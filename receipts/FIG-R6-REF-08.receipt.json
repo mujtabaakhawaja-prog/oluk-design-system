@@ -1,0 +1,12 @@
+{
+  "packetId": "FIG-R6-REF-08",
+  "status": "completed",
+  "completedOn": "2026-07-22",
+  "objective": "Wave 4 annotation-only treatment for 28 historical pages",
+  "pageCount": 28,
+  "annotationsCreated": 25,
+  "ancestorPagesVerified": 3,
+  "deletedNodeIds": [],
+  "forbiddenMutations": ["rebinding", "redesign", "component_mutation", "node_deletion", "authority_promotion"],
+  "nextPacket": "FIG-R6-REF-09"
+}

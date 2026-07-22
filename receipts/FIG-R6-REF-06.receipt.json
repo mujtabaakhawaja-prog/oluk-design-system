@@ -1,0 +1,10 @@
+{
+  "packetId": "FIG-R6-REF-06",
+  "status": "completed",
+  "completedOn": "2026-07-22",
+  "objective": "Wave 2 Standalone triage — registrars with triage annotations for 8 pages",
+  "pageCount": 8,
+  "registrarsCreated": 8,
+  "deletedNodeIds": [],
+  "nextPacket": "FIG-R6-REF-07"
+}

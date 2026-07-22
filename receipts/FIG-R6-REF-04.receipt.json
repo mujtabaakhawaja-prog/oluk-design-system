@@ -1,0 +1,15 @@
+{
+  "packetId": "FIG-R6-REF-04",
+  "status": "completed",
+  "completedOn": "2026-07-22",
+  "objective": "OpenLab/PDP public-state convergence — build unavailable specimen",
+  "createdNodeIds": ["1335:77217"],
+  "deletedNodeIds": [],
+  "acceptanceResults": [
+    { "criterion": "Full-PDP OpenLab-unavailable specimen exists", "result": "PASS", "nodeId": "1335:77217" },
+    { "criterion": "Customer-safe copy used", "result": "PASS", "copy": "Independent lab analysis for this product is not yet available" },
+    { "criterion": "No raw errors or provider terminology", "result": "PASS" },
+    { "criterion": "No token_missing or task IDs", "result": "PASS" }
+  ],
+  "nextPacket": "FIG-R6-REF-05"
+}

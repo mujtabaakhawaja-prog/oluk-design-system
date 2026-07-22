@@ -1,0 +1,51 @@
+{
+  "contract": "FIGMA_AUTHORITY_MANIFEST_V1",
+  "version": "1.0.0",
+  "emittedOn": "2026-07-22",
+  "emittedBy": "FIG-R6-REF-09",
+  "fileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+  "finalStatus": "FIGMA REFACTOR COMPLETE — PENDING RUNTIME CONFIRMATION AND HUMAN REVIEW",
+
+  "summary": {
+    "pages": 67,
+    "fileWideSets": 144,
+    "fileWideVariants": 1321,
+    "runtimeTargetSets": 39,
+    "runtimeTargetVariants": 712,
+    "g1Variables": 52,
+    "layoutTokens": 25,
+    "totalGovernedVariables": 77,
+    "activeTextStyles": 38,
+    "deprecatedTextStyles": 53,
+    "semanticIconGlyphs": 48,
+    "variableBindings": 65392
+  },
+
+  "packetChain": [
+    { "id": "FIG-R6-REF-00", "status": "completed", "description": "File census and authority lock" },
+    { "id": "FIG-R6-REF-01", "status": "completed", "description": "Arithmetic and deprecation corrections" },
+    { "id": "FIG-R6-REF-02", "status": "completed", "description": "Foundations and semantic-contract repair" },
+    { "id": "FIG-R6-REF-03", "status": "completed", "description": "Component inventory and runtime contracts" },
+    { "id": "FIG-R6-REF-04", "status": "completed", "description": "OpenLab/PDP public-state convergence" },
+    { "id": "FIG-R6-REF-05", "status": "completed", "description": "Wave 1 Champion refactor" },
+    { "id": "FIG-R6-REF-06", "status": "completed", "description": "Wave 2 Standalone triage" },
+    { "id": "FIG-R6-REF-07", "status": "completed", "description": "Wave 3 System boards" },
+    { "id": "FIG-R6-REF-08", "status": "completed", "description": "Wave 4 Annotation" },
+    { "id": "FIG-R6-REF-09", "status": "completed", "description": "Whole-file closeout" }
+  ],
+
+  "runtimeInterlock": {
+    "tokensUnblocked": true,
+    "typographyUnblocked": true,
+    "iconsUnblocked": true,
+    "componentRegistryUnblocked": true,
+    "openLabStateParityUnblocked": true,
+    "checkoutLifecycleDeferred": true
+  },
+
+  "deferredScope": [
+    "order_prepare_then_bridge",
+    "invoice_card_isolation",
+    "postpurchase_woo_read_model"
+  ]
+}
