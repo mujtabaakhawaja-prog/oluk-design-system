@@ -1,0 +1,35 @@
+{
+  "packetId": "FIG-R6-REF-03",
+  "fileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+  "status": "completed",
+  "completedOn": "2026-07-22",
+  "objective": "Classify all 144 file-wide component sets and reconcile the 39/712 runtime target",
+  "mode": "component_governance_mutation",
+  "dependencies": ["FIG-R6-REF-00", "FIG-R6-REF-01", "FIG-R6-REF-02"],
+  "pageIds": ["1167:180", "1195:7097", "849:2", "1:5", "1:4", "1:11", "1:16", "644:812", "88:2", "470:4257", "478:812", "276:77", "518:814", "702:15786", "808:812", "808:813", "881:812", "881:27862", "920:812", "940:812", "1185:4857"],
+  "mechanicalCounts": {
+    "fileWideSets": { "claimed": 144, "observed": 144, "match": true },
+    "fileWideVariants": { "claimed": 1321, "observed": 1321, "match": true },
+    "canonicalRuntimeSets": { "claimed": 39, "observed": 39, "match": true },
+    "canonicalRuntimeVariants": { "claimed": 712, "observed": 712, "match": true },
+    "classificationTotal": { "claimed": 144, "observed": "39+2+16+2+5+13+35+32=144", "match": true }
+  },
+  "acceptanceResults": [
+    { "criterion": "Every live set classified", "result": "PASS" },
+    { "criterion": "No set silently disappeared", "result": "PASS" },
+    { "criterion": "assembly never used for COMPONENT_SET", "result": "PASS" },
+    { "criterion": "Runtime target total mechanically derived", "result": "PASS" },
+    { "criterion": "Component descriptions match contract", "result": "PASS", "evidence": "37 descriptions added" },
+    { "criterion": "Code Connect unused", "result": "PASS" },
+    { "criterion": "SourceDrawer classified as active_design_only (4 variants)", "result": "PASS" },
+    { "criterion": "DocumentationSection classified as documentation_utility (15 variants)", "result": "PASS" },
+    { "criterion": "PDP CTA Button classified as deprecated", "result": "PASS" },
+    { "criterion": "CommerceTrustRail classified as runtime_assembly", "result": "PASS" }
+  ],
+  "mutatedNodeIds": ["descriptions added to 37 component sets"],
+  "createdNodeIds": [],
+  "deletedNodeIds": [],
+  "outputs": ["contracts/FIGMA_RUNTIME_COMPONENT_CONTRACTS.v1.json"],
+  "nextPacket": "FIG-R6-REF-04",
+  "runtimeUnblock": "Runtime component-registry implementation may proceed from this manifest."
+}

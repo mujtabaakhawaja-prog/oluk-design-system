@@ -1,0 +1,130 @@
+{
+  "contract": "FIGMA_RUNTIME_COMPONENT_CONTRACTS_V1",
+  "version": "1.0.0",
+  "emittedOn": "2026-07-22",
+  "emittedBy": "FIG-R6-REF-03",
+  "fileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+  "status": "FIGMA COMPLETE — PENDING RUNTIME CONFIRMATION",
+  "acquisitionMethod": "live evaluate_script file-wide COMPONENT_SET traversal",
+
+  "fileWideCensus": {
+    "totalSets": 144,
+    "totalVariants": 1321
+  },
+
+  "classificationSummary": [
+    { "classification": "canonical_runtime_target", "sets": 39, "variants": 712 },
+    { "classification": "deprecated", "sets": 2, "variants": 12 },
+    { "classification": "active_design_only", "sets": 16, "variants": 84 },
+    { "classification": "documentation_utility", "sets": 2, "variants": 19 },
+    { "classification": "governance", "sets": 5, "variants": 31 },
+    { "classification": "workshop", "sets": 13, "variants": 127 },
+    { "classification": "ancestor", "sets": 35, "variants": 152 },
+    { "classification": "supplemental_snapshot", "sets": 32, "variants": 178 }
+  ],
+  "classificationVerification": "39+2+16+2+5+13+35+32 = 144",
+  "variantVerification": "712+12+84+19+31+127+152+178 = 1315",
+  "variantNote": "1315 vs 1321 — 6 variant delta due to cross-page component duplication (same master node counted on its home page only)",
+
+  "canonicalRuntimeTargets": {
+    "totalSets": 39,
+    "totalVariants": 712,
+    "subtotals": {
+      "primitives": { "sets": 4, "variants": 94, "page": "1167:180 + 1:5" },
+      "pdpCommerce": { "sets": 8, "variants": 57, "page": "1167:180" },
+      "bridgeCommerce": { "sets": 24, "variants": 552, "page": "1195:7097" },
+      "systemWorkshop": { "sets": 3, "variants": 9, "page": "849:2" }
+    },
+    "verification": "4+8+24+3 = 39 sets; 94+57+552+9 = 712 variants",
+    "components": [
+      { "id": "1208:71821", "name": "OLUK / Button", "variants": 60, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1208:71858", "name": "OLUK / StatusChip", "variants": 12, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1234:68771", "name": "OLUK / Icon", "variants": 12, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1216:68329", "name": "OLUK / Input", "variants": 10, "classification": "canonical_runtime_target", "page": "1:5" },
+      { "id": "1192:285", "name": "PDP / PerformanceIcon", "variants": 6, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1192:304", "name": "PDP / CommerceTrustIcon", "variants": 3, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1208:71612", "name": "PDP / SeriesLabel", "variants": 2, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1192:63270", "name": "PDP / PerformanceCell", "variants": 24, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1192:63570", "name": "PDP / PerformanceRail", "variants": 8, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1192:63626", "name": "PDP / CommerceTrustCell", "variants": 6, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1208:71625", "name": "PDP / SKU Container", "variants": 2, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1208:71698", "name": "PDP / Price Container", "variants": 6, "classification": "canonical_runtime_target", "page": "1167:180" },
+      { "id": "1199:13771", "name": "OL/Commerce/QuickAddButton", "variants": 126, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:14303", "name": "OL/Commerce/ViewBasketButton", "variants": 30, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:14424", "name": "OL/Commerce/QuantityStepper", "variants": 36, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:14713", "name": "OL/Commerce/ProofChip", "variants": 128, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:15202", "name": "OL/Commerce/MetricStrip", "variants": 27, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:15338", "name": "OL/Commerce/AssuranceRail", "variants": 12, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:15561", "name": "OL/Commerce/ProductCard", "variants": 32, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:15890", "name": "OL/Commerce/QuickCommerceCard", "variants": 24, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16107", "name": "OL/Commerce/ProductRow", "variants": 16, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16264", "name": "OL/Commerce/MobileRailCard", "variants": 8, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16297", "name": "OL/Commerce/ProductRailCard", "variants": 12, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16346", "name": "OL/Commerce/StandaloneProductCard", "variants": 12, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16401", "name": "OL/Commerce/CommerceSectionShell", "variants": 8, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16470", "name": "OL/Commerce/TrustTile", "variants": 32, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16639", "name": "OL/Commerce/Breadcrumbs", "variants": 4, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16648", "name": "OL/Commerce/SecondaryAction", "variants": 9, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16676", "name": "OL/Commerce/LabReportLink", "variants": 6, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16689", "name": "OL/Commerce/SimilarProductCard", "variants": 6, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16714", "name": "OL/Commerce/CompareDrawer", "variants": 4, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16729", "name": "OL/Commerce/LoyaltySlot", "variants": 6, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16742", "name": "OL/Commerce/DispatchStatusRow", "variants": 4, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16771", "name": "OL/Commerce/ShopUtilityBar", "variants": 4, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16819", "name": "OL/Commerce/PriceBlock", "variants": 3, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "1199:16835", "name": "OL/Commerce/CategoryCard", "variants": 3, "classification": "canonical_runtime_target", "page": "1195:7097" },
+      { "id": "849:26151", "name": "ProductMetric", "variants": 3, "classification": "canonical_runtime_target", "page": "849:2" },
+      { "id": "849:26158", "name": "CommerceButton", "variants": 3, "classification": "canonical_runtime_target", "page": "849:2" },
+      { "id": "849:26283", "name": "ProductCommerceCard", "variants": 3, "classification": "canonical_runtime_target", "page": "849:2" }
+    ]
+  },
+
+  "explicitResolutions": [
+    {
+      "subject": "SourceDrawer (1216:1234)",
+      "observedType": "COMPONENT_SET",
+      "variants": 4,
+      "classification": "active_design_only",
+      "rationale": "Real UI component but not independently addressable as a runtime target. Consumed as part of PDP composition."
+    },
+    {
+      "subject": "DocumentationSection (1215:1237)",
+      "observedType": "COMPONENT_SET",
+      "variants": 15,
+      "classification": "documentation_utility",
+      "rationale": "Internal documentation template. Not a customer-facing component."
+    },
+    {
+      "subject": "PDP / CTA Button (1167:60755)",
+      "observedType": "COMPONENT_SET",
+      "variants": 2,
+      "classification": "deprecated",
+      "rationale": "Superseded by OLUK / Button (1208:71821)."
+    },
+    {
+      "subject": "TrustEvidenceSpine family (6 sets on 1167:180)",
+      "classification": "active_design_only",
+      "sets": 6,
+      "variants": 27,
+      "rationale": "Compositional building blocks consumed by PDP champion. Not independently addressable runtime targets."
+    },
+    {
+      "subject": "TrustEvidenceSpine family (9 sets on 644:812)",
+      "classification": "active_design_only",
+      "sets": 9,
+      "variants": 53,
+      "rationale": "Production V01 trust evidence spine components. Active design authority but not selected as runtime targets."
+    },
+    {
+      "subject": "CommerceTrustRail",
+      "classification": "runtime_assembly",
+      "rationale": "Not a COMPONENT_SET. Runtime composition of CommerceTrustCell instances. No node ID as a set."
+    }
+  ],
+
+  "runtimeTargetTotalDerivation": {
+    "equation": "4 primitives (94) + 8 PDP (57) + 24 bridge (552) + 3 system (9) = 39 sets / 712 variants",
+    "unchanged": true,
+    "noOmittedSetPromoted": true
+  }
+}
