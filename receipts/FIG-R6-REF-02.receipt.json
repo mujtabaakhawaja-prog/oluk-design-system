@@ -1,0 +1,97 @@
+{
+  "packetId": "FIG-R6-REF-02",
+  "fileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+  "status": "completed",
+  "completedOn": "2026-07-22",
+  "objective": "Foundations and semantic-contract repair: verify icon registry, document variable classification, typography ownership, and emit foundations contract",
+  "mode": "bounded_design_system_mutation",
+  "dependencies": ["FIG-R6-REF-01"],
+  "pageIds": ["1:3", "1:4", "1:5", "1:15"],
+
+  "preflightReadback": {
+    "iconRegistryNodeId": "1216:72291",
+    "iconRegistryGlyphCount": 48,
+    "peptidesMasterExists": true,
+    "peptidesMasterId": "1206:71645",
+    "nootropicsMasterExists": true,
+    "nootropicsMasterId": "1206:71656",
+    "g1CollectionId": "VariableCollectionId:738:2248",
+    "g1VariableCount": 52,
+    "g1Modes": ["Light (738:2)", "Dark (738:3)"],
+    "layoutCollectionId": "VariableCollectionId:1234:72750",
+    "layoutVariableCount": 25,
+    "textStylesTotal": 91,
+    "textStylesActive": 38,
+    "textStylesDeprecated": 53,
+    "iconComponentSetId": "1234:68771",
+    "iconComponentSetVariants": 12,
+    "statusChipV02Name": "[DEPRECATED] OLUK / StatusChip / Semantic V02",
+    "statusChipV02Id": "1213:1601"
+  },
+
+  "mutationProcedure": [
+    "Verified icon registry contains all 48 named glyphs including Category/Peptides (1216:72449) and Category/Nootropics (1216:72460)",
+    "Verified icon masters exist: Peptides (1206:71645) and Nootropics (1206:71656)",
+    "Verified foundations registry (1235:72800) contains corrected variable classification: 32+15+1+4=52",
+    "Verified foundations registry documents PJS ownership of Display/H1/H2/Metric and Inter ownership of remaining 34 active",
+    "Verified foundations registry documents Inter Tight as runtime-discretionary with 0 Figma styles",
+    "Verified runtime contracts registry (1235:74689) contains matching foundation contract content",
+    "Verified 20-alias/32-raw source law documented in both registries",
+    "Verified StatusChip V02 carries [DEPRECATED] prefix",
+    "No new Figma mutations required — all content was placed by FIG-R6-REF-01 initialization"
+  ],
+
+  "postMutationReadback": {
+    "iconGlyphsVerified": 48,
+    "g1VariablesVerified": 52,
+    "layoutTokensVerified": 25,
+    "activeTextStylesVerified": 38,
+    "deprecatedTextStylesVerified": 53,
+    "statusChipV02DeprecatedPrefixVerified": true
+  },
+
+  "contractDeltas": [],
+  "createdNodeIds": [],
+  "mutatedNodeIds": [],
+  "movedNodeIds": [],
+  "renamedNodeIds": [],
+  "deletedNodeIds": [],
+
+  "mechanicalCounts": {
+    "g1Variables": { "claimed": 52, "observed": 52, "match": true },
+    "layoutTokens": { "claimed": 25, "observed": 25, "match": true },
+    "iconGlyphs": { "claimed": 48, "observed": 48, "match": true },
+    "activeTextStyles": { "claimed": 38, "observed": 38, "match": true },
+    "deprecatedTextStyles": { "claimed": 53, "observed": 53, "match": true },
+    "iconComponentVariants": { "claimed": 12, "observed": 12, "match": true }
+  },
+
+  "acceptanceResults": [
+    { "criterion": "Category/Peptides and Category/Nootropics in registry", "result": "PASS", "evidence": "Instance 1216:72449 and 1216:72460 confirmed" },
+    { "criterion": "48 actual named glyph specimens", "result": "PASS", "evidence": "walkForGlyphs returned exactly 48" },
+    { "criterion": "24×24 source grid preserved", "result": "PASS", "evidence": "Icon instances are 150×92 display tiles wrapping 24×24 source" },
+    { "criterion": "Variable classification documented", "result": "PASS", "evidence": "Foundations registry text 1235:72803 contains 32+15+1+4=52" },
+    { "criterion": "PJS ownership documented", "result": "PASS", "evidence": "Foundations registry documents Display/H1/H2/Metric" },
+    { "criterion": "Inter ownership documented", "result": "PASS", "evidence": "34 remaining active roles" },
+    { "criterion": "Inter Tight runtime-discretionary", "result": "PASS", "evidence": "0 active Figma styles; runtime-discretionary" },
+    { "criterion": "Source law documented", "result": "PASS", "evidence": "20 alias-backed / 32 raw-backed" },
+    { "criterion": "Foundation metadata on runtime-contract board", "result": "PASS", "evidence": "Runtime contracts registry 1235:74689 contains matching content" },
+    { "criterion": "No G1 value/alias/mode/scope mutation", "result": "PASS", "evidence": "Zero mutatedNodeIds" },
+    { "criterion": "No deletions", "result": "PASS", "evidence": "Zero deletedNodeIds" }
+  ],
+
+  "residualAmbiguities": [
+    {
+      "id": "icon_registry_census_lag",
+      "detail": "Census at FIG-R6-REF-00 recorded 46 glyphs with 2 missing. Live readback now shows 48. The icons were already present when the census ran but the traversal may have used a different depth or name pattern.",
+      "resolution": "Resolved by live verification. 48 confirmed."
+    }
+  ],
+
+  "outputs": [
+    "contracts/FIGMA_FOUNDATIONS_CONTRACT.v1.json"
+  ],
+
+  "nextPacket": "FIG-R6-REF-03",
+  "runtimeUnblock": "Runtime token, typography, and icon implementation may proceed."
+}

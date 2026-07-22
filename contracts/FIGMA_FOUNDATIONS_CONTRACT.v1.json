@@ -1,0 +1,126 @@
+{
+  "contract": "FIGMA_FOUNDATIONS_CONTRACT_V1",
+  "version": "1.0.0",
+  "emittedOn": "2026-07-22",
+  "emittedBy": "FIG-R6-REF-02",
+  "fileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+  "status": "FIGMA COMPLETE — PENDING RUNTIME CONFIRMATION",
+  "acquisitionMethod": "live evaluate_script readback",
+
+  "g1SemanticAliases": {
+    "collectionId": "VariableCollectionId:738:2248",
+    "collectionName": "OLUK / TrustEvidenceSpine / G1 Semantic Aliases V02",
+    "totalVariables": 52,
+    "modes": [
+      { "modeId": "738:2", "name": "Light" },
+      { "modeId": "738:3", "name": "Dark" }
+    ],
+    "classification": {
+      "directRuntime": 32,
+      "indirectStatusIntent": 15,
+      "operativeBrand": 1,
+      "documentationOnly": 4,
+      "equation": "32 + 15 + 1 + 4 = 52",
+      "runtimeRequired": 48
+    },
+    "sourceLaw": {
+      "aliasBacked": 20,
+      "rawBacked": 32,
+      "aliasModeValues": 40,
+      "rawModeValues": 64,
+      "rule": "20 alias-backed core values resolve through variable alias chain in both modes. 32 domain-specific values have independently authored hex per mode. Both categories are intentional final authority."
+    },
+    "documentationOnlyVariables": [
+      "color/brand-source/current",
+      "color/brand-source/express",
+      "color/brand-source/olympus",
+      "color/brand-source/brand-blue"
+    ],
+    "operativeBrandVariable": "color/brand/blue",
+    "legacyNote": "state/stock (VariableID:519:898) lives in Closeout G1 (VariableCollectionId:518:817), NOT in G1. Legacy, replaced by state/success.",
+    "mutationPolicy": "No value, alias, mode, scope, or publishing-visibility mutation permitted by this contract."
+  },
+
+  "layoutTokens": {
+    "collectionId": "VariableCollectionId:1234:72750",
+    "collectionName": "OLUK / Layout Tokens",
+    "totalVariables": 25,
+    "breakdown": {
+      "spacing": 11,
+      "radius": 6,
+      "padding": 8
+    }
+  },
+
+  "typography": {
+    "totalStyles": 91,
+    "active": 38,
+    "deprecated": 53,
+    "fontOwnership": [
+      {
+        "family": "Plus Jakarta Sans",
+        "roles": ["Display", "H1", "H2", "Metric"],
+        "activeStyleCount": 4,
+        "authority": "Figma text style"
+      },
+      {
+        "family": "Inter",
+        "roles": "Remaining 34 active roles + 53 deprecated roles",
+        "activeStyleCount": 34,
+        "authority": "Figma text style"
+      },
+      {
+        "family": "Inter Tight",
+        "roles": "None in Figma",
+        "activeStyleCount": 0,
+        "authority": "runtime-discretionary",
+        "note": "No Figma text style authority. Runtime may use at its own discretion."
+      }
+    ]
+  },
+
+  "semanticIcons": {
+    "registryNodeId": "1216:72291",
+    "registryPage": "1:5",
+    "wrapperComponentSet": {
+      "nodeId": "1234:68771",
+      "name": "OLUK / Icon",
+      "variants": 12,
+      "axes": "size (sm, md, lg) × tone (primary, secondary, accent, onCta)"
+    },
+    "totalGlyphs": 48,
+    "categories": {
+      "navigation": 10,
+      "commerce": 10,
+      "evidence": 10,
+      "category": 8,
+      "micro": 10
+    },
+    "verification": "10 + 10 + 10 + 8 + 10 = 48",
+    "gridSpec": "24×24 source grid",
+    "strokeSpec": "1.5px round stroke",
+    "colorSpec": "variable-bound currentColor, no colored fills",
+    "a11y": "Decorative icons are aria-hidden. Interactive icons inherit accessible name from parent control.",
+    "resolvedGlyphs": [
+      { "name": "Category/Peptides", "masterId": "1206:71645", "registryInstanceId": "1216:72449" },
+      { "name": "Category/Nootropics", "masterId": "1206:71656", "registryInstanceId": "1216:72460" }
+    ]
+  },
+
+  "deprecatedComponents": [
+    {
+      "nodeId": "1213:1601",
+      "name": "[DEPRECATED] OLUK / StatusChip / Semantic V02",
+      "variants": 10,
+      "supersededBy": "OLUK / StatusChip (1208:71858)",
+      "excludedFromActiveCounts": true
+    }
+  ],
+
+  "codeConnect": {
+    "required": false,
+    "canonicalMappingMechanism": "machine-readable authority manifest"
+  },
+
+  "runtimeInterlock": "Runtime token, typography, and icon implementation may proceed when this contract is accepted."
+}
