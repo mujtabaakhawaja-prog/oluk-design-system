@@ -23,7 +23,21 @@ new governance layer.
   4. `9c9564337af65fed3ee51dd24c58afeb2d4e2df2`
 - Forward-integration branch: `codex/r6-reviewos-forward-integration`
 - Forward-integration head: `0c35d6f46068daf5a12e1134d7f5244f7de22b0d`
-- Draft PR: `#1007` — open, mergeable, held for human review
+- Draft PR: `#1007` — open, mergeable, held
+- Current ReviewOS disposition: `REVISE_REQUIRED`
+
+## Bounded ReviewOS integrity correction
+
+Source inspection of PR #1007 proved two acceptance gaps:
+
+1. The browser constructs `approval.decision`, `decidedAt`, and `reviewer`, and the
+   session endpoint persists the client-composed object unchanged.
+2. The evidence endpoint writes client-supplied images and paths without a
+   server-issued integrity receipt containing hashes, byte lengths, and capture
+   metadata.
+
+This is not authorization for new ReviewOS features. It is one contract-boundary
+correction required before a human Accept receipt can be authoritative.
 
 ## Canonical loop
 
@@ -43,20 +57,22 @@ candidate. The pre-code gate is Figma Agent recommendation plus human promotion.
 
 ## Start now, in parallel
 
-### Lane A — ReviewOS acceptance + Codex duplicate-lane closure
+### Lane A — ReviewOS correction + duplicate-lane closure
 
-Use `03-codex-prompt.md`.
+Use `03-codex-prompt.md` and `04-reviewos-protocol.md`.
 
 ```text
 Freeze the still-running competing integration session
 → obtain its exact branch/head/diff receipt
-→ compare it with PR #1007
-→ preserve no duplicate visual or ReviewOS mutation automatically
-→ run human integration acceptance against 4475
+→ compare any server-authority work with PR #1007
+→ route one bounded correction into the PR #1007 branch only
+→ rerun the existing ReviewOS/runtime/security verification
+→ run human integration acceptance against the corrected candidate
 → Accept / Revise / Reject PR #1007
 ```
 
-Do not include any unpromoted Featured Controller placement.
+Do not include any unpromoted Featured Controller placement. Do not open a second
+ReviewOS PR.
 
 ### Lane B — Figma Design Agent
 
@@ -69,6 +85,9 @@ Validate Make allowlist
 → issue Run 01A
 → return READY_FOR_MAKE
 ```
+
+Lane B may proceed while Lane A is corrected. Figma Make candidate generation still
+waits for `READY_FOR_MAKE`.
 
 ## Product Surface Laboratory run order
 
@@ -125,6 +144,7 @@ Product Surface Laboratory
 ## Hard stops
 
 - No second independent ReviewOS forward-integration lane or PR.
+- No human ReviewOS Accept before the server-authority correction passes.
 - No unpromoted Featured Controller implementation.
 - No invented product, price, purity, evidence, report, or asset data.
 - No Make-to-code path.
