@@ -8,6 +8,21 @@ MAKE_RESULT
 + HUMAN_PROMOTION_RECEIPT
 ```
 
+## Round 0 — Integrity precondition
+
+PR #1007 may not enter human acceptance until its submitted head is corrected so:
+
+- the client submits decision intent, not an authoritative approval object;
+- the server stamps/overwrites `decision`, `decidedAt`, `reviewer`, and a stable
+  decision receipt ID;
+- persisted evidence receives server-calculated SHA-256, byte length, capture time,
+  media type, and verified artifact path;
+- the stored session references the server-issued decision and evidence receipts;
+- forged client approval/evidence metadata is ignored, overwritten, or rejected;
+- archive/restore cannot silently rewrite the authoritative decision receipt.
+
+This is a bounded authority correction, not ReviewOS feature expansion.
+
 ## Round 1 — ReviewOS forward-integration acceptance
 
 ```text
@@ -19,7 +34,7 @@ dacfb0f2472b7888dd64f9d642867ad91b1a4b77
 
 Candidate:
 codex/r6-reviewos-forward-integration
-0c35d6f46068daf5a12e1134d7f5244f7de22b0d
+CORRECTED_PR_1007_HEAD
 
 Coverage:
 Homepage
@@ -39,7 +54,9 @@ Viewports:
 ### Accept
 
 - ReviewOS works against distinct base and candidate runtimes.
-- The server owns human decisions and evidence receipts.
+- A saved decision reads back as a server-issued receipt.
+- Persisted evidence hashes match the bytes on disk.
+- A forged client approval/evidence metadata test fails safely.
 - Newer systemization remains intact.
 - ReviewOS is local-only and absent from public runtime.
 - Commerce mutations remain HTTP `423`.
@@ -47,7 +64,8 @@ Viewports:
 
 ### Revise
 
-- ReviewOS works, but one or more current surfaces or systemization contracts regress.
+- ReviewOS works, but one or more current surfaces, integrity receipts, or
+  systemization contracts regress.
 
 ### Reject
 
@@ -72,6 +90,7 @@ For each promoted component, create a separate session containing:
 - parent template and insertion zone;
 - required theme/viewport/state cells;
 - before/after evidence;
+- server-issued decision and evidence receipts;
 - Accept / Revise / Reject.
 
 An accepted ReviewOS session authorizes closure of the candidate branch. It does
