@@ -1,0 +1,58 @@
+{
+  "compound": "MK-2866",
+  "alias": "Ostarine",
+  "category": "SARM",
+  "status": "champion",
+  "lifecycle": "active",
+  "media": {
+    "hero": { "src": "mk-2866-hero.webp", "alt": "MK-2866 Ostarine product" },
+    "grid": { "src": "mk-2866-grid.webp", "alt": "MK-2866 thumbnail" },
+    "detail": [
+      { "src": "mk-2866-detail-1.webp", "alt": "MK-2866 front view" },
+      { "src": "mk-2866-detail-2.webp", "alt": "MK-2866 lab report" }
+    ],
+    "chamberModes": {
+      "grid": "contain",
+      "quickAdd": "cover",
+      "featured": "stage",
+      "pdp": "gallery"
+    }
+  },
+  "metrics": {
+    "dosage": "15MG",
+    "capsules": "90 CAPS",
+    "purity": ">99%",
+    "display": "15MG / 90 CAPS / >99% PURITY"
+  },
+  "price": {
+    "amount": 43,
+    "currency": "GBP",
+    "symbol": "£",
+    "display": "£43",
+    "compareAt": null
+  },
+  "actions": {
+    "grid": { "label": "View Product", "variant": "secondary" },
+    "quickAdd": { "label": "Quick Add", "variant": "primary" },
+    "featured": { "label": "Shop Now", "variant": "primary" },
+    "pdp": { "label": "Add to Basket", "variant": "primary" }
+  },
+  "slots": {
+    "grid": ["MediaChamber", "CompoundIdentity", "MetricRail", "PriceBlock", "ProductCardAction"],
+    "quickAdd": ["MediaChamber", "CompoundIdentity", "MetricStrip", "PriceBlock", "QuickAddAction"],
+    "featured": ["MediaStage", "CompoundIdentity", "TrustEvidenceSpine", "MetricRail", "PriceBlock", "FeaturedAction"]
+  },
+  "evidence": {
+    "labRecordCount": 15,
+    "averagePurity": 99.5,
+    "failureCount": 0,
+    "latestBatch": "OLUK-MK2866-2026-07",
+    "spineVariant": "full"
+  },
+  "selector": {
+    "options": [
+      { "compound": "MK-2866", "dosage": "15MG", "capsules": "90", "default": true },
+      { "compound": "MK-2866", "dosage": "25MG", "capsules": "60", "default": false }
+    ]
+  }
+}
