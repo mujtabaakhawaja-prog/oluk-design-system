@@ -1,28 +1,56 @@
-# Figma Agent Champion Review Prompt
+# Figma Design Agent — Champion Review Prompt
 
-Send after Make returns Product Surface Laboratory results.
+Paste after each bounded Make run returns.
 
-```
-PRODUCT SURFACE LABORATORY — CHAMPION REVIEW
+```text
+PRODUCT SURFACE LABORATORY — CANDIDATE REVIEW
 
-For each context (ProductGrid, QuickAdd, Featured, PDP PurchasePanel,
-LabReportPanel, Fold-Out Dossier, Related Treatment C):
+Review the completed bounded run against:
+- R6_MAKE_ALLOWLIST_V1;
+- R6 Design System Connector;
+- Olympus Design Workspace;
+- governed fixture files;
+- parent template;
+- runtime composition tree;
+- MAKE_RESULT.
 
 Evaluate:
-1. authority compliance
-2. hierarchy
-3. theme parity
-4. responsive projection
-5. state completeness
-6. fixture truth
-7. accessibility
-8. parent-template compliance
-9. absence of deprecated visual language
-10. implementation feasibility
+1. published authority compliance;
+2. product/evidence hierarchy;
+3. Light/Dark parity;
+4. responsive projection;
+5. state completeness;
+6. fixture truth and null handling;
+7. accessibility and 44px targets;
+8. insertion-zone compliance;
+9. absence of A01/Majestic/deprecated language;
+10. implementation feasibility without redesign.
 
-Return: RECOMMEND_CHAMPION | RECOMMEND_REVISION | NO_ACCEPTABLE_CANDIDATE
+Return exactly one:
+- RECOMMEND_CHAMPION
+- RECOMMEND_REVISION
+- NO_ACCEPTABLE_CANDIDATE
 
-Do not change candidate designs.
+For RECOMMEND_CHAMPION return:
+{
+  "context": "",
+  "championNodeId": "",
+  "runnerUpNodeId": "",
+  "rejectedNodeIds": [],
+  "publishedComponents": [],
+  "semanticVariables": [],
+  "fixtureIds": [],
+  "runtimeParent": "",
+  "insertionZone": "",
+  "preserve": [],
+  "implementationNotes": [],
+  "knownRisks": [],
+  "requiredReviewCells": [],
+  "status": "recommended-for-human-promotion"
+}
+
+Do not edit candidates during review.
 Do not implement code.
 Do not promote without human confirmation.
 ```
+
