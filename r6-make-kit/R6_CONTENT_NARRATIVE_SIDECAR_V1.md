@@ -1,6 +1,6 @@
 # R6 Content & Narrative Sidecar V1
 
-**Visible Figma authority:** [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2)
+**Visible Figma authority:** [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3)
 
 The copy sidecar runs one wave ahead of Figma Make. GitHub is the machine-readable mirror; the Figma page is what Make consumes.
 
