@@ -46,15 +46,23 @@ OLUK R6 — G0 Universal Glue
 
 Attach these Figma sources:
 
-1. [Observed Brand & Design Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2).
-2. [Homepage Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=26-2).
-3. [Catalogue Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=26-3).
-4. [MK-2866 PDP Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=47-2).
-5. [OpenLab Portal Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=75-2).
-6. [Checkout Review Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=172-2).
-7. [Checkout Payment Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=179-2).
-8. [Order History Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=214-2).
-9. [Product Card States Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=137-2).
+1. [G0 Make Context — Observed Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
+2. [Homepage — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=12-2)
+3. [Homepage — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=15-2)
+4. [Catalogue — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=20-2)
+5. [Catalogue — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=21-2)
+6. [MK-2866 PDP — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=41-2)
+7. [MK-2866 PDP — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=42-2)
+8. [OpenLab Portal — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=69-2)
+9. [OpenLab Portal — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=70-2)
+10. [Checkout Review — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=166-2)
+11. [Checkout Review — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=167-2)
+12. [Checkout Payment — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=173-2)
+13. [Checkout Payment — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=174-2)
+14. [Order History — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=208-2)
+15. [Order History — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=209-2)
+16. [ProductCommerceCard States — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=131-2)
+17. [ProductCommerceCard States — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=132-2)
 
 Paste this prompt:
 
@@ -130,7 +138,8 @@ OpenLab is the first route-specific closure because the current Portal lacks a r
 
 Attach:
 
-1. [OpenLab Portal Atlas](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=75-2).
+1. [OpenLab Portal — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=69-2).
+2. [OpenLab Portal — 1440 Dark](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=70-2).
 2. [Content & Narrative Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3).
 3. [Dark twofold reference](https://www.figma.com/design/nMdvVtpTC3r2JQrhyjQ7yW/Olympus-R6-Architecture-Staging-V01?node-id=768-24461).
 4. [Light twofold reference](https://www.figma.com/design/nMdvVtpTC3r2JQrhyjQ7yW/Olympus-R6-Architecture-Staging-V01?node-id=768-23938).
