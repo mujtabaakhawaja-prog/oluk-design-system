@@ -94,7 +94,11 @@ View Lab Records
 
 This replaces the disconnected “Formulated. Verified. Batch Tracked.” eyebrow and checkout-operations subcopy.
 
-### Selected OpenLab Portal starting copy
+### Selected OpenLab twofold Portal hero
+
+This is the opening Portal composition directly beneath the shared shell. Do not add a separate generic hero or search block above it.
+
+Identity / find-evidence half:
 
 ```text
 EYEBROW
@@ -109,31 +113,9 @@ the method, result, and source behind each record.
 
 PRIMARY ACTION
 Search Lab Records
-
-SECONDARY ACTION
-How Testing Works
 ```
 
-### OpenLab twofold banner
-
-Panel one:
-
-```text
-EYEBROW
-FIND A RECORD
-
-HEADLINE
-Find the record that matches your product.
-
-BODY
-Search by compound, batch, or report ID to locate the available public
-record and its result.
-
-ACTION
-Search Records
-```
-
-Panel two:
+Understand-evidence half:
 
 ```text
 EYEBROW
