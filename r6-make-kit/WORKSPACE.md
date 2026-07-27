@@ -1,23 +1,23 @@
 # Olympus R6 Design Workspace
 
-**Status: MIGRATION-IN-PROGRESS — not yet executable for Make.**
+**Status: READY_FOR_MAKE.**
 
-The source file `nMdvVtpTC3r2JQrhyjQ7yW` remains the published visual authority. The five split destination files currently contain page shells plus operational control frames; their required design content has **not** been copied. The Production file has zero local variables, text styles, and effect styles, and must not be published.
+The Minimum Executable Split is complete. The source file `nMdvVtpTC3r2JQrhyjQ7yW` remains the published library and source authority. Routes and Make Laboratory contain verified copied source subtrees; the migration has 2,422 instances, zero detached instances, and 22,863 resolved variable bindings.
 
-Run [R6_RUN_NOW.md](./R6_RUN_NOW.md) and [R6_FIGMA_MAKE_EXECUTION_RUNBOOK_V3.md](./R6_FIGMA_MAKE_EXECUTION_RUNBOOK_V3.md). The prior “executable workspace” claim is superseded until `R6_FILE_MIGRATION_RECEIPT_V1.status` is `READY_FOR_MAKE`.
+The Production file remains intentionally unready: it has zero local variables/styles and must not be published until a later full parity migration. Proofs and Archive are not Make inputs.
+
+Start with [R6_RUN_NOW.md](./R6_RUN_NOW.md). M0 runs in native Figma Make, then Figma Agent review, then a human direction receipt. No visual Codex change is permitted before the required Make, Agent, and Human promotion receipts.
 
 ## Lane separation
 
-- **Figma Design Agent:** migration audit, allowlist, briefs, candidate audit.
+- **Figma Design Agent:** audit, brief, candidate review, and champion recommendation.
 - **Figma Make:** visual A/B/C generation only.
-- **Human:** direction and promotion.
-- **Codex:** integrity fixes now; promoted visual implementation later.
-- **Runtime Studio / ReviewOS:** executable proof and human decision.
+- **Human:** chooses direction and promotes candidates.
+- **Codex:** integrity fixes now; implements one promoted visual candidate later.
+- **Runtime Studio / ReviewOS:** executable proof and final human decision.
 
 ## Current visual authority
 
 - Frozen returned visual candidate: `550c31d8c5c5d9bf5e6a79c5b64add118243fff9`.
 - Integrity-only Codex head: `ed2bd52f154961d6cf92e7f5c66a0796fbc9d47d`.
 - Current customer-runtime design decision: **REVISE**.
-
-The current Make Kit folders remain source material for guidelines, fixtures, templates, and prompts. They do not replace native Figma frames/components or make an empty Lab file ready.
