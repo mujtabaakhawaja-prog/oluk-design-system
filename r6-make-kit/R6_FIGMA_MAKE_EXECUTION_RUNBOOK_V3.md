@@ -1,54 +1,33 @@
-# R6 Figma Make Execution Runbook V3 — current and executable
+# R6 Figma Make Execution Runbook V3 — Make-ready
 
-**Supersedes:** stale C0–C3 instructions in V2. V2 remains the source packet set for M0, H1–H5, P1–P6, C1–C4, O1–O6, X1–X8, and A1–A5.
+## Current status
 
-## What changed since V2
+The C0–C3 integrity-only Codex correction is complete locally on `ed2bd52f154961d6cf92e7f5c66a0796fbc9d47d`. The frozen visual candidate remains `550c31d8c5c5d9bf5e6a79c5b64add118243fff9` and remains `REVISE / returned candidate`.
 
-| Earlier item | Current truth |
-|---|---|
-| C0 visual freeze | Complete on integrity-only head `ed2bd52f154961d6cf92e7f5c66a0796fbc9d47d`; frozen visual base remains `550c31d8c5c5d9bf5e6a79c5b64add118243fff9`. |
-| C1 ReviewOS routing | Complete locally; visual findings route to named Make laboratories. |
-| C2 Studio inventory | Complete locally: 36 entries = 17 live routes + 19 review-only entries. |
-| C3 route/404 integrity | Complete locally; no visual redesign included. |
-| “Make Laboratory ready” | False. The Lab/Routes files have page shells and control frames only. |
+The required Figma Minimum Executable Split is now complete and `READY_FOR_MAKE`:
 
-## Gate 0 — do this before M0
+- 11 copied pages verified.
+- 2,422 instances verified; zero detached.
+- 22,863 variable bindings verified.
+- Source master remains untouched.
+- Routes and Lab can consume the still-published source library.
 
-`R6_FILE_MIGRATION_RECEIPT_V1` is currently `BLOCKED`.
+Production, Proofs, and Archive are deliberately deferred; none blocks the first Make run.
 
-The physical cross-file copy cannot be performed via the callable Figma Design API because nodes are scoped to their source document; it has no cross-file clone/reparent or Figma Make project API. Use the native Figma interface to copy—not move—the 11 Minimum Executable Split pages listed in [R6_RUN_NOW.md](./R6_RUN_NOW.md).
+## Run M0 now
 
-Then run Packet S-A from V2. It may return `READY_FOR_MAKE` only if every required page contains migrated design content, bindings resolve, and instances are intact.
+Create one native Make project named **Olympus R6 Creative Frontier — M0 Light/Dark Material Direction**. Attach the seven required native Figma references listed in [R6_RUN_NOW.md](./R6_RUN_NOW.md), then paste Packet M-COMMON and Run M0 from V2.
 
-## M0 — only native Make action to start next
+M0 establishes one shared material direction before route-specific exploration. It must generate A/B/C directions for HeaderStack, ProductCommerceCard, Featured Controller, and the OpenLab homepage evidence module, without changing the semantic token graph, product/evidence truth, runtime, or page templates.
 
-Project name: **Olympus R6 Creative Frontier — M0 Light/Dark Material Direction**.
+## Gates after M0
 
-Native inputs:
+1. Figma Agent issues a recommendation and rejects noncompliant directions.
+2. Human issues `HUMAN_DIRECTION_RECEIPT`.
+3. Run H1, H2, H3, H4, then H5 in sequence.
+4. Figma Agent issues `FIGMA_AGENT_CHAMPION_RECEIPT_V2` for H5.
+5. Human issues `HUMAN_PROMOTION_RECEIPT`.
+6. Codex implements the exact named H5 champion only.
+7. Runtime Studio proves it; ReviewOS decides Accept, Revise, or Reject.
 
-- Light hero `1420:843`; Dark hero `1420:813`
-- Featured candidates `1580:77642`
-- ProductCommerceCard `1193:4504`
-- TrustEvidenceSpine `682:3187`
-- Header source `1169:4859`
-- Foundations review `881:29377`
-- Runtime context only: `550c31d8…`
-- ReviewOS session: `review-b2f19b7d-ab61-4748-b703-105387b533f9`
-- Fixtures: MK-2866 primary; RAD-140 stress
-
-M0 explores only material, text-role, enclosure/divider, and density direction for HeaderStack, ProductCommerceCard, Featured Controller, and OpenLab homepage evidence module. A/B/C at 1440 Light and Dark plus 390 screening. No token graph, runtime, data, or template changes.
-
-Required output: `MAKE_RESULT_V2` + `MATERIAL_DIRECTION_RECEIPT_V1`, status no higher than `RECOMMENDED_CANDIDATE`.
-
-## After M0
-
-`M0 → Figma Agent audit → HUMAN_DIRECTION_RECEIPT → H1 → Agent/Human → H2 → Agent/Human → H3 → Agent/Human → H4 → Agent/Human → H5 → FIGMA_AGENT_CHAMPION_RECEIPT_V2 → HUMAN_PROMOTION_RECEIPT → Codex → Runtime Studio → ReviewOS.`
-
-No visual CSS, copy, spacing, density, Light/Dark, card, route composition, or template changes enter Codex before the three required receipts.
-
-## Canonical sources
-
-- Figma control board: source `nMdvVtpTC3r2JQrhyjQ7yW`, System Index `0:1 → 1637:812`.
-- Migration receipt: `r6-execution-launch/R6_FILE_MIGRATION_RECEIPT_V1.json`.
-- Current gate: `r6-make-kit/R6_RUN_NOW.md`.
-- Supersession: `r6-make-kit/R6_SUPERSESSION_REGISTER.md`.
+The V2 packet wording remains the detailed source for the M0/H/P/C/O/X/A prompts. This V3 document supersedes only V2’s old split-blocked and C0–C3-pending state.
