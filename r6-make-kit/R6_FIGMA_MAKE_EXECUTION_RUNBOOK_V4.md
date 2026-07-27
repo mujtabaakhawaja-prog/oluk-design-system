@@ -1,10 +1,10 @@
 # R6 Figma Make Execution Runbook V4
 
-**Active Figma run map:** [08 — Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-2)
+**Active Figma run map:** [08 — Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-3)
 
-**Content authority:** [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2)
+**Content authority:** [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3)
 
-**Observed system facts:** [06 — Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=272-2)
+**Observed system facts:** [06 — Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
 
 ## What V4 supersedes
 
@@ -46,7 +46,7 @@ OLUK R6 — G0 Universal Glue
 
 Attach these Figma sources:
 
-1. [Observed Brand & Design Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=272-2).
+1. [Observed Brand & Design Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2).
 2. [Homepage Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=26-2).
 3. [Catalogue Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=26-3).
 4. [MK-2866 PDP Atlas section](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=47-2).
@@ -131,7 +131,7 @@ OpenLab is the first route-specific closure because the current Portal lacks a r
 Attach:
 
 1. [OpenLab Portal Atlas](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=75-2).
-2. [Content & Narrative Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2).
+2. [Content & Narrative Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3).
 3. [Dark twofold reference](https://www.figma.com/design/nMdvVtpTC3r2JQrhyjQ7yW/Olympus-R6-Architecture-Staging-V01?node-id=768-24461).
 4. [Light twofold reference](https://www.figma.com/design/nMdvVtpTC3r2JQrhyjQ7yW/Olympus-R6-Architecture-Staging-V01?node-id=768-23938).
 5. The selected G0/G1 result.
