@@ -6,9 +6,9 @@ The Runtime Atlas and the minimum executable Figma split are complete. Start Fig
 
 Use:
 
-- [08 — Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-2)
-- [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2)
-- [06 — Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=272-2)
+- [08 — Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-3)
+- [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3)
+- [06 — Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
 - [Detailed V4 runbook](./R6_FIGMA_MAKE_EXECUTION_RUNBOOK_V4.md)
 
 ## Step 1 — create the first Make project now
@@ -21,7 +21,7 @@ OLUK R6 — G0 Universal Glue
 
 Attach these sections from the Runtime Atlas, not the old renderless hero references:
 
-1. [Observed Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=272-2)
+1. [Observed Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
 2. [Homepage](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=26-2)
 3. [Catalogue](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=26-3)
 4. [MK-2866 PDP](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=47-2)
@@ -37,7 +37,7 @@ Copy the complete G0 prompt from the V4 runbook or the Figma execution page. Sub
 
 ## Step 2 — finish/select the first copy packet while G0 runs
 
-Open [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2).
+Open [07 — Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3).
 
 Use the selected Homepage and OpenLab copy as the starting packet. Review/select any desired alternate before those route assemblies begin. Make may arrange the strings; it may not invent facts or silently rewrite them.
 
@@ -68,7 +68,7 @@ Do not ask Codex to implement broad visual corrections before G4 and the first r
 Create O0 using:
 
 - [OpenLab Portal Atlas](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=75-2)
-- [Content Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2)
+- [Content Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3)
 - [Dark twofold reference](https://www.figma.com/design/nMdvVtpTC3r2JQrhyjQ7yW/Olympus-R6-Architecture-Staging-V01?node-id=768-24461)
 - [Light twofold reference](https://www.figma.com/design/nMdvVtpTC3r2JQrhyjQ7yW/Olympus-R6-Architecture-Staging-V01?node-id=768-23938)
 - selected G0/G1 direction
