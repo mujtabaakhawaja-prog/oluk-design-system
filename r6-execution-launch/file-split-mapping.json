@@ -1,6 +1,24 @@
 {
   "sourceFile": "nMdvVtpTC3r2JQrhyjQ7yW",
   "splitDate": "2026-07-27",
+  "correctedDate": "2026-07-27",
+  "correctionNote": "Six Routes rows 2:12-2:17 corrected per human review. Homepage champion 753:812 kept only at 2:9.",
+  "inventorySemantics": {
+    "totalRoutes": 83,
+    "note": "83 is an inventory total across all lifecycle stages — not 83 launch-ready route implementations. Use LIVE_ROUTE, ROUTE_TEMPLATE, STATE_FIXTURE, COMPONENT_LAB, PROOF_EVIDENCE, ARCHIVE_REFERENCE to classify."
+  },
+  "libraryState": {
+    "publishedLibrary": "nMdvVtpTC3r2JQrhyjQ7yW",
+    "publishedLibraryNote": "Source file remains the published library. Do not publish DKOde9DRfyVCHThSNkUIX4 until Production library migration is complete.",
+    "sourceVariableCollections": 11,
+    "sourceVariables": 377,
+    "sourceTextStyles": 91,
+    "sourceTextStylesNote": "91 includes active and deprecated/local history. Not the same as 38 published active styles.",
+    "sourceEffectStyles": 12,
+    "productionFileVariables": 0,
+    "productionFileTextStyles": 0,
+    "productionFileEffectStyles": 0
+  },
   "destinationFiles": {
     "archive": {
       "fileKey": "HkUKcAFCy5Op9b2lq3F5Cf",
@@ -8,6 +26,7 @@
       "purpose": "Superseded explorations, legacy layers, ancestor files",
       "pageCount": 23,
       "migrationOrder": 1,
+      "contentState": "EMPTY_SHELL",
       "pages": [
         { "destPageId": "0:1", "destName": "LAYERS 1", "srcPageId": "1238:4490", "childCount": 167 },
         { "destPageId": "2:2", "destName": "LAYERS 2", "srcPageId": "1238:28562", "childCount": 39 },
@@ -40,6 +59,8 @@
       "purpose": "Published components, tokens, styles — single source of design-system truth",
       "pageCount": 13,
       "migrationOrder": 4,
+      "contentState": "EMPTY_SHELL",
+      "migrationNote": "Run last. Copying components and variables can change component keys, style IDs, variable ownership, and library identity. Requires pre/post manifest comparison.",
       "pages": [
         { "destPageId": "0:1", "destName": "R6 00 — Brand Identity", "srcPageId": "1:2" },
         { "destPageId": "2:2", "destName": "R6 01 — Foundations", "srcPageId": "1:3" },
@@ -62,6 +83,7 @@
       "purpose": "Route-level compositions",
       "pageCount": 17,
       "migrationOrder": 5,
+      "contentState": "EMPTY_SHELL",
       "pages": [
         { "destPageId": "0:1", "destName": "R6 07 — Homepage Sections", "srcPageId": "1:9" },
         { "destPageId": "2:2", "destName": "R6 08 — Catalogue System", "srcPageId": "1:10" },
@@ -74,12 +96,12 @@
         { "destPageId": "2:9", "destName": "CHAMPION Homepage Triptych V02", "srcPageId": "753:812" },
         { "destPageId": "2:10", "destName": "CHAMPION OpenLab Portal V2", "srcPageId": "766:815" },
         { "destPageId": "2:11", "destName": "CHAMPION PDP Corrected V02", "srcPageId": "777:812" },
-        { "destPageId": "2:12", "destName": "Homepage Hero", "srcPageId": "753:812" },
-        { "destPageId": "2:13", "destName": "R6 Checkout", "srcPageId": "702:15540" },
-        { "destPageId": "2:14", "destName": "R6 Lab Reports", "srcPageId": "702:21327" },
-        { "destPageId": "2:15", "destName": "R6 TRUST AND CURRENCY", "srcPageId": "702:21328" },
-        { "destPageId": "2:16", "destName": "Human Review Gallery", "srcPageId": "712:1311" },
-        { "destPageId": "2:17", "destName": "Human Feedback Register", "srcPageId": "33:2" }
+        { "destPageId": "2:12", "destName": "Homepage Hero", "srcPageId": "702:15540" },
+        { "destPageId": "2:13", "destName": "R6 Checkout", "srcPageId": "702:21327" },
+        { "destPageId": "2:14", "destName": "R6 Lab Reports", "srcPageId": "702:21328" },
+        { "destPageId": "2:15", "destName": "R6 TRUST AND CURRENCY", "srcPageId": "712:1311" },
+        { "destPageId": "2:16", "destName": "Human Review Gallery", "srcPageId": "33:2" },
+        { "destPageId": "2:17", "destName": "Human Feedback Register", "srcPageId": "33:3" }
       ]
     },
     "lab": {
@@ -88,6 +110,7 @@
       "purpose": "Active Make sprint candidates, explorations, storyboards",
       "pageCount": 14,
       "migrationOrder": 3,
+      "contentState": "EMPTY_SHELL",
       "pages": [
         { "destPageId": "0:1", "destName": "Product Cards", "srcPageId": "702:15786" },
         { "destPageId": "2:2", "destName": "Studio Renders", "srcPageId": "1186:4490" },
@@ -111,26 +134,59 @@
       "purpose": "Screenshot evidence from Codex runtime for ReviewOS comparison",
       "pageCount": 1,
       "migrationOrder": 2,
+      "contentState": "EMPTY_SHELL",
       "pages": [
-        { "destPageId": "0:1", "destName": "Codex Runtime Proofs", "srcPageId": "1430:77411", "childCount": 134 }
+        { "destPageId": "0:1", "destName": "Codex Runtime Proofs", "srcPageId": "1430:77411", "childCount": 134, "childCountNote": "134 is descendant proof nodes, not top-level screenshots. Top-level children: 10." }
       ]
     }
   },
-  "launchPriority": {
-    "blocking": [
-      "Site: Homepage, Catalogue, Search, 404",
-      "Product: PDP, Quick View, Compare, Recently Viewed",
-      "OpenLab: Portal, Lab Report, Certificate",
-      "Checkout: managed as Codex proofs"
+  "minimumExecutableSplit": {
+    "note": "Copy these first to unblock the Make Laboratory. Do not move or delete source pages.",
+    "lab": [
+      { "destPageId": "0:1", "srcPageId": "702:15786", "name": "Product Cards" },
+      { "destPageId": "2:6", "srcPageId": "881:29377", "name": "Foundations Decision Review" },
+      { "destPageId": "2:4", "srcPageId": "881:812", "name": "OpenLab Portal Review" },
+      { "destPageId": "2:14", "srcPageId": "1420:812", "name": "Range Horizon" }
     ],
-    "blockingRouteCount": 12,
-    "postLaunchRouteCount": 69,
-    "totalRoutes": 83
+    "routes": [
+      { "destPageId": "0:1", "srcPageId": "1:9", "name": "Homepage Sections" },
+      { "destPageId": "2:9", "srcPageId": "753:812", "name": "Homepage Champion Reference" },
+      { "destPageId": "2:12", "srcPageId": "702:15540", "name": "Homepage Hero" },
+      { "destPageId": "2:14", "srcPageId": "702:21328", "name": "Lab Reports" },
+      { "destPageId": "2:15", "srcPageId": "712:1311", "name": "Trust and Currency" },
+      { "destPageId": "2:16", "srcPageId": "33:2", "name": "Human Review Gallery" },
+      { "destPageId": "2:17", "srcPageId": "33:3", "name": "Human Feedback Register" }
+    ]
   },
+  "surfaceTypes": [
+    "LIVE_ROUTE",
+    "ROUTE_TEMPLATE",
+    "STATE_FIXTURE",
+    "COMPONENT_LAB",
+    "PROOF_EVIDENCE",
+    "ARCHIVE_REFERENCE"
+  ],
   "makeSprintOrder": [
-    "TIER 1: Homepage Hero, PDP, Catalogue, OpenLab Portal",
-    "TIER 2: Header/Nav, Checkout Flow, Account System",
-    "TIER 3: Content Pages, Support + Growth Routes",
-    "TIER 4: Data Viz Component Revamp, Brand Identity Consolidation"
-  ]
+    "M0: Light/Dark Material Direction",
+    "H1-H5: Homepage (Hero → Category → ProductGrid → OpenLab → Assembly)",
+    "P1-P6: Product (QuickAdd → PurchasePanel → LabReport → Dossier → Related → Assembly)",
+    "C1-C4: Catalogue/Search",
+    "O1-O6: OpenLab",
+    "X1-X8: Checkout/post-purchase",
+    "A1-A5: Account launch minimum",
+    "Post-launch: Content, Support, Growth"
+  ],
+  "currentStatus": {
+    "architecture": "FROZEN",
+    "customerRuntimeDesign": "REVISE",
+    "fiveDestinationFiles": "CREATED",
+    "destinationPageStructures": "CREATED",
+    "destinationPageContent": "EMPTY",
+    "physicalSplit": "NOT_STARTED",
+    "gitHubSplitMapping": "CORRECTED",
+    "makeLaboratory": "BLOCKED",
+    "codexVisualChanges": "HELD",
+    "codexMetadataFixes": "ALLOWED",
+    "production": "HELD"
+  }
 }
