@@ -19,7 +19,7 @@ Open native Figma Make in Build mode and create:
 OLUK R6 — G0 Universal Glue
 ```
 
-Attach these sections from the Runtime Atlas, not the old renderless hero references:
+Attach these editable native frames from the Runtime Atlas, not the old renderless hero references:
 
 1. [G0 Make Context — Observed Baseline](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
 2. [Homepage — 1440 Light](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=12-2)
