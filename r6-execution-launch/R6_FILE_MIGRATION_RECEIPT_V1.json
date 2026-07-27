@@ -1,0 +1,23 @@
+{
+  "receipt": "R6_FILE_MIGRATION_RECEIPT_V1",
+  "generatedAt": "2026-07-27",
+  "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+  "status": "BLOCKED",
+  "reason": "Destination files have operational control frames only; no source design content has been copied cross-file.",
+  "frozenVisualCandidate": "550c31d8c5c5d9bf5e6a79c5b64add118243fff9",
+  "integrityOnlyHead": "ed2bd52f154961d6cf92e7f5c66a0796fbc9d47d",
+  "requiredPages": [
+    {"source":"702:15786","destinationFile":"scM4viMDHV6Jv6Fxccm71g","destination":"0:1","status":"BLOCKED"},
+    {"source":"881:29377","destinationFile":"scM4viMDHV6Jv6Fxccm71g","destination":"2:6","status":"BLOCKED"},
+    {"source":"881:812","destinationFile":"scM4viMDHV6Jv6Fxccm71g","destination":"2:4","status":"BLOCKED"},
+    {"source":"1420:812","destinationFile":"scM4viMDHV6Jv6Fxccm71g","destination":"2:14","status":"BLOCKED"},
+    {"source":"1:9","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"0:1","status":"BLOCKED"},
+    {"source":"753:812","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"2:9","status":"BLOCKED"},
+    {"source":"702:15540","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"2:12","status":"BLOCKED"},
+    {"source":"702:21328","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"2:14","status":"BLOCKED"},
+    {"source":"712:1311","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"2:15","status":"BLOCKED"},
+    {"source":"33:2","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"2:16","status":"BLOCKED"},
+    {"source":"33:3","destinationFile":"eqraGRq4VoEdAIi0llMaN7","destination":"2:17","status":"BLOCKED"}
+  ],
+  "platformBoundary": "The callable Figma Design API is file-scoped and exposes no cross-file clone/reparent or Figma Make generation operation. Native Figma UI copy/duplicate is required for physical migration; native Figma Make is required for candidate generation."
+}
