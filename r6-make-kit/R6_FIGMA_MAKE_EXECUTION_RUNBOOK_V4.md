@@ -169,11 +169,11 @@ SECTION_BINDING_MAP and a complete six-cell candidate.
 Highest status: RECOMMENDED_CANDIDATE.
 ```
 
-O1 assembles the selected banner into:
+O1 makes the selected twofold banner the opening Portal hero directly beneath the shared shell. The identity half and lookup/proof half are one composition; do not place a second generic hero or search block above it.
 
 ```text
-Portal hero/search
-→ Twofold identity banner
+Shared shell
+→ Twofold Portal hero (identity + lookup/proof)
 → Coverage/finding summary
 → Recent Lab Records
 → Product-to-record pathways
