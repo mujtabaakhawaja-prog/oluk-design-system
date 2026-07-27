@@ -15,9 +15,9 @@ The prior Homepage-first Make sequence is superseded. Start with cross-route Uni
 ## Live Figma inputs
 
 - [Runtime Atlas Index](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=8-11)
-- [Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=272-2)
-- [Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-2)
-- [Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-2)
+- [Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
+- [Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3)
+- [Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-3)
 
 The observed Baseline is current-state evidence, not an accepted visual direction.
 
