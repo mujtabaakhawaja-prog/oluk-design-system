@@ -1,217 +1,86 @@
-# FIGMA MAKE CONSTITUTION — OLUK R6 LIGHT IDENTITY AUTHORITY V1
+# FIGMA MAKE — OLUK R6 LIGHT IDENTITY
 
-The attached R6 frames are visual authority packets for system inference. They
-are not screenshots to trace and they are not three competing art directions.
+The attached images are complementary visual references for one already-clear
+light-mode identity. Use their combined depth to build the system; do not
+average them into generic UI and do not turn them into competing themes.
 
-Build one cohesive LIGHT identity system from their shared strongest qualities.
-This run must feel as complete and internally related as a mature authority
-file: shared visual laws first, then those laws proven through finished
-components, sections and page compositions.
+Build immediately.
 
-Build immediately. Do not create `plan.md`. Do not audit and stop. Do not wait
-for another direction-selection run before producing the system.
+Do not create a plan, audit, scorecard, visual-ledger board, annotation board,
+component-anatomy board, API board or documentation-first output.
 
-Do not build dark mode. Do not use Majestic gold or Black shell styling. Do not
-introduce runtime, SSR, React, routing, Tailwind, TypeScript or architecture
-boards.
+## Build
 
-## Mission
+Create one cohesive, editable Olympus Labs UK light-mode design system and use
+it immediately in finished visual context:
 
-Create the definitive visual foundation for:
+- three-part header, menus and asymmetric homepage hero;
+- CategoryBrowse and product rails;
+- vertical, featured, overlap, compact and horizontal product-card contexts;
+- high-fidelity studio media chambers;
+- PDP gallery, product decision surface and evidence transition;
+- OpenLab landing, evidence district, Lab Records and dossier contexts;
+- long homepage, PDP and OpenLab compositions that prove section rhythm.
 
-`Calibrated Technical Signal — Light`
+The finished designs are the system proof. Do not substitute raw primitive
+sheets for the customer-facing work.
 
-The governing idea is:
+## Preserve and extend
 
-> Media, evidence, transaction and decision surfaces keep distinct jobs while
-> sharing one authored light identity.
+Preserve the strongest reference qualities:
 
-Use a white-dominant canvas, structural pale-cobalt atmosphere, disciplined
-cobalt signals, high-fidelity studio media chambers, raised white decision
-islands, and ruled evidence density.
+- white porcelain field;
+- structural pale-cobalt atmosphere;
+- cobalt hairlines and technical signals;
+- real cobalt-bottle studio media;
+- raised white commerce and decision islands;
+- centered, calm price treatment;
+- CategoryBrowse vertical editorial discipline;
+- asymmetric media/commerce and narrative/evidence folds;
+- increasingly ruled density as the experience moves into OpenLab.
 
-The work must be polished enough to judge as a real Olympus light website
-system. Avoid raw primitive sheets as the primary output.
+Product Rail cards should inherit the CategoryBrowse discipline while adding
+real MediaChambers, structured metrics, price and action.
 
-## Build these boards
+Use OverlapIsland, Featured Card and the PDP split as related expressions of one
+commerce family—not disconnected components.
 
-### 00 — Identity Thesis and Visual Surface Ledger
+## Improve
 
-Demonstrate the visual laws through composed specimens:
+Use the runtime references to understand required content and flow, then improve
+their raw presentation:
 
-- white field and cool breathing field;
-- media chamber;
-- flat ruled evidence surface;
-- raised commerce/decision island;
-- cobalt hairline, active signal, link and evidence trace;
-- typography hierarchy, spacing rhythm, corner behavior and functional lift.
+- make header, hero and product rail one composition;
+- strengthen product scale, lighting and crop;
+- give commerce surfaces hierarchy and restrained functional lift;
+- keep price subordinate to product identity and metrics;
+- preserve a useful PDP gallery;
+- create a clear showroom-to-laboratory transition;
+- replace flat repeated boxes with distinct surface roles;
+- keep evidence operational, ruled and inspectable rather than card-heavy.
 
-This is a visual ledger, not a code-token table.
+## Options
 
-### 01 — Header, Menu and Opening Composition
+Within this same identity, create two or three genuinely different spatial
+options for:
 
-Build a complete three-part header system and let it flow into a free,
-asymmetric homepage hero. Include:
+- header-to-hero choreography;
+- product-commerce card composition;
+- PDP media-to-decision balance;
+- commerce-to-OpenLab transition.
 
-- utility/trust rail;
-- primary identity/navigation rail;
-- contextual/category rail or menu;
-- expanded Shop/OpenLab menu specimens;
-- one finished flagship hero composition with real studio media;
-- two controlled spatial modulations of that same hero identity.
+Options must differ through proportion, overlap, media scale, density and
+rhythm. Do not change the palette, typography or identity.
 
-The modulations may emphasize:
+## Construction
 
-1. Monograph Split — editorial asymmetry and product authority.
-2. Product Observatory — optical product theatre and controlled negative space.
-3. Evidence-Led Fold — OpenLab signal present at the opening threshold.
+Use Auto Layout, variables, reusable components, variants, nested components,
+responsive constraints and editable vectors behind the finished designs.
 
-Do not turn these into color themes.
+Use real approved studio renders. Do not replace them with empty chambers.
 
-### 02 — Category Browse and Product Commerce Family
+Light mode only. Use Inter Variable and Olympus cobalt `#0057FF`. No gold, no
+dark Majestic styling, no invented claims, no runtime/SSR/React documentation.
 
-Build a finished category section and a related product family.
+Deliver the cohesive visual system and finished page compositions in this run.
 
-Category cards inherit the proven vertical editorial contract and cobalt
-hairline discipline. Give each category an identity through typography,
-indexing, information rhythm or technical graphic language—not through six
-unrelated gradients.
-
-Build the product family in real section context:
-
-- vertical grid card;
-- product rail card;
-- featured commerce card;
-- compact/quick-add expression;
-- related-product expression.
-
-Preserve shared product identity and MetricRail logic, but allow context to
-change silhouette and density. Use real studio render chambers. Keep price calm
-and subordinate to product identity and useful metrics.
-
-Show three controlled card silhouettes inside this single identity:
-
-1. Overlap Island;
-2. Ruled Chamber;
-3. Featured Rail.
-
-Do not declare a winner.
-
-### 03 — PDP Product Monograph
-
-Build a complete light PDP opening and one consecutive section sequence:
-
-- breadcrumb/context rail;
-- vertical media/gallery chamber;
-- horizontal product identity and transaction region;
-- product name, alias and factual descriptors;
-- clear MetricRail;
-- calm centered price where compositionally appropriate;
-- primary purchase action and OpenLab evidence entry;
-- assurance row;
-- description/dossier transition;
-- related product rail.
-
-The page should feel like a product monograph, not a generic marketplace PDP.
-Show the media/transaction/evidence jobs clearly. Preserve real render fidelity.
-
-Provide two controlled layout modulations of the first fold, not two new
-identities.
-
-### 04 — OpenLab and Evidence Threshold
-
-Build:
-
-- commerce-to-evidence transition;
-- OpenLab landing fold;
-- product-linked dossier/report fold;
-- dense lab-record ledger;
-- evidence summary and source-entry pattern;
-- explicit placeholder/warning treatment where facts are not governed.
-
-Use asymmetric narrative/evidence folds and ruled density. Avoid dashboard-card
-confetti. Evidence should look operational and inspectable.
-
-Provide three controlled threshold compositions:
-
-1. 4/8 Laboratory Threshold;
-2. 3/9 Ledger Fold;
-3. Split Proof Island.
-
-They must share the same typography, cobalt law and evidence grammar.
-
-### 05 — Consecutive Composition Strip
-
-Build one long, finished light composition proving that the identity holds
-across:
-
-header → hero → category browse → product rail → OpenLab transition → evidence
-ledger → assurance/newsletter → footer.
-
-This is the cohesion test. Use real content hierarchy and credible spacing; do
-not make it a collection of disconnected demo tiles.
-
-### 06 — Full Page Proofs
-
-Build three complete, editable 1440px light proofs:
-
-- Homepage;
-- Product Display Page;
-- OpenLab landing/report journey.
-
-Each proof must visibly derive from the same shared system. They may use the
-controlled modulations already shown, but may not invent a fourth language.
-
-### 07 — System Index
-
-Create a visual index linking:
-
-- surface families;
-- header/menu;
-- heroes;
-- category family;
-- product card family;
-- media chambers;
-- PDP modules;
-- evidence/OpenLab modules;
-- assurance/newsletter/footer;
-- the three page proofs;
-- every controlled modulation.
-
-Label what is shared, what changes by context, and what remains unresolved for
-human selection.
-
-## Construction expectation
-
-Use native Figma structure wherever Make supports it: Auto Layout, reusable
-components, nested shared parts, component properties, editable vectors and
-styles. These are construction qualities, not a request for an implementation
-architecture board.
-
-Use Inter Variable throughout this light authority build. Derive a coherent
-display, section, body, metric, label and mono/identifier hierarchy from it.
-
-Use the exact supplied product truth. Do not invent purity, testing, medical,
-performance, batch or price claims. Do not copy logos or raw brand assets from
-references.
-
-Do not self-score or select a champion. End with neutral option labels and a
-short unresolved-decision list for human review.
-
-Also include a clean all-boards-stacked view for review and bulk Figma copying.
-
-## Completion standard
-
-The run is complete only when:
-
-- the page proofs look finished rather than skeletal;
-- header, hero, category, commerce, PDP and OpenLab clearly share one identity;
-- alternatives differ spatially and choreographically, not just tonally;
-- the CategoryBrowse defect is resolved;
-- studio media fidelity is preserved;
-- price is not the dominant product signal;
-- evidence is ruled, dense and distinct from transaction surfaces;
-- no dark/gold shell appears;
-- all customer-facing claims remain governed or explicitly marked as
-  placeholders;
-- no runtime/SSR/React architecture content appears.
