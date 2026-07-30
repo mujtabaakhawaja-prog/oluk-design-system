@@ -1,44 +1,57 @@
-# Olympus R6 — Product Card Creative Frontier
+# OLUK R6 — Session 01A Product Card Guidelines
 
 ## Mission
-Discover the strongest product card architecture for a pharmaceutical-grade supplement brand.
-The card must communicate scientific authority through information density — not decoration.
 
-## Product truth (do not invent)
-- MK-2866 / Ostarine / 15 MG / 90 SERVINGS / >99% / SARM / Capsules / £43.00
-- RAD-140 / 8 MG / 60 SERVINGS / SARM / Capsules
-- MK-677 / Ibutamoren / 15 MG / 90 SERVINGS / >99% / GH Secretagogue / Capsules
-- SERVINGS and CAPSULES are distinct concepts. Never combine them.
-- Do not invent product names, claims, prices, or purity values.
+Create five materially different Grid-card architectures for precision-led evidence commerce.
+Generate candidates only. Do not rank or expand them.
 
-## Visual constraints
+## Fixed product content
+
+- MK-2866
+- Ostarine
+- SARM Series
+- 15 MG strength
+- 90 SERVINGS
+- Capsules is FORM, not a substitute for servings
+- Purity is Featured-only; omit it from Session 01A Grid metrics
+- £43.00 is a display fixture; price remains runtime-owned
+- Primary action copy for this specimen: Add to Bag
+
+Do not invent claims, benefits, evidence, prices, statuses, or product fields.
+
+## Fixed system laws
+
 - Light mode only
-- Zero box-shadow on any UI surface
-- Depth through hairline borders (1px, low opacity), whitespace, and ruled boundaries
-- Brand cobalt #0057FF used only for: primary CTA fill, active/selected state, section eyebrows
-- Do not wash the card in blue or border every surface in cobalt
-- White is the default canvas
-- Elevation = hairline border, not shadow
+- Page `#F7F8FA`; Surface `#FFFFFF`; Soft `#F4F7FC`; Atmosphere `#EEF4FF`
+- Text `#101114`; Secondary `#667085`; Border `#D9DEE8`; Accent `#0057FF`
+- Zero drop shadow
+- Solid cobalt owns decisive interaction and at most one other meaningful moment
+- Large fields use the pale atmospheric surface, not saturated cobalt
+- Metrics form an integrated ruled system, never floating chips or tags
+- Price is visible but subordinate to identity and metrics
+- Use the verified Inter family
+- Any cobalt/red selection or annotation outline that appears while copying the board is authoring chrome only; do not transfer any full-container outline or red treatment into a candidate
 
-## Card slot contract (immutable order)
-1. ProductIdentityStack — compound name, alias, series. Always eyebrow position.
-2. ProductMediaChamber — studio render container.
-3. ProductMetricRail — strength | qty | purity as a RULED RAIL (not chips, not tags).
-4. PriceDisplay — Inter Bold 16px. SUBORDINATE to metrics. Metrics carry authority.
-5. ProductCardAction — Add to Bag capsule CTA. Full-width.
-6. ProductSpecificationRail — CLASS · FORM · FORMULATION · TESTING. Featured only.
+## Semantic reading order
 
-Slots are included or excluded per context. Never reordered.
+1. Identity — compound, alias, series
+2. Media — governed studio render
+3. Metrics — Strength + Servings
+4. Price
+5. Action
 
-## What's currently wrong
-- MetricChips float loosely instead of forming a ruled rail
-- Price dominates visually when it should be subordinate
-- Media chamber proportions don't prove product scale
-- Cards feel like generic e-commerce tiles, not pharmaceutical specimens
-- No hierarchy difference between Grid/Featured/QuickAdd contexts
-- The identity stack (eyebrow) lacks authority
+The reading order is fixed; the geometry is open. Modules may form a split, inset, island, overlap, or ruled composition if the sequence remains unambiguous.
 
-## Creative frontier
-You are expected to surprise. Push beyond the current baseline.
-Each direction should feel like it was designed by a different world-class creative director.
-Differences must be architectural and compositional — not just color or spacing variations.
+## Open creative variables
+
+- Card boundary and field/island relationship
+- Media chamber scale, ratio, crop, and edge relationship
+- Metric-rail direction, cell proportions, and density
+- Price/action juxtaposition and exact CTA width or shape
+- Controlled radius and internal spacing
+- Typographic scale, rhythm, and alignment
+
+## Output gate
+
+Return five neutral candidates at equal scale with one spatial-thesis sentence each.
+Stop before ranking, Featured, QuickAdd, responsive, states, sections, or routes.
