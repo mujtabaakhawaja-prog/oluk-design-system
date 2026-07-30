@@ -1,3 +1,8 @@
+> [!CAUTION]
+> **SUPERSEDED — DO NOT RUN.** The active light identity build is
+> `make-runs/light-identity-authority-v1/`. This file is preserved only as a
+> historical receipt of the discarded card-first path.
+
 # Session 01 — Product Card Creative Frontier
 
 ## Setup

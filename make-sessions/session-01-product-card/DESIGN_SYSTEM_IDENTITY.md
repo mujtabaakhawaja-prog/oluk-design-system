@@ -1,3 +1,8 @@
+> [!CAUTION]
+> **HISTORICAL / NOT IMPLEMENTATION AUTHORITY.** These values were inferred
+> before a visual champion was selected. Measure and finalize variables only
+> after the Light Identity Authority review gate and native Figma adoption.
+
 # OLUK R6 — Design System Identity Specification
 
 Derived from visual evidence on page `461:89008` of file `yNAyIQhewnbofeZWMGkKVa`.

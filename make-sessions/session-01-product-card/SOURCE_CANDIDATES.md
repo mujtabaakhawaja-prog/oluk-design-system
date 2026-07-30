@@ -1,3 +1,9 @@
+> [!CAUTION]
+> **HISTORICAL / NOT LOCKED.** This assessment belongs to the superseded
+> card-first path and contains pre-lock assumptions. Use
+> `make-runs/light-identity-authority-v1/SOURCE_MANIFEST.md` and the human review
+> gate instead.
+
 # Session 01 — Source Candidate Assessment
 
 ## Champion-Tier Frames (attach these)

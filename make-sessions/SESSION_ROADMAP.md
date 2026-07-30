@@ -1,81 +1,14 @@
-# OLUK R6 — Make Session Roadmap (Bottom-Up)
+# SUPERSEDED — DO NOT RUN THE FIVE-SESSION ROADMAP
 
-## Philosophy
+Current opening run:
 
-Build primitives first. Compose pages last.
-One weakness per session. Multiple solutions per weakness.
-Creative-director-style briefs. No specification lists.
-Judge by the weakness ledger, not by Make's self-assessment.
+`make-runs/light-identity-authority-v1/`
 
----
+Use only:
 
-## Session Order
+1. `SOURCE_MANIFEST.md` to select the existing visual frames.
+2. `guidelines.md` as Make project guidance.
+3. `PROMPT.md` as the opening build instruction.
 
-| # | Focus | Weakness Attacked | Attach | Output |
-|---|---|---|---|---|
-| 01 | Product Card | Flat cards, loose metrics, dominant price, no hierarchy across contexts | `461:93046` + `461:89294` + `461:95165` | 5 card architectures → 2 winners in 3 contexts |
-| 02 | PurchasePanel + Rails | Assurance = 4 floating cards, Dossier = separate blocks, Purchase = scattered | Winner card from S01 | 3-5 rail variants, ruled shared surfaces |
-| 03 | Hero + Section Rhythm | No atmospheric hero, no alternating band rhythm, no section transitions | Winner card + rail from S01-02 | 3 hero compositions + 3 section-rhythm strips |
-| 04 | Evidence Transition | No grammar for commerce → evidence density shift | Evidence refs `461:89009` + `461:89547` + resolved primitives | 3 transition architectures |
-| 05 | Full Page Composition | Overall rhythm, density cadence, emotional pacing | All resolved primitives | Complete Homepage + PDP at 1440 |
+No prep boards, plans, primitive sessions or documentation boards are required.
 
----
-
-## Rules for Every Session
-
-1. **Attach 1-3 strong reference frames** — proven candidates, not the whole source board
-2. **guidelines.md stays minimal** — creative direction + product truth + constraints only
-3. **No implementation language** — no React, no CSS, no breakpoints, no SSR
-4. **No route-building** — only the declared primitive/artifact type
-5. **5 variants minimum** — named after creative-director archetypes
-6. **Reject if cosmetic-only variation** — differences must be spatial/compositional
-7. **Light mode only** throughout
-8. **Zero box-shadow** throughout
-9. **Each session builds on resolved artifacts** from the previous session
-10. **Card border language** — cobalt-family hairline inherited from CategoryFamilyRail
-
----
-
-## Decision Record
-
-| Session | Date | Winner | Rationale |
-|---|---|---|---|
-| 01 | pending | — | — |
-| 02 | pending | — | — |
-| 03 | pending | — | — |
-| 04 | pending | — | — |
-| 05 | pending | — | — |
-
----
-
-## Anti-Patterns (from previous runs)
-
-- Over-specifying outputs (200 requirements → Make defaults to implementation)
-- Attaching 4+ frames (Make averages them instead of being inspired)
-- Asking for responsive + states + pages in the same session (token explosion)
-- Letting Make score its own work (always generous)
-- "Design the PDP" (too ambiguous → generic output)
-- Premature champion selection before visual alternatives exist
-- guidelines.md longer than 50 lines (overwhelms creative context)
-- Attaching full-page compositions (Make builds pages instead of primitives)
-- Attaching spec/exploration documents (teaching material, not source)
-
----
-
-## Source Authority
-
-- File: `yNAyIQhewnbofeZWMGkKVa` (OLUK R6 — Codex Runtime Proofs)
-- Cross-file: `nMdvVtpTC3r2JQrhyjQ7yW` (Olympus R6 Architecture Staging)
-- Primary source page: `461:89008` (strongest proven candidates)
-- Legacy source board: Page `429:171` ([MAKE SOURCE] OLUK R6 LIGHT V2-FINAL)
-- Receipt: `receipts/FIGMA_AGENT_PREP_RECEIPT_V2_FINAL.md`
-- Build-from direction: Run 1 A02 Cobalt Atmospheric (`439:81059`)
-
----
-
-## Design System Identity
-
-See: `make-sessions/session-01-product-card/DESIGN_SYSTEM_IDENTITY.md`
-
-The canonical token specification derived from page `461:89008` evidence.
-All Make sessions must produce output consistent with these tokens.
