@@ -2,15 +2,25 @@
 
 ## Setup
 
-### Attach to Make
-- One frame only: `414:69946` (ProductCardV2 — best eyebrow pattern) from file `yNAyIQhewnbofeZWMGkKVa`
-- Add the `guidelines.md` from this folder as your Make project guidelines
+### Attach to Make (3 frames from page `461:89008`)
+
+| Frame | Node ID | Purpose |
+|-------|---------|----------|
+| ProductCommerceCardFeatured | `461:93046` | Card contract reference — correct slot order, MetricRail, media chamber |
+| CategoryFamilyRail | `461:89294` | Border language reference — cobalt hairline, NarrativeRail grammar |
+| OverlapIsland | `461:95165` | Minimal/Grid context card — proves contract at smallest envelope |
+
+All from file `yNAyIQhewnbofeZWMGkKVa`, page `461:89008`.
+
+### Style reference (do not attach — absorb visually)
+- MetallicChamber `461:91315` — render quality target for MediaChamber fills
+- Lab Records Section `461:89547` — asymmetric split grammar cards will live within
 
 ### Do NOT attach
-- Full source boards
-- Multiple reference frames
-- ZIP bundles or markdown documentation
+- Full-page compositions (causes Make to build pages instead of cards)
+- Spec/exploration documents (teaching material, not design source)
 - Previous Make run outputs
+- More than 3 source frames
 
 ---
 
@@ -32,8 +42,9 @@ The current product card feels like a generic e-commerce tile. It needs to feel 
 Specifically:
 • The metric cells (Strength, Servings, Purity) currently float as loose chips. They should become a continuous RULED RAIL — fixed-width cells divided by hairlines, like a specimen label or pharmaceutical packaging.
 • Price currently dominates. It should be UNDERSTATED — present but subordinate to the metrics. The metrics ARE the trust signal.
-• The media chamber needs to prove actual product scale — not a tiny icon, not a full-bleed image. A governed studio render at proper proportion.
+• The media chamber needs to prove actual product scale — not a tiny icon, not a full-bleed image. A governed studio render at proper proportion against a white-to-ice-blue gradient chamber.
 • The identity stack (product name, alias, series) needs eyebrow authority — it should anchor the top of every card like a specimen index.
+• The card border language inherits from the attached CategoryFamilyRail: 1px cobalt-family hairline at rest, full #0057FF on featured/hover/selected.
 
 ---
 
@@ -41,10 +52,10 @@ DESIGN 5 MATERIALLY DIFFERENT PRODUCT CARD ARCHITECTURES
 
 Each architecture must respect the slot order:
 1. Identity (eyebrow)
-2. Media chamber
-3. Metric rail
-4. Price
-5. CTA
+2. Media chamber (studio render on white-to-ice-blue gradient)
+3. Metric rail (ruled cells, never chips)
+4. Price (subordinate, 18/22 max)
+5. CTA (cobalt fill, full-width)
 
 But each should feel radically different in:
 • How the media chamber relates to the card boundary
@@ -52,7 +63,7 @@ But each should feel radically different in:
 • How identity creates authority (weight, position, rule, index number)
 • How the card communicates "this is pharmaceutical, not fashion"
 • How density and whitespace are balanced
-• How the cobalt accent functions (CTA only? Selection ring? Metric rule?)
+• How the cobalt accent functions (CTA only? Featured ring? Metric rule? Eyebrow?)
 
 ---
 
@@ -83,9 +94,10 @@ CONSTRAINTS
 
 • Light mode only
 • Zero box-shadow
-• Hairline borders only (1px, 8-12% opacity)
-• Cobalt #0057FF only for CTA fill and one other controlled moment per card
-• White canvas
+• Hairline borders only (1px, 8-12% opacity for default, full #0057FF for featured)
+• Cobalt #0057FF only for: CTA fill + one other controlled moment per card
+• White canvas #FFFFFF
+• Media chamber: white-to-ice-blue radial gradient, bottle carries the color
 • Real product data (MK-2866, 15 MG, 90 SERVINGS, >99%, £43.00)
 • Do not invent claims or unsupported language
 • Do not build anything other than cards
@@ -114,12 +126,15 @@ Reject the output if:
 - Make starts building pages, routes, or full sections
 - Dark mode appears anywhere
 - Product data is invented or stale
+- Card borders don't inherit the cobalt-family hairline language
+- Media chambers use dark/studio backgrounds (must be white-to-ice-blue)
 
 ## After this session
 
 Once a card winner is selected:
 - **Session 02:** PurchasePanel + AssuranceRail + DossierRail (same approach)
 - **Session 03:** Hero composition + section rhythm (using resolved card)
-- **Session 04:** Full page composition (with all resolved primitives)
+- **Session 04:** Evidence transition grammar
+- **Session 05:** Full page composition (with all resolved primitives)
 
 Each session builds on resolved artifacts from the previous one.
