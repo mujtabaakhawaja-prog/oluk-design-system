@@ -1,140 +1,110 @@
-# Session 01 — Product Card Creative Frontier
+# MF-01 — ProductCommerceCard Creative Frontier
 
-## Setup
+## Paste-ready opening prompt for Figma Make
 
-### Attach to Make (3 frames from page `461:89008`)
+Create a high-fidelity light-mode Olympus Labs UK commerce design exploration centered on an adaptive **ProductCommerceCard** family.
 
-| Frame | Node ID | Purpose |
-|-------|---------|----------|
-| ProductCommerceCardFeatured | `461:93046` | Card contract reference — correct slot order, MetricRail, media chamber |
-| CategoryFamilyRail | `461:89294` | Border language reference — cobalt hairline, NarrativeRail grammar |
-| OverlapIsland | `461:95165` | Minimal/Grid context card — proves contract at smallest envelope |
+The supplied PNGs are directional evidence, not screens or Figma boards to reproduce. Read them for identity, product hierarchy, material depth, canvas rhythm, media-chamber behavior and shape language. Design a stronger customer-facing experience. Do not rebuild annotations, documentation boards, Auto Layout structure or native-node geometry.
 
-All from file `yNAyIQhewnbofeZWMGkKVa`, page `461:89008`.
+This opening run is visual design first. Do not create a design-system library, production components, APIs, telemetry, loading architecture or runtime implementation. Make-generated code is disposable prototype machinery.
 
-### Style reference (do not attach — absorb visually)
-- MetallicChamber `461:91315` — render quality target for MediaChamber fills
-- Lab Records Section `461:89547` — asymmetric split grammar cards will live within
+## First-run input rule
 
-### Do NOT attach
-- Full-page compositions (causes Make to build pages instead of cards)
-- Spec/exploration documents (teaching material, not design source)
-- Previous Make run outputs
-- More than 3 source frames
+Use exactly the three flattened PNGs in the sealed MF-01 visual manifest. They already contain the approved product imagery, current product truth and accepted Native Light material direction. Do not add a separate bottle render or any fourth visual input.
 
----
+### Sealed MF-01 packet — no substitutions
 
-## Prompt (paste into Make)
+1. `productcommercecard-productgrid.png` — primary vertical ProductGrid/featured relationship; bounded chamber joined to a raised white purchase plane through a transparent embedded divider, with quantity, price and two actions.
+2. `horizontal-product-card.png` — horizontal related/upsell relationship; left chamber and right purchase plane connected by a sculpted seam, with no cobalt top-edge eyebrow and a quantity stepper before price.
+3. `MF01-C-compact-raised-white-purchase-panel-v2.png` — compact rail/QuickAdd relationship; selected-card emphasis, bounded chamber and compact raised white purchase panel. The neighboring crops are context only.
 
-```
-You are a senior visual systems designer exploring the frontier of product card architecture for a pharmaceutical-grade supplement brand.
+These PNGs are creative-direction evidence, not exact component skins. Make may improve silhouette, geometry, rhythm and adaptive behavior, but it must preserve their material hierarchy and canonical product truth.
 
-Do not build a page. Do not build a homepage. Do not build a layout system.
+Do not attach native Figma nodes, the transparent render as a separate file, G0 Universal Glue, `/all-pages`, system-board screenshots, older generated MF-01 variants, or multiple near-duplicates in this opening run. Selected nodes and components are introduced only after a creative direction wins.
 
-Build ONLY product cards.
+After one visual direction wins, introduce only the native structures needed to rationalize it: ProductMetricRail `248:4105`, PurchaseRail `202:1235`, SidebarPurchaseOptions `286:4015`, ProductIdentityHeader `323:5149` and ProductCardAction `323:5161`. Blue-Eyebrow `323:5174` is not part of this ProductCommerceCard family.
 
----
+Do not include the full Final-Design page, full `/all-pages` bundle, a system-board screenshot, dark/MENT work, the legacy dark card `323:5176`, the generic placeholder chamber `323:5156`, or any reference outside the sealed three-file manifest in MF-01.
 
-THE PROBLEM
+## Required exploration
 
-The current product card feels like a generic e-commerce tile. It needs to feel like a pharmaceutical specimen label — communicating scientific authority through precision, information density, and ruled hierarchy.
+Produce **three materially different, equally resolved directions** for one adaptive card family. They must share the same semantic content sequence while differing meaningfully in silhouette, chamber-to-content relationship, elevation, chip form, action placement and responsive strategy.
 
-Specifically:
-• The metric cells (Strength, Servings, Purity) currently float as loose chips. They should become a continuous RULED RAIL — fixed-width cells divided by hairlines, like a specimen label or pharmaceutical packaging.
-• Price currently dominates. It should be UNDERSTATED — present but subordinate to the metrics. The metrics ARE the trust signal.
-• The media chamber needs to prove actual product scale — not a tiny icon, not a full-bleed image. A governed studio render at proper proportion against a white-to-ice-blue gradient chamber.
-• The identity stack (product name, alias, series) needs eyebrow authority — it should anchor the top of every card like a specimen index.
-• The card border language inherits from the attached CategoryFamilyRail: 1px cobalt-family hairline at rest, full #0057FF on featured/hover/selected.
+The three supplied contexts must be resolved as one family and may generate a derived featured variant:
 
----
+1. vertical ProductGrid card;
+2. compact rail/QuickAdd card;
+3. horizontal related/upsell card;
+4. derived Featured vertical card using the same family logic.
 
-DESIGN 5 MATERIALLY DIFFERENT PRODUCT CARD ARCHITECTURES
+Every context follows this order:
 
-Each architecture must respect the slot order:
-1. Identity (eyebrow)
-2. Media chamber (studio render on white-to-ice-blue gradient)
-3. Metric rail (ruled cells, never chips)
-4. Price (subordinate, 18/22 max)
-5. CTA (cobalt fill, full-width)
+> **media chamber → product identity → quantified metrics → inventory/commerce → actions → evidence/trust status when relevant**
 
-But each should feel radically different in:
-• How the media chamber relates to the card boundary
-• How the metric rail is structured (ruled cells, but what geometry?)
-• How identity creates authority (weight, position, rule, index number)
-• How the card communicates "this is pharmaceutical, not fashion"
-• How density and whitespace are balanced
-• How the cobalt accent functions (CTA only? Featured ring? Metric rule? Eyebrow?)
+The contexts should feel related without becoming one rigid rectangle resized four times.
 
----
+## Design priorities
 
-CONTEXT VARIANTS
+* Let the cool page canvas remain visible between independent objects.
+* Use elevated or optically raised white content planes over the canvas.
+* Give product media a bounded white-to-ice field, contact grounding and restrained product-local cobalt atmosphere.
+* Let content determine silhouette: horizontal and vertical forms may use different flowing shapes while retaining a family resemblance.
+* Improve chip geometry and density. Product metrics and qualitative attributes must remain visually distinct.
+* Treat quantity and inventory by context: the vertical and horizontal references use a quantity stepper; the compact reference uses text-only **In stock**. Do not invent a green inventory icon or imply a live inventory source.
+* Use cobalt selectively in the bottle, primary actions, quantified metrics, icons, focus states and meaningful relational hairlines.
+* Keep copy readable: 15–16 px body text minimum and 12 px metadata/eyebrows minimum.
+* Do not add a cobalt outer outline or top-edge eyebrow to this card family. Use cobalt inside the product, metric, action and icon system; the horizontal relationship is carried by its seam and silhouette.
+* In vertical contexts, connect chamber and purchase plane with a transparent embedded divider rather than exposing page canvas between them. In horizontal contexts, preserve a deliberate connected seam. The compact purchase plane remains white and raised.
+* Make the cards and chambers feel authored, adaptive and commerce-ready—not like Figma proof boards.
 
-For your strongest 2 architectures, also show:
-• GRID context (≈225w, compact, no specification rail)
-• FEATURED context (≈412w, full metrics + specification rail, staged media)
-• QUICKADD context (≈176w, condensed chamber, minimal)
+## Immutable semantic distinctions
 
----
+* **ProductMetricRail:** quantified product truth only; cobalt metric treatment.
+* **Qualitative attributes:** colorless or white chips with blue-shifted boundaries, cobalt icons and dark text.
+* **CommerceTrustStrip:** optional separate composition; never merge it into ProductMetricRail or the qualitative grid.
+* Preserve the meaning and information order of the accepted purchase surface, but you may improve its silhouette, internal rhythm, responsive relationship and stock/trust presentation.
 
-CREATIVE EXPECTATIONS
+## Exact product truth
 
-Think of these as:
-A — Swiss pharmaceutical packaging (Roche annual report meets specimen label)
-B — Apple product page confidence (one product, total authority, breathing space)
-C — Bloomberg terminal precision (data-first, ruled, monospace metrics, maximum density)
-D — Aesop retail (restraint, typographic hierarchy, negative space as luxury)
-E — Your wildcard — surprise me with something none of these reference
+* SARM SERIES
+* MK-2866
+* Ostarine
+* SKU 80529-01
+* 15 MG
+* 90 SERVINGS
+* >99%
+* £43
 
-Each must feel authored by a different design intelligence.
-If they all look like the same card with different spacing, consider it a failure.
+Do not use decimal pricing, crossed-out pricing or per-serving price. Attribute and evidence claims remain fixture content and must not be promoted as product authority.
 
----
+## Typography and color direction
 
-CONSTRAINTS
+* System display/editorial: Plus Jakarta Sans.
+* Support and UI: Inter.
+* Purchase surfaces: Inter only.
+* Rejected: Barlow Condensed, Archivo, Cousine and Inter Variable.
+* Core identity/metric cobalt: `#0057FF`.
+* Interactive cobalt: `#256DFF`.
+* Approved blue-shifted support values include `#F8FAFC`, `#D9DEE8`, `#667085` and `#101114`.
+* "Zero grey" means no generic achromatic or Tailwind-grey leakage; approved blue-shifted neutrals are valid.
 
-• Light mode only
-• Zero box-shadow
-• Hairline borders only (1px, 8-12% opacity for default, full #0057FF for featured)
-• Cobalt #0057FF only for: CTA fill + one other controlled moment per card
-• White canvas #FFFFFF
-• Media chamber: white-to-ice-blue radial gradient, bottle carries the color
-• Real product data (MK-2866, 15 MG, 90 SERVINGS, >99%, £43.00)
-• Do not invent claims or unsupported language
-• Do not build anything other than cards
+## Reject
 
----
+* cream or warm-beige canvas;
+* broad inverse or dark sections;
+* blanket grey fields;
+* universal rectangular cards;
+* repeated white boxes with padding used as page margins;
+* full-width colored section backgrounds outside the PDP first-fold exception;
+* technical-OS wallpaper, global rulers, reticles, barcodes or decorative dossier chrome;
+* filled qualitative chips;
+* generic dashboard metrics;
+* empty media placeholders when the approved render is available;
+* design-system documentation boards;
+* loading skeletons, API copy, route ownership, payment-provider plumbing or telemetry.
 
-RETURN
+MENT, black-label validation and dark mode are deferred and must not appear in this run.
 
-Card-A through Card-E as 5 distinct specimen boards.
-Then: 2 winners expanded into Grid / Featured / QuickAdd contexts.
-Then: One-line description of each architecture's philosophy.
+## Deliverable
 
-Stop. Do not build pages. Do not recommend next steps. Do not score yourself.
-```
-
----
-
-## Acceptance criteria
-
-Reject the output if:
-- All 5 cards look structurally similar (cosmetic variation only)
-- Price is the dominant visual element on any card
-- Metrics appear as floating chips/tags instead of ruled cells
-- Any card uses box-shadow
-- Cards feel like fashion/lifestyle rather than pharmaceutical
-- Make starts building pages, routes, or full sections
-- Dark mode appears anywhere
-- Product data is invented or stale
-- Card borders don't inherit the cobalt-family hairline language
-- Media chambers use dark/studio backgrounds (must be white-to-ice-blue)
-
-## After this session
-
-Once a card winner is selected:
-- **Session 02:** PurchasePanel + AssuranceRail + DossierRail (same approach)
-- **Session 03:** Hero composition + section rhythm (using resolved card)
-- **Session 04:** Evidence transition grammar
-- **Session 05:** Full page composition (with all resolved primitives)
-
-Each session builds on resolved artifacts from the previous one.
+Show the three directions in realistic customer-facing commerce compositions at desktop width, with all four card contexts visible and using the same product truth. Include a concise comparison of what is intentionally different in each direction. Do not select a winner automatically. Human review will choose relationships to deepen in MF-02.
