@@ -1,66 +1,34 @@
-# Session 01 — Source Candidate Assessment
+# MF-01 Source Disposition
 
-## Champion-Tier Frames (attach these)
+## Attach now
 
-### 1. ProductCommerceCardFeatured — `461:93046`
-**Fitness: 4/5**
+Only the three files linked by `MANIFEST.md`:
 
-Correct slot order, good MetricRail structure, media chamber with studio render.
-Needs: metric rail should use ruled cells not rounded chips, price needs to be subordinated.
-Why attach: Proves the full Featured context envelope with all 6 slots present.
+1. `assets/productcommercecard-productgrid.png`
+2. `assets/horizontal-product-card.png`
+3. `assets/MF01-C-compact-raised-white-purchase-panel-v2.png`
 
-### 2. CategoryFamilyRail — `461:89294`
-**Fitness: 5/5**
+They jointly carry the current vertical, horizontal and compact relationship evidence. None is an entire winner.
 
-Best single component on this page. Already production-ready.
-- Cobalt hairline border on cards (1px, correct discipline)
-- NarrativeRail on left (eyebrow + headline + copy + link) at correct 4-col proportion
-- Cards use vertical slot contract: index → title → description → action
-- White card surfaces elevated against white canvas via hairline alone
-- Typography hierarchy: cobalt eyebrow, bold title, regular body, cobalt link
+## Introduce after MF-01 selection
 
-Why attach: Defines the border language that product cards must inherit.
+| Native source | Later job |
+|---|---|
+| ProductMetricRail `248:4105` | Rationalize quantified-truth anatomy |
+| PurchaseRail `202:1235` | Preserve accepted purchase hierarchy |
+| SidebarPurchaseOptions `286:4015` | Compact/side-rail anatomy and viewport variants |
+| ProductIdentityHeader `323:5149` | Identity structure |
+| ProductCardAction `323:5161` | Reusable action structure |
+| Transparent MK-2866 render pack | Replace/correct product imagery after direction selection if needed |
+| Logo reference pack | Later identity placement; not MF-01 input |
 
-### 3. OverlapIsland — `461:95165`
-**Fitness: 3.5/5**
+## Excluded from MF-01
 
-Minimal card skeleton proving the contract at smallest context.
-Why attach: Shows Grid/QuickAdd compression — how the same slot contract works at ~176-225w.
+- Native Figma nodes and URLs.
+- Full Final-Design page or Page `323:4823`.
+- G0 Universal Glue, `/all-pages`, system boards and old Make sessions.
+- Separate product render or logo files.
+- Blue-Eyebrow `323:5174` for ProductCommerceCard.
+- Dark/MENT references, runtime captures, loading/state architecture and APIs.
 
----
-
-## Style References (absorb visually, do NOT attach)
-
-### MetallicChamber — `461:91315`
-Studio render quality target. The cobalt bottle at proper scale against neutral stage.
-Use: proves what the MediaChamber fill should produce.
-
-### Lab Records Section — `461:89547`
-Asymmetric NarrativeRail + OperationalPanel with structured data table.
-Use: proves the system grammar these cards will eventually live within.
-
-### Body (PDP Hero) — `461:91364`
-7/5 asymmetric split with commerce rail. Best hero/PDP composition on the page.
-Use: proves the Featured card's eventual home environment.
-
----
-
-## Rejected / Archive
-
-| Frame | Reason |
-|-------|--------|
-| LIGHT-L1-PORCELAIN-PRECISION-R01 `461:92731` | Spec document, not production frame |
-| Universal Light System V2-FINAL `461:93114` | Too broad — cherry-pick sections |
-| App (Sidebar Purchase) `461:91166` | Sidebar/drawer pattern, different context |
-| Universal Design Language Exploration (both) | Scoring/analysis docs, not source |
-| Section `461:89250` (stub) | Incomplete |
-| Container `461:89715` | Orphan, no clear role |
-| Container:margin `461:89989` | Layout fragment |
-
----
-
-## Page Context
-
-File: `yNAyIQhewnbofeZWMGkKVa`
-Page: `461:89008`
-All source frames are on this page.
+The first run stays image-led so Make designs instead of converting native work.

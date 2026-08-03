@@ -19,10 +19,10 @@
     }
   },
   "metrics": {
-    "dosage": "15MG",
-    "capsules": "90 CAPS",
+    "strength": "15 MG",
+    "servings": 90,
     "purity": ">99%",
-    "display": "15MG / 90 CAPS / >99% PURITY"
+    "display": "15 MG / 90 SERVINGS / >99% PURITY"
   },
   "price": {
     "amount": 43,
@@ -35,7 +35,7 @@
     "grid": { "label": "View Product", "variant": "secondary" },
     "quickAdd": { "label": "Quick Add", "variant": "primary" },
     "featured": { "label": "Shop Now", "variant": "primary" },
-    "pdp": { "label": "Add to Basket", "variant": "primary" }
+    "pdp": { "label": "Add to bag", "variant": "primary" }
   },
   "slots": {
     "grid": ["MediaChamber", "CompoundIdentity", "MetricRail", "PriceBlock", "ProductCardAction"],
@@ -51,8 +51,7 @@
   },
   "selector": {
     "options": [
-      { "compound": "MK-2866", "dosage": "15MG", "capsules": "90", "default": true },
-      { "compound": "MK-2866", "dosage": "25MG", "capsules": "60", "default": false }
+      { "compound": "MK-2866", "strength": "15 MG", "servings": 90, "default": true }
     ]
   }
 }

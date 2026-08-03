@@ -1,60 +1,42 @@
-# Olympus R6 — Product Card Creative Frontier
+# MF-01 Creative Guidelines
 
-## Mission
-Discover the strongest product card architecture for a pharmaceutical-grade supplement brand.
-The card must communicate scientific authority through information density — not decoration.
+## Design objective
 
-## Product truth (do not invent)
-- MK-2866 / Ostarine / 15 MG / 90 SERVINGS / >99% / SARM / Capsules / £43.00
-- RAD-140 / 8 MG / 60 SERVINGS / SARM / Capsules
-- MK-677 / Ibutamoren / 15 MG / 90 SERVINGS / >99% / GH Secretagogue / Capsules
-- SERVINGS and CAPSULES are distinct concepts. Never combine them.
-- Do not invent product names, claims, prices, or purity values.
+Design one proprietary adaptive ProductCommerceCard family across vertical ProductGrid, compact rail/QuickAdd, horizontal related/upsell and derived Featured contexts. The three supplied PNGs are context proofs, not templates.
 
-## Visual constraints
-- Light mode only
-- Zero box-shadow on any UI surface
-- Depth through hairline borders (1px, low opacity), whitespace, and ruled boundaries
-- Brand cobalt #0057FF used only for: primary CTA fill, active/selected state, section eyebrows, featured card perimeter
-- Default card border: 1px rgba(0,87,255,0.08) — cobalt at 8% opacity
-- Featured/hover card border: 1px solid #0057FF
-- Do not wash the card in blue or border every surface in cobalt
-- White #FFFFFF is the only canvas color
-- Elevation = hairline border only, never shadow
-- Media chamber fill: radial gradient (white center → #F3F8FF mid → #DDEEFF edge)
-- Studio render against neutral-to-cool chamber — bottle IS the color
+## Fixed truth
 
-## Card slot contract (immutable order)
-1. ProductIdentityStack — compound name, alias, series. Always eyebrow position.
-2. ProductMediaChamber — studio render container. White-to-ice-blue gradient fill.
-3. ProductMetricRail — strength | qty | purity as a RULED RAIL (not chips, not tags).
-4. PriceDisplay — Inter Semibold 18/22. SUBORDINATE to metrics. Metrics carry authority.
-5. ProductCardAction — Add to Bag capsule CTA. Full-width cobalt.
-6. ProductSpecificationRail — CLASS · FORM · FORMULATION · TESTING. Featured only.
+`SARM SERIES · MK-2866 · Ostarine · SKU 80529-01 · 15 MG · 90 SERVINGS · >99% · £43`
 
-Slots are included or excluded per context. Never reordered.
+## Material direction
 
-## Context envelopes
-- Grid (≈225w): Identity → Media → MetricRail → Price → CTA. Compact.
-- Featured (≈412w): All 6 slots. Staged media. Full specification rail.
-- QuickAdd (≈176w): Identity → Media (condensed) → Price → CTA. Minimal.
+- Cool luminous canvas remains visible outside the card family.
+- The bounded white-to-ice media chamber owns product atmosphere.
+- The purchase/content plane is white and optically raised.
+- Vertical chamber and purchase content connect through a transparent embedded divider.
+- Horizontal chamber and purchase content connect through an authored seam.
+- No cobalt outer outline or decorative top-edge eyebrow on ProductCommerceCard.
+- Restrained cool elevation is allowed; generic shadow ladders are not.
 
-## What's currently wrong
-- MetricChips float loosely instead of forming a ruled rail
-- Price dominates visually when it should be subordinate
-- Media chamber proportions don't prove product scale
-- Cards feel like generic e-commerce tiles, not pharmaceutical specimens
-- No hierarchy difference between Grid/Featured/QuickAdd contexts
-- The identity stack (eyebrow) lacks authority
+## Information sequence
 
-## What's already right (proven on this page)
-- CategoryFamilyRail cards: cobalt hairline border, NarrativeRail left, white card surfaces
-- ProductCommerceCardFeatured: correct slot order, MetricRail as structured horizontal band
-- OverlapIsland: minimal card skeleton proving the contract at smallest context
-- Asymmetric Lab Records section: NarrativeRail + OperationalPanel split grammar
+`media chamber → product identity → quantified metrics → quantity or inventory + price → actions`
 
-## Creative frontier
-You are expected to surprise. Push beyond the current baseline.
-Each direction should feel like it was designed by a different world-class creative director.
-Differences must be architectural and compositional — not just color or spacing variations.
-The CategoryFamilyRail cobalt-hairline language is the system grammar — product cards inherit it.
+- ProductMetricRail is quantified truth, not generic chips.
+- Vertical and horizontal seeds use quantity steppers.
+- Compact seed uses text-only inventory.
+- No crossed price, decimal price, per-serving price, filled qualitative chips or invented evidence.
+
+## Creative latitude
+
+Make may redesign silhouette, seam geometry, density, chamber proportion, product scale, action placement and family adaptation. The three directions must be architectural alternatives—not palette swaps.
+
+Make may not turn the work into a design-system board, reconstruct Figma nodes, invent runtime infrastructure, or use cream, broad inverse, blanket grey, card soup or technical-OS decoration.
+
+## Typography
+
+- Plus Jakarta Sans: editorial/display.
+- Inter: commerce and UI.
+- Customer body: 15–16 px minimum.
+- Metadata/eyebrows: 12 px minimum.
+- Rejected: Barlow Condensed, Archivo, Cousine, Inter Variable.
