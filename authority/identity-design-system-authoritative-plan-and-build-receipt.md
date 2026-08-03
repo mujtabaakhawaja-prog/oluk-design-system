@@ -1,25 +1,27 @@
 # Identity Design System — Complete Execution Pipeline and Build Authority
 
-**Run:** `oluk-final-authority-20260801`  
-**Date:** 2026-08-02  
-**Document version:** 2.7 — Native V4 Component Convergence and Visual Authority Receipt  
-**Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=0-1)  
-**Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)  
-**Figma program index:** Page 00, node `36:2`  
-**Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`  
-**Current canonical position:** Canonical Phase 04 native authority convergence is built directly into the live Final-Design PDP and a separate editable reference-board set. `NR-02C` preserves and corrects the mature Dossier, LabReports, Lab Verification, Product Media Chamber, PurchaseRail and TrustEvidenceSpine capabilities; it also supplies exact 1440, 768 and 390 route proofs. Exact-frame human selection remains the controlling Identity Gate action.  
-**Promotion state:** The Native V4 set is review-ready but not self-promoted. Phase 05–06 color candidates remain hidden and provisional; the undocumented non-color collection is explicitly quarantined. Figma Make remains deferred until the native champion and its reference boards are accepted.
+**Run:** `oluk-final-authority-20260801`
+**Date:** 2026-08-03
+**Document version:** 3.0 — Sealed MF-01 ProductCommerceCard Input Revision
+**Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=0-1)
+**Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
+**Figma program index:** Page 00, node `36:2`
+**Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
+**Current canonical position:** The Native V4 work in Final-Design has passed the corrective Identity Gate as the directional light-mode baseline. Its PDP, ProductMetricRail, PurchaseRail, Dossier, LabReports, Lab Verification, Product Media and TrustEvidenceSpine relationships now seed the active Figma Make creative-frontier lane. Make begins from curated PNG references so it can design rather than translate native boards; selected nodes, components and variables enter only after a visual direction wins. The first active Make problem is the adaptive ProductCommerceCard family, followed by homepage, PDP, evidence/OpenLab and image-light transaction convergence.
+**Promotion state:** Figma Make design exploration is active. Native V4 is the baseline and structural evidence, not a pixel template or visual ceiling. Make may enhance component silhouettes, chip/card geometry, material depth, stock/trust presentation, responsive behavior and page composition while retaining product truth and semantic jobs. Phase 05–06 foundations remain provisional until the Make Design Gate selects the cross-route light-mode champion. MENT and dark mode are explicitly deferred. Runtime React remains a later translation lane.
 
 ## Document control
 
 This is the single controlling execution manual for the identity-led design-system program. It includes:
 
 - the canonical Phase 00–12 dependency model;
-- the relationship between the earlier 00–10 proposal, the temporary "Phase 1" token-run language, and the canonical phases;
+- the relationship between the earlier 00–10 proposal, the temporary “Phase 1” token-run language, and the canonical phases;
 - standard runbooks for every canonical phase;
 - the current Figma build receipt and audit state;
 - the ordered future runs required after the present evaluation run;
 - promotion, invalidation, rollback, supersession, and archive rules.
+
+For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`Figma Make Creative Frontier Constitution`](../make-sessions/session-01-product-card/CONSTITUTION.md). The exact first-run prompt is [`MF-01 — ProductCommerceCard Creative Frontier`](../make-sessions/session-01-product-card/PROMPT.md).
 
 It supersedes the earlier sequence as an execution authority. Legacy plans, transcripts, runtime captures, and the old Page `0:1` remain evidence or structural reference only.
 
@@ -27,11 +29,11 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 
 | Area | State | Controlling fact |
 |---|---|---|
-| Identity direction | Native V4 component convergence built; exact-frame human review pending | Live PDP `126:4`, visual-authority section `236:1568`, desktop proof `237:3220`, tablet proof `238:4089` and mobile proof `239:4097` |
-| Asset authority | Partially governed | The approved MK-2866 transparent master is registered and used throughout the native set; the high-resolution MENT candidate remains blocked pending human verification |
-| Color foundations | Mechanically sound; visually provisional | 59 primitives, 56 semantics and three evaluation modes remain operational and hidden, but their material mappings cannot be promoted from rejected authority |
-| Non-color foundations | Open | Typography, spacing/density, layout, shape, stroke, material, focus, motion and icon rules are not promoted |
-| System validation | Diagnostic only | The corrected native authority has not yet been rebased through provisional variables; old remaps and hidden Closeout G1 dependencies remain ineligible |
+| Identity direction | Native Light baseline accepted; Figma Make creative frontier active | Live PDP `126:4`, visual-authority section `236:1568`, Purchase Options set `286:4015`, ProductMetricRail `248:4105`, proof `284:3872`, and the 1440/768/390 route proofs provide direction and reusable structure rather than literal Make layouts |
+| Asset authority | Light-mode asset set sufficient for the active lane | The approved MK-2866 transparent master is registered and used; MENT verification is deferred with dark-mode work |
+| Color foundations | Mechanically sound; visually provisional | 60 primitives, 59 semantics and three evaluation modes remain operational and hidden after the bounded NR-02D purchase-contract update; their mappings are still candidate authority and remain unpublished |
+| Non-color foundations | Directional baseline established; creative refinement active | Make may improve typography scale, spacing/density, shape, material, motion and responsive relationships in customer-facing designs; formal extraction follows the Make champion |
+| System validation | Make convergence pending | Cross-route light-mode pages and adaptive component families must converge before formal system extraction and validation |
 | Foundation authority | Not started | Page 07 is a promotion shell; no mode is production `Light` |
 | Components through release | Deferred | Phases 08–12 may begin only through their recorded entry gates |
 
@@ -39,7 +41,7 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 
 This document combines the four supplied viewpoints into one controlling plan. The legacy 00–10 outline remains useful as a list of artifact families, but the canonical dependency model is:
 
-> **authority triage → brand/domain truth → creative frontier → direction and asset lock → identity authority compositions → foundation extraction → system validation → foundation promotion → reusable components → domain compositions → complete experience proof → runtime verification → governed evolution**
+> **authority triage → brand/domain truth → native directional baseline → PNG-led Figma Make creative frontier → selective native integration → cross-route Make design selection → foundation extraction → system validation → foundation promotion → adaptive components and domain compositions → complete experience proof → runtime verification → governed evolution**
 
 The active project does not restart from blank-slate brand discovery. Brand/domain truth, product grammar and much of the functional composition logic remain useful. Human review has, however, rejected the inherited material treatment. The program therefore reopens only the creative-frontier and authority-composition work needed to replace that treatment before foundation promotion resumes. Runtime proofs are corrective evidence, not automatic authority.
 
@@ -50,7 +52,7 @@ The active project does not restart from blank-slate brand discovery. Brand/doma
 3. **Brand truth and product grammar are materially established.** Correct, but asset governance remains mixed: visible compatibility evidence is not automatically a registered master.
 4. **The pipeline must not be a one-way waterfall.** Controlling correction. Human rejection has now exercised this rule by reopening the narrow Phase 02/04 material lane.
 
-The result is not "skip identity" and not "restart identity." It is: preserve accepted brand and domain truth, supersede the rejected material treatment, rebuild the affected Phase 04 authority compositions, then rebase and stress-test the provisional system before promotion.
+The result is not “skip identity,” “restart identity,” or “reconstruct Final-Design in Make.” Final-Design resolved enough identity, material and component relationships to give Make a strong starting point. Make now uses those proofs as creative direction, develops stronger customer-facing designs, then introduces selected native nodes and variables after the visual frontier has produced a champion.
 
 ## Locked identity laws
 
@@ -60,7 +62,7 @@ The result is not "skip identity" and not "restart identity." It is: preserve ac
 - White product-label stock remains the highest-authority white object; true `#FFFFFF` is also valid for deliberately raised decision, commerce and information planes when the cool canvas and material separation keep the object hierarchy clear.
 - Default ink is deep blue-biased navy, not pure black.
 - Commerce is a calm raised foreground; evidence is systematic; media carries product-led atmosphere; all three may lift from the canvas through controlled material depth rather than flat tonal bands.
-- `#3366FF` is the primary signal/action anchor, not default blue body text.
+- `#0057FF` is the core identity/metric signal and `#256DFF` is the current interactive cobalt; neither is default blue body text or global wallpaper.
 - `#E4E5F1` is structural mark material, not the dominant canvas.
 - The PDP hero is the deliberate exception to bounded media-chamber grammar: one continuous atmospheric rail extends beyond the 1440 content width, carries the approved transparent bottle directly, and receives one raised purchase plane on the same field. It has no left media card, outer border or cobalt top-edge rule.
 - Outside that PDP hero exception, luminous linear and full-field media chambers are authored raised planes inside larger rails. Their gradient fills the chamber interior, never the surrounding section or page canvas. They may carry product media or visualized information and use restrained blue-white gradients rather than grey placeholder fills.
@@ -85,7 +87,7 @@ The strongest current material evidence is [Runtime Proof node `414:67909`](http
 
 [Runtime Proof node `461:91925`](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-%E2%80%94-Codex-Runtime-Proofs?node-id=461-91925) is the more restrained technique reference: `#F7F8FA` canvas, white raised planes, `#D6E1F0` hairline, 14–16 px radii, soft blue-grey ambient depth, and ice-blue media fields. Its route layouts and section fills are not accepted wholesale. The two nodes define a material vocabulary only; final authority must keep the canvas visible around individually elevated chambers and rails.
 
-Node `414:67907` is the overflowing wrapper for this board, not a separate design direction. Node `429:176` is retained only as a historical cobalt/surface ledger: its `#0057FF`, "NO shadows" and alternating branded-band directives are superseded. Node `380:50830` is a compositional cobalt edge-gradient fragment, not a complete surface token; its useful lesson is localized low-alpha instrumentation over a white-to-ice full-field chamber.
+Node `414:67907` is the overflowing wrapper for this board, not a separate design direction. Node `429:176` is retained only as a historical cobalt/surface ledger: its `#0057FF`, “NO shadows” and alternating branded-band directives are superseded. Node `380:50830` is a compositional cobalt edge-gradient fragment, not a complete surface token; its useful lesson is localized low-alpha instrumentation over a white-to-ice full-field chamber.
 
 ### Human example disposition — 2026-08-01
 
@@ -102,8 +104,9 @@ Node `414:67907` is the overflowing wrapper for this board, not a separate desig
 | 02 — Creative frontier | Equal-fidelity, materially distinct identity directions using common proof content; targeted corrective frontier when human review rejects a downstream material law | Human champion or corrective-direction selection |
 | 03 — Direction and master assets | Decision record, master/compatibility/missing asset registry, canonical proof set | Downstream boards can use governed assets without legacy search |
 | 04 — Identity authority compositions | Narrative, media, transaction, dense evidence, material/elevation and relevant flow proofs; inverse only when a real product need authorizes it | **Identity Gate** passes across materially different jobs |
-| 05 — Candidate foundation model | Primitive and semantic candidates plus typography, spacing, layout, shape, material, motion, focus and icon language | One provisional semantic API can drive accepted proofs |
-| 06 — System validation | Remapped authority compositions, asset tests, contrast, state, content, accessibility and responsive stress | **System Gate** passes without local overrides or raw-value drift |
+| 04M — Figma Make creative frontier and convergence | PNG-led creative exploration first; selected native nodes/components/variables later; adaptive component families and real customer-facing route proofs | **Make Design Gate** selects one cross-route light-mode champion |
+| 05 — Candidate foundation model | Primitive and semantic candidates plus typography, spacing, layout, shape, material, motion, focus and icon language extracted/rebased from the accepted native baseline and Make champion | One provisional semantic API can drive the accepted Make experience |
+| 06 — System validation | Cross-route remaps, asset tests, contrast, state, content, accessibility and responsive stress against the Make champion | **System Gate** passes without route-local drift or raw-value fragmentation |
 | 07 — Foundation authority | Promoted variables/styles, final layout grammar, lifecycle metadata and migration record | Foundation API is stable and eligible for consumption |
 | 08 — Component contracts | Repeated semantic units with anatomy, states, accessibility, content and responsive contracts | Components consume semantic foundations and own stable jobs |
 | 09 — Domain modules | Recurring domain components, sections, composition registry and adoption map | Reuse preserves context without creating local systems |
@@ -129,7 +132,7 @@ The canonical numbering below controls all future work. Earlier numbering remain
 | `08 Components` | Phase 08 | Contracts and primitives extracted from accepted repetition |
 | `09 Compositions` | Phase 09 | Domain modules and recurring authored structures |
 | `10 Runtime Pages` | Phases 10–12 | Experience proof, runtime translation, then publication and evolution |
-| Earlier "Phase 1" color run | Phases 05–06 | The evaluation build completed in this run; it was not Foundation Authority |
+| Earlier “Phase 1” color run | Phases 05–06 | The evaluation build completed in this run; it was not Foundation Authority |
 
 # Canonical phase runbooks
 
@@ -147,7 +150,7 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 
 **Verification:** Every inherited claim has source, status, owner or explicit ownership gap, and downstream eligibility.
 
-**Prohibited:** Token creation, component extraction, winner selection, or importing "production-ready" status from legacy labels.
+**Prohibited:** Token creation, component extraction, winner selection, or importing “production-ready” status from legacy labels.
 
 **Exit authority:** The program knows what is current, what is only evidence, and which later phases are already materially satisfied.
 
@@ -291,7 +294,7 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 
 **Verification:** Variant counts are intentional, content extremes work, focus/touch/contrast pass, and no component contains raw styling or page-specific narrative.
 
-**Prohibited:** Speculative inventory, page fragments disguised as components, universal "everything components," or variant explosion.
+**Prohibited:** Speculative inventory, page fragments disguised as components, universal “everything components,” or variant explosion.
 
 **Exit authority:** Component contracts represent proven recurring semantic jobs and can be adopted by modules.
 
@@ -363,7 +366,7 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 
 **Verification:** Consumers can identify current authority, eligibility, changes, deprecated items, migration path and rollback procedure.
 
-**Prohibited:** One undifferentiated "complete" status, deletion of decision history, or unversioned edits to published authority.
+**Prohibited:** One undifferentiated “complete” status, deletion of decision history, or unversioned edits to published authority.
 
 **Exit authority:** The released system can evolve without losing provenance or silently drifting.
 
@@ -384,13 +387,39 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 |---|---|---|
 | 00 | Correction recorded | Human rejection, supersession and downstream invalidation are recorded without re-triaging the corpus |
 | 01 | Resolved with amended material law | Brand thesis and domain grammar remain; visible cool canvas, bounded chambers, raised white planes and cobalt top-edge accents are controlling |
-| 02 | Human-constrained direction selected for native proof | Images 2.0 and Runtime references supplied relationship evidence only; Figma Make exploration is deferred until the native champion is accepted |
-| 03 | Partially governed | MK-2866 node `66:14` is a registered approved master; MENT node `29:19243` is a supplied candidate but not a governed master; logo and broader family assets remain open |
-| 04 | Native candidate built / Identity Gate pending | Page 03 section `103:2` contains six desktop authority proofs and four real 768/390 responsive frames; explicit human review remains required |
-| 05 | Frozen provisional | Candidate primitive and semantic collections remain operational but are not promotion-eligible until corrected Phase 04 authority is extracted |
-| 06 | Diagnostic / rebase pending | Functional proofs remain diagnostic; the new native compositions have not yet been remapped through candidate foundations |
+| 02 | Corrective frontier resolved enough to seed Make | Images 2.0, native proofs and selected Runtime/Make references established the Native Light direction; the next frontier is customer-facing Make design rather than more native boards |
+| 03 | Light-mode assets sufficient | MK-2866 node `66:14` is registered and approved; MENT and dark-product validation are deferred until the later dark-mode lane |
+| 04 | Native baseline accepted / Identity Gate passed | Page 03 and the VNext component set establish direction, semantic jobs and reusable relationships; they are references and inputs, not Make reconstruction targets |
+| 04M | Active | Figma Make starts with curated PNG references, explores adaptive ProductCommerceCard and route compositions, then incorporates selected native nodes after visual selection |
+| 05 | Provisional / waits for Make champion | Candidate variables remain operational; final color and non-color extraction follows the Make Design Gate |
+| 06 | Pending Make convergence | Cross-route validation begins with Make route proofs and closes only after the selected design is expressed coherently at 1440/768/390 |
 | 07 | Deliberately empty gate shell | No foundation promotion is authorized |
-| 08–12 | Deferred | Component, composition, page, runtime and release work must not outrun the System Gate |
+| 08–10 | Partly exercised in Make, not promoted | Make may design adaptive components, routes and local interactions; formal system promotion remains downstream of the Make Design Gate and System Gate |
+| 11–12 | Deferred | Production runtime and release work wait for the approved Make experience and consolidated system |
+
+### Final authoritative execution sequence
+
+| Stage | Status | Required result |
+|---|---|---|
+| 00 — Authority intake | Complete | Existing source classification and supersession remain in force; no restart |
+| 01 — Brand/domain truth | Complete | Identity, product truth and evidence grammar remain established |
+| 02 — Creative correction | Complete for native baseline | Cream, blanket-grey, broad inverse, technical-OS and card-soup directions remain rejected |
+| 03 — Current Light assets | Complete for current scope | Approved MK-2866 render and fixed Light product truth are available; MENT/dark work is deferred |
+| 04 — Native Light baseline | Complete; Identity Gate passed | Figma Design supplies direction, semantic jobs and proven relationships—not immutable screens |
+| NR-04 — Make launch preparation | Complete | Freeze the exact three-PNG MF-01 manifest and exact truth; do not attach a fourth visual input or native nodes in the opening run |
+| Make A — PNG-first creative frontier | Next | Design three credible adaptive ProductCommerceCard directions and customer-facing route compositions |
+| Make B — Selective native convergence | After visual selection | Introduce only useful native nodes/components/variables without flattening the selected Make design |
+| Make Design Gate | Pending | Human selects one responsive cross-route Light champion and records accepted deviations |
+| 05 — Candidate foundation rebase | After Make Design Gate | Rebase color and non-color candidates from Native Light plus the selected Make relationships |
+| 06 — System validation | Blocked on Phase 05, not on MENT | Validate assets, contrast, accessibility, material, states, content and responsive stress |
+| 07 — Foundation authority | Blocked | Publish the winning Light foundation and formal layout grammar |
+| 08 — Component contracts | Blocked | Extract stable reusable contracts from accepted adaptive repetition |
+| 09 — Domain modules | Blocked | Formalize homepage, PDP, commerce, evidence and OpenLab compositions |
+| 10 — Experience proof | Blocked | Prove complete routes, states, recovery and responsive behavior; pass Experience Gate |
+| 11 — Runtime translation | Deferred | Implement React, Code Connect, APIs, accessibility, performance and parity after design settles |
+| 12 — Publication/evolution | Deferred | Release, adoption, migration, deprecation and governed iteration |
+
+There is no mandatory frame-by-frame “native reconstruction” phase after Make. Human-selected Make relationships feed Phase 05 and later contracts directly. Native masters are updated selectively when a reusable editable asset is actually needed; Make-generated code remains disposable and never becomes runtime authority.
 
 # Controlling gates
 
@@ -419,7 +448,7 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 | Runtime Verification | Exact-version parity, interaction, accessibility, performance, functional and rollback proof | Release candidate eligibility |
 | Release Promotion | Verified implementation, migration/adoption plan, downstream allowlist, deprecation and rollback record | Publication and governed adoption |
 
-No gate passes through accumulated "mostly complete" status. Each requires an exact candidate/version, explicit decision, evidence links, known exceptions, and downstream invalidation statement.
+No gate passes through accumulated “mostly complete” status. Each requires an exact candidate/version, explicit decision, evidence links, known exceptions, and downstream invalidation statement.
 
 # Continuous operating lanes
 
@@ -439,7 +468,7 @@ These lanes operate throughout the program and never disappear into a late gover
 
 ## Independent lifecycle axes
 
-One "complete" flag is forbidden. A board may be visually approved while its asset is compatibility-only; a component may be implemented while its data is specimen content; a published variable may later be superseded. Each artifact therefore tracks visual, asset, system, content/data, implementation and release state independently.
+One “complete” flag is forbidden. A board may be visually approved while its asset is compatibility-only; a component may be implemented while its data is specimen content; a published variable may later be superseded. Each artifact therefore tracks visual, asset, system, content/data, implementation and release state independently.
 
 ## Figma workspace delivered
 
@@ -479,12 +508,14 @@ All Page 80 boards are planning/control artifacts. They do not become design aut
 | `34:77` | `80.71 — Run Receipt Template` | Required mutation, validation, decision and downstream-impact receipt | Template only |
 | `35:2` | `80.80 — Master Run Register` | Groups all 24 stable run IDs and their controlling gates | Control only |
 | `35:27` | `80.90 — Program Definition of Done` | Defines completion across authority, system, experience, runtime and lifecycle | Control only |
-| `35:52` | `80.95 — Numbering Crosswalk` | Prevents legacy 00–10 and earlier "Phase 1" labels becoming parallel authority | Control only |
+| `35:52` | `80.95 — Numbering Crosswalk` | Prevents legacy 00–10 and earlier “Phase 1” labels becoming parallel authority | Control only |
 | `35:77` | `80.99 — Parallel FR-01 Run Packet` | Exact FR-01 inputs, mutation scope, proof and exit conditions | Partially executed by NR-01; MENT verification and governed record fixtures remain open |
 
 Page 00 node `36:2` is the program index. It points readers to current evidence on Pages 03–06, promotion authority on Page 07, the complete future runway on Page 80, and this written operating manual.
 
 ## Candidate variable system delivered
+
+The counts in this section record the original ER-01 delivery. The bounded NR-02D purchase-contract correction subsequently brought the current hidden candidate totals to 60 primitives and 59 semantics; the exact additions and remaps are recorded in the NR-02D receipt below.
 
 ### Collections
 
@@ -585,7 +616,7 @@ The validation pass also found and removed twelve literal-white commerce fills, 
 
 ### Post-build independent audit correction
 
-The variable counts and alias plumbing above were independently confirmed. The later claim that ten preparation actions introduced "zero structural regressions" was not confirmed and is superseded:
+The variable counts and alias plumbing above were independently confirmed. The later claim that ten preparation actions introduced “zero structural regressions” was not confirmed and is superseded:
 
 - Page 04 board `44:722` overlaps `14:35` and must be repositioned or rebuilt during the corrective cleanup.
 - New boards `44:609`, `44:722`, `44:47` and `44:451` duplicate existing board numbering and lack the `dsb` phase/run/key metadata required by this manual.
@@ -657,9 +688,9 @@ Page 02 node `44:609` is no longer an empty template:
 
 - New-Design node `66:14`, hash `026843ef0b16ec4a3978843f5d290dfb3b8adc98`, 2048×3072 RGBA, is registered as the approved MK-2866 transparent master and used in all native product-media placements;
 - the old 179×200 compatibility proxy is absent from the native authority set;
-- New-Design node `29:19243` is recorded as a supplied 2048×3072 MENT candidate, not a governed master; human verification remains mandatory;
+- New-Design node `29:19243` is recorded as a supplied 2048×3072 MENT candidate, not a governed master; its verification is deferred with dark mode and is non-blocking for the active Light lane;
 - canonical product fixture fields are limited to MK-2866, Ostarine, SARM Series, SKU 80529-01, 15 MG, 90 SERVINGS, >99%, £43 and available Lab Record access;
-- batch, stock and report values remain blocked or source-bound; no synthetic fixture is promoted into product truth.
+- batch and report values remain source-bound; Make may design an explicit fixture-driven `In stock` icon/status, but no synthetic fixture or implied live inventory source is promoted into product truth.
 
 ### NR-01 mechanical and visual audit
 
@@ -672,7 +703,7 @@ The audited customer-proof set contains ten frames: six desktop/native authority
 | Approved image dimensions | 2048×3072 |
 | Low-resolution proxy uses | 0 |
 | Missing fonts | 0 |
-| Font families | Plus Jakarta Sans, Inter, Barlow Condensed only |
+| Font families in this historical NR-01 audit | Plus Jakarta Sans, Inter, Barlow Condensed; Barlow Condensed is rejected by current authority |
 | Pure-black fills | 0 |
 | Broad inverse planes | 0 |
 | Cream/beige/ivory fills | 0 |
@@ -680,30 +711,29 @@ The audited customer-proof set contains ten frames: six desktop/native authority
 | Synthetic performance/compliance claims | 0 |
 | Responsive proof widths | 768 px and 390 px, exact |
 
-The decimal values `£128.97` and `$175.01` in checkout are an explicit content exception supplied by human authority, not legacy decimal-price drift. The required disclosure—"You are paying the USD equivalent of the displayed GBP amount."—is present.
+The decimal values `£128.97` and `$175.01` in checkout are an explicit content exception supplied by human authority, not legacy decimal-price drift. The required disclosure—“You are paying the USD equivalent of the displayed GBP amount.”—is present.
 
 **Variables changed by NR-01: 0.** Existing candidate collections and evaluation modes remain frozen and unpublished. **Components created by NR-01: 0.** The native set proves relationships before extraction.
 
 ## System Gate — current blockers
 
-Promotion remains blocked until the corrective Identity Gate passes and all of the following are complete:
+The corrective Identity Gate has passed. Foundation promotion remains downstream of the current Make design work and requires:
 
 1. **Complete:** register the current white-label MK-2866 master with source, version, owner role and allowed uses.
-2. **Blocking:** human-verify and register the supplied high-resolution MENT candidate as a black-label master, or explicitly reject and replace it.
-3. **Built, decision pending:** review the Native V4 authority set: live PDP `126:4`, reference section `236:1568`, desktop proof `237:3220`, tablet proof `238:4089` and mobile proof `239:4097`; no frame becomes locked authority until the human decision record names the accepted exact nodes.
-4. **Complete for PDP capability proof:** the mature Dossier, two Lab Verification relationships, Full Range rail, LabReports archive and TrustEvidenceSpine have real 768/390 recompositions. Homepage, checkout and remaining route families retain their earlier Phase 04 evidence and must be reconciled against the accepted V4 reference laws before the Identity Gate closes for the whole route set.
-5. **Open:** govern batch/report fixtures and content extremes without converting source-bound OpenLab specimens into product claims.
-6. **Open:** rebase surface, material/elevation and chamber candidates from the accepted native authority.
-7. **Open:** complete typography, grid/container, section rhythm, stroke, radius, focus, selection, motion and icon foundation proof.
-8. **Open:** run white- and dark-object separation across accepted candidates and representative conditions.
-9. **Open:** run color-vision, greyscale, reduced-contrast/outdoor and updated ratio tests.
-10. **Open:** record the Identity Gate decision, then the later human System Gate decision after rebased evidence is complete.
+2. **Active:** select an adaptive ProductCommerceCard family and cross-route light-mode champion through `MF-01`–`MF-10`.
+3. **Open:** govern batch/report fixtures and content extremes without converting source-bound OpenLab specimens into product claims.
+4. **Open:** rebase surface, material/elevation, chamber and adaptive-component candidates from the accepted Make champion plus the Native Light baseline.
+5. **Open:** complete typography, grid/container, section rhythm, stroke, radius, focus, selection, motion and icon foundation proof.
+6. **Open:** run light-object separation, color-vision, greyscale, reduced-contrast/outdoor and updated ratio tests.
+7. **Open:** run responsive, content-density and local-state stress against the accepted Make routes.
+8. **Deferred:** MENT, black-label and dark-object coverage move to the later dark-mode lane and do not block light-mode design convergence or Light foundation promotion.
+9. **Open:** record the later human System Gate decision after rebased evidence is complete.
 
-The earlier `Light / Atmospheric` hypothesis is no longer privileged. The three existing modes are preserved as diagnostic parameter packages and may be superseded or synthesized after corrected Phase 04 proof. No mode may be renamed `Light`, no collection may be exposed to publishing, and no broad component extraction may begin before the promotion record exists.
+The earlier `Light / Atmospheric` hypothesis is no longer privileged. Porcelain, Atmospheric and Frost remain hidden diagnostic mapping packages, not visible Make themes. Make may creatively synthesize the accepted Native Light direction. Production naming and publication wait for the Make Design Gate and System Gate.
 
 ## Complete future-run roadmap
 
-The historical evaluation build is `ER-01 — Color Candidate and Functional Proof Build`. It produced mechanically sound candidate collections and diagnostic proofs, but human review invalidated its inherited material authority. `RR-01` and `RR-02` recorded that rejection and audited the sources. Human authority then rejected Make as the next action and required native correction in Final-Design. `NR-*` now denotes the controlling native-repair lane. Existing `FR-*` identifiers remain stable.
+The historical evaluation build is `ER-01 — Color Candidate and Functional Proof Build`. It produced mechanically sound candidate collections and diagnostic proofs, but human review invalidated its inherited material authority. `RR-01` and `RR-02` recorded that rejection and audited the sources. Native correction then established a sufficiently mature light-mode baseline. `NR-03` is now passed, and `MF-*` denotes the active Figma Make creative-frontier lane. Existing `FR-*` identifiers remain stable for later foundation consolidation and validation.
 
 ### Corrective Identity Gate recovery
 
@@ -711,7 +741,7 @@ The historical evaluation build is `ER-01 — Color Candidate and Functional Pro
 |---|---|---|---|---|
 | `RR-01 Human Rejection + Invalidation Receipt` | 00 / control | Pages 00, 01, 03 and 06 plus this manual | Record cream, flat-grey, no-shadow and broad-inverse rejection; mark affected Page 03/06 evidence superseded; revise identity laws and downstream invalidation | Program state matches human authority |
 | `RR-02 Cross-File Source Audit + Make Input Whitelist` | 00 / 02 input | Source ledger and Make brief | Audit Runtime/Make files at frame level; whitelist accepted assets, content, layout and material evidence; exclude filenames/titles as authority | Clean creative inputs |
-| `RR-03 Corrective Creative Frontier` | 02 | Figma Make exploration files | **Deferred by human authority.** Retain its brief as optional post-native interaction exploration; it cannot precede or replace native composition correction | No current unlock |
+| `RR-03 Corrective Creative Frontier` | 02 | Historical Figma Make exploration brief | Superseded by the current PNG-first `MF-*` creative-frontier sequence; retain only as search history | Historical only |
 | `RR-04 Human Direction Addendum` | 02 | Decision register | Superseded by the direct native direction constraints and the `NR-02` human review record | Historical only |
 | `RR-05 Page 03 Authority v2 + Identity Gate` | 04 | Page 03 | Superseded by `NR-01`–`NR-04` so the existing ID remains searchable without creating parallel authority | Historical crosswalk only |
 | `RR-06 Phase 05 Candidate Rebase` | 05 / 06 input | Pages 04–06 | Superseded by `NR-05` after the native Identity Gate | Historical crosswalk only |
@@ -723,11 +753,27 @@ The historical evaluation build is `ER-01 — Color Candidate and Functional Pro
 | `NR-01 Native Authority Repair` | 03 feedback / 04 | Pages 02–03 | Register the approved MK-2866 master; build the first native PDP, dossier, product–evidence, OpenLab, image-light checkout, homepage rail and representative responsive proofs | **Complete and preserved as historical candidate** |
 | `NR-02 Native Authority Correction` | 04 | Page 03 | Rebuild the full-field PDP rail and purchase plane; restore joined dossier architecture; correct product–evidence, OpenLab, checkout and homepage; build all routes at 1440/768/390; keep foundations and Make frozen | **Complete:** corrected exact-node set ready for human decision |
 | `NR-02C Native V4 Component Convergence + Visual Authority` | 04 | Page 03 | Refactor the live MK-2866 PDP; preserve/rebind mature Dossier, LabReports, Lab Verification, Product Media, PurchaseRail and TrustEvidenceSpine capabilities; create editable reference boards; prove PDP at 1440/768/390; keep Make and foundation promotion frozen | **Complete:** current controlling candidate supersedes the NR-02 PDP/component treatment |
-| `NR-03 Exact-Frame Human Selection + Identity Gate Decision` | 04 | Page 03 + decision record | Accept, reject or route a bounded correction against the live Native V4 PDP, reference boards and exact 1440/768/390 proof nodes | Corrective Identity Gate passes or named rework is routed |
-| `NR-04 Native Source Lock + Rebase Charter` | 04 / 05 entry | Page 00/03 decision record | Bind accepted nodes, asset versions, accepted exceptions, prohibited patterns, invalidation scope and the exact Phase 05 extraction charter | Phase 05 rebase authorized; optional Make interaction exploration becomes eligible |
-| `NR-05 Candidate Foundation Rebase` | 05 / 06 input | Pages 04–06 | Extract/rebase color and non-color candidates, chamber recipes, radii, borders and elevation from the locked native source; rebuild remaps with zero local overrides | `FR-02`–`FR-04` resume |
+| `NR-02D Purchase Options Component + Make-Ready Proof` | 04 / bounded 05 feedback | Page 03 + candidate color collections | Establish ProductMetricRail and responsive purchase structures as strong design inputs | **Complete:** Make may use and enhance the relationships rather than trace the boards |
+| `NR-03 Exact-Frame Human Selection + Identity Gate Decision` | 04 | Human decision | Accept the Native Light direction, semantic structures and current product truth as the Make baseline | **Complete:** corrective Identity Gate passed |
+| `NR-04 Make Creative Handoff` | 04M entry | Sealed three-PNG reference set + current Make constitution | Use exactly `productcommercecard-productgrid.png`, `horizontal-product-card.png` and `MF01-C-compact-raised-white-purchase-panel-v2.png`; begin Make without a fourth visual input or native nodes | `MF-01` begins |
+| `NR-05 Candidate Foundation Rebase` | 05 / 06 input | Pages 04–06 and accepted Make result | Extract/rebase color and non-color candidates from the Native Light baseline plus the selected Make champion | `FR-02`–`FR-04` resume after the Make Design Gate |
 
-`FR-01 Asset + Fixture Authority` is partially complete through `NR-01`: the MK-2866 master and canonical product fields are registered, while MENT verification and governed report fixtures remain open. `FR-02`, `FR-03` and `FR-04` must not produce promotion evidence until `NR-04` and `NR-05` complete.
+`FR-01 Asset + Fixture Authority` is sufficiently complete for the active light-mode Make lane through the approved MK-2866 master and canonical product fields. MENT is deferred with dark mode. `FR-02`, `FR-03` and `FR-04` produce promotion evidence only after the Make Design Gate and `NR-05` rebase.
+
+### Figma Make creative-frontier sequence
+
+| Run | Primary design problem | Input strategy | Required result |
+|---|---|---|---|
+| `MF-01 ProductCommerceCard Frontier` | Vertical ProductGrid/Featured, compact rail/QuickAdd and horizontal related/upsell family | Sealed three-PNG manifest only; the approved render and Native Light direction are already embedded | Three materially different, high-fidelity adaptive card directions across all supplied contexts |
+| `MF-02 ProductCommerceCard Champion` | Select and deepen one card family | Winning relationships from `MF-01` | Route-ready card silhouettes, chambers, metrics, stock and actions |
+| `MF-03 Homepage Composition` | Hero, category rail, featured controller and card family | PNG direction plus `MF-02` champion | Authored homepage opening without generic card stacking |
+| `MF-04 PDP Composition` | Full-field media, purchase, trust and tab relationship | PNG direction, approved bottle and card/purchase champion | Strong PDP first fold at desktop scale |
+| `MF-05 Dossier + Evidence Transition` | Dossier, Lab Verification and TrustEvidenceSpine | PNG direction first; native components only in refinement | Increasing density with correct embedded-divider/canvas-split relationships |
+| `MF-06 OpenLab + LabReports` | Editorial archive, ledger and selected record | PNG crops from accepted evidence relationships | Public light-mode evidence destination, not a dashboard |
+| `MF-07 Image-Light Transaction` | Checkout, payment and email/consent | PNG references and exact amounts/copy | Identity proof without product imagery |
+| `MF-08 Native Integration` | Reconcile the champion with reusable native structures | Selected Figma nodes, components and variables | Preserve Make improvements while formalizing reusable structures |
+| `MF-09 Responsive + Interaction` | 1440/768/390 adaptation and local visual behavior | Integrated Make champion | Genuine recomposition, local hover/focus/selection/quantity/record states |
+| `MF-10 Cross-Route Convergence` | Homepage, PDP, OpenLab and transaction coherence | All accepted Make lanes | Human-approved Make champion and explicit system-extraction inputs |
 
 ### System Gate closure
 
@@ -747,7 +793,7 @@ The historical evaluation build is `ER-01 — Color Candidate and Functional Pro
 | `FR-05 Foundation Promotion` | 07 | Page 07 | Promote selected primitive/semantic mappings; rename only selected production mode to `Light`; archive rejected modes; version/ownership/lifecycle/change/migration metadata | Foundations eligible for downstream use |
 | `FR-06 Layout + Responsive Authority` | 07 | Page 07 | Final container, grid, content measure, section rhythm, media ratio, density, priority and recomposition grammar; representative relationship tests | Phase 08 entry gate passes |
 
-**Prohibited during FR-05–06:** silent edits to selected values, retaining evaluation modes as production themes, or inventing components to "prove" layout.
+**Prohibited during FR-05–06:** silent edits to selected values, retaining evaluation modes as production themes, or inventing components to “prove” layout.
 
 ### Component contracts and primitives
 
@@ -790,7 +836,7 @@ Representative proof precedes exhaustive page population. Runtime captures do no
 | `FR-20 Implementation Slices` | 11 | Runtime repositories and proof boards | Storefront, OpenLab and transactional slices using governed mappings and assets; distinct implementation status | Candidate implementation complete |
 | `FR-21 Independent Verification + Rollback` | 11 | Verification evidence | Visual parity, interaction, accessibility, performance, functional and security-relevant product checks; rollback/reversible rollout evidence | Runtime Verification passes |
 
-**Prohibited during FR-19–21:** changing design meaning to simplify code, treating "implemented" as "verified," or allowing runtime output to become visual authority without a design change record.
+**Prohibited during FR-19–21:** changing design meaning to simplify code, treating “implemented” as “verified,” or allowing runtime output to become visual authority without a design change record.
 
 ### Publication, adoption and evolution
 
@@ -804,9 +850,9 @@ Representative proof precedes exhaustive page population. Runtime captures do no
 
 The receipt below preserves the previous corrective pass as audit history. Its PDP/component treatment, allowance for Barlow Condensed and purchase-support per-serving copy are superseded by the Native V4 receipt that follows. Do not use the historical values or nodes as current extraction authority.
 
-**Run:** `NR-02 Native Authority Correction`  
-**Figma section:** [Page 03 native correction set — `153:6`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=153-6)  
-**Authority state:** review-ready native candidate; not self-promoted  
+**Run:** `NR-02 Native Authority Correction`
+**Figma section:** [Page 03 native correction set — `153:6`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=153-6)
+**Authority state:** review-ready native candidate; not self-promoted
 **Mutation boundary honored:** no new variables, modes, components, system boards, Make work or runtime changes
 
 ### Corrected desktop nodes
@@ -852,7 +898,7 @@ Each pair was rendered and inspected during NR-02. The source frame is preserved
 | Hidden `Closeout G1` and `Candidate V02` variables controlled stale PDP material | Corrected routes were rebuilt as clean native siblings; the last `overlay/scrim-strong` alias was detached from the existing render-effect master and replaced by an explicit product-local deep-navy contact shadow; NR-02 now contains zero variable aliases |
 | Hero behaved as two pale cards or a framed media chamber | Hero is one 1600 px continuous atmospheric rail with the transparent bottle directly on the field and one raised purchase plane on the same field |
 | Cobalt hairline appeared as a universal decoration | Two-pixel top edge is confined to approved non-hero white sections; the hero contains no top rule |
-| Wrong SKU, `90 CAPS`, decimal price and wrong per-serving value | Replaced with `SKU 80529-01`, `90 SERVINGS`, `£43` and `£0.48 per serving` |
+| Wrong SKU, `90 CAPS`, decimal price and wrong per-serving value | Historical NR-02 corrected the primary values to `SKU 80529-01`, `90 SERVINGS` and `£43`; its temporary `£0.48 per serving` support copy was later removed and is prohibited by current authority |
 | Stock, dispatch and performance claims were static UI copy | Removed; no unbound availability, dispatch, performance or compliance claim remains |
 | Metrics repeated as colored mini-cards and pills | Replaced by neutral divided metric rails |
 | Dossier was flattened into generic cards or carried ungoverned batch/lab results | Reconstructed as one joined four-leaf object; governed product composition is retained, while batch/lot/testing/serialization values wait for a selected published record |
@@ -873,13 +919,13 @@ The NR-02 section contains the approved customer values and no known stale alter
 - `90 SERVINGS` — present;
 - `>99%` — present;
 - `£43` — present;
-- `£0.48 per serving` — used only as the approved purchase-support value;
+- `£0.48 per serving` — historical source value only; current purchase and ProductCommerceCard designs prohibit per-serving pricing;
 - forbidden strings found: **0**, including `BKS38-85`, `90 CAPS`, `£43.00`, `£3.49`, performance claims, static stock/dispatch copy, RAD-140/Testolone cross-product content, synthetic batch identifiers and runtime infrastructure labels.
 
 ### Mechanical and visual validation
 
 - 874 nodes and 490 text nodes audited in the NR-02 section;
-- font families are restricted to Plus Jakarta Sans, Inter and Barlow Condensed;
+- this historical NR-02 audit contained Plus Jakarta Sans, Inter and Barlow Condensed; current customer-facing authority rejects Barlow Condensed and uses Plus Jakarta Sans with Inter support;
 - new components/component sets: **0**;
 - existing approved `PDP-render-effect-light` master `135:16` was named, described and detached from the stale remote scrim alias; 12 instances were used;
 - local variable and collection totals remained unchanged at 124 variables / 3 collections;
@@ -893,14 +939,11 @@ The NR-02 section contains the approved customer values and no known stale alter
 
 ### Remaining blockers
 
-1. Human approval of the exact NR-02 node set is still required to close the corrective Identity Gate.
-2. The black-label MENT candidate remains ungoverned; the later System Gate cannot close without verified dark-object evidence.
-3. Candidate color/non-color foundations remain provisional and frozen until the Identity Gate decision authorizes a controlled rebase.
-4. The undocumented nine-variable `R6 Primitives` collection remains quarantined and must be dispositioned before governed non-color extraction.
+This list is historical for NR-02. Current execution is governed by the Make creative-frontier sequence above. MENT is deferred, the Identity Gate is passed, and the remaining active work is Make design convergence followed by foundation extraction. The undocumented nine-variable `R6 Primitives` collection remains quarantined until non-color consolidation.
 
 ## Historical NR-02 next-run packet — superseded by the Native V4 receipt below
 
-`NR-02 Native Authority Correction` is mechanically complete and review-ready. The next controlling unit is `NR-03 Exact-Frame Human Selection + Identity Gate Decision`. Figma Make is not authorized and remains deferred.
+`NR-02 Native Authority Correction` is preserved as a superseded historical receipt. Its earlier Make deferral no longer controls execution: the Native Light prerequisite is complete and the `MF-*` creative-frontier lane is active.
 
 **Review inputs:** Page 03 NR-02 section `153:6`; desktop nodes `153:7`, `153:8`, `153:9`, `153:10`; route sections `153:12`, `153:13`, `153:14`; responsive proofs `165:22`, `165:152`, `166:46`, `166:81`, `167:46`, `167:86`, `168:46`, `168:98`; approved product-render master `135:16`.
 
@@ -910,14 +953,14 @@ The NR-02 section contains the approved customer values and no known stale alter
 
 **Exit:** exact-frame approval closes the corrective Identity Gate and authorizes `NR-04/NR-05` foundation rebase planning. Rejection identifies the failed route, gate and downstream proofs that must be rerun.
 
-**Asset fallback:** if the MENT candidate is not verified, retain the blocked black-label proof. Do not fabricate, omit or silently pass the test. The accepted native light-mode direction may continue to review, but the later System Gate remains blocked on dark-object evidence.
+**Current supersession:** MENT, black-label proof, dark-object validation, dark mode and broad inverse sections are deferred beyond completion of the Light foundation and experience proof. Do not fabricate or silently approve the asset, but it is not a current Make input, System Gate blocker or prerequisite for Phase 05–10 light-mode work.
 
 ## NR-02C Native V4 component convergence and visual-authority receipt
 
-**Run:** `NR-02C Native V4 Component Convergence + Visual Authority`  
-**Live route:** [MK-2866 PDP — `126:4`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=126-4)  
-**Reference-board section:** [Native V4 visual authority — `236:1568`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=236-1568)  
-**Authority state:** current controlling native candidate; human promotion pending  
+**Run:** `NR-02C Native V4 Component Convergence + Visual Authority`
+**Live route:** [MK-2866 PDP — `126:4`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=126-4)
+**Reference-board section:** [Native V4 visual authority — `236:1568`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=236-1568)
+**Authority state:** accepted Native Light directional baseline; Figma Make creative frontier active
 **Mutation boundary:** Final-Design only; no Make work, runtime implementation, production publication or production-mode promotion
 
 ### Why this corrective pass exists
@@ -960,7 +1003,7 @@ Retain the established purchase hierarchy but remove stale commerce content and 
 
 - Reusable master: [`202:1235`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=202-1235).
 - Exact customer truth: MK-2866, Ostarine, SKU 80529-01, 15 MG, 90 SERVINGS, >99%, £43.
-- No crossed price, decimal product price, per-serving price, filled feature chips, static stock/dispatch language or performance claims.
+- No crossed price, decimal product price, per-serving price, filled feature chips or ungoverned performance/dispatch claims. Make is authorized to improve the fixture-driven `In stock` icon/status without implying live inventory ownership.
 - Neutral feature rows use cobalt commerce/evidence icons without colored backgrounds.
 - The former static `In stock` master copy is now `Batch linked`.
 
@@ -1044,22 +1087,118 @@ All component masters, the live PDP, the six reference boards and both responsiv
 
 ### Variable and promotion status
 
-- `Foundation / Color Primitives — Candidate`: 59 variables, hidden.
-- `Foundation / Color Semantics — Evaluation`: 56 semantic variables, three temporary modes, hidden.
+- `Foundation / Color Primitives — Candidate`: 60 variables after the bounded NR-02D addition of `blue/450`, hidden.
+- `Foundation / Color Semantics — Evaluation`: 59 semantic variables after the bounded NR-02D additions of `accent/metric`, `accent/identity` and `state/success/indicator`; three temporary modes, hidden.
 - `ZZ / QUARANTINED — R6 Primitives · Legacy / Do Not Use`: nine inherited non-color variables, hidden and explicitly described as non-governed.
 - None of these collections is promoted or published by NR-02C.
 - Native V4 masters use the existing candidate semantic API where appropriate, but the exact Phase 05 rebase remains blocked until human selection names the accepted source nodes.
 
 ### Current gate and next exact sequence
 
-1. **NR-03 — human selection:** accept the live PDP and exact VA-00–VA-05 nodes, or route a bounded defect by board/section.
-2. **NR-04 — source lock:** lock accepted nodes, asset versions, exceptions and prohibited patterns; record invalidation scope.
-3. **NR-05 — foundation rebase:** update primitive/semantic mappings and extract governed non-color foundations from the locked Native V4 source.
-4. **FR-02/FR-03 — complete foundation and stress proof:** typography, spacing, layout, shape, material, focus, motion, icons, assets, contrast, content extremes and responsive stress.
-5. **FR-04 — System Gate:** human selection of exact mappings; only then promote Foundation Authority in FR-05/FR-06.
-6. **Make eligibility:** Make may begin only after the Native V4 identity source is locked. It explores interaction and route transitions from the accepted source; it may not redefine identity, surface contracts or component anatomy.
+1. **NR-03 — complete:** the Native Light direction and current semantic structures are accepted as Make's baseline.
+2. **MF-01/MF-02 — ProductCommerceCard frontier:** start with curated PNGs, create three serious adaptive directions, select and deepen one.
+3. **MF-03–MF-07 — route design:** apply the selected system to homepage, PDP, evidence/OpenLab and image-light transaction experiences.
+4. **MF-08 — native integration:** introduce selected Figma nodes/components/variables only after the creative direction is strong; preserve the Make design rather than collapsing back to native-board geometry.
+5. **MF-09/MF-10 — responsive, interaction and convergence:** prove 1440/768/390 and select the cross-route Make champion.
+6. **NR-05 — foundation rebase:** update primitive/semantic mappings and extract non-color foundations from the accepted Make champion and Native Light baseline.
+7. **FR-02/FR-03 — foundation and stress proof:** validate typography, spacing, layout, shape, material, focus, motion, icons, assets, contrast, content extremes and responsive behavior.
+8. **FR-04 — System Gate:** select exact mappings, then promote Foundation Authority in FR-05/FR-06.
 
-No production mode is renamed `Light`, no candidate collection is published, and no runtime implementation is authorized by this receipt.
+Make may use prototype code to design and demonstrate responsive/local behavior. Production React, Code Connect, service ownership and runtime integration remain downstream of the Make Design Gate and Experience Gate.
+
+## NR-02D Purchase Options component and Make-ready proof receipt
+
+**Run:** `NR-02D Purchase Options Component + Make-Ready Proof`
+**Component set:** [Purchase Options — `286:4015`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=286-4015)
+**Shared metric dependency:** [ProductMetricRail — `248:4105`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=248-4105)
+**Proof board:** [Purchase Options proof — `284:3872`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=284-3872)
+**Authority state:** accepted Make input and directional native baseline; Make may visually enhance it while preserving semantic jobs and exact product truth
+**Mutation boundary:** Final-Design component and shared candidate-token correction only; no Make file, runtime repository or React implementation was created
+
+### Component contract delivered
+
+| Variant | Node | Exact frame | Recomposition |
+|---|---|---:|---|
+| `Viewport=Sidebar` | [`260:4228`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=260-4228) | 564 × 758 px | Preferred desktop/sidebar purchase hierarchy |
+| `Viewport=Compact` | [`285:4006`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=285-4006) | 390 × 889 px | True compact reflow; sections and controls recompose rather than scale |
+
+`ProductMetricRail` is a proper shared component and is consumed by both variants. Its quantity role is `SERVINGS`; `CAPSULES` is not used as the product quantity metric. LabReports Canvas Split and Embedded variants use the same cobalt quantified-truth treatment for their summary statistics, while qualitative product attributes retain the separate colorless/transparent chip contract.
+
+The Make-ready purchase contract contains:
+
+- `SARM SERIES`, `MK-2866`, `OSTARINE` and `SKU 80529-01`;
+- `15 MG / STRENGTH`, `90 / SERVINGS` and `>99% / PURITY` through the shared ProductMetricRail;
+- a single `£43` price with no decimal, crossed price or per-serving calculation;
+- controlled quantity-stepper anatomy, primary `Add to bag` action and secondary `View Lab Record` action;
+- standard Inter only, with explicit static weights; no Inter Variable, Inter Tight, Plus Jakarta Sans, Barlow Condensed or Cousine occurs inside this component set;
+- no customer text below 12 px, no forbidden default-grey values and no forbidden commerce/product copy.
+
+### Shared candidate token changes
+
+These changes are shared candidate API corrections, not local component literals. Exact resolution was validated in `Light / Porcelain`, `Light / Atmospheric` and `Light / Frost`.
+
+#### Primitive creation and corrections
+
+| Primitive | Variable ID | Candidate value | Change |
+|---|---|---:|---|
+| `blue/450` | `VariableID:277:3863` | `#256DFF` | Created for primary interactive cobalt |
+| `blue/500` | `VariableID:13:9` | `#0057FF` | Updated to core identity/metric cobalt |
+| `neutral/75` | `VariableID:13:18` | `#F8FAFC` | Updated blue-shifted subtle surface |
+| `neutral/400` | `VariableID:13:28` | `#D9DEE8` | Updated blue-shifted boundary |
+| `neutral/700` | `VariableID:13:33` | `#667085` | Updated secondary ink |
+| `neutral/900` | `VariableID:13:37` | `#101114` | Updated near-navy primary ink |
+| `green/50` | `VariableID:13:39` | `#EFFBF3` | Updated success background |
+
+#### Semantic creation
+
+| Semantic | Variable ID | Scopes | All-mode alias |
+|---|---|---|---|
+| `accent/metric` | `VariableID:277:3864` | `TEXT_FILL`, `STROKE_COLOR` | `blue/500` |
+| `accent/identity` | `VariableID:279:3863` | `TEXT_FILL`, `STROKE_COLOR` | `blue/500` |
+| `state/success/indicator` | `VariableID:279:3864` | `SHAPE_FILL` | `green/700` |
+
+#### Semantic remaps in all three evaluation modes
+
+| Semantic role | Candidate alias |
+|---|---|
+| `surface/panel-raised` | `neutral/0` |
+| `surface/panel-soft` | `neutral/75` |
+| `text/secondary` | `neutral/700` |
+| `border/default` | `neutral/400` |
+| `accent/icon` | `blue/450` |
+| `accent/action/default` | `blue/450` |
+| `accent/action-hover` | `blue/500` |
+| `accent/action/pressed` | `blue/700` |
+| `action/primary/default` | `blue/450` |
+| `action/primary/hover` | `blue/500` |
+| `action/primary/pressed` | `blue/700` |
+| `state/success/background` | `green/50` |
+
+### Mechanical and visual validation
+
+| Check | Sidebar | Compact |
+|---|---:|---:|
+| Solid paints bound to shared variables | 58 / 58 | 58 / 58 |
+| Customer text below 12 px | 0 | 0 |
+| Forbidden grey matches | 0 | 0 |
+| Forbidden copy matches | 0 | 0 |
+| Standard Inter only | Pass | Pass |
+| Product truth and price format | Pass | Pass |
+
+Additional dependency and proof checks:
+
+- ProductMetricRail: 12 / 12 bound solid paints, standard Inter Bold/Medium, no text below 12 px and six exposed text properties.
+- Purchase Options proof board: 140 / 140 bound solid paints, no text below 12 px; instances resolve to `260:4228` and `285:4006`, each with nested ProductMetricRail `248:4105`.
+
+The proof board demonstrates the two variants beside the shared ProductMetricRail dependency. The compact frame is a real 390 px reflow: attribute rows, price/quantity relationship and actions are recomposed for the narrower measure and are not a scaled copy of the 564 px sidebar.
+
+### Make and runtime boundary
+
+This receipt makes the native Figma work a strong directional baseline for Make, not a reconstruction specification. The opening Make runs consume curated PNG crops, approved renders and exact product truth so Make can concentrate on visual design. Once a Make direction wins, native nodes/components/variables are introduced to reconcile reusable structures and semantics.
+
+Make may enhance card and chip silhouettes, PurchasePanel material and shape, stock/trust presentation, media-chamber relationships, responsive variants, interaction and route composition. It preserves ProductMetricRail's quantified-truth job, exact product truth and the distinction between quantified metrics and qualitative attributes; it does not have to retain every current radius, spacing value or board geometry.
+
+The requested production React component was not built because this workspace contains no runtime repository and no `AGENTS.md` from which basket, OpenLab route, inventory, quantity-cap, testing or build contracts could be read. Make can still implement local prototype behavior and responsive design. Production translation remains a Phase 11 task rather than an opening Make concern.
 
 ## Future-page creation rule
 
@@ -1181,4 +1320,4 @@ The program is not complete when variables, components or pages merely exist. Co
 
 ## Final determination
 
-The variable plumbing remains mechanically valid, hidden and frozen. `NR-02C` is the current controlling Phase 04 candidate: it corrects the live MK-2866 PDP, preserves and rebinds the mature Dossier/LabReports/Lab Verification/Product Media/PurchaseRail/TrustEvidenceSpine capabilities, and expresses the converging laws through editable visual-authority boards plus exact 1440/768/390 proofs. Automated and internal visual QA pass; the work does not promote itself. The next authority is exact-frame human approval through `NR-03`. Figma Make remains deferred. After that Identity Gate decision, Phase 05 foundations may be rebased from the accepted Native V4 source and the System Gate may resume; the unverified MENT asset remains a later System Gate blocker.
+The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 provides the accepted light-mode direction, reusable semantic structures and exact product truth required to start Make without beginning from a blank aesthetic. `NR-03` is passed. The active work is the `MF-*` creative-frontier sequence: PNG-led ProductCommerceCard exploration first, route design second, selective native integration third, then responsive cross-route convergence. Make is expected to improve the current card/chip shapes, stock and trust presentation, material depth and adaptive behavior. MENT and dark mode are deferred. After the Make Design Gate selects the light-mode champion, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.

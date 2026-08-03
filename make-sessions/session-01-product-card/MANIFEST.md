@@ -10,9 +10,9 @@ Attach exactly these three flattened PNGs to the opening MF-01 prompt. They are 
 
 | Attachment order | Asset | Role in the creative frontier | SHA-256 |
 | ----- | ----- | ----- | ----- |
-| 1 | `productcommercecard-productgrid.png` | Primary vertical ProductGrid/featured seed. Preserve the bounded media chamber, raised white purchase plane, transparent embedded divider, metric rail, quantity/price row and two-action hierarchy. | `ba96172d03644504b159313058d449ab6e7b6783322394f2ffce7b3d0520c89e` |
-| 2 | `horizontal-product-card.png` | Horizontal related/upsell seed. Preserve the left media chamber, right raised purchase plane, sculpted seam, quantity stepper and clear price/action hierarchy. No cobalt top-edge eyebrow. | `3c0e2f189e7ea847a3dfc7f8d692c72a4295109b131426002367db57007574d4` |
-| 3 | `MF01-C-compact-raised-white-purchase-panel-v2.png` | Compact rail/QuickAdd seed. Preserve the selected-card emphasis, bounded chamber and compact raised white purchase panel. Cropped neighboring cards are context only. Inventory is text-only here; do not infer an inventory icon requirement. | `f6bebb3b725bc4e780ba5603dd3281e52f5ca7427c7acc57ac43f3ac7736dee3` |
+| 1 | [`assets/productcommercecard-productgrid.png`](assets/productcommercecard-productgrid.png) | Primary vertical ProductGrid/featured seed. Preserve the bounded media chamber, raised white purchase plane, transparent embedded divider, metric rail, quantity/price row and two-action hierarchy. | `ba96172d03644504b159313058d449ab6e7b6783322394f2ffce7b3d0520c89e` |
+| 2 | [`assets/horizontal-product-card.png`](assets/horizontal-product-card.png) | Horizontal related/upsell seed. Preserve the left media chamber, right raised purchase plane, sculpted seam, quantity stepper and clear price/action hierarchy. No cobalt top-edge eyebrow. | `3c0e2f189e7ea847a3dfc7f8d692c72a4295109b131426002367db57007574d4` |
+| 3 | [`assets/MF01-C-compact-raised-white-purchase-panel-v2.png`](assets/MF01-C-compact-raised-white-purchase-panel-v2.png) | Compact rail/QuickAdd seed. Preserve the selected-card emphasis, bounded chamber and compact raised white purchase panel. Cropped neighboring cards are context only. Inventory is text-only here; do not infer an inventory icon requirement. | `f6bebb3b725bc4e780ba5603dd3281e52f5ca7427c7acc57ac43f3ac7736dee3` |
 
 ## Shared authority carried by all three
 

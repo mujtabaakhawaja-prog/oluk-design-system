@@ -31,11 +31,11 @@ This combination gives the ProductCommerceCard a bounded product-local atmospher
 | `323:4867` and `323:4874` | Horizontal luminous seam and wide chamber relationship | Explore second |
 | `323:4865` | Compact high-key chamber | Explore third |
 | `323:4824` | Stronger blue compact chamber | Tint comparison only |
-| `323:5163` | Approved product render/effect | Required product asset |
+| `323:5163` | Approved product render/effect | Required after MF-01 selection; already embedded in the opening PNGs |
 | `323:5148` | Quantified 15 MG / 90 SERVINGS / >99% contract | Introduce after creative selection |
 | `323:5149` | Product identity role | Anatomy only; current type is too small |
 | `323:5161` | Card action role | Reusable after creative selection |
-| `323:5174` | Continuous cobalt top-edge relationship | Use only for a true horizontal relationship |
+| `323:5174` | Continuous cobalt top-edge relationship | Excluded from ProductCommerceCard; reserve for a genuine multi-cell category rail |
 | `323:4876`, `323:4983` | Four-card and mixed featured/grid arrangements | Coverage and scale reservoirs only |
 | `323:4837` | Dense compact content sequence | Sequence only; current styling is too dossier-like |
 | `323:5176` | Dark legacy commerce card | Reject and exclude |
@@ -91,17 +91,10 @@ Use the PNGs as creative direction, not literal component specifications. Produc
 5. Phases 07–10 consolidate foundations, reusable contracts, domain modules and complete experience proof.
 6. Runtime React, Code Connect, APIs and production telemetry remain Phase 11 work after the Experience Gate.
 
-## GitHub documentation state
+## GitHub handoff state
 
-The repository `mujtabaakhawaja-prog/oluk-design-system` does **not** currently contain `ids-plan.md`, `oluk-pdp-architecture.md` or `oluk-make-philosophy.md` on `main` or the other accessible branches. Figma's statement that those documents were updated applies to attachments/agent memory, not GitHub.
+The repository now contains the controlling authority documents, `AGENTS.md`, the sealed MF-01 prompt/manifest/run procedure, all three MF-01 attachments, a transparent MK-2866 render pack and supplied logo references.
 
-Repository repair should occur in this order:
+Older root plans, registries, `r6-make-kit/`, `r6-execution-launch/` and bridge packets remain historical. They are deliberately retained for provenance but are no longer repository entrypoints.
 
-1. add the three controlling documents;
-2. point `README.md` to them;
-3. replace the Session 01 roadmap, source inventory, guidelines and prompt with `MF-01`;
-4. correct the MK-2866 fixture to 90 SERVINGS and £43;
-5. mark the old dark-first Make kit, runtime bridge, master plan and registries historical;
-6. update component and variable registries only after the Make champion is selected.
-
-No GitHub files were changed during this audit.
+Component and variable registries remain provisional until the Make champion is selected and the later foundation/system gates pass.

@@ -2,9 +2,11 @@
 
 ## Paste-ready opening prompt for Figma Make
 
+### Paste into Figma Make
+
 Create a high-fidelity light-mode Olympus Labs UK commerce design exploration centered on an adaptive **ProductCommerceCard** family.
 
-The supplied PNGs are directional evidence, not screens or Figma boards to reproduce. Read them for identity, product hierarchy, material depth, canvas rhythm, media-chamber behavior and shape language. Design a stronger customer-facing experience. Do not rebuild annotations, documentation boards, Auto Layout structure or native-node geometry.
+The three supplied PNGs are context proofs and creative-direction evidence—not screens, component boards or Figma nodes to reproduce. Infer the strongest common identity, then make an authored leap beyond them. Design a stronger customer-facing experience with proprietary chamber shapes, confident commerce hierarchy and context-specific silhouettes. Do not rebuild annotations, documentation boards, Auto Layout structure or native-node geometry.
 
 This opening run is visual design first. Do not create a design-system library, production components, APIs, telemetry, loading architecture or runtime implementation. Make-generated code is disposable prototype machinery.
 
@@ -28,7 +30,7 @@ Do not include the full Final-Design page, full `/all-pages` bundle, a system-bo
 
 ## Required exploration
 
-Produce **three materially different, equally resolved directions** for one adaptive card family. They must share the same semantic content sequence while differing meaningfully in silhouette, chamber-to-content relationship, elevation, chip form, action placement and responsive strategy.
+Produce **three materially different, equally resolved directions** for one adaptive card family. Every direction must solve all supplied contexts; do not assign one attachment to one direction. The directions must share the same semantic content sequence while differing meaningfully in silhouette, chamber-to-content relationship, elevation, metric treatment, action placement and adaptive strategy.
 
 The three supplied contexts must be resolved as one family and may generate a derived featured variant:
 
@@ -41,7 +43,7 @@ Every context follows this order:
 
 > **media chamber → product identity → quantified metrics → inventory/commerce → actions → evidence/trust status when relevant**
 
-The contexts should feel related without becoming one rigid rectangle resized four times.
+The contexts should feel related without becoming one rigid rectangle resized four times. Present each direction as a complete customer-facing commerce view, not as a labeled component library or design-system board. A minimal direction switcher may sit outside the artwork only for review.
 
 ## Design priorities
 
@@ -107,4 +109,4 @@ MENT, black-label validation and dark mode are deferred and must not appear in t
 
 ## Deliverable
 
-Show the three directions in realistic customer-facing commerce compositions at desktop width, with all four card contexts visible and using the same product truth. Include a concise comparison of what is intentionally different in each direction. Do not select a winner automatically. Human review will choose relationships to deepen in MF-02.
+Show the three directions as separate realistic customer-facing commerce views at desktop width, with all four card contexts demonstrated in believable route placement and using the same product truth. Do not select a winner automatically. Human review will choose chamber, seam, silhouette, density and action relationships to synthesize in MF-02.
