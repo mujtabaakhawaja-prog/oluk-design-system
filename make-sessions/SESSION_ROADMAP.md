@@ -95,6 +95,6 @@ Use the PNGs as creative direction, not literal component specifications. Produc
 
 The repository now contains the controlling authority documents, `AGENTS.md`, the sealed MF-01 prompt/manifest/run procedure, all three MF-01 attachments, a transparent MK-2866 render pack and supplied logo references.
 
-Older root plans, registries, `r6-make-kit/`, `r6-execution-launch/` and bridge packets remain historical. They are deliberately retained for provenance but are no longer repository entrypoints.
+Superseded root plans, legacy round-named Make kits, execution launch packets and bridge packets were removed on 2026-08-04. Git history retains their provenance without allowing them to compete with the active Make workspace.
 
 Component and variable registries remain provisional until the Make champion is selected and the later foundation/system gates pass.
