@@ -6,13 +6,16 @@ Read in this order before changing design or Make material:
 
 1. `authority/ids-plan.md`
 2. `authority/identity-design-system-authoritative-plan-and-build-receipt.md`
-3. `make-sessions/session-01-product-card/CONSTITUTION.md`
-4. `make-sessions/SESSION_ROADMAP.md`
-5. the active run's `MANIFEST.md`, `PROMPT.md`, and `RUN.md`
+3. `authority/surface-contract.md`
+4. `authority/oluk-make-philosophy.md`
+5. `authority/oluk-pdp-architecture.md`
+6. `make-sessions/session-01-product-card/CONSTITUTION.md`
+7. `make-sessions/SESSION_ROADMAP.md`
+8. the active run's `guidelines.md`, `MANIFEST.md`, `PROMPT.md`, and `RUN.md`
 
-The active lane is `MF-01 ProductCommerceCard Creative Frontier`. Figma Design established a strong Native Light baseline; Figma Make is expected to design beyond that baseline, not trace its nodes or convert its boards into an SSR prototype.
+The active lane is `MF-01A ProductCommerceCard Material Relationship Frontier`. Figma Design established a strong Native Light baseline; Figma Make is expected to design beyond that baseline, not trace its nodes or convert its boards into an SSR prototype. `MF-01B` is a separate cross-context transfer test and must not be folded into the opening generation.
 
-## MF-01 hard boundary
+## MF-01A hard boundary
 
 Attach exactly these three files and nothing else:
 
@@ -20,7 +23,7 @@ Attach exactly these three files and nothing else:
 - `make-sessions/session-01-product-card/assets/horizontal-product-card.png`
 - `make-sessions/session-01-product-card/assets/MF01-C-compact-raised-white-purchase-panel-v2.png`
 
-The transparent render and logo libraries are repository authority for later refinement. Their presence in `assets/` does not authorize attaching them to MF-01.
+The transparent render and logo libraries are repository authority for later refinement. Their presence in `assets/` does not authorize attaching them to MF-01A.
 
 ## Product truth
 
@@ -50,7 +53,7 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 
 ## Make versus runtime
 
-Make designs static customer-facing compositions first. Local visual interaction may follow after human selection. Do not introduce production callbacks, APIs, inventory ownership, cart/payment plumbing, routing architecture, telemetry, loading/error infrastructure, React, or Code Connect in MF-01.
+Make designs static customer-facing compositions first. Local visual interaction may follow after human selection. Do not introduce production callbacks, APIs, inventory ownership, cart/payment plumbing, routing architecture, telemetry, loading/error infrastructure, React, or Code Connect in MF-01A or MF-01B.
 
 Make-generated code is disposable prototype machinery. It never becomes runtime authority.
 
@@ -60,7 +63,7 @@ Make-generated code is disposable prototype machinery. It never becomes runtime 
 - Do not publish Figma variables or promote a foundation mode before the Make Design Gate and System Gate.
 - Do not treat filenames, “champion” labels, or repeated legacy patterns as authority.
 - Keep secrets and PII out of the repository.
-- Preserve the business invariant that no runtime discount may exceed 25%; MF-01 does not design discounting.
+- Preserve the business invariant that no runtime discount may exceed 25%; the MF-01A/MF-01B lanes do not design discounting.
 
 ## Git and review
 
@@ -69,11 +72,19 @@ Make-generated code is disposable prototype machinery. It never becomes runtime 
 - Every PR includes Status, Notes, Risks, Checklist, validation performed, and rollback.
 - Stage only task files. Never delete or overwrite unrelated user work.
 
-## MF-01 definition of done
+## MF-01A definition of done
 
 - Three materially distinct design directions.
 - Each direction is a coherent family, not a palette swap.
 - Each direction proves vertical ProductGrid, compact rail/QuickAdd, horizontal related/upsell, and a derived Featured context.
 - Exact product truth is preserved.
 - No comparison-board aesthetic, runtime language, native-node tracing, or system-documentation UI.
-- Human selects relationships before MF-02 introduces native nodes or additional assets.
+- Human records selected relationships for MF-01B. No native nodes enter before the transfer test passes and MF-02 begins.
+
+## MF-01B transfer boundary
+
+- MF-01B starts only after the MF-01A relationship selection is recorded.
+- It tests transfer into four bounded customer-facing fragments: homepage entry, PDP Section 1, embedded evidence, and true canvas-split evidence/rail.
+- G0 and selected route/evidence relationships may enter MF-01B only as explicitly curated flattened PNGs.
+- Native Figma nodes first enter in MF-02.
+- MF-01B does not build full routes, publish tokens, formalize a design-system library, or introduce runtime behavior.

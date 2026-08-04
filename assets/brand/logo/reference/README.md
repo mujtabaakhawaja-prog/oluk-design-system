@@ -12,4 +12,4 @@
 
 These files are inventoried, not silently promoted. Final logo authority still requires a versioned master-lockup decision, clear-space rule and minimum-size proof.
 
-**MF-01 status:** repository-only; do not attach.
+**MF-01A status:** repository-only; do not attach.

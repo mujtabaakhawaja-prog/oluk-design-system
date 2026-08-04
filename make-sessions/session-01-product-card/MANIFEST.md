@@ -1,10 +1,10 @@
-# MF-01 Sealed Visual Input Manifest
+# MF-01A Sealed Visual Input Manifest
 
 **Status:** Sealed for the opening Figma Make run
-**Date:** 2026-08-03
-**Scope:** ProductCommerceCard creative frontier
+**Date:** 2026-08-04
+**Scope:** ProductCommerceCard material relationship frontier
 
-Attach exactly these three flattened PNGs to the opening MF-01 prompt. They are the complete visual input set for this run. Do not add native Figma nodes, a separate bottle render, older MF-01 generations, system-board screenshots, G0 boards, `/all-pages`, MENT, dark-mode material, or other near-duplicate references until after the MF-01 relationship review.
+Attach exactly these three flattened PNGs to the opening MF-01A prompt. They are the complete visual input set for this run. Do not add native Figma nodes, a separate bottle render, older generations, system-board screenshots, G0 boards, `/all-pages`, MENT, dark-mode material, or other near-duplicate references. G0 enters only through the later MF-01B intake.
 
 ## Exact assets
 
@@ -27,4 +27,4 @@ Attach exactly these three flattened PNGs to the opening MF-01 prompt. They are 
 
 Use these images as creative-direction evidence, not screenshots to trace. Produce three materially different adaptive ProductCommerceCard families that preserve their shared semantic sequence and improve silhouette, chamber-to-purchase transition, density and responsive behavior across vertical, compact and horizontal contexts.
 
-The first output is static customer-facing design. Native nodes and local interaction enter only after human selection of the strongest relationships.
+The first output is static customer-facing design. MF-01A stops after human selection of the strongest relationships. Cross-context references enter MF-01B; native nodes and local interaction remain blocked until MF-02.

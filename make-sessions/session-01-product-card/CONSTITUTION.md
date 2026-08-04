@@ -1,7 +1,7 @@
 # Olympus Labs UK — Figma Make Creative Frontier Constitution
 
 **Status:** Current Make brief
-**Date:** 2026-08-03
+**Date:** 2026-08-04
 **Controlling plan alias:** `ids-plan.md`
 
 ## Mission
@@ -12,7 +12,7 @@ The first Make pass must not reconstruct Figma Design nodes or turn authority bo
 
 The Make lane therefore works in this order:
 
-> **PNG-led creative frontier → visual champion → selective native integration → adaptive component families → responsive route convergence → Make Design Gate → system consolidation → runtime translation**
+> **sealed PNG-led creative frontier → cross-context relationship transfer → adaptive card champion → selective native integration → customer-facing routes → responsive convergence → Make Design Gate → system consolidation → runtime translation**
 
 ## What the Final-Design work provides
 
@@ -37,7 +37,7 @@ Make may improve the silhouette, material expression, spatial rhythm, adaptive b
 * Do not import native nodes during the first exploration.
 * Use approved product renders in the visual output; do not use empty linework chambers.
 
-#### Sealed MF-01 input manifest
+#### Sealed MF-01A input manifest
 
 The opening ProductCommerceCard run uses exactly three PNGs from the sealed manifest:
 
@@ -45,16 +45,19 @@ The opening ProductCommerceCard run uses exactly three PNGs from the sealed mani
 2. `horizontal-product-card.png` — horizontal related/upsell relationship;
 3. `MF01-C-compact-raised-white-purchase-panel-v2.png` — compact rail/QuickAdd relationship.
 
-No fourth asset, separate render, native node, system board or legacy Make export may enter MF-01. The sealed packet is deliberately sufficient for Make to design a family without converting Figma Design work or averaging incompatible sources.
+No fourth asset, separate render, G0 reference, native node, system board or legacy Make export may enter MF-01A. The sealed packet is deliberately sufficient for Make to design a family without converting Figma Design work or averaging incompatible sources.
 
-### Pass 2 — Select and deepen
+### Pass 2 — Select relationships and transfer them
 
 * Select the strongest relationships across the candidates rather than accepting one entire output uncritically.
-* Refine component shape, elevation, media treatment, typography, copy scale and spatial rhythm.
-* Prove the selected direction in its immediate route context.
+* End MF-01A after relationship selection; do not synthesize a champion in the same run.
+* In MF-01B, test the selected relationships against one homepage entry, the PDP Section 1 exception, one connected embedded-divider composition and one genuine canvas-separated composition.
+* Reserve the curated G0 reference and route/evidence reference PNGs for MF-01B.
+* Keep MF-01B PNG-led. Native nodes still do not enter.
 
-### Pass 3 — Native integration
+### Pass 3 — Adaptive champion and native integration
 
+* In MF-02, synthesize one ProductCommerceCard family only after the relationship transfer survives.
 * Introduce only the relevant Figma components, nodes and variables.
 * Preserve ProductMetricRail, governed identity fields and exact product truth as reusable structures.
 * Reconcile the selected Make design with the native semantic API without flattening the creative result back into a reference board.
@@ -87,7 +90,7 @@ Native Light is the starting design concept, not a finished template:
 * cool luminous canvas;
 * raised white commerce and information planes;
 * bounded linear or full-field white-to-ice media chambers;
-* cobalt concentrated in product packaging, primary action, links, icons and metrics; the sealed MF-01 card family has no cobalt outer outline or decorative top-edge eyebrow;
+* cobalt concentrated in product packaging, primary action, links, icons and metrics; the sealed MF-01A card family has no cobalt outer outline or decorative top-edge eyebrow;
 * blue-shifted neutrals rather than achromatic default greys;
 * visible canvas used as margin and separation;
 * content-driven silhouettes rather than a universal rectangle.
@@ -131,7 +134,7 @@ Make retains:
 * colorless qualitative/support chips versus cobalt quantified metrics;
 * no crossed price and no per-serving price.
 
-For MF-01 specifically:
+For MF-01A specifically:
 
 * vertical ProductGrid and Featured forms use a transparent embedded divider to connect the bounded chamber and raised white purchase plane;
 * the horizontal form uses a connected sculpted seam and no cobalt top-edge eyebrow;
@@ -165,16 +168,17 @@ Attribute and evidence copy remains fixture data unless separately approved. No 
 
 ## Make sequence
 
-1. ProductCommerceCard creative frontier.
-2. Product-card selection and route-context refinement.
-3. Homepage hero, category rail and featured-product integration.
-4. PDP media, PurchasePanel and trust composition.
-5. Dossier, Lab Verification and evidence transition.
-6. OpenLab archive, LabReports and selected-record experience.
-7. Image-light checkout, payment and email proof.
-8. Selective native component/node/variable integration.
-9. Adaptive 1440/768/390 component and route proof with local interactions.
-10. Cross-route convergence and Make Design Gate.
+1. `MF-01A` — ProductCommerceCard Material Relationship Frontier.
+2. `MF-01B` — Cross-Context Surface Relationship Frontier.
+3. `MF-02` — Adaptive ProductCommerceCard Champion and selective native integration.
+4. `MF-03` — Homepage hero, category rail and featured-product integration.
+5. `MF-04` — PDP media, PurchasePanel and trust composition.
+6. `MF-05` — Dossier, Lab Verification and evidence transition.
+7. `MF-06` — OpenLab archive, LabReports and selected-record experience.
+8. `MF-07` — Image-light checkout, payment and email proof.
+9. `MF-08` — Selective native reconciliation across accepted route work.
+10. `MF-09` — Adaptive 1440/768/390 route proof with local visual interactions.
+11. `MF-10` — Cross-route convergence and Make Design Gate.
 
 ## Make outputs
 
@@ -182,8 +186,10 @@ Each run produces:
 
 * high-fidelity customer-facing design, not a system-board specimen;
 * three credible variants during the frontier pass;
-* the selected champion and a short rejection summary;
-* desktop proof first, followed by 768 and 390 adaptation after selection;
+* a relationship-selection record and a short rejection summary in MF-01A;
+* a cross-context transfer record in MF-01B;
+* the selected champion only from MF-02 onward;
+* desktop proof first, followed by 768 and 390 adaptation from MF-02 onward;
 * local interaction proof where relevant;
 * a list of native components/variables to introduce in the next pass;
 * no runtime integration claim.

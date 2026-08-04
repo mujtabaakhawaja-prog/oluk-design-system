@@ -1,4 +1,4 @@
-# MF-01 Source Disposition
+# MF-01A Source Disposition
 
 ## Attach now
 
@@ -10,7 +10,7 @@ Only the three files linked by `MANIFEST.md`:
 
 They jointly carry the current vertical, horizontal and compact relationship evidence. None is an entire winner.
 
-## Introduce after MF-01 selection
+## Introduce in MF-02 after MF-01B transfer
 
 | Native source | Later job |
 |---|---|
@@ -20,13 +20,13 @@ They jointly carry the current vertical, horizontal and compact relationship evi
 | ProductIdentityHeader `323:5149` | Identity structure |
 | ProductCardAction `323:5161` | Reusable action structure |
 | Transparent MK-2866 render pack | Replace/correct product imagery after direction selection if needed |
-| Logo reference pack | Later identity placement; not MF-01 input |
+| Logo reference pack | Later identity placement; not MF-01A input |
 
-## Excluded from MF-01
+## Excluded from MF-01A
 
 - Native Figma nodes and URLs.
 - Full Final-Design page or Page `323:4823`.
-- G0 Universal Glue, `/all-pages`, system boards and old Make sessions.
+- G0 Universal Glue, `/all-pages`, system boards and old Make sessions. A single curated G0 PNG is reserved for MF-01B only.
 - Separate product render or logo files.
 - Blue-Eyebrow `323:5174` for ProductCommerceCard.
 - Dark/MENT references, runtime captures, loading/state architecture and APIs.

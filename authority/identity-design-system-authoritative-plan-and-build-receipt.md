@@ -2,12 +2,12 @@
 
 **Run:** `oluk-final-authority-20260801`
 **Date:** 2026-08-03
-**Document version:** 3.0 — Sealed MF-01 ProductCommerceCard Input Revision
+**Document version:** 3.1 — Creative/Relationship Frontier Split
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=0-1)
 **Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
 **Figma program index:** Page 00, node `36:2`
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
-**Current canonical position:** The Native V4 work in Final-Design has passed the corrective Identity Gate as the directional light-mode baseline. Its PDP, ProductMetricRail, PurchaseRail, Dossier, LabReports, Lab Verification, Product Media and TrustEvidenceSpine relationships now seed the active Figma Make creative-frontier lane. Make begins from curated PNG references so it can design rather than translate native boards; selected nodes, components and variables enter only after a visual direction wins. The first active Make problem is the adaptive ProductCommerceCard family, followed by homepage, PDP, evidence/OpenLab and image-light transaction convergence.
+**Current canonical position:** The Native V4 work in Final-Design has passed the corrective Identity Gate as the directional light-mode baseline. Its PDP, ProductMetricRail, PurchaseRail, Dossier, LabReports, Lab Verification, Product Media and TrustEvidenceSpine relationships seed two deliberately separate Figma Make frontiers. MF-01A begins from a sealed three-PNG ProductCommerceCard packet so Make can design rather than translate native boards. MF-01B then tests selected relationships across homepage, PDP, embedded evidence and true canvas-split jobs. Selected nodes, components and variables enter only in MF-02 after that transfer succeeds.
 **Promotion state:** Figma Make design exploration is active. Native V4 is the baseline and structural evidence, not a pixel template or visual ceiling. Make may enhance component silhouettes, chip/card geometry, material depth, stock/trust presentation, responsive behavior and page composition while retaining product truth and semantic jobs. Phase 05–06 foundations remain provisional until the Make Design Gate selects the cross-route light-mode champion. MENT and dark mode are explicitly deferred. Runtime React remains a later translation lane.
 
 ## Document control
@@ -21,7 +21,7 @@ This is the single controlling execution manual for the identity-led design-syst
 - the ordered future runs required after the present evaluation run;
 - promotion, invalidation, rollback, supersession, and archive rules.
 
-For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`Figma Make Creative Frontier Constitution`](../make-sessions/session-01-product-card/CONSTITUTION.md). The exact first-run prompt is [`MF-01 — ProductCommerceCard Creative Frontier`](../make-sessions/session-01-product-card/PROMPT.md).
+For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`Figma Make Creative Frontier Constitution`](../make-sessions/session-01-product-card/CONSTITUTION.md). The exact first-run prompt is [`MF-01A — ProductCommerceCard Material Relationship Frontier`](../make-sessions/session-01-product-card/PROMPT.md).
 
 It supersedes the earlier sequence as an execution authority. Legacy plans, transcripts, runtime captures, and the old Page `0:1` remain evidence or structural reference only.
 
@@ -68,7 +68,7 @@ The result is not “skip identity,” “restart identity,” or “reconstruct
 - Outside that PDP hero exception, luminous linear and full-field media chambers are authored raised planes inside larger rails. Their gradient fills the chamber interior, never the surrounding section or page canvas. They may carry product media or visualized information and use restrained blue-white gradients rather than grey placeholder fills.
 - Light-mode elevation is permitted and expected where it clarifies material hierarchy. Candidate shadows are blue-grey, soft and low-opacity; elevation must be systemic, not arbitrary decoration.
 - Plane elevation and product-object shadows are separate responsibilities. A raised card/chamber uses restrained ambient depth; a bottle may use a localized cobalt float and neutral ground shadow without turning the containing surface into a blue glow.
-- Sections, rails and multi-column containers default to raised white or optically white planes, not blue/grey-filled bands. Their preferred brand accent is a cobalt hairline along the top edge, following the upper radius, with cool structural borders elsewhere.
+- Sections, rails and multi-column containers default to raised white or optically white planes, not blue/grey-filled bands. A single cobalt top-edge hairline is authorized only when it expresses one continuous section or multi-cell rail relationship; it is not the default accent for cards, heroes, every cell or a four-sided perimeter.
 - Broad navy/black inverse bands are prohibited in light mode. Dark-object product testing remains required, but `surface/inverse`, `text/inverse` and `border/inverse` are quarantined utilities rather than pacing devices.
 - Evidence, metric, specification, batch, and classification relationships are first-class identity grammar.
 - Open editorial space and compressed technical density form a deliberate rhythm.
@@ -390,7 +390,7 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 | 02 | Corrective frontier resolved enough to seed Make | Images 2.0, native proofs and selected Runtime/Make references established the Native Light direction; the next frontier is customer-facing Make design rather than more native boards |
 | 03 | Light-mode assets sufficient | MK-2866 node `66:14` is registered and approved; MENT and dark-product validation are deferred until the later dark-mode lane |
 | 04 | Native baseline accepted / Identity Gate passed | Page 03 and the VNext component set establish direction, semantic jobs and reusable relationships; they are references and inputs, not Make reconstruction targets |
-| 04M | Active | Figma Make starts with curated PNG references, explores adaptive ProductCommerceCard and route compositions, then incorporates selected native nodes after visual selection |
+| 04M | Active | MF-01A explores ProductCommerceCard material relationships from three sealed PNGs; MF-01B transfer-tests the selected relationships across four jobs; MF-02 may then incorporate selected native nodes |
 | 05 | Provisional / waits for Make champion | Candidate variables remain operational; final color and non-color extraction follows the Make Design Gate |
 | 06 | Pending Make convergence | Cross-route validation begins with Make route proofs and closes only after the selected design is expressed coherently at 1440/768/390 |
 | 07 | Deliberately empty gate shell | No foundation promotion is authorized |
@@ -406,9 +406,10 @@ Every phase uses the same control schema: purpose, entry, mandatory build, verif
 | 02 — Creative correction | Complete for native baseline | Cream, blanket-grey, broad inverse, technical-OS and card-soup directions remain rejected |
 | 03 — Current Light assets | Complete for current scope | Approved MK-2866 render and fixed Light product truth are available; MENT/dark work is deferred |
 | 04 — Native Light baseline | Complete; Identity Gate passed | Figma Design supplies direction, semantic jobs and proven relationships—not immutable screens |
-| NR-04 — Make launch preparation | Complete | Freeze the exact three-PNG MF-01 manifest and exact truth; do not attach a fourth visual input or native nodes in the opening run |
-| Make A — PNG-first creative frontier | Next | Design three credible adaptive ProductCommerceCard directions and customer-facing route compositions |
-| Make B — Selective native convergence | After visual selection | Introduce only useful native nodes/components/variables without flattening the selected Make design |
+| NR-04 — Make launch preparation | Complete | Freeze the exact three-PNG MF-01A manifest and exact truth; do not attach a fourth visual input or native nodes in the opening run |
+| MF-01A — ProductCommerceCard material frontier | Next | Design three credible ProductCommerceCard architectural hypotheses and select relationships without synthesizing a champion |
+| MF-01B — Cross-context relationship transfer | After MF-01A selection | Prove selected relationships across homepage entry, PDP atmosphere, embedded evidence and true canvas separation using curated PNG evidence only |
+| MF-02 — Adaptive card champion + native convergence | After MF-01B passes | Synthesize one adaptive ProductCommerceCard family and introduce only useful native nodes/components/variables without flattening the selected Make design |
 | Make Design Gate | Pending | Human selects one responsive cross-route Light champion and records accepted deviations |
 | 05 — Candidate foundation rebase | After Make Design Gate | Rebase color and non-color candidates from Native Light plus the selected Make relationships |
 | 06 — System validation | Blocked on Phase 05, not on MENT | Validate assets, contrast, accessibility, material, states, content and responsive stress |
@@ -720,7 +721,7 @@ The decimal values `£128.97` and `$175.01` in checkout are an explicit content 
 The corrective Identity Gate has passed. Foundation promotion remains downstream of the current Make design work and requires:
 
 1. **Complete:** register the current white-label MK-2866 master with source, version, owner role and allowed uses.
-2. **Active:** select an adaptive ProductCommerceCard family and cross-route light-mode champion through `MF-01`–`MF-10`.
+2. **Active:** run the sealed MF-01A card-material frontier, transfer-test selected relationships in MF-01B, then select an adaptive ProductCommerceCard family and cross-route light-mode champion through `MF-02`–`MF-10`.
 3. **Open:** govern batch/report fixtures and content extremes without converting source-bound OpenLab specimens into product claims.
 4. **Open:** rebase surface, material/elevation, chamber and adaptive-component candidates from the accepted Make champion plus the Native Light baseline.
 5. **Open:** complete typography, grid/container, section rhythm, stroke, radius, focus, selection, motion and icon foundation proof.
@@ -755,7 +756,7 @@ The historical evaluation build is `ER-01 — Color Candidate and Functional Pro
 | `NR-02C Native V4 Component Convergence + Visual Authority` | 04 | Page 03 | Refactor the live MK-2866 PDP; preserve/rebind mature Dossier, LabReports, Lab Verification, Product Media, PurchaseRail and TrustEvidenceSpine capabilities; create editable reference boards; prove PDP at 1440/768/390; keep Make and foundation promotion frozen | **Complete:** current controlling candidate supersedes the NR-02 PDP/component treatment |
 | `NR-02D Purchase Options Component + Make-Ready Proof` | 04 / bounded 05 feedback | Page 03 + candidate color collections | Establish ProductMetricRail and responsive purchase structures as strong design inputs | **Complete:** Make may use and enhance the relationships rather than trace the boards |
 | `NR-03 Exact-Frame Human Selection + Identity Gate Decision` | 04 | Human decision | Accept the Native Light direction, semantic structures and current product truth as the Make baseline | **Complete:** corrective Identity Gate passed |
-| `NR-04 Make Creative Handoff` | 04M entry | Sealed three-PNG reference set + current Make constitution | Use exactly `productcommercecard-productgrid.png`, `horizontal-product-card.png` and `MF01-C-compact-raised-white-purchase-panel-v2.png`; begin Make without a fourth visual input or native nodes | `MF-01` begins |
+| `NR-04 Make Creative Handoff` | 04M entry | Sealed three-PNG reference set + current Make constitution | Use exactly `productcommercecard-productgrid.png`, `horizontal-product-card.png` and `MF01-C-compact-raised-white-purchase-panel-v2.png`; begin Make without a fourth visual input, G0 reference or native nodes | `MF-01A` begins |
 | `NR-05 Candidate Foundation Rebase` | 05 / 06 input | Pages 04–06 and accepted Make result | Extract/rebase color and non-color candidates from the Native Light baseline plus the selected Make champion | `FR-02`–`FR-04` resume after the Make Design Gate |
 
 `FR-01 Asset + Fixture Authority` is sufficiently complete for the active light-mode Make lane through the approved MK-2866 master and canonical product fields. MENT is deferred with dark mode. `FR-02`, `FR-03` and `FR-04` produce promotion evidence only after the Make Design Gate and `NR-05` rebase.
@@ -764,8 +765,9 @@ The historical evaluation build is `ER-01 — Color Candidate and Functional Pro
 
 | Run | Primary design problem | Input strategy | Required result |
 |---|---|---|---|
-| `MF-01 ProductCommerceCard Frontier` | Vertical ProductGrid/Featured, compact rail/QuickAdd and horizontal related/upsell family | Sealed three-PNG manifest only; the approved render and Native Light direction are already embedded | Three materially different, high-fidelity adaptive card directions across all supplied contexts |
-| `MF-02 ProductCommerceCard Champion` | Select and deepen one card family | Winning relationships from `MF-01` | Route-ready card silhouettes, chambers, metrics, stock and actions |
+| `MF-01A ProductCommerceCard Material Relationship Frontier` | Vertical ProductGrid/Featured, compact rail/QuickAdd and horizontal related/upsell family | Sealed three-PNG manifest only; the approved render and Native Light direction are already embedded | Three materially different, high-fidelity card hypotheses plus a human relationship-selection record; no in-run synthesis |
+| `MF-01B Cross-Context Surface Relationship Frontier` | Transfer card-material discoveries across homepage entry, PDP first fold, connected evidence and independent canvas-separated jobs | Selected MF-01A relationship export plus curated G0, homepage, PDP, embedded-divider and LabReports PNG evidence; no native nodes | Two coherent transfer hypotheses and a human record of which relationships survive by context |
+| `MF-02 Adaptive ProductCommerceCard Champion` | Synthesize and prove one card family | Approved MF-01A/MF-01B relationships, then selective use of `248:4105`, `202:1235` and `286:4015` | Route-ready adaptive card silhouettes, chambers, metrics, status and actions at 1440/768/390 |
 | `MF-03 Homepage Composition` | Hero, category rail, featured controller and card family | PNG direction plus `MF-02` champion | Authored homepage opening without generic card stacking |
 | `MF-04 PDP Composition` | Full-field media, purchase, trust and tab relationship | PNG direction, approved bottle and card/purchase champion | Strong PDP first fold at desktop scale |
 | `MF-05 Dossier + Evidence Transition` | Dossier, Lab Verification and TrustEvidenceSpine | PNG direction first; native components only in refinement | Increasing density with correct embedded-divider/canvas-split relationships |
@@ -1096,13 +1098,15 @@ All component masters, the live PDP, the six reference boards and both responsiv
 ### Current gate and next exact sequence
 
 1. **NR-03 — complete:** the Native Light direction and current semantic structures are accepted as Make's baseline.
-2. **MF-01/MF-02 — ProductCommerceCard frontier:** start with curated PNGs, create three serious adaptive directions, select and deepen one.
-3. **MF-03–MF-07 — route design:** apply the selected system to homepage, PDP, evidence/OpenLab and image-light transaction experiences.
-4. **MF-08 — native integration:** introduce selected Figma nodes/components/variables only after the creative direction is strong; preserve the Make design rather than collapsing back to native-board geometry.
-5. **MF-09/MF-10 — responsive, interaction and convergence:** prove 1440/768/390 and select the cross-route Make champion.
-6. **NR-05 — foundation rebase:** update primitive/semantic mappings and extract non-color foundations from the accepted Make champion and Native Light baseline.
-7. **FR-02/FR-03 — foundation and stress proof:** validate typography, spacing, layout, shape, material, focus, motion, icons, assets, contrast, content extremes and responsive behavior.
-8. **FR-04 — System Gate:** select exact mappings, then promote Foundation Authority in FR-05/FR-06.
+2. **MF-01A — ProductCommerceCard material frontier:** attach exactly the three sealed PNGs, create three serious architectural hypotheses, select relationships and stop before synthesis.
+3. **MF-01B — cross-context transfer:** test those relationships across homepage entry, PDP Section 1, one embedded evidence object and one true canvas-separated editorial/rail composition; keep the run PNG-led.
+4. **MF-02 — adaptive ProductCommerceCard champion:** synthesize the accepted relationships, selectively introduce the three relevant native masters and prove genuine 1440/768/390 recomposition.
+5. **MF-03–MF-07 — route design:** apply the selected system to homepage, PDP, evidence/OpenLab and image-light transaction experiences.
+6. **MF-08 — native reconciliation:** introduce or reconcile selected Figma nodes/components/variables only after the creative direction is strong; preserve the Make design rather than collapsing back to native-board geometry.
+7. **MF-09/MF-10 — responsive, interaction and convergence:** prove cross-route behavior and select the Make champion.
+8. **NR-05 — foundation rebase:** update primitive/semantic mappings and extract non-color foundations from the accepted Make champion and Native Light baseline.
+9. **FR-02/FR-03 — foundation and stress proof:** validate typography, spacing, layout, shape, material, focus, motion, icons, assets, contrast, content extremes and responsive behavior.
+10. **FR-04 — System Gate:** select exact mappings, then promote Foundation Authority in FR-05/FR-06.
 
 Make may use prototype code to design and demonstrate responsive/local behavior. Production React, Code Connect, service ownership and runtime integration remain downstream of the Make Design Gate and Experience Gate.
 
@@ -1320,4 +1324,4 @@ The program is not complete when variables, components or pages merely exist. Co
 
 ## Final determination
 
-The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 provides the accepted light-mode direction, reusable semantic structures and exact product truth required to start Make without beginning from a blank aesthetic. `NR-03` is passed. The active work is the `MF-*` creative-frontier sequence: PNG-led ProductCommerceCard exploration first, route design second, selective native integration third, then responsive cross-route convergence. Make is expected to improve the current card/chip shapes, stock and trust presentation, material depth and adaptive behavior. MENT and dark mode are deferred. After the Make Design Gate selects the light-mode champion, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.
+The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 provides the accepted light-mode direction, reusable semantic structures and exact product truth required to start Make without beginning from a blank aesthetic. `NR-03` is passed. The active work begins with sealed MF-01A ProductCommerceCard material exploration, then MF-01B cross-context relationship transfer, then MF-02 adaptive champion/native convergence. Full routes, responsive convergence and system extraction follow only after those two frontiers succeed. Make is expected to improve the current card/chip shapes, stock and trust presentation, material depth and adaptive behavior without silently redefining semantic jobs. MENT and dark mode are deferred. After the Make Design Gate selects the light-mode champion, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.

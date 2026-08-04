@@ -1,20 +1,24 @@
-# MF-01 — ProductCommerceCard Creative Frontier
+# MF-01A — ProductCommerceCard Material Relationship Frontier
 
 ## Paste-ready opening prompt for Figma Make
 
 ### Paste into Figma Make
 
-Create a high-fidelity light-mode Olympus Labs UK commerce design exploration centered on an adaptive **ProductCommerceCard** family.
+Create a new Figma Make project named `OLUK — MF-01A ProductCommerceCard Material Relationship Frontier`.
+
+ProductCommerceCard is the first bounded creative laboratory for the Olympus Labs UK light-mode material system. Use it to explore how page canvas, bounded media atmosphere, raised commerce planes, embedded dividers, sculpted seams, elevation, spacing, quantified metrics, qualitative shapes and actions form one proprietary relationship.
+
+Create a high-fidelity light-mode commerce design exploration centered on one adaptive **ProductCommerceCard** family.
 
 The three supplied PNGs are context proofs and creative-direction evidence—not screens, component boards or Figma nodes to reproduce. Infer the strongest common identity, then make an authored leap beyond them. Design a stronger customer-facing experience with proprietary chamber shapes, confident commerce hierarchy and context-specific silhouettes. Do not rebuild annotations, documentation boards, Auto Layout structure or native-node geometry.
 
-This opening run is visual design first. Do not create a design-system library, production components, APIs, telemetry, loading architecture or runtime implementation. Make-generated code is disposable prototype machinery.
+This opening run is visual design first. Its result is three architectural hypotheses—not a champion, production component library or completed surface system. Every relationship remains candidate until it survives MF-01B cross-context transfer and human review. Do not create a design-system library, production components, APIs, telemetry, loading architecture or runtime implementation. Make-generated code is disposable prototype machinery.
 
-## First-run input rule
+## MF-01A input rule
 
-Use exactly the three flattened PNGs in the sealed MF-01 visual manifest. They already contain the approved product imagery, current product truth and accepted Native Light material direction. Do not add a separate bottle render or any fourth visual input.
+Use exactly the three flattened PNGs in the sealed MF-01A visual manifest. They already contain the approved product imagery, current product truth and accepted Native Light material direction. Do not add a separate bottle render or any fourth visual input.
 
-### Sealed MF-01 packet — no substitutions
+### Sealed MF-01A packet — no substitutions
 
 1. `productcommercecard-productgrid.png` — primary vertical ProductGrid/featured relationship; bounded chamber joined to a raised white purchase plane through a transparent embedded divider, with quantity, price and two actions.
 2. `horizontal-product-card.png` — horizontal related/upsell relationship; left chamber and right purchase plane connected by a sculpted seam, with no cobalt top-edge eyebrow and a quantity stepper before price.
@@ -22,11 +26,33 @@ Use exactly the three flattened PNGs in the sealed MF-01 visual manifest. They a
 
 These PNGs are creative-direction evidence, not exact component skins. Make may improve silhouette, geometry, rhythm and adaptive behavior, but it must preserve their material hierarchy and canonical product truth.
 
-Do not attach native Figma nodes, the transparent render as a separate file, G0 Universal Glue, `/all-pages`, system-board screenshots, older generated MF-01 variants, or multiple near-duplicates in this opening run. Selected nodes and components are introduced only after a creative direction wins.
+Do not attach native Figma nodes, the transparent render as a separate file, G0 Universal Glue, `/all-pages`, system-board screenshots, older generated variants, or multiple near-duplicates in this opening run. G0 and cross-route relationship references are reserved for MF-01B. Selected nodes and components enter only in MF-02 after transfer succeeds.
 
-After one visual direction wins, introduce only the native structures needed to rationalize it: ProductMetricRail `248:4105`, PurchaseRail `202:1235`, SidebarPurchaseOptions `286:4015`, ProductIdentityHeader `323:5149` and ProductCardAction `323:5161`. Blue-Eyebrow `323:5174` is not part of this ProductCommerceCard family.
+After MF-01B proves transfer, MF-02 may introduce only the native structures needed to rationalize the selected relationships: ProductMetricRail `248:4105`, PurchaseRail `202:1235`, SidebarPurchaseOptions `286:4015`, ProductIdentityHeader `323:5149` and ProductCardAction `323:5161`. Blue-Eyebrow `323:5174` is not part of this ProductCommerceCard family.
 
-Do not include the full Final-Design page, full `/all-pages` bundle, a system-board screenshot, dark/MENT work, the legacy dark card `323:5176`, the generic placeholder chamber `323:5156`, or any reference outside the sealed three-file manifest in MF-01.
+Do not include the full Final-Design page, full `/all-pages` bundle, a system-board screenshot, dark/MENT work, the legacy dark card `323:5176`, the generic placeholder chamber `323:5156`, or any reference outside the sealed three-file manifest in MF-01A.
+
+## Fixed relationships
+
+- cool luminous canvas around independent objects;
+- bounded white-to-ice product chamber;
+- raised white purchase/content plane;
+- exact product truth and information order;
+- quantified metrics distinct from qualitative attributes;
+- no cobalt card perimeter or decorative top eyebrow;
+- no cream, broad inverse, blanket grey or technical-OS decoration;
+- no runtime or production-system work.
+
+## Open to creative exploration
+
+- card silhouette and corner relationships;
+- chamber proportion and product scale;
+- contact grounding and elevation character;
+- embedded-divider and sculpted-seam geometry;
+- spacing rhythm and information density;
+- metric-cell and qualitative-chip geometry;
+- action placement;
+- context-specific adaptation across vertical, compact, horizontal and Featured forms.
 
 ## Required exploration
 
@@ -87,7 +113,7 @@ Do not use decimal pricing, crossed-out pricing or per-serving price. Attribute 
 * Rejected: Barlow Condensed, Archivo, Cousine and Inter Variable.
 * Core identity/metric cobalt: `#0057FF`.
 * Interactive cobalt: `#256DFF`.
-* Approved blue-shifted support values include `#F8FAFC`, `#D9DEE8`, `#667085` and `#101114`.
+* Current blue-shifted support references include `#F8FAFC`, `#D9DEE8`, `#667085` and `#101114`; these are directional evidence, not a fixed Make palette.
 * "Zero grey" means no generic achromatic or Tailwind-grey leakage; approved blue-shifted neutrals are valid.
 
 ## Reject
@@ -109,4 +135,4 @@ MENT, black-label validation and dark mode are deferred and must not appear in t
 
 ## Deliverable
 
-Show the three directions as separate realistic customer-facing commerce views at desktop width, with all four card contexts demonstrated in believable route placement and using the same product truth. Do not select a winner automatically. Human review will choose chamber, seam, silhouette, density and action relationships to synthesize in MF-02.
+Show the three directions as separate realistic customer-facing commerce views at desktop width, with all four card contexts demonstrated in believable route placement and using the same product truth. Do not select a winner automatically and do not create a comparison/specification board inside the artwork. Human review will choose chamber, seam, silhouette, density and action relationships for MF-01B transfer. Stop before synthesis or native integration.

@@ -1,12 +1,12 @@
-# MF-01 Exact Run Procedure
+# MF-01A Exact Run Procedure
 
 ## Objective
 
-Use Figma Make as a creative design frontier for one adaptive ProductCommerceCard family. The first run decides visual relationships; it does not create production components, reconstruct Final-Design, or settle runtime behavior.
+Use Figma Make as a creative material-relationship frontier for one adaptive ProductCommerceCard family. The first run produces architectural hypotheses; it does not select a champion, create production components, reconstruct Final-Design, or settle runtime behavior.
 
 ## Before opening Make
 
-1. Confirm the active repository manifest is `MANIFEST.md` dated 2026-08-03.
+1. Confirm the active repository manifest is the MF-01A `MANIFEST.md` and that all three hashes pass.
 2. Download the three files from `assets/` in manifest order.
 3. Do not download or attach the separate MK-2866 render pack or logo pack.
 4. Open `PROMPT.md` and copy the full contents under **Paste into Figma Make**.
@@ -14,7 +14,7 @@ Use Figma Make as a creative design frontier for one adaptive ProductCommerceCar
 ## In Figma Make
 
 1. From Figma Home, create a **new Make file**. Do not start from a Design frame and do not duplicate an older Make file.
-2. Name it `OLUK — MF-01 ProductCommerceCard Frontier`.
+2. Name it `OLUK — MF-01A ProductCommerceCard Material Relationship Frontier`.
 3. Attach, in order:
    1. `productcommercecard-productgrid.png`
    2. `horizontal-product-card.png`
@@ -38,7 +38,7 @@ Reject a direction immediately if it:
 - makes the media chamber a section background;
 - introduces runtime, API, inventory, payment, loading, or telemetry language.
 
-## Selection response to Make
+## Relationship selection
 
 Do not ask Make to “fix everything.” Identify the best relationship from each direction:
 
@@ -48,8 +48,8 @@ Do not ask Make to “fix everything.” Identify the best relationship from eac
 - compact rail behavior;
 - horizontal seam and action placement.
 
-Then ask Make for one synthesis pass using only those selected relationships. Native Figma components remain out until MF-02.
+Record the selected relationships outside the Make artwork and export all three hypotheses at review resolution. Do not request an in-run synthesis. The selection record and exports become the first input to MF-01B.
 
 ## Exit
 
-MF-01 exits when three materially different directions exist and a human selection record identifies which relationships proceed. Desktop-first is sufficient here; genuine 1440/768/390 recomposition belongs to MF-02.
+MF-01A exits when three materially different directions exist, review exports are saved, and a human selection record identifies which relationships proceed. Desktop-first is sufficient here. Cross-context transfer belongs to MF-01B; genuine 1440/768/390 recomposition and native-node integration belong to MF-02.
