@@ -1,160 +1,225 @@
 # FIGMA_AGENT_PREP_RECEIPT_V2_FINAL
 
-## Source Environment Created
+**Status:** `READY_FOR_MAKE_A0`  
+**Release:** `OLUK R6 LIGHT V2-FINAL`  
+**Last reviewed:** 2026-07-29  
+**Review method:** Figma MCP Dev Mode readback + direct source correction
+
+## Canonical Make Entry
 
 | Field | Value |
 |---|---|
-| File | `yNAyIQhewnbofeZWMGkKVa` |
-| Page Name | `[MAKE SOURCE] OLUK R6 LIGHT V2-FINAL` |
-| Page ID | `429:171` |
+| Figma file | `yNAyIQhewnbofeZWMGkKVa` |
+| Deep-reference source archive | `[MAKE SOURCE] OLUK R6 LIGHT V2-FINAL` / `429:171` |
+| Canonical Make launch page | `[MAKE LAUNCH] OLUK R6 LIGHT V2-FINAL` / `431:2` |
 | Mode | Light only |
-| Content Grid | 1171px inside 1440px specimen frames |
-| Created | 2026-07-29 |
+| Desktop viewport | `1440px` |
+| Desktop content maximum | `1171px` |
+| Champion doctrine | `Porcelain Precision · Cobalt Field · Ruled Evidence` |
+| UI box-shadow | Prohibited |
+| Production/runtime mutation | Not authorized |
 
----
+The original page `429:171` remains a source-evidence archive. It is **not** the batch attachment surface for Figma Make.
 
-## Frame IDs
+## Canonical Launch Frames
 
-| # | Frame Name | Node ID | Status |
+| Order | Frame | Node ID | Purpose |
 |---|---|---|---|
-| 00 | Authority + Product Truth | `429:172` | READY — slot spec, semantics, surface rules |
-| 01 | Full + Collapsed Header | `429:174` | READY — cloned 413:64913, annotations |
-| 02 | Surface Ledger + Cobalt Law | `429:176` | READY — surface specimens + selection state |
-| 03 | Hero Split + Atmospheric Field | `429:178` | READY — cloned 413:65374, split-layout annotations |
-| 04 | CategoryFamilyRail | `429:180` | READY — cloned 398:64473, 398:64257 reclassified |
-| 05 | Product Card Context Contract | `429:182` | READY — 3 card specimens + context annotations |
-| 06 | PurchasePanel Rail | `429:184` | READY — cloned 414:73808 + 414:70699 |
-| 07 | Assurance + Dossier Ruled Fields | `429:186` | READY — cloned 413:64954 + 413:64977, correction noted |
-| 08 | EvidenceDistrict | `429:188` | READY — cloned 390:61595 + 414:70300 |
-| 09 | OpenLab Records | `429:190` | READY — cloned 413:64993 + 413:65025 |
-| 10 | Compare + Editorial Patterns | `429:192` | READY — cloned 413:65102 + 398:63851 + 390:62221 |
-| 11 | Email + Footer | `429:194` | READY — cloned 414:74786 + 413:65108 |
-| 12 | Known Weaknesses / Rejected Patterns | `429:196` | READY — 5 weaknesses + 6 rejections documented |
-| 13 | Make Handoff Ledger | `429:198` | READY — full index + cross-file refs |
+| 00 | START MAKE HERE / Corrected Preflight | `431:3` | Staged run order, governing doctrine, and withdrawn attach-all strategy |
+| 01 | Universal Light System Input | `431:35` | Full/collapsed shell, Surface Ledger, cobalt law, split grammar, hero law |
+| 02 | Commerce Contract Input | `431:115` | Canonical product-card slots, three contexts, quantity semantics, PurchasePanel |
+| 03 | Evidence + Editorial Contract Input | `431:229` | Assurance rail, dossier rail, EvidenceDistrict, current OpenLab fixture |
+| 04 | COPY THIS INTO FIGMA MAKE | `431:309` | Exact Environment A audit prompt and continuation instruction |
 
----
+## Corrected Attachment Strategy
 
-## Component / Variable Publication Status
+### A0 — Start now
+
+Attach only:
+
+```text
+431:3   — 00 START MAKE HERE / Corrected Preflight
+431:35  — 01 Universal Light System Input
+```
+
+Then paste the prompt in `431:309` and stop after Make returns `plan.md`.
+
+### A1 — Three directions
+
+After reviewing `plan.md`, attach only:
+
+```text
+431:115 — 02 Commerce Contract Input
+431:229 — 03 Evidence + Editorial Contract Input
+```
+
+Invoke the Best-of-Three procedure. Require three materially distinct universal directions and preserve all three.
+
+### A2 — Champion development
+
+Continue only after the human direction decision. Build the universal champion before generating complete routes.
+
+### B/C — Route adoption
+
+Duplicate the approved Environment A champion into:
+
+- Environment B — Commerce Adoption
+- Environment C — OpenLab Evidence Adoption
+
+Neither downstream environment may fork foundations.
+
+## Withdrawn Recommendation
+
+The earlier recommendation to attach source frames `429:172` through `429:194` together is withdrawn.
+
+Reason:
+
+- source clones contain stale product and price literals;
+- multiple specimens are clipped or geometrically broken;
+- the board mixes authority, weakness evidence, diagnostic frames, and route-specific history;
+- the attachment payload is too broad for the first Make pass;
+- several annotations were semantically incorrect.
+
+## MCP Review Findings Corrected
+
+### Product card semantics
+
+Canonical order:
+
+1. `ProductIdentityStack` — index, series/category, product name, alias
+2. `ProductMediaChamber`
+3. `ProductMetricRail`
+4. `PriceDisplay`
+5. `ProductCardAction`
+6. `ProductSpecificationRail` — Featured only
+
+`ProductIdentityStack` does **not** contain strength, quantity, purity, price, or action.
+
+Deprecated:
+
+- `EyebrowBadge`
+- `ClassificationFooter`
+- universal eight-slot spine
+- separate purity link inside the price row
+
+### Quantity semantics
+
+- Customer metric and physical package quantity are separate semantics.
+- MK-2866 customer display: `90 SERVINGS`.
+- Package or selector copy may state `90 capsules`.
+- Never output `90 CAPS SERVINGS`.
+- Do not force both units into every card.
+
+### Runtime-owned literals
+
+Make must not copy visual-reference literals including:
+
+- MK-2866 `£48` or `£43`
+- MK-677 `10MG`
+- RAD-140 `10MG`
+- product stock or purchasability values not supplied by the active fixture
+
+Price, stock, and purchasability remain runtime-owned.
+
+### Header authority
+
+- Full shell: `TrustRail → PremiumNavBar → UserRail`
+- Collapsed sticky state: `88px`
+- Primary navigation: `SHOP / OPENLAB / LEARN`
+- `398:64257` is a category-card specimen, not UserRail authority.
+
+### Cobalt law
+
+Pure `#0057FF` may own:
+
+- decisive primary actions;
+- active/selected navigation;
+- section eyebrows and indexes;
+- links;
+- analytical traces;
+- small proof markers;
+- focus/selection architecture;
+- single-pixel transition rules.
+
+Large saturated decorative blue fields remain prohibited.
+
+### Surface law
+
+- White porcelain canvas
+- Low-opacity cobalt atmospheric fields
+- Shared ruled surfaces
+- Opaque overlap islands
+- Dense source-safe evidence fields
+- Zero UI box-shadow
+
+### Evidence law
+
+- Use `NarrativeRail + OperationalPanel`.
+- Do not invent charts, PASS/FAIL, laboratory values, methods, batches, or purity.
+- Pending source PDF is not a failed report.
+- Current deterministic portal fixture: `15` records, `5` first-paint rows, `Show 10 more`, `99.5%` SARMs average purity, `0` failures.
+
+## Original Source Archive
+
+The source archive at `429:171` remains useful for targeted deep reference:
+
+| Source frame | Node ID | Use |
+|---|---|---|
+| Authority + Product Truth | `429:172` | Historic rule source; superseded by launch contracts where corrected |
+| Header | `429:174` | Historic clone; use launch shell instead |
+| Surface Ledger | `429:176` | Historic specimen; use launch Surface Ledger instead |
+| Hero | `429:178` | Deep visual reference only |
+| Category | `429:180` | Deep visual reference only |
+| Product Cards | `429:182` | Weakness evidence only |
+| PurchasePanel | `429:184` | Weakness and anatomy evidence only |
+| Assurance + Dossier | `429:186` | Weakness evidence only |
+| EvidenceDistrict | `429:188` | Strong geometry reference; data is not authority |
+| OpenLab / Compare | `429:190` | Mixed deep reference, not one Make input |
+| Editorial / Records | `429:192` | Mixed deep reference |
+| Email + Footer | `429:194` | Deep visual reference only |
+| Weaknesses | `429:196` | Superseded by launch page and V2-FINAL guidelines |
+| Old handoff ledger | `429:198` | Superseded by this receipt and launch page `431:2` |
+
+## Cross-File References
+
+Use only when the active Make continuation needs them:
+
+| File | Node | Purpose |
+|---|---|---|
+| `nMdvVtpTC3r2JQrhyjQ7yW` | `1546:78122` | Product context/slot source; ignore fixed sizes and normalize names |
+| `nMdvVtpTC3r2JQrhyjQ7yW` | `780:847` | Metric-cell micro-reference |
+| `nMdvVtpTC3r2JQrhyjQ7yW` | `1178:14689` | Full light HeaderNavStack authority |
+| `nMdvVtpTC3r2JQrhyjQ7yW` | `682:3187` | TrustEvidenceSpine authority |
+
+## Publication and Kit Status
 
 | Item | Status |
 |---|---|
-| Local components | Not published (source-board only, per instruction) |
-| Variables bound | No — source specimens are clones, not variable-bound instances |
-| Styles applied | Inherited from source clones |
-| Champion published | NO — per instruction, no champion published in this task |
+| Launch source frames | Ready |
+| Source archive | Retained as deep reference |
+| Champion | Not yet selected or published |
+| Environment A | Ready to start |
+| Foundation Make Kit | Must be selected/confirmed in Make |
+| Commerce + Evidence Make Kit | Used after A0/plan review |
+| Cross-file product renders | Use governed assets or kit; not a blocker for A0 audit |
+| Human direction receipt | Pending |
 
----
+## First Make Prompt
 
-## Source Nodes Used
+```text
+Use the attached OLUK R6 V2-FINAL launch frames and the active project guidelines as authority.
 
-### From `yNAyIQhewnbofeZWMGkKVa` (primary file)
+Do not design yet. First run the R6 surface audit and create plan.md. Identify the five most consequential weaknesses in hierarchy, page rhythm, media authority, cobalt discipline, evidence transition, and responsive plausibility.
 
-| Source Node | Name | Used In Frame |
-|---|---|---|
-| `413:64913` | 01 / Global Header | 01 |
-| `413:64929` | view / front (selection state) | 02 |
-| `413:65374` | 02_FULL_FIELD_MEDIA_AND_PURCHASE | 03 |
-| `398:64473` | Section (Shop by category) | 04 |
-| `414:69946` | ProductCardV2 (best eyebrow) | 05 |
-| `414:79225` | ChampionProductCard (needs work) | 05 |
-| `414:74431` | Container (product card) | 05 |
-| `414:73808` | PurchaseRail | 06 |
-| `414:70699` | Container (purchase variant) | 06 |
-| `413:64954` | 04 / Consolidated Assurance | 07 |
-| `413:64977` | 05 / Compound Dossier | 07 |
-| `390:61595` | EvidenceDistrict | 08 |
-| `414:70300` | EvidenceDistrictV2 | 08 |
-| `413:64993` | 06 / OpenLab Evidence Snapshot | 09 |
-| `413:65025` | 08 / Compare + Decision Tools | 09 |
-| `413:65102` | 10 / Customer Reviews | 10 |
-| `398:63851` | Section (PDP) | 10 |
-| `390:62221` | Container (split-layout) | 10 (exploration-only) |
-| `414:74786` | Container (email drop) | 11 |
-| `413:65108` | 11 / Global Footer | 11 |
+The system is light only: 1440 viewport, 1171 content maximum, white porcelain canvas, low-opacity cobalt fields, ruled shared surfaces, NarrativeRail + OperationalPanel, zero UI box-shadow, deterministic fixtures, and no invented product or evidence facts.
 
-### From `nMdvVtpTC3r2JQrhyjQ7yW` (cross-file — NOT cloned, reference only)
+After plan.md is reviewed, I will attach the Commerce and Evidence contract frames. Then produce three materially distinct universal directions. Do not blend them. Preserve all three and recommend one provisional champion.
 
-| Source Node | Purpose |
-|---|---|
-| `780:847` | Card composition reference |
-| `1546:78122` | Studio thumbnail renders (ignore fixed sizes) |
-
----
-
-## Reclassifications Applied
-
-| Node | Was | Now |
-|---|---|---|
-| `390:62221` | Unclassified | Exploration-only (not production source) |
-| `398:64257` | UserRail | Category card specimen |
-
----
-
-## Required Visual Corrections (Noted, Not Executed)
-
-These are documented in Frame 07 and Frame 12 as instructions for the Make run:
-
-1. **Assurance → Shared Rail:** Convert 4 floating cards into a single horizontal ruled rail specimen
-2. **Dossier Metrics → Ruled Rail:** Convert separate metric blocks into shared ruled-rail with fixed-width cells
-3. **Product Card Slot Names:** Canonical names shown in Frame 00 (ProductIdentityStack, ProductMediaChamber, ProductMetricRail, PriceDisplay, ProductCardAction, ProductSpecificationRail)
-4. **SERVINGS vs CAPSULES:** Distinct semantics documented in Frame 00
-5. **Zero-Shadow Light Surface:** Rules documented in Frame 00 and Frame 02
-6. **Full Header + Collapsed State:** Both shown in Frame 01 (88px both states)
-
----
-
-## Missing Assets
-
-| Asset | Status | Resolution |
-|---|---|---|
-| Studio product renders (bottle PNGs) | Present as placeholders in source clones | Use `nMdvVtpTC3r2JQrhyjQ7yW:1546-78122` for reference sizing |
-| Cobalt brand mark / logo | Present in header clone | No action needed |
-| Category family thumbnails | Placeholder in category section | Requires real product photography |
-
----
-
-## Unresolved Conflicts
-
-| Conflict | Notes |
-|---|---|
-| ProductCardV2 vs ChampionProductCard | Both present in Frame 05. V2 has best eyebrow, Champion has best overall slot order but wrong proportions. Make must merge. |
-| Assurance rail shape | Not yet designed — annotated as correction requirement |
-| Dossier ruled rail shape | Not yet designed — annotated as correction requirement |
-| Cross-file card reference | Cannot clone from `nMdvVtpTC3r2JQrhyjQ7yW` into this file via this task. Reference-only. |
-
----
-
-## Frames Ready for Make Attachment
-
-All 14 frames on page `429:171` are ready for Make attachment:
-
-```
-429:172  — 00 Authority + Product Truth
-429:174  — 01 Full + Collapsed Header
-429:176  — 02 Surface Ledger + Cobalt Law
-429:178  — 03 Hero Split + Atmospheric Field
-429:180  — 04 CategoryFamilyRail
-429:182  — 05 Product Card Context Contract
-429:184  — 06 PurchasePanel Rail
-429:186  — 07 Assurance + Dossier Ruled Fields
-429:188  — 08 EvidenceDistrict
-429:190  — 09 OpenLab Records
-429:192  — 10 Compare + Editorial Patterns
-429:194  — 11 Email + Footer
-429:196  — 12 Known Weaknesses / Rejected Patterns
-429:198  — 13 Make Handoff Ledger
+Return plan.md and stop.
 ```
 
-**Recommended Make attachment strategy:** Attach frames 00-11 as source context. Frame 12 as constraints. Frame 13 as the handoff index. The Make session should reference all frames but only generate new design output — never mutate the source board.
+## Final Status
 
----
+`READY_FOR_MAKE_A0`
 
-## Constraints Carried Forward
-
-- Do not publish a champion in this task ✓
-- Do not create new product claims ✓
-- Do not alter runtime architecture ✓
-- Light mode only ✓
-- No customer-visible runtime/debug labels ✓
-- 390:62221 marked exploration-only ✓
-- 398:64257 reclassified as category card ✓
+Start with launch frames `431:3` and `431:35`. Do not wait for further source-board documentation.
