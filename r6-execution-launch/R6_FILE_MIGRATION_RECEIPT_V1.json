@@ -1,0 +1,175 @@
+{
+  "receipt": "R6_FILE_MIGRATION_RECEIPT_V1",
+  "generatedAt": "2026-07-27",
+  "status": "READY_FOR_MAKE",
+  "sourceIntegrity": {
+    "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+    "status": "UNTOUCHED",
+    "allSourcePagesExist": true,
+    "sourceChildCountsUnchanged": true
+  },
+  "files": [
+    {
+      "role": "Routes",
+      "fileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "status": "POPULATED"
+    },
+    {
+      "role": "Lab",
+      "fileKey": "scM4viMDHV6Jv6Fxccm71g",
+      "status": "POPULATED"
+    },
+    {
+      "role": "Production",
+      "fileKey": "DKOde9DRfyVCHThSNkUIX4",
+      "status": "EMPTY_SHELL_DO_NOT_PUBLISH"
+    },
+    {
+      "role": "Proofs",
+      "fileKey": "yNAyIQhewnbofeZWMGkKVa",
+      "status": "EMPTY_SHELL_DEFERRED"
+    },
+    {
+      "role": "Archive",
+      "fileKey": "HkUKcAFCy5Op9b2lq3F5Cf",
+      "status": "EMPTY_SHELL_DEFERRED"
+    }
+  ],
+  "pages": [
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "1:9",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "0:1",
+      "destinationChildCount": 3,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "753:812",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "2:9",
+      "destinationChildCount": 2,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "702:15540",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "2:12",
+      "destinationChildCount": 4,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "702:21328",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "2:14",
+      "destinationChildCount": 9,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "712:1311",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "2:15",
+      "destinationChildCount": 3,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "33:2",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "2:16",
+      "destinationChildCount": 5,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "33:3",
+      "destinationFileKey": "eqraGRq4VoEdAIi0llMaN7",
+      "destinationPageId": "2:17",
+      "destinationChildCount": 3,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "702:15786",
+      "destinationFileKey": "scM4viMDHV6Jv6Fxccm71g",
+      "destinationPageId": "0:1",
+      "destinationChildCount": 27,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "881:812",
+      "destinationFileKey": "scM4viMDHV6Jv6Fxccm71g",
+      "destinationPageId": "2:4",
+      "destinationChildCount": 10,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "881:29377",
+      "destinationFileKey": "scM4viMDHV6Jv6Fxccm71g",
+      "destinationPageId": "2:6",
+      "destinationChildCount": 2,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    },
+    {
+      "sourceFileKey": "nMdvVtpTC3r2JQrhyjQ7yW",
+      "sourcePageId": "1420:812",
+      "destinationFileKey": "scM4viMDHV6Jv6Fxccm71g",
+      "destinationPageId": "2:14",
+      "destinationChildCount": 12,
+      "bindingsResolved": true,
+      "instancesIntact": true,
+      "detachedInstances": 0,
+      "status": "COPIED_VERIFIED"
+    }
+  ],
+  "migrationTotals": {
+    "instances": 2422,
+    "detachedInstances": 0,
+    "boundVariables": 22863
+  },
+  "libraryConsumption": {
+    "labCanConsumeSource": true,
+    "sourceRemainsPublished": true
+  },
+  "approvedActionTerminology": {
+    "primaryCTA": "Shop the Catalogue",
+    "commerceAction": "Add to Cart"
+  },
+  "trueBlockers": []
+}

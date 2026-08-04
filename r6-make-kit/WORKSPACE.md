@@ -1,69 +1,52 @@
 # Olympus R6 Design Workspace
 
-Executable workspace for Figma Agent and Figma Make.
-Not documents. Not packets. An executable context that powers design exploration.
+**Status: READY FOR G0 FIGMA MAKE.**
 
-## Structure
+The Runtime Atlas is complete: 36 registered Runtime Studio entries, 216 editable native frames and 216 locked pixel references at 1440/1024/390 in Light/Dark.
 
-```
-r6-make-kit/
-├── WORKSPACE.md              ← you are here
-├── guidelines/
-│   ├── 00-authority.md       Token binding, typography, spacing, surfaces
-│   ├── 01-product-contexts.md Slot contracts, cobalt rules, deprecated patterns
-│   └── 02-prohibited.md     Visual language, data integrity, system boundaries
-├── fixtures/
-│   └── mk-2866.json          Primary governed product fixture
-├── prompts/
-│   ├── 01-component-evolution.md    Evolve one component
-│   ├── 02-section-evolution.md      Evolve one insertion zone
-│   ├── 03-responsive-projection.md  Desktop → Tablet → Mobile
-│   └── 04-theme-validation.md       Light/Dark parity check
-└── parent-templates/
-    ├── homepage.md            Locked layout with insertion zones
-    ├── pdp.md                 PDP module map
-    ├── openlab.md             OpenLab storytelling layout
-    └── checkout.md            Checkout (security constraints)
-```
+The prior Homepage-first Make sequence is superseded. Start with cross-route Universal Glue, then close OpenLab Portal and Homepage before the remaining route families.
 
-## 6 Sources of Context for Make
+## Start here
 
-1. **Published R6 Library** — variables, styles, components, assets (visual authority)
-2. **Runtime Parent Templates** — locked layouts with LOCKED/EDITABLE/REPLACEABLE zones
-3. **Runtime Studio Snapshots** — current implementation reference (read-only)
-4. **ReviewOS Findings** — approved problems to solve
-5. **Governed Fixtures** — MK-2866 (primary), RAD-140 (stress), MK-677, MENT
-6. **Prompt Library** — official templates only, no ad hoc prompts
+1. [R6_RUN_NOW.md](./R6_RUN_NOW.md) — complete operator instructions.
+2. [R6_FIGMA_MAKE_EXECUTION_RUNBOOK_V4.md](./R6_FIGMA_MAKE_EXECUTION_RUNBOOK_V4.md) — prompts, waves, route priorities and closure loop.
+3. [R6_CONTENT_NARRATIVE_SIDECAR_V1.md](./R6_CONTENT_NARRATIVE_SIDECAR_V1.md) — copy lane running one wave ahead of design.
 
-## Lane Separation
+## Live Figma inputs
 
-- **Figma Agent** = design reviewer and systems architect (art director)
-- **Figma Make** = visual exploration and generation (visual designer)
-- **ReviewOS** = review and approval authority
-- **Codex** = implementation authority
-- **Runtime Studio** = rendering and verification authority
+- [Runtime Atlas Index](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=8-11)
+- [Observed Brand & Design Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=282-2)
+- [Content & Narrative Baseline V1](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=275-3)
+- [Figma Make Execution V4](https://www.figma.com/design/yNAyIQhewnbofeZWMGkKVa/OLUK-R6-Codex-Runtime-Proofs?node-id=276-3)
 
-## Pipeline
+The observed Baseline is current-state evidence, not an accepted visual direction.
 
-```
-Figma Agent → Design Brief → Figma Make → Candidates → Champion
-→ Runtime Studio → ReviewOS → Codex → Runtime Studio
+## Active sequence
+
+```text
+G0 Universal material/type/section grammar
+→ G1 shell/route identity + G2 commerce/evidence + G3 forms/data/status
+→ G4 shared-system assembly
+→ O0/O1 OpenLab Portal
+→ Homepage
+→ PDP
+→ Catalogue/Search
+→ remaining OpenLab
+→ Checkout
+→ Account/Post-purchase
+→ post-launch route templates
 ```
 
-## Sprint Plan
+## Closure loop
 
-1. Product Surface Laboratory (highest ROI)
-2. Semantic Surface Laboratory
-3. Mobile Projection Laboratory
-4. OpenLab Storytelling
-5. Checkout Polish
+```text
+Figma Make A/B/C
+→ Figma Agent recommendation
+→ Human selection/promotion
+→ Codex exact implementation
+→ Runtime Studio six-cell proof
+→ ReviewOS Accept/Revise/Reject
+→ refresh Atlas and Baseline
+```
 
-## Code Connect
-
-Optional — requires Organization/Enterprise seat.
-The workspace operates without it. Runtime mappings in parent templates serve the same purpose.
-
-## Figma File
-
-Key: `nMdvVtpTC3r2JQrhyjQ7yW`
-Page: [SUPPLEMENTAL] R6 V02 / HOMEPAGE HERO / RANGE HORIZON V01
+Figma Make does not invent product/evidence data or production routes. Codex does not design in code. ReviewOS does not mutate source.
