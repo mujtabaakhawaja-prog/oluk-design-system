@@ -2,7 +2,7 @@
 
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=3-4)
 **Current gate:** Native Light source locked; `MF-01 ProductCommerceCard Creative Frontier` active
-**Last updated:** 2026-08-03
+**Last updated:** 2026-08-04
 
 ## Start here
 
@@ -15,15 +15,15 @@
 | [`make-sessions/session-01-product-card/RUN.md`](make-sessions/session-01-product-card/RUN.md) | Exact first-run click path and review sequence |
 | [`make-sessions/session-01-product-card/PROMPT.md`](make-sessions/session-01-product-card/PROMPT.md) | Paste-ready MF-01 creative-frontier prompt |
 | [`make-sessions/session-01-product-card/MANIFEST.md`](make-sessions/session-01-product-card/MANIFEST.md) | Exact three-file opening attachment manifest |
+| [`make-sessions/shared-kit/README.md`](make-sessions/shared-kit/README.md) | Shared Figma Make export library and usage boundaries |
 
 ## Active asset sets
 
 - [`make-sessions/session-01-product-card/assets/`](make-sessions/session-01-product-card/assets/) — the only three files attached to MF-01.
+- [`make-sessions/shared-kit/`](make-sessions/shared-kit/) — organized brand, homepage and evidence exports for later runs; these are not authorized MF-01 attachments.
 - [`assets/product/mk-2866/render-alpha/`](assets/product/mk-2866/render-alpha/) — governed transparent render sizes for later native/Make refinement.
 - [`assets/brand/logo/reference/`](assets/brand/logo/reference/) — supplied logo/mark references pending final master-lockup registration.
 
-## Historical material
+## Repository hygiene
 
-Root-level R6 plans, registries, `r6-make-kit/`, `r6-execution-launch/`, old bridge packets and earlier Session 01 source assessments remain searchable history. They do not control MF-01 and may contain superseded dark-first, zero-shadow, white-canvas, `90 CAPS`, stale typography or runtime assumptions.
-
-Do not delete history merely to make the repository look clean. The current entrypoints above prevent it from re-entering as authority.
+Superseded root plans, legacy round-named Make kits, execution launch packets, receipts and closeout artifacts were removed on 2026-08-04. Their Git history remains recoverable. Exact historical Figma file/page names may still contain legacy round labels where changing the text would break source provenance; those labels are evidence references, not active workspace vocabulary.
