@@ -38,10 +38,13 @@ Upstream COMPONENT_SET masters with variants → live PDP consumes as INSTANCE. 
 
 ### Product Commerce Card Contract
 Standard card structure for all product panels:
-1. **Blue-Eyebrow (252:5783)** at top edge — cobalt accent, replaces legacy strokeTopWeight
-2. **ProductMetricRail (248:4105)** — product truth chips (15 MG / 90 SERVINGS / >99%)
-3. **ProductSpecificationRail (259:3914)** — category chips (SARM / CAPSULES / LAB FORMULATED / 3RD-PARTY)
-All panels displaying product truth MUST use this contract. Chip contract: cobalt #0057FF 1.5px stroke, white fill, 8px radius.
+1. **ProductMetricRail (248:4105)** — quantified product truth (15 MG / 90 SERVINGS / >99%)
+2. **ProductSpecificationRail (259:3914)** — classified product information (SARM / CAPSULES / LAB FORMULATED / 3RD-PARTY) when the context requires it
+3. **Context-specific chamber/content connection** — embedded divider for vertical cards, authored seam for horizontal cards, and a raised white purchase panel in compact cards
+
+**Blue-Eyebrow normalization:** Blue-Eyebrow `252:5783` remains valid for authorized non-hero sections and continuous multi-cell rails. It is superseded as a ProductCommerceCard requirement and is prohibited as card-level decoration by the newer MF-01 Constitution. It is also prohibited on PDP Section 1.
+
+Panels displaying product truth preserve the ProductMetricRail's quantified-truth job and keep specifications and qualitative attributes semantically distinct. The current NR-04 file demonstrates tighter metric cells and slightly looser specification/qualitative rails; exact radii and strokes remain observed candidates rather than promoted tokens. See `surface-contract.md`.
 
 ### Visual Authority Boards (236:1568)
 - VA-00: Native Visual Authority Index (236:1569)
@@ -71,8 +74,11 @@ All panels displaying product truth MUST use this contract. Chip contract: cobal
 - MENT dark-object asset remains a later System Gate blocker
 
 ### Two Chip Contracts (frozen at NR-04)
-- **Cobalt metric chip:** #0057FF 1.5px stroke, 8px radius, white 2% fill — for ProductMetricRail quantified truth
-- **Colorless qualitative chip:** #D9DEE8 1px stroke, 8px radius, white fill — for SidebarPurchaseOptions attributes
+- **Cobalt metric chip:** current NR-04 expression uses #0057FF 1.5px stroke and approximately 8px radius for ProductMetricRail quantified truth
+- **Colorless qualitative chip:** current NR-04 expression uses #D9DEE8 1px stroke and approximately 10px radius for qualitative attributes
+- **Specification rail:** current NR-04 expression uses #0057FF 1px stroke and approximately 10px radius for joined classified information
+
+The semantic distinction is frozen at NR-04; the exact geometry is not. MF-01 may explore adaptive chip and rail shape within the hierarchy `metric > specification > qualitative > structural`. Exact values remain foundation candidates.
 
 ### SidebarPurchaseOptions (286:4015)
 - COMPONENT_SET with Viewport=Sidebar (564×758) and Viewport=Compact (390×889)
