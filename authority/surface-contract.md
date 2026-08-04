@@ -1,8 +1,8 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
-**Status:** Candidate authority for human review
-**Evidence state:** Extracted from frozen NR-04 native compositions and the G0 Universal Glue reference
-**Applies to:** Light-mode Make exploration beginning with MF-01
+**Status:** Accepted relationship authority for MF-01A/MF-01B
+**Evidence state:** Extracted from frozen NR-04 native compositions, later live-node verification, and the G0 Universal Glue reference
+**Applies to:** Light-mode Make exploration beginning with MF-01A
 **Does not authorize:** Foundation promotion, token publication, native Figma mutation, runtime implementation, or production release
 
 ## Purpose
@@ -11,7 +11,7 @@ This contract names the surfaces in the Olympus Labs UK light-mode system, expla
 
 It locks relationships, not final pixel values. The exact colors, radii, spacing, strokes and shadows observed in NR-04 are evidence that the relationships can work; they remain candidates until foundation extraction, system validation and human promotion.
 
-MF-01 may produce alternative expressions when they preserve the hierarchy and semantic jobs below. Make is expected to improve silhouette, spacing rhythm, elevation character, chamber proportion and chip geometry rather than trace the current native values.
+MF-01A and MF-01B may produce alternative expressions when they preserve the hierarchy and semantic jobs below. Make is expected to improve silhouette, spacing rhythm, elevation character, chamber proportion and chip geometry rather than trace the current native values.
 
 ## I. Canvas roles
 
@@ -51,13 +51,20 @@ Rules:
 
 ### 4. Embedded divider — when the relationship must remain joined
 
-Canvas is not the correct divider when content belongs to one continuous semantic object. In that case, keep the composition joined and use an internal seam, hairline, transparent embedded divider or controlled material transition. PDP Section 3 and the MF-01 ProductCommerceCard relationships demonstrate this pattern.
+Canvas is not the correct divider when content belongs to one continuous semantic object. In that case, keep the composition joined and use an internal seam, hairline, transparent embedded divider or controlled material transition. PDP Section 3 and the MF-01A ProductCommerceCard relationships demonstrate this pattern.
 
 Rules:
 
 - Use embedded dividers for tightly related chamber/content, evidence/detail or multi-cell rail relationships.
 - Do not expose page canvas inside one ProductCommerceCard between its media chamber and purchase content.
 - A divider should clarify a change of job without making the joined object look like unrelated cards.
+
+### Separation decision test
+
+1. If two regions are one semantic object, use an embedded divider or authored seam.
+2. If they are independent peer jobs, expose controlled canvas between their raised planes.
+3. If the composition is the PDP first-fold exception, keep the atmospheric field flat and raise only the decision plane.
+4. If a gap adds no reading, containment or hierarchy benefit, remove it.
 
 ### 5. Canvas anti-patterns
 
@@ -82,17 +89,7 @@ Do not use wide pale bands merely to alternate section colors. Canvas must retai
 
 ## II. Surface hierarchy
 
-### Layer 0 — Environmental page ground
-
-The lowest atmospheric field. It may be visible at true page edges and behind the section system, but customer content does not sit on it accidentally.
-
-Relationship:
-
-- cooler and optically lower than section canvas;
-- supports the total page environment rather than individual modules;
-- does not become a decorative band.
-
-### Layer 1 — Section canvas
+### Lowest customer-facing surface — Route and section canvas
 
 The default light-mode content ground and the primary source of margins, reading lanes and controlled inter-module separation.
 
@@ -102,6 +99,8 @@ Relationship:
 - visually continuous enough to establish page rhythm;
 - not elevated;
 - never allowed to become passive deadspacing.
+
+The Figma editor/page surround is workspace chrome, not an additional customer-facing surface layer. It must never be promoted into the interface palette merely because it appears behind frames in the authoring file.
 
 ### Layer 2 — Raised information and commerce planes
 
@@ -141,6 +140,18 @@ Relationship:
 - uses atmosphere and product imagery to create depth;
 - has no Blue-Eyebrow, cobalt top edge or four-sided card border;
 - does not authorize full-field backgrounds elsewhere.
+
+### Authored entry composition — Homepage hero
+
+The homepage hero is a distinct page-entry composition, not another ProductCommerceCard and not a mechanical copy of the PDP first fold.
+
+Relationship:
+
+- uses an authored silhouette and media/copy relationship appropriate to page entry;
+- may integrate a featured commerce object without wrapping the entire hero in a universal card shell;
+- keeps the surrounding canvas legible as page structure;
+- does not inherit the PDP full-field exception automatically;
+- must preserve the same surface hierarchy when it transfers selected MF-01A relationships in MF-01B.
 
 ### Structural terminal surface — Footer
 
@@ -198,7 +209,7 @@ Rules:
 - Joined rails should read as one authored object with internal divisions, not a collection of unrelated pills.
 - Card and chamber silhouettes may be asymmetric or context-specific when the family relationship remains legible.
 - Larger surfaces may carry broader curvature and more gradual transitions.
-- MF-01 may explore chip, rail, chamber and plane geometry within these relationships.
+- MF-01A may explore chip, rail, chamber and plane geometry within these relationships.
 - Exact radii are candidate foundation values and must not be promoted by this document.
 
 ## V. Spacing and information density
@@ -214,15 +225,15 @@ Rules:
 - Use distinct section and card shapes to carry rhythm before adding more canvas.
 - Maintain the minimum customer-readable copy requirements defined by the active Make Constitution.
 
-MF-01 may explore spacing ratios. It does not publish spacing tokens.
+MF-01A may explore spacing ratios. It does not publish spacing tokens.
 
-## VI. MF-01 application boundary
+## VI. MF-01A/MF-01B application boundary
 
-ProductCommerceCard is the first bounded laboratory for this contract. It tests canvas, bounded chamber, raised purchase plane, embedded divider, seam, elevation, spacing, metrics, qualitative geometry and actions inside one adaptive family.
+ProductCommerceCard is the first bounded laboratory for this contract. MF-01A tests canvas, bounded chamber, raised purchase plane, embedded divider, seam, elevation, spacing, metrics, qualitative geometry and actions inside one adaptive family.
 
-MF-01 locks no final surface recipe. It produces three architectural hypotheses and a human relationship selection.
+MF-01A locks no final surface recipe. It produces three architectural hypotheses and a human relationship selection. MF-01B then tests whether the selected relationships transfer into homepage entry, PDP first fold, embedded evidence and true canvas-split evidence/rail fragments before a champion is formalized.
 
-MF-01 must preserve:
+MF-01A must preserve:
 
 - canvas as active margin and separation around independent cards;
 - no canvas gap inside one card between chamber and purchase content;
@@ -232,7 +243,7 @@ MF-01 must preserve:
 - no Blue-Eyebrow or cobalt perimeter on ProductCommerceCard;
 - no deadspacing, cream, broad inverse, blanket grey or technical-OS decoration.
 
-MF-01 may explore:
+MF-01A may explore:
 
 - surface values within the cool light-mode hierarchy;
 - card, chamber, rail and chip geometry;
@@ -242,7 +253,7 @@ MF-01 may explore:
 - product grounding and scale;
 - context-specific silhouettes and action placement.
 
-The homepage hero, PDP Section 1 and evidence compositions later test whether the selected relationships transfer beyond cards. They do not expand the sealed MF-01 visual manifest.
+The homepage hero, PDP Section 1 and evidence fragments test transfer in MF-01B. They do not expand the sealed MF-01A visual manifest.
 
 ## Appendix A — NR-04 observed reference values
 
@@ -250,7 +261,6 @@ The following values are verified observations of the frozen NR-04 native author
 
 | Observed job | Current expression | Evidence |
 |---|---|---|
-| Environmental page background | `#EDF0F5` | PDP route `126:4` page-level ground |
 | Section canvas | `#F7F8FC` | PDP route and section frames |
 | G0 canvas variant | `#F5F8FD` | G0 Universal Glue reference |
 | Footer surface | `#FCFCFE` with a light structural top edge | Footer `126:350` |
@@ -263,6 +273,8 @@ The following values are verified observations of the frozen NR-04 native author
 | Standard section inset | currently 48 px on the referenced desktop PDP | PDP sections under `126:4` |
 | Embedded-divider inset | currently wider at 150 px in the referenced composition | Lab Verification section under `126:4` |
 
+`#EDF0F5` is the Figma editor/page surround observed behind the customer-facing frames. It is authoring chrome, not a route surface, candidate token or Make color instruction.
+
 The current raised-plane shadow observed on PurchaseRail is approximately `rgba(15,26,51,0.12)`, 32 px blur and 12 px vertical offset. It is evidence of restrained cool elevation, not a binding recipe.
 
 ## Appendix B — Negative and positive evidence
@@ -270,16 +282,18 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 ### Positive
 
 - G0 Universal Glue: canvas as margin, varied section silhouettes, dense readable content and cards that create their own elevation.
-- PDP Section 4: canvas as a relational divider around horizontally flowing content.
-- PDP Section 3: embedded dividers inside one continuous evidence composition.
-- MF-01 PNGs: bounded chambers, raised purchase content, quantified metrics and context-specific seams without Blue-Eyebrow.
+- PDP Section 4: macro evidence for an editorial intro beside a raised horizontal rail. Its repeated local cobalt hairlines and cobalt perimeters are defects, not authority; only one continuous relational top accent may survive where justified.
+- PDP Section 3: directional evidence for embedded dividers inside one continuous evidence composition. Its nested white/elevation wrappers are not final authority.
+- LabReports `222:1332`: the cleaner current example of independent raised planes separated by actual canvas.
+- MF-01A PNGs: bounded chambers, raised purchase content, quantified metrics and context-specific seams without Blue-Eyebrow.
 
 ### Negative
 
 - Current Product Dossier spacing: canvas-like space becomes a passive corridor between the headline stack and the introduced content.
+- Lab Verification Canvas Split `188:926`: the white outer wrapper prevents its internal gap from reading as true page canvas; retain the intended split relationship, not the current wrapper.
 - White wrappers around already raised white cards: duplicate the surface job and misrepresent the canvas relationship.
 - Full-width pale bands outside the PDP first-fold exception: turn structural canvas into decoration.
 
 ## Review and promotion
 
-This draft becomes controlling authority only after human review. Acceptance locks the relationship model, not the appendix values. Exact surface, spacing, radius, stroke and elevation values remain Phase 05 candidates and require later system validation and promotion.
+This document controls the relationship model for the current Make frontier. It does not promote the appendix values. Exact surface, spacing, radius, stroke and elevation values remain Phase 05 candidates and require later system validation and human promotion.

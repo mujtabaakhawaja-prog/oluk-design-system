@@ -10,4 +10,4 @@
 
 All five files preserve transparency. Product truth visible in the render remains governed by the asset itself. Do not redraw or regenerate the label.
 
-**MF-01 status:** repository-only; do not attach separately.
+**MF-01A status:** repository-only; do not attach separately.

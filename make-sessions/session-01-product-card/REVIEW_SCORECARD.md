@@ -1,4 +1,4 @@
-# MF-01 Review Scorecard
+# MF-01A Review Scorecard
 
 Score each direction `0`, `1`, or `2`.
 
@@ -15,4 +15,4 @@ Score each direction `0`, `1`, or `2`.
 
 Minimum survival score: `13/16`, with no rejection-gate failure.
 
-The winner is selected by relationships, not by total-image preference alone.
+Relationships are selected for MF-01B transfer, not promoted as a winner by total-image preference alone.

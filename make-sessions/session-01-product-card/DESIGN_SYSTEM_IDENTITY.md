@@ -1,6 +1,6 @@
-# MF-01 Native Light Directional Baseline
+# MF-01A Native Light Directional Baseline
 
-This file summarizes the identity relationships MF-01 may creatively enhance. It is not a token sheet or a limit on Make's visual frontier.
+This file summarizes the identity relationships MF-01A may creatively enhance. It is not a token sheet or a limit on Make's visual frontier.
 
 ## Identity thesis
 
@@ -30,7 +30,7 @@ A cool luminous environment carrying cobalt product objects, calm raised white c
 - Plus Jakarta Sans: display/editorial.
 - Inter: commerce/UI.
 
-These are directional references. Candidate variables remain unpublished, and MF-01 does not promote tokens.
+These are directional references. Candidate variables remain unpublished, and MF-01A does not promote tokens.
 
 ## Rejected inheritance
 

@@ -20,7 +20,7 @@ This directory is the neutral shared workspace for visual exports that may suppo
 ## Usage rules
 
 - These files are review references and Make inputs, not runtime assets or production authority.
-- They do not alter the sealed MF-01 rule: attach exactly the three files listed in `../session-01-product-card/MANIFEST.md` and nothing from this shared kit.
+- They do not alter the sealed MF-01A rule: attach exactly the three files listed in `../session-01-product-card/MANIFEST.md` and nothing from this shared kit.
 - Select only the smallest relevant subset for a later run. Do not attach an entire responsive family or both 1x and 2x versions unless the run explicitly requires them.
 - Prefer `@2x` exports for detailed review and the 1x export for lightweight orientation.
 - A/B files are preserved as supplied even where pixels are identical or nearly identical; filenames record the owner-provided design lineage.
@@ -29,6 +29,7 @@ This directory is the neutral shared workspace for visual exports that may suppo
 
 ## Suggested later-run routing
 
+- `MF-01B Cross-Context Surface Relationship Frontier`: use only the explicitly curated G0/homepage/PDP/evidence exports named in its intake after MF-01A selection; do not attach this whole shared kit.
 - `MF-03 Homepage composition`: `homepage/hero/`, then one selected family from `homepage/narrative/`.
 - `MF-05 Dossier and evidence transition`: selected `evidence/assurance-rails/` references.
 - `MF-06 OpenLab and LabReports`: one selected responsive family from `evidence/trust-compositions/`.
