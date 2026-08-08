@@ -23,7 +23,7 @@ Did Run 3 achieve section-level differentiation? **YES** — major improvement o
 | Composition | Dir A | Dir B | Dir C | Different? |
 |---|---|---|---|---|
 | Hero | Locked 2-fold card | Locked 2-fold card | Locked 2-fold card | LOCKED (intentional) |
-| Grid | Equal-density 4-across | Mixed-density Featured+Compact | Alternative 2x2+sidebar |✅ |
+| Grid | Equal-density 4-across | Mixed-density Featured+Compact | Alternative 2x2+sidebar | ✅ |
 | PDP S1 | 60/40 full-field | 55/45 | 50/50 | ✅ |
 | Dossier | Three-column (wider cards) | Two-panel (compact header) | Full-width stacked | ✅ |
 | Evidence | Canvas-split (archive+table) | Full-width dashboard | Stacked planar | ✅ |
@@ -45,13 +45,13 @@ Did Run 3 achieve section-level differentiation? **YES** — major improvement o
 
 ### Section 2: Product Grid / Rail
 
-**Winner: Direction A** — equal-density 4-across layout.
+**Winner: Direction A** — equal-density layout.
 
-**Correction:** The grid currently shows compact/quickrail-sized cards. In production, this section will use **ProductGrid Vertical cards** (`486:4634`, 481×916, r=24) — the full-height cards with bounded media chamber + purchase plane + MetricRail. The compact cards (`486:4642`, 302×382) are for QuickAdd/rail contexts, not the primary product grid.
+**Correction:** Upgrade from compact/quickrail cards to **3 ProductGrid Vertical cards** across (`486:4634`, 481×916, r=24). Three Vertical cards at 481px each = 1443px, tight fit at 1440px desktop with minimal inter-card spacing. The compact cards (`486:4642`, 302×382) are for QuickAdd/rail contexts, not the primary product grid.
+
+**Resolved:** 3 cards across (not 4). 481px × 3 = 1443px at desktop width.
 
 - Source component: `486:4634` — [Open in Figma](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=486-4634)
-- Grid approach: Equal-density peers, tight spacing, elevation graduation visible
-- Card count: 4 across at 1440px desktop width
 
 ### Section 3: PDP Section 1 — Full Field + PurchasePanel
 
@@ -76,6 +76,8 @@ Cherry-pick:
 3. **Reduce card width** — less wide overall, tighter content density
 4. **Improve copy readability** — the specification text is still too small or too dense to read comfortably. Ensure minimum 15-16px body per typography contract
 
+**Resolved:** Dossier tabs (Product/Facts/Composition) are **reference-only** for Make — show Product tab as active, do not implement switching.
+
 - Source component: `198:1292` — [Open in Figma](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=198-1292)
 
 ### Section 5: Evidence / TrustEvidenceSpine
@@ -95,41 +97,39 @@ Cherry-pick:
 
 **Correction:** The combo media chamber + horizontal purchase panel must stretch **full-width adaptively**. Currently at fixed width with truncated right side. The horizontal card (`486:4636`, 1060×542 native) must expand — both the media chamber and the purchase plane scale to fill the 1440px content width.
 
+**Resolved:** One adaptive horizontal card (RAD-140). No second product card.
+
 - Current state: `545:24677` — [Open in Figma](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=545-24677) — Container at 1512×622, needs adaptive stretch
 - Source component: `486:4636` — [Open in Figma](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=486-4636)
 
-## Champion Composite (MF-02B Candidate)
+## Champion Composite (LOCKED for MF-02B)
 
-| Composition | Source Dir | Key Pattern | Corrections |
-|---|---|---|---|
-| Hero | LOCKED | 2-fold vertical card from `470:6393` | Card contract colors, cobalt line to divider |
-| Grid | A | Equal-density 4-across | Upgrade to ProductGrid Vertical cards (`486:4634`) |
-| PDP S1 | A | Full-field media 60/40 | None — passes as-is |
-| Dossier | A+B hybrid | B's compact header + A's wider cards | Compact media, horizontal content, better readability |
-| Evidence | B | Full-width dashboard | None — clear winner |
-| Rail | A | Single full-width card | Adaptive full-width stretch |
+| Composition | Source Dir | Key Pattern | Corrections | Resolved |
+|---|---|---|---|---|
+| Hero | LOCKED | 2-fold vertical card from `470:6393` | Card contract colors, cobalt line to divider | — |
+| Grid | A | Equal-density 3-across | Upgrade to ProductGrid Vertical cards (`486:4634`) | **3 cards** (481px × 3) |
+| PDP S1 | A | Full-field media 60/40 | None — passes as-is | — |
+| Dossier | A+B hybrid | B's compact header + A's wider cards | Compact media, horizontal content, better readability | **Tabs reference-only** |
+| Evidence | B | Full-width dashboard | None — clear winner | — |
+| Rail | A | Single full-width card | Adaptive full-width stretch | **1 card** (RAD-140) |
 
 ## What Carries to MF-02B
 
 ### Proven Patterns (Lock)
-- Hero 2-fold vertical card structure
+- Hero 2-fold vertical card structure (from `470:6393`)
 - Dir C planar language as composition philosophy
-- Equal-density grid layout (upgraded to Vertical cards)
+- Equal-density grid with 3 Vertical cards across
 - Full-field PDP S1 with 60/40 split
-- Full-width evidence dashboard
+- Full-width evidence dashboard (Dir B)
 - Single adaptive horizontal card for upsell rail
+- Dossier tabs are reference-only (Product tab active)
 
 ### Corrections Needed Before MF-02B
-1. Hero DecisionSurface → MF-01A card contract colors
-2. Hero cobalt line → relocated to embedded divider
-3. Grid cards → ProductGrid Vertical (`486:4634`) not Compact (`486:4642`)
-4. Dossier media chamber → more compact, horizontal content alignment
-5. Horizontal card → adaptive full-width
-
-### Open Questions for Human
-- Grid: Should it be 3 Vertical cards across (they're 481px wide — 3 fit in 1440px with spacing) or 4 (requires narrower variant)?
-- Dossier: Should the three-tab (Product/Facts/Composition) switching mechanism be included in MF-02B or remain reference-only?
-- Rail: Should the rail show one adaptive horizontal card (RAD-140 only) or include a second product?
+1. Hero DecisionSurface → MF-01A card contract colors (near-black `rgb(20,24,39)`, cobalt accents)
+2. Hero cobalt line → removed from right side OR relocated to embedded divider
+3. Grid cards → 3× ProductGrid Vertical (`486:4634`, 481×916) not Compact (`486:4642`, 302×382)
+4. Dossier media chamber → more compact (delete logo/SKU, raise render), horizontal content alignment, better copy readability
+5. Horizontal card → adaptive full-width (media chamber + purchase plane expand to fill)
 
 ## Run History
 
