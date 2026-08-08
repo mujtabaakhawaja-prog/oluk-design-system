@@ -4,8 +4,33 @@
 
 - **MF-01A:** COMPLETE — 5 card densities produced in Softform Arc direction
 - **MF-01B:** COMPLETE — Transfer tested across 5 macro compositions, cherry-pick consolidated
-- **Phase 1 Corrections:** COMPLETE — All cards componentized, typography consistent, compact states wired
+- **Phase 1 Corrections:** COMPLETE — All cards componentized, typography consistent, compact states wired, horizontal card media height fixed
 - **MF-02A:** READY TO RUN
+
+## Input Strategy: Hybrid Native Frames + Creative-Direction PNG
+
+MF-02A uses a **hybrid input strategy** — 8 native Figma frames copied directly into the Make file + 1 creative-direction PNG. This replaces the original 9-PNG manifest.
+
+**Why hybrid?** Native frames carry full layer structure, typography values, spacing tokens, fills, strokes, shadows, and component relationships. Make can inspect and decompose these directly rather than interpreting rasterized pixels. This accelerates convergence and reduces material relationship drift. The homepage hero remains a PNG because its value is creative-direction atmosphere — Make should interpret the editorial intent, not decompose the layer tree.
+
+### Native Frame Inputs (8)
+
+| # | Component | Node ID | Type | Dimensions | Source Page |
+|---|---|---|---|---|---|
+| 1 | ProductCommerceCard / Vertical | `486:4634` | COMPONENT | 481×916 | MF-01 and MF-02 |
+| 2 | ProductCommerceCard / Featured | `486:4635` | COMPONENT | 481×896 | MF-01 and MF-02 |
+| 3 | ProductCommerceCard / Horizontal | `486:4636` | COMPONENT | 1060×542 | MF-01 and MF-02 |
+| 4 | ProductCommerceCard / Compact | `486:4642` | COMPONENT_SET | 302×382 per variant | MF-01 and MF-02 |
+| 5 | PurchasePanel | `478:10367` | COMPONENT | 420×687 | 03 Identity Authority |
+| 6 | PDP Section 1 — Control Test | `480:4503` | INSTANCE | 1440×879 | MF-01 and MF-02 |
+| 7 | LIVE / TrustEvidenceSpine | `475:9098` | COMPONENT | 1440×851 | 03 Identity Authority |
+| 8 | Dossier / Native Light VNext (Focus=Product) | `198:1292` | COMPONENT | (see set) | 03 Identity Authority |
+
+### Creative-Direction PNG Input (1)
+
+| # | Component | Node ID | Export Name | Source Page |
+|---|---|---|---|---|
+| 9 | homepageherocurrent | `462:6141` | `homepage-hero-current.png` | HOMEPAGE HERO |
 
 ## Native Component Registry
 
@@ -98,6 +123,7 @@ All components verified live in Figma file `BEPMuUt1HroEw8xjz8CVyN`.
 | 1.3 | RAD-140 8mg verification | ✅ | Already correct |
 | 1.4 | Typography consistency | ✅ | Fixed horizontal OPENLAB VERIFIED weight 750→800 |
 | 1.5 | Push convo.md | ✅ | Commit 8460180 |
+| 1.6 | Horizontal card media height | ✅ | Fixed GRID panel height — left panel and media now fill full card height |
 
 ## Security / Constraint Directives
 

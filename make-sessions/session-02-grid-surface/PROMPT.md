@@ -8,40 +8,47 @@ Phase 1 corrections have been completed: all 5 card densities are now componenti
 
 MF-02A is the first real-node frontier. Its job is to compose the proven MF-01A card family into CSS grid layouts, surface compositions, and card elevation patterns — using real native compositions as reference, not inventing new ones from scratch.
 
-## Sealed MF-02A Visual Manifest
+## Sealed MF-02A Input Manifest — Hybrid Native Frames + Creative-Direction PNG
 
-The 9 attached PNGs are your complete input. Do not add native Figma nodes, `/all-pages`, system boards, dark/MENT references, or any file outside this manifest.
+The sealed input manifest consists of **8 native Figma frames** copied directly into the Make file plus **1 creative-direction PNG**. Native frames carry full layer structure, typography, spacing, fills, strokes, shadows, and component relationships — providing Make with higher-fidelity structural authority than rasterized PNGs. The single PNG (homepage hero) serves as creative-direction evidence where the composition matters more than editable structure.
 
-1. `mf01a-vertical-card.png` — Vertical ProductGrid card (481×916, r=24). Bounded chamber + raised white purchase plane + MetricRail + QualitativeChips + quantity stepper + dual CTAs.
-2. `mf01a-featured-card.png` — Featured/Derived vertical card (481×896, r=24). Same family as Vertical with SKU badge addition and side-by-side CTA layout.
-3. `mf01a-horizontal-card.png` — Horizontal Related/Upsell card (1060×542, r=34). Left media chamber + right purchase plane connected by sculpted seam. "Stacks well with MK-2866" relationship language. RAD-140/Testolone product.
-4. `mf01a-compact-card-states.png` — Compact QuickAdd card (302×382, r=20) in 5 interactive states: Default, Hover, Focus, Selected (cobalt 2px border), Added ("Added ✓" confirmation).
-5. `mf01a-purchasepanel.png` — PurchasePanel (420×687, r=28). The strongest single MF-01A card — white fill, blue-shifted shadow (r=50, y=20), bordered stroke, OPENLAB VERIFIED badge, size selector, bordered MetricRail + QualitativeChips.
-6. `pdp-section1-control-test.png` — PDP Section 1 composition (1440×879). Full-field atmospheric media chamber with render slot on left + PurchasePanel elevated on right. Proven transfer test — no canvas bleed, purchase plane reads as independently raised.
-7. `trust-evidence-spine.png` — TrustEvidenceSpine (1440×851). Six-point evidence ledger: Identity Tested, Purity Measured, Concentration Confirmed, JANOSHIK Verified, Tamper-Proof Sealed, Batch Tracked. Full-width section with editorial headline left ("Finished products. Verified evidence.") + product bottle center + 6-point grid below.
-8. `homepage-hero-current.png` — Homepage hero composition (1440×780). The authoritative homepage entry — atmospheric bottle composition with product identity and editorial headline.
-9. `dossier-product-variant.png` — Product Dossier (Focus=Product variant). The primary product information dossier showing detailed product specifications, composition data, and facts. Three variants exist (Product/Facts/Composition) — this PNG shows the Product focus variant as the primary reference.
+Do not add additional native Figma nodes, `/all-pages`, system boards, dark/MENT references, or any file outside this manifest.
 
-These PNGs are creative-direction evidence AND structural authority. Make must preserve their material relationships, card family language, and composition structure while improving grid density, surface transitions, section spacing, and card elevation patterns.
+### Native Frame Inputs (8)
+
+1. **ProductCommerceCard / Vertical** — Vertical ProductGrid card (481×916, r=24). Bounded chamber + raised white purchase plane + MetricRail + QualitativeChips + quantity stepper + dual CTAs. Source: `486:4634`
+2. **ProductCommerceCard / Featured** — Featured/Derived vertical card (481×896, r=24). Same family as Vertical with SKU badge addition and side-by-side CTA layout. Source: `486:4635`
+3. **ProductCommerceCard / Horizontal** — Horizontal Related/Upsell card (1060×542, r=34). Left media chamber + right purchase plane connected by sculpted seam. "Stacks well with MK-2866" relationship language. RAD-140/Testolone product. Source: `486:4636`
+4. **ProductCommerceCard / Compact** — Compact QuickAdd card (302×382, r=20) in 5 interactive states: Default, Hover, Focus, Selected (cobalt 2px border), Added ("Added ✓" confirmation). Source: `486:4642`
+5. **PurchasePanel** — PurchasePanel (420×687, r=28). The strongest single MF-01A card — white fill, blue-shifted shadow (r=50, y=20), bordered stroke, OPENLAB VERIFIED badge, size selector, bordered MetricRail + QualitativeChips. Source: `478:10367`
+6. **PDP Section 1 — PurchasePanel Control Test** — PDP Section 1 composition (1440×879). Full-field atmospheric media chamber with render slot on left + PurchasePanel elevated on right. Proven transfer test — no canvas bleed, purchase plane reads as independently raised. Source: `480:4503`
+7. **LIVE / TrustEvidenceSpine** — TrustEvidenceSpine (1440×851). Six-point evidence ledger: Identity Tested, Purity Measured, Concentration Confirmed, JANOSHIK Verified, Tamper-Proof Sealed, Batch Tracked. Full-width section with editorial headline left + product bottle center + 6-point grid below. Source: `475:9098`
+8. **Dossier / Native Light VNext (Focus=Product)** — Product Dossier. The primary product information dossier showing detailed product specifications, composition data, and facts. Three variants exist (Product/Facts/Composition) — this shows the Product focus variant as the primary reference. Source: `198:1292`
+
+### Creative-Direction PNG Input (1)
+
+9. **homepage-hero-current.png** — Homepage hero composition (1440×780). The authoritative homepage entry — atmospheric bottle composition with product identity and editorial headline. This is provided as a PNG because the composition serves as creative-direction evidence; Make should interpret the visual atmosphere and editorial intent, not decompose its layer structure. Source: `462:6141`
+
+These inputs are creative-direction evidence AND structural authority. Native frames give Make direct access to material relationships, card family language, and composition structure. Make must preserve these while improving grid density, surface transitions, section spacing, and card elevation patterns.
 
 ## What MF-02A Must Produce
 
 Three materially different grid and surface compositions at desktop width (1440px). Each direction must demonstrate ALL SIX of these compositions:
 
 ### Composition 1: Homepage Hero Entry
-Use homepage-hero-current.png as structural authority. Integrate MF-01A card language into the hero (Direction A's card-inside-hero approach won the transfer test). The hero must feel like an authored entry composition, not a mechanical copy of PDP Section 1.
+Use homepage-hero-current.png as creative-direction authority. Integrate MF-01A card language into the hero (Direction A's card-inside-hero approach won the transfer test). The hero must feel like an authored entry composition, not a mechanical copy of PDP Section 1.
 
 ### Composition 2: Product Grid / Rail
 Demonstrate compact cards in a CSS grid or rail layout. Test equal-density peers (Direction A's 3-card approach was cleanest) AND mixed-density hierarchy (one Featured card promoting above compact peers). Grid must have tight, purposeful spacing — no dead air between cards.
 
 ### Composition 3: PDP Section 1 — Full Field + PurchasePanel
-Use pdp-section1-control-test.png as structural authority. The left media chamber must be fully filled (Direction B's approach — no page canvas leaking). PurchasePanel elevated on the right with its own shadow creating separation from the flat atmospheric field. This is the PDP first-fold exception: flat and without plane elevation on the background, only the purchase plane is raised.
+Use the native PDP Section 1 Control Test frame as structural authority. The left media chamber must be fully filled (Direction B's approach — no page canvas leaking). PurchasePanel elevated on the right with its own shadow creating separation from the flat atmospheric field. This is the PDP first-fold exception: flat and without plane elevation on the background, only the purchase plane is raised.
 
 ### Composition 4: Product Dossier
-Use dossier-product-variant.png as structural authority. The Dossier is a detailed product information section with tabbed focus variants (Product/Facts/Composition). It must sit between the PDP Section 1 and the Evidence section in the page flow. Spacing must serve continuity with Section 1 above — no passive corridor between the headline stack and dossier content. Reduce the current deadspacing flagged in the surface contract.
+Use the native Dossier frame as structural authority. The Dossier is a detailed product information section with tabbed focus variants (Product/Facts/Composition). It must sit between the PDP Section 1 and the Evidence section in the page flow. Spacing must serve continuity with Section 1 above — no passive corridor between the headline stack and dossier content. Reduce the current deadspacing flagged in the surface contract.
 
 ### Composition 5: Evidence Section
-Use trust-evidence-spine.png as structural authority. Six-point evidence record with vertical checklist + HPLC chart + data table (Direction C's dynamic approach). Cobalt authority dots must survive inside evidence context without competing with card-level cobalt.
+Use the native TrustEvidenceSpine frame as structural authority. Six-point evidence record with vertical checklist + HPLC chart + data table (Direction C's dynamic approach). Cobalt authority dots must survive inside evidence context without competing with card-level cobalt.
 
 ### Composition 6: Related/Upsell Rail with Canvas Split
 Horizontal cards in a rail or grid below an editorial section. True canvas separation between editorial content and the card rail. The canvas gap must read as intentional rhythm, not dead space.
@@ -98,7 +105,7 @@ Secondary product (horizontal card): RAD-140 / Testolone / SARM SERIES / 8 MG / 
 
 ## Interactive States (Reference Only)
 
-The compact card's 5 interactive states (Default/Hover/Focus/Selected/Added) are shown in compact-card-states.png. MF-02A does not need to implement these as working interactions — show Default state in grid compositions. The state system is reference for MF-02B.
+The compact card's 5 interactive states (Default/Hover/Focus/Selected/Added) are shown in the native Compact component set. MF-02A does not need to implement these as working interactions — show Default state in grid compositions. The state system is reference for MF-02B.
 
 ## Dossier Integration Notes
 
