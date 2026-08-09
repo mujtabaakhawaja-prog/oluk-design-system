@@ -1,8 +1,8 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
-**Status:** Accepted relationship authority for MF-01A/MF-01B
+**Status:** Accepted relationship authority; MF-01A/MF-01B are complete and their selected relationships carry into MF-03
 **Evidence state:** Extracted from frozen NR-04 native compositions, later live-node verification, and the G0 Universal Glue reference
-**Applies to:** Light-mode Make exploration beginning with MF-01A
+**Applies to:** Light-mode design convergence, including the active MF-03 Codex Sites lane
 **Does not authorize:** Foundation promotion, token publication, native Figma mutation, runtime implementation, or production release
 
 ## Purpose
