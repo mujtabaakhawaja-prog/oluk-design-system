@@ -35,8 +35,9 @@ Converge the accepted MF card, material and page relationships with the current 
 - All mutation-looking controls without a runtime owner are disabled or presented as static design states.
 - One inspected, claim-safe share image was generated and registered in `MANIFEST.md`.
 - Route, build, lint, type and rendered-authority checks pass.
-- Owner-only Codex Sites version 1 deployed successfully from validated source commit `54e1fefb56690c467ca21132140c0b81c27a0876`.
+- Owner-only Codex Sites version 2 deployed successfully from validated source commit `7a382206fc4fc573425a7c8b0bd5d4b810b4a2b5`.
 - Private review URL: `https://oluk-experience-lab.sigmamindset.chatgpt.site`.
+- Sites readback reports `access_mode: custom`, current user role `owner`, and no shared group allowlist.
 
 ## TESTS
 
@@ -52,8 +53,9 @@ Converge the accepted MF card, material and page relationships with the current 
 | Lint | `PASS` | `npm run lint` |
 | Type check | `PASS` | `npm run typecheck` |
 | Product/evidence authority assertions | `PASS` | `npm test`: 3/3 tests pass; rejected strings and fixture boundaries checked |
+| Client hydration smoke | `PASS` | Local Vinext preview returned 200 with no framework-Link hook error after the anchor correction |
 | 1440/1024/768/390 CSS contract | `IMPLEMENTED` | Fluid grids and 1120/900/640 breakpoints; browser visual review remains a human gate |
-| Private Codex Sites review URL | `PASS` | Owner-only version 1: `https://oluk-experience-lab.sigmamindset.chatgpt.site` |
+| Private Codex Sites review URL | `PASS` | Owner-only version 2: `https://oluk-experience-lab.sigmamindset.chatgpt.site` |
 | Public/production deployment | `NOT AUTHORIZED` | Private-preview-only decision |
 
 ## TELEMETRY
