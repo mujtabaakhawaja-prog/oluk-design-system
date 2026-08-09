@@ -1,181 +1,135 @@
-# MF-03 — Header + OpenLab Portal Design Frontier
+# MF-03 — Header + Footer + OpenLab Portal
 
-## Run Identity
-
-- **Session:** `session-03-openlab-header`
-- **File:** `BEPMuUt1HroEw8xjz8CVyN` — [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design)
-- **Page for output:** `512:4651` (MF-02)
-- **Date:** 2026-08-09
-- **Predecessor:** MF-02A Run 3 champion composite (`551:28924`)
+**Session:** `session-03-openlab-header`
+**File:** `BEPMuUt1HroEw8xjz8CVyN`
+**Output page:** `512:4651` (MF-02)
+**Predecessor:** MF-02A Run 3 champion `551:28924`
 
 ## Objective
 
-Design two blocking surfaces that every page needs but don't exist yet: the **site-wide header navigation** and the **OpenLab portal landing**. Also design the **site footer**. These are the final connective tissue elements before full-page assembly.
+Design three surfaces that don't exist yet: **site header**, **site footer**, and the **OpenLab portal landing page**. The OpenLab portal is the priority — it's the public evidence hub and the largest design surface in this run.
 
-Do NOT redesign the homepage body sections (hero, grid, dossier, evidence, rail) — those are locked from MF-02A. This run produces only the header, footer, and OpenLab surfaces.
+Do NOT redesign homepage body sections (hero, grid, dossier, evidence, rail) — those are locked from MF-02A.
 
-## Directions Required
+## Outputs
 
-Produce **3 directions** for the header and **2 directions** for the OpenLab portal. The footer can share across all directions.
-
----
-
-## INPUT TABLE — Native Figma Frames (13 inputs)
-
-### Structural Authority (USE directly)
-
-| # | Node ID | Name | Dimensions | Page | What It Provides | Figma Link |
-|---|---|---|---|---|---|---|
-| 1 | `564:42811` | Header / Desktop / Light / OptionB | 1440×198 | Openlab spine | Current header: 3-tier (trust rail + main nav + utility). Content structure and nav items. Visual treatment must be REDESIGNED under MF rules. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=564-42811) |
-| 2 | `551:28924` | App (MF-02A champion) | 1440×5724 | MF-02 | Full homepage composition. Header must integrate seamlessly above this. Surface contract, typography, cobalt authority order. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=551-28924) |
-| 3 | `561:41860` | CategoryFamilyRail | 1171×544 | Openlab spine | Compound families navigation pattern (SARMs, Prohormones, Research Chemicals, Stacks). Reference for how product categories should appear in nav. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=561-41860) |
-| 4 | `518:13092` | EvidenceStatus | 134×13 | MF-01 and MF-02 | OPENLAB VERIFIED badge component. May appear in header trust rail. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=518-13092) |
-
-### OpenLab Content Authority (USE directly)
-
-| # | Node ID | Name | Dimensions | Page | What It Provides | Figma Link |
-|---|---|---|---|---|---|---|
-| 5 | `561:41625` | openlab-realtime | 693×660 | Openlab spine | HPLC Purity Trace chart + Batch Records table with PASS status. Real-time trace state toggle. This is the evidence dashboard widget. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=561-41625) |
-| 6 | `422:10293` | Container (Lab Verification) | 1171×500 | 03 Identity Authority | Certificate of Analysis: Janoshik Analytical report with HPLC chromatogram + six-point proof checklist. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=422-10293) |
-| 7 | `422:10210` | Container (Compound Dossier) | 1171×408 | 03 Identity Authority | Specification Matrix: Application, Concentration, Total Active, Quantity, Purity, CAS, Molar Mass, Formula, Synonyms, Storage, Terms, Batch. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=422-10210) |
-| 8 | `563:42499` | Section (Product Dossier) | 1440×1372 | Openlab spine | BEST dossier composition: Product Facts + central media + Product Composition three-panel layout. Use as OpenLab dossier page template. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=563-42499) |
-| 9 | `475:9098` | TrustEvidenceSpine | 1440×851 | 03 Identity Authority | Six-point evidence ledger with narrative block. The evidence brand section. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=475-9098) |
-| 10 | `561:41769` | Section (Product Assurance) | 1440×434 | Openlab spine | Six-point assurance rail: Identity Recorded, Purity Measured, Concentration Recorded, Third-Party Tested, Tracked Dispatch, Secure Checkout. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=561-41769) |
-
-### Surface Contract Reference (MATCH these)
-
-| # | Node ID | Name | Dimensions | Page | What It Provides | Figma Link |
-|---|---|---|---|---|---|---|
-| 11 | `486:4634` | ProductCommerceCard / Vertical | 481×916 | MF-01 and MF-02 | Card makeup reference: bounded media chamber, MetricRail, QualitativeChips, Softform Arc shadow, r=24. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=486-4634) |
-| 12 | `470:6393` | Hero 2-fold template | 440×685 | MF-01 and MF-02 | Embedded divider + cobalt authority pattern. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=470-6393) |
-| 13 | `222:1332` | LabReports / Canvas Split | 1344×630 | 03 Identity Authority | Evidence section template with canvas-split layout. | [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=222-1332) |
+| # | Output | Width |
+|---|--------|-------|
+| 1 | Header (single champion) | 1440px |
+| 2 | Footer (dark) | 1440px |
+| 3 | OpenLab Portal Dir A (editorial vertical) | 1440px |
+| 4 | OpenLab Portal Dir B (dashboard grid) | 1440px |
 
 ---
 
-## SECTION A: HEADER NAVIGATION (3 directions)
+## SECTION 1: HEADER (single champion)
 
-### Content Contract
+Two-tier minimal. Trust rail as a slim 28–32px strip above the main nav bar. Total height ≤80px. The header should feel invisible so the hero commands attention.
 
-The header must contain these elements (content is fixed, visual treatment varies by direction):
+### Content (fixed)
 
-**Trust Rail (top bar):**
-- Free UK Delivery Over £50
-- Free Int'l Delivery £300+
-- Third-Party Lab Verified
-- JANOSHIK Validated
-- Encrypted Checkout
+**Trust rail:** Free UK Delivery Over £50 · Free Int'l Delivery £300+ · Third-Party Lab Verified · JANOSHIK Validated · Encrypted Checkout
 
-**Main Navigation:**
-- Logo: Olympus Labs UK mark + wordmark
-- Primary nav: Shop, Open Lab, Lab Records, About
-- Cart/Bag icon (no count — not connected)
-- Search icon or field
+**Nav bar:** Logo (Olympus Labs UK mountain mark from `564:42811`) · Shop · Open Lab · Lab Records · About · Search icon · Cart/Bag icon · Sign In icon
 
-**Utility (optional per direction):**
-- Sign In / Account icon
-- Currency display (GBP £ only — no toggle, single currency)
+**Excluded:** Wholesale, currency toggle, appearance toggle, dark mode switch.
 
-Do NOT include: Wholesale, Appearance toggle (Light/Dark), currency switcher, or any runtime-connected elements.
+### Surface
 
-### Direction Requirements
+- Background: `#ffffff` (header sits ON the canvas, not in it)
+- Bottom border: `rgba(206,220,241,0.92)` 1px
+- Nav text: Inter 14px, near-black `rgb(20,24,39)`
+- Trust rail text: Inter 11px, blue-shifted neutral `rgb(107,119,140)`
+- Active/emphasis: cobalt `#0057FF` for Lab Records and active states
+- Logo: mountain mark from `564:42811` — do not invent a new logo
 
-**Direction A — Minimal Two-Tier:**
-Trust rail as a slim strip (28–32px). Main nav + logo + cart as a single clean bar. No utility row. Total height ≤80px. Maximum restraint — the header should feel invisible so the hero commands attention.
+### Inputs
 
-**Direction B — Three-Tier with Evidence Integration:**
-Trust rail with cobalt accent. Main nav with prominent Lab Records button (cobalt filled, per Codex v2). Utility row with Sign In + currency. Total height ~120–140px. The header carries the trust narrative actively.
-
-**Direction C — Collapsed Single-Tier:**
-Everything in one bar: logo left, nav center, trust indicators as icons right, cart far-right. No separate trust rail row. Total height ≤56px. Aggressive density — every pixel of vertical space goes to content.
-
-### Surface Laws for Header
-
-- Background: white `#ffffff` (NOT canvas `#f7f8fc` — header sits ON the canvas)
-- Bottom border: `rgba(206,220,241,0.92)` 1px (same as card border — the header is part of the card family)
-- Typography: Inter for nav items, Plus Jakarta Sans ExtraBold for logo if text-based
-- Cobalt `#0057FF` for Lab Records emphasis and active nav states
-- Trust rail text: 11–12px Inter, blue-shifted neutral `rgb(107,119,140)` or similar
-- Logo: use the Olympus Labs UK mountain mark from `564:42811`. Do not invent a new logo.
+| Node | What it provides |
+|------|------------------|
+| `564:42811` Header/OptionB | Content structure, logo mark, nav items |
+| `551:28924` MF-02A champion | Surface contract context — header must sit above this seamlessly |
 
 ---
 
-## SECTION B: FOOTER (1 direction, shared)
+## SECTION 2: FOOTER (single direction)
 
-### Content Contract
+The ONE allowed inverse/dark surface in the entire system.
+
+### Content
 
 ```
 Olympus Labs UK
-"Product details, shopping and OpenLab remain distinct — and connected through clear routes."
 
-SHOP                    OPENLAB                 ABOUT
-Catalogue               Portal                  Olympus Labs UK
-SARMs                   Lab Records              EvidenceOS
-Prohormones             Batch Lookup             Contact
-Research Chemicals      Methodology              Privacy
-Stacks                  Source Chain
+SHOP                OPENLAB              ABOUT
+Catalogue           Portal               Olympus Labs UK
+SARMs               Lab Records          EvidenceOS
+Prohormones         Batch Lookup         Contact
+Research Chemicals  Methodology          Privacy
+Stacks              Source Chain
 
 © 2026 Olympus Labs UK. All rights reserved.
 ```
 
-### Surface Laws for Footer
+### Surface
 
-- Background: near-black `rgb(20,24,39)` (the inverse surface — this is the ONE allowed dark section)
-- Text: white for headings, `rgba(255,255,255,0.6)` for body links
-- Cobalt `#0057FF` for hover states on links
-- Logo: white variant of the mountain mark
-- Top border: none (the dark background is the visual separator)
-- Padding: generous (80px top/bottom, 48px column gaps)
-
----
-
-## SECTION C: OPENLAB PORTAL LANDING (2 directions)
-
-### Page Architecture
-
-The OpenLab portal is the public-facing evidence hub. It must communicate: "Every batch is tested. Every report is public. This is not a claim — it's an operating system."
-
-### Content Contract
-
-The portal page has these sections (top to bottom):
-
-1. **Portal Hero** — "Finished products. Verified evidence." headline + subhead explaining what OpenLab is + primary CTA "Browse Lab Records" + secondary CTA "Batch Lookup"
-2. **Evidence Summary Strip** — Key numbers: batch count, compound count, lab partner. Use fixture values: "240+ Batches Tested" / "12 Compounds" / "Janoshik Analytical" (mark as fixture where numbers aren't source-bound)
-3. **Six-Point Proof Section** — Use the TrustEvidenceSpine pattern (`475:9098`): Identity Confirmed, Purity Passed, Concentration Verified, Microbiological Clear, Heavy Metals Clear, Certificate Issued. These are the 6 verification points per batch.
-4. **Featured Record** — One example lab record using the openlab-realtime widget (`561:41625`): HPLC Purity Trace for MK-2866 Batch OL-MK28-240Q + Batch Records table showing 4 compounds with PASS status. This is real governed data from the Figma frame.
-5. **Methodology Preview** — Brief explanation of HPLC-UV testing methodology + link to full methodology page. Use content from the Certificate of Analysis frame (`422:10293`).
-6. **Compound Families Navigation** — Use CategoryFamilyRail pattern (`561:41860`): SARMs, Prohormones, Research Chemicals, Stacks — "Browse evidence by compound family."
-
-### Direction Requirements
-
-**Direction A — Editorial Vertical Scroll:**
-Full-width sections, one per viewport height. Hero is a statement section with large type. Evidence and records flow vertically with generous white space. The HPLC trace chart is a hero element, not a widget. Canvas-split layout for Featured Record (narrative left, data right, per `222:1332`).
-
-**Direction B — Dashboard Evidence Grid:**
-Denser layout. Evidence Summary as a 3-column metric bar. Six-Point Proof as a 2×3 card grid. Featured Record as an embedded card. More information density, less editorial space. The page feels like a transparency dashboard.
+- Background: `rgb(20,24,39)`
+- Headings: white `#ffffff`
+- Links: `rgba(255,255,255,0.6)`
+- Hover: cobalt `#0057FF`
+- Logo: white mountain mark
+- Padding: 80px top/bottom, 48px column gaps
 
 ---
 
-## SECTION-LEVEL DIFFERENTIATION CONTRACT
+## SECTION 3: OPENLAB PORTAL (2 directions)
 
-| Section | Direction A MUST differ from Direction B by |
-|---|---|
-| Portal Hero | Layout density (full-bleed vs. contained), type scale |
-| Evidence Summary | Presentation format (strip vs. metric cards) |
-| Six-Point Proof | Grid layout (vertical list vs. 2×3 grid) |
-| Featured Record | Canvas-split editorial vs. embedded card |
-| Methodology | Separate section vs. inline with records |
-| Category Navigation | Full CategoryFamilyRail vs. compact link list |
+The public evidence hub. "Every batch is tested. Every report is public."
 
-If ANY section is visually identical between directions, the run fails the differentiation gate.
+Make must use the MF-02 reference nodes for **layout orientation** but apply the full OLUK light-mode surface contract — card shapes, elevation, fills, borders, typography. The references show section structure and content; Make re-clothes them in the identity system.
+
+### Section order (top to bottom)
+
+| # | Section | Content source | Layout reference |
+|---|---------|---------------|------------------|
+| 1 | **Portal Hero** | "Proof built into every batch." + Product Facts / Media / Composition three-panel + Evidence Ledger 6-point grid | `588:67272` (replaces `588:66190` TrustGrid). Preserve the grid structure of `588:66008` Hero but translate to light surface. |
+| 2 | **Product Grid** | MF card-family commerce cards with MetricRail, EvidenceStatus, QualitativeChips | `588:67449` (replaces `588:66460` BestSellers) |
+| 3 | **Evidence Archive** | "Every batch. Every report. Public." + batch records table + search + methodology link | `588:67788` (replaces `588:66717` LabReports) |
+| 4 | **Embedded Evidence** | Six-point record: Compound Identity, Purity, Concentration, Microbiology, Heavy Metals, Certificate + HPLC trace + batch table | `588:67652` + `545:22790` (HPLC chart) + `545:22831` (batch records table) |
+| 5 | **OpenLab Product Banner** | Featured product with evidence posture — "Formulated to a higher standard" + MK-2866 card with metrics | `551:25195` |
+| 6 | **Compound Families** | SARMs · Prohormones · Research Chemicals · Stacks — "Browse evidence by compound family" | `561:41860` CategoryFamilyRail |
+
+### Additional structural inputs
+
+| Node | What it provides |
+|------|------------------|
+| `563:42499` Product Dossier | Three-panel [Facts \| Media \| Composition] reference for portal hero layout |
+| `475:9098` TrustEvidenceSpine | Six-point evidence ledger narrative pattern |
+| `561:41769` Product Assurance | AssuranceRail 6-point strip |
+| `486:4634` Vertical card | Card makeup reference: bounded media chamber, MetricRail, Softform Arc, r=24 |
+| `422:10293` Lab Verification | Certificate of Analysis / HPLC chromatogram |
+| `222:1332` LabReports/CanvasSplit | Canvas-split layout template |
+
+### Direction A — Editorial Vertical
+
+Full-width sections, generous vertical rhythm. Hero is a statement section with large type. HPLC trace is a hero-scale element, not a widget. Featured Record uses canvas-split layout (narrative left, data right per `222:1332`). Each section breathes.
+
+### Direction B — Dashboard Grid
+
+Denser layout. Evidence Summary as metric cards. Six-Point Proof as 2×3 card grid. Featured Record as embedded card. More information density. The page feels like a transparency dashboard, not an editorial magazine.
+
+### Differentiation gate
+
+Every section MUST differ structurally between A and B. If any section is visually identical, the run fails.
 
 ---
 
-## SURFACE CONTRACT (applies to ALL directions)
+## SURFACE CONTRACT (all outputs)
 
 | Token | Value |
-|---|---|
+|-------|-------|
 | Canvas | `#f7f8fc` |
-| Card background | `#ffffff` |
+| Card fill | `#ffffff` |
 | Card border | `rgba(206,220,241,0.92)` 1px |
 | Structural divider | `rgb(206,220,241)` 1px |
 | Authority divider | `#0057FF` 2px |
@@ -188,48 +142,33 @@ If ANY section is visually identical between directions, the run fails the diffe
 | Body minimum | 15px |
 | Softform Arc shadow | `0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)` |
 
-**Zero grey rule:** No achromatic Tailwind grey. All neutral tones blue-shifted.
-**Dark mode:** OUT OF SCOPE. Footer inverse is the only dark section.
+**Zero grey rule:** No achromatic Tailwind grey. All neutrals blue-shifted.
 **Cobalt authority order:** quantified metric > specification > qualitative attribute > structural edge.
+**Dark mode:** OUT OF SCOPE. Footer is the only inverse surface.
 
 ---
 
 ## REJECT RULES
 
-1. **REJECT** if any section headline is meta-commentary about the design system (e.g. "A clear evidence hierarchy")
-2. **REJECT** if any backend vocabulary appears in visible UI (GOVERNED, SOURCE-BOUND, DESIGN FIXTURE, DEMO STATE)
-3. **REJECT** if category cards use compound families different from: SARMs, Prohormones, Research Chemicals, Stacks
-4. **REJECT** if any card has a solid cobalt `#0057FF` fill background
-5. **REJECT** if canvas background is pure white `#ffffff` instead of `#f7f8fc`
-6. **REJECT** if the header includes Wholesale, currency toggle, appearance toggle, or dark mode switch
-7. **REJECT** if OpenLab sections between directions are identical (differentiation gate)
-8. **REJECT** if header directions use identical tier structure (each must be structurally different)
-9. **REJECT** if the footer uses light background (footer is the ONE dark surface)
-10. **REJECT** if any composition uses grey that isn't blue-shifted
+1. Meta-commentary headlines ("A clear evidence hierarchy", "Designed for trust")
+2. Backend vocabulary in UI (GOVERNED, SOURCE-BOUND, DESIGN FIXTURE, DEMO STATE, NOT CONNECTED)
+3. Wrong compound families (must be: SARMs, Prohormones, Research Chemicals, Stacks)
+4. Solid cobalt `#0057FF` card fill background
+5. Canvas `#ffffff` instead of `#f7f8fc`
+6. Header includes Wholesale, currency toggle, appearance toggle
+7. OpenLab directions visually identical per section
+8. Footer uses light background
+9. Non-blue-shifted grey
+10. `90 CAPS` anywhere — controlling value is `90 SERVINGS`
 
 ---
 
-## OUTPUT FORMAT
+## OPERATING CONSTRAINTS
 
-Produce these compositions on the output page:
-
-| Output | Contents | Width |
-|---|---|---|
-| Header Dir A | Trust rail + nav (2-tier minimal) | 1440px |
-| Header Dir B | Trust rail + nav + utility (3-tier evidence) | 1440px |
-| Header Dir C | Collapsed single-tier | 1440px |
-| Footer | Dark footer (shared) | 1440px |
-| OpenLab Dir A | Full portal page (editorial vertical) | 1440px |
-| OpenLab Dir B | Full portal page (dashboard grid) | 1440px |
-
----
-
-## MF-03 OPERATING CONSTRAINTS
-
-- Do NOT redesign homepage body sections (hero, grid, dossier, evidence, rail) — those are MF-02A locked
+- Do NOT redesign homepage body sections — MF-02A locked
 - Do NOT run Porcelain, Atmospheric, or Frost themes
 - Do NOT explore new typography or spacing systems
 - Make-generated code is disposable prototype machinery
-- The CommerceTrustStrip is separate from ProductMetricRail
-- Dark mode and broad inverse sections remain out of scope (footer exception)
-- For checkout, basket, payment, order-received: follow AGENTS.md and controlling runtime packet
+- CommerceTrustStrip is separate from ProductMetricRail
+- Dark mode and broad inverse sections remain out of scope
+- For checkout/basket/payment: follow AGENTS.md and controlling runtime packet

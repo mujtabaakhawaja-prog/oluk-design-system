@@ -1,60 +1,55 @@
 # MF-03 Run Procedure
 
-## Run Identity
+## Pre-Run
 
-- **Session:** `session-03-openlab-header`
-- **Focus:** Header Navigation + Footer + OpenLab Portal Landing
-- **Predecessor:** MF-02A Run 3 (champion composite locked)
-
-## Pre-Run Checklist
-
-- [ ] PROMPT.md read and understood
-- [ ] All 13 input frames accessible in Figma file `BEPMuUt1HroEw8xjz8CVyN`
-- [ ] Surface contract values loaded
-- [ ] Reject rules acknowledged
+- [ ] PROMPT.md read
+- [ ] All input nodes accessible
+- [ ] Surface contract loaded
 
 ## Input Verification
 
-| # | Node ID | Name | Accessible? |
-|---|---|---|---|
-| 1 | `564:42811` | Header / Desktop / Light / OptionB | [ ] |
-| 2 | `551:28924` | App (MF-02A champion) | [ ] |
-| 3 | `561:41860` | CategoryFamilyRail | [ ] |
-| 4 | `518:13092` | EvidenceStatus | [ ] |
-| 5 | `561:41625` | openlab-realtime | [ ] |
-| 6 | `422:10293` | Container (Lab Verification) | [ ] |
-| 7 | `422:10210` | Container (Compound Dossier) | [ ] |
-| 8 | `563:42499` | Section (Product Dossier) | [ ] |
-| 9 | `475:9098` | TrustEvidenceSpine | [ ] |
-| 10 | `561:41769` | Section (Product Assurance) | [ ] |
-| 11 | `486:4634` | ProductCommerceCard / Vertical | [ ] |
-| 12 | `470:6393` | Hero 2-fold template | [ ] |
-| 13 | `222:1332` | LabReports / Canvas Split | [ ] |
+| Node | Name | ✓ |
+|------|------|---|
+| `564:42811` | Header/OptionB | [ ] |
+| `551:28924` | MF-02A champion | [ ] |
+| `561:41860` | CategoryFamilyRail | [ ] |
+| `563:42499` | Product Dossier | [ ] |
+| `475:9098` | TrustEvidenceSpine | [ ] |
+| `561:41769` | Product Assurance | [ ] |
+| `486:4634` | Vertical card | [ ] |
+| `422:10293` | Lab Verification | [ ] |
+| `222:1332` | LabReports/CanvasSplit | [ ] |
+| `588:67272` | Portal hero (replaces TrustGrid) | [ ] |
+| `588:67449` | ProductGrid (replaces BestSellers) | [ ] |
+| `588:67788` | CanvasSplit (replaces LabReports) | [ ] |
+| `588:67652` | EmbeddedEvidence | [ ] |
+| `545:22790` | HPLC Purity Trace | [ ] |
+| `545:22831` | Batch Records table | [ ] |
+| `551:25195` | OpenLab product banner | [ ] |
 
 ## Expected Outputs
 
 | Output | Status |
-|---|---|
-| Header Dir A (2-tier minimal) | [ ] |
-| Header Dir B (3-tier evidence) | [ ] |
-| Header Dir C (collapsed single) | [ ] |
-| Footer (dark, shared) | [ ] |
-| OpenLab Dir A (editorial vertical) | [ ] |
-| OpenLab Dir B (dashboard grid) | [ ] |
+|--------|--------|
+| Header (two-tier champion) | [ ] |
+| Footer (dark) | [ ] |
+| OpenLab Dir A (editorial) | [ ] |
+| OpenLab Dir B (dashboard) | [ ] |
 
-## Differentiation Gate
+## Gates
 
-- [ ] All 3 header directions structurally different
-- [ ] Both OpenLab directions differ per section (see PROMPT.md table)
+- [ ] OpenLab A and B differ per section (differentiation gate)
 - [ ] Zero reject rule violations
+- [ ] Surface contract compliance
+- [ ] All body copy ≥15px
+- [ ] No `90 CAPS` — must read `90 SERVINGS`
+- [ ] No governance vocabulary on customer surface
 
-## Review Scoring (fill after run)
+## Scoring
 
-| Output | Surface Contract | Copy Register | Differentiation | Card Family | Overall |
-|---|---|---|---|---|---|
-| Header A | /5 | /5 | /5 | N/A | /5 |
-| Header B | /5 | /5 | /5 | N/A | /5 |
-| Header C | /5 | /5 | /5 | N/A | /5 |
+| Output | Surface | Copy | Differentiation | Card Family | Overall |
+|--------|---------|------|-----------------|-------------|--------|
+| Header | /5 | /5 | N/A | N/A | /5 |
 | Footer | /5 | /5 | N/A | N/A | /5 |
 | OpenLab A | /5 | /5 | /5 | /5 | /5 |
 | OpenLab B | /5 | /5 | /5 | /5 | /5 |
