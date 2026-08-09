@@ -1,7 +1,7 @@
 # Olympus Labs UK — Identity and Experience Design Program
 
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=3-4)
-**Current gate:** MF-03 v3 `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`; private publish pending
+**Current gate:** MF-03 v3 `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`; owner-only review
 **Last updated:** 2026-08-10
 
 ## Start here
@@ -33,7 +33,7 @@
 - [`assets/product/mk-2866/render-alpha/`](assets/product/mk-2866/render-alpha/) — governed transparent render sizes for later native/Make refinement.
 - [`assets/brand/logo/reference/`](assets/brand/logo/reference/) — supplied logo/mark references pending final master-lockup registration.
 
-The current implementation is isolated in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`. Sites v2 remains preserved as rejected review provenance. V3 has 15 local routes, including the private `/review` index; it must pass visual QA at 1440/1024/768/390 before any new private preview is created.
+The current implementation is isolated in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`. Sites v2 remains preserved as rejected review provenance. V3 passed the 1440/1024/768/390 gate and its 15 routes, including the private `/review` index, are live behind the unchanged owner-only access policy.
 
 ## Repository hygiene
 

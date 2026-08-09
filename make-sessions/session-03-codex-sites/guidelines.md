@@ -1,16 +1,16 @@
 # MF-03 — Codex Sites V3 Convergence Guidelines
 
 **Mode:** Reference
-**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
+**Status:** `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`
 **Date:** 2026-08-10
 **Worktree:** `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`
 **Branch:** `codex/mf-codex-sites-v3-corrections`
 **Implementation root:** `sites/oluk-experience-lab`
-**Authority class:** QA-passed design/review candidate; private publish pending; not runtime or release authority
+**Authority class:** Owner-only design/review candidate; not runtime or release authority
 
 ## Mission
 
-Converge the accepted MF-01A, MF-01B and MF-02A relationships into the 15-route Olympus Labs UK experience lab. V3 passed local four-width QA and is ready for owner-only review. V2 is preserved as `REJECTED_VISUAL_TRANSLATION` evidence.
+Converge the accepted MF-01A, MF-01B and MF-02A relationships into the 15-route Olympus Labs UK experience lab. V3 passed local four-width QA and is live for owner-only human review. V2 is preserved as `REJECTED_VISUAL_TRANSLATION` evidence.
 
 The V3 design supersedes the older Shopper visual treatment. It does not supersede product, inventory, evidence, review-system, checkout, payment, C2, deployment or release ownership. Use [`AUTHORITY-MATRIX.md`](AUTHORITY-MATRIX.md) whenever a value or state could be mistaken for runtime truth.
 
@@ -144,5 +144,5 @@ The `champion-olympus-commerce-runtime` workflow, Olympus Initiator and project-
 6. the dark footer is the only inverse surface;
 7. every route passes visual review at 1440/1024/768/390 with zero horizontal overflow;
 8. build, lint, type and rendered-route checks are rerun against the final local source;
-9. the receipt is updated before any private preview;
+9. the receipt records the exact private Sites version, deployment and access posture;
 10. no Shopper SSR, Woo, payment, C2, Figma or public/production mutation occurred.

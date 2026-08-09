@@ -1,7 +1,7 @@
 # MF-03 — Codex Sites V3 Visual-QA Brief
 
 **Mode:** How-to guide
-**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
+**Status:** `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`
 **Target:** `sites/oluk-experience-lab`
 **Output:** Validated local candidate, then a separately authorized private review preview
 

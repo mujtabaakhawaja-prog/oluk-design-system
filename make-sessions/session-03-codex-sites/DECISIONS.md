@@ -10,7 +10,7 @@
 |---|---|---|
 | `MF03-D01` | V3 work is isolated in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`. | Preserve unrelated and in-progress Sites work; do not use the older convergence path. |
 | `MF03-D02` | V2 is `REJECTED_VISUAL_TRANSLATION`. | Preserve its captures and URL as historical evidence only. |
-| `MF03-D03` | V3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`. | Do not claim a V3 deployment until live version metadata is recorded. |
+| `MF03-D03` | V3 is `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`. | Use the exact version and deployment metadata in the current-state receipt. |
 | `MF03-D04` | Current MF/Figma work supersedes the older Shopper visual treatment. | Shopper functional/runtime ownership remains unchanged. |
 | `MF03-D05` | Final Design node `614:75950` is the current structural source for the corrected hero grid. | Use its two-left-container, Featured-card, right-family-card and lower-ticker relationship; do not promote its data as runtime truth. |
 | `MF03-D06` | Primary navigation is `Shop / Open Lab / About`; Lab Records is prominent. | Wholesale, Sign In, currency and Appearance remain deferred. |
@@ -39,9 +39,9 @@ Trust copy, realistic reviews, secondary products, stock/status specimens and Fi
 | Shopper translation | Not part of V3 | `champion-olympus-commerce-runtime` after design acceptance |
 | Payment/Woo mutation | Not part of V3 | Explicit Initiator/payment stage |
 | C2 services/tools | Not part of V3 | Dedicated project-scoped C2 stage |
-| V3 hosting | Authorized and pending | Existing owner-only Sites project only; no access changes |
+| V3 hosting | Version 3 live for review | Existing owner-only Sites project; access revision unchanged |
 | Public release | Prohibited | Runtime verification and separate promotion record |
 
 ## Current clarification state
 
-No unresolved decision blocks the approved owner-only V3 publish. Connecting live data, translating into Shopper SSR, implementing payment, mutating C2 or changing public access expands authority and must be handled separately.
+No unresolved decision blocks human review of the deployed V3 surfaces. Connecting live data, translating into Shopper SSR, implementing payment, mutating C2 or changing public access expands authority and must be handled separately.

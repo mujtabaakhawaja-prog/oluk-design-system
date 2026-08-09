@@ -2,9 +2,9 @@
 
 **Mode:** Reference
 **Receipt date:** 2026-08-10
-**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
-**Deployment:** `NOT DEPLOYED`
-**Authority:** Local design/review candidate only
+**Status:** `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`
+**Deployment:** Sites version `3` succeeded at the owner-only review URL
+**Authority:** Private design/review candidate only
 
 ## PLAN
 
@@ -17,9 +17,10 @@ Validate the 15-route V3 experience lab against the latest human decisions, curr
 - Worktree: `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`
 - Branch: `codex/mf-codex-sites-v3-corrections`
 - Base reference: `origin/main` at `27c399fbc3b3123a82293a2f4ade9e5fbd78c6fd`
-- Current committed branch head at receipt preparation: `37cd62c01e751f0d0033a9bbe23be580235c1a3e`
+- Deployed source commit: `91537b2d95b68ce5a553bc4186c404d1724e4c4d`
+- GitHub branch: pushed to `origin/codex/mf-codex-sites-v3-corrections`
 - Site root: `sites/oluk-experience-lab`
-- Local V3 implementation changes are present in the worktree and do not yet have a deployed source identity.
+- The deployed archive and Sites source repository both resolve to the source commit above.
 
 ### Historical V2 disposition
 
@@ -40,7 +41,7 @@ Validate the 15-route V3 experience lab against the latest human decisions, curr
 - Backend/governance/fixture vocabulary is excluded from visible customer copy.
 - The dark footer is the sole inverse surface.
 - Shopper SSR, WooCommerce, Initiator/payment, C2 and Figma remain untouched by this lane.
-- V3 has passed local QA and is ready for its already approved owner-only publish; it has not yet been hosted or promoted.
+- V3 has passed local QA and is live for owner-only human review. It has not been promoted to public access or runtime authority.
 
 ## ROUTES AND REVIEW CONTROL
 
@@ -67,12 +68,33 @@ Validate the 15-route V3 experience lab against the latest human decisions, curr
 | Production dependency audit | `PASS` | Zero vulnerabilities |
 | 1440/1024/768/390 browser QA | `PASS` | 60 route/viewport combinations; headings present; no broken images or forbidden visible terms |
 | Zero horizontal overflow | `PASS` | No page overflow in the 60-combination sweep |
-| V3 private preview | `AUTHORIZED / PENDING` | Publish to the existing owner-only Sites project without access changes |
+| V3 private preview | `PASS` | Sites version 3 deployed successfully to the existing owner-only project |
 | Public/production deployment | `NOT AUTHORIZED` | Separate release authority required |
 
 ## TELEMETRY
 
 No runtime telemetry, inventory source, review source, evidence source, payment provider or C2 service is connected by this lane. Visual completeness must not be interpreted as a live integration claim.
+
+## PRIVATE SITES RECEIPT
+
+- Project: `appgprj_6a784499e0a481919243ddab0dcaadff`
+- Version: `3`
+- Version ID: `appgprj_6a784499e0a481919243ddab0dcaadff~appgver_4900734896d48191a24801504eac37a4`
+- Source commit: `91537b2d95b68ce5a553bc4186c404d1724e4c4d`
+- Archive content hash: `sha256:1c4444fc4b6c89d0532082bff2c1fc2a3e962effb77bafd088aa6d5d8f295832`
+- Archive: `218` files, `8,990,720` bytes
+- Deployment: `appgdep_6a78e24175a88191af9ef29cb3b686f3`
+- Deployment status: `succeeded`
+- Provider deployment: `site---6a784499e0a481919243ddab0dcaadff`
+- Review URL: `https://oluk-experience-lab.sigmamindset.chatgpt.site`
+- Access: `custom`; current user `owner`; access revision `1`; one owner; zero groups; zero external visitors
+- Access mutation: none
+
+## LIVE READBACK
+
+- The authenticated owner session resolved the live homepage with the corrected MF-03 hero and zero horizontal overflow.
+- `/review` resolved with `13` review items, `26` current/Figma links and zero horizontal overflow.
+- `/product/mk-2866#dossier`, `/open-lab`, `/open-lab/records`, `/open-lab/records/source-bound-record` and `/reviews` resolved with their expected headings, zero broken images and zero horizontal overflow.
 
 ## DOCS
 
@@ -94,8 +116,7 @@ No runtime telemetry, inventory source, review source, evidence source, payment 
 
 ## NEXT COMMANDS
 
-1. Commit and push the exact QA-passed source state.
-2. Package that committed state with the Sites helper.
-3. Save and deploy a new private version to the existing owner-only project.
-4. Verify the live review index and representative customer routes in the authenticated owner session.
-5. Update this receipt with the exact hosted version and deployment identity.
+1. Review the live surfaces from `/review` and record pass/correction per item.
+2. Keep V2 preserved as the rejected comparison baseline.
+3. Apply any human-requested visual corrections within this Sites lane and repeat the four-width gate.
+4. Begin Shopper SSR translation only after explicit human acceptance, using the separate runtime workflow.

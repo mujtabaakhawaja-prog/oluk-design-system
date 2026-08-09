@@ -13,7 +13,7 @@ Read in this order before changing design, Make or Sites material:
 7. `make-sessions/SESSION_ROADMAP.md`
 8. the active run's `guidelines.md`, `MANIFEST.md`, `PROMPT.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md`, and `DECISIONS.md`
 
-The active lane is [`MF-03 Codex Sites Convergence`](make-sessions/session-03-codex-sites/guidelines.md). `MF-01A`, `MF-01B` and `MF-02A` are completed historical design inputs. Their accepted card, surface and composition relationships carry forward; their Make-generated code does not. Sites v2 is formally `REJECTED_VISUAL_TRANSLATION`. Sites v3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`; it has not yet been deployed. The current Sites candidate supersedes the older Shopper visual treatment but does not become runtime, evidence, payment, C2, deployment or release authority.
+The active lane is [`MF-03 Codex Sites Convergence`](make-sessions/session-03-codex-sites/guidelines.md). `MF-01A`, `MF-01B` and `MF-02A` are completed historical design inputs. Their accepted card, surface and composition relationships carry forward; their Make-generated code does not. Sites v2 is formally `REJECTED_VISUAL_TRANSLATION`. Sites v3 is `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` at the owner-only review URL. The current Sites candidate supersedes the older Shopper visual treatment but does not become runtime, evidence, payment, C2 or public-release authority.
 
 ## MF-03 Codex Sites boundary
 

@@ -1,6 +1,6 @@
 # FIGMA_AGENT_RESPONSE — MF-03 Codex Sites Experience Lab Review
 
-> **Historical V2 disposition:** `REJECTED_VISUAL_TRANSLATION`. This review and its owner-only URL are preserved as V2 evidence only. V3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`; owner-only publishing is pending. Current execution is governed by `guidelines.md`, `AUTHORITY-MATRIX.md`, `MANIFEST.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md` and `DECISIONS.md`.
+> **Historical V2 disposition:** `REJECTED_VISUAL_TRANSLATION`. This review is preserved as V2 evidence only. V3 is `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`; its owner-only review URL now serves version 3. Current execution is governed by `guidelines.md`, `AUTHORITY-MATRIX.md`, `MANIFEST.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md` and `DECISIONS.md`.
 
 ## Metadata
 

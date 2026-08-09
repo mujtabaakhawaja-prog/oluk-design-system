@@ -1,7 +1,7 @@
 # MF-03 — V3 Authority Matrix
 
 **Mode:** Reference
-**Status:** Current for QA-passed V3 private review
+**Status:** Current for deployed owner-only V3 review
 **Date:** 2026-08-10
 
 ## Precedence
@@ -39,10 +39,10 @@ Current explicit human decisions control the bounded V3 Sites lane. Repository a
 | `REJECTED_VISUAL_TRANSLATION` | Preserved build/review evidence that is not current visual authority |
 | `IMPLEMENTED_LOCALLY` | Source exists in the isolated worktree; no deployment implied |
 | `LOCAL_QA_PASSED` | All 15 routes passed the automated and four-width browser gates |
-| `READY_FOR_PRIVATE_REVIEW` | The approved owner-only Sites publish may proceed |
-| `NOT DEPLOYED` | No V3 hosted version or live source identity has been recorded |
+| `PRIVATE_V3_DEPLOYED` | Saved Sites version 3 is live behind the unchanged custom owner-only policy |
+| `HUMAN_REVIEW_PENDING` | The linked design surfaces await the user's visual verdict |
 | `NOT AUTHORIZED` | Requires a separate runtime, payment, C2 or release decision |
 
 ## Review control
 
-The 15 routes and all stable `/review` targets are registered in `MANIFEST.md`. The local receipt records passing automated checks and completed 1440/1024/768/390 browser QA with zero horizontal overflow. Owner-only publishing is authorized; human visual acceptance remains a separate review result.
+The 15 routes and all stable `/review` targets are registered in `MANIFEST.md`. The receipt records passing automated checks, completed 1440/1024/768/390 browser QA with zero horizontal overflow, and the exact live Sites version. Human visual acceptance remains a separate review result.

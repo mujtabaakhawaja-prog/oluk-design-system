@@ -1,7 +1,7 @@
 # MF-03 — Codex Sites V3 Visual-QA Runbook
 
 **Mode:** How-to guide
-**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
+**Status:** `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`
 
 ## Expected result
 
@@ -13,7 +13,7 @@ A validated V3 candidate with 15 resolving routes, stable `/review` targets and 
 2. Confirm the branch is `codex/mf-codex-sites-v3-corrections`.
 3. Preserve unrelated and in-progress Sites changes.
 4. Read `AGENTS.md`, the authority chain and every active file in this directory.
-5. Confirm V2 is recorded as `REJECTED_VISUAL_TRANSLATION` and V3 as `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`.
+5. Confirm V2 is recorded as `REJECTED_VISUAL_TRANSLATION` and V3 as `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`.
 6. Treat Figma, Make, Shopper and Evidence-OS sources as read-only evidence.
 
 ## 2. Contract checks

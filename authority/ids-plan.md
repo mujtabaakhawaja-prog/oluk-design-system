@@ -21,7 +21,7 @@ When `ids-plan.md` is named in the active run, the MF-03 session documents are r
 - **MF-01B complete** — cross-context transfer verdicts preserved as historical input
 - **MF-02A complete** — grid/surface champion composite and correction packet preserved as historical input
 - **MF-03 v2** — `REJECTED_VISUAL_TRANSLATION`; preserved as historical review evidence
-- **MF-03 v3** — `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`; 15 routes including `/review`; owner-only publish pending
+- **MF-03 v3** — `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`; 15 routes including `/review`; owner-only access unchanged
 - **NR-05 foundation rebase** — blocked until the Make Design Gate selects the cross-route light-mode champion
 - **Figma file:** `BEPMuUt1HroEw8xjz8CVyN` (Final-Design), Page `3:4`
 - **Date:** 2026-08-10

@@ -1,7 +1,7 @@
 # MF-03 — Codex Sites V3 Convergence Manifest
 
 **Mode:** Reference
-**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
+**Status:** `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`
 **Date:** 2026-08-10
 **Worktree:** `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`
 **Branch:** `codex/mf-codex-sites-v3-corrections`
