@@ -1,8 +1,8 @@
 # Olympus Labs UK — Identity and Experience Design Program
 
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=3-4)
-**Current gate:** `MF-03 Codex Sites Convergence` active; private design review only
-**Last updated:** 2026-08-09
+**Current gate:** MF-03 v3 `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`; private publish pending
+**Last updated:** 2026-08-10
 
 ## Start here
 
@@ -15,7 +15,10 @@
 | [`make-sessions/SESSION_ROADMAP.md`](make-sessions/SESSION_ROADMAP.md) | Current convergence override and preserved historical run sequence |
 | [`make-sessions/session-03-codex-sites/guidelines.md`](make-sessions/session-03-codex-sites/guidelines.md) | Active MF-03 design, fixture, responsive and authority rules |
 | [`make-sessions/session-03-codex-sites/MANIFEST.md`](make-sessions/session-03-codex-sites/MANIFEST.md) | Current inputs, assets, routes and exclusions |
+| [`make-sessions/session-03-codex-sites/AUTHORITY-MATRIX.md`](make-sessions/session-03-codex-sites/AUTHORITY-MATRIX.md) | Visual-fixture, runtime, evidence, payment, C2 and release boundaries |
 | [`make-sessions/session-03-codex-sites/RUN.md`](make-sessions/session-03-codex-sites/RUN.md) | Build, review, private-hosting and rollback procedure |
+| [`make-sessions/session-03-codex-sites/CURRENT-STATE-RECEIPT.md`](make-sessions/session-03-codex-sites/CURRENT-STATE-RECEIPT.md) | V2 rejection, current local implementation state and QA gate |
+| [`make-sessions/session-03-codex-sites/DECISIONS.md`](make-sessions/session-03-codex-sites/DECISIONS.md) | Latest human decisions and later-stage deferrals |
 | [`make-sessions/session-01-product-card/`](make-sessions/session-01-product-card/) | Completed MF-01A historical run record |
 | [`make-sessions/session-01b-relationship-transfer/`](make-sessions/session-01b-relationship-transfer/) | Completed MF-01B historical transfer record |
 | [`make-sessions/session-02-grid-surface/`](make-sessions/session-02-grid-surface/) | Completed MF-02A historical run and bridge packet |
@@ -29,6 +32,8 @@
 - [`make-sessions/shared-kit/`](make-sessions/shared-kit/) — retained brand, homepage and evidence exports; use only when the active manifest authorizes them.
 - [`assets/product/mk-2866/render-alpha/`](assets/product/mk-2866/render-alpha/) — governed transparent render sizes for later native/Make refinement.
 - [`assets/brand/logo/reference/`](assets/brand/logo/reference/) — supplied logo/mark references pending final master-lockup registration.
+
+The current implementation is isolated in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`. Sites v2 remains preserved as rejected review provenance. V3 has 15 local routes, including the private `/review` index; it must pass visual QA at 1440/1024/768/390 before any new private preview is created.
 
 ## Repository hygiene
 

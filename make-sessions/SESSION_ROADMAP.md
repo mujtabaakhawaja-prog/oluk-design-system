@@ -1,8 +1,8 @@
 # Olympus Labs UK — Design Convergence Plan and Run Order
 
-**Date:** 2026-08-09
+**Date:** 2026-08-10
 **Controlling alias:** `ids-plan.md`
-**Current position:** `MF-01A`, `MF-01B` and `MF-02A` are complete historical inputs; `MF-03 Codex Sites Convergence` is active for private design review.
+**Current position:** `MF-01A`, `MF-01B` and `MF-02A` are complete historical inputs; MF-03 v3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW` and its private publish is pending.
 
 ## 2026-08-09 convergence addendum
 
@@ -13,11 +13,14 @@ Human review advanced the program from isolated Make frontiers into one Codex Si
 | `MF-01A` | Complete / historical | ProductCommerceCard family and material relationships |
 | `MF-01B` | Complete / historical | Cross-context transfer verdicts |
 | `MF-02A` | Complete / historical | Section differentiation, champion composite and correction packet |
-| `MF-03 Codex Sites Convergence` | Active | Global shell, homepage, shop, MK-2866 PDP, reviews and complete OpenLab route family |
+| `MF-03 Codex Sites Convergence v2` | `REJECTED_VISUAL_TRANSLATION` | Preserved source/data-honesty review evidence only; not current visual authority |
+| `MF-03 Codex Sites Convergence v3` | `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW` | Fifteen routes: shell, homepage, shop, MK-2866 PDP, realistic reviews, OpenLab family and private `/review` index |
 
-The active implementation is `sites/oluk-experience-lab` in the clean `codex/mf-codex-sites-convergence` worktree. Acceptance is genuine recomposition at 1440/1024/768/390 with zero horizontal overflow. Publishing is limited to a private Codex Sites review URL. Shopper SSR, WooCommerce, Initiator/payment, C2 and public/production release remain separate later stages.
+The active implementation is `sites/oluk-experience-lab` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`. Final Design node `614:75950` is the current structural source for the corrected hero grid, while exact visible customer truth remains `90 SERVINGS`. The approved trust rail and realistic reviews are visual fixtures; their appearance does not establish fulfilment, customer-record or runtime truth. Backend vocabulary remains absent from customer UI. The dark footer is the sole inverse surface.
 
-The active control set is [`session-03-codex-sites/`](session-03-codex-sites/). The historical run order below remains useful provenance and system-extraction context; where it conflicts with this approved convergence addendum, the addendum controls the current lane.
+Local acceptance passed across all 15 routes at 1440/1024/768/390 with zero horizontal overflow, plus stable review links from `/review`. V3 private publishing is authorized and pending. Shopper SSR, WooCommerce, Initiator/payment, C2 and public/production release remain separate later stages.
+
+The active control set is [`session-03-codex-sites/`](session-03-codex-sites/), including its [`authority matrix`](session-03-codex-sites/AUTHORITY-MATRIX.md). The historical run order below remains useful provenance and system-extraction context; where it conflicts with this approved convergence addendum, the addendum controls the current lane.
 
 ## Historical decision
 

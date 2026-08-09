@@ -1,102 +1,106 @@
-# MF-03 — Codex Sites Convergence Build Brief
+# MF-03 — Codex Sites V3 Visual-QA Brief
 
 **Mode:** How-to guide
+**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
 **Target:** `sites/oluk-experience-lab`
-**Output:** Private responsive design-review site
+**Output:** Validated local candidate, then a separately authorized private review preview
 
-## Build objective
+## Objective
 
-Use Codex Sites to converge the completed MF-01A, MF-01B and MF-02A design relationships into one coherent light-mode Olympus Labs UK experience. Build the site-wide shell, homepage, catalogue, MK-2866 PDP, reviews states and the full OpenLab route family.
+Finish visual QA for the 15-route V3 experience lab. Preserve the current customer-facing composition, correct discrepancies against the registered Figma structures and stop before deployment or runtime translation.
 
-This is design implementation for review. It supersedes the older Shopper app’s visual treatment but does not become Shopper SSR, evidence, payment, C2, production or release authority.
+V2 is `REJECTED_VISUAL_TRANSLATION`. V3 supersedes its visual treatment but does not become Shopper SSR, evidence, review-system, payment, C2 or release authority.
 
 ## Required shell
 
-Build a three-level responsive shell:
+- Primary navigation: `Shop / Open Lab / About`.
+- Keep `Lab Records` as the prominent OpenLab action.
+- Exclude Wholesale, Sign In, currency and Appearance controls.
+- Use the approved trust-rail fixture copy: `Free UK Delivery Over £50`, `Free Int'l Delivery £300+`, `Third-Party Lab Verified`, `JANOSHIK Validated`, `Encrypted Checkout`.
+- Do not show a development disclaimer or backend vocabulary on customer routes.
+- Use the exact on-light logo asset.
+- Use a dark footer as the sole inverse surface.
 
-1. source-safe OpenLab action rail;
-2. integrated Olympus Labs UK mark plus `Shop`, `Open Lab`, `About`, a prominent `Lab Records` action and bag action with no invented count;
-3. route-aware context rail.
+Trust-rail copy is a visual fixture. It does not prove fulfilment, checkout or evidence integration.
 
-Do not include Wholesale, Sign In, currency, Appearance or unverified trust claims. Use the exact integrated on-light logo asset; do not reconstruct the logo from type, bars or hand-authored vectors.
+## Homepage `/`
 
-## Commerce routes
+Use Final Design node `614:75950`, especially `614:75995`, as the current hero-structure source:
 
-### Homepage `/`
+1. OpenLab Portal and OpenLab Archive containers in the left stack;
+2. a central Featured ProductCommerceCard;
+3. four compound-family cards at right;
+4. a lower BatchTicker spanning the composition.
 
-- authored two-fold hero with editorial and featured-commerce zones;
-- cobalt horizontal embedded divider only—no right-side cobalt card edge;
-- MK-2866 commerce makeup with ProductMetricRail, qualitative attributes, clearly labelled demo inventory and EvidenceStatus states;
-- category navigation;
-- responsive product grid using the Vertical ProductCommerceCard relationship;
-- OpenLab/evidence entry composition;
-- rendered-review fixture plus honest alternate states;
-- one adaptive RAD-140 related-product fixture.
+Keep the corrected family taxonomy: SARMs, Prohormones, Research Chemicals and Stacks. Preserve the ProductCommerceCard chamber, bordered MetricRail, status, price and action hierarchy. Use exact MK-2866 truth with `90 SERVINGS`; reject `90 CAPS`.
 
-### Shop `/shop`
+The remaining homepage order is assurance, compound families, featured products, OpenLab/archive entry, realistic reviews, related product and the sole-inverse footer.
 
-- catalogue introduction and filtering/search/sort anatomy;
-- responsive Vertical ProductCommerceCard grid;
-- honest low-result/empty/unavailable presentation;
-- no live filtering, inventory or pagination claim unless implemented locally as design behavior and labelled appropriately.
+## Reviews
 
-### PDP `/product/mk-2866`
+- Render realistic review titles, names, dates, star ratings and `Verified purchase` on the homepage and `/reviews`.
+- Keep loading, empty and unavailable states out of the main customer presentation.
+- Do not expose `DESIGN FIXTURE`, `DEMO STATE`, `NOT CUSTOMER DATA`, `Sample reviewer` or similar implementation labels.
+- Treat rendered reviews as visual fixtures in documentation until a later review-system owner binds real records.
 
-Use the approved order:
+## PDP `/product/mk-2866`
 
-1. full-field product media plus raised purchase plane;
+Use this order and retain the stable anchors:
+
+1. `#purchase` — full-field media plus raised purchase plane;
 2. media/context controls;
 3. assurance rail;
-4. compact horizontal `[Facts | Media | Composition]` dossier;
-5. Lab Records header, evidence/source slot and record ledger;
-6. reviews states;
-7. one adaptive related-product card.
+4. `#dossier` — responsive Facts/Media/Composition dossier;
+5. `#lab-records` — evidence header, record presentation and OpenLab handoff;
+6. reviews;
+7. related product.
 
-Keep the dossier copy at least 15–16 px, remove logo/SKU decoration from its media chamber and present tabs as static reference state unless local behavior is explicitly useful.
+Use `SARM SERIES · MK-2866 · Ostarine · SKU 80529-01 · 15 MG · 90 SERVINGS · >99% · £43` exactly.
 
 ## OpenLab routes
 
-Build archive and individual record first, then the remaining family:
+Validate archive and individual record first, then portal, dossier, lookup, methodology, source chain, compare and EvidenceOS. Treat node `614:75950` and its OpenLab sections as structural sources. Values, dates, charts, reports, PASS/verified states and aggregates derived from design material remain visual fixtures, not runtime evidence.
 
-1. `/open-lab/records`;
-2. `/open-lab/records/source-bound-record`;
-3. `/open-lab`;
-4. `/open-lab/dossier/mk-2866`;
-5. `/open-lab/batch-lookup`;
-6. `/open-lab/methodology`;
-7. `/open-lab/source-chain`;
-8. `/open-lab/compare`;
-9. `/about/evidence-os`.
+Customer copy must never expose `GOVERNED`, `SOURCE-BOUND`, `DESIGN FIXTURE`, `DEMO STATE`, `NOT CONNECTED`, `CATALOGUE SOURCE PENDING` or similar backend vocabulary. The stable route `/open-lab/records/source-bound-record` remains unchanged even though that phrase is not rendered as customer copy.
 
-Treat `564:64871` as the route and content inventory, MF-01/MF-02 as the visual system, and Evidence-OS Make file `N40v2cUxw3oxfcpSZoluCh` plus `556:32216` as flow evidence. Rebuild every route in fluid CSS. Do not reproduce fixed 390 px five-column grids, dark dashboard styling, synthetic metrics, fake report rows or generated evidence.
+## Private `/review` route
 
-## Fixture and evidence rules
+Maintain all review links and anchors registered in `MANIFEST.md`. The review index is the V3 inspection surface for:
 
-- Display `EXPERIENCE LAB · STATIC DESIGN FIXTURES` globally.
-- Render governed MK-2866 truth exactly.
-- Qualify `IN STOCK` and `OPENLAB VERIFIED` as demo states until bound.
-- Label RAD-140 as a design fixture.
-- Label populated reviews `RENDERED DESIGN FIXTURE · NOT CUSTOMER DATA` and use anonymous sample labels.
-- Use `Source-bound`, `Not connected` and `Not supplied` for missing evidence.
-- Use a source/viewer slot instead of drawing or inventing a chromatogram.
-- Do not invent a batch ID, certificate, assay, laboratory, date, reviewer, rating count or dispatch promise.
+- hero;
+- assurance;
+- compound families;
+- featured products;
+- reviews;
+- related product;
+- PDP purchase, dossier and Lab Records;
+- OpenLab portal, archive and individual record;
+- footer.
 
-## Responsive acceptance
+## Responsive gate
 
-Prove genuine recomposition at `1440`, `1024`, `768` and `390` px. There must be no horizontal page overflow. Tables must transform before becoming unreadable; cards, dossier panels, header tiers and evidence planes must stack in semantic reading order.
+Review every route at `1440`, `1024`, `768` and `390` px. Pass only when:
+
+- there is zero horizontal page overflow;
+- the hero grid genuinely recomposes;
+- cards and dossier panels do not clip;
+- archive rows transform before columns become unreadable;
+- body and metadata type floors remain readable;
+- `/review` links land on stable targets;
+- the dark footer remains the only inverse surface.
 
 ## Reject
 
-- public or production deployment;
-- runtime/Shopper SSR, Initiator, WooCommerce, payment or C2 mutation;
-- Figma mutation;
-- dark/broad inverse pages;
+- visible `90 CAPS`;
+- visible backend/governance/fixture vocabulary;
+- a customer-facing development disclaimer;
+- a second inverse surface or dark page;
 - cream, blanket grey or generic Tailwind-grey surfaces;
-- unsupported trust, inventory, review or evidence claims;
-- static desktop scaling masquerading as responsive behavior;
-- card clipping, truncated horizontal rails or fixed-width mobile grids;
-- generated Make code treated as implementation authority.
+- right-side decorative cobalt hero edge;
+- clipped cards, rails, tables, dossier content or footer;
+- deployment before the local visual-QA receipt is updated;
+- any Shopper SSR, Woo, Initiator/payment, C2 or Figma mutation.
 
 ## Completion
 
-Run the production build, resolve all route/build failures, publish only a private Codex Sites review URL and record validation honestly in `CURRENT-STATE-RECEIPT.md`. Stop before public deployment or runtime translation.
+Rerun build, lint, type, rendered-route and stable-anchor checks against the final local source. Record the exact results in `CURRENT-STATE-RECEIPT.md`. V3 remains local until visual QA is complete and a separate private-preview action is authorized.

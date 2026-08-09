@@ -1,85 +1,101 @@
-# MF-03 — Current State Receipt
+# MF-03 — V3 Current State Receipt
 
 **Mode:** Reference
-**Receipt time:** 2026-08-09
-**Status:** `PRIVATE REVIEW DEPLOYED`
-**Authority:** Design/review candidate only
+**Receipt date:** 2026-08-10
+**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
+**Deployment:** `NOT DEPLOYED`
+**Authority:** Local design/review candidate only
 
 ## PLAN
 
-Converge the accepted MF card, material and page relationships with the current OpenLab route family in a private Codex Sites experience lab. Keep product, evidence, runtime, payment and release authority separate.
+Validate the 15-route V3 experience lab against the latest human decisions, current Figma structure and four-width acceptance gate, then publish only to the existing owner-only Sites project. Preserve V2 rejection provenance and keep runtime, evidence, review-system, payment, C2 and release authority separate.
 
 ## DIFF SUMMARY
 
 ### Isolated workspace
 
-- Worktree: `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-convergence`
-- Branch: `codex/mf-codex-sites-convergence`
-- Recorded base: `origin/main` at `45bb4b44304b5e86656fcb66f0ec4f0bbee6e74e`
+- Worktree: `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`
+- Branch: `codex/mf-codex-sites-v3-corrections`
+- Base reference: `origin/main` at `27c399fbc3b3123a82293a2f4ade9e5fbd78c6fd`
+- Current committed branch head at receipt preparation: `37cd62c01e751f0d0033a9bbe23be580235c1a3e`
 - Site root: `sites/oluk-experience-lab`
+- Local V3 implementation changes are present in the worktree and do not yet have a deployed source identity.
 
-### Completed evidence work
+### Historical V2 disposition
 
-- Repository authority, completed MF sessions, bridge packet and carryover audit read.
-- Current Figma header, logo, OpenLab, EvidenceStatus and commerce-flow sources inspected read-only.
-- Header defects and the OpenLab route inventory reconciled with current human decisions.
-- Exact on-light logo, EvidenceStatus atom, MK-2866 render and explicitly labelled RAD-140 fixture copied into the private Sites asset tree and hashed in `MANIFEST.md`.
-- User approvals and deferred decisions recorded in `DECISIONS.md`.
+- Review captures: `573:64880`, with screenshots `573:64872` through `573:64879`.
+- Historical owner-only URL: `https://oluk-experience-lab.sigmamindset.chatgpt.site`.
+- Historical deployed source: `7a382206fc4fc573425a7c8b0bd5d4b810b4a2b5`.
+- Formal verdict: `REJECTED_VISUAL_TRANSLATION`.
+- V2 remains useful for review provenance and source/data-honesty lessons. Its URL and deployment metadata are not V3 proof.
 
-### Implementation state at this receipt
+### V3 implementation state
 
-- Sites project initialized at `sites/oluk-experience-lab`.
-- Shared three-tier header, footer, material/token layer and persistent fixture boundary implemented.
-- Homepage, catalogue, MK-2866 PDP, reviews and About routes implemented.
-- OpenLab portal, archive, individual record, dossier, lookup, methodology, source chain, compare and EvidenceOS routes implemented.
-- All mutation-looking controls without a runtime owner are disabled or presented as static design states.
-- One inspected, claim-safe share image was generated and registered in `MANIFEST.md`.
-- Route, build, lint, type and rendered-authority checks pass.
-- Owner-only Codex Sites version 2 deployed successfully from validated source commit `7a382206fc4fc573425a7c8b0bd5d4b810b4a2b5`.
-- Private review URL: `https://oluk-experience-lab.sigmamindset.chatgpt.site`.
-- Sites readback reports `access_mode: custom`, current user role `owner`, and no shared group allowlist.
+- Fifteen routes are implemented locally, including the private `/review` index.
+- Final Design node `614:75950` is the current structural source for the corrected hero grid.
+- The hero uses two left containers, a central Featured ProductCommerceCard, right-side compound-family cards and a lower BatchTicker.
+- Exact MK-2866 truth uses `90 SERVINGS`; `90 CAPS` is rejected.
+- Approved trust-rail fixture copy is rendered in the customer register.
+- Realistic rendered reviews are present on the main customer surfaces.
+- Backend/governance/fixture vocabulary is excluded from visible customer copy.
+- The dark footer is the sole inverse surface.
+- Shopper SSR, WooCommerce, Initiator/payment, C2 and Figma remain untouched by this lane.
+- V3 has passed local QA and is ready for its already approved owner-only publish; it has not yet been hosted or promoted.
+
+## ROUTES AND REVIEW CONTROL
+
+- Route count: `15`.
+- Acceptance widths: `1440 / 1024 / 768 / 390`.
+- Overflow requirement: zero horizontal page overflow.
+- Private review route: `/review`.
+- Stable targets: `#hero`, `#assurance`, `#compound-families`, `#featured-products`, `#reviews`, `#related-products`, `#purchase`, `#dossier`, `#lab-records` and `#footer`, plus the registered OpenLab routes.
+- Full route and anchor inventory: `MANIFEST.md`.
 
 ## TESTS
 
-| Check | Result | Evidence |
+| Check | Current result | Evidence or next proof |
 |---|---|---|
-| Clean dedicated worktree/branch created | `PASS` | Paths and base revision above |
-| Current repository authority audited | `PASS` | Input list in `MANIFEST.md` |
-| Current Figma sources inspected without mutation | `PASS` | Node inventory in `MANIFEST.md` |
-| User decisions normalized | `PASS` | `DECISIONS.md` |
-| Asset files present and hashed | `PASS` | `MANIFEST.md` |
-| All 14 approved routes resolve | `PASS` | `npm test`: each route returns 200 and the expected `h1` |
-| Production build | `PASS` | `npm run build`: Vinext completed all five build phases |
-| Lint | `PASS` | `npm run lint` |
-| Type check | `PASS` | `npm run typecheck` |
-| Product/evidence authority assertions | `PASS` | `npm test`: 3/3 tests pass; rejected strings and fixture boundaries checked |
-| Client hydration smoke | `PASS` | Local Vinext preview returned 200 with no framework-Link hook error after the anchor correction |
-| 1440/1024/768/390 CSS contract | `IMPLEMENTED` | Fluid grids and 1120/900/640 breakpoints; browser visual review remains a human gate |
-| Private Codex Sites review URL | `PASS` | Owner-only version 2: `https://oluk-experience-lab.sigmamindset.chatgpt.site` |
-| Public/production deployment | `NOT AUTHORIZED` | Private-preview-only decision |
+| Dedicated worktree and branch | `PASS` | Paths and revisions above |
+| V2 status formalized | `PASS` | `FIGMA-REVIEW.md` and this receipt |
+| V3 15-route implementation | `PASS` | Rendered-route test enumerated and rendered all 15 routes |
+| Exact `90 SERVINGS` contract | `PASS` | Customer-truth assertion passed; prohibited variants absent |
+| Backend vocabulary removed from customer UI | `PASS` | Visible-text assertion passed across all 14 customer routes |
+| Stable `/review` anchors | `PASS` | Link and target assertion passed |
+| Production build | `PASS` | Vinext production build completed |
+| Lint | `PASS` | ESLint completed without findings |
+| Type check | `PASS` | `tsc --noEmit` completed without findings |
+| Production dependency audit | `PASS` | Zero vulnerabilities |
+| 1440/1024/768/390 browser QA | `PASS` | 60 route/viewport combinations; headings present; no broken images or forbidden visible terms |
+| Zero horizontal overflow | `PASS` | No page overflow in the 60-combination sweep |
+| V3 private preview | `AUTHORIZED / PENDING` | Publish to the existing owner-only Sites project without access changes |
+| Public/production deployment | `NOT AUTHORIZED` | Separate release authority required |
 
 ## TELEMETRY
 
-No runtime telemetry, analytics, inventory source, review source, evidence source, payment provider or C2 service is connected in this lane. Absence of a connection is shown as a source-bound/unavailable state rather than simulated live telemetry.
+No runtime telemetry, inventory source, review source, evidence source, payment provider or C2 service is connected by this lane. Visual completeness must not be interpreted as a live integration claim.
 
 ## DOCS
 
-- `guidelines.md` — active design and authority rules
-- `MANIFEST.md` — inputs, assets, routes and exclusions
-- `PROMPT.md` — implementation brief
-- `RUN.md` — build, review, hosting and rollback procedure
-- `DECISIONS.md` — approved and deferred decisions
+- `guidelines.md` — active design, copy and QA laws
+- `MANIFEST.md` — inputs, 15 routes, stable anchors and exclusions
+- `AUTHORITY-MATRIX.md` — visual/runtime/evidence/payment/C2 authority boundaries
+- `PROMPT.md` — V3 visual-QA brief
+- `RUN.md` — local validation and later private-preview gate
+- `DECISIONS.md` — latest human decisions and deferrals
+- `FIGMA-REVIEW.md` — rejected V2 review provenance
 
 ## RISK/ROLLBACK
 
-- A visually complete state can be mistaken for live evidence. Persistent fixture labels and source-bound values are mandatory.
-- The Option B logo asset is used as the current inspected design source; final master registration remains a later authority decision.
-- The legacy header includes unsupported business and trust claims. They are excluded until verified.
-- The OpenLab reference mobile boards contain fixed multi-column overflow. The Sites implementation must use fluid CSS rather than copy those frames literally.
-- The worktree isolates rollback to the Sites lane. No runtime, payment, Woo, C2 or Figma mutation has been authorized or performed by this receipt.
+- Realistic reviews and trust copy may look live; `AUTHORITY-MATRIX.md` records that they are visual fixtures only.
+- Figma-derived OpenLab values may look evidential; they are not publication or runtime proof.
+- The dark footer is an explicit V3 exception and must not expand into dark pages or a second inverse section.
+- The worktree contains in-progress Sites changes owned by the implementation lane. Documentation work must not overwrite or stage them accidentally.
+- Rollback is limited to the V3 worktree. Do not change Shopper SSR, Woo, payment or C2 as a rollback mechanism.
 
 ## NEXT COMMANDS
 
-1. Complete human visual review across `1440/1024/768/390`; do not infer that review from build success.
-2. Record cumulative corrections against the route and component inventory.
-3. Stop for human approval before any runtime translation or public deployment.
+1. Commit and push the exact QA-passed source state.
+2. Package that committed state with the Sites helper.
+3. Save and deploy a new private version to the existing owner-only project.
+4. Verify the live review index and representative customer routes in the authenticated owner session.
+5. Update this receipt with the exact hosted version and deployment identity.

@@ -13,15 +13,18 @@ Read in this order before changing design, Make or Sites material:
 7. `make-sessions/SESSION_ROADMAP.md`
 8. the active run's `guidelines.md`, `MANIFEST.md`, `PROMPT.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md`, and `DECISIONS.md`
 
-The active lane is [`MF-03 Codex Sites Convergence`](make-sessions/session-03-codex-sites/guidelines.md). `MF-01A`, `MF-01B` and `MF-02A` are completed historical design inputs. Their accepted card, surface and composition relationships carry forward; their Make-generated code does not. The current Sites candidate supersedes the older Shopper visual treatment but does not become runtime, evidence, payment, C2, deployment or release authority.
+The active lane is [`MF-03 Codex Sites Convergence`](make-sessions/session-03-codex-sites/guidelines.md). `MF-01A`, `MF-01B` and `MF-02A` are completed historical design inputs. Their accepted card, surface and composition relationships carry forward; their Make-generated code does not. Sites v2 is formally `REJECTED_VISUAL_TRANSLATION`. Sites v3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`; it has not yet been deployed. The current Sites candidate supersedes the older Shopper visual treatment but does not become runtime, evidence, payment, C2, deployment or release authority.
 
 ## MF-03 Codex Sites boundary
 
-- Work in `sites/oluk-experience-lab` on `codex/mf-codex-sites-convergence`.
+- Work in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`; the implementation root is `sites/oluk-experience-lab`.
 - Treat Figma and Evidence-OS sources as read-only design evidence.
-- Build the global shell, homepage, shop, MK-2866 PDP, review states and OpenLab route family at 1440/1024/768/390 with zero horizontal overflow.
-- Label fixtures and source-bound content honestly. Do not invent inventory, customer reviews, batches, reports, chromatograms or laboratory values.
-- Publish only to a private Codex Sites review URL. Public/production deployment is prohibited in this lane.
+- Treat Final Design node `614:75950` as the current structural source for the corrected homepage hero grid: two left editorial/archive containers, a featured ProductCommerceCard, right-side family cards and the lower report ticker. Its visible values do not become runtime or evidence authority.
+- Maintain all 15 routes, including the private `/review` index and its stable review anchors, at 1440/1024/768/390 with zero horizontal overflow.
+- Use the approved trust-rail fixture copy and realistic rendered reviews on the customer surfaces. Keep the fixture-versus-runtime distinction in documentation and review control; do not expose backend vocabulary such as `GOVERNED`, `SOURCE-BOUND`, `DESIGN FIXTURE`, `DEMO STATE` or `NOT CONNECTED` in customer UI.
+- Preserve the exact customer metric `90 SERVINGS`; `90 CAPS` is rejected.
+- The dark footer is the sole inverse surface in this lane. Every other customer surface remains in the light system.
+- Publish only to the existing owner-only Codex Sites project after visual QA. The user has approved this private-review action; public/production access is prohibited.
 - Do not mutate Shopper SSR, WooCommerce, Initiator/payment behavior or C2. Those require later explicit authority and the appropriate runtime workflow.
 
 ## Historical MF-01A hard boundary
@@ -49,7 +52,7 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 
 ## Design laws
 
-- Light mode only for the active lane. MENT and dark mode are deferred.
+- Light mode only for the active lane, with one explicit exception: the dark footer is the sole inverse surface. MENT, dark pages and any second broad inverse surface are deferred.
 - Cool luminous canvas; never cream, beige, blanket grey, broad inverse, or Tailwind-grey leakage.
 - Media chambers are bounded authored product environments outside PDP Section 1. They do not become section backgrounds.
 - Raised white content/purchase planes may use restrained cool elevation.

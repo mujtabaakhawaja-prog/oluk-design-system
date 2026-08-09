@@ -7,8 +7,8 @@
 **Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
 **Figma program index:** Page 00, node `36:2`
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
-**Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs now feed `MF-03 Codex Sites Convergence`. The active lane assembles the global shell, commerce, reviews and OpenLab route family as a private responsive design candidate. Earlier Make run receipts remain historical inputs rather than active execution instructions.
-**Promotion state:** Codex Sites design convergence is active. The candidate is design/review authority only; Phase 05–06 foundations remain provisional, MENT and dark mode remain deferred, and production Shopper SSR, payment, C2 and release work remain later separately authorized lanes.
+**Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs feed `MF-03 Codex Sites Convergence`. Sites v2 is `REJECTED_VISUAL_TRANSLATION`. V3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW` in the dedicated v3-corrections worktree; its 15 routes include a private `/review` index. Earlier Make run receipts remain historical inputs rather than active execution instructions.
+**Promotion state:** V3 private publishing is approved and pending; it carries design/review authority only. The latest bounded human decisions permit Final Design node `614:75950` as the current hero-structure source, realistic review and trust-rail fixture presentation without visible backend vocabulary, and one dark footer as the sole inverse exception. Those exceptions do not authorize runtime truth, Phase 05–06 promotion, Shopper SSR, payment, C2 or release work.
 
 ## Document control
 
@@ -33,7 +33,7 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 | Asset authority | Light-mode asset set sufficient for the active lane | The approved MK-2866 transparent master is registered and used; MENT verification is deferred with dark-mode work |
 | Color foundations | Mechanically sound; visually provisional | 60 primitives, 59 semantics and three evaluation modes remain operational and hidden after the bounded NR-02D purchase-contract update; their mappings are still candidate authority and remain unpublished |
 | Non-color foundations | Directional baseline established; creative refinement active | Make may improve typography scale, spacing/density, shape, material, motion and responsive relationships in customer-facing designs; formal extraction follows the Make champion |
-| System validation | Make convergence pending | Cross-route light-mode pages and adaptive component families must converge before formal system extraction and validation |
+| System validation | V3 visual QA in progress | Fifteen local routes require review at 1440/1024/768/390 with zero horizontal overflow before any private preview or formal system extraction |
 | Foundation authority | Not started | Page 07 is a promotion shell; no mode is production `Light` |
 | Components through release | Deferred | Phases 08–12 may begin only through their recorded entry gates |
 

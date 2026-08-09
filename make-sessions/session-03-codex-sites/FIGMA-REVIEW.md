@@ -1,5 +1,7 @@
 # FIGMA_AGENT_RESPONSE — MF-03 Codex Sites Experience Lab Review
 
+> **Historical V2 disposition:** `REJECTED_VISUAL_TRANSLATION`. This review and its owner-only URL are preserved as V2 evidence only. V3 is `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`; owner-only publishing is pending. Current execution is governed by `guidelines.md`, `AUTHORITY-MATRIX.md`, `MANIFEST.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md` and `DECISIONS.md`.
+
 ## Metadata
 
 - **File:** `BEPMuUt1HroEw8xjz8CVyN`
@@ -12,6 +14,8 @@
 ---
 
 ## VERDICT SUMMARY
+
+**Formal status:** `REJECTED_VISUAL_TRANSLATION`
 
 The v2 build gets the **data truth** right (MK-2866 values, source-bound states, honest fixture labels) but **re-interprets the MF design language as backend system documentation projected onto a frontend surface.** The result reads like an API spec with a stylesheet, not a storefront designed by the Figma MF work.
 

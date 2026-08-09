@@ -1,113 +1,131 @@
-# MF-03 — Codex Sites Convergence Runbook
+# MF-03 — Codex Sites V3 Visual-QA Runbook
 
 **Mode:** How-to guide
-**Status:** Active
+**Status:** `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`
 
 ## Expected result
 
-A build-clean, responsive experience lab at `sites/oluk-experience-lab`, published only to a private Codex Sites review URL. No runtime, payment, C2, Figma or production mutation is part of this run.
+A validated V3 candidate with 15 resolving routes, stable `/review` targets and genuine 1440/1024/768/390 recomposition. Local QA passed; owner-only publishing is the remaining action. Shopper SSR, Woo, payment, C2, Figma and public/production mutation are outside this run.
 
 ## 1. Preflight
 
-1. Confirm the worktree is `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-convergence` on `codex/mf-codex-sites-convergence` and is based on the recorded `origin/main` revision.
-2. Read `AGENTS.md`, the repository authority chain and all files in this session directory.
-3. Confirm `MANIFEST.md` contains the current route, asset and mutation allowlists.
-4. Confirm the persistent design-fixture notice and data-class rules are represented in the implementation plan.
-5. Treat Figma and Evidence-OS sources as read-only.
+1. Confirm the worktree is `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`.
+2. Confirm the branch is `codex/mf-codex-sites-v3-corrections`.
+3. Preserve unrelated and in-progress Sites changes.
+4. Read `AGENTS.md`, the authority chain and every active file in this directory.
+5. Confirm V2 is recorded as `REJECTED_VISUAL_TRANSLATION` and V3 as `LOCAL_QA_PASSED / READY_FOR_PRIVATE_REVIEW`.
+6. Treat Figma, Make, Shopper and Evidence-OS sources as read-only evidence.
 
-## 2. Build order
+## 2. Contract checks
 
-### Milestone 0 — Shared system and shell
+- Final Design node `614:75950` controls the current four-zone hero structure.
+- The trust rail uses its approved five-item visual-fixture copy, not a development disclaimer.
+- Main review surfaces use realistic customer-facing cards.
+- Customer routes contain no backend vocabulary.
+- MK-2866 renders exact `90 SERVINGS`; `90 CAPS` is absent.
+- The dark footer is the sole inverse surface.
+- All 15 routes and stable anchors in `MANIFEST.md` remain present.
 
-- establish the cool canvas, typography, cobalt authority, plane/chamber/elevation rules and responsive containers;
-- build the three-level header and quiet light footer;
-- add global fixture labelling and reusable source-bound states;
-- establish route-aware OpenLab secondary navigation.
+## 3. Visual-QA order
 
-### Milestone 1 — First OpenLab review
+### Pass A — Global shell and homepage
 
-Build in this order:
+Review:
 
-1. Lab Records archive;
-2. individual source-bound record.
+1. trust rail and primary navigation;
+2. `/#hero` against `614:75950` and `614:75995`;
+3. `/#assurance`;
+4. `/#compound-families`;
+5. `/#featured-products`;
+6. `/#reviews`;
+7. `/#related-products`;
+8. `/#footer` as the sole inverse.
 
-Verify that the archive uses editorial plus ledger/card relationships, the record has a source/viewer slot, and neither route invents report content.
+### Pass B — PDP
 
-### Milestone 2 — OpenLab family
+Review:
 
-Build:
+1. `/product/mk-2866#purchase`;
+2. media controls and assurance;
+3. `/product/mk-2866#dossier`;
+4. `/product/mk-2866#lab-records`;
+5. reviews and related product.
 
-1. portal;
-2. MK-2866 dossier;
-3. batch lookup;
-4. methodology;
-5. source chain;
-6. compare;
-7. EvidenceOS overview.
+### Pass C — OpenLab
 
-Keep the flow influence from Evidence-OS while replacing dark technical shells, fixed-width mobile columns and synthetic proof data.
+Review in this order:
 
-### Milestone 3 — Commerce family
+1. `/open-lab/records`;
+2. `/open-lab/records/source-bound-record`;
+3. `/open-lab`;
+4. `/open-lab/dossier/mk-2866`;
+5. `/open-lab/batch-lookup`;
+6. `/open-lab/methodology`;
+7. `/open-lab/source-chain`;
+8. `/open-lab/compare`;
+9. `/about/evidence-os`.
 
-Build:
+### Pass D — Remaining customer routes and review index
 
-1. homepage;
-2. shop/catalogue;
-3. MK-2866 PDP;
-4. reviews route and embedded review states;
-5. About route.
+Review `/shop`, `/reviews`, `/about` and `/review`. Confirm every `/review` link reaches the registered route or anchor.
 
-Apply the MF-02A champion corrections to the hero, grid, dossier and adaptive related rail. Keep the PDP order from `MANIFEST.md` and `PROMPT.md`.
+## 4. Acceptance matrix
 
-## 3. Acceptance matrix
-
-Review every route at `1440`, `1024`, `768` and `390` px against this matrix:
+Check every customer route at `1440`, `1024`, `768` and `390` px.
 
 | Area | Pass condition |
 |---|---|
-| Route | Resolves without a missing-page or client/server error |
-| Width | No horizontal page overflow or clipped fixed-width composition |
-| Shell | Primary navigation remains understandable and Lab Records stays prominent |
-| Type | Body and metadata floors remain readable |
-| Commerce | Cards preserve chamber, identity, metrics, status, price and action hierarchy |
-| Dossier | Facts, media and composition retain semantic order through reflow |
-| Records | Tables become readable compact records before columns collapse |
-| Evidence | Missing source truth is explicit; no invented report, chart or batch value |
-| Reviews | Fixture state is unmistakable; empty/loading/unavailable states are present |
-| Authority | Design/review candidate never claims runtime or production status |
+| Route | Resolves without missing-page or client/server failure |
+| Width | Zero horizontal page overflow and no clipped fixed-width composition |
+| Shell | Primary navigation remains clear; Lab Records remains prominent |
+| Trust rail | Approved customer copy is legible; no dev disclaimer replaces it |
+| Hero | Four-zone relationship recomposes without a decorative right cobalt edge |
+| Product truth | `90 SERVINGS` present; `90 CAPS`, decimal/crossed/per-serving pricing absent |
+| Cards | Chamber, identity, bordered metrics, status, price and actions remain coherent |
+| Dossier | Facts, media and composition preserve order without overlap or clipping |
+| OpenLab | Evidence presentation is customer-facing and makes no runtime claim |
+| Reviews | Realistic rendered cards appear on main surfaces; no fixture labels are visible |
+| Footer | Dark and legible; the only inverse surface |
+| Copy | No visible backend/governance/fixture vocabulary |
+| Review index | Every stable link and anchor in `MANIFEST.md` resolves |
 
-## 4. Build verification
+## 5. Local verification
 
-From `sites/oluk-experience-lab`:
+From `sites/oluk-experience-lab`, rerun the repository-defined checks for:
 
-```bash
-npm run build
-```
+- production build;
+- lint;
+- type checking;
+- all 15 server-rendered routes;
+- exact MK-2866 truth;
+- forbidden customer vocabulary;
+- responsive CSS contract;
+- stable `/review` targets.
 
-Treat a successful build as implementation evidence only. It does not prove responsive quality, source truth, runtime parity or deployment status.
+Record commands, results and current source identity in `CURRENT-STATE-RECEIPT.md`. A successful automated check does not substitute for browser visual QA.
 
-Record the exact result and any remaining uncertainty in `CURRENT-STATE-RECEIPT.md`.
+## 6. Private-preview gate
 
-## 5. Private preview gate
+1. Do not deploy unless the receipt records the completed four-width QA gate.
+2. Complete the four-width visual pass.
+3. Record remaining defects or human acceptance.
+4. Use the Codex Sites hosting workflow only for the already approved owner-only preview; never alter access policy.
+5. Record the exact V3 URL, version and source identity after a successful private deployment.
+6. Never reuse the historical V2 URL as proof that V3 is deployed.
+7. Do not publish publicly or connect a production domain.
 
-1. Use the Codex Sites hosting workflow only after the build passes.
-2. Select private review visibility.
-3. Record the exact private review URL and hosting result in the receipt.
-4. Do not publish publicly, connect a production domain or promote the result into Shopper SSR.
-5. Stop for human review after each accepted milestone or after a cumulative review build when the implementation was completed as one bounded pass.
-
-## 6. Failure routing
+## 7. Failure routing
 
 | Failure | Route to |
 |---|---|
-| Visual hierarchy or composition | MF-03 Sites design lane |
-| Incorrect product truth | Repository authority and human decision record |
-| Missing evidence or report source | Source-bound content owner; do not fabricate |
-| Responsive overflow | Shared CSS/layout owner, then recheck all routes |
-| Build failure | Sites implementation owner |
-| Basket, payment, Woo or C2 dependency | Stop; later Champion/Initiator/C2 stage requires explicit authorization |
-| Public deployment request | Stop; current gate authorizes private review only |
+| Visual hierarchy or responsive defect | MF-03 V3 Sites lane |
+| Incorrect product truth | Repository authority and `DECISIONS.md` |
+| Figma/value disagreement | `AUTHORITY-MATRIX.md`; visual structure does not confer runtime truth |
+| Broken review anchor | Review index, target surface and manifest must change together |
+| Build/test failure | Sites implementation owner |
+| Basket, payment, Woo or C2 dependency | Stop; later explicitly authorized stage |
+| Deployment request before QA | Stop; V3 is local only |
 
-## 7. Rollback
+## 8. Rollback
 
-The lane is isolated in its own worktree and branch. If the candidate is rejected, preserve the session documents and review evidence, then revert or supersede only the bounded Sites changes. Do not rewrite MF-01/MF-02 history or use runtime changes as a rollback mechanism.
+Preserve the V2 rejection and V3 review evidence. Revert or supersede only bounded V3 Sites changes in the isolated worktree. Do not rewrite MF-01/MF-02 history and do not use Shopper SSR, payment or C2 changes as a rollback mechanism.
