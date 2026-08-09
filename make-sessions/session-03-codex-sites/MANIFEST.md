@@ -29,6 +29,7 @@ It may not change Shopper SSR, Initiator, C2, WooCommerce, payment, Figma nodes 
 | `make-sessions/session-01b-relationship-transfer/**` | Completed MF-01B transfer results; historical input |
 | `make-sessions/session-02-grid-surface/**` | Completed MF-02A run, corrections and cherry-pick packet; historical input |
 | `make-sessions/MF-CARRYOVER-AUDIT.md` | Carryover inventory, unresolved surfaces and route map |
+| Codex task `019f9c8f-c368-7c51-9275-f8ecda9dd2bf` | Older Shopper/C2 topology and work-state cross-check only; current MF visual decisions supersede its visual treatment |
 
 ## Figma and Make design inputs
 

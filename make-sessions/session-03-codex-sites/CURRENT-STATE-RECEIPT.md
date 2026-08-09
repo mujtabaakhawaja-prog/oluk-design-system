@@ -2,7 +2,7 @@
 
 **Mode:** Reference
 **Receipt time:** 2026-08-09
-**Status:** `VALIDATED · PRIVATE HOSTING PENDING`
+**Status:** `PRIVATE REVIEW DEPLOYED`
 **Authority:** Design/review candidate only
 
 ## PLAN
@@ -35,7 +35,8 @@ Converge the accepted MF card, material and page relationships with the current 
 - All mutation-looking controls without a runtime owner are disabled or presented as static design states.
 - One inspected, claim-safe share image was generated and registered in `MANIFEST.md`.
 - Route, build, lint, type and rendered-authority checks pass.
-- Private Sites hosting is not yet claimed by this receipt.
+- Owner-only Codex Sites version 1 deployed successfully from validated source commit `54e1fefb56690c467ca21132140c0b81c27a0876`.
+- Private review URL: `https://oluk-experience-lab.sigmamindset.chatgpt.site`.
 
 ## TESTS
 
@@ -52,7 +53,7 @@ Converge the accepted MF card, material and page relationships with the current 
 | Type check | `PASS` | `npm run typecheck` |
 | Product/evidence authority assertions | `PASS` | `npm test`: 3/3 tests pass; rejected strings and fixture boundaries checked |
 | 1440/1024/768/390 CSS contract | `IMPLEMENTED` | Fluid grids and 1120/900/640 breakpoints; browser visual review remains a human gate |
-| Private Codex Sites review URL | `PENDING` | Host only after build passes |
+| Private Codex Sites review URL | `PASS` | Owner-only version 1: `https://oluk-experience-lab.sigmamindset.chatgpt.site` |
 | Public/production deployment | `NOT AUTHORIZED` | Private-preview-only decision |
 
 ## TELEMETRY
@@ -77,7 +78,6 @@ No runtime telemetry, analytics, inventory source, review source, evidence sourc
 
 ## NEXT COMMANDS
 
-1. Publish the validated commit only through the private Codex Sites hosting gate.
-2. Record the exact owner-only review URL and saved version result.
-3. Complete human visual review across `1440/1024/768/390`; do not infer that review from build success.
-4. Stop for human approval before any runtime translation or public deployment.
+1. Complete human visual review across `1440/1024/768/390`; do not infer that review from build success.
+2. Record cumulative corrections against the route and component inventory.
+3. Stop for human approval before any runtime translation or public deployment.

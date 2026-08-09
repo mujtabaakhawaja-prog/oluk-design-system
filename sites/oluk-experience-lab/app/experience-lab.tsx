@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- exact local Figma transparency assets are intentionally styled responsively in this private design lab. */
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext currently hydrates framework Link components incorrectly in this server-rendered experience. */
 
 type RouteKey =
   | "home"
@@ -142,9 +142,9 @@ function SiteHeader({ route }: { route: RouteKey }) {
 
       <div className="primary-nav-plane">
         <div className="shell primary-nav">
-          <Link className="brand-link" href="/" aria-label="Olympus Labs UK home">
+          <a className="brand-link" href="/" aria-label="Olympus Labs UK home">
             <img src="/assets/brand/oluk-logo-on-light.png" alt="Olympus Labs UK" />
-          </Link>
+          </a>
 
           <nav className="desktop-nav" aria-label="Primary navigation">
             <a aria-current={shopActive ? "page" : undefined} href="/shop">
@@ -182,9 +182,9 @@ function SiteHeader({ route }: { route: RouteKey }) {
       <nav className="context-rail" aria-label="Experience sections">
         <div className="shell context-rail-inner">
           <span className="context-label">Browse</span>
-          <Link aria-current={route === "home" ? "page" : undefined} href="/">
+          <a aria-current={route === "home" ? "page" : undefined} href="/">
             Featured
-          </Link>
+          </a>
           <a aria-current={route === "shop" ? "page" : undefined} href="/shop">
             Catalogue
           </a>
@@ -880,7 +880,7 @@ function RecordPage() {
     <>
       <OpenLabNav active="records" />
       <section className="record-page section-shell">
-        <div className="shell breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">›</span><a href="/open-lab">OpenLab</a><span aria-hidden="true">›</span><a href="/open-lab/records">Lab Records</a><span aria-hidden="true">›</span><strong aria-current="page">Source-bound record</strong></div>
+        <div className="shell breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><a href="/open-lab">OpenLab</a><span aria-hidden="true">›</span><a href="/open-lab/records">Lab Records</a><span aria-hidden="true">›</span><strong aria-current="page">Source-bound record</strong></div>
         <div className="shell record-hero">
           <div className="record-identity">
             <span className="eyebrow">OPENLAB · LAB RECORD</span>
