@@ -1,55 +1,55 @@
 # MF-03 Run Procedure
 
+## Output
+
+ONE frame: `OpenLab Portal` — 1440px wide, full page scroll.
+Not boards. Not directions. One finished page.
+
 ## Pre-Run
 
-- [ ] PROMPT.md read
-- [ ] All input nodes accessible
-- [ ] Surface contract loaded
+- [ ] All reference nodes accessible
+- [ ] Surface contract understood (see PROMPT.md)
+- [ ] Typography lock: Inter + Plus Jakarta Sans ExtraBold ONLY
 
-## Input Verification
+## Section Checklist
 
-| Node | Name | ✓ |
-|------|------|---|
-| `564:42811` | Header/OptionB | [ ] |
-| `551:28924` | MF-02A champion | [ ] |
-| `561:41860` | CategoryFamilyRail | [ ] |
-| `563:42499` | Product Dossier | [ ] |
-| `475:9098` | TrustEvidenceSpine | [ ] |
-| `561:41769` | Product Assurance | [ ] |
-| `486:4634` | Vertical card | [ ] |
-| `422:10293` | Lab Verification | [ ] |
-| `222:1332` | LabReports/CanvasSplit | [ ] |
-| `588:67272` | Portal hero (replaces TrustGrid) | [ ] |
-| `588:67449` | ProductGrid (replaces BestSellers) | [ ] |
-| `588:67788` | CanvasSplit (replaces LabReports) | [ ] |
-| `588:67652` | EmbeddedEvidence | [ ] |
-| `545:22790` | HPLC Purity Trace | [ ] |
-| `545:22831` | Batch Records table | [ ] |
-| `551:25195` | OpenLab product banner | [ ] |
+| # | Section | Reference | ✓ |
+|---|---------|-----------|---|
+| 1 | Header (2-tier, ≤80px) | `564:42811` | [ ] |
+| 2 | Hero (light, 4-zone grid) | `588:66008` → light | [ ] |
+| 3 | TrustEvidenceSpine banner | `556:33850` | [ ] |
+| 4 | Category cards (4 white) | `561:41860` | [ ] |
+| 5 | Product grid (3-4 vertical cards) | `588:67449` + `486:4634` | [ ] |
+| 6 | Evidence archive (canvas split) | `588:67788` | [ ] |
+| 7 | Embedded evidence (six-point) | `588:67652` | [ ] |
+| 8 | Product banner | `551:25195` | [ ] |
+| 9 | Compound families nav | `561:41860` | [ ] |
+| 10 | Footer (dark) | — | [ ] |
 
-## Expected Outputs
+## Gate Checks
 
-| Output | Status |
-|--------|--------|
-| Header (two-tier champion) | [ ] |
-| Footer (dark) | [ ] |
-| OpenLab Dir A (editorial) | [ ] |
-| OpenLab Dir B (dashboard) | [ ] |
-
-## Gates
-
-- [ ] OpenLab A and B differ per section (differentiation gate)
-- [ ] Zero reject rule violations
-- [ ] Surface contract compliance
-- [ ] All body copy ≥15px
-- [ ] No `90 CAPS` — must read `90 SERVINGS`
-- [ ] No governance vocabulary on customer surface
+- [ ] Every section has BOTH evidence AND commerce aspect
+- [ ] Canvas `#f7f8fc` everywhere (not `#ffffff`)
+- [ ] Card borders `rgba(206,220,241,0.92)`
+- [ ] Softform Arc shadow on all cards
+- [ ] Only Inter + Plus Jakarta Sans ExtraBold
+- [ ] No JetBrains Mono, Poppins, or other fonts
+- [ ] `90 SERVINGS` not `90 CAPS`
+- [ ] No direction labels or board markup
+- [ ] No meta-commentary headlines
+- [ ] No backend vocabulary
+- [ ] No solid cobalt card fills
+- [ ] No achromatic grey
+- [ ] Width = 1440px
+- [ ] Footer is dark `rgb(20,24,39)`
 
 ## Scoring
 
-| Output | Surface | Copy | Differentiation | Card Family | Overall |
-|--------|---------|------|-----------------|-------------|--------|
-| Header | /5 | /5 | N/A | N/A | /5 |
-| Footer | /5 | /5 | N/A | N/A | /5 |
-| OpenLab A | /5 | /5 | /5 | /5 | /5 |
-| OpenLab B | /5 | /5 | /5 | /5 | /5 |
+| Check | /5 |
+|-------|----|------|
+| Surface contract compliance | |
+| Card family makeup | |
+| Evidence × Commerce duality per section | |
+| Typography system | |
+| Copy register (customer-facing, no meta) | |
+| Overall | |

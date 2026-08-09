@@ -1,174 +1,144 @@
-# MF-03 — Header + Footer + OpenLab Portal
+# MF-03 — OpenLab Portal Page
 
-**Session:** `session-03-openlab-header`
 **File:** `BEPMuUt1HroEw8xjz8CVyN`
 **Output page:** `512:4651` (MF-02)
-**Predecessor:** MF-02A Run 3 champion `551:28924`
+**Width:** 1440px
 
-## Objective
+## What to produce
 
-Design three surfaces that don't exist yet: **site header**, **site footer**, and the **OpenLab portal landing page**. The OpenLab portal is the priority — it's the public evidence hub and the largest design surface in this run.
+ONE finished OpenLab portal page prototype at 1440px wide. Not boards. Not directions. Not labeled explorations. A single continuous scrolling page that a customer would see.
 
-Do NOT redesign homepage body sections (hero, grid, dossier, evidence, rail) — those are locked from MF-02A.
+The organizing principle: every section marries **EVIDENCE with COMMERCE** and **TECHNICAL with PRODUCT**. No section is purely informational. No section is purely commercial. Each one presents evidence AND sells.
 
-## Outputs
+## Section order (top to bottom)
 
-| # | Output | Width |
-|---|--------|-------|
-| 1 | Header (single champion) | 1440px |
-| 2 | Footer (dark) | 1440px |
-| 3 | OpenLab Portal Dir A (editorial vertical) | 1440px |
-| 4 | OpenLab Portal Dir B (dashboard grid) | 1440px |
+### 1. Header
+Use `564:42811` as content reference. Two-tier: trust rail (28-32px) + main nav bar. Total ≤80px.
+- Trust rail: Free UK Delivery Over £50 · Free Int'l Delivery £300+ · Third-Party Lab Verified · JANOSHIK Validated · Encrypted Checkout
+- Nav: Olympus Labs UK logo mark · Shop · Open Lab · Lab Records · About · Search · Cart · Sign In
+- White `#ffffff` background, `rgba(206,220,241,0.92)` 1px bottom border
+- Excluded: Wholesale, currency toggle, appearance toggle
 
----
+### 2. Hero
+Re-design the hero from `588:66008` in the LIGHT surface contract. Preserve the grid structure: LEFT editorial copy + CENTER FlagshipCard + BOTTOM BatchTicker + RIGHT category card stack. But render it on `#f7f8fc` canvas with white cards, blue-shifted borders, Softform Arc shadow — not the dark treatment.
+- Left: "Proof built into every batch." headline (Plus Jakarta Sans ExtraBold) + subhead + "Explore OpenLab" CTA (cobalt `#0057FF` filled button)
+- Center: FlagshipCard showing MK-2866 product with metrics (15 MG · 90 SERVINGS · >99% PURITY) — use `486:4634` Vertical card makeup: bounded media chamber `rgb(240,244,251)`, MetricRail, r=24, Softform Arc
+- Bottom: BatchTicker strip with live batch verification feed (MK-677 98.9% · BPC-157 99.2% · CJC-1295 99.0%)
+- Right: 4 category cards (SARMs, Peptides, Longevity, Nootropics) as small white elevated cards
 
-## SECTION 1: HEADER (single champion)
+### 3. TrustEvidenceSpine Banner
+Use `556:33850` / `588:67272` as direct layout reference. Three-panel composition:
+- Left: "Proof built into every batch." narrative block with EXPLORE OPENLAB button
+- Center: Product bottle render with Product Facts and Product Composition panels flanking
+- Bottom: Evidence Ledger 2×3 grid — 01 Identity Tested · 02 Purity Measured · 03 Concentration Confirmed · 04 Janoshik Verified · 05 Tamper-Proof Sealed · 06 Batch Tracked
 
-Two-tier minimal. Trust rail as a slim 28–32px strip above the main nav bar. Total height ≤80px. The header should feel invisible so the hero commands attention.
+This section is the EVIDENCE + TECHNICAL anchor. Each ledger cell has numbered glyph + title + description.
 
-### Content (fixed)
+### 4. Category Cards
+Use `561:41860` CategoryFamilyRail pattern. Four equal white cards:
+- SARMs · Prohormones · Research Chemicals · Stacks
+- Each card: white fill, `rgba(206,220,241,0.92)` border, Softform Arc shadow, r=24
+- Brief description + compound count + "Browse →" link
+- NO solid cobalt fill backgrounds
 
-**Trust rail:** Free UK Delivery Over £50 · Free Int'l Delivery £300+ · Third-Party Lab Verified · JANOSHIK Validated · Encrypted Checkout
+### 5. Product Grid (Vertical Cards)
+Use `588:67449` for layout, `486:4634` for card makeup. 3-4 ProductCommerceCards:
+- Each card: bounded media chamber `rgb(240,244,251)`, MetricRail (3 bordered chips: STRENGTH · SERVINGS · PURITY), QualitativeChips, EvidenceStatus badge, price, "Add to bag" cobalt button
+- MK-2866 (£43), RAD-140 (£46), MK-677 (£44), LGD-4033 (£38)
+- Section headline: "Finished products. Verified evidence." — NOT meta-commentary
+- This is COMMERCE + EVIDENCE: products with their proof attached
 
-**Nav bar:** Logo (Olympus Labs UK mountain mark from `564:42811`) · Shop · Open Lab · Lab Records · About · Search icon · Cart/Bag icon · Sign In icon
+### 6. Evidence Archive (Canvas Split)
+Use `588:67788` for layout, `222:1332` for canvas-split pattern.
+- Left: "Every batch. Every report. Public." + description + search field + metrics (15 Reports · 99.55% Avg Purity · 0 Failures) + "View testing methodology →"
+- Right: Batch Records table — columns: BATCH · COMPOUND · PURITY · DATE · LAB · RECORD — rows for OL2201/MK-2866, OL2202/RAD-140, BPC-157, MK-677, LGD-4033, CJC-1295 — all >99% PURITY, all PASS
+- This is TECHNICAL + EVIDENCE: the operating system, not marketing
 
-**Excluded:** Wholesale, currency toggle, appearance toggle, dark mode switch.
+### 7. Embedded Evidence (Six-Point Record)
+Use `588:67652` for layout.
+- Left: Six-point record list — Compound Identity · Purity · Concentration · Microbiology · Heavy Metals · Certificate — each with status indicator
+- Right: HPLC Purity Trace chart (use `545:22790` pattern) + Batch Records summary table (use `545:22831` pattern)
+- This is TECHNICAL + PRODUCT: showing exactly how a single record works
 
-### Surface
+### 8. OpenLab Product Banner
+Use `551:25195` as direct reference.
+- "Formulated to a higher standard." headline
+- Featured MK-2866 card with metrics (15 MG · 90 SERVINGS · >99% PURITY · £43)
+- "Shop the Range" CTA + "View Lab Records" secondary
+- Compound selector chips: MK-2866 · MENT · Endurobished · RAD-140 · MK-677
+- This is COMMERCE + EVIDENCE: the product with its proof, driving purchase
 
-- Background: `#ffffff` (header sits ON the canvas, not in it)
-- Bottom border: `rgba(206,220,241,0.92)` 1px
-- Nav text: Inter 14px, near-black `rgb(20,24,39)`
-- Trust rail text: Inter 11px, blue-shifted neutral `rgb(107,119,140)`
-- Active/emphasis: cobalt `#0057FF` for Lab Records and active states
-- Logo: mountain mark from `564:42811` — do not invent a new logo
+### 9. Compound Families Navigation
+Repeat of section 4 pattern at page bottom, serving as exit navigation.
+- SARMs · Prohormones · Research Chemicals · Stacks
+- "Browse evidence by compound family."
 
-### Inputs
+### 10. Footer
+Dark `rgb(20,24,39)` — the ONE allowed inverse surface.
+- SHOP (Catalogue, SARMs, Prohormones, Research Chemicals, Stacks)
+- OPENLAB (Portal, Lab Records, Batch Lookup, Methodology, Source Chain)
+- ABOUT (Olympus Labs UK, EvidenceOS, Contact, Privacy)
+- © 2026 Olympus Labs UK. White mountain logo mark.
 
-| Node | What it provides |
-|------|------------------|
-| `564:42811` Header/OptionB | Content structure, logo mark, nav items |
-| `551:28924` MF-02A champion | Surface contract context — header must sit above this seamlessly |
+## Surface contract (MANDATORY — every pixel)
 
----
+| Token | Value | NEVER |
+|-------|-------|-------|
+| Canvas | `#f7f8fc` | `#ffffff` for canvas |
+| Card fill | `#ffffff` | Any grey |
+| Card border | `rgba(206,220,241,0.92)` 1px | No border |
+| Shadow | `0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)` | Generic shadow |
+| Near-black | `rgb(20,24,39)` | `#000000` |
+| Cobalt core | `#0057FF` | Other blues |
+| Cobalt interactive | `#256DFF` | |
+| Media chamber | `rgb(240,244,251)` | Grey chamber |
+| Display | Plus Jakarta Sans ExtraBold | Any other display font |
+| Body | Inter | Any other body font |
+| Body min | 15px | Smaller |
+| Card radius | r=24 (vertical), r=34 (horizontal), r=20 (compact) | |
 
-## SECTION 2: FOOTER (single direction)
+**Zero grey rule:** No achromatic Tailwind grey anywhere. All neutrals blue-shifted.
+**Cobalt authority:** quantified metric > specification > qualitative > structural edge.
 
-The ONE allowed inverse/dark surface in the entire system.
+## Typography lock
 
-### Content
+ONLY two font families exist:
+- **Plus Jakarta Sans ExtraBold** — headlines, display text
+- **Inter** — everything else (nav, body, labels, captions, chips)
 
-```
-Olympus Labs UK
+No JetBrains Mono. No Poppins. No Manrope. No system fonts. No serif fonts.
 
-SHOP                OPENLAB              ABOUT
-Catalogue           Portal               Olympus Labs UK
-SARMs               Lab Records          EvidenceOS
-Prohormones         Batch Lookup         Contact
-Research Chemicals  Methodology          Privacy
-Stacks              Source Chain
+## Reject rules
 
-© 2026 Olympus Labs UK. All rights reserved.
-```
-
-### Surface
-
-- Background: `rgb(20,24,39)`
-- Headings: white `#ffffff`
-- Links: `rgba(255,255,255,0.6)`
-- Hover: cobalt `#0057FF`
-- Logo: white mountain mark
-- Padding: 80px top/bottom, 48px column gaps
-
----
-
-## SECTION 3: OPENLAB PORTAL (2 directions)
-
-The public evidence hub. "Every batch is tested. Every report is public."
-
-Make must use the MF-02 reference nodes for **layout orientation** but apply the full OLUK light-mode surface contract — card shapes, elevation, fills, borders, typography. The references show section structure and content; Make re-clothes them in the identity system.
-
-### Section order (top to bottom)
-
-| # | Section | Content source | Layout reference |
-|---|---------|---------------|------------------|
-| 1 | **Portal Hero** | "Proof built into every batch." + Product Facts / Media / Composition three-panel + Evidence Ledger 6-point grid | `588:67272` (replaces `588:66190` TrustGrid). Preserve the grid structure of `588:66008` Hero but translate to light surface. |
-| 2 | **Product Grid** | MF card-family commerce cards with MetricRail, EvidenceStatus, QualitativeChips | `588:67449` (replaces `588:66460` BestSellers) |
-| 3 | **Evidence Archive** | "Every batch. Every report. Public." + batch records table + search + methodology link | `588:67788` (replaces `588:66717` LabReports) |
-| 4 | **Embedded Evidence** | Six-point record: Compound Identity, Purity, Concentration, Microbiology, Heavy Metals, Certificate + HPLC trace + batch table | `588:67652` + `545:22790` (HPLC chart) + `545:22831` (batch records table) |
-| 5 | **OpenLab Product Banner** | Featured product with evidence posture — "Formulated to a higher standard" + MK-2866 card with metrics | `551:25195` |
-| 6 | **Compound Families** | SARMs · Prohormones · Research Chemicals · Stacks — "Browse evidence by compound family" | `561:41860` CategoryFamilyRail |
-
-### Additional structural inputs
-
-| Node | What it provides |
-|------|------------------|
-| `563:42499` Product Dossier | Three-panel [Facts \| Media \| Composition] reference for portal hero layout |
-| `475:9098` TrustEvidenceSpine | Six-point evidence ledger narrative pattern |
-| `561:41769` Product Assurance | AssuranceRail 6-point strip |
-| `486:4634` Vertical card | Card makeup reference: bounded media chamber, MetricRail, Softform Arc, r=24 |
-| `422:10293` Lab Verification | Certificate of Analysis / HPLC chromatogram |
-| `222:1332` LabReports/CanvasSplit | Canvas-split layout template |
-
-### Direction A — Editorial Vertical
-
-Full-width sections, generous vertical rhythm. Hero is a statement section with large type. HPLC trace is a hero-scale element, not a widget. Featured Record uses canvas-split layout (narrative left, data right per `222:1332`). Each section breathes.
-
-### Direction B — Dashboard Grid
-
-Denser layout. Evidence Summary as metric cards. Six-Point Proof as 2×3 card grid. Featured Record as embedded card. More information density. The page feels like a transparency dashboard, not an editorial magazine.
-
-### Differentiation gate
-
-Every section MUST differ structurally between A and B. If any section is visually identical, the run fails.
-
----
-
-## SURFACE CONTRACT (all outputs)
-
-| Token | Value |
-|-------|-------|
-| Canvas | `#f7f8fc` |
-| Card fill | `#ffffff` |
-| Card border | `rgba(206,220,241,0.92)` 1px |
-| Structural divider | `rgb(206,220,241)` 1px |
-| Authority divider | `#0057FF` 2px |
-| Near-black | `rgb(20,24,39)` |
-| Cobalt core | `#0057FF` |
-| Cobalt interactive | `#256DFF` |
-| Media chamber fill | `rgb(240,244,251)` |
-| Display font | Plus Jakarta Sans ExtraBold |
-| Body font | Inter |
-| Body minimum | 15px |
-| Softform Arc shadow | `0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)` |
-
-**Zero grey rule:** No achromatic Tailwind grey. All neutrals blue-shifted.
-**Cobalt authority order:** quantified metric > specification > qualitative attribute > structural edge.
-**Dark mode:** OUT OF SCOPE. Footer is the only inverse surface.
-
----
-
-## REJECT RULES
-
-1. Meta-commentary headlines ("A clear evidence hierarchy", "Designed for trust")
-2. Backend vocabulary in UI (GOVERNED, SOURCE-BOUND, DESIGN FIXTURE, DEMO STATE, NOT CONNECTED)
-3. Wrong compound families (must be: SARMs, Prohormones, Research Chemicals, Stacks)
-4. Solid cobalt `#0057FF` card fill background
+1. Direction labels ("Direction A", "Baseline version B", any exploration markup)
+2. Meta-commentary headlines ("A clear evidence hierarchy", "Designed for trust")
+3. Backend vocabulary (GOVERNED, SOURCE-BOUND, DESIGN FIXTURE, DEMO STATE)
+4. Solid cobalt card fill backgrounds
 5. Canvas `#ffffff` instead of `#f7f8fc`
-6. Header includes Wholesale, currency toggle, appearance toggle
-7. OpenLab directions visually identical per section
-8. Footer uses light background
-9. Non-blue-shifted grey
-10. `90 CAPS` anywhere — controlling value is `90 SERVINGS`
+6. Any font besides Inter and Plus Jakarta Sans ExtraBold
+7. `90 CAPS` — must read `90 SERVINGS`
+8. Width other than 1440px
+9. Grey that isn't blue-shifted
+10. Boards/explorations instead of a single finished page
 
----
+## Reference nodes for Make
 
-## OPERATING CONSTRAINTS
-
-- Do NOT redesign homepage body sections — MF-02A locked
-- Do NOT run Porcelain, Atmospheric, or Frost themes
-- Do NOT explore new typography or spacing systems
-- Make-generated code is disposable prototype machinery
-- CommerceTrustStrip is separate from ProductMetricRail
-- Dark mode and broad inverse sections remain out of scope
-- For checkout/basket/payment: follow AGENTS.md and controlling runtime packet
+| Node | Use as |
+|------|--------|
+| `564:42811` | Header content + logo |
+| `551:28924` | MF-02A champion — surface contract source of truth |
+| `588:66008` | Hero grid structure (translate to light) |
+| `556:33850` | TrustEvidenceSpine banner (direct reference) |
+| `588:67272` | Portal hero composition |
+| `561:41860` | CategoryFamilyRail |
+| `486:4634` | ProductCommerceCard/Vertical — card makeup |
+| `518:13092` | EvidenceStatus badge |
+| `588:67449` | Product grid layout |
+| `588:67788` | Canvas-split archive layout |
+| `588:67652` | Embedded evidence layout |
+| `545:22790` | HPLC Purity Trace chart |
+| `545:22831` | Batch Records table |
+| `551:25195` | OpenLab product banner |
+| `222:1332` | LabReports canvas-split template |
+| `470:6393` | Hero 2-fold template |
+| `475:9098` | TrustEvidenceSpine narrative |
