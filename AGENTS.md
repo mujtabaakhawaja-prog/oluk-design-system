@@ -2,7 +2,7 @@
 
 ## Current authority
 
-Read in this order before changing design or Make material:
+Read in this order before changing design, Make or Sites material:
 
 1. `authority/ids-plan.md`
 2. `authority/identity-design-system-authoritative-plan-and-build-receipt.md`
@@ -11,11 +11,20 @@ Read in this order before changing design or Make material:
 5. `authority/oluk-pdp-architecture.md`
 6. `make-sessions/session-01-product-card/CONSTITUTION.md`
 7. `make-sessions/SESSION_ROADMAP.md`
-8. the active run's `guidelines.md`, `MANIFEST.md`, `PROMPT.md`, and `RUN.md`
+8. the active run's `guidelines.md`, `MANIFEST.md`, `PROMPT.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md`, and `DECISIONS.md`
 
-The active lane is `MF-01A ProductCommerceCard Material Relationship Frontier`. Figma Design established a strong Native Light baseline; Figma Make is expected to design beyond that baseline, not trace its nodes or convert its boards into an SSR prototype. `MF-01B` is a separate cross-context transfer test and must not be folded into the opening generation.
+The active lane is [`MF-03 Codex Sites Convergence`](make-sessions/session-03-codex-sites/guidelines.md). `MF-01A`, `MF-01B` and `MF-02A` are completed historical design inputs. Their accepted card, surface and composition relationships carry forward; their Make-generated code does not. The current Sites candidate supersedes the older Shopper visual treatment but does not become runtime, evidence, payment, C2, deployment or release authority.
 
-## MF-01A hard boundary
+## MF-03 Codex Sites boundary
+
+- Work in `sites/oluk-experience-lab` on `codex/mf-codex-sites-convergence`.
+- Treat Figma and Evidence-OS sources as read-only design evidence.
+- Build the global shell, homepage, shop, MK-2866 PDP, review states and OpenLab route family at 1440/1024/768/390 with zero horizontal overflow.
+- Label fixtures and source-bound content honestly. Do not invent inventory, customer reviews, batches, reports, chromatograms or laboratory values.
+- Publish only to a private Codex Sites review URL. Public/production deployment is prohibited in this lane.
+- Do not mutate Shopper SSR, WooCommerce, Initiator/payment behavior or C2. Those require later explicit authority and the appropriate runtime workflow.
+
+## Historical MF-01A hard boundary
 
 Attach exactly these three files and nothing else:
 
@@ -72,7 +81,7 @@ Make-generated code is disposable prototype machinery. It never becomes runtime 
 - Every PR includes Status, Notes, Risks, Checklist, validation performed, and rollback.
 - Stage only task files. Never delete or overwrite unrelated user work.
 
-## MF-01A definition of done
+## Historical MF-01A definition of done
 
 - Three materially distinct design directions.
 - Each direction is a coherent family, not a palette swap.
@@ -81,7 +90,7 @@ Make-generated code is disposable prototype machinery. It never becomes runtime 
 - No comparison-board aesthetic, runtime language, native-node tracing, or system-documentation UI.
 - Human records selected relationships for MF-01B. No native nodes enter before the transfer test passes and MF-02 begins.
 
-## MF-01B transfer boundary
+## Historical MF-01B transfer boundary
 
 - MF-01B starts only after the MF-01A relationship selection is recorded.
 - It tests transfer into four bounded customer-facing fragments: homepage entry, PDP Section 1, embedded evidence, and true canvas-split evidence/rail.

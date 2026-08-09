@@ -69,8 +69,8 @@ Panels displaying product truth preserve the ProductMetricRail's quantified-trut
 ### Gate Status
 - NR-03 passed — human selection complete
 - NR-04 Source Lock complete — purchase masters synchronized, icon corrected, inputs frozen
-- MF-01A is the active sealed creative run; MF-01B follows as a PNG-led relationship-transfer test
-- Foundation rebase (NR-05) blocked until native reconstruction (04B) completes
+- MF-01A, MF-01B and MF-02A are complete historical inputs; MF-03 Codex Sites convergence is active
+- Foundation rebase (NR-05) remains blocked until the cross-route light-mode design candidate passes the Make Design Gate
 - MENT dark-object asset remains a later System Gate blocker
 
 ### Semantic chip distinctions

@@ -1,28 +1,32 @@
-# Olympus Labs UK — Identity and Figma Make Program
+# Olympus Labs UK — Identity and Experience Design Program
 
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=3-4)
-**Current gate:** Native Light source locked; `MF-01A ProductCommerceCard Material Relationship Frontier` active
-**Last updated:** 2026-08-04
+**Current gate:** `MF-03 Codex Sites Convergence` active; private design review only
+**Last updated:** 2026-08-09
 
 ## Start here
 
 | Document | Job |
 |---|---|
-| [`AGENTS.md`](AGENTS.md) | Agent operating contract and MF-01A/MF-01B boundaries |
+| [`AGENTS.md`](AGENTS.md) | Agent operating contract, active MF-03 boundary and preserved historical run rules |
 | [`authority/ids-plan.md`](authority/ids-plan.md) | Alias to the controlling authority documents |
 | [`authority/identity-design-system-authoritative-plan-and-build-receipt.md`](authority/identity-design-system-authoritative-plan-and-build-receipt.md) | Canonical Phase 00–12 pipeline and receipts |
 | [`authority/surface-contract.md`](authority/surface-contract.md) | Adaptive macro/micro surface relationships and live-source caveats |
-| [`make-sessions/SESSION_ROADMAP.md`](make-sessions/SESSION_ROADMAP.md) | MF-01A/MF-01B–MF-10 run sequence |
-| [`make-sessions/session-01-product-card/RUN.md`](make-sessions/session-01-product-card/RUN.md) | Exact MF-01A click path and review sequence |
-| [`make-sessions/session-01-product-card/PROMPT.md`](make-sessions/session-01-product-card/PROMPT.md) | Paste-ready MF-01A creative-frontier prompt |
-| [`make-sessions/session-01-product-card/MANIFEST.md`](make-sessions/session-01-product-card/MANIFEST.md) | Exact three-file opening attachment manifest |
-| [`make-sessions/session-01b-relationship-transfer/INTAKE.md`](make-sessions/session-01b-relationship-transfer/INTAKE.md) | MF-01B relationship-transfer scope and deferred input slots |
+| [`make-sessions/SESSION_ROADMAP.md`](make-sessions/SESSION_ROADMAP.md) | Current convergence override and preserved historical run sequence |
+| [`make-sessions/session-03-codex-sites/guidelines.md`](make-sessions/session-03-codex-sites/guidelines.md) | Active MF-03 design, fixture, responsive and authority rules |
+| [`make-sessions/session-03-codex-sites/MANIFEST.md`](make-sessions/session-03-codex-sites/MANIFEST.md) | Current inputs, assets, routes and exclusions |
+| [`make-sessions/session-03-codex-sites/RUN.md`](make-sessions/session-03-codex-sites/RUN.md) | Build, review, private-hosting and rollback procedure |
+| [`make-sessions/session-01-product-card/`](make-sessions/session-01-product-card/) | Completed MF-01A historical run record |
+| [`make-sessions/session-01b-relationship-transfer/`](make-sessions/session-01b-relationship-transfer/) | Completed MF-01B historical transfer record |
+| [`make-sessions/session-02-grid-surface/`](make-sessions/session-02-grid-surface/) | Completed MF-02A historical run and bridge packet |
 | [`make-sessions/shared-kit/README.md`](make-sessions/shared-kit/README.md) | Shared Figma Make export library and usage boundaries |
 
-## Active asset sets
+## Active workspace and retained assets
 
-- [`make-sessions/session-01-product-card/assets/`](make-sessions/session-01-product-card/assets/) — the only three files attached to MF-01A.
-- [`make-sessions/shared-kit/`](make-sessions/shared-kit/) — organized brand, homepage and evidence exports for later runs; these are not authorized MF-01A attachments.
+- [`sites/oluk-experience-lab/`](sites/oluk-experience-lab/) — active private Codex Sites design-convergence implementation.
+- [`make-sessions/session-03-codex-sites/`](make-sessions/session-03-codex-sites/) — active lane controls and receipt.
+- [`make-sessions/session-01-product-card/assets/`](make-sessions/session-01-product-card/assets/) — preserved sealed MF-01A inputs; historical, not the active attachment rule.
+- [`make-sessions/shared-kit/`](make-sessions/shared-kit/) — retained brand, homepage and evidence exports; use only when the active manifest authorizes them.
 - [`assets/product/mk-2866/render-alpha/`](assets/product/mk-2866/render-alpha/) — governed transparent render sizes for later native/Make refinement.
 - [`assets/brand/logo/reference/`](assets/brand/logo/reference/) — supplied logo/mark references pending final master-lockup registration.
 

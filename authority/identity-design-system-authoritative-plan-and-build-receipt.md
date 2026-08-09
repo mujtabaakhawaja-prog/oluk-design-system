@@ -7,8 +7,8 @@
 **Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
 **Figma program index:** Page 00, node `36:2`
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
-**Current canonical position:** The Native V4 work in Final-Design has passed the corrective Identity Gate as the directional light-mode baseline. Its PDP, ProductMetricRail, PurchaseRail, Dossier, LabReports, Lab Verification, Product Media and TrustEvidenceSpine relationships seed two deliberately separate Figma Make frontiers. MF-01A begins from a sealed three-PNG ProductCommerceCard packet so Make can design rather than translate native boards. MF-01B then tests selected relationships across homepage, PDP, embedded evidence and true canvas-split jobs. Selected nodes, components and variables enter only in MF-02 after that transfer succeeds.
-**Promotion state:** Figma Make design exploration is active. Native V4 is the baseline and structural evidence, not a pixel template or visual ceiling. Make may enhance component silhouettes, chip/card geometry, material depth, stock/trust presentation, responsive behavior and page composition while retaining product truth and semantic jobs. Phase 05–06 foundations remain provisional until the Make Design Gate selects the cross-route light-mode champion. MENT and dark mode are explicitly deferred. Runtime React remains a later translation lane.
+**Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs now feed `MF-03 Codex Sites Convergence`. The active lane assembles the global shell, commerce, reviews and OpenLab route family as a private responsive design candidate. Earlier Make run receipts remain historical inputs rather than active execution instructions.
+**Promotion state:** Codex Sites design convergence is active. The candidate is design/review authority only; Phase 05–06 foundations remain provisional, MENT and dark mode remain deferred, and production Shopper SSR, payment, C2 and release work remain later separately authorized lanes.
 
 ## Document control
 
@@ -21,7 +21,7 @@ This is the single controlling execution manual for the identity-led design-syst
 - the ordered future runs required after the present evaluation run;
 - promotion, invalidation, rollback, supersession, and archive rules.
 
-For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`Figma Make Creative Frontier Constitution`](../make-sessions/session-01-product-card/CONSTITUTION.md). The exact first-run prompt is [`MF-01A — ProductCommerceCard Material Relationship Frontier`](../make-sessions/session-01-product-card/PROMPT.md).
+For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`MF-03 Codex Sites controls`](../make-sessions/session-03-codex-sites/guidelines.md). The MF-01A constitution and prompt remain historical source records.
 
 It supersedes the earlier sequence as an execution authority. Legacy plans, transcripts, runtime captures, and the old Page `0:1` remain evidence or structural reference only.
 
@@ -1324,4 +1324,4 @@ The program is not complete when variables, components or pages merely exist. Co
 
 ## Final determination
 
-The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 provides the accepted light-mode direction, reusable semantic structures and exact product truth required to start Make without beginning from a blank aesthetic. `NR-03` is passed. The active work begins with sealed MF-01A ProductCommerceCard material exploration, then MF-01B cross-context relationship transfer, then MF-02 adaptive champion/native convergence. Full routes, responsive convergence and system extraction follow only after those two frontiers succeed. Make is expected to improve the current card/chip shapes, stock and trust presentation, material depth and adaptive behavior without silently redefining semantic jobs. MENT and dark mode are deferred. After the Make Design Gate selects the light-mode champion, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.
+The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 and the completed MF-01A, MF-01B and MF-02A work provide the accepted light-mode direction, reusable semantic structures and exact product truth for the active MF-03 Codex Sites convergence. MF-03 now proves the shell, commerce, review and OpenLab route relationships at 1440/1024/768/390 in a private design-review site. It does not publish foundations or establish runtime, evidence, payment, C2, deployment or release authority. MENT and dark mode remain deferred. After human design selection and the Make Design Gate, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.

@@ -18,5 +18,5 @@ Make should DESIGN first, not code Figma Design boards. Figma Design work establ
 
 The adaptive relationship model is documented in `surface-contract.md`. Make preserves semantic distinctions while exploring their expression; exact radii, spacing, strokes and shadows remain Phase 05/07 candidates.
 
-### Pipeline position (as of 2026-08-04)
-NR-04 Source Lock is complete. MF-01A is the active PNG-led material-relationship frontier; MF-01B validates cross-context transfer before MF-02 introduces selected native structures. After the Make Design Gate, NR-05 rebases candidate foundations.
+### Pipeline position (as of 2026-08-09)
+NR-04 Source Lock, MF-01A, MF-01B and MF-02A are complete. Their accepted relationships feed the active MF-03 Codex Sites convergence lane. Sites may implement responsive local design behavior for private review, but its code is not Shopper SSR/runtime authority. After the Make Design Gate, NR-05 rebases candidate foundations.

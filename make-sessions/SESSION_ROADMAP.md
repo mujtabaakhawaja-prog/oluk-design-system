@@ -1,10 +1,25 @@
-# Olympus Labs UK — Final Figma Make Plan and Run Order
+# Olympus Labs UK — Design Convergence Plan and Run Order
 
-**Date:** 2026-08-04
+**Date:** 2026-08-09
 **Controlling alias:** `ids-plan.md`
-**Current position:** `NR-04` complete; `MF-01A ProductCommerceCard Material Relationship Frontier` is the active run.
+**Current position:** `MF-01A`, `MF-01B` and `MF-02A` are complete historical inputs; `MF-03 Codex Sites Convergence` is active for private design review.
 
-## Decision
+## 2026-08-09 convergence addendum
+
+Human review advanced the program from isolated Make frontiers into one Codex Sites convergence lane. This addendum supersedes the earlier “MF-01A active” position without deleting or rewriting the completed run history below.
+
+| Lane | Current state | Current use |
+|---|---|---|
+| `MF-01A` | Complete / historical | ProductCommerceCard family and material relationships |
+| `MF-01B` | Complete / historical | Cross-context transfer verdicts |
+| `MF-02A` | Complete / historical | Section differentiation, champion composite and correction packet |
+| `MF-03 Codex Sites Convergence` | Active | Global shell, homepage, shop, MK-2866 PDP, reviews and complete OpenLab route family |
+
+The active implementation is `sites/oluk-experience-lab` in the clean `codex/mf-codex-sites-convergence` worktree. Acceptance is genuine recomposition at 1440/1024/768/390 with zero horizontal overflow. Publishing is limited to a private Codex Sites review URL. Shopper SSR, WooCommerce, Initiator/payment, C2 and public/production release remain separate later stages.
+
+The active control set is [`session-03-codex-sites/`](session-03-codex-sites/). The historical run order below remains useful provenance and system-extraction context; where it conflicts with this approved convergence addendum, the addendum controls the current lane.
+
+## Historical decision
 
 Start from the sealed three-PNG ProductCommerceCard packet and use it to generate three architectural hypotheses across vertical, compact and horizontal contexts. Select relationships rather than a whole-image winner, prove those relationships across materially different jobs in MF-01B, then synthesize the adaptive family in MF-02. These assets supersede the earlier provisional MF01-A/B/C generation set.
 
