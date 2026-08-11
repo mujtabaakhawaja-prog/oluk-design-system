@@ -12,7 +12,7 @@
 - Figma: `BEPMuUt1HroEw8xjz8CVyN`
 - Sites root: `sites/oluk-experience-lab`
 - Existing private site: `https://oluk-experience-lab.sigmamindset.chatgpt.site/`
-- Latest access verification on 2026-08-11: public access-policy revision 4 corrected to revision 5 `custom`; one allowed current owner; zero groups; zero external visitors; anonymous HTTP `401`
+- Latest access verification on 2026-08-11: public access-policy revision 6 corrected to revision 7 `custom`; one allowed current owner; zero groups; zero external visitors; anonymous `/` and `/review` HTTP `401`
 - Lane directory: `make-sessions/fc-01-candidate-foundation-convergence/`
 - Historical naming: MF-06 remains OpenLab + LabReports; the retained worktree directory name is provenance only
 
@@ -59,7 +59,7 @@
 - four-column authority matrix and candidate values;
 - cumulative decisions, all-route review map and acceptance contract;
 - exact baseline/access receipt;
-- owner-only access restored and verified at access-policy revision 5; Sites version 5 serves exact candidate source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` at `/review`.
+- owner-only access restored and verified at access-policy revision 7; Sites version 5 serves exact candidate source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` at `/review`.
 
 ### Bounded technical evidence implemented
 

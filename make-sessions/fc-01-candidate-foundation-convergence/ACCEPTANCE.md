@@ -11,7 +11,7 @@
 - [x] Commerce taxonomy is `SARMs / Prohormones / Research Chemicals / Stacks`.
 - [x] Dossier index is non-interactive and does not use tab semantics.
 - [x] All 15 owner-only routes and direct Figma targets are linkable.
-- [x] Public access-policy revision 4 was corrected to custom owner-only revision 5; one allowed owner, zero groups, zero external visitors and anonymous HTTP `401`.
+- [x] Latest public access-policy drift at revision 6 was corrected to custom owner-only revision 7; one allowed owner, zero groups, zero external visitors and anonymous `/` and `/review` HTTP `401`.
 - [x] The user's 2026-08-11 continuation authorizes one exact-commit owner-only candidate review deployment; public access remains prohibited.
 
 ## MF-02B — Adaptive technical evidence

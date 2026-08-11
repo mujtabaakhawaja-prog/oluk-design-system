@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "updatedDate": "2026-08-11",
+  "program": "OLUK_DESIGN_TO_PRESENTATION_CONVERGENCE",
+  "currentWave": "W1",
+  "currentPhase": "W1.1_HUMAN_ADAPTIVE_CARD_SELECTION",
+  "status": "PAUSED_AT_REQUIRED_HUMAN_GATE",
+  "completed": [
+    "W0.1_ACCESS_CONTAINMENT",
+    "W0.2_AUTHORITY_RECONCILIATION",
+    "W0.3_CONTROLLER_INSTALLATION"
+  ],
+  "activeCandidate": "CANDIDATE_CONVERGENCE_v0",
+  "candidatePromotionState": "UNPUBLISHED_UNPROMOTED",
+  "sites": {
+    "version": 5,
+    "sourceCommit": "2fb152ed689b94f709d4fb78d26d25ea0a88329f",
+    "accessPolicyRevision": 7,
+    "accessMode": "custom",
+    "anonymousRootStatus": 401,
+    "anonymousReviewStatus": 401
+  },
+  "nextRequiredDecision": "HUMAN_CARD_FAMILY_SELECTION"
+}

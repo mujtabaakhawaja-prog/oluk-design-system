@@ -24,3 +24,4 @@
 19. `551:27148` remains dossier correction-required, and the adaptive Relation component does not close the full related-product rail.
 20. Shopper SSR, WooCommerce, Initiator/payment, project-scoped C2 and public release remain separately unauthorized.
 21. Sites version 5 is the exact-commit owner-only review deployment for source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`. It exposes the candidate only through `/review`; it does not accept the candidate or reclassify the other 14 routes.
+22. A later public access drift was observed at policy revision 6. It was corrected to revision 7 `custom`, with one current owner, zero groups, zero external visitors and anonymous `/` and `/review` returning HTTP `401`. This containment repair did not change Sites version 5 or its source.

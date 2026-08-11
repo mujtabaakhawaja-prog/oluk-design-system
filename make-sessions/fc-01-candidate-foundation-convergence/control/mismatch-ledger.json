@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "updatedDate": "2026-08-11",
+  "open": [
+    {"id": "MM-001", "surface": "MF-02B", "issue": "human adaptive-card champion not selected", "severity": "gate", "next": "W1.1"},
+    {"id": "MM-002", "surface": "dossier", "issue": "clipping and central metric overlap remain unresolved", "severity": "high", "next": "W1.2"},
+    {"id": "MM-003", "surface": "related rail", "issue": "component exists but full adaptive section is open", "severity": "high", "next": "W1.3"},
+    {"id": "MM-004", "surface": "customer routes", "issue": "14 customer routes remain rejected-v3 comparison baseline", "severity": "high", "next": "W3_W5"},
+    {"id": "MM-005", "surface": "commerce lifecycle", "issue": "discovery and PDP controls are presentation-only or inert", "severity": "high", "next": "W4"},
+    {"id": "MM-006", "surface": "OpenLab lifecycle", "issue": "lookup filters reports and analytical table states are not converged", "severity": "high", "next": "W5"},
+    {"id": "MM-007", "surface": "checkout lifecycle", "issue": "bag checkout order-pay confirmation failure and retry pages are not designed", "severity": "high", "next": "W6"}
+  ]
+}

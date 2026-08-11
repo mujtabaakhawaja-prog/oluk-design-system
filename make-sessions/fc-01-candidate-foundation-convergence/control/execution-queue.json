@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "updatedDate": "2026-08-11",
+  "policy": "execute_ready_work_sequentially_and_interrupt_only_for_human_authority_or_external_blockers",
+  "queue": [
+    {"id": "W1.1", "work": "ratify adaptive card-family champion and MF-01A/MF-01B provenance", "state": "waiting_for_human"},
+    {"id": "W1.2", "work": "correct dossier at four widths", "state": "blocked_by_W1.1"},
+    {"id": "W1.3", "work": "complete full adaptive related-product rail", "state": "blocked_by_W1.1"},
+    {"id": "W2", "work": "harden selected candidate system and state coverage", "state": "blocked_by_W1"},
+    {"id": "W3", "work": "converge shell, MF-03 opening and homepage", "state": "blocked_by_W2"},
+    {"id": "W4", "work": "design catalogue discovery and PDP lifecycle", "state": "blocked_by_W3"},
+    {"id": "W5", "work": "design OpenLab lifecycle", "state": "blocked_by_W3"},
+    {"id": "W6", "work": "design bag, checkout and post-purchase presentation lifecycle", "state": "blocked_by_W4"},
+    {"id": "W7", "work": "cross-route convergence and human visual gate", "state": "blocked_by_W3_W4_W5_W6"},
+    {"id": "W8", "work": "foundation and presentation promotion decision", "state": "blocked_by_W7"},
+    {"id": "W9", "work": "prepare separate runtime translation packets", "state": "blocked_by_W8"}
+  ]
+}

@@ -17,19 +17,19 @@
 ## Verified Sites access readback
 
 - Latest containment check: `2026-08-11`
-- Observed drift: access-policy revision `4`, mode `public`
-- Restored policy: access-policy revision `5`, mode `custom`
+- Latest observed drift: access-policy revision `6`, mode `public`
+- Restored policy: access-policy revision `7`, mode `custom`
 - Allowed users: `1` — current owner
 - Shared groups: `0`
 - External visitors: `0`
-- Anonymous response: HTTP `401`
+- Anonymous `/` and `/review`: HTTP `401`
 - Sites version `5` serves the exact candidate source on `/review`; the other 14 routes remain the rejected-v3 comparison baseline.
 - Saved version: `appgprj_6a784499e0a481919243ddab0dcaadff~appgver_e860a6283ca48191ade81bed9263a092`
 - Deployment: `appgdep_6a7b4d4fc6e08191b3809908a447c4fd` — `succeeded`
 - Exact source: `2fb152ed689b94f709d4fb78d26d25ea0a88329f`
 - Archive: `sha256:121eb567546e19953b68387b53faa2d6f8a89e6601e6d7d043f0ceb8f747639e`, 222 files, 8,806,400 bytes
 - Authenticated live smoke: candidate heading, sampled stable anchors, visible overflow, all images loaded and zero console errors.
-- Anonymous `/` and `/review`: HTTP `401`.
+- The earlier revision-4 to revision-5 containment event remains historical; revision 7 is the current verified policy.
 
 ## Control and containment completed
 

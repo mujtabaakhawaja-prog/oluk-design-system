@@ -21,7 +21,7 @@ When `ids-plan.md` is named in the active run, the FC-01 packet is read together
 - **MF-01B complete** — cross-context transfer verdicts preserved as historical input
 - **MF-02A complete** — grid/surface champion composite and correction packet preserved as historical input
 - **MF-03 v2** — `REJECTED_VISUAL_TRANSLATION`; preserved as historical review evidence
-- **MF-03 v3** — `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`; rejected deployed comparison content with 15 routes including `/review`, contained by custom owner-only access-policy revision 5
+- **MF-03 v3** — `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`; rejected deployed comparison content with 15 routes including `/review`, contained by custom owner-only access-policy revision 7 after public revision-6 drift was corrected
 - **FC-01 Candidate Foundation Convergence** — `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`; `CANDIDATE_CONVERGENCE_v0` is unpublished and unpromoted, with bounded hidden Figma artifacts and a local isolated `/review` implementation
 - **MF-06 OpenLab + LabReports** — historical future-run meaning preserved; not the active foundation lane
 - **NR-05 foundation rebase** — blocked until human card-family selection, dossier correction, full related-rail closure and a later explicit foundation-promotion gate

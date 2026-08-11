@@ -20,9 +20,9 @@
     "sourceCommit": "2fb152ed689b94f709d4fb78d26d25ea0a88329f",
     "archiveContentHash": "sha256:121eb567546e19953b68387b53faa2d6f8a89e6601e6d7d043f0ceb8f747639e",
     "access": {
-      "observedDriftRevision": 4,
+      "observedDriftRevision": 6,
       "observedDriftMode": "public",
-      "restoredRevision": 5,
+      "restoredRevision": 7,
       "restoredMode": "custom",
       "allowedUsers": 1,
       "allowedUserRole": "owner",

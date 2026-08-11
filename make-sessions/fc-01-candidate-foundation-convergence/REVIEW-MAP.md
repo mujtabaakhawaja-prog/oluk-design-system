@@ -2,7 +2,7 @@
 
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Current Sites classification:** `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`
-**Verified access:** access-policy revision 5 `custom`, one allowed current owner, zero groups, zero external visitors, anonymous HTTP `401`; corrected from public revision 4 on 2026-08-11
+**Verified access:** access-policy revision 7 `custom`, one allowed current owner, zero groups, zero external visitors, anonymous `/` and `/review` HTTP `401`; corrected from public revision 6 on 2026-08-11
 
 Sites version 5 serves the candidate `/review` for exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; the other 14 routes remain the preserved rejected-v3 comparison baseline. Neither availability nor route coverage is an accepted design milestone.
 

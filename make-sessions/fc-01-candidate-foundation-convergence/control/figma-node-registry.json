@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "updatedDate": "2026-08-11",
+  "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+  "nodes": {
+    "foundation": "637:3",
+    "adaptiveCandidatePage": "639:2",
+    "inventoryStatus": "641:17",
+    "evidenceStatus": "518:13092",
+    "verticalCard": "646:10801",
+    "featuredCard": "646:10802",
+    "compactStates": "639:13888",
+    "relationCard": "643:8616",
+    "purchasePanel": "639:13889",
+    "assuranceRail": "556:34627",
+    "relatedRail": "551:26896",
+    "dossier": "551:27148",
+    "mf03Opening": "614:75994",
+    "review1440": "644:3",
+    "review1024": "644:568",
+    "review768": "644:1093",
+    "review390": "644:1625"
+  }
+}

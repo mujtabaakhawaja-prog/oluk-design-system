@@ -98,7 +98,7 @@ Prohibited:
 
 ## Gate sequence
 
-1. **P0 — Control and containment:** complete; access-policy revision 5 is custom owner-only after public revision-4 drift was corrected.
+1. **P0 — Control and containment:** complete; access-policy revision 7 is custom owner-only after public revision-6 drift was corrected.
 2. **MF-02B candidate evidence:** technically ready across the adaptive card family and four review widths.
 3. **Human card-family selection:** required; no automated or agent verdict can fill the receipt.
 4. **Dossier and related-rail closure:** required before commerce-route convergence.

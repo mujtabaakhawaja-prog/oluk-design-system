@@ -10,7 +10,7 @@ Human review determined that another route-local CSS correction would reproduce 
 
 | Lane | Current state | Current use |
 |---|---|---|
-| `MF-03 Codex Sites Convergence v3` | `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` | Rejected deployed comparison source behind custom owner-only access-policy revision 5; route shell and useful responsive infrastructure only |
+| `MF-03 Codex Sites Convergence v3` | `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` | Rejected deployed comparison source behind custom owner-only access-policy revision 7 after public revision-6 drift was corrected; route shell and useful responsive infrastructure only |
 | `FC-01 Candidate Foundation Convergence` | `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED` | Unpublished `CANDIDATE_CONVERGENCE_v0`, hidden Figma candidates, exact-commit owner-only `/review`, node/source matrix and review map |
 | `MF-06 OpenLab + LabReports` | `HISTORICAL FUTURE-RUN IDENTIFIER` | Meaning preserved; not reused for foundation convergence |
 | Shopper SSR / payment / C2 | `NOT AUTHORIZED` | Later translation only after all design frontiers pass human review |
