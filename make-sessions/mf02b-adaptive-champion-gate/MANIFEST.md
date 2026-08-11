@@ -12,7 +12,7 @@
 
 Close the missing selection chain between MF-01A exploration, MF-01B transfer testing and MF-02A Run 3 before FC-01 or any page frontier treats a ProductCommerceCard family as human-accepted.
 
-The bounded technical candidate now exists in native Figma and as an isolated Sites `/review` implementation. Sites version 4 provides an exact-source owner-only review surface; this packet records that evidence without selecting a champion, converging customer routes, promoting FC-01 candidate foundations or authorizing runtime translation.
+The bounded technical candidate now exists in native Figma and as an isolated Sites `/review` implementation. Sites version 5 provides an exact-source owner-only review surface; this packet records that evidence without selecting a champion, converging customer routes, promoting FC-01 candidate foundations or authorizing runtime translation.
 
 ## Authority boundary
 
@@ -39,7 +39,7 @@ The bounded technical candidate now exists in native Figma and as an isolated Si
 | Shared InventoryStatus set | [`641:17`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=641-17) | In stock, out of stock and unavailable |
 | Shared EvidenceStatus atom | [`518:13092`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=518-13092) | Exact atom relationship reused throughout |
 | Four-width review frames | [`644:3`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-3), [`644:568`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-568), [`644:1093`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-1093), [`644:1625`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-1625) | `1440 / 1024 / 768 / 390` technical frames |
-| Isolated Sites review | `/review#mf02b-provenance` through `/review#mf02b-selection-receipt` | Exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` served privately as version 4 |
+| Isolated Sites review | `/review#mf02b-provenance` through `/review#mf02b-selection-receipt` | Exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` served privately as version 5 |
 
 Technical inspection found zero semantic child-boundary violations in the normalized candidate frames. The only permitted overflows are authored product-image crops inside clipped media chambers and the exact EvidenceStatus atom geometry. Exact `90 SERVINGS`, the 12px metadata floor, green inventory treatment and the candidate-only material tokens are present. These checks do not fill the human receipt.
 
@@ -140,7 +140,7 @@ Every row requires independent `1440`, `1024`, `768` and `390` evidence. A deskt
 - Human selection and the missing MF-01A/MF-01B provenance ratification remain open.
 - The dossier remains `CORRECTION_REQUIRED`; the candidate review intentionally identifies the existing clipping/overlap defect instead of promoting it.
 - The complete related-product rail remains open. The normalized Horizontal relation component is evidence input, not proof that the full rail is finished.
-- The isolated Sites `/review` implementation still requires final local/browser validation and an authorized owner-only publish before any live URL is claimed.
+- The isolated Sites `/review` implementation is locally validated and available as owner-only version 5; availability remains technical evidence, not human selection.
 - Customer-route convergence, runtime adapters, Shopper SSR, Woo, Initiator/payment, C2 and foundation publication remain outside this gate.
 
 The complete contract is in [`ADAPTIVE-CHAMPION-CONTRACT.md`](ADAPTIVE-CHAMPION-CONTRACT.md).

@@ -22,7 +22,7 @@
 - [x] Local `/review` imports and CSS are isolated from customer routes.
 - [x] Local browser QA reports zero page overflow, zero semantic child-boundary violations, 12px minimum type, loaded images, wrapped assurance copy, no console errors and 2px cobalt focus.
 - [x] Build-backed test suite passes `6/6`.
-- [x] Exact pushed source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` is saved as Sites version 4 and deployed behind the verified owner-only policy; `/` and `/review` anonymously return HTTP `401`.
+- [x] Exact pushed source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` is saved as Sites version 5 and deployed behind the verified owner-only policy; `/` and `/review` anonymously return HTTP `401`.
 - [ ] Human explicitly selects the adaptive champion.
 - [ ] Dossier passes its correction gate.
 - [ ] Full related-product rail passes its section-level gate.

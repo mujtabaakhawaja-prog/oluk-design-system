@@ -23,11 +23,11 @@
 - Shared groups: `0`
 - External visitors: `0`
 - Anonymous response: HTTP `401`
-- Sites version `4` serves the exact candidate source on `/review`; the other 14 routes remain the rejected-v3 comparison baseline.
-- Saved version: `appgprj_6a784499e0a481919243ddab0dcaadff~appgver_3fdab5ea3fb8819194f22341ff54703f`
-- Deployment: `appgdep_6a7b495fded48191b3e8b3edc567c359` — `succeeded`
-- Exact source: `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`
-- Archive: `sha256:223bf228fc3fa469ca61281fafab6e917c0af68c9333352e7a9752559227021d`, 222 files, 8,806,400 bytes
+- Sites version `5` serves the exact candidate source on `/review`; the other 14 routes remain the rejected-v3 comparison baseline.
+- Saved version: `appgprj_6a784499e0a481919243ddab0dcaadff~appgver_e860a6283ca48191ade81bed9263a092`
+- Deployment: `appgdep_6a7b4d4fc6e08191b3809908a447c4fd` — `succeeded`
+- Exact source: `2fb152ed689b94f709d4fb78d26d25ea0a88329f`
+- Archive: `sha256:121eb567546e19953b68387b53faa2d6f8a89e6601e6d7d043f0ceb8f747639e`, 222 files, 8,806,400 bytes
 - Authenticated live smoke: candidate heading, sampled stable anchors, visible overflow, all images loaded and zero console errors.
 - Anonymous `/` and `/review`: HTTP `401`.
 

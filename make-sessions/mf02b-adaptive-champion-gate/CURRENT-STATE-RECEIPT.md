@@ -46,7 +46,7 @@ Isolated Sites evidence in the current worktree and owner-only review deployment
 - typed review-fixture and runtime-owner separation;
 - overflow is exposed for measurement rather than hidden by `overflow-x: clip`.
 
-Sites version 4 deployed exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` behind custom owner-only access-policy revision 5; anonymous `/` and `/review` return HTTP `401`. No customer route was converged. No Figma library publication, foundation promotion, Shopper SSR, Woo, payment, C2 or runtime mutation is claimed by this receipt.
+Sites version 5 deployed exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` behind custom owner-only access-policy revision 5; anonymous `/` and `/review` return HTTP `401`. No customer route was converged. No Figma library publication, foundation promotion, Shopper SSR, Woo, payment, C2 or runtime mutation is claimed by this receipt.
 
 ## Provenance findings
 
@@ -102,7 +102,7 @@ Documentation validation required before handoff:
 - `OPEN` — full Related rail remains to be completed and reviewed.
 - `PASS` — the exact owner-only review deployment is recorded without claiming customer-route convergence, foundation promotion or runtime authority.
 
-The four-width browser and automated checks above apply to the local route-isolated review candidate. The separate Sites receipt verifies version 4 availability for exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`; neither fills the human selection receipt.
+The four-width browser and automated checks above apply to the local route-isolated review candidate. The separate Sites receipt verifies version 5 availability for exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; neither fills the human selection receipt.
 
 ## TELEMETRY
 
@@ -162,7 +162,7 @@ The next bounded actions are:
 
 1. preserve the current technical candidate on `codex/fc01-candidate-foundation-convergence`;
 2. complete Dossier correction and the full Related rail without changing the accepted-candidate status;
-3. if authorized, publish only to the owner-only review surface and record the exact revision/access receipt;
+3. keep the deployed owner-only review surface at version 5 unless a new exact-source review change is authorized;
 4. conduct human review against [`REVIEW-MAP.md`](REVIEW-MAP.md) and fill the selection receipt manually.
 
 Do not begin customer-route convergence, foundation promotion or runtime work while the human receipt remains empty.

@@ -59,7 +59,7 @@
 - four-column authority matrix and candidate values;
 - cumulative decisions, all-route review map and acceptance contract;
 - exact baseline/access receipt;
-- owner-only access restored and verified at access-policy revision 5; Sites version 4 serves exact candidate source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` at `/review`.
+- owner-only access restored and verified at access-policy revision 5; Sites version 5 serves exact candidate source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` at `/review`.
 
 ### Bounded technical evidence implemented
 

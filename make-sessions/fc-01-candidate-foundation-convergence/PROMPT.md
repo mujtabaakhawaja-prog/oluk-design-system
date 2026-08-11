@@ -1,6 +1,6 @@
 # FC-01 — Candidate Evidence and Human-Selection Brief
 
-> **Post-run receipt:** The bounded generation phase below completed, and the user's 2026-08-11 continuation subsequently authorized one exact-commit owner-only review deployment. Sites version 4 now serves source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`; no customer route, foundation, runtime or public-access authority changed.
+> **Post-run receipt:** The bounded generation phase below completed, and the user's 2026-08-11 continuation subsequently authorized one exact-commit owner-only review deployment. Sites version 5 now serves source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; no customer route, foundation, runtime or public-access authority changed.
 
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished as a Figma/system authority, privately exercised in review isolation, unpromoted

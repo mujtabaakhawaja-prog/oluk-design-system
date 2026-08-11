@@ -184,7 +184,7 @@ Decision handling:
 - Every specimen has four planned/recorded widths.
 - Exact product and candidate-token strings are present.
 - Current candidate Figma and isolated Sites worktree mutations are recorded exactly.
-- Exact-source Sites version 4 is available behind owner-only access for review. No customer-route convergence, runtime mutation or foundation publication is claimed by this packet.
+- Exact-source Sites version 5 is available behind owner-only access for review. No customer-route convergence, runtime mutation or foundation publication is claimed by this packet.
 
 ## Failure routing
 

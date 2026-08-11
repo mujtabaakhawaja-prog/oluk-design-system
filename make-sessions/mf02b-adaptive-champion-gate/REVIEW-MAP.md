@@ -4,7 +4,7 @@
 **Status:** `ADAPTIVE_CHAMPION_PENDING / HUMAN_SELECTION_REQUIRED`
 **Owner-only review base after authorized publish:** `https://oluk-experience-lab.sigmamindset.chatgpt.site/review`
 
-The anchors below are implemented in the current worktree as an isolated `/review` route and pass local route/anchor tests. Sites version 4 currently serves exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` behind custom owner-only access-policy revision 5.
+The anchors below are implemented in the current worktree as an isolated `/review` route and pass local route/anchor tests. Sites version 5 currently serves exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` behind custom owner-only access-policy revision 5.
 
 ## Stable review targets
 
@@ -33,7 +33,7 @@ The anchors below are implemented in the current worktree as an isolated `/revie
 
 ## Responsive evidence matrix
 
-`PASS` below means technical candidate evidence only. It is not human acceptance. The Figma frame ID is shared by every isolated family specimen at that review width; Sites version 4 makes the route-isolated candidate available for owner review.
+`PASS` below means technical candidate evidence only. It is not human acceptance. The Figma frame ID is shared by every isolated family specimen at that review width; Sites version 5 makes the route-isolated candidate available for owner review.
 
 | Review item | 1440 | 1024 | 768 | 390 |
 |---|---|---|---|---|
@@ -81,7 +81,7 @@ The human selection receipt must also address these direct historical nodes.
 
 ## Review boundary
 
-- The Sites hostname is the owner-only comparison surface for exact version-4 source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`; anonymous requests return HTTP `401`.
+- The Sites hostname is the owner-only comparison surface for exact version-5 source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; anonymous requests return HTTP `401`.
 - A populated matrix is technical review evidence, not human acceptance.
 - Only the human receipt may remove `HUMAN_SELECTION_REQUIRED`.
 - No anchor in this map authorizes a later deployment, runtime translation, payment or C2 work.

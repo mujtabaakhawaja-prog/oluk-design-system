@@ -47,7 +47,7 @@ Reject `90 CAPS`, decimal/crossed/per-serving prices and unapproved performance 
 - Four-width review frames: `644:3` (1440), `644:568` (1024), `644:1093` (768), `644:1625` (390).
 - Exact EvidenceStatus / AssuranceRail source: `518:13092` / `556:34627`.
 - Candidate Figma collections, variables, text/effect styles and components remain hidden from publishing.
-- The Sites candidate is route-isolated to `app/review/` and `app/design-system/`. Customer `ExperienceLab` routes do not import candidate CSS or components. Sites version 4 serves exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` behind owner-only access.
+- The Sites candidate is route-isolated to `app/review/` and `app/design-system/`. Customer `ExperienceLab` routes do not import candidate CSS or components. Sites version 5 serves exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` behind owner-only access.
 
 ## Foundation laws
 
@@ -106,4 +106,4 @@ Prohibited:
 
 ## Local QA classification
 
-At 1440/1024/768/390, local browser measurements report `scrollWidth === clientWidth`, zero semantic child-boundary violations, a 12px minimum computed font, all images loaded, wrapped six-point AssuranceRail descriptions without overflow, zero console errors and a 2px cobalt keyboard-focus outline. The build-backed test suite passes `6/6`. Sites version 4 separately proves that exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` renders `/review` behind owner-only access. Neither fact is a human design decision.
+At 1440/1024/768/390, local browser measurements report `scrollWidth === clientWidth`, zero semantic child-boundary violations, a 12px minimum computed font, all images loaded, wrapped six-point AssuranceRail descriptions without overflow, zero console errors and a 2px cobalt keyboard-focus outline. The build-backed test suite passes `6/6`. Sites version 5 separately proves that exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f` renders `/review` behind owner-only access. Neither fact is a human design decision.

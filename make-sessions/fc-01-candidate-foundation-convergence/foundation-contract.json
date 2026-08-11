@@ -109,7 +109,7 @@
     "fullRelatedRail": "open",
     "customerRouteConvergence": "not_authorized",
     "foundationPromotion": "not_authorized",
-    "candidateDeployment": "owner_only_version_4_deployed",
+    "candidateDeployment": "owner_only_version_5_deployed",
     "runtimeTranslation": "not_authorized"
   }
 }
