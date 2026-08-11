@@ -96,6 +96,7 @@
       "mf02b-horizontal",
       "mf02b-purchase-panel",
       "mf02b-assurance",
+      "mf02b-related-rail",
       "mf02b-responsive-ledger",
       "mf02b-dossier",
       "baseline-routes",
@@ -108,7 +109,7 @@
     "fullRelatedRail": "open",
     "customerRouteConvergence": "not_authorized",
     "foundationPromotion": "not_authorized",
-    "candidateDeployment": "authorized_owner_only_exact_commit",
+    "candidateDeployment": "owner_only_version_4_deployed",
     "runtimeTranslation": "not_authorized"
   }
 }

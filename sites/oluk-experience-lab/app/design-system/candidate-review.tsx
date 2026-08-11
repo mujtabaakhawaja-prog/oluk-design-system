@@ -148,6 +148,15 @@ function PendingDossier() {
   );
 }
 
+function PendingRelatedRail() {
+  return (
+    <OlukSection className="oluk-candidate-section oluk-candidate-pending" id="mf02b-related-rail">
+      <ReviewHeading eyebrow="RELATED PRODUCT RAIL" title="Section-level convergence remains open." copy="The bounded Relation card proves the horizontal component relationship, but it does not yet prove the full-width adaptive rail, surrounding copy, spacing or four-width section behavior." source={figmaReviewLinks.relatedRail} />
+      <div><strong>FULL RAIL REQUIRED</strong><p>Next candidate must reconcile nodes 551:26896, 545:24677 and 486:4636 through the shared horizontal-card grammar without fixed inner geometry or clipped mobile content.</p></div>
+    </OlukSection>
+  );
+}
+
 function BaselineRouteIndex() {
   return (
     <OlukSection className="oluk-candidate-section" id="baseline-routes">
@@ -175,7 +184,7 @@ export function CandidateReviewIndex() {
           <div className="oluk-candidate-review-status"><strong>{candidateContract.id}</strong><span>{candidateContract.status}</span><span>RUNTIME AUTHORITY {candidateContract.runtimeAuthority}</span></div>
         </div>
         <nav aria-label="Candidate review items">
-          <a href="#foundation">Foundation</a><a href="#mf02b-atoms">Status atoms</a><a href="#mf02b-vertical">Vertical</a><a href="#mf02b-featured">Featured</a><a href="#mf02b-compact-default">Compact states</a><a href="#mf02b-horizontal">Relation</a><a href="#mf02b-purchase-panel">PurchasePanel</a><a href="#mf02b-six-icons">Assurance</a><a href="#mf02b-dossier">Dossier</a><a href="#baseline-routes">Pages</a>
+          <a href="#foundation">Foundation</a><a href="#mf02b-atoms">Status atoms</a><a href="#mf02b-vertical">Vertical</a><a href="#mf02b-featured">Featured</a><a href="#mf02b-compact-default">Compact states</a><a href="#mf02b-horizontal">Relation</a><a href="#mf02b-purchase-panel">PurchasePanel</a><a href="#mf02b-six-icons">Assurance</a><a href="#mf02b-related-rail">Related rail</a><a href="#mf02b-dossier">Dossier</a><a href="#baseline-routes">Pages</a>
         </nav>
       </header>
 
@@ -214,6 +223,7 @@ export function CandidateReviewIndex() {
           <AssuranceRail />
         </OlukSection>
 
+        <PendingRelatedRail />
         <PendingDossier />
         <ViewportLedger />
         <BaselineRouteIndex />

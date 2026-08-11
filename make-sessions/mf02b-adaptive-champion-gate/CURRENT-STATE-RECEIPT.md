@@ -37,7 +37,7 @@ Normalized Figma evidence:
 - InventoryStatus set `641:17` and exact EvidenceStatus source `518:13092`;
 - four-width frames `644:3`, `644:568`, `644:1093` and `644:1625`.
 
-Isolated Sites evidence in the current worktree:
+Isolated Sites evidence in the current worktree and owner-only review deployment:
 
 - route-isolated `/review` implementation using exported reusable candidate wrapper primitives;
 - eight Compact states;
@@ -46,7 +46,7 @@ Isolated Sites evidence in the current worktree:
 - typed review-fixture and runtime-owner separation;
 - overflow is exposed for measurement rather than hidden by `overflow-x: clip`.
 
-No customer route was converged. No live deployment, Figma library publication, foundation promotion, Shopper SSR, Woo, payment, C2 or runtime mutation is claimed by this receipt.
+Sites version 4 deployed exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` behind custom owner-only access-policy revision 5; anonymous `/` and `/review` return HTTP `401`. No customer route was converged. No Figma library publication, foundation promotion, Shopper SSR, Woo, payment, C2 or runtime mutation is claimed by this receipt.
 
 ## Provenance findings
 
@@ -100,9 +100,9 @@ Documentation validation required before handoff:
 - `PASS` — out-of-stock Compact state does not show `Quick add` as available.
 - `BLOCKED` — Dossier remains `CORRECTION_REQUIRED`; no four-width acceptance claim is made.
 - `OPEN` — full Related rail remains to be completed and reviewed.
-- `PASS` — no live deployment, customer-route convergence, foundation promotion or runtime claim is made.
+- `PASS` — the exact owner-only review deployment is recorded without claiming customer-route convergence, foundation promotion or runtime authority.
 
-The browser and automated checks above apply to the local route-isolated review candidate. Live owner-only review remains unverified until an authorized publish receipt identifies the exact revision.
+The four-width browser and automated checks above apply to the local route-isolated review candidate. The separate Sites receipt verifies version 4 availability for exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`; neither fills the human selection receipt.
 
 ## TELEMETRY
 

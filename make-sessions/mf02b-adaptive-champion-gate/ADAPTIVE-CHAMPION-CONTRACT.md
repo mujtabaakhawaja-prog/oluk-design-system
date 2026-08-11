@@ -22,7 +22,7 @@ The normalized Figma family and isolated Sites `/review` surface have reached `T
 
 - Adaptive candidate page: [`639:2`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=639-2).
 - Four-width review frames: [`1440 · 644:3`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-3), [`1024 · 644:568`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-568), [`768 · 644:1093`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-1093) and [`390 · 644:1625`](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-1625).
-- Sites review: route-isolated `/review`, implemented in the current worktree with reusable candidate wrappers; no live deployment is claimed by this contract.
+- Sites review: route-isolated `/review`, implemented with reusable candidate wrappers and served as exact-source owner-only version 4; deployment is availability evidence, not champion acceptance.
 - Browser evidence: all four widths report `scrollWidth == clientWidth`, zero semantic child-boundary escapes, 12px minimum rendered text, loaded images, wrapped long assurance definitions, no console errors and a visible focus outline.
 - Automated validation: `6/6` tests pass in the current worktree.
 

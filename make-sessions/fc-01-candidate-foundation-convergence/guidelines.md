@@ -1,7 +1,7 @@
 # FC-01 — Candidate Foundation Convergence Guidelines
 
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
-**Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished, locally exercised in review isolation, unpromoted
+**Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished as a Figma/system authority, privately exercised in review isolation, unpromoted
 **Date:** 2026-08-11
 **Worktree:** `/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence`
 **Branch:** `codex/fc01-candidate-foundation-convergence`
@@ -11,7 +11,7 @@
 
 ## Mission
 
-Normalize selected MF-01/MF-02/MF-03 material, shape, type and responsive relationships into one unpublished candidate contract, a bounded hidden Figma specimen family and an isolated local Sites `/review` surface. Technical evidence is ready. Human selection remains required before customer-route convergence or foundation promotion.
+Normalize selected MF-01/MF-02/MF-03 material, shape, type and responsive relationships into one unpublished candidate contract, a bounded hidden Figma specimen family and an isolated owner-only Sites `/review` surface. Technical evidence is ready. Human selection remains required before customer-route convergence or foundation promotion.
 
 Historical `MF-06` continues to mean OpenLab + LabReports. FC-01 does not replace or renumber that future frontier. The retained worktree directory name is operational provenance only.
 
@@ -47,7 +47,7 @@ Reject `90 CAPS`, decimal/crossed/per-serving prices and unapproved performance 
 - Four-width review frames: `644:3` (1440), `644:568` (1024), `644:1093` (768), `644:1625` (390).
 - Exact EvidenceStatus / AssuranceRail source: `518:13092` / `556:34627`.
 - Candidate Figma collections, variables, text/effect styles and components remain hidden from publishing.
-- The local Sites candidate is route-isolated to `app/review/` and `app/design-system/`. Customer `ExperienceLab` routes do not import candidate CSS or components.
+- The Sites candidate is route-isolated to `app/review/` and `app/design-system/`. Customer `ExperienceLab` routes do not import candidate CSS or components. Sites version 4 serves exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` behind owner-only access.
 
 ## Foundation laws
 
@@ -78,14 +78,14 @@ Allowed:
 
 - authority, status, node, review and acceptance documentation in the FC-01 packet;
 - hidden unpublished Figma candidate variables, styles, components and review frames listed above;
-- isolated local review-only Sites primitives, component specimens, typed fixtures, exact candidate SVG assets and tests;
+- isolated owner-only review Sites primitives, component specimens, typed fixtures, exact candidate SVG assets and tests;
 - read-only verification of owner-only Sites access.
 
 Prohibited:
 
 - publishing the candidate Figma library or renaming a mode to production `Light`;
 - importing candidate styles/components into customer routes;
-- changing Sites access or deploying the local candidate without the explicit next gate;
+- changing owner-only Sites access or deploying a later candidate revision without another exact-commit private-review receipt;
 - publishing the library;
 - promoting or renaming a mode to production `Light`;
 - rewriting/deleting historical nodes;
@@ -106,4 +106,4 @@ Prohibited:
 
 ## Local QA classification
 
-At 1440/1024/768/390, browser measurements report `scrollWidth === clientWidth`, zero semantic child-boundary violations, a 12px minimum computed font, all images loaded, wrapped six-point AssuranceRail descriptions without overflow, zero console errors and a 2px cobalt keyboard-focus outline. The build-backed test suite passes `6/6`. This is local technical evidence only and is not a live deployment or human design decision.
+At 1440/1024/768/390, local browser measurements report `scrollWidth === clientWidth`, zero semantic child-boundary violations, a 12px minimum computed font, all images loaded, wrapped six-point AssuranceRail descriptions without overflow, zero console errors and a 2px cobalt keyboard-focus outline. The build-backed test suite passes `6/6`. Sites version 4 separately proves that exact source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` renders `/review` behind owner-only access. Neither fact is a human design decision.

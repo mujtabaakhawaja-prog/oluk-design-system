@@ -1,6 +1,6 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
-> **2026-08-11 supersession:** FC-01 contains the proposed exact values as unpublished `CANDIDATE_CONVERGENCE_v0`. Hidden Figma candidates and an isolated local Sites `/review` wrapper now exercise the contract as technical evidence; they do not promote a foundation or authorize customer-route convergence. Historical MF-06 remains OpenLab + LabReports.
+> **2026-08-11 supersession:** FC-01 contains the proposed exact values as unpublished `CANDIDATE_CONVERGENCE_v0`. Hidden Figma candidates and an isolated owner-only Sites `/review` wrapper now exercise the contract as technical evidence; they do not promote a foundation or authorize customer-route convergence. Historical MF-06 remains OpenLab + LabReports.
 
 **Status:** Accepted relationship authority; selected MF-01A/MF-01B/MF-02A relationships feed FC-01 containment
 **Evidence state:** Extracted from frozen NR-04 native compositions, later live-node verification, and the G0 Universal Glue reference
@@ -9,7 +9,7 @@
 
 ## FC-01 candidate-value containment addendum
 
-The proposed exact values in `make-sessions/fc-01-candidate-foundation-convergence/AUTHORITY-MATRIX.md` are recorded as `CANDIDATE_CONVERGENCE_v0`. Hidden candidate variables/styles/components and the isolated local `/review` wrapper now test them across the adaptive card family. They remain unpublished and unpromoted. Technical evidence does not close the human-selection gate, repair the dossier, close the full related rail or authorize customer routes.
+The proposed exact values in `make-sessions/fc-01-candidate-foundation-convergence/AUTHORITY-MATRIX.md` are recorded as `CANDIDATE_CONVERGENCE_v0`. Hidden candidate variables/styles/components and the isolated owner-only `/review` wrapper now test them across the adaptive card family. They remain unpublished and unpromoted. Technical evidence does not close the human-selection gate, repair the dossier, close the full related rail or authorize customer routes.
 
 Current relationship decisions remain: `614:75994` supplies the unified-left/featured-center/category-plus-ticker-right opening; commerce taxonomy is `SARMs / Prohormones / Research Chemicals / Stacks`; and the dossier index is non-interactive without tab semantics. The dark footer is the sole inverse relationship candidate. These supersede older active-lane descriptions without rewriting historical evidence.
 

@@ -1,7 +1,9 @@
 # FC-01 — Candidate Evidence and Human-Selection Brief
 
+> **Post-run receipt:** The bounded generation phase below completed, and the user's 2026-08-11 continuation subsequently authorized one exact-commit owner-only review deployment. Sites version 4 now serves source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`; no customer route, foundation, runtime or public-access authority changed.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
-**Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished, locally exercised in review isolation, unpromoted
+**Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished as a Figma/system authority, privately exercised in review isolation, unpromoted
 
 ## Goal
 
@@ -24,16 +26,16 @@ Review the normalized adaptive card-family candidate without mistaking technical
 - Compact `639:13888`, Relation `643:8616`, PurchasePanel `639:13889`.
 - Review frames `644:3`, `644:568`, `644:1093`, `644:1625`.
 - Exact EvidenceStatus `518:13092` and AssuranceRail `556:34627` sources.
-- Isolated local `/review` wrapper and typed review fixtures; no customer-route import.
+- Isolated owner-only `/review` wrapper and typed review fixtures; no customer-route import.
 
 ## Human decision required
 
-Select or reject the adaptive card-family relationships after direct Figma and local review comparison. Do not infer selection from the `6/6` test result or four-width geometry measurements.
+Select or reject the adaptive card-family relationships after direct Figma and owner-only review comparison. Do not infer selection from the `6/6` test result or four-width geometry measurements.
 
 ## Held work — not authorized by technical evidence
 
 - customer-route component refactors;
-- candidate Sites save/deploy;
+- public, shared or non-exact-source Sites publication;
 - dossier or full related-rail closure;
 - route corrections or foundation promotion.
 
@@ -53,4 +55,4 @@ Select or reject the adaptive card-family relationships after direct Figma and l
 
 ## Completion statement
 
-This phase is complete only as technical evidence when source disposition, Figma candidates, isolated local wrappers and local QA agree. That condition does not equal human selection, foundation acceptance, deployment or route convergence.
+This phase is complete only as technical evidence when source disposition, Figma candidates, isolated wrappers and local QA agree. The later owner-only review deployment proves availability only; neither condition equals human selection, foundation acceptance or route convergence.

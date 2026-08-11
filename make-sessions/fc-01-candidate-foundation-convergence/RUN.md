@@ -17,7 +17,7 @@
 
 1. Hidden unpublished Figma candidate foundation and adaptive sets created.
 2. Explicit responsive variants registered at 1440/1024/768/390.
-3. Isolated local Sites `/review` wrapper and typed fixtures implemented.
+3. Route-isolated Sites `/review` wrapper and typed fixtures implemented.
 4. Browser geometry, wrapping, focus, image and console checks passed locally.
 5. Build-backed test suite passed `6/6`.
 

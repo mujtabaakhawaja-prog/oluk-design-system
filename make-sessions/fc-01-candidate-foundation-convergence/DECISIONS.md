@@ -5,7 +5,7 @@
 
 1. The active lane is FC-01 Candidate Foundation Convergence. Historical MF-06 retains the OpenLab + LabReports meaning.
 2. P0 containment is complete. The adaptive card-family candidate now has bounded technical evidence; human selection is the next milestone, not another route-local CSS pass.
-3. The supplied `--oluk-*` map is implemented as unpublished and unpromoted `CANDIDATE_CONVERGENCE_v0` in hidden Figma artifacts and an isolated local `/review` wrapper. Raw legacy Figma values and candidate code are evidence, not promotion authority.
+3. The supplied `--oluk-*` map is implemented as unpublished and unpromoted `CANDIDATE_CONVERGENCE_v0` in hidden Figma artifacts and an isolated owner-only `/review` wrapper. Raw legacy Figma values and candidate code are evidence, not promotion authority.
 4. Use inventory green for `IN STOCK`; current cobalt stock dots are superseded.
 5. Commerce taxonomy is `SARMs / Prohormones / Research Chemicals / Stacks` across hero, family rail, catalogue filters, breadcrumbs and route copy.
 6. Alternative `Peptides / Longevity / Nootropics` terms may exist only as a separately defined OpenLab taxonomy; they are not interchangeable commerce families.
@@ -23,3 +23,4 @@
 18. Local automated QA may establish geometry, wrapping, focus and build health. It cannot fill the human-selection receipt.
 19. `551:27148` remains dossier correction-required, and the adaptive Relation component does not close the full related-product rail.
 20. Shopper SSR, WooCommerce, Initiator/payment, project-scoped C2 and public release remain separately unauthorized.
+21. Sites version 4 is the exact-commit owner-only review deployment for source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`. It exposes the candidate only through `/review`; it does not accept the candidate or reclassify the other 14 routes.

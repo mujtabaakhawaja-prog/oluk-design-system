@@ -50,6 +50,7 @@ const candidateReviewAnchors = [
   "mf02b-purchase-panel-disabled",
   "mf02b-assurance",
   "mf02b-six-icons",
+  "mf02b-related-rail",
   "mf02b-dossier",
   "mf02b-responsive-ledger",
   "baseline-routes",
@@ -57,6 +58,12 @@ const candidateReviewAnchors = [
 ];
 
 const baselineRouteLinks = customerRoutes.map(([pathname]) => pathname);
+
+const stableCustomerReviewAnchors = [
+  ["/", ["hero", "assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
+  ["/product/mk-2866", ["purchase", "dossier", "lab-records"]],
+  ["/open-lab", ["embedded-evidence"]],
+];
 
 const forbiddenCustomerVocabulary = [
   /\bGOVERNED(?: PRODUCT)?\b/i,
@@ -243,7 +250,14 @@ test("renders owner-review candidate anchors, direct Figma sources, and all comp
     assert.match(reviewHtml, new RegExp(`href=["']${escapeRegExp(href)}["']`), `baseline page link ${href}`);
   }
 
-  for (const node of ["637:3", "646:10801", "646:10802", "639:13888", "643:8616", "639:13889", "641:17", "518:13092", "556:34627", "551:27148", "644:3", "644:568", "644:1093", "644:1625"]) {
+  for (const [pathname, anchors] of stableCustomerReviewAnchors) {
+    const html = await renderHtml(worker, pathname);
+    for (const anchor of anchors) {
+      assert.match(html, new RegExp(`\\bid=["']${escapeRegExp(anchor)}["']`, "i"), `${pathname}#${anchor}`);
+    }
+  }
+
+  for (const node of ["637:3", "646:10801", "646:10802", "639:13888", "643:8616", "639:13889", "641:17", "518:13092", "556:34627", "551:26896", "551:27148", "644:3", "644:568", "644:1093", "644:1625"]) {
     assert.match(reviewHtml, new RegExp(escapeRegExp(`node-id=${node.replace(":", "-")}`)), `Figma node ${node}`);
   }
 

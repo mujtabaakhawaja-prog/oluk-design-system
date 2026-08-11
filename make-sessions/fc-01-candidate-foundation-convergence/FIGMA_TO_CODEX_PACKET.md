@@ -5,7 +5,7 @@
 
 ## Goal
 
-Carry the bounded candidate evidence into human review without turning it into customer-route or runtime authority. The unpublished Figma candidate and isolated local Sites wrapper exist; human selection is the next gate.
+Carry the bounded candidate evidence into human review without turning it into customer-route or runtime authority. The unpublished Figma candidate and exact-commit owner-only Sites wrapper exist; human selection is the next gate.
 
 ## Canonical sources
 

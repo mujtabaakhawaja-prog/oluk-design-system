@@ -11,8 +11,14 @@
   "baseCommit": "c5af8e547e8701304e8c26497f10ba8ae1f31466",
   "sites": {
     "url": "https://oluk-experience-lab.sigmamindset.chatgpt.site/",
-    "deployedCandidate": false,
-    "deployedContentClassification": "REJECTED_V3_COMPARISON_BASELINE",
+    "deployedCandidate": true,
+    "deployedContentClassification": "CANDIDATE_REVIEW_AT_REVIEW_ROUTE__REJECTED_V3_ON_OTHER_ROUTES",
+    "versionNumber": 4,
+    "versionId": "appgprj_6a784499e0a481919243ddab0dcaadff~appgver_3fdab5ea3fb8819194f22341ff54703f",
+    "deploymentId": "appgdep_6a7b495fded48191b3e8b3edc567c359",
+    "deploymentStatus": "succeeded",
+    "sourceCommit": "e3b8b6dbac45c8f725bc7085256bd7e85eca59f3",
+    "archiveContentHash": "sha256:223bf228fc3fa469ca61281fafab6e917c0af68c9333352e7a9752559227021d",
     "access": {
       "observedDriftRevision": 4,
       "observedDriftMode": "public",
@@ -75,8 +81,7 @@
     "DOSSIER_CORRECTION",
     "FULL_RELATED_RAIL_CLOSURE",
     "CUSTOMER_ROUTE_CONVERGENCE",
-    "FOUNDATION_PROMOTION",
-    "PRIVATE_CANDIDATE_DEPLOYMENT_PENDING"
+    "FOUNDATION_PROMOTION"
   ],
   "runtimeMutation": {
     "shopperSsr": false,

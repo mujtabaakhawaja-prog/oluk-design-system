@@ -10,7 +10,7 @@
 > **2026-08-11 supersession:** Active control has moved to `FC-01 Candidate Foundation Convergence` at `make-sessions/fc-01-candidate-foundation-convergence/`. Historical `MF-06` retains its OpenLab + LabReports meaning. The FC-01 candidate is `CANDIDATE_CONVERGENCE_v0`, unpublished and unpromoted. Bounded adaptive-card technical evidence now exists; human selection, dossier correction and full related-rail closure remain the next gate.
 
 **Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs feed FC-01 containment. MF-03 v2 is `REJECTED_VISUAL_TRANSLATION`; v3 is `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` and remains the owner-only comparison baseline.
-**Promotion state:** No foundation has been promoted. Hidden candidate Figma variables/styles, bounded component sets and an isolated local Sites `/review` wrapper now provide technical evidence for `CANDIDATE_CONVERGENCE_v0`. They do not authorize library publication, production `Light` promotion, customer-route convergence, Shopper SSR, payment, C2 or public release. Final Design `614:75994` controls the later opening relationship.
+**Promotion state:** No foundation has been promoted. Hidden candidate Figma variables/styles, bounded component sets and an isolated owner-only Sites `/review` wrapper now provide technical evidence for `CANDIDATE_CONVERGENCE_v0`. They do not authorize library publication, production `Light` promotion, customer-route convergence, Shopper SSR, payment, C2 or public release. Final Design `614:75994` controls the later opening relationship.
 
 ## FC-01 controlling addendum — 2026-08-11
 
@@ -42,7 +42,7 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 | Color foundations | Mechanically sound; visually provisional | 60 primitives, 59 semantics and three evaluation modes remain operational and hidden after the bounded NR-02D purchase-contract update; their mappings are still candidate authority and remain unpublished |
 | Non-color foundations | Directional baseline established; creative refinement active | Make may improve typography scale, spacing/density, shape, material, motion and responsive relationships in customer-facing designs; formal extraction follows the Make champion |
 | System validation | `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED` | Four-width card-family review frames exist; automated evidence does not equal human selection |
-| Foundation authority | `CANDIDATE_CONVERGENCE_v0`; unpublished and unpromoted | Hidden Figma candidates and an isolated local `/review` wrapper exist only as bounded technical evidence |
+| Foundation authority | `CANDIDATE_CONVERGENCE_v0`; unpublished and unpromoted | Hidden Figma candidates and an isolated owner-only `/review` wrapper exist only as bounded technical evidence |
 | Components through release | Deferred | Phases 08–12 may begin only through their recorded entry gates |
 
 ## Authority statement
@@ -1332,4 +1332,4 @@ The program is not complete when variables, components or pages merely exist. Co
 
 ## Final determination
 
-The candidate variable plumbing and FC-01 artifacts remain hidden and unpublished. Native V4 and completed MF-01A, MF-01B and MF-02A provide relationship evidence and exact product truth; the bounded `CANDIDATE_CONVERGENCE_v0` Figma sets and local `/review` wrapper now provide adaptive technical evidence. This is not foundation promotion or customer-route implementation. Human card-family selection, dossier correction and full related-rail closure precede any later route convergence or promotion decision. Historical MF-06 continues to mean OpenLab + LabReports. Runtime, evidence, payment, C2 and release authority remain separate later lanes.
+The candidate variable plumbing and FC-01 artifacts remain hidden and unpublished. Native V4 and completed MF-01A, MF-01B and MF-02A provide relationship evidence and exact product truth; the bounded `CANDIDATE_CONVERGENCE_v0` Figma sets and owner-only `/review` wrapper now provide adaptive technical evidence. This is not foundation promotion or customer-route implementation. Human card-family selection, dossier correction and full related-rail closure precede any later route convergence or promotion decision. Historical MF-06 continues to mean OpenLab + LabReports. Runtime, evidence, payment, C2 and release authority remain separate later lanes.

@@ -44,7 +44,7 @@ Legend: `LOCK` = preserve; `ADAPT` = preserve relationship, replace raw implemen
 
 ## Candidate convergence values
 
-These values are exercised in hidden candidate Figma variables/styles/components and the route-isolated local Sites `/review` wrapper. They are not published variables, customer-route tokens or promoted foundation authority.
+These values are exercised in hidden candidate Figma variables/styles/components and the route-isolated owner-only Sites `/review` wrapper. They are not published variables, customer-route tokens or promoted foundation authority.
 
 | Role | Exact value |
 |---|---|

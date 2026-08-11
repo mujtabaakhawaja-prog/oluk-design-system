@@ -1,7 +1,7 @@
 # FC-01 — Current State Receipt
 
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
-**Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished, locally exercised in review isolation, unpromoted
+**Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished as a Figma/system authority, privately exercised in review isolation, unpromoted
 **Date:** 2026-08-11
 **Current phase:** Adaptive card-family technical evidence ready; human selection pending
 
@@ -23,7 +23,13 @@
 - Shared groups: `0`
 - External visitors: `0`
 - Anonymous response: HTTP `401`
-- The deployed site remains the rejected-v3 baseline; no candidate save/deploy has occurred.
+- Sites version `4` serves the exact candidate source on `/review`; the other 14 routes remain the rejected-v3 comparison baseline.
+- Saved version: `appgprj_6a784499e0a481919243ddab0dcaadff~appgver_3fdab5ea3fb8819194f22341ff54703f`
+- Deployment: `appgdep_6a7b495fded48191b3e8b3edc567c359` — `succeeded`
+- Exact source: `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3`
+- Archive: `sha256:223bf228fc3fa469ca61281fafab6e917c0af68c9333352e7a9752559227021d`, 222 files, 8,806,400 bytes
+- Authenticated live smoke: candidate heading, sampled stable anchors, visible overflow, all images loaded and zero console errors.
+- Anonymous `/` and `/review`: HTTP `401`.
 
 ## Control and containment completed
 
@@ -79,16 +85,16 @@ At 1440, 1024, 768 and 390:
 - body and candidate wrappers retain visible overflow, so page-level clipping is not used as proof;
 - build-backed test suite passes `6/6`.
 
-This is local technical evidence, not a live Sites receipt or human visual acceptance.
+This is four-width local technical evidence. The private exact-source deployment above proves review availability, not human visual acceptance.
 
 ## Open items
 
 - Human selection receipt is empty.
 - `551:27148` remains `DOSSIER_CORRECTION_REQUIRED`; clipping and central metric overlap are not normalized.
 - The bounded Relation component does not close the full section-level related rail.
-- Customer-route convergence, foundation promotion and library publication have not begun. One exact-commit owner-only candidate review deployment is authorized but not yet recorded.
+- Customer-route convergence, foundation promotion and library publication have not begun. The exact-commit owner-only candidate review deployment is recorded above.
 - MF-03 v3 customer routes remain the rejected comparison baseline.
 
 ## Next exact action
 
-Publish the exact pushed candidate commit behind the verified owner-only policy, record the deployment receipt, and review the bounded Figma component sets plus `/review` anchors. Then record the human adaptive-card selection. Do not begin dossier normalization, related-rail convergence, customer-route refactoring or foundation promotion.
+Review the bounded Figma component sets plus the owner-only `/review` anchors, then record the human adaptive-card selection. Do not begin dossier normalization, related-rail convergence, customer-route refactoring or foundation promotion.

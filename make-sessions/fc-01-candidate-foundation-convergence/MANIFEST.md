@@ -59,18 +59,18 @@
 - four-column authority matrix and candidate values;
 - cumulative decisions, all-route review map and acceptance contract;
 - exact baseline/access receipt;
-- owner-only access restored and verified at access-policy revision 5; no candidate deployment.
+- owner-only access restored and verified at access-policy revision 5; Sites version 4 serves exact candidate source `e3b8b6dbac45c8f725bc7085256bd7e85eca59f3` at `/review`.
 
 ### Bounded technical evidence implemented
 
 - hidden candidate Figma variables, styles, foundation specimen and adaptive component sets;
 - four Figma review frames at 1440/1024/768/390;
-- local route-isolated Sites `/review` wrapper and component specimens;
+- route-isolated owner-only Sites `/review` wrapper and component specimens;
 - typed review-fixture registry with authority, source, runtime owner, publication state and review-only fields;
 - exact AssuranceRail and qualitative-chip SVG assets sourced from Figma;
 - local browser and build-backed technical QA.
 
-These artifacts exist as technical evidence. They are not published, deployed, human-selected or promoted.
+These artifacts exist as technical evidence. The Figma/system candidate is unpublished and unpromoted; the Sites review specimen is privately deployed, but it is not human-selected or accepted.
 
 ## Candidate Figma outputs
 
