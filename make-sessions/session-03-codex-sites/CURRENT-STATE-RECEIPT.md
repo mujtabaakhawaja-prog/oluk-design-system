@@ -1,5 +1,8 @@
 # MF-03 — V3 Current State Receipt
 
+> **Superseded active status — 2026-08-11:** This receipt remains the immutable revision-3 deployment record. Current control is [`FC-01 Candidate Foundation Convergence`](../fc-01-candidate-foundation-convergence/guidelines.md). V3 is `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`; verified access at `2026-08-11T00:29Z` was custom, current-user owner, zero groups, zero external visitors, Sites revision 3, anonymous HTTP `401`. MF-03 v2 remains `REJECTED_VISUAL_TRANSLATION`.
+
+
 **Mode:** Reference
 **Receipt date:** 2026-08-10
 **Status:** `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING`

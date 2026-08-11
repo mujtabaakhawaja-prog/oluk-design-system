@@ -91,6 +91,11 @@ dd {
   overflow-x: clip;
 }
 
+body:has(.experience-lab--candidate-review),
+.experience-lab--candidate-review {
+  overflow-x: visible;
+}
+
 .shell {
   margin-inline: auto;
   max-width: var(--shell);

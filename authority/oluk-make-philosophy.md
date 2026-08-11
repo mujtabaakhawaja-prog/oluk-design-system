@@ -1,5 +1,8 @@
 ## Make Philosophy — Controlling Directives
 
+> **2026-08-11 supersession:** FC-01 is the active candidate-convergence lane with `CANDIDATE_CONVERGENCE_v0` unpublished and unpromoted. A bounded adaptive card-family candidate and isolated local review wrapper provide technical evidence; human selection, dossier correction and full related-rail closure remain open. Historical MF-06 retains OpenLab + LabReports meaning. The older MF-03 pipeline-position paragraph below is preserved as history.
+
+
 ### Core rule
 Make should DESIGN first, not code Figma Design boards. Figma Design work established direction for Make to enhance, NOT for Make to recreate. Make-generated code is disposable prototype machinery, not runtime handoff.
 

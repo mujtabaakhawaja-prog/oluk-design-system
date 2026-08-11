@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="StrengthIcon">
+<path id="Vector" d="M4 9.33333C4.73638 9.33333 5.33333 8.7364 5.33333 8C5.33333 7.2636 4.73638 6.66667 4 6.66667C3.26362 6.66667 2.66667 7.2636 2.66667 8C2.66667 8.7364 3.26362 9.33333 4 9.33333Z" stroke="#0057FF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M10.6667 5.33333C11.4031 5.33333 12 4.73638 12 4C12 3.26362 11.4031 2.66667 10.6667 2.66667C9.93027 2.66667 9.33333 3.26362 9.33333 4C9.33333 4.73638 9.93027 5.33333 10.6667 5.33333Z" stroke="#0057FF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M12 12.6667C12.7364 12.6667 13.3333 12.0697 13.3333 11.3333C13.3333 10.5969 12.7364 10 12 10C11.2636 10 10.6667 10.5969 10.6667 11.3333C10.6667 12.0697 11.2636 12.6667 12 12.6667Z" stroke="#0057FF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M5.33333 7.33333L9.33333 4.66667M5.33333 8.66667L10.6667 10.6667" stroke="#0057FF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

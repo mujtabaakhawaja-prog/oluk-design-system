@@ -2,9 +2,24 @@
 
 **Date:** 2026-08-10
 **Controlling alias:** `ids-plan.md`
-**Current position:** `MF-01A`, `MF-01B` and `MF-02A` are complete historical inputs; MF-03 v3 is `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` at the owner-only review URL.
+**Current position:** FC-01 is `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`; `CANDIDATE_CONVERGENCE_v0` is unpublished and unpromoted. Historical MF-06 remains OpenLab + LabReports.
+
+## 2026-08-11 FC-01 containment addendum
+
+Human review determined that another route-local CSS correction would reproduce the same drift, but foundation promotion cannot precede a human-selected adaptive champion. FC-01 therefore contains the candidate contract and now exercises it through hidden Figma candidates plus an isolated `/review` implementation. This addendum controls the active lane. The user's 2026-08-11 continuation authorizes one exact-commit owner-only candidate review deployment; the bounded technical evidence does not authorize customer-route convergence, public access, promotion or runtime translation.
+
+| Lane | Current state | Current use |
+|---|---|---|
+| `MF-03 Codex Sites Convergence v3` | `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` | Rejected deployed comparison source behind custom owner-only access-policy revision 5; route shell and useful responsive infrastructure only |
+| `FC-01 Candidate Foundation Convergence` | `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED` | Unpublished `CANDIDATE_CONVERGENCE_v0`, hidden Figma candidates, isolated local `/review`, node/source matrix and review map |
+| `MF-06 OpenLab + LabReports` | `HISTORICAL FUTURE-RUN IDENTIFIER` | Meaning preserved; not reused for foundation convergence |
+| Shopper SSR / payment / C2 | `NOT AUTHORIZED` | Later translation only after all design frontiers pass human review |
+
+The active packet is `make-sessions/fc-01-candidate-foundation-convergence/` in the retained operational worktree `/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence` on `codex/fc01-candidate-foundation-convergence`. Final Design `614:75994` is the current opening relationship, `626:11760` is the historical card/state reservoir, and `561:41860` supplies commerce taxonomy. Candidate evidence is registered at `637:3`, `641:17`, `646:10801`, `646:10802`, `639:13888`, `643:8616`, `639:13889` and four-width frames `644:3`, `644:568`, `644:1093`, `644:1625`; exact EvidenceStatus and AssuranceRail sources remain `518:13092` and `556:34627`. The dossier index is non-interactive and must not use tab semantics; the full related rail remains open.
 
 ## 2026-08-09 convergence addendum
+
+> **Superseded status snapshot:** This section preserves the MF-03 handoff as written. Current v3 status, hero authority and active lane are controlled by the FC-01 addendum above.
 
 Human review advanced the program from isolated Make frontiers into one Codex Sites convergence lane. This addendum supersedes the earlier “MF-01A active” position without deleting or rewriting the completed run history below.
 

@@ -7,8 +7,16 @@
 **Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
 **Figma program index:** Page 00, node `36:2`
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
-**Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs feed `MF-03 Codex Sites Convergence`. Sites v2 is `REJECTED_VISUAL_TRANSLATION`. V3 is `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` in the dedicated v3-corrections worktree; its 15 routes include a private `/review` index. Earlier Make run receipts remain historical inputs rather than active execution instructions.
-**Promotion state:** Sites version 3 is live behind the unchanged owner-only access policy and carries design/review authority only. The latest bounded human decisions permit Final Design node `614:75950` as the current hero-structure source, realistic review and trust-rail fixture presentation without visible backend vocabulary, and one dark footer as the sole inverse exception. Those exceptions do not authorize runtime truth, Phase 05–06 promotion, Shopper SSR, payment, C2 or public-release work.
+> **2026-08-11 supersession:** Active control has moved to `FC-01 Candidate Foundation Convergence` at `make-sessions/fc-01-candidate-foundation-convergence/`. Historical `MF-06` retains its OpenLab + LabReports meaning. The FC-01 candidate is `CANDIDATE_CONVERGENCE_v0`, unpublished and unpromoted. Bounded adaptive-card technical evidence now exists; human selection, dossier correction and full related-rail closure remain the next gate.
+
+**Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs feed FC-01 containment. MF-03 v2 is `REJECTED_VISUAL_TRANSLATION`; v3 is `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` and remains the owner-only comparison baseline.
+**Promotion state:** No foundation has been promoted. Hidden candidate Figma variables/styles, bounded component sets and an isolated local Sites `/review` wrapper now provide technical evidence for `CANDIDATE_CONVERGENCE_v0`. They do not authorize library publication, production `Light` promotion, customer-route convergence, Shopper SSR, payment, C2 or public release. Final Design `614:75994` controls the later opening relationship.
+
+## FC-01 controlling addendum — 2026-08-11
+
+Human review found that MF-03 repeated the same material relationships with page-local values. FC-01 now contains and technically exercises those relationships through hidden Figma candidates and a local review-only Sites wrapper without promoting them. The adaptive card family has technical evidence at 1440/1024/768/390, but only a human selection can close that gate. The dossier and full related rail remain open.
+
+The active packet is `make-sessions/fc-01-candidate-foundation-convergence/`. Where older material names `614:75950`, the current source is `614:75994`: unified Portal + Archive on the left, Featured ProductCommerceCard in the center, and categories plus BatchTicker on the right. Commerce taxonomy is `SARMs / Prohormones / Research Chemicals / Stacks`. The dossier Product/Facts/Composition treatment is a non-interactive visual index, not tab semantics.
 
 ## Document control
 
@@ -21,7 +29,7 @@ This is the single controlling execution manual for the identity-led design-syst
 - the ordered future runs required after the present evaluation run;
 - promotion, invalidation, rollback, supersession, and archive rules.
 
-For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`MF-03 Codex Sites controls`](../make-sessions/session-03-codex-sites/guidelines.md). The MF-01A constitution and prompt remain historical source records.
+For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`FC-01 containment controls`](../make-sessions/fc-01-candidate-foundation-convergence/guidelines.md). The MF-01A constitution and prompt remain historical source records.
 
 It supersedes the earlier sequence as an execution authority. Legacy plans, transcripts, runtime captures, and the old Page `0:1` remain evidence or structural reference only.
 
@@ -33,8 +41,8 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 | Asset authority | Light-mode asset set sufficient for the active lane | The approved MK-2866 transparent master is registered and used; MENT verification is deferred with dark-mode work |
 | Color foundations | Mechanically sound; visually provisional | 60 primitives, 59 semantics and three evaluation modes remain operational and hidden after the bounded NR-02D purchase-contract update; their mappings are still candidate authority and remain unpublished |
 | Non-color foundations | Directional baseline established; creative refinement active | Make may improve typography scale, spacing/density, shape, material, motion and responsive relationships in customer-facing designs; formal extraction follows the Make champion |
-| System validation | Private V3 human review pending | Fifteen routes passed the 1440/1024/768/390 zero-overflow gate and are live behind owner-only access; human visual acceptance remains pending |
-| Foundation authority | Not started | Page 07 is a promotion shell; no mode is production `Light` |
+| System validation | `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED` | Four-width card-family review frames exist; automated evidence does not equal human selection |
+| Foundation authority | `CANDIDATE_CONVERGENCE_v0`; unpublished and unpromoted | Hidden Figma candidates and an isolated local `/review` wrapper exist only as bounded technical evidence |
 | Components through release | Deferred | Phases 08–12 may begin only through their recorded entry gates |
 
 ## Authority statement
@@ -1324,4 +1332,4 @@ The program is not complete when variables, components or pages merely exist. Co
 
 ## Final determination
 
-The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 and the completed MF-01A, MF-01B and MF-02A work provide the accepted light-mode direction, reusable semantic structures and exact product truth for the active MF-03 Codex Sites convergence. MF-03 now proves the shell, commerce, review and OpenLab route relationships at 1440/1024/768/390 in a private design-review site. It does not publish foundations or establish runtime, evidence, payment, C2, deployment or release authority. MENT and dark mode remain deferred. After human design selection and the Make Design Gate, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.
+The candidate variable plumbing and FC-01 artifacts remain hidden and unpublished. Native V4 and completed MF-01A, MF-01B and MF-02A provide relationship evidence and exact product truth; the bounded `CANDIDATE_CONVERGENCE_v0` Figma sets and local `/review` wrapper now provide adaptive technical evidence. This is not foundation promotion or customer-route implementation. Human card-family selection, dossier correction and full related-rail closure precede any later route convergence or promotion decision. Historical MF-06 continues to mean OpenLab + LabReports. Runtime, evidence, payment, C2 and release authority remain separate later lanes.

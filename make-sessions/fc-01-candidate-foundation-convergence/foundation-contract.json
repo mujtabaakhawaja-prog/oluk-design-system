@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "contractId": "OLUK_CANDIDATE_CONVERGENCE_v0",
+  "lane": "FC-01 Candidate Foundation Convergence",
+  "status": [
+    "ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY",
+    "DOSSIER_CORRECTION_REQUIRED",
+    "HUMAN_SELECTION_REQUIRED"
+  ],
+  "publicationState": "unpublished",
+  "promotionState": "unpromoted",
+  "runtimeAuthority": "none",
+  "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
+  "sourceAuthority": {
+    "foundationReservoir": "626:11760",
+    "commerceCard": "486:4634",
+    "evidenceStatus": "518:13092",
+    "assuranceRail": "556:34627",
+    "commerceTaxonomy": "561:41860",
+    "opening": "614:75994",
+    "dossier": "551:27148"
+  },
+  "candidateOutputs": {
+    "foundation": "637:3",
+    "inventoryStatus": "641:17",
+    "vertical": "646:10801",
+    "featured": "646:10802",
+    "compact": "639:13888",
+    "relation": "643:8616",
+    "purchasePanel": "639:13889",
+    "reviewFrames": {
+      "1440": "644:3",
+      "1024": "644:568",
+      "768": "644:1093",
+      "390": "644:1625"
+    }
+  },
+  "tokens": {
+    "canvas": "#f7f8fc",
+    "card": "#ffffff",
+    "familySurface": "#fafcff",
+    "mediaChamber": "#f0f4fb",
+    "cobaltSoft": "#eef4ff",
+    "cardBorder": "rgba(206,220,241,0.92)",
+    "strongBorder": "#afc8ff",
+    "familyBorder": "#d2e4ff",
+    "nearBlack": "#141827",
+    "secondaryText": "#53617d",
+    "mutedText": "#64718a",
+    "cobalt": "#0057ff",
+    "interactiveCobalt": "#256dff",
+    "inventoryGreen": "#15803d",
+    "inventorySoft": "#ecfdf3",
+    "radii": {
+      "control": 8,
+      "chip": 10,
+      "metric": 12,
+      "compact": 20,
+      "vertical": 24,
+      "purchase": 28,
+      "horizontal": 34
+    },
+    "softformArc": "0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)",
+    "displayFont": "Plus Jakarta Sans",
+    "bodyFont": "Inter",
+    "bodyFloorPx": 15,
+    "metadataFloorPx": 12,
+    "contentMaxPx": 1344,
+    "gridGapPx": 20,
+    "guttersPx": {
+      "desktop": 48,
+      "tablet": 32,
+      "mobile": 16
+    }
+  },
+  "siteIsolation": {
+    "route": "/review",
+    "candidateImportsRestrictedToReview": true,
+    "customerExperienceLabImportsCandidateLayer": false,
+    "wrapperExports": [
+      "OlukCanvas",
+      "OlukSection",
+      "OlukSurface",
+      "OlukCard",
+      "OlukMediaChamber",
+      "OlukPurchasePlane",
+      "OlukDivider",
+      "OlukCanvasSplit"
+    ],
+    "reviewAnchors": [
+      "foundation",
+      "mf02b-provenance",
+      "mf02b-atoms",
+      "mf02b-card-family",
+      "mf02b-compact-states",
+      "mf02b-horizontal",
+      "mf02b-purchase-panel",
+      "mf02b-assurance",
+      "mf02b-responsive-ledger",
+      "mf02b-dossier",
+      "baseline-routes",
+      "mf02b-selection-receipt"
+    ]
+  },
+  "gates": {
+    "humanCardFamilySelection": "required",
+    "dossier": "correction_required",
+    "fullRelatedRail": "open",
+    "customerRouteConvergence": "not_authorized",
+    "foundationPromotion": "not_authorized",
+    "candidateDeployment": "authorized_owner_only_exact_commit",
+    "runtimeTranslation": "not_authorized"
+  }
+}

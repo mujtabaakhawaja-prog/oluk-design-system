@@ -1,6 +1,6 @@
 # FIGMA_TO_CODEX_PACKET — Experience Lab v2 Structural Correction Pass
 
-> **Historical correction input:** This packet responded to the `REJECTED_VISUAL_TRANSLATION` V2 build. It is superseded by the active V3 packet. Where it conflicts with current decisions—especially the `614:75950` hero structure, sole-inverse dark footer, realistic reviews, trust-rail fixture copy or local-only status—the active packet controls.
+> **Historical correction input:** This packet responded to the `REJECTED_VISUAL_TRANSLATION` V2 build. V3 later became technically healthy but failed design convergence. Current control is [`FC-01 Candidate Foundation Convergence`](../fc-01-candidate-foundation-convergence/guidelines.md), with `614:75994` as the opening source and MF-02B adaptive-champion selection pending.
 
 ## Metadata
 

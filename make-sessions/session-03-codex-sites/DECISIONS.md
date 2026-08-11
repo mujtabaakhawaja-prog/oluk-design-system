@@ -1,5 +1,7 @@
 # MF-03 — V3 Decision Register
 
+> **Superseded active status — 2026-08-11:** This file is preserved as MF-03 revision-3 history. Current control is [`FC-01 Candidate Foundation Convergence`](../fc-01-candidate-foundation-convergence/guidelines.md). MF-03 v3 is `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`; `614:75994` supersedes `614:75950` for the opening. MF-03 v2 remains `REJECTED_VISUAL_TRANSLATION`.
+
 **Mode:** Reference
 **Date:** 2026-08-10
 **Decision authority:** Latest explicit human direction

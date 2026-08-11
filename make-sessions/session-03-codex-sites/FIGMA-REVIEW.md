@@ -1,6 +1,6 @@
 # FIGMA_AGENT_RESPONSE — MF-03 Codex Sites Experience Lab Review
 
-> **Historical V2 disposition:** `REJECTED_VISUAL_TRANSLATION`. This review is preserved as V2 evidence only. V3 is `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections`; its owner-only review URL now serves version 3. Current execution is governed by `guidelines.md`, `AUTHORITY-MATRIX.md`, `MANIFEST.md`, `RUN.md`, `CURRENT-STATE-RECEIPT.md` and `DECISIONS.md`.
+> **Historical V2 disposition:** `REJECTED_VISUAL_TRANSLATION`. This review is preserved as V2 evidence only. V3 now classifies as `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`. Current control is [`FC-01 Candidate Foundation Convergence`](../fc-01-candidate-foundation-convergence/guidelines.md); the owner-only revision-3 receipt remains historical deployment evidence.
 
 ## Metadata
 

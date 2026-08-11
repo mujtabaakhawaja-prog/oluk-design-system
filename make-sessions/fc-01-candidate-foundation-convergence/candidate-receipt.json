@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-08-11",
+  "status": [
+    "ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY",
+    "DOSSIER_CORRECTION_REQUIRED",
+    "HUMAN_SELECTION_REQUIRED"
+  ],
+  "worktree": "/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence",
+  "branch": "codex/fc01-candidate-foundation-convergence",
+  "baseCommit": "c5af8e547e8701304e8c26497f10ba8ae1f31466",
+  "sites": {
+    "url": "https://oluk-experience-lab.sigmamindset.chatgpt.site/",
+    "deployedCandidate": false,
+    "deployedContentClassification": "REJECTED_V3_COMPARISON_BASELINE",
+    "access": {
+      "observedDriftRevision": 4,
+      "observedDriftMode": "public",
+      "restoredRevision": 5,
+      "restoredMode": "custom",
+      "allowedUsers": 1,
+      "allowedUserRole": "owner",
+      "groups": 0,
+      "externalVisitors": 0,
+      "anonymousHttpStatus": 401
+    }
+  },
+  "figma": {
+    "publicationState": "hidden_from_publishing",
+    "foundation": "637:3",
+    "inventoryStatus": "641:17",
+    "vertical": "646:10801",
+    "featured": "646:10802",
+    "compact": "639:13888",
+    "relation": "643:8616",
+    "purchasePanel": "639:13889",
+    "reviewFrames": [
+      "644:3",
+      "644:568",
+      "644:1093",
+      "644:1625"
+    ],
+    "exactEvidenceStatusSource": "518:13092",
+    "exactAssuranceRailSource": "556:34627"
+  },
+  "localReview": {
+    "routeIsolated": true,
+    "customerRouteImportsCandidateLayer": false,
+    "purchasePanelStateCount": 6,
+    "compactStateCount": 8,
+    "assuranceIconCount": 6,
+    "assuranceSvgColor": "#0057ff",
+    "viewportWidths": [
+      1440,
+      1024,
+      768,
+      390
+    ],
+    "scrollWidthEqualsClientWidth": true,
+    "semanticChildBoundaryViolations": 0,
+    "minimumComputedFontPx": 12,
+    "allImagesLoaded": true,
+    "assuranceDescriptionsWrapWithoutOverflow": true,
+    "consoleErrors": 0,
+    "keyboardFocusOutline": "2px #0057ff",
+    "bodyOverflow": "visible",
+    "wrapperOverflow": "visible",
+    "testSuite": {
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "openGates": [
+    "HUMAN_CARD_FAMILY_SELECTION",
+    "DOSSIER_CORRECTION",
+    "FULL_RELATED_RAIL_CLOSURE",
+    "CUSTOMER_ROUTE_CONVERGENCE",
+    "FOUNDATION_PROMOTION",
+    "PRIVATE_CANDIDATE_DEPLOYMENT_PENDING"
+  ],
+  "runtimeMutation": {
+    "shopperSsr": false,
+    "woocommerce": false,
+    "initiatorPayment": false,
+    "c2": false
+  }
+}

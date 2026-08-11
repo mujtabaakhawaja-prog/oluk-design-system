@@ -1,5 +1,8 @@
 ## PDP MK-2866 Page Architecture
 
+> **2026-08-11 supersession:** This native V4 architecture is preserved as source evidence. FC-01 controls the current candidate interpretation: the dossier Product/Facts/Composition treatment is a non-interactive visual index without tab semantics. The adaptive card-family technical candidate does not correct the dossier; `551:27148` remains `DOSSIER_CORRECTION_REQUIRED`, and no foundation is promoted before human selection and four-width dossier repair.
+
+
 ### Current State — NR-02C Native V4 (node 126:4)
 - 1440×5204px, vertical layout
 - Page canvas: #F7F8FC (blue-shifted near-white)

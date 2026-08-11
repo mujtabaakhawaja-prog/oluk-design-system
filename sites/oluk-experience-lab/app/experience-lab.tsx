@@ -15,8 +15,7 @@ type RouteKey =
   | "compare"
   | "evidence-os"
   | "about"
-  | "reviews"
-  | "review";
+  | "reviews";
 
 type ExperienceLabProps = { route: RouteKey };
 
@@ -547,26 +546,6 @@ function ReviewsPage() {
   return <><PageHero eyebrow="CUSTOMER REVIEWS" title="Experiences shared by Olympus customers." copy="Product, delivery and OpenLab feedback presented in a clear, consistent review surface." /><ReviewsSection full /></>;
 }
 
-const reviewItems = [
-  ["Header + opening composition", "/#hero", "614:75950", "Two left containers, Featured card, right categories and BatchTicker"],
-  ["Six-point assurance", "/#assurance", "556:34627", "Full and compact AssuranceRail"],
-  ["Compound families", "/#compound-families", "561:41860", "Four equal white family cards"],
-  ["Product card family", "/#featured-products", "486:4634", "Bounded chamber, metric rail, facts and purchase plane"],
-  ["Customer reviews", "/#reviews", "614:75950", "Rendered three-card customer state"],
-  ["Related product", "/#related-products", "486:4636", "Adaptive horizontal ProductCommerceCard"],
-  ["PDP first fold", "/product/mk-2866#purchase", "551:31570", "Media and PurchasePanel"],
-  ["PDP dossier", "/product/mk-2866#dossier", "551:27148", "Three-panel responsive dossier"],
-  ["PDP Lab Records", "/product/mk-2866#lab-records", "551:31665", "Record cards and OpenLab handoff"],
-  ["OpenLab portal", "/open-lab", "588:67272", "Portal composition"],
-  ["Lab Records archive", "/open-lab/records", "588:67449", "Archive filters and record grid"],
-  ["Individual record", "/open-lab/records/source-bound-record", "588:67788", "Record summary, trace and report access"],
-  ["Footer", "/#footer", "614:75950", "Sole inverse surface"],
-];
-
-function ReviewIndex() {
-  return <section className="review-index"><div className="shell"><span className="eyebrow">PRIVATE DESIGN REVIEW · VERSION 3</span><h1>Olympus Labs UK review surfaces.</h1><p>Each item links directly to the current implementation and its Figma reference. Populated records, reviews, availability, delivery and assurance copy are presentation content for this private design review; live sources are connected only after visual approval.</p><div className="review-index-grid">{reviewItems.map(([title, href, node, copy], index) => <article key={title}><span>0{index + 1}</span><h2>{title}</h2><p>{copy}</p><div><a href={href}>Open current surface <Arrow /></a><a href={`https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=${node.replace(":", "-")}`} target="_blank" rel="noreferrer">Open Figma target <Arrow /></a></div><strong>READY FOR REVIEW</strong></article>)}</div><section className="review-notes"><h2>Review sequence</h2><ol><li>Check structure and card relationships at 1440 px.</li><li>Check recomposition at 1024, 768 and 390 px.</li><li>Record pass or correction against each linked item.</li></ol></section></div></section>;
-}
-
 export function ExperienceLab({ route }: ExperienceLabProps) {
   let content: React.ReactNode;
   switch (route) {
@@ -583,9 +562,7 @@ export function ExperienceLab({ route }: ExperienceLabProps) {
     case "evidence-os": content = <EvidenceOsPage />; break;
     case "about": content = <AboutPage />; break;
     case "reviews": content = <ReviewsPage />; break;
-    case "review": content = <ReviewIndex />; break;
     default: content = <HomePage />;
   }
-  if (route === "review") return <div className="experience-lab"><main id="main-content">{content}</main></div>;
   return <div className="experience-lab"><SiteHeader route={route} /><main id="main-content">{content}</main><div id="footer"><SiteFooter /></div></div>;
 }
