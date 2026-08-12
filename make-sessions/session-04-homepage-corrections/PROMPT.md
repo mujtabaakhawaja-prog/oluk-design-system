@@ -1,5 +1,7 @@
 # MF-04 — Homepage Figma Corrections
 
+> **Superseded by CONV-001:** Homepage work is now MF-03A in `../mf03-experience-convergence/PROMPT.md`. This prompt remains historical evidence and must not be treated as current full-state authority.
+
 **File:** `BEPMuUt1HroEw8xjz8CVyN`
 **Target page:** `512:4651` (MF-02)
 **Method:** Figma edit_design (not Make — these are corrections to existing nodes)

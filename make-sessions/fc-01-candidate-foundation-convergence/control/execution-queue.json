@@ -1,18 +1,29 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updatedDate": "2026-08-11",
-  "policy": "execute_ready_work_sequentially_and_interrupt_only_for_human_authority_or_external_blockers",
+  "supersededBy": "make-sessions/mf03-experience-convergence/MANIFEST.md",
+  "policy": "inherit_champion_state_then_apply_only_the_named_run_delta",
   "queue": [
-    {"id": "W1.1", "work": "ratify adaptive card-family champion and MF-01A/MF-01B provenance", "state": "waiting_for_human"},
-    {"id": "W1.2", "work": "correct dossier at four widths", "state": "blocked_by_W1.1"},
-    {"id": "W1.3", "work": "complete full adaptive related-product rail", "state": "blocked_by_W1.1"},
-    {"id": "W2", "work": "harden selected candidate system and state coverage", "state": "blocked_by_W1"},
-    {"id": "W3", "work": "converge shell, MF-03 opening and homepage", "state": "blocked_by_W2"},
-    {"id": "W4", "work": "design catalogue discovery and PDP lifecycle", "state": "blocked_by_W3"},
-    {"id": "W5", "work": "design OpenLab lifecycle", "state": "blocked_by_W3"},
-    {"id": "W6", "work": "design bag, checkout and post-purchase presentation lifecycle", "state": "blocked_by_W4"},
-    {"id": "W7", "work": "cross-route convergence and human visual gate", "state": "blocked_by_W3_W4_W5_W6"},
-    {"id": "W8", "work": "foundation and presentation promotion decision", "state": "blocked_by_W7"},
-    {"id": "W9", "work": "prepare separate runtime translation packets", "state": "blocked_by_W8"}
-  ]
+    {"id": "MF-03A", "priority": "P0", "work": "shell and homepage candidate", "state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "figmaNode": "764:50"},
+    {"id": "MF-03B", "priority": "P0", "work": "OpenLab portal candidate", "state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "figmaNode": "767:50"},
+    {"id": "MF-04", "priority": "P0", "work": "PDP candidate", "state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "figmaNode": "766:50"},
+    {"id": "MF-05", "priority": "P1", "work": "dossier and evidence transition", "state": "queued_after_MF-04"},
+    {"id": "MF-05A", "priority": "P2", "work": "compare bundle stack and goal-led decision surfaces", "state": "optional_after_core_proof"},
+    {"id": "MF-06", "priority": "P1", "work": "OpenLab archive lookup and record lifecycle", "state": "queued_after_MF-03B"},
+    {"id": "MF-07", "priority": "P1", "work": "bag checkout and post-purchase presentation", "state": "queued_after_MF-04"},
+    {"id": "MF-09", "priority": "P0", "work": "responsive and local-state proof", "state": "REQUIRED_FOR_FULL_FOUR_WIDTH_AND_STATE_PROOF"},
+    {"id": "MF-10", "priority": "P0", "work": "cross-route final design gate", "state": "BLOCKED_PENDING_MF-09_AND_CHAMPION_REVIEW"},
+    {"id": "MF++", "priority": "POST_GATE", "work": "promotion Code Connect and runtime translation", "state": "blocked_by_MF-10_and_separate_authorization"}
+  ],
+  "removedStandaloneRun": {
+    "id": "MF-08",
+    "reason": "selective native integration is continuous through canonical component instancing"
+  },
+  "sitesImplementation": {
+    "state": "CANDIDATE_IMPLEMENTED_HUMAN_REVIEW_REQUIRED",
+    "sourceCommit": "84f8627a513a6e7c547cd4df76d17a6351d48420",
+    "routeCount": 15,
+    "validation": "BUILD_TYPECHECK_LINT_7_OF_7_TESTS_BROWSER_QA_PASS",
+    "deployment": "NONE"
+  }
 }

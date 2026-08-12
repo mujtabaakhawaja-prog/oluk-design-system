@@ -1,11 +1,35 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "recordedDate": "2026-08-11",
   "status": [
+    "SUPERSEDED_AS_ACTIVE_CONTROL",
+    "PRESERVED_AS_PREDECESSOR_EVIDENCE"
+  ],
+  "predecessorStatus": [
     "ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY",
     "DOSSIER_CORRECTION_REQUIRED",
     "HUMAN_SELECTION_REQUIRED"
   ],
+  "supersededBy": "CONV-001",
+  "currentControl": "authority/CURRENT-STATE.json",
+  "convergenceAddendum": {
+    "approval": "APPROVED_WITH_CORRECTIONS",
+    "newArtifacts": "UNPUBLISHED_HUMAN_REVIEW_REQUIRED",
+    "hero": {
+      "layout": "717:15468",
+      "data": "626:7994",
+      "requiredMetric": "90 SERVINGS",
+      "rejectedWrapper": "713:1065 Hero component with PurchasePanel geometry"
+    },
+    "variables": {
+      "activeCollections": 4,
+      "activeVariables": 86,
+      "archivedCollections": 3,
+      "archivedVariables": 128
+    },
+    "typeFloor": "PROPOSED_NON_CONTROLLING",
+    "decisionLedger": "authority/DECISION-LEDGER.json"
+  },
   "worktree": "/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence",
   "branch": "codex/fc01-candidate-foundation-convergence",
   "baseCommit": "c5af8e547e8701304e8c26497f10ba8ae1f31466",
@@ -77,11 +101,11 @@
     }
   },
   "openGates": [
-    "HUMAN_CARD_FAMILY_SELECTION",
-    "DOSSIER_CORRECTION",
-    "FULL_RELATED_RAIL_CLOSURE",
-    "CUSTOMER_ROUTE_CONVERGENCE",
-    "FOUNDATION_PROMOTION"
+    "ARTIFACT_SPECIFIC_HUMAN_REVIEW",
+    "MF03A_MF03B_MF04_ROUTE_CANDIDATES",
+    "MF09_RESPONSIVE_PROOF",
+    "MF10_FINAL_DESIGN_GATE",
+    "MF_PLUS_PLUS_SEPARATE_AUTHORIZATION"
   ],
   "runtimeMutation": {
     "shopperSsr": false,

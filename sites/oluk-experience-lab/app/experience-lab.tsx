@@ -95,19 +95,6 @@ const categoryFamilies = [
   ["04", "Stacks", "Curated multi-product selections, individually traceable.", "6 products"],
 ];
 
-const portalCategories = [
-  ["01", "SARMs", "Selective compounds with receptor specificity."],
-  ["02", "Prohormones", "Specialist product-specific formulations."],
-  ["03", "Research Chemicals", "Technical facts and Lab Record access."],
-  ["04", "Stacks", "Multi-product selections, individually traceable."],
-];
-
-const batchTicker = [
-  ["MK-677", "Verified 08 May 2026", "98.9%"],
-  ["BPC-157", "Verified 07 May 2026", "99.2%"],
-  ["CJC-1295", "Verified 06 May 2026", "99.0%"],
-];
-
 const reviews = [
   ["Excellent product detail", "A. Morgan", "18 July 2026", "The product information was clear and the Lab Record was easy to find.", "5"],
   ["Everything in one place", "Daniel R.", "04 July 2026", "Strength, servings and independent testing were simple to compare before ordering.", "5"],
@@ -244,6 +231,40 @@ function MetricRail({ product = mk2866, compact = false }: { product?: Product; 
   );
 }
 
+function ProductTabs() {
+  return (
+    <nav className="product-tabs" aria-label="Featured product options">
+      {["MK-2866", "MENT", "ENDURASHRED", "RAD-140", "MK-677"].map((label, index) => (
+        <a aria-current={index === 0 ? "page" : undefined} href={index === 0 ? "/product/mk-2866" : "/shop"} key={label}>{label}</a>
+      ))}
+    </nav>
+  );
+}
+
+function HeroDecisionSurface() {
+  return (
+    <article className="hero-decision-surface" aria-label="Featured MK-2866 product decision surface">
+      <div className="hero-decision-heading">
+        <div>
+          <span className="product-series">FEATURED PRODUCT</span>
+          <h2>{mk2866.name}</h2>
+          <p>{mk2866.alias}</p>
+        </div>
+        <div className="product-status-stack"><InventoryStatus /><EvidenceStatus compact /></div>
+      </div>
+      <MetricRail compact />
+      <div className="hero-decision-commerce">
+        <div className="price-block"><span>PRICE</span><strong>{mk2866.price}</strong></div>
+        <div className="card-actions">
+          <a className="button button-secondary" href="/product/mk-2866">View product <Arrow /></a>
+          <button className="button" type="button" disabled>Add to bag</button>
+        </div>
+      </div>
+      <ProductTabs />
+    </article>
+  );
+}
+
 function FactIcon({ kind }: { kind: string }) {
   if (kind === "class") return <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>;
   if (kind === "form") return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7a4 4 0 0 1 0 6L13 17a4 4 0 0 1-6 0Z" fill="none" stroke="currentColor" strokeWidth="1.6"/><path d="m10 14 4 4" fill="none" stroke="currentColor" strokeWidth="1.6"/></svg>;
@@ -311,49 +332,25 @@ function SectionHeading({ eyebrow, title, copy, action }: { eyebrow: string; tit
   );
 }
 
-function PortalCard() {
-  return (
-    <article className="portal-card hero-panel">
-      <span className="eyebrow">OPENLAB PORTAL</span>
-      <h1>Shop the range and verify every batch.</h1>
-      <p>Browse products, check batch records and access lab reports in one place.</p>
-      <label className="hero-search"><SearchIcon /><span className="sr-only">Search products or batches</span><input type="search" placeholder="Search products, batches or compounds" /></label>
-      <div className="button-row"><ActionLink href="/shop">Shop the range</ActionLink><ActionLink href="/open-lab/records" secondary>View Lab Records</ActionLink></div>
-    </article>
-  );
-}
-
-function ArchiveCard() {
-  return (
-    <article className="archive-card hero-panel">
-      <div className="archive-card-copy"><span className="eyebrow">OPENLAB ARCHIVE</span><h2>Every batch. Every report. Public.</h2><p>Independent testing records, connected directly to the products they verify.</p></div>
-      <div className="archive-metrics"><div><strong>15</strong><span>REPORTS</span></div><div><strong>99.55%</strong><span>AVG PURITY</span></div><div><strong>0</strong><span>FAILURES</span></div></div>
-      <a href="/open-lab/methodology">Read our methodology <Arrow /></a>
-    </article>
-  );
-}
-
-function HeroCategoryCards() {
-  return <div className="hero-category-cards">{portalCategories.map(([index, title, copy]) => <a href="/shop" key={title}><span>{index}</span><h3>{title}</h3><p>{copy}</p><strong>Browse <Arrow /></strong></a>)}</div>;
-}
-
-function BatchTicker() {
-  return (
-    <aside className="batch-ticker" aria-label="Latest batch reports">
-      <div className="ticker-heading"><span><i />Latest batch reports</span><a href="/open-lab/records">All reports <Arrow /></a></div>
-      <div className="ticker-grid">{batchTicker.map(([product, date, result]) => <a href="/open-lab/records" key={product}><div><strong>{product}</strong><span>{date}</span></div><div><strong>{result}</strong><span>HPLC</span></div></a>)}</div>
-    </aside>
-  );
-}
-
 function HomeHero() {
   return (
     <section className="mf03-hero" id="hero">
-      <div className="shell hero-composition">
-        <div className="hero-left-stack"><PortalCard /><ArchiveCard /></div>
-        <ProductCommerceCard variant="featured" />
-        <HeroCategoryCards />
-        <BatchTicker />
+      <div className="shell">
+        <div className="product-decision-hero">
+          <div className="product-decision-copy">
+            <span className="eyebrow">FORMULATED. VERIFIED. BATCH TRACKED.</span>
+            <h1>Formulated to a higher standard.</h1>
+            <p>Third-party tested. Strength, servings, and fulfilment confirmed before checkout.</p>
+            <div className="button-row"><ActionLink href="/shop">Shop the range</ActionLink><ActionLink href="/open-lab/records" secondary>View Lab Records</ActionLink></div>
+          </div>
+          <div className="product-decision-media" aria-label="MK-2866 product range">
+            <div className="product-decision-orbit" aria-hidden="true" />
+            <img className="product-bottle product-bottle-ghost product-bottle-ghost-left" src={mk2866.image} alt="" />
+            <img className="product-bottle product-bottle-primary" src={mk2866.image} alt="MK-2866 Ostarine bottle" />
+            <img className="product-bottle product-bottle-ghost product-bottle-ghost-right" src={mk2866.image} alt="" />
+          </div>
+          <HeroDecisionSurface />
+        </div>
       </div>
     </section>
   );
@@ -497,7 +494,7 @@ function EvidenceArchiveSection({ id = "openlab-records" }: { id?: string }) {
 
 function OpenLabPage() {
   return (
-    <><OpenLabNav active="overview" /><section className="openlab-portal-hero"><div className="shell openlab-portal-grid"><div className="openlab-intro"><span className="eyebrow">OPENLAB</span><h1>Independent evidence, connected to every product.</h1><p>Browse finished-product records, trace each batch and open the original report from one public archive.</p><div className="button-row"><ActionLink href="/open-lab/records">Browse Lab Records</ActionLink><ActionLink href="/open-lab/methodology" secondary>How testing works</ActionLink></div></div><div className="openlab-feature-card"><div><img src={mk2866.image} alt="MK-2866 Ostarine bottle" /></div><span>{mk2866.series}</span><h2>{mk2866.name}</h2><p>{mk2866.alias}</p><MetricRail compact /><a href="/open-lab/dossier/mk-2866">Open product dossier <Arrow /></a></div></div></section><section className="section"><div className="shell"><SectionHeading eyebrow="SIX-POINT ASSURANCE" title="What every record is built to show." copy="A consistent route from product identity through testing and batch tracking." /><AssuranceRail /></div></section><EvidenceArchiveSection id="embedded-evidence" /><section className="section section-blue-wash"><div className="shell portal-route-grid">{[["01", "Lab Records", "Search published records.", "/open-lab/records"], ["02", "Batch Lookup", "Find a specific batch.", "/open-lab/batch-lookup"], ["03", "Methodology", "Understand each testing method.", "/open-lab/methodology"], ["04", "Source Chain", "Follow product to report.", "/open-lab/source-chain"], ["05", "Compare", "Review compatible records.", "/open-lab/compare"], ["06", "EvidenceOS", "Explore the evidence framework.", "/about/evidence-os"]].map(([index, title, copy, href]) => <a href={href} key={title}><span>{index}</span><h3>{title}</h3><p>{copy}</p><Arrow /></a>)}</div></section></>
+    <><OpenLabNav active="overview" /><section className="openlab-portal-hero"><div className="shell openlab-portal-grid"><div className="openlab-intro"><span className="eyebrow">OPENLAB</span><h1>Independent evidence, connected to every product.</h1><p>Browse finished-product records, trace each batch and open the original report from one public archive.</p><div className="openlab-lens-tabs" aria-label="OpenLab experience lenses"><span aria-current="true">Technical</span><span>Product evidence</span><span>Commerce</span></div><div className="button-row"><ActionLink href="/open-lab/records">Browse Lab Records</ActionLink><ActionLink href="/open-lab/methodology" secondary>How testing works</ActionLink></div></div><div className="openlab-feature-card"><div><img src={mk2866.image} alt="MK-2866 Ostarine bottle" /></div><div className="openlab-feature-status"><InventoryStatus /><EvidenceStatus compact /></div><span>{mk2866.series}</span><h2>{mk2866.name}</h2><p>{mk2866.alias}</p><MetricRail compact /><a href="/open-lab/dossier/mk-2866">Open product dossier <Arrow /></a></div></div></section><section className="section"><div className="shell"><SectionHeading eyebrow="SIX-POINT ASSURANCE" title="What every record is built to show." copy="A consistent route from product identity through testing and batch tracking." /><AssuranceRail /></div></section><EvidenceArchiveSection id="embedded-evidence" /><section className="section section-blue-wash"><div className="shell portal-route-grid">{[["01", "Lab Records", "Search published records.", "/open-lab/records"], ["02", "Batch Lookup", "Find a specific batch.", "/open-lab/batch-lookup"], ["03", "Methodology", "Understand each testing method.", "/open-lab/methodology"], ["04", "Source Chain", "Follow product to report.", "/open-lab/source-chain"], ["05", "Compare", "Review compatible records.", "/open-lab/compare"], ["06", "EvidenceOS", "Explore the evidence framework.", "/about/evidence-os"]].map(([index, title, copy, href]) => <a href={href} key={title}><span>{index}</span><h3>{title}</h3><p>{copy}</p><Arrow /></a>)}</div></section></>
   );
 }
 

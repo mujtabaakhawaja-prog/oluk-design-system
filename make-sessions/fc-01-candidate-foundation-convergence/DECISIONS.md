@@ -1,5 +1,7 @@
 # FC-01 — Cumulative Decisions
 
+> **Superseded active control:** Champion decisions are now append-only in `authority/DECISION-LEDGER.json`. Do not append current decisions to this predecessor list.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Date:** 2026-08-11
 

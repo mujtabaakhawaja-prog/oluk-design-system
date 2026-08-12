@@ -1,5 +1,7 @@
 # FC-01 — Review Map
 
+> **Superseded active control:** Current candidate identities live in `authority/ARTIFACT-REGISTRY.json`. This map preserves the FC-01 comparison routes.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Current Sites classification:** `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`
 **Verified access:** access-policy revision 7 `custom`, one allowed current owner, zero groups, zero external visitors, anonymous `/` and `/review` HTTP `401`; corrected from public revision 6 on 2026-08-11

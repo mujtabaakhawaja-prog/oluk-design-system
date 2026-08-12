@@ -3,7 +3,7 @@ import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const routes = [
-  ["/", "Shop the range and verify every batch."],
+  ["/", "Formulated to a higher standard."],
   ["/shop", "The Olympus Labs UK range."],
   ["/product/mk-2866", "MK-2866"],
   ["/reviews", "Experiences shared by Olympus customers."],
@@ -66,6 +66,10 @@ const stableCustomerReviewAnchors = [
 ];
 
 const forbiddenCustomerVocabulary = [
+  /CANDIDATE(?: ·|_)? HUMAN REVIEW REQUIRED/i,
+  /HUMAN_REVIEW_REQUIRED/i,
+  /\bCONV-001\b/i,
+  /\bMF01A ANATOMY\b/i,
   /\bGOVERNED(?: PRODUCT)?\b/i,
   /CATALOGUE SOURCE PENDING/i,
   /\bSOURCE[-\u2011\u2013 ]BOUND\b/i,
@@ -171,6 +175,8 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
     "15 MG",
     "90 SERVINGS",
     ">99%",
+    "IN STOCK",
+    "OPENLAB VERIFIED",
     "£43",
   ]) {
     assert.match(productText, new RegExp(escapeRegExp(expected)), `MK-2866 truth: ${expected}`);
@@ -189,6 +195,36 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
       assert.doesNotMatch(text, forbidden, `${pathname} visibly contains ${forbidden}`);
     }
   }
+});
+
+test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", async () => {
+  const worker = await loadWorker();
+
+  const homeText = visibleText(await renderHtml(worker, "/"));
+  for (const expected of [
+    "FORMULATED. VERIFIED. BATCH TRACKED.",
+    "Formulated to a higher standard.",
+    "15 MG",
+    "90 SERVINGS",
+    ">99%",
+    "IN STOCK",
+    "OPENLAB VERIFIED",
+    "£43",
+  ]) {
+    assert.match(homeText, new RegExp(escapeRegExp(expected)), `homepage decision truth: ${expected}`);
+  }
+  assert.doesNotMatch(homeText, /90 CAPS(?:\b|ULES)/i);
+
+  const openLabText = visibleText(await renderHtml(worker, "/open-lab"));
+  for (const lens of ["Technical", "Product evidence", "Commerce"]) {
+    assert.match(openLabText, new RegExp(escapeRegExp(lens)), `OpenLab lens: ${lens}`);
+  }
+
+  const source = await readFile(new URL("../app/experience-lab.tsx", import.meta.url), "utf8");
+  const homeHero = source.match(/function HomeHero\(\)[\s\S]*?\n}\n\nfunction CompoundFamilies/)?.[0] ?? "";
+  assert.match(source, /function HeroDecisionSurface\(\)/, "purpose-built hero decision surface exists");
+  assert.match(homeHero, /<HeroDecisionSurface\s*\/>/, "homepage uses the purpose-built surface");
+  assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
 });
 
 test("locks the unpublished candidate foundation without treating overflow clipping as responsive proof", async () => {
@@ -214,13 +250,31 @@ test("locks the unpublished candidate foundation without treating overflow clipp
   ]) {
     assert.match(candidateTokens, new RegExp(escapeRegExp(token)), token);
   }
-  assert.match(candidateTokens, /--oluk-shadow-arc:\s*0 1px 3px rgba\(20, 24, 39, 0\.04\),\s*0 4px 12px rgba\(20, 24, 39, 0\.06\)\s*;/i);
+  for (const token of [
+    "--oluk-shadow-compact: 0 5px 12px rgba(15, 26, 51, 0.09)",
+    "--oluk-shadow-card: 0 24px 60px rgba(15, 26, 51, 0.1)",
+    "--oluk-shadow-purchase: 0 20px 50px rgba(15, 26, 51, 0.18)",
+    "--oluk-shadow-relation: 0 12px 25px rgba(15, 26, 51, 0.12)",
+  ]) {
+    assert.match(candidateTokens, new RegExp(escapeRegExp(token)), token);
+  }
+  assert.doesNotMatch(candidateTokens, /shadow-arc/i, "archived two-layer elevation must not remain active");
+  assert.match(candidateCss, /\.oluk-card--compact\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-compact\)/i);
+  assert.match(candidateCss, /\.oluk-card--vertical,[\s\S]*?\.oluk-card--featured\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-card\)/i);
+  assert.match(candidateCss, /\.oluk-card--purchase\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-purchase\)/i);
+  assert.match(candidateCss, /\.oluk-canvas-split\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-relation\)/i);
   assert.match(candidateCss, /\.oluk-candidate-qualitative\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/i);
   assert.match(candidateCss, /@media \(max-width: 540px\)[\s\S]*?\.oluk-candidate-qualitative\s*\{\s*grid-template-columns:\s*1fr\s*;/i);
   assert.doesNotMatch(candidateCss, /overflow-x:\s*clip/i, "candidate review must not use page clipping as responsive evidence");
   assert.match(css, /body:has\(\.experience-lab--candidate-review\),\s*\.experience-lab--candidate-review\s*\{\s*overflow-x:\s*visible\s*;/i, "candidate route must expose real document overflow");
   assert.doesNotMatch(candidateCss, /linear-gradient/i, "candidate content planes remain white rather than inventing a page-level gradient");
-  assert.doesNotMatch(candidateTokens, /shadow-content-plane/i, "the exact candidate Softform Arc remains the only card elevation recipe");
+  assert.doesNotMatch(candidateTokens, /shadow-content-plane/i, "nested content planes do not create a second card elevation");
+
+  assert.equal((css.match(/background:\s*var\(--inverse\)\s*;/gi) ?? []).length, 1, "footer is the sole inverse surface");
+  assert.match(css, /\.trust-rail\s*\{[\s\S]*?background:\s*var\(--white\)\s*;/i, "trust rail remains light");
+  assert.match(css, /\.product-commerce-card\s*\{[\s\S]*?box-shadow:\s*var\(--shadow-card\)\s*;/i);
+  assert.match(css, /\.purchase-panel\s*\{[\s\S]*?box-shadow:\s*var\(--shadow-purchase\)\s*;/i);
+  assert.match(css, /\.horizontal-product-card\s*\{[\s\S]*?box-shadow:\s*var\(--shadow-relation\)\s*;/i);
 
   assert.match(css, /\.hero-category-cards\s*>\s*a\s*\{[\s\S]*?border-radius:\s*20px\s*;/i);
   assert.match(css, /\.product-commerce-card\s*\{[\s\S]*?border-radius:\s*24px\s*;/i);
@@ -232,6 +286,7 @@ test("locks the unpublished candidate foundation without treating overflow clipp
   }
 
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.hero-composition\s*\{[\s\S]*?grid-template-columns:\s*1fr\s*;/i);
+  assert.match(css, /@media \(max-width: 960px\)[\s\S]*?\.product-decision-hero\s*\{[\s\S]*?grid-template-columns:\s*1fr\s*;/i);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.product-grid\s*\{[\s\S]*?grid-template-columns:\s*1fr\s*;/i);
   assert.match(css, /@media \(max-width: 540px\)[\s\S]*?\.shell\s*\{[\s\S]*?padding-inline:\s*16px\s*;/i);
   assert.doesNotMatch(css, /prefers-color-scheme:\s*dark/i);
@@ -257,13 +312,14 @@ test("renders owner-review candidate anchors, direct Figma sources, and all comp
     }
   }
 
-  for (const node of ["637:3", "646:10801", "646:10802", "639:13888", "643:8616", "639:13889", "641:17", "518:13092", "556:34627", "551:26896", "551:27148", "644:3", "644:568", "644:1093", "644:1625"]) {
+  for (const node of ["728:50", "732:2897", "742:50", "743:50", "743:281", "743:520", "745:50", "732:2902", "732:2912", "752:167", "753:18136", "750:182", "737:50", "737:159", "737:264", "739:50"]) {
     assert.match(reviewHtml, new RegExp(escapeRegExp(`node-id=${node.replace(":", "-")}`)), `Figma node ${node}`);
   }
 
-  assert.match(reviewText, /CANDIDATE_CONVERGENCE_v0/);
-  assert.match(reviewText, /UNPUBLISHED \/ HUMAN SELECTION REQUIRED/);
-  assert.match(reviewText, /Adaptive champion selection remains open\./);
+  assert.match(reviewText, /CONV-001 \/ CANDIDATE_CONVERGENCE_v0/);
+  assert.match(reviewText, /CHAMPION STATE INHERITED \/ HUMAN_REVIEW_REQUIRED/);
+  assert.match(reviewText, /Rendered surface approval remains open\./);
+  assert.match(reviewText, /PROPOSED and non-controlling/i);
   assert.match(reviewHtml, /data-candidate-component=["']ProductCommerceCard\.vertical["']/i);
   assert.match(reviewHtml, /data-candidate-component=["']ProductCommerceCard\.Relation["']/i);
   assert.match(reviewHtml, /data-candidate-component=["']PurchasePanel["']/i);
@@ -286,7 +342,7 @@ test("keeps candidate fixtures typed and isolated from all customer routes", asy
   assert.match(registry, /reviewOnly:\s*true/g);
   assert.match(registry, /servings:\s*["']90 SERVINGS["']/);
   assert.doesNotMatch(registry, /90 CAPS(?:\b|ULES)/i);
-  assert.equal((registry.match(/sourceRef:\s*"Figma AssuranceRail 556:34627/g) ?? []).length, 6, "every assurance claim has direct source provenance");
+  assert.equal((registry.match(/sourceRef:\s*"Figma AssuranceRail 752:167/g) ?? []).length, 6, "every assurance claim has direct source provenance");
   assert.equal((registry.match(/runtimeOwner:\s*"openlab_runtime_later"/g) ?? []).length, 6, "every assurance claim has a future runtime owner");
   assert.doesNotMatch(experienceLab, /CandidateReviewIndex|CANDIDATE_CONVERGENCE_v0/, "customer route module must not import review fixtures");
   assert.match(reviewPage, /CandidateReviewIndex/, "review route owns the candidate import boundary");

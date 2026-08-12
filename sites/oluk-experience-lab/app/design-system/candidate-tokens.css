@@ -31,7 +31,10 @@
   --oluk-radius-content-plane: 30px;
   --oluk-radius-media-seam: 52px;
   --oluk-radius-pill: 999px;
-  --oluk-shadow-arc: 0 1px 3px rgba(20, 24, 39, 0.04), 0 4px 12px rgba(20, 24, 39, 0.06);
+  --oluk-shadow-compact: 0 5px 12px rgba(15, 26, 51, 0.09);
+  --oluk-shadow-card: 0 24px 60px rgba(15, 26, 51, 0.1);
+  --oluk-shadow-purchase: 0 20px 50px rgba(15, 26, 51, 0.18);
+  --oluk-shadow-relation: 0 12px 25px rgba(15, 26, 51, 0.12);
 
   --oluk-font-display: "Plus Jakarta Sans", sans-serif;
   --oluk-font-body: "Inter", sans-serif;

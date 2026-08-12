@@ -1,12 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updatedDate": "2026-08-11",
   "surfaces": [
-    {"family": "global", "pages": ["header", "navigation", "trust rail", "footer"], "state": "planned_W3"},
-    {"family": "commerce_discovery", "pages": ["homepage", "shop", "category", "search", "filter drawer"], "state": "planned_W3_W4"},
-    {"family": "product", "pages": ["PDP", "media", "PurchasePanel", "dossier", "lab records", "related rail"], "state": "planned_W1_W4"},
-    {"family": "openlab", "pages": ["portal", "archive", "lookup", "record", "dossier", "methodology", "source chain", "compare"], "state": "planned_W5"},
-    {"family": "checkout", "pages": ["bag", "checkout details", "delivery", "payment handoff", "order-pay", "confirmation", "failure", "retry"], "state": "presentation_only_planned_W6"},
-    {"family": "review", "pages": ["candidate specimens", "responsive evidence", "selection receipt"], "state": "implemented_owner_only"}
+    {"family": "global", "pages": ["header", "navigation", "trust rail", "footer"], "canonicalSources": ["754:18224", "754:18225", "754:18226"], "state": "candidate_graph_ready_human_review_required"},
+    {"family": "commerce_discovery", "pages": ["homepage", "shop", "category", "search", "filter drawer"], "state": "MF-03A_P0"},
+    {"family": "product", "pages": ["PDP", "media", "PurchasePanel", "dossier", "assurance", "related rail"], "canonicalSources": ["745:50", "750:182", "752:167", "753:18136"], "state": "MF-04_P0"},
+    {"family": "openlab", "pages": ["portal", "archive", "lookup", "record", "dossier", "methodology", "source chain", "compare"], "state": "MF-03B_P0_then_MF-06_P1"},
+    {"family": "checkout", "pages": ["bag", "checkout details", "delivery", "payment handoff", "order-pay", "confirmation", "failure", "retry"], "state": "MF-07_P1_presentation_only"},
+    {"family": "responsive", "pages": ["all reviewed candidates at 1440 1024 768 390"], "state": "MF-09_P0_required"},
+    {"family": "promotion_runtime", "pages": ["library", "Code Connect", "customer routes", "runtime adapters"], "state": "MF++_blocked"}
   ]
 }

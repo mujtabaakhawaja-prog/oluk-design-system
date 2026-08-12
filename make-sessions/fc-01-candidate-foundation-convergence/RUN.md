@@ -1,5 +1,7 @@
 # FC-01 — Runbook
 
+> **Superseded active control:** Use `make-sessions/mf03-experience-convergence/RUN.md`. This runbook is predecessor evidence.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 
 ## P0 — Discovery and containment

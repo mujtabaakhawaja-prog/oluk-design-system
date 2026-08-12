@@ -1,5 +1,7 @@
 # FC-01 — Candidate Authority Matrix
 
+> **Superseded active control:** Use `authority/DECISION-LEDGER.json` and `authority/ARTIFACT-REGISTRY.json`. The values below preserve the predecessor candidate for comparison.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished and unpromoted
 **Date:** 2026-08-11

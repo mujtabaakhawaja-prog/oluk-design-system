@@ -1,5 +1,7 @@
 # FC-01 — Candidate Foundation Convergence Guidelines
 
+> **Superseded active control:** CONV-001 now controls through `authority/CURRENT-STATE.json`, `authority/DECISION-LEDGER.json` and `make-sessions/mf03-experience-convergence/`. This file is predecessor evidence.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished as a Figma/system authority, privately exercised in review isolation, unpromoted
 **Date:** 2026-08-11

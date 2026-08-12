@@ -4,25 +4,26 @@
 
 Read in this order before changing design, Make or Sites material:
 
-1. `authority/ids-plan.md`
-2. `authority/identity-design-system-authoritative-plan-and-build-receipt.md`
-3. `authority/surface-contract.md`
-4. `authority/oluk-make-philosophy.md`
-5. `authority/oluk-pdp-architecture.md`
-6. `make-sessions/session-01-product-card/CONSTITUTION.md`
-7. `make-sessions/SESSION_ROADMAP.md`
-8. the active run's `guidelines.md`, `AUTHORITY-MATRIX.md`, `MANIFEST.md`, `PROMPT.md`, `RUN.md`, `REVIEW-MAP.md`, `ACCEPTANCE.md`, `CURRENT-STATE-RECEIPT.md`, and `DECISIONS.md`
+1. `authority/CURRENT-STATE.json`
+2. `authority/DECISION-LEDGER.json`
+3. `authority/ARTIFACT-REGISTRY.json`
+4. `authority/ids-plan.md`
+5. `authority/surface-contract.md`
+6. `authority/oluk-make-philosophy.md`
+7. `authority/oluk-pdp-architecture.md`
+8. `make-sessions/mf03-experience-convergence/MANIFEST.md`
+9. the active run's `PROMPT.md`, `RUN.md`, `ACCEPTANCE.md`, and `CURRENT-STATE-RECEIPT.md`
 
-The active lane is [`FC-01 Candidate Foundation Convergence`](make-sessions/fc-01-candidate-foundation-convergence/guidelines.md) with status `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`. `MF-01A`, `MF-01B` and `MF-02A` are historical design inputs whose selection provenance is not sufficient to close MF-02B by itself. The historical identifier `MF-06` continues to mean the later OpenLab + LabReports frontier and is not reused for foundation work. MF-03 v2 remains `REJECTED_VISUAL_TRANSLATION`. MF-03 v3 is `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`: preserve its route shell and owner-only comparison evidence, but do not treat its repeated surface recipes or route count as an accepted design milestone.
+The active control state is `CONV-001_APPROVED_WITH_CORRECTIONS`. The decisions and methodology are champion authority; every newly reconciled Figma component/page and every Sites surface remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. MF-01A material/anatomy relationships persist through every later run. MF-02 and later boards supply named deltas and must never be treated as whole-state replacement snapshots. Historical MF-03 v2/v3 remain rejected comparison evidence, not current visual authority.
 
-## FC-01 containment boundary
+## CONV-001 operating boundary
 
-- Work in `/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence` on `codex/fc01-candidate-foundation-convergence`; the legacy worktree directory name is retained as provenance and does not redefine historical MF-06.
-- FC-01 records the unpublished candidate contract `CANDIDATE_CONVERGENCE_v0`. Hidden Figma candidate variables/styles and bounded adaptive component sets now exist as technical review evidence, and an isolated owner-only `/review` implementation consumes the candidate wrapper. They are not a promoted foundation, published Figma library, production `Light` mode, customer-route contract or runtime authority.
-- The bounded evidence sources are Final Design `637:3` (foundation specimen), `641:17` (InventoryStatus), `646:10801` (Vertical), `646:10802` (Featured), `639:13888` (Compact states), `643:8616` (Relation), `639:13889` (PurchasePanel), and review frames `644:3`, `644:568`, `644:1093`, `644:1625`. EvidenceStatus remains the exact `518:13092` atom and AssuranceRail remains grounded in `556:34627`.
-- Sites candidate work is restricted to `sites/oluk-experience-lab/app/design-system/`, `sites/oluk-experience-lab/app/review/`, candidate SVG assets, the typed review-fixture registry, and review-only tests. Do not refactor customer routes from this evidence, make the site public, or publish a later revision without another exact-commit private-review receipt.
-- Treat Final Design node `614:75994` as the current structural source for the homepage opening: one unified Portal + Archive surface, exact Featured ProductCommerceCard, and a category-plus-BatchTicker right stack. Fixed track widths and clipped ticker geometry are rejected.
+- Work on `codex/oluk-authority-convergence`, based on `codex/fc01-candidate-foundation-convergence` at `0013033ef941ee83303bf79f7b970d1d05f0dcf5`.
+- Use the 4 active convergence collections/86 variables. The 3 legacy/quarantined collections/128 variables are archived provenance and must not be deleted or rebound into new work.
+- The canonical candidate source graph is registered in `authority/ARTIFACT-REGISTRY.json`. Page candidates instantiate it; they do not redraw it locally.
+- Sites may implement the MF-03A/MF-03B/MF-04 route surfaces as private candidates using the canonical source graph. Keep candidate/runtime ownership explicit, preserve exact-source receipts, and do not make the site public, claim production authority or publish a later revision without the appropriate private-review gate.
 - Treat `626:11760` as the master anatomy/state reservoir, not literal token or copy authority. Every `90 CAPS`, unsupported performance claim, generic shadow and undersized type in source material is rejected.
+- Treat `717:15468` as hero layout/composition authority only after its metric correction to `90 SERVINGS`. Merge the complete data from `626:7994`, including `IN STOCK` and `OPENLAB VERIFIED`, into the purpose-built HeroDecisionSurface. `713:1065` is a Hero component with PurchasePanel geometry, not Compact, and remains provenance only.
 - Preserve the commerce taxonomy `SARMs / Prohormones / Research Chemicals / Stacks`. Alternative OpenLab taxonomies are separate and may not replace it.
 - Treat the dossier Product/Facts/Composition treatment as a non-interactive visual index only. Do not use tab, tablist or active-tab semantics and do not imply view switching.
 - Preserve the proposed `--oluk-*` map only as the locally implemented review candidate `CANDIDATE_CONVERGENCE_v0`; do not present it as approved, published, promoted or runtime authority.
@@ -31,7 +32,7 @@ The active lane is [`FC-01 Candidate Foundation Convergence`](make-sessions/fc-0
 - Preserve the exact customer metric `90 SERVINGS`; `90 CAPS` is rejected.
 - The dark footer is the sole inverse surface in this lane. Every other customer surface remains in the light system.
 - Latest containment verification on 2026-08-11: a later access-policy drift at revision 6 was observed as `public` and corrected to revision 7 `custom`; exactly one allowed user is the current owner, with zero groups, zero external visitors, and anonymous `/` and `/review` returning HTTP `401`. Sites version 5 continues to serve exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; `/review` is the candidate surface while the other 14 routes remain the rejected-v3 comparison baseline. Do not change owner-only access, import candidate code into customer routes, or promote the foundation.
-- `551:27148` remains `DOSSIER_CORRECTION_REQUIRED`. The current three-panel relationship must not be called a champion until clipping, overlap and four-width behavior are corrected. The full related-product rail also remains open; the bounded Relation component evidence does not close the section-level rail.
+- `551:27148` is historical correction evidence. The reconciled Dossier source `750:182` and RelatedRail source `753:18136` are canonical candidates, still requiring artifact-specific human review.
 - Do not mutate Shopper SSR, WooCommerce, Initiator/payment behavior or C2. Those require later explicit authority and the appropriate runtime workflow.
 
 ## Historical MF-01A hard boundary
@@ -68,7 +69,7 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 - ProductCommerceCard has no cobalt outer outline or decorative top-edge eyebrow.
 - Cobalt belongs primarily to the product, metrics, actions, selected states, icons, and meaningful relational marks.
 - Plus Jakarta Sans leads editorial/display work. Inter is the only supporting/UI typeface. Barlow Condensed, Archivo, Cousine, and Inter Variable are rejected.
-- Minimum customer body copy is 15–16 px; metadata/eyebrows are at least 12 px.
+- The 15–16px customer-body and 12px metadata floor is `DEC-TYPE-001 · PROPOSED_NON_CONTROLLING`; audit and report it, but do not claim it as inherited champion authority.
 
 ## Make versus runtime
 

@@ -1,11 +1,10 @@
 {
-  "schemaVersion": 1,
-  "contractId": "OLUK_CANDIDATE_CONVERGENCE_v0",
-  "lane": "FC-01 Candidate Foundation Convergence",
+  "schemaVersion": 2,
+  "contractId": "OLUK_CONV_001_CANONICAL_CANDIDATE_GRAPH",
+  "lane": "CONV-001 Authority Convergence",
   "status": [
-    "ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY",
-    "DOSSIER_CORRECTION_REQUIRED",
-    "HUMAN_SELECTION_REQUIRED"
+    "DECISIONS_APPROVED_WITH_CORRECTIONS",
+    "ARTIFACT_SPECIFIC_HUMAN_REVIEW_REQUIRED"
   ],
   "publicationState": "unpublished",
   "promotionState": "unpromoted",
@@ -17,23 +16,36 @@
     "evidenceStatus": "518:13092",
     "assuranceRail": "556:34627",
     "commerceTaxonomy": "561:41860",
-    "opening": "614:75994",
-    "dossier": "551:27148"
+    "mf01aPersistentReservoir": "626:11760",
+    "heroLayout": "717:15468",
+    "heroData": "626:7994",
+    "heroRejectedWrapper": "713:1065",
+    "opening": "739:50",
+    "dossier": "750:182"
+  },
+  "variableDisposition": {
+    "keepAndExtend": {"collections": 4, "variables": 86},
+    "archiveWithoutDeletion": {"collections": 3, "variables": 128}
   },
   "candidateOutputs": {
-    "foundation": "637:3",
-    "inventoryStatus": "641:17",
-    "vertical": "646:10801",
-    "featured": "646:10802",
-    "compact": "639:13888",
-    "relation": "643:8616",
-    "purchasePanel": "639:13889",
-    "reviewFrames": {
-      "1440": "644:3",
-      "1024": "644:568",
-      "768": "644:1093",
-      "390": "644:1625"
-    }
+    "inventoryStatus": "732:2902",
+    "evidenceStatus": "732:2912",
+    "metricRail": "733:95",
+    "qualitativeChip": "733:17342",
+    "productTabs": "734:17326",
+    "heroDecisionSurface": "736:17458",
+    "productDecisionHero": "739:50",
+    "compact": "742:50",
+    "vertical": "743:50",
+    "featured": "743:281",
+    "relation": "743:520",
+    "purchasePanel": "745:50",
+    "dossier": "750:182",
+    "assuranceRail": "752:167",
+    "relatedRail": "753:18136",
+    "siteHeader": "754:18224",
+    "trustRail": "754:18225",
+    "siteFooter": "754:18226"
   },
   "tokens": {
     "canvas": "#f7f8fc",
@@ -60,11 +72,20 @@
       "purchase": 28,
       "horizontal": 34
     },
-    "softformArc": "0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)",
+    "shadows": {
+      "compact": "0 5px 12px rgba(15,26,51,0.09)",
+      "verticalFeatured": "0 24px 60px rgba(15,26,51,0.10)",
+      "purchasePanel": "0 20px 50px rgba(15,26,51,0.18)",
+      "relation": "0 12px 25px rgba(15,26,51,0.12)",
+      "archived": "0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)"
+    },
     "displayFont": "Plus Jakarta Sans",
     "bodyFont": "Inter",
-    "bodyFloorPx": 15,
-    "metadataFloorPx": 12,
+    "typeFloorProposal": {
+      "status": "PROPOSED_NON_CONTROLLING",
+      "bodyPx": "15-16",
+      "metadataPx": 12
+    },
     "contentMaxPx": 1344,
     "gridGapPx": 20,
     "guttersPx": {
@@ -104,12 +125,12 @@
     ]
   },
   "gates": {
-    "humanCardFamilySelection": "required",
-    "dossier": "correction_required",
-    "fullRelatedRail": "open",
+    "methodologyAndCorrections": "approved",
+    "canonicalComponents": "human_review_required",
+    "routeCandidates": "human_review_required",
     "customerRouteConvergence": "not_authorized",
     "foundationPromotion": "not_authorized",
-    "candidateDeployment": "owner_only_version_5_deployed",
+    "candidateDeployment": "predecessor_owner_only_version_5_preserved",
     "runtimeTranslation": "not_authorized"
   }
 }

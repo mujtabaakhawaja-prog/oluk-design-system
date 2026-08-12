@@ -1,5 +1,7 @@
 # FC-01 — Candidate Evidence and Human-Selection Brief
 
+> **Superseded active control:** Use the three-block prompts in `make-sessions/mf03-experience-convergence/PROMPT.md`. Do not execute this predecessor prompt as current state.
+
 > **Post-run receipt:** The bounded generation phase below completed, and the user's 2026-08-11 continuation subsequently authorized one exact-commit owner-only review deployment. Sites version 5 now serves source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; no customer route, foundation, runtime or public-access authority changed.
 
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`

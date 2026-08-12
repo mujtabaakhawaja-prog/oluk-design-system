@@ -1,24 +1,75 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updatedDate": "2026-08-11",
   "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
-  "nodes": {
+  "predecessorEvidence": {
     "foundation": "637:3",
     "adaptiveCandidatePage": "639:2",
-    "inventoryStatus": "641:17",
-    "evidenceStatus": "518:13092",
     "verticalCard": "646:10801",
     "featuredCard": "646:10802",
     "compactStates": "639:13888",
     "relationCard": "643:8616",
     "purchasePanel": "639:13889",
-    "assuranceRail": "556:34627",
-    "relatedRail": "551:26896",
-    "dossier": "551:27148",
-    "mf03Opening": "614:75994",
-    "review1440": "644:3",
-    "review1024": "644:568",
-    "review768": "644:1093",
-    "review390": "644:1625"
-  }
+    "reviewFrames": ["644:3", "644:568", "644:1093", "644:1625"]
+  },
+  "authoritySources": {
+    "mf01aReservoir": "626:11760",
+    "heroLayout": "717:15468",
+    "heroData": "626:7994",
+    "heroRejectedWrapper": "713:1065",
+    "evidenceStatus": "518:13092"
+  },
+  "canonicalCandidates": {
+    "inventoryStatus": "732:2902",
+    "evidenceStatus": "732:2912",
+    "metricRail": "733:95",
+    "qualitativeChip": "733:17342",
+    "productTabs": "734:17326",
+    "heroDecisionSurface": "736:17458",
+    "productDecisionHero": "739:50",
+    "compact": "742:50",
+    "vertical": "743:50",
+    "featured": "743:281",
+    "relation": "743:520",
+    "purchasePanel": "745:50",
+    "dossier": "750:182",
+    "assuranceRail": "752:167",
+    "relatedRail": "753:18136",
+    "siteHeader": "754:18224",
+    "trustRail": "754:18225",
+    "siteFooter": "754:18226"
+  },
+  "settledBoards": {
+    "authority": "728:50",
+    "changelog": "728:224",
+    "runtimeCandidateReceipt": "776:50",
+    "brandIdentity": "756:50",
+    "color": "760:50",
+    "typography": "760:195",
+    "dimensions": "760:260",
+    "elevation": "760:380",
+    "iconography": "773:50",
+    "navigationAndShell": "775:50",
+    "productAssetProof": "773:141",
+    "canonicalSources": "732:2897",
+    "instanceReview": "763:50",
+    "homepage": "764:50",
+    "shop": "765:50",
+    "pdp": "766:50",
+    "openLab": "767:50"
+  },
+  "reviewAnnotations": {
+    "placement": "outside_customer_frames_on_figma_canvas",
+    "homepage": "764:51",
+    "shop": "765:51",
+    "pdp": "766:51",
+    "openLab": "767:51"
+  },
+  "validation": {
+    "forbidden90CapsCount": 0,
+    "nonActiveVariableBindingCount": 0,
+    "dossierHeightPx": 898,
+    "governanceLabelsInsideCustomerFrames": 0
+  },
+  "publicationState": "unpublished_human_review_required"
 }

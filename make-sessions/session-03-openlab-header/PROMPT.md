@@ -1,5 +1,7 @@
 # MF-03 — OpenLab Portal Page
 
+> **Superseded by CONV-001:** Use the MF-03A and MF-03B blocks in `../mf03-experience-convergence/PROMPT.md`. This prompt remains source inventory only and must not override inherited MF-01A champion state or the canonical candidate graph.
+
 **File:** `BEPMuUt1HroEw8xjz8CVyN`
 **Output page:** `512:4651` (MF-02)
 **Width:** 1440px

@@ -1,5 +1,7 @@
 # FC-01 — Manifest
 
+> **Superseded active control:** Use `authority/CURRENT-STATE.json` and `make-sessions/mf03-experience-convergence/MANIFEST.md`. This manifest remains FC-01 provenance.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished, locally exercised in review isolation, unpromoted
 **Date:** 2026-08-11

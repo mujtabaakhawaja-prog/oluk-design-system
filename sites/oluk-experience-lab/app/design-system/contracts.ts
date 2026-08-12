@@ -40,15 +40,16 @@ export type AssuranceSpecimen = {
 };
 
 export const candidateContract = {
-  id: "CANDIDATE_CONVERGENCE_v0",
-  status: "UNPUBLISHED / HUMAN SELECTION REQUIRED",
-  figmaFoundationNode: "637:3",
-  runtimeAuthority: "NONE",
+  id: "CONV-001 / CANDIDATE_CONVERGENCE_v0",
+  status: "CHAMPION STATE INHERITED / HUMAN_REVIEW_REQUIRED",
+  figmaFoundationNode: "728:50",
+  runtimeAuthority: "CANDIDATE ONLY",
+  typographyFloorDecision: "PROPOSED / NON-CONTROLLING",
 } as const;
 
 export const mk2866Specimen: ReviewFixture<ProductSpecimen> = {
   authorityClass: "locked_product_truth",
-  sourceRef: "AGENTS.md product truth + Figma 486:4634",
+  sourceRef: "CONV-001 product truth + Figma HeroDecisionSurface 736:17458",
   runtimeOwner: "shopper_ssr_later",
   publicationState: "owner_only_review",
   reviewOnly: true,
@@ -67,7 +68,7 @@ export const mk2866Specimen: ReviewFixture<ProductSpecimen> = {
 
 export const rad140Specimen: ReviewFixture<ProductSpecimen> = {
   authorityClass: "design_review_fixture",
-  sourceRef: "MF-02 correction-pass design fixture + Figma 626:12504",
+  sourceRef: "CONV-001 canonical Relation set + Figma 743:520",
   runtimeOwner: "shopper_ssr_later",
   publicationState: "owner_only_review",
   reviewOnly: true,
@@ -86,7 +87,7 @@ export const rad140Specimen: ReviewFixture<ProductSpecimen> = {
 export const assuranceSpecimens = [
   {
     authorityClass: "design_review_fixture",
-    sourceRef: "Figma AssuranceRail 556:34627 / Identity Tested",
+    sourceRef: "Figma AssuranceRail 752:167 / Identity Tested",
     runtimeOwner: "openlab_runtime_later",
     publicationState: "owner_only_review",
     reviewOnly: true,
@@ -100,7 +101,7 @@ export const assuranceSpecimens = [
   },
   {
     authorityClass: "design_review_fixture",
-    sourceRef: "Figma AssuranceRail 556:34627 / Purity Measured",
+    sourceRef: "Figma AssuranceRail 752:167 / Purity Measured",
     runtimeOwner: "openlab_runtime_later",
     publicationState: "owner_only_review",
     reviewOnly: true,
@@ -113,7 +114,7 @@ export const assuranceSpecimens = [
   },
   {
     authorityClass: "design_review_fixture",
-    sourceRef: "Figma AssuranceRail 556:34627 / Concentration Confirmed",
+    sourceRef: "Figma AssuranceRail 752:167 / Concentration Confirmed",
     runtimeOwner: "openlab_runtime_later",
     publicationState: "owner_only_review",
     reviewOnly: true,
@@ -126,7 +127,7 @@ export const assuranceSpecimens = [
   },
   {
     authorityClass: "design_review_fixture",
-    sourceRef: "Figma AssuranceRail 556:34627 / Janoshik Verified",
+    sourceRef: "Figma AssuranceRail 752:167 / Janoshik Verified",
     runtimeOwner: "openlab_runtime_later",
     publicationState: "owner_only_review",
     reviewOnly: true,
@@ -139,7 +140,7 @@ export const assuranceSpecimens = [
   },
   {
     authorityClass: "design_review_fixture",
-    sourceRef: "Figma AssuranceRail 556:34627 / Tamper-Proof Sealed",
+    sourceRef: "Figma AssuranceRail 752:167 / Tamper-Proof Sealed",
     runtimeOwner: "openlab_runtime_later",
     publicationState: "owner_only_review",
     reviewOnly: true,
@@ -152,7 +153,7 @@ export const assuranceSpecimens = [
   },
   {
     authorityClass: "design_review_fixture",
-    sourceRef: "Figma AssuranceRail 556:34627 / Batch Tracked",
+    sourceRef: "Figma AssuranceRail 752:167 / Batch Tracked",
     runtimeOwner: "openlab_runtime_later",
     publicationState: "owner_only_review",
     reviewOnly: true,
@@ -166,20 +167,26 @@ export const assuranceSpecimens = [
 ] as const satisfies ReadonlyArray<ReviewFixture<AssuranceSpecimen>>;
 
 export const figmaReviewLinks = {
-  foundation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=637-3",
-  adaptivePage: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=639-2",
-  vertical: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=646-10801",
-  featured: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=646-10802",
-  compact: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=639-13888",
-  relation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=643-8616",
-  purchase: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=639-13889",
-  inventory: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=641-17",
-  evidence: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=518-13092",
-  assurance: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=556-34627",
-  dossier: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=551-27148",
-  relatedRail: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=551-26896",
-  review1440: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-3",
-  review1024: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-568",
-  review768: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-1093",
-  review390: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=644-1625",
+  control: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=728-50",
+  foundation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=728-50",
+  adaptivePage: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=732-2897",
+  compact: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=742-50",
+  vertical: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=743-50",
+  featured: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=743-281",
+  relation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=743-520",
+  purchase: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=745-50",
+  inventory: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=732-2902",
+  evidence: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=732-2912",
+  heroDecisionSurface: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=736-17458",
+  productDecisionHero: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=739-50",
+  assurance: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=752-167",
+  dossier: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=750-182",
+  relatedRail: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=753-18136",
+  siteHeader: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=754-18224",
+  trustRail: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=754-18225",
+  siteFooter: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=754-18226",
+  review1440: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=737-50",
+  review1024: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=737-159",
+  review768: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=737-159",
+  review390: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=737-264",
 } as const;

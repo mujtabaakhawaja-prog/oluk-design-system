@@ -1,5 +1,7 @@
 # FIGMA_TO_CODEX_PACKET — MF Carryover Audit & Completion Roadmap
 
+> **CONV-001 supersession — 2026-08-11:** This inventory remains historical source analysis. Current authority and prioritized prompts are `authority/CURRENT-STATE.json`, `authority/DECISION-LEDGER.json`, `authority/ARTIFACT-REGISTRY.json` and `make-sessions/mf03-experience-convergence/`. Do not use this document's old MF-03 recommendation as a whole-state prompt.
+
 ## Metadata
 
 - **File:** `BEPMuUt1HroEw8xjz8CVyN` — [Open](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design)

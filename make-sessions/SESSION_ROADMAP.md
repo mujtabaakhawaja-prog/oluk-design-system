@@ -2,11 +2,37 @@
 
 **Date:** 2026-08-10
 **Controlling alias:** `ids-plan.md`
-**Current position:** FC-01 is `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`; `CANDIDATE_CONVERGENCE_v0` is unpublished and unpromoted. Historical MF-06 remains OpenLab + LabReports.
+**Current position:** `CONV-001_APPROVED_WITH_CORRECTIONS`; decisions/methodology are champion authority, while every new component/page/Sites build remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
 
-## 2026-08-11 FC-01 containment addendum
+## 2026-08-11 CONV-001 control addendum
 
-Human review determined that another route-local CSS correction would reproduce the same drift, but foundation promotion cannot precede a human-selected adaptive champion. FC-01 therefore contains the candidate contract and now exercises it through hidden Figma candidates plus an isolated `/review` implementation. This addendum controls the active lane. The user's 2026-08-11 continuation authorizes one exact-commit owner-only candidate review deployment; the bounded technical evidence does not authorize customer-route convergence, public access, promotion or runtime translation.
+This section controls the current queue. Historical run tables below remain provenance.
+
+- Inherit MF-01A material/anatomy relationships before applying any later-run delta.
+- Use the required `INHERITED_CHAMPION_STATE / THIS_RUN_DELTA / DO_NOT_INHERIT` prompt structure.
+- Hero authority is split: `717:15468` layout/composition after `90 SERVINGS` correction; `626:7994` complete data; `713:1065` rejected wrapper provenance.
+- Keep/extend 86 convergence variables; archive 128 legacy/quarantined variables.
+- Use the approved graduated single shadows; treat the type-floor decision as proposed/non-controlling.
+- Do not publish or translate to runtime before artifact review, MF-09 and MF-10.
+
+| Run | Priority | Current state | Work |
+|---|---:|---|---|
+| `MF-03A` | P0 | `READY` | shell and homepage candidate |
+| `MF-03B` | P0 | `READY` | OpenLab portal candidate |
+| `MF-04` | P0 | `READY_AFTER_CANONICAL_GRAPH` | PDP candidate |
+| `MF-05` | P1 | `QUEUED` | dossier/evidence transition |
+| `MF-05A` | P2 | `OPTIONAL_AFTER_CORE_PROOF` | compare/bundle/stack/goal-led surfaces |
+| `MF-06` | P1 | `QUEUED_AFTER_MF-03B` | archive/lookup/record lifecycle |
+| `MF-07` | P1 | `QUEUED_AFTER_MF-04` | bag/checkout/post-purchase presentation |
+| `MF-09` | P0 | `REQUIRED_AFTER_ROUTE_CANDIDATES` | responsive and local-state proof |
+| `MF-10` | P0 | `REQUIRED_AFTER_MF-09` | cross-route final design gate |
+| `MF++` | POST-GATE | `BLOCKED` | promotion, Code Connect and runtime translation |
+
+`MF-08` is not a separate active prompt; selective native integration is continuous through the canonical-source requirement. Use [`mf03-experience-convergence/`](mf03-experience-convergence/) for implementable prompts and gates.
+
+## 2026-08-11 FC-01 predecessor containment addendum
+
+Human review determined that another route-local CSS correction would reproduce the same drift. FC-01 contained the candidate contract through hidden Figma candidates and an isolated `/review` implementation. CONV-001 now supersedes it as active control; this section remains predecessor evidence.
 
 | Lane | Current state | Current use |
 |---|---|---|

@@ -1,10 +1,23 @@
 # MF-02B — Adaptive Champion Gate Current-State Receipt
 
 **Mode:** Reference
-**Status:** `ADAPTIVE_CHAMPION_PENDING / HUMAN_SELECTION_REQUIRED`
+**Status:** `SUPERSEDED_BY_CONV-001 / PREDECESSOR_EVIDENCE_PRESERVED`
 **Date:** 2026-08-11
 **Current phase:** Technical candidate evidence ready; dossier/full rail and human selection remain open
 **Branch:** `codex/fc01-candidate-foundation-convergence`
+
+## CONV-001 human-decision addendum — 2026-08-11
+
+The champion user approved the convergence package with corrections. This supersedes MF-02B as the active gate without retroactively turning every predecessor candidate into a promoted champion.
+
+- MF-01A material/anatomy relationships persist into all later contexts.
+- Hero authority is split: `717:15468` supplies layout/composition after its metric correction to `90 SERVINGS`; `626:7994` supplies complete product/status/evidence data; `713:1065` is accurately classified as a Hero component with PurchasePanel geometry and is not the target structure.
+- Four convergence collections/86 variables are kept and extended. Two legacy plus one quarantined collections/128 variables are archived without deletion.
+- Graduated single shadows are the latest decision; the two-layer recipe below is predecessor evidence.
+- The 12px metadata / 15–16px body floor is `PROPOSED_NON_CONTROLLING`.
+- New canonical components and route surfaces remain unpublished and require exact artifact-specific human visual review.
+
+Current control lives in `authority/CURRENT-STATE.json`, `authority/DECISION-LEDGER.json`, `authority/ARTIFACT-REGISTRY.json` and `make-sessions/mf03-experience-convergence/`. The unfilled receipt below is preserved to show that the old MF-02B candidate was never silently promoted.
 
 ## PLAN
 

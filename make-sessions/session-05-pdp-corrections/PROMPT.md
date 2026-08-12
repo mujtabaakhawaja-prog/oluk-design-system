@@ -1,5 +1,7 @@
 # MF-05 — PDP Page Figma Corrections
 
+> **Superseded by CONV-001:** PDP composition is now MF-04 in `../mf03-experience-convergence/PROMPT.md`; evidence transitions are MF-05. This prompt remains historical evidence and must not override the canonical PurchasePanel, Dossier, AssuranceRail or RelatedRail sources.
+
 **File:** `BEPMuUt1HroEw8xjz8CVyN`
 **Target page:** `512:4651` (MF-02)
 **Method:** Figma edit_design (corrections to existing nodes)

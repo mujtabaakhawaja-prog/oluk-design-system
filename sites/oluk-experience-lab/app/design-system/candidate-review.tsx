@@ -18,13 +18,13 @@ import {
 import { OlukCanvas, OlukSection } from "./candidate-primitives";
 
 const baselineRoutes = [
-  ["Homepage", "/", "614:75994"],
-  ["Shop", "/shop", "626:8099"],
-  ["MK-2866 PDP", "/product/mk-2866", "626:8664"],
+  ["Homepage", "/", "739:50"],
+  ["Shop", "/shop", "743:50"],
+  ["MK-2866 PDP", "/product/mk-2866", "745:50"],
   ["Reviews", "/reviews", "614:75950"],
   ["About", "/about", "614:75952"],
   ["EvidenceOS", "/about/evidence-os", "626:11285"],
-  ["OpenLab portal", "/open-lab", "626:11754"],
+  ["OpenLab portal", "/open-lab", "750:182"],
   ["Lab Records", "/open-lab/records", "626:10899"],
   ["Individual record", "/open-lab/records/source-bound-record", "626:11285"],
   ["MK-2866 dossier", "/open-lab/dossier/mk-2866", "551:27148"],
@@ -80,12 +80,12 @@ function FoundationSpecimen() {
   ];
   return (
     <OlukSection className="oluk-candidate-section" id="foundation">
-      <ReviewHeading eyebrow="FC-01 · CANDIDATE FOUNDATION" title="One material grammar before route assembly." copy="Local variables, semantic wrappers and the exact Softform Arc recipe are review candidates only. They are hidden from publishing and have no runtime authority." source={figmaReviewLinks.foundation} />
+      <ReviewHeading eyebrow="CONV-001 · ACTIVE FOUNDATION" title="One material grammar before route assembly." copy="The 86 convergence variables remain active and unpublished. The 128 legacy and quarantined variables are archived, while component elevation follows the approved graduated single-shadow decision." source={figmaReviewLinks.foundation} />
       <div className="oluk-candidate-foundation-grid">
         <article><h3>Colour lineage</h3><div className="oluk-candidate-swatches">{swatches.map(([name, value, token]) => <div key={name}><i data-swatch={token} /><strong>{name}</strong><span>{value}</span></div>)}</div></article>
-        <article><h3>Shape hierarchy</h3><div className="oluk-candidate-radius-row"><span data-radius="compact">20</span><span data-radius="vertical">24</span><span data-radius="purchase">28</span><span data-radius="horizontal">34</span></div><p>Compact / Vertical / Purchase / Horizontal</p></article>
-        <article><h3>Elevation</h3><div className="oluk-candidate-shadow-sample">Softform Arc</div><p>Two restrained layers; no generic shadow-md or decorative cobalt perimeter.</p></article>
-        <article><h3>Typography</h3><strong className="oluk-candidate-display-sample">Plus Jakarta Sans</strong><p>Inter supports body, navigation, labels, metrics and controls. Metadata floor 12px; body floor 15px.</p></article>
+        <article><h3>Shape hierarchy</h3><div className="oluk-candidate-radius-row"><span data-radius="compact">20</span><span data-radius="vertical">24</span><span data-radius="purchase">28</span><span data-radius="horizontal">34</span></div><p>Compact / Vertical / Purchase / Relation</p></article>
+        <article><h3>Graduated elevation</h3><div className="oluk-candidate-shadow-grid"><div className="oluk-candidate-shadow-sample" data-elevation="compact">Compact<br />12 / 5 / .09</div><div className="oluk-candidate-shadow-sample" data-elevation="card">Vertical + Featured<br />60 / 24 / .10</div><div className="oluk-candidate-shadow-sample" data-elevation="purchase">PurchasePanel<br />50 / 20 / .18</div><div className="oluk-candidate-shadow-sample" data-elevation="relation">Relation<br />25 / 12 / .12</div></div><p>One shadow per component role; no archived two-layer recipe.</p></article>
+        <article><h3>Typography</h3><strong className="oluk-candidate-display-sample">Plus Jakarta Sans</strong><p>Inter supports body, navigation, labels, metrics and controls. The 12px metadata / 15–16px body floor remains PROPOSED and non-controlling.</p></article>
       </div>
     </OlukSection>
   );
@@ -94,11 +94,11 @@ function FoundationSpecimen() {
 function ProvenanceGate() {
   return (
     <OlukSection className="oluk-candidate-section oluk-candidate-provenance" id="mf02b-provenance">
-      <ReviewHeading eyebrow="MF-02B · CONTROL GATE" title="Selection provenance stays explicit." copy="The normalized adaptive family is now implemented as review evidence. MF-01A and MF-01B historical selections remain unproven, and no automated check can fill the human receipt." source={figmaReviewLinks.adaptivePage} />
+      <ReviewHeading eyebrow="CONV-001 · CONTROL GATE" title="Champion inheritance stays explicit." copy="The approved package preserves MF-01A material and anatomy, applies the current correction delta, and blocks later Make boards from replacing that inherited state wholesale." source={figmaReviewLinks.control} />
       <div className="oluk-candidate-gate-grid">
-        <article><span>01</span><h3>MF-01A</h3><p>Exploration artifacts present; named human selection receipt absent.</p><strong>RATIFICATION REQUIRED</strong></article>
-        <article><span>02</span><h3>MF-01B</h3><p>Transfer exploration complete; selection provenance incomplete.</p><strong>RATIFICATION REQUIRED</strong></article>
-        <article><span>03</span><h3>MF-02B</h3><p>Adaptive evidence prepared at 1440, 1024, 768 and 390.</p><strong>HUMAN SELECTION REQUIRED</strong></article>
+        <article><span>01</span><h3>INHERITED_CHAMPION_STATE</h3><p>MF-01A owns the persistent material relationships, anatomy and converging component grammar.</p><strong>CHAMPION</strong></article>
+        <article><span>02</span><h3>THIS_RUN_DELTA</h3><p>Correct product truth, canonical source graph, graduated shadows and archived legacy variables.</p><strong>APPROVED</strong></article>
+        <article><span>03</span><h3>DO_NOT_INHERIT</h3><p>Raw later-board composition, the wrapped Hero component and the archived two-layer shadow recipe.</p><strong>ENFORCED</strong></article>
       </div>
     </OlukSection>
   );
@@ -142,8 +142,8 @@ function ViewportLedger() {
 function PendingDossier() {
   return (
     <OlukSection className="oluk-candidate-section oluk-candidate-pending" id="mf02b-dossier">
-      <ReviewHeading eyebrow="DOSSIER VNEXT" title="Correction remains open." copy="The three-panel relationship is retained, but node 551:27148 still clips Product Composition and overlaps central metrics. It is deliberately not presented as a selected champion." source={figmaReviewLinks.dossier} />
-      <div><strong>CORRECTION REQUIRED</strong><p>Next candidate must prove intrinsic columns, min-width: 0, 15–16px copy, compact media, safe long-value wrapping and four-width containment.</p></div>
+      <ReviewHeading eyebrow="CANONICAL DOSSIER" title="Corrected structure is now sourced." copy="The corrected three-panel dossier has clear Product Facts, media and Product Composition regions, with the canonical source extracted from the repaired review frame." source={figmaReviewLinks.dossier} />
+      <div><strong>IMPLEMENTED · HUMAN_REVIEW_REQUIRED</strong><p>The MF03 runtime carries intrinsic columns, safe long-value wrapping, product truth and direct record access without promoting the proposed type floor.</p></div>
     </OlukSection>
   );
 }
@@ -151,8 +151,8 @@ function PendingDossier() {
 function PendingRelatedRail() {
   return (
     <OlukSection className="oluk-candidate-section oluk-candidate-pending" id="mf02b-related-rail">
-      <ReviewHeading eyebrow="RELATED PRODUCT RAIL" title="Section-level convergence remains open." copy="The bounded Relation card proves the horizontal component relationship, but it does not yet prove the full-width adaptive rail, surrounding copy, spacing or four-width section behavior." source={figmaReviewLinks.relatedRail} />
-      <div><strong>FULL RAIL REQUIRED</strong><p>Next candidate must reconcile nodes 551:26896, 545:24677 and 486:4636 through the shared horizontal-card grammar without fixed inner geometry or clipped mobile content.</p></div>
+      <ReviewHeading eyebrow="CANONICAL RELATED RAIL" title="Section-level convergence is implemented." copy="The RelatedRail now instantiates the adaptive canonical Relation component at desktop, tablet and mobile widths while preserving its surrounding copy and spacing." source={figmaReviewLinks.relatedRail} />
+      <div><strong>IMPLEMENTED · HUMAN_REVIEW_REQUIRED</strong><p>The runtime uses the same relation anatomy and the approved 25 / 12 / .12 single shadow; promotion remains behind the visual gate.</p></div>
     </OlukSection>
   );
 }
@@ -160,7 +160,7 @@ function PendingRelatedRail() {
 function BaselineRouteIndex() {
   return (
     <OlukSection className="oluk-candidate-section" id="baseline-routes">
-      <ReviewHeading eyebrow="CURRENT PRIVATE ROUTES" title="Rejected v3 comparison surfaces." copy="These owner-only pages remain useful before/after evidence. Their presence does not convert route coverage into design approval." source={figmaReviewLinks.review1440} />
+      <ReviewHeading eyebrow="MF01–MF03 PRIVATE ROUTES" title="Converged candidate surfaces." copy="Homepage, Shop, PDP and OpenLab carry the approved champion state into a private implementation. Route coverage is evidence, not visual promotion." source={figmaReviewLinks.productDecisionHero} />
       <div className="oluk-candidate-route-grid">
         {baselineRoutes.map(([label, href, node]) => (
           <article key={href}>
@@ -180,7 +180,7 @@ export function CandidateReviewIndex() {
         <div>
           <span>OWNER-ONLY DESIGN REVIEW</span>
           <h1>Olympus Labs UK review surfaces.</h1>
-          <p>This is an unpublished component-convergence review, not an accepted design-system milestone. Customer routes remain the rejected v3 comparison baseline while the adaptive family awaits human selection.</p>
+          <p>This unpublished review carries the approved CONV-001 champion state into MF01–MF03 runtime surfaces. The system decisions are inherited; the rendered Homepage, Shop, PDP and OpenLab surfaces still require the human visual gate.</p>
           <div className="oluk-candidate-review-status"><strong>{candidateContract.id}</strong><span>{candidateContract.status}</span><span>RUNTIME AUTHORITY {candidateContract.runtimeAuthority}</span></div>
         </div>
         <nav aria-label="Candidate review items">
@@ -194,7 +194,7 @@ export function CandidateReviewIndex() {
         <AtomReview />
 
         <OlukSection className="oluk-candidate-section" id="mf02b-card-family">
-          <ReviewHeading eyebrow="ADAPTIVE CARD FAMILY" title="One component grammar across density and width." copy="The family shares bounded ice media, a connected white content plane, quantified MetricRail, icon-bearing QualitativeChips, exact EvidenceStatus, green inventory, and the candidate Softform Arc elevation." source={figmaReviewLinks.adaptivePage} />
+          <ReviewHeading eyebrow="ADAPTIVE CARD FAMILY" title="One component grammar across density and width." copy="The family shares bounded ice media, a connected white content plane, quantified MetricRail, icon-bearing QualitativeChips, exact EvidenceStatus, green inventory and role-specific single elevation." source={figmaReviewLinks.adaptivePage} />
           <div className="oluk-candidate-primary-grid">
             <ProductCommerceCard product={mk2866Specimen.value} variant="vertical" id="mf02b-vertical" sourceLink={<FigmaLink href={figmaReviewLinks.vertical}>Open vertical component set</FigmaLink>} />
             <ProductCommerceCard product={mk2866Specimen.value} variant="featured" id="mf02b-featured" sourceLink={<FigmaLink href={figmaReviewLinks.featured}>Open featured component set</FigmaLink>} />
@@ -219,7 +219,7 @@ export function CandidateReviewIndex() {
         </OlukSection>
 
         <OlukSection className="oluk-candidate-section" id="mf02b-assurance">
-          <ReviewHeading eyebrow="SIX-POINT ASSURANCE" title="Six distinct semantic icons." copy="The exact Figma glyphs and locked 01–06 order replace the generic modulo icon cycle. Definitions are lifted to the 15px customer-copy floor in this candidate." source={figmaReviewLinks.assurance} />
+          <ReviewHeading eyebrow="SIX-POINT ASSURANCE" title="Six distinct semantic icons." copy="The exact Figma glyphs and locked 01–06 order replace the generic modulo icon cycle. The rendered copy explores the proposed floor without promoting it to champion status." source={figmaReviewLinks.assurance} />
           <AssuranceRail />
         </OlukSection>
 
@@ -229,8 +229,8 @@ export function CandidateReviewIndex() {
         <BaselineRouteIndex />
 
         <OlukSection className="oluk-candidate-section oluk-candidate-selection" id="mf02b-selection-receipt">
-          <span>HUMAN GATE</span><h2>Adaptive champion selection remains open.</h2><p>Approve, reject or request bounded corrections against the linked Figma candidates. Route convergence remains paused until this receipt is named and dated.</p>
-          <div><strong>DECISION</strong><span>PENDING</span><strong>REVIEWER</strong><span>PENDING</span><strong>DATE</strong><span>PENDING</span></div>
+          <span>HUMAN GATE</span><h2>Rendered surface approval remains open.</h2><p>Approve, reject or request bounded corrections against the linked canonical Figma sources and MF01–MF03 candidate routes. No library or runtime promotion occurs from this build.</p>
+          <div><strong>SYSTEM STATE</strong><span>CONV-001 APPROVED</span><strong>SURFACE DECISION</strong><span>PENDING</span><strong>PUBLICATION</strong><span>BLOCKED</span></div>
         </OlukSection>
       </div>
     </OlukCanvas>

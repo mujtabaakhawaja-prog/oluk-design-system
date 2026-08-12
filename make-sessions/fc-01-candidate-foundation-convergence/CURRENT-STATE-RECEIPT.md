@@ -1,5 +1,7 @@
 # FC-01 — Current State Receipt
 
+> **Superseded active control:** CONV-001 is current. This receipt remains immutable predecessor evidence; see `authority/CHANGELOG.md` for the correction event.
+
 **Status:** `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED`
 **Candidate:** `CANDIDATE_CONVERGENCE_v0` — unpublished as a Figma/system authority, privately exercised in review isolation, unpromoted
 **Date:** 2026-08-11

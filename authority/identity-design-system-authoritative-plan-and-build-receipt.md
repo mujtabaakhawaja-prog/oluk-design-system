@@ -2,19 +2,31 @@
 
 **Run:** `oluk-final-authority-20260801`
 **Date:** 2026-08-03
-**Document version:** 3.1 — Creative/Relationship Frontier Split
+**Document version:** 3.2 — CONV-001 control-plane addendum
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=0-1)
 **Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
 **Figma program index:** Page 00, node `36:2`
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
-> **2026-08-11 supersession:** Active control has moved to `FC-01 Candidate Foundation Convergence` at `make-sessions/fc-01-candidate-foundation-convergence/`. Historical `MF-06` retains its OpenLab + LabReports meaning. The FC-01 candidate is `CANDIDATE_CONVERGENCE_v0`, unpublished and unpromoted. Bounded adaptive-card technical evidence now exists; human selection, dossier correction and full related-rail closure remain the next gate.
+> **2026-08-11 CONV-001 supersession:** Active control is now the machine-readable state, append-only ledger and artifact registry in `authority/`, plus `make-sessions/mf03-experience-convergence/`. The champion user approved the convergence package with corrections. This approves the decisions/methodology, not automatic promotion of newly built artifacts; all new Figma and Sites work remains unpublished and `HUMAN_REVIEW_REQUIRED`.
 
-**Current canonical position:** The Native V4 baseline and completed MF-01A, MF-01B and MF-02A runs feed FC-01 containment. MF-03 v2 is `REJECTED_VISUAL_TRANSLATION`; v3 is `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` and remains the owner-only comparison baseline.
-**Promotion state:** No foundation has been promoted. Hidden candidate Figma variables/styles, bounded component sets and an isolated owner-only Sites `/review` wrapper now provide technical evidence for `CANDIDATE_CONVERGENCE_v0`. They do not authorize library publication, production `Light` promotion, customer-route convergence, Shopper SSR, payment, C2 or public release. Final Design `614:75994` controls the later opening relationship.
+**Current canonical position:** MF-01A material/anatomy/state authority persists through all later runs. The CONV-001 canonical candidate graph reconciles the active foundations, card family, hero, Dossier, rails and shell. MF-03 v2/v3 remain rejected comparison evidence.
+**Promotion state:** Decisions are approved; artifacts are not promoted. Four convergence collections/86 variables remain active, three legacy/quarantined collections/128 variables are archived, and all new components/pages remain unpublished candidates. Library publication, Code Connect, customer-route convergence and runtime work require later gates.
 
-## FC-01 controlling addendum — 2026-08-11
+## CONV-001 correction addendum — controlling
 
-Human review found that MF-03 repeated the same material relationships with page-local values. FC-01 now contains and technically exercises those relationships through hidden Figma candidates and a local review-only Sites wrapper without promoting them. The adaptive card family has technical evidence at 1440/1024/768/390, but only a human selection can close that gate. The dossier and full related rail remain open.
+1. `717:15468` is hero layout/composition authority only after `90 SERVINGS` replaces `90 CAPS`. `626:7994` supplies complete product/status/evidence data. The target is a purpose-built HeroDecisionSurface.
+2. `713:1065` is a Hero component with PurchasePanel geometry (r=28, blur 50, offsetY 20), not an MF-02B Compact card. It remains provenance, not target structure.
+3. Keep/extend the 4 convergence collections/86 variables. Archive, do not delete, the 2 legacy plus 1 quarantined collections/128 variables.
+4. The current effect decision is graduated single shadows by decision weight. The former two-layer recipe is archived.
+5. The 12px metadata / 15–16px body floor is `PROPOSED_NON_CONTROLLING` pending an explicit champion decision.
+6. Every future Make/Sites prompt separates `INHERITED_CHAMPION_STATE`, `THIS_RUN_DELTA` and `DO_NOT_INHERIT`.
+7. The footer remains the sole inverse surface; every new artifact requires an exact human visual gate.
+
+Where any older paragraph in this manual conflicts with this addendum, `authority/DECISION-LEDGER.json` and `authority/CURRENT-STATE.json` control. Historical paragraphs remain recoverable evidence.
+
+## FC-01 predecessor addendum — 2026-08-11
+
+Human review found that MF-03 repeated the same material relationships with page-local values. FC-01 contained and technically exercised those relationships through hidden Figma candidates and a local review-only Sites wrapper. CONV-001 now supersedes FC-01 as the active control plane; FC-01 remains predecessor evidence.
 
 The active packet is `make-sessions/fc-01-candidate-foundation-convergence/`. Where older material names `614:75950`, the current source is `614:75994`: unified Portal + Archive on the left, Featured ProductCommerceCard in the center, and categories plus BatchTicker on the right. Commerce taxonomy is `SARMs / Prohormones / Research Chemicals / Stacks`. The dossier Product/Facts/Composition treatment is a non-interactive visual index, not tab semantics.
 
@@ -41,8 +53,8 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 | Asset authority | Light-mode asset set sufficient for the active lane | The approved MK-2866 transparent master is registered and used; MENT verification is deferred with dark-mode work |
 | Color foundations | Mechanically sound; visually provisional | 60 primitives, 59 semantics and three evaluation modes remain operational and hidden after the bounded NR-02D purchase-contract update; their mappings are still candidate authority and remain unpublished |
 | Non-color foundations | Directional baseline established; creative refinement active | Make may improve typography scale, spacing/density, shape, material, motion and responsive relationships in customer-facing designs; formal extraction follows the Make champion |
-| System validation | `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED` | Four-width card-family review frames exist; automated evidence does not equal human selection |
-| Foundation authority | `CANDIDATE_CONVERGENCE_v0`; unpublished and unpromoted | Hidden Figma candidates and an isolated owner-only `/review` wrapper exist only as bounded technical evidence |
+| System validation | `CONV-001 decisions approved / artifact-specific human review required` | Canonical component graph exists; new pages and components remain candidates |
+| Foundation authority | 4 convergence collections / 86 variables retained; 128 legacy/quarantined variables archived | Unpublished and unpromoted pending the later system gate |
 | Components through release | Deferred | Phases 08–12 may begin only through their recorded entry gates |
 
 ## Authority statement

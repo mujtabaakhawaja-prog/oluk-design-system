@@ -1,5 +1,7 @@
 # FC-01 — Acceptance Contract
 
+> **Superseded active control:** Use `make-sessions/mf03-experience-convergence/ACCEPTANCE.md`. Unchecked items below remain historical FC-01 evidence.
+
 ## P0 — Containment
 
 - [x] Active lane is FC-01; historical MF-06 retains OpenLab + LabReports meaning.
