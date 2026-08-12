@@ -114,6 +114,36 @@
       "decision": "Sequence components and foundations before page candidates, page candidates before runtime translation, and responsive/final gates before publication, Code Connect or runtime promotion.",
       "appliesTo": ["MF-03A", "MF-03B", "MF-04", "MF-05", "MF-05A", "MF-06", "MF-07", "MF-09", "MF-10", "MF++"],
       "supersedes": []
+    },
+    {
+      "id": "DEC-FIDELITY-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "MF-01A's complete color inventory is authoritative. The CONV-001 convergence palette missed the graduated border hierarchy (border-chip #D4E0F2, border-outer #BECFE9, border-identity #BDD0F1, border-inner #B4CAF0, border-family-bg #D9E3F1) and chip value text (#17213F). These are now added as convergence variables. Codex must not invent color values; every fill and stroke must resolve to a convergence variable.",
+      "appliesTo": ["Figma variables", "Codex Sites CSS", "canonical components", "token extraction"],
+      "supersedes": ["DEC-VARIABLES-001"],
+      "newVariableCount": 98
+    },
+    {
+      "id": "DEC-CHIP-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "QualitativeChip uses MF-01A two-type grammar: icon-led container with label (Inter Medium 11px, tracking 0.66px, UPPER, text/muted #64718A) above value (Inter Bold 12px, tracking 0.24px, text/chip-value #17213F). Container fill surface/card, stroke border/chip #D4E0F2, radius 10px. The single-line label chip pattern is rejected.",
+      "sources": ["626:11968"],
+      "appliesTo": ["QualitativeChip 733:17342", "card chip areas", "CommerceDiscoveryFilters", "Codex Sites chip CSS"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Media chamber uses MF-01A atmospheric diagonal gradient (#F8FBFF at 5% → #E4ECFA at 100%) not a solid fill. surface/media #F0F4FB remains available as fallback for small contexts only. neutral/family updated from #FAFCFF to MF-01A's #F8FAFC.",
+      "sources": ["626:11821", "626:11980"],
+      "appliesTo": ["ProductCommerceCard media chambers", "bounded media chambers", "Codex Sites media CSS"],
+      "supersedes": []
     }
   ]
 }
