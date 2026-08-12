@@ -39,7 +39,7 @@
   position: relative;
   display: grid;
   place-items: center;
-  background: var(--oluk-surface-media);
+  background: var(--oluk-media-gradient);
   overflow: hidden;
 }
 
@@ -188,12 +188,12 @@
 .oluk-candidate-metric-rail dt { color: var(--oluk-cobalt); font-family: var(--oluk-font-display); font-size: var(--oluk-type-metric); font-weight: 800; line-height: 1; }
 .oluk-candidate-metric-rail dd { margin: var(--oluk-space-2) 0 0; color: var(--oluk-cobalt); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.05em; }
 .oluk-candidate-qualitative { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--oluk-space-2); margin: 0; }
-.oluk-candidate-qualitative > div { display: grid; grid-template-columns: var(--oluk-space-4) minmax(0, 1fr); align-items: center; column-gap: var(--oluk-space-3); min-width: 0; min-height: var(--oluk-space-16); padding: var(--oluk-space-3); border: var(--oluk-border-width) solid var(--oluk-border-card); border-radius: var(--oluk-radius-chip); background: var(--oluk-surface-card); }
+.oluk-candidate-qualitative > div { display: grid; grid-template-columns: var(--oluk-space-4) minmax(0, 1fr); align-items: center; column-gap: var(--oluk-space-3); min-width: 0; min-height: var(--oluk-space-16); padding: var(--oluk-space-3); border: var(--oluk-border-width) solid var(--oluk-border-chip); border-radius: var(--oluk-radius-chip); background: var(--oluk-surface-card); }
 .oluk-candidate-qualitative img { grid-row: 1 / span 2; width: var(--oluk-space-4); height: var(--oluk-space-4); }
 .oluk-candidate-qualitative dt,
 .oluk-candidate-qualitative dd { grid-column: 2; min-width: 0; }
-.oluk-candidate-qualitative dt { color: var(--oluk-text-muted); font-size: var(--oluk-type-eyebrow); font-weight: 500; letter-spacing: 0.055em; }
-.oluk-candidate-qualitative dd { margin: var(--oluk-space-1) 0 0; color: var(--oluk-text-primary); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.02em; overflow-wrap: anywhere; }
+.oluk-candidate-qualitative dt { color: var(--oluk-text-muted); font-size: var(--oluk-type-chip-label); font-weight: 500; letter-spacing: 0.06em; }
+.oluk-candidate-qualitative dd { margin: var(--oluk-space-1) 0 0; color: var(--oluk-text-chip-value); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.02em; overflow-wrap: anywhere; }
 .oluk-candidate-purchase-line { display: flex; align-items: center; justify-content: space-between; gap: var(--oluk-space-3); }
 .oluk-candidate-purchase-line > strong { color: var(--oluk-cobalt); font-family: var(--oluk-font-display); font-size: var(--oluk-type-product); }
 .oluk-candidate-quantity { display: grid; grid-template-columns: repeat(3, var(--oluk-quantity-cell)); height: var(--oluk-quantity-height); border: var(--oluk-border-width) solid var(--oluk-border-card); border-radius: var(--oluk-radius-control); overflow: hidden; }

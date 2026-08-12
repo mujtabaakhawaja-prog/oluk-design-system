@@ -227,7 +227,7 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
   assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
 });
 
-test("locks the unpublished candidate foundation without treating overflow clipping as responsive proof", async () => {
+test("locks the unpublished candidate foundation with CONV-002 graduated tokens and media gradient", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const candidateTokens = await readFile(new URL("../app/design-system/candidate-tokens.css", import.meta.url), "utf8");
   const candidateCss = await readFile(new URL("../app/design-system/candidate-review.css", import.meta.url), "utf8");
@@ -239,14 +239,22 @@ test("locks the unpublished candidate foundation without treating overflow clipp
   for (const token of [
     "--oluk-canvas: #f7f8fc",
     "--oluk-surface-card: #ffffff",
+    "--oluk-surface-family: #f8fafc",
     "--oluk-surface-media: #f0f4fb",
     "--oluk-border-card: rgba(206, 220, 241, 0.92)",
+    "--oluk-border-chip: #d4e0f2",
+    "--oluk-border-outer: #becfe9",
+    "--oluk-border-identity: #bdd0f1",
+    "--oluk-border-inner: #b4caf0",
+    "--oluk-border-family-bg: #d9e3f1",
+    "--oluk-text-chip-value: #17213f",
     "--oluk-cobalt: #0057ff",
     "--oluk-inventory-green: #15803d",
     "--oluk-radius-compact: 20px",
     "--oluk-radius-vertical: 24px",
     "--oluk-radius-purchase: 28px",
     "--oluk-radius-horizontal: 34px",
+    "--oluk-type-chip-label: 11px",
   ]) {
     assert.match(candidateTokens, new RegExp(escapeRegExp(token)), token);
   }
@@ -259,6 +267,7 @@ test("locks the unpublished candidate foundation without treating overflow clipp
     assert.match(candidateTokens, new RegExp(escapeRegExp(token)), token);
   }
   assert.doesNotMatch(candidateTokens, /shadow-arc/i, "archived two-layer elevation must not remain active");
+  assert.match(candidateTokens, /--oluk-media-gradient:\s*linear-gradient\(70deg,\s*#f8fbff\s+5%,\s*#e4ecfa\s+100%\)/i, "media gradient token must use MF-01A diagonal stops");
   assert.match(candidateCss, /\.oluk-card--compact\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-compact\)/i);
   assert.match(candidateCss, /\.oluk-card--vertical,[\s\S]*?\.oluk-card--featured\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-card\)/i);
   assert.match(candidateCss, /\.oluk-card--purchase\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-purchase\)/i);
@@ -267,8 +276,14 @@ test("locks the unpublished candidate foundation without treating overflow clipp
   assert.match(candidateCss, /@media \(max-width: 540px\)[\s\S]*?\.oluk-candidate-qualitative\s*\{\s*grid-template-columns:\s*1fr\s*;/i);
   assert.doesNotMatch(candidateCss, /overflow-x:\s*clip/i, "candidate review must not use page clipping as responsive evidence");
   assert.match(css, /body:has\(\.experience-lab--candidate-review\),\s*\.experience-lab--candidate-review\s*\{\s*overflow-x:\s*visible\s*;/i, "candidate route must expose real document overflow");
-  assert.doesNotMatch(candidateCss, /linear-gradient/i, "candidate content planes remain white rather than inventing a page-level gradient");
+
+  assert.match(candidateCss, /\.oluk-media-chamber\s*\{[\s\S]*?background:\s*var\(--oluk-media-gradient\)/i, "media chamber must use the MF-01A atmospheric gradient, not a solid fill");
+  assert.doesNotMatch(candidateCss, /\.oluk-candidate-content-plane[\s\S]*?linear-gradient/i, "content planes remain white rather than inventing a gradient");
   assert.doesNotMatch(candidateTokens, /shadow-content-plane/i, "nested content planes do not create a second card elevation");
+
+  assert.match(candidateCss, /\.oluk-candidate-qualitative > div\s*\{[\s\S]*?border:[^;]*var\(--oluk-border-chip\)/i, "chip containers must use border/chip, not generic border/card");
+  assert.match(candidateCss, /\.oluk-candidate-qualitative dt\s*\{[^}]*font-size:\s*var\(--oluk-type-chip-label\)/i, "chip labels must use 11px chip-label token, not 12px eyebrow");
+  assert.match(candidateCss, /\.oluk-candidate-qualitative dd\s*\{[^}]*color:\s*var\(--oluk-text-chip-value\)/i, "chip values must use text/chip-value (#17213F), not text/primary");
 
   assert.equal((css.match(/background:\s*var\(--inverse\)\s*;/gi) ?? []).length, 1, "footer is the sole inverse surface");
   assert.match(css, /\.trust-rail\s*\{[\s\S]*?background:\s*var\(--white\)\s*;/i, "trust rail remains light");

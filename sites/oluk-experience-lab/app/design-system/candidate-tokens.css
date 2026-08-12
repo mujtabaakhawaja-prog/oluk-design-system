@@ -1,15 +1,21 @@
 :root {
   --oluk-canvas: #f7f8fc;
   --oluk-surface-card: #ffffff;
-  --oluk-surface-family: #fafcff;
+  --oluk-surface-family: #f8fafc;
   --oluk-surface-media: #f0f4fb;
   --oluk-surface-cobalt-soft: #eef4ff;
   --oluk-border-card: rgba(206, 220, 241, 0.92);
   --oluk-border-strong: #afc8ff;
   --oluk-border-family: #d2e4ff;
+  --oluk-border-chip: #d4e0f2;
+  --oluk-border-outer: #becfe9;
+  --oluk-border-identity: #bdd0f1;
+  --oluk-border-inner: #b4caf0;
+  --oluk-border-family-bg: #d9e3f1;
   --oluk-text-primary: #141827;
   --oluk-text-secondary: #53617d;
   --oluk-text-muted: #64718a;
+  --oluk-text-chip-value: #17213f;
   --oluk-text-on-inverse: #ffffff;
   --oluk-cobalt: #0057ff;
   --oluk-cobalt-alt: #256dff;
@@ -36,6 +42,8 @@
   --oluk-shadow-purchase: 0 20px 50px rgba(15, 26, 51, 0.18);
   --oluk-shadow-relation: 0 12px 25px rgba(15, 26, 51, 0.12);
 
+  --oluk-media-gradient: linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%);
+
   --oluk-font-display: "Plus Jakarta Sans", sans-serif;
   --oluk-font-body: "Inter", sans-serif;
   --oluk-type-display-xl: 56px;
@@ -45,6 +53,7 @@
   --oluk-type-body: 16px;
   --oluk-type-body-sm: 15px;
   --oluk-type-label: 13px;
+  --oluk-type-chip-label: 11px;
   --oluk-type-eyebrow: 12px;
   --oluk-type-product: 31px;
   --oluk-type-metric: 20px;

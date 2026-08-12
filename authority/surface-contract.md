@@ -1,6 +1,6 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
-> **2026-08-12 CONV-002 addendum:** 10 new convergence variables added to close the MF-01A standardization gap. Chip grammar, media gradient, and graduated border hierarchy now fully specified. `neutral/family` updated to #F8FAFC per champion decision. Total convergence variables: 96.
+> **2026-08-12 CONV-002 addendum:** 12 new convergence variables added to close the MF-01A standardization gap. Chip grammar, media gradient, and graduated border hierarchy now fully specified. `neutral/family` updated to #F8FAFC per champion decision. Total convergence variables: 98.
 
 > **2026-08-11 CONV-001 supersession:** The append-only decision ledger and current-state snapshot now control. MF-01A material/anatomy relationships persist; later runs apply named deltas. The canonical graph remains unpublished and `HUMAN_REVIEW_REQUIRED`.
 
@@ -33,6 +33,8 @@ The CONV-001 convergence palette (86 variables) captured the primary surface, te
 | `border/chip` | `blue/border-chip` | QualitativeChip container stroke |
 | `border/outer` | `blue/border-outer` | Card outer wrapper stroke |
 | `border/identity` | `blue/border-identity` | Identity section stroke |
+| `border/inner` | `blue/border-inner` | Inner identity accent stroke |
+| `border/family-bg` | `blue/border-family-bg` | Family container / background stroke |
 | `text/chip-value` | `ink/chip-value` | Chip value text fill |
 
 ### Updated primitive
@@ -100,16 +102,16 @@ The solid `surface/media` (#F0F4FB) remains available as a fallback for contexts
 | Collection | CONV-001 | CONV-002 | Delta |
 |---|---|---|---|
 | Color Primitives (634:2) | 17 | 23 | +6 |
-| Color Semantics (634:20) | 19 | 23 | +4 |
+| Color Semantics (634:20) | 19 | 25 | +6 |
 | Dimensions (634:40) | 28 | 28 | 0 |
 | Typography (634:69) | 22 | 22 | 0 |
-| **Total** | **86** | **96** | **+10** |
+| **Total** | **86** | **98** | **+12** |
 
 ---
 
 ## CONV-001 material addendum
 
-The active candidate foundations are the 4 convergence collections/96 variables. The 2 legacy plus 1 quarantined collections/128 variables are archived provenance. New work binds only to the active convergence collections. None is published or promoted.
+The active candidate foundations are the 4 convergence collections/98 variables. The 2 legacy plus 1 quarantined collections/128 variables are archived provenance. New work binds only to the active convergence collections. None is published or promoted.
 
 Current effect authority is graduated single shadows: Compact y5/blur12/.09, Vertical/Featured y24/blur60/.10, PurchasePanel y20/blur50/.18 and Relation y12/blur25/.12. The former two-layer Softform Arc recipe is archived evidence. Commerce taxonomy remains `SARMs / Prohormones / Research Chemicals / Stacks`; the dossier index remains non-interactive unless a later decision explicitly authorizes interaction; the dark footer is the sole inverse surface. The proposed 12px metadata / 15–16px body floor does not control until explicitly approved.
 
@@ -402,7 +404,7 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 - White wrappers around already raised white cards: duplicate the surface job and misrepresent the canvas relationship.
 - Full-width pale bands outside the PDP first-fold exception: turn structural canvas into decoration.
 
-## Appendix C — CONV-002 complete convergence palette (96 variables)
+## Appendix C — CONV-002 complete convergence palette (98 variables)
 
 ### Color Primitives (23 variables)
 
@@ -432,7 +434,7 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 | `green/inventory` | `#15803D` | `VariableID:634:18` |
 | `green/inventory-soft` | `#ECFDF3` | `VariableID:634:19` |
 
-### Color Semantics (23 variables)
+### Color Semantics (25 variables)
 
 | Variable | Alias target | Figma ID |
 |---|---|---|
@@ -448,6 +450,8 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 | `border/chip` | `blue/border-chip` | `VariableID:824:300` |
 | `border/outer` | `blue/border-outer` | `VariableID:824:301` |
 | `border/identity` | `blue/border-identity` | `VariableID:824:302` |
+| `border/inner` | `blue/border-inner` | `VariableID:838:298` |
+| `border/family-bg` | `blue/border-family-bg` | `VariableID:838:299` |
 | `text/primary` | `ink/primary` | `VariableID:634:30` |
 | `text/secondary` | `ink/secondary` | `VariableID:634:31` |
 | `text/muted` | `ink/muted` | `VariableID:634:32` |
