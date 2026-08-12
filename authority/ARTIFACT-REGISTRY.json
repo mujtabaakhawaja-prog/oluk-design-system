@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "registryId": "OLUK-CONV-002-ARTIFACTS",
+  "registryId": "OLUK-CONV-003-ARTIFACTS",
   "updatedDate": "2026-08-12",
   "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
   "defaultPublicationState": "unpublished",
   "validation": {
-    "scope": "canonical_sources_and_settled_surfaces",
+    "scope": "CONV003_FIGMA_SITES_MF09_MF10_CANDIDATE",
     "forbidden90CapsCount": 0,
     "nonActiveVariableBindingCount": 0,
     "dossierHeightPx": 898,
@@ -16,8 +16,16 @@
     "activeConvergenceVariableCount": 98,
     "legacyBindingsOnCanonicalBoard": 0,
     "shop765_98InheritanceVerified": true,
-    "repositoryCompletionCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
-    "boundedBrowserProof": "SHOP_AND_REVIEW_1440_1024_768_390_NOT_FULL_MF09"
+    "conv002RepositoryCompletionCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
+    "boundedBrowserProof": "SHOP_AND_REVIEW_1440_1024_768_390_NOT_FULL_MF09",
+    "conv003Completion": "MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    "figmaNext50Status": "FG001_048_VERIFIED_FG049_050_BLOCKED",
+    "sitesNext50Status": "CX001_047_VERIFIED_CX048_050_BLOCKED",
+    "mf09RouteWidthMatrix": "31_ROUTES_X_1440_1024_768_390_VERIFIED",
+    "mf10ChampionApproval": "BLOCKED_PENDING_ARTIFACT_SPECIFIC_REVIEW",
+    "repositoryCompletionCommit": "__CONV003_COMMIT_SHA_PENDING__",
+    "finalMF10FigmaNode": "888:304",
+    "deployment": "none"
   },
   "artifacts": [
     {"id": "figma-control-current", "node": "728:50", "name": "00.00 — Canonical Convergence Control · 2026.08.11", "class": "control", "authority": "current", "review": "approved_methodology"},
@@ -101,6 +109,24 @@
     {"id": "repo-decision-ledger", "path": "authority/DECISION-LEDGER.json", "class": "control", "authority": "current_append_only"},
     {"id": "repo-conv002-fidelity-receipt", "path": "authority/receipts/CONV-002-FIDELITY-COMPLETION.md", "class": "validation_receipt", "authority": "current_validated_evidence", "review": "repository_validated_human_review_required"},
     {"id": "repo-mf03-package", "path": "make-sessions/mf03-experience-convergence/", "class": "prompt_package", "authority": "current"},
-    {"id": "sites-mf01-mf03-candidate", "path": "sites/oluk-experience-lab/", "commit": "c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1", "completionCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1", "class": "runtime_candidate", "authority": "candidate_implementation", "review": "repository_validated_human_review_required", "deployment": "none"}
+    {"id": "sites-mf01-mf03-candidate", "path": "sites/oluk-experience-lab/", "commit": "c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1", "completionCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1", "class": "runtime_candidate", "authority": "candidate_implementation", "review": "repository_validated_human_review_required", "deployment": "none"},
+    {"id": "figma-conv003-responsive-matrix-page", "node": "672:14", "page": "13 Responsive Matrix", "name": "CONV-003 · MF-09 Responsive Matrix", "class": "proof_page", "authority": "candidate_proof", "review": "verified_human_review_required", "publication": "unpublished"},
+    {"id": "figma-conv003-motion-interaction-page", "node": "672:15", "page": "14 Motion + Interaction", "name": "CONV-003 · MF-09 Local State and Accessibility Proof", "class": "proof_page", "authority": "candidate_proof", "review": "verified_human_review_required", "publication": "unpublished"},
+    {"id": "figma-conv003-transaction-page", "node": "672:21", "page": "20 Checkout", "name": "CONV-003 · MF-07 Transaction Presentation", "class": "experience_page", "authority": "candidate_surface", "review": "verified_human_review_required", "publication": "unpublished", "runtime": "none"},
+    {"id": "figma-conv003-all-grammar-page", "node": "672:22", "page": "21 ALL Grammar", "name": "CONV-003 · Decision and Experience Grammar", "class": "system_page", "authority": "candidate_documentation", "review": "verified_human_review_required", "publication": "unpublished"},
+    {"id": "figma-conv003-system-board-page", "node": "672:23", "page": "22 System Board", "name": "CONV-003 · Cross-System Graph", "class": "system_page", "authority": "candidate_documentation", "review": "verified_human_review_required", "publication": "unpublished"},
+    {"id": "figma-conv003-proof-boards-page", "node": "672:24", "page": "23 Proof Boards", "name": "CONV-003 · Media, Provenance, Responsive and Accessibility Proofs", "class": "proof_page", "authority": "candidate_proof", "review": "verified_human_review_required", "publication": "unpublished"},
+    {"id": "figma-conv003-changelog-page", "node": "672:26", "page": "25 Changelog & Version History", "name": "CONV-003 · Version and Acceptance Projection", "class": "control_page", "authority": "candidate_evidence", "review": "verified_human_review_required", "publication": "unpublished"},
+    {"id": "figma-conv003-mf10-approval-board", "node": "888:304", "page": "25 Changelog & Version History", "name": "CONV-003 · MF-10 Cross-Route Approval Candidate", "class": "approval_board", "authority": "candidate_evidence", "review": "figma_receipt_verified_human_review_required", "publication": "unpublished"},
+    {"id": "repo-shop-taxonomy-contract", "path": "authority/SHOP-TAXONOMY-CONTRACT.json", "class": "read_only_runtime_contract", "authority": "candidate_design_input", "review": "verified_non_live", "runtimeMutationAuthorized": false},
+    {"id": "repo-conv003-completion-receipt", "path": "authority/receipts/CONV-003-MF09-MF10-COMPLETION.md", "class": "validation_receipt", "authority": "current_validated_evidence", "review": "human_review_required", "publication": "unpublished"},
+    {"id": "repo-conv003-next-50x50", "path": "authority/receipts/CONV-002-NEXT-50X50.md", "class": "completion_matrix", "authority": "current_projection", "review": "95_verified_5_blocked"},
+    {"id": "sites-conv003-component-graph", "path": "sites/oluk-experience-lab/app/design-system/", "class": "candidate_component_graph", "authority": "candidate_implementation", "review": "verified_human_review_required", "deployment": "none"},
+    {"id": "sites-conv003-route-map", "path": "sites/oluk-experience-lab/app/design-system/site-route-map.ts", "class": "candidate_information_architecture", "authority": "candidate_implementation", "review": "verified_human_review_required", "routeCount": 31, "deployment": "none"},
+    {"id": "sites-conv003-transaction-presentation", "path": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx", "class": "candidate_presentation", "authority": "presentation_only", "review": "verified_human_review_required", "runtime": "none", "deployment": "none"},
+    {"id": "sites-conv003-proof-tooling", "path": "sites/oluk-experience-lab/scripts/proof/", "class": "validation_tooling", "authority": "candidate_evidence", "review": "verified_human_review_required", "routeCount": 31, "widths": [1440, 1024, 768, 390]},
+    {"id": "sites-conv003-visual-baseline-manifest", "path": "sites/oluk-experience-lab/tests/visual-baselines/manifest.json", "class": "visual_baseline_manifest", "authority": "candidate_evidence", "review": "124_captured_unreviewed_0_champion_reviewed", "routeCount": 31},
+    {"id": "sites-conv003-contrast-zoom-long-copy-proof", "path": "sites/oluk-experience-lab/scripts/proof/contrast-zoom-stress.mjs", "receipt": "Codex-Cold-Store/oluk-conv003-mf09-20260812/final-all-route/cx38-contrast-zoom-long-copy.json", "class": "browser_proof", "authority": "candidate_evidence", "review": "30_of_30_customer_routes_pass_aa_zoom_long_copy_enhanced_aaa_manual_review", "deployment": "none", "runtimeAuthority": "none"},
+    {"id": "sites-conv003-candidate", "path": "sites/oluk-experience-lab/", "commit": "__CONV003_COMMIT_SHA_PENDING__", "class": "runtime_candidate", "authority": "candidate_implementation", "review": "mf09_mf10_candidate_verified_human_review_required", "deployment": "none", "runtimeAuthority": "none"}
   ]
 }

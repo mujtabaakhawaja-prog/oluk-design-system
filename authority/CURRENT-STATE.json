@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "snapshotId": "OLUK-CONV-002-20260812",
+  "snapshotId": "OLUK-CONV-003-20260812",
   "recordedDate": "2026-08-12",
   "program": "OLUK_DESIGN_COMMERCE_EXPERIENCE_CONVERGENCE",
-  "status": "FIGMA_RECEIPT_VERIFIED_REPOSITORY_VALIDATED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "status": "CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
   "publicationState": "UNPUBLISHED",
   "promotionState": "HUMAN_REVIEW_REQUIRED",
   "controllingLedger": "authority/DECISION-LEDGER.json",
@@ -76,7 +76,32 @@
     "status": "CHAMPION",
     "primaryTreatment": "Outer GRADIENT_LINEAR #F8FBFF@5% → #E4ECFA@100% diagonal plus contact-shelf GRADIENT_LINEAR #FFFFFF → #E6EDFA",
     "fallbackSolid": "surface/media #F0F4FB",
-    "literalStopException": "Only the exact outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA Figma gradients are allowed to remain literal, and only inside the MF-01A atmospheric media recipe; all other component fills and strokes must resolve through the active convergence variables."
+    "literalStopException": "Only the exact outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA Figma gradients are allowed to remain literal, and only inside the MF-01A atmospheric media recipe; all other component fills and strokes must resolve through the active convergence variables.",
+    "populationDecisionId": "DEC-MEDIA-004",
+    "populationState": "POPULATED_ADAPTIVE_CHAMBERS_VERIFIED",
+    "requiredOwners": ["ProductDecisionHero", "Compact", "Vertical", "Featured", "Relation"],
+    "purchasePanelMedia": "NOT_APPLICABLE_NO_MEDIA_CHAMBER_BY_DESIGN"
+  },
+  "shopTaxonomy": {
+    "decisionId": "DEC-TAXONOMY-001",
+    "contract": "authority/SHOP-TAXONOMY-CONTRACT.json",
+    "status": "READ_ONLY_DESIGN_CONTRACT_VERIFIED_NON_LIVE",
+    "families": ["SARMs", "Research Chemicals", "Prohormones", "Stacks"],
+    "independentFacets": ["goal", "form", "servings_or_pack", "availability"],
+    "headerRole": "SHELL_INFORMATION_ARCHITECTURE",
+    "runtimeMutationAuthorized": false
+  },
+  "fixturePolicy": {
+    "decisionId": "DEC-FIXTURE-001",
+    "verticalFixtureReuse": "ACCEPTED_FOR_COMPONENT_CONTRACT_PROOF",
+    "runtimeProductDiversificationRequiredForContractProof": false,
+    "fabricatedProductTruthAllowed": false
+  },
+  "runModel": {
+    "decisionId": "DEC-RUN-002",
+    "mode": "PAIRED_FIGMA_AND_CODEX_SITES_CANDIDATE_RUNS",
+    "concurrentFacets": ["design", "commerce", "experience", "ux_ui"],
+    "runtimeSeparatelyGated": true
   },
   "canonicalCandidateSources": {
     "inventoryStatus": "732:2902",
@@ -119,7 +144,38 @@
     "pdp": "766:50",
     "openLab": "767:50",
     "conv002FidelityReceiptSection": "847:50",
-    "conv002FidelityReceipt": "847:51"
+    "conv002FidelityReceipt": "847:51",
+    "systemPages": {
+      "01BrandOverviewAndLogo": "672:2",
+      "02TokenAndThemeSpecimens": "672:3",
+      "03ColorSystem": "672:4",
+      "04Typography": "672:5",
+      "05SpacingAndRadius": "672:6",
+      "06ElevationAndEffects": "672:7",
+      "07Iconography": "672:8",
+      "08NavigationAndShell": "672:9",
+      "09ComponentLibrary": "672:10",
+      "10CardsAndRails": "672:11",
+      "11CommercePatterns": "672:12",
+      "12DataDisplay": "672:13",
+      "13ResponsiveMatrix": "672:14",
+      "14MotionAndInteraction": "672:15",
+      "15DoAndDont": "672:16",
+      "16HandoffSpec": "672:17",
+      "17PDP": "672:18",
+      "18OpenLab": "672:19",
+      "19Mobile": "672:20",
+      "20Checkout": "672:21",
+      "21AllGrammar": "672:22",
+      "22SystemBoard": "672:23",
+      "23ProofBoards": "672:24",
+      "24SandboxAndPlayground": "672:25",
+      "25ChangelogAndVersionHistory": "672:26"
+    },
+    "mf09ResponsiveMatrix": "672:14",
+    "mf09InteractionAndAccessibilityProof": "672:15",
+    "mf09ProofBoards": "672:24",
+    "mf10ApprovalBoard": "888:304"
   },
   "surfaceReviewAnnotations": {
     "placement": "outside_customer_frames_on_figma_canvas",
@@ -172,58 +228,92 @@
       },
       "completionChecksAwaitingReceipt": [],
       "gradientStopsUnboundException": "Outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA are the only literal paint exceptions, governed by DEC-MEDIA-003 and limited to the MF-01A atmospheric media recipe."
+    },
+    "conv003Completion": {
+      "verificationState": "FG_NEXT_001_048_VERIFIED_FG_NEXT_049_050_BLOCKED",
+      "verifiedTaskCount": 48,
+      "blockedTaskCount": 2,
+      "systemPageRange": ["672:2", "672:26"],
+      "canonicalSourceBoard": "732:2897",
+      "instanceReviewBoard": "763:50",
+      "candidateSurfaces": ["764:50", "765:50", "766:50", "767:50"],
+      "mf09ProofPages": ["672:14", "672:15", "672:24"],
+      "mf10ApprovalBoard": "888:304",
+      "receiptPath": "authority/receipts/CONV-003-MF09-MF10-COMPLETION.md",
+      "publicationState": "UNPUBLISHED",
+      "reviewState": "HUMAN_REVIEW_REQUIRED"
     }
   },
-  "currentGate": "ARTIFACT_SPECIFIC_HUMAN_VISUAL_REVIEW",
+  "currentGate": "MF10_ARTIFACT_SPECIFIC_CHAMPION_APPROVAL_REQUIRED",
   "runQueue": [
-    {"run": "MF-03A", "priority": "P0", "work": "shell and homepage candidate", "state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "figmaNode": "764:50"},
-    {"run": "MF-03B", "priority": "P0", "work": "OpenLab portal candidate", "state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "figmaNode": "767:50"},
-    {"run": "MF-04", "priority": "P0", "work": "PDP candidate", "state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "figmaNode": "766:50"},
-    {"run": "MF-05", "priority": "P1", "work": "dossier and evidence transitions"},
-    {"run": "MF-05A", "priority": "P2", "work": "compare bundle stack and goal-led decision surfaces"},
-    {"run": "MF-06", "priority": "P1", "work": "OpenLab archive and record lifecycle"},
-    {"run": "MF-07", "priority": "P1", "work": "bag checkout and post-purchase presentation"},
-    {"run": "MF-09", "priority": "P0", "work": "responsive and local-state proof", "state": "REQUIRED_FOR_FULL_FOUR_WIDTH_AND_STATE_PROOF"},
-    {"run": "MF-10", "priority": "P0", "work": "cross-route final design gate", "state": "BLOCKED_PENDING_MF09_AND_CHAMPION_REVIEW"},
-    {"run": "MF++", "priority": "POST_GATE", "work": "promotion runtime translation and Code Connect"}
+    {"run": "MF-03A", "priority": "P0", "work": "shell and homepage candidate", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "764:50"},
+    {"run": "MF-03B", "priority": "P0", "work": "OpenLab portal candidate", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "767:50"},
+    {"run": "MF-04", "priority": "P0", "work": "PDP candidate", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "766:50"},
+    {"run": "MF-05", "priority": "P1", "work": "dossier and evidence transitions", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:18"},
+    {"run": "MF-05A", "priority": "P2", "work": "compare bundle stack and goal-led decision surfaces", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:22"},
+    {"run": "MF-06", "priority": "P1", "work": "OpenLab archive and record lifecycle", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:19"},
+    {"run": "MF-07", "priority": "P1", "work": "bag checkout and post-purchase presentation", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:21"},
+    {"run": "MF-09", "priority": "P0", "work": "responsive local-state accessibility and stress proof", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:14"},
+    {"run": "MF-10", "priority": "P0", "work": "cross-route final design gate candidate", "state": "CANDIDATE_ASSEMBLED_VERIFIED_CHAMPION_APPROVAL_BLOCKED", "figmaNode": "888:304"},
+    {"run": "MF++", "priority": "POST_GATE", "work": "publication runtime translation and Code Connect", "state": "BLOCKED_PENDING_MF10_CHAMPION_APPROVAL_AND_SEPARATE_AUTHORIZATION"}
   ],
   "sitesImplementation": {
-    "state": "REPOSITORY_VALIDATED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-    "sourceCommit": "c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1",
-    "completionCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
-    "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab"],
-    "routeCount": 15,
-    "conv002Required": {
-      "candidateTokensCSS": "12 CONV-002 CSS custom properties present; --oluk-neutral-family is #F8FAFC; governed media gradient present",
-      "candidateReviewCSS": "MF-01A gradient, border/chip, 11px label and bold chip value grammar present",
-      "customerRouteCSS": "Former 7px joined qualitative cells replaced by MF-01A two-type chip grammar",
-      "renderedHtmlTest": "Token inventory and governed gradient exception are asserted",
-      "status": "CONV002_FIDELITY_DELTA_COMPLETE_REPOSITORY_VALIDATED"
+    "state": "CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    "sourceCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
+    "completionCommit": "__CONV003_COMMIT_SHA_PENDING__",
+    "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab", "Evidence lifecycle", "Decision tools", "Bag and checkout presentation", "Post-purchase presentation", "Owner review"],
+    "routeCount": 31,
+    "conv003Completion": {
+      "sharedDesignSystemGraph": "sites/oluk-experience-lab/app/design-system/",
+      "taxonomyContract": "authority/SHOP-TAXONOMY-CONTRACT.json",
+      "routeMap": "sites/oluk-experience-lab/app/design-system/site-route-map.ts",
+      "transactionPresentation": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
+      "proofTooling": "sites/oluk-experience-lab/scripts/proof/",
+      "visualBaselineManifest": "sites/oluk-experience-lab/tests/visual-baselines/manifest.json",
+      "status": "CX_NEXT_001_047_VERIFIED_CX_NEXT_048_050_BLOCKED"
     },
     "validation": {
       "build": "PASS",
       "typecheck": "PASS",
       "lint": "PASS",
-      "tests": {"passed": 8, "total": 8},
-      "browserQA": {
-        "proofScope": "BOUNDED_CONV002_SHOP_AND_REVIEW_NOT_FULL_MF09",
-        "routes": ["/shop", "/review"],
+      "tests": "PASS_38_OF_38_FULL_CANDIDATE_SUITE",
+      "contractProofs": "PASS",
+      "contractProofDetails": {
+        "tokenManifest": {"status": "PASS", "activeVariables": 98, "individuallyDocumented": 98, "pendingIndividualInventory": 0},
+        "componentProvenance": {"status": "PASS", "passed": 63, "total": 63},
+        "taxonomy": {"status": "PASS", "passed": 5, "total": 5, "runtimeMutationAuthorized": false},
+        "visualBaselines": {"status": "PASS_CANDIDATE_CAPTURE", "routeWidthCases": 124, "capturedUnreviewed": 124, "championReviewed": 0}
+      },
+      "mf09": {
+        "proofScope": "ALL_31_CANDIDATE_ROUTES",
         "widthsPx": [1440, 1024, 768, 390],
-        "documentOverflow": 0,
-        "clippedCardsOrPanels": 0,
-        "qualitativeChipCount": 4,
-        "overlappingQualitativeChips": 0,
+        "boundsAndCapture": "PASS",
+        "localStates": "PASS",
+        "accessibilityAndStress": "PASS_62_OF_62_A11Y_AND_30_OF_30_CUSTOMER_ROUTE_AA_ZOOM_LONG_COPY",
+        "interactionCases": {"status": "PASS", "passed": 27, "total": 27, "postHydrationNetworkCallbacks": 0},
+        "stressCases": {"status": "PASS", "customerRoutes": 30, "wcagAAViolationRules": 0, "zoomOverflowRoutes": 0, "longCopyFailureRoutes": 0, "enhancedAAARequiresManualReview": true},
+        "receiptDirectory": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-conv003-mf09-20260812/final-all-route",
         "visible90Caps": 0,
         "governanceLabelLeakage": 0,
         "footerSolePersistentInverse": true
       },
-      "routeCount": 15,
-      "fullMF09Satisfied": false
+      "routeCount": 31,
+      "fullMF09Satisfied": true,
+      "mf10LocalCandidateAssembled": true,
+      "championApprovalSatisfied": false,
+      "dependencyAudit": {
+        "status": "OPEN_TOOLCHAIN_RISK",
+        "low": 2,
+        "high": 15,
+        "critical": 0,
+        "scope": "unpublished candidate tooling and dependencies",
+        "resolution": "separate dependency-upgrade validation before any hosting or runtime adoption"
+      }
     },
     "deployment": "NONE",
     "humanReviewRequired": true,
     "doesNotChangeFigmaCandidateState": true,
     "doesNotGrantProductionRuntimeAuthority": true
   },
-  "runtimeAuthority": "NONE_UNTIL_MF10_AND_SEPARATE_MF_PLUS_PLUS_APPROVAL"
+  "runtimeAuthority": "NONE_UNTIL_ARTIFACT_SPECIFIC_MF10_CHAMPION_APPROVAL_AND_SEPARATE_MF_PLUS_PLUS_AUTHORIZATION"
 }

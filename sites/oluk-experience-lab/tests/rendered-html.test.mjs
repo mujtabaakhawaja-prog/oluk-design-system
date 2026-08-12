@@ -11,13 +11,13 @@ const routes = [
   ["/about", "Quality, made visible."],
   ["/about/evidence-os", "A clearer path from product to proof."],
   ["/open-lab", "Independent evidence, connected to every product."],
-  ["/open-lab/records", "Every batch. Every report. Public."],
-  ["/open-lab/records/source-bound-record", "MK-2866 · May 2026"],
+  ["/open-lab/records", "Every product. Its available record path."],
+  ["/open-lab/records/source-bound-record", "MK-2866 evidence record"],
   ["/open-lab/dossier/mk-2866", "MK-2866 product dossier."],
   ["/open-lab/batch-lookup", "Find a batch record."],
-  ["/open-lab/methodology", "How finished products are verified."],
+  ["/open-lab/methodology", "How finished-product records are read."],
   ["/open-lab/source-chain", "From finished product to original report."],
-  ["/open-lab/compare", "Compare finished-product records."],
+  ["/open-lab/compare", "Compare finished-product evidence paths."],
 ];
 
 const customerRoutes = routes.filter(([pathname]) => pathname !== "/review");
@@ -220,10 +220,11 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
     assert.match(openLabText, new RegExp(escapeRegExp(lens)), `OpenLab lens: ${lens}`);
   }
 
-  const source = await readFile(new URL("../app/experience-lab.tsx", import.meta.url), "utf8");
-  const homeHero = source.match(/function HomeHero\(\)[\s\S]*?\n}\n\nfunction CompoundFamilies/)?.[0] ?? "";
-  assert.match(source, /function HeroDecisionSurface\(\)/, "purpose-built hero decision surface exists");
-  assert.match(homeHero, /<HeroDecisionSurface\s*\/>/, "homepage uses the purpose-built surface");
+  const routeSource = await readFile(new URL("../app/customer-routes.tsx", import.meta.url), "utf8");
+  const heroSource = await readFile(new URL("../app/design-system/product-decision-hero.tsx", import.meta.url), "utf8");
+  const homeHero = routeSource.match(/export function HomeRoute\(\)[\s\S]*?\n}\n\nexport function ProductRoute/)?.[0] ?? "";
+  assert.match(heroSource, /export function HeroDecisionSurface\(/, "purpose-built hero decision surface exists");
+  assert.match(homeHero, /<ProductDecisionHero\b/, "homepage uses the shared purpose-built hero");
   assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
 });
 
@@ -315,11 +316,13 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
 
 test("adopts the MF-01A qualitative-chip and media grammar on customer routes", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-  const source = await readFile(new URL("../app/experience-lab.tsx", import.meta.url), "utf8");
+  const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
+  const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
+  const mediaSource = await readFile(new URL("../app/design-system/product-media-chamber.tsx", import.meta.url), "utf8");
+  const mediaCss = await readFile(new URL("../app/design-system/product-media-chamber.module.css", import.meta.url), "utf8");
   const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
   const worker = await loadWorker();
   const productHtml = await renderHtml(worker, "/product/mk-2866");
-  const customerCardSource = source.match(/function ProductCommerceCard\([\s\S]*?\n}\n\nfunction AssuranceRail/)?.[0] ?? "";
 
   for (const token of [
     "--oluk-surface-family: #f8fafc",
@@ -335,20 +338,23 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
     assert.match(css, new RegExp(escapeRegExp(token)), `customer token ${token}`);
   }
 
-  assert.match(source, /function QualitativeChip\(\{ kind, label, value \}: QualitativeFact\)/, "customer chips use a reusable component");
-  assert.match(source, /<ul[^>]*className="qualitative-chips"[^>]*>[\s\S]*?<QualitativeChip\b/, "customer chip collection renders independent component instances");
-  assert.match(source, /<FactIcon kind=\{kind\}\s*\/>/, "customer chips retain authored semantic glyphs");
-  assert.match(source, /\/assets\/candidate\/qualitative\/\$\{kind\}\.svg/, "customer chips use the exact authored semantic SVG source set");
-  assert.match(customerCardSource, /className="media-contact-shelf"/, "customer card exposes the authored contact-shelf layer");
-  assert.doesNotMatch(customerCardSource, /className="media-orbit"/, "the invented circular orbit is removed from Vertical and Featured customer cards");
+  assert.match(chipSource, /export function QualitativeChip\(/, "customer chips use a reusable component");
+  assert.match(chipSource, /<ul[^>]*aria-label=\{label\}[^>]*>[\s\S]*?<QualitativeChip\b/, "customer chip collection renders independent component instances");
+  for (const kind of ["class", "form", "quality", "tested"]) {
+    assert.match(chipSource, new RegExp(`/assets/candidate/qualitative/${kind}\\.svg`), `${kind} chip uses its authored semantic SVG`);
+  }
+  assert.match(cardSource, /<ProductMediaChamber\b/, "customer cards use the shared authored media chamber");
+  assert.match(mediaSource, /data-authored-layers="outer-gradient luminous-halo identity-pane contact-shelf product"/, "shared media chamber exposes the complete authored layer contract");
+  assert.match(mediaSource, /className=\{classes\(styles\.contactShelf, "oluk-product-media-chamber__contact-shelf"\)\}/, "shared media chamber owns the contact-shelf layer");
+  assert.doesNotMatch(cardSource, /className="media-orbit"/, "the invented circular orbit is removed from Vertical and Featured customer cards");
   assert.match(layout, /@fontsource\/inter\/500\.css/, "Inter Medium is loaded rather than synthesized");
 
   assert.match(css, /\.product-commerce-card\s*\{[^}]*border:\s*1px solid var\(--oluk-border-outer\)/i, "customer cards use the MF-01A outer-wrapper border");
-  assert.match(css, /\.product-media-chamber\s*\{[^}]*background:\s*var\(--oluk-media-gradient\)/i, "bounded product chambers use the governed MF-01A gradient");
-  assert.doesNotMatch(css, /\.product-media-chamber\s*\{[^}]*radial-gradient/i, "product chambers do not layer an invented radial fill over the governed gradient");
-  assert.match(css, /\.product-media-chamber::before\s*\{[^}]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*inset/i, "customer chambers restore the luminous halo");
-  assert.match(css, /\.product-media-chamber::after\s*\{(?=[^}]*var\(--oluk-border-identity\))(?=[^}]*rgba\(255,\s*255,\s*255,\s*0\.42\))[^}]*\}/i, "customer chambers restore the identity pane");
-  assert.match(css, /\.media-contact-shelf\s*\{(?=[^}]*var\(--oluk-media-contact-shelf-gradient\))(?=[^}]*var\(--oluk-border-inner\))[^}]*\}/i, "customer chambers restore the contact shelf");
+  assert.match(mediaCss, /\.chamber\s*\{[^}]*background:\s*var\(--oluk-media-gradient/i, "bounded product chambers use the governed MF-01A gradient");
+  assert.doesNotMatch(mediaCss, /radial-gradient/i, "product chambers do not layer an invented radial fill over the governed gradient");
+  assert.match(mediaCss, /\.halo\s*\{[^}]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*inset/i, "customer chambers restore the luminous halo");
+  assert.match(mediaCss, /\.identityPane\s*\{(?=[^}]*var\(--oluk-border-identity)(?=[^}]*rgba\(255,\s*255,\s*255,\s*0\.42\))[^}]*\}/i, "customer chambers restore the identity pane");
+  assert.match(mediaCss, /\.contactShelf\s*\{[\s\S]*?var\(\s*--oluk-media-contact-shelf-gradient[\s\S]*?var\(--oluk-border-inner[\s\S]*?\}/i, "customer chambers restore the contact shelf");
   assert.match(css, /\.product-commerce-card \.product-series\s*\{(?=[^}]*var\(--oluk-surface-family\))(?=[^}]*var\(--oluk-border-family-bg\))[^}]*\}/i, "customer family marker uses the MF-01A family surface and border");
   assert.match(css, /\.metric-rail\s*\{[^}]*border:\s*1px solid var\(--line-strong\)[^}]*gap:\s*0[^}]*overflow:\s*hidden/i, "customer MetricRail is a joined bordered rail, not generic pills");
   assert.match(css, /\.metric-rail > div \+ div\s*\{[^}]*border-left:\s*1px solid var\(--line-strong\)/i, "customer MetricRail uses governed internal dividers");

@@ -7,33 +7,36 @@ Read in this order before changing design, Make or Sites material:
 1. `authority/CURRENT-STATE.json`
 2. `authority/DECISION-LEDGER.json`
 3. `authority/ARTIFACT-REGISTRY.json`
-4. `authority/ids-plan.md`
-5. `authority/surface-contract.md`
-6. `authority/oluk-make-philosophy.md`
-7. `authority/oluk-pdp-architecture.md`
-8. `make-sessions/mf03-experience-convergence/MANIFEST.md`
-9. the active run's `PROMPT.md`, `RUN.md`, `ACCEPTANCE.md`, and `CURRENT-STATE-RECEIPT.md`
+4. `authority/CHANGELOG.md`
+5. `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md`
+6. `authority/receipts/CONV-002-NEXT-50X50.md`
+7. `authority/SHOP-TAXONOMY-CONTRACT.json`
+8. `authority/surface-contract.md`
+9. `authority/ids-plan.md`
+10. `authority/oluk-make-philosophy.md`
+11. `authority/oluk-pdp-architecture.md`
+12. `make-sessions/mf03-experience-convergence/MANIFEST.md`
+13. the active run's `PROMPT.md`, `RUN.md`, `ACCEPTANCE.md`, and `CURRENT-STATE-RECEIPT.md`
 
-The active control state is `CONV-001_APPROVED_WITH_CORRECTIONS`. The decisions and methodology are champion authority; every newly reconciled Figma component/page and every Sites surface remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. MF-01A material/anatomy relationships persist through every later run. MF-02 and later boards supply named deltas and must never be treated as whole-state replacement snapshots. Historical MF-03 v2/v3 remain rejected comparison evidence, not current visual authority.
+The active control state is `CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED`. MF runs are paired Figma + Codex Sites candidate runs that advance design, commerce, experience and UX/UI together. The decisions and inherited MF-01A relationships are champion authority; every reconciled Figma component/page, proof and Sites surface remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. Candidate verification is not champion approval, publication, deployment or runtime authority. Historical MF-03 v2/v3 remain rejected comparison evidence.
 
-## CONV-001 operating boundary
+## CONV-003 operating boundary
 
-- Work on `codex/oluk-authority-convergence`, based on `codex/fc01-candidate-foundation-convergence` at `0013033ef941ee83303bf79f7b970d1d05f0dcf5`.
-- Use the 4 active convergence collections/86 variables. The 3 legacy/quarantined collections/128 variables are archived provenance and must not be deleted or rebound into new work.
-- The canonical candidate source graph is registered in `authority/ARTIFACT-REGISTRY.json`. Page candidates instantiate it; they do not redraw it locally.
-- Sites may implement the MF-03A/MF-03B/MF-04 route surfaces as private candidates using the canonical source graph. Keep candidate/runtime ownership explicit, preserve exact-source receipts, and do not make the site public, claim production authority or publish a later revision without the appropriate private-review gate.
-- Treat `626:11760` as the master anatomy/state reservoir, not literal token or copy authority. Every `90 CAPS`, unsupported performance claim, generic shadow and undersized type in source material is rejected.
-- Treat `717:15468` as hero layout/composition authority only after its metric correction to `90 SERVINGS`. Merge the complete data from `626:7994`, including `IN STOCK` and `OPENLAB VERIFIED`, into the purpose-built HeroDecisionSurface. `713:1065` is a Hero component with PurchasePanel geometry, not Compact, and remains provenance only.
-- Preserve the commerce taxonomy `SARMs / Prohormones / Research Chemicals / Stacks`. Alternative OpenLab taxonomies are separate and may not replace it.
-- Treat the dossier Product/Facts/Composition treatment as a non-interactive visual index only. Do not use tab, tablist or active-tab semantics and do not imply view switching.
-- Preserve the proposed `--oluk-*` map only as the locally implemented review candidate `CANDIDATE_CONVERGENCE_v0`; do not present it as approved, published, promoted or runtime authority.
-- Preserve all 15 rejected-v3 comparison routes. Candidate review anchors are `/review#foundation`, `/review#mf02b-provenance`, `/review#mf02b-atoms`, `/review#mf02b-card-family`, `/review#mf02b-compact-states`, `/review#mf02b-compact-default`, `/review#mf02b-horizontal`, `/review#mf02b-purchase-panel`, `/review#mf02b-assurance`, `/review#mf02b-six-icons`, `/review#mf02b-related-rail`, `/review#mf02b-responsive-ledger`, `/review#mf02b-dossier`, `/review#baseline-routes`, and `/review#mf02b-selection-receipt`.
-- Use the approved trust-rail fixture copy and realistic rendered reviews on the customer surfaces. Keep the fixture-versus-runtime distinction in documentation and review control; do not expose backend vocabulary such as `GOVERNED`, `SOURCE-BOUND`, `DESIGN FIXTURE`, `DEMO STATE` or `NOT CONNECTED` in customer UI.
-- Preserve the exact customer metric `90 SERVINGS`; `90 CAPS` is rejected.
-- The dark footer is the sole inverse surface in this lane. Every other customer surface remains in the light system.
-- Latest containment verification on 2026-08-11: a later access-policy drift at revision 6 was observed as `public` and corrected to revision 7 `custom`; exactly one allowed user is the current owner, with zero groups, zero external visitors, and anonymous `/` and `/review` returning HTTP `401`. Sites version 5 continues to serve exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; `/review` is the candidate surface while the other 14 routes remain the rejected-v3 comparison baseline. Do not change owner-only access, import candidate code into customer routes, or promote the foundation.
-- `551:27148` is historical correction evidence. The reconciled Dossier source `750:182` and RelatedRail source `753:18136` are canonical candidates, still requiring artifact-specific human review.
-- Do not mutate Shopper SSR, WooCommerce, Initiator/payment behavior or C2. Those require later explicit authority and the appropriate runtime workflow.
+- Work only in the assigned clean `codex/*` worktree. Preserve unrelated user changes and historical authority.
+- Use the 4 active convergence collections/98 variables. The 3 legacy/quarantined collections/128 variables remain archived provenance and must not be deleted or rebound into new work. The only literal-paint exceptions are the two exact MF-01A gradients governed by `DEC-MEDIA-003`.
+- The canonical candidate source graph is registered at Figma `732:2897` and in `authority/ARTIFACT-REGISTRY.json`. Page and Sites candidates instantiate or import the canonical graph; they do not redraw canonical components locally.
+- The current Sites candidate contains 31 routes covering site, Shop, PDP, OpenLab/evidence, owner review and inert bag-through-retry transaction presentation. The exact route list and four-width receipt are in `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md`.
+- `authority/SHOP-TAXONOMY-CONTRACT.json` is read-only design input, not runtime authority. Shopper SSR owns the visible shell/header and Shop presentation; Woo owns category/tag slugs plus price, stock and purchasability; owner-locked product truth projected through tools-service owns form and source-owned quantity metrics; Shopper SSR owns goal-route normalization.
+- Preserve family navigation as `SARMs / Research Chemicals / Prohormones / Stacks`. Keep family, goal, form, servings/pack and availability as independent filter dimensions. Header destinations and utilities are shell information architecture, not a flat copy of Shop filters.
+- Repeated MK-2866 Vertical fixtures are accepted for component-contract proof. Product-slot diversification belongs to runtime catalogue publication. Fixtures never authorize fabricated product or evidence truth.
+- Populate every canonical card/hero media chamber with a confirmed render so adaptive crop, scale and safe area are testable. PurchasePanel has no media chamber; its media-population result is `NOT_APPLICABLE`, and no chamber may be invented for it.
+- Treat `626:11760` as the persistent anatomy/state reservoir, not literal token or copy authority. Every `90 CAPS`, unsupported performance claim, generic shadow and off-contract material remains rejected.
+- Treat `717:15468` as hero layout/composition authority only after the `90 SERVINGS` correction. Merge complete data from `626:7994` into the purpose-built HeroDecisionSurface. `713:1065` is provenance-only Hero-with-PurchasePanel geometry, not Compact.
+- Keep Dossier Product/Facts/Composition behavior truthful to the candidate implementation. Static visual-index specimens must not claim interactive switching; interactive candidates must expose the exact local states and accessibility proof recorded by the active run.
+- Keep fixture/provenance/governance labels out of customer UI. Owner-only review tooling remains separate from `/reviews` and every customer route.
+- Preserve `90 SERVINGS`; `90 CAPS` is rejected. Preserve the dark footer as the sole persistent inverse surface; all other customer surfaces remain in the light system.
+- Figma pages `672:2`–`672:26`, canonical components and MF-09/MF-10 evidence remain unpublished. Do not publish variables/components, activate Code Connect, deploy Sites, change access, or claim champion promotion until the exact MF-10 artifact receives explicit human approval and a separate MF++ authorization is recorded.
+- Do not mutate or connect Shopper SSR, WooCommerce, tools-service, OpenLab runtime, inventory, cart, Initiator, checkout/payment processors, C2, telemetry, DNS or release infrastructure. Each requires a later owner-specific runtime packet and explicit authorization.
 
 ## Historical MF-01A hard boundary
 
@@ -73,9 +76,11 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 
 ## Make versus runtime
 
-Make designs static customer-facing compositions first. Local visual interaction may follow after human selection. Do not introduce production callbacks, APIs, inventory ownership, cart/payment plumbing, routing architecture, telemetry, loading/error infrastructure, React, or Code Connect in MF-01A or MF-01B.
+The current lane pairs Figma with Codex Sites. React, shared route modules and deterministic local state are permitted implementation machinery for the private Sites candidate; the historical MF-01A/MF-01B no-React boundary is not a ban on the current Codex Sites candidate.
 
-Make-generated code is disposable prototype machinery. It never becomes runtime authority.
+Candidate code must remain presentation-only. Do not add production callbacks, live APIs, runtime inventory ownership, Woo/cart mutation, checkout/payment plumbing, C2 integration, telemetry, deployment or Code Connect. Local empty, unavailable, quantity, filter, search, tab, failure and retry states must be deterministic and must not imply a live owner connection.
+
+Make-generated code remains disposable prototype machinery. Codex Sites candidate code is stronger review and translation evidence, but it still never becomes production runtime authority merely by existing, building or passing MF-09.
 
 ## Change discipline
 

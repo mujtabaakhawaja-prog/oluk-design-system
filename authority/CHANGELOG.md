@@ -56,3 +56,26 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Browser QA passes `/shop` and `/review` at 1440/1024/768/390 with zero document overflow, zero clipped cards/panels, four non-overlapping qualitative chips, no visible `90 CAPS` and no governance copy in the tested roots.
 - State advances to `FIGMA_RECEIPT_VERIFIED · REPOSITORY_VALIDATED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
 - This is bounded CONV-002 proof, not the complete MF-09 route/state matrix. Full MF-09, MF-10 and later publication/runtime gates remain open; deployment remains `NONE`.
+
+## 2026-08-12 — CONV-003 paired Figma + Codex Sites candidate completion
+
+- Appended four champion decisions without rewriting earlier authority:
+  - `DEC-TAXONOMY-001` separates runtime-owned family taxonomy (`SARMs / Research Chemicals / Prohormones / Stacks`) from independent goal, form, servings/pack and availability facets while preserving the established header as shell information architecture.
+  - `DEC-FIXTURE-001` accepts repeated MK-2866 Vertical fixtures for component-contract proof and leaves product-slot diversification to runtime publication.
+  - `DEC-RUN-002` defines MF runs as paired Figma + Codex Sites candidates that advance design, commerce, experience and UX/UI together while retaining separate runtime gates.
+  - `DEC-MEDIA-004` requires populated adaptive chambers wherever a chamber exists and records PurchasePanel media as `NOT_APPLICABLE` because PurchasePanel has no chamber by design.
+- Projected all system pages `672:2`–`672:26`, the canonical graph `732:2897`, instance review `763:50`, four anchor route surfaces `764:50`–`767:50`, MF-09 proof pages `672:14`, `672:15` and `672:24`, and the existing Page 25 receipts into the current-state and artifact registries.
+- Completed the 50×50 candidate matrix: `FG-NEXT-001`–`048` and `CX-NEXT-001`–`047` are `VERIFIED`; the five publication/runtime items remain `BLOCKED`.
+- Recorded the 31-route Codex Sites candidate, four-width MF-09 matrix, shared component/provenance/taxonomy graph, inert bag-through-retry transaction presentation and local validation tooling.
+- Added `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md` as the durable completion and gate receipt.
+- The final unpublished MF-10 approval candidate is registered at Figma node `888:304`; the integrated repository commit remains `__CONV003_COMMIT_SHA_PENDING__`. The node is candidate evidence, not champion approval or publication authority.
+
+### Validation and gate
+
+- Candidate projection: build, typecheck, lint, tests and token/provenance/taxonomy/visual/MF-09 proof contracts are recorded `PASS` across 31 routes and 1440/1024/768/390.
+- Browser receipts record `124/124` geometry cases, `62/62` accessibility cases, `27/27` deterministic interaction cases, and `30/30` customer routes with zero WCAG AA violation rules, zero 200% reflow overflow and zero long-copy failures. Enhanced AAA contrast remains a manual-review warning rather than a false automated pass claim.
+- Integrated validation passes typecheck, lint, the 31-route production build and `38/38` tests. Asset/font budgets pass `11/11`; customer-copy and locked-truth checks pass `8/8` across all 30 customer routes.
+- Bounded contract output remains explicit: provenance is `63/63`, taxonomy is `5/5`, and all `124` route-width images are captured but not champion-reviewed. The token checker recognizes and individually documents all `98/98` active variables with `0` pending inventory.
+- State advances to `CONV003_MF09_MF10_CANDIDATE_VERIFIED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
+- Champion approval has not occurred. Figma publication, Code Connect, production adoption, commerce/evidence/inventory/checkout/payment integration, telemetry and release remain blocked behind the exact MF-10 artifact and separate MF++ authorization.
+- Deployment remains `NONE`; runtime authority remains `NONE`.

@@ -166,6 +166,48 @@
       "appliesTo": ["bounded ProductCommerceCard media chambers", "Figma outer chamber paint", "Figma contact shelf paint", "CONV-002 receipts"],
       "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-002"],
       "supersedes": []
+    },
+    {
+      "id": "DEC-TAXONOMY-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Shop discovery preserves the runtime-owned family taxonomy (SARMs, Research Chemicals, Prohormones and Stacks) and models goal, form, servings or pack size, and availability as independent, combinable facets. The established header navigation remains the shell information architecture; category navigation and filter facets must not be collapsed into one mixed taxonomy. Figma and Codex Sites consume a read-only contract and do not become live catalogue or inventory authority.",
+      "sources": ["authority/SHOP-TAXONOMY-CONTRACT.json", "561:41860", "754:18224", "765:50"],
+      "appliesTo": ["SiteHeader", "Shop", "commerce discovery", "goal-led discovery", "taxonomy fixtures", "Codex Sites"],
+      "runtimeOwnership": ["Woo catalogue families and product fields", "Shopper/runtime header navigation", "runtime inventory and purchasability"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-FIXTURE-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Repeated MK-2866 Vertical-card fixture data is acceptable when the review job is to prove the shared component contract, geometry, material, responsive behavior or states. Product-slot diversification belongs to runtime publication and catalogue data; it is not required to validate the Vertical contract and never authorizes fabricated product truth.",
+      "sources": ["626:11760", "743:50", "763:50", "764:50", "765:50", "766:50"],
+      "appliesTo": ["ProductCommerceCard / Vertical", "component review boards", "Homepage", "Shop", "PDP", "deterministic fixtures"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-RUN-002",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "MF runs are paired Figma and Codex Sites candidate runs. Each run advances design, commerce, experience and UX/UI together through synchronized Figma, repository and proof projections. This paired candidate work finishes what Figma Make began, but it remains presentation authority only: publication, production adoption and every live runtime owner remain separately gated behind artifact-specific MF-10 champion approval and a later independently authorized MF++ packet.",
+      "appliesTo": ["MF-03A", "MF-03B", "MF-04", "MF-05", "MF-05A", "MF-06", "MF-07", "MF-09", "MF-10", "Codex Sites", "Figma"],
+      "clarifies": ["DEC-RUN-001", "DEC-GATE-001", "DEC-PROMPT-001"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-004",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Every canonical card that owns a media chamber must use a populated, confirmed product render to prove adaptive crop, scale, safe area and the MF-01A atmospheric construction. Empty placeholder chambers are rejected for adaptive proof. PurchasePanel contains no media chamber by design, so media-population acceptance is not applicable to PurchasePanel; it must not receive an invented chamber.",
+      "sources": ["626:11821", "742:50", "743:50", "743:281", "743:520", "745:50", "773:141"],
+      "appliesTo": ["ProductMediaChamber", "Compact", "Vertical", "Featured", "Relation", "ProductDecisionHero", "media stress proof"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-003"],
+      "supersedes": []
     }
   ]
 }

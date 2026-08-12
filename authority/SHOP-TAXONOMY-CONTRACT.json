@@ -1,0 +1,466 @@
+{
+  "schemaVersion": "oluk.shop-taxonomy-contract.v1",
+  "contractId": "SHOP-TAXONOMY-001",
+  "status": "DESIGN_REVIEW_FIXTURE_READ_ONLY_NON_LIVE",
+  "capturedAt": "2026-08-12T13:11:36.556Z",
+  "environment": "production-read-only-audit",
+  "runtimeMutationAuthorized": false,
+  "publicationAuthorized": false,
+  "notes": [
+    "This contract records production taxonomy and owner-source boundaries for design and Codex Sites review.",
+    "It is not a live catalogue cache, inventory authority, publication receipt, or permission to mutate WooCommerce, Shopper SSR, or tools-service.",
+    "Navigation and filters are separate projections: primary navigation opens destinations; Shop facets combine within the catalogue surface."
+  ],
+  "sources": {
+    "liveShop": {
+      "url": "https://olympuslabs.uk/shop",
+      "method": "GET",
+      "observedStatus": 200,
+      "runtimeHeader": "x-olympus-shopper-runtime: shopper-ssr-preview",
+      "routeControlHeader": "x-olympus-edge-route-control: cloudflare-worker-lifecycle-route-control",
+      "renderOriginHeader": "x-render-origin-server: Render",
+      "observedAt": "2026-08-12T13:09:07Z",
+      "owner": "Shopper SSR visible shell"
+    },
+    "wooCategories": {
+      "url": "https://olympuslabs.uk/wp-json/wc/store/v1/products/categories",
+      "method": "GET",
+      "observedStatus": 200,
+      "owner": "WooCommerce catalogue ledger"
+    },
+    "wooTags": {
+      "url": "https://olympuslabs.uk/wp-json/wc/store/v1/products/tags",
+      "method": "GET",
+      "observedStatus": 200,
+      "owner": "WooCommerce catalogue ledger"
+    },
+    "wooAttributes": {
+      "url": "https://olympuslabs.uk/wp-json/wc/store/v1/products/attributes",
+      "method": "GET",
+      "observedStatus": 200,
+      "owner": "WooCommerce catalogue ledger",
+      "observedValues": [
+        { "id": 1, "name": "color", "taxonomy": "pa_color", "count": 0 },
+        { "id": 2, "name": "size", "taxonomy": "pa_size", "count": 0 }
+      ]
+    },
+    "wooProducts": {
+      "url": "https://olympuslabs.uk/wp-json/wc/store/v1/products?per_page=100",
+      "method": "GET",
+      "observedStatus": 200,
+      "owner": "WooCommerce catalogue, price and stock ledger",
+      "warning": "Product prose is not product-truth authority. Only identifiers, categories, tags, price and current stock/purchasability fields are consumed by this taxonomy contract."
+    },
+    "headerSource": {
+      "repository": "mujtabaakhawaja-prog/olympus-plugin-initiator",
+      "commit": "6e9a117bf7f08ed8997405fddfb3033a9020a585",
+      "paths": [
+        "apps/olympus-shopper-ui/src/components/header/HeaderStack.tsx:33-82",
+        "apps/olympus-shopper-ui/src/contracts/homepage-benchmark.ts:133-139"
+      ],
+      "owner": "Shopper SSR shell"
+    },
+    "shopSource": {
+      "repository": "mujtabaakhawaja-prog/olympus-plugin-initiator",
+      "commit": "6e9a117bf7f08ed8997405fddfb3033a9020a585",
+      "paths": [
+        "apps/olympus-shopper-ui/src/App.tsx:412-439",
+        "apps/olympus-shopper-ui/src/entry-server.tsx:14-46"
+      ],
+      "owner": "Shopper SSR Shop presentation"
+    },
+    "ownerLockedProductSource": {
+      "repository": "mujtabaakhawaja-prog/olympus-plugin-initiator",
+      "commit": "6e9a117bf7f08ed8997405fddfb3033a9020a585",
+      "paths": [
+        "apps/olympus-shopper-ui/src/contracts/product-runtime.ts:35-65",
+        "apps/olympus-shopper-ui/src/contracts/product-runtime.ts:67-116",
+        "apps/olympus-shopper-ui/src/server/product-truth-tools-service.ts:39-88",
+        "apps/olympus-shopper-ui/src/server/product-truth-tools-service.ts:91-145"
+      ],
+      "owner": "Owner-locked product truth projected through tools-service into Shopper SSR"
+    },
+    "goalRouteSource": {
+      "repository": "mujtabaakhawaja-prog/olympus-plugin-initiator",
+      "commit": "6e9a117bf7f08ed8997405fddfb3033a9020a585",
+      "paths": [
+        "apps/olympus-shopper-ui/app/quick-commerce/shop-goal-route-contract.ts:1-35",
+        "apps/olympus-shopper-ui/app/quick-commerce/shop-goal-route-contract.ts:57-83"
+      ],
+      "owner": "Shopper SSR goal-route normalization"
+    }
+  },
+  "sourcePrecedence": [
+    "Live production response establishes currently mounted navigation, Shop behavior and runtime identity.",
+    "Woo Store API owns current category slugs, tag slugs, price, stock and purchasability state.",
+    "Owner-locked ProductRuntimeContract owns form and source-owned quantity metrics; Woo prose and empty Woo attributes do not.",
+    "This contract normalizes those sources into deterministic design-review facets but does not become runtime authority."
+  ],
+  "header": {
+    "primaryNavigation": [
+      { "label": "SHOP", "href": "/shop", "kind": "destination" },
+      { "label": "OPEN LAB", "href": "/open-lab", "kind": "destination" },
+      { "label": "LAB RECORDS", "href": "/lab-reports", "kind": "destination" },
+      { "label": "WHOLESALE", "href": "/wholesale", "kind": "destination" },
+      { "label": "ABOUT", "href": "/about", "kind": "destination" }
+    ],
+    "actions": [
+      { "label": "SEARCH", "href": "/search", "kind": "utility" },
+      { "label": "BAG", "href": "/bag", "kind": "commerce-state" },
+      { "label": "YOUR ACCOUNT", "href": "/account", "kind": "account" }
+    ],
+    "notTaxonomy": [
+      "OPEN LAB",
+      "LAB RECORDS",
+      "WHOLESALE",
+      "ABOUT",
+      "SEARCH",
+      "BAG",
+      "YOUR ACCOUNT",
+      "LIGHT",
+      "DARK"
+    ]
+  },
+  "dimensions": {
+    "family": {
+      "kind": "woo-product-category",
+      "selection": "multi-select-within-dimension",
+      "combineAcrossDimensions": "AND",
+      "source": "sources.wooCategories",
+      "values": [
+        { "id": 155, "slug": "sarms", "label": "SARMs", "observedCount": 8 },
+        { "id": 151, "slug": "research-chemicals", "label": "Research Chemicals", "observedCount": 4 },
+        { "id": 157, "slug": "prohormones", "label": "Prohormones", "observedCount": 4 },
+        { "id": 156, "slug": "stacks", "label": "Stacks", "observedCount": 1 }
+      ],
+      "excludedValues": [
+        {
+          "id": 15,
+          "slug": "uncategorised",
+          "label": "Uncategorised",
+          "reason": "Administrative fallback is not a customer discovery family."
+        }
+      ]
+    },
+    "goal": {
+      "kind": "woo-product-tag-with-route-alias",
+      "selection": "multi-select-within-dimension",
+      "combineAcrossDimensions": "AND",
+      "source": "sources.wooTags",
+      "queryParam": "goal",
+      "unknownValueBehavior": "unfiltered",
+      "values": [
+        { "id": 195, "routeSlug": "strength", "wooTagSlug": "strength", "label": "Strength", "observedCount": 8 },
+        { "id": 199, "routeSlug": "body-composition", "wooTagSlug": "body-composition", "label": "Body composition", "observedCount": 2 },
+        { "id": 198, "routeSlug": "bulk", "wooTagSlug": "bulking", "label": "Bulk", "observedCount": 4 },
+        { "id": 196, "routeSlug": "cutting", "wooTagSlug": "cutting", "label": "Cutting", "observedCount": 1 },
+        { "id": 197, "routeSlug": "endurance", "wooTagSlug": "endurance", "label": "Endurance", "observedCount": 1 }
+      ]
+    },
+    "form": {
+      "kind": "owner-locked-product-field",
+      "selection": "multi-select-within-dimension",
+      "combineAcrossDimensions": "AND",
+      "source": "ProductRuntimeContract.form",
+      "values": [
+        { "slug": "capsules", "label": "Capsules" }
+      ],
+      "wooAttributeAvailable": false,
+      "warning": "Woo product attributes currently contain only zero-count color and size taxonomies. Form must not be inferred from Woo prose."
+    },
+    "servings": {
+      "kind": "derived-owner-locked-quantity-metric",
+      "selection": "multi-select-within-dimension",
+      "combineAcrossDimensions": "AND",
+      "source": "ProductRuntimeContract.metrics[QTY] where source is SOURCE_OWNED",
+      "values": [
+        { "count": 30, "label": "30 servings", "observedSourceTokens": ["30 CAPS"] },
+        { "count": 60, "label": "60 servings", "observedSourceTokens": ["60 CAPS"] },
+        { "count": 90, "label": "90 servings", "observedSourceTokens": ["90 CAPS", "90 SERVINGS"] }
+      ],
+      "packAlias": true,
+      "wooAttributeAvailable": false,
+      "warning": "The count is a review normalization of a source-owned pack metric. Customer publication must preserve product truth and may not parse Woo marketing prose."
+    },
+    "availability": {
+      "kind": "dynamic-runtime-state",
+      "selection": "multi-select-within-dimension",
+      "combineAcrossDimensions": "AND",
+      "source": "Woo Store API is_in_stock/is_on_backorder/is_purchasable and ProductCommerceCard availability",
+      "cachePolicy": "never freeze this audit snapshot as live inventory",
+      "values": [
+        { "slug": "in-stock", "label": "In stock" },
+        { "slug": "out-of-stock", "label": "Out of stock" },
+        { "slug": "on-backorder", "label": "On backorder" },
+        { "slug": "unavailable", "label": "Unavailable" },
+        { "slug": "unknown", "label": "Availability pending" }
+      ]
+    }
+  },
+  "normalizationRules": {
+    "familyAliases": {
+      "SARM": "sarms",
+      "SARMs": "sarms",
+      "Research Chemical": "research-chemicals",
+      "Research Chemicals": "research-chemicals",
+      "Prohormone": "prohormones",
+      "Prohormones": "prohormones",
+      "Stack": "stacks",
+      "Stacks": "stacks"
+    },
+    "goalAliases": {
+      "bulk": "bulking"
+    },
+    "selectionLaw": "OR within one dimension; AND across different dimensions.",
+    "emptySelectionLaw": "An empty dimension does not restrict the result.",
+    "unknownSelectionLaw": "Ignore unknown query values and preserve the unfiltered dimension; do not invent a zero-result authority state.",
+    "identityLaw": "Join products by canonical Woo product ID first, then unique SKU, then normalized slug. Duplicate SKU values require an explicit exception and must not silently merge products."
+  },
+  "productProjection": {
+    "requiredFields": [
+      "fixtureId",
+      "displayName",
+      "displayAlias",
+      "customerPath",
+      "imageSrc",
+      "imageSourceUrl",
+      "imageAlt",
+      "capturedPriceMinor",
+      "currencyCode",
+      "familySlugs",
+      "goalTagSlugs",
+      "formSlug",
+      "servingsCount",
+      "availabilityState",
+      "reviewOnly",
+      "liveAuthority"
+    ],
+    "identityFields": ["wooProductId", "sku", "wooSlug"],
+    "runtimeVolatileFields": ["availabilityState", "capturedPriceMinor"],
+    "nullableUntilOwnerLocked": ["formSlug", "servingsCount"],
+    "forbiddenDerivations": [
+      "Do not derive form or servings from Woo short_description or description.",
+      "Do not treat singular/plural className strings as separate families.",
+      "Do not present design fixtures as current stock or purchasability."
+    ]
+  },
+  "deterministicFixtures": {
+    "authority": "DESIGN_REVIEW_FIXTURE_READ_ONLY_NON_LIVE",
+    "source": "A deterministic projection of the audited values for component and filter testing only.",
+    "products": [
+      {
+        "fixtureId": "mk-2866",
+        "wooProductId": 7384,
+        "wooSlug": "mk-2866-ostarine",
+        "sku": "80529-01",
+        "displayName": "MK-2866",
+        "displayAlias": "Ostarine",
+        "customerPath": "/product/mk-2866-ostarine",
+        "imageSrc": "/assets/products/shop/mk-2866.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2018/05/bottle-01-300x450.webp",
+        "imageAlt": "MK-2866 Ostarine bottle",
+        "capturedPriceMinor": 4300,
+        "currencyCode": "GBP",
+        "familySlugs": ["sarms"],
+        "goalTagSlugs": ["strength"],
+        "formSlug": "capsules",
+        "servingsCount": 90,
+        "availabilityState": "in-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "mk-677",
+        "wooProductId": 7413,
+        "wooSlug": "mk-677",
+        "sku": "80529-02",
+        "displayName": "MK-677",
+        "displayAlias": "Ibutamoren",
+        "customerPath": "/product/mk-677",
+        "imageSrc": "/assets/products/shop/mk-677.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-03-300x450.webp",
+        "imageAlt": "MK-677 bottle",
+        "capturedPriceMinor": 5700,
+        "currencyCode": "GBP",
+        "familySlugs": ["research-chemicals"],
+        "goalTagSlugs": ["body-composition"],
+        "formSlug": "capsules",
+        "servingsCount": 90,
+        "availabilityState": "in-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "rad-140",
+        "wooProductId": 7435,
+        "wooSlug": "rad140",
+        "sku": "80529-05",
+        "displayName": "RAD-140",
+        "displayAlias": "Testolone",
+        "customerPath": "/product/rad140",
+        "imageSrc": "/assets/products/shop/rad-140.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-09-300x450.webp",
+        "imageAlt": "RAD-140 Testolone bottle",
+        "capturedPriceMinor": 4300,
+        "currencyCode": "GBP",
+        "familySlugs": ["sarms"],
+        "goalTagSlugs": ["strength"],
+        "formSlug": "capsules",
+        "servingsCount": 60,
+        "availabilityState": "in-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "m-sten",
+        "wooProductId": 7428,
+        "wooSlug": "m-sten",
+        "sku": "80529-10",
+        "displayName": "M-STEN",
+        "displayAlias": "Methylstenbolone",
+        "customerPath": "/product/m-sten",
+        "imageSrc": "/assets/products/shop/m-sten.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-15-300x450.webp",
+        "imageAlt": "M-STEN bottle",
+        "capturedPriceMinor": 5500,
+        "currencyCode": "GBP",
+        "familySlugs": ["prohormones"],
+        "goalTagSlugs": ["bulking"],
+        "formSlug": "capsules",
+        "servingsCount": 90,
+        "availabilityState": "in-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "gw-501516",
+        "wooProductId": 8817,
+        "wooSlug": "gw-501516",
+        "sku": null,
+        "displayName": "GW-501516",
+        "displayAlias": "Cardarine",
+        "customerPath": "/product/gw-501516",
+        "imageSrc": "/assets/products/shop/gw-501516.jpeg",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/06/WhatsApp-Image-2025-10-18-at-19.27.24-1-300x450.jpeg",
+        "imageAlt": "GW-501516 bottle",
+        "capturedPriceMinor": 3500,
+        "currencyCode": "GBP",
+        "familySlugs": ["research-chemicals"],
+        "goalTagSlugs": ["endurance"],
+        "formSlug": "capsules",
+        "servingsCount": 90,
+        "availabilityState": "in-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "ment",
+        "wooProductId": 7446,
+        "wooSlug": "trestolone",
+        "sku": "80529-08",
+        "displayName": "MENT",
+        "displayAlias": "Trestolone",
+        "customerPath": "/product/trestolone",
+        "imageSrc": "/assets/products/shop/ment.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-11-300x450.webp",
+        "imageAlt": "MENT Trestolone bottle",
+        "capturedPriceMinor": 5500,
+        "currencyCode": "GBP",
+        "familySlugs": ["research-chemicals"],
+        "goalTagSlugs": ["strength"],
+        "formSlug": "capsules",
+        "servingsCount": 30,
+        "availabilityState": "in-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "epistane",
+        "wooProductId": 7408,
+        "wooSlug": "epistane",
+        "sku": "80529-12",
+        "displayName": "EPISTANE",
+        "displayAlias": null,
+        "customerPath": "/product/epistane",
+        "imageSrc": "/assets/products/shop/epistane.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-19-300x450.webp",
+        "imageAlt": "Epistane bottle",
+        "capturedPriceMinor": 5500,
+        "currencyCode": "GBP",
+        "familySlugs": ["prohormones"],
+        "goalTagSlugs": ["bulking"],
+        "formSlug": "capsules",
+        "servingsCount": null,
+        "availabilityState": "out-of-stock",
+        "reviewOnly": true,
+        "liveAuthority": false
+      },
+      {
+        "fixtureId": "stack-source-gap",
+        "wooProductId": 7423,
+        "wooSlug": "lgd-4033-mk-677",
+        "sku": "80529-06",
+        "displayName": "LGD-4033 / MK-677",
+        "displayAlias": "Stack",
+        "customerPath": "/product/lgd-4033-mk-677",
+        "imageSrc": "/assets/products/shop/lgd-4033-mk-677.webp",
+        "imageSourceUrl": "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-21-300x450.webp",
+        "imageAlt": "LGD-4033 and MK-677 stack bottle",
+        "capturedPriceMinor": 6000,
+        "currencyCode": "GBP",
+        "familySlugs": ["research-chemicals", "sarms", "stacks"],
+        "goalTagSlugs": ["body-composition"],
+        "formSlug": null,
+        "servingsCount": null,
+        "availabilityState": "unknown",
+        "reviewOnly": true,
+        "liveAuthority": false
+      }
+    ]
+  },
+  "separationRules": [
+    "Primary header navigation contains route destinations, not a flat copy of Shop filters.",
+    "Family/category, goal, form, servings/pack and availability remain separate dimensions.",
+    "Availability is a dynamic runtime fact; the design fixture exists only to prove states.",
+    "Vertical-card product diversification is not required to establish the component contract, but taxonomy fixtures must prove filtering behavior.",
+    "Review labels and provenance must not appear on customer-facing routes."
+  ],
+  "gaps": [
+    {
+      "id": "SHOP-TAX-GAP-001",
+      "severity": "high",
+      "finding": "The live Shop generates one flat filter list from ProductRuntimeContract.className.",
+      "impact": "Singular and plural runtime strings create duplicate pseudo-families: SARMS/SARM, PROHORMONES/PROHORMONE, and STACK instead of Stacks."
+    },
+    {
+      "id": "SHOP-TAX-GAP-002",
+      "severity": "high",
+      "finding": "The live Shop accepts `search` in SSR props but does not consume `?goal=` in ShopCatalogueRoute.",
+      "impact": "`/shop?goal=strength` renders the same 15-product unfiltered catalogue."
+    },
+    {
+      "id": "SHOP-TAX-GAP-003",
+      "severity": "high",
+      "finding": "Woo contains no populated form or servings attributes.",
+      "impact": "Those facets require owner-locked product projections and may not be inferred from Woo prose."
+    },
+    {
+      "id": "SHOP-TAX-GAP-004",
+      "severity": "high",
+      "finding": "SKU 80529-06 is shared by Woo products 8816 and 7423 in the observed Store API response.",
+      "impact": "The current merge path can associate the ENDURASHRED fallback identity with the wrong projected Woo product ID. Product ID must outrank SKU and the collision needs an explicit exception."
+    },
+    {
+      "id": "SHOP-TAX-GAP-005",
+      "severity": "medium",
+      "finding": "The historical goal-route product list contains test/mutation records and can drift from the live Woo tag set.",
+      "impact": "Goal facets should normalize stable tag slugs and filter the current projected catalogue rather than own a hardcoded product ledger."
+    },
+    {
+      "id": "SHOP-TAX-GAP-006",
+      "severity": "medium",
+      "finding": "The Woo `uncategorised` fallback and mutation-proof products are not customer taxonomy.",
+      "impact": "Both require explicit exclusion from customer discovery fixtures and presentation."
+    }
+  ]
+}

@@ -1,0 +1,1259 @@
+{
+  "schemaVersion": "oluk.visual-baseline-manifest.v1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "authority": {
+    "run": "MF-09",
+    "publication": "NONE",
+    "promotion": "HUMAN_REVIEW_REQUIRED"
+  },
+  "routeCount": 31,
+  "widthCount": 4,
+  "comparison": {
+    "hashAlgorithm": "sha256",
+    "pixelDiff": "PENDING_THRESHOLD_DECISION",
+    "rule": "Only champion-reviewed captures become REVIEWED_BASELINE."
+  },
+  "cases": [
+    {
+      "id": "home--1440",
+      "route": "/",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/home--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "3a5c74e1fa56159c9c466ad7d80afe3709d67dc0b31f3a5fca8e75f843b22464"
+    },
+    {
+      "id": "home--1024",
+      "route": "/",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/home--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "9ae5c05ac07bfceb4cf56e379216038e98eb99292d1325246d4b5640da614e29"
+    },
+    {
+      "id": "home--768",
+      "route": "/",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/home--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "dca86c0cfd4f67a2df0df12e426de5c05e9e3ff3a5ce590c0fb986a1e62a0996"
+    },
+    {
+      "id": "home--390",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/home--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "fa87c7e0dd23535577ff04c3a8cf9e3a86bd6a10bac1d598008cc9f05e862cfd"
+    },
+    {
+      "id": "about--1440",
+      "route": "/about",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/about--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "540d5458d30407c5b51ccba5558fee02de60d784d9a18040a3af8fbce85d8528"
+    },
+    {
+      "id": "about--1024",
+      "route": "/about",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/about--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "b1430f22708b9daa9b2ec7b0b791117f8c133e4e9dc3d5b9fdf11bc2aa28e53c"
+    },
+    {
+      "id": "about--768",
+      "route": "/about",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/about--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "e5e1e075e0ba48506ea4b3c5afcbb73a9b44bda5e43f379a5af0f7502044c7d8"
+    },
+    {
+      "id": "about--390",
+      "route": "/about",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/about--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "a851bbf309f76e21cbeb6139356f202d3a2f7b89601bdf7c54fc8b65cd8ff323"
+    },
+    {
+      "id": "about--evidence-os--1440",
+      "route": "/about/evidence-os",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/about--evidence-os--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "fd74741d796667fa258081c6dbea15c33637a0af249232b956c8220bf2f670c3"
+    },
+    {
+      "id": "about--evidence-os--1024",
+      "route": "/about/evidence-os",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/about--evidence-os--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1044ad647e8277cac457bb22a5a37a7e12a2292c0923ecbba59915567338ffd2"
+    },
+    {
+      "id": "about--evidence-os--768",
+      "route": "/about/evidence-os",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/about--evidence-os--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "eb90e449116f8c7bef966b32c6165c3fc678de5ce1803c0e690355523bd12d91"
+    },
+    {
+      "id": "about--evidence-os--390",
+      "route": "/about/evidence-os",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/about--evidence-os--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "d8de52a437d48939ac4c45c7c450bb11c5de80a22137f2f71f3f545fc5f115e3"
+    },
+    {
+      "id": "account--1440",
+      "route": "/account",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/account--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "444a6718c7c2f7db0782770e32ed991f476aa681ff1d437687b57070b85273a8"
+    },
+    {
+      "id": "account--1024",
+      "route": "/account",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "a535553f4094c9c5f29cf95ba44adf99db802d05d5cc8332426740a9586473de"
+    },
+    {
+      "id": "account--768",
+      "route": "/account",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "40452fac3b124fb43b9b031de34d2bf0ea642e3e4f3d87859b18e61ce69e70fd"
+    },
+    {
+      "id": "account--390",
+      "route": "/account",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/account--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "ae90692cc74b3bba1369f2e59f35c5fae69c1da5fc84ce2e9e47e27cb95c3fcc"
+    },
+    {
+      "id": "bag--1440",
+      "route": "/bag",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/bag--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "26841a29afc229974b03be79e2b1c3a54d910d35c30aed1959e575e44ed3b926"
+    },
+    {
+      "id": "bag--1024",
+      "route": "/bag",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/bag--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "4663953461f463de135e3ae5f43654d811fc1d51d705b36d7f404815558873ef"
+    },
+    {
+      "id": "bag--768",
+      "route": "/bag",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/bag--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "bb80d0692aa0e6fb119feb6805b0a4cc78d56325638e23a02b0cb9c27eff1495"
+    },
+    {
+      "id": "bag--390",
+      "route": "/bag",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/bag--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "66b0c9b32b75d972cc9e0540fb4e2abcea336e49a0277181220dfec4023ff8af"
+    },
+    {
+      "id": "checkout--1440",
+      "route": "/checkout",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "54295e239d9f4daa09d4e2abc5732d7d7bff51d5049a19b8d02cca4773f5c2a7"
+    },
+    {
+      "id": "checkout--1024",
+      "route": "/checkout",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "65e5538a9cc4da1eec7567a6299ca1e40315de2b0d89341f1f7dc775f82febf5"
+    },
+    {
+      "id": "checkout--768",
+      "route": "/checkout",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c70665bb4ec385b9216fac6b47870938073ae4ef387d82cf4e342eb351f3bbc9"
+    },
+    {
+      "id": "checkout--390",
+      "route": "/checkout",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1f1aa37bd3771e2f73882734799a85efcab59cb7dae5b832805ad5d5c25c9c7c"
+    },
+    {
+      "id": "checkout--confirmation--1440",
+      "route": "/checkout/confirmation",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--confirmation--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "badc8b16061e0fd53d8ff1ff6e14a4ad8194f9f4aedde15a9bc44ce3ede1e94d"
+    },
+    {
+      "id": "checkout--confirmation--1024",
+      "route": "/checkout/confirmation",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--confirmation--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f7695338fca517802b3fbc7c5992d6228ae2ceb29a75a19907de764f256741e6"
+    },
+    {
+      "id": "checkout--confirmation--768",
+      "route": "/checkout/confirmation",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--confirmation--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "7b3119646d5b32e8a02a516120afb8532d71947a30985fbbb7f203a2b8f8e11a"
+    },
+    {
+      "id": "checkout--confirmation--390",
+      "route": "/checkout/confirmation",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--confirmation--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f413b7577e9cb70cbbed01dd9f5be4eb125d2d3c7fefd521c5b1bdffb9bd096c"
+    },
+    {
+      "id": "checkout--delivery--1440",
+      "route": "/checkout/delivery",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--delivery--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "6a5f0896a0f4cf4d3509981ca9325398b208346a81b030cd93d19bf3bfcd7e0d"
+    },
+    {
+      "id": "checkout--delivery--1024",
+      "route": "/checkout/delivery",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--delivery--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "abb1a900ce13aa7f6466ce2c1d6c22c00fec2bdacb9661ab7e781fdcc0ba9c8e"
+    },
+    {
+      "id": "checkout--delivery--768",
+      "route": "/checkout/delivery",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--delivery--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1ff02e72bac33813c709a10767b028abcad032c347d88728342a5cf3f1a12f20"
+    },
+    {
+      "id": "checkout--delivery--390",
+      "route": "/checkout/delivery",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--delivery--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "6508e1987fee7683c9e4d759c32dc5c1f3b43b3fa40d375f7ba8b86b18cc0b5e"
+    },
+    {
+      "id": "checkout--failure--1440",
+      "route": "/checkout/failure",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--failure--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "0c05af1c3ce51064c1e9a32299d86a1d1348272aaf9c48c2cb79904334167de5"
+    },
+    {
+      "id": "checkout--failure--1024",
+      "route": "/checkout/failure",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--failure--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "44d421882c63e84dfef702668e41157fcba1d6cd17f63e728f419a6aa665b915"
+    },
+    {
+      "id": "checkout--failure--768",
+      "route": "/checkout/failure",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--failure--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "9fb7c4b15df9d589fe4e2f5e8d8e59839fdce58aa2237bda53b990c65a3223c0"
+    },
+    {
+      "id": "checkout--failure--390",
+      "route": "/checkout/failure",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--failure--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "b48980b117f79731e2ac49c5a42e466b61856061689544bb247ca02def9cb086"
+    },
+    {
+      "id": "checkout--order-pay--1440",
+      "route": "/checkout/order-pay",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--order-pay--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "2b8c7ab3864997ba33bb26050f008dfb06286d6a1d2f864deef239a0872f5289"
+    },
+    {
+      "id": "checkout--order-pay--1024",
+      "route": "/checkout/order-pay",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--order-pay--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c389723c2f20a06b89fcaae200dfcfae62a33ac16c11b9922eabba9ae830af29"
+    },
+    {
+      "id": "checkout--order-pay--768",
+      "route": "/checkout/order-pay",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--order-pay--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "fab4515138dd16cfa5ebe1564db5471a9696b4fb6c72ed3330f0eb253806187f"
+    },
+    {
+      "id": "checkout--order-pay--390",
+      "route": "/checkout/order-pay",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--order-pay--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "89406dccf4e03b274c01091dc831be095cea0d87a18d21707ccb8b4922abb6de"
+    },
+    {
+      "id": "checkout--payment-handoff--1440",
+      "route": "/checkout/payment-handoff",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment-handoff--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "2c144af94d1ef6644a72468ca7d8453ca1263280a109515ee74965cd4e288e11"
+    },
+    {
+      "id": "checkout--payment-handoff--1024",
+      "route": "/checkout/payment-handoff",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment-handoff--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "49ebf65479d12e779764affd68b5ee80a54d898a4aa10f1824c79806e3e74cbf"
+    },
+    {
+      "id": "checkout--payment-handoff--768",
+      "route": "/checkout/payment-handoff",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment-handoff--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "3f640b51d05e526d1da93576d5af7dbecfe955bc74efcd7deb14bf87537d1ca9"
+    },
+    {
+      "id": "checkout--payment-handoff--390",
+      "route": "/checkout/payment-handoff",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment-handoff--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c22a07d5c45e023857b47b7cc92d136f1ec2f551cc03e75981801ac1f690e251"
+    },
+    {
+      "id": "checkout--retry--1440",
+      "route": "/checkout/retry",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--retry--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "3ae85ed7c760addc50aa0ea13fce9765307912353d3fb68473c0d85ba847ab0f"
+    },
+    {
+      "id": "checkout--retry--1024",
+      "route": "/checkout/retry",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--retry--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1f89200fb4435ea49ed56246a210d48097561b254ff073c9f42d280547a57be3"
+    },
+    {
+      "id": "checkout--retry--768",
+      "route": "/checkout/retry",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--retry--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "e2ca27540d03cb2415e1a528fde7682f9feb2829a20c2e3a87af0e4c2e19e0ea"
+    },
+    {
+      "id": "checkout--retry--390",
+      "route": "/checkout/retry",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--retry--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1c1cc6808184c1c92ca5bc5819a46926fa9b515f8d3394580e5e57dac99013d8"
+    },
+    {
+      "id": "contact--1440",
+      "route": "/contact",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/contact--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "ec5a97737c205925744a754ab76283c4a7433f0bce1ac4bc7911e6175203280e"
+    },
+    {
+      "id": "contact--1024",
+      "route": "/contact",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/contact--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c8d4ac0d93c6735453babdb004971e8b1946634c6eb109cd78628b794b4eac64"
+    },
+    {
+      "id": "contact--768",
+      "route": "/contact",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/contact--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "bd8b5d0431163ddcf4cc3d78d630c7ae0db5552a8071247d8fdce47af2c354e4"
+    },
+    {
+      "id": "contact--390",
+      "route": "/contact",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/contact--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "8c3e608e9872b47394af8eb1467e871b5ae38e9bad8668e8f517e9be6d268379"
+    },
+    {
+      "id": "delivery--1440",
+      "route": "/delivery",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/delivery--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1951c506a33dc27ec0efb7807fabf5dd86748cf206287cf69470f90376ca606b"
+    },
+    {
+      "id": "delivery--1024",
+      "route": "/delivery",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/delivery--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "b4f07f964325819823899daaff2601749f04ab30b3091dc6a8f35a82058d2f01"
+    },
+    {
+      "id": "delivery--768",
+      "route": "/delivery",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/delivery--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f9b0420540b8f9f808e5dfc39913d08bd51953fa57d73c99c7d16cdfcfe0683f"
+    },
+    {
+      "id": "delivery--390",
+      "route": "/delivery",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/delivery--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f2b70b6865e1d28804520798c643921d5661c8fd74add4d8fb0953570a9bf810"
+    },
+    {
+      "id": "lab-reports--1440",
+      "route": "/lab-reports",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/lab-reports--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "11dbff79114502eb40fa50eb05398916b12e1ad4598ef70a6b02eff574466024"
+    },
+    {
+      "id": "lab-reports--1024",
+      "route": "/lab-reports",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/lab-reports--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "d45d4abff41a536faf6d37ea64737041ac16784341f4045030597bb77f7fd0bc"
+    },
+    {
+      "id": "lab-reports--768",
+      "route": "/lab-reports",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/lab-reports--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "e67dbc78621032c6352eca2fa18e828bed3f607511dd59b090c3e49662056471"
+    },
+    {
+      "id": "lab-reports--390",
+      "route": "/lab-reports",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/lab-reports--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f7559987166580fbe47f25b85864ad923f4d64811458630997eba22e1fe746d4"
+    },
+    {
+      "id": "open-lab--1440",
+      "route": "/open-lab",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "31d2c903b806372314e50e51e15f3fd6dcf2da675e4cc0141f4a950b8bf4a745"
+    },
+    {
+      "id": "open-lab--1024",
+      "route": "/open-lab",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "6b3ad0260f46c33f7c418c01b65d92d44f22ffe9e089d0a8a33b071bca6e2f8c"
+    },
+    {
+      "id": "open-lab--768",
+      "route": "/open-lab",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "86f5c55c180ec80521eb2ad364df0293d7bd18687ecee52e8437d58297985d1f"
+    },
+    {
+      "id": "open-lab--390",
+      "route": "/open-lab",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "017ba182a6c9c85c3b406b7aba57e26cb172de885d1cd5f1c79fb8f3b058b191"
+    },
+    {
+      "id": "open-lab--batch-lookup--1440",
+      "route": "/open-lab/batch-lookup",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--batch-lookup--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "dede2109081a42aa063e52194006f3c69a6281b3a14662dc07bdb4d340200599"
+    },
+    {
+      "id": "open-lab--batch-lookup--1024",
+      "route": "/open-lab/batch-lookup",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--batch-lookup--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "610bb8737a7693b87150cf9d10f2aec5fe678aaca9310e52238b05973c23af59"
+    },
+    {
+      "id": "open-lab--batch-lookup--768",
+      "route": "/open-lab/batch-lookup",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--batch-lookup--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "389e48d79ef042e7372c9fba9ee89d29a441076c701c34a08104b03a88466d94"
+    },
+    {
+      "id": "open-lab--batch-lookup--390",
+      "route": "/open-lab/batch-lookup",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--batch-lookup--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "addcb3d25c393bbb1509ad0967fe761951364b970eab3c96ba46faa4debec557"
+    },
+    {
+      "id": "open-lab--compare--1440",
+      "route": "/open-lab/compare",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compare--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "7b4a43d34221d8aab9543325320bcb98ccbf2f1db4d94ecc4dd3f2cdca495418"
+    },
+    {
+      "id": "open-lab--compare--1024",
+      "route": "/open-lab/compare",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compare--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "64825e61a67c7b234c330d3888c5668b024b87354fa5c455df43aa8f28cced68"
+    },
+    {
+      "id": "open-lab--compare--768",
+      "route": "/open-lab/compare",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compare--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "3e3718e76ad22f73702ec99ad374fc73ceb1eb906cb4685cf78c3eb9a1f009e1"
+    },
+    {
+      "id": "open-lab--compare--390",
+      "route": "/open-lab/compare",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compare--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c46626e3cf46e0326eaa1bc937f35daaac41b90f10be8d0f83e190e6a4724fd8"
+    },
+    {
+      "id": "open-lab--dossier--mk-2866--1440",
+      "route": "/open-lab/dossier/mk-2866",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dossier--mk-2866--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c297e33a096a5b1db8eb8f3d63f893aac66f90b9240519fe9fdc6af7e54a0414"
+    },
+    {
+      "id": "open-lab--dossier--mk-2866--1024",
+      "route": "/open-lab/dossier/mk-2866",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dossier--mk-2866--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "6e0ca6df964fa69217fd02d3556ab5af1283f1ab9a567355154f1dae8fdef4e6"
+    },
+    {
+      "id": "open-lab--dossier--mk-2866--768",
+      "route": "/open-lab/dossier/mk-2866",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dossier--mk-2866--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "042036b124ff30238a9de46957f68b60eb7952dff48205dbe325254e447e8b75"
+    },
+    {
+      "id": "open-lab--dossier--mk-2866--390",
+      "route": "/open-lab/dossier/mk-2866",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dossier--mk-2866--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "9d356d4e84428f5f8b21b09fa92faeea3abad9640443521bf4dae1f9ddadc3a5"
+    },
+    {
+      "id": "open-lab--methodology--1440",
+      "route": "/open-lab/methodology",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--methodology--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "c1b89f6fb3c1b9fb069a72171e68f7dd438b06af0280f29354b79ca56f541a1b"
+    },
+    {
+      "id": "open-lab--methodology--1024",
+      "route": "/open-lab/methodology",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--methodology--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "eeb43e5ce33c9ffa72c48f5662ee724c1497e9a8f48ef6505d99056d00509c69"
+    },
+    {
+      "id": "open-lab--methodology--768",
+      "route": "/open-lab/methodology",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--methodology--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "35219ebf8b549de1877a0266d9c3fc90a9803a33af53642d4839cc8cade91bae"
+    },
+    {
+      "id": "open-lab--methodology--390",
+      "route": "/open-lab/methodology",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--methodology--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "760bd624a3514431e1787033f037169f8984c2ffa53344e1a1864b6c50ca6fcd"
+    },
+    {
+      "id": "open-lab--records--1440",
+      "route": "/open-lab/records",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "11dbff79114502eb40fa50eb05398916b12e1ad4598ef70a6b02eff574466024"
+    },
+    {
+      "id": "open-lab--records--1024",
+      "route": "/open-lab/records",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "d45d4abff41a536faf6d37ea64737041ac16784341f4045030597bb77f7fd0bc"
+    },
+    {
+      "id": "open-lab--records--768",
+      "route": "/open-lab/records",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "e67dbc78621032c6352eca2fa18e828bed3f607511dd59b090c3e49662056471"
+    },
+    {
+      "id": "open-lab--records--390",
+      "route": "/open-lab/records",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f7559987166580fbe47f25b85864ad923f4d64811458630997eba22e1fe746d4"
+    },
+    {
+      "id": "open-lab--records--source-bound-record--1440",
+      "route": "/open-lab/records/source-bound-record",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--source-bound-record--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "bf502a064378863daf19949de2ffa6823373db8a34d635e514b7f31343a92070"
+    },
+    {
+      "id": "open-lab--records--source-bound-record--1024",
+      "route": "/open-lab/records/source-bound-record",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--source-bound-record--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "0634f17e320f180129e3f3a126d68dfe923e3a309bf26deb1c8dbe358fb03cb3"
+    },
+    {
+      "id": "open-lab--records--source-bound-record--768",
+      "route": "/open-lab/records/source-bound-record",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--source-bound-record--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "bb4428e2c317940d0412de4d9a4f8452aae96ecb911be40bd31e5fdaee889f15"
+    },
+    {
+      "id": "open-lab--records--source-bound-record--390",
+      "route": "/open-lab/records/source-bound-record",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--records--source-bound-record--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1897cadef9638fe29449999556e70393be51a12dd4c6079e03c0757c97d53576"
+    },
+    {
+      "id": "open-lab--source-chain--1440",
+      "route": "/open-lab/source-chain",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--source-chain--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f4b2a83f4de1b03fe6d08dc8f20ac87679027e560acd5566188366cde881c7bd"
+    },
+    {
+      "id": "open-lab--source-chain--1024",
+      "route": "/open-lab/source-chain",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--source-chain--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "8b342b1865c7c16d5389c06af63dd0e3a2cede8a81f74de21eb5b7df1e7dce06"
+    },
+    {
+      "id": "open-lab--source-chain--768",
+      "route": "/open-lab/source-chain",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--source-chain--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "d2d0283c58cc3a17d4442ad0720fc47c447dd1d82d1f6dc446e210758c2ca2b4"
+    },
+    {
+      "id": "open-lab--source-chain--390",
+      "route": "/open-lab/source-chain",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--source-chain--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "becbd08de1f865aa1f0499f43682162865dbc477dad12aa903c79fdee26c3952"
+    },
+    {
+      "id": "privacy--1440",
+      "route": "/privacy",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/privacy--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "e76102a6b24656202e1cd2637aadc2d4e8baddcc9b119ff41ca96e97b43c53a8"
+    },
+    {
+      "id": "privacy--1024",
+      "route": "/privacy",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/privacy--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "3e43375632304d234056bbbe346ff4c2be9103ac398f88be06fc199c85c15903"
+    },
+    {
+      "id": "privacy--768",
+      "route": "/privacy",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/privacy--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "701b9a900dc4515fef871b17d4c73842ac19036f80e614d5c14c817084b9b52a"
+    },
+    {
+      "id": "privacy--390",
+      "route": "/privacy",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/privacy--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "f386b3c494ff488f165bef2955d26bee58acae564f1cbac852252ee743b8e450"
+    },
+    {
+      "id": "product--mk-2866--1440",
+      "route": "/product/mk-2866",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "5f308e9bb8fece879cbc2a973ec7f53d4af82354697abaf7272c5979be47b065"
+    },
+    {
+      "id": "product--mk-2866--1024",
+      "route": "/product/mk-2866",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "ee307a19b7c71e5203aabf40cd2493765a22cb03d92be197475edc0948ce8b20"
+    },
+    {
+      "id": "product--mk-2866--768",
+      "route": "/product/mk-2866",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "ed4dbb3b8b43230d530e79dc1f6255133d8962e012334104f4a40fbd3ed1f0d3"
+    },
+    {
+      "id": "product--mk-2866--390",
+      "route": "/product/mk-2866",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "de2cacdacebbd857c0bfe42972a855c0a925dd25bd5953912350d21066841573"
+    },
+    {
+      "id": "review--1440",
+      "route": "/review",
+      "width": 1440,
+      "height": 1000,
+      "customer": false,
+      "artifact": "screenshots/review--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "1254e3f1b4112aa2978a1f9f33d3758f61de886e10649499cc900f2d56814f05"
+    },
+    {
+      "id": "review--1024",
+      "route": "/review",
+      "width": 1024,
+      "height": 900,
+      "customer": false,
+      "artifact": "screenshots/review--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "0f180cf4616186df3e0feb46906e31d3da686b484755418966e9bc0f850a1399"
+    },
+    {
+      "id": "review--768",
+      "route": "/review",
+      "width": 768,
+      "height": 900,
+      "customer": false,
+      "artifact": "screenshots/review--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "98e47f6943785baaa1598b4780a8d37b224aaf703b5ae629740cb86cd98e2b2d"
+    },
+    {
+      "id": "review--390",
+      "route": "/review",
+      "width": 390,
+      "height": 844,
+      "customer": false,
+      "artifact": "screenshots/review--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "2ac866c78d41802caa1ba680ab4d284c54fdf8a928f451a451079f64c4646541"
+    },
+    {
+      "id": "reviews--1440",
+      "route": "/reviews",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/reviews--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "98583b07708613d5d6662a744e90db3be4bc76684605cfe0d2322dafbeda6092"
+    },
+    {
+      "id": "reviews--1024",
+      "route": "/reviews",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/reviews--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "0ad255c1f68f4725d6e4f830665ddd980e6ecee29b645424cc5962f17663b02f"
+    },
+    {
+      "id": "reviews--768",
+      "route": "/reviews",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/reviews--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "57f101fec46bea0b2cc6eecc4fb89a7c20f814209c3ab692a2c548cfbbedee88"
+    },
+    {
+      "id": "reviews--390",
+      "route": "/reviews",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/reviews--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "9273383da8ea933bcef594c1590e24588470bb4d6a2816999a6d0ae62e680c97"
+    },
+    {
+      "id": "search--1440",
+      "route": "/search",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/search--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "da1573d396d7141fe360c548c4cbf1fd11482dfbaaf16ca8598e8578fa1a154d"
+    },
+    {
+      "id": "search--1024",
+      "route": "/search",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/search--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "dea701931603db2c36542a5e9d3b0f57bba5bafdf6a7e5d6b0cc95937f42054b"
+    },
+    {
+      "id": "search--768",
+      "route": "/search",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/search--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "898bca1109120b152bcc6caeea0a02457ec5155b3bfa9d7b691dc0bd1775f133"
+    },
+    {
+      "id": "search--390",
+      "route": "/search",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/search--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "937f91090d64b93dbbad9d33ba171d3b39915c0393711d2cf253f2a8078642c4"
+    },
+    {
+      "id": "shop--1440",
+      "route": "/shop",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/shop--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "598ba087b62b8e79f76586f122fbe09f401fa73d5bd932d8bfe5b0bada1fc58a"
+    },
+    {
+      "id": "shop--1024",
+      "route": "/shop",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/shop--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "539eccf52d56dceb754beb9b4245199531bf0e3fac82f4173a4cc8b157af225e"
+    },
+    {
+      "id": "shop--768",
+      "route": "/shop",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/shop--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "33f6116d5f241fdfe6ff066af0521ce15d4ee586c02c11c161879f5f3c3f7b67"
+    },
+    {
+      "id": "shop--390",
+      "route": "/shop",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/shop--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "3ee328b82b97b2ee8113989e28e5520d6bc2b28588802e66c4a9a37bc655c366"
+    },
+    {
+      "id": "terms--1440",
+      "route": "/terms",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/terms--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "bceb03d198e30f1e5d17fa2166d2d4fa2a1dd591f7f96116afac90aaae0e04e0"
+    },
+    {
+      "id": "terms--1024",
+      "route": "/terms",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/terms--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "e078cc4b63b88a8fb799decf5d5ddff5c69959cd186088177c45bbd54e3fdeef"
+    },
+    {
+      "id": "terms--768",
+      "route": "/terms",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/terms--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "bc60142f650a0a1c20f8e7cad7f9d677ae55869add8dd0ee15aed96c8af17cfd"
+    },
+    {
+      "id": "terms--390",
+      "route": "/terms",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/terms--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "5a9c345723ac6e6bb3c9a2cd9adb68331ce2061886ad4ecd7a58736ca8facf69"
+    },
+    {
+      "id": "wholesale--1440",
+      "route": "/wholesale",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/wholesale--1440.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "d334b96eb28013116f1c5cb5c41338f645371a6aa13c9e7762e7b7d796805b20"
+    },
+    {
+      "id": "wholesale--1024",
+      "route": "/wholesale",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/wholesale--1024.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "d252a981d67002d5763b1448a02d7b81be440085c92551990f54dc50830bcacc"
+    },
+    {
+      "id": "wholesale--768",
+      "route": "/wholesale",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/wholesale--768.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "2be7a4764c13483bdf0315d2cb5f59ed1c296378fec416a3186d81d632aae433"
+    },
+    {
+      "id": "wholesale--390",
+      "route": "/wholesale",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/wholesale--390.png",
+      "state": "CAPTURED_UNREVIEWED",
+      "sha256": "9677480990a4f5308c810ee21f9db0b729f7619c93296e969e461eef6075f85e"
+    }
+  ],
+  "generatedFromReceipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-conv003-mf09-20260812/mf09-four-width-receipt.json"
+}

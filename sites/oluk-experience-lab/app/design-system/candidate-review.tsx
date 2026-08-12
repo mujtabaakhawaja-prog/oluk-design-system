@@ -16,6 +16,7 @@ import {
   purchasePanelStates,
 } from "./candidate-components";
 import { OlukCanvas, OlukSection } from "./candidate-primitives";
+import { OwnerReviewStateHarness } from "./owner-review-state-harness";
 
 const baselineRoutes = [
   ["Homepage", "/", "739:50"],
@@ -184,7 +185,7 @@ export function CandidateReviewIndex() {
           <div className="oluk-candidate-review-status"><strong>{candidateContract.id}</strong><span>{candidateContract.status}</span><span>RUNTIME AUTHORITY {candidateContract.runtimeAuthority}</span></div>
         </div>
         <nav aria-label="Candidate review items">
-          <a href="#foundation">Foundation</a><a href="#mf02b-atoms">Status atoms</a><a href="#mf02b-vertical">Vertical</a><a href="#mf02b-featured">Featured</a><a href="#mf02b-compact-default">Compact states</a><a href="#mf02b-horizontal">Relation</a><a href="#mf02b-purchase-panel">PurchasePanel</a><a href="#mf02b-six-icons">Assurance</a><a href="#mf02b-related-rail">Related rail</a><a href="#mf02b-dossier">Dossier</a><a href="#baseline-routes">Pages</a>
+          <a href="#foundation">Foundation</a><a href="#mf02b-atoms">Status atoms</a><a href="#mf02b-vertical">Vertical</a><a href="#mf02b-featured">Featured</a><a href="#mf02b-compact-default">Compact states</a><a href="#mf02b-horizontal">Relation</a><a href="#mf02b-purchase-panel">PurchasePanel</a><a href="#mf02b-six-icons">Assurance</a><a href="#mf02b-related-rail">Related rail</a><a href="#mf02b-dossier">Dossier</a><a href="#mf09-local-state-harness">Local states</a><a href="#baseline-routes">Pages</a>
         </nav>
       </header>
 
@@ -225,6 +226,12 @@ export function CandidateReviewIndex() {
 
         <PendingRelatedRail />
         <PendingDossier />
+
+        <OlukSection className="oluk-candidate-section" id="mf09-local-state-harness">
+          <ReviewHeading eyebrow="MF-09 · LOCAL INTERACTION PROOF" title="State transitions without runtime authority." copy="This owner-only client harness exercises quantity, added, unavailable, out-of-stock, search, filters, tabs and record reveal entirely in memory. It does not contact commerce, evidence or publication services." source={figmaReviewLinks.review390} />
+          <OwnerReviewStateHarness />
+        </OlukSection>
+
         <ViewportLedger />
         <BaselineRouteIndex />
 

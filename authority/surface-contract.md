@@ -469,6 +469,66 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 | `status/inventory` | `green/inventory` | `VariableID:634:38` |
 | `status/inventory-soft` | `green/inventory-soft` | `VariableID:634:39` |
 
+### Dimensions (28 variables)
+
+| Variable | Value | Scope | WEB syntax | Figma ID |
+|---|---:|---|---|---|
+| `space/1` | `4` | `GAP` | `var(--oluk-space-1)` | `VariableID:634:41` |
+| `space/2` | `8` | `GAP` | `var(--oluk-space-2)` | `VariableID:634:42` |
+| `space/3` | `12` | `GAP` | `var(--oluk-space-3)` | `VariableID:634:43` |
+| `space/4` | `16` | `GAP` | `var(--oluk-space-4)` | `VariableID:634:44` |
+| `space/5` | `20` | `GAP` | `var(--oluk-space-5)` | `VariableID:634:45` |
+| `space/6` | `24` | `GAP` | `var(--oluk-space-6)` | `VariableID:634:46` |
+| `space/8` | `32` | `GAP` | `var(--oluk-space-8)` | `VariableID:634:47` |
+| `space/10` | `40` | `GAP` | `var(--oluk-space-10)` | `VariableID:634:48` |
+| `space/12` | `48` | `GAP` | `var(--oluk-space-12)` | `VariableID:634:49` |
+| `space/16` | `64` | `GAP` | `var(--oluk-space-16)` | `VariableID:634:50` |
+| `space/18` | `72` | `GAP` | `var(--oluk-space-18)` | `VariableID:634:51` |
+| `space/24` | `96` | `GAP` | `var(--oluk-space-24)` | `VariableID:634:52` |
+| `border/width` | `1` | `STROKE_FLOAT` | `var(--oluk-border-width)` | `VariableID:634:53` |
+| `divider/width` | `2` | `STROKE_FLOAT` | `var(--oluk-divider-width)` | `VariableID:634:54` |
+| `focus/width` | `2` | `STROKE_FLOAT` | `var(--oluk-focus-width)` | `VariableID:634:55` |
+| `radius/control` | `8` | `CORNER_RADIUS` | `var(--oluk-radius-control)` | `VariableID:634:56` |
+| `radius/chip` | `10` | `CORNER_RADIUS` | `var(--oluk-radius-chip)` | `VariableID:634:57` |
+| `radius/metric` | `12` | `CORNER_RADIUS` | `var(--oluk-radius-metric)` | `VariableID:634:58` |
+| `radius/compact` | `20` | `CORNER_RADIUS` | `var(--oluk-radius-compact)` | `VariableID:634:59` |
+| `radius/vertical` | `24` | `CORNER_RADIUS` | `var(--oluk-radius-vertical)` | `VariableID:634:60` |
+| `radius/purchase` | `28` | `CORNER_RADIUS` | `var(--oluk-radius-purchase)` | `VariableID:634:61` |
+| `radius/horizontal` | `34` | `CORNER_RADIUS` | `var(--oluk-radius-horizontal)` | `VariableID:634:62` |
+| `radius/pill` | `999` | `CORNER_RADIUS` | `var(--oluk-radius-pill)` | `VariableID:634:63` |
+| `layout/content-max` | `1344` | `WIDTH_HEIGHT` | `var(--oluk-content-max)` | `VariableID:634:64` |
+| `layout/grid-gap` | `20` | `GAP` | `var(--oluk-grid-gap)` | `VariableID:634:65` |
+| `layout/gutter-desktop` | `48` | `GAP` | `var(--oluk-page-gutter-desktop)` | `VariableID:634:66` |
+| `layout/gutter-tablet` | `32` | `GAP` | `var(--oluk-page-gutter-tablet)` | `VariableID:634:67` |
+| `layout/gutter-mobile` | `16` | `GAP` | `var(--oluk-page-gutter-mobile)` | `VariableID:634:68` |
+
+### Typography (22 variables)
+
+| Variable | Value | Scope | WEB syntax | Figma ID |
+|---|---:|---|---|---|
+| `family/display` | `Plus Jakarta Sans` | `FONT_FAMILY` | `var(--oluk-font-display)` | `VariableID:634:70` |
+| `family/body` | `Inter` | `FONT_FAMILY` | `var(--oluk-font-body)` | `VariableID:634:71` |
+| `display/xl/size` | `56` | `FONT_SIZE` | `var(--oluk-type-display-xl-size)` | `VariableID:634:72` |
+| `display/xl/line` | `60` | `LINE_HEIGHT` | `var(--oluk-type-display-xl-line)` | `VariableID:634:73` |
+| `display/xl/track` | `-4` | `LETTER_SPACING` | `var(--oluk-type-display-xl-track)` | `VariableID:634:74` |
+| `display/lg/size` | `40` | `FONT_SIZE` | `var(--oluk-type-display-lg-size)` | `VariableID:634:75` |
+| `display/lg/line` | `44` | `LINE_HEIGHT` | `var(--oluk-type-display-lg-line)` | `VariableID:634:76` |
+| `display/lg/track` | `-3.2` | `LETTER_SPACING` | `var(--oluk-type-display-lg-track)` | `VariableID:634:77` |
+| `display/md/size` | `28` | `FONT_SIZE` | `var(--oluk-type-display-md-size)` | `VariableID:634:78` |
+| `display/md/line` | `34` | `LINE_HEIGHT` | `var(--oluk-type-display-md-line)` | `VariableID:634:79` |
+| `display/md/track` | `-2.4` | `LETTER_SPACING` | `var(--oluk-type-display-md-track)` | `VariableID:634:80` |
+| `body/lg/size` | `18` | `FONT_SIZE` | `var(--oluk-type-body-lg-size)` | `VariableID:634:81` |
+| `body/lg/line` | `28` | `LINE_HEIGHT` | `var(--oluk-type-body-lg-line)` | `VariableID:634:82` |
+| `body/md/size` | `16` | `FONT_SIZE` | `var(--oluk-type-body-size)` | `VariableID:634:83` |
+| `body/md/line` | `24` | `LINE_HEIGHT` | `var(--oluk-type-body-line)` | `VariableID:634:84` |
+| `body/sm/size` | `15` | `FONT_SIZE` | `var(--oluk-type-body-sm-size)` | `VariableID:634:85` |
+| `body/sm/line` | `22` | `LINE_HEIGHT` | `var(--oluk-type-body-sm-line)` | `VariableID:634:86` |
+| `label/size` | `13` | `FONT_SIZE` | `var(--oluk-type-label-size)` | `VariableID:634:87` |
+| `label/line` | `18` | `LINE_HEIGHT` | `var(--oluk-type-label-line)` | `VariableID:634:88` |
+| `eyebrow/size` | `12` | `FONT_SIZE` | `var(--oluk-type-eyebrow-size)` | `VariableID:634:89` |
+| `eyebrow/line` | `16` | `LINE_HEIGHT` | `var(--oluk-type-eyebrow-line)` | `VariableID:634:90` |
+| `eyebrow/track` | `12` | `LETTER_SPACING` | `var(--oluk-type-eyebrow-track)` | `VariableID:634:91` |
+
 ## Review and promotion
 
 This document controls the relationship model for the current Make frontier. It does not promote the appendix values. Exact surface, spacing, radius, stroke and elevation values remain Phase 05 candidates and require later system validation and human promotion.

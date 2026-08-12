@@ -1,0 +1,418 @@
+.heroWrap {
+  background: var(--canvas);
+  padding: 28px 0 92px;
+}
+
+.sectionTight {
+  padding-block: 64px;
+}
+
+.commerceFocus {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+}
+
+.commerceEditorial {
+  align-self: center;
+  max-width: 620px;
+}
+
+.commerceEditorial h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(38px, 5vw, 66px);
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  margin: 14px 0 18px;
+}
+
+.commerceEditorial p {
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.commerceEditorial a {
+  color: var(--cobalt);
+  display: inline-flex;
+  font-weight: 800;
+  margin-top: 24px;
+}
+
+.singleCard {
+  justify-self: end;
+  max-width: 520px;
+  width: 100%;
+}
+
+.stateSurface {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-compact);
+  padding: 34px;
+}
+
+.stateSurface h2,
+.stateSurface h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  margin: 14px 0 12px;
+}
+
+.stateSurface p {
+  color: var(--ink-muted);
+  line-height: 1.65;
+  max-width: 58ch;
+}
+
+.stateSurface :global(.presentation-state__action) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.entryGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.entryCard {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-compact);
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  padding: 34px;
+}
+
+.entryCard h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.05em;
+  margin: 42px 0 12px;
+}
+
+.entryCard p {
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+.entryCard a {
+  color: var(--cobalt);
+  font-weight: 800;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.staticIndex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+.staticIndex span {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 10px 14px;
+  text-transform: uppercase;
+}
+
+.archiveLayout {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(260px, 0.36fr) minmax(0, 1fr);
+}
+
+.searchPanel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-compact);
+  padding: 28px;
+}
+
+.searchPanel label,
+.searchPanel input,
+.searchPanel button {
+  width: 100%;
+}
+
+.searchPanel label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin: 20px 0 8px;
+}
+
+.searchPanel input {
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  min-height: 52px;
+  padding-inline: 14px;
+}
+
+.searchPanel button {
+  margin-top: 12px;
+}
+
+.searchPanel a {
+  color: var(--cobalt);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.recordIndex {
+  display: grid;
+  gap: 14px;
+}
+
+.recordRow {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-compact);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(170px, 1fr) repeat(3, minmax(110px, 0.55fr)) auto;
+  padding: 24px;
+}
+
+.recordRow h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+  margin-top: 6px;
+}
+
+.recordRow dt {
+  color: var(--ink-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.recordRow dd {
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.recordRow > a {
+  color: var(--cobalt);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.recordHeroMedia {
+  align-self: end;
+  min-height: 390px;
+}
+
+.recordContent {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+}
+
+.recordFacts,
+.productBridge,
+.compareTool {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-compact);
+  padding: 32px;
+}
+
+.recordFacts dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.recordFacts dl div {
+  border-top: 1px solid var(--line);
+  padding: 16px;
+}
+
+.recordFacts dt {
+  color: var(--ink-muted);
+  font-size: 11px;
+}
+
+.recordFacts dd {
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.productBridge h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 28px;
+  letter-spacing: -0.05em;
+  margin: 14px 0 10px;
+}
+
+.productBridge p {
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.productBridge a {
+  color: var(--cobalt);
+  display: inline-flex;
+  font-weight: 800;
+  margin-top: 22px;
+}
+
+.lookupResult {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.lookupProduct {
+  max-width: 520px;
+}
+
+.compareTool details {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+
+.compareTool summary {
+  color: var(--cobalt);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 8px 0;
+}
+
+.compareTableWrap {
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.compareTable {
+  border-collapse: collapse;
+  min-width: 680px;
+  width: 100%;
+}
+
+.compareTable th,
+.compareTable td {
+  border: 1px solid var(--line);
+  padding: 16px;
+  text-align: left;
+}
+
+.compareTable th {
+  background: var(--canvas);
+  font-size: 12px;
+}
+
+.compareTable td {
+  font-size: 14px;
+}
+
+.compareTable a {
+  color: var(--cobalt);
+  font-weight: 800;
+}
+
+.reviewScope {
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 26px;
+  max-width: 64ch;
+}
+
+.pdpBreadcrumb {
+  padding-bottom: 24px;
+}
+
+:global(.breadcrumb) ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:global(.breadcrumb) li + li::before {
+  color: var(--ink-muted);
+  content: "/";
+  margin-right: 8px;
+}
+
+@media (max-width: 960px) {
+  .commerceFocus,
+  .archiveLayout,
+  .recordContent {
+    grid-template-columns: 1fr;
+  }
+
+  .singleCard {
+    justify-self: start;
+  }
+
+  .recordRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recordRow > div:first-child,
+  .recordRow > a {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .entryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .heroWrap {
+    padding: 16px 0 66px;
+  }
+
+  .stateSurface,
+  .entryCard,
+  .searchPanel,
+  .recordFacts,
+  .productBridge,
+  .compareTool {
+    border-radius: 20px;
+    padding: 24px;
+  }
+
+  .recordRow,
+  .recordFacts dl {
+    grid-template-columns: 1fr;
+  }
+
+  .recordRow > div:first-child,
+  .recordRow > a {
+    grid-column: auto;
+  }
+}
