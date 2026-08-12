@@ -175,7 +175,19 @@
     "mf09ResponsiveMatrix": "672:14",
     "mf09InteractionAndAccessibilityProof": "672:15",
     "mf09ProofBoards": "672:24",
-    "mf10ApprovalBoard": "888:304"
+    "mf10ApprovalBoard": "888:304",
+    "codeBridgeRegistry": "911:2629",
+    "conv003aVisualReviewBridgeChangelog": "929:304",
+    "artifactSpecificVisualReview": {
+      "homepage": "921:2675",
+      "shop": "921:2682",
+      "pdp": "921:2689",
+      "openLab": "921:2696",
+      "evidenceLifecycle": "921:2703",
+      "transactions": "921:2710",
+      "supportingRoutes": "921:2717",
+      "canonicalNativeStates": "921:2724"
+    }
   },
   "surfaceReviewAnnotations": {
     "placement": "outside_customer_frames_on_figma_canvas",
@@ -239,6 +251,15 @@
       "candidateSurfaces": ["764:50", "765:50", "766:50", "767:50"],
       "mf09ProofPages": ["672:14", "672:15", "672:24"],
       "mf10ApprovalBoard": "888:304",
+      "receiptNodesAreNotVisualApproval": ["881:2675", "888:304"],
+      "artifactSpecificVisualReviewBoards": ["921:2675", "921:2682", "921:2689", "921:2696", "921:2703", "921:2710", "921:2717", "921:2724"],
+      "boundedFigmaCorrections": {
+        "verticalMobileIdentityReflow": "743:158",
+        "featuredMobileIdentityReflow": "743:393",
+        "foundationCurrentProjection": "637:3",
+        "dossierClippedLabelCorrection": "750:182",
+        "codeBridgeRegistryV1_1": "911:2629"
+      },
       "receiptPath": "authority/receipts/CONV-003-MF09-MF10-COMPLETION.md",
       "publicationState": "UNPUBLISHED",
       "reviewState": "HUMAN_REVIEW_REQUIRED"
@@ -261,6 +282,7 @@
     "state": "CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
     "sourceCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
     "completionCommit": "bba06da93ce02dfd17bce3766c61f2d59b538cbe",
+    "codeBridgeCommit": "67a43c93da22b5125a379d541a6444aecfa83ebf",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab", "Evidence lifecycle", "Decision tools", "Bag and checkout presentation", "Post-purchase presentation", "Owner review"],
     "routeCount": 31,
     "conv003Completion": {
@@ -270,18 +292,23 @@
       "transactionPresentation": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
       "proofTooling": "sites/oluk-experience-lab/scripts/proof/",
       "visualBaselineManifest": "sites/oluk-experience-lab/tests/visual-baselines/manifest.json",
+      "figmaCodeBridge": "authority/FIGMA-CODE-BRIDGE.json",
+      "figmaCodeBridgeStaticResource": "sites/oluk-experience-lab/public/.well-known/oluk-figma-code-bridge.json",
+      "figmaCodeBridgeProof": "sites/oluk-experience-lab/scripts/proof/figma-code-bridge.mjs",
+      "transactionRuntimeGuard": "STATIC_IMPORT_GRAPH_AND_DEPENDENCY_SCAN_NO_CALLBACKS_NO_SDKS",
       "status": "CX_NEXT_001_047_VERIFIED_CX_NEXT_048_050_BLOCKED"
     },
     "validation": {
       "build": "PASS",
       "typecheck": "PASS",
       "lint": "PASS",
-      "tests": "PASS_38_OF_38_FULL_CANDIDATE_SUITE",
+      "tests": "PASS_41_OF_41_FULL_CANDIDATE_SUITE",
       "contractProofs": "PASS",
       "contractProofDetails": {
         "tokenManifest": {"status": "PASS", "activeVariables": 98, "individuallyDocumented": 98, "pendingIndividualInventory": 0},
         "componentProvenance": {"status": "PASS", "passed": 63, "total": 63},
         "taxonomy": {"status": "PASS", "passed": 5, "total": 5, "runtimeMutationAuthorized": false},
+        "figmaCodeBridge": {"status": "PASS", "passed": 201, "total": 201, "componentMappings": 15, "routeMappings": 9, "officialCodeConnectInvoked": false, "networkCallbacks": 0},
         "visualBaselines": {"status": "PASS_CANDIDATE_CAPTURE", "routeWidthCases": 124, "capturedUnreviewed": 124, "championReviewed": 0}
       },
       "mf09": {
@@ -312,7 +339,8 @@
     },
     "deployment": "NONE",
     "humanReviewRequired": true,
-    "doesNotChangeFigmaCandidateState": true,
+    "figmaMutationScope": "REGISTRY_COPY_CORRECTION_COMPONENT_LAYOUT_FIXES_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
+    "doesNotPromoteOrPublishFigma": true,
     "doesNotGrantProductionRuntimeAuthority": true
   },
   "runtimeAuthority": "NONE_UNTIL_ARTIFACT_SPECIFIC_MF10_CHAMPION_APPROVAL_AND_SEPARATE_MF_PLUS_PLUS_AUTHORIZATION"

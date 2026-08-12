@@ -208,6 +208,40 @@
       "appliesTo": ["ProductMediaChamber", "Compact", "Vertical", "Featured", "Relation", "ProductDecisionHero", "media stress proof"],
       "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-003"],
       "supersedes": []
+    },
+    {
+      "id": "DEC-CODE-BRIDGE-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Use a repository-owned, executable Figma-to-code bridge as the current Code Connect workaround. The bridge maps exact Figma nodes to typed React exports, route sources and governed tokens; exposes an identical read-only JSON resource for Codex, MCP, SSR-inventory or a later FastAPI adapter; and rejects stale pseudo paths by execution. Official Code Connect mapping, hosting, publication and runtime adoption remain separately gated and were not invoked.",
+      "sources": ["911:2629", "authority/FIGMA-CODE-BRIDGE.json", "authority/receipts/CONV-003-CODE-BRIDGE.md", "67a43c93da22b5125a379d541a6444aecfa83ebf"],
+      "appliesTo": ["Figma MCP ingestion", "Codex Sites component discovery", "component provenance", "route provenance", "token provenance", "future MCP or FastAPI adapter"],
+      "clarifies": ["DEC-RUN-002", "DEC-GATE-001"],
+      "supersedes": [],
+      "guardrails": ["official Code Connect not invoked", "no Figma publication", "no deployment", "no runtime callback", "HUMAN_REVIEW_REQUIRED"]
+    },
+    {
+      "id": "DEC-VISUAL-REVIEW-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "MF-09 node 881:2675 and MF-10 node 888:304 are execution and control receipts, not sufficient visual-approval surfaces. Champion visual review must use artifact-specific boards that place native Figma evidence beside validated Sites captures, plus direct canonical component and route nodes. Receipt validation never implies champion approval.",
+      "sources": ["881:2675", "888:304", "921:2675", "921:2682", "921:2689", "921:2696", "921:2703", "921:2710", "921:2717", "921:2724"],
+      "appliesTo": ["MF-09", "MF-10", "visual approval", "artifact-specific review"],
+      "clarifies": ["DEC-GATE-001", "DEC-RUN-002"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-FIGMA-CORRECTION-001",
+      "recordedDate": "2026-08-12",
+      "actor": "codex_agent",
+      "status": "IMPLEMENTED_VERIFIED_HUMAN_REVIEW_REQUIRED",
+      "decision": "Corrected the bounded Figma review defects found during the MF-09/MF-10 audit: Vertical and Featured mobile identity/status regions now reflow without collision; FC-01 reflects the 98-variable CONV-003 projection, #F8FAFC family surface and current taxonomy/gates; the redundant clipped Dossier series label is hidden; and Page 23 now contains artifact-specific visual review boards. No component, variable or library was promoted or published.",
+      "sources": ["743:158", "743:393", "637:3", "750:182", "921:2675", "921:2682", "921:2689", "921:2696", "921:2703", "921:2710", "921:2717", "921:2724", "929:304"],
+      "appliesTo": ["Vertical mobile", "Featured mobile", "FC-01", "Dossier", "Proof Boards"],
+      "clarifies": ["DEC-FIDELITY-001", "DEC-VISUAL-REVIEW-001"],
+      "supersedes": []
     }
   ]
 }

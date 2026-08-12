@@ -4,6 +4,7 @@
 **Status:** `CANDIDATE_REPOSITORY_MAPPING_VERIFIED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`  
 **Figma registry authority:** `BEPMuUt1HroEw8xjz8CVyN · 911:2629`  
 **Official Code Connect:** `NOT_INVOKED`
+**Repository implementation:** `67a43c93da22b5125a379d541a6444aecfa83ebf`
 
 ## Outcome
 
@@ -63,6 +64,8 @@ Regenerate and verify locally:
 npm run inventory:generate
 npm run proof:code-bridge
 ```
+
+Validation at the implementation commit: `201/201` bridge checks, `41/41` integrated tests, typecheck, lint, 31-route build and the aggregate contract proof all pass.
 
 ## Deliberately unresolved components
 

@@ -79,3 +79,14 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - State advances to `CONV003_MF09_MF10_CANDIDATE_VERIFIED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
 - Champion approval has not occurred. Figma publication, Code Connect, production adoption, commerce/evidence/inventory/checkout/payment integration, telemetry and release remain blocked behind the exact MF-10 artifact and separate MF++ authorization.
 - Deployment remains `NONE`; runtime authority remains `NONE`.
+
+## 2026-08-12 — CONV-003 artifact review and executable Figma code bridge
+
+- Reclassified MF-09 `881:2675` and MF-10 `888:304` accurately as execution/control receipts rather than visual-approval surfaces (`DEC-VISUAL-REVIEW-001`).
+- Added eight unpublished Page 23 review boards with direct visual evidence for Homepage `921:2675`, Shop `921:2682`, PDP `921:2689`, OpenLab `921:2696`, evidence lifecycle `921:2703`, transactions `921:2710`, supporting routes `921:2717` and native component states `921:2724`.
+- Corrected bounded Figma defects discovered in the audit: Vertical mobile `743:158` and Featured mobile `743:393` now reflow identity/status content without collision; FC-01 `637:3` reflects 98 variables, `#F8FAFC` family truth, current taxonomy and gates; Dossier `750:182` no longer exposes the redundant clipped series label. The PDP and OpenLab visual-review images were refreshed after the Dossier correction (`DEC-FIGMA-CORRECTION-001`).
+- Corrected the CC registry at `911:2629` to actual repository paths, route spellings, Shop instance `765:98` and Featured source `743:282`, and explicit PR ancestry.
+- Added the repository-owned Code Connect substitute at `authority/FIGMA-CODE-BRIDGE.json`, a typed React projection, identical `/.well-known/oluk-figma-code-bridge.json` resource and executable proof (`DEC-CODE-BRIDGE-001`). Commit `67a43c93da22b5125a379d541a6444aecfa83ebf` passes `201/201` mapping checks and `41/41` integrated tests.
+- Added a recursive transaction import-graph and dependency guard. The eight static bag/checkout/post-purchase routes have no form submission, fetch/AJAX, socket, storage, server action, Woo, payment SDK, Initiator, tools-service or telemetry callback.
+- Appended the matching native Figma Page 25 receipt at `929:304`; it records the same review nodes, corrections, executable-bridge evidence and closed gates without claiming approval or publication.
+- Official Code Connect was not invoked. No Figma library was published, no service was deployed, no runtime owner was mutated, and no PR was merged. All artifacts remain `HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
