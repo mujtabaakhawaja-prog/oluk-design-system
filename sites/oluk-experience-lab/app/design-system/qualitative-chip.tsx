@@ -1,21 +1,29 @@
-/* eslint-disable @next/next/no-img-element -- exact local qualitative SVGs are governed candidate assets. */
-
-import type { QualitativeFact, QualitativeFactKind } from "./commerce-types";
+import type { QualitativeFact } from "./commerce-types";
 import { classes } from "./component-utils";
+import { QualitativeIcon } from "./qualitative-icon";
 
-const qualitativeIconRegistry: Readonly<Record<QualitativeFactKind, string>> = {
-  class: "/assets/candidate/qualitative/class.svg",
-  form: "/assets/candidate/qualitative/form.svg",
-  quality: "/assets/candidate/qualitative/quality.svg",
-  tested: "/assets/candidate/qualitative/tested.svg",
-};
+export type QualitativeChipState = "default" | "selected" | "disabled";
 
-export type QualitativeChipProps = QualitativeFact & Readonly<{ className?: string }>;
+export type QualitativeChipProps = QualitativeFact & Readonly<{
+  className?: string;
+  state?: QualitativeChipState;
+}>;
 
-export function QualitativeChip({ kind, label, value, className }: QualitativeChipProps) {
+export function QualitativeChip({
+  kind,
+  label,
+  value,
+  className,
+  state = "default",
+}: QualitativeChipProps) {
   return (
-    <li className={classes("qualitative-chip", "oluk-qualitative-chip", className)} data-kind={kind}>
-      <img alt="" aria-hidden="true" src={qualitativeIconRegistry[kind]} />
+    <li
+      aria-disabled={state === "disabled" || undefined}
+      className={classes("qualitative-chip", "oluk-qualitative-chip", className)}
+      data-kind={kind}
+      data-state={state}
+    >
+      <QualitativeIcon kind={kind} />
       <dl>
         <dt>{label}</dt>
         <dd>{value}</dd>

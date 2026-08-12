@@ -198,7 +198,7 @@
 .oluk-candidate-qualitative img { grid-row: 1 / span 2; width: var(--oluk-space-4); height: var(--oluk-space-4); }
 .oluk-candidate-qualitative dt,
 .oluk-candidate-qualitative dd { grid-column: 2; min-width: 0; }
-.oluk-candidate-qualitative dt { color: var(--oluk-text-muted); font-size: var(--oluk-type-chip-label); font-weight: 500; letter-spacing: 0.06em; }
+.oluk-candidate-qualitative dt { color: var(--oluk-text-muted); font-size: var(--oluk-type-chip-label); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
 .oluk-candidate-qualitative dd { margin: var(--oluk-space-1) 0 0; color: var(--oluk-text-chip-value); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.02em; overflow-wrap: anywhere; }
 .oluk-candidate-purchase-line { display: flex; align-items: center; justify-content: space-between; gap: var(--oluk-space-3); }
 .oluk-candidate-purchase-line > strong { color: var(--oluk-cobalt); font-family: var(--oluk-font-display); font-size: var(--oluk-type-product); }

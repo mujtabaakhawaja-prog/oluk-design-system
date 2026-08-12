@@ -318,6 +318,7 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
   const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
+  const iconSource = await readFile(new URL("../app/design-system/qualitative-icon.tsx", import.meta.url), "utf8");
   const mediaSource = await readFile(new URL("../app/design-system/product-media-chamber.tsx", import.meta.url), "utf8");
   const mediaCss = await readFile(new URL("../app/design-system/product-media-chamber.module.css", import.meta.url), "utf8");
   const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
@@ -339,9 +340,10 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   }
 
   assert.match(chipSource, /export function QualitativeChip\(/, "customer chips use a reusable component");
+  assert.match(chipSource, /<QualitativeIcon kind=\{kind\} \/>/, "customer chips use the mapped qualitative icon component");
   assert.match(chipSource, /<ul[^>]*aria-label=\{label\}[^>]*>[\s\S]*?<QualitativeChip\b/, "customer chip collection renders independent component instances");
   for (const kind of ["class", "form", "quality", "tested"]) {
-    assert.match(chipSource, new RegExp(`/assets/candidate/qualitative/${kind}\\.svg`), `${kind} chip uses its authored semantic SVG`);
+    assert.match(iconSource, new RegExp(`/assets/candidate/qualitative/${kind}\\.svg`), `${kind} chip uses its authored semantic SVG`);
   }
   assert.match(cardSource, /<ProductMediaChamber\b/, "customer cards use the shared authored media chamber");
   assert.match(mediaSource, /data-authored-layers="outer-gradient luminous-halo identity-pane contact-shelf product"/, "shared media chamber exposes the complete authored layer contract");

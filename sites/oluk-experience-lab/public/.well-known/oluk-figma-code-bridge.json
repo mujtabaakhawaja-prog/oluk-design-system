@@ -1,0 +1,1030 @@
+{
+  "schemaVersion": 1,
+  "bridgeId": "OLUK-CC-BRIDGE-001",
+  "recordedDate": "2026-08-12",
+  "status": "CANDIDATE_REPOSITORY_MAPPING_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "purpose": "Deterministic repository-owned substitute for Code Connect discovery and agent context injection.",
+  "authority": {
+    "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "figmaRegistryBoard": "911:2629",
+    "figmaRegistryBoardName": "CC-BRIDGE · Code Connect Bridge · OLUK Design System",
+    "repositoryCurrentState": "authority/CURRENT-STATE.json",
+    "repositoryArtifactRegistry": "authority/ARTIFACT-REGISTRY.json",
+    "componentSourceRoot": "sites/oluk-experience-lab",
+    "officialCodeConnectInvoked": false,
+    "figmaMutationPerformed": true,
+    "figmaMutationScope": "REGISTRY_COPY_CORRECTION_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
+    "publicationState": "UNPUBLISHED",
+    "runtimeAuthority": "NONE",
+    "deployment": "NONE"
+  },
+  "consumption": {
+    "authorityResource": "authority/FIGMA-CODE-BRIDGE.json",
+    "publicStaticResource": "sites/oluk-experience-lab/public/.well-known/oluk-figma-code-bridge.json",
+    "publicCandidatePath": "/.well-known/oluk-figma-code-bridge.json",
+    "typedContract": "sites/oluk-experience-lab/app/design-system/figma-code-bridge.ts",
+    "validationCommand": "npm run proof:code-bridge",
+    "generationCommand": "npm run inventory:generate",
+    "networkRequiredForValidation": false
+  },
+  "visualReviewBoards": [
+    {
+      "id": "homepage-parity",
+      "nodeId": "921:2675",
+      "imageNodeId": "921:2681",
+      "scope": "Homepage Figma native plus Sites 1440/1024/768/390"
+    },
+    {
+      "id": "shop-parity",
+      "nodeId": "921:2682",
+      "imageNodeId": "921:2688",
+      "scope": "Shop Figma native plus Sites 1440/1024/768/390"
+    },
+    {
+      "id": "pdp-parity",
+      "nodeId": "921:2689",
+      "imageNodeId": "921:2695",
+      "scope": "PDP Figma native plus Sites 1440/1024/768/390"
+    },
+    {
+      "id": "openlab-parity",
+      "nodeId": "921:2696",
+      "imageNodeId": "921:2702",
+      "scope": "OpenLab Figma native plus Sites 1440/1024/768/390"
+    },
+    {
+      "id": "evidence-lifecycle",
+      "nodeId": "921:2703",
+      "imageNodeId": "921:2709",
+      "scope": "Evidence archive, lookup, record, dossier, methodology, source-chain and compare"
+    },
+    {
+      "id": "transactions",
+      "nodeId": "921:2710",
+      "imageNodeId": "921:2716",
+      "scope": "Bag through retry static presentation at desktop and mobile"
+    },
+    {
+      "id": "supporting-routes",
+      "nodeId": "921:2717",
+      "imageNodeId": "921:2723",
+      "scope": "About, Evidence OS, reviews, search, wholesale, account and policy routes"
+    },
+    {
+      "id": "canonical-native-states",
+      "nodeId": "921:2724",
+      "imageNodeId": "921:2730",
+      "scope": "Native Compact, Relation, Vertical, Featured, PurchasePanel, status, chip and icon variants"
+    }
+  ],
+  "figmaBoardObservations": [
+    {
+      "label": "ProductCommerceCard/Vertical",
+      "nodeId": "743:50",
+      "boardCodePath": "components/ProductCommerceCard.tsx",
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+      "resolution": "CORRECTED_TO_REPOSITORY_EXPORT"
+    },
+    {
+      "label": "ProductCommerceCard/Featured",
+      "nodeId": "743:281",
+      "boardCodePath": "components/ProductCommerceCard.tsx",
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+      "resolution": "CORRECTED_TO_REPOSITORY_EXPORT"
+    },
+    {
+      "label": "QualitativeChip",
+      "nodeId": "733:17342",
+      "boardCodePath": "components/QualitativeChip.tsx",
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
+      "resolution": "CORRECTED_TO_REPOSITORY_EXPORT"
+    },
+    {
+      "label": "QualitativeIcon",
+      "nodeId": "844:926",
+      "boardCodePath": "components/QualitativeIcon.tsx",
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/qualitative-icon.tsx",
+      "resolution": "IMPLEMENTED_AS_EXACT_REPOSITORY_EXPORT"
+    },
+    {
+      "label": "CanonicalInstance/Shop",
+      "nodeId": "765:98",
+      "boardDeclaredSourceNodeId": "743:282",
+      "boardCodePath": "routes/shop",
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/shop/page.tsx",
+      "resolution": "CORRECTED_TO_ACTUAL_SHOP_INSTANCE_INHERITING_FEATURED_DESKTOP"
+    }
+  ],
+  "componentMappings": [
+    {
+      "id": "inventory-status",
+      "figma": {
+        "nodeId": "732:2902",
+        "name": "InventoryStatus",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+        "export": "InventoryStatus",
+        "propsType": "InventoryStatusProps",
+        "contract": "InventoryStatus",
+        "props": [
+          "state",
+          "className"
+        ]
+      },
+      "variants": {
+        "state": [
+          "in-stock",
+          "out-of-stock",
+          "unavailable"
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-inventory-green",
+        "--oluk-text-muted",
+        "--oluk-surface-family"
+      ]
+    },
+    {
+      "id": "evidence-status",
+      "figma": {
+        "nodeId": "732:2912",
+        "name": "EvidenceStatus",
+        "kind": "COMPONENT"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+        "export": "EvidenceStatus",
+        "propsType": "EvidenceStatusProps",
+        "contract": "EvidenceStatus",
+        "props": [
+          "state",
+          "compact",
+          "className"
+        ]
+      },
+      "variants": {
+        "state": [
+          "verified",
+          "available",
+          "unavailable"
+        ],
+        "compact": [
+          true,
+          false
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab",
+        "/open-lab/records",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-cobalt",
+        "--oluk-text-muted"
+      ]
+    },
+    {
+      "id": "metric-rail",
+      "figma": {
+        "nodeId": "733:95",
+        "name": "MetricRail",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "export": "MetricRail",
+        "propsType": "MetricRailProps",
+        "contract": "MetricRail",
+        "props": [
+          "product",
+          "values",
+          "compact",
+          "className"
+        ]
+      },
+      "variants": {
+        "compact": [
+          true,
+          false
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab",
+        "/open-lab/dossier/mk-2866",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-cobalt",
+        "--oluk-border-strong",
+        "--oluk-radius-metric"
+      ]
+    },
+    {
+      "id": "qualitative-chip",
+      "figma": {
+        "nodeId": "733:17342",
+        "name": "QualitativeChip",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
+        "export": "QualitativeChip",
+        "propsType": "QualitativeChipProps",
+        "contract": "QualitativeChip",
+        "props": [
+          "kind",
+          "label",
+          "value",
+          "className",
+          "state"
+        ]
+      },
+      "variants": {
+        "state": [
+          "default",
+          "selected",
+          "disabled"
+        ],
+        "kind": [
+          "class",
+          "form",
+          "quality",
+          "tested"
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-border-chip",
+        "--oluk-text-muted",
+        "--oluk-text-chip-value",
+        "--oluk-type-chip-label",
+        "--oluk-radius-chip",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "qualitative-icon",
+      "figma": {
+        "nodeId": "844:926",
+        "name": "OLUK/QualitativeIcon",
+        "kind": "COMPONENT_SET",
+        "variantNodes": {
+          "class": "844:914",
+          "form": "844:917",
+          "quality": "844:921",
+          "tested": "844:925"
+        }
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/qualitative-icon.tsx",
+        "export": "QualitativeIcon",
+        "propsType": "QualitativeIconProps",
+        "contract": "QualitativeIcon",
+        "props": [
+          "kind",
+          "className"
+        ]
+      },
+      "variants": {
+        "kind": [
+          "class",
+          "form",
+          "quality",
+          "tested"
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "hero-decision-surface",
+      "figma": {
+        "nodeId": "736:17458",
+        "name": "HeroDecisionSurface",
+        "kind": "COMPONENT"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
+        "export": "HeroDecisionSurface",
+        "propsType": "HeroDecisionSurfaceProps",
+        "contract": "HeroDecisionSurface",
+        "props": [
+          "product",
+          "headingLevel",
+          "className"
+        ]
+      },
+      "variants": {},
+      "routes": [
+        "/"
+      ],
+      "tokens": [
+        "--oluk-surface-card",
+        "--oluk-border-outer",
+        "--oluk-radius-purchase",
+        "--oluk-shadow-purchase",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "product-decision-hero",
+      "figma": {
+        "nodeId": "739:50",
+        "name": "ProductDecisionHero",
+        "kind": "COMPONENT"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
+        "export": "ProductDecisionHero",
+        "propsType": "ProductDecisionHeroProps",
+        "contract": "ProductDecisionHero",
+        "props": [
+          "product",
+          "eyebrow",
+          "title",
+          "copy",
+          "className",
+          "priorityMedia",
+          "actions"
+        ]
+      },
+      "variants": {
+        "responsive": [
+          1440,
+          1024,
+          768,
+          390
+        ]
+      },
+      "routes": [
+        "/"
+      ],
+      "tokens": [
+        "--oluk-canvas",
+        "--oluk-media-gradient",
+        "--oluk-cobalt",
+        "--oluk-text-primary"
+      ]
+    },
+    {
+      "id": "product-commerce-card-compact",
+      "figma": {
+        "nodeId": "742:50",
+        "name": "ProductCommerceCard / Compact",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "export": "ProductCommerceCard",
+        "propsType": "ProductCommerceCardProps",
+        "contract": "ProductCommerceCard",
+        "props": [
+          "product",
+          "variant",
+          "state",
+          "inventory",
+          "evidence",
+          "headingLevel",
+          "quantity",
+          "showQualitative",
+          "contextKicker",
+          "className"
+        ],
+        "fixedProps": {
+          "variant": "compact"
+        }
+      },
+      "variants": {
+        "state": [
+          "default",
+          "hover",
+          "focus",
+          "selected",
+          "added",
+          "unavailable",
+          "out-of-stock",
+          "disabled"
+        ]
+      },
+      "routes": [
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-surface-card",
+        "--oluk-radius-compact",
+        "--oluk-shadow-compact",
+        "--oluk-media-gradient",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "product-commerce-card-vertical",
+      "figma": {
+        "nodeId": "743:50",
+        "name": "ProductCommerceCard / Vertical",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "export": "ProductCommerceCard",
+        "propsType": "ProductCommerceCardProps",
+        "contract": "ProductCommerceCard",
+        "props": [
+          "product",
+          "variant",
+          "state",
+          "inventory",
+          "evidence",
+          "headingLevel",
+          "quantity",
+          "showQualitative",
+          "contextKicker",
+          "className"
+        ],
+        "fixedProps": {
+          "variant": "vertical"
+        }
+      },
+      "variants": {
+        "width": [
+          "desktop",
+          "mobile"
+        ],
+        "state": [
+          "default",
+          "hover",
+          "focus",
+          "selected",
+          "added",
+          "unavailable",
+          "out-of-stock",
+          "disabled"
+        ]
+      },
+      "routes": [
+        "/open-lab",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-surface-card",
+        "--oluk-border-outer",
+        "--oluk-radius-vertical",
+        "--oluk-shadow-card",
+        "--oluk-media-gradient",
+        "--oluk-border-chip",
+        "--oluk-text-chip-value",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "product-commerce-card-featured",
+      "figma": {
+        "nodeId": "743:281",
+        "name": "ProductCommerceCard / Featured",
+        "kind": "COMPONENT_SET",
+        "registeredDesktopVariant": "743:282",
+        "downstreamShopInstance": "765:98"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "export": "ProductCommerceCard",
+        "propsType": "ProductCommerceCardProps",
+        "contract": "ProductCommerceCard",
+        "props": [
+          "product",
+          "variant",
+          "state",
+          "inventory",
+          "evidence",
+          "headingLevel",
+          "quantity",
+          "showQualitative",
+          "contextKicker",
+          "className"
+        ],
+        "fixedProps": {
+          "variant": "featured"
+        }
+      },
+      "variants": {
+        "width": [
+          "desktop",
+          "mobile"
+        ],
+        "state": [
+          "default",
+          "hover",
+          "focus",
+          "selected",
+          "added",
+          "unavailable",
+          "out-of-stock",
+          "disabled"
+        ]
+      },
+      "routes": [
+        "/shop",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-surface-card",
+        "--oluk-border-outer",
+        "--oluk-radius-vertical",
+        "--oluk-shadow-card",
+        "--oluk-media-gradient",
+        "--oluk-border-chip",
+        "--oluk-text-chip-value",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "product-commerce-card-relation",
+      "figma": {
+        "nodeId": "743:520",
+        "name": "ProductCommerceCard / Relation",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "export": "ProductCommerceCard",
+        "propsType": "ProductCommerceCardProps",
+        "contract": "ProductCommerceCard",
+        "props": [
+          "product",
+          "variant",
+          "state",
+          "inventory",
+          "evidence",
+          "headingLevel",
+          "quantity",
+          "showQualitative",
+          "contextKicker",
+          "className"
+        ],
+        "fixedProps": {
+          "variant": "relation"
+        }
+      },
+      "variants": {
+        "width": [
+          "desktop-horizontal",
+          "tablet-stacked",
+          "mobile-stacked"
+        ],
+        "state": [
+          "default",
+          "hover",
+          "focus",
+          "selected",
+          "added",
+          "unavailable",
+          "out-of-stock",
+          "disabled"
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-surface-card",
+        "--oluk-border-outer",
+        "--oluk-radius-horizontal",
+        "--oluk-shadow-relation",
+        "--oluk-media-gradient",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "purchase-panel",
+      "figma": {
+        "nodeId": "745:50",
+        "name": "PurchasePanel",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "export": "PurchasePanel",
+        "propsType": "PurchasePanelProps",
+        "contract": "PurchasePanel",
+        "props": [
+          "product",
+          "state",
+          "width",
+          "inventory",
+          "evidence",
+          "quantity",
+          "headingLevel",
+          "className"
+        ]
+      },
+      "variants": {
+        "state": [
+          "default",
+          "quantity-changed",
+          "added",
+          "unavailable",
+          "out-of-stock",
+          "disabled"
+        ],
+        "width": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "routes": [
+        "/product/mk-2866",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-surface-card",
+        "--oluk-border-outer",
+        "--oluk-radius-purchase",
+        "--oluk-shadow-purchase",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "product-dossier",
+      "figma": {
+        "nodeId": "750:182",
+        "name": "Dossier",
+        "kind": "COMPONENT"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-dossier.tsx",
+        "export": "ProductDossier",
+        "propsType": "ProductDossierProps",
+        "contract": "ProductDossier",
+        "props": [
+          "product",
+          "eyebrow",
+          "title",
+          "copy",
+          "headingLevel",
+          "className",
+          "id",
+          "evidenceHref"
+        ]
+      },
+      "variants": {
+        "responsive": [
+          1440,
+          1024,
+          768,
+          390
+        ]
+      },
+      "routes": [
+        "/product/mk-2866",
+        "/open-lab/dossier/mk-2866"
+      ],
+      "tokens": [
+        "--oluk-surface-family",
+        "--oluk-border-family-bg",
+        "--oluk-text-primary",
+        "--oluk-cobalt"
+      ]
+    },
+    {
+      "id": "assurance-rail",
+      "figma": {
+        "nodeId": "752:167",
+        "name": "AssuranceRail",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/assurance-rail.tsx",
+        "export": "AssuranceRail",
+        "propsType": "AssuranceRailProps",
+        "contract": "AssuranceRail",
+        "props": [
+          "items",
+          "variant",
+          "className"
+        ]
+      },
+      "variants": {
+        "variant": [
+          "full",
+          "compact"
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab"
+      ],
+      "tokens": [
+        "--oluk-cobalt",
+        "--oluk-text-primary",
+        "--oluk-text-secondary"
+      ]
+    },
+    {
+      "id": "related-rail",
+      "figma": {
+        "nodeId": "753:18136",
+        "name": "RelatedRail",
+        "kind": "COMPONENT_SET"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/related-rail.tsx",
+        "export": "RelatedRail",
+        "propsType": "RelatedRailProps",
+        "contract": "RelatedRail",
+        "props": [
+          "anchorProduct",
+          "products",
+          "eyebrow",
+          "title",
+          "copy",
+          "headingLevel",
+          "className",
+          "id"
+        ]
+      },
+      "variants": {
+        "responsive": [
+          1440,
+          1024,
+          768,
+          390
+        ]
+      },
+      "routes": [
+        "/",
+        "/product/mk-2866",
+        "/open-lab"
+      ],
+      "tokens": [
+        "--oluk-canvas",
+        "--oluk-cobalt",
+        "--oluk-text-primary",
+        "--oluk-text-secondary"
+      ]
+    }
+  ],
+  "routeMappings": [
+    {
+      "id": "home",
+      "figmaNodeId": "764:50",
+      "boardPath": "/",
+      "resolvedPaths": [
+        "/"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/page.tsx",
+        "sites/oluk-experience-lab/app/customer-routes.tsx"
+      ],
+      "resolution": "EXACT"
+    },
+    {
+      "id": "shop",
+      "figmaNodeId": "765:50",
+      "boardPath": "/shop",
+      "resolvedPaths": [
+        "/shop"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/shop/page.tsx",
+        "sites/oluk-experience-lab/app/design-system/shop-discovery.tsx"
+      ],
+      "resolution": "EXACT"
+    },
+    {
+      "id": "pdp",
+      "figmaNodeId": "766:50",
+      "boardPath": "/products/:slug",
+      "resolvedPaths": [
+        "/product/mk-2866"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/product/mk-2866/page.tsx",
+        "sites/oluk-experience-lab/app/customer-routes.tsx"
+      ],
+      "resolution": "CORRECTED_TO_CANDIDATE_ROUTE"
+    },
+    {
+      "id": "openlab",
+      "figmaNodeId": "767:50",
+      "boardPath": "/openlab",
+      "resolvedPaths": [
+        "/open-lab"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/open-lab/page.tsx",
+        "sites/oluk-experience-lab/app/customer-routes.tsx"
+      ],
+      "resolution": "CORRECTED_TO_CANDIDATE_ROUTE"
+    },
+    {
+      "id": "transaction",
+      "figmaNodeId": "870:50",
+      "boardPath": "/checkout/*",
+      "resolvedPaths": [
+        "/bag",
+        "/checkout",
+        "/checkout/delivery",
+        "/checkout/payment-handoff",
+        "/checkout/order-pay",
+        "/checkout/confirmation",
+        "/checkout/failure",
+        "/checkout/retry"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx"
+      ],
+      "resolution": "EXPANDED_TO_STATIC_INERT_ROUTE_SET"
+    },
+    {
+      "id": "dossier",
+      "figmaNodeId": "871:50",
+      "boardPath": "/products/:slug/dossier",
+      "resolvedPaths": [
+        "/open-lab/dossier/mk-2866"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/open-lab/dossier/mk-2866/page.tsx",
+        "sites/oluk-experience-lab/app/customer-routes.tsx"
+      ],
+      "resolution": "CORRECTED_TO_CANDIDATE_ROUTE"
+    },
+    {
+      "id": "compare",
+      "figmaNodeId": "872:445",
+      "boardPath": "/compare",
+      "resolvedPaths": [
+        "/open-lab/compare"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/open-lab/compare/page.tsx",
+        "sites/oluk-experience-lab/app/customer-routes.tsx"
+      ],
+      "resolution": "CORRECTED_TO_CANDIDATE_ROUTE"
+    },
+    {
+      "id": "goal-discovery",
+      "figmaNodeId": "872:892",
+      "boardPath": "/discover",
+      "resolvedPaths": [
+        "/shop?goal=:goal"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/shop/page.tsx",
+        "sites/oluk-experience-lab/app/design-system/shop-discovery.tsx"
+      ],
+      "resolution": "MAPPED_TO_SHOP_GOAL_FACET_NO_SEPARATE_ROUTE"
+    },
+    {
+      "id": "selected-record",
+      "figmaNodeId": "875:1094",
+      "boardPath": "/products/:slug/record",
+      "resolvedPaths": [
+        "/open-lab/records/source-bound-record"
+      ],
+      "codeFiles": [
+        "sites/oluk-experience-lab/app/open-lab/records/source-bound-record/page.tsx",
+        "sites/oluk-experience-lab/app/customer-routes.tsx"
+      ],
+      "resolution": "CORRECTED_TO_CANDIDATE_ROUTE"
+    }
+  ],
+  "tokenCollections": [
+    {
+      "id": "634:2",
+      "name": "Color Primitives",
+      "count": 23
+    },
+    {
+      "id": "634:20",
+      "name": "Color Semantics",
+      "count": 25
+    },
+    {
+      "id": "634:40",
+      "name": "Dimensions",
+      "count": 28
+    },
+    {
+      "id": "634:69",
+      "name": "Typography",
+      "count": 22
+    }
+  ],
+  "bridgeTokens": [
+    {
+      "css": "--oluk-border-chip",
+      "value": "#d4e0f2",
+      "figmaVariable": "border/chip",
+      "scope": "stroke"
+    },
+    {
+      "css": "--oluk-border-outer",
+      "value": "#becfe9",
+      "figmaVariable": "border/outer",
+      "scope": "stroke"
+    },
+    {
+      "css": "--oluk-border-identity",
+      "value": "#bdd0f1",
+      "figmaVariable": "border/identity",
+      "scope": "stroke"
+    },
+    {
+      "css": "--oluk-border-inner",
+      "value": "#b4caf0",
+      "figmaVariable": "border/inner",
+      "scope": "stroke"
+    },
+    {
+      "css": "--oluk-border-family-bg",
+      "value": "#d9e3f1",
+      "figmaVariable": "border/family-bg",
+      "scope": "stroke"
+    },
+    {
+      "css": "--oluk-text-chip-value",
+      "value": "#17213f",
+      "figmaVariable": "text/chip-value",
+      "scope": "text-fill"
+    },
+    {
+      "css": "--oluk-type-chip-label",
+      "value": "11px",
+      "figmaVariable": "type/chip-label",
+      "scope": "font-size"
+    },
+    {
+      "css": "--oluk-media-gradient",
+      "value": "linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%)",
+      "figmaVariable": null,
+      "scope": "governed-literal-gradient"
+    },
+    {
+      "css": "--oluk-surface-family",
+      "value": "#f8fafc",
+      "figmaVariable": "surface/family",
+      "scope": "fill"
+    }
+  ],
+  "unmappedCanonicalCandidates": [
+    {
+      "nodeId": "734:17326",
+      "name": "ProductTabs",
+      "reason": "No standalone React export; Dossier currently renders a truthful static visual index."
+    },
+    {
+      "nodeId": "754:18224",
+      "name": "SiteHeader",
+      "reason": "Current candidate is a route-shell-local function, not an exported design-system component."
+    },
+    {
+      "nodeId": "754:18225",
+      "name": "TrustRail",
+      "reason": "Current candidate is embedded inside SiteHeader and has no exact exported component."
+    },
+    {
+      "nodeId": "754:18226",
+      "name": "SiteFooter",
+      "reason": "Current candidate is a route-shell-local function, not an exported design-system component."
+    }
+  ],
+  "guardrails": {
+    "officialCodeConnect": "NOT_INVOKED",
+    "figmaWrites": "REGISTRY_COPY_CORRECTION_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
+    "networkCallbacks": "NONE",
+    "commerceCallbacks": "NONE",
+    "paymentSdk": "NONE",
+    "runtimeMutation": "NONE",
+    "publication": "NONE",
+    "promotion": "NONE",
+    "humanReviewRequired": true
+  }
+}

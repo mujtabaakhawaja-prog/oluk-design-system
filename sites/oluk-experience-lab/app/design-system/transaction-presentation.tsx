@@ -190,7 +190,7 @@ function BagContent() {
 function DetailsContent() {
   return (
     <div className={styles.layout}>
-      <form className={styles.primary}>
+      <section aria-label="Checkout details presentation" className={styles.primary}>
         <section className={styles.formPanel}>
           <div className={styles.panelHeading}><span>01</span><div><h2>Contact</h2><p>Used for the order confirmation and delivery updates.</p></div></div>
           <div className={styles.fieldGrid}>
@@ -213,7 +213,7 @@ function DetailsContent() {
           <a href="/bag">← Back to bag</a>
           <ActionLink href="/checkout/delivery">Continue to delivery</ActionLink>
         </div>
-      </form>
+      </section>
       <OrderSummary compact />
     </div>
   );
