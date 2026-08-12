@@ -48,3 +48,11 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added the durable repository receipt at `authority/receipts/CONV-002-FIDELITY-COMPLETION.md` and registered the Page 25 Figma receipt section `847:50`, comparison board `847:51`, source snapshots `847:65` / `847:306` and canonical instances `847:180` / `847:423`.
 - This entry records work in progress only. No final Figma or Sites fidelity claim is made until the exact Page 25 receipt node, repository completion commit and full validation results replace the pending markers.
 - All affected artifacts remain `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`; rollback is additive, preserves ledger/source history and requires a later explicit supersession for any champion change.
+
+## 2026-08-12 — CONV-002 fidelity validation receipt
+
+- Verified the native Page 25 receipt at section `847:50`, comparison board `847:51`, source snapshots `847:65` / `847:306` and canonical instances `847:180` / `847:423`.
+- Repository completion commit `5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1` validates the bounded Sites delta: typecheck, lint and production build pass across 15 routes; tests pass 8/8.
+- Browser QA passes `/shop` and `/review` at 1440/1024/768/390 with zero document overflow, zero clipped cards/panels, four non-overlapping qualitative chips, no visible `90 CAPS` and no governance copy in the tested roots.
+- State advances to `FIGMA_RECEIPT_VERIFIED · REPOSITORY_VALIDATED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
+- This is bounded CONV-002 proof, not the complete MF-09 route/state matrix. Full MF-09, MF-10 and later publication/runtime gates remain open; deployment remains `NONE`.

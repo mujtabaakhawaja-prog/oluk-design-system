@@ -56,3 +56,7 @@ No Figma library publication, Code Connect, customer-route promotion, inventory/
 ## 2026-08-12 successor pointer — CONV-002 material fidelity
 
 This CONV-001 receipt remains historical evidence for the initial candidate graph and Sites implementation. The current material-fidelity delta is tracked in `authority/receipts/CONV-002-FIDELITY-COMPLETION.md` under `DEC-FIDELITY-001`, `DEC-CHIP-001`, `DEC-MEDIA-001`, `DEC-MEDIA-002` and the full-chamber clarification `DEC-MEDIA-003`. Its Page 25 Figma evidence is verified at section `847:50` and comparison board `847:51`; repository completion remains `PENDING_REPOSITORY_COMMIT`. Its state is therefore `FIGMA_RECEIPT_VERIFIED · REPOSITORY_COMPLETION_PENDING · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`, and it does not supersede this receipt's runtime and publication boundary.
+
+## 2026-08-12 CONV-002 validation pointer
+
+Repository completion is now validated at `5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1`. The bounded state advances to `FIGMA_RECEIPT_VERIFIED · REPOSITORY_VALIDATED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`; it does not satisfy full MF-09 and does not supersede this receipt's runtime or publication boundary.

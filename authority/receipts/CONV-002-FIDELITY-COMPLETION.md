@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-12
 
-**Status:** `FIGMA_RECEIPT_VERIFIED / REPOSITORY_COMPLETION_PENDING / HUMAN_REVIEW_REQUIRED / UNPUBLISHED`
+**Status:** `FIGMA_RECEIPT_VERIFIED / REPOSITORY_VALIDATED / HUMAN_REVIEW_REQUIRED / UNPUBLISHED`
 
 **Controlling decisions:** `DEC-PRECEDENCE-001`, `DEC-FIDELITY-001`, `DEC-CHIP-001`, `DEC-MEDIA-001`, `DEC-MEDIA-002`, `DEC-MEDIA-003`, `DEC-GATE-001`
 
@@ -57,7 +57,7 @@ Canonical and downstream targets:
 - Featured mobile variant: `743:393`.
 - Shop inherited Featured instance: `765:98`.
 
-Reported restored atmospheric layers awaiting Page 25 receipt verification:
+Verified restored atmospheric layers:
 
 - Vertical desktop: `844:20800`, `844:20801`, `844:20802`.
 - Vertical mobile: `844:20803`, `844:20804`, `844:20805`.
@@ -77,32 +77,34 @@ Visible Page 25 comparison receipt:
 - Append-only decisions: `authority/DECISION-LEDGER.json`.
 - Current projection: `authority/CURRENT-STATE.json`.
 - Artifact registration: `authority/ARTIFACT-REGISTRY.json`.
-- Sites candidate implementation and tests: repository delta based on `c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1`; completion commit `PENDING_REPOSITORY_COMMIT`.
+- Sites candidate implementation and tests: repository delta based on `c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1`; validated completion commit `5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1`.
 
 ## VALIDATION
 
-The following checks are required before this receipt may advance from pending:
+The bounded CONV-002 checks are complete:
 
 - [x] Figma Page 25 comparison receipt is registered at section `847:50`, board `847:51`, source snapshots `847:65` / `847:306` and canonical instances `847:180` / `847:423`.
-- [ ] All 98 active convergence variables are accounted for; no legacy/quarantined variable is rebound.
-- [ ] CONV-002 primitive variables have `ALL_SCOPES` cleared and governed WEB syntax.
-- [ ] CONV-002 semantic variables use role-appropriate scopes and governed WEB syntax.
-- [ ] QualitativeChip uses a semantic cobalt icon, Inter Medium 11px/0.66px uppercase label, Inter Bold 12px/0.24px `#17213F` value, `#D4E0F2` stroke and 10px radius.
-- [ ] Canonical Vertical and Featured cards reproduce the MF-01A graduated border and atmospheric media hierarchy.
-- [ ] Shop instance `765:98` inherits the corrected component state without local overrides.
-- [ ] Literal gradient stops are limited to the exact `DEC-MEDIA-003` exception: outer `#F8FBFF→#E4ECFA` and contact shelf `#FFFFFF→#E6EDFA`, only inside the MF-01A atmospheric media recipe; no other invented or ungoverned paint is present.
-- [ ] Sites customer routes use the same two-type chip grammar and media recipe.
-- [ ] Build, typecheck, lint, automated tests and browser visual checks pass.
-- [ ] No visible `90 CAPS`, no customer-facing governance labels and no second persistent inverse surface appear.
+- [x] All 98 active convergence variables are accounted for; canonical-board validation reports zero legacy/quarantined bindings.
+- [x] CONV-002 primitive variables have `ALL_SCOPES` cleared and governed WEB syntax.
+- [x] CONV-002 semantic variables use role-appropriate scopes and governed WEB syntax.
+- [x] QualitativeChip uses the semantic cobalt QualitativeIcon set `844:926`, Inter Medium 11px/0.66px uppercase label, Inter Bold 12px/0.24px `#17213F` value, `#D4E0F2` stroke and 10px radius.
+- [x] Canonical Vertical and Featured cards reproduce the MF-01A graduated border and atmospheric media hierarchy.
+- [x] Shop instance `765:98` inherits the corrected component state without local overrides.
+- [x] Literal gradient stops are limited to the exact `DEC-MEDIA-003` exception: outer `#F8FBFF→#E4ECFA` and contact shelf `#FFFFFF→#E6EDFA`, only inside the MF-01A atmospheric media recipe; no other invented or ungoverned component paint is present.
+- [x] Sites customer routes use the same two-type chip grammar and media recipe.
+- [x] Typecheck, lint and production build pass; the build covers 15 routes and the automated suite passes 8/8.
+- [x] Bounded browser QA passes `/shop` and `/review` at 1440/1024/768/390 with zero document overflow, zero clipped cards/panels, four non-overlapping qualitative chips, no visible `90 CAPS` and no governance copy inside the tested roots.
+- [x] The footer remains the sole persistent inverse surface.
+- [x] Deployment is `NONE`; no Figma library, Sites candidate, Code Connect mapping or runtime surface was published or promoted.
 
-Current result: `FIGMA_RECEIPT_VERIFIED_HUMAN_REVIEW_REQUIRED`; repository completion and combined final validation remain pending, so this receipt makes no publication or runtime-authority claim.
+Current result: `FIGMA_RECEIPT_VERIFIED · REPOSITORY_VALIDATED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. This is a bounded CONV-002 four-width proof for `/shop` and `/review`, not the full MF-09 route/state matrix. It grants no publication, deployment or runtime authority.
 
 ## OPEN
 
 - Figma comparison evidence is registered at section `847:50` and board `847:51`; artifact-specific champion review remains open.
-- Exact repository completion commit: `PENDING_REPOSITORY_COMMIT`.
 - Artifact-specific champion visual approval remains open.
 - MF-09 four-width/local-state proof and MF-10 final convergence gate remain open.
+- MF++ publication, Code Connect, deployment and runtime translation remain blocked pending their separate gates and authorization.
 
 ## ROLLBACK
 

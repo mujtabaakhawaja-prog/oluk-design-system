@@ -3,7 +3,7 @@
   "snapshotId": "OLUK-CONV-002-20260812",
   "recordedDate": "2026-08-12",
   "program": "OLUK_DESIGN_COMMERCE_EXPERIENCE_CONVERGENCE",
-  "status": "CONV_002_FIDELITY_COMPLETION_IN_PROGRESS",
+  "status": "FIGMA_RECEIPT_VERIFIED_REPOSITORY_VALIDATED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
   "publicationState": "UNPUBLISHED",
   "promotionState": "HUMAN_REVIEW_REQUIRED",
   "controllingLedger": "authority/DECISION-LEDGER.json",
@@ -164,13 +164,13 @@
         "mediaGradientApplied": true,
         "completeAtmosphericLayerHierarchyRestored": true,
         "familyColorUpdated": true,
-        "activeVariableCount": 98
+        "activeVariableCount": 98,
+        "variableScopesGoverned": true,
+        "webCodeSyntaxGoverned": true,
+        "legacyBindingsOnCanonicalBoard": 0,
+        "shop765_98InheritanceVerified": true
       },
-      "completionChecksAwaitingReceipt": [
-        "complete graduated-border binding",
-        "variable scopes and WEB syntax",
-        "Shop 765:98 inherited-state verification"
-      ],
+      "completionChecksAwaitingReceipt": [],
       "gradientStopsUnboundException": "Outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA are the only literal paint exceptions, governed by DEC-MEDIA-003 and limited to the MF-01A atmospheric media recipe."
     }
   },
@@ -188,29 +188,37 @@
     {"run": "MF++", "priority": "POST_GATE", "work": "promotion runtime translation and Code Connect"}
   ],
   "sitesImplementation": {
-    "state": "CONV002_FIDELITY_COMPLETION_IN_PROGRESS",
+    "state": "REPOSITORY_VALIDATED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
     "sourceCommit": "c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1",
-    "completionCommit": "PENDING_REPOSITORY_COMMIT",
+    "completionCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab"],
     "routeCount": 15,
     "conv002Required": {
-      "candidateTokensCSS": "Add 12 new CSS custom properties, update --oluk-neutral-family to #F8FAFC, add media gradient mixin",
-      "candidateReviewCSS": "Replace solid media fill with gradient, replace chip border/card with border/chip, fix chip label 12px→11px and weight Medium→Bold for values",
-      "customerRouteCSS": "Replace 7px joined qualitative cells with MF-01A two-type chip grammar",
-      "renderedHtmlTest": "Update token inventory count, add gradient exception rule",
-      "status": "TOKEN_DELTA_APPLIED_CUSTOMER_COMPONENT_AND_VISUAL_RECEIPT_PENDING"
+      "candidateTokensCSS": "12 CONV-002 CSS custom properties present; --oluk-neutral-family is #F8FAFC; governed media gradient present",
+      "candidateReviewCSS": "MF-01A gradient, border/chip, 11px label and bold chip value grammar present",
+      "customerRouteCSS": "Former 7px joined qualitative cells replaced by MF-01A two-type chip grammar",
+      "renderedHtmlTest": "Token inventory and governed gradient exception are asserted",
+      "status": "CONV002_FIDELITY_DELTA_COMPLETE_REPOSITORY_VALIDATED"
     },
     "validation": {
       "build": "PASS",
       "typecheck": "PASS",
       "lint": "PASS",
-      "tests": {"passed": 7, "total": 7},
+      "tests": {"passed": 8, "total": 8},
       "browserQA": {
-        "horizontalOverflow": 0,
+        "proofScope": "BOUNDED_CONV002_SHOP_AND_REVIEW_NOT_FULL_MF09",
+        "routes": ["/shop", "/review"],
+        "widthsPx": [1440, 1024, 768, 390],
+        "documentOverflow": 0,
+        "clippedCardsOrPanels": 0,
+        "qualitativeChipCount": 4,
+        "overlappingQualitativeChips": 0,
         "visible90Caps": 0,
         "governanceLabelLeakage": 0,
         "footerSolePersistentInverse": true
-      }
+      },
+      "routeCount": 15,
+      "fullMF09Satisfied": false
     },
     "deployment": "NONE",
     "humanReviewRequired": true,
