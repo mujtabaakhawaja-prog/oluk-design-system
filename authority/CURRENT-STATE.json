@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "snapshotId": "OLUK-CONV-001-20260811",
-  "recordedDate": "2026-08-11",
+  "snapshotId": "OLUK-CONV-002-20260812",
+  "recordedDate": "2026-08-12",
   "program": "OLUK_DESIGN_COMMERCE_EXPERIENCE_CONVERGENCE",
-  "status": "CONV_001_APPROVED_WITH_CORRECTIONS",
+  "status": "CONV_002_FIDELITY_CORRECTIONS_APPLIED",
   "publicationState": "UNPUBLISHED",
   "promotionState": "HUMAN_REVIEW_REQUIRED",
   "controllingLedger": "authority/DECISION-LEDGER.json",
@@ -39,7 +39,12 @@
   "variables": {
     "keepAndExtend": {
       "collectionCount": 4,
-      "variableCount": 86
+      "variableCount": 98,
+      "conv002Delta": {
+        "addedPrimitives": ["blue/border-chip", "blue/border-outer", "blue/border-identity", "blue/border-inner", "blue/border-family-bg", "ink/chip-value"],
+        "addedSemantics": ["border/chip", "border/outer", "border/identity", "border/inner", "border/family-bg", "text/chip-value"],
+        "updatedPrimitive": "neutral/family #FAFCFF → #F8FAFC"
+      }
     },
     "archived": {
       "collectionCount": 3,
@@ -54,6 +59,22 @@
     "bodyPx": "15-16"
   },
   "inverseSurface": "footer_only",
+  "chipGrammar": {
+    "decisionId": "DEC-CHIP-001",
+    "status": "CHAMPION",
+    "label": "Inter Medium 11px, tracking 0.66px, UPPER, text/muted #64718A",
+    "value": "Inter Bold 12px, tracking 0.24px, text/chip-value #17213F",
+    "containerFill": "surface/card",
+    "containerStroke": "border/chip #D4E0F2",
+    "containerRadius": "radius/chip 10px",
+    "iconStroke": "accent/cobalt #0057FF"
+  },
+  "mediaChamber": {
+    "decisionId": "DEC-MEDIA-001",
+    "status": "CHAMPION",
+    "primaryTreatment": "GRADIENT_LINEAR #F8FBFF@5% → #E4ECFA@100% diagonal",
+    "fallbackSolid": "surface/media #F0F4FB"
+  },
   "canonicalCandidateSources": {
     "inventoryStatus": "732:2902",
     "evidenceStatus": "732:2912",
@@ -107,7 +128,16 @@
     "dossierHeightPx": 898,
     "governanceLabelsInsideCustomerFrames": 0,
     "publicationState": "UNPUBLISHED",
-    "reviewState": "HUMAN_REVIEW_REQUIRED"
+    "reviewState": "HUMAN_REVIEW_REQUIRED",
+    "conv002FidelityCorrections": {
+      "chipGrammarFixed": true,
+      "mediaGradientApplied": true,
+      "borderHierarchyBound": true,
+      "familyColorUpdated": true,
+      "variableScopesSet": true,
+      "codeSyntaxAdded": true,
+      "gradientStopsUnboundException": "Media gradient stops #F8FBFF and #E4ECFA are literal gradient colors, not variable-bindable. Governed via DEC-MEDIA-001 paint spec."
+    }
   },
   "currentGate": "ARTIFACT_SPECIFIC_HUMAN_VISUAL_REVIEW",
   "runQueue": [
@@ -123,10 +153,17 @@
     {"run": "MF++", "priority": "POST_GATE", "work": "promotion runtime translation and Code Connect"}
   ],
   "sitesImplementation": {
-    "state": "CANDIDATE_IMPLEMENTED_HUMAN_REVIEW_REQUIRED",
+    "state": "CONV002_TOKEN_UPDATE_PENDING",
     "sourceCommit": "84f8627a513a6e7c547cd4df76d17a6351d48420",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab"],
     "routeCount": 15,
+    "conv002Required": {
+      "candidateTokensCSS": "Add 12 new CSS custom properties, update --oluk-neutral-family to #F8FAFC, add media gradient mixin",
+      "candidateReviewCSS": "Replace solid media fill with gradient, replace chip border/card with border/chip, fix chip label 12px→11px and weight Medium→Bold for values",
+      "customerRouteCSS": "Replace 7px joined qualitative cells with MF-01A two-type chip grammar",
+      "renderedHtmlTest": "Update token inventory count, add gradient exception rule",
+      "status": "FIGMA_HANDOFF_COMPLETE_CODEX_ADOPTION_PENDING"
+    },
     "validation": {
       "build": "PASS",
       "typecheck": "PASS",
