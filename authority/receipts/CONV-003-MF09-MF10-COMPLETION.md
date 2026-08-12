@@ -3,7 +3,7 @@
 **Recorded:** 2026-08-12
 **Figma file:** `BEPMuUt1HroEw8xjz8CVyN`
 **Final MF-10 Figma node:** `888:304`
-**Repository completion commit:** `__CONV003_COMMIT_SHA_PENDING__`
+**Repository completion commit:** `bba06da93ce02dfd17bce3766c61f2d59b538cbe`
 **State:** `CANDIDATE_VERIFIED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`
 **Deployment:** `NONE`
 **Runtime authority:** `NONE`
@@ -144,6 +144,6 @@ No telemetry was added, configured or activated. Telemetry remains a separately 
 ## Remaining gate
 
 1. Re-read and visually inspect Figma node `888:304` before champion action; it remains unpublished and human-review-required.
-2. Replace `__CONV003_COMMIT_SHA_PENDING__` with the integrated completion commit.
+2. Use implementation commit `bba06da93ce02dfd17bce3766c61f2d59b538cbe` as the exact repository candidate reviewed with the Figma artifact.
 3. Obtain artifact-specific champion `APPROVE / CORRECT / REJECT` disposition.
 4. Keep MF++ blocked unless a later, separate authorization explicitly names the publication or runtime packet.

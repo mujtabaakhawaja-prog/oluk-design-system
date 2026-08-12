@@ -68,7 +68,7 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Completed the 50×50 candidate matrix: `FG-NEXT-001`–`048` and `CX-NEXT-001`–`047` are `VERIFIED`; the five publication/runtime items remain `BLOCKED`.
 - Recorded the 31-route Codex Sites candidate, four-width MF-09 matrix, shared component/provenance/taxonomy graph, inert bag-through-retry transaction presentation and local validation tooling.
 - Added `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md` as the durable completion and gate receipt.
-- The final unpublished MF-10 approval candidate is registered at Figma node `888:304`; the integrated repository commit remains `__CONV003_COMMIT_SHA_PENDING__`. The node is candidate evidence, not champion approval or publication authority.
+- The final unpublished MF-10 approval candidate is registered at Figma node `888:304`; the integrated repository implementation is commit `bba06da93ce02dfd17bce3766c61f2d59b538cbe`. The node is candidate evidence, not champion approval or publication authority.
 
 ### Validation and gate
 

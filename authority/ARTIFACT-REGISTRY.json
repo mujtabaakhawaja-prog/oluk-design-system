@@ -23,7 +23,7 @@
     "sitesNext50Status": "CX001_047_VERIFIED_CX048_050_BLOCKED",
     "mf09RouteWidthMatrix": "31_ROUTES_X_1440_1024_768_390_VERIFIED",
     "mf10ChampionApproval": "BLOCKED_PENDING_ARTIFACT_SPECIFIC_REVIEW",
-    "repositoryCompletionCommit": "__CONV003_COMMIT_SHA_PENDING__",
+    "repositoryCompletionCommit": "bba06da93ce02dfd17bce3766c61f2d59b538cbe",
     "finalMF10FigmaNode": "888:304",
     "deployment": "none"
   },
@@ -127,6 +127,6 @@
     {"id": "sites-conv003-proof-tooling", "path": "sites/oluk-experience-lab/scripts/proof/", "class": "validation_tooling", "authority": "candidate_evidence", "review": "verified_human_review_required", "routeCount": 31, "widths": [1440, 1024, 768, 390]},
     {"id": "sites-conv003-visual-baseline-manifest", "path": "sites/oluk-experience-lab/tests/visual-baselines/manifest.json", "class": "visual_baseline_manifest", "authority": "candidate_evidence", "review": "124_captured_unreviewed_0_champion_reviewed", "routeCount": 31},
     {"id": "sites-conv003-contrast-zoom-long-copy-proof", "path": "sites/oluk-experience-lab/scripts/proof/contrast-zoom-stress.mjs", "receipt": "Codex-Cold-Store/oluk-conv003-mf09-20260812/final-all-route/cx38-contrast-zoom-long-copy.json", "class": "browser_proof", "authority": "candidate_evidence", "review": "30_of_30_customer_routes_pass_aa_zoom_long_copy_enhanced_aaa_manual_review", "deployment": "none", "runtimeAuthority": "none"},
-    {"id": "sites-conv003-candidate", "path": "sites/oluk-experience-lab/", "commit": "__CONV003_COMMIT_SHA_PENDING__", "class": "runtime_candidate", "authority": "candidate_implementation", "review": "mf09_mf10_candidate_verified_human_review_required", "deployment": "none", "runtimeAuthority": "none"}
+    {"id": "sites-conv003-candidate", "path": "sites/oluk-experience-lab/", "commit": "bba06da93ce02dfd17bce3766c61f2d59b538cbe", "class": "runtime_candidate", "authority": "candidate_implementation", "review": "mf09_mf10_candidate_verified_human_review_required", "deployment": "none", "runtimeAuthority": "none"}
   ]
 }

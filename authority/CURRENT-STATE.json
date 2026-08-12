@@ -260,7 +260,7 @@
   "sitesImplementation": {
     "state": "CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
     "sourceCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
-    "completionCommit": "__CONV003_COMMIT_SHA_PENDING__",
+    "completionCommit": "bba06da93ce02dfd17bce3766c61f2d59b538cbe",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab", "Evidence lifecycle", "Decision tools", "Bag and checkout presentation", "Post-purchase presentation", "Owner review"],
     "routeCount": 31,
     "conv003Completion": {
