@@ -153,7 +153,7 @@ export function ProductCommerceCard({
   return (
     <OlukCard className={`oluk-candidate-commerce-card oluk-candidate-commerce-card--${variant}`} component={`ProductCommerceCard.${variant}`} density={variant} id={id}>
       <OlukMediaChamber className="oluk-candidate-media-chamber">
-        <div className="oluk-candidate-media-orbit" aria-hidden="true" />
+        <div className="oluk-candidate-media-contact-shelf" aria-hidden="true" />
         <img src={product.image} alt={`${product.name} ${product.alias} bottle`} />
       </OlukMediaChamber>
       <OlukPurchasePlane className="oluk-candidate-content-plane">

@@ -36,3 +36,15 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - State advanced from `SEPARATE_VALIDATION_IN_PROGRESS` to `CANDIDATE_IMPLEMENTED_HUMAN_REVIEW_REQUIRED`.
 - No Sites deployment occurred. This validated candidate does not promote Figma artifacts or grant production runtime, evidence, inventory, payment, C2 or release authority.
 - Registered Page 25 runtime candidate receipt `776:50` under changelog `728:224`; it remains unpublished and `HUMAN_REVIEW_REQUIRED`.
+
+## 2026-08-12 — CONV-002 MF-01A material-fidelity completion in progress
+
+- Preserved MF-01A authority for `text/chip-value #17213F`, `neutral/family #F8FAFC`, the atmospheric media recipe and the complete graduated border hierarchy (`DEC-FIDELITY-001`, `DEC-CHIP-001`, `DEC-MEDIA-001`).
+- Recorded the only permitted literal-paint exception: Figma gradient stops `#F8FBFF` and `#E4ECFA` remain governed as the exact two-stop media recipe; the exception does not authorize any other invented or unbound component color (`DEC-MEDIA-002`).
+- Clarified the exception append-only after restoration of the full MF-01A chamber: `DEC-MEDIA-003` governs both the outer `#F8FBFF→#E4ECFA` gradient and the contact-shelf `#FFFFFF→#E6EDFA` gradient, only inside that exact atmospheric recipe. The earlier `DEC-MEDIA-002` event remains intact as history.
+- Confirmed the active convergence projection at four collections and 98 variables; three legacy/quarantined collections and 128 variables remain archived and undeleted.
+- Registered MF-01A source targets `626:11814`, `626:11821`, `626:11822`, `626:11823`, `626:11824`; canonical targets `733:17342`, `743:50`, `743:51`, `743:281`, `743:282`; and downstream Shop instance `765:98` for the bounded completion audit.
+- Registered QualitativeIcon set `844:926` with components `844:914`, `844:917`, `844:921`, `844:925`, plus restored atmospheric layers `844:20800` through `844:20811` across Vertical/Featured desktop and mobile variants.
+- Added the durable repository receipt at `authority/receipts/CONV-002-FIDELITY-COMPLETION.md` and registered the Page 25 Figma receipt section `847:50`, comparison board `847:51`, source snapshots `847:65` / `847:306` and canonical instances `847:180` / `847:423`.
+- This entry records work in progress only. No final Figma or Sites fidelity claim is made until the exact Page 25 receipt node, repository completion commit and full validation results replace the pending markers.
+- All affected artifacts remain `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`; rollback is additive, preserves ledger/source history and requires a later explicit supersession for any champion change.

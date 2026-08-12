@@ -14,8 +14,17 @@
   --cobalt-soft: #e8efff;
   --line: rgba(206, 220, 241, 0.92);
   --line-strong: #afc8ff;
+  --oluk-surface-family: #f8fafc;
+  --oluk-border-chip: #d4e0f2;
+  --oluk-border-outer: #becfe9;
+  --oluk-border-identity: #bdd0f1;
+  --oluk-border-inner: #b4caf0;
+  --oluk-border-family-bg: #d9e3f1;
+  --oluk-text-chip-value: #17213f;
   --success: #13a66a;
   --inverse: #141827;
+  --oluk-media-gradient: linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%);
+  --oluk-media-contact-shelf-gradient: linear-gradient(180deg, #ffffff 0%, #e6edfa 100%);
   --shadow-compact: 0 5px 12px rgba(15, 26, 51, 0.09);
   --shadow-card: 0 24px 60px rgba(15, 26, 51, 0.1);
   --shadow-purchase: 0 20px 50px rgba(15, 26, 51, 0.18);
@@ -37,7 +46,6 @@ body {
   color: var(--ink);
   font-family: var(--font-ui), Inter, sans-serif;
   margin: 0;
-  overflow-x: clip;
 }
 
 button,
@@ -90,7 +98,6 @@ dd {
 
 .experience-lab {
   min-height: 100vh;
-  overflow-x: clip;
 }
 
 body:has(.experience-lab--candidate-review),
@@ -708,7 +715,7 @@ a.button-secondary:hover {
 
 .product-commerce-card {
   background: transparent;
-  border: 1px solid var(--line);
+  border: 1px solid var(--oluk-border-outer);
   border-radius: 24px;
   box-shadow: var(--shadow-card);
   min-width: 0;
@@ -734,7 +741,7 @@ a.button-secondary:hover {
 
 .product-media-chamber {
   align-items: center;
-  background: radial-gradient(circle at 50% 38%, var(--white), transparent 31%), linear-gradient(155deg, var(--ice), #e9f0fa);
+  background: var(--oluk-media-gradient);
   display: flex;
   height: 288px;
   justify-content: center;
@@ -746,25 +753,46 @@ a.button-secondary:hover {
   height: 300px;
 }
 
-.media-orbit {
-  border: 1px solid rgba(0, 87, 255, 0.13);
-  border-radius: 50%;
-  height: 210px;
-  position: absolute;
-  width: 210px;
-}
-
-.media-orbit::before,
-.media-orbit::after {
-  border: 1px solid rgba(0, 87, 255, 0.08);
-  border-radius: 50%;
+.product-media-chamber::before,
+.product-media-chamber::after {
   content: "";
-  inset: 22px;
+  pointer-events: none;
   position: absolute;
 }
 
-.media-orbit::after {
-  inset: 48px;
+.product-media-chamber::before {
+  background: rgba(255, 255, 255, 0.00001);
+  border: 1px solid rgba(255, 255, 255, 0.98);
+  border-radius: 21px;
+  box-shadow: 0 10px 28px rgba(71, 111, 174, 0.07), inset 0 0 24px rgba(255, 255, 255, 0.85);
+  height: 76%;
+  left: 13%;
+  top: 14%;
+  width: 74%;
+}
+
+.product-media-chamber::after {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid color-mix(in srgb, var(--oluk-border-identity) 65%, transparent);
+  border-radius: 32px;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.7);
+  height: 61%;
+  left: 17%;
+  top: 27%;
+  width: 66%;
+}
+
+.media-contact-shelf {
+  background: var(--oluk-media-contact-shelf-gradient);
+  border: 1px solid color-mix(in srgb, var(--oluk-border-inner) 80%, transparent);
+  border-radius: 999px;
+  bottom: 7%;
+  box-shadow: 0 8px 12px rgba(30, 70, 140, 0.1);
+  height: 13%;
+  left: 12%;
+  position: absolute;
+  right: 12%;
+  z-index: 1;
 }
 
 .product-media-chamber > img {
@@ -774,7 +802,15 @@ a.button-secondary:hover {
   position: relative;
   transform: translateY(6px);
   width: 74%;
-  z-index: 1;
+  z-index: 2;
+}
+
+.product-commerce-card .product-series {
+  background: var(--oluk-surface-family);
+  border: 1px solid var(--oluk-border-family-bg);
+  border-radius: 999px;
+  display: inline-flex;
+  padding: 8px 12px;
 }
 
 .product-content-plane {
@@ -867,18 +903,24 @@ a.button-secondary:hover {
 
 .metric-rail {
   display: grid;
-  gap: 7px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  gap: 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 20px 0 12px;
+  overflow: hidden;
 }
 
 .metric-rail > div {
-  background: var(--canvas);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  background: var(--white);
+  border: 0;
   min-width: 0;
   padding: 12px 8px 10px;
   text-align: center;
+}
+
+.metric-rail > div + div {
+  border-left: 1px solid var(--line-strong);
 }
 
 .metric-rail dt {
@@ -892,7 +934,7 @@ a.button-secondary:hover {
 }
 
 .metric-rail dd {
-  color: var(--ink-muted);
+  color: var(--cobalt);
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -904,47 +946,55 @@ a.button-secondary:hover {
 }
 
 .qualitative-chips {
-  border: 1px solid var(--line);
-  border-radius: 14px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
   margin: 12px 0 18px;
+  padding: 0;
 }
 
-.qualitative-chips > div {
+.qualitative-chip {
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--oluk-border-chip);
+  border-radius: 10px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 20px minmax(0, 1fr);
   min-width: 0;
-  padding: 10px 5px;
-  text-align: center;
+  padding: 12px 14px;
+  text-align: left;
 }
 
-.qualitative-chips > div + div {
-  border-left: 1px solid var(--line);
-}
-
-.qualitative-chips svg {
+.qualitative-chip :is(svg, img) {
   color: var(--cobalt);
-  fill: var(--cobalt);
-  height: 17px;
-  margin-bottom: 5px;
-  width: 17px;
+  height: 20px;
+  width: 20px;
 }
 
-.qualitative-chips dt {
-  color: var(--cobalt);
-  font-size: 7px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+.qualitative-chip dl {
+  min-width: 0;
 }
 
-.qualitative-chips dd {
-  color: var(--ink);
-  font-size: 7px;
-  font-weight: 800;
+.qualitative-chip dt {
+  color: var(--ink-muted);
+  font-family: var(--font-ui), Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.66px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.qualitative-chip dd {
+  color: var(--oluk-text-chip-value);
+  font-family: var(--font-ui), Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
   line-height: 1.25;
-  margin-top: 3px;
+  margin-top: 2px;
   overflow-wrap: anywhere;
 }
 
@@ -3073,6 +3123,12 @@ a.button-secondary:hover {
 }
 
 @media (max-width: 1180px) {
+  .trust-rail-inner span:nth-child(2),
+  .trust-rail-inner span:nth-child(4),
+  .trust-rail-inner span:nth-child(5) {
+    display: none;
+  }
+
   .hero-composition {
     grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
   }
@@ -3159,12 +3215,6 @@ a.button-secondary:hover {
 
   .shell {
     padding-inline: 22px;
-  }
-
-  .trust-rail-inner span:nth-child(2),
-  .trust-rail-inner span:nth-child(4),
-  .trust-rail-inner span:nth-child(5) {
-    display: none;
   }
 
   .primary-nav {
@@ -3319,15 +3369,6 @@ a.button-secondary:hover {
 
   .horizontal-content .qualitative-chips {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .horizontal-content .qualitative-chips > div:nth-child(3) {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .horizontal-content .qualitative-chips > div:nth-child(4) {
-    border-top: 1px solid var(--line);
   }
 
   .horizontal-content .purchase-row {
@@ -3780,15 +3821,6 @@ a.button-secondary:hover {
 
   .qualitative-chips {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .qualitative-chips > div:nth-child(3) {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .qualitative-chips > div:nth-child(4) {
-    border-top: 1px solid var(--line);
   }
 
   .card-actions,

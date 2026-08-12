@@ -94,8 +94,13 @@ The media chamber uses a diagonal linear gradient for atmospheric softform feel,
 | Stop 1 | `#F8FBFF` at position 5% (near-white ice) |
 | Stop 2 | `#E4ECFA` at position 100% (deeper ice) |
 | Direction | ~70° diagonal via transform matrix |
+| Contact shelf | Secondary gradient `#FFFFFF` → `#E6EDFA` |
 
 The solid `surface/media` (#F0F4FB) remains available as a fallback for contexts where gradients are impractical (e.g., small chips, status indicators). The gradient is the primary media chamber treatment.
+
+`DEC-MEDIA-002` governs one bounded literal-paint exception: Figma gradient stops `#F8FBFF` and `#E4ECFA` may remain literal because the paint recipe, rather than an individually bindable stop, is the controlled artifact. The exception is limited to this exact two-stop media gradient, must appear in validation receipts, and does not authorize any other unbound or invented component color. Codex/Sites uses the governed `--oluk-media-gradient` custom property for the same recipe.
+
+`DEC-MEDIA-003` clarifies the complete authored recipe without rewriting the earlier event: the bounded exception includes both the outer chamber `#F8FBFF→#E4ECFA` gradient and the contact-shelf `#FFFFFF→#E6EDFA` gradient. Those four stop colors are permitted literally only within this MF-01A atmospheric media construction; every other component fill and stroke must resolve through an active convergence variable.
 
 ### Total convergence variable count
 

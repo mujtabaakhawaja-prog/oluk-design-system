@@ -144,6 +144,28 @@
       "sources": ["626:11821", "626:11980"],
       "appliesTo": ["ProductCommerceCard media chambers", "bounded media chambers", "Codex Sites media CSS"],
       "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-002",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "The MF-01A atmospheric media gradient remains governed by DEC-MEDIA-001 even though its #F8FBFF and #E4ECFA paint stops are literal Figma gradient-stop colors. This is an explicit bounded exception to the otherwise zero-invented-color and variable-binding rule: components must use the exact two-stop paint recipe, the exception must be visible in validation receipts, and no additional unbound paint color is authorized.",
+      "sources": ["626:11821", "626:11822", "626:11823", "626:11824"],
+      "appliesTo": ["bounded ProductCommerceCard media chambers", "Figma gradient paint validation", "Codex Sites media-gradient token", "CONV-002 receipts"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-FIDELITY-001"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-003",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "The complete MF-01A atmospheric media recipe contains two governed literal gradients: the outer chamber #F8FBFF to #E4ECFA and the contact shelf #FFFFFF to #E6EDFA. Both exceptions are limited to the exact authored media-chamber construction. Every other component fill and stroke remains required to resolve through the active convergence variables.",
+      "sources": ["626:11821", "626:11822", "626:11823", "626:11824", "844:20800", "844:20801", "844:20802", "844:20803", "844:20804", "844:20805", "844:20806", "844:20807", "844:20808", "844:20809", "844:20810", "844:20811"],
+      "appliesTo": ["bounded ProductCommerceCard media chambers", "Figma outer chamber paint", "Figma contact shelf paint", "CONV-002 receipts"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-002"],
+      "supersedes": []
     }
   ]
 }

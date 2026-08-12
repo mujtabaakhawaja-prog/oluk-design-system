@@ -43,6 +43,7 @@
   --oluk-shadow-relation: 0 12px 25px rgba(15, 26, 51, 0.12);
 
   --oluk-media-gradient: linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%);
+  --oluk-media-contact-shelf-gradient: linear-gradient(180deg, #ffffff 0%, #e6edfa 100%);
 
   --oluk-font-display: "Plus Jakarta Sans", sans-serif;
   --oluk-font-body: "Inter", sans-serif;

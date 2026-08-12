@@ -3,7 +3,7 @@
   "snapshotId": "OLUK-CONV-002-20260812",
   "recordedDate": "2026-08-12",
   "program": "OLUK_DESIGN_COMMERCE_EXPERIENCE_CONVERGENCE",
-  "status": "CONV_002_FIDELITY_CORRECTIONS_APPLIED",
+  "status": "CONV_002_FIDELITY_COMPLETION_IN_PROGRESS",
   "publicationState": "UNPUBLISHED",
   "promotionState": "HUMAN_REVIEW_REQUIRED",
   "controllingLedger": "authority/DECISION-LEDGER.json",
@@ -71,15 +71,20 @@
   },
   "mediaChamber": {
     "decisionId": "DEC-MEDIA-001",
+    "literalStopExceptionDecisionId": "DEC-MEDIA-003",
+    "clarifiedDecisionIds": ["DEC-MEDIA-002", "DEC-MEDIA-003"],
     "status": "CHAMPION",
-    "primaryTreatment": "GRADIENT_LINEAR #F8FBFF@5% → #E4ECFA@100% diagonal",
-    "fallbackSolid": "surface/media #F0F4FB"
+    "primaryTreatment": "Outer GRADIENT_LINEAR #F8FBFF@5% → #E4ECFA@100% diagonal plus contact-shelf GRADIENT_LINEAR #FFFFFF → #E6EDFA",
+    "fallbackSolid": "surface/media #F0F4FB",
+    "literalStopException": "Only the exact outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA Figma gradients are allowed to remain literal, and only inside the MF-01A atmospheric media recipe; all other component fills and strokes must resolve through the active convergence variables."
   },
   "canonicalCandidateSources": {
     "inventoryStatus": "732:2902",
     "evidenceStatus": "732:2912",
     "metricRail": "733:95",
     "qualitativeChip": "733:17342",
+    "qualitativeIcon": "844:926",
+    "qualitativeIconComponents": ["844:914", "844:917", "844:921", "844:925"],
     "productTabs": "734:17326",
     "heroDecisionSurface": "736:17458",
     "productDecisionHero": "739:50",
@@ -112,7 +117,9 @@
     "homepage": "764:50",
     "shop": "765:50",
     "pdp": "766:50",
-    "openLab": "767:50"
+    "openLab": "767:50",
+    "conv002FidelityReceiptSection": "847:50",
+    "conv002FidelityReceipt": "847:51"
   },
   "surfaceReviewAnnotations": {
     "placement": "outside_customer_frames_on_figma_canvas",
@@ -129,14 +136,42 @@
     "governanceLabelsInsideCustomerFrames": 0,
     "publicationState": "UNPUBLISHED",
     "reviewState": "HUMAN_REVIEW_REQUIRED",
-    "conv002FidelityCorrections": {
-      "chipGrammarFixed": true,
-      "mediaGradientApplied": true,
-      "borderHierarchyBound": true,
-      "familyColorUpdated": true,
-      "variableScopesSet": true,
-      "codeSyntaxAdded": true,
-      "gradientStopsUnboundException": "Media gradient stops #F8FBFF and #E4ECFA are literal gradient colors, not variable-bindable. Governed via DEC-MEDIA-001 paint spec."
+    "conv002FidelityCompletion": {
+      "verificationState": "FIGMA_RECEIPT_VERIFIED_HUMAN_REVIEW_REQUIRED",
+      "sourceNodes": ["626:11814", "626:11821", "626:11822", "626:11823", "626:11824"],
+      "canonicalTargets": ["733:17342", "743:50", "743:51", "743:158", "743:281", "743:282", "743:393"],
+      "qualitativeIconTargets": {
+        "componentSet": "844:926",
+        "components": ["844:914", "844:917", "844:921", "844:925"]
+      },
+      "atmosphericLayerTargets": {
+        "verticalDesktop": ["844:20800", "844:20801", "844:20802"],
+        "verticalMobile": ["844:20803", "844:20804", "844:20805"],
+        "featuredDesktop": ["844:20806", "844:20807", "844:20808"],
+        "featuredMobile": ["844:20809", "844:20810", "844:20811"]
+      },
+      "downstreamTargets": ["765:98"],
+      "visibleComparisonReceipt": "847:51",
+      "visibleComparisonReceiptSection": "847:50",
+      "receiptEvidence": {
+        "sourceSnapshots": ["847:65", "847:306"],
+        "canonicalInstances": ["847:180", "847:423"]
+      },
+      "receiptPath": "authority/receipts/CONV-002-FIDELITY-COMPLETION.md",
+      "reportedBaselineCorrections": {
+        "chipGrammarFixed": true,
+        "semanticQualitativeIconRestored": true,
+        "mediaGradientApplied": true,
+        "completeAtmosphericLayerHierarchyRestored": true,
+        "familyColorUpdated": true,
+        "activeVariableCount": 98
+      },
+      "completionChecksAwaitingReceipt": [
+        "complete graduated-border binding",
+        "variable scopes and WEB syntax",
+        "Shop 765:98 inherited-state verification"
+      ],
+      "gradientStopsUnboundException": "Outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA are the only literal paint exceptions, governed by DEC-MEDIA-003 and limited to the MF-01A atmospheric media recipe."
     }
   },
   "currentGate": "ARTIFACT_SPECIFIC_HUMAN_VISUAL_REVIEW",
@@ -153,8 +188,9 @@
     {"run": "MF++", "priority": "POST_GATE", "work": "promotion runtime translation and Code Connect"}
   ],
   "sitesImplementation": {
-    "state": "CONV002_TOKEN_UPDATE_PENDING",
-    "sourceCommit": "84f8627a513a6e7c547cd4df76d17a6351d48420",
+    "state": "CONV002_FIDELITY_COMPLETION_IN_PROGRESS",
+    "sourceCommit": "c2f9f4c53645ffafab99dcdd95ccc9d9ae660bf1",
+    "completionCommit": "PENDING_REPOSITORY_COMMIT",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab"],
     "routeCount": 15,
     "conv002Required": {
@@ -162,7 +198,7 @@
       "candidateReviewCSS": "Replace solid media fill with gradient, replace chip border/card with border/chip, fix chip label 12px→11px and weight Medium→Bold for values",
       "customerRouteCSS": "Replace 7px joined qualitative cells with MF-01A two-type chip grammar",
       "renderedHtmlTest": "Update token inventory count, add gradient exception rule",
-      "status": "FIGMA_HANDOFF_COMPLETE_CODEX_ADOPTION_PENDING"
+      "status": "TOKEN_DELTA_APPLIED_CUSTOMER_COMPONENT_AND_VISUAL_RECEIPT_PENDING"
     },
     "validation": {
       "build": "PASS",

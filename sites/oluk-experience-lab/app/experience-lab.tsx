@@ -265,19 +265,42 @@ function HeroDecisionSurface() {
   );
 }
 
-function FactIcon({ kind }: { kind: string }) {
-  if (kind === "class") return <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>;
-  if (kind === "form") return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7a4 4 0 0 1 0 6L13 17a4 4 0 0 1-6 0Z" fill="none" stroke="currentColor" strokeWidth="1.6"/><path d="m10 14 4 4" fill="none" stroke="currentColor" strokeWidth="1.6"/></svg>;
-  if (kind === "quality") return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" fill="none" stroke="currentColor" strokeWidth="1.6"/><path d="M7.5 16h9" fill="none" stroke="currentColor" strokeWidth="1.6"/></svg>;
-  return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 7 3v5c0 4.7-2.9 8-7 10-4.1-2-7-5.3-7-10V6l7-3Z" fill="none" stroke="currentColor" strokeWidth="1.6"/><path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" strokeWidth="1.6"/></svg>;
+type FactKind = "class" | "form" | "quality" | "tested";
+
+type QualitativeFact = {
+  kind: FactKind;
+  label: string;
+  value: string;
+};
+
+const qualitativeFacts: readonly QualitativeFact[] = [
+  { kind: "class", label: "CLASS", value: "SARM" },
+  { kind: "form", label: "FORM", value: "CAPSULES" },
+  { kind: "quality", label: "QUALITY", value: "LAB FORMULATED" },
+  { kind: "tested", label: "TESTED", value: "THIRD PARTY" },
+];
+
+function FactIcon({ kind }: { kind: FactKind }) {
+  return <img aria-hidden="true" alt="" src={`/assets/candidate/qualitative/${kind}.svg`} />;
+}
+
+function QualitativeChip({ kind, label, value }: QualitativeFact) {
+  return (
+    <li className="qualitative-chip">
+      <FactIcon kind={kind} />
+      <dl>
+        <dt>{label}</dt>
+        <dd>{value}</dd>
+      </dl>
+    </li>
+  );
 }
 
 function QualitativeChips() {
-  const facts = [["class", "CLASS", "SARM"], ["form", "FORM", "CAPSULES"], ["quality", "QUALITY", "LAB FORMULATED"], ["tested", "TESTED", "THIRD PARTY"]];
   return (
-    <dl className="qualitative-chips">
-      {facts.map(([kind, label, value]) => <div key={label}><FactIcon kind={kind} /><dt>{label}</dt><dd>{value}</dd></div>)}
-    </dl>
+    <ul aria-label="Product attributes" className="qualitative-chips">
+      {qualitativeFacts.map((fact) => <QualitativeChip key={fact.kind} {...fact} />)}
+    </ul>
   );
 }
 
@@ -285,7 +308,7 @@ function ProductCommerceCard({ product = mk2866, variant = "vertical", showQuali
   return (
     <article className={`product-commerce-card product-commerce-card-${variant}`}>
       <div className="product-media-chamber">
-        <div className="media-orbit" aria-hidden="true" />
+        <div className="media-contact-shelf" aria-hidden="true" />
         <img src={product.image} alt={`${product.name} ${product.alias} bottle`} />
       </div>
       <div className="product-content-plane">
@@ -427,7 +450,7 @@ function ShopPage() {
   return (
     <>
       <PageHero eyebrow="SHOP" title="The Olympus Labs UK range." copy="Compare clear product specifications, then move directly into available Lab Records." />
-      <section className="section"><div className="shell catalogue-layout"><aside className="filter-panel"><span className="eyebrow">FILTERS</span><h2>Refine products</h2>{["SARMs", "Peptides", "Longevity", "Nootropics"].map((item, index) => <label key={item}><input type="checkbox" defaultChecked={index === 0} />{item}</label>)}<hr /><label><input type="checkbox" />Lab Record available</label></aside><div className="catalogue-main"><div className="catalogue-toolbar"><span>8 products</span><label>Sort <select defaultValue="featured"><option value="featured">Featured</option><option value="price">Price</option></select></label></div><div className="product-grid product-grid-catalogue">{productRange.map((product) => <ProductCommerceCard key={product.name} product={product} showQualitative={false} />)}</div></div></div></section>
+      <section className="section"><div className="shell catalogue-layout"><aside className="filter-panel"><span className="eyebrow">FILTERS</span><h2>Refine products</h2>{["SARMs", "Peptides", "Longevity", "Nootropics"].map((item, index) => <label key={item}><input type="checkbox" defaultChecked={index === 0} />{item}</label>)}<hr /><label><input type="checkbox" />Lab Record available</label></aside><div className="catalogue-main"><div className="catalogue-toolbar"><span>8 products</span><label>Sort <select defaultValue="featured"><option value="featured">Featured</option><option value="price">Price</option></select></label></div><div className="product-grid product-grid-catalogue">{productRange.map((product) => <ProductCommerceCard key={product.name} product={product} />)}</div></div></div></section>
     </>
   );
 }
