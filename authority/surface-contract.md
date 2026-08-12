@@ -1,5 +1,7 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
+> **2026-08-12 CONV-002 addendum:** 10 new convergence variables added to close the MF-01A standardization gap. Chip grammar, media gradient, and graduated border hierarchy now fully specified. `neutral/family` updated to #F8FAFC per champion decision. Total convergence variables: 96.
+
 > **2026-08-11 CONV-001 supersession:** The append-only decision ledger and current-state snapshot now control. MF-01A material/anatomy relationships persist; later runs apply named deltas. The canonical graph remains unpublished and `HUMAN_REVIEW_REQUIRED`.
 
 **Status:** Accepted relationship authority feeding the CONV-001 candidate graph
@@ -7,9 +9,107 @@
 **Applies to:** Light-mode design relationship review and FC-01 candidate containment
 **Does not authorize:** Published-library promotion, a production `Light` mode, Shopper/runtime implementation, or production release
 
+## CONV-002 material addendum — MF-01A standardization gap closure
+
+### Problem resolved
+
+The CONV-001 convergence palette (86 variables) captured the primary surface, text, and accent colors from MF-01A but missed the graduated border hierarchy and chip-specific values. Codex built structurally correct canonical components but used invented color values for borders and chip text because the tokens did not exist. This produced visual divergence from the MF-01A champion source despite correct variable binding methodology.
+
+### New color primitives (VariableCollectionId:634:2)
+
+| Variable | Hex | Role | MF-01A source evidence |
+|---|---|---|---|
+| `blue/border-chip` | `#D4E0F2` | QualitativeChip container strokes | 626:11885, 626:11900, 626:11912, 626:11925 |
+| `blue/border-outer` | `#BECFE9` | Card outer wrapper / secondary perimeter | 626:11819, 626:11978 |
+| `blue/border-identity` | `#BDD0F1` | Identity section borders | 626:11823, 626:11982 |
+| `blue/border-inner` | `#B4CAF0` | Inner identity accent strokes | 626:11824, 626:11983 |
+| `blue/border-family-bg` | `#D9E3F1` | Family container / background strokes | 626:11829, 626:11938, 626:11988 |
+| `ink/chip-value` | `#17213F` | Chip value text (bold line in two-type grammar) | 626:11968 chip value text nodes |
+
+### New semantic aliases (VariableCollectionId:634:20)
+
+| Variable | Alias target | Semantic role |
+|---|---|---|
+| `border/chip` | `blue/border-chip` | QualitativeChip container stroke |
+| `border/outer` | `blue/border-outer` | Card outer wrapper stroke |
+| `border/identity` | `blue/border-identity` | Identity section stroke |
+| `text/chip-value` | `ink/chip-value` | Chip value text fill |
+
+### Updated primitive
+
+| Variable | Old value | New value | Reason |
+|---|---|---|---|
+| `neutral/family` | `#FAFCFF` | `#F8FAFC` | Champion decision: adopt MF-01A's original identity family surface color |
+
+### Graduated border hierarchy (complete)
+
+The MF-01A material language uses a 8-value graduated border system. Each border serves a distinct semantic role at a specific depth in the card anatomy:
+
+| Border | Hex | Semantic depth | Usage |
+|---|---|---|---|
+| `border/strong` | `#AFC8FF` | Highest contrast | MetricRail cells, specification containers |
+| `border/family` | `#D2E4FF` | High | Family section boundaries |
+| `border/chip` | `#D4E0F2` | Medium-high | QualitativeChip containers |
+| `border/identity` | `#BDD0F1` | Medium | Identity section boundaries |
+| `border/inner` | `#B4CAF0` | Medium | Inner identity accent |
+| `border/card` | `#CEDCF1 @92%` | Medium-low | Card perimeter |
+| `border/family-bg` | `#D9E3F1` | Low | Family container / background strokes |
+| `border/outer` | `#BECFE9` | Lowest | Card outer wrapper |
+
+### QualitativeChip grammar (MF-01A canonical)
+
+Each chip is an **icon-led, two-type bordered container**:
+
+```
+┌─────────────────────────────┐
+│  [Icon]  LABEL   ← Inter Medium 11px, tracking 0.66px, UPPER, text/muted (#64718A)
+│          VALUE   ← Inter Bold 12px, tracking 0.24px, text/chip-value (#17213F)
+└─────────────────────────────┘
+   Fill: surface/card (#FFFFFF)
+   Stroke: border/chip (#D4E0F2), 1px
+   Radius: radius/chip (10px)
+   Icon: cobalt stroke vectors (#0057FF)
+```
+
+Content pattern (MK-2866):
+- CLASS / SARM
+- FORM / CAPSULES
+- QUALITY / LAB FORMULATED
+- TESTED / THIRD PARTY
+
+State variants:
+- **Default:** label = text/muted, value = text/chip-value, border = border/chip
+- **Selected:** label = accent/cobalt, value = accent/cobalt, border = accent/cobalt
+- **Disabled:** label = text/muted, value = text/muted, border = border/chip
+
+### Media chamber gradient (MF-01A canonical)
+
+The media chamber uses a diagonal linear gradient for atmospheric softform feel, NOT a solid fill:
+
+| Property | Value |
+|---|---|
+| Type | `GRADIENT_LINEAR` |
+| Stop 1 | `#F8FBFF` at position 5% (near-white ice) |
+| Stop 2 | `#E4ECFA` at position 100% (deeper ice) |
+| Direction | ~70° diagonal via transform matrix |
+
+The solid `surface/media` (#F0F4FB) remains available as a fallback for contexts where gradients are impractical (e.g., small chips, status indicators). The gradient is the primary media chamber treatment.
+
+### Total convergence variable count
+
+| Collection | CONV-001 | CONV-002 | Delta |
+|---|---|---|---|
+| Color Primitives (634:2) | 17 | 23 | +6 |
+| Color Semantics (634:20) | 19 | 23 | +4 |
+| Dimensions (634:40) | 28 | 28 | 0 |
+| Typography (634:69) | 22 | 22 | 0 |
+| **Total** | **86** | **96** | **+10** |
+
+---
+
 ## CONV-001 material addendum
 
-The active candidate foundations are the 4 convergence collections/86 variables. The 2 legacy plus 1 quarantined collections/128 variables are archived provenance. New work binds only to the active convergence collections. None is published or promoted.
+The active candidate foundations are the 4 convergence collections/96 variables. The 2 legacy plus 1 quarantined collections/128 variables are archived provenance. New work binds only to the active convergence collections. None is published or promoted.
 
 Current effect authority is graduated single shadows: Compact y5/blur12/.09, Vertical/Featured y24/blur60/.10, PurchasePanel y20/blur50/.18 and Relation y12/blur25/.12. The former two-layer Softform Arc recipe is archived evidence. Commerce taxonomy remains `SARMs / Prohormones / Research Chemicals / Stacks`; the dossier index remains non-interactive unless a later decision explicitly authorizes interaction; the dark footer is the sole inverse surface. The proposed 12px metadata / 15–16px body floor does not control until explicitly approved.
 
@@ -129,7 +229,7 @@ Outside the PDP Section 1 exception, a media chamber is an authored product envi
 Relationship:
 
 - bounded, not a page or section background;
-- may use a white-to-ice atmosphere, product-local cobalt and contact grounding;
+- uses the MF-01A atmospheric gradient (`#F8FBFF` 5% → `#E4ECFA` 100%, diagonal) for softform depth;
 - shares the raised hierarchy of the purchase plane without requiring the identical silhouette or shadow;
 - connects to related purchase content through an embedded divider or authored seam;
 - separates from independent objects through canvas.
@@ -193,15 +293,15 @@ ProductMetricRail has the strongest small-scale cobalt edge treatment because it
 
 ### Specifications
 
-Specification rails may use a lighter cobalt edge and joined internal dividers. They communicate classified product information, not the same authority as quantified metrics.
+Specification rails may use a lighter cobalt edge and joined internal dividers. They communicate classified product information, not the same authority as quantified truth.
 
 ### Qualitative attributes
 
-Qualitative attributes use quieter blue-shifted structural edges by default. A cobalt variant may exist for an explicitly selected or emphasized state, but qualitative content must not compete with quantified truth.
+Qualitative attributes use the two-type chip grammar (see CONV-002 addendum above). Default state uses `border/chip` (#D4E0F2) structural edges. A cobalt variant exists for the Selected state only. Qualitative content must not compete with quantified truth.
 
 ### Structural borders and embedded dividers
 
-Structural edges are the lightest and least saturated. They clarify containment, cell boundaries or section termination without becoming identity decoration.
+Structural edges use the graduated border hierarchy (see CONV-002 addendum). They clarify containment, cell boundaries or section termination without becoming identity decoration. The hierarchy runs from `border/strong` (#AFC8FF, highest contrast) through `border/outer` (#BECFE9, lowest).
 
 ## IV. Adaptive shape grammar
 
@@ -273,11 +373,11 @@ The following values are verified observations of the frozen NR-04 native author
 | G0 canvas variant | `#F5F8FD` | G0 Universal Glue reference |
 | Footer surface | `#FCFCFE` with a light structural top edge | Footer `126:350` |
 | Raised commerce plane | `#FFFFFF`, approximately 18 px radius, cool shadow | PurchaseRail `202:1235` |
-| Bounded media chamber | current peer elevation and structural edge | ProductMediaChamber `202:1165` |
+| Bounded media chamber | MF-01A gradient `#F8FBFF→#E4ECFA` diagonal | ProductMediaChamber `202:1165`, MF-01A `626:11821` |
 | PDP Section 1 | no plane effects | Hero rail `126:37` |
 | Metric cells | heavier cobalt edge, approximately 8 px radius | ProductMetricRail `248:4105` |
 | Specification rail | lighter cobalt edge, approximately 10 px radius | ProductSpecificationRail `259:3914` |
-| Qualitative rail | blue-shifted structural edge, approximately 10 px radius | Transparent-Chips `252:5801` |
+| Qualitative rail | blue-shifted structural edge (`#D4E0F2`), approximately 10 px radius | MF-01A `626:11968` |
 | Standard section inset | currently 48 px on the referenced desktop PDP | PDP sections under `126:4` |
 | Embedded-divider inset | currently wider at 150 px in the referenced composition | Lab Verification section under `126:4` |
 
@@ -301,6 +401,64 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 - Lab Verification Canvas Split `188:926`: the white outer wrapper prevents its internal gap from reading as true page canvas; retain the intended split relationship, not the current wrapper.
 - White wrappers around already raised white cards: duplicate the surface job and misrepresent the canvas relationship.
 - Full-width pale bands outside the PDP first-fold exception: turn structural canvas into decoration.
+
+## Appendix C — CONV-002 complete convergence palette (96 variables)
+
+### Color Primitives (23 variables)
+
+| Variable | Hex | Figma ID |
+|---|---|---|
+| `neutral/canvas` | `#F7F8FC` | `VariableID:634:3` |
+| `neutral/white` | `#FFFFFF` | `VariableID:634:4` |
+| `neutral/family` | `#F8FAFC` | `VariableID:634:5` |
+| `neutral/media` | `#F0F4FB` | `VariableID:634:6` |
+| `blue/cobalt-soft` | `#EEF4FF` | `VariableID:634:7` |
+| `blue/border-card` | `#CEDCF1 @92%` | `VariableID:634:8` |
+| `blue/border-strong` | `#AFC8FF` | `VariableID:634:9` |
+| `blue/border-family` | `#D2E4FF` | `VariableID:634:10` |
+| `blue/border-chip` | `#D4E0F2` | `VariableID:824:294` |
+| `blue/border-outer` | `#BECFE9` | `VariableID:824:295` |
+| `blue/border-identity` | `#BDD0F1` | `VariableID:824:296` |
+| `blue/border-inner` | `#B4CAF0` | `VariableID:824:297` |
+| `blue/border-family-bg` | `#D9E3F1` | `VariableID:824:298` |
+| `ink/primary` | `#141827` | `VariableID:634:11` |
+| `ink/secondary` | `#53617D` | `VariableID:634:12` |
+| `ink/muted` | `#64718A` | `VariableID:634:13` |
+| `ink/inverse-muted` | `#B9C7DD` | `VariableID:634:14` |
+| `ink/chip-value` | `#17213F` | `VariableID:824:299` |
+| `blue/cobalt` | `#0057FF` | `VariableID:634:15` |
+| `blue/interactive` | `#256DFF` | `VariableID:634:16` |
+| `blue/focus` | `#0057FF @28%` | `VariableID:634:17` |
+| `green/inventory` | `#15803D` | `VariableID:634:18` |
+| `green/inventory-soft` | `#ECFDF3` | `VariableID:634:19` |
+
+### Color Semantics (23 variables)
+
+| Variable | Alias target | Figma ID |
+|---|---|---|
+| `surface/canvas` | `neutral/canvas` | `VariableID:634:21` |
+| `surface/card` | `neutral/white` | `VariableID:634:22` |
+| `surface/family` | `neutral/family` | `VariableID:634:23` |
+| `surface/media` | `neutral/media` | `VariableID:634:24` |
+| `surface/cobalt-soft` | `blue/cobalt-soft` | `VariableID:634:25` |
+| `surface/inverse` | `ink/primary` | `VariableID:634:26` |
+| `border/card` | `blue/border-card` | `VariableID:634:27` |
+| `border/strong` | `blue/border-strong` | `VariableID:634:28` |
+| `border/family` | `blue/border-family` | `VariableID:634:29` |
+| `border/chip` | `blue/border-chip` | `VariableID:824:300` |
+| `border/outer` | `blue/border-outer` | `VariableID:824:301` |
+| `border/identity` | `blue/border-identity` | `VariableID:824:302` |
+| `text/primary` | `ink/primary` | `VariableID:634:30` |
+| `text/secondary` | `ink/secondary` | `VariableID:634:31` |
+| `text/muted` | `ink/muted` | `VariableID:634:32` |
+| `text/on-inverse` | `neutral/white` | `VariableID:634:33` |
+| `text/on-inverse-muted` | `ink/inverse-muted` | `VariableID:634:34` |
+| `text/chip-value` | `ink/chip-value` | `VariableID:824:303` |
+| `accent/cobalt` | `blue/cobalt` | `VariableID:634:35` |
+| `accent/cobalt-interactive` | `blue/interactive` | `VariableID:634:36` |
+| `accent/cobalt-focus` | `blue/focus` | `VariableID:634:37` |
+| `status/inventory` | `green/inventory` | `VariableID:634:38` |
+| `status/inventory-soft` | `green/inventory-soft` | `VariableID:634:39` |
 
 ## Review and promotion
 
