@@ -1,5 +1,7 @@
 # FIGMA_TO_CODEX_PACKET — Experience Lab v2 Structural Correction Pass
 
+> **Historical correction input:** This packet responded to the `REJECTED_VISUAL_TRANSLATION` V2 build. V3 later became technically healthy but failed design convergence. Current control is [`FC-01 Candidate Foundation Convergence`](../fc-01-candidate-foundation-convergence/guidelines.md), with `614:75994` as the opening source and MF-02B adaptive-champion selection pending.
+
 ## Metadata
 
 - **File:** `BEPMuUt1HroEw8xjz8CVyN`
@@ -34,7 +36,7 @@ Container (white card, 1px rgba(206,220,241,0.92) border, r=24)
  └─ Purchase Zone (bottom)
      ├─ "FEATURED PRODUCT" eyebrow (cobalt #0057FF)
      ├─ "MK-2866" product name (cobalt #0057FF)
-     ├─ MetricRail: [15 MG | 90 CAPS | >99%]
+     ├─ MetricRail: [15 MG | 90 SERVINGS | >99%]
      ├─ Price: "£43" (cobalt #0057FF)
      ├─ CTAs: [View Product] [Add to Bag]
      └─ Product toggle chips BELOW card: MK-2866, MENT, ENDURASHRED, RAD-140, MK-677

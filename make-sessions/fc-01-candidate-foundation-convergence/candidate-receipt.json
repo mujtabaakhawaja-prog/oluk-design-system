@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "recordedDate": "2026-08-11",
+  "status": [
+    "SUPERSEDED_AS_ACTIVE_CONTROL",
+    "PRESERVED_AS_PREDECESSOR_EVIDENCE"
+  ],
+  "predecessorStatus": [
+    "ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY",
+    "DOSSIER_CORRECTION_REQUIRED",
+    "HUMAN_SELECTION_REQUIRED"
+  ],
+  "supersededBy": "CONV-001",
+  "currentControl": "authority/CURRENT-STATE.json",
+  "convergenceAddendum": {
+    "approval": "APPROVED_WITH_CORRECTIONS",
+    "newArtifacts": "UNPUBLISHED_HUMAN_REVIEW_REQUIRED",
+    "hero": {
+      "layout": "717:15468",
+      "data": "626:7994",
+      "requiredMetric": "90 SERVINGS",
+      "rejectedWrapper": "713:1065 Hero component with PurchasePanel geometry"
+    },
+    "variables": {
+      "activeCollections": 4,
+      "activeVariables": 86,
+      "archivedCollections": 3,
+      "archivedVariables": 128
+    },
+    "typeFloor": "PROPOSED_NON_CONTROLLING",
+    "decisionLedger": "authority/DECISION-LEDGER.json"
+  },
+  "worktree": "/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence",
+  "branch": "codex/fc01-candidate-foundation-convergence",
+  "baseCommit": "c5af8e547e8701304e8c26497f10ba8ae1f31466",
+  "sites": {
+    "url": "https://oluk-experience-lab.sigmamindset.chatgpt.site/",
+    "deployedCandidate": true,
+    "deployedContentClassification": "CANDIDATE_REVIEW_AT_REVIEW_ROUTE__REJECTED_V3_ON_OTHER_ROUTES",
+    "versionNumber": 5,
+    "versionId": "appgprj_6a784499e0a481919243ddab0dcaadff~appgver_e860a6283ca48191ade81bed9263a092",
+    "deploymentId": "appgdep_6a7b4d4fc6e08191b3809908a447c4fd",
+    "deploymentStatus": "succeeded",
+    "sourceCommit": "2fb152ed689b94f709d4fb78d26d25ea0a88329f",
+    "archiveContentHash": "sha256:121eb567546e19953b68387b53faa2d6f8a89e6601e6d7d043f0ceb8f747639e",
+    "access": {
+      "observedDriftRevision": 6,
+      "observedDriftMode": "public",
+      "restoredRevision": 7,
+      "restoredMode": "custom",
+      "allowedUsers": 1,
+      "allowedUserRole": "owner",
+      "groups": 0,
+      "externalVisitors": 0,
+      "anonymousHttpStatus": 401
+    }
+  },
+  "figma": {
+    "publicationState": "hidden_from_publishing",
+    "foundation": "637:3",
+    "inventoryStatus": "641:17",
+    "vertical": "646:10801",
+    "featured": "646:10802",
+    "compact": "639:13888",
+    "relation": "643:8616",
+    "purchasePanel": "639:13889",
+    "reviewFrames": [
+      "644:3",
+      "644:568",
+      "644:1093",
+      "644:1625"
+    ],
+    "exactEvidenceStatusSource": "518:13092",
+    "exactAssuranceRailSource": "556:34627"
+  },
+  "localReview": {
+    "routeIsolated": true,
+    "customerRouteImportsCandidateLayer": false,
+    "purchasePanelStateCount": 6,
+    "compactStateCount": 8,
+    "assuranceIconCount": 6,
+    "assuranceSvgColor": "#0057ff",
+    "viewportWidths": [
+      1440,
+      1024,
+      768,
+      390
+    ],
+    "scrollWidthEqualsClientWidth": true,
+    "semanticChildBoundaryViolations": 0,
+    "minimumComputedFontPx": 12,
+    "allImagesLoaded": true,
+    "assuranceDescriptionsWrapWithoutOverflow": true,
+    "consoleErrors": 0,
+    "keyboardFocusOutline": "2px #0057ff",
+    "bodyOverflow": "visible",
+    "wrapperOverflow": "visible",
+    "testSuite": {
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "openGates": [
+    "ARTIFACT_SPECIFIC_HUMAN_REVIEW",
+    "MF03A_MF03B_MF04_ROUTE_CANDIDATES",
+    "MF09_RESPONSIVE_PROOF",
+    "MF10_FINAL_DESIGN_GATE",
+    "MF_PLUS_PLUS_SEPARATE_AUTHORIZATION"
+  ],
+  "runtimeMutation": {
+    "shopperSsr": false,
+    "woocommerce": false,
+    "initiatorPayment": false,
+    "c2": false
+  }
+}

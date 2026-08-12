@@ -1,5 +1,8 @@
 ## Make Philosophy — Controlling Directives
 
+> **2026-08-11 CONV-001 supersession:** Use the append-only decision ledger and the three-block prompt contract in `make-sessions/mf03-experience-convergence/`. MF-01A champion relationships are inherited first; every later Make board contributes only its named delta. New artifacts remain unpublished and `HUMAN_REVIEW_REQUIRED`.
+
+
 ### Core rule
 Make should DESIGN first, not code Figma Design boards. Figma Design work established direction for Make to enhance, NOT for Make to recreate. Make-generated code is disposable prototype machinery, not runtime handoff.
 
@@ -11,12 +14,14 @@ Make should DESIGN first, not code Figma Design boards. Figma Design work establ
 - "Zero grey" means no generic achromatic/Tailwind grey leakage — approved blue-shifted neutrals remain valid
 
 ### Make handoff boundary
-- **Fixed relationships:** Plus Jakarta Sans display, Inter support, Inter-only purchase, #0057FF as the current identity/metric cobalt, exact product truth, 15-16px body minimum, 12px metadata minimum, cool canvas below optically white raised planes, quantified metrics visually stronger than qualitative attributes, and radius increasing with surface scale
+- **Fixed relationships:** Plus Jakarta Sans display, Inter support, Inter-only purchase, #0057FF as the current identity/metric cobalt, exact product truth, cool canvas below optically white raised planes, quantified metrics visually stronger than qualitative attributes, radius increasing with surface scale and the footer as the sole inverse surface
+- **Proposed, non-controlling:** 15–16px customer body minimum and 12px metadata minimum (`DEC-TYPE-001`)
 - **Observed, not promoted:** NR-04 currently demonstrates approximately 8px metric-cell radii, 10px specification/qualitative rail radii and 16-18px raised-plane radii. These values are evidence, not fixed Make tokens.
 - **May decide:** Composition within laws, responsive ordering, chamber scale, canvas-split vs embedded-divider, local state transitions, trust-strip placement, spacing rhythm, shadow character, and candidate chip/rail/plane silhouette and geometry within the semantic hierarchy
 - **May not decide:** Token names/publication, product claims, runtime data, APIs, React architecture, dark mode, silent changes to semantic jobs or authoritative component contracts, loading/error infrastructure, release readiness
 
 The adaptive relationship model is documented in `surface-contract.md`. Make preserves semantic distinctions while exploring their expression; exact radii, spacing, strokes and shadows remain Phase 05/07 candidates.
 
-### Pipeline position (as of 2026-08-04)
-NR-04 Source Lock is complete. MF-01A is the active PNG-led material-relationship frontier; MF-01B validates cross-context transfer before MF-02 introduces selected native structures. After the Make Design Gate, NR-05 rebases candidate foundations.
+### Pipeline position (as of 2026-08-11)
+
+CONV-001 decisions/methodology are approved. MF-03A shell/homepage, MF-03B OpenLab and MF-04 PDP are the P0 candidate builds; MF-09 responsive proof and MF-10 cross-route review remain required. MF++ promotion/runtime work is blocked until those gates and separate authorization.

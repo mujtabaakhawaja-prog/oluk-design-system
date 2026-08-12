@@ -1,10 +1,69 @@
-# Olympus Labs UK — Final Figma Make Plan and Run Order
+# Olympus Labs UK — Design Convergence Plan and Run Order
 
-**Date:** 2026-08-04
+**Date:** 2026-08-10
 **Controlling alias:** `ids-plan.md`
-**Current position:** `NR-04` complete; `MF-01A ProductCommerceCard Material Relationship Frontier` is the active run.
+**Current position:** `CONV-001_APPROVED_WITH_CORRECTIONS`; decisions/methodology are champion authority, while every new component/page/Sites build remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
 
-## Decision
+## 2026-08-11 CONV-001 control addendum
+
+This section controls the current queue. Historical run tables below remain provenance.
+
+- Inherit MF-01A material/anatomy relationships before applying any later-run delta.
+- Use the required `INHERITED_CHAMPION_STATE / THIS_RUN_DELTA / DO_NOT_INHERIT` prompt structure.
+- Hero authority is split: `717:15468` layout/composition after `90 SERVINGS` correction; `626:7994` complete data; `713:1065` rejected wrapper provenance.
+- Keep/extend 86 convergence variables; archive 128 legacy/quarantined variables.
+- Use the approved graduated single shadows; treat the type-floor decision as proposed/non-controlling.
+- Do not publish or translate to runtime before artifact review, MF-09 and MF-10.
+
+| Run | Priority | Current state | Work |
+|---|---:|---|---|
+| `MF-03A` | P0 | `READY` | shell and homepage candidate |
+| `MF-03B` | P0 | `READY` | OpenLab portal candidate |
+| `MF-04` | P0 | `READY_AFTER_CANONICAL_GRAPH` | PDP candidate |
+| `MF-05` | P1 | `QUEUED` | dossier/evidence transition |
+| `MF-05A` | P2 | `OPTIONAL_AFTER_CORE_PROOF` | compare/bundle/stack/goal-led surfaces |
+| `MF-06` | P1 | `QUEUED_AFTER_MF-03B` | archive/lookup/record lifecycle |
+| `MF-07` | P1 | `QUEUED_AFTER_MF-04` | bag/checkout/post-purchase presentation |
+| `MF-09` | P0 | `REQUIRED_AFTER_ROUTE_CANDIDATES` | responsive and local-state proof |
+| `MF-10` | P0 | `REQUIRED_AFTER_MF-09` | cross-route final design gate |
+| `MF++` | POST-GATE | `BLOCKED` | promotion, Code Connect and runtime translation |
+
+`MF-08` is not a separate active prompt; selective native integration is continuous through the canonical-source requirement. Use [`mf03-experience-convergence/`](mf03-experience-convergence/) for implementable prompts and gates.
+
+## 2026-08-11 FC-01 predecessor containment addendum
+
+Human review determined that another route-local CSS correction would reproduce the same drift. FC-01 contained the candidate contract through hidden Figma candidates and an isolated `/review` implementation. CONV-001 now supersedes it as active control; this section remains predecessor evidence.
+
+| Lane | Current state | Current use |
+|---|---|---|
+| `MF-03 Codex Sites Convergence v3` | `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING` | Rejected deployed comparison source behind custom owner-only access-policy revision 7 after public revision-6 drift was corrected; route shell and useful responsive infrastructure only |
+| `FC-01 Candidate Foundation Convergence` | `ADAPTIVE_CARD_FAMILY_TECHNICAL_EVIDENCE_READY / DOSSIER_CORRECTION_REQUIRED / HUMAN_SELECTION_REQUIRED` | Unpublished `CANDIDATE_CONVERGENCE_v0`, hidden Figma candidates, exact-commit owner-only `/review`, node/source matrix and review map |
+| `MF-06 OpenLab + LabReports` | `HISTORICAL FUTURE-RUN IDENTIFIER` | Meaning preserved; not reused for foundation convergence |
+| Shopper SSR / payment / C2 | `NOT AUTHORIZED` | Later translation only after all design frontiers pass human review |
+
+The active packet is `make-sessions/fc-01-candidate-foundation-convergence/` in the retained operational worktree `/Users/mujtabakhawaja/Worktrees/oluk-mf06-foundation-wrapper-convergence` on `codex/fc01-candidate-foundation-convergence`. Final Design `614:75994` is the current opening relationship, `626:11760` is the historical card/state reservoir, and `561:41860` supplies commerce taxonomy. Candidate evidence is registered at `637:3`, `641:17`, `646:10801`, `646:10802`, `639:13888`, `643:8616`, `639:13889` and four-width frames `644:3`, `644:568`, `644:1093`, `644:1625`; exact EvidenceStatus and AssuranceRail sources remain `518:13092` and `556:34627`. The dossier index is non-interactive and must not use tab semantics; the full related rail remains open.
+
+## 2026-08-09 convergence addendum
+
+> **Superseded status snapshot:** This section preserves the MF-03 handoff as written. Current v3 status, hero authority and active lane are controlled by the FC-01 addendum above.
+
+Human review advanced the program from isolated Make frontiers into one Codex Sites convergence lane. This addendum supersedes the earlier “MF-01A active” position without deleting or rewriting the completed run history below.
+
+| Lane | Current state | Current use |
+|---|---|---|
+| `MF-01A` | Complete / historical | ProductCommerceCard family and material relationships |
+| `MF-01B` | Complete / historical | Cross-context transfer verdicts |
+| `MF-02A` | Complete / historical | Section differentiation, champion composite and correction packet |
+| `MF-03 Codex Sites Convergence v2` | `REJECTED_VISUAL_TRANSLATION` | Preserved source/data-honesty review evidence only; not current visual authority |
+| `MF-03 Codex Sites Convergence v3` | `PRIVATE_V3_DEPLOYED / HUMAN_REVIEW_PENDING` | Fifteen routes: shell, homepage, shop, MK-2866 PDP, realistic reviews, OpenLab family and private `/review` index |
+
+The active implementation is `sites/oluk-experience-lab` in `/Users/mujtabakhawaja/Worktrees/oluk-mf-codex-sites-v3-corrections` on `codex/mf-codex-sites-v3-corrections`. Final Design node `614:75950` is the current structural source for the corrected hero grid, while exact visible customer truth remains `90 SERVINGS`. The approved trust rail and realistic reviews are visual fixtures; their appearance does not establish fulfilment, customer-record or runtime truth. Backend vocabulary remains absent from customer UI. The dark footer is the sole inverse surface.
+
+Local acceptance passed across all 15 routes at 1440/1024/768/390 with zero horizontal overflow, plus stable review links from `/review`. Sites version 3 is live behind the unchanged custom owner-only access policy and awaits human visual review. Shopper SSR, WooCommerce, Initiator/payment, C2 and public/production release remain separate later stages.
+
+The active control set is [`session-03-codex-sites/`](session-03-codex-sites/), including its [`authority matrix`](session-03-codex-sites/AUTHORITY-MATRIX.md). The historical run order below remains useful provenance and system-extraction context; where it conflicts with this approved convergence addendum, the addendum controls the current lane.
+
+## Historical decision
 
 Start from the sealed three-PNG ProductCommerceCard packet and use it to generate three architectural hypotheses across vertical, compact and horizontal contexts. Select relationships rather than a whole-image winner, prove those relationships across materially different jobs in MF-01B, then synthesize the adaptive family in MF-02. These assets supersede the earlier provisional MF01-A/B/C generation set.
 

@@ -2,20 +2,40 @@
 
 ## Current authority
 
-Read in this order before changing design or Make material:
+Read in this order before changing design, Make or Sites material:
 
-1. `authority/ids-plan.md`
-2. `authority/identity-design-system-authoritative-plan-and-build-receipt.md`
-3. `authority/surface-contract.md`
-4. `authority/oluk-make-philosophy.md`
-5. `authority/oluk-pdp-architecture.md`
-6. `make-sessions/session-01-product-card/CONSTITUTION.md`
-7. `make-sessions/SESSION_ROADMAP.md`
-8. the active run's `guidelines.md`, `MANIFEST.md`, `PROMPT.md`, and `RUN.md`
+1. `authority/CURRENT-STATE.json`
+2. `authority/DECISION-LEDGER.json`
+3. `authority/ARTIFACT-REGISTRY.json`
+4. `authority/ids-plan.md`
+5. `authority/surface-contract.md`
+6. `authority/oluk-make-philosophy.md`
+7. `authority/oluk-pdp-architecture.md`
+8. `make-sessions/mf03-experience-convergence/MANIFEST.md`
+9. the active run's `PROMPT.md`, `RUN.md`, `ACCEPTANCE.md`, and `CURRENT-STATE-RECEIPT.md`
 
-The active lane is `MF-01A ProductCommerceCard Material Relationship Frontier`. Figma Design established a strong Native Light baseline; Figma Make is expected to design beyond that baseline, not trace its nodes or convert its boards into an SSR prototype. `MF-01B` is a separate cross-context transfer test and must not be folded into the opening generation.
+The active control state is `CONV-001_APPROVED_WITH_CORRECTIONS`. The decisions and methodology are champion authority; every newly reconciled Figma component/page and every Sites surface remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. MF-01A material/anatomy relationships persist through every later run. MF-02 and later boards supply named deltas and must never be treated as whole-state replacement snapshots. Historical MF-03 v2/v3 remain rejected comparison evidence, not current visual authority.
 
-## MF-01A hard boundary
+## CONV-001 operating boundary
+
+- Work on `codex/oluk-authority-convergence`, based on `codex/fc01-candidate-foundation-convergence` at `0013033ef941ee83303bf79f7b970d1d05f0dcf5`.
+- Use the 4 active convergence collections/86 variables. The 3 legacy/quarantined collections/128 variables are archived provenance and must not be deleted or rebound into new work.
+- The canonical candidate source graph is registered in `authority/ARTIFACT-REGISTRY.json`. Page candidates instantiate it; they do not redraw it locally.
+- Sites may implement the MF-03A/MF-03B/MF-04 route surfaces as private candidates using the canonical source graph. Keep candidate/runtime ownership explicit, preserve exact-source receipts, and do not make the site public, claim production authority or publish a later revision without the appropriate private-review gate.
+- Treat `626:11760` as the master anatomy/state reservoir, not literal token or copy authority. Every `90 CAPS`, unsupported performance claim, generic shadow and undersized type in source material is rejected.
+- Treat `717:15468` as hero layout/composition authority only after its metric correction to `90 SERVINGS`. Merge the complete data from `626:7994`, including `IN STOCK` and `OPENLAB VERIFIED`, into the purpose-built HeroDecisionSurface. `713:1065` is a Hero component with PurchasePanel geometry, not Compact, and remains provenance only.
+- Preserve the commerce taxonomy `SARMs / Prohormones / Research Chemicals / Stacks`. Alternative OpenLab taxonomies are separate and may not replace it.
+- Treat the dossier Product/Facts/Composition treatment as a non-interactive visual index only. Do not use tab, tablist or active-tab semantics and do not imply view switching.
+- Preserve the proposed `--oluk-*` map only as the locally implemented review candidate `CANDIDATE_CONVERGENCE_v0`; do not present it as approved, published, promoted or runtime authority.
+- Preserve all 15 rejected-v3 comparison routes. Candidate review anchors are `/review#foundation`, `/review#mf02b-provenance`, `/review#mf02b-atoms`, `/review#mf02b-card-family`, `/review#mf02b-compact-states`, `/review#mf02b-compact-default`, `/review#mf02b-horizontal`, `/review#mf02b-purchase-panel`, `/review#mf02b-assurance`, `/review#mf02b-six-icons`, `/review#mf02b-related-rail`, `/review#mf02b-responsive-ledger`, `/review#mf02b-dossier`, `/review#baseline-routes`, and `/review#mf02b-selection-receipt`.
+- Use the approved trust-rail fixture copy and realistic rendered reviews on the customer surfaces. Keep the fixture-versus-runtime distinction in documentation and review control; do not expose backend vocabulary such as `GOVERNED`, `SOURCE-BOUND`, `DESIGN FIXTURE`, `DEMO STATE` or `NOT CONNECTED` in customer UI.
+- Preserve the exact customer metric `90 SERVINGS`; `90 CAPS` is rejected.
+- The dark footer is the sole inverse surface in this lane. Every other customer surface remains in the light system.
+- Latest containment verification on 2026-08-11: a later access-policy drift at revision 6 was observed as `public` and corrected to revision 7 `custom`; exactly one allowed user is the current owner, with zero groups, zero external visitors, and anonymous `/` and `/review` returning HTTP `401`. Sites version 5 continues to serve exact source `2fb152ed689b94f709d4fb78d26d25ea0a88329f`; `/review` is the candidate surface while the other 14 routes remain the rejected-v3 comparison baseline. Do not change owner-only access, import candidate code into customer routes, or promote the foundation.
+- `551:27148` is historical correction evidence. The reconciled Dossier source `750:182` and RelatedRail source `753:18136` are canonical candidates, still requiring artifact-specific human review.
+- Do not mutate Shopper SSR, WooCommerce, Initiator/payment behavior or C2. Those require later explicit authority and the appropriate runtime workflow.
+
+## Historical MF-01A hard boundary
 
 Attach exactly these three files and nothing else:
 
@@ -40,7 +60,7 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 
 ## Design laws
 
-- Light mode only for the active lane. MENT and dark mode are deferred.
+- Light mode only for the active lane, with one explicit exception: the dark footer is the sole inverse surface. MENT, dark pages and any second broad inverse surface are deferred.
 - Cool luminous canvas; never cream, beige, blanket grey, broad inverse, or Tailwind-grey leakage.
 - Media chambers are bounded authored product environments outside PDP Section 1. They do not become section backgrounds.
 - Raised white content/purchase planes may use restrained cool elevation.
@@ -49,7 +69,7 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 - ProductCommerceCard has no cobalt outer outline or decorative top-edge eyebrow.
 - Cobalt belongs primarily to the product, metrics, actions, selected states, icons, and meaningful relational marks.
 - Plus Jakarta Sans leads editorial/display work. Inter is the only supporting/UI typeface. Barlow Condensed, Archivo, Cousine, and Inter Variable are rejected.
-- Minimum customer body copy is 15–16 px; metadata/eyebrows are at least 12 px.
+- The 15–16px customer-body and 12px metadata floor is `DEC-TYPE-001 · PROPOSED_NON_CONTROLLING`; audit and report it, but do not claim it as inherited champion authority.
 
 ## Make versus runtime
 
@@ -72,7 +92,7 @@ Make-generated code is disposable prototype machinery. It never becomes runtime 
 - Every PR includes Status, Notes, Risks, Checklist, validation performed, and rollback.
 - Stage only task files. Never delete or overwrite unrelated user work.
 
-## MF-01A definition of done
+## Historical MF-01A definition of done
 
 - Three materially distinct design directions.
 - Each direction is a coherent family, not a palette swap.
@@ -81,7 +101,7 @@ Make-generated code is disposable prototype machinery. It never becomes runtime 
 - No comparison-board aesthetic, runtime language, native-node tracing, or system-documentation UI.
 - Human records selected relationships for MF-01B. No native nodes enter before the transfer test passes and MF-02 begins.
 
-## MF-01B transfer boundary
+## Historical MF-01B transfer boundary
 
 - MF-01B starts only after the MF-01A relationship selection is recorded.
 - It tests transfer into four bounded customer-facing fragments: homepage entry, PDP Section 1, embedded evidence, and true canvas-split evidence/rail.

@@ -1,7 +1,21 @@
 # MF Completion Consolidation — Full Status View
 
-## Date: 2026-08-09
+## Date: 2026-08-11
 ## File: `BEPMuUt1HroEw8xjz8CVyN`
+
+> **CONV-001 supersession:** Use `authority/CURRENT-STATE.json`, `authority/DECISION-LEDGER.json` and `make-sessions/mf03-experience-convergence/` for current work. This document's earlier inventory remains provenance where it does not conflict.
+
+## Current convergence receipt
+
+| Area | Current state |
+|---|---|
+| Champion methodology/decisions | `CONV-001_APPROVED_WITH_CORRECTIONS` |
+| Foundations | 4 convergence collections/86 variables kept and extended; 3 legacy/quarantined collections/128 variables archived |
+| Component graph | canonical candidate sources registered from status atoms through cards, hero, Dossier, rails and shell |
+| Hero | `717:15468` layout + corrected `90 SERVINGS`; data delta from `626:7994`; purpose-built HeroDecisionSurface required |
+| Type floor | `PROPOSED_NON_CONTROLLING` |
+| Publication | all new artifacts unpublished and `HUMAN_REVIEW_REQUIRED` |
+| Active run package | `make-sessions/mf03-experience-convergence/` |
 
 ---
 
@@ -14,8 +28,9 @@
 | MF-02A Run 1 | Grid Surface (PNG-based) | ✅ COMPLETE | Hero PNG failure identified → native frames needed | `session-02-grid-surface/` |
 | MF-02A Run 2 | Grid Surface (native, hero variants) | ✅ COMPLETE | Section differentiation failure → contract added | `session-02-grid-surface/` |
 | MF-02A Run 3 | Grid Surface (locked hero, differentiation) | ✅ COMPLETE | Champion composite locked, 6 sections cherry-picked | `session-02-grid-surface/` |
-| MF-03 Codex Sites v2 | Experience Lab build | 🔧 IN PROGRESS | Data truth correct, structural design gaps identified | `session-03-codex-sites/` |
-| MF-03 Make | Header + Footer + OpenLab Portal | 📋 PLANNED | PROMPT.md written, 13 inputs mapped, 3+1+2 directions | `session-03-openlab-header/` |
+| MF-03 Codex Sites v2/v3 | Experience Lab comparison | ❌ REJECTED VISUAL TRANSLATION | Route shell/provenance only | `session-03-codex-sites/` |
+| CONV-001 canonical graph | foundations/components/shell | 🔎 HUMAN REVIEW REQUIRED | reconciled candidate sources, unpublished | `authority/ARTIFACT-REGISTRY.json` |
+| MF-03A/B + MF-04 | Homepage, OpenLab, PDP candidates | 📋 P0 QUEUE | implementable convergent prompts ready | `mf03-experience-convergence/` |
 
 ---
 
@@ -53,7 +68,9 @@
 | Cobalt interactive | `#256DFF` | ✅ Locked |
 | Media chamber | `rgb(240,244,251)` | ✅ Locked |
 | Typography | Plus Jakarta Sans ExtraBold + Inter | ✅ Locked |
-| Softform Arc radii | r=20/24/28/34 per density | ✅ Locked |
+| Softform Arc radii | r=20/24/28/34 per density | ✅ Champion relationship |
+| Graduated single shadows | Compact 12/5/.09; V/F 60/24/.10; PurchasePanel 50/20/.18; Relation 25/12/.12 | ✅ Latest champion decision |
+| Body/metadata floor | 15–16px / 12px | ⚠️ Proposed, non-controlling |
 
 ---
 

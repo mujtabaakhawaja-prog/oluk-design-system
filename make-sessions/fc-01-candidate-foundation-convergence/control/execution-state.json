@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 2,
+  "updatedDate": "2026-08-11",
+  "program": "OLUK_DESIGN_TO_PRESENTATION_CONVERGENCE",
+  "controlState": "CONV_001_APPROVED_WITH_CORRECTIONS",
+  "status": "P0_FIGMA_ROUTE_CANDIDATES_BUILT__HUMAN_REVIEW_REQUIRED",
+  "predecessor": {
+    "lane": "FC-01 Candidate Foundation Convergence",
+    "status": "SUPERSEDED_AS_ACTIVE_CONTROL__PRESERVED_AS_EVIDENCE"
+  },
+  "completed": [
+    "ACCESS_CONTAINMENT",
+    "AUTHORITY_RECONCILIATION",
+    "DECISION_LEDGER_INSTALLATION",
+    "VARIABLE_COLLECTION_DISPOSITION",
+    "CANONICAL_COMPONENT_GRAPH",
+    "MF-03A_FIGMA_CANDIDATE_764:50",
+    "MF-03B_FIGMA_CANDIDATE_767:50",
+    "MF-04_FIGMA_CANDIDATE_766:50"
+  ],
+  "candidatePromotionState": "UNPUBLISHED_HUMAN_REVIEW_REQUIRED",
+  "figmaCandidateRuns": {
+    "MF-03A": {"state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "node": "764:50"},
+    "MF-03B": {"state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "node": "767:50"},
+    "MF-04": {"state": "CANDIDATE_BUILT_HUMAN_REVIEW_REQUIRED", "node": "766:50"}
+  },
+  "nextRuns": ["MF-09", "MF-10"],
+  "MF-09": "REQUIRED_FOR_FULL_FOUR_WIDTH_AND_STATE_PROOF",
+  "MF-10": "BLOCKED_PENDING_MF-09_AND_CHAMPION_REVIEW",
+  "sitesImplementation": {
+    "state": "CANDIDATE_IMPLEMENTED_HUMAN_REVIEW_REQUIRED",
+    "sourceCommit": "84f8627a513a6e7c547cd4df76d17a6351d48420",
+    "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab"],
+    "routeCount": 15,
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": "7/7 PASS",
+    "browserQA": "PASS_NO_OVERFLOW_NO_90_CAPS_NO_GOVERNANCE_LABEL_LEAKAGE",
+    "footerSolePersistentInverse": true,
+    "deployment": "NONE"
+  },
+  "nextRequiredDecision": "ARTIFACT_SPECIFIC_HUMAN_VISUAL_REVIEW",
+  "runtimeAuthority": false
+}

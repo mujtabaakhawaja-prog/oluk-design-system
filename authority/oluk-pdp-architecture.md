@@ -1,5 +1,8 @@
 ## PDP MK-2866 Page Architecture
 
+> **2026-08-11 CONV-001 supersession:** This native V4 architecture remains evidence. Current MF-04 composition uses the canonical candidate PurchasePanel `745:50`, Dossier `750:182`, AssuranceRail `752:167`, RelatedRail `753:18136`, SiteHeader `754:18224`, TrustRail `754:18225` and sole-inverse SiteFooter `754:18226`. All remain unpublished and require artifact-specific human review.
+
+
 ### Current State — NR-02C Native V4 (node 126:4)
 - 1440×5204px, vertical layout
 - Page canvas: #F7F8FC (blue-shifted near-white)
@@ -11,7 +14,7 @@
 3. **Utility Sub-Header** (126:21) — 1440×46
 4. **Section 1: Full-Field Hero Rail** (126:37) — 1440×879, continuous flat atmospheric field with an integrated product render composition and independently raised PurchaseRail. It does not consume the bounded/elevated ProductMediaChamber master. **EXCEPTION: NO cobalt top edge, NO card language, NO Blue-Eyebrow.** Only PDP section that breaks bounded-chamber architecture
 5. **Hero Tab Bar** (126:47) — 1440×72, left-aligned with 48px gutter
-6. **Dossier / Native Interactive** (182:92) — INSTANCE of 206:1899, 1440×1253, three Product/Facts/Composition states with 8 hover reactions. Retain its taxonomy and interaction; reject its current passive header/content corridor and excess wrapper spacing.
+6. **Dossier** — use canonical candidate `750:182`; historical interactive nodes remain source evidence. Do not infer interaction semantics from labels without a later explicit decision.
 7. **Section 3: Lab Verification Embedded** (188:450) — 1440×784, six-point proof + HPLC trace + batch records
 8. **Section 3b: Lab V Canvas-Split** (188:926) — 1440×784, comparative/provisional only. Its white outer wrapper prevents the child gap from being true exposed canvas; do not use this exact wrapper as surface authority.
 9. **Section 4: Content Rail (Archive)** (126:226) — 1440×380, editorial intro + 4 compound family cells. Its macro rail relationship is useful; repeated local hairlines and cobalt perimeter strokes are defects. Where justified, retain only one continuous top relationship accent.
@@ -69,8 +72,9 @@ Panels displaying product truth preserve the ProductMetricRail's quantified-trut
 ### Gate Status
 - NR-03 passed — human selection complete
 - NR-04 Source Lock complete — purchase masters synchronized, icon corrected, inputs frozen
-- MF-01A is the active sealed creative run; MF-01B follows as a PNG-led relationship-transfer test
-- Foundation rebase (NR-05) blocked until native reconstruction (04B) completes
+- MF-01A material/anatomy remains persistent relationship authority; CONV-001 applies later deltas through the canonical candidate graph
+- MF-03A/B and MF-04 candidates remain human-review required; MF-09 and MF-10 gate promotion
+- Foundation rebase/promotion remains blocked until MF-10 and a separate system decision
 - MENT dark-object asset remains a later System Gate blocker
 
 ### Semantic chip distinctions

@@ -1,6 +1,8 @@
 # Resolved Open Questions — MF-03 Codex + Make
 
-## Date: 2026-08-09
+## Date: 2026-08-10
+
+These decisions are active for V3 visual presentation. Their fixture-versus-runtime meaning is recorded in `AUTHORITY-MATRIX.md`; customer routes do not display backend or fixture disclaimers.
 
 ### Question 1: Trust Rail
 **Q:** Trust rail — fixture text ("FREE UK DELIVERY") or dev disclaimer banner?
@@ -11,7 +13,7 @@
 - JANOSHIK Validated
 - Encrypted Checkout
 
-The "EXPERIENCE LAB · STATIC DESIGN FIXTURES" dev disclaimer can remain as a SEPARATE bar above the trust rail if needed for development context, but it must NOT replace the trust rail itself.
+Do not show a development disclaimer above or in place of the trust rail on customer routes.
 
 ### Question 2: OpenLab 6-Cell Grid
 **Q:** OpenLab 6-cell grid — replace with evidence components or correct the labels?

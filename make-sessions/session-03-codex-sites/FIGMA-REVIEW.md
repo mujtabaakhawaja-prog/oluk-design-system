@@ -1,5 +1,7 @@
 # FIGMA_AGENT_RESPONSE — MF-03 Codex Sites Experience Lab Review
 
+> **Historical V2 disposition:** `REJECTED_VISUAL_TRANSLATION`. This review is preserved as V2 evidence only. V3 now classifies as `TECHNICALLY_HEALTHY / DESIGN_CONVERGENCE_FAILED / HUMAN_REVIEW_PENDING`. Current control is [`FC-01 Candidate Foundation Convergence`](../fc-01-candidate-foundation-convergence/guidelines.md); the owner-only revision-3 receipt remains historical deployment evidence.
+
 ## Metadata
 
 - **File:** `BEPMuUt1HroEw8xjz8CVyN`
@@ -12,6 +14,8 @@
 ---
 
 ## VERDICT SUMMARY
+
+**Formal status:** `REJECTED_VISUAL_TRANSLATION`
 
 The v2 build gets the **data truth** right (MK-2866 values, source-bound states, honest fixture labels) but **re-interprets the MF design language as backend system documentation projected onto a frontend surface.** The result reads like an API spec with a stylesheet, not a storefront designed by the Figma MF work.
 

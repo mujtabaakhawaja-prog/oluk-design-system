@@ -1,9 +1,17 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
-**Status:** Accepted relationship authority for MF-01A/MF-01B
+> **2026-08-11 CONV-001 supersession:** The append-only decision ledger and current-state snapshot now control. MF-01A material/anatomy relationships persist; later runs apply named deltas. The canonical graph remains unpublished and `HUMAN_REVIEW_REQUIRED`.
+
+**Status:** Accepted relationship authority feeding the CONV-001 candidate graph
 **Evidence state:** Extracted from frozen NR-04 native compositions, later live-node verification, and the G0 Universal Glue reference
-**Applies to:** Light-mode Make exploration beginning with MF-01A
-**Does not authorize:** Foundation promotion, token publication, native Figma mutation, runtime implementation, or production release
+**Applies to:** Light-mode design relationship review and FC-01 candidate containment
+**Does not authorize:** Published-library promotion, a production `Light` mode, Shopper/runtime implementation, or production release
+
+## CONV-001 material addendum
+
+The active candidate foundations are the 4 convergence collections/86 variables. The 2 legacy plus 1 quarantined collections/128 variables are archived provenance. New work binds only to the active convergence collections. None is published or promoted.
+
+Current effect authority is graduated single shadows: Compact y5/blur12/.09, Vertical/Featured y24/blur60/.10, PurchasePanel y20/blur50/.18 and Relation y12/blur25/.12. The former two-layer Softform Arc recipe is archived evidence. Commerce taxonomy remains `SARMs / Prohormones / Research Chemicals / Stacks`; the dossier index remains non-interactive unless a later decision explicitly authorizes interaction; the dark footer is the sole inverse surface. The proposed 12px metadata / 15–16px body floor does not control until explicitly approved.
 
 ## Purpose
 
@@ -155,7 +163,7 @@ Relationship:
 
 ### Structural terminal surface — Footer
 
-The footer is a quiet terminal plane. It uses the lightest structural edge needed to close the page without becoming an inverse slab.
+The footer is the sole permitted inverse terminal plane in the FC-01 candidate relationships. It uses `rgb(20,24,39)` with restrained structure and may not authorize a second inverse section, dark route or broad dark pacing slab.
 
 ## III. Accent and edge authority
 

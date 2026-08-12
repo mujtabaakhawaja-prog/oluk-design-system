@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "updatedDate": "2026-08-11",
+  "policy": "review fixtures stay typed and isolated from eventual runtime adapters",
+  "requiredFields": ["authorityClass", "sourceRef", "runtimeOwner", "publicationState", "reviewOnly"],
+  "classes": [
+    {"id": "governed_product_truth", "reviewOnly": false, "runtimeOwner": "WooCommerce_or_governed_catalogue"},
+    {"id": "secondary_product_presentation", "reviewOnly": true, "runtimeOwner": "WooCommerce"},
+    {"id": "customer_review_presentation", "reviewOnly": true, "runtimeOwner": "later_review_source"},
+    {"id": "openlab_record_presentation", "reviewOnly": true, "runtimeOwner": "OpenLab_runtime"},
+    {"id": "checkout_state_presentation", "reviewOnly": true, "runtimeOwner": "tools-service_C2_plus_payment_owners"}
+  ],
+  "customerVisibleDevelopmentLabelsProhibited": true
+}

@@ -2,13 +2,33 @@
 
 **Run:** `oluk-final-authority-20260801`
 **Date:** 2026-08-03
-**Document version:** 3.1 — Creative/Relationship Frontier Split
+**Document version:** 3.2 — CONV-001 control-plane addendum
 **Authority workspace:** [Final-Design](https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=0-1)
 **Selective evidence workspace:** [New-Design](https://www.figma.com/design/jROUrZz83j9QPl6N2dLI8O/New-Design?node-id=0-1)
 **Figma program index:** Page 00, node `36:2`
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
-**Current canonical position:** The Native V4 work in Final-Design has passed the corrective Identity Gate as the directional light-mode baseline. Its PDP, ProductMetricRail, PurchaseRail, Dossier, LabReports, Lab Verification, Product Media and TrustEvidenceSpine relationships seed two deliberately separate Figma Make frontiers. MF-01A begins from a sealed three-PNG ProductCommerceCard packet so Make can design rather than translate native boards. MF-01B then tests selected relationships across homepage, PDP, embedded evidence and true canvas-split jobs. Selected nodes, components and variables enter only in MF-02 after that transfer succeeds.
-**Promotion state:** Figma Make design exploration is active. Native V4 is the baseline and structural evidence, not a pixel template or visual ceiling. Make may enhance component silhouettes, chip/card geometry, material depth, stock/trust presentation, responsive behavior and page composition while retaining product truth and semantic jobs. Phase 05–06 foundations remain provisional until the Make Design Gate selects the cross-route light-mode champion. MENT and dark mode are explicitly deferred. Runtime React remains a later translation lane.
+> **2026-08-11 CONV-001 supersession:** Active control is now the machine-readable state, append-only ledger and artifact registry in `authority/`, plus `make-sessions/mf03-experience-convergence/`. The champion user approved the convergence package with corrections. This approves the decisions/methodology, not automatic promotion of newly built artifacts; all new Figma and Sites work remains unpublished and `HUMAN_REVIEW_REQUIRED`.
+
+**Current canonical position:** MF-01A material/anatomy/state authority persists through all later runs. The CONV-001 canonical candidate graph reconciles the active foundations, card family, hero, Dossier, rails and shell. MF-03 v2/v3 remain rejected comparison evidence.
+**Promotion state:** Decisions are approved; artifacts are not promoted. Four convergence collections/86 variables remain active, three legacy/quarantined collections/128 variables are archived, and all new components/pages remain unpublished candidates. Library publication, Code Connect, customer-route convergence and runtime work require later gates.
+
+## CONV-001 correction addendum — controlling
+
+1. `717:15468` is hero layout/composition authority only after `90 SERVINGS` replaces `90 CAPS`. `626:7994` supplies complete product/status/evidence data. The target is a purpose-built HeroDecisionSurface.
+2. `713:1065` is a Hero component with PurchasePanel geometry (r=28, blur 50, offsetY 20), not an MF-02B Compact card. It remains provenance, not target structure.
+3. Keep/extend the 4 convergence collections/86 variables. Archive, do not delete, the 2 legacy plus 1 quarantined collections/128 variables.
+4. The current effect decision is graduated single shadows by decision weight. The former two-layer recipe is archived.
+5. The 12px metadata / 15–16px body floor is `PROPOSED_NON_CONTROLLING` pending an explicit champion decision.
+6. Every future Make/Sites prompt separates `INHERITED_CHAMPION_STATE`, `THIS_RUN_DELTA` and `DO_NOT_INHERIT`.
+7. The footer remains the sole inverse surface; every new artifact requires an exact human visual gate.
+
+Where any older paragraph in this manual conflicts with this addendum, `authority/DECISION-LEDGER.json` and `authority/CURRENT-STATE.json` control. Historical paragraphs remain recoverable evidence.
+
+## FC-01 predecessor addendum — 2026-08-11
+
+Human review found that MF-03 repeated the same material relationships with page-local values. FC-01 contained and technically exercised those relationships through hidden Figma candidates and a local review-only Sites wrapper. CONV-001 now supersedes FC-01 as the active control plane; FC-01 remains predecessor evidence.
+
+The active packet is `make-sessions/fc-01-candidate-foundation-convergence/`. Where older material names `614:75950`, the current source is `614:75994`: unified Portal + Archive on the left, Featured ProductCommerceCard in the center, and categories plus BatchTicker on the right. Commerce taxonomy is `SARMs / Prohormones / Research Chemicals / Stacks`. The dossier Product/Facts/Composition treatment is a non-interactive visual index, not tab semantics.
 
 ## Document control
 
@@ -21,7 +41,7 @@ This is the single controlling execution manual for the identity-led design-syst
 - the ordered future runs required after the present evaluation run;
 - promotion, invalidation, rollback, supersession, and archive rules.
 
-For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`Figma Make Creative Frontier Constitution`](../make-sessions/session-01-product-card/CONSTITUTION.md). The exact first-run prompt is [`MF-01A — ProductCommerceCard Material Relationship Frontier`](../make-sessions/session-01-product-card/PROMPT.md).
+For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) alias together with the [`adaptive surface contract`](surface-contract.md) and [`FC-01 containment controls`](../make-sessions/fc-01-candidate-foundation-convergence/guidelines.md). The MF-01A constitution and prompt remain historical source records.
 
 It supersedes the earlier sequence as an execution authority. Legacy plans, transcripts, runtime captures, and the old Page `0:1` remain evidence or structural reference only.
 
@@ -33,8 +53,8 @@ It supersedes the earlier sequence as an execution authority. Legacy plans, tran
 | Asset authority | Light-mode asset set sufficient for the active lane | The approved MK-2866 transparent master is registered and used; MENT verification is deferred with dark-mode work |
 | Color foundations | Mechanically sound; visually provisional | 60 primitives, 59 semantics and three evaluation modes remain operational and hidden after the bounded NR-02D purchase-contract update; their mappings are still candidate authority and remain unpublished |
 | Non-color foundations | Directional baseline established; creative refinement active | Make may improve typography scale, spacing/density, shape, material, motion and responsive relationships in customer-facing designs; formal extraction follows the Make champion |
-| System validation | Make convergence pending | Cross-route light-mode pages and adaptive component families must converge before formal system extraction and validation |
-| Foundation authority | Not started | Page 07 is a promotion shell; no mode is production `Light` |
+| System validation | `CONV-001 decisions approved / artifact-specific human review required` | Canonical component graph exists; new pages and components remain candidates |
+| Foundation authority | 4 convergence collections / 86 variables retained; 128 legacy/quarantined variables archived | Unpublished and unpromoted pending the later system gate |
 | Components through release | Deferred | Phases 08–12 may begin only through their recorded entry gates |
 
 ## Authority statement
@@ -1324,4 +1344,4 @@ The program is not complete when variables, components or pages merely exist. Co
 
 ## Final determination
 
-The candidate variable plumbing remains mechanically valid, hidden and unpublished. Native V4 provides the accepted light-mode direction, reusable semantic structures and exact product truth required to start Make without beginning from a blank aesthetic. `NR-03` is passed. The active work begins with sealed MF-01A ProductCommerceCard material exploration, then MF-01B cross-context relationship transfer, then MF-02 adaptive champion/native convergence. Full routes, responsive convergence and system extraction follow only after those two frontiers succeed. Make is expected to improve the current card/chip shapes, stock and trust presentation, material depth and adaptive behavior without silently redefining semantic jobs. MENT and dark mode are deferred. After the Make Design Gate selects the light-mode champion, `NR-05` rebases the foundations and the System Gate resumes. Production runtime remains a later translation lane.
+The candidate variable plumbing and FC-01 artifacts remain hidden and unpublished. Native V4 and completed MF-01A, MF-01B and MF-02A provide relationship evidence and exact product truth; the bounded `CANDIDATE_CONVERGENCE_v0` Figma sets and owner-only `/review` wrapper now provide adaptive technical evidence. This is not foundation promotion or customer-route implementation. Human card-family selection, dossier correction and full related-rail closure precede any later route convergence or promotion decision. Historical MF-06 continues to mean OpenLab + LabReports. Runtime, evidence, payment, C2 and release authority remain separate later lanes.

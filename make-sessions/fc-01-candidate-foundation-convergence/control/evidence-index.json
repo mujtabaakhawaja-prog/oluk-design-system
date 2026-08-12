@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "updatedDate": "2026-08-11",
+  "currentGate": "ARTIFACT_SPECIFIC_HUMAN_VISUAL_REVIEW",
+  "control": {
+    "decisionLedger": "authority/DECISION-LEDGER.json",
+    "artifactRegistry": "authority/ARTIFACT-REGISTRY.json",
+    "promptPackage": "make-sessions/mf03-experience-convergence/"
+  },
+  "sitesPredecessorEvidence": {
+    "review": "https://oluk-experience-lab.sigmamindset.chatgpt.site/review",
+    "version": 5,
+    "sourceCommit": "2fb152ed689b94f709d4fb78d26d25ea0a88329f",
+    "accessPolicyRevision": 7,
+    "authority": "comparison_only"
+  },
+  "figma": {
+    "controlBoard": "728:50",
+    "decisionReceipt": "728:224",
+    "runtimeCandidateReceipt": "776:50",
+    "heroDecisionSurface": "736:17458",
+    "productDecisionHero": "739:50",
+    "compact": "742:50",
+    "vertical": "743:50",
+    "featured": "743:281",
+    "relation": "743:520",
+    "purchasePanel": "745:50",
+    "dossier": "750:182",
+    "assuranceRail": "752:167",
+    "relatedRail": "753:18136",
+    "siteHeader": "754:18224",
+    "trustRail": "754:18225",
+    "siteFooter": "754:18226",
+    "brandIdentity": "756:50",
+    "color": "760:50",
+    "typography": "760:195",
+    "dimensions": "760:260",
+    "elevation": "760:380",
+    "iconography": "773:50",
+    "navigationAndShell": "775:50",
+    "productAssetProof": "773:141",
+    "canonicalSources": "732:2897",
+    "instanceReview": "763:50",
+    "homepage": "764:50",
+    "shop": "765:50",
+    "pdp": "766:50",
+    "openLab": "767:50"
+  },
+  "figmaValidation": {
+    "forbidden90CapsCount": 0,
+    "nonActiveVariableBindingCount": 0,
+    "dossierHeightPx": 898,
+    "governanceLabelsInsideCustomerFrames": 0,
+    "externalReviewAnnotations": ["764:51", "765:51", "766:51", "767:51"],
+    "publicationState": "unpublished_human_review_required"
+  },
+  "sitesCandidate": {
+    "state": "CANDIDATE_IMPLEMENTED_HUMAN_REVIEW_REQUIRED",
+    "sourceCommit": "84f8627a513a6e7c547cd4df76d17a6351d48420",
+    "surfaces": ["Homepage", "Shop", "PDP", "OpenLab"],
+    "routeCount": 15,
+    "validation": {
+      "build": "PASS",
+      "typecheck": "PASS",
+      "lint": "PASS",
+      "tests": "7/7 PASS",
+      "browserQA": "PASS_NO_OVERFLOW_NO_90_CAPS_NO_GOVERNANCE_LABEL_LEAKAGE",
+      "footerSolePersistentInverse": true
+    },
+    "deployment": "NONE",
+    "figmaReceipt": "776:50"
+  },
+  "approval": {
+    "methodologyAndCorrections": true,
+    "newArtifacts": false,
+    "newArtifactState": "HUMAN_REVIEW_REQUIRED"
+  }
+}

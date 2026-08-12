@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "contractId": "OLUK_CONV_001_CANONICAL_CANDIDATE_GRAPH",
+  "lane": "CONV-001 Authority Convergence",
+  "status": [
+    "DECISIONS_APPROVED_WITH_CORRECTIONS",
+    "ARTIFACT_SPECIFIC_HUMAN_REVIEW_REQUIRED"
+  ],
+  "publicationState": "unpublished",
+  "promotionState": "unpromoted",
+  "runtimeAuthority": "none",
+  "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
+  "sourceAuthority": {
+    "foundationReservoir": "626:11760",
+    "commerceCard": "486:4634",
+    "evidenceStatus": "518:13092",
+    "assuranceRail": "556:34627",
+    "commerceTaxonomy": "561:41860",
+    "mf01aPersistentReservoir": "626:11760",
+    "heroLayout": "717:15468",
+    "heroData": "626:7994",
+    "heroRejectedWrapper": "713:1065",
+    "opening": "739:50",
+    "dossier": "750:182"
+  },
+  "variableDisposition": {
+    "keepAndExtend": {"collections": 4, "variables": 86},
+    "archiveWithoutDeletion": {"collections": 3, "variables": 128}
+  },
+  "candidateOutputs": {
+    "inventoryStatus": "732:2902",
+    "evidenceStatus": "732:2912",
+    "metricRail": "733:95",
+    "qualitativeChip": "733:17342",
+    "productTabs": "734:17326",
+    "heroDecisionSurface": "736:17458",
+    "productDecisionHero": "739:50",
+    "compact": "742:50",
+    "vertical": "743:50",
+    "featured": "743:281",
+    "relation": "743:520",
+    "purchasePanel": "745:50",
+    "dossier": "750:182",
+    "assuranceRail": "752:167",
+    "relatedRail": "753:18136",
+    "siteHeader": "754:18224",
+    "trustRail": "754:18225",
+    "siteFooter": "754:18226"
+  },
+  "tokens": {
+    "canvas": "#f7f8fc",
+    "card": "#ffffff",
+    "familySurface": "#fafcff",
+    "mediaChamber": "#f0f4fb",
+    "cobaltSoft": "#eef4ff",
+    "cardBorder": "rgba(206,220,241,0.92)",
+    "strongBorder": "#afc8ff",
+    "familyBorder": "#d2e4ff",
+    "nearBlack": "#141827",
+    "secondaryText": "#53617d",
+    "mutedText": "#64718a",
+    "cobalt": "#0057ff",
+    "interactiveCobalt": "#256dff",
+    "inventoryGreen": "#15803d",
+    "inventorySoft": "#ecfdf3",
+    "radii": {
+      "control": 8,
+      "chip": 10,
+      "metric": 12,
+      "compact": 20,
+      "vertical": 24,
+      "purchase": 28,
+      "horizontal": 34
+    },
+    "shadows": {
+      "compact": "0 5px 12px rgba(15,26,51,0.09)",
+      "verticalFeatured": "0 24px 60px rgba(15,26,51,0.10)",
+      "purchasePanel": "0 20px 50px rgba(15,26,51,0.18)",
+      "relation": "0 12px 25px rgba(15,26,51,0.12)",
+      "archived": "0 1px 3px rgba(20,24,39,0.04), 0 4px 12px rgba(20,24,39,0.06)"
+    },
+    "displayFont": "Plus Jakarta Sans",
+    "bodyFont": "Inter",
+    "typeFloorProposal": {
+      "status": "PROPOSED_NON_CONTROLLING",
+      "bodyPx": "15-16",
+      "metadataPx": 12
+    },
+    "contentMaxPx": 1344,
+    "gridGapPx": 20,
+    "guttersPx": {
+      "desktop": 48,
+      "tablet": 32,
+      "mobile": 16
+    }
+  },
+  "siteIsolation": {
+    "route": "/review",
+    "candidateImportsRestrictedToReview": true,
+    "customerExperienceLabImportsCandidateLayer": false,
+    "wrapperExports": [
+      "OlukCanvas",
+      "OlukSection",
+      "OlukSurface",
+      "OlukCard",
+      "OlukMediaChamber",
+      "OlukPurchasePlane",
+      "OlukDivider",
+      "OlukCanvasSplit"
+    ],
+    "reviewAnchors": [
+      "foundation",
+      "mf02b-provenance",
+      "mf02b-atoms",
+      "mf02b-card-family",
+      "mf02b-compact-states",
+      "mf02b-horizontal",
+      "mf02b-purchase-panel",
+      "mf02b-assurance",
+      "mf02b-related-rail",
+      "mf02b-responsive-ledger",
+      "mf02b-dossier",
+      "baseline-routes",
+      "mf02b-selection-receipt"
+    ]
+  },
+  "gates": {
+    "methodologyAndCorrections": "approved",
+    "canonicalComponents": "human_review_required",
+    "routeCandidates": "human_review_required",
+    "customerRouteConvergence": "not_authorized",
+    "foundationPromotion": "not_authorized",
+    "candidateDeployment": "predecessor_owner_only_version_5_preserved",
+    "runtimeTranslation": "not_authorized"
+  }
+}

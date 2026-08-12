@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 2,
+  "updatedDate": "2026-08-11",
+  "resolved": [
+    {"id": "MM-001", "resolution": "CONV-001 methodology/corrections approved; new artifacts use separate human review gates"},
+    {"id": "MM-002", "resolution": "canonical Dossier candidate created at 750:182; artifact review remains open"},
+    {"id": "MM-003", "resolution": "canonical RelatedRail candidate created at 753:18136; artifact review remains open"},
+    {"id": "MM-008", "resolution": "hero 90 CAPS corrected to 90 SERVINGS and complete data preserved through split authority"},
+    {"id": "MM-009", "resolution": "713:1065 classified as Hero component with PurchasePanel geometry"},
+    {"id": "MM-010", "resolution": "86 active convergence variables retained and 128 legacy/quarantined variables archived"}
+  ],
+  "open": [
+    {"id": "MM-004", "surface": "route candidates", "issue": "homepage Shop PDP and OpenLab candidates require artifact-specific visual review", "severity": "gate", "next": "MF-03A_MF-03B_MF-04"},
+    {"id": "MM-005", "surface": "responsive system", "issue": "cross-route four-width and local-state proof not closed", "severity": "gate", "next": "MF-09"},
+    {"id": "MM-006", "surface": "final convergence", "issue": "cross-route design gate not closed", "severity": "gate", "next": "MF-10"},
+    {"id": "MM-007", "surface": "promotion and runtime", "issue": "publication Code Connect and runtime translation not authorized", "severity": "blocked", "next": "MF++"},
+    {"id": "MM-011", "surface": "typography", "issue": "12px metadata and 15-16px body floor remains proposed/non-controlling", "severity": "proposal", "next": "champion_decision_if_desired"}
+  ]
+}

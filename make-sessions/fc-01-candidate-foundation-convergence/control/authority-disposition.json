@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "updatedDate": "2026-08-11",
+  "candidate": "CONV-001_CANONICAL_CANDIDATE_GRAPH",
+  "supersededActiveControl": "FC-01",
+  "currentControl": "authority/CURRENT-STATE.json",
+  "decisionLedger": "authority/DECISION-LEDGER.json",
+  "dimensions": ["visualGeometryAuthority", "customerCopyAuthority", "privateFixtureAuthority", "eventualRuntimeOwner"],
+  "sources": [
+    {
+      "source": "626:11760",
+      "role": "persistent MF-01A material anatomy and state authority",
+      "publication": "reference",
+      "runtimeAuthority": false
+    },
+    {
+      "source": "717:15468",
+      "role": "hero layout and composition authority after 90 SERVINGS correction",
+      "publication": "reference",
+      "runtimeAuthority": false
+    },
+    {
+      "source": "626:7994",
+      "role": "hero customer data delta",
+      "publication": "reference",
+      "runtimeAuthority": false
+    },
+    {
+      "source": "713:1065",
+      "role": "rejected whole-zone Hero wrapper with PurchasePanel geometry",
+      "publication": "provenance",
+      "runtimeAuthority": false
+    },
+    {"source": "637:3", "role": "candidate foundation specimen", "publication": "hidden", "runtimeAuthority": false},
+    {"source": "646:10801", "role": "vertical card candidate", "publication": "hidden", "runtimeAuthority": false},
+    {"source": "646:10802", "role": "featured card candidate", "publication": "hidden", "runtimeAuthority": false},
+    {"source": "639:13888", "role": "compact local-state candidate", "publication": "hidden", "runtimeAuthority": false},
+    {"source": "643:8616", "role": "horizontal relation candidate", "publication": "hidden", "runtimeAuthority": false},
+    {"source": "639:13889", "role": "PurchasePanel candidate", "publication": "hidden", "runtimeAuthority": false},
+    {"source": "518:13092", "role": "exact EvidenceStatus geometry", "publication": "reference", "runtimeAuthority": false},
+    {"source": "556:34627", "role": "AssuranceRail visual authority", "publication": "reference", "runtimeAuthority": false},
+    {"source": "614:75994", "role": "later MF-03 opening relationship", "publication": "reference", "runtimeAuthority": false},
+    {"source": "551:27148", "role": "dossier relationship requiring correction", "publication": "reference", "runtimeAuthority": false}
+  ],
+  "variableDisposition": {
+    "activeConvergenceCollections": 4,
+    "activeConvergenceVariables": 86,
+    "archivedCollections": 3,
+    "archivedVariables": 128,
+    "deleteArchived": false
+  },
+  "newArtifactPublication": "unpublished_human_review_required",
+  "runtimeBoundaries": {
+    "catalogueAndOrderLedger": "WooCommerce",
+    "shopperFirstPaint": "Shopper SSR",
+    "checkoutLifecycleProjection": "tools-service/C2",
+    "verifiedWooMutation": "Initiator",
+    "payment": "Processor/Egress/BiasPay",
+    "designCandidate": "Figma plus isolated Sites review"
+  }
+}
