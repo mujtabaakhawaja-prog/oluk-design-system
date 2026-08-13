@@ -430,9 +430,9 @@
   ],
   "sitesImplementation": {
     "state": "CONV004_REPOSITORY_VALIDATED_WORKTREE_PENDING_IMPLEMENTATION_COMMIT_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-    "sourceCommit": "PENDING_CONV004_IMPLEMENTATION_COMMIT",
-    "completionCommit": "PENDING_CONV004_IMPLEMENTATION_COMMIT",
-    "codeBridgeCommit": "PENDING_CONV004_IMPLEMENTATION_COMMIT",
+    "sourceCommit": "216076987196e2b09164e7628390285b71222a51",
+    "completionCommit": "216076987196e2b09164e7628390285b71222a51",
+    "codeBridgeCommit": "216076987196e2b09164e7628390285b71222a51",
     "conv004BranchBase": "ad8500d091fb6217a93c3ebbdb1d37954abd45ab",
     "conv004Receipt": "authority/receipts/CONV-004-DESIGN-CONVERGENCE.md",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab", "Evidence lifecycle", "Decision tools", "Bag and checkout presentation", "Post-purchase presentation", "Owner review"],

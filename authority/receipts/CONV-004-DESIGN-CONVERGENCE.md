@@ -3,7 +3,7 @@
 **Recorded:** 2026-08-12  
 **Figma file:** `BEPMuUt1HroEw8xjz8CVyN`  
 **Upstream repository candidate:** `ad8500d091fb6217a93c3ebbdb1d37954abd45ab`  
-**Repository implementation commit:** `PENDING_CONV004_IMPLEMENTATION_COMMIT`  
+**Repository implementation commit:** `216076987196e2b09164e7628390285b71222a51`
 **State:** `FINAL_FIGMA_CLOSEOUT_VERIFIED · REPOSITORY_VALIDATED_WORKTREE_PENDING_COMMIT · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`  
 **Deployment:** `NONE`  
 **Runtime authority:** `NONE`
@@ -127,7 +127,7 @@ The bounded CONV-004 repository delta updates:
 
 The bridge maps 18 components after separating atomic CobaltDivider from executable CobaltDensityBoundary, adding ProductMediaChamber and correcting InventoryStatus/StockPill provenance. Figma and Sites now agree on the executable boundary contexts: Hero (`/`), OpenLab (`/open-lab`) and the private review harness (`/review`). The bridge retains 9 route mappings and projects 112 Figma variables. Registry board `911:2629` / header `911:2636` is v1.2 CONV-004 and points to receipt `1043:310`. Official Code Connect remains uninvoked.
 
-The repository projection is validated in the CONV-004 worktree. Its final implementation SHA remains `PENDING_CONV004_IMPLEMENTATION_COMMIT` until the bounded commit is created; no earlier CONV-002/CONV-003 SHA is presented as current CONV-004 authority.
+The repository projection is validated at implementation commit `216076987196e2b09164e7628390285b71222a51`; no earlier CONV-002/CONV-003 SHA is presented as current CONV-004 authority.
 
 ### Final4 browser and execution receipts
 
