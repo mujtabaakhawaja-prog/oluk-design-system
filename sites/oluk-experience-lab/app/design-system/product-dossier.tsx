@@ -43,11 +43,11 @@ export function ProductDossier({
             <p>{copy}</p>
           </div>
         </div>
-        <div aria-label="Dossier sections" className="dossier-tabs" role="list">
-          <span role="listitem">Product</span>
-          <span role="listitem">Facts</span>
-          <span role="listitem">Composition</span>
-        </div>
+        <ol aria-label="Dossier sections" className="dossier-section-index">
+          <li>01 Product facts</li>
+          <li>02 Product visual</li>
+          <li>03 Product composition</li>
+        </ol>
         <div className="dossier-card">
           <article className="dossier-panel dossier-facts">
             <span className="panel-index">01</span>

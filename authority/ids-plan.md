@@ -13,13 +13,15 @@ Read in order:
 
 ## Current state
 
-- `CONV-001` is `APPROVED_WITH_CORRECTIONS` at the methodology/decision level.
+- `CONV-004` is the current reconciled candidate projection and remains `HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
 - New canonical Figma sources and page/Sites candidates remain `HUMAN_REVIEW_REQUIRED`, unpublished and unpromoted.
 - MF-01A `626:11760` is persistent material/anatomy/state authority. Later MF runs apply named deltas; they do not replace inherited state with an entire later board.
 - Hero: use `717:15468` for layout/composition after correcting `90 CAPS` to `90 SERVINGS`; merge complete status/evidence/product data from `626:7994`. `713:1065` is a Hero component with PurchasePanel geometry, not Compact, and is not the target structure.
-- Keep/extend the 4 convergence collections/86 variables. The 3 legacy/quarantined collections/128 variables are archived, not deleted.
+- Use the 4 active convergence collections/112 variables (`29 / 31 / 30 / 22`). The former 3 legacy/quarantined collections/128 variables were migrated and deleted only after `DEC-VARIABLES-002` explicitly superseded the archive-only disposition.
+- Use Plus Jakarta Sans ExtraBold for headings and Inter Variable for body/UI; use the cobalt StockPill, canonical MediaChamber set `1022:4099`, and current CobaltDensityBoundary `1026:27046` behavior registered by CONV-004. Atomic rule `1010:27053` is supporting source; hidden predecessor `1010:27064` is immutable superseded history.
+- Current CONV-004 receipt authority is Page 25 COMPONENT `1043:310`. Nodes `999:28867`, `999:28868` and `999:28872` are immutable rejected historical evidence.
 - Current effect authority is the graduated single-shadow family; the two-layer Softform Arc recipe is archived evidence.
-- The 12px metadata and 15–16px body floor is `DEC-TYPE-001 · PROPOSED_NON_CONTROLLING`.
+- The 12px metadata and 15–16px body floor is champion authority under `DEC-TYPE-FLOOR-001`; the MF-01A QualitativeChip label is the sole named 11px exception.
 - Footer is the sole inverse surface.
 - Exact product truth is `SARM SERIES · MK-2866 · Ostarine · SKU 80529-01 · 15 MG · 90 SERVINGS · >99% · £43`.
 

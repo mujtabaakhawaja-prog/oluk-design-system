@@ -1,6 +1,6 @@
 # MF-03+ — OLUK experience convergence manifest
 
-**Control:** `CONV-001_APPROVED_WITH_CORRECTIONS`
+**Control:** `CONV-004_RECONCILED_HUMAN_REVIEW_REQUIRED`
 
 **Publication:** `UNPUBLISHED · HUMAN_REVIEW_REQUIRED`
 
@@ -23,7 +23,7 @@ This package is the current handoff for Figma Make and Codex Sites from MF-03A t
 7. `RUN.md`
 8. `ACCEPTANCE.md`
 
-If prose conflicts with the append-only ledger, the latest accepted ledger event controls. `DEC-TYPE-001` is explicitly proposed and non-controlling.
+If prose conflicts with the append-only ledger, the latest accepted ledger event controls. `DEC-TYPE-FLOOR-001` supersedes the earlier proposed disposition and is champion authority, with the MF-01A QualitativeChip label as the sole named 11px exception.
 
 ## Inherited champion sources
 
@@ -34,14 +34,20 @@ If prose conflicts with the append-only ledger, the latest accepted ledger event
 | Hero customer-data delta | `626:7994` | Inherit `IN STOCK`, `OPENLAB VERIFIED` and complete product truth |
 | Rejected hero wrapper | `713:1065` | Provenance only; accurately named Hero component with PurchasePanel geometry |
 | EvidenceStatus derivation | `518:13092` | Exact visual source |
-| Current canonical candidate graph | `732:2902`, `732:2912`, `733:95`, `733:17342`, `734:17326`, `736:17458`, `739:50`, `742:50`, `743:50`, `743:281`, `743:520`, `745:50`, `750:182`, `752:167`, `753:18136`, `754:18224`, `754:18225`, `754:18226` | Instantiate; do not redraw page-local copies |
+| Current canonical candidate graph | `732:2902`, `732:2912`, `733:95`, `733:17342`, `734:17326`, `736:17458`, `739:50`, `742:50`, `743:50`, `743:281`, `743:520`, `745:50`, `750:182`, `752:167`, `753:18136`, `754:18224`, `754:18225`, `754:18226`, MediaChamber `1022:4099`, CobaltDensityBoundary `1026:27046` | Instantiate; do not redraw page-local copies. Atomic divider `1010:27053` is supporting source; hidden `1010:27064` is superseded history. |
+
+## Final CONV-004 closeout evidence
+
+- Current Page 25 receipt authority: COMPONENT `1043:310`.
+- Immutable rejected historical evidence: `999:28867`, `999:28868`, `999:28872`.
+- Final Figma proof: `42/42` canvases; 112 unpublished variables (`29 / 31 / 30 / 22`); zero rejected paints; only Inter Variable, Plus Jakarta Sans and JetBrains Mono; exact API styles `SemiBold` / `ExtraBold`; zero authored fractional font sizes; 127 computed readings solely inside four scaled review instances; zero stale variable references in active canonical/customer roots. The full file retains 1,219 immutable historical alias references and must not be described as file-wide zero debt.
 
 ## Variable disposition
 
-- Keep and extend the 4 `OLUK / CANDIDATE_CONVERGENCE_v0` collections: 86 variables total.
-- Keep the 3 archived legacy/quarantined collections for provenance: 128 variables total.
-- Never rebind new work to archived variables.
-- Never delete an archived collection inside an MF run.
+- Keep and extend the 4 `OLUK / CANDIDATE_CONVERGENCE_v0` collections: 112 variables total (`29 / 31 / 30 / 22`).
+- The 3 former legacy/quarantined collections were migrated and deleted only after the champion's explicit `DEC-VARIABLES-002` supersession and usage audit. Do not recreate or reference them.
+- Use `#0057FF` for primary cobalt, preserve chip-value `#17213F` and the exact DEC-MEDIA-003 gradients as scoped exceptions, and use the new explicit error/warning/unavailable/disabled variables rather than hardcoded near-duplicates.
+- Use Plus Jakarta Sans ExtraBold for display and Inter Variable for body/UI.
 
 ## Queue and relevance
 

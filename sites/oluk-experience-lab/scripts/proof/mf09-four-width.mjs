@@ -63,7 +63,7 @@ function pageAuditExpression({ customer, expectedHeading, governancePatterns }) 
       return clipped && !authoredClipping ? [{ selector: describe(element), clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: style.overflowX }] : [];
     }).slice(0, 30);
     const overlapContainers = [
-      ...document.querySelectorAll(".product-grid, .commerce-card-grid, .qualitative-chips, .oluk-candidate-qualitative, .oluk-state-grid, .oluk-width-grid"),
+      ...document.querySelectorAll(".product-grid, .commerce-card-grid, .shop-result-grid, .transaction-grid, .transaction-summary-grid, .qualitative-chips, .oluk-candidate-qualitative, .oluk-state-grid, .oluk-width-grid, .oluk-purchase-panel-matrix"),
     ];
     const overlaps = [];
     for (const container of overlapContainers) {
@@ -130,12 +130,17 @@ function settlePageExpression() {
   return `(async () => {
     const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const images = [...document.images];
-    for (const image of images) image.loading = "eager";
+    for (const image of images) {
+      image.loading = "eager";
+      image.fetchPriority = "high";
+      image.scrollIntoView({ block: "center", inline: "nearest" });
+      await pause(80);
+    }
     const height = Math.max(document.documentElement.scrollHeight, document.body?.scrollHeight || 0);
     const increment = Math.max(320, Math.floor(innerHeight * 0.8));
     for (let y = 0; y < height; y += increment) {
       scrollTo(0, y);
-      await pause(20);
+      await pause(60);
     }
     scrollTo(0, 0);
     await Promise.race([
@@ -148,8 +153,20 @@ function settlePageExpression() {
       })),
       pause(12_000),
     ]);
-    await pause(60);
-    return { imageCount: images.length, settled: images.filter((image) => image.complete).length };
+    await Promise.all(images.map(async (image) => {
+      await Promise.race([
+        image.decode().catch(() => {
+          // A failed decode remains visible to the subsequent naturalWidth audit.
+        }),
+        pause(2_000),
+      ]);
+    }));
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    await pause(120);
+    return {
+      imageCount: images.length,
+      settled: images.filter((image) => image.complete && image.naturalWidth > 0).length,
+    };
   })()`;
 }
 

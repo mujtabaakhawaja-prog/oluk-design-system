@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -23,6 +24,10 @@ function expectedCases() {
     customer: route.customer,
     artifact: `screenshots/${routeSlug(route.path)}--${viewport.width}.png`,
   })));
+}
+
+async function sha256(filePath) {
+  return createHash("sha256").update(await readFile(filePath)).digest("hex");
 }
 
 function lint(manifest) {
@@ -76,9 +81,18 @@ if (receiptPath) {
   const receiptById = new Map(receipt.results.map((result) => [`${routeSlug(result.route)}--${result.viewport.width}`, result]));
 
   if (option("from-receipt")) {
+    const screenshotRoot = path.resolve(option("screenshot-root") ?? receipt.outputDirectory);
+    for (const baseline of manifest.cases) {
+      const result = receiptById.get(baseline.id);
+      assert.ok(result, `receipt is missing ${baseline.id}`);
+      assert.ok(result.screenshot, `${baseline.id} receipt has no screenshot path`);
+      const screenshotPath = path.join(screenshotRoot, result.screenshot);
+      assert.equal(await sha256(screenshotPath), result.screenshotSha256, `${baseline.id} screenshot is missing or its SHA-256 does not match`);
+    }
     const nextManifest = {
       ...manifest,
       generatedFromReceipt: path.resolve(receiptPath),
+      screenshotRoot,
       cases: manifest.cases.map((baseline) => {
         const result = receiptById.get(baseline.id);
         assert.ok(result, `receipt is missing ${baseline.id}`);

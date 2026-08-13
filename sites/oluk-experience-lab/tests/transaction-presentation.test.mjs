@@ -16,13 +16,17 @@ async function exists(filePath) {
   }
 }
 
-async function collectRelativeImportGraph(entryPath, seen = new Set()) {
+async function collectRelativeImportGraph(entryPath, seen = new Set(), bareImports = new Set()) {
   const resolvedEntry = path.resolve(entryPath);
   if (seen.has(resolvedEntry)) return seen;
   seen.add(resolvedEntry);
   const source = await readFile(resolvedEntry, "utf8");
-  const imports = [...source.matchAll(/(?:from\s+|import\s*)["'](\.[^"']+)["']/g)].map((match) => match[1]);
+  const imports = [...source.matchAll(/(?:from\s+|import\s*|import\s*\()["']([^"']+)["']\)?/g)].map((match) => match[1]);
   for (const specifier of imports) {
+    if (!specifier.startsWith(".")) {
+      bareImports.add(specifier);
+      continue;
+    }
     if (/\.(?:css|json|svg|png|jpe?g|webp)$/i.test(specifier)) continue;
     const base = path.resolve(path.dirname(resolvedEntry), specifier);
     const candidates = [base, `${base}.ts`, `${base}.tsx`, path.join(base, "index.ts"), path.join(base, "index.tsx")];
@@ -30,20 +34,20 @@ async function collectRelativeImportGraph(entryPath, seen = new Set()) {
       const found = await foundPromise;
       return found ?? ((await exists(candidate)) ? candidate : null);
     }, Promise.resolve(null));
-    if (target) await collectRelativeImportGraph(target, seen);
+    if (target) await collectRelativeImportGraph(target, seen, bareImports);
   }
   return seen;
 }
 
 const routes = [
   ["bag", "bag"],
-  ["checkout", "checkout-details"],
+  ["checkout", "checkout"],
   ["checkout/delivery", "checkout-delivery"],
-  ["checkout/payment-handoff", "payment-handoff"],
-  ["checkout/order-pay", "order-pay"],
-  ["checkout/confirmation", "confirmation"],
-  ["checkout/failure", "failure"],
-  ["checkout/retry", "retry"],
+  ["checkout/payment-handoff", "checkout-payment-handoff"],
+  ["checkout/order-pay", "checkout-order-pay"],
+  ["checkout/confirmation", "checkout-confirmation"],
+  ["checkout/failure", "checkout-failure"],
+  ["checkout/retry", "checkout-retry"],
 ];
 
 test("MF-07 route pages form one static transaction lifecycle", async () => {
@@ -75,9 +79,12 @@ test("transaction presentation preserves exact MK-2866 truth and deterministic i
 });
 
 test("transaction import graph and dependencies cannot acquire runtime callbacks", async () => {
-  const entry = path.join(siteRoot, "app/design-system/transaction-presentation.tsx");
-  const graph = await collectRelativeImportGraph(entry);
-  assert.ok(graph.size >= 5, `expected a non-trivial import graph, received ${graph.size} files`);
+  const graph = new Set();
+  const bareImports = new Set();
+  for (const [pathname] of routes) {
+    await collectRelativeImportGraph(path.join(siteRoot, `app/${pathname}/page.tsx`), graph, bareImports);
+  }
+  assert.ok(graph.size >= routes.length + 5, `expected all eight route entries and their shared graph, received ${graph.size} files`);
 
   const forbiddenRuntime = /\bfetch\s*\(|\baxios\b|\bXMLHttpRequest\b|\bWebSocket\b|\bEventSource\b|\blocalStorage\b|\bsessionStorage\b|\buse server\b|\bserver action\b|\bformAction\b|\bonSubmit\b|\bwoocommerce\b|\bstripe\b|\bbiaspay\b|\binitiator\b|\btools-service\b|\btelemetry\b/i;
   for (const filePath of graph) {
@@ -86,11 +93,17 @@ test("transaction import graph and dependencies cannot acquire runtime callbacks
   }
 
   const manifest = JSON.parse(await readFile(path.join(siteRoot, "package.json"), "utf8"));
-  const dependencies = Object.keys({ ...manifest.dependencies, ...manifest.optionalDependencies });
+  const dependencies = Object.keys({
+    ...manifest.dependencies,
+    ...manifest.devDependencies,
+    ...manifest.optionalDependencies,
+    ...manifest.peerDependencies,
+  });
+  const importAndDependencyNames = [...bareImports, ...dependencies];
   assert.equal(
-    dependencies.filter((name) => /stripe|woocommerce|paypal|adyen|braintree|square|shopify|commerce|payment/i.test(name)).length,
+    importAndDependencyNames.filter((name) => /stripe|woocommerce|paypal|adyen|braintree|square|shopify|commerce|payment|biaspay/i.test(name)).length,
     0,
-    "transaction candidate must not add commerce or payment SDK dependencies",
+    "transaction route graph must not import or declare commerce or payment SDKs",
   );
 });
 

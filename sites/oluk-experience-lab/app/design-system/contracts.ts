@@ -40,11 +40,11 @@ export type AssuranceSpecimen = {
 };
 
 export const candidateContract = {
-  id: "CONV-001 / CANDIDATE_CONVERGENCE_v0",
-  status: "CHAMPION STATE INHERITED / HUMAN_REVIEW_REQUIRED",
-  figmaFoundationNode: "728:50",
-  runtimeAuthority: "CANDIDATE ONLY",
-  typographyFloorDecision: "PROPOSED / NON-CONTROLLING",
+  id: "CONV-004 / CANDIDATE_CONVERGENCE_v0",
+  status: "RECONCILIATION DELTA / HUMAN_REVIEW_REQUIRED",
+  figmaFoundationNode: "637:3",
+  runtimeAuthority: "NONE",
+  typographyFloorDecision: "CHAMPION / DEC-TYPE-FLOOR-001 / 12PX METADATA / 15-16PX BODY / 11PX QUALITATIVECHIP EXCEPTION",
 } as const;
 
 export const mk2866Specimen: ReviewFixture<ProductSpecimen> = {
@@ -168,7 +168,7 @@ export const assuranceSpecimens = [
 
 export const figmaReviewLinks = {
   control: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=728-50",
-  foundation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=728-50",
+  foundation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=637-3",
   adaptivePage: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=732-2897",
   compact: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=742-50",
   vertical: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=743-50",
@@ -176,6 +176,9 @@ export const figmaReviewLinks = {
   relation: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=743-520",
   purchase: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=745-50",
   inventory: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=732-2902",
+  inventorySource: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=641-17",
+  mediaChamber: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1022-4099",
+  cobaltDivider: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1010-27053",
   evidence: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=732-2912",
   metricRail: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=733-95",
   qualitativeChip: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=733-17342",

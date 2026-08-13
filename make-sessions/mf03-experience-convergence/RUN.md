@@ -45,6 +45,11 @@ Order of operations:
 ## Validation
 
 - Product string scan: `90 SERVINGS` present; `90 CAPS` appears only in rejection/provenance documentation.
+- Token inventory: exactly four active CONV-004 collections and 112 variables; deleted legacy collection IDs and the rejected cobalt/text duplicates do not return.
+- Typography: Plus Jakarta Sans ExtraBold controls headings and Inter Variable controls body/UI; exact structured Figma style strings are `SemiBold` and `ExtraBold`; Barlow Condensed and static Inter body/UI do not return.
+- Status: InventoryStatus/StockPill uses cobalt for in-stock, error for out-of-stock and muted for unavailable; green is not inventory authority.
+- Component provenance: Vertical/Featured chamber instances resolve to MediaChamber set `1022:4099`; governed complex density boundaries resolve to current behavior component `1026:27046` with actual Hero/OpenLab instances `1026:27048` / `1026:27050`. Atomic rule `1010:27053` is supporting source and hidden `1010:27064` is a superseded historical predecessor.
+- Figma closeout: current receipt is Page 25 COMPONENT `1043:310`; `999:28867`, `999:28868`, `999:28872` are immutable rejected history. Validate `42/42` canvases, 112 unpublished variables (`29 / 31 / 30 / 22`), zero rejected paints, only the three allowed font families, zero authored fractional sizes, computed fractional readings confined to four scaled review instances, and zero stale variable references in active canonical/customer roots. Record the 1,219 immutable historical alias references separately; never report file-wide zero stale aliases.
 - Component provenance: page candidates are instances of registered canonical sources unless a documented exception exists.
 - Variable provenance: new nodes bind only to active convergence collections.
 - Visual: no clipping/overlap at 1440/1024/768/390; no hidden overflow used as proof.

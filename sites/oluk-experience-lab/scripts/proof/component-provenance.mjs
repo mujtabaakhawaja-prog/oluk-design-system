@@ -21,23 +21,28 @@ const files = {
   candidateComponents: "app/design-system/candidate-components.tsx",
   candidatePrimitives: "app/design-system/candidate-primitives.tsx",
   candidateReview: "app/design-system/candidate-review.tsx",
+  ownerReviewHarness: "app/design-system/owner-review-state-harness.tsx",
   contracts: "app/design-system/contracts.ts",
   customerCss: "app/globals.css",
   candidateCss: "app/design-system/candidate-review.css",
+  cobaltDivider: "app/design-system/cobalt-divider.tsx",
+  mediaChamber: "app/design-system/product-media-chamber.tsx",
 };
 
 const canonicalComponents = Object.freeze([
-  { role: "InventoryStatus", figma: "732:2902", customerDefinition: "function InventoryStatus", candidateDefinition: "export function InventoryStatus" },
-  { role: "EvidenceStatus", figma: "732:2912", customerDefinition: "function EvidenceStatus", candidateDefinition: "export function EvidenceStatus" },
-  { role: "MetricRail", figma: "733:95", customerDefinition: "function MetricRail", candidateDefinition: "export function MetricRail" },
-  { role: "QualitativeChip", figma: "733:17342", customerDefinition: "function QualitativeChip", candidateDefinition: "export function QualitativeChips" },
+  { role: "StockPill", figma: "641:17 / 732:2902", customerDefinition: "function StockPill", candidateDefinition: null },
+  { role: "ProductMediaChamber", figma: "1022:4099", customerDefinition: "function ProductMediaChamber", candidateDefinition: null },
+  { role: "CobaltDivider", figma: "1010:27053", customerDefinition: "function CobaltDivider", candidateDefinition: null },
+  { role: "EvidenceStatus", figma: "732:2912", customerDefinition: "function EvidenceStatus", candidateDefinition: null },
+  { role: "MetricRail", figma: "733:95", customerDefinition: "function MetricRail", candidateDefinition: null },
+  { role: "QualitativeChip", figma: "733:17342", customerDefinition: "function QualitativeChip", candidateDefinition: null },
   { role: "HeroDecisionSurface", figma: "736:17458", customerDefinition: "function HeroDecisionSurface", candidateDefinition: null },
   { role: "ProductDecisionHero", figma: "739:50", customerDefinition: "function ProductDecisionHero", candidateDefinition: null },
-  { role: "ProductCommerceCard", figma: "742:50 / 743:50 / 743:281", customerDefinition: "function ProductCommerceCard", candidateDefinition: "export function ProductCommerceCard" },
-  { role: "RelationCard", figma: "743:520", customerDefinition: "function RelationCard", candidateDefinition: "export function RelationCard" },
-  { role: "PurchasePanel", figma: "745:50", customerDefinition: "function PurchasePanel", candidateDefinition: "export function PurchasePanel" },
+  { role: "ProductCommerceCard", figma: "742:50 / 743:50 / 743:281", customerDefinition: "function ProductCommerceCard", candidateDefinition: null },
+  { role: "RelationCard", figma: "743:520", customerDefinition: "function RelationCard", candidateDefinition: null },
+  { role: "PurchasePanel", figma: "745:50", customerDefinition: "function PurchasePanel", candidateDefinition: null },
   { role: "Dossier", figma: "750:182", customerDefinition: "function ProductDossier", candidateDefinition: null },
-  { role: "AssuranceRail", figma: "752:167", customerDefinition: "function AssuranceRail", candidateDefinition: "export function AssuranceRail" },
+  { role: "AssuranceRail", figma: "752:167", customerDefinition: "function AssuranceRail", candidateDefinition: null },
   { role: "RelatedRail", figma: "753:18136", customerDefinition: "function RelatedRail", candidateDefinition: null },
   { role: "SiteHeader", figma: "754:18224", customerDefinition: "function SiteHeader", candidateDefinition: null },
   { role: "SiteFooter", figma: "754:18226", customerDefinition: "function SiteFooter", candidateDefinition: null },
@@ -63,7 +68,7 @@ const source = Object.fromEntries(
 const customerComponentSources = Object.fromEntries(
   Object.entries(source).filter(([key]) => [
     "assuranceRail", "metricRail", "productCard", "productHero", "productDossier",
-    "productStatus", "purchasePanel", "qualitativeChip", "relatedRail",
+    "productStatus", "purchasePanel", "qualitativeChip", "relatedRail", "cobaltDivider", "mediaChamber",
   ].includes(key)),
 );
 const customerSource = Object.values(customerComponentSources).join("\n") + `\n${source.experience}\n${source.customerRoutes}`;
@@ -82,20 +87,41 @@ for (const component of canonicalComponents) {
   for (const nodeId of nodeIds) check(source.contracts.includes(`node-id=${nodeId.replace(":", "-")}`), `${component.role} direct Figma source ${nodeId} is registered`);
 }
 
-for (const name of ["InventoryStatus", "EvidenceStatus", "MetricRail", "ProductCommerceCard", "AssuranceRail", "SiteHeader", "SiteFooter", "PurchasePanel", "ProductDossier"]) {
+for (const name of ["StockPill", "InventoryStatus", "ProductMediaChamber", "CobaltDivider", "EvidenceStatus", "MetricRail", "ProductCommerceCard", "AssuranceRail", "SiteHeader", "SiteFooter", "PurchasePanel", "ProductDossier"]) {
   check(declarations(customerSource, name) === 1, `${name} has one customer-module definition`);
 }
+check(
+  source.candidateComponents.includes('export { EvidenceStatus, InventoryStatus, StockPill } from "./product-status"'),
+  "owner review compatibility registry re-exports the canonical status module",
+);
 check(declarations(customerSource, "QualitativeChip") === 1, "QualitativeChip has one customer-module definition");
 check(count(customerSource, "<QualitativeChip") >= 1, "customer compositions instantiate QualitativeChip");
-check(source.candidatePrimitives.includes("data-candidate-component={component}"), "review primitives emit canonical provenance markers");
 check(
-  source.candidateComponents.includes('component={`ProductCommerceCard.${variant}`}') &&
-    source.candidateComponents.includes('variant: "vertical" | "featured"'),
-  "review source emits vertical and featured ProductCommerceCard provenance",
+  source.candidateReview.includes('import { ProductCommerceCard } from "./product-commerce-card"') &&
+    count(source.candidateReview, "<ProductCommerceCard") >= 3,
+  "owner review imports and instantiates canonical ProductCommerceCard for the family and state matrix",
 );
-for (const marker of ["ProductCommerceCard.compact", "ProductCommerceCard.Relation", "PurchasePanel", "AssuranceRail"]) {
-  check(source.candidateComponents.includes(marker), `review source emits ${marker} provenance`);
+for (const [modulePath, componentName] of [
+  ["./purchase-panel", "PurchasePanel"],
+  ["./related-rail", "RelationCard"],
+  ["./assurance-rail", "AssuranceRail"],
+  ["./product-status", "EvidenceStatus"],
+]) {
+  check(
+    source.candidateReview.includes(`from "${modulePath}"`) && source.candidateReview.includes(`<${componentName}`),
+    `owner review imports and instantiates canonical ${componentName}`,
+  );
 }
+for (const duplicate of ["EvidenceStatus", "MetricRail", "QualitativeChips", "ProductCommerceCard", "RelationCard", "PurchasePanel", "AssuranceRail"]) {
+  check(declarations(source.candidateComponents, duplicate) === 0, `owner compatibility registry does not redefine ${duplicate}`);
+}
+check(
+  source.ownerReviewHarness.includes('import { ProductCommerceCard } from "./product-commerce-card"') &&
+    source.ownerReviewHarness.includes("<ProductCommerceCard") &&
+    !source.ownerReviewHarness.includes("<MetricRail") &&
+    !source.ownerReviewHarness.includes("<QualitativeChipList"),
+  "owner state harness instantiates the canonical card instead of redrawing its media, metrics, chips or status",
+);
 
 const customerCardSource = source.productCard;
 const rejectedLegacyPatterns = [

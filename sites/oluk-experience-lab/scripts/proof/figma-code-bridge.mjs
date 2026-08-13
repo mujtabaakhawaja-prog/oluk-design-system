@@ -5,13 +5,13 @@ import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
+import { ROUTES as EXECUTABLE_ROUTES } from "./route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const repositoryRoot = path.resolve(siteRoot, "../..");
 const registryPath = path.join(repositoryRoot, "authority/FIGMA-CODE-BRIDGE.json");
 const publicPath = path.join(siteRoot, "public/.well-known/oluk-figma-code-bridge.json");
 const typedContractPath = path.join(siteRoot, "app/design-system/figma-code-bridge.ts");
-const routeMatrixPath = path.join(siteRoot, "scripts/proof/route-matrix.mjs");
 const tokenCssPaths = [
   path.join(siteRoot, "app/design-system/candidate-tokens.css"),
   path.join(siteRoot, "app/globals.css"),
@@ -72,12 +72,29 @@ check(registry.schemaVersion === 1, "bridge schema version is 1");
 check(registry.bridgeId === "OLUK-CC-BRIDGE-001", "bridge ID is stable");
 check(registry.authority.figmaFileKey === "BEPMuUt1HroEw8xjz8CVyN", "Figma file key is exact");
 check(registry.authority.figmaRegistryBoard === "911:2629", "live CC registry board is exact");
+check(registry.authority.figmaRegistryHeaderNode === "911:2636", "live CC registry header node is exact");
+check(registry.authority.figmaRegistryBoardVersion === "1.2", "live CC registry board is v1.2");
 check(registry.authority.officialCodeConnectInvoked === false, "official Code Connect is not invoked");
 check(registry.authority.figmaMutationPerformed === true, "bounded Figma documentation writes are recorded truthfully");
 check(
-  registry.authority.figmaMutationScope === "REGISTRY_COPY_CORRECTION_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
-  "Figma write scope is limited to registry copy and unpublished visual review boards",
+  registry.authority.figmaMutationScope ===
+    "CONV004_FULL_FILE_CANDIDATE_CONVERGENCE_STOCKPILL_COBALT_DIVIDER_MEDIA_CHAMBER_AND_UNPUBLISHED_RECEIPT",
+  "Figma write scope records the bounded CONV-004 candidate convergence",
 );
+check(registry.authority.conv004CurrentReceipt === "1043:310", "corrected CONV-004 current receipt is exact");
+check(registry.authority.conv004CurrentReceiptKind === "COMPONENT", "corrected CONV-004 receipt is a COMPONENT");
+check(
+  registry.authority.conv004RejectedHistoricalEvidence.join(",") === "999:28867,999:28868,999:28872",
+  "three rejected receipt nodes remain immutable historical evidence",
+);
+check(registry.authority.legacyCompatibilityReceiptFieldsDisposition === "IMMUTABLE_REJECTED_HISTORICAL_EVIDENCE_ONLY", "legacy receipt fields cannot regain authority");
+check(registry.figmaCloseoutProof.canvasAudit.passed === 42 && registry.figmaCloseoutProof.canvasAudit.total === 42, "final Figma canvas audit is 42 of 42");
+check(registry.figmaCloseoutProof.rejectedPaintCount === 0, "final Figma rejected paint set is zero");
+check(registry.figmaCloseoutProof.authoredFractionalFontSizeCount === 0, "authored fractional font-size count is zero");
+check(registry.figmaCloseoutProof.computedFractionalReadings.count === 127, "127 computed fractional readings are recorded separately");
+check(registry.figmaCloseoutProof.staleVariableReferences.activeCanonicalRoots === 0, "active canonical roots have zero stale variable references");
+check(registry.figmaCloseoutProof.staleVariableReferences.activeCustomerRoots === 0, "active customer roots have zero stale variable references");
+check(registry.figmaCloseoutProof.staleVariableReferences.immutableHistoricalFileAliases === 1219, "1,219 immutable historical aliases remain explicit debt");
 check(registry.visualReviewBoards.length === 8, "eight artifact-specific visual review boards are registered");
 check(new Set(registry.visualReviewBoards.map(({ nodeId }) => nodeId)).size === 8, "visual review board node IDs are unique");
 check(registry.guardrails.networkCallbacks === "NONE", "bridge has no network callbacks");
@@ -89,7 +106,7 @@ const componentIds = registry.componentMappings.map(({ id }) => id);
 const componentNodeIds = registry.componentMappings.map(({ figma }) => figma.nodeId);
 check(new Set(componentIds).size === componentIds.length, "component mapping IDs are unique");
 check(new Set(componentNodeIds).size === componentNodeIds.length, "component Figma node IDs are unique");
-check(registry.componentMappings.length === 15, "15 exact component mappings are registered");
+check(registry.componentMappings.length === 18, "18 exact component mappings are registered");
 
 const typedContractSource = await readFile(typedContractPath, "utf8");
 for (const mapping of registry.componentMappings) {
@@ -99,7 +116,12 @@ for (const mapping of registry.componentMappings) {
   const source = await readFile(absoluteFile, "utf8");
   const declarations = exportedDeclarations(source, absoluteFile);
   check(declarations.values.has(mapping.code.export), `${mapping.id} export ${mapping.code.export} exists`);
-  check(declarations.types.has(mapping.code.propsType), `${mapping.id} props type ${mapping.code.propsType} exists`);
+  check(
+    mapping.code.propsTypeSource === "typed-contract"
+      ? typedContractSource.includes(`export type ${mapping.code.propsType}`)
+      : declarations.types.has(mapping.code.propsType),
+    `${mapping.id} props type ${mapping.code.propsType} exists`,
+  );
   check(
     typedContractSource.includes(`${mapping.code.contract}: {`) &&
       typedContractSource.includes(`propsType: "${mapping.code.propsType}"`),
@@ -126,6 +148,16 @@ const featured = registry.componentMappings.find(({ id }) => id === "product-com
 check(featured?.figma.registeredDesktopVariant === "743:282", "Featured desktop variant 743:282 is registered");
 check(featured?.figma.downstreamShopInstance === "765:98", "actual Shop instance 765:98 is registered");
 check(featured?.code.fixedProps?.variant === "featured", "Shop-inherited Featured mapping fixes variant=featured");
+const compactCard = registry.componentMappings.find(({ id }) => id === "product-commerce-card-compact");
+const verticalCard = registry.componentMappings.find(({ id }) => id === "product-commerce-card-vertical");
+const relationCard = registry.componentMappings.find(({ id }) => id === "product-commerce-card-relation");
+const purchasePanel = registry.componentMappings.find(({ id }) => id === "purchase-panel");
+check(Object.keys(compactCard?.variants ?? {}).join(",") === "state", "Compact maps only its eight-state Figma axis");
+check(compactCard?.variants.state.length === 8, "Compact maps all eight Figma states");
+check(JSON.stringify(verticalCard?.variants) === JSON.stringify({ width: ["desktop", "mobile"] }), "Vertical maps only its two-width Figma axis");
+check(JSON.stringify(featured?.variants) === JSON.stringify({ width: ["desktop", "mobile"] }), "Featured maps only its two-width Figma axis");
+check(JSON.stringify(relationCard?.variants) === JSON.stringify({ width: ["desktop-horizontal", "tablet-stacked", "mobile-stacked"] }), "Relation maps only its three-width Figma axis");
+check(purchasePanel?.variants.state.length === 6 && purchasePanel?.variants.width.length === 2, "PurchasePanel maps its exact six-state by two-width matrix");
 check(
   registry.figmaBoardObservations.some(
     ({ nodeId, boardDeclaredSourceNodeId, label }) =>
@@ -134,14 +166,44 @@ check(
   "actual Shop instance and its Featured source are both retained as provenance",
 );
 
-const routeMatrix = await readFile(routeMatrixPath, "utf8");
+const stock = registry.componentMappings.find(({ id }) => id === "inventory-status");
+check(stock?.figma.nodeId === "732:2902", "promoted InventoryStatus canonical 732:2902 is registered");
+check(stock?.figma.sourceSpecimenNodeId === "641:17", "InventoryStatus source specimen 641:17 is retained");
+check(stock?.code.export === "StockPill", "promoted canonical maps directly to StockPill export");
+check(stock?.code.propsType === "StockPillProps", "promoted canonical maps directly to StockPillProps");
+check(stock?.code.compatibilityAlias?.export === "InventoryStatus", "InventoryStatus is retained only as a compatibility alias");
+check(stock?.tokens.includes("--oluk-cobalt"), "in-stock StockPill uses cobalt");
+check(!stock?.tokens.includes("--oluk-inventory-green"), "inventory mapping rejects green status authority");
+
+const mediaChamber = registry.componentMappings.find(({ id }) => id === "product-media-chamber");
+check(mediaChamber?.figma.nodeId === "1022:4099", "MediaChamber component set 1022:4099 is registered");
+check(Object.keys(mediaChamber?.figma.variantNodes ?? {}).length === 4, "four canonical MediaChamber variants are registered");
+check(mediaChamber?.figma.instanceNodes.length === 4, "four corrected MediaChamber instances are registered");
+
+const cobaltDivider = registry.componentMappings.find(({ id }) => id === "cobalt-divider");
+check(cobaltDivider?.figma.nodeId === "1010:27053", "CobaltDivider component 1010:27053 is registered");
+check(cobaltDivider?.figma.rhythmSpecimenNodeId === "1010:27054", "CobaltDivider rhythm specimen is registered");
+check(cobaltDivider?.figma.historicalPredecessorInstanceNodeId === "1010:27064", "CobaltDivider hidden predecessor is retained as history");
+check(cobaltDivider?.routes.length === 0, "atomic CobaltDivider has no direct customer route usage");
+
+const cobaltBoundary = registry.componentMappings.find(({ id }) => id === "cobalt-density-boundary");
+check(cobaltBoundary?.figma.nodeId === "1026:27046", "CobaltDensityBoundary component 1026:27046 is registered");
+check(cobaltBoundary?.figma.instanceNodeIds.join(",") === "1026:27048,1026:27050", "CobaltDensityBoundary Hero and OpenLab instances are exact");
+check(cobaltBoundary?.figma.intendedContexts.join(",") === "Hero,OpenLab", "Figma intended contexts are exact");
+check(cobaltBoundary?.code.export === "CobaltDensityBoundary", "CobaltDensityBoundary exact code export is registered");
+check(
+  cobaltBoundary?.routes.join(",") === "/,/open-lab,/review",
+  "CobaltDensityBoundary exact Sites call routes are registered",
+);
+
+const executableRoutePaths = new Set(EXECUTABLE_ROUTES.map(({ path: routePath }) => routePath));
 for (const route of registry.routeMappings) {
   for (const codeFile of route.codeFiles) {
     check(await exists(path.join(repositoryRoot, codeFile)), `${route.id} route source ${codeFile} exists`);
   }
   for (const resolvedPath of route.resolvedPaths) {
     const basePath = resolvedPath.split("?")[0];
-    check(routeMatrix.includes(`path: "${basePath}"`), `${route.id} resolved path ${basePath} is in the executable route matrix`);
+    check(executableRoutePaths.has(basePath), `${route.id} resolved path ${basePath} is in the executable route matrix`);
   }
   if (route.resolution.startsWith("CORRECTED") || route.resolution.startsWith("MAPPED") || route.resolution.startsWith("EXPANDED")) {
     check(!route.resolvedPaths.includes(route.boardPath), `${route.id} rejects the stale CC-board route path`);
@@ -163,16 +225,27 @@ check(
 
 const tokenCssSources = await Promise.all(tokenCssPaths.map((filePath) => readFile(filePath, "utf8")));
 const tokenMaps = tokenCssSources.map(collectCssVariables);
+const customerCascadeTokenMap = new Map(tokenMaps.flatMap((tokenMap) => [...tokenMap.entries()]));
 for (const token of registry.bridgeTokens) {
   check(
-    tokenMaps.some((tokenMap) => tokenMap.get(token.css) === normalized(token.value)),
-    `${token.css} resolves to ${token.value}`,
+    customerCascadeTokenMap.get(token.css) === normalized(token.value),
+    `${token.css} resolves to ${token.value} in the customer root cascade`,
   );
 }
 check(
-  registry.tokenCollections.reduce((total, collection) => total + collection.count, 0) === 98,
-  "token collection counts total 98",
+  registry.tokenCollections.reduce((total, collection) => total + collection.count, 0) === 112,
+  "token collection counts total 112",
 );
+check(registry.styleMappings.paintStyles.length === 10, "ten Figma paint styles are registered");
+check(registry.styleMappings.gridStyle.columns === 12, "Figma grid style has 12 columns");
+check(registry.styleMappings.gridStyle.gutterPx === 24, "Figma grid style has a 24px gutter");
+check(registry.styleMappings.gridStyle.cssColumns === "--grid-columns", "grid column CSS projection is exact");
+check(registry.styleMappings.gridStyle.cssGap === "--grid-gap", "grid gap CSS projection is exact");
+check(registry.styleMappings.monoTextStyle.family === "JetBrains Mono", "code-only Figma text style uses JetBrains Mono");
+check(registry.styleMappings.monoTextStyle.css === "--font-mono", "mono CSS projection is exact");
+check(customerCascadeTokenMap.get("--grid-columns") === "12", "--grid-columns resolves to 12 in the customer root cascade");
+check(customerCascadeTokenMap.get("--grid-gap") === "24px", "--grid-gap resolves to 24px in the customer root cascade");
+check(customerCascadeTokenMap.get("--font-mono") === '"jetbrains mono", monospace', "--font-mono resolves to JetBrains Mono in the customer root cascade");
 
 const qualitativeSource = await readFile(path.join(siteRoot, "app/design-system/qualitative-icon.tsx"), "utf8");
 for (const kind of ["class", "form", "quality", "tested"]) {

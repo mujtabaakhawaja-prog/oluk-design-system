@@ -11,12 +11,52 @@ export type AssuranceRailProps = Readonly<{
   className?: string;
 }>;
 
-const defaultAssuranceItems: ReadonlyArray<AssuranceSpecimen> = assuranceSpecimens.map(
+export const ownerReviewAssuranceItems: ReadonlyArray<AssuranceSpecimen> = assuranceSpecimens.map(
   (fixture) => fixture.value,
 );
 
+const customerAssuranceItems: ReadonlyArray<AssuranceSpecimen> = [
+  {
+    number: "01",
+    title: "Identity context",
+    description: "Product and compound names stay aligned across commerce and any available record.",
+    icon: "/assets/candidate/assurance/identity.svg",
+    proofPoint: "/assets/candidate/assurance/identity-proof-point.svg",
+  },
+  {
+    number: "02",
+    title: "Purity context",
+    description: "Purity values appear only when they are supplied by an available evidence record.",
+    icon: "/assets/candidate/assurance/purity.svg",
+  },
+  {
+    number: "03",
+    title: "Strength context",
+    description: "Label strength remains distinct from any measured concentration in a report.",
+    icon: "/assets/candidate/assurance/concentration.svg",
+  },
+  {
+    number: "04",
+    title: "Independent records",
+    description: "Third-party sources are named only when their record is available to review.",
+    icon: "/assets/candidate/assurance/janoshik.svg",
+  },
+  {
+    number: "05",
+    title: "Pack information",
+    description: "Packaging details remain attached to their source-owned product information.",
+    icon: "/assets/candidate/assurance/sealed.svg",
+  },
+  {
+    number: "06",
+    title: "Batch access",
+    description: "Batch references connect to OpenLab only when an evidence record is available.",
+    icon: "/assets/candidate/assurance/batch.svg",
+  },
+];
+
 export function AssuranceRail({
-  items = defaultAssuranceItems,
+  items = customerAssuranceItems,
   variant = "full",
   className,
 }: AssuranceRailProps) {
@@ -24,7 +64,7 @@ export function AssuranceRail({
 
   return (
     <div
-      aria-label="Six-point product assurance"
+      aria-label="Six-point product and evidence pathway"
       className={classes(
         "assurance-rail",
         compact && "assurance-rail-compact",
@@ -32,6 +72,7 @@ export function AssuranceRail({
         className,
       )}
       data-component="AssuranceRail"
+      data-live-authority="false"
       data-variant={variant}
     >
       {items.map((item) => (

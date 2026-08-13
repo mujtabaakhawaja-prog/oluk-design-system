@@ -5,14 +5,18 @@
 - [x] `CONV-001` champion corrections are recorded in the append-only ledger.
 - [x] MF-01A persistence and delta-not-snapshot precedence are explicit.
 - [x] Hero layout, data and rejected-wrapper authorities are separated.
-- [x] 86 active convergence variables and 128 archived variables are distinguished.
+- [x] CONV-004 records four active collections/112 variables and the explicit migration-plus-deletion supersession for the former 128 archived variables.
+- [x] PJS ExtraBold/Inter Variable, cobalt StockPill, canonical MediaChamber and CobaltDensityBoundary decisions are append-only and node-addressable.
+- [x] Page 25 COMPONENT `1043:310` is current receipt authority; `999:28867`, `999:28868`, `999:28872` and hidden divider predecessor `1010:27064` remain immutable superseded/rejected history.
+- [x] Final live Figma closeout records `42/42` canvases, 112 unpublished variables, zero rejected paints, zero authored fractional sizes and zero stale variable references in active canonical/customer roots.
 - [x] Graduated single shadows supersede the archived two-layer recipe.
-- [x] Type-floor proposal is non-controlling.
+- [x] `DEC-TYPE-FLOOR-001` controls the 12px metadata / 15–16px body floor, with the MF-01A QualitativeChip label as the sole named 11px exception.
 - [x] Every future prompt contains the three required context blocks.
 
 ## Artifact gate — repeat for each run
 
 - [ ] Exact target node(s) or route(s) recorded.
+- [ ] CONV-004 variable, typeface, status and component-source projection passes without flattening MF-01A scoped exceptions.
 - [ ] Canonical component provenance passes.
 - [ ] Active-variable binding audit passes.
 - [ ] Exact product truth passes; no visible `90 CAPS`.

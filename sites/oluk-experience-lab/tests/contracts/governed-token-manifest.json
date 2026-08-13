@@ -3,26 +3,26 @@
   "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
   "authority": {
     "currentState": "authority/CURRENT-STATE.json",
-    "surfaceContract": "authority/surface-contract.md#appendix-c--conv-002-complete-convergence-palette-98-variables",
+    "surfaceContract": "authority/surface-contract.md#conv-004-convergence-addendum",
     "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN"
   },
   "collections": [
     {
       "name": "Color Primitives",
       "figmaCollectionId": "VariableCollectionId:634:2",
-      "variableCount": 23,
+      "variableCount": 29,
       "individualInventory": "complete"
     },
     {
       "name": "Color Semantics",
       "figmaCollectionId": "VariableCollectionId:634:20",
-      "variableCount": 25,
+      "variableCount": 31,
       "individualInventory": "complete"
     },
     {
       "name": "Dimensions",
       "figmaCollectionId": "VariableCollectionId:634:40",
-      "variableCount": 28,
+      "variableCount": 30,
       "individualInventory": "complete"
     },
     {
@@ -32,8 +32,8 @@
       "individualInventory": "complete"
     }
   ],
-  "figmaActiveVariableCount": 98,
-  "individuallyDocumentedFigmaVariableCount": 98,
+  "figmaActiveVariableCount": 112,
+  "individuallyDocumentedFigmaVariableCount": 112,
   "remainingIndividualFigmaVariablesToDocument": 0,
   "colorPrimitives": [
     {
@@ -133,7 +133,7 @@
     },
     {
       "name": "blue/interactive",
-      "valueOrAlias": "#256DFF",
+      "valueOrAlias": "#0057FF",
       "figmaId": "VariableID:634:16"
     },
     {
@@ -142,14 +142,50 @@
       "figmaId": "VariableID:634:17"
     },
     {
-      "name": "green/inventory",
+      "name": "green/success",
       "valueOrAlias": "#15803D",
       "figmaId": "VariableID:634:18"
     },
     {
-      "name": "green/inventory-soft",
+      "name": "green/success-soft",
       "valueOrAlias": "#ECFDF3",
       "figmaId": "VariableID:634:19"
+    },
+    {
+      "name": "ink/dark",
+      "valueOrAlias": "#344054",
+      "figmaId": "VariableID:1024:50",
+      "job": "Dark secondary copy"
+    },
+    {
+      "name": "red/error",
+      "valueOrAlias": "#B42318",
+      "figmaId": "VariableID:1024:51",
+      "job": "Error and out-of-stock foreground"
+    },
+    {
+      "name": "red/error-soft",
+      "valueOrAlias": "#FEF3F2",
+      "figmaId": "VariableID:1024:52",
+      "job": "Error and out-of-stock fill"
+    },
+    {
+      "name": "amber/warning",
+      "valueOrAlias": "#B54708",
+      "figmaId": "VariableID:1024:53",
+      "job": "Warning foreground"
+    },
+    {
+      "name": "neutral/unavailable-soft",
+      "valueOrAlias": "#F4F5F7",
+      "figmaId": "VariableID:1024:54",
+      "job": "Unavailable fill"
+    },
+    {
+      "name": "neutral/disabled",
+      "valueOrAlias": "#9CA3AF",
+      "figmaId": "VariableID:1024:55",
+      "job": "Disabled or placeholder text only"
     }
   ],
   "colorSemantics": [
@@ -305,7 +341,7 @@
       "valueOrAlias": "blue/interactive",
       "figmaId": "VariableID:634:36",
       "cssProperty": "--oluk-cobalt-alt",
-      "cssValue": "#256dff"
+      "cssValue": "#0057ff"
     },
     {
       "name": "accent/cobalt-focus",
@@ -315,18 +351,66 @@
       "cssValue": "rgba(0, 87, 255, 0.28)"
     },
     {
-      "name": "status/inventory",
-      "valueOrAlias": "green/inventory",
+      "name": "status/success",
+      "valueOrAlias": "green/success",
       "figmaId": "VariableID:634:38",
-      "cssProperty": "--oluk-inventory-green",
+      "cssProperty": "--oluk-status-success",
       "cssValue": "#15803d"
     },
     {
-      "name": "status/inventory-soft",
-      "valueOrAlias": "green/inventory-soft",
+      "name": "status/success-soft",
+      "valueOrAlias": "green/success-soft",
       "figmaId": "VariableID:634:39",
-      "cssProperty": "--oluk-inventory-green-soft",
+      "cssProperty": "--oluk-status-success-soft",
       "cssValue": "#ecfdf3"
+    },
+    {
+      "name": "text/dark",
+      "valueOrAlias": "ink/dark",
+      "figmaId": "VariableID:1024:56",
+      "job": "Dark secondary text alias",
+      "cssProperty": "--oluk-text-dark",
+      "cssValue": "var(--oluk-ink-dark)"
+    },
+    {
+      "name": "status/error",
+      "valueOrAlias": "red/error",
+      "figmaId": "VariableID:1024:57",
+      "job": "Error status alias",
+      "cssProperty": "--oluk-status-error",
+      "cssValue": "#b42318"
+    },
+    {
+      "name": "status/error-soft",
+      "valueOrAlias": "red/error-soft",
+      "figmaId": "VariableID:1024:58",
+      "job": "Error status fill alias",
+      "cssProperty": "--oluk-status-error-soft",
+      "cssValue": "#fef3f2"
+    },
+    {
+      "name": "status/warning",
+      "valueOrAlias": "amber/warning",
+      "figmaId": "VariableID:1024:59",
+      "job": "Warning status alias",
+      "cssProperty": "--oluk-status-warning",
+      "cssValue": "#b54708"
+    },
+    {
+      "name": "status/unavailable-soft",
+      "valueOrAlias": "neutral/unavailable-soft",
+      "figmaId": "VariableID:1024:60",
+      "job": "Unavailable status fill alias",
+      "cssProperty": "--oluk-status-unavailable-soft",
+      "cssValue": "#f4f5f7"
+    },
+    {
+      "name": "text/disabled",
+      "valueOrAlias": "neutral/disabled",
+      "figmaId": "VariableID:1024:61",
+      "job": "Disabled text alias",
+      "cssProperty": "--oluk-text-disabled",
+      "cssValue": "var(--oluk-status-disabled)"
     }
   ],
   "dimensions": [
@@ -609,6 +693,26 @@
       "cssProperty": "--oluk-page-gutter-mobile",
       "cssValue": "16px",
       "hiddenFromPublishing": true
+    },
+    {
+      "name": "layout/page-padding",
+      "rawValue": "64",
+      "scope": "GAP",
+      "webSyntax": "var(--oluk-page-padding)",
+      "figmaId": "VariableID:1024:62",
+      "cssProperty": "--oluk-page-padding",
+      "cssValue": "64px",
+      "hiddenFromPublishing": true
+    },
+    {
+      "name": "layout/section-gap",
+      "rawValue": "32",
+      "scope": "GAP",
+      "webSyntax": "var(--oluk-section-gap)",
+      "figmaId": "VariableID:1024:63",
+      "cssProperty": "--oluk-section-gap",
+      "cssValue": "32px",
+      "hiddenFromPublishing": true
     }
   ],
   "typography": [
@@ -624,12 +728,12 @@
     },
     {
       "name": "family/body",
-      "rawValue": "Inter",
+      "rawValue": "Inter Variable",
       "scope": "FONT_FAMILY",
       "webSyntax": "var(--oluk-font-body)",
       "figmaId": "VariableID:634:71",
       "cssProperty": "--oluk-font-body",
-      "cssValue": "\"Inter\", sans-serif",
+      "cssValue": "\"Inter Variable\", sans-serif",
       "hiddenFromPublishing": true
     },
     {
@@ -859,20 +963,23 @@
     "--oluk-card-mobile-width": "358px",
     "--oluk-card-vertical-width": "481px",
     "--oluk-cobalt": "#0057ff",
-    "--oluk-cobalt-alt": "#256dff",
+    "--oluk-cobalt-alt": "#0057ff",
     "--oluk-cobalt-focus": "rgba(0, 87, 255, 0.28)",
     "--oluk-content-max": "1344px",
     "--oluk-control-height": "48px",
+    "--oluk-divider-rhythm": "var(--oluk-section-gap)",
     "--oluk-divider-width": "2px",
+    "--oluk-doc-grid-columns": "12",
+    "--oluk-doc-grid-gap": "24px",
     "--oluk-focus-width": "2px",
-    "--oluk-font-body": "\"Inter\", sans-serif",
+    "--oluk-font-body": "\"Inter Variable\", sans-serif",
     "--oluk-font-display": "\"Plus Jakarta Sans\", sans-serif",
+    "--oluk-font-mono": "\"JetBrains Mono\", monospace",
     "--oluk-grid-gap": "20px",
     "--oluk-gutter-desktop": "48px",
     "--oluk-gutter-mobile": "16px",
     "--oluk-gutter-tablet": "32px",
-    "--oluk-inventory-green": "#15803d",
-    "--oluk-inventory-green-soft": "#ecfdf3",
+    "--oluk-ink-dark": "#344054",
     "--oluk-inverse": "#141827",
     "--oluk-media-contact-shelf-gradient": "linear-gradient(180deg, #ffffff 0%, #e6edfa 100%)",
     "--oluk-media-gradient": "linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%)",
@@ -883,6 +990,7 @@
     "--oluk-page-gutter-desktop": "48px",
     "--oluk-page-gutter-mobile": "16px",
     "--oluk-page-gutter-tablet": "32px",
+    "--oluk-page-padding": "64px",
     "--oluk-purchase-panel-padding": "27px",
     "--oluk-quantity-cell": "36px",
     "--oluk-quantity-height": "38px",
@@ -896,6 +1004,7 @@
     "--oluk-radius-pill": "999px",
     "--oluk-radius-purchase": "28px",
     "--oluk-radius-vertical": "24px",
+    "--oluk-section-gap": "32px",
     "--oluk-shadow-card": "0 24px 60px rgba(15, 26, 51, 0.1)",
     "--oluk-shadow-compact": "0 5px 12px rgba(15, 26, 51, 0.09)",
     "--oluk-shadow-purchase": "0 20px 50px rgba(15, 26, 51, 0.18)",
@@ -912,11 +1021,27 @@
     "--oluk-space-5": "20px",
     "--oluk-space-6": "24px",
     "--oluk-space-8": "32px",
+    "--oluk-status-disabled": "#9ca3af",
+    "--oluk-status-error": "#b42318",
+    "--oluk-status-error-soft": "#fef3f2",
+    "--oluk-status-success": "#15803d",
+    "--oluk-status-success-soft": "#ecfdf3",
+    "--oluk-status-unavailable-soft": "#f4f5f7",
+    "--oluk-status-warning": "#b54708",
+    "--oluk-stock-in-stock": "var(--oluk-cobalt)",
+    "--oluk-stock-in-stock-soft": "var(--oluk-surface-cobalt-soft)",
+    "--oluk-stock-out-of-stock": "var(--oluk-status-error)",
+    "--oluk-stock-out-of-stock-soft": "var(--oluk-status-error-soft)",
+    "--oluk-stock-unavailable": "var(--oluk-text-muted)",
+    "--oluk-stock-unavailable-soft": "var(--oluk-status-unavailable-soft)",
     "--oluk-surface-card": "#ffffff",
     "--oluk-surface-cobalt-soft": "#eef4ff",
     "--oluk-surface-family": "#f8fafc",
     "--oluk-surface-media": "#f0f4fb",
+    "--oluk-text-body": "#53617d",
     "--oluk-text-chip-value": "#17213f",
+    "--oluk-text-dark": "var(--oluk-ink-dark)",
+    "--oluk-text-disabled": "var(--oluk-status-disabled)",
     "--oluk-text-muted": "#64718a",
     "--oluk-text-on-inverse": "#ffffff",
     "--oluk-text-on-inverse-muted": "#b9c7dd",

@@ -1,5 +1,5 @@
 import { ExperienceLab } from "../../experience-lab";
 
 export default function ConfirmationPage() {
-  return <ExperienceLab route="confirmation" />;
+  return <ExperienceLab route="checkout-confirmation" />;
 }

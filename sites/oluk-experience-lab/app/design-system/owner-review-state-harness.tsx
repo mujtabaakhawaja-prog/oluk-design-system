@@ -7,9 +7,8 @@ import {
   useRef,
   useState,
 } from "react";
-import Image from "next/image";
-import { MetricRail, QualitativeChips } from "./candidate-components";
-import { mk2866Specimen } from "./contracts";
+import { mk2866Fixture } from "./product-fixtures";
+import { ProductCommerceCard } from "./product-commerce-card";
 import styles from "./owner-review-state-harness.module.css";
 
 type Availability = "ready" | "unavailable" | "out-of-stock";
@@ -60,7 +59,7 @@ function availabilityLabel(availability: Availability) {
 }
 
 export function OwnerReviewStateHarness() {
-  const product = mk2866Specimen.value;
+  const product = mk2866Fixture;
   const harnessId = useId();
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const [activeTab, setActiveTab] = useState<ReviewTab>("product");
@@ -151,6 +150,14 @@ export function OwnerReviewStateHarness() {
         : added
           ? "Added locally"
           : "Add locally";
+  const cardState = added
+    ? "added"
+    : availability === "unavailable"
+      ? "unavailable"
+      : availability === "out-of-stock"
+        ? "out-of-stock"
+        : "default";
+  const cardInventory = availability === "ready" ? "in-stock" : availability;
 
   return (
     <div
@@ -178,36 +185,17 @@ export function OwnerReviewStateHarness() {
       </div>
 
       <div className={styles.workspace}>
-        <article className={styles.productCard} aria-labelledby={`${harnessId}-product-name`}>
-          <div className={styles.media}>
-            <Image
-              src={product.image}
-              alt={`${product.name} ${product.alias} bottle`}
-              width={220}
-              height={280}
-              sizes="(max-width: 620px) 70vw, 220px"
-            />
-          </div>
-          <div className={styles.productBody}>
-            <div className={styles.identityRow}>
-              <div>
-                <span className={styles.series}>{product.series}</span>
-                <h4 id={`${harnessId}-product-name`}>{product.name}</h4>
-                <p>{product.alias}</p>
-              </div>
-              <span className={styles.inventory} data-inventory={availability}>
-                <i aria-hidden="true" /> {availabilityLabel(availability)}
-              </span>
-            </div>
-            <span className={styles.evidence}>OPENLAB VERIFIED</span>
-            <MetricRail product={product} />
-            <QualitativeChips />
-            <div className={styles.priceRow}>
-              <strong>{product.price}</strong>
-              <span>SKU {product.sku}</span>
-            </div>
-          </div>
-        </article>
+        <div className={styles.canonicalCard} data-harness-canonical-card="true">
+          <ProductCommerceCard
+            evidence={product.presentationStatus.evidence}
+            headingLevel="h3"
+            inventory={cardInventory}
+            product={product}
+            quantity={quantity}
+            state={cardState}
+            variant="vertical"
+          />
+        </div>
 
         <div className={styles.controlPlane}>
           <div className={styles.tabList} role="tablist" aria-label="Owner review harness sections">
