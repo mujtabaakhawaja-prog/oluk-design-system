@@ -1,9 +1,9 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-13T17:29:21-04:00",
-  "sourceGitSha": "37d915b18c1e2e0af0ce130335aab772981973d3",
-  "sourceTreeHash": "bd528dcfdaddd3e7227f24c10138a9437efbd4385b1eae2f77dfc358c705749b",
+  "generatedAt": "2026-08-13T17:54:44-04:00",
+  "sourceGitSha": "47fd6d867055c30d18c5d1fbc14fa013855202a3",
+  "sourceTreeHash": "d864072d4d62c56a40cdf91b39466cf5dd394bf772b0463594350fb0e0413cf7",
   "designContractHash": "33a2b3f97c75be1fdcda4949619a655844c0c8fecc658e8da195e9cd44fcebfa",
   "decisionCount": 12,
   "families": [
@@ -13,11 +13,13 @@
       "routes": [
         "/",
         "/shop",
+        "/shop/research-chemicals",
         "/search"
       ],
       "representativeRoutes": [
         "/",
-        "/shop"
+        "/shop",
+        "/shop/research-chemicals"
       ],
       "mobileStrategy": "collapse",
       "mobileOrder": [
@@ -47,10 +49,14 @@
       "label": "PDP and growth",
       "routes": [
         "/product/mk-2866",
-        "/product/mk-2866/continuation"
+        "/product/rad-140",
+        "/product/mk-2866/continuation",
+        "/bundle-builder"
       ],
       "representativeRoutes": [
-        "/product/mk-2866"
+        "/product/mk-2866",
+        "/product/rad-140",
+        "/bundle-builder"
       ],
       "mobileStrategy": "reorder",
       "mobileOrder": [
@@ -87,13 +93,15 @@
         "/open-lab/batch-lookup",
         "/open-lab/methodology",
         "/open-lab/source-chain",
-        "/open-lab/compare"
+        "/open-lab/compare",
+        "/open-lab/compound-guide"
       ],
       "representativeRoutes": [
         "/open-lab",
         "/open-lab/records",
         "/open-lab/compound/mk-2866",
-        "/open-lab/batch-lookup"
+        "/open-lab/batch-lookup",
+        "/open-lab/compound-guide"
       ],
       "mobileStrategy": "summary",
       "mobileOrder": [
@@ -127,15 +135,19 @@
         "/checkout/delivery",
         "/checkout/review",
         "/checkout/payment",
+        "/checkout/payment-details",
         "/checkout/processing",
         "/checkout/confirmation",
-        "/checkout/tracking"
+        "/checkout/tracking",
+        "/checkout/receipt",
+        "/checkout/refund"
       ],
       "representativeRoutes": [
         "/bag",
         "/checkout/review",
         "/checkout/payment",
-        "/checkout/confirmation"
+        "/checkout/confirmation",
+        "/checkout/refund"
       ],
       "mobileStrategy": "summary",
       "mobileOrder": [
@@ -163,7 +175,12 @@
       "label": "Support and account",
       "routes": [
         "/about",
+        "/faq-help-centre",
         "/account",
+        "/account/dashboard",
+        "/account/loyalty",
+        "/account/subscriptions",
+        "/account/research-profile",
         "/contact",
         "/delivery",
         "/privacy",
@@ -172,7 +189,9 @@
       ],
       "representativeRoutes": [
         "/about",
-        "/account"
+        "/faq-help-centre",
+        "/account/dashboard",
+        "/account/loyalty"
       ],
       "mobileStrategy": "collapse",
       "mobileOrder": [
@@ -250,12 +269,15 @@
       "id": "commerce-decision",
       "label": "Commerce decision",
       "exports": [
+        "ProductHero",
+        "ProductNarrative",
+        "ProductContinuation",
         "ProductDecisionHero",
         "PurchasePanel",
         "ProductCommerceCard",
         "ProductDossier"
       ],
-      "dataOwner": "woo-and-tools-projection",
+      "dataOwner": "frontier-product-content",
       "runtimeExclusions": [
         "browser mutation",
         "price inference"
@@ -274,11 +296,13 @@
       "id": "growth-continuation",
       "label": "Growth and continuation",
       "exports": [
+        "StackExplorer",
+        "GrowthModules",
         "RecommendationCard",
         "RestockCard",
         "UpsellContextRail"
       ],
-      "dataOwner": "tools-presentation-projection",
+      "dataOwner": "frontier-stack-content",
       "runtimeExclusions": [
         "recommendation mutation",
         "discount authority",
@@ -287,7 +311,8 @@
       "mounts": [
         "/product/:slug",
         "/bag",
-        "/checkout/confirmation"
+        "/checkout/confirmation",
+        "/account/dashboard"
       ],
       "emptyState": "rail omitted",
       "unavailableState": "disabled explicit unavailable card",
@@ -324,11 +349,12 @@
       "id": "checkout-lifecycle",
       "label": "Checkout lifecycle",
       "exports": [
+        "CheckoutLifecycle",
         "CheckoutStepIndicator",
         "CurrencyEqualityLock",
         "LifecycleAmountRecord"
       ],
-      "dataOwner": "tools-checkout-projection",
+      "dataOwner": "frontier-checkout-content",
       "runtimeExclusions": [
         "form submission",
         "payment SDK",
@@ -391,7 +417,7 @@
     {
       "id": "static",
       "status": "PASS",
-      "detail": "Build, typecheck, lint and 75 tests"
+      "detail": "Build, typecheck, lint and static test suite"
     },
     {
       "id": "tokens",
