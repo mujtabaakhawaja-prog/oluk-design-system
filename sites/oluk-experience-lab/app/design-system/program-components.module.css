@@ -1,7 +1,7 @@
 .statusChip,.recommendation,.restock,.stepper,.rail,.openLabModule{border:1px solid var(--oluk-border-card);background:var(--oluk-surface-card);color:var(--oluk-text-primary)}
 .statusChip{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:6px 10px;border-radius:var(--oluk-radius-pill);font:700 12px/1 var(--font-ui);letter-spacing:.04em;text-transform:uppercase}
 .statusChip svg{width:16px;height:16px;color:var(--oluk-cobalt)}
-.statusChip[data-state="unavailable"]{background:var(--oluk-status-unavailable-soft);color:var(--oluk-text-disabled)}
+.statusChip[data-state="unavailable"]{background:var(--oluk-status-unavailable-soft);color:var(--oluk-text-muted)}
 .recommendation,.restock,.openLabModule{border-radius:var(--oluk-radius-card);padding:24px;box-shadow:var(--oluk-shadow-card)}
 .recommendation{display:grid;gap:18px}.recommendation h3,.restock h3,.openLabModule h3{margin:0;font:800 24px/1.15 var(--font-display)}
 .recommendation p,.restock p,.openLabModule p{margin:0;font:400 15px/1.55 var(--font-ui);color:var(--oluk-text-muted)}

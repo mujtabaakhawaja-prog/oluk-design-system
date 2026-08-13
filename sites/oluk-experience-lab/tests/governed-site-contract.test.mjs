@@ -26,7 +26,18 @@ test("the four Figma sources remain intent-only and name their data owners", asy
     assert.ok(source.fileKey && source.rootNodeId);
     assert.ok(source.dataOwners.length > 0);
     assert.ok(source.runtimeExclusions.length > 0);
+    assert.ok(source.intentNodes.length > 0);
+    for (const intent of source.intentNodes) {
+      assert.match(intent.nodeId, /^\d+:\d+$/);
+      assert.ok(intent.target && intent.state && intent.copy && intent.dataOwner);
+    }
   }
+  const unsafeOpenLabCopy = registry.sources
+    .filter(({ id }) => id === "commerce-growth" || id === "openlab")
+    .flatMap(({ intentNodes }) => intentNodes)
+    .filter(({ dataOwner }) => dataOwner === "openlab-source");
+  assert.ok(unsafeOpenLabCopy.length > 0);
+  assert.ok(unsafeOpenLabCopy.every(({ copy }) => copy === "source-required" || copy === "prohibited-as-fact"));
 });
 
 test("the public governed contract is an exact authority projection", async () => {

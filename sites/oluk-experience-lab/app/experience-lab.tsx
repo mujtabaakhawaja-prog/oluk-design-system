@@ -186,7 +186,7 @@ export function SiteFooter() {
 }
 
 export function GovernedProgramShell({ children, lane = "openlab" }: { children: ReactNode; lane?: "openlab" | "checkout" }) {
-  return <><SiteHeader route={lane === "openlab" ? "openlab" : "checkout"}/><main>{children}</main><SiteFooter/></>;
+  return <><SiteHeader route={lane === "openlab" ? "openlab" : "checkout"}/><main data-live-authority={lane === "checkout" ? "false" : undefined}>{children}</main><SiteFooter/></>;
 }
 function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: string; copy: string; actions?: ReactNode }) {
   return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p>{actions && <div className="button-row">{actions}</div>}</div></section>;

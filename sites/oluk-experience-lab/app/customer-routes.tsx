@@ -22,6 +22,7 @@ import { ProductMediaChamber } from "./design-system/product-media-chamber";
 import { EvidenceStatus } from "./design-system/product-status";
 import { PurchasePanel } from "./design-system/purchase-panel";
 import { RelatedRail } from "./design-system/related-rail";
+import { UpsellContextRail } from "./design-system/program-components";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
 import styles from "./customer-routes.module.css";
 
@@ -268,6 +269,7 @@ export function ProductRoute() {
       </section>
       <ProductDossier evidenceHref="#lab-records" id="dossier" product={mk2866Fixture} />
       <RecordAvailabilitySection />
+      <section className="section" id="product-continuation"><div className="shell"><UpsellContextRail /></div></section>
       <RelatedRail
         anchorProduct={mk2866Fixture}
         id="related-products"

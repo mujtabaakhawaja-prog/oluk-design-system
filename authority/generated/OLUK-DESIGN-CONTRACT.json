@@ -2016,7 +2016,7 @@
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
-      "sha256": "af247505a15b4e0a031ea64420d98efbfecda47989b6f11e691e97317070561b"
+      "sha256": "028b156949b0c01e5ea6956df231c74f35b2bd4bca02d83e826ef69ae0661cd0"
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
@@ -2024,7 +2024,7 @@
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
-      "sha256": "600b4daef4d105155136b1814572a02e308fb99711b6de61b12062adcdf3d6da"
+      "sha256": "e8cd0c136521124eed8de76b5b9d1875204ac2efcf05075524268aa1edc43243"
     },
     "runtime": {
       "file": "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json",
@@ -2073,6 +2073,29 @@
         ],
         "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
         "id": "commerce-growth",
+        "intentNodes": [
+          {
+            "copy": "source-required",
+            "dataOwner": "design-fixture",
+            "nodeId": "2:70",
+            "state": "lab-reports-entry",
+            "target": "/"
+          },
+          {
+            "copy": "prohibited-as-fact",
+            "dataOwner": "openlab-source",
+            "nodeId": "2:158",
+            "state": "archive-hierarchy-dark-intent",
+            "target": "/open-lab/records"
+          },
+          {
+            "copy": "prohibited-as-fact",
+            "dataOwner": "openlab-source",
+            "nodeId": "2:257",
+            "state": "dossier-hierarchy-intent",
+            "target": "/open-lab/dossier/mk-2866"
+          }
+        ],
         "rootNodeId": "2:2",
         "runtimeExclusions": [
           "recommendation mutation",
@@ -2097,6 +2120,36 @@
         ],
         "fileKey": "cGrvE3Fyj3ThKuqPZqceYv",
         "id": "pdp",
+        "intentNodes": [
+          {
+            "copy": "draft-and-source-required",
+            "dataOwner": "woo",
+            "nodeId": "4:3578",
+            "state": "complete-desktop-intent",
+            "target": "/product/mk-2866"
+          },
+          {
+            "copy": "draft",
+            "dataOwner": "woo",
+            "nodeId": "4:3611",
+            "state": "purchase-hierarchy",
+            "target": "ProductDecisionHero"
+          },
+          {
+            "copy": "source-required",
+            "dataOwner": "openlab-source",
+            "nodeId": "4:3664",
+            "state": "evidence-placement",
+            "target": "OpenLabSnapshot"
+          },
+          {
+            "copy": "draft-and-source-required",
+            "dataOwner": "woo",
+            "nodeId": "4:3709",
+            "state": "details-order",
+            "target": "ProductDossier"
+          }
+        ],
         "rootNodeId": "4:3545",
         "runtimeExclusions": [
           "cart mutation",
@@ -2122,6 +2175,92 @@
         ],
         "fileKey": "9jTrnlEWgbBpFi2idodVB2",
         "id": "commerce-checkout",
+        "intentNodes": [
+          {
+            "copy": "approved-structure",
+            "dataOwner": "tools-service-projection",
+            "nodeId": "9:9416",
+            "state": "desktop-light",
+            "target": "/bag"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "tools-service-projection",
+            "nodeId": "9:9414",
+            "state": "desktop-light",
+            "target": "/checkout/information"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "tools-service-projection",
+            "nodeId": "9:9413",
+            "state": "desktop-light",
+            "target": "/checkout/delivery"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "tools-service-projection",
+            "nodeId": "9:9415",
+            "state": "desktop-light",
+            "target": "/checkout/review"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "tools-service-projection",
+            "nodeId": "9:9401",
+            "state": "expanded-desktop-light",
+            "target": "/checkout/payment"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "tools-service-projection",
+            "nodeId": "9:9412",
+            "state": "desktop-light",
+            "target": "/checkout/processing"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "terminal-order-projection",
+            "nodeId": "9:9410",
+            "state": "desktop-light",
+            "target": "/checkout/confirmation"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "terminal-order-projection",
+            "nodeId": "9:9409",
+            "state": "desktop-light",
+            "target": "/checkout/tracking"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "terminal-order-projection",
+            "nodeId": "9:9403",
+            "state": "desktop-light",
+            "target": "order-details"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "terminal-order-projection",
+            "nodeId": "9:9404",
+            "state": "desktop-light",
+            "target": "receipt"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "terminal-order-projection",
+            "nodeId": "9:9407",
+            "state": "desktop-light",
+            "target": "order-history"
+          },
+          {
+            "copy": "approved-lifecycle",
+            "dataOwner": "terminal-order-projection",
+            "nodeId": "9:9402",
+            "state": "desktop-light",
+            "target": "refund"
+          }
+        ],
         "rootNodeId": "0:1",
         "runtimeExclusions": [
           "form submission",
@@ -2149,6 +2288,36 @@
         ],
         "fileKey": "GkC3KEt9V3RyG5K319iAUV",
         "id": "openlab",
+        "intentNodes": [
+          {
+            "copy": "source-required",
+            "dataOwner": "openlab-source",
+            "nodeId": "12:2",
+            "state": "evidence-page-hierarchy",
+            "target": "/open-lab"
+          },
+          {
+            "copy": "source-required",
+            "dataOwner": "openlab-source",
+            "nodeId": "12:22",
+            "state": "source-status-card",
+            "target": "EvidenceStatusChip"
+          },
+          {
+            "copy": "draft",
+            "dataOwner": "design-fixture",
+            "nodeId": "12:73",
+            "state": "section-index",
+            "target": "OpenLabNavigation"
+          },
+          {
+            "copy": "source-required",
+            "dataOwner": "openlab-source",
+            "nodeId": "12:120",
+            "state": "related-record-hierarchy",
+            "target": "RelatedOpenLabSurface"
+          }
+        ],
         "rootNodeId": "3:66993",
         "runtimeExclusions": [
           "invented evidence",
@@ -2212,7 +2381,7 @@
         "disposition": "replace",
         "family": "product_detail",
         "id": "product",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/product/:slug"
       },
@@ -2287,7 +2456,7 @@
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "bag",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/bag"
       },
@@ -2299,7 +2468,7 @@
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-information",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/information"
       },
@@ -2307,7 +2476,7 @@
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "checkout-delivery",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/delivery"
       },
@@ -2315,7 +2484,7 @@
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-review",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/review"
       },
@@ -2323,7 +2492,7 @@
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-payment",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/payment"
       },
@@ -2331,7 +2500,7 @@
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-processing",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/processing"
       },
@@ -2339,7 +2508,7 @@
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-confirmation",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/confirmation"
       },
@@ -2363,7 +2532,7 @@
         "disposition": "new",
         "family": "post_purchase",
         "id": "checkout-tracking",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/checkout/tracking"
       },
@@ -2427,7 +2596,7 @@
         "disposition": "enhance",
         "family": "openlab_portal",
         "id": "open-lab",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/open-lab"
       },
@@ -2435,7 +2604,7 @@
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-records",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/open-lab/records"
       },
@@ -2451,7 +2620,7 @@
         "disposition": "new",
         "family": "openlab_product_record",
         "id": "open-lab-compound",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "openlab-source",
         "path": "/open-lab/compound/:slug"
       },
@@ -2459,7 +2628,7 @@
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-report",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "openlab-source",
         "path": "/open-lab/report/:batchId"
       },
@@ -2475,7 +2644,7 @@
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-batch-lookup",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/open-lab/batch-lookup"
       },
@@ -2483,7 +2652,7 @@
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-methodology",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/open-lab/methodology"
       },
@@ -2491,7 +2660,7 @@
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-source-chain",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/open-lab/source-chain"
       },
@@ -2499,7 +2668,7 @@
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-compare",
-        "maturity": "SHAPE_COMPLETE",
+        "maturity": "REVIEW_READY",
         "owner": "sites-reference",
         "path": "/open-lab/compare"
       },
@@ -2515,7 +2684,7 @@
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "open-lab-admin",
-        "maturity": "SCAFFOLD",
+        "maturity": "REVIEW_READY",
         "owner": "sites-owner-review",
         "path": "/open-lab/admin",
         "public": false
@@ -2774,5 +2943,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "c5dd2a6f15a27915502ce5556f1f115fd9c8d97277b052b580cf97bb24ab544c"
+  "contractHash": "e354e59f890afeb07cc5aed397929415b1296e30ddf37d2ef728d3b4773d1bf8"
 }

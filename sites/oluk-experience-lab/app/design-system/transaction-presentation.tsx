@@ -5,6 +5,7 @@ import { MetricRail } from "./metric-rail";
 import { mk2866Fixture } from "./product-fixtures";
 import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
 import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
+import { RecommendationCard, RestockCard } from "./program-components";
 
 export type TransactionStage =
   | "bag"
@@ -183,6 +184,7 @@ function BagContent() {
           <div><strong>Need to keep browsing?</strong><span>Your bag stays ready while you compare the range.</span></div>
           <a href="/shop">Return to the shop →</a>
         </div>
+        <RecommendationCard state="default" />
       </div>
       <OrderSummary action={<ActionLink href="/checkout">Continue to details</ActionLink>} />
     </div>
@@ -310,6 +312,8 @@ function ConfirmationContent() {
           <article><span>02</span><h2>Delivery</h2><p>Delivery progress appears with the order when available.</p></article>
           <article><span>03</span><h2>Lab Record</h2><p>Product evidence remains available independently of the order.</p></article>
         </div>
+        <RestockCard state="active" />
+        <RecommendationCard state="default" />
       </section>
       <OrderSummary compact heading="Order total" />
     </div>
