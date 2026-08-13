@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- exact local OpenLab SVG is a governed candidate asset. */
 
-import type { CSSProperties } from "react";
 import type { EvidenceState, InventoryState } from "./commerce-types";
 import { classes } from "./component-utils";
 
@@ -16,29 +15,34 @@ const evidenceLabels: Readonly<Record<EvidenceState, string>> = {
   unavailable: "EVIDENCE UNAVAILABLE",
 };
 
-export type InventoryStatusProps = Readonly<{
+export type StockPillProps = Readonly<{
   state?: InventoryState;
   className?: string;
 }>;
 
-export function InventoryStatus({ state = "in-stock", className }: InventoryStatusProps) {
-  const statusStyle: CSSProperties = {
-    color:
-      state === "in-stock"
-        ? "var(--oluk-inventory-green, var(--success, #15803d))"
-        : "var(--oluk-text-muted, var(--ink-muted, #64718a))",
-  };
-
+export function StockPill({ state = "in-stock", className }: StockPillProps) {
   return (
     <span
-      className={classes("inventory-status", "oluk-candidate-inventory", "oluk-inventory-status", className)}
+      className={classes(
+        "stock-pill",
+        "inventory-status",
+        "oluk-candidate-inventory",
+        "oluk-inventory-status",
+        className,
+      )}
       data-state={state}
-      style={statusStyle}
     >
-      <i aria-hidden="true" style={{ background: "currentColor" }} />
+      <i aria-hidden="true" />
       {inventoryLabels[state]}
     </span>
   );
+}
+
+/** Compatibility export for existing consumers while StockPill becomes the canonical name. */
+export type InventoryStatusProps = StockPillProps;
+
+export function InventoryStatus(props: InventoryStatusProps) {
+  return <StockPill {...props} />;
 }
 
 export type EvidenceStatusProps = Readonly<{
@@ -82,7 +86,7 @@ export function ProductStatusStack({
 }: ProductStatusStackProps) {
   return (
     <div className={classes("product-status-stack", "oluk-candidate-status-stack", className)}>
-      <InventoryStatus state={inventory} />
+      <StockPill state={inventory} />
       <EvidenceStatus compact={compactEvidence} state={evidence} />
     </div>
   );

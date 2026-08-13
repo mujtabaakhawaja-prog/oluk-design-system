@@ -124,7 +124,7 @@
 }
 
 .productMark span {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.14em;
 }
@@ -137,7 +137,7 @@
 
 .productIdentity > span {
   color: var(--cobalt);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -411,7 +411,7 @@
 
 .choice b {
   color: var(--cobalt);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -475,10 +475,10 @@
 
 .paymentLock {
   align-items: center;
-  background: var(--oluk-inventory-green-soft, #ecfdf3);
+  background: color-mix(in srgb, var(--oluk-status-success, #15803d) 8%, white);
   border: 1px solid rgba(21, 128, 61, 0.2);
   border-radius: 50%;
-  color: var(--oluk-inventory-green, #15803d);
+  color: var(--oluk-status-success, #15803d);
   display: flex;
   font-size: 26px;
   font-weight: 800;
@@ -529,9 +529,9 @@
 }
 
 .outcome[data-tone="success"] {
-  background: var(--oluk-inventory-green-soft, #ecfdf3);
+  background: color-mix(in srgb, var(--oluk-status-success, #15803d) 8%, white);
   border-color: rgba(21, 128, 61, 0.28);
-  color: var(--oluk-inventory-green, #15803d);
+  color: var(--oluk-status-success, #15803d);
 }
 
 .outcome[data-tone="attention"] {
@@ -644,7 +644,7 @@
 
   .progress a {
     display: grid;
-    font-size: 9px;
+    font-size: 12px;
     gap: 4px;
     letter-spacing: 0.04em;
   }

@@ -25,12 +25,12 @@ test("governed token manifest remains a deterministic projection of authority an
   const generated = await buildTokenManifest();
   const committed = JSON.parse(await readFile(new URL("./contracts/governed-token-manifest.json", import.meta.url), "utf8"));
   assert.deepEqual(generated, committed);
-  assert.equal(generated.figmaActiveVariableCount, 98);
-  assert.equal(generated.colorPrimitives.length, 23);
-  assert.equal(generated.colorSemantics.length, 25);
-  assert.equal(generated.dimensions.length, 28);
+  assert.equal(generated.figmaActiveVariableCount, 112);
+  assert.equal(generated.colorPrimitives.length, 29);
+  assert.equal(generated.colorSemantics.length, 31);
+  assert.equal(generated.dimensions.length, 30);
   assert.equal(generated.typography.length, 22);
-  assert.equal(generated.individuallyDocumentedFigmaVariableCount, 98);
+  assert.equal(generated.individuallyDocumentedFigmaVariableCount, 112);
   assert.equal(generated.remainingIndividualFigmaVariablesToDocument, 0);
 });
 
@@ -61,11 +61,20 @@ test("browser proof runners preserve unpublished review posture and keep evidenc
     assert.match(source, /mkdtemp\(path\.join\(tmpdir\(\)/);
   }
   assert.match(fourWidth, /horizontal document overflow/);
+  assert.match(fourWidth, /\.shop-result-grid/);
+  assert.match(fourWidth, /\.oluk-purchase-panel-matrix/);
   assert.match(fourWidth, /framework error overlay visible/);
   assert.match(fourWidth, /visible90Caps/);
+  assert.match(fourWidth, /image\.decode\(\)\.catch/, "lazy product media decode is attempted before geometry and image audit");
+  assert.match(fourWidth, /pause\(2_000\)/, "a stalled browser decode is bounded to two seconds");
+  assert.match(fourWidth, /image\.loading = "eager"/, "proof navigation deterministically requests lazy product media");
+  assert.match(fourWidth, /image\.fetchPriority = "high"/, "proof navigation prioritizes the inspected image set");
+  assert.match(fourWidth, /image\.complete && image\.naturalWidth > 0/, "settled count requires a decoded image with intrinsic width");
   assert.match(accessibility, /Accessibility\.getFullAXTree/);
   assert.match(accessibility, /prefers-reduced-motion/);
   assert.match(contrastZoom, /axe\.run/);
+  assert.match(contrastZoom, /\["auto", "scroll"\]\.includes\(ancestorStyle\.overflowX\)/, "zoom audit preserves authored horizontal scrollers without treating reachable descendants as viewport escapes");
+  assert.match(contrastZoom, /ancestor\.scrollWidth > ancestor\.clientWidth \+ 1/, "zoom audit exempts only ancestors that are actually scrollable");
   assert.match(contrastZoom, /color-contrast/);
   assert.match(contrastZoom, /Emulation\.setPageScaleFactor/);
   assert.match(contrastZoom, /font-size: 200%/);

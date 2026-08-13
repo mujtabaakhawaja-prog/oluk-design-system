@@ -206,7 +206,7 @@ export const SHOP_TAXONOMY_FIXTURE_PRODUCTS = Object.freeze([
     sku: "80529-01",
     displayName: "MK-2866",
     displayAlias: "Ostarine",
-    customerPath: "/product/mk-2866-ostarine",
+    customerPath: "/product/mk-2866",
     imageSrc: "/assets/products/shop/mk-2866.webp",
     imageSourceUrl: "https://olympuslabs.uk/wp-content/uploads/2018/05/bottle-01-300x450.webp",
     imageAlt: "MK-2866 Ostarine bottle",

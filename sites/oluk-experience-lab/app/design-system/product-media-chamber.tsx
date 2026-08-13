@@ -35,7 +35,6 @@ const defaultSizes: Readonly<Record<ProductMediaContext, string>> = {
   relation: "(max-width: 760px) calc(100vw - 32px), 46vw",
   hero: "(max-width: 960px) calc(100vw - 44px), 42vw",
   dossier: "(max-width: 540px) calc(100vw - 56px), 34vw",
-  purchase: "(max-width: 540px) calc(100vw - 44px), 420px",
 };
 
 export function ProductMediaChamber({

@@ -26,11 +26,13 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
 });
 
 const APPROVED_FONT_PACKAGES = new Set([
-  "@fontsource/inter",
+  "@fontsource-variable/inter",
+  "@fontsource/jetbrains-mono",
   "@fontsource/plus-jakarta-sans",
 ]);
-const APPROVED_FONT_FAMILIES = new Set(["Inter", "Plus Jakarta Sans"]);
-const REJECTED_FONT_PATTERN = /\b(?:Barlow Condensed|Archivo|Cousine|Inter Variable)\b/i;
+const APPROVED_FONT_FAMILIES = new Set(["Inter Variable", "JetBrains Mono", "Plus Jakarta Sans"]);
+const REJECTED_FONT_PATTERN = /\b(?:Barlow Condensed|Archivo|Cousine)\b/i;
+const REJECTED_STATIC_INTER_PATTERN = /["']Inter["']/g;
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -151,14 +153,17 @@ export async function auditAssetFontPerformance() {
   const fontsourcePackages = Object.keys({
     ...packageJson.dependencies,
     ...packageJson.devDependencies,
-  }).filter((name) => name.startsWith("@fontsource/"));
+  }).filter((name) => name.startsWith("@fontsource/") || name.startsWith("@fontsource-variable/"));
   const fontsourceImports = sourceEntries.flatMap(({ filePath, source }) =>
-    [...source.matchAll(/from\s+["'](@fontsource\/[^"']+)["']|import\s+["'](@fontsource\/[^"']+)["']/g)].map(
+    [...source.matchAll(/from\s+["'](@fontsource(?:-variable)?\/[^"']+)["']|import\s+["'](@fontsource(?:-variable)?\/[^"']+)["']/g)].map(
       (match) => ({ file: relative(filePath), specifier: match[1] ?? match[2] }),
     ),
   );
   const rejectedFontHits = sourceEntries.flatMap(({ filePath, source }) => {
-    const matches = source.match(new RegExp(REJECTED_FONT_PATTERN.source, "gi")) ?? [];
+    const matches = [
+      ...(source.match(new RegExp(REJECTED_FONT_PATTERN.source, "gi")) ?? []),
+      ...(source.match(REJECTED_STATIC_INTER_PATTERN) ?? []),
+    ];
     return matches.map((value) => ({ file: relative(filePath), value }));
   });
   const remoteFontSourceHits = sourceEntries.flatMap(({ filePath, source }) => {
@@ -181,7 +186,7 @@ export async function auditAssetFontPerformance() {
 
   const emittedFontEntries = clientEntries.filter(({ kind }) => kind === "font");
   const emittedFontNameViolations = emittedFontEntries
-    .filter(({ filePath }) => !/(?:inter|plus-jakarta-sans)/i.test(path.basename(filePath)))
+    .filter(({ filePath }) => !/(?:inter|jetbrains-mono|plus-jakarta-sans)/i.test(path.basename(filePath)))
     .map(({ filePath }) => relative(filePath));
   const builtCssEntries = await Promise.all(
     clientEntries
@@ -286,7 +291,7 @@ export async function auditAssetFontPerformance() {
       "approved-font-packages",
       fontsourcePackages.length === APPROVED_FONT_PACKAGES.size &&
         fontsourcePackages.every((name) => APPROVED_FONT_PACKAGES.has(name)),
-      "Only the approved package-local Inter and Plus Jakarta Sans font packages are declared.",
+      "Only the approved package-local Inter Variable, Plus Jakarta Sans and scoped JetBrains Mono font packages are declared.",
       fontsourcePackages,
     ),
     makeCheck(
@@ -295,9 +300,10 @@ export async function auditAssetFontPerformance() {
         fontsourceImports.every(({ specifier }) =>
           [...APPROVED_FONT_PACKAGES].some((name) => specifier === name || specifier.startsWith(`${name}/`)),
         ) &&
-        layoutSource.includes('@fontsource/inter/400.css') &&
+        layoutSource.includes('@fontsource-variable/inter') &&
+        layoutSource.includes('@fontsource/jetbrains-mono/700.css') &&
         layoutSource.includes('@fontsource/plus-jakarta-sans/700.css'),
-      "Root font imports are package-local and stay within the approved two-family set.",
+      "Root font imports are package-local and stay within the approved families, with JetBrains Mono scoped by CSS to code specimens.",
       fontsourceImports,
     ),
     makeCheck(
@@ -311,7 +317,7 @@ export async function auditAssetFontPerformance() {
       emittedFontNameViolations.length === 0 &&
         emittedFontFamilies.length === APPROVED_FONT_FAMILIES.size &&
         emittedFontFamilies.every((family) => APPROVED_FONT_FAMILIES.has(family)),
-      "Built font files and @font-face declarations contain only Inter and Plus Jakarta Sans.",
+      "Built font files and @font-face declarations contain only Inter Variable, Plus Jakarta Sans and scoped JetBrains Mono.",
       { emittedFontFamilies, emittedFontNameViolations },
     ),
     makeCheck(

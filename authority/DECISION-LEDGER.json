@@ -242,6 +242,103 @@
       "appliesTo": ["Vertical mobile", "Featured mobile", "FC-01", "Dossier", "Proof Boards"],
       "clarifies": ["DEC-FIDELITY-001", "DEC-VISUAL-REVIEW-001"],
       "supersedes": []
+    },
+    {
+      "id": "DEC-COLOR-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "CONV-004 collapses the page-local and candidate accent splits #3366FF, #256DFF, #1842FF and #2147C4 into one primary cobalt #0057FF. Heading text resolves to #141827; body levels resolve to #53617D, #64718A and #344054; error and warning resolve to #B42318 and #B54708. The scoped QualitativeChip value #17213F and the exact DEC-MEDIA-003 atmospheric gradients remain governed exceptions and must not be flattened by the color convergence.",
+      "appliesTo": ["Figma paints and styles", "repository token projections", "Codex Sites CSS", "Figma code bridge"],
+      "clarifies": ["DEC-FIDELITY-001", "DEC-CHIP-001", "DEC-MEDIA-003"],
+      "supersedes": ["candidate accent/cobalt-interactive #256DFF split", "legacy page-local blue and text-color clusters"]
+    },
+    {
+      "id": "DEC-TYPEFACE-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Plus Jakarta Sans ExtraBold is the locked display and heading family. Inter Variable is the locked body and UI family. Weight names use the spaced forms Semi Bold and Extra Bold, and imported fractional sizes 9.28, 12.16, 11.84 and 10.4 round to 10, 12, 12 and 10. JetBrains Mono remains a scoped code-specimen exception. This typeface decision does not promote the separate 12px metadata and 15–16px body-floor proposal in DEC-TYPE-001.",
+      "appliesTo": ["Figma text styles", "customer-facing Figma nodes", "Codex Sites font tokens", "bridge documentation"],
+      "clarifies": ["DEC-TYPE-001"],
+      "supersedes": ["Barlow Condensed headings", "large Inter headings", "static Inter body and UI family"]
+    },
+    {
+      "id": "DEC-VARIABLES-002",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "After migrating active bindings to the four convergence collections and completing the usage scan, delete the three archived legacy and quarantined collections containing 128 variables. CONV-004 then extends the active unpublished candidate to exactly four collections and 112 variables: 29 Color Primitives, 31 Color Semantics, 30 Dimensions and 22 Typography variables. The 14 added variables preserve approved dark/error/warning/unavailable/disabled and page-spacing roles instead of corrupting MF-01A scoped exceptions.",
+      "appliesTo": ["Figma variable collections", "current-state projection", "token inventory", "bridge registry"],
+      "supersedes": ["DEC-VARIABLES-001", "DEC-FIDELITY-001 archive-without-deletion disposition"],
+      "publicationAuthorized": false
+    },
+    {
+      "id": "DEC-STOCK-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "InventoryStatus adopts the StockPill visual contract. In stock uses #0057FF text and dot on #EEF4FF with radius 999; out of stock uses #B42318 on #FEF3F2; unavailable uses #64718A on #F4F5F7. Inventory no longer uses green. #15803D remains available only for non-inventory success contexts.",
+      "sources": ["641:17", "641:8", "641:11", "641:14", "732:2902", "732:2903", "732:2906", "732:2909"],
+      "appliesTo": ["InventoryStatus", "StockPill", "all inherited inventory instances", "Codex Sites status contract"],
+      "supersedes": ["green InventoryStatus interpretation in DEC-FIDELITY-001 and the CONV-003 candidate"]
+    },
+    {
+      "id": "DEC-DIVIDER-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Use the canonical CobaltDivider only at meaningful density boundaries between headline or control material and commerce, OpenLab, technical or checkout sections. The rhythm is 32px gap, 2px #0057FF divider, 32px gap. It is a relational divider, not a decorative card eyebrow, cobalt perimeter or universal section rule.",
+      "sources": ["1010:27053", "1010:27054", "1010:27064", "1026:27046", "1026:27048", "1026:27050"],
+      "appliesTo": ["complex grid sections", "embedded relationship specimens", "Codex Sites divider primitive"],
+      "clarifies": ["DEC-COLOR-001", "DEC-PRECEDENCE-001"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-005",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "ProductCommerceCard Vertical and Featured variants consume one canonical MediaChamber component rather than four locally authored chamber frames. The source preserves the complete MF-01A gradient, halo, identity-pane, contact-shelf and populated-product construction governed by DEC-MEDIA-003 and DEC-MEDIA-004.",
+      "sources": ["1022:4099", "998:28862", "1022:4072", "1022:4081", "1022:4090", "1010:27065", "1010:27070", "1010:27075", "1010:27080"],
+      "appliesTo": ["MediaChamber", "Vertical desktop and mobile", "Featured desktop and mobile", "Figma-to-code bridge"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-003", "DEC-MEDIA-004"],
+      "supersedes": ["four locally authored Vertical and Featured media frames"]
+    },
+    {
+      "id": "DEC-CONV-004",
+      "recordedDate": "2026-08-12",
+      "actor": "codex_agent",
+      "status": "IMPLEMENTED_VERIFIED_HUMAN_REVIEW_REQUIRED",
+      "decision": "CONV-004 records the champion-directed full-file color, typeface, spacing, surface, contrast, style-binding and variable-hygiene reconciliation together with the StockPill, CobaltDivider and canonical MediaChamber corrections. The Figma execution receipt is registered, but candidate verification does not constitute artifact-specific visual approval, publication, Code Connect activation, deployment or runtime authority.",
+      "sources": ["999:28867", "999:28868", "641:17", "732:2902", "1022:4099", "998:28862", "1022:4072", "1022:4081", "1022:4090", "1010:27053", "1010:27054", "1010:27064", "1026:27046", "1026:27048", "1026:27050", "1010:27065", "1010:27070", "1010:27075", "1010:27080"],
+      "appliesTo": ["Figma full-file candidate", "repository authority projection", "Figma code bridge", "MF-10 review gate"],
+      "clarifies": ["DEC-GATE-001", "DEC-VISUAL-REVIEW-001"],
+      "supersedes": [],
+      "guardrails": ["HUMAN_REVIEW_REQUIRED", "UNPUBLISHED", "official Code Connect not invoked", "no deployment", "no runtime mutation"]
+    },
+    {
+      "id": "DEC-CONV-004-CLOSEOUT-001",
+      "recordedDate": "2026-08-12",
+      "actor": "codex_agent",
+      "status": "IMPLEMENTED_VERIFIED_HUMAN_REVIEW_REQUIRED",
+      "decision": "The corrected current CONV-004 Figma execution receipt is Page 25 COMPONENT 1043:310. Nodes 999:28867, 999:28868 and 999:28872 are retained unchanged as immutable rejected historical evidence and must never be reactivated as current receipt authority. Hidden instance 1010:27064 is retained as a superseded historical predecessor; current divider behavior is owned by CobaltDensityBoundary 1026:27046 through actual Hero and OpenLab instances 1026:27048 and 1026:27050. Blue/interactive resolves to #0057FF. The former green/inventory and status/inventory roles retain their IDs and values but are renamed green/success, green/success-soft, status/success and status/success-soft; StockPill uses accent/cobalt and surface/cobalt-soft rather than success roles. Final Figma execution proof covers 42 of 42 canvases, four unpublished collections and 112 variables, zero rejected paints, only Inter Variable, Plus Jakarta Sans and JetBrains Mono, exact structured Figma style strings SemiBold and ExtraBold, zero authored fractional font sizes, 127 computed fractional readings solely inside four scaled review instances, and zero stale variable references in active canonical and customer roots. The full file retains 1,219 immutable historical alias references; that preserved debt does not contradict the zero active-root result.",
+      "sources": ["1043:310", "999:28867", "999:28868", "999:28872", "1010:27064", "1026:27046", "1026:27048", "1026:27050"],
+      "appliesTo": ["CONV-004 receipt authority", "Page 25 changelog evidence", "CobaltDensityBoundary provenance", "full-file Figma closeout proof", "Figma code bridge"],
+      "clarifies": ["DEC-DIVIDER-001", "DEC-CONV-004"],
+      "supersedes": ["999:28867 current-receipt interpretation", "999:28868 current-receipt interpretation", "999:28872 current-receipt interpretation", "1010:27064 current-divider-instance interpretation"],
+      "guardrails": ["historical nodes remain immutable", "HUMAN_REVIEW_REQUIRED", "UNPUBLISHED", "official Code Connect not invoked", "no deployment", "no runtime mutation"]
+    },
+    {
+      "id": "DEC-TYPE-FLOOR-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "The approved CONV-004 accessibility correction promotes a 12px minimum for customer-facing metadata and eyebrows and a 15–16px minimum for customer body copy. The MF-01A QualitativeChip label remains the sole named 11px component exception because its two-type grammar was explicitly selected and separately verified.",
+      "sources": ["reconcile.md PHASE 5", "exampleplan.md PHASE 5", "AGENTS.md design law"],
+      "appliesTo": ["Codex Sites customer routes", "Figma customer surfaces", "accessibility proof"],
+      "supersedes": ["DEC-TYPE-001 PROPOSED_NON_CONTROLLING disposition"],
+      "guardrails": ["QualitativeChip label exception only", "HUMAN_REVIEW_REQUIRED", "UNPUBLISHED"]
     }
   ]
 }

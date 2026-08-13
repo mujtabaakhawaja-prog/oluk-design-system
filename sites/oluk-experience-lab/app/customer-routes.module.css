@@ -123,7 +123,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   padding: 10px 14px;
@@ -204,7 +204,7 @@
 
 .recordRow dt {
   color: var(--ink-muted);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -255,7 +255,7 @@
 
 .recordFacts dt {
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .recordFacts dd {
@@ -326,6 +326,28 @@
 .compareTable th {
   background: var(--canvas);
   font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .compareTableWrap {
+    overflow: visible;
+  }
+
+  .compareTable {
+    min-width: 0;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .compareTable th,
+  .compareTable td {
+    overflow-wrap: anywhere;
+    padding: 10px 8px;
+  }
+
+  .compareTable th:first-child {
+    width: 30%;
+  }
 }
 
 .compareTable td {

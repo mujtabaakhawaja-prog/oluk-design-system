@@ -100,17 +100,21 @@ export function PurchasePanel({
         <PriceBlock price={product.price} />
         <StaticQuantityStepper value={quantity ?? presentation.quantity} />
       </div>
-      <StaticPurchaseActions evidenceHref={product.evidencePath} primaryLabel={presentation.actionLabel} />
+      <StaticPurchaseActions
+        evidenceHref={product.evidencePath}
+        primaryLabel={presentation.actionLabel}
+        state={inventory ?? presentation.inventory}
+      />
     </article>
   );
 }
 
 export function PurchasePanelMatrix({ product = mk2866Fixture }: Readonly<{ product?: ProductFixture }>) {
   return (
-    <div aria-label="PurchasePanel state and width matrix" className="oluk-purchase-panel-matrix">
+    <div aria-label="PurchasePanel state and width matrix" className="oluk-purchase-panel-matrix oluk-candidate-purchase-state-grid">
       {presentationWidths.flatMap((width) =>
         purchasePanelStates.map((state) => (
-          <div className="oluk-purchase-panel-matrix__cell" data-state={state} data-width={width} key={`${width}-${state}`}>
+          <div className="oluk-purchase-panel-matrix__cell oluk-candidate-purchase-stage" data-state={state} data-width={width} id={`mf02b-purchase-panel-${state}${width === "desktop" ? "" : "-mobile"}`} key={`${width}-${state}`}>
             <span className="oluk-candidate-state-label">
               {width} · {state.replaceAll("-", " ")}
             </span>

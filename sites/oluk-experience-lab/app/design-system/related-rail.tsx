@@ -7,6 +7,7 @@ export type RelationCardProps = Readonly<{
   anchorProduct: ProductFixture;
   product: ProductFixture;
   state?: ProductCardState;
+  contextKicker?: string;
   className?: string;
 }>;
 
@@ -14,12 +15,13 @@ export function RelationCard({
   anchorProduct,
   product,
   state = "default",
+  contextKicker,
   className,
 }: RelationCardProps) {
   return (
     <ProductCommerceCard
       className={className}
-      contextKicker={`RELATED TO ${anchorProduct.name}`}
+      contextKicker={contextKicker ?? `STACKS WELL WITH ${anchorProduct.name}`}
       product={product}
       state={state}
       variant="relation"

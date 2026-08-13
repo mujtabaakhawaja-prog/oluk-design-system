@@ -107,6 +107,8 @@ test("customer routes adopt the canonical design-system modules without page-loc
     /export function DossierRoute\(\)[\s\S]*?\n}\n\nfunction lookupStateFromReference/,
   )?.[0] ?? "";
   assert.match(dossierRoute, /<ProductDossier\b/, "OpenLab dossier reuses the PDP dossier component");
+  assert.match(dossierRoute, /secondaryHref=\{mk2866Fixture\.customerPath\}/, "dossier return-to-commerce action targets the PDP");
+  assert.match(dossierRoute, /secondaryLabel="Return to MK-2866"/, "dossier does not self-link through a lab-record label");
 });
 
 test("batch lookup renders accessible deterministic empty, entered, found, no-result and unavailable states", async () => {

@@ -96,7 +96,7 @@ export async function auditCustomerCopy() {
     (value) => !home?.text.includes(value),
   );
   const shop = rendered.find(({ route }) => route === "/shop");
-  const missingShopTruth = ["MK-2866", "Ostarine", "90 servings", "£43"].filter(
+  const missingShopTruth = ["MK-2866", "Ostarine", "90 SERVINGS", "£43"].filter(
     (value) => !shop?.text.includes(value),
   );
   const unavailableRecord = rendered.find(({ route }) => route === "/open-lab/records/source-bound-record");

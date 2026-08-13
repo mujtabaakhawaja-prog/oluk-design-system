@@ -90,3 +90,37 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added a recursive transaction import-graph and dependency guard. The eight static bag/checkout/post-purchase routes have no form submission, fetch/AJAX, socket, storage, server action, Woo, payment SDK, Initiator, tools-service or telemetry callback.
 - Appended the matching native Figma Page 25 receipt at `929:304`; it records the same review nodes, corrections, executable-bridge evidence and closed gates without claiming approval or publication.
 - Official Code Connect was not invoked. No Figma library was published, no service was deployed, no runtime owner was mutated, and no PR was merged. All artifacts remain `HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
+
+## 2026-08-12 — CONV-004 full-file design convergence reconciliation
+
+- Recorded the champion-directed color and typography convergence as append-only `DEC-COLOR-001` and `DEC-TYPEFACE-001`: primary cobalt is `#0057FF`; display is Plus Jakarta Sans ExtraBold; body/UI is Inter Variable. The chip-value navy and exact MF-01A atmospheric gradients remain explicit scoped exceptions.
+- `DEC-VARIABLES-002` supersedes the former archive-only disposition after binding migration and usage proof. The three former archived collections/128 variables are deleted; four unpublished active collections now contain `112` variables (`29 / 31 / 30 / 22`).
+- Added 14 exact role variables `1024:50`–`1024:63` for dark copy, error, warning, unavailable, disabled and page-spacing semantics instead of collapsing unlike jobs into the old 98-variable model.
+- Registered the cobalt StockPill source `641:17`, promoted canonical `732:2902` and all six source/promoted variant IDs under `DEC-STOCK-001`. Inventory no longer uses green.
+- Registered MediaChamber component set `1022:4099`, four variants and four corrected Vertical/Featured instances under `DEC-MEDIA-005`.
+- Registered CobaltDivider `1010:27053`, rhythm specimen `1010:27054` and actual instance `1010:27064` under `DEC-DIVIDER-001`.
+- Added executable `CobaltDensityBoundary` `1026:27046` with Hero `1026:27048` and OpenLab `1026:27050` instances so the approved `32 / 2 / 32` rhythm is component behavior rather than specimen-only annotation.
+- Registered the Page 25 Figma receipt section `999:28867`, receipt `999:28868` and durable repository receipt `authority/receipts/CONV-004-DESIGN-CONVERGENCE.md`.
+- Extended the repository-owned bridge projection from 15 to 17 component mappings while retaining 9 route mappings; the append-only final closeout entry below subsequently separates CobaltDensityBoundary as mapping 18. Official Code Connect, library publication, deployment and runtime integration remain blocked.
+- CONV-004 reconciles the rejected final-validation projection; it does not constitute artifact-specific champion approval. All affected artifacts remain `HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
+
+## 2026-08-12 — CONV-004 final Figma closeout correction
+
+- Appended `DEC-CONV-004-CLOSEOUT-001` without rewriting the earlier CONV-004 record.
+- Registered Page 25 COMPONENT `1043:310` as the corrected current execution receipt.
+- Corrected active token roles without changing IDs: `blue/interactive` is `#0057FF`; the former inventory-green primitive/semantic names are now `green/success`, `green/success-soft`, `status/success` and `status/success-soft`. StockPill remains cobalt/cobalt-soft and does not consume success roles.
+- Classified `999:28867`, `999:28868` and `999:28872` as immutable rejected historical evidence. They remain preserved for provenance and must not be reactivated as current receipt authority.
+- Classified hidden instance `1010:27064` as an immutable superseded historical predecessor. Current divider behavior is `CobaltDensityBoundary` `1026:27046`, with actual Hero `1026:27048` and OpenLab `1026:27050` instances; atomic rule `1010:27053` remains a supporting subcomponent source.
+- Split the executable bridge into 18 mappings: atomic CobaltDivider has no direct customer routes, while CobaltDensityBoundary maps Figma Hero/OpenLab intent separately from its exact current Sites call routes. Bridge board `911:2629` / header `911:2636` advances to v1.2 CONV-004.
+- Recorded final live Figma proof: `42/42` canvases; 112 unpublished variables across `29 / 31 / 30 / 22`; zero rejected paints; only Inter Variable, Plus Jakarta Sans and JetBrains Mono; zero authored fractional font sizes; 127 transform-derived fractional readings solely within four scaled review instances; and zero stale variable references in active canonical and customer roots.
+- This closeout remains `HUMAN_REVIEW_REQUIRED · UNPUBLISHED`; it grants no artifact approval, official Code Connect, deployment or runtime authority.
+
+## 2026-08-12 — CONV-004 final4 repository and browser validation
+
+- Advanced the repository projection from revalidation-pending to `VALIDATED_WORKTREE_PENDING_CONV004_IMPLEMENTATION_COMMIT`; the eventual implementation SHA remains an explicit placeholder until the bounded commit is created.
+- Revalidated the complete candidate: typecheck, lint and production build pass; tests pass `53/53`; token coverage passes `112/112` with `128` CSS custom properties; component provenance passes `71/71`; and the executable Figma bridge passes `290/290`.
+- Recorded active CSS color governance at zero rejected and zero ungoverned values.
+- Recorded final4 browser evidence under `/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-conv004-final4-20260812`: official MF-09 `124/124`, detailed audit `124/124`, accessibility `62/62`, contrast/zoom/long-copy `30/30` with zero automated violations and 30 explicit manual-review incompletes, and interactions `35/35` including `8/8` transaction zero-callback cases.
+- Refreshed the visual-baseline manifest from the final4 official receipt. All 124 screenshots exist and match SHA-256; they remain `CAPTURED_UNREVIEWED`, with `0` champion-reviewed.
+- Corrected the current Shop completion wording: the fully confirmed MK-2866 result instantiates the canonical Featured ProductCommerceCard, while incomplete catalogue fixtures remain truth-limited discovery projections rather than fabricated full commerce cards.
+- Sites remains a design/experience candidate with `runtimeAuthority: none`. Figma publication, official Code Connect, deployment, live commerce/evidence integration and MF++ remain blocked pending artifact-specific human review and separate authorization.

@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex -- the horizontal comparison scroller must remain keyboard reachable. */
 
 import { AssuranceRail } from "./design-system/assurance-rail";
+import { CobaltDensityBoundary } from "./design-system/cobalt-divider";
 import {
   ActionLink,
   Arrow,
@@ -23,30 +24,6 @@ import { PurchasePanel } from "./design-system/purchase-panel";
 import { RelatedRail } from "./design-system/related-rail";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
 import styles from "./customer-routes.module.css";
-
-const reviews = [
-  {
-    title: "Excellent product detail",
-    name: "A. Morgan",
-    date: "18 July 2026",
-    copy: "The product information was clear and the Lab Record was easy to find.",
-    stars: 5,
-  },
-  {
-    title: "Everything in one place",
-    name: "Daniel R.",
-    date: "04 July 2026",
-    copy: "Strength, servings and independent testing were simple to compare before ordering.",
-    stars: 5,
-  },
-  {
-    title: "Clear and well presented",
-    name: "M. Lewis",
-    date: "22 June 2026",
-    copy: "A clean experience with the details I wanted without unnecessary clutter.",
-    stars: 4,
-  },
-] as const;
 
 const openLabEntries = [
   { index: "01", title: "Lab Records", copy: "Browse the record index.", href: "/open-lab/records" },
@@ -74,44 +51,26 @@ const sourceChainEntries = [
 
 function ReviewsSection({ full = false }: Readonly<{ full?: boolean }>) {
   return (
-    <section className="section reviews-section" id="reviews">
+    <section className="section reviews-section" data-live-authority="false" id="reviews">
       <div className="shell">
         <SectionHeading
           action={full ? undefined : <a href="/reviews">Read all reviews <Arrow /></a>}
-          copy="Customer experiences remain separate from product specifications and OpenLab records."
+          copy="Customer review content will appear here only when a source-owned review projection is connected."
           eyebrow="CUSTOMER REVIEWS"
-          title="What customers are saying."
+          title="A clear home for customer feedback."
         />
         <div className="review-grid">
-          {reviews.map((review) => (
-            <article className="review-card" key={review.title}>
-              <div aria-label={`${review.stars} out of 5 stars`} className="stars">
-                {"★★★★★".slice(0, review.stars)}
-                <span>{"★★★★★".slice(review.stars)}</span>
-              </div>
-              <h3>{review.title}</h3>
-              <p>“{review.copy}”</p>
-              <div className="review-author">
-                <div>
-                  <strong>{review.name}</strong>
-                  <span>{review.date}</span>
-                </div>
-                <span className="verified-purchase">Verified purchase</span>
-              </div>
-            </article>
-          ))}
+          <article className="review-card">
+            <span className="eyebrow">REVIEWS UNAVAILABLE</span>
+            <h3>No customer reviews are available yet.</h3>
+            <p>Product facts and OpenLab availability remain accessible without inventing customer names, dates or purchase claims.</p>
+            <a href="/product/mk-2866">View MK-2866 <Arrow /></a>
+          </article>
         </div>
         {full ? (
-          <>
-            <div className="review-pagination">
-              <button disabled type="button">Previous</button>
-              <span>1 / 1</span>
-              <button disabled type="button">Next</button>
-            </div>
-            <p className={styles.reviewScope}>
-              This page contains customer reviews. Product and evidence details are available through their own routes.
-            </p>
-          </>
+          <p className={styles.reviewScope}>
+            This presentation does not claim live review authority. Product and evidence details remain available through their own routes.
+          </p>
         ) : null}
       </div>
     </section>
@@ -246,12 +205,13 @@ export function HomeRoute() {
                 <ActionLink href="/open-lab/records" secondary>View Lab Records</ActionLink>
               </>
             }
-            copy="Third-party tested. Strength, servings and fulfilment details remain clear before checkout."
-            eyebrow="FORMULATED. VERIFIED. BATCH TRACKED."
+            copy="Strength, servings and fulfilment details remain clear before checkout. OpenLab records appear only when available."
+            eyebrow="FORMULATED. CLEARLY SPECIFIED. EVIDENCE-AWARE."
             title="Formulated to a higher standard."
           />
         </div>
       </section>
+      <div className="shell"><CobaltDensityBoundary /></div>
       <AssuranceSection />
       <FamilyDiscovery />
       <FeaturedProduct />
@@ -346,6 +306,7 @@ export function OpenLabRoute() {
           />
         </div>
       </section>
+      <div className="shell"><CobaltDensityBoundary /></div>
       <section className="section">
         <div className="shell">
           <SectionHeading
@@ -410,12 +371,6 @@ export function RecordsRoute() {
               <dl><dt>Status</dt><dd><EvidenceStatus state="unavailable" /></dd></dl>
               <a href={selectedEvidenceRecord.customerPath}>Open state <Arrow /></a>
             </article>
-            <PresentationState
-              action={<ActionLink href="/open-lab/records">Clear search</ActionLink>}
-              className={styles.stateSurface}
-              copy="No record matches the current search example. Check the reference or return to the unfiltered index."
-              state="no-result"
-            />
           </div>
         </div>
       </section>
@@ -509,6 +464,8 @@ export function DossierRoute() {
           <ProductCommerceCard
             contextKicker="RETURN TO COMMERCE"
             product={mk2866Fixture}
+            secondaryHref={mk2866Fixture.customerPath}
+            secondaryLabel="Return to MK-2866"
             showQualitative={false}
             variant="relation"
           />

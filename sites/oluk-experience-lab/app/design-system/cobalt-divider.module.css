@@ -1,0 +1,13 @@
+.divider {
+  background: var(--oluk-cobalt);
+  border: 0;
+  block-size: var(--oluk-divider-width);
+  inline-size: 100%;
+  margin: 0;
+}
+
+.boundary {
+  box-sizing: border-box;
+  inline-size: 100%;
+  padding-block: var(--oluk-divider-rhythm);
+}

@@ -29,8 +29,8 @@ export type ProductMediaCropSet = Readonly<{
 }>;
 
 export type ProductMediaAsset = Readonly<{
-  id: `${ProductFixtureId}-front`;
-  productId: ProductFixtureId;
+  id: `${string}-front`;
+  productId: string;
   src: string;
   alt: string;
   width: number;
@@ -94,11 +94,6 @@ const defaultCrops = {
     desktop: { objectPosition: "50% 50%", scale: 0.92, translateY: "4px" },
     tablet: { objectPosition: "50% 49%", scale: 0.9, translateY: "3px" },
     mobile: { objectPosition: "50% 47%", scale: 0.86, translateY: "2px" },
-  },
-  purchase: {
-    desktop: { objectPosition: "50% 50%", scale: 1, translateY: "6px" },
-    tablet: { objectPosition: "50% 49%", scale: 0.98, translateY: "5px" },
-    mobile: { objectPosition: "50% 48%", scale: 0.94, translateY: "3px" },
   },
 } as const satisfies Readonly<Record<ProductMediaContext, ProductMediaCropSet>>;
 

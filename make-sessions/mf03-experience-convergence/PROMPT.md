@@ -12,10 +12,15 @@ Use exactly one run block at a time. Copy all three headings into the agent prom
 - Use the canonical candidate components registered in `authority/ARTIFACT-REGISTRY.json`; instantiate them rather than recreating page-local copies.
 - Hero: `717:15468` controls layout/composition only, after the `90 SERVINGS` correction. `626:7994` contributes complete product/status/evidence data. The target is the purpose-built `HeroDecisionSurface`/`ProductDecisionHero`, not a raw frame or whole-zone wrapper.
 - `713:1065` is a Hero component with PurchasePanel geometry, not Compact. Preserve that classification only as provenance; do not promote the structure.
-- Keep/extend 86 convergence variables. Archived 128 legacy/quarantined variables are read-only provenance.
+- Use the four active CONV-004 collections/112 variables (`29` primitives, `31` semantics, `30` dimensions, `22` typography). The former 128 archived variables were migrated and deleted by `DEC-VARIABLES-002`; do not recreate them.
+- Use Plus Jakarta Sans ExtraBold for headings and Inter Variable for body/UI. Preserve JetBrains Mono only for intentional code specimens.
+- InventoryStatus is the cobalt StockPill contract from `641:17`, promoted at `732:2902`; green is non-inventory success only.
+- Treat `green/success`, `green/success-soft`, `status/success` and `status/success-soft` as non-inventory success roles. StockPill maps `accent/cobalt` plus `surface/cobalt-soft`; it never consumes success roles. `blue/interactive` is the same `#0057FF` cobalt.
+- Instantiate canonical MediaChamber set `1022:4099` and current CobaltDensityBoundary `1026:27046`, using actual inherited instances `1026:27048` and `1026:27050` where applicable. Atomic rule `1010:27053` is supporting source; hidden predecessor `1010:27064` is immutable superseded history. The boundary uses `32px gap → 2px cobalt → 32px gap` only at meaningful density boundaries.
+- Use Page 25 COMPONENT `1043:310` as the current CONV-004 receipt. Treat `999:28867`, `999:28868` and `999:28872` only as immutable rejected historical evidence.
 - Use graduated single shadows: Compact y5/blur12/.09; Vertical/Featured y24/blur60/.10; PurchasePanel y20/blur50/.18; Relation y12/blur25/.12.
 - Footer is the sole inverse surface. All other customer surfaces remain in the light system.
-- The 12px metadata / 15–16px body floor is `PROPOSED_NON_CONTROLLING`; report violations for review but do not claim this proposal as champion authority.
+- `DEC-TYPE-FLOOR-001` locks a 12px minimum for customer metadata/eyebrows and a 15–16px minimum for customer body copy. The MF-01A QualitativeChip label is the sole named 11px exception.
 - Everything produced by this run is `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
 
 ### THIS_RUN_DELTA
@@ -27,7 +32,7 @@ Replace this section with exactly one delta below. Change only the named surface
 - Do not use an MF-02/MF-03 board as a full replacement state. Inherit champion state first; take only the explicitly named delta.
 - Do not inherit `90 CAPS`, clipped text, fixed-width tracks, raw page-local variables, generic shadows, cobalt card perimeters/top edges, undersized source type, broad inverse slabs, or dashboard styling by default.
 - Do not redraw canonical component anatomy inside a page.
-- Do not publish variables/components, create Code Connect mappings, mutate runtime ownership, connect inventory/cart/payment APIs, or expose development labels in customer UI.
+- Do not publish variables/components, invoke official Code Connect, mutate runtime ownership, connect inventory/cart/payment APIs, or expose development labels in customer UI. The repository-owned executable bridge may be updated as unpublished candidate documentation.
 - Do not call technical validation or an agent verdict “approved.” Only the champion user's artifact-specific review can promote it.
 
 ---

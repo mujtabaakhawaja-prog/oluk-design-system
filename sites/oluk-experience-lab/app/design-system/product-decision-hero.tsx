@@ -43,6 +43,7 @@ export function HeroDecisionSurface({
           evidenceHref={product.evidencePath}
           productHref={product.customerPath}
           showProductLink
+          state={product.presentationStatus.inventory}
         />
       </div>
     </article>

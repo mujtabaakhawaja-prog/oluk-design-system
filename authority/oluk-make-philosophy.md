@@ -1,6 +1,6 @@
 ## Make Philosophy — Controlling Directives
 
-> **2026-08-11 CONV-001 supersession:** Use the append-only decision ledger and the three-block prompt contract in `make-sessions/mf03-experience-convergence/`. MF-01A champion relationships are inherited first; every later Make board contributes only its named delta. New artifacts remain unpublished and `HUMAN_REVIEW_REQUIRED`.
+> **2026-08-12 CONV-004 pointer:** Use the append-only decision ledger and the three-block prompt contract in `make-sessions/mf03-experience-convergence/`. MF-01A champion relationships are inherited first; every later Make board contributes only its named delta. CONV-004 locks Plus Jakarta Sans ExtraBold display, Inter Variable body/UI, 112 active variables, cobalt StockPill, canonical MediaChamber and current CobaltDensityBoundary behavior while retaining unpublished `HUMAN_REVIEW_REQUIRED` gates. Current receipt authority is Page 25 COMPONENT `1043:310`; `999:28867`, `999:28868` and `999:28872` remain rejected historical evidence.
 
 
 ### Core rule
@@ -14,8 +14,8 @@ Make should DESIGN first, not code Figma Design boards. Figma Design work establ
 - "Zero grey" means no generic achromatic/Tailwind grey leakage — approved blue-shifted neutrals remain valid
 
 ### Make handoff boundary
-- **Fixed relationships:** Plus Jakarta Sans display, Inter support, Inter-only purchase, #0057FF as the current identity/metric cobalt, exact product truth, cool canvas below optically white raised planes, quantified metrics visually stronger than qualitative attributes, radius increasing with surface scale and the footer as the sole inverse surface
-- **Proposed, non-controlling:** 15–16px customer body minimum and 12px metadata minimum (`DEC-TYPE-001`)
+- **Fixed relationships:** Plus Jakarta Sans ExtraBold display, Inter Variable body/UI, #0057FF as the current identity/metric cobalt, exact product truth, cool canvas below optically white raised planes, quantified metrics visually stronger than qualitative attributes, radius increasing with surface scale and the footer as the sole inverse surface
+- **Champion:** 15–16px customer body minimum and 12px metadata minimum (`DEC-TYPE-FLOOR-001`), with the selected MF-01A QualitativeChip label as the sole named 11px exception.
 - **Observed, not promoted:** NR-04 currently demonstrates approximately 8px metric-cell radii, 10px specification/qualitative rail radii and 16-18px raised-plane radii. These values are evidence, not fixed Make tokens.
 - **May decide:** Composition within laws, responsive ordering, chamber scale, canvas-split vs embedded-divider, local state transitions, trust-strip placement, spacing rhythm, shadow character, and candidate chip/rail/plane silhouette and geometry within the semantic hierarchy
 - **May not decide:** Token names/publication, product claims, runtime data, APIs, React architecture, dark mode, silent changes to semantic jobs or authoritative component contracts, loading/error infrastructure, release readiness

@@ -1,8 +1,10 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element -- audited Woo catalogue media is intentionally exercised as a non-live design fixture. */
-
 import { useMemo, useState, useSyncExternalStore } from "react";
+import { ProductCommerceCard } from "./product-commerce-card";
+import { ProductMediaChamber } from "./product-media-chamber";
+import { mk2866Fixture, type ProductMediaAsset } from "./product-fixtures";
+import { StockPill } from "./product-status";
 import {
   filterShopTaxonomyFixtures,
   SHOP_AVAILABILITY_OPTIONS,
@@ -29,14 +31,6 @@ type FilterState = {
 };
 
 type SortMode = "featured" | "name" | "price";
-
-const EMPTY_FILTERS: FilterState = {
-  families: [],
-  goals: [],
-  forms: [],
-  servings: [],
-  availability: [],
-};
 
 const familySlugs = new Set<ShopFamilySlug>(SHOP_FAMILY_OPTIONS.map(({ slug }) => slug));
 const goalSlugs = new Set<ShopGoalRouteSlug>(SHOP_GOAL_OPTIONS.map(({ slug }) => slug));
@@ -105,6 +99,15 @@ function writeFiltersToUrl(filters: FilterState): void {
   window.dispatchEvent(new Event(SHOP_URL_CHANGE_EVENT));
 }
 
+function resetShopDiscovery(): void {
+  const url = new URL(window.location.href);
+  ["family", "goal", "form", "servings", "availability", "search"].forEach((key) =>
+    url.searchParams.delete(key),
+  );
+  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  window.dispatchEvent(new Event(SHOP_URL_CHANGE_EVENT));
+}
+
 function toggleValue<T>(values: readonly T[], value: T): T[] {
   return values.includes(value) ? values.filter((entry) => entry !== value) : [...values, value];
 }
@@ -117,15 +120,40 @@ function formatPrice(minor: number): string {
   }).format(minor / 100);
 }
 
-function availabilityLabel(value: ShopAvailabilityState): string {
-  return SHOP_AVAILABILITY_OPTIONS.find(({ slug }) => slug === value)?.label ?? "Availability pending";
-}
-
 function familyLabel(value: ShopFamilySlug): string {
   return SHOP_FAMILY_OPTIONS.find(({ slug }) => slug === value)?.label ?? value;
 }
 
-function ShopResultCard({ product }: { product: ShopTaxonomyFixtureProduct }) {
+function taxonomyMedia(product: ShopTaxonomyFixtureProduct): ProductMediaAsset {
+  return {
+    id: `${product.fixtureId}-front`,
+    productId: product.fixtureId,
+    src: product.imageSrc,
+    alt: product.imageAlt,
+    width: 300,
+    height: 450,
+    fit: "contain",
+    hasTransparency: false,
+    sourceRef: `SHOP-TAXONOMY-CONTRACT audited catalogue media · ${product.imageSourceUrl}`,
+    authority: "confirmed-design-fixture",
+    live: false,
+    crops: mk2866Fixture.media.crops,
+  };
+}
+
+function stockState(product: ShopTaxonomyFixtureProduct) {
+  if (product.availabilityState === "in-stock") return "in-stock" as const;
+  if (product.availabilityState === "out-of-stock") return "out-of-stock" as const;
+  return "unavailable" as const;
+}
+
+/**
+ * A taxonomy discovery projection, not a ProductCommerceCard substitute.
+ * Only the locked MK-2866 record may instantiate the full commerce contract;
+ * remaining audited catalogue entries reuse canonical media/status atoms until
+ * their PDP and complete product truth are publication-authorized.
+ */
+function ShopDiscoveryResult({ product }: { product: ShopTaxonomyFixtureProduct }) {
   const purchaseLabel =
     product.availabilityState === "in-stock"
       ? "Add to bag"
@@ -137,21 +165,11 @@ function ShopResultCard({ product }: { product: ShopTaxonomyFixtureProduct }) {
   return (
     <article
       aria-labelledby={`shop-product-${product.fixtureId}`}
-      className="shop-result-card"
+      className="shop-result-card shop-discovery-result"
+      data-component="ShopDiscoveryResult"
       data-live-authority="false"
     >
-      <div className="shop-result-media">
-        <div aria-hidden="true" className="shop-result-orbit" />
-        <img
-          alt={product.imageAlt}
-          decoding="async"
-          height={450}
-          loading="lazy"
-          sizes="(max-width: 720px) calc(100vw - 32px), (max-width: 1180px) 50vw, 360px"
-          src={product.imageSrc}
-          width={300}
-        />
-      </div>
+      <ProductMediaChamber context="featured" media={taxonomyMedia(product)} />
       <div className="shop-result-content">
         <div className="shop-result-heading">
           <div>
@@ -159,10 +177,7 @@ function ShopResultCard({ product }: { product: ShopTaxonomyFixtureProduct }) {
             <h2 id={`shop-product-${product.fixtureId}`}>{product.displayName}</h2>
             {product.displayAlias ? <p>{product.displayAlias}</p> : null}
           </div>
-          <span className="shop-result-availability" data-state={product.availabilityState}>
-            <i aria-hidden="true" />
-            {availabilityLabel(product.availabilityState)}
-          </span>
+          <StockPill className="shop-result-availability" state={stockState(product)} />
         </div>
         <dl className="shop-result-facts">
           <div>
@@ -180,7 +195,7 @@ function ShopResultCard({ product }: { product: ShopTaxonomyFixtureProduct }) {
         <div className="shop-result-commerce">
           <strong>{formatPrice(product.capturedPriceMinor)}</strong>
           <div>
-            <a className="button button-secondary" href={product.customerPath}>View product <span aria-hidden="true">→</span></a>
+            <span className="button button-secondary" data-route-state="unavailable">Product page unavailable</span>
             <button className={product.availabilityState === "in-stock" ? "button" : "button shop-result-action-unavailable"} disabled type="button">{purchaseLabel}</button>
           </div>
         </div>
@@ -206,7 +221,24 @@ export function ShopDiscovery() {
     const normalizedSearch = searchTerm.toLocaleLowerCase("en-GB");
     const matched = filterShopTaxonomyFixtures(selection).filter((product) => {
       if (!normalizedSearch) return true;
-      return [product.displayName, product.displayAlias, product.wooSlug]
+      const familyTerms = product.familySlugs.flatMap((slug) => {
+        const option = SHOP_FAMILY_OPTIONS.find((entry) => entry.slug === slug);
+        return [slug, option?.label, `${option?.label ?? slug} series`];
+      });
+      const goalTerms = product.goalTagSlugs.flatMap((slug) => {
+        const option = SHOP_GOAL_OPTIONS.find((entry) => entry.wooTagSlug === slug);
+        return [slug, option?.slug, option?.label];
+      });
+      return [
+        product.displayName,
+        product.displayAlias,
+        product.wooSlug,
+        product.sku,
+        product.formSlug,
+        product.servingsCount ? `${product.servingsCount} servings` : null,
+        ...familyTerms,
+        ...goalTerms,
+      ]
         .filter((value): value is string => Boolean(value))
         .some((value) => value.toLocaleLowerCase("en-GB").includes(normalizedSearch));
     });
@@ -240,7 +272,7 @@ export function ShopDiscovery() {
             <div><span className="eyebrow">FILTERS</span><h2>Refine products</h2></div>
             <div className="filter-panel-actions">
               <button aria-controls="shop-filter-groups" aria-expanded={filtersOpen} className="filter-toggle" onClick={() => setFiltersOpen((open) => !open)} type="button">{filtersOpen ? "Close" : "Open"}</button>
-              {activeCount > 0 ? <button onClick={() => writeFiltersToUrl(EMPTY_FILTERS)} type="button">Clear all</button> : null}
+              {activeCount > 0 || searchTerm ? <button onClick={resetShopDiscovery} type="button">Clear all</button> : null}
             </div>
           </div>
           <div className="shop-filter-groups" data-open={filtersOpen} id="shop-filter-groups">
@@ -309,14 +341,25 @@ export function ShopDiscovery() {
           </div>
           {results.length > 0 ? (
             <div className="shop-result-grid">
-              {results.map((product) => <ShopResultCard key={product.fixtureId} product={product} />)}
+              {results.map((product) =>
+                product.fixtureId === "mk-2866" ? (
+                  <ProductCommerceCard
+                    className="shop-result-card shop-result-card-canonical"
+                    key={product.fixtureId}
+                    product={mk2866Fixture}
+                    variant="featured"
+                  />
+                ) : (
+                  <ShopDiscoveryResult key={product.fixtureId} product={product} />
+                ),
+              )}
             </div>
           ) : (
             <div className="shop-empty-state" role="status">
               <span className="eyebrow">NO MATCHES</span>
               <h2>Try a broader combination.</h2>
               <p>No products match every selected filter. Remove one or clear the filters to see the full range.</p>
-              <button className="button" onClick={() => writeFiltersToUrl(EMPTY_FILTERS)} type="button">Clear filters</button>
+              <button className="button" onClick={resetShopDiscovery} type="button">Clear search and filters</button>
             </div>
           )}
           <p className="shop-result-scope">
