@@ -1,9 +1,11 @@
 import type { AssuranceRailProps } from "./assurance-rail";
+import type { CobaltDensityBoundaryProps, CobaltDividerProps } from "./cobalt-divider";
 import type { MetricRailProps } from "./metric-rail";
 import type { ProductCommerceCardProps } from "./product-commerce-card";
 import type { HeroDecisionSurfaceProps, ProductDecisionHeroProps } from "./product-decision-hero";
 import type { ProductDossierProps } from "./product-dossier";
-import type { EvidenceStatusProps, InventoryStatusProps } from "./product-status";
+import type { ProductMediaChamberProps } from "./product-media-chamber";
+import type { EvidenceStatusProps, StockPillProps } from "./product-status";
 import type { PurchasePanelProps } from "./purchase-panel";
 import type { QualitativeChipProps } from "./qualitative-chip";
 import type { QualitativeIconProps } from "./qualitative-icon";
@@ -25,11 +27,11 @@ function exactPropKeys<Props>() {
  * This is a private candidate resource; it is not Figma Code Connect metadata.
  */
 export const codeBridgeComponentContracts = Object.freeze({
-  InventoryStatus: {
+  StockPill: {
     module: "app/design-system/product-status.tsx",
-    exportName: "InventoryStatus",
-    propsType: "InventoryStatusProps",
-    propKeys: exactPropKeys<InventoryStatusProps>()(["state", "className"]),
+    exportName: "StockPill",
+    propsType: "StockPillProps",
+    propKeys: exactPropKeys<StockPillProps>()(["state", "className"]),
   },
   EvidenceStatus: {
     module: "app/design-system/product-status.tsx",
@@ -75,6 +77,32 @@ export const codeBridgeComponentContracts = Object.freeze({
       "actions",
     ]),
   },
+  ProductMediaChamber: {
+    module: "app/design-system/product-media-chamber.tsx",
+    exportName: "ProductMediaChamber",
+    propsType: "ProductMediaChamberProps",
+    propKeys: exactPropKeys<ProductMediaChamberProps>()([
+      "media",
+      "context",
+      "alt",
+      "className",
+      "decorative",
+      "priority",
+      "sizes",
+    ]),
+  },
+  CobaltDivider: {
+    module: "app/design-system/cobalt-divider.tsx",
+    exportName: "CobaltDivider",
+    propsType: "CobaltDividerProps",
+    propKeys: exactPropKeys<CobaltDividerProps>()(["className"]),
+  },
+  CobaltDensityBoundary: {
+    module: "app/design-system/cobalt-divider.tsx",
+    exportName: "CobaltDensityBoundary",
+    propsType: "CobaltDensityBoundaryProps",
+    propKeys: exactPropKeys<CobaltDensityBoundaryProps>()(["className"]),
+  },
   ProductCommerceCard: {
     module: "app/design-system/product-commerce-card.tsx",
     exportName: "ProductCommerceCard",
@@ -89,6 +117,8 @@ export const codeBridgeComponentContracts = Object.freeze({
       "quantity",
       "showQualitative",
       "contextKicker",
+      "secondaryHref",
+      "secondaryLabel",
       "className",
     ]),
   },

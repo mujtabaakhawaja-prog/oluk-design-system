@@ -2,21 +2,73 @@
   "schemaVersion": 1,
   "bridgeId": "OLUK-CC-BRIDGE-001",
   "recordedDate": "2026-08-12",
-  "status": "CANDIDATE_REPOSITORY_MAPPING_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "purpose": "Deterministic repository-owned substitute for Code Connect discovery and agent context injection.",
+  "status": "CONV004_FINAL_FIGMA_CLOSEOUT_REPOSITORY_MAPPING_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "purpose": "Deterministic repository-owned substitute for Code Connect discovery and agent context injection, reconciled to the final CONV-004 StockPill, canonical MediaChamber and CobaltDensityBoundary graph.",
   "authority": {
     "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
     "figmaRegistryBoard": "911:2629",
-    "figmaRegistryBoardName": "CC-BRIDGE · Code Connect Bridge · OLUK Design System",
+    "figmaRegistryBoardName": "CC-BRIDGE · Code Connect Bridge · OLUK Design System v1.2 · CONV-004",
+    "figmaRegistryBoardVersion": "1.2",
+    "figmaRegistryHeaderNode": "911:2636",
     "repositoryCurrentState": "authority/CURRENT-STATE.json",
     "repositoryArtifactRegistry": "authority/ARTIFACT-REGISTRY.json",
     "componentSourceRoot": "sites/oluk-experience-lab",
     "officialCodeConnectInvoked": false,
     "figmaMutationPerformed": true,
-    "figmaMutationScope": "REGISTRY_COPY_CORRECTION_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
+    "figmaMutationScope": "CONV004_FULL_FILE_CANDIDATE_CONVERGENCE_STOCKPILL_COBALT_DIVIDER_MEDIA_CHAMBER_AND_UNPUBLISHED_RECEIPT",
+    "figmaCurrentCloseoutScope": "CONV004_FINAL_CLOSEOUT_STOCKPILL_MEDIA_CHAMBER_COBALT_DENSITY_BOUNDARY_AND_CORRECTED_UNPUBLISHED_RECEIPT",
+    "conv004HistoricalRejectedReceiptSection": "999:28867",
+    "conv004HistoricalRejectedReceipt": "999:28868",
+    "legacyCompatibilityReceiptFieldsDisposition": "IMMUTABLE_REJECTED_HISTORICAL_EVIDENCE_ONLY",
+    "conv004CurrentReceipt": "1043:310",
+    "conv004CurrentReceiptKind": "COMPONENT",
+    "conv004CurrentReceiptPage": "25 Changelog & Version History",
+    "conv004RejectedHistoricalEvidence": [
+      "999:28867",
+      "999:28868",
+      "999:28872"
+    ],
     "publicationState": "UNPUBLISHED",
     "runtimeAuthority": "NONE",
     "deployment": "NONE"
+  },
+  "figmaCloseoutProof": {
+    "canvasAudit": {
+      "passed": 42,
+      "total": 42
+    },
+    "variables": {
+      "publicationState": "UNPUBLISHED",
+      "total": 112,
+      "collections": [
+        29,
+        31,
+        30,
+        22
+      ]
+    },
+    "rejectedPaintCount": 0,
+    "allowedFontFamilies": [
+      "Inter Variable",
+      "Plus Jakarta Sans",
+      "JetBrains Mono"
+    ],
+    "figmaApiStyleStrings": [
+      "SemiBold",
+      "ExtraBold"
+    ],
+    "authoredFractionalFontSizeCount": 0,
+    "computedFractionalReadings": {
+      "count": 127,
+      "scope": "FOUR_SCALED_REVIEW_INSTANCES_ONLY",
+      "scaledReviewInstanceCount": 4
+    },
+    "staleVariableReferences": {
+      "activeCanonicalRoots": 0,
+      "activeCustomerRoots": 0,
+      "immutableHistoricalFileAliases": 1219
+    },
+    "currentReceipt": "1043:310"
   },
   "consumption": {
     "authorityResource": "authority/FIGMA-CODE-BRIDGE.json",
@@ -113,6 +165,49 @@
       "boardCodePath": "routes/shop",
       "resolvedRepositoryPath": "sites/oluk-experience-lab/app/shop/page.tsx",
       "resolution": "CORRECTED_TO_ACTUAL_SHOP_INSTANCE_INHERITING_FEATURED_DESKTOP"
+    },
+    {
+      "label": "InventoryStatus/StockPill",
+      "nodeId": "732:2902",
+      "boardDeclaredSourceNodeId": "641:17",
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+      "resolution": "CONV004_PROMOTED_CANONICAL_WITH_SOURCE_SPECIMEN_PROVENANCE"
+    },
+    {
+      "label": "MediaChamber",
+      "nodeId": "1022:4099",
+      "variantNodeIds": [
+        "998:28862",
+        "1022:4072",
+        "1022:4081",
+        "1022:4090"
+      ],
+      "instanceNodeIds": [
+        "1010:27065",
+        "1010:27070",
+        "1010:27075",
+        "1010:27080"
+      ],
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+      "resolution": "CONV004_CANONICAL_COMPONENT_MAPPED_TO_EXACT_REPOSITORY_EXPORT"
+    },
+    {
+      "label": "CobaltDensityBoundary",
+      "nodeId": "1026:27046",
+      "atomicRuleNodeId": "1010:27053",
+      "rhythmSpecimenNodeId": "1010:27054",
+      "historicalPredecessorInstanceNodeId": "1010:27064",
+      "historicalPredecessorDisposition": "IMMUTABLE_SUPERSEDED_HISTORICAL_PREDECESSOR_HIDDEN",
+      "currentBehaviorInstanceNodeIds": [
+        "1026:27048",
+        "1026:27050"
+      ],
+      "figmaIntendedContexts": [
+        "Hero",
+        "OpenLab"
+      ],
+      "resolvedRepositoryPath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+      "resolution": "CONV004_CURRENT_BEHAVIOR_MAPPED_TO_PURPOSE_BUILT_REPOSITORY_EXPORT_DESIGN_CONTEXTS_SEPARATE_FROM_CODE_ROUTES"
     }
   ],
   "componentMappings": [
@@ -120,14 +215,30 @@
       "id": "inventory-status",
       "figma": {
         "nodeId": "732:2902",
-        "name": "InventoryStatus",
-        "kind": "COMPONENT_SET"
+        "name": "InventoryStatus / StockPill",
+        "kind": "COMPONENT_SET",
+        "sourceSpecimenNodeId": "641:17",
+        "sourceVariantNodes": {
+          "in-stock": "641:8",
+          "out-of-stock": "641:11",
+          "unavailable": "641:14"
+        },
+        "variantNodes": {
+          "in-stock": "732:2903",
+          "out-of-stock": "732:2906",
+          "unavailable": "732:2909"
+        }
       },
       "code": {
         "file": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
-        "export": "InventoryStatus",
-        "propsType": "InventoryStatusProps",
-        "contract": "InventoryStatus",
+        "export": "StockPill",
+        "propsType": "StockPillProps",
+        "contract": "StockPill",
+        "compatibilityAlias": {
+          "export": "InventoryStatus",
+          "propsType": "InventoryStatusProps",
+          "authority": "NON_CANONICAL_COMPATIBILITY_ONLY"
+        },
         "props": [
           "state",
           "className"
@@ -147,9 +258,10 @@
         "/review"
       ],
       "tokens": [
-        "--oluk-inventory-green",
+        "--oluk-cobalt",
+        "--oluk-surface-cobalt-soft",
         "--oluk-text-muted",
-        "--oluk-surface-family"
+        "--oluk-radius-pill"
       ]
     },
     {
@@ -391,6 +503,132 @@
       ]
     },
     {
+      "id": "product-media-chamber",
+      "figma": {
+        "nodeId": "1022:4099",
+        "name": "MediaChamber",
+        "kind": "COMPONENT_SET",
+        "variantNodes": {
+          "vertical-desktop": "998:28862",
+          "vertical-mobile": "1022:4072",
+          "featured-desktop": "1022:4081",
+          "featured-mobile": "1022:4090"
+        },
+        "instanceNodes": [
+          "1010:27065",
+          "1010:27070",
+          "1010:27075",
+          "1010:27080"
+        ]
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+        "export": "ProductMediaChamber",
+        "propsType": "ProductMediaChamberProps",
+        "contract": "ProductMediaChamber",
+        "props": [
+          "media",
+          "context",
+          "alt",
+          "className",
+          "decorative",
+          "priority",
+          "sizes"
+        ]
+      },
+      "variants": {
+        "context": [
+          "card",
+          "compact",
+          "featured",
+          "relation",
+          "hero",
+          "dossier"
+        ]
+      },
+      "routes": [
+        "/",
+        "/shop",
+        "/product/mk-2866",
+        "/open-lab",
+        "/open-lab/dossier/mk-2866",
+        "/review"
+      ],
+      "tokens": [
+        "--oluk-media-gradient",
+        "--oluk-media-contact-shelf-gradient",
+        "--oluk-border-identity",
+        "--oluk-border-inner"
+      ]
+    },
+    {
+      "id": "cobalt-divider",
+      "figma": {
+        "nodeId": "1010:27053",
+        "name": "CobaltDivider atomic rule",
+        "kind": "COMPONENT",
+        "rhythmSpecimenNodeId": "1010:27054",
+        "childOfBehaviorNodeId": "1026:27046",
+        "historicalPredecessorInstanceNodeId": "1010:27064",
+        "historicalPredecessorDisposition": "IMMUTABLE_SUPERSEDED_HISTORICAL_PREDECESSOR_HIDDEN",
+        "replacesSourceNodeId": "717:15492"
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+        "export": "CobaltDivider",
+        "propsType": "CobaltDividerProps",
+        "contract": "CobaltDivider",
+        "props": [
+          "className"
+        ]
+      },
+      "variants": {},
+      "routes": [],
+      "routeDisposition": "ATOMIC_CHILD_ONLY_NO_DIRECT_CUSTOMER_ROUTE_USAGE",
+      "tokens": [
+        "--oluk-cobalt",
+        "--oluk-divider-width"
+      ]
+    },
+    {
+      "id": "cobalt-density-boundary",
+      "figma": {
+        "nodeId": "1026:27046",
+        "name": "CobaltDensityBoundary",
+        "kind": "COMPONENT",
+        "atomicRuleNodeId": "1010:27053",
+        "instanceNodeIds": [
+          "1026:27048",
+          "1026:27050"
+        ],
+        "intendedContexts": [
+          "Hero",
+          "OpenLab"
+        ]
+      },
+      "code": {
+        "file": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+        "export": "CobaltDensityBoundary",
+        "propsType": "CobaltDensityBoundaryProps",
+        "contract": "CobaltDensityBoundary",
+        "props": [
+          "className"
+        ]
+      },
+      "variants": {},
+      "routes": [
+        "/",
+        "/open-lab",
+        "/review"
+      ],
+      "routeEvidence": "EXACT_CURRENT_SITES_CALL_CONTEXTS_HOME_HERO_OPENLAB_PORTAL_HERO_AND_PRIVATE_REVIEW",
+      "tokens": [
+        "--oluk-cobalt",
+        "--oluk-divider-width",
+        "--oluk-section-gap"
+      ]
+    },
+    {
       "id": "product-commerce-card-compact",
       "figma": {
         "nodeId": "742:50",
@@ -412,10 +650,13 @@
           "quantity",
           "showQualitative",
           "contextKicker",
+          "secondaryHref",
+          "secondaryLabel",
           "className"
         ],
         "fixedProps": {
-          "variant": "compact"
+          "variant": "compact",
+          "showQualitative": false
         }
       },
       "variants": {
@@ -463,6 +704,8 @@
           "quantity",
           "showQualitative",
           "contextKicker",
+          "secondaryHref",
+          "secondaryLabel",
           "className"
         ],
         "fixedProps": {
@@ -473,16 +716,6 @@
         "width": [
           "desktop",
           "mobile"
-        ],
-        "state": [
-          "default",
-          "hover",
-          "focus",
-          "selected",
-          "added",
-          "unavailable",
-          "out-of-stock",
-          "disabled"
         ]
       },
       "routes": [
@@ -524,6 +757,8 @@
           "quantity",
           "showQualitative",
           "contextKicker",
+          "secondaryHref",
+          "secondaryLabel",
           "className"
         ],
         "fixedProps": {
@@ -534,16 +769,6 @@
         "width": [
           "desktop",
           "mobile"
-        ],
-        "state": [
-          "default",
-          "hover",
-          "focus",
-          "selected",
-          "added",
-          "unavailable",
-          "out-of-stock",
-          "disabled"
         ]
       },
       "routes": [
@@ -583,6 +808,8 @@
           "quantity",
           "showQualitative",
           "contextKicker",
+          "secondaryHref",
+          "secondaryLabel",
           "className"
         ],
         "fixedProps": {
@@ -594,16 +821,6 @@
           "desktop-horizontal",
           "tablet-stacked",
           "mobile-stacked"
-        ],
-        "state": [
-          "default",
-          "hover",
-          "focus",
-          "selected",
-          "added",
-          "unavailable",
-          "out-of-stock",
-          "disabled"
         ]
       },
       "routes": [
@@ -920,17 +1137,17 @@
     {
       "id": "634:2",
       "name": "Color Primitives",
-      "count": 23
+      "count": 29
     },
     {
       "id": "634:20",
       "name": "Color Semantics",
-      "count": 25
+      "count": 31
     },
     {
       "id": "634:40",
       "name": "Dimensions",
-      "count": 28
+      "count": 30
     },
     {
       "id": "634:69",
@@ -938,7 +1155,172 @@
       "count": 22
     }
   ],
+  "styleMappings": {
+    "paintStyles": [
+      {
+        "id": "S:3a6e57496fe35daa56520cf0c30a69809d33fa93,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Heading",
+        "css": "--color-text-heading"
+      },
+      {
+        "id": "S:814d4429a0269de9914472c5f386f25bafc01ef0,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Body",
+        "css": "--color-text-body"
+      },
+      {
+        "id": "S:ab9f1be16d7e1aec33765475605671ec6880421f,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Muted",
+        "css": "--color-text-muted"
+      },
+      {
+        "id": "S:12360ccc1fa4a813678c843f30e82862081b871d,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Accent",
+        "css": "--color-primary"
+      },
+      {
+        "id": "S:a57266dacc3683a04d151976b62139d2cb01c095,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Success",
+        "css": "--color-status-success"
+      },
+      {
+        "id": "S:cad68e9dce3475229c806aa0271b69c2b7243e4b,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Error",
+        "css": "--color-status-error"
+      },
+      {
+        "id": "S:9fb8d3cbe31e727262adeac1563f33b74b588fe0,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Warning",
+        "css": "--color-status-warning"
+      },
+      {
+        "id": "S:43c7a9117e1c2cb93037be53785d9a02a3fa523b,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / White",
+        "css": "--color-surface-card"
+      },
+      {
+        "id": "S:6e8b7c3bbf655f32ce0a6d606e71eff68a15c513,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Surface Canvas",
+        "css": "--color-surface-canvas"
+      },
+      {
+        "id": "S:95e395c5df7b6967fea81e6b00ebce34bc6a2e50,",
+        "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Color / Surface Accent",
+        "css": "--color-surface-accent"
+      }
+    ],
+    "gridStyle": {
+      "id": "S:b2c09e5a4f4d2d4c8a566cfa6b1289e3dfc483b8,",
+      "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Grid / 12 Column",
+      "columns": 12,
+      "gutterPx": 24,
+      "cssColumns": "--grid-columns",
+      "cssGap": "--grid-gap"
+    },
+    "monoTextStyle": {
+      "id": "S:403905aa3080095d34ba45deecd4b102614a068b,",
+      "name": "OLUK / CANDIDATE_CONVERGENCE_v0 / Code / Mono",
+      "family": "JetBrains Mono",
+      "style": "Bold",
+      "sizePx": 11,
+      "css": "--font-mono"
+    }
+  },
   "bridgeTokens": [
+    {
+      "css": "--oluk-cobalt-alt",
+      "value": "#0057ff",
+      "figmaVariable": "accent/cobalt-interactive",
+      "figmaVariableId": "VariableID:634:36",
+      "figmaPrimitive": "blue/interactive",
+      "figmaPrimitiveId": "VariableID:634:16",
+      "scope": "accent"
+    },
+    {
+      "css": "--oluk-status-success",
+      "value": "#15803d",
+      "figmaVariable": "status/success",
+      "figmaVariableId": "VariableID:634:38",
+      "figmaPrimitive": "green/success",
+      "figmaPrimitiveId": "VariableID:634:18",
+      "scope": "non-inventory-success"
+    },
+    {
+      "css": "--oluk-status-success-soft",
+      "value": "#ecfdf3",
+      "figmaVariable": "status/success-soft",
+      "figmaVariableId": "VariableID:634:39",
+      "figmaPrimitive": "green/success-soft",
+      "figmaPrimitiveId": "VariableID:634:19",
+      "scope": "non-inventory-success-fill"
+    },
+    {
+      "css": "--oluk-text-dark",
+      "value": "var(--oluk-ink-dark)",
+      "figmaVariable": "text/dark",
+      "figmaVariableId": "VariableID:1024:56",
+      "figmaPrimitive": "ink/dark",
+      "figmaPrimitiveId": "VariableID:1024:50",
+      "scope": "text-fill"
+    },
+    {
+      "css": "--oluk-status-error",
+      "value": "#b42318",
+      "figmaVariable": "status/error",
+      "figmaVariableId": "VariableID:1024:57",
+      "figmaPrimitive": "red/error",
+      "figmaPrimitiveId": "VariableID:1024:51",
+      "scope": "status"
+    },
+    {
+      "css": "--oluk-status-error-soft",
+      "value": "#fef3f2",
+      "figmaVariable": "status/error-soft",
+      "figmaVariableId": "VariableID:1024:58",
+      "figmaPrimitive": "red/error-soft",
+      "figmaPrimitiveId": "VariableID:1024:52",
+      "scope": "status-fill"
+    },
+    {
+      "css": "--oluk-status-warning",
+      "value": "#b54708",
+      "figmaVariable": "status/warning",
+      "figmaVariableId": "VariableID:1024:59",
+      "figmaPrimitive": "amber/warning",
+      "figmaPrimitiveId": "VariableID:1024:53",
+      "scope": "status"
+    },
+    {
+      "css": "--oluk-status-unavailable-soft",
+      "value": "#f4f5f7",
+      "figmaVariable": "status/unavailable-soft",
+      "figmaVariableId": "VariableID:1024:60",
+      "figmaPrimitive": "neutral/unavailable-soft",
+      "figmaPrimitiveId": "VariableID:1024:54",
+      "scope": "status-fill"
+    },
+    {
+      "css": "--oluk-text-disabled",
+      "value": "var(--oluk-status-disabled)",
+      "figmaVariable": "text/disabled",
+      "figmaVariableId": "VariableID:1024:61",
+      "figmaPrimitive": "neutral/disabled",
+      "figmaPrimitiveId": "VariableID:1024:55",
+      "scope": "text-fill"
+    },
+    {
+      "css": "--oluk-page-padding",
+      "value": "64px",
+      "figmaVariable": "layout/page-padding",
+      "figmaVariableId": "VariableID:1024:62",
+      "scope": "spacing"
+    },
+    {
+      "css": "--oluk-section-gap",
+      "value": "32px",
+      "figmaVariable": "layout/section-gap",
+      "figmaVariableId": "VariableID:1024:63",
+      "scope": "spacing"
+    },
     {
       "css": "--oluk-border-chip",
       "value": "#d4e0f2",
@@ -992,6 +1374,24 @@
       "value": "#f8fafc",
       "figmaVariable": "surface/family",
       "scope": "fill"
+    },
+    {
+      "css": "--font-mono",
+      "value": "\"JetBrains Mono\", monospace",
+      "figmaStyle": "S:403905aa3080095d34ba45deecd4b102614a068b,",
+      "scope": "code-only-font-family"
+    },
+    {
+      "css": "--grid-columns",
+      "value": "12",
+      "figmaStyle": "S:b2c09e5a4f4d2d4c8a566cfa6b1289e3dfc483b8,",
+      "scope": "doc-grid-columns"
+    },
+    {
+      "css": "--grid-gap",
+      "value": "24px",
+      "figmaStyle": "S:b2c09e5a4f4d2d4c8a566cfa6b1289e3dfc483b8,",
+      "scope": "doc-grid-gutter"
     }
   ],
   "unmappedCanonicalCandidates": [
@@ -1018,7 +1418,7 @@
   ],
   "guardrails": {
     "officialCodeConnect": "NOT_INVOKED",
-    "figmaWrites": "REGISTRY_COPY_CORRECTION_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
+    "figmaWrites": "CONV004_FULL_FILE_CANDIDATE_CONVERGENCE_STOCKPILL_COBALT_DIVIDER_MEDIA_CHAMBER_AND_UNPUBLISHED_RECEIPT",
     "networkCallbacks": "NONE",
     "commerceCallbacks": "NONE",
     "paymentSdk": "NONE",

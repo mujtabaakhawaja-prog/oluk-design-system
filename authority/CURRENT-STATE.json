@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "snapshotId": "OLUK-CONV-003-20260812",
+  "snapshotId": "OLUK-CONV-004-20260812",
   "recordedDate": "2026-08-12",
   "program": "OLUK_DESIGN_COMMERCE_EXPERIENCE_CONVERGENCE",
-  "status": "CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "status": "CONV004_FINAL_FIGMA_CLOSEOUT_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
   "publicationState": "UNPUBLISHED",
   "promotionState": "HUMAN_REVIEW_REQUIRED",
   "controllingLedger": "authority/DECISION-LEDGER.json",
@@ -39,24 +39,87 @@
   "variables": {
     "keepAndExtend": {
       "collectionCount": 4,
-      "variableCount": 98,
+      "variableCount": 112,
       "conv002Delta": {
         "addedPrimitives": ["blue/border-chip", "blue/border-outer", "blue/border-identity", "blue/border-inner", "blue/border-family-bg", "ink/chip-value"],
         "addedSemantics": ["border/chip", "border/outer", "border/identity", "border/inner", "border/family-bg", "text/chip-value"],
         "updatedPrimitive": "neutral/family #FAFCFF → #F8FAFC"
+      },
+      "conv004Disposition": {
+        "activeCollections": [
+          {"name": "Color Primitives", "variableCount": 29},
+          {"name": "Color Semantics", "variableCount": 31},
+          {"name": "Dimensions", "variableCount": 30},
+          {"name": "Typography", "variableCount": 22}
+        ],
+        "canonicalRoleCorrections": {
+          "blue/interactive": "#0057FF",
+          "green/success": {"id": "VariableID:634:18", "value": "#15803D", "renamedFromHistorical": "green/inventory"},
+          "green/success-soft": {"id": "VariableID:634:19", "value": "#ECFDF3", "renamedFromHistorical": "green/inventory-soft"},
+          "status/success": {"id": "VariableID:634:38", "alias": "green/success", "renamedFromHistorical": "status/inventory"},
+          "status/success-soft": {"id": "VariableID:634:39", "alias": "green/success-soft", "renamedFromHistorical": "status/inventory-soft"},
+          "stockPillTokenSources": ["accent/cobalt", "surface/cobalt-soft"]
+        },
+        "publicationState": "UNPUBLISHED"
       }
     },
     "archived": {
-      "collectionCount": 3,
-      "variableCount": 128,
-      "deletionAllowed": false
+      "collectionCount": 0,
+      "variableCount": 0,
+      "disposition": "MIGRATED_THEN_DELETED_BY_EXPLICIT_DEC_VARIABLES_002",
+      "supersededDecision": "DEC-VARIABLES-001"
     }
   },
+  "colorConvergence": {
+    "decisionId": "DEC-COLOR-001",
+    "status": "CHAMPION",
+    "cobalt": "#0057FF",
+    "interactiveCobalt": "#0057FF",
+    "heading": "#141827",
+    "body": "#53617D",
+    "muted": "#64718A",
+    "secondary": "#344054",
+    "error": "#B42318",
+    "warning": "#B54708",
+    "scopedExceptions": ["text/chip-value #17213F", "DEC-MEDIA-003 literal atmospheric gradient stops"]
+  },
+  "conv004VariableDelta": {
+    "primitiveVariables": [
+      {"id": "VariableID:1024:50", "name": "ink/dark", "value": "#344054"},
+      {"id": "VariableID:1024:51", "name": "red/error", "value": "#B42318"},
+      {"id": "VariableID:1024:52", "name": "red/error-soft", "value": "#FEF3F2"},
+      {"id": "VariableID:1024:53", "name": "amber/warning", "value": "#B54708"},
+      {"id": "VariableID:1024:54", "name": "neutral/unavailable-soft", "value": "#F4F5F7"},
+      {"id": "VariableID:1024:55", "name": "neutral/disabled", "value": "#9CA3AF"}
+    ],
+    "semanticVariables": [
+      {"id": "VariableID:1024:56", "name": "text/dark", "alias": "ink/dark"},
+      {"id": "VariableID:1024:57", "name": "status/error", "alias": "red/error"},
+      {"id": "VariableID:1024:58", "name": "status/error-soft", "alias": "red/error-soft"},
+      {"id": "VariableID:1024:59", "name": "status/warning", "alias": "amber/warning"},
+      {"id": "VariableID:1024:60", "name": "status/unavailable-soft", "alias": "neutral/unavailable-soft"},
+      {"id": "VariableID:1024:61", "name": "text/disabled", "alias": "neutral/disabled"}
+    ],
+    "dimensionVariables": [
+      {"id": "VariableID:1024:62", "name": "layout/page-padding", "value": 64},
+      {"id": "VariableID:1024:63", "name": "layout/section-gap", "value": 32}
+    ]
+  },
+  "typeface": {
+    "decisionId": "DEC-TYPEFACE-001",
+    "status": "CHAMPION",
+    "display": "Plus Jakarta Sans ExtraBold",
+    "bodyAndUi": "Inter Variable",
+    "codeSpecimenException": "JetBrains Mono",
+    "figmaApiStyleStrings": ["SemiBold", "ExtraBold"],
+    "humanReadableStyleLabels": ["Semi Bold", "Extra Bold"]
+  },
   "typographyFloor": {
-    "decisionId": "DEC-TYPE-001",
-    "status": "PROPOSED_NON_CONTROLLING",
+    "decisionId": "DEC-TYPE-FLOOR-001",
+    "status": "CHAMPION",
     "metadataPx": 12,
-    "bodyPx": "15-16"
+    "bodyPx": "15-16",
+    "exception": "QualitativeChip label 11px only"
   },
   "inverseSurface": "footer_only",
   "chipGrammar": {
@@ -70,10 +133,13 @@
     "iconStroke": "accent/cobalt #0057FF"
   },
   "mediaChamber": {
-    "decisionId": "DEC-MEDIA-001",
+    "decisionId": "DEC-MEDIA-005",
     "literalStopExceptionDecisionId": "DEC-MEDIA-003",
     "clarifiedDecisionIds": ["DEC-MEDIA-002", "DEC-MEDIA-003"],
-    "status": "CHAMPION",
+    "status": "CHAMPION_CANONICAL_COMPONENT_INSTANCED",
+    "canonicalComponentSet": "1022:4099",
+    "canonicalVariants": ["998:28862", "1022:4072", "1022:4081", "1022:4090"],
+    "cardInstances": ["1010:27065", "1010:27070", "1010:27075", "1010:27080"],
     "primaryTreatment": "Outer GRADIENT_LINEAR #F8FBFF@5% → #E4ECFA@100% diagonal plus contact-shelf GRADIENT_LINEAR #FFFFFF → #E6EDFA",
     "fallbackSolid": "surface/media #F0F4FB",
     "literalStopException": "Only the exact outer #F8FBFF→#E4ECFA and contact-shelf #FFFFFF→#E6EDFA Figma gradients are allowed to remain literal, and only inside the MF-01A atmospheric media recipe; all other component fills and strokes must resolve through the active convergence variables.",
@@ -81,6 +147,38 @@
     "populationState": "POPULATED_ADAPTIVE_CHAMBERS_VERIFIED",
     "requiredOwners": ["ProductDecisionHero", "Compact", "Vertical", "Featured", "Relation"],
     "purchasePanelMedia": "NOT_APPLICABLE_NO_MEDIA_CHAMBER_BY_DESIGN"
+  },
+  "inventoryStatus": {
+    "decisionId": "DEC-STOCK-001",
+    "status": "CHAMPION_CANDIDATE_HUMAN_REVIEW_REQUIRED",
+    "sourceSpecimen": "641:17",
+    "sourceVariants": ["641:8", "641:11", "641:14"],
+    "promotedCanonical": "732:2902",
+    "promotedVariants": ["732:2903", "732:2906", "732:2909"],
+    "states": {
+      "inStock": {"foreground": "#0057FF", "background": "#EEF4FF"},
+      "outOfStock": {"foreground": "#B42318", "background": "#FEF3F2"},
+      "unavailable": {"foreground": "#64718A", "background": "#F4F5F7"}
+    },
+    "greenInventoryRejected": true,
+    "repositoryCanonicalExport": "StockPill",
+    "repositoryCanonicalPropsType": "StockPillProps",
+    "inventoryStatusExportDisposition": "NON_CANONICAL_COMPATIBILITY_ALIAS_ONLY"
+  },
+  "cobaltDivider": {
+    "decisionId": "DEC-DIVIDER-001",
+    "status": "CHAMPION_CANDIDATE_HUMAN_REVIEW_REQUIRED",
+    "atomicRuleComponent": "1010:27053",
+    "rhythmSpecimen": "1010:27054",
+    "currentBehaviorComponent": "1026:27046",
+    "currentBehaviorInstances": ["1026:27048", "1026:27050"],
+    "historicalPredecessorInstance": {
+      "node": "1010:27064",
+      "visibility": "HIDDEN",
+      "disposition": "IMMUTABLE_SUPERSEDED_HISTORICAL_PREDECESSOR"
+    },
+    "rhythm": "32px gap → 2px #0057FF divider → 32px gap",
+    "cardEyebrowAllowed": false
   },
   "shopTaxonomy": {
     "decisionId": "DEC-TAXONOMY-001",
@@ -104,7 +202,10 @@
     "runtimeSeparatelyGated": true
   },
   "canonicalCandidateSources": {
+    "inventoryStatusSourceSpecimen": "641:17",
+    "inventoryStatusSourceVariants": ["641:8", "641:11", "641:14"],
     "inventoryStatus": "732:2902",
+    "inventoryStatusVariants": ["732:2903", "732:2906", "732:2909"],
     "evidenceStatus": "732:2912",
     "metricRail": "733:95",
     "qualitativeChip": "733:17342",
@@ -116,7 +217,15 @@
     "compact": "742:50",
     "vertical": "743:50",
     "featured": "743:281",
+    "mediaChamber": "1022:4099",
+    "mediaChamberVariants": ["998:28862", "1022:4072", "1022:4081", "1022:4090"],
+    "mediaChamberInstances": ["1010:27065", "1010:27070", "1010:27075", "1010:27080"],
     "relation": "743:520",
+    "cobaltDividerAtomicRule": "1010:27053",
+    "cobaltDividerRhythmSpecimen": "1010:27054",
+    "cobaltDensityBoundary": "1026:27046",
+    "cobaltDensityBoundaryInstances": ["1026:27048", "1026:27050"],
+    "cobaltDividerHistoricalPredecessorInstance": "1010:27064",
     "purchasePanel": "745:50",
     "dossier": "750:182",
     "assuranceRail": "752:167",
@@ -177,7 +286,12 @@
     "mf09ProofBoards": "672:24",
     "mf10ApprovalBoard": "888:304",
     "codeBridgeRegistry": "911:2629",
+    "codeBridgeRegistryHeader": "911:2636",
+    "codeBridgeRegistryVersion": "1.2",
     "conv003aVisualReviewBridgeChangelog": "929:304",
+    "conv004CurrentReceipt": "1043:310",
+    "conv004CurrentReceiptType": "COMPONENT",
+    "conv004RejectedHistoricalEvidence": ["999:28867", "999:28868", "999:28872"],
     "artifactSpecificVisualReview": {
       "homepage": "921:2675",
       "shop": "921:2682",
@@ -204,6 +318,18 @@
     "governanceLabelsInsideCustomerFrames": 0,
     "publicationState": "UNPUBLISHED",
     "reviewState": "HUMAN_REVIEW_REQUIRED",
+    "finalCloseoutProof": {
+      "verificationState": "FIGMA_EXECUTION_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+      "canvasAudit": {"passed": 42, "total": 42},
+      "variableAudit": {"publicationState": "UNPUBLISHED", "total": 112, "collections": {"colorPrimitives": 29, "colorSemantics": 31, "dimensions": 30, "typography": 22}},
+      "rejectedPaintCount": 0,
+      "allowedFontFamilies": ["Inter Variable", "Plus Jakarta Sans", "JetBrains Mono"],
+      "authoredFractionalFontSizeCount": 0,
+      "computedFractionalReadings": {"count": 127, "scope": "FOUR_SCALED_REVIEW_INSTANCES_ONLY", "scaledReviewInstanceCount": 4, "authority": "COMPUTED_TRANSFORM_EVIDENCE_NOT_AUTHORED_TYPE_VALUES"},
+      "staleVariableReferences": {"activeCanonicalRoots": 0, "activeCustomerRoots": 0, "immutableHistoricalFileAliases": 1219, "historicalDebtDisposition": "PRESERVED_IMMUTABLE_NOT_ACTIVE_AUTHORITY"},
+      "currentReceipt": {"node": "1043:310", "type": "COMPONENT", "page": "25 Changelog & Version History"},
+      "immutableRejectedHistoricalEvidence": ["999:28867", "999:28868", "999:28872"]
+    },
     "conv002FidelityCompletion": {
       "verificationState": "FIGMA_RECEIPT_VERIFIED_HUMAN_REVIEW_REQUIRED",
       "sourceNodes": ["626:11814", "626:11821", "626:11822", "626:11823", "626:11824"],
@@ -258,14 +384,38 @@
         "featuredMobileIdentityReflow": "743:393",
         "foundationCurrentProjection": "637:3",
         "dossierClippedLabelCorrection": "750:182",
-        "codeBridgeRegistryV1_1": "911:2629"
+        "codeBridgeRegistryV1_2": "911:2629",
+        "codeBridgeRegistryHeader": "911:2636"
       },
       "receiptPath": "authority/receipts/CONV-003-MF09-MF10-COMPLETION.md",
       "publicationState": "UNPUBLISHED",
       "reviewState": "HUMAN_REVIEW_REQUIRED"
+    },
+    "conv004Completion": {
+      "verificationState": "FINAL_FIGMA_CLOSEOUT_VERIFIED_REPOSITORY_VALIDATED_WORKTREE_PENDING_IMPLEMENTATION_COMMIT_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+      "decisionIds": ["DEC-COLOR-001", "DEC-TYPEFACE-001", "DEC-TYPE-FLOOR-001", "DEC-VARIABLES-002", "DEC-STOCK-001", "DEC-DIVIDER-001", "DEC-MEDIA-005", "DEC-CONV-004", "DEC-CONV-004-CLOSEOUT-001"],
+      "activeVariableCollections": 4,
+      "activeVariableCount": 112,
+      "archivedVariableCollections": 0,
+      "archivedVariableCount": 0,
+      "inventorySourceSpecimen": "641:17",
+      "inventoryPromotedCanonical": "732:2902",
+      "mediaChamberComponentSet": "1022:4099",
+      "mediaChamberVariants": ["998:28862", "1022:4072", "1022:4081", "1022:4090"],
+      "mediaChamberInstances": ["1010:27065", "1010:27070", "1010:27075", "1010:27080"],
+      "cobaltDividerAtomicRule": "1010:27053",
+      "cobaltDividerRhythmSpecimen": "1010:27054",
+      "cobaltDensityBoundary": "1026:27046",
+      "cobaltDensityBoundaryInstances": ["1026:27048", "1026:27050"],
+      "cobaltDividerHistoricalPredecessor": {"node": "1010:27064", "visibility": "HIDDEN", "disposition": "IMMUTABLE_SUPERSEDED_HISTORICAL_PREDECESSOR"},
+      "currentReceipt": {"node": "1043:310", "type": "COMPONENT", "page": "25 Changelog & Version History"},
+      "rejectedHistoricalReceiptEvidence": ["999:28867", "999:28868", "999:28872"],
+      "finalProof": {"canvases": "42_OF_42", "rejectedPaints": 0, "authoredFractionalFontSizes": 0, "computedFractionalReadingsInFourScaledReviewInstances": 127, "activeCanonicalRootStaleVariableRefs": 0, "activeCustomerRootStaleVariableRefs": 0, "immutableHistoricalAliasDebt": 1219},
+      "publicationState": "UNPUBLISHED",
+      "reviewState": "HUMAN_REVIEW_REQUIRED"
     }
   },
-  "currentGate": "MF10_ARTIFACT_SPECIFIC_CHAMPION_APPROVAL_REQUIRED",
+  "currentGate": "CONV004_ARTIFACT_SPECIFIC_CHAMPION_APPROVAL_REQUIRED",
   "runQueue": [
     {"run": "MF-03A", "priority": "P0", "work": "shell and homepage candidate", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "764:50"},
     {"run": "MF-03B", "priority": "P0", "work": "OpenLab portal candidate", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "767:50"},
@@ -275,14 +425,16 @@
     {"run": "MF-06", "priority": "P1", "work": "OpenLab archive and record lifecycle", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:19"},
     {"run": "MF-07", "priority": "P1", "work": "bag checkout and post-purchase presentation", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:21"},
     {"run": "MF-09", "priority": "P0", "work": "responsive local-state accessibility and stress proof", "state": "CANDIDATE_COMPLETE_VERIFIED_HUMAN_REVIEW_REQUIRED", "figmaNode": "672:14"},
-    {"run": "MF-10", "priority": "P0", "work": "cross-route final design gate candidate", "state": "CANDIDATE_ASSEMBLED_VERIFIED_CHAMPION_APPROVAL_BLOCKED", "figmaNode": "888:304"},
+    {"run": "MF-10", "priority": "P0", "work": "cross-route final design gate candidate reconciled through CONV-004", "state": "CANDIDATE_RECONCILED_CONV004_CHAMPION_APPROVAL_BLOCKED", "figmaNode": "888:304", "correctionReceipt": "1043:310", "rejectedHistoricalReceiptEvidence": ["999:28867", "999:28868", "999:28872"]},
     {"run": "MF++", "priority": "POST_GATE", "work": "publication runtime translation and Code Connect", "state": "BLOCKED_PENDING_MF10_CHAMPION_APPROVAL_AND_SEPARATE_AUTHORIZATION"}
   ],
   "sitesImplementation": {
-    "state": "CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-    "sourceCommit": "5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1",
-    "completionCommit": "bba06da93ce02dfd17bce3766c61f2d59b538cbe",
-    "codeBridgeCommit": "67a43c93da22b5125a379d541a6444aecfa83ebf",
+    "state": "CONV004_REPOSITORY_VALIDATED_WORKTREE_PENDING_IMPLEMENTATION_COMMIT_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    "sourceCommit": "216076987196e2b09164e7628390285b71222a51",
+    "completionCommit": "216076987196e2b09164e7628390285b71222a51",
+    "codeBridgeCommit": "216076987196e2b09164e7628390285b71222a51",
+    "conv004BranchBase": "ad8500d091fb6217a93c3ebbdb1d37954abd45ab",
+    "conv004Receipt": "authority/receipts/CONV-004-DESIGN-CONVERGENCE.md",
     "candidateSurfaces": ["Homepage", "Shop", "PDP", "OpenLab", "Evidence lifecycle", "Decision tools", "Bag and checkout presentation", "Post-purchase presentation", "Owner review"],
     "routeCount": 31,
     "conv003Completion": {
@@ -295,31 +447,34 @@
       "figmaCodeBridge": "authority/FIGMA-CODE-BRIDGE.json",
       "figmaCodeBridgeStaticResource": "sites/oluk-experience-lab/public/.well-known/oluk-figma-code-bridge.json",
       "figmaCodeBridgeProof": "sites/oluk-experience-lab/scripts/proof/figma-code-bridge.mjs",
-      "transactionRuntimeGuard": "STATIC_IMPORT_GRAPH_AND_DEPENDENCY_SCAN_NO_CALLBACKS_NO_SDKS",
-      "status": "CX_NEXT_001_047_VERIFIED_CX_NEXT_048_050_BLOCKED"
+      "conv004Mappings": ["InventoryStatus / StockPill", "ProductMediaChamber", "CobaltDensityBoundary"],
+      "transactionRuntimeGuard": "PASS_8_OF_8_STATIC_TRANSACTION_ROUTES_ZERO_CALLBACKS_NO_SDKS_NO_RUNTIME_MUTATION",
+      "status": "CONV004_REPOSITORY_VALIDATED_WORKTREE_PENDING_IMPLEMENTATION_COMMIT_HUMAN_REVIEW_REQUIRED_UNPUBLISHED"
     },
     "validation": {
       "build": "PASS",
       "typecheck": "PASS",
       "lint": "PASS",
-      "tests": "PASS_41_OF_41_FULL_CANDIDATE_SUITE",
+      "tests": "PASS_53_OF_53_FULL_CANDIDATE_SUITE",
       "contractProofs": "PASS",
       "contractProofDetails": {
-        "tokenManifest": {"status": "PASS", "activeVariables": 98, "individuallyDocumented": 98, "pendingIndividualInventory": 0},
-        "componentProvenance": {"status": "PASS", "passed": 63, "total": 63},
+        "tokenManifest": {"status": "PASS", "activeVariables": 112, "individuallyDocumented": 112, "pendingIndividualInventory": 0, "cssCustomProperties": 128},
+        "componentProvenance": {"status": "PASS", "passed": 71, "total": 71},
         "taxonomy": {"status": "PASS", "passed": 5, "total": 5, "runtimeMutationAuthorized": false},
-        "figmaCodeBridge": {"status": "PASS", "passed": 201, "total": 201, "componentMappings": 15, "routeMappings": 9, "officialCodeConnectInvoked": false, "networkCallbacks": 0},
-        "visualBaselines": {"status": "PASS_CANDIDATE_CAPTURE", "routeWidthCases": 124, "capturedUnreviewed": 124, "championReviewed": 0}
+        "figmaCodeBridge": {"status": "PASS", "passed": 290, "total": 290, "componentMappings": 18, "routeMappings": 9, "tokenCount": 112, "officialCodeConnectInvoked": false, "networkCallbacks": 0},
+        "cssColorContract": {"status": "PASS", "rejectedActiveCssValues": 0, "ungovernedActiveCssValues": 0},
+        "visualBaselines": {"status": "PASS_CANDIDATE_CAPTURE", "routeWidthCases": 124, "capturedUnreviewed": 124, "championReviewed": 0, "manifest": "sites/oluk-experience-lab/tests/visual-baselines/manifest.json", "screenshotRoot": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-conv004-final4-20260812/screenshots"}
       },
       "mf09": {
         "proofScope": "ALL_31_CANDIDATE_ROUTES",
         "widthsPx": [1440, 1024, 768, 390],
-        "boundsAndCapture": "PASS",
-        "localStates": "PASS",
-        "accessibilityAndStress": "PASS_62_OF_62_A11Y_AND_30_OF_30_CUSTOMER_ROUTE_AA_ZOOM_LONG_COPY",
-        "interactionCases": {"status": "PASS", "passed": 27, "total": 27, "postHydrationNetworkCallbacks": 0},
-        "stressCases": {"status": "PASS", "customerRoutes": 30, "wcagAAViolationRules": 0, "zoomOverflowRoutes": 0, "longCopyFailureRoutes": 0, "enhancedAAARequiresManualReview": true},
-        "receiptDirectory": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-conv003-mf09-20260812/final-all-route",
+        "boundsAndCapture": "PASS_124_OF_124_OFFICIAL_AND_124_OF_124_DETAILED",
+        "localStates": "PASS_35_OF_35_INTERACTIONS_INCLUDING_8_OF_8_TRANSACTION_ZERO_CALLBACK",
+        "accessibilityAndStress": "PASS_62_OF_62_A11Y_AND_30_OF_30_CUSTOMER_ROUTE_AA_ZOOM_LONG_COPY_ZERO_VIOLATIONS_30_MANUAL_REVIEW_INCOMPLETES",
+        "interactionCases": {"status": "PASS", "passed": 35, "total": 35, "transactionZeroCallbackPassed": 8, "transactionZeroCallbackTotal": 8, "postHydrationNetworkCallbacks": 0},
+        "stressCases": {"status": "PASS", "customerRoutes": 30, "wcagAAViolationRules": 0, "zoomOverflowRoutes": 0, "longCopyFailureRoutes": 0, "manualReviewIncompletes": 30, "enhancedAAARequiresManualReview": true},
+        "receiptDirectory": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-conv004-final4-20260812",
+        "receipts": {"official": "mf09-four-width-receipt.json", "detailed": "conv004-detailed-browser-audit.json", "accessibility": "mf09-accessibility-smoke.json", "contrastZoomLongCopy": "cx38-contrast-zoom-long-copy.json", "interactions": "cx37-interaction-state-proof.json", "screenshots": "screenshots/"},
         "visible90Caps": 0,
         "governanceLabelLeakage": 0,
         "footerSolePersistentInverse": true
@@ -339,9 +494,9 @@
     },
     "deployment": "NONE",
     "humanReviewRequired": true,
-    "figmaMutationScope": "REGISTRY_COPY_CORRECTION_COMPONENT_LAYOUT_FIXES_AND_UNPUBLISHED_VISUAL_REVIEW_BOARDS_ONLY",
+    "figmaMutationScope": "CONV004_FULL_FILE_CANDIDATE_CONVERGENCE_STOCKPILL_COBALT_DIVIDER_MEDIA_CHAMBER_AND_UNPUBLISHED_RECEIPT",
     "doesNotPromoteOrPublishFigma": true,
     "doesNotGrantProductionRuntimeAuthority": true
   },
-  "runtimeAuthority": "NONE_UNTIL_ARTIFACT_SPECIFIC_MF10_CHAMPION_APPROVAL_AND_SEPARATE_MF_PLUS_PLUS_AUTHORIZATION"
+  "runtimeAuthority": "NONE_UNTIL_ARTIFACT_SPECIFIC_CONV004_MF10_CHAMPION_APPROVAL_AND_SEPARATE_MF_PLUS_PLUS_AUTHORIZATION"
 }

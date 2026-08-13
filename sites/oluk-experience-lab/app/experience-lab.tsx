@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- local transparent Figma assets require authored object-fit treatment. */
 /* eslint-disable @next/next/no-html-link-for-pages -- plain anchors preserve stable Vinext hydration in the private Sites build. */
 
+import type { ReactNode } from "react";
+
 import {
   AboutRoute,
   CompareRoute,
@@ -17,40 +19,42 @@ import {
   SourceChainRoute,
 } from "./customer-routes";
 import { ShopDiscovery } from "./design-system/shop-discovery";
+import {
+  getCustomerRoute,
+  PRIMARY_NAV_ROUTE_KEYS,
+  type CoreCustomerRouteKey,
+} from "./design-system/site-route-map";
+import {
+  SHOP_AVAILABILITY_OPTIONS,
+  SHOP_FAMILY_OPTIONS,
+  SHOP_FORM_OPTIONS,
+  SHOP_GOAL_OPTIONS,
+  SHOP_SERVINGS_OPTIONS,
+} from "./design-system/shop-taxonomy";
 import { TransactionPresentation } from "./design-system/transaction-presentation";
 
-type RouteKey =
-  | "home"
-  | "shop"
-  | "product"
-  | "openlab"
-  | "records"
-  | "record"
-  | "dossier"
-  | "lookup"
-  | "methodology"
-  | "source-chain"
-  | "compare"
-  | "evidence-os"
-  | "about"
-  | "reviews"
-  | "search"
-  | "wholesale"
-  | "account"
-  | "contact"
-  | "delivery"
-  | "privacy"
-  | "terms"
-  | "bag"
-  | "checkout-details"
-  | "checkout-delivery"
-  | "payment-handoff"
-  | "order-pay"
-  | "confirmation"
-  | "failure"
-  | "retry";
+type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review">;
+type PrimaryNavRouteKey = (typeof PRIMARY_NAV_ROUTE_KEYS)[number];
+type ExperienceLabProps = { route: ExperienceRouteKey; lookupReference?: string };
 
-type ExperienceLabProps = { route: RouteKey; lookupReference?: string };
+const PRIMARY_NAV_LABELS = {
+  shop: "SHOP",
+  openlab: "OPEN LAB",
+  "lab-reports": "LAB RECORDS",
+  wholesale: "WHOLESALE",
+  about: "ABOUT",
+} as const satisfies Readonly<Record<PrimaryNavRouteKey, string>>;
+
+function activePrimaryRoute(route: ExperienceRouteKey): PrimaryNavRouteKey | null {
+  const definition = getCustomerRoute(route);
+  if (definition.section === "shop") return "shop";
+  if (definition.section === "company") return "about";
+  if (route === "wholesale") return "wholesale";
+  if (definition.section !== "openlab") return null;
+  return ["openlab", "methodology", "source-chain"].includes(route)
+    ? "openlab"
+    : "lab-reports";
+}
 
 function Arrow() {
   return <span aria-hidden="true">→</span>;
@@ -74,7 +78,7 @@ function BagIcon() {
   );
 }
 
-function ActionLink({ href, children, secondary = false }: { href: string; children: React.ReactNode; secondary?: boolean }) {
+function ActionLink({ href, children, secondary = false }: { href: string; children: ReactNode; secondary?: boolean }) {
   return (
     <a className={secondary ? "button button-secondary" : "button"} href={href}>
       <span>{children}</span>
@@ -83,20 +87,16 @@ function ActionLink({ href, children, secondary = false }: { href: string; child
   );
 }
 
-function SiteHeader({ route }: { route: RouteKey }) {
-  const shopActive = ["shop", "product", "reviews"].includes(route);
-  const labActive = ["openlab", "methodology", "source-chain"].includes(route);
-  const recordsActive = ["records", "record", "dossier", "lookup", "compare"].includes(route);
-  const wholesaleActive = route === "wholesale";
-  const aboutActive = ["about", "evidence-os"].includes(route);
+function SiteHeader({ route }: { route: ExperienceRouteKey }) {
+  const activeRoute = activePrimaryRoute(route);
   return (
     <header className="site-header">
       <div className="trust-rail">
         <div className="shell trust-rail-inner">
           <span><i />Free UK Delivery Over £50</span>
           <span><i />Free Int&apos;l Delivery £300+</span>
-          <span><i />Third-Party Lab Verified</span>
-          <span><i />JANOSHIK Validated</span>
+          <span><i />Specifications Visible</span>
+          <span><i />Records When Available</span>
           <span><i />Encrypted Checkout</span>
           <a href="/lab-reports">Browse Lab Records <Arrow /></a>
         </div>
@@ -107,11 +107,14 @@ function SiteHeader({ route }: { route: RouteKey }) {
             <img src="/assets/brand/oluk-logo-on-light.png" alt="Olympus Labs UK" />
           </a>
           <nav className="desktop-nav" aria-label="Primary navigation">
-            <a aria-current={shopActive ? "page" : undefined} href="/shop">SHOP</a>
-            <a aria-current={labActive ? "page" : undefined} href="/open-lab">OPEN LAB</a>
-            <a aria-current={recordsActive ? "page" : undefined} href="/lab-reports">LAB RECORDS</a>
-            <a aria-current={wholesaleActive ? "page" : undefined} href="/wholesale">WHOLESALE</a>
-            <a aria-current={aboutActive ? "page" : undefined} href="/about">ABOUT</a>
+            {PRIMARY_NAV_ROUTE_KEYS.map((key) => {
+              const destination = getCustomerRoute(key);
+              return (
+                <a aria-current={activeRoute === key ? "page" : undefined} href={destination.path} key={key}>
+                  {PRIMARY_NAV_LABELS[key]}
+                </a>
+              );
+            })}
           </nav>
           <div className="nav-actions">
             <a className="icon-action" href="/search" aria-label="Search"><SearchIcon /><span className="sr-only">Search</span></a>
@@ -120,14 +123,39 @@ function SiteHeader({ route }: { route: RouteKey }) {
           <details className="mobile-menu">
             <summary>Menu</summary>
             <nav aria-label="Mobile navigation">
-              <a href="/shop">SHOP</a>
-              <a href="/open-lab">OPEN LAB</a>
-              <a href="/lab-reports">LAB RECORDS</a>
-              <a href="/wholesale">WHOLESALE</a>
-              <a href="/about">ABOUT</a>
+              {PRIMARY_NAV_ROUTE_KEYS.map((key) => {
+                const destination = getCustomerRoute(key);
+                return <a href={destination.path} key={key}>{PRIMARY_NAV_LABELS[key]}</a>;
+              })}
               <span className="mobile-menu-actions"><a href="/search">SEARCH</a><a href="/bag">BAG · 0</a></span>
             </nav>
           </details>
+        </div>
+      </div>
+      <div className="shop-taxonomy-plane">
+        <div className="shell shop-taxonomy-shell">
+          <span className="shop-taxonomy-label">SHOP BY FAMILY</span>
+          <nav aria-label="Shop by product family">
+            {SHOP_FAMILY_OPTIONS.map(({ label, slug }) => (
+              <a href={`/shop?family=${slug}`} key={slug}>{label}</a>
+            ))}
+          </nav>
+          <span aria-hidden="true" className="shop-taxonomy-separator" />
+          <span className="shop-taxonomy-label">REFINE</span>
+          <nav aria-label="Refine shop discovery">
+            {SHOP_FORM_OPTIONS.map(({ label, slug }) => (
+              <a href={`/shop?form=${slug}`} key={`form-${slug}`}>{label}</a>
+            ))}
+            {SHOP_SERVINGS_OPTIONS.map(({ count, label }) => (
+              <a href={`/shop?servings=${count}`} key={`servings-${count}`}>{label}</a>
+            ))}
+            {SHOP_GOAL_OPTIONS.map(({ label, slug }) => (
+              <a href={`/shop?goal=${slug}`} key={`goal-${slug}`}>{label}</a>
+            ))}
+            {SHOP_AVAILABILITY_OPTIONS.map(({ label, slug }) => (
+              <a href={`/shop?availability=${slug}`} key={`availability-${slug}`}>{label}</a>
+            ))}
+          </nav>
         </div>
       </div>
     </header>
@@ -155,7 +183,7 @@ function SiteFooter() {
     </footer>
   );
 }
-function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: string; copy: string; actions?: React.ReactNode }) {
+function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: string; copy: string; actions?: ReactNode }) {
   return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p>{actions && <div className="button-row">{actions}</div>}</div></section>;
 }
 
@@ -194,38 +222,40 @@ function PolicyBridgePage({ kind }: { kind: "privacy" | "terms" }) {
   return <><PageHero eyebrow={privacy ? "PRIVACY" : "TERMS"} title={privacy ? "Privacy information." : "Terms and conditions."} copy={privacy ? "Review how Olympus Labs UK handles information across the current customer service." : "Review the terms that apply to the current Olympus Labs UK customer service."} actions={<a className="button" href={liveHref} rel="external">Read the current {privacy ? "privacy policy" : "terms"} <Arrow /></a>} /><section className="section"><div className="shell utility-card utility-policy-card"><span className="eyebrow">CUSTOMER INFORMATION</span><h2>{privacy ? "Use the current published privacy policy." : "Use the current published terms."}</h2><p>Open the full document above to read the applicable information.</p></div></section></>;
 }
 
+const routeRenderers = {
+  home: () => <HomeRoute />,
+  shop: () => <ShopPage />,
+  product: () => <ProductRoute />,
+  reviews: () => <ReviewsRoute />,
+  about: () => <AboutRoute />,
+  "evidence-os": () => <EvidenceOsRoute />,
+  account: () => <AccountPage />,
+  bag: () => <TransactionPresentation stage="bag" />,
+  checkout: () => <TransactionPresentation stage="details" />,
+  "checkout-delivery": () => <TransactionPresentation stage="delivery" />,
+  "checkout-payment-handoff": () => <TransactionPresentation stage="handoff" />,
+  "checkout-order-pay": () => <TransactionPresentation stage="order-pay" />,
+  "checkout-confirmation": () => <TransactionPresentation stage="confirmation" />,
+  "checkout-failure": () => <TransactionPresentation stage="failure" />,
+  "checkout-retry": () => <TransactionPresentation stage="retry" />,
+  contact: () => <ContactPage />,
+  delivery: () => <DeliveryPage />,
+  "lab-reports": () => <RecordsRoute />,
+  openlab: () => <OpenLabRoute />,
+  records: () => <RecordsRoute />,
+  record: () => <RecordRoute />,
+  dossier: () => <DossierRoute />,
+  lookup: (lookupReference?: string) => <LookupRoute reference={lookupReference} />,
+  methodology: () => <MethodologyRoute />,
+  "source-chain": () => <SourceChainRoute />,
+  compare: () => <CompareRoute />,
+  privacy: () => <PolicyBridgePage kind="privacy" />,
+  search: () => <SearchPage />,
+  terms: () => <PolicyBridgePage kind="terms" />,
+  wholesale: () => <WholesalePage />,
+} satisfies Readonly<Record<ExperienceRouteKey, (lookupReference?: string) => ReactNode>>;
+
 export function ExperienceLab({ route, lookupReference }: ExperienceLabProps) {
-  let content: React.ReactNode;
-  switch (route) {
-    case "shop": content = <ShopPage />; break;
-    case "product": content = <ProductRoute />; break;
-    case "openlab": content = <OpenLabRoute />; break;
-    case "records": content = <RecordsRoute />; break;
-    case "record": content = <RecordRoute />; break;
-    case "dossier": content = <DossierRoute />; break;
-    case "lookup": content = <LookupRoute reference={lookupReference} />; break;
-    case "methodology": content = <MethodologyRoute />; break;
-    case "source-chain": content = <SourceChainRoute />; break;
-    case "compare": content = <CompareRoute />; break;
-    case "evidence-os": content = <EvidenceOsRoute />; break;
-    case "about": content = <AboutRoute />; break;
-    case "reviews": content = <ReviewsRoute />; break;
-    case "search": content = <SearchPage />; break;
-    case "wholesale": content = <WholesalePage />; break;
-    case "account": content = <AccountPage />; break;
-    case "contact": content = <ContactPage />; break;
-    case "delivery": content = <DeliveryPage />; break;
-    case "privacy": content = <PolicyBridgePage kind="privacy" />; break;
-    case "terms": content = <PolicyBridgePage kind="terms" />; break;
-    case "bag": content = <TransactionPresentation stage="bag" />; break;
-    case "checkout-details": content = <TransactionPresentation stage="details" />; break;
-    case "checkout-delivery": content = <TransactionPresentation stage="delivery" />; break;
-    case "payment-handoff": content = <TransactionPresentation stage="handoff" />; break;
-    case "order-pay": content = <TransactionPresentation stage="order-pay" />; break;
-    case "confirmation": content = <TransactionPresentation stage="confirmation" />; break;
-    case "failure": content = <TransactionPresentation stage="failure" />; break;
-    case "retry": content = <TransactionPresentation stage="retry" />; break;
-    default: content = <HomeRoute />;
-  }
+  const content = routeRenderers[route](lookupReference);
   return <div className="experience-lab"><SiteHeader route={route} /><main id="main-content">{content}</main><SiteFooter /></div>;
 }

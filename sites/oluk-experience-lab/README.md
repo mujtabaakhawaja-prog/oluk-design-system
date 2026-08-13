@@ -12,7 +12,7 @@ The authority order is append-only:
 2. `THIS_RUN_DELTA`: corrected product truth, canonical sources, four graduated single shadows and legacy-variable archival.
 3. `DO_NOT_INHERIT`: raw later-board composition, the wrapped Hero component, `90 CAPS`, and the archived two-layer shadow recipe.
 
-The 12px metadata / 15–16px body floor is implemented only as a review proposal and remains non-controlling.
+`DEC-TYPE-FLOOR-001` now controls a 12px metadata and 15–16px body floor. The MF-01A QualitativeChip label is the sole named 11px exception.
 
 Current governed product truth is limited to:
 

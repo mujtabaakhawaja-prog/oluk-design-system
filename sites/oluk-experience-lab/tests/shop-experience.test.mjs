@@ -6,20 +6,14 @@ const appRoot = new URL("../app/", import.meta.url);
 
 test("customer shell mirrors the production navigation contract without orphan static routes", async () => {
   const source = await readFile(new URL("experience-lab.tsx", appRoot), "utf8");
-  const expectedNavigation = [
-    ["SHOP", "/shop"],
-    ["OPEN LAB", "/open-lab"],
-    ["LAB RECORDS", "/lab-reports"],
-    ["WHOLESALE", "/wholesale"],
-    ["ABOUT", "/about"],
-  ];
-
-  let prior = -1;
-  for (const [label, href] of expectedNavigation) {
-    const current = source.indexOf(`href="${href}">${label}</a>`);
-    assert.ok(current > prior, `${label} follows production navigation order`);
-    prior = current;
-  }
+  const { CUSTOMER_ROUTES, PRIMARY_NAV_ROUTE_KEYS } = await import("../app/design-system/site-route-data.mjs");
+  assert.deepEqual(PRIMARY_NAV_ROUTE_KEYS, ["shop", "openlab", "lab-reports", "wholesale", "about"]);
+  assert.deepEqual(
+    PRIMARY_NAV_ROUTE_KEYS.map((key) => CUSTOMER_ROUTES.find((route) => route.key === key)?.path),
+    ["/shop", "/open-lab", "/lab-reports", "/wholesale", "/about"],
+  );
+  assert.match(source, /PRIMARY_NAV_ROUTE_KEYS\.map/);
+  assert.match(source, /getCustomerRoute\(key\)/);
 
   for (const [label, href] of [["Search", "/search"], ["Bag", "/bag"]]) {
     assert.match(source, new RegExp(`href="${href}"[^>]*aria-label="${label}`, "i"));
@@ -38,6 +32,12 @@ test("customer shell mirrors the production navigation contract without orphan s
     const route = await readFile(new URL(`${pathname}/page.tsx`, appRoot), "utf8");
     assert.match(route, /<ExperienceLab\s+route=/, `${pathname} is a static presentation route`);
   }
+
+  for (const sourceName of ["SHOP_FAMILY_OPTIONS", "SHOP_FORM_OPTIONS", "SHOP_SERVINGS_OPTIONS", "SHOP_GOAL_OPTIONS", "SHOP_AVAILABILITY_OPTIONS"]) {
+    assert.match(source, new RegExp(sourceName), `${sourceName} is projected into header discovery`);
+  }
+  assert.match(source, /aria-label="Shop by product family"/);
+  assert.match(source, /aria-label="Refine shop discovery"/);
 });
 
 test("Shop uses independent combinable facets and keeps the candidate non-live", async () => {
@@ -60,6 +60,14 @@ test("Shop uses independent combinable facets and keeps the candidate non-live",
   assert.match(discovery, /data-live-authority="false"/g);
   assert.match(discovery, /aria-live="polite"/);
   assert.match(discovery, /<fieldset>/g);
+  assert.match(discovery, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
+  assert.match(discovery, /import \{ mk2866Fixture, type ProductMediaAsset \} from "\.\/product-fixtures"/);
+  assert.match(discovery, /product\.fixtureId === "mk-2866"[\s\S]*?<ProductCommerceCard[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="featured"/);
+  assert.match(discovery, /className="shop-result-card shop-result-card-canonical"/);
+  assert.match(discovery, /function ShopDiscoveryResult/);
+  assert.match(discovery, /<ProductMediaChamber context="featured" media=\{taxonomyMedia\(product\)\} \/>/);
+  assert.match(discovery, /<StockPill className="shop-result-availability" state=\{stockState\(product\)\} \/>/);
+  assert.doesNotMatch(discovery, /function ShopResultCard|shop-result-orbit|<img/);
   assert.match(discovery, /<button className=\{[^}]+\} disabled type="button">\{purchaseLabel\}<\/button>/);
   assert.match(discovery, /product\.imageSrc/);
 });
@@ -70,6 +78,6 @@ test("Shop layout remains responsive without hiding geometry overflow", async ()
   assert.match(css, /\.shop-result-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.shop-result-grid\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(css, /\.shop-filter-groups\s*\{[^}]*grid-template-columns:\s*repeat\(5,/s);
-  assert.match(css, /\.shop-result-media\s*\{[^}]*background:\s*var\(--oluk-media-gradient\)/s);
+  assert.doesNotMatch(css, /\.shop-result-media|\.shop-result-orbit/);
   assert.doesNotMatch(css, /\.shop-discovery[^}]*overflow-x:\s*clip/is);
 });

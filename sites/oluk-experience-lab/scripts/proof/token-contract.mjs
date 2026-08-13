@@ -27,16 +27,22 @@ const semanticCssMap = Object.freeze({
   "border/inner": ["--oluk-border-inner", "#b4caf0"],
   "border/family-bg": ["--oluk-border-family-bg", "#d9e3f1"],
   "text/primary": ["--oluk-text-primary", "#141827"],
+  "text/dark": ["--oluk-text-dark", "var(--oluk-ink-dark)"],
   "text/secondary": ["--oluk-text-secondary", "#53617d"],
   "text/muted": ["--oluk-text-muted", "#64718a"],
   "text/on-inverse": ["--oluk-text-on-inverse", "#ffffff"],
   "text/on-inverse-muted": ["--oluk-text-on-inverse-muted", "#b9c7dd"],
   "text/chip-value": ["--oluk-text-chip-value", "#17213f"],
   "accent/cobalt": ["--oluk-cobalt", "#0057ff"],
-  "accent/cobalt-interactive": ["--oluk-cobalt-alt", "#256dff"],
+  "accent/cobalt-interactive": ["--oluk-cobalt-alt", "#0057ff"],
   "accent/cobalt-focus": ["--oluk-cobalt-focus", "rgba(0,87,255,0.28)"],
-  "status/inventory": ["--oluk-inventory-green", "#15803d"],
-  "status/inventory-soft": ["--oluk-inventory-green-soft", "#ecfdf3"],
+  "status/success": ["--oluk-status-success", "#15803d"],
+  "status/success-soft": ["--oluk-status-success-soft", "#ecfdf3"],
+  "status/error": ["--oluk-status-error", "#b42318"],
+  "status/error-soft": ["--oluk-status-error-soft", "#fef3f2"],
+  "status/warning": ["--oluk-status-warning", "#b54708"],
+  "status/unavailable-soft": ["--oluk-status-unavailable-soft", "#f4f5f7"],
+  "text/disabled": ["--oluk-text-disabled", "var(--oluk-status-disabled)"],
 });
 
 const dimensionCssMap = Object.freeze({
@@ -52,6 +58,8 @@ const dimensionCssMap = Object.freeze({
   "space/16": ["--oluk-space-16", "64px", "GAP"],
   "space/18": ["--oluk-space-18", "72px", "GAP"],
   "space/24": ["--oluk-space-24", "96px", "GAP"],
+  "layout/page-padding": ["--oluk-page-padding", "64px", "GAP"],
+  "layout/section-gap": ["--oluk-section-gap", "32px", "GAP"],
   "border/width": ["--oluk-border-width", "1px", "STROKE_FLOAT"],
   "divider/width": ["--oluk-divider-width", "2px", "STROKE_FLOAT"],
   "focus/width": ["--oluk-focus-width", "2px", "STROKE_FLOAT"],
@@ -72,7 +80,7 @@ const dimensionCssMap = Object.freeze({
 
 const typographyCssMap = Object.freeze({
   "family/display": ["--oluk-font-display", '"Plus Jakarta Sans", sans-serif', "FONT_FAMILY"],
-  "family/body": ["--oluk-font-body", '"Inter", sans-serif', "FONT_FAMILY"],
+  "family/body": ["--oluk-font-body", '"Inter Variable", sans-serif', "FONT_FAMILY"],
   "display/xl/size": ["--oluk-type-display-xl-size", "56px", "FONT_SIZE"],
   "display/xl/line": ["--oluk-type-display-xl-line", "60px", "LINE_HEIGHT"],
   "display/xl/track": ["--oluk-type-display-xl-track", "-4px", "LETTER_SPACING"],
@@ -123,6 +131,15 @@ function parseGovernedTable(section) {
   }));
 }
 
+function parseConv004RoleTable(section) {
+  return [...section.matchAll(/^\|\s*`([^`]+)`\s*\|\s*`([^`]+)`\s*\|\s*`(VariableID:[^`]+)`\s*\|\s*([^|]+?)\s*\|$/gm)].map((match) => ({
+    name: match[1],
+    valueOrAlias: match[2],
+    figmaId: match[3],
+    job: match[4].trim(),
+  }));
+}
+
 function getSection(markdown, startHeading, endHeading) {
   const start = markdown.indexOf(startHeading);
   const end = markdown.indexOf(endHeading, start + startHeading.length);
@@ -139,19 +156,37 @@ export async function buildTokenManifest() {
   ]);
   const currentState = JSON.parse(currentStateSource);
   const cssVariables = parseCssVariables(css);
-  const primitives = parseTable(getSection(surfaceContract, "### Color Primitives (23 variables)", "### Color Semantics (25 variables)"));
-  const semantics = parseTable(getSection(surfaceContract, "### Color Semantics (25 variables)", "### Dimensions (28 variables)"));
-  const dimensions = parseGovernedTable(getSection(surfaceContract, "### Dimensions (28 variables)", "### Typography (22 variables)"));
+  const basePrimitives = parseTable(getSection(surfaceContract, "### Color Primitives (23 variables)", "### Color Semantics (25 variables)"));
+  const baseSemantics = parseTable(getSection(surfaceContract, "### Color Semantics (25 variables)", "### Dimensions (28 variables)"));
+  const baseDimensions = parseGovernedTable(getSection(surfaceContract, "### Dimensions (28 variables)", "### Typography (22 variables)"));
   const typography = parseGovernedTable(getSection(surfaceContract, "### Typography (22 variables)", "## Review and promotion"));
+  const conv004Roles = parseConv004RoleTable(getSection(surfaceContract, "### Explicit role variables", "### StockPill"));
+  const primitiveNames = new Set(["ink/dark", "red/error", "red/error-soft", "amber/warning", "neutral/unavailable-soft", "neutral/disabled"]);
+  const semanticNames = new Set(["text/dark", "status/error", "status/error-soft", "status/warning", "status/unavailable-soft", "text/disabled"]);
+  const dimensionNames = new Set(["layout/page-padding", "layout/section-gap"]);
+  const primitives = [...basePrimitives, ...conv004Roles.filter(({ name }) => primitiveNames.has(name))];
+  const semantics = [...baseSemantics, ...conv004Roles.filter(({ name }) => semanticNames.has(name))];
+  const dimensions = [
+    ...baseDimensions,
+    ...conv004Roles
+      .filter(({ name }) => dimensionNames.has(name))
+      .map((entry) => ({
+        name: entry.name,
+        rawValue: entry.valueOrAlias,
+        scope: "GAP",
+        webSyntax: `var(${dimensionCssMap[entry.name][0]})`,
+        figmaId: entry.figmaId,
+      })),
+  ];
 
-  assert.equal(currentState.variables.keepAndExtend.variableCount, 98, "current-state active variable count");
-  assert.equal(primitives.length, 23, "primitive color inventory");
-  assert.equal(semantics.length, 25, "semantic color inventory");
-  assert.equal(dimensions.length, 28, "dimension inventory");
+  assert.equal(currentState.variables.keepAndExtend.variableCount, 112, "current-state active variable count");
+  assert.equal(primitives.length, 29, "primitive color inventory");
+  assert.equal(semantics.length, 31, "semantic color inventory");
+  assert.equal(dimensions.length, 30, "dimension inventory");
   assert.equal(typography.length, 22, "typography inventory");
-  assert.equal(new Set([...primitives, ...semantics, ...dimensions, ...typography].map(({ figmaId }) => figmaId)).size, 98, "all active Figma IDs must be unique");
-  assert.deepEqual(new Set(semantics.map(({ name }) => name)), new Set(Object.keys(semanticCssMap)), "semantic CSS mapping must cover all 25 color aliases");
-  assert.deepEqual(new Set(dimensions.map(({ name }) => name)), new Set(Object.keys(dimensionCssMap)), "dimension CSS mapping must cover all 28 variables");
+  assert.equal(new Set([...primitives, ...semantics, ...dimensions, ...typography].map(({ figmaId }) => figmaId)).size, 112, "all active Figma IDs must be unique");
+  assert.deepEqual(new Set(semantics.map(({ name }) => name)), new Set(Object.keys(semanticCssMap)), "semantic CSS mapping must cover all 31 color aliases");
+  assert.deepEqual(new Set(dimensions.map(({ name }) => name)), new Set(Object.keys(dimensionCssMap)), "dimension CSS mapping must cover all 30 variables");
   assert.deepEqual(new Set(typography.map(({ name }) => name)), new Set(Object.keys(typographyCssMap)), "typography CSS mapping must cover all 22 variables");
 
   const semanticMappings = semantics.map((entry) => {
@@ -183,17 +218,17 @@ export async function buildTokenManifest() {
     status: "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
     authority: {
       currentState: "authority/CURRENT-STATE.json",
-      surfaceContract: "authority/surface-contract.md#appendix-c--conv-002-complete-convergence-palette-98-variables",
+      surfaceContract: "authority/surface-contract.md#conv-004-convergence-addendum",
       figmaFileKey: "BEPMuUt1HroEw8xjz8CVyN",
     },
     collections: [
-      { name: "Color Primitives", figmaCollectionId: "VariableCollectionId:634:2", variableCount: 23, individualInventory: "complete" },
-      { name: "Color Semantics", figmaCollectionId: "VariableCollectionId:634:20", variableCount: 25, individualInventory: "complete" },
-      { name: "Dimensions", figmaCollectionId: "VariableCollectionId:634:40", variableCount: 28, individualInventory: "complete" },
+      { name: "Color Primitives", figmaCollectionId: "VariableCollectionId:634:2", variableCount: 29, individualInventory: "complete" },
+      { name: "Color Semantics", figmaCollectionId: "VariableCollectionId:634:20", variableCount: 31, individualInventory: "complete" },
+      { name: "Dimensions", figmaCollectionId: "VariableCollectionId:634:40", variableCount: 30, individualInventory: "complete" },
       { name: "Typography", figmaCollectionId: "VariableCollectionId:634:69", variableCount: 22, individualInventory: "complete" },
     ],
-    figmaActiveVariableCount: 98,
-    individuallyDocumentedFigmaVariableCount: 98,
+    figmaActiveVariableCount: 112,
+    individuallyDocumentedFigmaVariableCount: 112,
     remainingIndividualFigmaVariablesToDocument: 0,
     colorPrimitives: primitives,
     colorSemantics: semanticMappings,

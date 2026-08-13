@@ -103,7 +103,10 @@ test("exposes keyboard, naming, disclosure and live-status semantics", () => {
 });
 
 test("inherits exact locked MK-2866 truth without creating analytical claims", () => {
-  assert.match(component, /const product = mk2866Specimen\.value/);
+  assert.match(component, /const product = mk2866Fixture/);
+  assert.match(component, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
+  assert.match(component, /<ProductCommerceCard/);
+  assert.doesNotMatch(component, /<Image|<MetricRail|<QualitativeChipList/);
   for (const exactTruth of [
     'series: "SARM SERIES"',
     'name: "MK-2866"',

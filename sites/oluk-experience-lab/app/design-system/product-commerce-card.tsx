@@ -28,6 +28,8 @@ export type ProductCommerceCardProps = Readonly<{
   quantity?: number;
   showQualitative?: boolean;
   contextKicker?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
   className?: string;
 }>;
 
@@ -54,7 +56,11 @@ function presentationState(
           ? "Unavailable"
           : state === "disabled"
             ? "Disabled"
-            : "Add to bag";
+            : resolvedInventory === "out-of-stock"
+              ? "Out of stock"
+              : resolvedInventory === "unavailable"
+                ? "Unavailable"
+                : "Add to bag";
 
   return { inventory: resolvedInventory, evidence: resolvedEvidence, primaryLabel } as const;
 }
@@ -67,11 +73,14 @@ export function ProductCommerceCard({
   evidence,
   headingLevel = "h3",
   quantity = 1,
-  showQualitative = true,
+  showQualitative,
   contextKicker,
+  secondaryHref,
+  secondaryLabel,
   className,
 }: ProductCommerceCardProps) {
   const resolved = presentationState(product, state, inventory, evidence);
+  const qualitativeVisible = showQualitative ?? variant !== "compact";
   const status = (
     <FixtureStatusStack
       evidence={resolved.evidence}
@@ -94,14 +103,19 @@ export function ProductCommerceCard({
           <span className="product-series">{contextKicker ?? "RELATED PRODUCT"}</span>
           <ProductIdentity headingLevel={headingLevel} product={product} status={status} />
           <MetricRail product={product} />
-          {showQualitative && product.qualitativeFacts.length > 0 ? (
+          {qualitativeVisible && product.qualitativeFacts.length > 0 ? (
             <QualitativeChipList facts={product.qualitativeFacts} />
           ) : null}
           <div className="purchase-row">
             <PriceBlock price={product.price} />
             <StaticQuantityStepper value={quantity} />
           </div>
-          <StaticPurchaseActions evidenceHref={product.evidencePath} primaryLabel={resolved.primaryLabel} />
+          <StaticPurchaseActions
+            evidenceHref={secondaryHref ?? product.evidencePath}
+            evidenceLabel={secondaryLabel ?? (resolved.evidence === "unavailable" ? "Browse Lab Records" : "View Lab Record")}
+            primaryLabel={resolved.primaryLabel}
+            state={resolved.inventory}
+          />
         </div>
       </article>
     );
@@ -131,12 +145,16 @@ export function ProductCommerceCard({
         </div>
         <MetricRail compact product={product} />
         <div className="oluk-candidate-compact-proof">{status}</div>
-        {showQualitative && product.qualitativeFacts.length > 0 ? (
-          <QualitativeChipList facts={product.qualitativeFacts} />
-        ) : null}
+        {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
         <div className="oluk-candidate-compact-buy">
           <strong>{product.price}</strong>
-          <button disabled type="button">{resolved.primaryLabel === "Add to bag" ? "Quick add" : resolved.primaryLabel}</button>
+          <button disabled type="button">
+            {resolved.primaryLabel === "Add to bag"
+              ? "Quick add"
+              : resolved.primaryLabel === "Added"
+                ? "Added ✓"
+                : resolved.primaryLabel}
+          </button>
         </div>
       </article>
     );
@@ -156,24 +174,31 @@ export function ProductCommerceCard({
       data-state={state}
       data-variant={variant}
     >
-      <ProductMediaChamber context={mediaContext} media={product.media} />
-      <div className="product-content-plane">
-        <ProductIdentity headingLevel={headingLevel} product={product} status={status} />
-        {variant === "featured" && product.sku ? (
-          <div className="card-sku">
-            <span>SKU {product.sku}</span>
-            <a href={product.customerPath}>View product →</a>
+      <div className="product-commerce-card-inner">
+        <ProductMediaChamber context={mediaContext} media={product.media} />
+        <div className="product-content-plane">
+          <ProductIdentity headingLevel={headingLevel} product={product} status={status} />
+          {variant === "featured" && product.sku ? (
+            <div className="card-sku">
+              <span>SKU {product.sku}</span>
+              <a href={product.customerPath}>View product →</a>
+            </div>
+          ) : null}
+          <MetricRail product={product} />
+          {qualitativeVisible && product.qualitativeFacts.length > 0 ? (
+            <QualitativeChipList facts={product.qualitativeFacts} />
+          ) : null}
+          <div className="purchase-row">
+            <PriceBlock price={product.price} />
+            <StaticQuantityStepper value={quantity} />
           </div>
-        ) : null}
-        <MetricRail product={product} />
-        {showQualitative && product.qualitativeFacts.length > 0 ? (
-          <QualitativeChipList facts={product.qualitativeFacts} />
-        ) : null}
-        <div className="purchase-row">
-          <PriceBlock price={product.price} />
-          <StaticQuantityStepper value={quantity} />
+          <StaticPurchaseActions
+            evidenceHref={secondaryHref ?? product.evidencePath}
+            evidenceLabel={secondaryLabel}
+            primaryLabel={resolved.primaryLabel}
+            state={resolved.inventory}
+          />
         </div>
-        <StaticPurchaseActions evidenceHref={product.evidencePath} primaryLabel={resolved.primaryLabel} />
       </div>
     </article>
   );

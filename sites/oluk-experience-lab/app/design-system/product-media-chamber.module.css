@@ -10,11 +10,11 @@
 }
 
 .chamber[data-context="card"] {
-  height: 288px;
+  height: 310px;
 }
 
 .chamber[data-context="featured"] {
-  height: 300px;
+  height: 292px;
 }
 
 .chamber[data-context="compact"] {
@@ -31,10 +31,6 @@
 
 .chamber[data-context="dossier"] {
   min-height: 420px;
-}
-
-.chamber[data-context="purchase"] {
-  height: 288px;
 }
 
 .halo,
@@ -116,10 +112,12 @@
 }
 
 @media (max-width: 540px) {
-  .chamber[data-context="card"],
-  .chamber[data-context="featured"],
-  .chamber[data-context="purchase"] {
-    height: 260px;
+  .chamber[data-context="card"] {
+    height: 280px;
+  }
+
+  .chamber[data-context="featured"] {
+    height: 327px;
   }
 
   .chamber[data-context="relation"] {

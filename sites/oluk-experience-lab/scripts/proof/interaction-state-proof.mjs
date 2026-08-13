@@ -283,7 +283,7 @@ async function shopSuite(chromePort, baseUrl) {
 
     await proofCase(targetSuite, "combined-query-and-five-facets", async () => {
       await waitFor(client, `[...document.querySelectorAll(".catalogue-toolbar output")].some((node) => node.textContent?.includes("1 product") && node.textContent?.includes("5 filters") && node.textContent?.includes("for “mk”"))`, "combined Shop result");
-      const evidence = await inspect(client, `({ output: document.querySelector(".catalogue-toolbar output")?.textContent?.replace(/\\s+/g, " ").trim(), products: [...document.querySelectorAll(".shop-result-card h2")].map((node) => node.textContent?.trim()), selectionLaw: document.querySelector(".shop-discovery")?.getAttribute("data-selection-law"), liveAuthority: document.querySelector(".shop-discovery")?.getAttribute("data-live-authority") })`);
+      const evidence = await inspect(client, `({ output: document.querySelector(".catalogue-toolbar output")?.textContent?.replace(/\\s+/g, " ").trim(), products: [...document.querySelectorAll(".shop-result-card :is(h2, h3)")].map((node) => node.textContent?.trim()), selectionLaw: document.querySelector(".shop-discovery")?.getAttribute("data-selection-law"), liveAuthority: document.querySelector(".shop-discovery")?.getAttribute("data-live-authority") })`);
       return requireCondition(evidence.products.length === 1 && evidence.products[0] === "MK-2866" && evidence.selectionLaw === "or-within-and-across" && evidence.liveAuthority === "false", "combined facet result mismatch", evidence);
     });
 
@@ -367,6 +367,63 @@ async function lookupSuite(chromePort, baseUrl) {
   return targetSuite;
 }
 
+async function transactionSuite(chromePort, baseUrl) {
+  const transactionRoutes = [
+    "/bag",
+    "/checkout",
+    "/checkout/delivery",
+    "/checkout/payment-handoff",
+    "/checkout/order-pay",
+    "/checkout/confirmation",
+    "/checkout/failure",
+    "/checkout/retry",
+  ];
+  const targetSuite = suite("static-transaction-zero-callbacks", "MF-07 lifecycle", { width: 1440, height: 1000 });
+  const { client, targetId } = await createPage(chromePort);
+  const callbackRequests = [];
+  const webSockets = [];
+  client.on("Network.requestWillBeSent", (request) => {
+    if (["Fetch", "XHR", "EventSource"].includes(request.type)) {
+      callbackRequests.push({ type: request.type, method: request.request?.method, url: request.request?.url });
+    }
+  });
+  client.on("Network.webSocketCreated", (request) => {
+    webSockets.push({ type: "WebSocket", url: request.url });
+  });
+
+  try {
+    await setViewport(client, targetSuite.viewport);
+    for (const route of transactionRoutes) {
+      await proofCase(targetSuite, `inert-${route.replaceAll("/", "-").replace(/^-/, "")}`, async () => {
+        await navigate(client, new URL(route, baseUrl).href);
+        await waitFor(client, `document.querySelector("[data-live-authority='false']") !== null`, `${route} static authority marker`);
+        await delay(250);
+        callbackRequests.length = 0;
+        webSockets.length = 0;
+        const surface = await inspect(client, `(() => ({
+          authority: document.querySelector("[data-live-authority='false']")?.getAttribute("data-live-authority"),
+          forms: document.querySelectorAll("form").length,
+          enabledButtons: [...document.querySelectorAll("button")].filter((button) => !button.disabled).length,
+          externalActions: [...document.querySelectorAll("a")].filter((link) => {
+            try { return new URL(link.href, location.href).origin !== location.origin; } catch { return true; }
+          }).length,
+          paymentScripts: [...document.scripts].filter((script) => /stripe|paypal|woocommerce|biaspay|payment/i.test(script.src)).map((script) => script.src),
+        }))()`);
+        await delay(200);
+        const requests = [...callbackRequests, ...webSockets];
+        return requireCondition(
+          surface.authority === "false" && surface.forms === 0 && surface.enabledButtons === 0 && surface.externalActions === 0 && surface.paymentScripts.length === 0 && requests.length === 0,
+          `${route} crossed the inert transaction boundary: ${JSON.stringify({ surface, requests })}`,
+          { route, surface, requests },
+        );
+      });
+    }
+  } finally {
+    await closePage(chromePort, client, targetId);
+  }
+  return targetSuite;
+}
+
 const baseUrl = new URL(option("base-url", process.env.PROOF_BASE_URL ?? "http://127.0.0.1:4173"));
 const outputDirectory = path.resolve(option("output", "") || await mkdtemp(path.join(tmpdir(), "oluk-interaction-proof-")));
 await mkdir(outputDirectory, { recursive: true });
@@ -377,6 +434,7 @@ try {
   suites.push(await ownerReviewSuite(chrome.port, baseUrl));
   suites.push(await shopSuite(chrome.port, baseUrl));
   suites.push(await lookupSuite(chrome.port, baseUrl));
+  suites.push(await transactionSuite(chrome.port, baseUrl));
 } finally {
   await chrome.close();
 }

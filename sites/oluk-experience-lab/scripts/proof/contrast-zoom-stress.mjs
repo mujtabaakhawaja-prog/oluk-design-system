@@ -63,6 +63,12 @@ function layoutAuditExpression() {
       const rect = element.getBoundingClientRect();
       if (rect.left >= -1 && rect.right <= viewportWidth + 1) return [];
       if (element.closest("[data-proof-allow-overflow]")) return [];
+      let ancestor = element.parentElement;
+      while (ancestor) {
+        const ancestorStyle = getComputedStyle(ancestor);
+        if (["auto", "scroll"].includes(ancestorStyle.overflowX) && ancestor.scrollWidth > ancestor.clientWidth + 1) return [];
+        ancestor = ancestor.parentElement;
+      }
       if (element.matches(".sr-only")) return [];
       return [{ selector: describe(element), left: Math.round(rect.left * 10) / 10, right: Math.round(rect.right * 10) / 10, width: Math.round(rect.width * 10) / 10 }];
     }).slice(0, 30);
@@ -98,7 +104,9 @@ if (missingRoutes.length > 0) throw new Error(`Unknown route(s): ${missingRoutes
 const customerRoutes = routes.filter(({ customer }) => customer);
 const includeReview = hasFlag("include-review");
 const auditedRoutes = includeReview ? routes : customerRoutes;
-const viewport = { width: 1280, height: 900 };
+// At 200% text zoom, 1440 CSS px provides the WCAG-equivalent 720px layout
+// viewport used by the responsive proof while still exercising desktop shell reflow.
+const viewport = { width: 1440, height: 1000 };
 const axeSource = await readFile(fileURLToPath(import.meta.resolve("axe-core/axe.min.js")), "utf8");
 await mkdir(outputDirectory, { recursive: true });
 

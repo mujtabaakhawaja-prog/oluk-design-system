@@ -1,5 +1,9 @@
 # MF-03+ — Current-state receipt
 
+## 2026-08-12 successor pointer — CONV-004 full-file reconciliation
+
+The controlling snapshot is now `authority/CURRENT-STATE.json` with receipt `authority/receipts/CONV-004-DESIGN-CONVERGENCE.md`. CONV-004 records four active unpublished collections/112 variables, Plus Jakarta Sans ExtraBold headings, Inter Variable body/UI, the cobalt StockPill at promoted canonical `732:2902`, MediaChamber component set `1022:4099`, current CobaltDensityBoundary behavior `1026:27046` with actual instances `1026:27048` / `1026:27050`, and corrected Page 25 COMPONENT receipt `1043:310`. Nodes `999:28867`, `999:28868`, `999:28872` and hidden predecessor `1010:27064` remain immutable rejected/superseded historical evidence. Final Figma proof passes `42/42` canvases, 112 unpublished variables (`29 / 31 / 30 / 22`), zero rejected paints, only Inter Variable / Plus Jakarta Sans / JetBrains Mono with exact API styles `SemiBold` / `ExtraBold`, zero authored fractional sizes, 127 computed readings solely inside four scaled review instances and zero stale variable references in active canonical/customer roots. The full file retains 1,219 immutable historical alias references; this is preserved debt, not active authority. Artifact-specific champion approval, publication, official Code Connect, deployment and runtime authority remain blocked.
+
 **Date:** 2026-08-11
 
 **Status:** `CONTROL_PLANE_READY / CANDIDATE_BUILDS_HUMAN_REVIEW_REQUIRED`

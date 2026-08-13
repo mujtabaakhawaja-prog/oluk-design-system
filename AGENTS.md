@@ -8,22 +8,29 @@ Read in this order before changing design, Make or Sites material:
 2. `authority/DECISION-LEDGER.json`
 3. `authority/ARTIFACT-REGISTRY.json`
 4. `authority/CHANGELOG.md`
-5. `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md`
-6. `authority/receipts/CONV-002-NEXT-50X50.md`
-7. `authority/SHOP-TAXONOMY-CONTRACT.json`
-8. `authority/surface-contract.md`
-9. `authority/ids-plan.md`
-10. `authority/oluk-make-philosophy.md`
-11. `authority/oluk-pdp-architecture.md`
-12. `make-sessions/mf03-experience-convergence/MANIFEST.md`
-13. the active run's `PROMPT.md`, `RUN.md`, `ACCEPTANCE.md`, and `CURRENT-STATE-RECEIPT.md`
+5. `authority/receipts/CONV-004-DESIGN-CONVERGENCE.md`
+6. `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md`
+7. `authority/receipts/CONV-002-NEXT-50X50.md`
+8. `authority/SHOP-TAXONOMY-CONTRACT.json`
+9. `authority/surface-contract.md`
+10. `authority/ids-plan.md`
+11. `authority/oluk-make-philosophy.md`
+12. `authority/oluk-pdp-architecture.md`
+13. `make-sessions/mf03-experience-convergence/MANIFEST.md`
+14. the active run's `PROMPT.md`, `RUN.md`, `ACCEPTANCE.md`, and `CURRENT-STATE-RECEIPT.md`
 
-The active control state is `CONV003_MF09_MF10_CANDIDATE_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED`. MF runs are paired Figma + Codex Sites candidate runs that advance design, commerce, experience and UX/UI together. The decisions and inherited MF-01A relationships are champion authority; every reconciled Figma component/page, proof and Sites surface remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. Candidate verification is not champion approval, publication, deployment or runtime authority. Historical MF-03 v2/v3 remain rejected comparison evidence.
+The active control state is `CONV004_DESIGN_CONVERGENCE_RECONCILED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED`. MF runs are paired Figma + Codex Sites candidate runs that advance design, commerce, experience and UX/UI together. The decisions and inherited MF-01A relationships are champion authority; every reconciled Figma component/page, proof and Sites surface remains `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`. Candidate verification is not champion approval, publication, deployment or runtime authority. Historical MF-03 v2/v3 remain rejected comparison evidence.
 
-## CONV-003 operating boundary
+## CONV-004 operating boundary
 
 - Work only in the assigned clean `codex/*` worktree. Preserve unrelated user changes and historical authority.
-- Use the 4 active convergence collections/98 variables. The 3 legacy/quarantined collections/128 variables remain archived provenance and must not be deleted or rebound into new work. The only literal-paint exceptions are the two exact MF-01A gradients governed by `DEC-MEDIA-003`.
+- Use the 4 active convergence collections/112 variables. CONV-004 migrated all surviving bindings away from the 3 legacy/quarantined collections and `DEC-VARIABLES-002` explicitly superseded the former archive-only disposition before those 128 variables were deleted. Do not recreate or reference the deleted collections. The only literal-paint exceptions are the two exact MF-01A gradients governed by `DEC-MEDIA-003`.
+- Use Plus Jakarta Sans ExtraBold for display/headings and Inter Variable for body/UI. JetBrains Mono is a scoped code-specimen exception. Do not reintroduce Barlow Condensed, large Inter headings, or static Inter body/UI typography.
+- Use InventoryStatus as the cobalt StockPill contract: in-stock cobalt/soft-cobalt, out-of-stock error/error-soft, unavailable muted/unavailable-soft. Green is non-inventory success only.
+- Use MediaChamber component set `1022:4099` and its four registered variants/instances for Vertical and Featured. Do not redraw those chambers locally or flatten their MF-01A atmosphere into generic canvas.
+- Use current CobaltDensityBoundary `1026:27046` only at a meaningful density boundary with the governed `32 / 2 / 32` rhythm; its current Figma instances are Hero `1026:27048` and OpenLab `1026:27050`. Atomic CobaltDivider `1010:27053` is a supporting child source. Hidden `1010:27064` is immutable superseded history, not current behavior.
+- Current CONV-004 receipt authority is Page 25 COMPONENT `1043:310`. Treat `999:28867`, `999:28868` and `999:28872` as immutable rejected historical evidence.
+- Active canonical/customer roots have zero stale variable references, but the full file retains 1,219 immutable historical alias references. Do not collapse those two facts into a false file-wide zero.
 - The canonical candidate source graph is registered at Figma `732:2897` and in `authority/ARTIFACT-REGISTRY.json`. Page and Sites candidates instantiate or import the canonical graph; they do not redraw canonical components locally.
 - The current Sites candidate contains 31 routes covering site, Shop, PDP, OpenLab/evidence, owner review and inert bag-through-retry transaction presentation. The exact route list and four-width receipt are in `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md`.
 - `authority/SHOP-TAXONOMY-CONTRACT.json` is read-only design input, not runtime authority. Shopper SSR owns the visible shell/header and Shop presentation; Woo owns category/tag slugs plus price, stock and purchasability; owner-locked product truth projected through tools-service owns form and source-owned quantity metrics; Shopper SSR owns goal-route normalization.
@@ -71,8 +78,8 @@ Never use `90 CAPS` as the metric, decimal pricing, crossed pricing, per-serving
 - ProductMetricRail is quantified truth. Do not restyle it as generic pills.
 - ProductCommerceCard has no cobalt outer outline or decorative top-edge eyebrow.
 - Cobalt belongs primarily to the product, metrics, actions, selected states, icons, and meaningful relational marks.
-- Plus Jakarta Sans leads editorial/display work. Inter is the only supporting/UI typeface. Barlow Condensed, Archivo, Cousine, and Inter Variable are rejected.
-- The 15–16px customer-body and 12px metadata floor is `DEC-TYPE-001 · PROPOSED_NON_CONTROLLING`; audit and report it, but do not claim it as inherited champion authority.
+- Plus Jakarta Sans ExtraBold leads editorial/display work. Inter Variable is the only supporting/UI typeface. Barlow Condensed, large Inter headings, static Inter body/UI use, Archivo and Cousine are rejected. JetBrains Mono remains limited to intentional code specimens.
+- `DEC-TYPE-FLOOR-001` locks a 15–16px customer-body and 12px metadata/eyebrow floor. The MF-01A QualitativeChip label at 11px is the only named component exception.
 
 ## Make versus runtime
 

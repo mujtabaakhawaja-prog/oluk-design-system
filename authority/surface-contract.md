@@ -1,5 +1,7 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
+> **2026-08-12 CONV-004 addendum:** the full-file convergence extends the four active unpublished collections from 98 to 112 variables so the approved dark/error/warning/unavailable/disabled and page-spacing roles remain explicit. Generic page canvases converge to `surface/canvas`, but this does not flatten `surface/family`, the governed MF-01A MediaChamber recipe, cards, or the sole inverse footer. Inventory adopts the cobalt StockPill contract; general success green is no longer inventory authority.
+
 > **2026-08-12 CONV-002 addendum:** 12 new convergence variables added to close the MF-01A standardization gap. Chip grammar, media gradient, and graduated border hierarchy now fully specified. `neutral/family` updated to #F8FAFC per champion decision. Total convergence variables: 98.
 
 > **2026-08-11 CONV-001 supersession:** The append-only decision ledger and current-state snapshot now control. MF-01A material/anatomy relationships persist; later runs apply named deltas. The canonical graph remains unpublished and `HUMAN_REVIEW_REQUIRED`.
@@ -114,11 +116,73 @@ The solid `surface/media` (#F0F4FB) remains available as a fallback for contexts
 
 ---
 
+## CONV-004 convergence addendum
+
+### Explicit role variables
+
+CONV-004 does not compress unlike semantic jobs into the old 98-variable model. It adds 14 variables, retaining four unpublished collections:
+
+| Collection | CONV-003 | CONV-004 | Delta |
+|---|---:|---:|---:|
+| Color Primitives | 23 | 29 | +6 |
+| Color Semantics | 25 | 31 | +6 |
+| Dimensions | 28 | 30 | +2 |
+| Typography | 22 | 22 | 0 |
+| **Total** | **98** | **112** | **+14** |
+
+| Variable | Value / alias | Figma ID | Job |
+|---|---|---|---|
+| `ink/dark` | `#344054` | `VariableID:1024:50` | Dark secondary copy |
+| `red/error` | `#B42318` | `VariableID:1024:51` | Error and out-of-stock foreground |
+| `red/error-soft` | `#FEF3F2` | `VariableID:1024:52` | Error and out-of-stock fill |
+| `amber/warning` | `#B54708` | `VariableID:1024:53` | Warning foreground |
+| `neutral/unavailable-soft` | `#F4F5F7` | `VariableID:1024:54` | Unavailable fill |
+| `neutral/disabled` | `#9CA3AF` | `VariableID:1024:55` | Disabled or placeholder text only |
+| `text/dark` | `ink/dark` | `VariableID:1024:56` | Dark secondary text alias |
+| `status/error` | `red/error` | `VariableID:1024:57` | Error status alias |
+| `status/error-soft` | `red/error-soft` | `VariableID:1024:58` | Error status fill alias |
+| `status/warning` | `amber/warning` | `VariableID:1024:59` | Warning status alias |
+| `status/unavailable-soft` | `neutral/unavailable-soft` | `VariableID:1024:60` | Unavailable status fill alias |
+| `text/disabled` | `neutral/disabled` | `VariableID:1024:61` | Disabled text alias |
+| `layout/page-padding` | `64` | `VariableID:1024:62` | Documentation/authority page padding |
+| `layout/section-gap` | `32` | `VariableID:1024:63` | Documentation/authority section gap |
+
+### StockPill
+
+The promoted InventoryStatus canonical remains `732:2902`, derived from the source specimen `641:17`. Its three promoted variants are `732:2903`, `732:2906` and `732:2909`.
+
+- In stock: `#0057FF` foreground on `#EEF4FF`.
+- Out of stock: `#B42318` foreground on `#FEF3F2`.
+- Unavailable: `#64718A` foreground on `#F4F5F7`.
+- All states use the governed pill radius. `#15803D` remains non-inventory success only.
+
+### Canonical MediaChamber
+
+Component set `1022:4099` owns four variants: `998:28862`, `1022:4072`, `1022:4081` and `1022:4090`. Instances `1010:27065`, `1010:27070`, `1010:27075` and `1010:27080` replace the locally authored Vertical/Featured media frames while preserving the exact DEC-MEDIA-003 gradients and DEC-MEDIA-004 populated-product requirement.
+
+### CobaltDivider
+
+The atomic 2px rule remains supporting source `1010:27053`; rhythm specimen `1010:27054` remains supporting documentation. Current behavior is owned by `1026:27046` (`CobaltDensityBoundary`), which binds `layout/section-gap` above and below the rule to encode the full `32 / 2 / 32` contract. Actual current instances are `1026:27048` in the HeroDecisionSurface and `1026:27050` in the OpenLab portal. Hidden instance `1010:27064` is an immutable superseded historical predecessor; `717:15492` is stale historical reference evidence. Neither is current behavior authority.
+
+The current boundary defines one relational rhythm:
+
+> `32px gap → 2px #0057FF divider → 32px gap`
+
+It separates meaningful density boundaries between headline/control material and commerce, OpenLab, technical or checkout sections. It is prohibited as a ProductCommerceCard eyebrow, cobalt perimeter, or decorative rule repeated without a semantic boundary.
+
+### CONV-004 final receipt and audit pointer
+
+The current Page 25 execution receipt is COMPONENT `1043:310`. Nodes `999:28867`, `999:28868` and `999:28872` are immutable rejected historical evidence. The final Figma audit passes `42/42` canvases, 112 unpublished variables (`29 / 31 / 30 / 22`), zero rejected paints, only Inter Variable / Plus Jakarta Sans / JetBrains Mono, zero authored fractional font sizes, 127 computed fractional readings isolated to four scaled review instances, and zero stale variable references in active canonical or customer roots.
+
+CONV-004 also registers ten local candidate paint styles, the `OLUK / CANDIDATE_CONVERGENCE_v0 / Grid / 12 Column` layout style (`S:b2c09e5a4f4d2d4c8a566cfa6b1289e3dfc483b8,`, 12 columns, 24px gutter), and the scoped `Code / Mono` text style (`S:403905aa3080095d34ba45deecd4b102614a068b,`, JetBrains Mono Bold 11px). Repository projections are `--grid-columns: 12`, `--grid-gap: 24px`, and `--font-mono: "JetBrains Mono", monospace`.
+
+---
+
 ## CONV-001 material addendum
 
-The active candidate foundations are the 4 convergence collections/98 variables. The 2 legacy plus 1 quarantined collections/128 variables are archived provenance. New work binds only to the active convergence collections. None is published or promoted.
+At CONV-001/002 time, the active candidate foundation contained 4 convergence collections/98 variables and 3 archived collections/128 variables. CONV-004 now supersedes that live disposition with 4 active collections/112 variables and zero archived collections after migration and explicit deletion approval. This paragraph remains historical context; the CONV-004 addendum controls current work. None of the active collections is published or promoted.
 
-Current effect authority is graduated single shadows: Compact y5/blur12/.09, Vertical/Featured y24/blur60/.10, PurchasePanel y20/blur50/.18 and Relation y12/blur25/.12. The former two-layer Softform Arc recipe is archived evidence. Commerce taxonomy remains `SARMs / Prohormones / Research Chemicals / Stacks`; the dossier index remains non-interactive unless a later decision explicitly authorizes interaction; the dark footer is the sole inverse surface. The proposed 12px metadata / 15–16px body floor does not control until explicitly approved.
+Current effect authority is graduated single shadows: Compact y5/blur12/.09, Vertical/Featured y24/blur60/.10, PurchasePanel y20/blur50/.18 and Relation y12/blur25/.12. The former two-layer Softform Arc recipe is archived evidence. Commerce taxonomy remains `SARMs / Prohormones / Research Chemicals / Stacks`; the dossier index remains non-interactive unless a later decision explicitly authorizes interaction; the dark footer is the sole inverse surface. DEC-TYPE-FLOOR-001 promotes the customer-facing floor to 12px metadata/eyebrows and 15–16px body copy, with the MF-01A QualitativeChip label at 11px as the sole named component exception.
 
 ## Purpose
 
@@ -434,10 +498,10 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 | `ink/inverse-muted` | `#B9C7DD` | `VariableID:634:14` |
 | `ink/chip-value` | `#17213F` | `VariableID:824:299` |
 | `blue/cobalt` | `#0057FF` | `VariableID:634:15` |
-| `blue/interactive` | `#256DFF` | `VariableID:634:16` |
+| `blue/interactive` | `#0057FF` | `VariableID:634:16` |
 | `blue/focus` | `#0057FF @28%` | `VariableID:634:17` |
-| `green/inventory` | `#15803D` | `VariableID:634:18` |
-| `green/inventory-soft` | `#ECFDF3` | `VariableID:634:19` |
+| `green/success` | `#15803D` | `VariableID:634:18` |
+| `green/success-soft` | `#ECFDF3` | `VariableID:634:19` |
 
 ### Color Semantics (25 variables)
 
@@ -466,8 +530,8 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 | `accent/cobalt` | `blue/cobalt` | `VariableID:634:35` |
 | `accent/cobalt-interactive` | `blue/interactive` | `VariableID:634:36` |
 | `accent/cobalt-focus` | `blue/focus` | `VariableID:634:37` |
-| `status/inventory` | `green/inventory` | `VariableID:634:38` |
-| `status/inventory-soft` | `green/inventory-soft` | `VariableID:634:39` |
+| `status/success` | `green/success` | `VariableID:634:38` |
+| `status/success-soft` | `green/success-soft` | `VariableID:634:39` |
 
 ### Dimensions (28 variables)
 
@@ -507,7 +571,7 @@ The current raised-plane shadow observed on PurchaseRail is approximately `rgba(
 | Variable | Value | Scope | WEB syntax | Figma ID |
 |---|---:|---|---|---|
 | `family/display` | `Plus Jakarta Sans` | `FONT_FAMILY` | `var(--oluk-font-display)` | `VariableID:634:70` |
-| `family/body` | `Inter` | `FONT_FAMILY` | `var(--oluk-font-body)` | `VariableID:634:71` |
+| `family/body` | `Inter Variable` | `FONT_FAMILY` | `var(--oluk-font-body)` | `VariableID:634:71` |
 | `display/xl/size` | `56` | `FONT_SIZE` | `var(--oluk-type-display-xl-size)` | `VariableID:634:72` |
 | `display/xl/line` | `60` | `LINE_HEIGHT` | `var(--oluk-type-display-xl-line)` | `VariableID:634:73` |
 | `display/xl/track` | `-4` | `LETTER_SPACING` | `var(--oluk-type-display-xl-track)` | `VariableID:634:74` |

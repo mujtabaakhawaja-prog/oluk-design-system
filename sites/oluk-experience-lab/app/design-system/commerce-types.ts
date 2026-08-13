@@ -30,8 +30,7 @@ export type ProductMediaContext =
   | "featured"
   | "relation"
   | "hero"
-  | "dossier"
-  | "purchase";
+  | "dossier";
 
 export type QualitativeFactKind = "class" | "form" | "quality" | "tested";
 

@@ -9,8 +9,10 @@
 **Future-run control center:** Page 80, nodes `12:27`, `31:*`, `33:*`, `34:*` and `35:*`
 > **2026-08-11 CONV-001 supersession:** Active control is now the machine-readable state, append-only ledger and artifact registry in `authority/`, plus `make-sessions/mf03-experience-convergence/`. The champion user approved the convergence package with corrections. This approves the decisions/methodology, not automatic promotion of newly built artifacts; all new Figma and Sites work remains unpublished and `HUMAN_REVIEW_REQUIRED`.
 
+> **2026-08-12 CONV-004 controlling correction:** The current foundation is four unpublished convergence collections / 112 variables (`29 primitives / 31 semantics / 30 dimensions / 22 typography`). `DEC-VARIABLES-002` authorized migration and deletion of the former 128 legacy/quarantined variables; do not recreate them. `DEC-TYPE-FLOOR-001` promotes the 12px metadata / 15–16px body floor, with the MF-01A QualitativeChip label as the sole named 11px exception. The older 86/128 dashboard below is retained only as CONV-001 history.
+
 **Current canonical position:** MF-01A material/anatomy/state authority persists through all later runs. The CONV-001 canonical candidate graph reconciles the active foundations, card family, hero, Dossier, rails and shell. MF-03 v2/v3 remain rejected comparison evidence.
-**Promotion state:** Decisions are approved; artifacts are not promoted. Four convergence collections/86 variables remain active, three legacy/quarantined collections/128 variables are archived, and all new components/pages remain unpublished candidates. Library publication, Code Connect, customer-route convergence and runtime work require later gates.
+**Promotion state:** Decisions are approved; artifacts are not promoted. Four convergence collections/112 variables remain active and unpublished; the former 128 legacy/quarantined variables were migrated and deleted under `DEC-VARIABLES-002`. Library publication, official Code Connect and runtime work require later gates.
 
 ## CONV-001 correction addendum — controlling
 
@@ -18,7 +20,7 @@
 2. `713:1065` is a Hero component with PurchasePanel geometry (r=28, blur 50, offsetY 20), not an MF-02B Compact card. It remains provenance, not target structure.
 3. Keep/extend the 4 convergence collections/86 variables. Archive, do not delete, the 2 legacy plus 1 quarantined collections/128 variables.
 4. The current effect decision is graduated single shadows by decision weight. The former two-layer recipe is archived.
-5. The 12px metadata / 15–16px body floor is `PROPOSED_NON_CONTROLLING` pending an explicit champion decision.
+5. This CONV-001 record originally left the 12px metadata / 15–16px body floor proposed. `DEC-TYPE-FLOOR-001` now supersedes that disposition as champion authority, with the MF-01A QualitativeChip label as the sole named 11px exception.
 6. Every future Make/Sites prompt separates `INHERITED_CHAMPION_STATE`, `THIS_RUN_DELTA` and `DO_NOT_INHERIT`.
 7. The footer remains the sole inverse surface; every new artifact requires an exact human visual gate.
 
@@ -45,7 +47,7 @@ For the active lane, read this manual through the [`ids-plan.md`](ids-plan.md) a
 
 It supersedes the earlier sequence as an execution authority. Legacy plans, transcripts, runtime captures, and the old Page `0:1` remain evidence or structural reference only.
 
-### Current authority dashboard
+### CONV-001 historical dashboard — superseded by the CONV-004 correction above
 
 | Area | State | Controlling fact |
 |---|---|---|

@@ -85,20 +85,24 @@ export function StaticQuantityStepper({ value = 1, className }: StaticQuantitySt
 export type StaticPurchaseActionsProps = Readonly<{
   primaryLabel?: string;
   evidenceHref?: string;
+  evidenceLabel?: string;
   productHref?: string;
   showProductLink?: boolean;
   className?: string;
+  state?: InventoryState;
 }>;
 
 export function StaticPurchaseActions({
   primaryLabel = "Add to bag",
   evidenceHref,
+  evidenceLabel = "View Lab Record",
   productHref,
   showProductLink = false,
   className,
+  state = "in-stock",
 }: StaticPurchaseActionsProps) {
   return (
-    <div className={classes("card-actions", "oluk-candidate-actions", className)}>
+    <div className={classes("card-actions", "oluk-candidate-actions", className)} data-state={state}>
       <button className={classes("button", "oluk-candidate-button")} disabled type="button">
         {primaryLabel}
       </button>
@@ -115,7 +119,7 @@ export function StaticPurchaseActions({
           className={classes("button", "button-secondary", "oluk-candidate-button", "oluk-candidate-button--secondary")}
           href={evidenceHref}
         >
-          View Lab Record <Arrow />
+          {evidenceLabel} <Arrow />
         </a>
       ) : null}
     </div>

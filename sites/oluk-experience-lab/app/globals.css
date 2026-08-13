@@ -1,17 +1,17 @@
 :root {
   --font-display: "Plus Jakarta Sans";
-  --font-ui: "Inter";
+  --font-ui: "Inter Variable";
   --canvas: #f7f8fc;
-  --canvas-deep: #eef3fb;
+  --canvas-deep: #eef4ff;
   --white: #ffffff;
   --ice: #f0f4fb;
-  --ice-deep: #e6eef9;
+  --ice-deep: #e4ecfa;
   --ink: #141827;
-  --ink-soft: #3e4d68;
+  --ink-soft: #344054;
   --ink-muted: #64718a;
   --cobalt: #0057ff;
-  --cobalt-hover: #256dff;
-  --cobalt-soft: #e8efff;
+  --cobalt-hover: #0057ff;
+  --cobalt-soft: #eef4ff;
   --line: rgba(206, 220, 241, 0.92);
   --line-strong: #afc8ff;
   --oluk-surface-family: #f8fafc;
@@ -20,10 +20,44 @@
   --oluk-border-identity: #bdd0f1;
   --oluk-border-inner: #b4caf0;
   --oluk-border-family-bg: #d9e3f1;
+  --oluk-ink-dark: #344054;
   --oluk-text-secondary: #53617d;
   --oluk-text-chip-value: #17213f;
-  --oluk-inventory-green: #15803d;
+  --oluk-text-on-inverse-muted: #b9c7dd;
+  --oluk-status-success: #15803d;
+  --oluk-status-error: #b42318;
+  --oluk-status-error-soft: #fef3f2;
+  --oluk-status-warning: #b54708;
+  --oluk-status-unavailable-soft: #f4f5f7;
+  --oluk-status-disabled: #9ca3af;
+  --oluk-stock-in-stock: var(--cobalt);
+  --oluk-stock-in-stock-soft: var(--cobalt-soft);
+  --oluk-stock-out-of-stock: var(--oluk-status-error);
+  --oluk-stock-out-of-stock-soft: var(--oluk-status-error-soft);
+  --oluk-stock-unavailable: var(--ink-muted);
+  --oluk-stock-unavailable-soft: var(--oluk-status-unavailable-soft);
+  --oluk-cobalt: var(--cobalt);
+  --oluk-divider-width: 2px;
+  --oluk-divider-rhythm: 32px;
   --success: #15803d;
+  --color-primary: #0057ff;
+  --color-text-heading: #141827;
+  --color-text-body: #53617d;
+  --color-text-muted: #64718a;
+  --color-text-secondary: #344054;
+  --color-text-disabled: #9ca3af;
+  --color-status-success: #15803d;
+  --color-status-error: #b42318;
+  --color-status-warning: #b54708;
+  --color-surface-canvas: #f7f8fc;
+  --color-surface-card: #ffffff;
+  --color-surface-accent: #eef4ff;
+  --font-body: "Inter Variable";
+  --font-mono: "JetBrains Mono", monospace;
+  --grid-columns: 12;
+  --grid-gap: 24px;
+  --space-page-padding: 64px;
+  --space-section-gap: 32px;
   --inverse: #141827;
   --oluk-media-gradient: linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%);
   --oluk-media-contact-shelf-gradient: linear-gradient(180deg, #ffffff 0%, #e6edfa 100%);
@@ -46,8 +80,20 @@ html {
 body {
   background: var(--canvas);
   color: var(--ink);
-  font-family: var(--font-ui), Inter, sans-serif;
+  font-family: var(--font-ui), sans-serif;
   margin: 0;
+}
+
+body p {
+  font-size: max(15px, 1em) !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
 }
 
 button,
@@ -225,7 +271,7 @@ a.button-secondary:hover {
 .trust-rail-inner {
   align-items: center;
   display: flex;
-  gap: 28px;
+  gap: 20px;
   min-height: 32px;
 }
 
@@ -233,7 +279,7 @@ a.button-secondary:hover {
 .trust-rail a {
   align-items: center;
   display: inline-flex;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   gap: 8px;
   letter-spacing: 0.09em;
@@ -257,6 +303,60 @@ a.button-secondary:hover {
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
+}
+
+.shop-taxonomy-plane {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.shop-taxonomy-shell {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  min-height: 44px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+
+.shop-taxonomy-shell::-webkit-scrollbar {
+  display: none;
+}
+
+.shop-taxonomy-shell nav {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+}
+
+.shop-taxonomy-shell a,
+.shop-taxonomy-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.shop-taxonomy-shell a {
+  color: var(--ink-soft);
+}
+
+.shop-taxonomy-shell a:hover,
+.shop-taxonomy-shell a:focus-visible {
+  color: var(--cobalt);
+}
+
+.shop-taxonomy-label {
+  color: var(--cobalt);
+}
+
+.shop-taxonomy-separator {
+  background: var(--line);
+  flex: 0 0 1px;
+  height: 20px;
 }
 
 .primary-nav {
@@ -347,7 +447,7 @@ a.button-secondary:hover {
   border-radius: 999px;
   color: var(--white);
   display: inline-flex;
-  font-size: 9px;
+  font-size: 12px;
   height: 18px;
   justify-content: center;
   min-width: 18px;
@@ -597,7 +697,7 @@ a.button-secondary:hover {
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink-muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.04em;
   padding: 10px 12px;
@@ -731,7 +831,7 @@ a.button-secondary:hover {
 .archive-metrics span {
   color: var(--ink-muted);
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.11em;
   margin-top: 4px;
@@ -749,19 +849,48 @@ a.button-secondary:hover {
 }
 
 .product-commerce-card {
-  background: transparent;
+  background: var(--white);
   border: 1px solid var(--oluk-border-outer);
   border-radius: 24px;
   box-shadow: var(--shadow-card);
   min-width: 0;
   overflow: hidden;
+  padding: 28px;
 }
 
 .product-commerce-card-featured {
   align-self: stretch;
-  display: grid;
-  grid-template-rows: 300px 1fr;
   height: 100%;
+}
+
+.product-commerce-card-compact {
+  border-color: var(--oluk-border-card);
+  border-radius: 20px;
+  box-shadow: var(--shadow-compact);
+  padding: 16px;
+}
+
+.product-commerce-card-inner {
+  background: var(--white);
+  border: 1px solid var(--oluk-border-card);
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.product-commerce-card-inner > * {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+}
+
+.product-commerce-card-featured .product-commerce-card-inner {
+  grid-template-rows: auto 1fr;
 }
 
 .product-commerce-card-featured .product-content-plane {
@@ -772,49 +901,6 @@ a.button-secondary:hover {
 .product-commerce-card-featured .purchase-row {
   margin-top: auto;
   padding-top: 20px;
-}
-
-.product-media-chamber {
-  align-items: center;
-  background: var(--oluk-media-gradient);
-  display: flex;
-  height: 288px;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-commerce-card-featured .product-media-chamber {
-  height: 300px;
-}
-
-.product-media-chamber::before,
-.product-media-chamber::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-}
-
-.product-media-chamber::before {
-  background: rgba(255, 255, 255, 0.00001);
-  border: 1px solid rgba(255, 255, 255, 0.98);
-  border-radius: 21px;
-  box-shadow: 0 10px 28px rgba(71, 111, 174, 0.07), inset 0 0 24px rgba(255, 255, 255, 0.85);
-  height: 76%;
-  left: 13%;
-  top: 14%;
-  width: 74%;
-}
-
-.product-media-chamber::after {
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid color-mix(in srgb, var(--oluk-border-identity) 65%, transparent);
-  border-radius: 32px;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.7);
-  height: 61%;
-  left: 17%;
-  top: 27%;
-  width: 66%;
 }
 
 .media-contact-shelf {
@@ -828,16 +914,6 @@ a.button-secondary:hover {
   position: absolute;
   right: 12%;
   z-index: 1;
-}
-
-.product-media-chamber > img {
-  filter: drop-shadow(0 25px 26px rgba(24, 48, 92, 0.22));
-  height: 91%;
-  object-fit: contain;
-  position: relative;
-  transform: translateY(6px);
-  width: 74%;
-  z-index: 2;
 }
 
 .product-commerce-card .product-series {
@@ -910,7 +986,7 @@ a.button-secondary:hover {
   align-items: center;
   color: var(--ink-soft);
   display: inline-flex;
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 800;
   gap: 6px;
@@ -919,16 +995,67 @@ a.button-secondary:hover {
   white-space: nowrap;
 }
 
+.inventory-status {
+  background: var(--oluk-stock-unavailable-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--oluk-stock-unavailable);
+  min-height: 30px;
+  padding: 7px 11px;
+}
+
 .inventory-status i {
-  background: var(--success);
+  background: currentColor;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(19, 166, 106, 0.1);
   height: 7px;
   width: 7px;
 }
 
+.inventory-status[data-state="in-stock"] {
+  background: var(--oluk-stock-in-stock-soft);
+  border-color: var(--line-strong);
+  color: var(--oluk-stock-in-stock);
+}
+
+.inventory-status[data-state="out-of-stock"] {
+  background: var(--oluk-stock-out-of-stock-soft);
+  border-color: color-mix(in srgb, var(--oluk-stock-out-of-stock) 24%, transparent);
+  color: var(--oluk-stock-out-of-stock);
+}
+
+.inventory-status[data-state="unavailable"] {
+  background: var(--oluk-stock-unavailable-soft);
+  color: var(--oluk-stock-unavailable);
+}
+
+.card-actions[data-state="unavailable"] > button,
+.card-actions[data-state="out-of-stock"] > button {
+  background: var(--oluk-status-unavailable-soft);
+  border-color: var(--line);
+  color: var(--ink-muted);
+}
+
 .evidence-status {
   color: var(--cobalt);
+}
+
+.evidence-status[data-state="verified"],
+.evidence-status[data-state="available"] {
+  background: transparent;
+  color: var(--cobalt);
+}
+
+.evidence-status[data-state="unavailable"] {
+  background: var(--oluk-status-unavailable-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-muted);
+  padding: 6px 10px;
+}
+
+.evidence-status[data-state="unavailable"] img {
+  filter: grayscale(1);
+  opacity: 0.55;
 }
 
 .evidence-status img {
@@ -970,7 +1097,7 @@ a.button-secondary:hover {
 
 .metric-rail dd {
   color: var(--cobalt);
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
   margin-top: 5px;
@@ -1014,7 +1141,7 @@ a.button-secondary:hover {
 
 .qualitative-chip dt {
   color: var(--ink-muted);
-  font-family: var(--font-ui), Inter, sans-serif;
+  font-family: var(--font-ui), sans-serif;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.66px;
@@ -1024,7 +1151,7 @@ a.button-secondary:hover {
 
 .qualitative-chip dd {
   color: var(--oluk-text-chip-value);
-  font-family: var(--font-ui), Inter, sans-serif;
+  font-family: var(--font-ui), sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24px;
@@ -1040,13 +1167,35 @@ a.button-secondary:hover {
   justify-content: space-between;
 }
 
+.oluk-candidate-pack-size {
+  display: grid;
+  gap: 8px;
+}
+
+.oluk-candidate-pack-size span {
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.oluk-candidate-pack-size strong {
+  background: var(--cobalt-soft);
+  border: 1px solid var(--cobalt);
+  border-radius: 12px;
+  color: var(--cobalt);
+  font-size: 15px;
+  padding: 12px;
+  text-align: center;
+}
+
 .card-sku {
   align-items: center;
   border-bottom: 1px solid var(--line);
   border-top: 1px solid var(--line);
   color: var(--ink-muted);
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   justify-content: space-between;
   letter-spacing: 0.08em;
@@ -1061,7 +1210,7 @@ a.button-secondary:hover {
 .price-block span {
   color: var(--cobalt);
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.14em;
 }
@@ -1135,7 +1284,7 @@ a.button-secondary:hover {
 
 .hero-category-cards > a > span {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -1149,14 +1298,14 @@ a.button-secondary:hover {
 
 .hero-category-cards p {
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.4;
 }
 
 .hero-category-cards strong {
   color: var(--cobalt);
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 7px;
 }
 
@@ -1182,7 +1331,7 @@ a.button-secondary:hover {
 .ticker-heading a {
   align-items: center;
   display: flex;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   gap: 10px;
   letter-spacing: 0.11em;
@@ -1245,7 +1394,7 @@ a.button-secondary:hover {
 
 .ticker-grid span {
   color: var(--ink-muted);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   margin-top: 4px;
@@ -1369,7 +1518,7 @@ a.button-secondary:hover {
 
 .family-grid > a > div span {
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -1382,10 +1531,6 @@ a.button-secondary:hover {
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.product-grid .product-media-chamber {
-  height: 250px;
 }
 
 .product-grid .product-content-plane {
@@ -1407,19 +1552,19 @@ a.button-secondary:hover {
 
 .product-grid .inventory-status,
 .product-grid .evidence-status {
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .product-grid .metric-rail dt {
   font-size: 15px;
 }
 
-.product-grid .card-actions {
+.product-commerce-card-featured .card-actions {
   grid-template-columns: 1fr 1.12fr;
 }
 
-.product-grid .card-actions .button {
-  font-size: 11px;
+.product-commerce-card-featured .card-actions .button {
+  font-size: 12px;
   gap: 8px;
   padding: 0 12px;
 }
@@ -1457,7 +1602,7 @@ a.button-secondary:hover {
 
 .assurance-number {
   color: var(--ink-soft);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
   padding-top: 4px;
@@ -1527,7 +1672,7 @@ a.button-secondary:hover {
 }
 
 .evidence-archive-section {
-  background: linear-gradient(135deg, #edf3fc, #f8f9fc 56%);
+  background: linear-gradient(135deg, var(--cobalt-soft), var(--canvas) 56%);
 }
 
 .evidence-archive-grid {
@@ -1603,7 +1748,7 @@ a.button-secondary:hover {
 
 .summary-metrics span {
   color: var(--ink-muted);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -1636,7 +1781,7 @@ a.button-secondary:hover {
 }
 
 .stars span {
-  color: #cad5e7;
+  color: var(--line);
 }
 
 .review-card h3 {
@@ -1673,13 +1818,13 @@ a.button-secondary:hover {
 
 .review-author > div span {
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 3px;
 }
 
 .verified-purchase {
-  color: var(--oluk-inventory-green, #15803d);
-  font-size: 9px;
+  color: var(--oluk-status-success, #15803d);
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1906,7 +2051,7 @@ a.button-secondary:hover {
   color: var(--cobalt);
   cursor: pointer;
   flex: 0 0 auto;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   padding: 4px 0;
 }
@@ -1924,7 +2069,7 @@ a.button-secondary:hover {
 
 .shop-filter-groups legend {
   color: var(--ink);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.09em;
   margin-bottom: 11px;
@@ -1973,49 +2118,6 @@ a.button-secondary:hover {
   overflow: hidden;
 }
 
-.shop-result-media {
-  align-items: center;
-  background: var(--oluk-media-gradient);
-  border-bottom: 1px solid var(--oluk-border-identity);
-  display: flex;
-  height: 328px;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-}
-
-.shop-result-orbit {
-  background: color-mix(in srgb, var(--white) 48%, transparent);
-  border: 1px solid var(--oluk-border-inner);
-  border-radius: 42% 42% 48% 48%;
-  bottom: 28px;
-  left: 10%;
-  position: absolute;
-  right: 10%;
-  top: 44px;
-}
-
-.shop-result-media::after {
-  background: var(--oluk-media-contact-shelf-gradient);
-  border: 1px solid var(--oluk-border-inner);
-  border-radius: 999px;
-  bottom: 34px;
-  content: "";
-  height: 42px;
-  left: 15%;
-  position: absolute;
-  right: 15%;
-}
-
-.shop-result-media img {
-  height: 91%;
-  mix-blend-mode: multiply;
-  object-fit: contain;
-  position: relative;
-  width: 76%;
-  z-index: 2;
-}
-
 .shop-result-content {
   padding: 24px;
 }
@@ -2050,7 +2152,7 @@ a.button-secondary:hover {
   color: var(--ink-soft);
   display: inline-flex;
   flex: 0 0 auto;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   gap: 7px;
   letter-spacing: 0.06em;
@@ -2067,11 +2169,13 @@ a.button-secondary:hover {
 }
 
 .shop-result-availability[data-state="in-stock"] {
-  color: var(--oluk-inventory-green, #15803d);
+  background: var(--oluk-stock-in-stock-soft);
+  border-color: var(--line-strong);
+  color: var(--oluk-stock-in-stock);
 }
 
 .shop-result-availability[data-state="in-stock"] i {
-  background: var(--success);
+  background: currentColor;
 }
 
 .shop-result-availability[data-state="on-backorder"] {
@@ -2100,7 +2204,7 @@ a.button-secondary:hover {
 
 .shop-result-facts dt {
   color: var(--ink-muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2125,7 +2229,7 @@ a.button-secondary:hover {
   border: 1px solid var(--oluk-border-family-bg);
   border-radius: 999px;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   padding: 7px 10px;
   text-transform: capitalize;
@@ -2154,7 +2258,7 @@ a.button-secondary:hover {
 }
 
 .shop-result-commerce .button {
-  font-size: 11px;
+  font-size: 12px;
   gap: 9px;
   min-height: 42px;
   padding-inline: 14px;
@@ -2290,7 +2394,7 @@ a.button-secondary:hover {
 }
 
 .pdp-first-fold {
-  background: linear-gradient(180deg, #f3f6fb, var(--canvas));
+  background: linear-gradient(180deg, var(--ice), var(--canvas));
   padding: 56px 0 92px;
 }
 
@@ -2303,7 +2407,7 @@ a.button-secondary:hover {
 
 .pdp-media-stage {
   align-items: center;
-  background: radial-gradient(circle at 50% 42%, #fff 0 14%, transparent 38%), linear-gradient(145deg, var(--ice), #e8f0fb);
+  background: radial-gradient(circle at 50% 42%, var(--white) 0 14%, transparent 38%), var(--oluk-media-gradient);
   border: 1px solid var(--line);
   border-radius: 32px;
   display: flex;
@@ -2315,7 +2419,7 @@ a.button-secondary:hover {
 
 .media-tag {
   color: var(--cobalt);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   left: 24px;
   letter-spacing: 0.12em;
@@ -2398,7 +2502,7 @@ a.button-secondary:hover {
   border-bottom: 1px solid var(--line);
   border-top: 1px solid var(--line);
   display: flex;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   justify-content: space-between;
   letter-spacing: 0.06em;
@@ -2422,31 +2526,28 @@ a.button-secondary:hover {
   padding-block: 44px 0;
 }
 
-.dossier-tabs {
+.dossier-section-index {
+  counter-reset: dossier-section;
   display: flex;
   gap: 8px;
-  margin-bottom: -1px;
-  padding-left: 22px;
-  position: relative;
-  z-index: 2;
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
 }
 
-.dossier-tabs span {
-  background: var(--ice);
-  border: 1px solid var(--line);
-  border-bottom: 0;
-  border-radius: 12px 12px 0 0;
-  color: var(--oluk-text-secondary, #53617d);
-  font-size: 11px;
-  font-weight: 800;
-  min-width: 102px;
-  padding: 12px 16px;
-  text-align: center;
-}
-
-.dossier-tabs span[aria-current="true"] {
+.dossier-section-index li {
+  align-items: center;
   background: var(--white);
-  color: var(--cobalt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--oluk-text-secondary, #53617d);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 800;
+  gap: 8px;
+  letter-spacing: 0.04em;
+  padding: 9px 13px;
+  text-transform: uppercase;
 }
 
 .dossier-card {
@@ -2475,7 +2576,7 @@ a.button-secondary:hover {
 
 .panel-index {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -2529,7 +2630,7 @@ a.button-secondary:hover {
 
 .dossier-media {
   align-items: center;
-  background: linear-gradient(145deg, var(--ice), #e8f0fb);
+  background: var(--oluk-media-gradient);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -2578,7 +2679,7 @@ a.button-secondary:hover {
 
 .record-card > div:first-child span {
   color: var(--cobalt);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -2605,7 +2706,7 @@ a.button-secondary:hover {
 
 .record-card dt {
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .record-card dd {
@@ -2656,7 +2757,7 @@ a.button-secondary:hover {
 .openlab-nav > .shell > div a {
   align-items: center;
   display: flex;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   padding: 0 14px;
 }
@@ -2709,7 +2810,7 @@ a.button-secondary:hover {
 .openlab-lens-tabs span {
   border-bottom: 2px solid transparent;
   color: var(--ink-muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
   padding: 0 10px 12px;
@@ -2758,7 +2859,7 @@ a.button-secondary:hover {
 
 .openlab-feature-card > span {
   color: var(--cobalt);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -2801,7 +2902,7 @@ a.button-secondary:hover {
 
 .portal-route-grid > a > span {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -2860,7 +2961,7 @@ a.button-secondary:hover {
 .records-table-head {
   background: var(--ice);
   color: var(--ink-muted);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
   min-height: 44px;
@@ -2891,7 +2992,7 @@ a.button-secondary:hover {
 
 .records-table-row strong {
   color: var(--cobalt);
-  font-size: 11px;
+  font-size: 12px;
   text-align: right;
 }
 
@@ -2906,7 +3007,7 @@ a.button-secondary:hover {
   color: var(--ink-muted);
   display: flex;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 12px;
   gap: 8px;
 }
 
@@ -2957,13 +3058,19 @@ a.button-secondary:hover {
 }
 
 .record-state > span:last-child {
-  background: rgba(19, 166, 106, 0.1);
+  background: var(--oluk-status-unavailable-soft);
   border-radius: 999px;
-  color: var(--oluk-inventory-green, #15803d);
-  font-size: 10px;
+  color: var(--ink-muted);
+  font-size: 12px;
   font-weight: 800;
   padding: 8px 11px;
   text-transform: uppercase;
+}
+
+.record-state > span[data-state="available"],
+.record-state > span[data-state="verified"] {
+  background: color-mix(in srgb, var(--oluk-status-success) 10%, transparent);
+  color: var(--oluk-status-success);
 }
 
 .record-detail-layout {
@@ -3009,7 +3116,7 @@ a.button-secondary:hover {
 
 .result-value span {
   color: var(--ink-muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -3032,7 +3139,7 @@ a.button-secondary:hover {
 
 .record-result-card dt {
   color: var(--ink-muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .record-result-card dd {
@@ -3180,7 +3287,7 @@ a.button-secondary:hover {
 
 .lookup-guide > span {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   grid-row: span 2;
   padding-top: 4px;
@@ -3224,7 +3331,7 @@ a.button-secondary:hover {
 .methodology-grid article > span,
 .about-grid article > span {
   color: var(--ink-soft);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -3275,7 +3382,7 @@ a.button-secondary:hover {
 
 .source-chain article > span {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -3332,7 +3439,7 @@ a.button-secondary:hover {
 
 .compare-product span {
   color: var(--cobalt);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -3399,7 +3506,7 @@ a.button-secondary:hover {
 .footer-mark {
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.38);
-  color: #8fb2ff;
+  color: var(--line-strong);
   display: flex;
   font-size: 12px;
   font-weight: 800;
@@ -3422,22 +3529,22 @@ a.button-secondary:hover {
 }
 
 .footer-lockup > div span {
-  color: #8fb2ff;
-  font-size: 8px;
+  color: var(--line-strong);
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.25em;
   margin-top: 2px;
 }
 
 .footer-intro p {
-  color: #aeb9cc;
+  color: var(--oluk-text-on-inverse-muted);
   font-size: 15px;
   line-height: 1.65;
   margin: 24px 0;
 }
 
 .footer-intro > a {
-  color: #8fb2ff;
+  color: var(--line-strong);
   font-size: 12px;
   font-weight: 800;
 }
@@ -3449,8 +3556,8 @@ a.button-secondary:hover {
 }
 
 .footer-grid h3 {
-  color: #8fb2ff;
-  font-size: 10px;
+  color: var(--line-strong);
+  font-size: 12px;
   letter-spacing: 0.13em;
   margin: 0 0 8px;
   text-transform: uppercase;
@@ -3458,15 +3565,15 @@ a.button-secondary:hover {
 
 .footer-links a,
 .footer-links span {
-  color: #d9dfeb;
+  color: var(--oluk-text-on-inverse-muted);
   font-size: 13px;
 }
 
 .footer-base {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  color: #8995a9;
+  color: var(--oluk-text-on-inverse-muted);
   display: flex;
-  font-size: 10px;
+  font-size: 12px;
   justify-content: space-between;
   margin-top: 54px;
   padding-top: 22px;
@@ -3511,7 +3618,7 @@ a.button-secondary:hover {
 
 .review-index-grid article > span {
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -3544,9 +3651,9 @@ a.button-secondary:hover {
 }
 
 .review-index-grid article > strong {
-  color: var(--oluk-inventory-green, #15803d);
+  color: var(--oluk-status-success, #15803d);
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   margin-top: 20px;
 }
@@ -3701,7 +3808,7 @@ a.button-secondary:hover {
   }
 
   .desktop-nav a {
-    font-size: 11px;
+    font-size: 12px;
     padding-inline: 15px;
   }
 
@@ -4100,11 +4207,39 @@ a.button-secondary:hover {
   }
 
   .openlab-nav {
-    overflow-x: auto;
+    overflow: visible;
   }
 
   .openlab-nav > .shell {
-    min-width: 720px;
+    align-items: stretch;
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+    padding-block: 10px;
+  }
+
+  .openlab-wordmark {
+    justify-self: start;
+    min-height: 34px;
+  }
+
+  .openlab-nav > .shell > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    width: 100%;
+  }
+
+  .openlab-nav > .shell > div a {
+    justify-content: flex-start;
+    line-height: 1.35;
+    min-width: 0;
+    padding: 9px 8px;
+    white-space: normal;
+  }
+
+  .openlab-nav > .shell > div a[aria-current="page"] {
+    box-shadow: inset 2px 0 var(--cobalt);
   }
 
   .openlab-portal-grid {
@@ -4148,7 +4283,7 @@ a.button-secondary:hover {
   .records-table-row span {
     border-top: 1px solid var(--line);
     display: grid;
-    font-size: 11px;
+    font-size: 12px;
     gap: 4px;
     padding: 11px 7px;
   }
@@ -4156,7 +4291,7 @@ a.button-secondary:hover {
   .records-table-row span::before {
     color: var(--ink-muted);
     content: attr(data-label);
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -4206,12 +4341,17 @@ a.button-secondary:hover {
 }
 
 @media (max-width: 540px) {
+  .product-commerce-card-vertical,
+  .product-commerce-card-featured {
+    padding: 12px;
+  }
+
   .shell {
     padding-inline: 16px;
   }
 
   .trust-rail a {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .brand-link,
@@ -4320,12 +4460,7 @@ a.button-secondary:hover {
   }
 
   .archive-metrics span {
-    font-size: 7px;
-  }
-
-  .product-media-chamber,
-  .product-commerce-card-featured .product-media-chamber {
-    height: 260px;
+    font-size: 12px;
   }
 
   .product-content-plane {
@@ -4352,7 +4487,7 @@ a.button-secondary:hover {
   }
 
   .card-actions,
-  .product-grid .card-actions {
+  .product-commerce-card-featured .card-actions {
     grid-template-columns: 1fr;
   }
 
@@ -4370,7 +4505,7 @@ a.button-secondary:hover {
 
   .ticker-heading > span,
   .ticker-heading a {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .section {
@@ -4406,7 +4541,7 @@ a.button-secondary:hover {
   }
 
   .summary-metrics span {
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .review-card {
@@ -4452,10 +4587,6 @@ a.button-secondary:hover {
 
   .shop-filter-groups {
     grid-template-columns: 1fr;
-  }
-
-  .shop-result-media {
-    height: 290px;
   }
 
   .shop-result-content {
@@ -4525,9 +4656,9 @@ a.button-secondary:hover {
     gap: 9px;
   }
 
-  .dossier-tabs {
+  .dossier-section-index {
     overflow-x: auto;
-    padding-left: 10px;
+    padding-left: 0;
   }
 
   .dossier-card {

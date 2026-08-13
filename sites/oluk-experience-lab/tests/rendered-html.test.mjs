@@ -1,24 +1,9 @@
 import assert from "node:assert/strict";
 import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
+import { CUSTOMER_ROUTES } from "../app/design-system/site-route-data.mjs";
 
-const routes = [
-  ["/", "Formulated to a higher standard."],
-  ["/shop", "The Olympus Labs UK range."],
-  ["/product/mk-2866", "MK-2866"],
-  ["/reviews", "Experiences shared by Olympus customers."],
-  ["/review", "Olympus Labs UK review surfaces."],
-  ["/about", "Quality, made visible."],
-  ["/about/evidence-os", "A clearer path from product to proof."],
-  ["/open-lab", "Independent evidence, connected to every product."],
-  ["/open-lab/records", "Every product. Its available record path."],
-  ["/open-lab/records/source-bound-record", "MK-2866 evidence record"],
-  ["/open-lab/dossier/mk-2866", "MK-2866 product dossier."],
-  ["/open-lab/batch-lookup", "Find a batch record."],
-  ["/open-lab/methodology", "How finished-product records are read."],
-  ["/open-lab/source-chain", "From finished product to original report."],
-  ["/open-lab/compare", "Compare finished-product evidence paths."],
-];
+const routes = CUSTOMER_ROUTES.map(({ path, heading }) => [path, heading]);
 
 const customerRoutes = routes.filter(([pathname]) => pathname !== "/review");
 
@@ -57,7 +42,7 @@ const candidateReviewAnchors = [
   "mf02b-selection-receipt",
 ];
 
-const baselineRouteLinks = customerRoutes.map(([pathname]) => pathname);
+const baselineRouteLinks = routes.map(([pathname]) => pathname);
 
 const stableCustomerReviewAnchors = [
   ["/", ["hero", "assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
@@ -144,8 +129,8 @@ async function renderHtml(worker, pathname) {
   return response.text();
 }
 
-test("server-renders all 15 diagnostic routes with their expected headings and private indexing policy", async () => {
-  assert.equal(routes.length, 15);
+test("server-renders all 31 governed routes with their expected headings and private indexing policy", async () => {
+  assert.equal(routes.length, 31);
   const worker = await loadWorker();
 
   for (const [pathname, heading] of routes) {
@@ -202,7 +187,7 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
 
   const homeText = visibleText(await renderHtml(worker, "/"));
   for (const expected of [
-    "FORMULATED. VERIFIED. BATCH TRACKED.",
+    "FORMULATED. CLEARLY SPECIFIED. EVIDENCE-AWARE.",
     "Formulated to a higher standard.",
     "15 MG",
     "90 SERVINGS",
@@ -214,6 +199,11 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
     assert.match(homeText, new RegExp(escapeRegExp(expected)), `homepage decision truth: ${expected}`);
   }
   assert.doesNotMatch(homeText, /90 CAPS(?:\b|ULES)/i);
+  assert.doesNotMatch(homeText, /Third-party tested|FORMULATED\. VERIFIED\. BATCH TRACKED\./i);
+
+  const shopHtml = await renderHtml(worker, "/shop");
+  assert.match(shopHtml, /data-component=["']ProductCommerceCard\.featured["']/i, "Shop renders the mapped canonical Featured component");
+  assert.match(shopHtml, /class=["'][^"']*shop-result-card-canonical[^"']*["']/i, "Shop exposes the canonical catalogue-result selector");
 
   const openLabText = visibleText(await renderHtml(worker, "/open-lab"));
   for (const lens of ["Technical", "Product evidence", "Commerce"]) {
@@ -232,6 +222,35 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const candidateTokens = await readFile(new URL("../app/design-system/candidate-tokens.css", import.meta.url), "utf8");
   const candidateCss = await readFile(new URL("../app/design-system/candidate-review.css", import.meta.url), "utf8");
+  const candidateComponents = await readFile(new URL("../app/design-system/candidate-components.tsx", import.meta.url), "utf8");
+  const candidateReview = await readFile(new URL("../app/design-system/candidate-review.tsx", import.meta.url), "utf8");
+  const sharedCard = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
+  const sharedMediaCss = await readFile(new URL("../app/design-system/product-media-chamber.module.css", import.meta.url), "utf8");
+
+  const foundationSource = candidateReview.match(/function FoundationSpecimen\(\)[\s\S]*?\n}\n\nfunction ProvenanceGate/)?.[0] ?? "";
+  const colourRolesSource = foundationSource.match(/const colourRoles = \[([\s\S]*?)\] as const;/)?.[1] ?? "";
+  assert.match(foundationSource, /OLUK candidate foundation convergence/);
+  assert.match(foundationSource, /A normalization layer for MF-01A through MF-03 relationships\. It is not promoted design-system authority\./);
+  assert.equal((foundationSource.match(/data-foundation-section=/g) ?? []).length, 5, "FC-01 keeps all five governing sections");
+  assert.equal((colourRolesSource.match(/^\s*\["/gm) ?? []).length, 22, "FC-01 exposes all 22 current colour roles");
+  for (const section of ["01 · COLOR", "02 · TYPOGRAPHY", "03 · SHAPE + ELEVATION", "04 · SURFACE RELATIONSHIPS", "05 · CANDIDATE GATE"]) {
+    assert.match(foundationSource, new RegExp(escapeRegExp(section)), section);
+  }
+  for (const status of ["112 LOCAL VARIABLES", "HIDDEN FROM PUBLISHING", "HUMAN SELECTION PENDING", "RUNTIME AUTHORITY: NONE"]) {
+    assert.match(foundationSource, new RegExp(escapeRegExp(status)), status);
+  }
+  assert.match(foundationSource, /DISPLAY · PLUS JAKARTA SANS EXTRABOLD/);
+  assert.match(foundationSource, /BODY \+ UI · INTER VARIABLE/);
+  for (const scale of ["18 / 28", "16 / 24", "15 / 22", "12 / 16"]) {
+    assert.match(foundationSource, new RegExp(escapeRegExp(scale)), `body scale ${scale}`);
+  }
+  for (const density of ["20px", "24px", "28px", "34px", "12 / 5 / .09", "60 / 24 / .10", "50 / 20 / .18", "25 / 12 / .12"]) {
+    assert.match(foundationSource, new RegExp(escapeRegExp(density)), `density specimen ${density}`);
+  }
+  for (const relationship of ["BOUNDED MEDIA CHAMBER", "INDEPENDENT EDITORIAL PLANE", "SOLE INVERSE SURFACE"]) {
+    assert.match(foundationSource, new RegExp(relationship), relationship);
+  }
+  assert.equal((foundationSource.match(/<li>/g) ?? []).length, 5, "candidate gate keeps five guardrails");
 
   assert.match(css, /--canvas:\s*#f7f8fc\s*;/i);
   assert.match(css, /body\s*\{[\s\S]*?background:\s*var\(--canvas\)\s*;/i);
@@ -250,12 +269,23 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
     "--oluk-border-family-bg: #d9e3f1",
     "--oluk-text-chip-value: #17213f",
     "--oluk-cobalt: #0057ff",
-    "--oluk-inventory-green: #15803d",
+    "--oluk-cobalt-alt: #0057ff",
+    "--oluk-ink-dark: #344054",
+    "--oluk-status-error: #b42318",
+    "--oluk-status-error-soft: #fef3f2",
+    "--oluk-status-warning: #b54708",
+    "--oluk-status-unavailable-soft: #f4f5f7",
+    "--oluk-status-disabled: #9ca3af",
+    "--oluk-stock-in-stock: var(--oluk-cobalt)",
+    "--oluk-stock-in-stock-soft: var(--oluk-surface-cobalt-soft)",
+    "--oluk-status-success: #15803d",
     "--oluk-radius-compact: 20px",
     "--oluk-radius-vertical: 24px",
     "--oluk-radius-purchase: 28px",
     "--oluk-radius-horizontal: 34px",
     "--oluk-type-chip-label: 11px",
+    "--oluk-page-padding: 64px",
+    "--oluk-section-gap: 32px",
   ]) {
     assert.match(candidateTokens, new RegExp(escapeRegExp(token)), token);
   }
@@ -274,15 +304,28 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.match(candidateCss, /\.oluk-card--vertical,[\s\S]*?\.oluk-card--featured\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-card\)/i);
   assert.match(candidateCss, /\.oluk-card--purchase\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-purchase\)/i);
   assert.match(candidateCss, /\.oluk-canvas-split\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-relation\)/i);
+  assert.match(candidateCss, /\.oluk-candidate-foundation-swatches\s*\{[^}]*grid-template-columns:\s*repeat\(5, minmax\(0, 1fr\)\)/i, "FC-01 renders the authored five-column colour specimen");
+  assert.match(candidateCss, /\.oluk-candidate-foundation-density-grid \[data-elevation="compact"\][^}]*var\(--oluk-shadow-compact\)/i);
+  assert.match(candidateCss, /\.oluk-candidate-foundation-density-grid \[data-elevation="card"\][^}]*var\(--oluk-shadow-card\)/i);
+  assert.match(candidateCss, /\.oluk-candidate-foundation-density-grid \[data-elevation="purchase"\][^}]*var\(--oluk-shadow-purchase\)/i);
+  assert.match(candidateCss, /\.oluk-candidate-foundation-density-grid \[data-elevation="relation"\][^}]*var\(--oluk-shadow-relation\)/i);
+  assert.match(candidateCss, /\.oluk-candidate-foundation-embedded > i\s*\{[^}]*background:\s*var\(--oluk-cobalt\)/i, "embedded relationship uses its cobalt relational mark");
+  assert.match(candidateCss, /\.oluk-candidate-foundation-canvas-split\s*\{[^}]*background:\s*var\(--oluk-canvas\)/i, "independent planes expose true canvas");
+  assert.match(candidateCss, /\.oluk-candidate-foundation-inverse\s*\{[^}]*background:\s*var\(--oluk-inverse\)/i, "footer-only inverse specimen is explicit");
   assert.match(candidateCss, /\.oluk-candidate-qualitative\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/i);
-  assert.match(candidateCss, /@media \(max-width: 540px\)[\s\S]*?\.oluk-candidate-qualitative\s*\{\s*grid-template-columns:\s*1fr\s*;/i);
+  assert.doesNotMatch(candidateCss, /@media \(max-width: 540px\)[\s\S]*?\.oluk-candidate-qualitative\s*\{\s*grid-template-columns:\s*1fr\s*;/i, "mobile keeps the MF-01A 2x2 chip grammar");
   assert.doesNotMatch(candidateCss, /overflow-x:\s*clip/i, "candidate review must not use page clipping as responsive evidence");
   assert.match(css, /body:has\(\.experience-lab--candidate-review\),\s*\.experience-lab--candidate-review\s*\{\s*overflow-x:\s*visible\s*;/i, "candidate route must expose real document overflow");
 
-  assert.match(candidateCss, /\.oluk-media-chamber\s*\{[\s\S]*?background:\s*var\(--oluk-media-gradient\)/i, "media chamber must use the MF-01A atmospheric gradient, not a solid fill");
-  assert.match(candidateCss, /\.oluk-candidate-media-chamber::before\s*\{[^}]*border:[^;]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*box-shadow:[^}]*inset/i, "candidate chamber restores the luminous halo");
-  assert.match(candidateCss, /\.oluk-candidate-media-chamber::after\s*\{[^}]*var\(--oluk-border-identity\)[^}]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.42\)/i, "candidate chamber restores the identity pane");
-  assert.match(candidateCss, /\.oluk-candidate-media-contact-shelf\s*\{[^}]*var\(--oluk-border-inner\)[^}]*background:\s*var\(--oluk-media-contact-shelf-gradient\)/i, "candidate chamber restores the contact shelf");
+  assert.match(sharedMediaCss, /\.chamber\s*\{[^}]*background:\s*var\(--oluk-media-gradient/i, "shared candidate chamber must use the MF-01A atmospheric gradient, not a solid fill");
+  assert.match(candidateComponents, /export \{ ProductCommerceCard \} from "\.\/product-commerce-card"/, "the compatibility registry re-exports the canonical card");
+  assert.match(sharedCard, /import \{ ProductMediaChamber \}/, "canonical cards import the shared authored chamber");
+  assert.ok((sharedCard.match(/<ProductMediaChamber\b/g) ?? []).length >= 3, "canonical vertical, featured, compact and relation compositions reuse ProductMediaChamber");
+  assert.doesNotMatch(candidateComponents, /function (?:ProductCommerceCard|CompactCard|RelationCard|MetricRail|QualitativeChips|PurchasePanel)/, "candidate registry contains no parallel component anatomy");
+  assert.match(candidateReview, /<ProductCommerceCard[\s\S]*?showQualitative=\{false\}[\s\S]*?variant="compact"/, "compact review uses canonical anatomy without the omitted chip block");
+  assert.match(sharedMediaCss, /\.halo\s*\{[^}]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*inset/i, "shared candidate chamber preserves the luminous halo");
+  assert.match(sharedMediaCss, /\.identityPane\s*\{(?=[^}]*var\(--oluk-border-identity)(?=[^}]*rgba\(255,\s*255,\s*255,\s*0\.42\))[^}]*\}/i, "shared candidate chamber preserves the identity pane");
+  assert.match(sharedMediaCss, /\.contactShelf\s*\{[\s\S]*?var\(\s*--oluk-media-contact-shelf-gradient[\s\S]*?var\(--oluk-border-inner[\s\S]*?\}/i, "shared candidate chamber preserves the contact shelf");
   assert.match(candidateCss, /\.oluk-card--vertical,[\s\S]*?\.oluk-card--featured\s*\{[^}]*border-color:\s*var\(--oluk-border-outer\)/i, "Vertical and Featured outer wrappers use border/outer");
   assert.match(candidateCss, /\.oluk-candidate-series\s*\{[^}]*border:[^;]*var\(--oluk-border-family-bg\)[^}]*background:\s*var\(--oluk-surface-family\)/i, "family markers use the MF-01A family surface hierarchy");
   assert.doesNotMatch(candidateCss, /\.oluk-candidate-content-plane[\s\S]*?linear-gradient/i, "content planes remain white rather than inventing a gradient");
@@ -349,7 +392,8 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   assert.match(mediaSource, /data-authored-layers="outer-gradient luminous-halo identity-pane contact-shelf product"/, "shared media chamber exposes the complete authored layer contract");
   assert.match(mediaSource, /className=\{classes\(styles\.contactShelf, "oluk-product-media-chamber__contact-shelf"\)\}/, "shared media chamber owns the contact-shelf layer");
   assert.doesNotMatch(cardSource, /className="media-orbit"/, "the invented circular orbit is removed from Vertical and Featured customer cards");
-  assert.match(layout, /@fontsource\/inter\/500\.css/, "Inter Medium is loaded rather than synthesized");
+  assert.match(layout, /@fontsource-variable\/inter/, "Inter Variable is loaded from the package-local variable font");
+  assert.doesNotMatch(layout, /@fontsource\/inter\//, "static Inter weights are no longer imported");
 
   assert.match(css, /\.product-commerce-card\s*\{[^}]*border:\s*1px solid var\(--oluk-border-outer\)/i, "customer cards use the MF-01A outer-wrapper border");
   assert.match(mediaCss, /\.chamber\s*\{[^}]*background:\s*var\(--oluk-media-gradient/i, "bounded product chambers use the governed MF-01A gradient");
@@ -390,18 +434,20 @@ test("renders owner-review candidate anchors, direct Figma sources, and all comp
     }
   }
 
-  for (const node of ["728:50", "732:2897", "742:50", "743:50", "743:281", "743:520", "745:50", "732:2902", "732:2912", "752:167", "753:18136", "750:182", "737:50", "737:159", "737:264", "739:50"]) {
+  for (const node of ["637:3", "732:2897", "742:50", "743:50", "743:281", "743:520", "745:50", "732:2902", "732:2912", "752:167", "753:18136", "750:182", "737:50", "737:159", "737:264", "739:50", "764:50", "765:50", "766:50", "767:50", "870:72", "871:50", "872:445", "875:1094", "921:2703", "921:2717", "921:2724"]) {
     assert.match(reviewHtml, new RegExp(escapeRegExp(`node-id=${node.replace(":", "-")}`)), `Figma node ${node}`);
   }
 
-  assert.match(reviewText, /CONV-001 \/ CANDIDATE_CONVERGENCE_v0/);
-  assert.match(reviewText, /CHAMPION STATE INHERITED \/ HUMAN_REVIEW_REQUIRED/);
+  assert.match(reviewText, /CONV-004 \/ CANDIDATE_CONVERGENCE_v0/);
+  assert.match(reviewText, /RECONCILIATION DELTA \/ HUMAN_REVIEW_REQUIRED/);
+  assert.match(reviewText, /RUNTIME AUTHORITY NONE/);
+  assert.match(reviewText, /Thirty-one governed candidate surfaces\./);
   assert.match(reviewText, /Rendered surface approval remains open\./);
-  assert.match(reviewText, /PROPOSED and non-controlling/i);
-  assert.match(reviewHtml, /data-candidate-component=["']ProductCommerceCard\.vertical["']/i);
-  assert.match(reviewHtml, /data-candidate-component=["']ProductCommerceCard\.Relation["']/i);
-  assert.match(reviewHtml, /data-candidate-component=["']PurchasePanel["']/i);
-  assert.match(reviewHtml, /data-candidate-component=["']AssuranceRail["']/i);
+  assert.match(reviewText, /DEC-TYPE-FLOOR-001 controls a 12px metadata and 15–16px body floor/i);
+  assert.match(reviewHtml, /data-component=["']ProductCommerceCard\.vertical["']/i);
+  assert.match(reviewHtml, /data-component=["']ProductCommerceCard\.Relation["']/i);
+  assert.match(reviewHtml, /data-component=["']PurchasePanel["']/i);
+  assert.match(reviewHtml, /data-component=["']AssuranceRail["']/i);
   assert.match(reviewHtml, /<button\b(?=[^>]*\bdisabled\b)[^>]*>Add to bag<\/button>/i, "static actions use native disabled-button semantics");
   assert.doesNotMatch(reviewHtml, /<span\b[^>]*\baria-disabled=/i, "button-like spans are not used for static controls");
 });
@@ -425,12 +471,18 @@ test("keeps candidate fixtures typed and isolated from all customer routes", asy
   assert.doesNotMatch(experienceLab, /CandidateReviewIndex|CANDIDATE_CONVERGENCE_v0/, "customer route module must not import review fixtures");
   assert.match(reviewPage, /CandidateReviewIndex/, "review route owns the candidate import boundary");
 
-  for (const primitive of ["OlukCanvas", "OlukSection", "OlukSurface", "OlukCard", "OlukMediaChamber", "OlukPurchasePlane", "OlukDivider", "OlukCanvasSplit"]) {
+  for (const primitive of ["OlukCanvas", "OlukSection"]) {
     assert.match(primitives, new RegExp(`export function ${primitive}\\b`), `candidate primitive ${primitive}`);
     assert.match(components + reviewPage + (await readFile(new URL("../app/design-system/candidate-review.tsx", import.meta.url), "utf8")), new RegExp(`<${primitive}\\b`), `candidate primitive usage ${primitive}`);
   }
+  for (const historicalPrimitive of ["OlukSurface", "OlukCard", "OlukPurchasePlane", "OlukDivider", "OlukCanvasSplit", "OlukMediaChamber"]) {
+    assert.match(primitives, new RegExp(`export function ${historicalPrimitive}\\b`), `historical candidate primitive ${historicalPrimitive} remains available`);
+  }
+  assert.match(primitives, /export function OlukMediaChamber\b/, "historical candidate primitive remains available without controlling card composition");
+  assert.doesNotMatch(components, /<OlukMediaChamber\b/, "candidate cards use ProductMediaChamber instead of the parallel historical primitive");
 
-  assert.match(components, /state === "out-of-stock" \? "Out of stock"/, "out-of-stock compact specimen cannot present Quick add");
+  assert.doesNotMatch(components, /export function (?:ProductCommerceCard|PurchasePanel|MetricRail|EvidenceStatus|AssuranceRail|RelationCard)/, "owner review has no parallel canonical anatomy definitions");
+  assert.match(components, /export \{ ProductCommerceCard \} from "\.\/product-commerce-card"/, "owner review compatibility registry re-exports canonical ProductCommerceCard");
   for (const state of ["default", "quantity-changed", "added", "unavailable", "out-of-stock", "disabled"]) {
     assert.match(components, new RegExp(`(?:\\"|')${escapeRegExp(state)}(?:\\"|')`), `PurchasePanel state ${state}`);
   }
