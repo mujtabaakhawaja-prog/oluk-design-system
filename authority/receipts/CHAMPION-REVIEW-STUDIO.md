@@ -25,7 +25,7 @@ Status: `HUMAN_REVIEW_REQUIRED_UNPUBLISHED`
 ## Unchanged gates
 
 - No champion decision has been recorded.
-- `Third-Party Tested` remains an approved Olympus trust statement. Only result-specific analytical claims remain source-bound.
+- Approved supplied product, commerce, OpenLab, testing, payment-trust, and lifecycle content remains controlling design input, including `Third-Party Tested`. The design lane prohibits only newly invented material; it does not reopen or weaken already-vetted content.
 - Existing 124 captures remain `CAPTURED_UNREVIEWED`; 36 remain pending machine capture.
 - No capture is promoted by this implementation.
 - No Figma publication, hosting, Shopper deployment, Tools mutation, Woo mutation, or payment integration occurred.

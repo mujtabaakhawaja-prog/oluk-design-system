@@ -1,9 +1,9 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-13T15:55:51-04:00",
-  "sourceGitSha": "886b1daf3efae84f11e46876b59e2613a171fc90",
-  "sourceTreeHash": "7e9356b3bdac2072eb19ca27e62ec4cc55e8722c0ddbd4213151a7002ed8c37a",
+  "generatedAt": "2026-08-13T15:56:26-04:00",
+  "sourceGitSha": "144e595529e60d9644a01cebd8ee2852a40c4f40",
+  "sourceTreeHash": "ed5cbcc82770921e70dfd8e01945c84e960eabb3450d6b2689d065b9f04c91f9",
   "designContractHash": "874cd0b0d43621abebb06e33cfce99f4b7dd32e147030fb1379a790d88f29aef",
   "decisionCount": 12,
   "families": [
@@ -354,17 +354,11 @@
     "canonicalPdp": "/product/:slug",
     "canonicalOpenLab": "/open-lab",
     "ownerOnlyIsAuthenticated": false,
+    "contentAuthority": "PRESERVE_APPROVED_SUPPLIED_CONTENT",
     "approvedTrustStatements": [
       "Third-Party Tested"
     ],
-    "sourceBoundClaims": [
-      "named report result",
-      "analyte result",
-      "PASS outcome",
-      "release approval",
-      "QA signoff",
-      "test scope"
-    ]
+    "prohibition": "NEWLY_INVENTED_MATERIAL_ONLY"
   },
   "routeLedger": {
     "routeCount": 73,
