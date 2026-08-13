@@ -18,3 +18,13 @@ test("frontier section registry covers all 75 creative actions with explicit mob
   assert.ok(registry.sections.every((section) => section.mobileStrategy && section.mounts.length));
   assert.deepEqual(registry.mobileContract.reviewWidths, [1440,390]);
 });
+
+test("frontier binds supplied product renders and ships bounded Make/agentic handoff kits", () => {
+  assert.match(content, /"mk-2866": "\/assets\/products\/mk-2866\/front\.png"/);
+  assert.match(content, /"rad-140": "\/assets\/products\/rad-140\/front-design-fixture\.png"/);
+  const kitRoot = new URL("../../../make-sessions/frontier-site-expansion/", import.meta.url);
+  for (const file of ["README.md", "assets.json", "app.tsx", "PROMPTS.md", "AGENTIC_PROMPTS.md"]) {
+    assert.ok(readFileSync(new URL(file, kitRoot), "utf8").length > 200, file);
+  }
+  assert.doesNotMatch(readFileSync(new URL("PROMPTS.md", kitRoot), "utf8"), /RAD-140[^\n]{0,80}10 MG/);
+});

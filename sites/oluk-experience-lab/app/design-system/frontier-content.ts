@@ -33,6 +33,11 @@ export const frontierProducts = [
 
 export const productBySlug = Object.fromEntries(frontierProducts.map((product) => [product.slug, product])) as Record<string, FrontierProductRecord>;
 export const getFrontierProduct = (slug: string) => productBySlug[slug];
+/** The frontier reuses only repository-owned product renders; routes without a render keep the chamber unpopulated. */
+export const actualProductMedia: Readonly<Record<string, string>> = {
+  "mk-2866": "/assets/products/mk-2866/front.png",
+  "rad-140": "/assets/products/rad-140/front-design-fixture.png",
+};
 export const productFamilies: ReadonlyArray<{name: ProductFamily; summary: string}> = [
   {name:"Research Chemicals",summary:"A focused collection for product-led discovery, comparisons and related research paths."},
   {name:"Metabolics",summary:"A product family organised around clear category context and complementary collection routes."},

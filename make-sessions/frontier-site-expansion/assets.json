@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "oluk.frontier-make-assets.v1",
+  "productRenders": [
+    {"product":"MK-2866","path":"../../sites/oluk-experience-lab/public/assets/products/mk-2866/front.png","usage":"PDP hero, product card and checkout line-item only"},
+    {"product":"RAD-140","path":"../../sites/oluk-experience-lab/public/assets/products/rad-140/front-design-fixture.png","usage":"PDP hero and comparison only; label strength remains 8 MG"}
+  ],
+  "sharedReferenceRoot": "../shared-kit",
+  "doNotUseAsRuntimeAssets": true
+}

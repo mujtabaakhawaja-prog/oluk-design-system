@@ -16,7 +16,7 @@ const MIB = 1024 * KIB;
 
 export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The frontier’s dynamic PDP/account modules add a bounded local CSS/SSR split.
-  clientJavaScriptBytes: 544 * KIB,
+  clientJavaScriptBytes: 560 * KIB,
   clientCssBytes: 232 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,

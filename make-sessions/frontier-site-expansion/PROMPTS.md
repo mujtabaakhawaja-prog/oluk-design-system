@@ -1,0 +1,24 @@
+# OLUK Frontier Make Prompts
+
+Use each prompt independently. Each requires a **1440px desktop** and **390px mobile** frame. Use the supplied static `app.tsx` and actual render references. Do not copy its CSS as a final Sites implementation.
+
+## 01 — OpenLab portal and record workspace
+
+Design an Olympus Labs UK OpenLab portal in the established active light system: luminous cool-blue canvas, raised white content planes, graduated blue borders, cobalt only for meaningful actions/relationships, Plus Jakarta Sans display type, Inter Variable UI/body. Compose a calm evidence portal with: a strong OpenLab hero, “Choose your way in” cards for Records, Batch Lookup, Methodology, Source Chain and Compare; a four-state evidence legend; a compact visual record preview; a source-chain transition; and a product-to-OpenLab return path. Do not make a clinical dashboard or generic SaaS admin panel. Use explicit state labels—Verified Evidence, Source Reported, Source Only, Unavailable—and never rely on colour alone. On mobile, prioritize hero → status legend → next action → one record preview; convert dense tables to summary rows/disclosure and reserve horizontal scrolling only for a clearly labelled comparison table. Do not invent charts, reports, PDFs, laboratory values, dates, pass/fail outcomes, API behavior or login.
+
+## 02 — PDP decision, details and continuation
+
+Design the MK-2866 PDP as an information-rich but calm commerce narrative using the actual MK-2866 product render. Preserve exactly: SARM SERIES, MK-2866, Ostarine, SKU 80529-01, 15 MG, 90 SERVINGS, >99%, £43. Build: media chamber and raised purchase plane; a compact metric rail; detail/Composition/Guidance disclosures; an OpenLab evidence snapshot; “Complete Your Stack” continuation; a Restock Lab state; related-product cards; and pre-footer trust closure. Do not add a cobalt perimeter or decorative card eyebrow; use an internal chamber-to-content seam and the existing white/ice material hierarchy. At 390px, make the primary choice, price and product metrics visible above the fold; use a sticky decision summary only as navigation to the purchase plane; move secondary content into disclosures/carousels without simply stacking every desktop region.
+
+## 03 — Checkout lifecycle and payment trust
+
+Design a coherent Olympus checkout lifecycle from Bag through Information, Delivery, Review, Payment, Processing, Confirmation, Tracking, Order Details, Receipt, Return and Refund. Preserve the established equality-lock hierarchy: show GBP as the selected customer display currency and disclose fixed USD equivalent at Review/Payment/Confirmation. Pre-payment copy: “You are paying the USD equivalent of the displayed GBP amount.” Confirmation heading: “Your order total” with “Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD.” Receipt and Order Details use “Amount Processed”; History remains concise; Refund uses “Refund Amount.” Make Payment a visual protected handoff shell, not a real card form, Stripe embed, provider UI or callback flow. Mobile compacts progress into a clear step summary, keeps total/equality lock visible, and uses disclosure for line-item detail rather than a long desktop-form stack.
+
+## 04 — Commerce growth, stacks and account continuation
+
+Design connected growth modules that can mount consistently on PDP, Bag, Confirmation and Account: Recommendation Cards in Default/Selected/Added/Unavailable/Out of Stock; Restock Lab in Active/Due Soon/Overdue/Paused; a two-view Upsell Context Rail; a Good/Better/Best stack explorer for Bulking, Cutting, Recomp and PCT; a bundle-builder decision surface; loyalty/referral summaries; quick reorder; saved stacks and account dashboard tiles. Use the actual product renders only where available. Preserve RAD-140 at 8 MG in every alternative/bulking/comparison variant. Make the offer ladder quiet: a compact free-delivery progress message and one optional exit-intent state, never a noisy promo wall. At mobile width, present one priority continuation action at a time, turn grids into intentional rails or concise summaries, and retain 44px targets.
+
+## 05 — OpenLab technical modules
+
+Design a reusable system for Lab Records Archive, Branded Lab Record, Report Viewer, Batch Lookup, Methodology, Source Chain, and Compare. Keep an editorial science-and-commerce atmosphere, not a medical portal. A record view needs identity header, evidence state, source action area, analyte table anatomy, document-preview slot and a product return path. Batch Lookup needs exact-input, no-result and unavailable compositions. Methodology uses six stages and technical-method cards. Compare uses a sticky compact header and horizontally scrollable fact table on mobile with a visible scroll cue. All unavailable information must look deliberately designed rather than empty. Do not invent chromatograms, result tables, certificate images or implied lab outcomes.
+
