@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element -- local transparent Figma assets require authored object-fit treatment. */
-/* eslint-disable @next/next/no-html-link-for-pages -- plain anchors preserve stable Vinext hydration in the private Sites build. */
 
 import type { ReactNode } from "react";
 

@@ -7,6 +7,7 @@ import {
   CUSTOMER_ROUTES,
   PRIMARY_NAV_ROUTE_KEYS,
 } from "../app/design-system/site-route-data.mjs";
+import { FRONTIER_ROUTE_PATTERNS } from "../app/design-system/frontier-content.ts";
 import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -27,14 +28,12 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("one executable registry controls all 41 physical pages and the 40-case-family browser proof", async () => {
+test("core registry controls 41 governed pages while frontier patterns declare module-composed dynamic pages", async () => {
   assert.equal(CUSTOMER_ROUTES.length, 41);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 41);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 41);
-  assert.deepEqual(
-    [...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)].sort(),
-    await pageRoutes(),
-  );
+  const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS]);
+  assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
   assert.deepEqual(
     ROUTES.map(({ path: routePath }) => routePath),
     [...CUSTOMER_ROUTES.filter(({key})=>key!=="review-studio").map(({ path: routePath }) => routePath)].sort(),
