@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
-import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
@@ -173,10 +173,22 @@ function settlePageExpression() {
 const baseUrl = new URL(option("base-url", process.env.PROOF_BASE_URL ?? "http://127.0.0.1:4173"));
 const routes = selectRoutes(option("routes", ""));
 const viewports = selectViewports(option("widths", ""));
-const capture = hasFlag("capture") || hasFlag("full-page");
+const mode = option("mode", "standard");
+if (!new Set(["standard", "qa"]).has(mode)) throw new Error(`Unsupported MF-09 mode: ${mode}`);
+const capture = mode === "qa" || hasFlag("capture") || hasFlag("full-page");
 const fullPage = hasFlag("full-page");
 const outputDirectory = option("output", "") || await mkdtemp(path.join(tmpdir(), "oluk-mf09-proof-"));
 await mkdir(outputDirectory, { recursive: true });
+let baselineCases = new Map();
+if (mode === "qa") {
+  const manifestPath = option("baseline-manifest", path.resolve("tests/visual-baselines/manifest.json"));
+  try {
+    const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+    baselineCases = new Map(manifest.cases.map((entry) => [`${entry.route}::${entry.width}`, entry]));
+  } catch {
+    // A missing baseline makes every capture new, which is the safe QA behavior.
+  }
+}
 
 const chrome = await launchChrome();
 const results = [];
@@ -235,6 +247,17 @@ try {
           const screenshotPath = path.join(outputDirectory, screenshot);
           await capturePng(client, screenshotPath, { fullPage });
           screenshotSha256 = await sha256(screenshotPath);
+          if (mode === "qa") {
+            const baseline = baselineCases.get(`${route.path}::${viewport.width}`);
+            const reason = failures.length > 0 ? "failure" : !baseline ? "new-route" : baseline.sha256 !== screenshotSha256 ? "material-change" : null;
+            if (!reason) {
+              await rm(screenshotPath);
+              screenshot = null;
+              screenshotSha256 = null;
+            } else {
+              audit.retainedCaptureReason = reason;
+            }
+          }
         }
 
         if (failures.length > 0) failed = true;
@@ -279,6 +302,8 @@ const receipt = {
   baseUrl: baseUrl.href,
   outputDirectory,
   captureMode: capture ? (fullPage ? "full-page" : "viewport") : "none",
+  evidenceMode: mode,
+  retainedCaptureCount: results.filter(({ screenshot }) => Boolean(screenshot)).length,
   routeCount: routes.length,
   widthCount: viewports.length,
   caseCount: results.length,

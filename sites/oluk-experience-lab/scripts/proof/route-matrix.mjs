@@ -9,10 +9,16 @@ export const VIEWPORTS = Object.freeze([
 
 export const ROUTES = Object.freeze(
   CUSTOMER_ROUTES
+    // The studio is the owner review instrument, not one of the 160 product
+    // surface regression cells it summarizes. It has its own route/a11y tests.
+    .filter(({ key }) => key !== "review-studio")
     .map(({ path, heading, authorityClass }) =>
       Object.freeze({ path, heading, customer: authorityClass !== "owner-review" }),
     )
     .sort((left, right) => left.path.localeCompare(right.path)),
+);
+const OWNER_UTILITY_ROUTES = Object.freeze(
+  CUSTOMER_ROUTES.filter(({key})=>key==="review-studio").map(({path,heading})=>Object.freeze({path,heading,customer:false})),
 );
 
 export const GOVERNANCE_PATTERNS = Object.freeze([
@@ -28,8 +34,9 @@ export function routeSlug(pathname) {
 export function selectRoutes(routeFilter) {
   if (!routeFilter) return ROUTES;
   const requested = new Set(routeFilter.split(",").map((value) => value.trim()).filter(Boolean));
-  const selected = ROUTES.filter(({ path }) => requested.has(path));
-  const missing = [...requested].filter((path) => !ROUTES.some((route) => route.path === path));
+  const selectable=[...ROUTES,...OWNER_UTILITY_ROUTES];
+  const selected = selectable.filter(({ path }) => requested.has(path));
+  const missing = [...requested].filter((path) => !selectable.some((route) => route.path === path));
   if (missing.length > 0) throw new Error(`Unknown route(s): ${missing.join(", ")}`);
   return selected;
 }

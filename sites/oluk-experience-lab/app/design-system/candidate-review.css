@@ -414,3 +414,21 @@
   .oluk-candidate-root *::before,
   .oluk-candidate-root *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
+
+@media (max-width: 540px) {
+  .oluk-candidate-root button,
+  .oluk-candidate-root input,
+  .oluk-candidate-root select,
+  .oluk-candidate-root textarea,
+  .oluk-candidate-root summary,
+  .oluk-candidate-root a.button,
+  .oluk-candidate-root [role="tab"] {
+    min-height: 44px;
+  }
+
+  .oluk-candidate-root button,
+  .oluk-candidate-root summary,
+  .oluk-candidate-root [role="tab"] {
+    min-width: 44px;
+  }
+}

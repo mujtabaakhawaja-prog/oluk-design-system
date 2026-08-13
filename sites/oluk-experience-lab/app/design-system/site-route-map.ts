@@ -59,6 +59,7 @@ export const routeReviewTargets = {
   report: { nodeId: "921:2703", kind: "group-review-board" },
   privacy: { nodeId: "921:2717", kind: "group-review-board" },
   review: { nodeId: "921:2724", kind: "group-review-board" },
+  "review-studio": { nodeId: "921:2724", kind: "group-review-board" },
   search: { nodeId: "921:2717", kind: "group-review-board" },
   terms: { nodeId: "921:2717", kind: "group-review-board" },
   wholesale: { nodeId: "921:2717", kind: "group-review-board" },

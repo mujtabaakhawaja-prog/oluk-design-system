@@ -1,5 +1,5 @@
 /**
- * Executable route truth for the unpublished 31-route candidate.
+ * Executable route truth for the unpublished governed Sites candidate.
  * Both the React renderer and the browser-proof matrix consume this table.
  */
 export const CUSTOMER_ROUTES = /** @type {const} */ ([
@@ -40,6 +40,7 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "report", path: "/open-lab/report/registered-record", label: "Report", heading: "Report registered-record", section: "openlab", authorityClass: "customer-candidate" },
   { key: "privacy", path: "/privacy", label: "Privacy", heading: "Privacy information.", section: "support", authorityClass: "customer-candidate" },
   { key: "review", path: "/review", label: "Owner review", heading: "Olympus Labs UK review surfaces.", section: "owner", authorityClass: "owner-review" },
+  { key: "review-studio", path: "/review-studio", label: "Champion Review Studio", heading: "Champion Review Studio", section: "owner", authorityClass: "owner-review" },
   { key: "search", path: "/search", label: "Search", heading: "Find a product.", section: "support", authorityClass: "customer-candidate" },
   { key: "terms", path: "/terms", label: "Terms", heading: "Terms and conditions.", section: "support", authorityClass: "customer-candidate" },
   { key: "wholesale", path: "/wholesale", label: "Wholesale", heading: "Wholesale with product clarity built in.", section: "support", authorityClass: "customer-candidate" },

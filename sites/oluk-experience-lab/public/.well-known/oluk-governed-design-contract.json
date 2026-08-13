@@ -820,6 +820,11 @@
         },
         "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
         "id": "evidence-status-chip-v2",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "summary",
+          "touchTargetPx": 44
+        },
         "variants": {
           "state": [
             "verified-evidence",
@@ -838,6 +843,11 @@
         },
         "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
         "id": "recommendation-card",
+        "responsive": {
+          "horizontalScrollAllowed": true,
+          "mobileStrategy": "carousel",
+          "touchTargetPx": 44
+        },
         "variants": {
           "state": [
             "default",
@@ -857,6 +867,11 @@
         },
         "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
         "id": "restock-card",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "summary",
+          "touchTargetPx": 44
+        },
         "variants": {
           "state": [
             "active",
@@ -875,6 +890,11 @@
         },
         "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
         "id": "upsell-context-rail",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "collapse",
+          "touchTargetPx": 44
+        },
         "variants": {
           "view": [
             "recommendations",
@@ -891,6 +911,11 @@
         },
         "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
         "id": "checkout-step-indicator",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "summary",
+          "touchTargetPx": 44
+        },
         "variants": {
           "current": [
             "information",
@@ -2020,7 +2045,7 @@
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
-      "sha256": "93356867c87f1a0c1d5ef8dd2a002450fa64dfdcd72790e3f322dfc898ae915d"
+      "sha256": "50ce67013137f594866ca8c294a3d1c19c7e27c26dabe115f99e549afe3111f5"
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
@@ -2943,5 +2968,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "e354e59f890afeb07cc5aed397929415b1296e30ddf37d2ef728d3b4773d1bf8"
+  "contractHash": "88af816d987521687da3304a3b62943153243df36d418abfb109f6a37550844f"
 }

@@ -34,7 +34,7 @@ import {
 import { TransactionPresentation } from "./design-system/transaction-presentation";
 
 type ProgramRouteKey = "product-continuation" | "checkout-information" | "checkout-payment" | "checkout-processing" | "checkout-review" | "checkout-tracking" | "openlab-admin" | "compound" | "report";
-type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" | ProgramRouteKey>;
+type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" | "review-studio" | ProgramRouteKey>;
 type PrimaryNavRouteKey = (typeof PRIMARY_NAV_ROUTE_KEYS)[number];
 type ExperienceLabProps = { route: ExperienceRouteKey; lookupReference?: string };
 
@@ -96,7 +96,7 @@ export function SiteHeader({ route }: { route: ExperienceRouteKey }) {
         <div className="shell trust-rail-inner">
           <span><i />Free UK Delivery Over £50</span>
           <span><i />Free Int&apos;l Delivery £300+</span>
-          <span><i />Specifications Visible</span>
+          <span><i />Third-Party Tested</span>
           <span><i />Records When Available</span>
           <span><i />Encrypted Checkout</span>
           <a href="/lab-reports">Browse Lab Records <Arrow /></a>

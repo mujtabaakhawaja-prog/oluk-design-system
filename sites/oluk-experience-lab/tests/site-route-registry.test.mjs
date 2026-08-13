@@ -27,30 +27,30 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("one executable registry controls all 40 physical pages and browser proof routes", async () => {
-  assert.equal(CUSTOMER_ROUTES.length, 40);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 40);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 40);
+test("one executable registry controls all 41 physical pages and the 40-case-family browser proof", async () => {
+  assert.equal(CUSTOMER_ROUTES.length, 41);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 41);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 41);
   assert.deepEqual(
     [...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)].sort(),
     await pageRoutes(),
   );
   assert.deepEqual(
     ROUTES.map(({ path: routePath }) => routePath),
-    [...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)].sort(),
+    [...CUSTOMER_ROUTES.filter(({key})=>key!=="review-studio").map(({ path: routePath }) => routePath)].sort(),
   );
   assert.deepEqual(PRIMARY_NAV_ROUTE_KEYS, ["shop", "openlab", "lab-reports", "wholesale", "about"]);
 });
 
 test("React route execution is exhaustive against the shared route key type", async () => {
   const source = await readFile(path.join(appRoot, "experience-lab.tsx"), "utf8");
-  assert.match(source, /type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" \| ProgramRouteKey>/);
+  assert.match(source, /type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" \| "review-studio" \| ProgramRouteKey>/);
   assert.match(source, /satisfies Readonly<Record<ExperienceRouteKey, \(lookupReference\?: string\) => ReactNode>>/);
   assert.doesNotMatch(source, /type RouteKey\s*=/);
   assert.match(source, /const content = routeRenderers\[route\]\(lookupReference\)/);
 });
 
-test("owner review derives all 40 links from the route registry and current Figma targets", async () => {
+test("owner review derives the governed route links from the route registry and current Figma targets", async () => {
   const routeMap = await readFile(path.join(appRoot, "design-system/site-route-map.ts"), "utf8");
   const review = await readFile(path.join(appRoot, "design-system/candidate-review.tsx"), "utf8");
 

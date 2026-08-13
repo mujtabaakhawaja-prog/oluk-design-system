@@ -80,3 +80,19 @@ test("browser proof runners preserve unpublished review posture and keep evidenc
   assert.match(contrastZoom, /font-size: 200%/);
   assert.match(contrastZoom, /data-proof-long-copy/);
 });
+
+test("review capture separates exhaustive QA evidence from champion contact sheets", async () => {
+  const [fourWidth, champion] = await Promise.all([
+    readFile(new URL("../scripts/proof/mf09-four-width.mjs", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/proof/champion-capture.mjs", import.meta.url), "utf8"),
+  ]);
+  assert.match(fourWidth, /mode === "qa"/);
+  assert.match(fourWidth, /"new-route"/);
+  assert.match(fourWidth, /"material-change"/);
+  assert.match(fourWidth, /retainedCaptureCount/);
+  assert.match(champion, /--decision-receipt/);
+  assert.match(champion, /\[1440, 390\]/);
+  assert.match(champion, /CHAMPION_APPROVED/);
+  assert.match(champion, /contactSheet/);
+  assert.match(champion, /sourceTreeHash/);
+});

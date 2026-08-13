@@ -4819,3 +4819,33 @@ a.button-secondary:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media (max-width: 540px) {
+  :where(button, input, select, textarea, summary, a.button, [role="tab"]) {
+    min-height: 46px;
+  }
+
+  :where(button, summary, [role="tab"]) {
+    min-width: 46px;
+  }
+
+  .experience-lab button,
+  .experience-lab input,
+  .experience-lab select,
+  .experience-lab textarea,
+  .experience-lab summary,
+  .experience-lab a.button,
+  .experience-lab [role="tab"] {
+    min-height: 44px;
+  }
+
+  .experience-lab button,
+  .experience-lab summary,
+  .experience-lab [role="tab"] {
+    min-width: 44px;
+  }
+
+  .experience-lab .shop-result-commerce button.button {
+    min-height: 46px;
+  }
+}

@@ -8,6 +8,7 @@
       "export": "EvidenceStatusChip",
       "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "variants": { "state": ["verified-evidence", "source-reported", "source-only", "unavailable"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "GkC3KEt9V3RyG5K319iAUV", "nodeId": "3:66993" },
       "figmaComponentNodeId": null
     },
@@ -16,6 +17,7 @@
       "export": "RecommendationCard",
       "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "variants": { "state": ["default", "selected", "added", "unavailable", "out-of-stock"] },
+      "responsive": { "mobileStrategy": "carousel", "touchTargetPx": 44, "horizontalScrollAllowed": true },
       "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
       "figmaComponentNodeId": null
     },
@@ -24,6 +26,7 @@
       "export": "RestockCard",
       "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "variants": { "state": ["active", "due-soon", "overdue", "paused"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
       "figmaComponentNodeId": null
     },
@@ -32,6 +35,7 @@
       "export": "UpsellContextRail",
       "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "variants": { "view": ["recommendations", "restock"] },
+      "responsive": { "mobileStrategy": "collapse", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "cGrvE3Fyj3ThKuqPZqceYv", "nodeId": "4:3545" },
       "figmaComponentNodeId": null
     },
@@ -40,6 +44,7 @@
       "export": "CheckoutStepIndicator",
       "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "variants": { "current": ["information", "delivery", "review", "payment", "confirmation"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "9jTrnlEWgbBpFi2idodVB2", "nodeId": "0:1" },
       "figmaComponentNodeId": null
     }

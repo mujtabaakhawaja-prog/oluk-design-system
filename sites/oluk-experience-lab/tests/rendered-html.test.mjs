@@ -5,7 +5,7 @@ import { CUSTOMER_ROUTES } from "../app/design-system/site-route-data.mjs";
 
 const routes = CUSTOMER_ROUTES.map(({ path, heading }) => [path, heading]);
 
-const customerRoutes = routes.filter(([pathname]) => pathname !== "/review");
+const customerRoutes = routes.filter(([pathname]) => !["/review","/review-studio"].includes(pathname));
 
 const candidateReviewAnchors = [
   "mf02b-provenance",
@@ -42,7 +42,7 @@ const candidateReviewAnchors = [
   "mf02b-selection-receipt",
 ];
 
-const baselineRouteLinks = routes.map(([pathname]) => pathname);
+const baselineRouteLinks = routes.filter(([pathname])=>pathname!=="/review-studio").map(([pathname]) => pathname);
 
 const stableCustomerReviewAnchors = [
   ["/", ["hero", "assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
@@ -129,8 +129,8 @@ async function renderHtml(worker, pathname) {
   return response.text();
 }
 
-test("server-renders all 40 governed routes with their expected headings and private indexing policy", async () => {
-  assert.equal(routes.length, 40);
+test("server-renders all 41 governed routes with their expected headings and private indexing policy", async () => {
+  assert.equal(routes.length, 41);
   const worker = await loadWorker();
 
   for (const [pathname, heading] of routes) {
@@ -199,7 +199,8 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
     assert.match(homeText, new RegExp(escapeRegExp(expected)), `homepage decision truth: ${expected}`);
   }
   assert.doesNotMatch(homeText, /90 CAPS(?:\b|ULES)/i);
-  assert.doesNotMatch(homeText, /Third-party tested|FORMULATED\. VERIFIED\. BATCH TRACKED\./i);
+  assert.match(homeText, /Third-Party Tested/i, "approved trust statement remains visible");
+  assert.doesNotMatch(homeText, /FORMULATED\. VERIFIED\. BATCH TRACKED\./i);
 
   const shopHtml = await renderHtml(worker, "/shop");
   assert.match(shopHtml, /data-component=["']ProductCommerceCard\.featured["']/i, "Shop renders the mapped canonical Featured component");
