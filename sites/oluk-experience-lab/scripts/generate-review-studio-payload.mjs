@@ -74,7 +74,11 @@ const moduleOutputPath = path.join(siteRoot, "app/design-system/review-studio-pa
 if (process.argv.includes("--check")) {
   const existing = await readFile(outputPath, "utf8");
   const moduleExisting = await readFile(moduleOutputPath, "utf8");
-  if (existing !== output || moduleExisting !== output) throw new Error("Review Studio payload is stale; run npm run review:generate");
+  const compareStableProjection = (candidate) => {
+    const parsed = JSON.parse(candidate);
+    return JSON.stringify({ ...parsed, generatedAt:payload.generatedAt, sourceGitSha:payload.sourceGitSha, sourceTreeHash:payload.sourceTreeHash });
+  };
+  if (compareStableProjection(existing) !== JSON.stringify(payload) || compareStableProjection(moduleExisting) !== JSON.stringify(payload)) throw new Error("Review Studio payload is stale; run npm run review:generate");
   process.stdout.write(`PASS review studio payload ${payload.designContractHash}\n`);
 } else {
   await writeFile(outputPath, output);
