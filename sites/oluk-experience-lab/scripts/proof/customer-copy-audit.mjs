@@ -118,7 +118,7 @@ export async function auditCustomerCopy() {
   const checks = [
     check(
       "all-customer-routes-rendered",
-      rendered.length === 30 && rendered.length === customerRoutes.length,
+      rendered.length === customerRoutes.length,
       "Every customer route in the canonical matrix rendered for visible-copy inspection.",
       customerRouteStatus,
     ),

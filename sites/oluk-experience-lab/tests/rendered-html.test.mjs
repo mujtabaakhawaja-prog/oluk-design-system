@@ -129,8 +129,8 @@ async function renderHtml(worker, pathname) {
   return response.text();
 }
 
-test("server-renders all 31 governed routes with their expected headings and private indexing policy", async () => {
-  assert.equal(routes.length, 31);
+test("server-renders all 40 governed routes with their expected headings and private indexing policy", async () => {
+  assert.equal(routes.length, 40);
   const worker = await loadWorker();
 
   for (const [pathname, heading] of routes) {

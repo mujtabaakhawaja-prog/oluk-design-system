@@ -6,7 +6,7 @@
     "publication": "NONE",
     "promotion": "HUMAN_REVIEW_REQUIRED"
   },
-  "routeCount": 31,
+  "routeCount": 40,
   "widthCount": 4,
   "comparison": {
     "hashAlgorithm": "sha256",
@@ -375,6 +375,46 @@
       "sha256": "c86b125fd669a57c980d75691e16e016ea81ff280dfd433ed048df14f16b8963"
     },
     {
+      "id": "checkout--information--1440",
+      "route": "/checkout/information",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--information--1024",
+      "route": "/checkout/information",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--information--768",
+      "route": "/checkout/information",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--information--390",
+      "route": "/checkout/information",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "checkout--order-pay--1440",
       "route": "/checkout/order-pay",
       "width": 1440,
@@ -413,6 +453,46 @@
       "artifact": "screenshots/checkout--order-pay--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "9f5a9072f21ef246bffb6ad33b894716fad36abbae90b47440420c30f5fa49a0"
+    },
+    {
+      "id": "checkout--payment--1440",
+      "route": "/checkout/payment",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--payment--1024",
+      "route": "/checkout/payment",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--payment--768",
+      "route": "/checkout/payment",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--payment--390",
+      "route": "/checkout/payment",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "checkout--payment-handoff--1440",
@@ -455,6 +535,46 @@
       "sha256": "3cdc7a14df24c020c4f8f159551839b675d75a3f06730dd42801b2e63e08364e"
     },
     {
+      "id": "checkout--processing--1440",
+      "route": "/checkout/processing",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--processing--1024",
+      "route": "/checkout/processing",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--processing--768",
+      "route": "/checkout/processing",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--processing--390",
+      "route": "/checkout/processing",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "checkout--retry--1440",
       "route": "/checkout/retry",
       "width": 1440,
@@ -493,6 +613,86 @@
       "artifact": "screenshots/checkout--retry--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "b69e797f2699a9de9ecf270f4836a10a8ba30c115768c62709035582ee750b0d"
+    },
+    {
+      "id": "checkout--review--1440",
+      "route": "/checkout/review",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--review--1024",
+      "route": "/checkout/review",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--review--768",
+      "route": "/checkout/review",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--review--390",
+      "route": "/checkout/review",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--1440",
+      "route": "/checkout/tracking",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--1024",
+      "route": "/checkout/tracking",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--768",
+      "route": "/checkout/tracking",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--390",
+      "route": "/checkout/tracking",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "contact--1440",
@@ -655,6 +855,46 @@
       "sha256": "282f9728f2fd57a42af680ec0d044f723bdc4392083db57bfc97b6748360555e"
     },
     {
+      "id": "open-lab--admin--1440",
+      "route": "/open-lab/admin",
+      "width": 1440,
+      "height": 1000,
+      "customer": false,
+      "artifact": "screenshots/open-lab--admin--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--admin--1024",
+      "route": "/open-lab/admin",
+      "width": 1024,
+      "height": 900,
+      "customer": false,
+      "artifact": "screenshots/open-lab--admin--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--admin--768",
+      "route": "/open-lab/admin",
+      "width": 768,
+      "height": 900,
+      "customer": false,
+      "artifact": "screenshots/open-lab--admin--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--admin--390",
+      "route": "/open-lab/admin",
+      "width": 390,
+      "height": 844,
+      "customer": false,
+      "artifact": "screenshots/open-lab--admin--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--batch-lookup--1440",
       "route": "/open-lab/batch-lookup",
       "width": 1440,
@@ -733,6 +973,46 @@
       "artifact": "screenshots/open-lab--compare--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "e1960246b1903f50fbd6246ca7a7532146a9431e833541af0ff00bde010f973f"
+    },
+    {
+      "id": "open-lab--compound--mk-2866--1440",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--1024",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--768",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--390",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "open-lab--dossier--mk-2866--1440",
@@ -895,6 +1175,46 @@
       "sha256": "aacd14e71d13e93999d9ec099d9abbe7121f9b0c847c8b38d7db01ed60b4e9b1"
     },
     {
+      "id": "open-lab--report--registered-record--1440",
+      "route": "/open-lab/report/registered-record",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--report--registered-record--1024",
+      "route": "/open-lab/report/registered-record",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--report--registered-record--768",
+      "route": "/open-lab/report/registered-record",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--report--registered-record--390",
+      "route": "/open-lab/report/registered-record",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--source-chain--1440",
       "route": "/open-lab/source-chain",
       "width": 1440,
@@ -1013,6 +1333,46 @@
       "artifact": "screenshots/product--mk-2866--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "2987d319e3ad76000aaa2505092116e509743a76e0e7ec41ee4d209518286d30"
+    },
+    {
+      "id": "product--mk-2866--continuation--1440",
+      "route": "/product/mk-2866/continuation",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--continuation--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "product--mk-2866--continuation--1024",
+      "route": "/product/mk-2866/continuation",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--continuation--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "product--mk-2866--continuation--768",
+      "route": "/product/mk-2866/continuation",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--continuation--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "product--mk-2866--continuation--390",
+      "route": "/product/mk-2866/continuation",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/product--mk-2866--continuation--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "review--1440",

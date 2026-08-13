@@ -1,0 +1,45 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import test from "node:test";
+import { fileURLToPath } from "node:url";
+
+const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const repoRoot = path.resolve(siteRoot, "../..");
+const load = async (file) => JSON.parse(await readFile(file, "utf8"));
+
+test("the champion ledger has exactly 73 unique governed routes", async () => {
+  const ledger = await load(path.join(repoRoot, "authority/SITE-ROUTE-LEDGER.json"));
+  assert.equal(ledger.routes.length, 73);
+  assert.equal(new Set(ledger.routes.map(({ id }) => id)).size, 73);
+  assert.equal(new Set(ledger.routes.map(({ path }) => path)).size, 73);
+  assert.equal(ledger.canonicalOpenLabNamespace, "/open-lab");
+  assert.equal(ledger.aliasPolicy["/openlab/*"], "/open-lab/*");
+  assert.equal(ledger.routes.find(({ id }) => id === "open-lab-admin").disposition, "owner-only");
+});
+
+test("the four Figma sources remain intent-only and name their data owners", async () => {
+  const registry = await load(path.join(repoRoot, "authority/FIGMA-INTENT-REGISTRY.json"));
+  assert.equal(registry.sources.length, 4);
+  assert.equal(registry.status, "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY");
+  for (const source of registry.sources) {
+    assert.ok(source.fileKey && source.rootNodeId);
+    assert.ok(source.dataOwners.length > 0);
+    assert.ok(source.runtimeExclusions.length > 0);
+  }
+});
+
+test("the public governed contract is an exact authority projection", async () => {
+  const authority = await readFile(path.join(repoRoot, "authority/generated/OLUK-DESIGN-CONTRACT.json"), "utf8");
+  const publicProjection = await readFile(path.join(siteRoot, "public/.well-known/oluk-governed-design-contract.json"), "utf8");
+  assert.equal(publicProjection, authority);
+  const contract = JSON.parse(authority);
+  assert.equal(contract.routeAuthority.routes.length, 73);
+  assert.equal(contract.designSystem.variableCount, 112);
+  assert.equal(contract.designSystem.componentCount, 23);
+  assert.equal(contract.designSystem.programComponentMappings.length, 5);
+  assert.equal(contract.immutableProductTruth.servings, "90 SERVINGS");
+  assert.equal(contract.boundaries.browserDirectServiceCalls, false);
+  assert.equal(contract.runtimeContractSnapshot.browserDirectServiceCallsAllowed, false);
+  assert.match(contract.runtimeContractSnapshot.contentHash, /^[a-f0-9]{64}$/);
+});

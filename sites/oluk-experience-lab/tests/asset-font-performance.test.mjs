@@ -10,7 +10,7 @@ test("CX-NEXT-039 keeps media local and sized, fonts approved, and local build b
 
   assert.equal(receipt.run, "CX-NEXT-039_ASSET_FONT_PERFORMANCE");
   assert.equal(receipt.failCount, 0, JSON.stringify(receipt.checks.filter(({ status }) => status === "FAIL"), null, 2));
-  assert.equal(receipt.measurements.customerRouteCount, 30);
+  assert.equal(receipt.measurements.customerRouteCount, 38);
   assert.ok(receipt.measurements.renderedProductImageCount >= 20);
   assert.deepEqual(receipt.measurements.emittedFontFamilies, ["Inter Variable", "JetBrains Mono", "Plus Jakarta Sans"]);
   assert.deepEqual(receipt.budgets, ASSET_PERFORMANCE_BUDGETS);

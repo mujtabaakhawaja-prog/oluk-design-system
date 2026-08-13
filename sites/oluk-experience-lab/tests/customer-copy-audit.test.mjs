@@ -6,8 +6,8 @@ test("CX-NEXT-045 audits all customer routes for exact truth and customer-safe t
   const receipt = await auditCustomerCopy();
 
   assert.equal(receipt.run, "CX-NEXT-045_CUSTOMER_COPY_TERMINOLOGY");
-  assert.equal(receipt.customerRouteCount, 30);
-  assert.equal(receipt.routePassCount, 30);
+  assert.equal(receipt.customerRouteCount, 38);
+  assert.equal(receipt.routePassCount, 38);
   assert.equal(receipt.routeFailCount, 0);
   assert.equal(receipt.failCount, 0, JSON.stringify(receipt.checks.filter(({ status }) => status === "FAIL"), null, 2));
 });

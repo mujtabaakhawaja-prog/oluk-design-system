@@ -20,16 +20,17 @@ async function pageRoutes(directory = appRoot) {
     if (entry.isDirectory()) paths.push(...await pageRoutes(absolute));
     if (entry.isFile() && entry.name === "page.tsx") {
       const relative = path.relative(appRoot, path.dirname(absolute));
-      paths.push(relative ? `/${relative}` : "/");
+      const routePath = relative ? `/${relative}` : "/";
+      paths.push(routePath.replace("/open-lab/compound/[slug]", "/open-lab/compound/mk-2866").replace("/open-lab/report/[batchId]", "/open-lab/report/registered-record"));
     }
   }
   return paths.sort();
 }
 
-test("one executable registry controls all 31 physical pages and browser proof routes", async () => {
-  assert.equal(CUSTOMER_ROUTES.length, 31);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 31);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 31);
+test("one executable registry controls all 40 physical pages and browser proof routes", async () => {
+  assert.equal(CUSTOMER_ROUTES.length, 40);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 40);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 40);
   assert.deepEqual(
     [...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)].sort(),
     await pageRoutes(),
@@ -43,13 +44,13 @@ test("one executable registry controls all 31 physical pages and browser proof r
 
 test("React route execution is exhaustive against the shared route key type", async () => {
   const source = await readFile(path.join(appRoot, "experience-lab.tsx"), "utf8");
-  assert.match(source, /type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review">/);
+  assert.match(source, /type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" \| ProgramRouteKey>/);
   assert.match(source, /satisfies Readonly<Record<ExperienceRouteKey, \(lookupReference\?: string\) => ReactNode>>/);
   assert.doesNotMatch(source, /type RouteKey\s*=/);
   assert.match(source, /const content = routeRenderers\[route\]\(lookupReference\)/);
 });
 
-test("owner review derives all 31 links from the route registry and current Figma targets", async () => {
+test("owner review derives all 40 links from the route registry and current Figma targets", async () => {
   const routeMap = await readFile(path.join(appRoot, "design-system/site-route-map.ts"), "utf8");
   const review = await readFile(path.join(appRoot, "design-system/candidate-review.tsx"), "utf8");
 

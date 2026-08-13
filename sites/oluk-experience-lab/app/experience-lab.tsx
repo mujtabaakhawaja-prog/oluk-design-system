@@ -33,7 +33,8 @@ import {
 } from "./design-system/shop-taxonomy";
 import { TransactionPresentation } from "./design-system/transaction-presentation";
 
-type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review">;
+type ProgramRouteKey = "product-continuation" | "checkout-information" | "checkout-payment" | "checkout-processing" | "checkout-review" | "checkout-tracking" | "openlab-admin" | "compound" | "report";
+type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" | ProgramRouteKey>;
 type PrimaryNavRouteKey = (typeof PRIMARY_NAV_ROUTE_KEYS)[number];
 type ExperienceLabProps = { route: ExperienceRouteKey; lookupReference?: string };
 
@@ -87,7 +88,7 @@ function ActionLink({ href, children, secondary = false }: { href: string; child
   );
 }
 
-function SiteHeader({ route }: { route: ExperienceRouteKey }) {
+export function SiteHeader({ route }: { route: ExperienceRouteKey }) {
   const activeRoute = activePrimaryRoute(route);
   return (
     <header className="site-header">
@@ -162,7 +163,7 @@ function SiteHeader({ route }: { route: ExperienceRouteKey }) {
   );
 }
 
-function SiteFooter() {
+export function SiteFooter() {
   return (
     <footer className="site-footer" id="footer">
       <div className="shell footer-grid">
@@ -182,6 +183,10 @@ function SiteFooter() {
       <div className="shell footer-base"><span>© 2026 Olympus Labs UK</span><span>Quality, made visible.</span></div>
     </footer>
   );
+}
+
+export function GovernedProgramShell({ children, lane = "openlab" }: { children: ReactNode; lane?: "openlab" | "checkout" }) {
+  return <><SiteHeader route={lane === "openlab" ? "openlab" : "checkout"}/><main>{children}</main><SiteFooter/></>;
 }
 function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: string; copy: string; actions?: ReactNode }) {
   return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p>{actions && <div className="button-row">{actions}</div>}</div></section>;

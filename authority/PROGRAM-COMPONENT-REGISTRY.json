@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "oluk.program-component-registry.v1",
+  "status": "IMPLEMENTED_CODE_FIGMA_BACKFILL_PENDING",
+  "runtimeAuthority": "NONE",
+  "components": [
+    {
+      "id": "evidence-status-chip-v2",
+      "export": "EvidenceStatusChip",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "state": ["verified-evidence", "source-reported", "source-only", "unavailable"] },
+      "figmaIntent": { "fileKey": "GkC3KEt9V3RyG5K319iAUV", "nodeId": "3:66993" },
+      "figmaComponentNodeId": null
+    },
+    {
+      "id": "recommendation-card",
+      "export": "RecommendationCard",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "state": ["default", "selected", "added", "unavailable", "out-of-stock"] },
+      "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
+      "figmaComponentNodeId": null
+    },
+    {
+      "id": "restock-card",
+      "export": "RestockCard",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "state": ["active", "due-soon", "overdue", "paused"] },
+      "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
+      "figmaComponentNodeId": null
+    },
+    {
+      "id": "upsell-context-rail",
+      "export": "UpsellContextRail",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "view": ["recommendations", "restock"] },
+      "figmaIntent": { "fileKey": "cGrvE3Fyj3ThKuqPZqceYv", "nodeId": "4:3545" },
+      "figmaComponentNodeId": null
+    },
+    {
+      "id": "checkout-step-indicator",
+      "export": "CheckoutStepIndicator",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "current": ["information", "delivery", "review", "payment", "confirmation"] },
+      "figmaIntent": { "fileKey": "9jTrnlEWgbBpFi2idodVB2", "nodeId": "0:1" },
+      "figmaComponentNodeId": null
+    }
+  ],
+  "mappingLaw": "Code exists and is executable; official Figma component mapping remains pending champion backfill and must not be fabricated from intent roots."
+}
