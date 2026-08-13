@@ -6,7 +6,7 @@
     "publication": "NONE",
     "promotion": "HUMAN_REVIEW_REQUIRED"
   },
-  "routeCount": 40,
+  "routeCount": 51,
   "widthCount": 4,
   "comparison": {
     "hashAlgorithm": "sha256",
@@ -935,6 +935,86 @@
       "sha256": "2fc0adbe4d0122ea13289d3c525751ea5db0a5ba21828eb2e587be8d542a7a3d"
     },
     {
+      "id": "open-lab--case-studies--1440",
+      "route": "/open-lab/case-studies",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--case-studies--1024",
+      "route": "/open-lab/case-studies",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--case-studies--768",
+      "route": "/open-lab/case-studies",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--case-studies--390",
+      "route": "/open-lab/case-studies",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--1440",
+      "route": "/open-lab/coa/r28868",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--1024",
+      "route": "/open-lab/coa/r28868",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--768",
+      "route": "/open-lab/coa/r28868",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--390",
+      "route": "/open-lab/coa/r28868",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--compare--1440",
       "route": "/open-lab/compare",
       "width": 1440,
@@ -973,6 +1053,46 @@
       "artifact": "screenshots/open-lab--compare--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "e1960246b1903f50fbd6246ca7a7532146a9431e833541af0ff00bde010f973f"
+    },
+    {
+      "id": "open-lab--compound-guide--1440",
+      "route": "/open-lab/compound-guide",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound-guide--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound-guide--1024",
+      "route": "/open-lab/compound-guide",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound-guide--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound-guide--768",
+      "route": "/open-lab/compound-guide",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound-guide--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound-guide--390",
+      "route": "/open-lab/compound-guide",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound-guide--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "open-lab--compound--mk-2866--1440",
@@ -1015,6 +1135,86 @@
       "sha256": null
     },
     {
+      "id": "open-lab--cycle-planner--1440",
+      "route": "/open-lab/cycle-planner",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--1024",
+      "route": "/open-lab/cycle-planner",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--768",
+      "route": "/open-lab/cycle-planner",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--390",
+      "route": "/open-lab/cycle-planner",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--1440",
+      "route": "/open-lab/dosing-calculator",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--1024",
+      "route": "/open-lab/dosing-calculator",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--768",
+      "route": "/open-lab/dosing-calculator",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--390",
+      "route": "/open-lab/dosing-calculator",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--dossier--mk-2866--1440",
       "route": "/open-lab/dossier/mk-2866",
       "width": 1440,
@@ -1053,6 +1253,166 @@
       "artifact": "screenshots/open-lab--dossier--mk-2866--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "3b66749b7a23eb9190c14869d23b4a49afb30bc3d2e08b0222cbce3cff31b99a"
+    },
+    {
+      "id": "open-lab--evidence--1440",
+      "route": "/open-lab/evidence",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--1024",
+      "route": "/open-lab/evidence",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--768",
+      "route": "/open-lab/evidence",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--390",
+      "route": "/open-lab/evidence",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--1440",
+      "route": "/open-lab/glossary",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--1024",
+      "route": "/open-lab/glossary",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--768",
+      "route": "/open-lab/glossary",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--390",
+      "route": "/open-lab/glossary",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--1440",
+      "route": "/open-lab/interaction-checker",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--1024",
+      "route": "/open-lab/interaction-checker",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--768",
+      "route": "/open-lab/interaction-checker",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--390",
+      "route": "/open-lab/interaction-checker",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--1440",
+      "route": "/open-lab/lab-partner",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--1024",
+      "route": "/open-lab/lab-partner",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--768",
+      "route": "/open-lab/lab-partner",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--390",
+      "route": "/open-lab/lab-partner",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "open-lab--methodology--1440",
@@ -1215,6 +1575,46 @@
       "sha256": null
     },
     {
+      "id": "open-lab--research-papers--1440",
+      "route": "/open-lab/research-papers",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--1024",
+      "route": "/open-lab/research-papers",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--768",
+      "route": "/open-lab/research-papers",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--390",
+      "route": "/open-lab/research-papers",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--source-chain--1440",
       "route": "/open-lab/source-chain",
       "width": 1440,
@@ -1253,6 +1653,46 @@
       "artifact": "screenshots/open-lab--source-chain--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "3ff97a8618f9dec12ece448ba0bc7fc4430aaf8898cbca79eca6f1ae9412f7f4"
+    },
+    {
+      "id": "open-lab--stack-builder--1440",
+      "route": "/open-lab/stack-builder",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--stack-builder--1024",
+      "route": "/open-lab/stack-builder",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--stack-builder--768",
+      "route": "/open-lab/stack-builder",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--stack-builder--390",
+      "route": "/open-lab/stack-builder",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "privacy--1440",

@@ -28,10 +28,10 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("core registry controls 41 governed pages while frontier patterns declare module-composed dynamic pages", async () => {
-  assert.equal(CUSTOMER_ROUTES.length, 41);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 41);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 41);
+test("core registry controls 52 governed pages while frontier patterns declare module-composed dynamic pages", async () => {
+  assert.equal(CUSTOMER_ROUTES.length, 52);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
   const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS]);
   assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
   assert.deepEqual(

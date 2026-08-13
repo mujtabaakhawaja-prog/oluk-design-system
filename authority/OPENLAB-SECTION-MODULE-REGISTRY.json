@@ -14,9 +14,17 @@
     {"id":"OL-METH","export":"OpenLabMethodologyPipeline","dataOwner":"approved-methodology-content","mounts":["/open-lab/methodology"],"mobileStrategy":"summary","runtimeExclusions":["analytical-result"]},
     {"id":"OL-CHAIN","export":"OpenLabSourceChain","dataOwner":"openlab-source-projection","mounts":["/open-lab/source-chain","/about/evidence-os"],"mobileStrategy":"collapse","runtimeExclusions":["custody-inference"]},
     {"id":"OL-COMPARE","export":"OpenLabComparison","dataOwner":"product-and-openlab-projections","mounts":["/open-lab/compare"],"mobileStrategy":"horizontal-scroll","runtimeExclusions":["generated-comparison-result"]},
-    {"id":"OL-UNAVAILABLE","export":"OpenLabUnavailableBoundary","dataOwner":"presentation-state-contract","mounts":["/open-lab/source-chain","/open-lab/report/:batchId","/open-lab/records/:recordId"],"mobileStrategy":"stack-allowed","runtimeExclusions":["fallback-result","substitution"]}
+    {"id":"OL-UNAVAILABLE","export":"OpenLabUnavailableBoundary","dataOwner":"presentation-state-contract","mounts":["/open-lab/source-chain","/open-lab/report/:batchId","/open-lab/records/:recordId"],"mobileStrategy":"stack-allowed","runtimeExclusions":["fallback-result","substitution"]},
+    {"id":"OL-EVIDENCE-CHARTS","export":"OpenLabFrontierPage:evidence","dataOwner":"frontier-content","mounts":["/open-lab/evidence"],"mobileStrategy":"summary","runtimeExclusions":["live-fetch","mutation"]},
+    {"id":"OL-COMPOUND-GUIDE","export":"OpenLabFrontierPage:compound-guide","dataOwner":"frontier-content","mounts":["/open-lab/compound-guide"],"mobileStrategy":"reorder","runtimeExclusions":["live-fetch","mutation"]},
+    {"id":"OL-STACK-BUILDER","export":"OpenLabFrontierPage:stack-builder","dataOwner":"frontier-content","mounts":["/open-lab/stack-builder"],"mobileStrategy":"collapse","runtimeExclusions":["cart-mutation","pricing-authority"]},
+    {"id":"OL-SIDEBAR-WORKSPACE","export":"Workspace","dataOwner":"frontier-content","mounts":["/open-lab/dosing-calculator","/open-lab/cycle-planner","/open-lab/case-studies","/open-lab/glossary"],"mobileStrategy":"collapse","runtimeExclusions":["persistence","account-authority"]},
+    {"id":"OL-INTERACTION-CHECKER","export":"OpenLabFrontierPage:interaction-checker","dataOwner":"frontier-content","mounts":["/open-lab/interaction-checker"],"mobileStrategy":"reorder","runtimeExclusions":["clinical-decision","live-fetch"]},
+    {"id":"OL-COA-VIEWER","export":"CoaViewer","dataOwner":"frontier-content","mounts":["/open-lab/coa/:id"],"mobileStrategy":"summary","runtimeExclusions":["document-mutation","live-fetch"]},
+    {"id":"OL-RESEARCH-ARCHIVE","export":"OpenLabFrontierPage:research-papers","dataOwner":"frontier-content","mounts":["/open-lab/research-papers"],"mobileStrategy":"collapse","runtimeExclusions":["cms-authority"]},
+    {"id":"OL-LAB-PARTNER","export":"OpenLabFrontierPage:lab-partner","dataOwner":"frontier-content","mounts":["/open-lab/lab-partner"],"mobileStrategy":"reorder","runtimeExclusions":["form-submit","crm-callback"]}
   ],
   "dynamicDetailComponents": ["ReportIdentityHeader","AnalyteTable","CustodyTimeline","UnavailableEvidencePanel"],
   "ownerOnlyRoutes": ["/open-lab/admin"],
-  "deferredRoutes": ["/open-lab/evidence","/open-lab/compound-guide","/open-lab/stack-builder","/open-lab/dosing-calculator","/open-lab/cycle-planner","/open-lab/interaction-checker","/open-lab/coa/:id","/open-lab/research-papers","/open-lab/case-studies","/open-lab/glossary","/open-lab/lab-partner"]
+  "deferredRoutes": []
 }

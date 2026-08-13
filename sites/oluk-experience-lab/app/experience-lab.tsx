@@ -32,7 +32,7 @@ import {
 } from "./design-system/shop-taxonomy";
 import { TransactionPresentation } from "./design-system/transaction-presentation";
 
-type ProgramRouteKey = "product-continuation" | "checkout-information" | "checkout-payment" | "checkout-processing" | "checkout-review" | "checkout-tracking" | "openlab-admin" | "compound" | "report";
+type ProgramRouteKey = "product-continuation" | "checkout-information" | "checkout-payment" | "checkout-processing" | "checkout-review" | "checkout-tracking" | "openlab-admin" | "compound" | "report" | "openlab-evidence" | "compound-guide" | "stack-builder" | "dosing-calculator" | "cycle-planner" | "interaction-checker" | "coa" | "research-papers" | "case-studies" | "glossary" | "lab-partner";
 type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" | "review-studio" | ProgramRouteKey>;
 type PrimaryNavRouteKey = (typeof PRIMARY_NAV_ROUTE_KEYS)[number];
 type ExperienceLabProps = { route: ExperienceRouteKey; lookupReference?: string };
@@ -185,7 +185,7 @@ export function SiteFooter() {
 }
 
 export function GovernedProgramShell({ children, lane = "openlab" }: { children: ReactNode; lane?: "openlab" | "checkout" }) {
-  return <><SiteHeader route={lane === "openlab" ? "openlab" : "checkout"}/><main data-live-authority={lane === "checkout" ? "false" : undefined}>{children}</main><SiteFooter/></>;
+  return <><SiteHeader route={lane === "openlab" ? "openlab" : "checkout"}/><main data-live-authority={lane === "checkout" ? "false" : undefined} id="main-content">{children}</main><SiteFooter/></>;
 }
 function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: string; copy: string; actions?: ReactNode }) {
   return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p>{actions && <div className="button-row">{actions}</div>}</div></section>;

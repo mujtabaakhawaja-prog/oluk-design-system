@@ -11,13 +11,13 @@ import { buildTokenManifest } from "../scripts/proof/token-contract.mjs";
 const execFile = promisify(execFileCallback);
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("MF-09 matrix names all 40 routes at 1440/1024/768/390 without collisions", () => {
-  assert.equal(ROUTES.length, 40);
+test("MF-09 matrix names all 51 routes at 1440/1024/768/390 without collisions", () => {
+  assert.equal(ROUTES.length, 51);
   assert.deepEqual(VIEWPORTS.map(({ width }) => width), [1440, 1024, 768, 390]);
   const ids = ROUTES.flatMap((route) => VIEWPORTS.map((viewport) => `${routeSlug(route.path)}--${viewport.width}`));
-  assert.equal(ids.length, 160);
-  assert.equal(new Set(ids).size, 160);
-  assert.equal(ROUTES.filter(({ customer }) => customer).length, 38);
+  assert.equal(ids.length, 204);
+  assert.equal(new Set(ids).size, 204);
+  assert.equal(ROUTES.filter(({ customer }) => customer).length, 49);
   assert.equal(ROUTES.find(({ path: pathname }) => pathname === "/review")?.customer, false);
 });
 
@@ -44,10 +44,10 @@ test("component provenance static checker rejects page-local drift and legacy pa
 test("visual baseline manifest captures the full route-width matrix without claiming champion-reviewed baselines", async () => {
   const { stdout } = await execFile(process.execPath, ["scripts/proof/visual-baseline.mjs"], { cwd: siteRoot });
   const result = JSON.parse(stdout);
-  assert.equal(result.caseCount, 160);
+  assert.equal(result.caseCount, 204);
   assert.equal(result.reviewed, 0);
   assert.equal(result.capturedUnreviewed, 124);
-  assert.equal(result.pending, 36);
+  assert.equal(result.pending, 80);
 });
 
 test("browser proof runners preserve unpublished review posture and keep evidence outside source by default", async () => {

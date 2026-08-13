@@ -928,7 +928,7 @@
       }
     ],
     "publicationState": "UNPUBLISHED",
-    "sectionModuleCount": 14,
+    "sectionModuleCount": 22,
     "sectionModuleMappings": [
       {
         "dataOwner": "product projection",
@@ -1107,6 +1107,112 @@
         "runtimeExclusions": [
           "fallback-result",
           "substitution"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "OpenLabFrontierPage:evidence",
+        "id": "OL-EVIDENCE-CHARTS",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/open-lab/evidence"
+        ],
+        "runtimeExclusions": [
+          "live-fetch",
+          "mutation"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "OpenLabFrontierPage:compound-guide",
+        "id": "OL-COMPOUND-GUIDE",
+        "mobileStrategy": "reorder",
+        "mounts": [
+          "/open-lab/compound-guide"
+        ],
+        "runtimeExclusions": [
+          "live-fetch",
+          "mutation"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "OpenLabFrontierPage:stack-builder",
+        "id": "OL-STACK-BUILDER",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab/stack-builder"
+        ],
+        "runtimeExclusions": [
+          "cart-mutation",
+          "pricing-authority"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "Workspace",
+        "id": "OL-SIDEBAR-WORKSPACE",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab/dosing-calculator",
+          "/open-lab/cycle-planner",
+          "/open-lab/case-studies",
+          "/open-lab/glossary"
+        ],
+        "runtimeExclusions": [
+          "persistence",
+          "account-authority"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "OpenLabFrontierPage:interaction-checker",
+        "id": "OL-INTERACTION-CHECKER",
+        "mobileStrategy": "reorder",
+        "mounts": [
+          "/open-lab/interaction-checker"
+        ],
+        "runtimeExclusions": [
+          "clinical-decision",
+          "live-fetch"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "CoaViewer",
+        "id": "OL-COA-VIEWER",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/open-lab/coa/:id"
+        ],
+        "runtimeExclusions": [
+          "document-mutation",
+          "live-fetch"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "OpenLabFrontierPage:research-papers",
+        "id": "OL-RESEARCH-ARCHIVE",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab/research-papers"
+        ],
+        "runtimeExclusions": [
+          "cms-authority"
+        ]
+      },
+      {
+        "dataOwner": "frontier-content",
+        "export": "OpenLabFrontierPage:lab-partner",
+        "id": "OL-LAB-PARTNER",
+        "mobileStrategy": "reorder",
+        "mounts": [
+          "/open-lab/lab-partner"
+        ],
+        "runtimeExclusions": [
+          "form-submit",
+          "crm-callback"
         ]
       }
     ],
@@ -2227,7 +2333,7 @@
     },
     "openLabSections": {
       "file": "authority/OPENLAB-SECTION-MODULE-REGISTRY.json",
-      "sha256": "cc9f5d3780ba31e3947a5e0615bd3ff7ebaaa014dc725b272be4fb192d485ba1"
+      "sha256": "d118f2ae57c16a60e2ed919799ca04cb8b8a340126ba50f23ce200f2bc545919"
     },
     "pdpSections": {
       "file": "authority/PDP-SECTION-MODULE-REGISTRY.json",
@@ -2239,7 +2345,7 @@
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
-      "sha256": "e8cd0c136521124eed8de76b5b9d1875204ac2efcf05075524268aa1edc43243"
+      "sha256": "e5956388875f505a3a317bea9851878fa9da817cee2c1bc13e8d9d9eaac8ceef"
     },
     "runtime": {
       "file": "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json",
@@ -2850,10 +2956,10 @@
       {
         "disposition": "new",
         "family": "openlab_report_viewer",
-        "id": "open-lab-report-viewer",
-        "maturity": "SCAFFOLD",
-        "owner": "openlab-source",
-        "path": "/open-lab/report/:batchId/viewer"
+        "id": "open-lab-coa-viewer",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/coa/:id"
       },
       {
         "disposition": "enhance",
@@ -2890,10 +2996,10 @@
       {
         "disposition": "new",
         "family": "openlab_methodology_compare_evidenceos",
-        "id": "open-lab-evidence-os",
-        "maturity": "SCAFFOLD",
+        "id": "open-lab-evidence",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/evidence-os"
+        "path": "/open-lab/evidence"
       },
       {
         "disposition": "owner-only",
@@ -2947,67 +3053,67 @@
       },
       {
         "disposition": "new",
-        "family": "support_content",
-        "id": "journal",
-        "maturity": "SCAFFOLD",
+        "family": "openlab_frontier_content",
+        "id": "open-lab-research-papers",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/journal"
+        "path": "/open-lab/research-papers"
       },
       {
         "disposition": "new",
-        "family": "support_content",
-        "id": "journal-entry",
-        "maturity": "SCAFFOLD",
+        "family": "openlab_frontier_content",
+        "id": "open-lab-case-studies",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/journal/:slug"
+        "path": "/open-lab/case-studies"
       },
       {
         "disposition": "new",
-        "family": "support_content",
-        "id": "glossary",
-        "maturity": "SCAFFOLD",
+        "family": "openlab_frontier_content",
+        "id": "open-lab-glossary",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/glossary"
-      },
-      {
-        "disposition": "new",
-        "family": "decision_tools",
-        "id": "your-goals",
-        "maturity": "SCAFFOLD",
-        "owner": "sites-reference",
-        "path": "/your-goals"
+        "path": "/open-lab/glossary"
       },
       {
         "disposition": "new",
         "family": "decision_tools",
-        "id": "compound-guide",
-        "maturity": "SCAFFOLD",
+        "id": "open-lab-dosing-calculator",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/compound-guide"
+        "path": "/open-lab/dosing-calculator"
       },
       {
         "disposition": "new",
         "family": "decision_tools",
-        "id": "compound-guide-detail",
-        "maturity": "SCAFFOLD",
+        "id": "open-lab-compound-guide",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/compound-guide/:slug"
+        "path": "/open-lab/compound-guide"
       },
       {
         "disposition": "new",
         "family": "decision_tools",
-        "id": "stack-builder",
-        "maturity": "SCAFFOLD",
+        "id": "open-lab-interaction-checker",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/stack-builder"
+        "path": "/open-lab/interaction-checker"
       },
       {
         "disposition": "new",
         "family": "decision_tools",
-        "id": "bundle-builder",
-        "maturity": "SCAFFOLD",
+        "id": "open-lab-stack-builder",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/bundle-builder"
+        "path": "/open-lab/stack-builder"
+      },
+      {
+        "disposition": "new",
+        "family": "decision_tools",
+        "id": "open-lab-cycle-planner",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/cycle-planner"
       },
       {
         "disposition": "new",
@@ -3068,11 +3174,11 @@
       },
       {
         "disposition": "new",
-        "family": "support_content",
-        "id": "accessibility",
-        "maturity": "SCAFFOLD",
+        "family": "openlab_frontier_content",
+        "id": "open-lab-lab-partner",
+        "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/accessibility"
+        "path": "/open-lab/lab-partner"
       },
       {
         "disposition": "new",
@@ -3158,5 +3264,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "5e043e02e466a57830be45cb271318c4bdba472eb4616f24c018312dc1b2aad9"
+  "contractHash": "7ce9593ab88f49b73a765331ba6571286a3b7ef88b0ce6a1e86e7cbb43a55a89"
 }

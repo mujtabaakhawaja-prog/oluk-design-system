@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-13T17:54:44-04:00",
-  "sourceGitSha": "47fd6d867055c30d18c5d1fbc14fa013855202a3",
-  "sourceTreeHash": "d864072d4d62c56a40cdf91b39466cf5dd394bf772b0463594350fb0e0413cf7",
-  "designContractHash": "33a2b3f97c75be1fdcda4949619a655844c0c8fecc658e8da195e9cd44fcebfa",
+  "generatedAt": "2026-08-13T18:03:29-04:00",
+  "sourceGitSha": "aaf04725f4f44b90bd02d37ab9fedba00155c729",
+  "sourceTreeHash": "68210621d2852eb343f36c6ce80563522a4463741e97b90df37ea0133385cb61",
+  "designContractHash": "11cbdef685cf4ec1fa36a2b72a719230b1e013da496ce563fbddf083531ff7b2",
   "decisionCount": 12,
   "families": [
     {
@@ -389,8 +389,8 @@
   "routeLedger": {
     "routeCount": 73,
     "maturityCounts": {
-      "SCAFFOLD": 31,
-      "SHAPE_COMPLETE": 17,
+      "SCAFFOLD": 20,
+      "SHAPE_COMPLETE": 28,
       "SOURCE_BOUND": 1,
       "INTERACTIVE": 2,
       "REVIEW_READY": 18,
@@ -406,11 +406,11 @@
     "status": "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY"
   },
   "visualEvidence": {
-    "routeCount": 40,
+    "routeCount": 51,
     "widthCount": 4,
     "reviewed": 0,
     "capturedUnreviewed": 124,
-    "pending": 36,
+    "pending": 80,
     "disposition": "MACHINE_EVIDENCE_NOT_CHAMPION_REVIEW_WORKLOAD"
   },
   "proofs": [

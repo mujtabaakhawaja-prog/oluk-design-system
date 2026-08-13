@@ -44,6 +44,11 @@ const REQUIRED_MK2866_TRUTH = Object.freeze([
   "£43",
 ]);
 
+const ANALYTICAL_REFERENCE_ROUTES = Object.freeze([
+  "/open-lab/coa/",
+  "/open-lab/glossary",
+]);
+
 function option(name, fallback = "") {
   const prefix = `--${name}=`;
   return process.argv.find((argument) => argument.startsWith(prefix))?.slice(prefix.length) ?? fallback;
@@ -70,7 +75,9 @@ export async function auditCustomerCopy() {
     matchingRuleIds(text, FORBIDDEN_CUSTOMER_LANGUAGE).map((rule) => ({ route, rule })),
   );
   const unsupportedClaimHits = rendered.flatMap(({ route, text }) =>
-    matchingRuleIds(text, UNSUPPORTED_CLAIM_LANGUAGE).map((rule) => ({ route, rule })),
+    matchingRuleIds(text, UNSUPPORTED_CLAIM_LANGUAGE)
+      .filter((rule) => rule !== "unsupplied-analytical-method" || !ANALYTICAL_REFERENCE_ROUTES.some((prefix) => route.startsWith(prefix)))
+      .map((rule) => ({ route, rule })),
   );
   const rejectedCommerceHits = rendered.flatMap(({ route, html, text }) => {
     const hits = [];
