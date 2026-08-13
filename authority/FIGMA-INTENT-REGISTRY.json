@@ -34,7 +34,21 @@
       "url": "https://www.figma.com/design/9jTrnlEWgbBpFi2idodVB2/Commerce---Checkout?node-id=0-1",
       "contributes": ["transaction hierarchy", "delivery choice", "FX reveal", "payment handoff", "processing", "confirmation", "tracking", "recovery"],
       "dataOwners": ["tools-service-projection", "initiator-terminal"],
-      "runtimeExclusions": ["form submission", "payment SDK", "payment callback", "Woo mutation"]
+      "runtimeExclusions": ["form submission", "payment SDK", "payment callback", "Woo mutation"],
+      "intentNodes": [
+        {"nodeId":"9:9416","target":"/bag","state":"desktop-light","copy":"approved-structure","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9414","target":"/checkout/information","state":"desktop-light","copy":"approved-structure","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9413","target":"/checkout/delivery","state":"desktop-light","copy":"approved-structure","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9415","target":"/checkout/review","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9401","target":"/checkout/payment","state":"expanded-desktop-light","copy":"approved-lifecycle","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9412","target":"/checkout/processing","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9410","target":"/checkout/confirmation","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9409","target":"/checkout/tracking","state":"desktop-light","copy":"approved-structure","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9403","target":"order-details","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9404","target":"receipt","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9407","target":"order-history","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9402","target":"refund","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"}
+      ]
     },
     {
       "id": "openlab",

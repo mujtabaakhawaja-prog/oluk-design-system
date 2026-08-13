@@ -76,7 +76,9 @@ test("transaction presentation preserves exact MK-2866 truth and deterministic i
 
   assert.match(source, /<MetricRail compact product=\{mk2866Fixture\}\s*\/>/);
   assert.match(source, /data-live-authority="false"/);
-  assert.match(source, /<button[^>]*disabled[^>]*>Pay \{mk2866Fixture\.price\}<\/button>/);
+  assert.match(source, /<button[^>]*disabled[^>]*>Pay securely<\/button>/);
+  assert.match(source, /<CurrencyEqualityLock compact \/>/);
+  assert.match(source, /<LifecycleAmountRecord stage="confirmation" \/>/);
   assert.doesNotMatch(source, /fetch\s*\(|axios|XMLHttpRequest|use server|server action|woocommerce|stripe|biaspay|initiator|tools-service|C2/i);
   assert.doesNotMatch(source, /90 CAPS(?:\b|ULES)|£43\.00|<del\b/i);
   assert.doesNotMatch(source, /<form\b|\bformAction\s*=|\bonSubmit\s*=/i);

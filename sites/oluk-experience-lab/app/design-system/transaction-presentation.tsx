@@ -3,6 +3,8 @@ import styles from "../transaction-presentation.module.css";
 import { ActionLink, Breadcrumbs } from "./customer-route-primitives";
 import { MetricRail } from "./metric-rail";
 import { mk2866Fixture } from "./product-fixtures";
+import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
+import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
 
 export type TransactionStage =
   | "bag"
@@ -49,12 +51,12 @@ const stageHeadings = {
     copy: "Review the available delivery presentation before moving to payment.",
   },
   handoff: {
-    title: "Continue to secure payment.",
-    copy: "Review the order once more before opening the secure payment step.",
+    title: "Your product, order value and payment equivalent.",
+    copy: paymentTrustCopy.continuity,
   },
   "order-pay": {
-    title: "Complete payment.",
-    copy: "Confirm the amount due in the secure payment window.",
+    title: "Make a card payment.",
+    copy: paymentTrustCopy.protectedStep,
   },
   confirmation: {
     title: "Order received.",
@@ -214,7 +216,7 @@ function DetailsContent() {
           <ActionLink href="/checkout/delivery">Continue to delivery</ActionLink>
         </div>
       </section>
-      <OrderSummary compact />
+      <div><OrderSummary compact /><PaymentTrustPrimer /></div>
     </div>
   );
 }
@@ -240,7 +242,7 @@ function DeliveryContent() {
           <ActionLink href="/checkout/payment-handoff">Continue to payment</ActionLink>
         </div>
       </div>
-      <OrderSummary compact />
+      <div><OrderSummary compact /><CurrencyEqualityLock compact /></div>
     </div>
   );
 }
@@ -275,14 +277,14 @@ function OrderPayContent() {
       <section className={styles.paymentWindow}>
         <div className={styles.paymentLock} aria-hidden="true">✓</div>
         <span className={styles.sectionLabel}>Secure payment window</span>
-        <h2>Amount due</h2>
-        <strong className={styles.paymentAmount}>{mk2866Fixture.price}</strong>
-        <p>Choose your payment method in this window. You’ll return to Olympus when the payment step closes.</p>
-        <button className="button" disabled type="button">Pay {mk2866Fixture.price}</button>
+        <h2>Payment amount</h2>
+        <strong className={styles.paymentAmount}>{paymentTrustStudy.settlementAmount} USD</strong>
+        <p>{paymentTrustCopy.equality}</p>
+        <button className="button" disabled type="button">Pay securely</button>
         <a href="/checkout/payment-handoff">Return to order review</a>
         <a href="/checkout/failure">Payment not completed?</a>
       </section>
-      <OrderSummary compact heading="Payment summary" />
+      <div><CurrencyEqualityLock compact /><OrderSummary compact heading="Payment summary" /></div>
     </div>
   );
 }
@@ -295,6 +297,7 @@ function ConfirmationContent() {
           <span aria-hidden="true">✓</span>
           <div><strong>Thank you.</strong><p>The order summary is ready below.</p></div>
         </div>
+        <LifecycleAmountRecord stage="confirmation" />
         <section className={styles.formPanel}>
           <div className={styles.confirmationHeading}>
             <div><span className={styles.sectionLabel}>Order reference</span><strong>OL-10428</strong></div>
