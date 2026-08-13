@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import {readFile} from "node:fs/promises";
+import path from "node:path";
+import test from "node:test";
+import {fileURLToPath} from "node:url";
+
+const siteRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
+const repoRoot=path.resolve(siteRoot,"../..");
+const readSite=(file)=>readFile(path.join(siteRoot,file),"utf8");
+
+test("PDP is a declared canonical module composition",async()=>{const registry=JSON.parse(await readFile(path.join(repoRoot,"authority/PDP-SECTION-MODULE-REGISTRY.json"),"utf8"));assert.equal(registry.runtimeAuthority,"NONE");assert.deepEqual(registry.composition,["ProductMediaGallery","PurchasePanel","AssuranceRail","ProductDetailDisclosure","ProductDossier","ProductEvidenceSnapshot","UpsellContextRail","RelatedRail","MobileDecisionSummary"]);assert.equal(registry.modules.length,4);for(const entry of registry.modules){assert.ok(entry.dataOwner);assert.ok(entry.mobileStrategy);assert.ok(entry.runtimeExclusions.length);}});
+
+test("PDP route mounts canonical sections and preserves approved content",async()=>{const [route,sections]=await Promise.all([readSite("app/customer-routes.tsx"),readSite("app/design-system/pdp-sections.tsx")]);for(const component of ["ProductMediaGallery","ProductDetailDisclosure","ProductEvidenceSnapshot","MobileDecisionSummary"])assert.match(route,new RegExp(`<${component}`));assert.match(sections,/Third-Party Tested\./);assert.match(sections,/15 MG|product\.strength/);assert.match(sections,/90 SERVINGS|product\.servings/);assert.match(sections,/product\.purity/);assert.doesNotMatch(sections,/fetch\(|XMLHttpRequest|WebSocket|localStorage|sessionStorage/);});
+
+test("mobile decision module remains navigation-only and token governed",async()=>{const [sections,css]=await Promise.all([readSite("app/design-system/pdp-sections.tsx"),readSite("app/design-system/pdp-sections.module.css")]);assert.match(sections,/href="#purchase"/);assert.doesNotMatch(sections,/addToBag|order_prepare|payment_bridge|complete_payment/i);assert.match(css,/@media\(max-width:540px\)/);assert.match(css,/min-height:44px/);assert.doesNotMatch(css,/#(?:[0-9a-f]{3}){1,2}\b/i);});

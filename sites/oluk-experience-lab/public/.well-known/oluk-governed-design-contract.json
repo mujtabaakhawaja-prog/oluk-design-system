@@ -928,6 +928,56 @@
       }
     ],
     "publicationState": "UNPUBLISHED",
+    "sectionModuleCount": 4,
+    "sectionModuleMappings": [
+      {
+        "dataOwner": "product projection",
+        "export": "ProductMediaGallery",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/product/:slug"
+        ],
+        "runtimeExclusions": [
+          "media mutation",
+          "asset inference"
+        ]
+      },
+      {
+        "dataOwner": "approved supplied product content",
+        "export": "ProductDetailDisclosure",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/product/:slug"
+        ],
+        "runtimeExclusions": [
+          "content invention"
+        ]
+      },
+      {
+        "dataOwner": "approved supplied OpenLab and product content",
+        "export": "ProductEvidenceSnapshot",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/product/:slug",
+          "/open-lab"
+        ],
+        "runtimeExclusions": [
+          "evidence inference"
+        ]
+      },
+      {
+        "dataOwner": "product projection",
+        "export": "MobileDecisionSummary",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/product/:slug"
+        ],
+        "runtimeExclusions": [
+          "cart mutation",
+          "inventory mutation"
+        ]
+      }
+    ],
     "tokenCollections": [
       {
         "count": 29,
@@ -2043,6 +2093,10 @@
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
       "sha256": "028b156949b0c01e5ea6956df231c74f35b2bd4bca02d83e826ef69ae0661cd0"
     },
+    "pdpSections": {
+      "file": "authority/PDP-SECTION-MODULE-REGISTRY.json",
+      "sha256": "c330dbd74cfc1f997e0b2d992461cf89eba3dafe7779884f1e72ee80e096fe3b"
+    },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
       "sha256": "50ce67013137f594866ca8c294a3d1c19c7e27c26dabe115f99e549afe3111f5"
@@ -2968,5 +3022,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "88af816d987521687da3304a3b62943153243df36d418abfb109f6a37550844f"
+  "contractHash": "98f7447ce2cf9f37b4cd0a65f8407032889588f323c91d46c11bb34949dc3c28"
 }

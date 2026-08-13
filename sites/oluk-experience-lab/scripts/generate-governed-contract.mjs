@@ -12,6 +12,7 @@ const sources = {
   routes: path.join(repoRoot, "authority/SITE-ROUTE-LEDGER.json"),
   intents: path.join(repoRoot, "authority/FIGMA-INTENT-REGISTRY.json"),
   programComponents: path.join(repoRoot, "authority/PROGRAM-COMPONENT-REGISTRY.json"),
+  pdpSections: path.join(repoRoot, "authority/PDP-SECTION-MODULE-REGISTRY.json"),
   runtime: path.join(repoRoot, "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json"),
   tokens: path.join(siteRoot, "tests/contracts/governed-token-manifest.json"),
 };
@@ -45,6 +46,8 @@ const payload = stable({
     tokenCollections: input.bridge.value.tokenCollections,
     componentMappings: input.bridge.value.componentMappings,
     programComponentMappings: input.programComponents.value.components,
+    sectionModuleMappings: input.pdpSections.value.modules,
+    sectionModuleCount: input.pdpSections.value.modules.length,
     componentCount: input.bridge.value.componentMappings.length + input.programComponents.value.components.length,
     tokenManifest: input.tokens.value,
   },

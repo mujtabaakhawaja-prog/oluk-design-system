@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element -- the PDP exception uses an authored transparent product render. */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex -- the horizontal comparison scroller must remain keyboard reachable. */
 
 import { AssuranceRail } from "./design-system/assurance-rail";
@@ -19,6 +18,7 @@ import { ProductDecisionHero } from "./design-system/product-decision-hero";
 import { ProductDossier } from "./design-system/product-dossier";
 import { mk2866Fixture, rad140Fixture } from "./design-system/product-fixtures";
 import { ProductMediaChamber } from "./design-system/product-media-chamber";
+import { MobileDecisionSummary, ProductDetailDisclosure, ProductEvidenceSnapshot, ProductMediaGallery } from "./design-system/pdp-sections";
 import { EvidenceStatus } from "./design-system/product-status";
 import { PurchasePanel } from "./design-system/purchase-panel";
 import { RelatedRail } from "./design-system/related-rail";
@@ -241,40 +241,23 @@ export function ProductRoute() {
           />
         </div>
         <div className="shell pdp-grid">
-          <div className="pdp-media">
-            <div className="pdp-media-stage">
-              <span className="media-tag">FINISHED PRODUCT</span>
-              <span className="media-batch">SKU {mk2866Fixture.sku}</span>
-              <div aria-hidden="true" className="media-contact-shelf" />
-              <img
-                alt={`${mk2866Fixture.name} ${mk2866Fixture.alias} bottle`}
-                decoding="async"
-                fetchPriority="high"
-                height={mk2866Fixture.media.height}
-                loading="eager"
-                sizes="(max-width: 960px) calc(100vw - 44px), 50vw"
-                src={mk2866Fixture.media.src}
-                width={mk2866Fixture.media.width}
-              />
-            </div>
-            <div aria-label="Available product image" className="media-controls">
-              <span aria-current="true">Front</span>
-            </div>
-          </div>
+          <ProductMediaGallery product={mk2866Fixture}/>
           <PurchasePanel headingLevel="h1" product={mk2866Fixture} />
         </div>
       </section>
       <section className="section pdp-assurance" id="pdp-assurance">
         <div className="shell"><AssuranceRail variant="compact" /></div>
       </section>
+      <ProductDetailDisclosure product={mk2866Fixture}/>
       <ProductDossier evidenceHref="#lab-records" id="dossier" product={mk2866Fixture} />
-      <RecordAvailabilitySection />
+      <ProductEvidenceSnapshot product={mk2866Fixture}/>
       <section className="section" id="product-continuation"><div className="shell"><UpsellContextRail /></div></section>
       <RelatedRail
         anchorProduct={mk2866Fixture}
         id="related-products"
         products={[rad140Fixture]}
       />
+      <MobileDecisionSummary product={mk2866Fixture}/>
     </>
   );
 }

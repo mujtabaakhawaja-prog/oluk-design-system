@@ -1230,12 +1230,15 @@ a.button-secondary:hover {
   border: 1px solid var(--line);
   border-radius: 12px;
   display: grid;
-  grid-template-columns: 34px 34px 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   min-height: 40px;
-  overflow: hidden;
+  min-width: 0;
+  overflow: visible;
+  width: min(100%, 102px);
 }
 
 .quantity-stepper button,
+.quantity-stepper output,
 .quantity-stepper span {
   align-items: center;
   background: var(--white);
@@ -1245,6 +1248,7 @@ a.button-secondary:hover {
   font-weight: 800;
   height: 100%;
   justify-content: center;
+  min-width: 0;
 }
 
 .quantity-stepper span {

@@ -97,8 +97,8 @@ test("customer routes adopt the canonical design-system modules without page-loc
   const productRoute = routeSource.match(
     /export function ProductRoute\(\)[\s\S]*?\n}\n\nexport function OpenLabRoute/,
   )?.[0] ?? "";
-  assert.match(productRoute, /className="pdp-media-stage"/, "PDP retains its flat atmospheric media exception");
-  assert.doesNotMatch(productRoute, /<ProductMediaChamber\b/, "PDP first fold does not consume the bounded chamber master");
+  assert.match(productRoute, /<ProductMediaGallery\b/, "PDP adopts the canonical media/view module");
+  assert.doesNotMatch(productRoute, /className="pdp-media-stage"/, "PDP no longer redraws its media chamber in the route");
   assert.match(productRoute, /<PurchasePanel\b/);
   assert.match(productRoute, /<ProductDossier\b/);
   assert.match(productRoute, /<RelatedRail\b/);

@@ -57,7 +57,7 @@ const payload = {
     disposition: "MACHINE_EVIDENCE_NOT_CHAMPION_REVIEW_WORKLOAD"
   },
   proofs: [
-    proof("static", /Node suite: 68\/68 PASS/.test(studioReceipt), "Build, typecheck, lint and 68 tests"),
+    proof("static", /Node suite: 71\/71 PASS/.test(studioReceipt), "Build, typecheck, lint and 71 tests"),
     proof("tokens", contractProof.tokenManifest.activeVariables === 112 && contractProof.tokenManifest.cssCustomProperties === 128, "112 governed variables and 128 CSS properties"),
     proof("provenance", contractProof.componentProvenance.passed === 71, "Canonical component provenance"),
     proof("bridge", contractProof.figmaCodeBridge.passed === 290, "Repository-owned mapping bridge"),

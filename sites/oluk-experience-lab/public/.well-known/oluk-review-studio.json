@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-13T15:56:26-04:00",
-  "sourceGitSha": "144e595529e60d9644a01cebd8ee2852a40c4f40",
-  "sourceTreeHash": "ed5cbcc82770921e70dfd8e01945c84e960eabb3450d6b2689d065b9f04c91f9",
-  "designContractHash": "874cd0b0d43621abebb06e33cfce99f4b7dd32e147030fb1379a790d88f29aef",
+  "generatedAt": "2026-08-13T15:58:09-04:00",
+  "sourceGitSha": "3cee81421e0f1612f72fbdc8de791a20f3fe2d91",
+  "sourceTreeHash": "a4049090d2b9addb7e831c4a55928022d8c3e2b7a3dc73c19b2cb408d1619d14",
+  "designContractHash": "1b18c79d7fd68164538540142b9f08c9544c5300955c3f69547849a368fad37c",
   "decisionCount": 12,
   "families": [
     {
@@ -391,7 +391,7 @@
     {
       "id": "static",
       "status": "PASS",
-      "detail": "Build, typecheck, lint and 68 tests"
+      "detail": "Build, typecheck, lint and 71 tests"
     },
     {
       "id": "tokens",
