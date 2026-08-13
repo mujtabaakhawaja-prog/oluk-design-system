@@ -16,7 +16,7 @@ Status: `HUMAN_REVIEW_REQUIRED_UNPUBLISHED`
 ## Current evidence
 
 - Production build: PASS, 41 physical routes including the owner studio.
-- Node suite: 71/71 PASS.
+- Node suite: 75/75 PASS.
 - Review Studio viewport proof: 2/2 PASS at 1440 and 390.
 - Review Studio accessibility smoke: 2/2 PASS.
 - Mobile compaction representative matrix: 15 cases; scroll depth remains warning-only.

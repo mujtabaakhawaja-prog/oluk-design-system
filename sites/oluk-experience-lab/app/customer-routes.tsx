@@ -1,17 +1,26 @@
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex -- the horizontal comparison scroller must remain keyboard reachable. */
-
 import { AssuranceRail } from "./design-system/assurance-rail";
 import { CobaltDensityBoundary } from "./design-system/cobalt-divider";
 import {
   ActionLink,
   Arrow,
   Breadcrumbs,
-  Chevron,
   OpenLabNav,
   PageHero,
   SectionHeading,
 } from "./design-system/customer-route-primitives";
 import { selectedEvidenceRecord } from "./design-system/evidence-record-fixtures";
+import {
+  EvidenceRecordExplainer,
+  OpenLabComparison,
+  OpenLabDossierComposition,
+  OpenLabMethodologyPipeline,
+  OpenLabPortalHero,
+  OpenLabRecordDetail,
+  OpenLabRegistryArchive,
+  OpenLabSourceChain,
+  OpenLabUnavailableBoundary,
+  OpenLabWayfinding,
+} from "./design-system/openlab-sections";
 import { PresentationState, type PresentationStateKind } from "./design-system/presentation-state";
 import { ProductCommerceCard } from "./design-system/product-commerce-card";
 import { ProductDecisionHero } from "./design-system/product-decision-hero";
@@ -25,30 +34,6 @@ import { RelatedRail } from "./design-system/related-rail";
 import { UpsellContextRail } from "./design-system/program-components";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
 import styles from "./customer-routes.module.css";
-
-const openLabEntries = [
-  { index: "01", title: "Lab Records", copy: "Browse the record index.", href: "/open-lab/records" },
-  { index: "02", title: "Batch Lookup", copy: "Check a product or batch reference.", href: "/open-lab/batch-lookup" },
-  { index: "03", title: "Methodology", copy: "Understand the evidence vocabulary.", href: "/open-lab/methodology" },
-  { index: "04", title: "Source Chain", copy: "Follow product identity toward a report.", href: "/open-lab/source-chain" },
-  { index: "05", title: "Compare", copy: "Compare product facts and record availability.", href: "/open-lab/compare" },
-  { index: "06", title: "EvidenceOS", copy: "See how the evidence pathway fits together.", href: "/about/evidence-os" },
-] as const;
-
-const methodologyEntries = [
-  { index: "01", title: "Identity", copy: "Links the named product and compound to the evidence record." },
-  { index: "02", title: "Purity", copy: "Reports an analytical result only when it is supplied by the available record." },
-  { index: "03", title: "Concentration", copy: "Keeps measured concentration separate from the product label value." },
-  { index: "04", title: "Source custody", copy: "Preserves the route from product and batch context to the original document." },
-] as const;
-
-const sourceChainEntries = [
-  { index: "01", title: "Product", copy: "Label identity and product specifications" },
-  { index: "02", title: "Batch", copy: "The finished production reference, when supplied" },
-  { index: "03", title: "Laboratory", copy: "The named analytical source on an available report" },
-  { index: "04", title: "Report", copy: "The original document and its stated result" },
-  { index: "05", title: "OpenLab", copy: "The customer-facing route to available records" },
-] as const;
 
 function ReviewsSection({ full = false }: Readonly<{ full?: boolean }>) {
   return (
@@ -169,31 +154,6 @@ function EvidenceArchiveEntry({ id = "openlab-records" }: Readonly<{ id?: string
   );
 }
 
-function RecordAvailabilitySection({ id = "lab-records" }: Readonly<{ id?: string }>) {
-  return (
-    <section className="section section-blue-wash lab-records-section" id={id}>
-      <div className="shell">
-        <SectionHeading
-          action={<a href="/open-lab/records">View the record index <Arrow /></a>}
-          copy="No analytical result is filled in until an available record provides that detail."
-          eyebrow="OPENLAB RECORDS"
-          title="The MK-2866 evidence pathway."
-        />
-        <PresentationState
-          action={
-            <>
-              <ActionLink href="/open-lab/records">Browse records</ActionLink>
-              <ActionLink href="/open-lab/methodology" secondary>Read methodology</ActionLink>
-            </>
-          }
-          className={styles.stateSurface}
-          state="unavailable"
-        />
-      </div>
-    </section>
-  );
-}
-
 export function HomeRoute() {
   return (
     <>
@@ -266,55 +226,11 @@ export function OpenLabRoute() {
   return (
     <>
       <OpenLabNav active="openlab" />
-      <section className="openlab-portal-hero">
-        <div className="shell openlab-portal-grid">
-          <div className="openlab-intro">
-            <span className="eyebrow">OPENLAB</span>
-            <h1>Independent evidence, connected to every product.</h1>
-            <p>Move from product facts toward available records, methodology and source context without losing the commerce relationship.</p>
-            <div aria-label="OpenLab experience lenses" className={styles.staticIndex} role="list">
-              <span role="listitem">Technical</span>
-              <span role="listitem">Product evidence</span>
-              <span role="listitem">Commerce</span>
-            </div>
-            <div className="button-row">
-              <ActionLink href="/open-lab/records">Browse Lab Records</ActionLink>
-              <ActionLink href="/open-lab/methodology" secondary>How records are presented</ActionLink>
-            </div>
-          </div>
-          <ProductCommerceCard
-            className={styles.singleCard}
-            headingLevel="h2"
-            product={mk2866Fixture}
-            showQualitative={false}
-            variant="vertical"
-          />
-        </div>
-      </section>
+      <OpenLabPortalHero />
       <div className="shell"><CobaltDensityBoundary /></div>
-      <section className="section">
-        <div className="shell">
-          <SectionHeading
-            copy="One consistent vocabulary supports product, methodology and record pages."
-            eyebrow="SIX-POINT ASSURANCE"
-            title="What an evidence path is built to show."
-          />
-          <AssuranceRail />
-        </div>
-      </section>
+      <OpenLabWayfinding />
+      <EvidenceRecordExplainer />
       <EvidenceArchiveEntry id="embedded-evidence" />
-      <section className="section section-blue-wash">
-        <div className="shell portal-route-grid">
-          {openLabEntries.map((entry) => (
-            <a href={entry.href} key={entry.title}>
-              <span>{entry.index}</span>
-              <h3>{entry.title}</h3>
-              <p>{entry.copy}</p>
-              <Arrow />
-            </a>
-          ))}
-        </div>
-      </section>
       <RelatedRail
         anchorProduct={mk2866Fixture}
         eyebrow="COMMERCE CONNECTION"
@@ -336,29 +252,7 @@ export function RecordsRoute() {
         eyebrow="OPENLAB ARCHIVE"
         title="Every product. Its available record path."
       />
-      <section className="section">
-        <div className={`shell ${styles.archiveLayout}`}>
-          <aside className={styles.searchPanel}>
-            <span className="eyebrow">SEARCH RECORDS</span>
-            <label htmlFor="record-search">Product or record reference</label>
-            <input id="record-search" placeholder="e.g. MK-2866" type="search" />
-            <button className="button" disabled type="button">Search records</button>
-            <a href="/open-lab/batch-lookup">Have a batch number? <Arrow /></a>
-          </aside>
-          <div className={styles.recordIndex}>
-            <article className={styles.recordRow} data-live-authority="false">
-              <div>
-                <span className="eyebrow">PRODUCT RECORD PATH</span>
-                <h2>{mk2866Fixture.name}</h2>
-              </div>
-              <dl><dt>Product</dt><dd>{mk2866Fixture.alias}</dd></dl>
-              <dl><dt>Record</dt><dd>Unavailable</dd></dl>
-              <dl><dt>Status</dt><dd><EvidenceStatus state="unavailable" /></dd></dl>
-              <a href={selectedEvidenceRecord.customerPath}>Open state <Arrow /></a>
-            </article>
-          </div>
-        </div>
-      </section>
+      <OpenLabRegistryArchive />
     </>
   );
 }
@@ -393,38 +287,7 @@ export function RecordRoute() {
           </div>
         </div>
       </section>
-      <section className="section">
-        <div className={`shell ${styles.recordContent}`}>
-          <div>
-            <PresentationState
-              action={
-                <>
-                  <ActionLink href="/open-lab/records">Return to records</ActionLink>
-                  <ActionLink href="/open-lab/source-chain" secondary>View source chain</ActionLink>
-                </>
-              }
-              className={styles.stateSurface}
-              state="unavailable"
-            />
-            <article className={styles.recordFacts}>
-              <span className="eyebrow">CURRENT DETAIL</span>
-              <dl>
-                <div><dt>Product</dt><dd>{record.product.name}</dd></div>
-                <div><dt>SKU</dt><dd>{record.product.sku}</dd></div>
-                <div><dt>Published</dt><dd>Unavailable</dd></div>
-                <div><dt>Result</dt><dd>Unavailable</dd></div>
-              </dl>
-            </article>
-          </div>
-          <aside className={styles.productBridge}>
-            <span className="eyebrow">CONNECTED PRODUCT</span>
-            <h2>{record.product.name}</h2>
-            <p>{record.product.alias} · {record.product.strength} · {record.product.servings} · {record.product.purity}</p>
-            <a href={record.product.customerPath}>View product · {record.product.price} <Arrow /></a>
-            <a href="/open-lab/dossier/mk-2866">Open product dossier <Arrow /></a>
-          </aside>
-        </div>
-      </section>
+      <OpenLabRecordDetail record={record} />
     </>
   );
 }
@@ -438,24 +301,7 @@ export function DossierRoute() {
         eyebrow="PRODUCT DOSSIER"
         title="MK-2866 product dossier."
       />
-      <ProductDossier
-        evidenceHref="#dossier-record-state"
-        id="dossier"
-        product={mk2866Fixture}
-      />
-      <RecordAvailabilitySection id="dossier-record-state" />
-      <section className={`section ${styles.sectionTight}`}>
-        <div className="shell">
-          <ProductCommerceCard
-            contextKicker="RETURN TO COMMERCE"
-            product={mk2866Fixture}
-            secondaryHref={mk2866Fixture.customerPath}
-            secondaryLabel="Return to MK-2866"
-            showQualitative={false}
-            variant="relation"
-          />
-        </div>
-      </section>
+      <OpenLabDossierComposition />
     </>
   );
 }
@@ -546,18 +392,7 @@ export function MethodologyRoute() {
         eyebrow="TESTING METHODOLOGY"
         title="How finished-product records are read."
       />
-      <section className="section">
-        <div className="shell methodology-grid">
-          {methodologyEntries.map((entry) => (
-            <article key={entry.title}>
-              <span>{entry.index}</span>
-              <h2>{entry.title}</h2>
-              <p>{entry.copy}</p>
-              <a href="/open-lab/records">View record states <Arrow /></a>
-            </article>
-          ))}
-        </div>
-      </section>
+      <OpenLabMethodologyPipeline />
       <section className="section section-blue-wash">
         <div className="shell">
           <SectionHeading eyebrow="ASSURANCE RAIL" title="One shared evidence vocabulary." />
@@ -577,27 +412,8 @@ export function SourceChainRoute() {
         eyebrow="SOURCE CHAIN"
         title="From finished product to original report."
       />
-      <section className="section">
-        <div className="shell source-chain">
-          {sourceChainEntries.map((entry) => (
-            <article key={entry.title}>
-              <span>{entry.index}</span>
-              <div><h2>{entry.title}</h2><p>{entry.copy}</p></div>
-              <Chevron />
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className={`section ${styles.sectionTight}`}>
-        <div className="shell">
-          <PresentationState
-            action={<ActionLink href="/open-lab/records">Return to the record index</ActionLink>}
-            className={styles.stateSurface}
-            copy="Batch, laboratory, document and result details remain unavailable until supplied by a record."
-            state="unavailable"
-          />
-        </div>
-      </section>
+      <OpenLabSourceChain />
+      <OpenLabUnavailableBoundary><ActionLink href="/open-lab/records">Return to the record index</ActionLink></OpenLabUnavailableBoundary>
     </>
   );
 }
@@ -611,36 +427,7 @@ export function CompareRoute() {
         eyebrow="COMPARE RECORDS"
         title="Compare finished-product evidence paths."
       />
-      <section className="section">
-        <div className={`shell ${styles.compareTool}`}>
-          <span className="eyebrow">COMPARISON TOOL</span>
-          <div
-            aria-label="Scrollable product comparison"
-            className={styles.compareTableWrap}
-            role="region"
-            tabIndex={0}
-          >
-            <table className={styles.compareTable}>
-              <caption className="sr-only">Product facts and evidence availability comparison</caption>
-              <thead>
-                <tr><th scope="col">Field</th><th scope="col">MK-2866</th><th scope="col">RAD-140</th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">Series</th><td>{mk2866Fixture.series}</td><td>{rad140Fixture.series}</td></tr>
-                <tr><th scope="row">Strength</th><td>{mk2866Fixture.strength}</td><td>{rad140Fixture.strength}</td></tr>
-                <tr><th scope="row">Servings</th><td>{mk2866Fixture.servings}</td><td>{rad140Fixture.servings}</td></tr>
-                <tr><th scope="row">Label purity</th><td>{mk2866Fixture.purity}</td><td>{rad140Fixture.purity}</td></tr>
-                <tr><th scope="row">Evidence detail</th><td>Unavailable</td><td>Unavailable</td></tr>
-                <tr><th scope="row">Product path</th><td><a href="/product/mk-2866">View product</a></td><td><a href="/shop?family=sarms">View family</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <details>
-            <summary>What this comparison does not claim</summary>
-            <p>Unavailable analytical fields remain unavailable. Label purity is a product specification, not a measured record result.</p>
-          </details>
-        </div>
-      </section>
+      <OpenLabComparison />
     </>
   );
 }
@@ -662,17 +449,9 @@ export function EvidenceOsRoute() {
       <section className="section">
         <div className="shell">
           <SectionHeading eyebrow="THE EVIDENCE MODEL" title="Five connected layers." />
-          <div className="source-chain">
-            {sourceChainEntries.map((entry) => (
-              <article key={entry.title}>
-                <span>{entry.index}</span>
-                <div><h2>{entry.title}</h2><p>{entry.copy}</p></div>
-                <Chevron />
-              </article>
-            ))}
-          </div>
         </div>
       </section>
+      <OpenLabSourceChain />
       <AssuranceSection />
       <EvidenceArchiveEntry id="evidence-os-records" />
     </>

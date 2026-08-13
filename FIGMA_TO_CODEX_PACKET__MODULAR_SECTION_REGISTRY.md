@@ -27,7 +27,7 @@ Every section MUST make sense standalone AND be modularly insertable across page
 - No local cart authority — cart/checkout/order state from tools-service projections only
 - Evidence boundary: OpenLab data is source-owned. No invented lab claims
 - Search is fail-closed — never substitute, never "did you mean"
-- EvidenceOS Command Center (/openlab/admin) needs auth gating
+- EvidenceOS Command Center (`/open-lab/admin`) is an owner-only, noindex Sites specimen; identity/authentication remains deferred
 - Stripe iframe on payment step is visual shell only
 - 4-state honesty: Verified Evidence / Source Reported / Source Only / Unavailable
 - Zero Grey Rule: all neutrals blue-shifted per CONV-004
@@ -136,9 +136,9 @@ These mount on EVERY route. They are not optional.
 
 ---
 
-## IV. PRODUCT DETAIL PAGE (`/shop/:slug`)
+## IV. PRODUCT DETAIL PAGE (`/product/:slug`)
 
-### Route: `/shop/:slug` — PDP
+### Route: `/product/:slug` — PDP
 **Journey stage**: Consideration / Decision
 **Function**: Product deep-dive, evidence presentation, purchase conversion
 **Figma sources**: PDP file (4 compound variants: MK-2866, MENT, RAD-140, MK-677), each at 1440/1024/390 x Light/Dark

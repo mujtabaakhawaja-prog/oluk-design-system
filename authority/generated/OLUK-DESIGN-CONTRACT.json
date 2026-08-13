@@ -928,7 +928,7 @@
       }
     ],
     "publicationState": "UNPUBLISHED",
-    "sectionModuleCount": 4,
+    "sectionModuleCount": 14,
     "sectionModuleMappings": [
       {
         "dataOwner": "product projection",
@@ -975,6 +975,138 @@
         "runtimeExclusions": [
           "cart mutation",
           "inventory mutation"
+        ]
+      },
+      {
+        "dataOwner": "design-intent-and-governed-product-fixture",
+        "export": "OpenLabPortalHero",
+        "id": "OL-01",
+        "mobileStrategy": "reorder",
+        "mounts": [
+          "/open-lab"
+        ],
+        "runtimeExclusions": [
+          "fetch",
+          "mutation",
+          "evidence-inference"
+        ]
+      },
+      {
+        "dataOwner": "canonical-route-registry",
+        "export": "OpenLabWayfinding",
+        "id": "OL-02",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab"
+        ],
+        "runtimeExclusions": [
+          "routing-authority",
+          "personalization"
+        ]
+      },
+      {
+        "dataOwner": "approved-content-contract",
+        "export": "EvidenceRecordExplainer",
+        "id": "OL-04",
+        "mobileStrategy": "horizontal-scroll",
+        "mounts": [
+          "/open-lab"
+        ],
+        "runtimeExclusions": [
+          "result-inference"
+        ]
+      },
+      {
+        "dataOwner": "deterministic-openlab-fixture",
+        "export": "OpenLabRegistryArchive",
+        "id": "LR-02-LR-05",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/open-lab/records"
+        ],
+        "runtimeExclusions": [
+          "live-search",
+          "source-substitution",
+          "did-you-mean"
+        ]
+      },
+      {
+        "dataOwner": "openlab-record-projection",
+        "export": "OpenLabRecordDetail",
+        "id": "BLR-01-BLR-06",
+        "mobileStrategy": "reorder",
+        "mounts": [
+          "/open-lab/records/:recordId"
+        ],
+        "runtimeExclusions": [
+          "source-generation",
+          "analytical-inference"
+        ]
+      },
+      {
+        "dataOwner": "product-and-openlab-projections",
+        "export": "OpenLabDossierComposition",
+        "id": "CD-01-CD-06",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab/dossier/mk-2866",
+          "/product/mk-2866"
+        ],
+        "runtimeExclusions": [
+          "cart-mutation",
+          "evidence-inference"
+        ]
+      },
+      {
+        "dataOwner": "approved-methodology-content",
+        "export": "OpenLabMethodologyPipeline",
+        "id": "OL-METH",
+        "mobileStrategy": "summary",
+        "mounts": [
+          "/open-lab/methodology"
+        ],
+        "runtimeExclusions": [
+          "analytical-result"
+        ]
+      },
+      {
+        "dataOwner": "openlab-source-projection",
+        "export": "OpenLabSourceChain",
+        "id": "OL-CHAIN",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab/source-chain",
+          "/about/evidence-os"
+        ],
+        "runtimeExclusions": [
+          "custody-inference"
+        ]
+      },
+      {
+        "dataOwner": "product-and-openlab-projections",
+        "export": "OpenLabComparison",
+        "id": "OL-COMPARE",
+        "mobileStrategy": "horizontal-scroll",
+        "mounts": [
+          "/open-lab/compare"
+        ],
+        "runtimeExclusions": [
+          "generated-comparison-result"
+        ]
+      },
+      {
+        "dataOwner": "presentation-state-contract",
+        "export": "OpenLabUnavailableBoundary",
+        "id": "OL-UNAVAILABLE",
+        "mobileStrategy": "stack-allowed",
+        "mounts": [
+          "/open-lab/source-chain",
+          "/open-lab/report/:batchId",
+          "/open-lab/records/:recordId"
+        ],
+        "runtimeExclusions": [
+          "fallback-result",
+          "substitution"
         ]
       }
     ],
@@ -2093,6 +2225,10 @@
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
       "sha256": "028b156949b0c01e5ea6956df231c74f35b2bd4bca02d83e826ef69ae0661cd0"
     },
+    "openLabSections": {
+      "file": "authority/OPENLAB-SECTION-MODULE-REGISTRY.json",
+      "sha256": "cc9f5d3780ba31e3947a5e0615bd3ff7ebaaa014dc725b272be4fb192d485ba1"
+    },
     "pdpSections": {
       "file": "authority/PDP-SECTION-MODULE-REGISTRY.json",
       "sha256": "c330dbd74cfc1f997e0b2d992461cf89eba3dafe7779884f1e72ee80e096fe3b"
@@ -3022,5 +3158,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "98f7447ce2cf9f37b4cd0a65f8407032889588f323c91d46c11bb34949dc3c28"
+  "contractHash": "5e043e02e466a57830be45cb271318c4bdba472eb4616f24c018312dc1b2aad9"
 }

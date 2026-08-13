@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "oluk.openlab-section-registry.v1",
+  "status": "IMPLEMENTED_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "runtimeAuthority": "NONE",
+  "canonicalNamespace": "/open-lab",
+  "figmaSourceFile": "GkC3KEt9V3RyG5K319iAUV",
+  "modules": [
+    {"id":"OL-01","export":"OpenLabPortalHero","dataOwner":"design-intent-and-governed-product-fixture","mounts":["/open-lab"],"mobileStrategy":"reorder","runtimeExclusions":["fetch","mutation","evidence-inference"]},
+    {"id":"OL-02","export":"OpenLabWayfinding","dataOwner":"canonical-route-registry","mounts":["/open-lab"],"mobileStrategy":"collapse","runtimeExclusions":["routing-authority","personalization"]},
+    {"id":"OL-04","export":"EvidenceRecordExplainer","dataOwner":"approved-content-contract","mounts":["/open-lab"],"mobileStrategy":"horizontal-scroll","runtimeExclusions":["result-inference"]},
+    {"id":"LR-02-LR-05","export":"OpenLabRegistryArchive","dataOwner":"deterministic-openlab-fixture","mounts":["/open-lab/records"],"mobileStrategy":"summary","runtimeExclusions":["live-search","source-substitution","did-you-mean"]},
+    {"id":"BLR-01-BLR-06","export":"OpenLabRecordDetail","dataOwner":"openlab-record-projection","mounts":["/open-lab/records/:recordId"],"mobileStrategy":"reorder","runtimeExclusions":["source-generation","analytical-inference"]},
+    {"id":"CD-01-CD-06","export":"OpenLabDossierComposition","dataOwner":"product-and-openlab-projections","mounts":["/open-lab/dossier/mk-2866","/product/mk-2866"],"mobileStrategy":"collapse","runtimeExclusions":["cart-mutation","evidence-inference"]},
+    {"id":"OL-METH","export":"OpenLabMethodologyPipeline","dataOwner":"approved-methodology-content","mounts":["/open-lab/methodology"],"mobileStrategy":"summary","runtimeExclusions":["analytical-result"]},
+    {"id":"OL-CHAIN","export":"OpenLabSourceChain","dataOwner":"openlab-source-projection","mounts":["/open-lab/source-chain","/about/evidence-os"],"mobileStrategy":"collapse","runtimeExclusions":["custody-inference"]},
+    {"id":"OL-COMPARE","export":"OpenLabComparison","dataOwner":"product-and-openlab-projections","mounts":["/open-lab/compare"],"mobileStrategy":"horizontal-scroll","runtimeExclusions":["generated-comparison-result"]},
+    {"id":"OL-UNAVAILABLE","export":"OpenLabUnavailableBoundary","dataOwner":"presentation-state-contract","mounts":["/open-lab/source-chain","/open-lab/report/:batchId","/open-lab/records/:recordId"],"mobileStrategy":"stack-allowed","runtimeExclusions":["fallback-result","substitution"]}
+  ],
+  "dynamicDetailComponents": ["ReportIdentityHeader","AnalyteTable","CustodyTimeline","UnavailableEvidencePanel"],
+  "ownerOnlyRoutes": ["/open-lab/admin"],
+  "deferredRoutes": ["/open-lab/evidence","/open-lab/compound-guide","/open-lab/stack-builder","/open-lab/dosing-calculator","/open-lab/cycle-planner","/open-lab/interaction-checker","/open-lab/coa/:id","/open-lab/research-papers","/open-lab/case-studies","/open-lab/glossary","/open-lab/lab-partner"]
+}
