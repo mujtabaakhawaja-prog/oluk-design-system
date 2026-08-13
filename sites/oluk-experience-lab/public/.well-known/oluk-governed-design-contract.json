@@ -1,0 +1,2778 @@
+{
+  "boundaries": {
+    "browserDirectServiceCalls": false,
+    "initiator": "final payment verification and verified Woo mutation",
+    "shopperSsr": "public first paint, route shells, same-origin bridge and hydration",
+    "sites": "governed design and review candidate",
+    "toolsService": "server-side cart, checkout, lifecycle, order and evidence projections",
+    "woo": "catalogue and order ledger"
+  },
+  "contractId": "oluk.governed-design-contract.v1",
+  "designSystem": {
+    "componentCount": 23,
+    "componentMappings": [
+      {
+        "code": {
+          "compatibilityAlias": {
+            "authority": "NON_CANONICAL_COMPATIBILITY_ONLY",
+            "export": "InventoryStatus",
+            "propsType": "InventoryStatusProps"
+          },
+          "contract": "StockPill",
+          "export": "StockPill",
+          "file": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+          "props": [
+            "state",
+            "className"
+          ],
+          "propsType": "StockPillProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "InventoryStatus / StockPill",
+          "nodeId": "732:2902",
+          "sourceSpecimenNodeId": "641:17",
+          "sourceVariantNodes": {
+            "in-stock": "641:8",
+            "out-of-stock": "641:11",
+            "unavailable": "641:14"
+          },
+          "variantNodes": {
+            "in-stock": "732:2903",
+            "out-of-stock": "732:2906",
+            "unavailable": "732:2909"
+          }
+        },
+        "id": "inventory-status",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-cobalt",
+          "--oluk-surface-cobalt-soft",
+          "--oluk-text-muted",
+          "--oluk-radius-pill"
+        ],
+        "variants": {
+          "state": [
+            "in-stock",
+            "out-of-stock",
+            "unavailable"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "EvidenceStatus",
+          "export": "EvidenceStatus",
+          "file": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+          "props": [
+            "state",
+            "compact",
+            "className"
+          ],
+          "propsType": "EvidenceStatusProps"
+        },
+        "figma": {
+          "kind": "COMPONENT",
+          "name": "EvidenceStatus",
+          "nodeId": "732:2912"
+        },
+        "id": "evidence-status",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab",
+          "/open-lab/records",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-cobalt",
+          "--oluk-text-muted"
+        ],
+        "variants": {
+          "compact": [
+            true,
+            false
+          ],
+          "state": [
+            "verified",
+            "available",
+            "unavailable"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "MetricRail",
+          "export": "MetricRail",
+          "file": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+          "props": [
+            "product",
+            "values",
+            "compact",
+            "className"
+          ],
+          "propsType": "MetricRailProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "MetricRail",
+          "nodeId": "733:95"
+        },
+        "id": "metric-rail",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab",
+          "/open-lab/dossier/mk-2866",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-cobalt",
+          "--oluk-border-strong",
+          "--oluk-radius-metric"
+        ],
+        "variants": {
+          "compact": [
+            true,
+            false
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "QualitativeChip",
+          "export": "QualitativeChip",
+          "file": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
+          "props": [
+            "kind",
+            "label",
+            "value",
+            "className",
+            "state"
+          ],
+          "propsType": "QualitativeChipProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "QualitativeChip",
+          "nodeId": "733:17342"
+        },
+        "id": "qualitative-chip",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-border-chip",
+          "--oluk-text-muted",
+          "--oluk-text-chip-value",
+          "--oluk-type-chip-label",
+          "--oluk-radius-chip",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "kind": [
+            "class",
+            "form",
+            "quality",
+            "tested"
+          ],
+          "state": [
+            "default",
+            "selected",
+            "disabled"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "QualitativeIcon",
+          "export": "QualitativeIcon",
+          "file": "sites/oluk-experience-lab/app/design-system/qualitative-icon.tsx",
+          "props": [
+            "kind",
+            "className"
+          ],
+          "propsType": "QualitativeIconProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "OLUK/QualitativeIcon",
+          "nodeId": "844:926",
+          "variantNodes": {
+            "class": "844:914",
+            "form": "844:917",
+            "quality": "844:921",
+            "tested": "844:925"
+          }
+        },
+        "id": "qualitative-icon",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "kind": [
+            "class",
+            "form",
+            "quality",
+            "tested"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "HeroDecisionSurface",
+          "export": "HeroDecisionSurface",
+          "file": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
+          "props": [
+            "product",
+            "headingLevel",
+            "className"
+          ],
+          "propsType": "HeroDecisionSurfaceProps"
+        },
+        "figma": {
+          "kind": "COMPONENT",
+          "name": "HeroDecisionSurface",
+          "nodeId": "736:17458"
+        },
+        "id": "hero-decision-surface",
+        "routes": [
+          "/"
+        ],
+        "tokens": [
+          "--oluk-surface-card",
+          "--oluk-border-outer",
+          "--oluk-radius-purchase",
+          "--oluk-shadow-purchase",
+          "--oluk-cobalt"
+        ],
+        "variants": {}
+      },
+      {
+        "code": {
+          "contract": "ProductDecisionHero",
+          "export": "ProductDecisionHero",
+          "file": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
+          "props": [
+            "product",
+            "eyebrow",
+            "title",
+            "copy",
+            "className",
+            "priorityMedia",
+            "actions"
+          ],
+          "propsType": "ProductDecisionHeroProps"
+        },
+        "figma": {
+          "kind": "COMPONENT",
+          "name": "ProductDecisionHero",
+          "nodeId": "739:50"
+        },
+        "id": "product-decision-hero",
+        "routes": [
+          "/"
+        ],
+        "tokens": [
+          "--oluk-canvas",
+          "--oluk-media-gradient",
+          "--oluk-cobalt",
+          "--oluk-text-primary"
+        ],
+        "variants": {
+          "responsive": [
+            1440,
+            1024,
+            768,
+            390
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "ProductMediaChamber",
+          "export": "ProductMediaChamber",
+          "file": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+          "props": [
+            "media",
+            "context",
+            "alt",
+            "className",
+            "decorative",
+            "priority",
+            "sizes"
+          ],
+          "propsType": "ProductMediaChamberProps"
+        },
+        "figma": {
+          "instanceNodes": [
+            "1010:27065",
+            "1010:27070",
+            "1010:27075",
+            "1010:27080"
+          ],
+          "kind": "COMPONENT_SET",
+          "name": "MediaChamber",
+          "nodeId": "1022:4099",
+          "variantNodes": {
+            "featured-desktop": "1022:4081",
+            "featured-mobile": "1022:4090",
+            "vertical-desktop": "998:28862",
+            "vertical-mobile": "1022:4072"
+          }
+        },
+        "id": "product-media-chamber",
+        "routes": [
+          "/",
+          "/shop",
+          "/product/mk-2866",
+          "/open-lab",
+          "/open-lab/dossier/mk-2866",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-media-gradient",
+          "--oluk-media-contact-shelf-gradient",
+          "--oluk-border-identity",
+          "--oluk-border-inner"
+        ],
+        "variants": {
+          "context": [
+            "card",
+            "compact",
+            "featured",
+            "relation",
+            "hero",
+            "dossier"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "CobaltDivider",
+          "export": "CobaltDivider",
+          "file": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+          "props": [
+            "className"
+          ],
+          "propsType": "CobaltDividerProps"
+        },
+        "figma": {
+          "childOfBehaviorNodeId": "1026:27046",
+          "historicalPredecessorDisposition": "IMMUTABLE_SUPERSEDED_HISTORICAL_PREDECESSOR_HIDDEN",
+          "historicalPredecessorInstanceNodeId": "1010:27064",
+          "kind": "COMPONENT",
+          "name": "CobaltDivider atomic rule",
+          "nodeId": "1010:27053",
+          "replacesSourceNodeId": "717:15492",
+          "rhythmSpecimenNodeId": "1010:27054"
+        },
+        "id": "cobalt-divider",
+        "routeDisposition": "ATOMIC_CHILD_ONLY_NO_DIRECT_CUSTOMER_ROUTE_USAGE",
+        "routes": [],
+        "tokens": [
+          "--oluk-cobalt",
+          "--oluk-divider-width"
+        ],
+        "variants": {}
+      },
+      {
+        "code": {
+          "contract": "CobaltDensityBoundary",
+          "export": "CobaltDensityBoundary",
+          "file": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+          "props": [
+            "className"
+          ],
+          "propsType": "CobaltDensityBoundaryProps"
+        },
+        "figma": {
+          "atomicRuleNodeId": "1010:27053",
+          "instanceNodeIds": [
+            "1026:27048",
+            "1026:27050"
+          ],
+          "intendedContexts": [
+            "Hero",
+            "OpenLab"
+          ],
+          "kind": "COMPONENT",
+          "name": "CobaltDensityBoundary",
+          "nodeId": "1026:27046"
+        },
+        "id": "cobalt-density-boundary",
+        "routeEvidence": "EXACT_CURRENT_SITES_CALL_CONTEXTS_HOME_HERO_OPENLAB_PORTAL_HERO_AND_PRIVATE_REVIEW",
+        "routes": [
+          "/",
+          "/open-lab",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-cobalt",
+          "--oluk-divider-width",
+          "--oluk-section-gap"
+        ],
+        "variants": {}
+      },
+      {
+        "code": {
+          "contract": "ProductCommerceCard",
+          "export": "ProductCommerceCard",
+          "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+          "fixedProps": {
+            "showQualitative": false,
+            "variant": "compact"
+          },
+          "props": [
+            "product",
+            "variant",
+            "state",
+            "inventory",
+            "evidence",
+            "headingLevel",
+            "quantity",
+            "showQualitative",
+            "contextKicker",
+            "secondaryHref",
+            "secondaryLabel",
+            "className"
+          ],
+          "propsType": "ProductCommerceCardProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "ProductCommerceCard / Compact",
+          "nodeId": "742:50"
+        },
+        "id": "product-commerce-card-compact",
+        "routes": [
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-surface-card",
+          "--oluk-radius-compact",
+          "--oluk-shadow-compact",
+          "--oluk-media-gradient",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "state": [
+            "default",
+            "hover",
+            "focus",
+            "selected",
+            "added",
+            "unavailable",
+            "out-of-stock",
+            "disabled"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "ProductCommerceCard",
+          "export": "ProductCommerceCard",
+          "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+          "fixedProps": {
+            "variant": "vertical"
+          },
+          "props": [
+            "product",
+            "variant",
+            "state",
+            "inventory",
+            "evidence",
+            "headingLevel",
+            "quantity",
+            "showQualitative",
+            "contextKicker",
+            "secondaryHref",
+            "secondaryLabel",
+            "className"
+          ],
+          "propsType": "ProductCommerceCardProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "ProductCommerceCard / Vertical",
+          "nodeId": "743:50"
+        },
+        "id": "product-commerce-card-vertical",
+        "routes": [
+          "/open-lab",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-surface-card",
+          "--oluk-border-outer",
+          "--oluk-radius-vertical",
+          "--oluk-shadow-card",
+          "--oluk-media-gradient",
+          "--oluk-border-chip",
+          "--oluk-text-chip-value",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "width": [
+            "desktop",
+            "mobile"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "ProductCommerceCard",
+          "export": "ProductCommerceCard",
+          "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+          "fixedProps": {
+            "variant": "featured"
+          },
+          "props": [
+            "product",
+            "variant",
+            "state",
+            "inventory",
+            "evidence",
+            "headingLevel",
+            "quantity",
+            "showQualitative",
+            "contextKicker",
+            "secondaryHref",
+            "secondaryLabel",
+            "className"
+          ],
+          "propsType": "ProductCommerceCardProps"
+        },
+        "figma": {
+          "downstreamShopInstance": "765:98",
+          "kind": "COMPONENT_SET",
+          "name": "ProductCommerceCard / Featured",
+          "nodeId": "743:281",
+          "registeredDesktopVariant": "743:282"
+        },
+        "id": "product-commerce-card-featured",
+        "routes": [
+          "/shop",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-surface-card",
+          "--oluk-border-outer",
+          "--oluk-radius-vertical",
+          "--oluk-shadow-card",
+          "--oluk-media-gradient",
+          "--oluk-border-chip",
+          "--oluk-text-chip-value",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "width": [
+            "desktop",
+            "mobile"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "ProductCommerceCard",
+          "export": "ProductCommerceCard",
+          "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+          "fixedProps": {
+            "variant": "relation"
+          },
+          "props": [
+            "product",
+            "variant",
+            "state",
+            "inventory",
+            "evidence",
+            "headingLevel",
+            "quantity",
+            "showQualitative",
+            "contextKicker",
+            "secondaryHref",
+            "secondaryLabel",
+            "className"
+          ],
+          "propsType": "ProductCommerceCardProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "ProductCommerceCard / Relation",
+          "nodeId": "743:520"
+        },
+        "id": "product-commerce-card-relation",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-surface-card",
+          "--oluk-border-outer",
+          "--oluk-radius-horizontal",
+          "--oluk-shadow-relation",
+          "--oluk-media-gradient",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "width": [
+            "desktop-horizontal",
+            "tablet-stacked",
+            "mobile-stacked"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "PurchasePanel",
+          "export": "PurchasePanel",
+          "file": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+          "props": [
+            "product",
+            "state",
+            "width",
+            "inventory",
+            "evidence",
+            "quantity",
+            "headingLevel",
+            "className"
+          ],
+          "propsType": "PurchasePanelProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "PurchasePanel",
+          "nodeId": "745:50"
+        },
+        "id": "purchase-panel",
+        "routes": [
+          "/product/mk-2866",
+          "/review"
+        ],
+        "tokens": [
+          "--oluk-surface-card",
+          "--oluk-border-outer",
+          "--oluk-radius-purchase",
+          "--oluk-shadow-purchase",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "state": [
+            "default",
+            "quantity-changed",
+            "added",
+            "unavailable",
+            "out-of-stock",
+            "disabled"
+          ],
+          "width": [
+            "desktop",
+            "mobile"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "ProductDossier",
+          "export": "ProductDossier",
+          "file": "sites/oluk-experience-lab/app/design-system/product-dossier.tsx",
+          "props": [
+            "product",
+            "eyebrow",
+            "title",
+            "copy",
+            "headingLevel",
+            "className",
+            "id",
+            "evidenceHref"
+          ],
+          "propsType": "ProductDossierProps"
+        },
+        "figma": {
+          "kind": "COMPONENT",
+          "name": "Dossier",
+          "nodeId": "750:182"
+        },
+        "id": "product-dossier",
+        "routes": [
+          "/product/mk-2866",
+          "/open-lab/dossier/mk-2866"
+        ],
+        "tokens": [
+          "--oluk-surface-family",
+          "--oluk-border-family-bg",
+          "--oluk-text-primary",
+          "--oluk-cobalt"
+        ],
+        "variants": {
+          "responsive": [
+            1440,
+            1024,
+            768,
+            390
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "AssuranceRail",
+          "export": "AssuranceRail",
+          "file": "sites/oluk-experience-lab/app/design-system/assurance-rail.tsx",
+          "props": [
+            "items",
+            "variant",
+            "className"
+          ],
+          "propsType": "AssuranceRailProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "AssuranceRail",
+          "nodeId": "752:167"
+        },
+        "id": "assurance-rail",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab"
+        ],
+        "tokens": [
+          "--oluk-cobalt",
+          "--oluk-text-primary",
+          "--oluk-text-secondary"
+        ],
+        "variants": {
+          "variant": [
+            "full",
+            "compact"
+          ]
+        }
+      },
+      {
+        "code": {
+          "contract": "RelatedRail",
+          "export": "RelatedRail",
+          "file": "sites/oluk-experience-lab/app/design-system/related-rail.tsx",
+          "props": [
+            "anchorProduct",
+            "products",
+            "eyebrow",
+            "title",
+            "copy",
+            "headingLevel",
+            "className",
+            "id"
+          ],
+          "propsType": "RelatedRailProps"
+        },
+        "figma": {
+          "kind": "COMPONENT_SET",
+          "name": "RelatedRail",
+          "nodeId": "753:18136"
+        },
+        "id": "related-rail",
+        "routes": [
+          "/",
+          "/product/mk-2866",
+          "/open-lab"
+        ],
+        "tokens": [
+          "--oluk-canvas",
+          "--oluk-cobalt",
+          "--oluk-text-primary",
+          "--oluk-text-secondary"
+        ],
+        "variants": {
+          "responsive": [
+            1440,
+            1024,
+            768,
+            390
+          ]
+        }
+      }
+    ],
+    "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "figmaReceipt": "1043:310",
+    "programComponentMappings": [
+      {
+        "export": "EvidenceStatusChip",
+        "figmaComponentNodeId": null,
+        "figmaIntent": {
+          "fileKey": "GkC3KEt9V3RyG5K319iAUV",
+          "nodeId": "3:66993"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+        "id": "evidence-status-chip-v2",
+        "variants": {
+          "state": [
+            "verified-evidence",
+            "source-reported",
+            "source-only",
+            "unavailable"
+          ]
+        }
+      },
+      {
+        "export": "RecommendationCard",
+        "figmaComponentNodeId": null,
+        "figmaIntent": {
+          "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
+          "nodeId": "2:2"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+        "id": "recommendation-card",
+        "variants": {
+          "state": [
+            "default",
+            "selected",
+            "added",
+            "unavailable",
+            "out-of-stock"
+          ]
+        }
+      },
+      {
+        "export": "RestockCard",
+        "figmaComponentNodeId": null,
+        "figmaIntent": {
+          "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
+          "nodeId": "2:2"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+        "id": "restock-card",
+        "variants": {
+          "state": [
+            "active",
+            "due-soon",
+            "overdue",
+            "paused"
+          ]
+        }
+      },
+      {
+        "export": "UpsellContextRail",
+        "figmaComponentNodeId": null,
+        "figmaIntent": {
+          "fileKey": "cGrvE3Fyj3ThKuqPZqceYv",
+          "nodeId": "4:3545"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+        "id": "upsell-context-rail",
+        "variants": {
+          "view": [
+            "recommendations",
+            "restock"
+          ]
+        }
+      },
+      {
+        "export": "CheckoutStepIndicator",
+        "figmaComponentNodeId": null,
+        "figmaIntent": {
+          "fileKey": "9jTrnlEWgbBpFi2idodVB2",
+          "nodeId": "0:1"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+        "id": "checkout-step-indicator",
+        "variants": {
+          "current": [
+            "information",
+            "delivery",
+            "review",
+            "payment",
+            "confirmation"
+          ]
+        }
+      }
+    ],
+    "publicationState": "UNPUBLISHED",
+    "tokenCollections": [
+      {
+        "count": 29,
+        "id": "634:2",
+        "name": "Color Primitives"
+      },
+      {
+        "count": 31,
+        "id": "634:20",
+        "name": "Color Semantics"
+      },
+      {
+        "count": 30,
+        "id": "634:40",
+        "name": "Dimensions"
+      },
+      {
+        "count": 22,
+        "id": "634:69",
+        "name": "Typography"
+      }
+    ],
+    "tokenManifest": {
+      "authority": {
+        "currentState": "authority/CURRENT-STATE.json",
+        "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "surfaceContract": "authority/surface-contract.md#conv-004-convergence-addendum"
+      },
+      "collections": [
+        {
+          "figmaCollectionId": "VariableCollectionId:634:2",
+          "individualInventory": "complete",
+          "name": "Color Primitives",
+          "variableCount": 29
+        },
+        {
+          "figmaCollectionId": "VariableCollectionId:634:20",
+          "individualInventory": "complete",
+          "name": "Color Semantics",
+          "variableCount": 31
+        },
+        {
+          "figmaCollectionId": "VariableCollectionId:634:40",
+          "individualInventory": "complete",
+          "name": "Dimensions",
+          "variableCount": 30
+        },
+        {
+          "figmaCollectionId": "VariableCollectionId:634:69",
+          "individualInventory": "complete",
+          "name": "Typography",
+          "variableCount": 22
+        }
+      ],
+      "colorPrimitives": [
+        {
+          "figmaId": "VariableID:634:3",
+          "name": "neutral/canvas",
+          "valueOrAlias": "#F7F8FC"
+        },
+        {
+          "figmaId": "VariableID:634:4",
+          "name": "neutral/white",
+          "valueOrAlias": "#FFFFFF"
+        },
+        {
+          "figmaId": "VariableID:634:5",
+          "name": "neutral/family",
+          "valueOrAlias": "#F8FAFC"
+        },
+        {
+          "figmaId": "VariableID:634:6",
+          "name": "neutral/media",
+          "valueOrAlias": "#F0F4FB"
+        },
+        {
+          "figmaId": "VariableID:634:7",
+          "name": "blue/cobalt-soft",
+          "valueOrAlias": "#EEF4FF"
+        },
+        {
+          "figmaId": "VariableID:634:8",
+          "name": "blue/border-card",
+          "valueOrAlias": "#CEDCF1 @92%"
+        },
+        {
+          "figmaId": "VariableID:634:9",
+          "name": "blue/border-strong",
+          "valueOrAlias": "#AFC8FF"
+        },
+        {
+          "figmaId": "VariableID:634:10",
+          "name": "blue/border-family",
+          "valueOrAlias": "#D2E4FF"
+        },
+        {
+          "figmaId": "VariableID:824:294",
+          "name": "blue/border-chip",
+          "valueOrAlias": "#D4E0F2"
+        },
+        {
+          "figmaId": "VariableID:824:295",
+          "name": "blue/border-outer",
+          "valueOrAlias": "#BECFE9"
+        },
+        {
+          "figmaId": "VariableID:824:296",
+          "name": "blue/border-identity",
+          "valueOrAlias": "#BDD0F1"
+        },
+        {
+          "figmaId": "VariableID:824:297",
+          "name": "blue/border-inner",
+          "valueOrAlias": "#B4CAF0"
+        },
+        {
+          "figmaId": "VariableID:824:298",
+          "name": "blue/border-family-bg",
+          "valueOrAlias": "#D9E3F1"
+        },
+        {
+          "figmaId": "VariableID:634:11",
+          "name": "ink/primary",
+          "valueOrAlias": "#141827"
+        },
+        {
+          "figmaId": "VariableID:634:12",
+          "name": "ink/secondary",
+          "valueOrAlias": "#53617D"
+        },
+        {
+          "figmaId": "VariableID:634:13",
+          "name": "ink/muted",
+          "valueOrAlias": "#64718A"
+        },
+        {
+          "figmaId": "VariableID:634:14",
+          "name": "ink/inverse-muted",
+          "valueOrAlias": "#B9C7DD"
+        },
+        {
+          "figmaId": "VariableID:824:299",
+          "name": "ink/chip-value",
+          "valueOrAlias": "#17213F"
+        },
+        {
+          "figmaId": "VariableID:634:15",
+          "name": "blue/cobalt",
+          "valueOrAlias": "#0057FF"
+        },
+        {
+          "figmaId": "VariableID:634:16",
+          "name": "blue/interactive",
+          "valueOrAlias": "#0057FF"
+        },
+        {
+          "figmaId": "VariableID:634:17",
+          "name": "blue/focus",
+          "valueOrAlias": "#0057FF @28%"
+        },
+        {
+          "figmaId": "VariableID:634:18",
+          "name": "green/success",
+          "valueOrAlias": "#15803D"
+        },
+        {
+          "figmaId": "VariableID:634:19",
+          "name": "green/success-soft",
+          "valueOrAlias": "#ECFDF3"
+        },
+        {
+          "figmaId": "VariableID:1024:50",
+          "job": "Dark secondary copy",
+          "name": "ink/dark",
+          "valueOrAlias": "#344054"
+        },
+        {
+          "figmaId": "VariableID:1024:51",
+          "job": "Error and out-of-stock foreground",
+          "name": "red/error",
+          "valueOrAlias": "#B42318"
+        },
+        {
+          "figmaId": "VariableID:1024:52",
+          "job": "Error and out-of-stock fill",
+          "name": "red/error-soft",
+          "valueOrAlias": "#FEF3F2"
+        },
+        {
+          "figmaId": "VariableID:1024:53",
+          "job": "Warning foreground",
+          "name": "amber/warning",
+          "valueOrAlias": "#B54708"
+        },
+        {
+          "figmaId": "VariableID:1024:54",
+          "job": "Unavailable fill",
+          "name": "neutral/unavailable-soft",
+          "valueOrAlias": "#F4F5F7"
+        },
+        {
+          "figmaId": "VariableID:1024:55",
+          "job": "Disabled or placeholder text only",
+          "name": "neutral/disabled",
+          "valueOrAlias": "#9CA3AF"
+        }
+      ],
+      "colorSemantics": [
+        {
+          "cssProperty": "--oluk-canvas",
+          "cssValue": "#f7f8fc",
+          "figmaId": "VariableID:634:21",
+          "name": "surface/canvas",
+          "valueOrAlias": "neutral/canvas"
+        },
+        {
+          "cssProperty": "--oluk-surface-card",
+          "cssValue": "#ffffff",
+          "figmaId": "VariableID:634:22",
+          "name": "surface/card",
+          "valueOrAlias": "neutral/white"
+        },
+        {
+          "cssProperty": "--oluk-surface-family",
+          "cssValue": "#f8fafc",
+          "figmaId": "VariableID:634:23",
+          "name": "surface/family",
+          "valueOrAlias": "neutral/family"
+        },
+        {
+          "cssProperty": "--oluk-surface-media",
+          "cssValue": "#f0f4fb",
+          "figmaId": "VariableID:634:24",
+          "name": "surface/media",
+          "valueOrAlias": "neutral/media"
+        },
+        {
+          "cssProperty": "--oluk-surface-cobalt-soft",
+          "cssValue": "#eef4ff",
+          "figmaId": "VariableID:634:25",
+          "name": "surface/cobalt-soft",
+          "valueOrAlias": "blue/cobalt-soft"
+        },
+        {
+          "cssProperty": "--oluk-inverse",
+          "cssValue": "#141827",
+          "figmaId": "VariableID:634:26",
+          "name": "surface/inverse",
+          "valueOrAlias": "ink/primary"
+        },
+        {
+          "cssProperty": "--oluk-border-card",
+          "cssValue": "rgba(206, 220, 241, 0.92)",
+          "figmaId": "VariableID:634:27",
+          "name": "border/card",
+          "valueOrAlias": "blue/border-card"
+        },
+        {
+          "cssProperty": "--oluk-border-strong",
+          "cssValue": "#afc8ff",
+          "figmaId": "VariableID:634:28",
+          "name": "border/strong",
+          "valueOrAlias": "blue/border-strong"
+        },
+        {
+          "cssProperty": "--oluk-border-family",
+          "cssValue": "#d2e4ff",
+          "figmaId": "VariableID:634:29",
+          "name": "border/family",
+          "valueOrAlias": "blue/border-family"
+        },
+        {
+          "cssProperty": "--oluk-border-chip",
+          "cssValue": "#d4e0f2",
+          "figmaId": "VariableID:824:300",
+          "name": "border/chip",
+          "valueOrAlias": "blue/border-chip"
+        },
+        {
+          "cssProperty": "--oluk-border-outer",
+          "cssValue": "#becfe9",
+          "figmaId": "VariableID:824:301",
+          "name": "border/outer",
+          "valueOrAlias": "blue/border-outer"
+        },
+        {
+          "cssProperty": "--oluk-border-identity",
+          "cssValue": "#bdd0f1",
+          "figmaId": "VariableID:824:302",
+          "name": "border/identity",
+          "valueOrAlias": "blue/border-identity"
+        },
+        {
+          "cssProperty": "--oluk-border-inner",
+          "cssValue": "#b4caf0",
+          "figmaId": "VariableID:838:298",
+          "name": "border/inner",
+          "valueOrAlias": "blue/border-inner"
+        },
+        {
+          "cssProperty": "--oluk-border-family-bg",
+          "cssValue": "#d9e3f1",
+          "figmaId": "VariableID:838:299",
+          "name": "border/family-bg",
+          "valueOrAlias": "blue/border-family-bg"
+        },
+        {
+          "cssProperty": "--oluk-text-primary",
+          "cssValue": "#141827",
+          "figmaId": "VariableID:634:30",
+          "name": "text/primary",
+          "valueOrAlias": "ink/primary"
+        },
+        {
+          "cssProperty": "--oluk-text-secondary",
+          "cssValue": "#53617d",
+          "figmaId": "VariableID:634:31",
+          "name": "text/secondary",
+          "valueOrAlias": "ink/secondary"
+        },
+        {
+          "cssProperty": "--oluk-text-muted",
+          "cssValue": "#64718a",
+          "figmaId": "VariableID:634:32",
+          "name": "text/muted",
+          "valueOrAlias": "ink/muted"
+        },
+        {
+          "cssProperty": "--oluk-text-on-inverse",
+          "cssValue": "#ffffff",
+          "figmaId": "VariableID:634:33",
+          "name": "text/on-inverse",
+          "valueOrAlias": "neutral/white"
+        },
+        {
+          "cssProperty": "--oluk-text-on-inverse-muted",
+          "cssValue": "#b9c7dd",
+          "figmaId": "VariableID:634:34",
+          "name": "text/on-inverse-muted",
+          "valueOrAlias": "ink/inverse-muted"
+        },
+        {
+          "cssProperty": "--oluk-text-chip-value",
+          "cssValue": "#17213f",
+          "figmaId": "VariableID:824:303",
+          "name": "text/chip-value",
+          "valueOrAlias": "ink/chip-value"
+        },
+        {
+          "cssProperty": "--oluk-cobalt",
+          "cssValue": "#0057ff",
+          "figmaId": "VariableID:634:35",
+          "name": "accent/cobalt",
+          "valueOrAlias": "blue/cobalt"
+        },
+        {
+          "cssProperty": "--oluk-cobalt-alt",
+          "cssValue": "#0057ff",
+          "figmaId": "VariableID:634:36",
+          "name": "accent/cobalt-interactive",
+          "valueOrAlias": "blue/interactive"
+        },
+        {
+          "cssProperty": "--oluk-cobalt-focus",
+          "cssValue": "rgba(0, 87, 255, 0.28)",
+          "figmaId": "VariableID:634:37",
+          "name": "accent/cobalt-focus",
+          "valueOrAlias": "blue/focus"
+        },
+        {
+          "cssProperty": "--oluk-status-success",
+          "cssValue": "#15803d",
+          "figmaId": "VariableID:634:38",
+          "name": "status/success",
+          "valueOrAlias": "green/success"
+        },
+        {
+          "cssProperty": "--oluk-status-success-soft",
+          "cssValue": "#ecfdf3",
+          "figmaId": "VariableID:634:39",
+          "name": "status/success-soft",
+          "valueOrAlias": "green/success-soft"
+        },
+        {
+          "cssProperty": "--oluk-text-dark",
+          "cssValue": "var(--oluk-ink-dark)",
+          "figmaId": "VariableID:1024:56",
+          "job": "Dark secondary text alias",
+          "name": "text/dark",
+          "valueOrAlias": "ink/dark"
+        },
+        {
+          "cssProperty": "--oluk-status-error",
+          "cssValue": "#b42318",
+          "figmaId": "VariableID:1024:57",
+          "job": "Error status alias",
+          "name": "status/error",
+          "valueOrAlias": "red/error"
+        },
+        {
+          "cssProperty": "--oluk-status-error-soft",
+          "cssValue": "#fef3f2",
+          "figmaId": "VariableID:1024:58",
+          "job": "Error status fill alias",
+          "name": "status/error-soft",
+          "valueOrAlias": "red/error-soft"
+        },
+        {
+          "cssProperty": "--oluk-status-warning",
+          "cssValue": "#b54708",
+          "figmaId": "VariableID:1024:59",
+          "job": "Warning status alias",
+          "name": "status/warning",
+          "valueOrAlias": "amber/warning"
+        },
+        {
+          "cssProperty": "--oluk-status-unavailable-soft",
+          "cssValue": "#f4f5f7",
+          "figmaId": "VariableID:1024:60",
+          "job": "Unavailable status fill alias",
+          "name": "status/unavailable-soft",
+          "valueOrAlias": "neutral/unavailable-soft"
+        },
+        {
+          "cssProperty": "--oluk-text-disabled",
+          "cssValue": "var(--oluk-status-disabled)",
+          "figmaId": "VariableID:1024:61",
+          "job": "Disabled text alias",
+          "name": "text/disabled",
+          "valueOrAlias": "neutral/disabled"
+        }
+      ],
+      "cssCustomProperties": {
+        "--oluk-border-card": "rgba(206, 220, 241, 0.92)",
+        "--oluk-border-chip": "#d4e0f2",
+        "--oluk-border-family": "#d2e4ff",
+        "--oluk-border-family-bg": "#d9e3f1",
+        "--oluk-border-identity": "#bdd0f1",
+        "--oluk-border-inner": "#b4caf0",
+        "--oluk-border-outer": "#becfe9",
+        "--oluk-border-strong": "#afc8ff",
+        "--oluk-border-width": "1px",
+        "--oluk-canvas": "#f7f8fc",
+        "--oluk-card-mobile-width": "358px",
+        "--oluk-card-vertical-width": "481px",
+        "--oluk-cobalt": "#0057ff",
+        "--oluk-cobalt-alt": "#0057ff",
+        "--oluk-cobalt-focus": "rgba(0, 87, 255, 0.28)",
+        "--oluk-content-max": "1344px",
+        "--oluk-control-height": "48px",
+        "--oluk-divider-rhythm": "var(--oluk-section-gap)",
+        "--oluk-divider-width": "2px",
+        "--oluk-doc-grid-columns": "12",
+        "--oluk-doc-grid-gap": "24px",
+        "--oluk-focus-width": "2px",
+        "--oluk-font-body": "\"Inter Variable\", sans-serif",
+        "--oluk-font-display": "\"Plus Jakarta Sans\", sans-serif",
+        "--oluk-font-mono": "\"JetBrains Mono\", monospace",
+        "--oluk-grid-gap": "20px",
+        "--oluk-gutter-desktop": "48px",
+        "--oluk-gutter-mobile": "16px",
+        "--oluk-gutter-tablet": "32px",
+        "--oluk-ink-dark": "#344054",
+        "--oluk-inverse": "#141827",
+        "--oluk-media-contact-shelf-gradient": "linear-gradient(180deg, #ffffff 0%, #e6edfa 100%)",
+        "--oluk-media-gradient": "linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%)",
+        "--oluk-media-mobile-height": "280px",
+        "--oluk-motion-ease": "cubic-bezier(0.2, 0, 0, 1)",
+        "--oluk-motion-fast": "120ms",
+        "--oluk-motion-standard": "180ms",
+        "--oluk-page-gutter-desktop": "48px",
+        "--oluk-page-gutter-mobile": "16px",
+        "--oluk-page-gutter-tablet": "32px",
+        "--oluk-page-padding": "64px",
+        "--oluk-purchase-panel-padding": "27px",
+        "--oluk-quantity-cell": "36px",
+        "--oluk-quantity-height": "38px",
+        "--oluk-radius-chip": "10px",
+        "--oluk-radius-compact": "20px",
+        "--oluk-radius-content-plane": "30px",
+        "--oluk-radius-control": "8px",
+        "--oluk-radius-horizontal": "34px",
+        "--oluk-radius-media-seam": "52px",
+        "--oluk-radius-metric": "12px",
+        "--oluk-radius-pill": "999px",
+        "--oluk-radius-purchase": "28px",
+        "--oluk-radius-vertical": "24px",
+        "--oluk-section-gap": "32px",
+        "--oluk-shadow-card": "0 24px 60px rgba(15, 26, 51, 0.1)",
+        "--oluk-shadow-compact": "0 5px 12px rgba(15, 26, 51, 0.09)",
+        "--oluk-shadow-purchase": "0 20px 50px rgba(15, 26, 51, 0.18)",
+        "--oluk-shadow-relation": "0 12px 25px rgba(15, 26, 51, 0.12)",
+        "--oluk-space-1": "4px",
+        "--oluk-space-10": "40px",
+        "--oluk-space-12": "48px",
+        "--oluk-space-16": "64px",
+        "--oluk-space-18": "72px",
+        "--oluk-space-2": "8px",
+        "--oluk-space-24": "96px",
+        "--oluk-space-3": "12px",
+        "--oluk-space-4": "16px",
+        "--oluk-space-5": "20px",
+        "--oluk-space-6": "24px",
+        "--oluk-space-8": "32px",
+        "--oluk-status-disabled": "#9ca3af",
+        "--oluk-status-error": "#b42318",
+        "--oluk-status-error-soft": "#fef3f2",
+        "--oluk-status-success": "#15803d",
+        "--oluk-status-success-soft": "#ecfdf3",
+        "--oluk-status-unavailable-soft": "#f4f5f7",
+        "--oluk-status-warning": "#b54708",
+        "--oluk-stock-in-stock": "var(--oluk-cobalt)",
+        "--oluk-stock-in-stock-soft": "var(--oluk-surface-cobalt-soft)",
+        "--oluk-stock-out-of-stock": "var(--oluk-status-error)",
+        "--oluk-stock-out-of-stock-soft": "var(--oluk-status-error-soft)",
+        "--oluk-stock-unavailable": "var(--oluk-text-muted)",
+        "--oluk-stock-unavailable-soft": "var(--oluk-status-unavailable-soft)",
+        "--oluk-surface-card": "#ffffff",
+        "--oluk-surface-cobalt-soft": "#eef4ff",
+        "--oluk-surface-family": "#f8fafc",
+        "--oluk-surface-media": "#f0f4fb",
+        "--oluk-text-body": "#53617d",
+        "--oluk-text-chip-value": "#17213f",
+        "--oluk-text-dark": "var(--oluk-ink-dark)",
+        "--oluk-text-disabled": "var(--oluk-status-disabled)",
+        "--oluk-text-muted": "#64718a",
+        "--oluk-text-on-inverse": "#ffffff",
+        "--oluk-text-on-inverse-muted": "#b9c7dd",
+        "--oluk-text-primary": "#141827",
+        "--oluk-text-secondary": "#53617d",
+        "--oluk-type-body": "16px",
+        "--oluk-type-body-lg": "18px",
+        "--oluk-type-body-lg-line": "28px",
+        "--oluk-type-body-lg-size": "18px",
+        "--oluk-type-body-line": "24px",
+        "--oluk-type-body-size": "16px",
+        "--oluk-type-body-sm": "15px",
+        "--oluk-type-body-sm-line": "22px",
+        "--oluk-type-body-sm-size": "15px",
+        "--oluk-type-chip-label": "11px",
+        "--oluk-type-display-lg": "40px",
+        "--oluk-type-display-lg-line": "44px",
+        "--oluk-type-display-lg-size": "40px",
+        "--oluk-type-display-lg-track": "-3.2px",
+        "--oluk-type-display-md": "28px",
+        "--oluk-type-display-md-line": "34px",
+        "--oluk-type-display-md-size": "28px",
+        "--oluk-type-display-md-track": "-2.4px",
+        "--oluk-type-display-xl": "56px",
+        "--oluk-type-display-xl-line": "60px",
+        "--oluk-type-display-xl-size": "56px",
+        "--oluk-type-display-xl-track": "-4px",
+        "--oluk-type-eyebrow": "12px",
+        "--oluk-type-eyebrow-line": "16px",
+        "--oluk-type-eyebrow-size": "12px",
+        "--oluk-type-eyebrow-track": "0.12em",
+        "--oluk-type-label": "13px",
+        "--oluk-type-label-line": "18px",
+        "--oluk-type-label-size": "13px",
+        "--oluk-type-metric": "20px",
+        "--oluk-type-product": "31px"
+      },
+      "dimensions": [
+        {
+          "cssProperty": "--oluk-space-1",
+          "cssValue": "4px",
+          "figmaId": "VariableID:634:41",
+          "hiddenFromPublishing": true,
+          "name": "space/1",
+          "rawValue": "4",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-1)"
+        },
+        {
+          "cssProperty": "--oluk-space-2",
+          "cssValue": "8px",
+          "figmaId": "VariableID:634:42",
+          "hiddenFromPublishing": true,
+          "name": "space/2",
+          "rawValue": "8",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-2)"
+        },
+        {
+          "cssProperty": "--oluk-space-3",
+          "cssValue": "12px",
+          "figmaId": "VariableID:634:43",
+          "hiddenFromPublishing": true,
+          "name": "space/3",
+          "rawValue": "12",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-3)"
+        },
+        {
+          "cssProperty": "--oluk-space-4",
+          "cssValue": "16px",
+          "figmaId": "VariableID:634:44",
+          "hiddenFromPublishing": true,
+          "name": "space/4",
+          "rawValue": "16",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-4)"
+        },
+        {
+          "cssProperty": "--oluk-space-5",
+          "cssValue": "20px",
+          "figmaId": "VariableID:634:45",
+          "hiddenFromPublishing": true,
+          "name": "space/5",
+          "rawValue": "20",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-5)"
+        },
+        {
+          "cssProperty": "--oluk-space-6",
+          "cssValue": "24px",
+          "figmaId": "VariableID:634:46",
+          "hiddenFromPublishing": true,
+          "name": "space/6",
+          "rawValue": "24",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-6)"
+        },
+        {
+          "cssProperty": "--oluk-space-8",
+          "cssValue": "32px",
+          "figmaId": "VariableID:634:47",
+          "hiddenFromPublishing": true,
+          "name": "space/8",
+          "rawValue": "32",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-8)"
+        },
+        {
+          "cssProperty": "--oluk-space-10",
+          "cssValue": "40px",
+          "figmaId": "VariableID:634:48",
+          "hiddenFromPublishing": true,
+          "name": "space/10",
+          "rawValue": "40",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-10)"
+        },
+        {
+          "cssProperty": "--oluk-space-12",
+          "cssValue": "48px",
+          "figmaId": "VariableID:634:49",
+          "hiddenFromPublishing": true,
+          "name": "space/12",
+          "rawValue": "48",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-12)"
+        },
+        {
+          "cssProperty": "--oluk-space-16",
+          "cssValue": "64px",
+          "figmaId": "VariableID:634:50",
+          "hiddenFromPublishing": true,
+          "name": "space/16",
+          "rawValue": "64",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-16)"
+        },
+        {
+          "cssProperty": "--oluk-space-18",
+          "cssValue": "72px",
+          "figmaId": "VariableID:634:51",
+          "hiddenFromPublishing": true,
+          "name": "space/18",
+          "rawValue": "72",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-18)"
+        },
+        {
+          "cssProperty": "--oluk-space-24",
+          "cssValue": "96px",
+          "figmaId": "VariableID:634:52",
+          "hiddenFromPublishing": true,
+          "name": "space/24",
+          "rawValue": "96",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-space-24)"
+        },
+        {
+          "cssProperty": "--oluk-border-width",
+          "cssValue": "1px",
+          "figmaId": "VariableID:634:53",
+          "hiddenFromPublishing": true,
+          "name": "border/width",
+          "rawValue": "1",
+          "scope": "STROKE_FLOAT",
+          "webSyntax": "var(--oluk-border-width)"
+        },
+        {
+          "cssProperty": "--oluk-divider-width",
+          "cssValue": "2px",
+          "figmaId": "VariableID:634:54",
+          "hiddenFromPublishing": true,
+          "name": "divider/width",
+          "rawValue": "2",
+          "scope": "STROKE_FLOAT",
+          "webSyntax": "var(--oluk-divider-width)"
+        },
+        {
+          "cssProperty": "--oluk-focus-width",
+          "cssValue": "2px",
+          "figmaId": "VariableID:634:55",
+          "hiddenFromPublishing": true,
+          "name": "focus/width",
+          "rawValue": "2",
+          "scope": "STROKE_FLOAT",
+          "webSyntax": "var(--oluk-focus-width)"
+        },
+        {
+          "cssProperty": "--oluk-radius-control",
+          "cssValue": "8px",
+          "figmaId": "VariableID:634:56",
+          "hiddenFromPublishing": true,
+          "name": "radius/control",
+          "rawValue": "8",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-control)"
+        },
+        {
+          "cssProperty": "--oluk-radius-chip",
+          "cssValue": "10px",
+          "figmaId": "VariableID:634:57",
+          "hiddenFromPublishing": true,
+          "name": "radius/chip",
+          "rawValue": "10",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-chip)"
+        },
+        {
+          "cssProperty": "--oluk-radius-metric",
+          "cssValue": "12px",
+          "figmaId": "VariableID:634:58",
+          "hiddenFromPublishing": true,
+          "name": "radius/metric",
+          "rawValue": "12",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-metric)"
+        },
+        {
+          "cssProperty": "--oluk-radius-compact",
+          "cssValue": "20px",
+          "figmaId": "VariableID:634:59",
+          "hiddenFromPublishing": true,
+          "name": "radius/compact",
+          "rawValue": "20",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-compact)"
+        },
+        {
+          "cssProperty": "--oluk-radius-vertical",
+          "cssValue": "24px",
+          "figmaId": "VariableID:634:60",
+          "hiddenFromPublishing": true,
+          "name": "radius/vertical",
+          "rawValue": "24",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-vertical)"
+        },
+        {
+          "cssProperty": "--oluk-radius-purchase",
+          "cssValue": "28px",
+          "figmaId": "VariableID:634:61",
+          "hiddenFromPublishing": true,
+          "name": "radius/purchase",
+          "rawValue": "28",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-purchase)"
+        },
+        {
+          "cssProperty": "--oluk-radius-horizontal",
+          "cssValue": "34px",
+          "figmaId": "VariableID:634:62",
+          "hiddenFromPublishing": true,
+          "name": "radius/horizontal",
+          "rawValue": "34",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-horizontal)"
+        },
+        {
+          "cssProperty": "--oluk-radius-pill",
+          "cssValue": "999px",
+          "figmaId": "VariableID:634:63",
+          "hiddenFromPublishing": true,
+          "name": "radius/pill",
+          "rawValue": "999",
+          "scope": "CORNER_RADIUS",
+          "webSyntax": "var(--oluk-radius-pill)"
+        },
+        {
+          "cssProperty": "--oluk-content-max",
+          "cssValue": "1344px",
+          "figmaId": "VariableID:634:64",
+          "hiddenFromPublishing": true,
+          "name": "layout/content-max",
+          "rawValue": "1344",
+          "scope": "WIDTH_HEIGHT",
+          "webSyntax": "var(--oluk-content-max)"
+        },
+        {
+          "cssProperty": "--oluk-grid-gap",
+          "cssValue": "20px",
+          "figmaId": "VariableID:634:65",
+          "hiddenFromPublishing": true,
+          "name": "layout/grid-gap",
+          "rawValue": "20",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-grid-gap)"
+        },
+        {
+          "cssProperty": "--oluk-page-gutter-desktop",
+          "cssValue": "48px",
+          "figmaId": "VariableID:634:66",
+          "hiddenFromPublishing": true,
+          "name": "layout/gutter-desktop",
+          "rawValue": "48",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-page-gutter-desktop)"
+        },
+        {
+          "cssProperty": "--oluk-page-gutter-tablet",
+          "cssValue": "32px",
+          "figmaId": "VariableID:634:67",
+          "hiddenFromPublishing": true,
+          "name": "layout/gutter-tablet",
+          "rawValue": "32",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-page-gutter-tablet)"
+        },
+        {
+          "cssProperty": "--oluk-page-gutter-mobile",
+          "cssValue": "16px",
+          "figmaId": "VariableID:634:68",
+          "hiddenFromPublishing": true,
+          "name": "layout/gutter-mobile",
+          "rawValue": "16",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-page-gutter-mobile)"
+        },
+        {
+          "cssProperty": "--oluk-page-padding",
+          "cssValue": "64px",
+          "figmaId": "VariableID:1024:62",
+          "hiddenFromPublishing": true,
+          "name": "layout/page-padding",
+          "rawValue": "64",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-page-padding)"
+        },
+        {
+          "cssProperty": "--oluk-section-gap",
+          "cssValue": "32px",
+          "figmaId": "VariableID:1024:63",
+          "hiddenFromPublishing": true,
+          "name": "layout/section-gap",
+          "rawValue": "32",
+          "scope": "GAP",
+          "webSyntax": "var(--oluk-section-gap)"
+        }
+      ],
+      "figmaActiveVariableCount": 112,
+      "governedLiteralGradientExceptions": [
+        {
+          "cssProperty": "--oluk-media-gradient",
+          "decision": "DEC-MEDIA-001/002/003",
+          "value": "linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%)"
+        },
+        {
+          "cssProperty": "--oluk-media-contact-shelf-gradient",
+          "decision": "DEC-MEDIA-003",
+          "value": "linear-gradient(180deg, #ffffff 0%, #e6edfa 100%)"
+        }
+      ],
+      "individuallyDocumentedFigmaVariableCount": 112,
+      "remainingIndividualFigmaVariablesToDocument": 0,
+      "schemaVersion": "oluk.governed-token-manifest.v1",
+      "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+      "typography": [
+        {
+          "cssProperty": "--oluk-font-display",
+          "cssValue": "\"Plus Jakarta Sans\", sans-serif",
+          "figmaId": "VariableID:634:70",
+          "hiddenFromPublishing": true,
+          "name": "family/display",
+          "rawValue": "Plus Jakarta Sans",
+          "scope": "FONT_FAMILY",
+          "webSyntax": "var(--oluk-font-display)"
+        },
+        {
+          "cssProperty": "--oluk-font-body",
+          "cssValue": "\"Inter Variable\", sans-serif",
+          "figmaId": "VariableID:634:71",
+          "hiddenFromPublishing": true,
+          "name": "family/body",
+          "rawValue": "Inter Variable",
+          "scope": "FONT_FAMILY",
+          "webSyntax": "var(--oluk-font-body)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-xl-size",
+          "cssValue": "56px",
+          "figmaId": "VariableID:634:72",
+          "hiddenFromPublishing": true,
+          "name": "display/xl/size",
+          "rawValue": "56",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-display-xl-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-xl-line",
+          "cssValue": "60px",
+          "figmaId": "VariableID:634:73",
+          "hiddenFromPublishing": true,
+          "name": "display/xl/line",
+          "rawValue": "60",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-display-xl-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-xl-track",
+          "cssValue": "-4px",
+          "figmaId": "VariableID:634:74",
+          "hiddenFromPublishing": true,
+          "name": "display/xl/track",
+          "rawValue": "-4",
+          "scope": "LETTER_SPACING",
+          "webSyntax": "var(--oluk-type-display-xl-track)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-lg-size",
+          "cssValue": "40px",
+          "figmaId": "VariableID:634:75",
+          "hiddenFromPublishing": true,
+          "name": "display/lg/size",
+          "rawValue": "40",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-display-lg-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-lg-line",
+          "cssValue": "44px",
+          "figmaId": "VariableID:634:76",
+          "hiddenFromPublishing": true,
+          "name": "display/lg/line",
+          "rawValue": "44",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-display-lg-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-lg-track",
+          "cssValue": "-3.2px",
+          "figmaId": "VariableID:634:77",
+          "hiddenFromPublishing": true,
+          "name": "display/lg/track",
+          "rawValue": "-3.2",
+          "scope": "LETTER_SPACING",
+          "webSyntax": "var(--oluk-type-display-lg-track)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-md-size",
+          "cssValue": "28px",
+          "figmaId": "VariableID:634:78",
+          "hiddenFromPublishing": true,
+          "name": "display/md/size",
+          "rawValue": "28",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-display-md-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-md-line",
+          "cssValue": "34px",
+          "figmaId": "VariableID:634:79",
+          "hiddenFromPublishing": true,
+          "name": "display/md/line",
+          "rawValue": "34",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-display-md-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-display-md-track",
+          "cssValue": "-2.4px",
+          "figmaId": "VariableID:634:80",
+          "hiddenFromPublishing": true,
+          "name": "display/md/track",
+          "rawValue": "-2.4",
+          "scope": "LETTER_SPACING",
+          "webSyntax": "var(--oluk-type-display-md-track)"
+        },
+        {
+          "cssProperty": "--oluk-type-body-lg-size",
+          "cssValue": "18px",
+          "figmaId": "VariableID:634:81",
+          "hiddenFromPublishing": true,
+          "name": "body/lg/size",
+          "rawValue": "18",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-body-lg-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-body-lg-line",
+          "cssValue": "28px",
+          "figmaId": "VariableID:634:82",
+          "hiddenFromPublishing": true,
+          "name": "body/lg/line",
+          "rawValue": "28",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-body-lg-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-body-size",
+          "cssValue": "16px",
+          "figmaId": "VariableID:634:83",
+          "hiddenFromPublishing": true,
+          "name": "body/md/size",
+          "rawValue": "16",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-body-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-body-line",
+          "cssValue": "24px",
+          "figmaId": "VariableID:634:84",
+          "hiddenFromPublishing": true,
+          "name": "body/md/line",
+          "rawValue": "24",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-body-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-body-sm-size",
+          "cssValue": "15px",
+          "figmaId": "VariableID:634:85",
+          "hiddenFromPublishing": true,
+          "name": "body/sm/size",
+          "rawValue": "15",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-body-sm-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-body-sm-line",
+          "cssValue": "22px",
+          "figmaId": "VariableID:634:86",
+          "hiddenFromPublishing": true,
+          "name": "body/sm/line",
+          "rawValue": "22",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-body-sm-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-label-size",
+          "cssValue": "13px",
+          "figmaId": "VariableID:634:87",
+          "hiddenFromPublishing": true,
+          "name": "label/size",
+          "rawValue": "13",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-label-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-label-line",
+          "cssValue": "18px",
+          "figmaId": "VariableID:634:88",
+          "hiddenFromPublishing": true,
+          "name": "label/line",
+          "rawValue": "18",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-label-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-eyebrow-size",
+          "cssValue": "12px",
+          "figmaId": "VariableID:634:89",
+          "hiddenFromPublishing": true,
+          "name": "eyebrow/size",
+          "rawValue": "12",
+          "scope": "FONT_SIZE",
+          "webSyntax": "var(--oluk-type-eyebrow-size)"
+        },
+        {
+          "cssProperty": "--oluk-type-eyebrow-line",
+          "cssValue": "16px",
+          "figmaId": "VariableID:634:90",
+          "hiddenFromPublishing": true,
+          "name": "eyebrow/line",
+          "rawValue": "16",
+          "scope": "LINE_HEIGHT",
+          "webSyntax": "var(--oluk-type-eyebrow-line)"
+        },
+        {
+          "cssProperty": "--oluk-type-eyebrow-track",
+          "cssValue": "0.12em",
+          "figmaId": "VariableID:634:91",
+          "hiddenFromPublishing": true,
+          "name": "eyebrow/track",
+          "rawValue": "12",
+          "scope": "LETTER_SPACING",
+          "webSyntax": "var(--oluk-type-eyebrow-track)"
+        }
+      ]
+    },
+    "variableCount": 112
+  },
+  "generatedFrom": {
+    "bridge": {
+      "file": "authority/FIGMA-CODE-BRIDGE.json",
+      "sha256": "9dbc84b31dd62192bce2c22ddaf1f9368ed5e2cd4b5bd896b92252d3a4215635"
+    },
+    "intents": {
+      "file": "authority/FIGMA-INTENT-REGISTRY.json",
+      "sha256": "af247505a15b4e0a031ea64420d98efbfecda47989b6f11e691e97317070561b"
+    },
+    "programComponents": {
+      "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
+      "sha256": "93356867c87f1a0c1d5ef8dd2a002450fa64dfdcd72790e3f322dfc898ae915d"
+    },
+    "routes": {
+      "file": "authority/SITE-ROUTE-LEDGER.json",
+      "sha256": "600b4daef4d105155136b1814572a02e308fb99711b6de61b12062adcdf3d6da"
+    },
+    "runtime": {
+      "file": "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json",
+      "sha256": "9affdf788797c3f9e9c62325b335c24c8caf6d85fbc52c027d2f8b61365579d9"
+    },
+    "tokens": {
+      "file": "sites/oluk-experience-lab/tests/contracts/governed-token-manifest.json",
+      "sha256": "c6d3f6ec16f75a96162cb5ebefd69bb6cc7e4f9a0553ef814e9d40a854d95b79"
+    }
+  },
+  "immutableProductTruth": {
+    "alias": "Ostarine",
+    "displayPrice": "£43",
+    "product": "MK-2866",
+    "purity": ">99%",
+    "series": "SARM SERIES",
+    "servings": "90 SERVINGS",
+    "sku": "80529-01",
+    "strength": "15 MG"
+  },
+  "intentAuthority": {
+    "registryId": "OLUK-FIGMA-INTENT-004",
+    "rules": {
+      "copyDefault": "draft",
+      "generatedCodeDisposition": "discard",
+      "requiredTrace": [
+        "intentNode",
+        "canonicalComponent",
+        "dataOwner"
+      ],
+      "runtimeBehavior": "excluded"
+    },
+    "schemaVersion": 1,
+    "sources": [
+      {
+        "contributes": [
+          "recommendation hierarchy",
+          "cross-sell placement",
+          "restock lifecycle",
+          "campaign hierarchy",
+          "post-purchase continuation"
+        ],
+        "dataOwners": [
+          "design-fixture",
+          "tools-service-projection"
+        ],
+        "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
+        "id": "commerce-growth",
+        "rootNodeId": "2:2",
+        "runtimeExclusions": [
+          "recommendation mutation",
+          "discount authority",
+          "inventory authority"
+        ],
+        "url": "https://www.figma.com/design/PEFpFuw4CWdFMRNtbEiUzS/Commerce---GROWTH?node-id=2-2"
+      },
+      {
+        "contributes": [
+          "purchase hierarchy",
+          "evidence snapshot",
+          "recommendations",
+          "restock context",
+          "responsive section order",
+          "unavailable states"
+        ],
+        "dataOwners": [
+          "woo",
+          "tools-service-projection",
+          "openlab-source"
+        ],
+        "fileKey": "cGrvE3Fyj3ThKuqPZqceYv",
+        "id": "pdp",
+        "rootNodeId": "4:3545",
+        "runtimeExclusions": [
+          "cart mutation",
+          "price calculation",
+          "evidence inference"
+        ],
+        "url": "https://www.figma.com/design/cGrvE3Fyj3ThKuqPZqceYv/PDP?node-id=4-3545"
+      },
+      {
+        "contributes": [
+          "transaction hierarchy",
+          "delivery choice",
+          "FX reveal",
+          "payment handoff",
+          "processing",
+          "confirmation",
+          "tracking",
+          "recovery"
+        ],
+        "dataOwners": [
+          "tools-service-projection",
+          "initiator-terminal"
+        ],
+        "fileKey": "9jTrnlEWgbBpFi2idodVB2",
+        "id": "commerce-checkout",
+        "rootNodeId": "0:1",
+        "runtimeExclusions": [
+          "form submission",
+          "payment SDK",
+          "payment callback",
+          "Woo mutation"
+        ],
+        "url": "https://www.figma.com/design/9jTrnlEWgbBpFi2idodVB2/Commerce---Checkout?node-id=0-1"
+      },
+      {
+        "contributes": [
+          "archive",
+          "record",
+          "compound dossier",
+          "report presentation",
+          "lookup",
+          "methodology",
+          "source chain",
+          "comparison",
+          "owner command center"
+        ],
+        "dataOwners": [
+          "openlab-source",
+          "owner-only"
+        ],
+        "fileKey": "GkC3KEt9V3RyG5K319iAUV",
+        "id": "openlab",
+        "rootNodeId": "3:66993",
+        "runtimeExclusions": [
+          "invented evidence",
+          "reconstructed chromatogram",
+          "inferred pass",
+          "public admin access"
+        ],
+        "url": "https://www.figma.com/design/GkC3KEt9V3RyG5K319iAUV/OPENLAB?node-id=3-66993"
+      }
+    ],
+    "status": "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY"
+  },
+  "routeAuthority": {
+    "aliases": {
+      "/openlab": "/open-lab",
+      "/openlab/*": "/open-lab/*"
+    },
+    "canonicalOpenLabNamespace": "/open-lab",
+    "routes": [
+      {
+        "disposition": "enhance",
+        "family": "homepage",
+        "id": "home",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/"
+      },
+      {
+        "disposition": "enhance",
+        "family": "catalogue_search_collections",
+        "id": "shop",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/shop"
+      },
+      {
+        "disposition": "new",
+        "family": "catalogue_search_collections",
+        "id": "collection",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/collections/:slug"
+      },
+      {
+        "disposition": "enhance",
+        "family": "catalogue_search_collections",
+        "id": "search",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/search"
+      },
+      {
+        "disposition": "new",
+        "family": "catalogue_search_collections",
+        "id": "product-compare",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/compare"
+      },
+      {
+        "disposition": "replace",
+        "family": "product_detail",
+        "id": "product",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/product/:slug"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "reviews",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/reviews"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "about",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/about"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "about-evidence-os",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/about/evidence-os"
+      },
+      {
+        "disposition": "enhance",
+        "family": "account",
+        "id": "account",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/account"
+      },
+      {
+        "disposition": "new",
+        "family": "account",
+        "id": "account-orders",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/account/orders"
+      },
+      {
+        "blocker": "Identity and signed order projection required",
+        "disposition": "authority-deferred",
+        "family": "account",
+        "id": "account-order",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "identity-and-order-projection",
+        "path": "/account/orders/:orderId"
+      },
+      {
+        "blocker": "Identity contract required",
+        "disposition": "authority-deferred",
+        "family": "account",
+        "id": "account-profile",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "identity",
+        "path": "/account/profile"
+      },
+      {
+        "blocker": "Identity and Woo address projection required",
+        "disposition": "authority-deferred",
+        "family": "account",
+        "id": "account-addresses",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "identity",
+        "path": "/account/addresses"
+      },
+      {
+        "disposition": "enhance",
+        "family": "bag_checkout",
+        "id": "bag",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/bag"
+      },
+      {
+        "aliases": [
+          "/checkout",
+          "/checkout/info"
+        ],
+        "disposition": "replace",
+        "family": "bag_checkout",
+        "id": "checkout-information",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/checkout/information"
+      },
+      {
+        "disposition": "enhance",
+        "family": "bag_checkout",
+        "id": "checkout-delivery",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/checkout/delivery"
+      },
+      {
+        "disposition": "new",
+        "family": "bag_checkout",
+        "id": "checkout-review",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/checkout/review"
+      },
+      {
+        "disposition": "replace",
+        "family": "bag_checkout",
+        "id": "checkout-payment",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/checkout/payment"
+      },
+      {
+        "disposition": "new",
+        "family": "bag_checkout",
+        "id": "checkout-processing",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/checkout/processing"
+      },
+      {
+        "disposition": "enhance",
+        "family": "post_purchase",
+        "id": "checkout-confirmation",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/checkout/confirmation"
+      },
+      {
+        "disposition": "enhance",
+        "family": "post_purchase",
+        "id": "checkout-failure",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/checkout/failure"
+      },
+      {
+        "disposition": "enhance",
+        "family": "post_purchase",
+        "id": "checkout-retry",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/checkout/retry"
+      },
+      {
+        "disposition": "new",
+        "family": "post_purchase",
+        "id": "checkout-tracking",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/checkout/tracking"
+      },
+      {
+        "disposition": "existing",
+        "family": "complete_payment",
+        "id": "checkout-order-pay",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "preserve-only",
+        "path": "/checkout/order-pay"
+      },
+      {
+        "disposition": "existing",
+        "family": "complete_payment",
+        "id": "checkout-payment-handoff",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "preserve-only",
+        "path": "/checkout/payment-handoff"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "contact",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/contact"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "delivery",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/delivery"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "shipping-returns",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/shipping-returns"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "faq",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/faq"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_archive",
+        "id": "lab-reports",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/lab-reports"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_portal",
+        "id": "open-lab",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_archive",
+        "id": "open-lab-records",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/records"
+      },
+      {
+        "disposition": "replace",
+        "family": "openlab_product_record",
+        "id": "open-lab-record",
+        "maturity": "SOURCE_BOUND",
+        "owner": "openlab-source",
+        "path": "/open-lab/records/:recordId"
+      },
+      {
+        "disposition": "new",
+        "family": "openlab_product_record",
+        "id": "open-lab-compound",
+        "maturity": "SCAFFOLD",
+        "owner": "openlab-source",
+        "path": "/open-lab/compound/:slug"
+      },
+      {
+        "disposition": "new",
+        "family": "openlab_report_viewer",
+        "id": "open-lab-report",
+        "maturity": "SCAFFOLD",
+        "owner": "openlab-source",
+        "path": "/open-lab/report/:batchId"
+      },
+      {
+        "disposition": "new",
+        "family": "openlab_report_viewer",
+        "id": "open-lab-report-viewer",
+        "maturity": "SCAFFOLD",
+        "owner": "openlab-source",
+        "path": "/open-lab/report/:batchId/viewer"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_archive",
+        "id": "open-lab-batch-lookup",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/batch-lookup"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_methodology_compare_evidenceos",
+        "id": "open-lab-methodology",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/methodology"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_methodology_compare_evidenceos",
+        "id": "open-lab-source-chain",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/source-chain"
+      },
+      {
+        "disposition": "enhance",
+        "family": "openlab_methodology_compare_evidenceos",
+        "id": "open-lab-compare",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/open-lab/compare"
+      },
+      {
+        "disposition": "new",
+        "family": "openlab_methodology_compare_evidenceos",
+        "id": "open-lab-evidence-os",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/open-lab/evidence-os"
+      },
+      {
+        "disposition": "owner-only",
+        "family": "governance_review",
+        "id": "open-lab-admin",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-owner-review",
+        "path": "/open-lab/admin",
+        "public": false
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "privacy",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/privacy"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "terms",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/terms"
+      },
+      {
+        "disposition": "enhance",
+        "family": "support_content",
+        "id": "wholesale",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "path": "/wholesale"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "international",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/international"
+      },
+      {
+        "blocker": "Gift-card commercial authority not approved",
+        "disposition": "authority-deferred",
+        "family": "support_content",
+        "id": "gift-cards",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "commerce-policy",
+        "path": "/gift-cards"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "journal",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/journal"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "journal-entry",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/journal/:slug"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "glossary",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/glossary"
+      },
+      {
+        "disposition": "new",
+        "family": "decision_tools",
+        "id": "your-goals",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/your-goals"
+      },
+      {
+        "disposition": "new",
+        "family": "decision_tools",
+        "id": "compound-guide",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/compound-guide"
+      },
+      {
+        "disposition": "new",
+        "family": "decision_tools",
+        "id": "compound-guide-detail",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/compound-guide/:slug"
+      },
+      {
+        "disposition": "new",
+        "family": "decision_tools",
+        "id": "stack-builder",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/stack-builder"
+      },
+      {
+        "disposition": "new",
+        "family": "decision_tools",
+        "id": "bundle-builder",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/bundle-builder"
+      },
+      {
+        "disposition": "new",
+        "family": "post_purchase",
+        "id": "order-success",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/order/success/:orderId?"
+      },
+      {
+        "disposition": "new",
+        "family": "post_purchase",
+        "id": "order-pending",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/order/pending/:orderId?"
+      },
+      {
+        "disposition": "new",
+        "family": "post_purchase",
+        "id": "order-failed",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/order/failed/:orderId?"
+      },
+      {
+        "disposition": "new",
+        "family": "post_purchase",
+        "id": "order-cancelled",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/order/cancelled/:orderId?"
+      },
+      {
+        "disposition": "new",
+        "family": "post_purchase",
+        "id": "order-tracking",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/order/tracking/:orderId"
+      },
+      {
+        "disposition": "owner-only",
+        "family": "governance_review",
+        "id": "owner-review",
+        "maturity": "INTERACTIVE",
+        "owner": "sites-owner-review",
+        "path": "/review",
+        "public": false
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "legal-document",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/legal/:doc"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "accessibility",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/accessibility"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "cookies",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/cookies"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "refunds",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/refunds"
+      },
+      {
+        "disposition": "new",
+        "family": "catalogue_search_collections",
+        "id": "family-sarms",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/collections/sarms"
+      },
+      {
+        "disposition": "new",
+        "family": "catalogue_search_collections",
+        "id": "family-research-chemicals",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/collections/research-chemicals"
+      },
+      {
+        "disposition": "new",
+        "family": "catalogue_search_collections",
+        "id": "family-prohormones",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/collections/prohormones"
+      },
+      {
+        "disposition": "new",
+        "family": "catalogue_search_collections",
+        "id": "family-stacks",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/collections/stacks"
+      },
+      {
+        "disposition": "enhance",
+        "family": "catalogue_search_collections",
+        "id": "shop-goal",
+        "maturity": "INTERACTIVE",
+        "owner": "sites-reference",
+        "path": "/shop?goal=:goal"
+      },
+      {
+        "disposition": "new",
+        "family": "support_content",
+        "id": "sitemap",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/sitemap"
+      },
+      {
+        "disposition": "new",
+        "family": "shared_shell",
+        "id": "not-found",
+        "maturity": "SCAFFOLD",
+        "owner": "sites-reference",
+        "path": "/404"
+      }
+    ],
+    "terminalContract": "SITE_SURFACE_MATURITY_V2"
+  },
+  "runtimeAuthority": "NONE",
+  "runtimeContractSnapshot": {
+    "browserDirectServiceCallsAllowed": false,
+    "contentHash": "4362e9b7529db369dae7d490fd94a2525c4a80b72a474541c591bded55ce086b",
+    "schemaVersion": "olympus.shopper-runtime-contract-snapshot.v1",
+    "status": "CANDIDATE_CONTRACT_NOT_DEPLOYED"
+  },
+  "schemaVersion": 1,
+  "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "contractHash": "c5dd2a6f15a27915502ce5556f1f115fd9c8d97277b052b580cf97bb24ab544c"
+}

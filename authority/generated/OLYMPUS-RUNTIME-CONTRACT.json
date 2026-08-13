@@ -1,0 +1,566 @@
+{
+  "authority": {
+    "browserDirectServiceCallsAllowed": false,
+    "catalogueLedger": "WooCommerce",
+    "finalMutationOwner": "olympus-plugin-initiator",
+    "firstPaintOwner": "shopper-ssr",
+    "paymentProviderCallsAllowedFromBrowser": false,
+    "projectionOwner": "tools-service"
+  },
+  "contentHash": "4362e9b7529db369dae7d490fd94a2525c4a80b72a474541c591bded55ce086b",
+  "endpoints": [
+    {
+      "handler": "create_commerce_lifecycle",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/create"
+    },
+    {
+      "handler": "commerce_lifecycle_healthz",
+      "method": "GET",
+      "path": "/api/commerce-lifecycle/healthz"
+    },
+    {
+      "handler": "read_order_shopper_contract",
+      "method": "GET",
+      "path": "/api/commerce-lifecycle/order/{woo_order_id}/shopper-contract"
+    },
+    {
+      "handler": "resolve_complete_payment",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/complete-payment/resolve"
+    },
+    {
+      "handler": "read_ledger_intent",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/ledger-intent"
+    },
+    {
+      "handler": "normalize_payment_event",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/payment-event"
+    },
+    {
+      "handler": "request_payment_session",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/request-payment-session"
+    },
+    {
+      "handler": "read_shopper_contract",
+      "method": "GET",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/shopper-contract"
+    },
+    {
+      "handler": "read_terminal_contract",
+      "method": "GET",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/terminal-contract"
+    },
+    {
+      "handler": "transition",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/transition"
+    },
+    {
+      "handler": "validate_cart",
+      "method": "POST",
+      "path": "/api/commerce-lifecycle/{lifecycle_id}/validate-cart"
+    },
+    {
+      "handler": "shopper_checkout_action_contract",
+      "method": "GET",
+      "path": "/api/shopper/actions/checkout"
+    },
+    {
+      "handler": "shopper_checkout_action",
+      "method": "POST",
+      "path": "/api/shopper/actions/checkout/{action}"
+    },
+    {
+      "handler": "shopper_cart_contract",
+      "method": "GET",
+      "path": "/api/shopper/cart"
+    },
+    {
+      "handler": "shopper_cart_handoff",
+      "method": "GET",
+      "path": "/api/shopper/cart-handoffs/{handoff_token}"
+    },
+    {
+      "handler": "shopper_cart_snapshot",
+      "method": "POST",
+      "path": "/api/shopper/cart-snapshots/{session_id}"
+    },
+    {
+      "handler": "shopper_cart_actions",
+      "method": "POST",
+      "path": "/api/shopper/cart/actions"
+    },
+    {
+      "handler": "shopper_cart_items",
+      "method": "POST",
+      "path": "/api/shopper/cart/items"
+    },
+    {
+      "handler": "shopper_checkout_contract",
+      "method": "GET",
+      "path": "/api/shopper/checkout"
+    },
+    {
+      "handler": "shopper_checkout_actions",
+      "method": "POST",
+      "path": "/api/shopper/checkout/actions"
+    },
+    {
+      "handler": "shopper_order_projection_contract",
+      "method": "GET",
+      "path": "/api/shopper/orders/{reference}"
+    },
+    {
+      "handler": "shopper_payment_terminal",
+      "method": "GET",
+      "path": "/api/shopper/payment-terminal"
+    },
+    {
+      "handler": "shopper_projection",
+      "method": "GET",
+      "path": "/api/shopper/projections/{surface}"
+    },
+    {
+      "handler": "shopper_proof_cart_reset",
+      "method": "POST",
+      "path": "/api/shopper/proof/cart/reset"
+    },
+    {
+      "handler": "store_categories",
+      "method": "GET",
+      "path": "/api/store/categories"
+    },
+    {
+      "handler": "store_collection",
+      "method": "GET",
+      "path": "/api/store/collections/{slug}"
+    },
+    {
+      "handler": "store_products",
+      "method": "GET",
+      "path": "/api/store/products"
+    },
+    {
+      "handler": "store_product",
+      "method": "GET",
+      "path": "/api/store/products/{slug}"
+    }
+  ],
+  "openLab": {
+    "exactNumericPurityOnly": true,
+    "mayInferEvidence": false,
+    "reportCardinality": "one-record-per-report",
+    "status": "AUTHORITY_DEFERRED_UNTIL_REGISTERED_SOURCE_PROJECTION",
+    "thresholdPurityDisplayOnly": true
+  },
+  "requiredProjectionFamilies": [
+    "product",
+    "collection",
+    "cart",
+    "checkout",
+    "order",
+    "payment-terminal",
+    "openlab"
+  ],
+  "schemaVersion": "olympus.shopper-runtime-contract-snapshot.v1",
+  "schemas": {
+    "commerceLifecycle": {
+      "$defs": {
+        "CommerceLifecycleState": {
+          "enum": [
+            "cart_draft",
+            "cart_validated",
+            "checkout_intent_created",
+            "discount_validated",
+            "payment_session_requested",
+            "hosted_pay_session_created",
+            "hosted_pay_redirected",
+            "provider_pending",
+            "processor_event_received",
+            "egress_event_verified",
+            "ledger_write_requested",
+            "woo_ledger_committed",
+            "complete_payment_returned",
+            "shopper_success",
+            "shopper_pending",
+            "shopper_failed",
+            "shopper_cancelled",
+            "shopper_tracking_ready",
+            "account_order_visible"
+          ],
+          "title": "CommerceLifecycleState",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "allowed_next_actions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Next Actions",
+          "type": "array"
+        },
+        "cart_id": {
+          "title": "Cart Id",
+          "type": "string"
+        },
+        "checkout_intent_id": {
+          "title": "Checkout Intent Id",
+          "type": "string"
+        },
+        "complete_payment_route": {
+          "title": "Complete Payment Route",
+          "type": "string"
+        },
+        "contract_version": {
+          "default": "commerce_lifecycle_contract.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "event_cursor": {
+          "title": "Event Cursor",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "hosted_pay_url_present": {
+          "default": false,
+          "title": "Hosted Pay Url Present",
+          "type": "boolean"
+        },
+        "idempotency_key": {
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "internal_status": {
+          "$ref": "#/$defs/CommerceLifecycleState"
+        },
+        "ledger_status": {
+          "enum": [
+            "not_requested",
+            "write_requested",
+            "committed",
+            "failed",
+            "pending"
+          ],
+          "title": "Ledger Status",
+          "type": "string"
+        },
+        "lifecycle_id": {
+          "title": "Lifecycle Id",
+          "type": "string"
+        },
+        "links": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Links",
+          "type": "object"
+        },
+        "order_id": {
+          "title": "Order Id",
+          "type": "string"
+        },
+        "payment_status": {
+          "enum": [
+            "not_started",
+            "requested",
+            "hosted_session_created",
+            "redirected",
+            "pending",
+            "authorized",
+            "captured",
+            "failed",
+            "cancelled",
+            "unknown"
+          ],
+          "title": "Payment Status",
+          "type": "string"
+        },
+        "provider_family": {
+          "const": "biaspay",
+          "title": "Provider Family",
+          "type": "string"
+        },
+        "public_status": {
+          "enum": [
+            "cart",
+            "checkout",
+            "handoff",
+            "pending",
+            "success",
+            "failed",
+            "cancelled",
+            "tracking",
+            "account"
+          ],
+          "title": "Public Status",
+          "type": "string"
+        },
+        "render_hints": {
+          "additionalProperties": true,
+          "title": "Render Hints",
+          "type": "object"
+        },
+        "shopper_route": {
+          "title": "Shopper Route",
+          "type": "string"
+        },
+        "terminal_route": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Terminal Route"
+        },
+        "user_safe_message": {
+          "title": "User Safe Message",
+          "type": "string"
+        },
+        "user_safe_title": {
+          "title": "User Safe Title",
+          "type": "string"
+        },
+        "woo_order_id": {
+          "title": "Woo Order Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lifecycle_id",
+        "cart_id",
+        "checkout_intent_id",
+        "order_id",
+        "woo_order_id",
+        "public_status",
+        "internal_status",
+        "shopper_route",
+        "complete_payment_route",
+        "payment_status",
+        "ledger_status",
+        "provider_family",
+        "event_cursor",
+        "idempotency_key",
+        "expires_at",
+        "user_safe_title",
+        "user_safe_message"
+      ],
+      "title": "CommerceLifecycleContract",
+      "type": "object"
+    },
+    "completePaymentHandoff": {
+      "$defs": {
+        "CommerceLifecycleState": {
+          "enum": [
+            "cart_draft",
+            "cart_validated",
+            "checkout_intent_created",
+            "discount_validated",
+            "payment_session_requested",
+            "hosted_pay_session_created",
+            "hosted_pay_redirected",
+            "provider_pending",
+            "processor_event_received",
+            "egress_event_verified",
+            "ledger_write_requested",
+            "woo_ledger_committed",
+            "complete_payment_returned",
+            "shopper_success",
+            "shopper_pending",
+            "shopper_failed",
+            "shopper_cancelled",
+            "shopper_tracking_ready",
+            "account_order_visible"
+          ],
+          "title": "CommerceLifecycleState",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "canonical_shopper_url": {
+          "title": "Canonical Shopper Url",
+          "type": "string"
+        },
+        "contract_version": {
+          "default": "complete_payment_handoff_contract.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "fallback_complete_payment_url": {
+          "title": "Fallback Complete Payment Url",
+          "type": "string"
+        },
+        "handoff_id": {
+          "title": "Handoff Id",
+          "type": "string"
+        },
+        "lifecycle_id": {
+          "title": "Lifecycle Id",
+          "type": "string"
+        },
+        "reason_code": {
+          "title": "Reason Code",
+          "type": "string"
+        },
+        "resolved_public_status": {
+          "enum": [
+            "cart",
+            "checkout",
+            "handoff",
+            "pending",
+            "success",
+            "failed",
+            "cancelled",
+            "tracking",
+            "account"
+          ],
+          "title": "Resolved Public Status",
+          "type": "string"
+        },
+        "return_state": {
+          "$ref": "#/$defs/CommerceLifecycleState"
+        },
+        "safe_to_render": {
+          "title": "Safe To Render",
+          "type": "boolean"
+        },
+        "signature_status": {
+          "enum": [
+            "valid",
+            "invalid",
+            "expired",
+            "missing"
+          ],
+          "title": "Signature Status",
+          "type": "string"
+        },
+        "woo_order_id": {
+          "title": "Woo Order Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "handoff_id",
+        "lifecycle_id",
+        "woo_order_id",
+        "return_state",
+        "signature_status",
+        "resolved_public_status",
+        "canonical_shopper_url",
+        "fallback_complete_payment_url",
+        "expires_at",
+        "safe_to_render",
+        "reason_code"
+      ],
+      "title": "CompletePaymentHandoffContract",
+      "type": "object"
+    },
+    "paymentSession": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "default": "payment_session_contract.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "creates_payment_intent": {
+          "default": false,
+          "title": "Creates Payment Intent",
+          "type": "boolean"
+        },
+        "creates_provider_transaction": {
+          "default": false,
+          "title": "Creates Provider Transaction",
+          "type": "boolean"
+        },
+        "expires_at": {
+          "format": "date-time",
+          "title": "Expires At",
+          "type": "string"
+        },
+        "hosted_pay_url_present": {
+          "default": true,
+          "title": "Hosted Pay Url Present",
+          "type": "boolean"
+        },
+        "lifecycle_id": {
+          "title": "Lifecycle Id",
+          "type": "string"
+        },
+        "payment_authority": {
+          "const": "not_payment_authority",
+          "default": "not_payment_authority",
+          "title": "Payment Authority",
+          "type": "string"
+        },
+        "provider_family": {
+          "const": "biaspay",
+          "default": "biaspay",
+          "title": "Provider Family",
+          "type": "string"
+        },
+        "session_authority": {
+          "const": "hosted_session_only",
+          "default": "hosted_session_only",
+          "title": "Session Authority",
+          "type": "string"
+        },
+        "signature_ref": {
+          "title": "Signature Ref",
+          "type": "string"
+        },
+        "terminal_route": {
+          "title": "Terminal Route",
+          "type": "string"
+        },
+        "woo_order_id": {
+          "title": "Woo Order Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lifecycle_id",
+        "woo_order_id",
+        "terminal_route",
+        "expires_at",
+        "signature_ref"
+      ],
+      "title": "PaymentSessionContract",
+      "type": "object"
+    }
+  },
+  "sources": [
+    {
+      "path": "tools/shopper_projection.py",
+      "sha256": "8908f7e6a92f829f7e1a44c8d9281e8313b0a7be5bcd21fdf9c7d3300b441d4d"
+    },
+    {
+      "path": "tools/commerce_lifecycle/routes.py",
+      "sha256": "1d78adec9d84253deb01891652c2e414d820537472857797c9bbc275e74ee566"
+    },
+    {
+      "path": "tools/commerce_lifecycle/contracts.py",
+      "sha256": "a0d47bf769a6228ffc1e23e6b9614b4fae76ba423f86b49eec695cb7dd1e20dd"
+    }
+  ],
+  "status": "CANDIDATE_CONTRACT_NOT_DEPLOYED"
+}

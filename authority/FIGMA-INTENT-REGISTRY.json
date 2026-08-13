@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "registryId": "OLUK-FIGMA-INTENT-004",
+  "status": "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY",
+  "rules": {
+    "generatedCodeDisposition": "discard",
+    "copyDefault": "draft",
+    "runtimeBehavior": "excluded",
+    "requiredTrace": ["intentNode", "canonicalComponent", "dataOwner"]
+  },
+  "sources": [
+    {
+      "id": "commerce-growth",
+      "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
+      "rootNodeId": "2:2",
+      "url": "https://www.figma.com/design/PEFpFuw4CWdFMRNtbEiUzS/Commerce---GROWTH?node-id=2-2",
+      "contributes": ["recommendation hierarchy", "cross-sell placement", "restock lifecycle", "campaign hierarchy", "post-purchase continuation"],
+      "dataOwners": ["design-fixture", "tools-service-projection"],
+      "runtimeExclusions": ["recommendation mutation", "discount authority", "inventory authority"]
+    },
+    {
+      "id": "pdp",
+      "fileKey": "cGrvE3Fyj3ThKuqPZqceYv",
+      "rootNodeId": "4:3545",
+      "url": "https://www.figma.com/design/cGrvE3Fyj3ThKuqPZqceYv/PDP?node-id=4-3545",
+      "contributes": ["purchase hierarchy", "evidence snapshot", "recommendations", "restock context", "responsive section order", "unavailable states"],
+      "dataOwners": ["woo", "tools-service-projection", "openlab-source"],
+      "runtimeExclusions": ["cart mutation", "price calculation", "evidence inference"]
+    },
+    {
+      "id": "commerce-checkout",
+      "fileKey": "9jTrnlEWgbBpFi2idodVB2",
+      "rootNodeId": "0:1",
+      "url": "https://www.figma.com/design/9jTrnlEWgbBpFi2idodVB2/Commerce---Checkout?node-id=0-1",
+      "contributes": ["transaction hierarchy", "delivery choice", "FX reveal", "payment handoff", "processing", "confirmation", "tracking", "recovery"],
+      "dataOwners": ["tools-service-projection", "initiator-terminal"],
+      "runtimeExclusions": ["form submission", "payment SDK", "payment callback", "Woo mutation"]
+    },
+    {
+      "id": "openlab",
+      "fileKey": "GkC3KEt9V3RyG5K319iAUV",
+      "rootNodeId": "3:66993",
+      "url": "https://www.figma.com/design/GkC3KEt9V3RyG5K319iAUV/OPENLAB?node-id=3-66993",
+      "contributes": ["archive", "record", "compound dossier", "report presentation", "lookup", "methodology", "source chain", "comparison", "owner command center"],
+      "dataOwners": ["openlab-source", "owner-only"],
+      "runtimeExclusions": ["invented evidence", "reconstructed chromatogram", "inferred pass", "public admin access"]
+    }
+  ]
+}

@@ -53,7 +53,11 @@ const routes = [
 test("MF-07 route pages form one static transaction lifecycle", async () => {
   for (const [pathname, route] of routes) {
     const source = await readFile(new URL(`${pathname}/page.tsx`, appRoot), "utf8");
-    assert.match(source, new RegExp(`<ExperienceLab\\s+route="${route}"\\s*/>`), pathname);
+    if (["checkout/delivery", "checkout/confirmation"].includes(pathname)) {
+      assert.match(source, /<CheckoutProgramPage step="(?:delivery|confirmation)"\s*\/>/, pathname);
+    } else {
+      assert.match(source, new RegExp(`<ExperienceLab\\s+route="${route}"\\s*/>`), pathname);
+    }
   }
 });
 
