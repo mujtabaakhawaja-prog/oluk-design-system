@@ -82,7 +82,7 @@ export function InventoryStatus({ state = "in-stock" }: { state?: InventoryState
 export function EvidenceStatus() {
   return (
     <span className="oluk-candidate-evidence">
-      <span className="oluk-candidate-evidence-icon"><img src="/assets/evidence/openlab-atom.svg" alt="" /></span>
+      <span className="oluk-candidate-evidence-icon"><img src="/assets/evidence/openlab-atom.svg" alt="" aria-hidden="true" /></span>
       OPENLAB VERIFIED
     </span>
   );
@@ -103,7 +103,7 @@ export function QualitativeChips() {
     <dl className="oluk-candidate-qualitative">
       {qualitativeFacts.map(([kind, label, value]) => (
         <div key={kind}>
-          <img src={`/assets/candidate/qualitative/${kind}.svg`} alt="" />
+          <img src={`/assets/candidate/qualitative/${kind}.svg`} alt="" aria-hidden="true" />
           <dt>{label}</dt>
           <dd>{value}</dd>
         </div>
@@ -153,7 +153,7 @@ export function ProductCommerceCard({
   return (
     <OlukCard className={`oluk-candidate-commerce-card oluk-candidate-commerce-card--${variant}`} component={`ProductCommerceCard.${variant}`} density={variant} id={id}>
       <OlukMediaChamber className="oluk-candidate-media-chamber">
-        <div className="oluk-candidate-media-orbit" aria-hidden="true" />
+        <div className="oluk-candidate-media-contact-shelf" aria-hidden="true" />
         <img src={product.image} alt={`${product.name} ${product.alias} bottle`} />
       </OlukMediaChamber>
       <OlukPurchasePlane className="oluk-candidate-content-plane">
@@ -183,10 +183,10 @@ export function CompactCard({ state, label }: { state: CompactState; label: stri
   const inventoryState: InventoryState = state === "out-of-stock" ? "out-of-stock" : unavailable ? "unavailable" : "in-stock";
   const actionLabel = state === "added" ? "Added" : state === "out-of-stock" ? "Out of stock" : unavailable ? "Unavailable" : "Quick add";
   return (
-    <OlukCard className="oluk-candidate-compact" density="compact" id={`mf02b-compact-${state}`} label={`${label} static compact-card state`} state={state}>
+    <OlukCard className="oluk-candidate-compact" component="ProductCommerceCard.compact" density="compact" id={`mf02b-compact-${state}`} label={`${label} static compact-card state`} state={state}>
       <span className="oluk-candidate-state-label">{label}</span>
       <div className="oluk-candidate-compact-top">
-        <OlukMediaChamber className="oluk-candidate-compact-media"><img src={mk2866Specimen.value.image} alt="" /></OlukMediaChamber>
+        <OlukMediaChamber className="oluk-candidate-compact-media"><img src={mk2866Specimen.value.image} alt="" aria-hidden="true" /></OlukMediaChamber>
         <div><span>{mk2866Specimen.value.series}</span><h3>{mk2866Specimen.value.name}</h3><p>{mk2866Specimen.value.alias}</p></div>
       </div>
       <MetricRail product={mk2866Specimen.value} />
@@ -247,8 +247,8 @@ export function AssuranceRail() {
           <OlukSurface key={item.number} className="oluk-candidate-assurance-cell">
             <span>{item.number}</span>
             <div className="oluk-candidate-assurance-icon">
-              <img src={item.icon} alt="" />
-              {"proofPoint" in item && item.proofPoint && <img className="oluk-candidate-proof-point" src={item.proofPoint} alt="" />}
+              <img src={item.icon} alt="" aria-hidden="true" />
+              {"proofPoint" in item && item.proofPoint && <img className="oluk-candidate-proof-point" src={item.proofPoint} alt="" aria-hidden="true" />}
             </div>
             <div><h3>{item.title}</h3><p>{item.description}</p></div>
           </OlukSurface>

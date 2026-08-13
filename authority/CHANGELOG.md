@@ -36,3 +36,57 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - State advanced from `SEPARATE_VALIDATION_IN_PROGRESS` to `CANDIDATE_IMPLEMENTED_HUMAN_REVIEW_REQUIRED`.
 - No Sites deployment occurred. This validated candidate does not promote Figma artifacts or grant production runtime, evidence, inventory, payment, C2 or release authority.
 - Registered Page 25 runtime candidate receipt `776:50` under changelog `728:224`; it remains unpublished and `HUMAN_REVIEW_REQUIRED`.
+
+## 2026-08-12 — CONV-002 MF-01A material-fidelity completion in progress
+
+- Preserved MF-01A authority for `text/chip-value #17213F`, `neutral/family #F8FAFC`, the atmospheric media recipe and the complete graduated border hierarchy (`DEC-FIDELITY-001`, `DEC-CHIP-001`, `DEC-MEDIA-001`).
+- Recorded the only permitted literal-paint exception: Figma gradient stops `#F8FBFF` and `#E4ECFA` remain governed as the exact two-stop media recipe; the exception does not authorize any other invented or unbound component color (`DEC-MEDIA-002`).
+- Clarified the exception append-only after restoration of the full MF-01A chamber: `DEC-MEDIA-003` governs both the outer `#F8FBFF→#E4ECFA` gradient and the contact-shelf `#FFFFFF→#E6EDFA` gradient, only inside that exact atmospheric recipe. The earlier `DEC-MEDIA-002` event remains intact as history.
+- Confirmed the active convergence projection at four collections and 98 variables; three legacy/quarantined collections and 128 variables remain archived and undeleted.
+- Registered MF-01A source targets `626:11814`, `626:11821`, `626:11822`, `626:11823`, `626:11824`; canonical targets `733:17342`, `743:50`, `743:51`, `743:281`, `743:282`; and downstream Shop instance `765:98` for the bounded completion audit.
+- Registered QualitativeIcon set `844:926` with components `844:914`, `844:917`, `844:921`, `844:925`, plus restored atmospheric layers `844:20800` through `844:20811` across Vertical/Featured desktop and mobile variants.
+- Added the durable repository receipt at `authority/receipts/CONV-002-FIDELITY-COMPLETION.md` and registered the Page 25 Figma receipt section `847:50`, comparison board `847:51`, source snapshots `847:65` / `847:306` and canonical instances `847:180` / `847:423`.
+- This entry records work in progress only. No final Figma or Sites fidelity claim is made until the exact Page 25 receipt node, repository completion commit and full validation results replace the pending markers.
+- All affected artifacts remain `CANDIDATE · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`; rollback is additive, preserves ledger/source history and requires a later explicit supersession for any champion change.
+
+## 2026-08-12 — CONV-002 fidelity validation receipt
+
+- Verified the native Page 25 receipt at section `847:50`, comparison board `847:51`, source snapshots `847:65` / `847:306` and canonical instances `847:180` / `847:423`.
+- Repository completion commit `5d29a5d5562c9da13e569b18ffd97b3bec1d5ab1` validates the bounded Sites delta: typecheck, lint and production build pass across 15 routes; tests pass 8/8.
+- Browser QA passes `/shop` and `/review` at 1440/1024/768/390 with zero document overflow, zero clipped cards/panels, four non-overlapping qualitative chips, no visible `90 CAPS` and no governance copy in the tested roots.
+- State advances to `FIGMA_RECEIPT_VERIFIED · REPOSITORY_VALIDATED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
+- This is bounded CONV-002 proof, not the complete MF-09 route/state matrix. Full MF-09, MF-10 and later publication/runtime gates remain open; deployment remains `NONE`.
+
+## 2026-08-12 — CONV-003 paired Figma + Codex Sites candidate completion
+
+- Appended four champion decisions without rewriting earlier authority:
+  - `DEC-TAXONOMY-001` separates runtime-owned family taxonomy (`SARMs / Research Chemicals / Prohormones / Stacks`) from independent goal, form, servings/pack and availability facets while preserving the established header as shell information architecture.
+  - `DEC-FIXTURE-001` accepts repeated MK-2866 Vertical fixtures for component-contract proof and leaves product-slot diversification to runtime publication.
+  - `DEC-RUN-002` defines MF runs as paired Figma + Codex Sites candidates that advance design, commerce, experience and UX/UI together while retaining separate runtime gates.
+  - `DEC-MEDIA-004` requires populated adaptive chambers wherever a chamber exists and records PurchasePanel media as `NOT_APPLICABLE` because PurchasePanel has no chamber by design.
+- Projected all system pages `672:2`–`672:26`, the canonical graph `732:2897`, instance review `763:50`, four anchor route surfaces `764:50`–`767:50`, MF-09 proof pages `672:14`, `672:15` and `672:24`, and the existing Page 25 receipts into the current-state and artifact registries.
+- Completed the 50×50 candidate matrix: `FG-NEXT-001`–`048` and `CX-NEXT-001`–`047` are `VERIFIED`; the five publication/runtime items remain `BLOCKED`.
+- Recorded the 31-route Codex Sites candidate, four-width MF-09 matrix, shared component/provenance/taxonomy graph, inert bag-through-retry transaction presentation and local validation tooling.
+- Added `authority/receipts/CONV-003-MF09-MF10-COMPLETION.md` as the durable completion and gate receipt.
+- The final unpublished MF-10 approval candidate is registered at Figma node `888:304`; the integrated repository implementation is commit `bba06da93ce02dfd17bce3766c61f2d59b538cbe`. The node is candidate evidence, not champion approval or publication authority.
+
+### Validation and gate
+
+- Candidate projection: build, typecheck, lint, tests and token/provenance/taxonomy/visual/MF-09 proof contracts are recorded `PASS` across 31 routes and 1440/1024/768/390.
+- Browser receipts record `124/124` geometry cases, `62/62` accessibility cases, `27/27` deterministic interaction cases, and `30/30` customer routes with zero WCAG AA violation rules, zero 200% reflow overflow and zero long-copy failures. Enhanced AAA contrast remains a manual-review warning rather than a false automated pass claim.
+- Integrated validation passes typecheck, lint, the 31-route production build and `38/38` tests. Asset/font budgets pass `11/11`; customer-copy and locked-truth checks pass `8/8` across all 30 customer routes.
+- Bounded contract output remains explicit: provenance is `63/63`, taxonomy is `5/5`, and all `124` route-width images are captured but not champion-reviewed. The token checker recognizes and individually documents all `98/98` active variables with `0` pending inventory.
+- State advances to `CONV003_MF09_MF10_CANDIDATE_VERIFIED · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.
+- Champion approval has not occurred. Figma publication, Code Connect, production adoption, commerce/evidence/inventory/checkout/payment integration, telemetry and release remain blocked behind the exact MF-10 artifact and separate MF++ authorization.
+- Deployment remains `NONE`; runtime authority remains `NONE`.
+
+## 2026-08-12 — CONV-003 artifact review and executable Figma code bridge
+
+- Reclassified MF-09 `881:2675` and MF-10 `888:304` accurately as execution/control receipts rather than visual-approval surfaces (`DEC-VISUAL-REVIEW-001`).
+- Added eight unpublished Page 23 review boards with direct visual evidence for Homepage `921:2675`, Shop `921:2682`, PDP `921:2689`, OpenLab `921:2696`, evidence lifecycle `921:2703`, transactions `921:2710`, supporting routes `921:2717` and native component states `921:2724`.
+- Corrected bounded Figma defects discovered in the audit: Vertical mobile `743:158` and Featured mobile `743:393` now reflow identity/status content without collision; FC-01 `637:3` reflects 98 variables, `#F8FAFC` family truth, current taxonomy and gates; Dossier `750:182` no longer exposes the redundant clipped series label. The PDP and OpenLab visual-review images were refreshed after the Dossier correction (`DEC-FIGMA-CORRECTION-001`).
+- Corrected the CC registry at `911:2629` to actual repository paths, route spellings, Shop instance `765:98` and Featured source `743:282`, and explicit PR ancestry.
+- Added the repository-owned Code Connect substitute at `authority/FIGMA-CODE-BRIDGE.json`, a typed React projection, identical `/.well-known/oluk-figma-code-bridge.json` resource and executable proof (`DEC-CODE-BRIDGE-001`). Commit `67a43c93da22b5125a379d541a6444aecfa83ebf` passes `201/201` mapping checks and `41/41` integrated tests.
+- Added a recursive transaction import-graph and dependency guard. The eight static bag/checkout/post-purchase routes have no form submission, fetch/AJAX, socket, storage, server action, Woo, payment SDK, Initiator, tools-service or telemetry callback.
+- Appended the matching native Figma Page 25 receipt at `929:304`; it records the same review nodes, corrections, executable-bridge evidence and closed gates without claiming approval or publication.
+- Official Code Connect was not invoked. No Figma library was published, no service was deployed, no runtime owner was mutated, and no PR was merged. All artifacts remain `HUMAN_REVIEW_REQUIRED · UNPUBLISHED`.

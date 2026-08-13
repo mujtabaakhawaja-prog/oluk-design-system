@@ -11,13 +11,13 @@ const routes = [
   ["/about", "Quality, made visible."],
   ["/about/evidence-os", "A clearer path from product to proof."],
   ["/open-lab", "Independent evidence, connected to every product."],
-  ["/open-lab/records", "Every batch. Every report. Public."],
-  ["/open-lab/records/source-bound-record", "MK-2866 · May 2026"],
+  ["/open-lab/records", "Every product. Its available record path."],
+  ["/open-lab/records/source-bound-record", "MK-2866 evidence record"],
   ["/open-lab/dossier/mk-2866", "MK-2866 product dossier."],
   ["/open-lab/batch-lookup", "Find a batch record."],
-  ["/open-lab/methodology", "How finished products are verified."],
+  ["/open-lab/methodology", "How finished-product records are read."],
   ["/open-lab/source-chain", "From finished product to original report."],
-  ["/open-lab/compare", "Compare finished-product records."],
+  ["/open-lab/compare", "Compare finished-product evidence paths."],
 ];
 
 const customerRoutes = routes.filter(([pathname]) => pathname !== "/review");
@@ -220,10 +220,11 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
     assert.match(openLabText, new RegExp(escapeRegExp(lens)), `OpenLab lens: ${lens}`);
   }
 
-  const source = await readFile(new URL("../app/experience-lab.tsx", import.meta.url), "utf8");
-  const homeHero = source.match(/function HomeHero\(\)[\s\S]*?\n}\n\nfunction CompoundFamilies/)?.[0] ?? "";
-  assert.match(source, /function HeroDecisionSurface\(\)/, "purpose-built hero decision surface exists");
-  assert.match(homeHero, /<HeroDecisionSurface\s*\/>/, "homepage uses the purpose-built surface");
+  const routeSource = await readFile(new URL("../app/customer-routes.tsx", import.meta.url), "utf8");
+  const heroSource = await readFile(new URL("../app/design-system/product-decision-hero.tsx", import.meta.url), "utf8");
+  const homeHero = routeSource.match(/export function HomeRoute\(\)[\s\S]*?\n}\n\nexport function ProductRoute/)?.[0] ?? "";
+  assert.match(heroSource, /export function HeroDecisionSurface\(/, "purpose-built hero decision surface exists");
+  assert.match(homeHero, /<ProductDecisionHero\b/, "homepage uses the shared purpose-built hero");
   assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
 });
 
@@ -268,6 +269,7 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   }
   assert.doesNotMatch(candidateTokens, /shadow-arc/i, "archived two-layer elevation must not remain active");
   assert.match(candidateTokens, /--oluk-media-gradient:\s*linear-gradient\(70deg,\s*#f8fbff\s+5%,\s*#e4ecfa\s+100%\)/i, "media gradient token must use MF-01A diagonal stops");
+  assert.match(candidateTokens, /--oluk-media-contact-shelf-gradient:\s*linear-gradient\(180deg,\s*#ffffff\s+0%,\s*#e6edfa\s+100%\)/i, "contact shelf token must use the second governed MF-01A gradient");
   assert.match(candidateCss, /\.oluk-card--compact\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-compact\)/i);
   assert.match(candidateCss, /\.oluk-card--vertical,[\s\S]*?\.oluk-card--featured\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-card\)/i);
   assert.match(candidateCss, /\.oluk-card--purchase\s*\{[^}]*box-shadow:\s*var\(--oluk-shadow-purchase\)/i);
@@ -278,6 +280,11 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.match(css, /body:has\(\.experience-lab--candidate-review\),\s*\.experience-lab--candidate-review\s*\{\s*overflow-x:\s*visible\s*;/i, "candidate route must expose real document overflow");
 
   assert.match(candidateCss, /\.oluk-media-chamber\s*\{[\s\S]*?background:\s*var\(--oluk-media-gradient\)/i, "media chamber must use the MF-01A atmospheric gradient, not a solid fill");
+  assert.match(candidateCss, /\.oluk-candidate-media-chamber::before\s*\{[^}]*border:[^;]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*box-shadow:[^}]*inset/i, "candidate chamber restores the luminous halo");
+  assert.match(candidateCss, /\.oluk-candidate-media-chamber::after\s*\{[^}]*var\(--oluk-border-identity\)[^}]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.42\)/i, "candidate chamber restores the identity pane");
+  assert.match(candidateCss, /\.oluk-candidate-media-contact-shelf\s*\{[^}]*var\(--oluk-border-inner\)[^}]*background:\s*var\(--oluk-media-contact-shelf-gradient\)/i, "candidate chamber restores the contact shelf");
+  assert.match(candidateCss, /\.oluk-card--vertical,[\s\S]*?\.oluk-card--featured\s*\{[^}]*border-color:\s*var\(--oluk-border-outer\)/i, "Vertical and Featured outer wrappers use border/outer");
+  assert.match(candidateCss, /\.oluk-candidate-series\s*\{[^}]*border:[^;]*var\(--oluk-border-family-bg\)[^}]*background:\s*var\(--oluk-surface-family\)/i, "family markers use the MF-01A family surface hierarchy");
   assert.doesNotMatch(candidateCss, /\.oluk-candidate-content-plane[\s\S]*?linear-gradient/i, "content planes remain white rather than inventing a gradient");
   assert.doesNotMatch(candidateTokens, /shadow-content-plane/i, "nested content planes do not create a second card elevation");
 
@@ -305,6 +312,62 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.product-grid\s*\{[\s\S]*?grid-template-columns:\s*1fr\s*;/i);
   assert.match(css, /@media \(max-width: 540px\)[\s\S]*?\.shell\s*\{[\s\S]*?padding-inline:\s*16px\s*;/i);
   assert.doesNotMatch(css, /prefers-color-scheme:\s*dark/i);
+});
+
+test("adopts the MF-01A qualitative-chip and media grammar on customer routes", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
+  const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
+  const iconSource = await readFile(new URL("../app/design-system/qualitative-icon.tsx", import.meta.url), "utf8");
+  const mediaSource = await readFile(new URL("../app/design-system/product-media-chamber.tsx", import.meta.url), "utf8");
+  const mediaCss = await readFile(new URL("../app/design-system/product-media-chamber.module.css", import.meta.url), "utf8");
+  const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
+  const worker = await loadWorker();
+  const productHtml = await renderHtml(worker, "/product/mk-2866");
+
+  for (const token of [
+    "--oluk-surface-family: #f8fafc",
+    "--oluk-border-chip: #d4e0f2",
+    "--oluk-border-outer: #becfe9",
+    "--oluk-border-identity: #bdd0f1",
+    "--oluk-border-inner: #b4caf0",
+    "--oluk-border-family-bg: #d9e3f1",
+    "--oluk-text-chip-value: #17213f",
+    "--oluk-media-gradient: linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%)",
+    "--oluk-media-contact-shelf-gradient: linear-gradient(180deg, #ffffff 0%, #e6edfa 100%)",
+  ]) {
+    assert.match(css, new RegExp(escapeRegExp(token)), `customer token ${token}`);
+  }
+
+  assert.match(chipSource, /export function QualitativeChip\(/, "customer chips use a reusable component");
+  assert.match(chipSource, /<QualitativeIcon kind=\{kind\} \/>/, "customer chips use the mapped qualitative icon component");
+  assert.match(chipSource, /<ul[^>]*aria-label=\{label\}[^>]*>[\s\S]*?<QualitativeChip\b/, "customer chip collection renders independent component instances");
+  for (const kind of ["class", "form", "quality", "tested"]) {
+    assert.match(iconSource, new RegExp(`/assets/candidate/qualitative/${kind}\\.svg`), `${kind} chip uses its authored semantic SVG`);
+  }
+  assert.match(cardSource, /<ProductMediaChamber\b/, "customer cards use the shared authored media chamber");
+  assert.match(mediaSource, /data-authored-layers="outer-gradient luminous-halo identity-pane contact-shelf product"/, "shared media chamber exposes the complete authored layer contract");
+  assert.match(mediaSource, /className=\{classes\(styles\.contactShelf, "oluk-product-media-chamber__contact-shelf"\)\}/, "shared media chamber owns the contact-shelf layer");
+  assert.doesNotMatch(cardSource, /className="media-orbit"/, "the invented circular orbit is removed from Vertical and Featured customer cards");
+  assert.match(layout, /@fontsource\/inter\/500\.css/, "Inter Medium is loaded rather than synthesized");
+
+  assert.match(css, /\.product-commerce-card\s*\{[^}]*border:\s*1px solid var\(--oluk-border-outer\)/i, "customer cards use the MF-01A outer-wrapper border");
+  assert.match(mediaCss, /\.chamber\s*\{[^}]*background:\s*var\(--oluk-media-gradient/i, "bounded product chambers use the governed MF-01A gradient");
+  assert.doesNotMatch(mediaCss, /radial-gradient/i, "product chambers do not layer an invented radial fill over the governed gradient");
+  assert.match(mediaCss, /\.halo\s*\{[^}]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*inset/i, "customer chambers restore the luminous halo");
+  assert.match(mediaCss, /\.identityPane\s*\{(?=[^}]*var\(--oluk-border-identity)(?=[^}]*rgba\(255,\s*255,\s*255,\s*0\.42\))[^}]*\}/i, "customer chambers restore the identity pane");
+  assert.match(mediaCss, /\.contactShelf\s*\{[\s\S]*?var\(\s*--oluk-media-contact-shelf-gradient[\s\S]*?var\(--oluk-border-inner[\s\S]*?\}/i, "customer chambers restore the contact shelf");
+  assert.match(css, /\.product-commerce-card \.product-series\s*\{(?=[^}]*var\(--oluk-surface-family\))(?=[^}]*var\(--oluk-border-family-bg\))[^}]*\}/i, "customer family marker uses the MF-01A family surface and border");
+  assert.match(css, /\.metric-rail\s*\{[^}]*border:\s*1px solid var\(--line-strong\)[^}]*gap:\s*0[^}]*overflow:\s*hidden/i, "customer MetricRail is a joined bordered rail, not generic pills");
+  assert.match(css, /\.metric-rail > div \+ div\s*\{[^}]*border-left:\s*1px solid var\(--line-strong\)/i, "customer MetricRail uses governed internal dividers");
+  assert.match(css, /\.qualitative-chips\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/i, "qualitative attributes form a 2x2 responsive grid");
+  assert.match(css, /\.qualitative-chip\s*\{[^}]*background:\s*var\(--white\)[^}]*border:\s*1px solid var\(--oluk-border-chip\)[^}]*border-radius:\s*10px/i, "every qualitative chip is an independent MF-01A container");
+  assert.match(css, /\.qualitative-chip dt\s*\{[^}]*color:\s*var\(--ink-muted\)[^}]*font-size:\s*11px[^}]*font-weight:\s*500[^}]*letter-spacing:\s*0\.66px[^}]*text-transform:\s*uppercase/i, "chip labels preserve the 11px Medium muted uppercase hierarchy");
+  assert.match(css, /\.qualitative-chip dd\s*\{[^}]*color:\s*var\(--oluk-text-chip-value\)[^}]*font-size:\s*12px[^}]*font-weight:\s*700[^}]*letter-spacing:\s*0\.24px/i, "chip values preserve the 12px Bold navy hierarchy");
+  assert.doesNotMatch(css, /\.qualitative-chips\s*>\s*div\s*\+\s*div/, "the rejected joined-rail divider pattern is absent");
+
+  assert.match(productHtml, /<ul(?=[^>]*\bclass=["'][^"']*\bqualitative-chips\b[^"']*["'])(?=[^>]*\baria-label=["']Product attributes["'])[^>]*>/i, "rendered product route exposes the qualitative attribute list");
+  assert.equal((productHtml.match(/<li\b[^>]*\bclass=["'][^"']*\bqualitative-chip\b[^"']*["'][^>]*>/gi) ?? []).length >= 4, true, "rendered product route includes independent qualitative-chip instances");
 });
 
 test("renders owner-review candidate anchors, direct Figma sources, and all comparison pages", async () => {

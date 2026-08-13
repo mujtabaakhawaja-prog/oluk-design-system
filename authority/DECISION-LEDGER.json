@@ -144,6 +144,104 @@
       "sources": ["626:11821", "626:11980"],
       "appliesTo": ["ProductCommerceCard media chambers", "bounded media chambers", "Codex Sites media CSS"],
       "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-002",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "The MF-01A atmospheric media gradient remains governed by DEC-MEDIA-001 even though its #F8FBFF and #E4ECFA paint stops are literal Figma gradient-stop colors. This is an explicit bounded exception to the otherwise zero-invented-color and variable-binding rule: components must use the exact two-stop paint recipe, the exception must be visible in validation receipts, and no additional unbound paint color is authorized.",
+      "sources": ["626:11821", "626:11822", "626:11823", "626:11824"],
+      "appliesTo": ["bounded ProductCommerceCard media chambers", "Figma gradient paint validation", "Codex Sites media-gradient token", "CONV-002 receipts"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-FIDELITY-001"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-003",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "The complete MF-01A atmospheric media recipe contains two governed literal gradients: the outer chamber #F8FBFF to #E4ECFA and the contact shelf #FFFFFF to #E6EDFA. Both exceptions are limited to the exact authored media-chamber construction. Every other component fill and stroke remains required to resolve through the active convergence variables.",
+      "sources": ["626:11821", "626:11822", "626:11823", "626:11824", "844:20800", "844:20801", "844:20802", "844:20803", "844:20804", "844:20805", "844:20806", "844:20807", "844:20808", "844:20809", "844:20810", "844:20811"],
+      "appliesTo": ["bounded ProductCommerceCard media chambers", "Figma outer chamber paint", "Figma contact shelf paint", "CONV-002 receipts"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-002"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-TAXONOMY-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Shop discovery preserves the runtime-owned family taxonomy (SARMs, Research Chemicals, Prohormones and Stacks) and models goal, form, servings or pack size, and availability as independent, combinable facets. The established header navigation remains the shell information architecture; category navigation and filter facets must not be collapsed into one mixed taxonomy. Figma and Codex Sites consume a read-only contract and do not become live catalogue or inventory authority.",
+      "sources": ["authority/SHOP-TAXONOMY-CONTRACT.json", "561:41860", "754:18224", "765:50"],
+      "appliesTo": ["SiteHeader", "Shop", "commerce discovery", "goal-led discovery", "taxonomy fixtures", "Codex Sites"],
+      "runtimeOwnership": ["Woo catalogue families and product fields", "Shopper/runtime header navigation", "runtime inventory and purchasability"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-FIXTURE-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Repeated MK-2866 Vertical-card fixture data is acceptable when the review job is to prove the shared component contract, geometry, material, responsive behavior or states. Product-slot diversification belongs to runtime publication and catalogue data; it is not required to validate the Vertical contract and never authorizes fabricated product truth.",
+      "sources": ["626:11760", "743:50", "763:50", "764:50", "765:50", "766:50"],
+      "appliesTo": ["ProductCommerceCard / Vertical", "component review boards", "Homepage", "Shop", "PDP", "deterministic fixtures"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-RUN-002",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "MF runs are paired Figma and Codex Sites candidate runs. Each run advances design, commerce, experience and UX/UI together through synchronized Figma, repository and proof projections. This paired candidate work finishes what Figma Make began, but it remains presentation authority only: publication, production adoption and every live runtime owner remain separately gated behind artifact-specific MF-10 champion approval and a later independently authorized MF++ packet.",
+      "appliesTo": ["MF-03A", "MF-03B", "MF-04", "MF-05", "MF-05A", "MF-06", "MF-07", "MF-09", "MF-10", "Codex Sites", "Figma"],
+      "clarifies": ["DEC-RUN-001", "DEC-GATE-001", "DEC-PROMPT-001"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-MEDIA-004",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Every canonical card that owns a media chamber must use a populated, confirmed product render to prove adaptive crop, scale, safe area and the MF-01A atmospheric construction. Empty placeholder chambers are rejected for adaptive proof. PurchasePanel contains no media chamber by design, so media-population acceptance is not applicable to PurchasePanel; it must not receive an invented chamber.",
+      "sources": ["626:11821", "742:50", "743:50", "743:281", "743:520", "745:50", "773:141"],
+      "appliesTo": ["ProductMediaChamber", "Compact", "Vertical", "Featured", "Relation", "ProductDecisionHero", "media stress proof"],
+      "clarifies": ["DEC-MEDIA-001", "DEC-MEDIA-003"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-CODE-BRIDGE-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Use a repository-owned, executable Figma-to-code bridge as the current Code Connect workaround. The bridge maps exact Figma nodes to typed React exports, route sources and governed tokens; exposes an identical read-only JSON resource for Codex, MCP, SSR-inventory or a later FastAPI adapter; and rejects stale pseudo paths by execution. Official Code Connect mapping, hosting, publication and runtime adoption remain separately gated and were not invoked.",
+      "sources": ["911:2629", "authority/FIGMA-CODE-BRIDGE.json", "authority/receipts/CONV-003-CODE-BRIDGE.md", "67a43c93da22b5125a379d541a6444aecfa83ebf"],
+      "appliesTo": ["Figma MCP ingestion", "Codex Sites component discovery", "component provenance", "route provenance", "token provenance", "future MCP or FastAPI adapter"],
+      "clarifies": ["DEC-RUN-002", "DEC-GATE-001"],
+      "supersedes": [],
+      "guardrails": ["official Code Connect not invoked", "no Figma publication", "no deployment", "no runtime callback", "HUMAN_REVIEW_REQUIRED"]
+    },
+    {
+      "id": "DEC-VISUAL-REVIEW-001",
+      "recordedDate": "2026-08-12",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "MF-09 node 881:2675 and MF-10 node 888:304 are execution and control receipts, not sufficient visual-approval surfaces. Champion visual review must use artifact-specific boards that place native Figma evidence beside validated Sites captures, plus direct canonical component and route nodes. Receipt validation never implies champion approval.",
+      "sources": ["881:2675", "888:304", "921:2675", "921:2682", "921:2689", "921:2696", "921:2703", "921:2710", "921:2717", "921:2724"],
+      "appliesTo": ["MF-09", "MF-10", "visual approval", "artifact-specific review"],
+      "clarifies": ["DEC-GATE-001", "DEC-RUN-002"],
+      "supersedes": []
+    },
+    {
+      "id": "DEC-FIGMA-CORRECTION-001",
+      "recordedDate": "2026-08-12",
+      "actor": "codex_agent",
+      "status": "IMPLEMENTED_VERIFIED_HUMAN_REVIEW_REQUIRED",
+      "decision": "Corrected the bounded Figma review defects found during the MF-09/MF-10 audit: Vertical and Featured mobile identity/status regions now reflow without collision; FC-01 reflects the 98-variable CONV-003 projection, #F8FAFC family surface and current taxonomy/gates; the redundant clipped Dossier series label is hidden; and Page 23 now contains artifact-specific visual review boards. No component, variable or library was promoted or published.",
+      "sources": ["743:158", "743:393", "637:3", "750:182", "921:2675", "921:2682", "921:2689", "921:2696", "921:2703", "921:2710", "921:2717", "921:2724", "929:304"],
+      "appliesTo": ["Vertical mobile", "Featured mobile", "FC-01", "Dossier", "Proof Boards"],
+      "clarifies": ["DEC-FIDELITY-001", "DEC-VISUAL-REVIEW-001"],
+      "supersedes": []
     }
   ]
 }

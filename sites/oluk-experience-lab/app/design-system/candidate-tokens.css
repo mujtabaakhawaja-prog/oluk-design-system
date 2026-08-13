@@ -17,6 +17,7 @@
   --oluk-text-muted: #64718a;
   --oluk-text-chip-value: #17213f;
   --oluk-text-on-inverse: #ffffff;
+  --oluk-text-on-inverse-muted: #b9c7dd;
   --oluk-cobalt: #0057ff;
   --oluk-cobalt-alt: #256dff;
   --oluk-cobalt-focus: rgba(0, 87, 255, 0.28);
@@ -43,6 +44,7 @@
   --oluk-shadow-relation: 0 12px 25px rgba(15, 26, 51, 0.12);
 
   --oluk-media-gradient: linear-gradient(70deg, #f8fbff 5%, #e4ecfa 100%);
+  --oluk-media-contact-shelf-gradient: linear-gradient(180deg, #ffffff 0%, #e6edfa 100%);
 
   --oluk-font-display: "Plus Jakarta Sans", sans-serif;
   --oluk-font-body: "Inter", sans-serif;
@@ -68,9 +70,13 @@
   --oluk-space-10: 40px;
   --oluk-space-12: 48px;
   --oluk-space-16: 64px;
+  --oluk-space-18: 72px;
   --oluk-space-24: 96px;
   --oluk-content-max: 1344px;
   --oluk-grid-gap: 20px;
+  --oluk-page-gutter-desktop: 48px;
+  --oluk-page-gutter-tablet: 32px;
+  --oluk-page-gutter-mobile: 16px;
   --oluk-gutter-desktop: 48px;
   --oluk-gutter-tablet: 32px;
   --oluk-gutter-mobile: 16px;
@@ -84,4 +90,26 @@
   --oluk-motion-fast: 120ms;
   --oluk-motion-standard: 180ms;
   --oluk-motion-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Exact WEB-syntax projection for all 22 governed typography variables. */
+  --oluk-type-display-xl-size: 56px;
+  --oluk-type-display-xl-line: 60px;
+  --oluk-type-display-xl-track: -4px;
+  --oluk-type-display-lg-size: 40px;
+  --oluk-type-display-lg-line: 44px;
+  --oluk-type-display-lg-track: -3.2px;
+  --oluk-type-display-md-size: 28px;
+  --oluk-type-display-md-line: 34px;
+  --oluk-type-display-md-track: -2.4px;
+  --oluk-type-body-lg-size: 18px;
+  --oluk-type-body-lg-line: 28px;
+  --oluk-type-body-size: 16px;
+  --oluk-type-body-line: 24px;
+  --oluk-type-body-sm-size: 15px;
+  --oluk-type-body-sm-line: 22px;
+  --oluk-type-label-size: 13px;
+  --oluk-type-label-line: 18px;
+  --oluk-type-eyebrow-size: 12px;
+  --oluk-type-eyebrow-line: 16px;
+  --oluk-type-eyebrow-track: 0.12em;
 }

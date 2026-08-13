@@ -1,0 +1,728 @@
+.transaction {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+.intro {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(0, 87, 255, 0.075), transparent 34%),
+    var(--canvas);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 54px;
+}
+
+.progress {
+  margin: 30px 0 50px;
+}
+
+.progress ol {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.progress li {
+  border-top: 2px solid var(--line);
+  min-width: 0;
+}
+
+.progress li[data-complete],
+.progress li:has(a[aria-current="step"]) {
+  border-color: var(--cobalt);
+}
+
+.progress a {
+  color: var(--ink-muted);
+  display: flex;
+  font-size: 12px;
+  font-weight: 800;
+  gap: 9px;
+  letter-spacing: 0.08em;
+  padding: 13px 8px 0 0;
+  text-transform: uppercase;
+}
+
+.progress a[aria-current="step"],
+.progress li[data-complete] a {
+  color: var(--cobalt);
+}
+
+.progress a span {
+  font-family: var(--font-display), sans-serif;
+}
+
+.introCopy {
+  max-width: 820px;
+}
+
+.introCopy h1 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(48px, 7vw, 86px);
+  letter-spacing: -0.07em;
+  line-height: 0.96;
+}
+
+.introCopy p {
+  color: var(--ink-muted);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: 18px;
+  max-width: 62ch;
+}
+
+.content {
+  padding: 70px 0 112px;
+}
+
+.layout,
+.paymentLayout {
+  align-items: start;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 0.42fr);
+}
+
+.primary {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.sectionLabel {
+  color: var(--cobalt);
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.productLine {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-compact);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  padding: 26px;
+}
+
+.productMark {
+  align-items: center;
+  aspect-ratio: 1;
+  background: var(--oluk-media-gradient);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  color: var(--cobalt);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.productMark span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.productMark strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+}
+
+.productIdentity > span {
+  color: var(--cobalt);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.productIdentity h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.05em;
+  margin-top: 7px;
+}
+
+.productIdentity > p {
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.productIdentity :global(.metric-rail) {
+  margin-top: 18px;
+  max-width: 400px;
+}
+
+.productPrice {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.productPrice > strong {
+  color: var(--cobalt);
+  font-family: var(--font-display), sans-serif;
+  font-size: 36px;
+  letter-spacing: -0.05em;
+}
+
+.quantity {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  overflow: hidden;
+}
+
+.quantity > * {
+  align-items: center;
+  background: var(--white);
+  border: 0;
+  color: var(--cobalt);
+  display: flex;
+  height: 42px;
+  justify-content: center;
+}
+
+.quantity > * + * {
+  border-left: 1px solid var(--line);
+}
+
+.quantity output {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.summary,
+.formPanel,
+.handoffPanel,
+.paymentWindow,
+.retryPanel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow-purchase);
+  padding: 32px;
+}
+
+.summary {
+  position: sticky;
+  top: 28px;
+}
+
+.summary[data-compact] {
+  box-shadow: var(--shadow-compact);
+}
+
+.summary dl {
+  margin-top: 24px;
+}
+
+.summary dl > div {
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.summary dt {
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+.summary dd {
+  font-weight: 800;
+  text-align: right;
+}
+
+.summary .total {
+  border-color: var(--cobalt);
+  margin-top: 8px;
+  padding-top: 22px;
+}
+
+.summary .total dt {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.summary .total dd {
+  color: var(--cobalt);
+  font-family: var(--font-display), sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+.summaryAction {
+  margin-top: 20px;
+}
+
+.summaryAction :global(.button) {
+  width: 100%;
+}
+
+.labLink {
+  color: var(--cobalt);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 22px;
+}
+
+.bagHelp {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 22px 6px 0;
+}
+
+.bagHelp div {
+  display: grid;
+  gap: 5px;
+}
+
+.bagHelp span {
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.bagHelp a,
+.continueRow > a:not(:global(.button)),
+.confirmationHeading a,
+.paymentWindow > a {
+  color: var(--cobalt);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.formPanel {
+  box-shadow: var(--shadow-compact);
+}
+
+.panelHeading {
+  align-items: start;
+  display: flex;
+  gap: 18px;
+}
+
+.panelHeading > span {
+  color: var(--cobalt);
+  font-family: var(--font-display), sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  padding-top: 5px;
+}
+
+.panelHeading h2,
+.handoffPanel h2,
+.retryPanel h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.panelHeading p,
+.handoffPanel > p,
+.retryPanel > p {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.fieldGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field > span {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.field input {
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 52px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.field input:focus-visible {
+  outline: 3px solid rgba(0, 87, 255, 0.24);
+  outline-offset: 2px;
+}
+
+.continueRow {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding-top: 6px;
+}
+
+.choice {
+  align-items: center;
+  border: 2px solid var(--cobalt);
+  border-radius: 18px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  margin-top: 26px;
+  padding: 22px;
+}
+
+.choice input {
+  accent-color: var(--cobalt);
+  height: 20px;
+  width: 20px;
+}
+
+.choice > span {
+  display: grid;
+  gap: 5px;
+}
+
+.choice small {
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+.choice b {
+  color: var(--cobalt);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.handoffPanel {
+  padding: clamp(34px, 6vw, 64px);
+}
+
+.handoffPanel h2 {
+  font-size: clamp(38px, 5vw, 60px);
+  margin: 16px 0;
+  max-width: 12ch;
+}
+
+.handoffPanel > p {
+  font-size: 17px;
+  max-width: 60ch;
+}
+
+.handoffPanel ol {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 36px 0;
+  padding: 0;
+}
+
+.handoffPanel li {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 48px minmax(0, 1fr);
+  padding: 20px 0;
+}
+
+.handoffPanel li > span {
+  color: var(--cobalt);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+}
+
+.handoffPanel li p {
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+.paymentLayout {
+  grid-template-columns: minmax(0, 0.82fr) minmax(330px, 0.38fr);
+  margin-inline: auto;
+  max-width: 1080px;
+}
+
+.paymentWindow {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(42px, 8vw, 84px);
+  text-align: center;
+}
+
+.paymentLock {
+  align-items: center;
+  background: var(--oluk-inventory-green-soft, #ecfdf3);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  border-radius: 50%;
+  color: var(--oluk-inventory-green, #15803d);
+  display: flex;
+  font-size: 26px;
+  font-weight: 800;
+  height: 62px;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 62px;
+}
+
+.paymentWindow h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  margin-top: 24px;
+}
+
+.paymentAmount {
+  color: var(--cobalt);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(64px, 10vw, 100px);
+  letter-spacing: -0.08em;
+  line-height: 1;
+  margin: 10px 0 24px;
+}
+
+.paymentWindow p {
+  color: var(--ink-muted);
+  line-height: 1.65;
+  max-width: 48ch;
+}
+
+.paymentWindow :global(.button) {
+  margin-top: 28px;
+  min-width: 220px;
+}
+
+.paymentWindow > a {
+  margin-top: 22px;
+}
+
+.outcome {
+  align-items: center;
+  border: 1px solid;
+  border-radius: 24px;
+  display: flex;
+  gap: 20px;
+  padding: 26px;
+}
+
+.outcome[data-tone="success"] {
+  background: var(--oluk-inventory-green-soft, #ecfdf3);
+  border-color: rgba(21, 128, 61, 0.28);
+  color: var(--oluk-inventory-green, #15803d);
+}
+
+.outcome[data-tone="attention"] {
+  background: var(--cobalt-soft);
+  border-color: var(--line-strong);
+  color: var(--cobalt);
+}
+
+.outcome > span {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 22px;
+  font-weight: 800;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+
+.outcome strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+
+.outcome p {
+  color: var(--oluk-text-secondary, #53617d);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.confirmationHeading {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.confirmationHeading > div {
+  display: grid;
+  gap: 10px;
+}
+
+.confirmationHeading > div > strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 34px;
+  letter-spacing: -0.05em;
+}
+
+.nextSteps {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nextSteps article {
+  border-top: 2px solid var(--cobalt);
+  padding: 22px 4px 0;
+}
+
+.nextSteps article > span {
+  color: var(--cobalt);
+  font-family: var(--font-display), sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.nextSteps h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+  margin: 18px 0 8px;
+}
+
+.nextSteps p {
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.retryPanel > .productLine {
+  margin-top: 30px;
+}
+
+.retryPanel > .continueRow {
+  margin-top: 26px;
+}
+
+@media (max-width: 980px) {
+  .layout,
+  .paymentLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .intro {
+    padding-bottom: 40px;
+  }
+
+  .progress {
+    margin: 24px 0 38px;
+  }
+
+  .progress a {
+    display: grid;
+    font-size: 9px;
+    gap: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .introCopy h1 {
+    font-size: 50px;
+  }
+
+  .introCopy p {
+    font-size: 15px;
+  }
+
+  .content {
+    padding: 44px 0 76px;
+  }
+
+  .productLine {
+    align-items: start;
+    grid-template-columns: 76px minmax(0, 1fr);
+    padding: 20px;
+  }
+
+  .productPrice {
+    align-items: center;
+    flex-direction: row-reverse;
+    grid-column: 1 / -1;
+    justify-content: space-between;
+  }
+
+  .productIdentity h2 {
+    font-size: 26px;
+  }
+
+  .productIdentity :global(.metric-rail) {
+    margin-left: -100px;
+    margin-top: 28px;
+    width: calc(100% + 100px);
+  }
+
+  .summary,
+  .formPanel,
+  .handoffPanel,
+  .paymentWindow,
+  .retryPanel {
+    border-radius: 22px;
+    padding: 24px;
+  }
+
+  .fieldGrid,
+  .nextSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .continueRow,
+  .bagHelp,
+  .confirmationHeading {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .continueRow :global(.button) {
+    width: 100%;
+  }
+
+  .choice {
+    align-items: start;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .choice b {
+    grid-column: 2;
+  }
+
+  .handoffPanel h2 {
+    font-size: 42px;
+  }
+
+  .paymentWindow {
+    padding-block: 44px;
+  }
+}
