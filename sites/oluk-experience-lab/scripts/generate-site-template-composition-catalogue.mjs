@@ -68,7 +68,7 @@ const compositionFor = (route) => {
     candidateCompositions: template.candidateLayoutIds.map((id) => ({
       id,
       ...source.candidateLayouts[id],
-      sectionOrder: sections,
+      sectionOrder: sections.map(({ id: sectionId }) => sectionId),
       state: "ARCHITECTURE_DEFINED",
       ownerSelected: false,
     })),

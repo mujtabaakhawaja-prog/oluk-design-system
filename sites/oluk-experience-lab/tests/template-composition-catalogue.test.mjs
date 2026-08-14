@@ -29,6 +29,7 @@ test("the Sites template catalogue gives every ledger route three unselected cus
       assert.ok(candidate.commercialThesis);
       assert.ok(candidate.differentiator);
       assert.equal(candidate.tradeoffs.length, 2);
+      assert.deepEqual(candidate.sectionOrder, route.plannedSectionOrder.map(({ id }) => id));
     }
     assert.ok(route.plannedSectionOrder.length > 0);
     for (const section of route.plannedSectionOrder) {
