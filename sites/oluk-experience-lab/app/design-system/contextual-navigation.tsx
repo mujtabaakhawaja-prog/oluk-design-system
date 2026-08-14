@@ -5,12 +5,25 @@ import styles from "./site-header.module.css";
 const checkoutStepByRoute = {
   bag: "information",
   checkout: "information",
+  information: "information",
   delivery: "delivery",
   review: "review",
   payment: "payment",
+  "payment-details": "payment",
+  "payment-handoff": "payment",
+  "order-pay": "payment",
   processing: "payment",
+  pending: "payment",
+  failure: "payment",
+  retry: "payment",
   confirmation: "confirmation",
   tracking: "confirmation",
+  "order-history": "confirmation",
+  "order-details": "confirmation",
+  receipt: "confirmation",
+  return: "confirmation",
+  refund: "confirmation",
+  cancelled: "confirmation",
 } as const;
 
 function checkoutStep(route: string) {

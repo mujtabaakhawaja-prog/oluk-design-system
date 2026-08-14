@@ -23,5 +23,5 @@ export function generateStaticParams() { return stages.map((stage) => ({ stage }
 
 export default function CheckoutStagePage({ params }: { params: { stage: string } }) {
   const stage = stageMap[params.stage as keyof typeof stageMap] ?? "details";
-  return <CustomerSiteChrome route="checkout"><main data-live-authority="false"><TransactionPresentation stage={stage} /></main></CustomerSiteChrome>;
+  return <CustomerSiteChrome route={`checkout-${params.stage}`}><main data-live-authority="false"><TransactionPresentation stage={stage} /></main></CustomerSiteChrome>;
 }

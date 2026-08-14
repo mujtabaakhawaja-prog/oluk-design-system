@@ -171,6 +171,21 @@ test("post-purchase aliases reuse the canonical lifecycle without a competing st
   assert.match(source, /orderReference=\{orderId \?\? "OL-10428"\}/);
   assert.doesNotMatch(source, /RecommendationCard|RestockCard|page-hero|post-purchase-grid/);
   assert.match(shell, /<main data-live-authority="false">[\s\S]*?<PostPurchaseSurface/);
+  assert.match(shell, /route=\{`checkout-\$\{checkoutContext\}`\}/);
+});
+
+test("checkout progress is route-aware and rendered once in the shared shell", async () => {
+  const transaction = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
+  const context = await readFile(new URL("design-system/contextual-navigation.tsx", appRoot), "utf8");
+  const dynamicStage = await readFile(new URL("checkout/[stage]/page.tsx", appRoot), "utf8");
+  const programRoutes = await readFile(new URL("program-routes.tsx", appRoot), "utf8");
+
+  assert.doesNotMatch(transaction, /CheckoutStepIndicator/, "the lifecycle body must not duplicate shell progress");
+  assert.match(dynamicStage, /route=\{`checkout-\$\{params\.stage\}`\}/);
+  assert.match(programRoutes, /route=\{`checkout-\$\{step\}`\}/);
+  for (const stage of ["information", "delivery", "review", "payment", "processing", "pending", "failure", "confirmation", "tracking", "receipt", "return", "refund"]) {
+    assert.match(context, new RegExp(`(?:\\"${stage}\\"|${stage}): \\"(?:information|delivery|review|payment|confirmation)\\"`), stage);
+  }
 });
 
 test("payment-focused stages contain no promotional continuation", async () => {

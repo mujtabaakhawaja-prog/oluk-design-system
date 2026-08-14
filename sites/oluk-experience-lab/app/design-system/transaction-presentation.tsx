@@ -6,7 +6,7 @@ import { mk2866Fixture } from "./product-fixtures";
 import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
 import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
 import { ProductCommerceCard } from "./product-commerce-card";
-import { CheckoutStepIndicator, RestockCard, type CheckoutStep } from "./program-components";
+import { RestockCard } from "./program-components";
 import { YourStackBuilder } from "./your-stack-builder";
 
 export type TransactionStage =
@@ -104,22 +104,8 @@ const stageHeadings = {
   },
 } as const satisfies Readonly<Record<TransactionStage, { title: string; copy: string }>>;
 
-const checkoutStepByStage: Partial<Record<TransactionStage, CheckoutStep>> = {
-  details: "information",
-  delivery: "delivery",
-  review: "review",
-  handoff: "payment",
-  "order-pay": "payment",
-  processing: "payment",
-  pending: "payment",
-  failure: "payment",
-  retry: "payment",
-  confirmation: "confirmation",
-};
-
 function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
   const heading = stageHeadings[stage];
-  const checkoutStep = checkoutStepByStage[stage];
   return (
     <section className={styles.intro}>
       <div className="shell">
@@ -137,9 +123,7 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
           eyebrow={stage === "bag" ? "Your order" : stage === "tracking" ? "Delivery progress" : "Order journey"}
           headingLevel="h1"
           title={heading.title}
-        >
-          {checkoutStep ? <CheckoutStepIndicator current={checkoutStep} /> : null}
-        </TransactionIntroCard>
+        />
       </div>
     </section>
   );
