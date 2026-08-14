@@ -367,6 +367,139 @@ async function lookupSuite(chromePort, baseUrl) {
   return targetSuite;
 }
 
+async function motionPreservationSuite(chromePort, baseUrl) {
+  const targetSuite = suite("sites-motion-preservation", "/?featured=rad-140", { width: 1440, height: 1000 });
+  const { client, targetId } = await createPage(chromePort);
+
+  try {
+    await setViewport(client, targetSuite.viewport);
+    await navigate(client, new URL(targetSuite.route, baseUrl).href);
+    await waitFor(client, `document.querySelector("#hero-product-stage") !== null`, "LockedHero hydration");
+
+    await proofCase(targetSuite, "hero-url-selection-restoration", async () => {
+      await waitFor(client, `document.querySelector("#hero-product-tab-rad-140")?.getAttribute("aria-selected") === "true"`, "RAD-140 featured state");
+      const evidence = await inspect(client, `({
+        selected: document.querySelector("[role='tab'][aria-selected='true']")?.textContent?.trim(),
+        heading: document.querySelector("#hero-product-stage")?.getAttribute("aria-labelledby"),
+        stateRestoration: document.querySelector("#hero")?.getAttribute("data-state-restoration"),
+        featured: new URLSearchParams(location.search).get("featured"),
+      })`);
+      return requireCondition(
+        evidence.selected === "RAD-140" && evidence.heading === "hero-product-tab-rad-140" && evidence.stateRestoration === "url-featured-product" && evidence.featured === "rad-140",
+        `hero URL restoration mismatch: ${JSON.stringify(evidence)}`,
+        evidence,
+      );
+    });
+
+    await proofCase(targetSuite, "hero-roving-tab-focus-and-next-control", async () => {
+      await inspect(client, `document.querySelector("#hero-product-tab-rad-140")?.focus()`);
+      await client.send("Input.dispatchKeyEvent", { type: "keyDown", key: "End", code: "End", windowsVirtualKeyCode: 35 });
+      await client.send("Input.dispatchKeyEvent", { type: "keyUp", key: "End", code: "End", windowsVirtualKeyCode: 35 });
+      await waitFor(client, `document.querySelector("#hero-product-tab-mk-677")?.getAttribute("aria-selected") === "true" && document.activeElement?.id === "hero-product-tab-mk-677"`, "hero End-key selection");
+      await inspect(client, `(() => {
+        const button = document.querySelector("button[aria-label='Next featured product']");
+        if (!(button instanceof HTMLButtonElement)) return false;
+        button.click();
+        return true;
+      })()`);
+      await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true"`, "hero next control wrap");
+      const evidence = await inspect(client, `({
+        selected: document.querySelector("[role='tab'][aria-selected='true']")?.textContent?.trim(),
+        focus: document.activeElement?.id,
+        featured: new URLSearchParams(location.search).get("featured"),
+      })`);
+      return requireCondition(
+        evidence.selected === "MK-2866" && evidence.featured === null,
+        `hero keyboard/control interaction mismatch: ${JSON.stringify(evidence)}`,
+        evidence,
+      );
+    });
+
+    await setViewport(client, { width: 390, height: 844 });
+    await navigate(client, new URL("/?featured=rad-140", baseUrl).href);
+    await waitFor(client, `document.querySelector("#hero-product-tab-rad-140")?.getAttribute("aria-selected") === "true"`, "mobile hero selection");
+
+    await proofCase(targetSuite, "hero-mobile-priority-and-reduced-motion", async () => {
+      await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
+      const evidence = await inspect(client, `(() => {
+        const stage = document.querySelector("#hero-product-stage");
+        const farSlots = [...document.querySelectorAll("#hero-product-stage [data-slot='-2'], #hero-product-stage [data-slot='2']")]
+          .map((node) => getComputedStyle(node).display);
+        const active = document.querySelector("#hero-product-stage [data-active]");
+        const controls = [...document.querySelectorAll("button[aria-label$='featured product']")]
+          .map((button) => ({ width: getComputedStyle(button).width, height: getComputedStyle(button).height }));
+        return {
+          mobilePriority: stage?.getAttribute("data-mobile-priority"),
+          reducedMotion: stage?.getAttribute("data-reduced-motion"),
+          farSlots,
+          transition: active ? getComputedStyle(active).transitionDuration : null,
+          controls,
+        };
+      })()`);
+      await client.send("Emulation.setEmulatedMedia", { features: [] });
+      const touchControls = evidence.controls.every((control) => Number.parseFloat(control.width) >= 44 && Number.parseFloat(control.height) >= 44);
+      const staticTransition = Number.parseFloat(evidence.transition ?? "1") <= 0.001;
+      return requireCondition(
+        evidence.mobilePriority === "active-product-first" && evidence.reducedMotion === "static-state" && evidence.farSlots.every((display) => display === "none") && staticTransition && touchControls,
+        `hero mobile/reduced-motion contract mismatch: ${JSON.stringify(evidence)}`,
+        evidence,
+      );
+    });
+
+    await setViewport(client, { width: 1440, height: 1000 });
+    await navigate(client, new URL("/open-lab/compound/mk-2866#openlab-label-comparison", baseUrl).href);
+    await waitFor(client, `document.querySelector("[data-component='OpenLabProductExperience']") !== null`, "OpenLab Product Experience hydration");
+
+    await proofCase(targetSuite, "dossier-hash-selection-and-keyboard-focus", async () => {
+      await waitFor(client, `document.querySelector("#openlab-tab-label-comparison")?.getAttribute("aria-selected") === "true"`, "dossier hash selection");
+      await inspect(client, `document.querySelector("#openlab-tab-label-comparison")?.focus()`);
+      await client.send("Input.dispatchKeyEvent", { type: "keyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39 });
+      await client.send("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39 });
+      await waitFor(client, `document.querySelector("#openlab-tab-analytes")?.getAttribute("aria-selected") === "true" && document.activeElement?.id === "openlab-tab-analytes"`, "dossier keyboard selection");
+      const evidence = await inspect(client, `({
+        selected: document.querySelector("[data-component='OpenLabProductExperience'] [role='tab'][aria-selected='true']")?.textContent?.trim(),
+        panel: document.querySelector("[data-component='OpenLabProductExperience'] [role='tabpanel']")?.id,
+        labelledBy: document.querySelector("[data-component='OpenLabProductExperience'] [role='tabpanel']")?.getAttribute("aria-labelledby"),
+        hash: location.hash,
+        contract: document.querySelector("[data-component='OpenLabProductExperience']")?.getAttribute("data-deep-link-contract"),
+      })`);
+      return requireCondition(
+        evidence.selected === "analytes" && evidence.panel === "openlab-panel-analytes" && evidence.labelledBy === "openlab-tab-analytes" && evidence.hash === "#openlab-analytes" && evidence.contract === "openlab-view-hash",
+        `dossier keyboard/deep-link mismatch: ${JSON.stringify(evidence)}`,
+        evidence,
+      );
+    });
+
+    await proofCase(targetSuite, "dossier-hash-restoration-and-mobile-disclosure", async () => {
+      await inspect(client, `(() => { location.hash = "#openlab-source-context"; return location.hash; })()`);
+      await waitFor(client, `document.querySelector("#openlab-tab-source-context")?.getAttribute("aria-selected") === "true"`, "dossier hash restoration");
+      await setViewport(client, { width: 390, height: 844 });
+      const evidence = await inspect(client, `(() => {
+        const root = document.querySelector("[data-component='OpenLabProductExperience']");
+        const tabs = root?.querySelector("[role='tablist']");
+        const selected = root?.querySelector("[role='tab'][aria-selected='true']");
+        return {
+          selected: selected?.textContent?.trim(),
+          panels: root?.querySelectorAll("[role='tabpanel']").length,
+          mobileStrategy: root?.getAttribute("data-mobile-strategy"),
+          reducedMotion: root?.getAttribute("data-reduced-motion"),
+          scrollable: tabs ? getComputedStyle(tabs).overflowX : null,
+          minHeight: selected ? getComputedStyle(selected).minHeight : null,
+        };
+      })()`);
+      return requireCondition(
+        evidence.selected === "source context" && evidence.panels === 1 && evidence.mobileStrategy === "progressive-disclosure" && evidence.reducedMotion === "static-data-views" && evidence.scrollable === "auto" && Number.parseFloat(evidence.minHeight) >= 44,
+        `dossier mobile restoration mismatch: ${JSON.stringify(evidence)}`,
+        evidence,
+      );
+    });
+  } finally {
+    await closePage(chromePort, client, targetId);
+  }
+
+  return targetSuite;
+}
+
 async function transactionSuite(chromePort, baseUrl) {
   const transactionRoutes = [
     "/bag",
@@ -438,6 +571,7 @@ try {
   suites.push(await ownerReviewSuite(chrome.port, baseUrl));
   suites.push(await shopSuite(chrome.port, baseUrl));
   suites.push(await lookupSuite(chrome.port, baseUrl));
+  suites.push(await motionPreservationSuite(chrome.port, baseUrl));
   suites.push(await transactionSuite(chrome.port, baseUrl));
 } finally {
   await chrome.close();

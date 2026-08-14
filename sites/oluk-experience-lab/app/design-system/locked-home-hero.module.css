@@ -6,3 +6,5 @@
 .bottle{width:44%}
 @media(max-width:760px){.bottle{width:43%}}
 @media(max-width:390px){.bottle{width:48%}}
+.tabs button:focus-visible,.bottle:focus-visible,.stageControls button:focus-visible{outline:var(--oluk-focus-width) solid var(--cobalt);outline-offset:3px}.stageControls button{height:44px;width:44px}
+@media(max-width:760px){.bottle[data-slot="-2"],.bottle[data-slot="2"]{display:none}.tabs{scroll-snap-type:x mandatory}.tabs button{scroll-snap-align:start}}

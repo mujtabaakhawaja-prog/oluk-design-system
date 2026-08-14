@@ -21,11 +21,12 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // share one client path. The compiler-backed OpenLab record switcher adds a
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
   // Product-depth wave adds the outcome-led stack choices and five-view OpenLab interaction.
-  // Keep the bounded aggregate increase explicit; largest-chunk law remains unchanged.
-  clientJavaScriptBytes: 590 * KIB,
-  // The OpenLab evidence visualisation adds one token-governed stylesheet while
-  // retaining a sub-260 KiB aggregate target.
-  clientCssBytes: 261 * KIB,
+  // Sites-local hero restoration and deep-linkable dossier controls add bounded
+  // client interaction only; the largest-chunk law remains unchanged.
+  clientJavaScriptBytes: 593 * KIB,
+  // The same controls add focus and compact-priority styles while retaining a
+  // bounded aggregate stylesheet budget.
+  clientCssBytes: 262 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,
