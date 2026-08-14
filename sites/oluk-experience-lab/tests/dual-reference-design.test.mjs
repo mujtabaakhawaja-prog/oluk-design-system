@@ -50,6 +50,7 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
   const account = registry.records.find(({ id }) => id === "account-hub");
   const commerce = registry.records.find(({ id }) => id === "catalogue-grid");
   const pdp = registry.records.find(({ id }) => id === "frontier-product-hero");
+  const openLab = registry.records.find(({ id }) => id === "openlab-record-suite");
 
   assert.deepEqual(checkout.figmaReference, {
     fileKey: "BEPMuUt1HroEw8xjz8CVyN",
@@ -80,6 +81,12 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
     nodeId: "1241:2984",
     desktopNodeId: "1241:2984",
     mobileNodeId: "1241:3486",
+  });
+  assert.deepEqual(openLab.figmaReference, {
+    fileKey: "BEPMuUt1HroEw8xjz8CVyN",
+    nodeId: "1242:3886",
+    desktopNodeId: "1242:3886",
+    mobileNodeId: "1242:4017",
   });
 });
 
