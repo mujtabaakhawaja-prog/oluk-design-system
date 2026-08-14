@@ -20,12 +20,11 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The hydrated OptionB navigation and the explicit post-purchase lifecycle entry pages
   // share one client path. The compiler-backed OpenLab record switcher adds a
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
-  // Product-depth adds the outcome-led stack choices and five-view OpenLab interaction.
-  // The grammar foundation adds four route-shared copy-surface exports and deterministic
-  // attributes while keeping the largest-chunk law unchanged.
-  clientJavaScriptBytes: 591 * KIB,
-  // The OpenLab evidence visualisation adds one token-governed stylesheet while
-  // The four route-shared content surfaces add a bounded responsive grammar layer.
+  // Product-depth, the grammar foundation and cross-host stack continuations add
+  // bounded client interaction while keeping the largest-chunk law unchanged.
+  clientJavaScriptBytes: 595 * KIB,
+  // The OpenLab evidence visualisation, route-shared content surfaces and compact
+  // stack continuations retain a bounded aggregate stylesheet budget.
   clientCssBytes: 264 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,

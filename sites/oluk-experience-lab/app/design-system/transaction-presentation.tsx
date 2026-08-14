@@ -8,6 +8,7 @@ import { mk2866Fixture } from "./product-fixtures";
 import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
 import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
 import { RecommendationCard, RestockCard } from "./program-components";
+import { YourStackBuilder } from "./your-stack-builder";
 
 export type TransactionStage =
   | "bag"
@@ -184,6 +185,7 @@ function BagContent() {
           <a href="/shop">Return to the shop →</a>
         </div>
         <RecommendationCard state="default" />
+        <YourStackBuilder baselineSlug="mk-2866" host="bag" />
       </div>
       <OrderSummary action={<ActionLink href="/checkout">Continue to details</ActionLink>} />
     </div>
@@ -313,6 +315,7 @@ function ConfirmationContent() {
         </div>
         <RestockCard state="active" />
         <RecommendationCard state="default" />
+        <YourStackBuilder baselineSlug="mk-2866" host="confirmation" />
       </section>
       <OrderSummary compact heading="Order total" />
     </div>
