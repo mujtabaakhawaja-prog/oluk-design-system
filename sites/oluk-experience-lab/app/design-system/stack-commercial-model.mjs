@@ -43,3 +43,14 @@ export function stackTotalFor(baselinePrice, additionPrices) {
 export function uniqueStackContributions(groups) {
   return [...new Set(groups.flat())];
 }
+
+/**
+ * @param {readonly string[]} contributions
+ */
+export function stackContributionPhrase(contributions) {
+  const readable = contributions.map((contribution) => contribution.toLowerCase());
+  if (readable.length === 0) return "the selected product direction";
+  if (readable.length === 1) return readable[0];
+  if (readable.length === 2) return `${readable[0]} and ${readable[1]}`;
+  return `${readable.slice(0, -1).join(", ")} and ${readable.at(-1)}`;
+}

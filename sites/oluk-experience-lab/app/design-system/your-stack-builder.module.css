@@ -1,163 +1,173 @@
 .page {
-  display: grid;
-  gap: 24px;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding: 52px 72px 80px;
+  background: var(--oluk-canvas);
+  padding-block: var(--oluk-space-12) var(--oluk-space-16);
 }
 
-.intro {
-  max-width: 980px;
+.page[data-component="YourStackBuilder"] h1,
+.page[data-component="YourStackBuilder"] h2,
+.page[data-component="YourStackBuilder"] h3 {
+  letter-spacing: -0.01em;
+  word-spacing: 0.12em;
 }
 
-.intro h1 {
-  font-size: clamp(42px, 5vw, 68px);
-  letter-spacing: -0.055em;
-  line-height: 0.98;
-}
-
-.intro p {
-  font-size: 17px;
-  max-width: 820px;
-}
-
-.goalPicker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.goalPicker button,
-.baselinePicker button {
-  background: var(--oluk-surface-card);
-  border: 1px solid var(--oluk-border-chip);
-  border-radius: var(--oluk-radius-control);
-  color: var(--oluk-text-primary);
-  font-size: 14px;
-  font-weight: 800;
-  min-height: 44px;
-  padding: 0 18px;
-}
-
-.goalPicker button[aria-pressed="true"],
-.baselinePicker button[aria-pressed="true"] {
-  background: var(--oluk-cobalt);
-  border-color: var(--oluk-cobalt);
-  color: var(--oluk-text-on-inverse);
-}
-
-.goalPicker button:focus-visible,
-.baselinePicker button:focus-visible,
-.stackChoiceActions a:focus-visible,
-.stackChoiceActions button:focus-visible,
-.evidenceEntry:focus-visible,
-.confidence a:focus-visible,
-.continue button:focus-visible,
-.continueAction:focus-visible,
-.summaryOptionActions button:focus-visible,
-.summaryAction:focus-visible {
-  outline: var(--oluk-focus-width) solid var(--oluk-cobalt);
-  outline-offset: 3px;
-}
-
-.anchor {
+.stackGrid {
   align-items: stretch;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: minmax(300px, 0.8fr) minmax(360px, 1.2fr);
+  row-gap: var(--oluk-space-6);
 }
 
-.baselineCard,
-.baselineDecision {
+.introductionZone {
+  align-self: center;
+  padding-block: var(--oluk-space-4);
+}
+
+.goalSurface,
+.baselineSurface,
+.additionsSurface,
+.outcome,
+.confidence,
+.summaryDecision,
+.summaryOption,
+.summaryOutcome {
   height: 100%;
 }
 
-.anchorChips,
-.relevanceRow,
-.contributionChips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.goalPicker {
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.contextChip {
+.goalPicker > * {
+  width: 100%;
+}
+
+.baselineEmbed {
+  background: var(--oluk-surface-cobalt-soft);
+  border: var(--oluk-border-width) solid var(--oluk-border-strong);
+  border-radius: var(--oluk-radius-compact);
+  display: grid;
+  gap: var(--oluk-space-5);
+  grid-template-rows: auto auto;
+  padding: var(--oluk-space-5);
+}
+
+.baselineCard {
+  min-width: 0;
+}
+
+.baselineProductRow {
+  align-items: stretch;
+  display: grid;
+  gap: var(--oluk-space-5);
+  grid-template-columns: minmax(320px, 5fr) minmax(0, 7fr);
+  min-width: 0;
+}
+
+.baselineFacts,
+.priceAndRole {
+  align-content: center;
+  display: grid;
+  gap: var(--oluk-space-3);
+  min-width: 0;
+}
+
+.baselineFacts :global(.price-block),
+.priceAndRole :global(.price-block) {
   align-items: center;
   background: var(--oluk-surface-card);
-  border: 1px solid var(--oluk-border-chip);
-  border-radius: var(--oluk-radius-chip);
-  display: grid;
-  gap: 8px;
-  grid-template-columns: 14px minmax(0, 1fr);
-  min-width: 0;
-  padding: 8px 12px;
-  text-transform: uppercase;
-}
-
-.contextChip i {
-  background: var(--oluk-cobalt);
-  border-radius: var(--oluk-radius-pill);
-  box-shadow: 0 0 0 4px var(--oluk-surface-cobalt-soft);
-  height: 6px;
-  width: 6px;
-}
-
-.contextChip > span {
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-control);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: var(--oluk-space-3) var(--oluk-space-4);
 }
 
-.contextChip small,
-.contextChip strong {
-  font-size: 12px;
-  line-height: 1.3;
-}
-
-.contextChip small {
+.baselineFacts :global(.price-block span),
+.priceAndRole :global(.price-block span) {
   color: var(--oluk-text-secondary);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: var(--oluk-type-eyebrow-size);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
 }
 
-.contextChip strong {
-  color: var(--oluk-text-primary);
-  font-weight: 800;
+.baselineFacts :global(.price-block strong),
+.priceAndRole :global(.price-block strong) {
+  color: var(--oluk-cobalt);
+  font-family: var(--oluk-font-display);
+  font-size: var(--oluk-type-display-md-size);
+}
+
+.baselineFacts :global(.qualitative-chips),
+.decisionFacts,
+.selectedProductFacts {
+  margin: 0;
 }
 
 .baselinePicker {
   border: 0;
-  margin: 4px 0 0;
+  border-top: var(--oluk-border-width) solid var(--oluk-border-strong);
+  margin: 0;
   min-width: 0;
-  padding: 0;
+  padding: var(--oluk-space-5) 0 0;
 }
 
 .baselinePicker legend {
   color: var(--oluk-text-primary);
-  font-size: 15px;
+  font-size: var(--oluk-type-body-size);
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: var(--oluk-space-3);
 }
 
 .baselinePicker > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fixedBaseline {
+  align-items: center;
+  border-top: var(--oluk-border-width) solid var(--oluk-border-strong);
+  display: grid;
+  gap: var(--oluk-space-2);
+  min-height: 48px;
+  padding-top: var(--oluk-space-4);
+}
+
+.fixedBaseline span,
+.fixedBaseline strong {
+  color: var(--oluk-text-secondary);
+  font-size: var(--oluk-type-eyebrow-size);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+  line-height: var(--oluk-type-eyebrow-line);
+  text-transform: uppercase;
 }
 
 .rail {
   display: grid;
-  gap: 20px;
+  gap: var(--oluk-space-5);
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: 0;
+}
+
+.rail[data-option-count="4"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mobileRailCue {
+  display: none;
 }
 
 .stackChoice {
   display: grid;
   grid-template-rows: auto 1fr;
   min-width: 0;
-  transition: transform 0.2s ease;
+  transition: transform 160ms ease;
 }
 
 .stackChoice[data-selected] {
-  transform: translateY(-8px);
+  transform: translateY(calc(var(--oluk-space-2) * -1));
 }
 
 .stackChoice > article {
@@ -172,149 +182,87 @@
   height: 100%;
 }
 
-.relevanceRow .contextChip {
-  flex: 1;
+.decisionFacts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .contributionChips {
-  margin-top: 4px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--oluk-space-2);
+  margin-top: var(--oluk-space-1);
 }
 
-.contributionChips span {
-  background: var(--oluk-surface-cobalt-soft);
-  border: 1px solid var(--oluk-border-chip);
-  border-radius: var(--oluk-radius-chip);
-  color: var(--oluk-cobalt);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 8px 10px;
-  text-transform: uppercase;
+.stackChoiceActions,
+.confidenceActions {
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+}
+
+.stackChoiceActions > *,
+.confidenceActions > * {
+  width: 100%;
 }
 
 .evidenceEntry {
   align-items: center;
   background: var(--oluk-surface-family);
-  border: 1px solid var(--oluk-border-inner);
+  border: var(--oluk-border-width) solid var(--oluk-border-inner);
   border-radius: var(--oluk-radius-control);
-  color: var(--oluk-text-primary);
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--oluk-space-2);
   justify-content: space-between;
   min-height: 48px;
-  padding: 8px 10px 8px 13px;
-  text-decoration: none;
-}
-
-.evidenceEntry > span {
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.stackChoiceActions,
-.summaryOptionActions {
-  align-items: center;
-  display: grid;
-  gap: 8px;
-  grid-template-columns: auto minmax(100px, 1fr) minmax(120px, 1.2fr);
-  width: 100%;
-}
-
-.stackChoiceActions > strong,
-.summaryOptionActions > strong {
-  color: var(--oluk-cobalt);
-  font-family: var(--oluk-font-display);
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.stackChoiceActions a,
-.stackChoiceActions button,
-.summaryOptionActions button,
-.summaryAction,
-.confidenceActions a,
-.continue button,
-.continueAction {
-  align-items: center;
-  border-radius: var(--oluk-radius-control);
-  display: flex;
-  font-size: 15px;
-  font-weight: 800;
-  justify-content: center;
-  min-height: 46px;
-  padding: 0 14px;
-}
-
-.stackChoiceActions a,
-.summaryAction,
-.confidenceActions a:last-child {
-  border: 1px solid var(--oluk-border-control);
-  color: var(--oluk-text-primary);
-  text-decoration: none;
-}
-
-.stackChoiceActions button,
-.summaryOptionActions button,
-.confidenceActions a:first-child,
-.continue button,
-.continueAction {
-  background: var(--oluk-cobalt);
-  border: 1px solid var(--oluk-cobalt);
-  color: var(--oluk-text-on-inverse);
-}
-
-.outcomeGrid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-}
-
-.outcome,
-.confidence {
-  height: 100%;
+  padding: var(--oluk-space-2) var(--oluk-space-3);
 }
 
 .level {
   align-self: stretch;
   background: var(--oluk-surface-family);
-  border: 1px solid var(--oluk-border-inner);
+  border: var(--oluk-border-width) solid var(--oluk-border-inner);
   border-radius: var(--oluk-radius-control);
-  padding: 18px;
+  padding: var(--oluk-space-5);
 }
 
-.level > div {
+.levelHeader {
   align-items: center;
   display: flex;
+  gap: var(--oluk-space-3);
   justify-content: space-between;
 }
 
-.level > div > span {
-  background: var(--oluk-cobalt);
-  border: 1px solid var(--oluk-cobalt);
-  border-radius: var(--oluk-radius-chip);
-  color: var(--oluk-text-on-inverse);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 9px 11px;
-  text-transform: uppercase;
+.levelStatus {
+  grid-template-columns: minmax(0, 180px);
+  margin: 0;
 }
 
-.level > div > small {
+.levelHeader > small {
   color: var(--oluk-text-secondary);
-  font-size: 12px;
+  font-size: var(--oluk-type-eyebrow-size);
   font-weight: 800;
 }
 
-.level p {
-  color: var(--oluk-text-primary);
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 14px 0 0;
+.level p,
+.selectedLineup {
+  color: var(--oluk-text-secondary);
+  font-size: var(--oluk-type-body-size);
+  line-height: var(--oluk-type-body-line);
+  margin: var(--oluk-space-3) 0 0;
+}
+
+.selectedProductFacts {
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
 }
 
 .confidenceProducts {
   display: grid;
-  gap: 8px;
+  gap: var(--oluk-space-2);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -323,34 +271,19 @@
 .confidenceProducts li {
   align-items: center;
   background: var(--oluk-surface-card);
-  border: 1px solid var(--oluk-border-inner);
+  border: var(--oluk-border-width) solid var(--oluk-border-inner);
   border-radius: var(--oluk-radius-control);
   display: grid;
-  gap: 10px;
-  grid-template-columns: minmax(100px, 1fr) auto auto;
+  gap: var(--oluk-space-2);
+  grid-template-columns: minmax(100px, 1fr) auto minmax(132px, auto);
   min-height: 48px;
-  padding: 8px 10px 8px 13px;
+  padding: var(--oluk-space-2) var(--oluk-space-3);
 }
 
-.confidenceProducts strong,
-.confidenceProducts a {
-  font-size: 15px;
+.confidenceProducts strong {
+  color: var(--oluk-text-primary);
+  font-size: var(--oluk-type-body-size);
   font-weight: 800;
-}
-
-.confidenceProducts a {
-  color: var(--oluk-cobalt);
-}
-
-.confidenceActions {
-  display: grid;
-  gap: 8px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  width: 100%;
-}
-
-.confidenceActions a {
-  text-decoration: none;
 }
 
 .continue {
@@ -358,182 +291,121 @@
   grid-template-columns: minmax(0, 1fr) auto;
 }
 
-.continue button,
-.continueAction {
-  min-height: 50px;
-  padding-inline: 22px;
-}
-
-.continue button:disabled {
-  background: var(--oluk-surface-cobalt-soft);
-  border-color: var(--oluk-border-chip);
-  color: var(--oluk-text-secondary);
-}
-
-.continueAction {
-  text-decoration: none;
-}
-
-/* Compact hosts retain the commercial contract while summarising the selection. */
 .page[data-variant="compact"],
 .page[data-variant="summary"] {
+  padding-block: var(--oluk-space-6) 0;
+}
+
+.page[data-variant="compact"] .stackGrid,
+.page[data-variant="summary"] .stackGrid {
   max-width: none;
-  padding: 24px 0 0;
+  padding-inline: 0;
 }
 
-.summaryBody {
-  align-items: stretch;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: minmax(0, 1.3fr) minmax(230px, 0.7fr);
-}
-
-.summaryDecision,
-.summaryOption,
-.summaryOutcome {
-  height: 100%;
-}
-
-.summaryOptionActions {
-  grid-template-columns: auto minmax(130px, 1fr);
-}
-
-.summaryOutcome {
-  margin-top: -10px;
-}
-
-.summaryAction {
-  border-color: var(--oluk-cobalt);
-  color: var(--oluk-cobalt);
-  min-width: 170px;
-  white-space: nowrap;
-}
-
-@media (max-width: 1040px) {
-  .page {
-    padding-inline: 32px;
-  }
-
-  .anchor,
-  .outcomeGrid {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 1120px) {
   .rail {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .page {
-    gap: 14px;
-    padding: 20px 16px 46px;
+    padding-block: var(--oluk-space-8) var(--oluk-space-12);
   }
 
-  .intro h1 {
-    font-size: 42px;
+  .stackGrid {
+    row-gap: var(--oluk-space-4);
   }
 
-  .intro p {
-    font-size: 16px;
+  .page[data-component="YourStackBuilder"] h1,
+  .page[data-component="YourStackBuilder"] h2,
+  .page[data-component="YourStackBuilder"] h3 {
+    letter-spacing: 0;
+    word-spacing: 0.14em;
   }
 
-  .goalPicker {
-    flex-wrap: nowrap;
-    margin-inline: -22px;
-    overflow-x: auto;
-    padding: 0 22px 8px;
-    scroll-snap-type: x mandatory;
+  .introductionZone {
+    padding-block: 0;
   }
 
-  .goalPicker button {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+  .baselineEmbed {
+    gap: var(--oluk-space-4);
+    padding: var(--oluk-space-4);
   }
 
-  .baselinePicker > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .baselineProductRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .baselinePicker,
+  .fixedBaseline {
+    padding: var(--oluk-space-4) 0 0;
+  }
+
+  .baselineFacts :global(.qualitative-chips),
+  .decisionFacts,
+  .contributionChips,
+  .selectedProductFacts {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .rail {
     display: flex;
-    gap: 14px;
-    margin-inline: -16px;
+    gap: var(--oluk-space-4);
+    margin-inline: calc(var(--oluk-space-5) * -1);
     overflow-x: auto;
-    padding: 10px 16px 26px;
-    scroll-padding-left: 16px;
+    padding: var(--oluk-space-2) var(--oluk-space-5) var(--oluk-space-5);
+    scroll-padding-left: var(--oluk-space-5);
     scroll-snap-type: x mandatory;
   }
 
+  .mobileRailCue {
+    color: var(--oluk-text-secondary);
+    display: block;
+    font-size: var(--oluk-type-body-size);
+    font-weight: 700;
+    line-height: var(--oluk-type-body-line);
+    margin: 0;
+  }
+
   .stackChoice {
-    flex: 0 0 min(350px, calc(100vw - 44px));
+    flex: 0 0 min(352px, calc(100vw - 48px));
     scroll-snap-align: start;
   }
 
   .stackChoice[data-selected] {
-    transform: translateY(-4px);
+    transform: none;
   }
 
-  .stackChoiceActions {
-    grid-template-columns: auto 1fr;
-  }
-
-  .stackChoiceActions button {
-    grid-column: 1 / -1;
-  }
-
-  .continue {
-    grid-template-columns: 1fr;
-  }
-
-  .page[data-variant="compact"],
-  .page[data-variant="summary"] {
-    padding: 18px 0 0;
-  }
-
-  .summaryBody,
-  .page[data-variant="summary"] .summaryBody {
-    grid-template-columns: 1fr;
-  }
-
-  .summaryDecision .goalPicker {
-    margin-inline: -18px;
-    padding-inline: 18px;
-  }
-
+  .stackChoiceActions,
   .confidenceActions,
   .confidenceProducts li {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .confidenceProducts li > span,
-  .confidenceProducts li > a {
+  .confidenceProducts li > * {
     justify-self: start;
   }
 
-  .summaryAction,
-  .continue button,
-  .continueAction {
-    width: 100%;
+  .evidenceEntry {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .continue {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
-@media (max-width: 440px) {
-  .intro h1 {
-    font-size: 36px;
-  }
-
+@media (max-width: 420px) {
+  .goalPicker,
   .baselinePicker > div {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .stackChoice {
-    flex-basis: calc(100vw - 36px);
-  }
-
-  .summaryOptionActions {
-    grid-template-columns: 1fr;
+    flex-basis: calc(100vw - 80px);
   }
 }
 

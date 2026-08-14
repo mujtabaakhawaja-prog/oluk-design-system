@@ -43,6 +43,8 @@ const strictFoundationFiles = new Set([
   "app/design-system/surface-grid.tsx",
   "app/review-studio/surface-grammar/page.tsx",
   "app/review-studio/surface-grammar/surface-grammar.module.css",
+  "app/design-system/your-stack-builder.module.css",
+  "app/design-system/your-stack-builder.tsx",
 ]);
 
 const coreFamilies = new Set([
@@ -143,6 +145,8 @@ export function auditRenderedCopySurfaces(html) {
 
     const attributes = parseTagAttributes(token);
     const inheritedSurface = [...stack].reverse().find((frame) => frame.copySurface)?.copySurface ?? null;
+    const inheritedStrictScope = [...stack].reverse().find((frame) => frame.strictScope)?.strictScope ?? false;
+    const strictScope = inheritedStrictScope || attributes["data-grammar-strict"] === "true";
     const declaredSurface = governedCopySurfaceKinds.has(attributes["data-copy-surface"])
       ? attributes["data-copy-surface"]
       : attributes["data-copy-surface"] === canvasIntroductionSurface
@@ -165,6 +169,7 @@ export function auditRenderedCopySurfaces(html) {
               ? "CONTAINED"
               : "LOOSE_CANVAS_COPY",
         copySurface,
+        strictScope,
         text,
       });
     } else if (
@@ -175,11 +180,12 @@ export function auditRenderedCopySurfaces(html) {
         element: tag,
         status: "INVALID_CANVAS_EXCEPTION",
         copySurface,
+        strictScope,
         text: visibleText(token).slice(0, 180),
       });
     }
 
-    if (!token.endsWith("/>") && !voidElements.has(tag)) stack.push({ tag, copySurface });
+    if (!token.endsWith("/>") && !voidElements.has(tag)) stack.push({ tag, copySurface, strictScope });
   }
 
   return copyGroups;
@@ -263,7 +269,7 @@ export function auditTsxText(source, file = "fixture.tsx") {
     const allowed = file === "app/design-system/pdp-first-fold.tsx" && match[1] === "pdp-media-purchase-decision-pair";
     if (!allowed) findings.push({ rule: "undeclared-canvas-exception", file, value: match[1], offset: match.index });
   }
-  if (source.includes('data-grammar-strict="true"') && !file.endsWith("action-control.tsx")) {
+  if (/data-grammar-strict=/.test(source) && !file.endsWith("action-control.tsx")) {
     for (const match of source.matchAll(/<(?:button\b|a\b[^>]*className=["'][^"']*\bbutton\b)/g)) {
       findings.push({ rule: "noncanonical-action-control", file, value: match[0], offset: match.index });
     }
@@ -296,16 +302,24 @@ async function auditSources(files) {
 
 function routeAudit(route, html, strict = false) {
   const groups = auditRenderedCopySurfaces(html);
-  const violations = groups.filter(({ status }) => status === "LOOSE_CANVAS_COPY" || status === "INVALID_CANVAS_EXCEPTION");
+  const violation = ({ status }) => status === "LOOSE_CANVAS_COPY" || status === "INVALID_CANVAS_EXCEPTION";
+  const violations = groups.filter(violation);
+  const strictGroups = strict ? groups.filter(({ strictScope }) => strictScope) : groups;
+  const strictViolations = strictGroups.filter(violation);
+  const routeStatus = violations.length === 0 ? "GRAMMAR_READY" : "NEEDS_ROUTE_REFACTOR";
   return {
     routeId: route.routeId ?? route.id,
     path: route.path,
     strict,
-    status: violations.length === 0 ? "GRAMMAR_READY" : strict ? "STRICT_SCOPE_FAILED" : "NEEDS_ROUTE_REFACTOR",
+    status: strictViolations.length === 0 ? "GRAMMAR_READY" : strict ? "STRICT_SCOPE_FAILED" : "NEEDS_ROUTE_REFACTOR",
+    routeStatus,
     copyGroupCount: groups.length,
     containedCopyGroupCount: groups.length - violations.length,
     looseCopyGroupCount: violations.length,
     looseCopyExamples: violations.slice(0, 6),
+    strictScopedCopyGroupCount: strict ? strictGroups.length : 0,
+    strictScopedLooseCopyGroupCount: strict ? strictViolations.length : 0,
+    surroundingRouteLooseCopyGroupCount: strict ? violations.length - strictViolations.length : 0,
   };
 }
 
@@ -341,8 +355,8 @@ export async function buildCustomerSurfaceGrammarAudit() {
     contractId: "oluk.customer-surface-grammar.v2",
     sourceHash,
     auditedRouteCount: routes.length,
-    grammarReadyRouteCount: routes.filter(({ status }) => status === "GRAMMAR_READY").length,
-    routeRefactorCount: routes.filter(({ status }) => status === "NEEDS_ROUTE_REFACTOR").length,
+    grammarReadyRouteCount: routes.filter(({ routeStatus }) => routeStatus === "GRAMMAR_READY").length,
+    routeRefactorCount: routes.filter(({ routeStatus }) => routeStatus === "NEEDS_ROUTE_REFACTOR").length,
     looseCopyGroupCount: routes.reduce((total, route) => total + route.looseCopyGroupCount, 0),
     sourceFindingCount: sourceFindings.length,
     debt: {
@@ -353,7 +367,7 @@ export async function buildCustomerSurfaceGrammarAudit() {
         .reduce((total, route) => total + route.looseCopyGroupCount, 0),
     },
     currentState:
-      routes.every(({ status }) => status === "GRAMMAR_READY") && sourceFindings.length === 0
+      routes.every(({ routeStatus }) => routeStatus === "GRAMMAR_READY") && sourceFindings.length === 0
         ? "GRAMMAR_READY"
         : "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
     strictFoundation: {

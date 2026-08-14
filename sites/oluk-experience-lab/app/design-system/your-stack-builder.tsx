@@ -3,11 +3,15 @@
 import { useMemo, useState } from "react";
 
 import { ProductCommerceCard } from "./product-commerce-card";
+import { PriceBlock } from "./commerce-parts";
 import type { ProductFixture, ProductMediaAsset } from "./product-fixtures";
 import { EvidenceStatusChip, type EvidenceAuthorityState } from "./program-components";
 import { actualProductMedia, getFrontierProduct } from "./frontier-content";
 import { DecisionSurface, TechnicalSurface } from "./content-surfaces";
-import { stackLevelFor, stackTotalFor, uniqueStackContributions } from "./stack-commercial-model.mjs";
+import { ActionButton, ActionLink } from "./action-control";
+import { QualitativeChip, QualitativeChipList } from "./qualitative-chip";
+import { SectionIntroduction, SurfaceGrid, SurfaceGridZone } from "./surface-grid";
+import { stackContributionPhrase, stackLevelFor, stackTotalFor, uniqueStackContributions } from "./stack-commercial-model.mjs";
 import styles from "./your-stack-builder.module.css";
 
 type StackGoal = "Cutting" | "Bulking" | "Recomp" | "PCT";
@@ -283,7 +287,9 @@ function stackFixture(product: StackProduct | StackBaseline): ProductFixture {
     customerPath: `/product/${id}`,
     evidencePath: `/open-lab/compound/${id}`,
     media: product.media,
-    qualitativeFacts: [],
+    qualitativeFacts: [
+      { kind: "class", label: "PRODUCT CLASS", value: product.series.replace(/\s+SERIES$/i, "") },
+    ],
     presentationStatus: {
       inventory: "in-stock",
       evidence: product.evidenceState === "verified-evidence" ? "verified" : "unavailable",
@@ -315,23 +321,22 @@ const hostActions: Readonly<Record<Exclude<StackHost, "pdp" | "standalone">, { h
   account: { href: "/open-lab/stack-builder", label: "Open stack builder" },
 };
 
-function ContextChip({ label, value }: { label: string; value: string }) {
-  return (
-    <span className={styles.contextChip}>
-      <i aria-hidden="true" />
-      <span>
-        <small>{label}</small>
-        <strong>{value}</strong>
-      </span>
-    </span>
-  );
-}
-
 function ContributionChips({ contributions }: { contributions: readonly string[] }) {
   return (
-    <div aria-label="Selected product contributions" className={styles.contributionChips}>
-      {contributions.map((contribution) => <span key={contribution}>{contribution}</span>)}
-    </div>
+    <ul
+      aria-label="Selected product contributions"
+      className={`qualitative-chips oluk-qualitative-chips ${styles.contributionChips}`}
+    >
+      {contributions.map((contribution) => (
+        <QualitativeChip
+          key={contribution}
+          kind="quality"
+          label="CONTRIBUTION"
+          state="selected"
+          value={contribution}
+        />
+      ))}
+    </ul>
   );
 }
 
@@ -345,8 +350,13 @@ function StackCommercialLevel({ contributions, productCount }: { contributions: 
   const level = stackLevelFor(productCount);
   return (
     <div className={styles.level} data-component="StackCommercialLevel" data-level={level}>
-      <div>
-        <span>{level}</span>
+      <div className={styles.levelHeader}>
+        <ul
+          aria-label="Stack level"
+          className={`qualitative-chips oluk-qualitative-chips ${styles.levelStatus}`}
+        >
+          <QualitativeChip kind="tested" label="STACK LEVEL" state="selected" value={level} />
+        </ul>
         <small>{productCount} {productCount === 1 ? "product" : "products"}</small>
       </div>
       <p>{stackLevelCopy[level]}</p>
@@ -368,15 +378,15 @@ function OpenLabConfidenceSurface({ products: confidenceProducts, compact = fals
       <TechnicalSurface
         actions={(
           <div className={styles.confidenceActions}>
-            <a href={`/open-lab/compound/${confidenceProducts[0]?.slug ?? "mk-2866"}`}>Open baseline dossier</a>
-            <a href="/open-lab/compare">Compare OpenLab status</a>
+            <ActionLink href={`/open-lab/compound/${confidenceProducts[0]?.slug ?? "mk-2866"}`}>Open starting-product dossier</ActionLink>
+            <ActionLink href="/open-lab/compare" variant="secondary">Compare OpenLab status</ActionLink>
           </div>
         )}
         className={styles.confidence}
         compact={compact}
         copy={availableCount > 0
           ? "Every selected product keeps its own record status. Open the available dossier when you want source context before adding the full selection."
-          : "No public record is registered for these selected products yet. Their product facts stay visible and no substitute result is shown."}
+          : "No public record is available for this selection yet. Product details remain available while OpenLab status is updated."}
         eyebrow="OpenLab confidence"
         state={availableCount > 0 ? "default" : "unavailable"}
         title={availableCount > 0 ? "Check the records behind your selection." : "See the record status for every selected product."}
@@ -386,7 +396,9 @@ function OpenLabConfidenceSurface({ products: confidenceProducts, compact = fals
             <li key={product.slug}>
               <strong>{product.name}</strong>
               <EvidenceStatusChip state={product.evidenceState} />
-              <a href={`/open-lab/compound/${product.slug}`}>{product.evidenceState === "unavailable" ? "View status" : "Open dossier"}</a>
+              <ActionLink href={`/open-lab/compound/${product.slug}`} size="compact" variant="quiet">
+                {product.evidenceState === "unavailable" ? "View status" : "Open dossier"}
+              </ActionLink>
             </li>
           ))}
         </ul>
@@ -397,6 +409,11 @@ function OpenLabConfidenceSurface({ products: confidenceProducts, compact = fals
 
 /** Canonical addition card: product facts come from the registry and the reason to add it comes from relationship data. */
 export function StackOutcomeCard({ product, added, onAdd }: { product: StackProduct; added: boolean; onAdd: () => void }) {
+  const decisionFacts = [
+    { kind: "quality", label: "PRODUCT ROLE", value: product.focus },
+    { kind: "class", label: "WHAT IT ADDS", value: product.position },
+  ] as const;
+
   return (
     <div className={styles.stackChoice} data-component="StackAdditionCard" data-selected={added || undefined}>
       <ProductCommerceCard
@@ -410,57 +427,66 @@ export function StackOutcomeCard({ product, added, onAdd }: { product: StackProd
       <DecisionSurface
         actions={(
           <div className={styles.stackChoiceActions}>
-            <strong>{product.price}</strong>
-            <a href={`/product/${product.id}`}>View product</a>
-            <button aria-pressed={added} onClick={onAdd} type="button">{added ? "Added ✓" : "Add to stack"}</button>
+            <ActionLink href={`/product/${product.id}`} variant="secondary">View product</ActionLink>
+            <ActionButton aria-pressed={added} onClick={onAdd} variant={added ? "secondary" : "primary"}>
+              {added ? `Remove ${product.name}` : `Add ${product.name}`}
+            </ActionButton>
           </div>
         )}
         className={styles.stackChoiceDecision}
         compact
         copy={product.rationale}
+        secondaryCopy={product.media ? undefined : "Product image coming soon. Pack information remains available in the product details below."}
         eyebrow={product.position}
         headingLevel="h3"
         title={added ? `${product.name} is in your stack.` : `Add ${product.name} for ${product.focus.toLowerCase()}.`}
       >
-        <div className={styles.relevanceRow}>
-          <ContextChip label="PRODUCT ROLE" value={product.focus} />
-          <ContextChip label="WHAT IT ADDS" value={product.position} />
+        <div className={styles.priceAndRole}>
+          <PriceBlock price={product.price} />
+          <QualitativeChipList className={styles.decisionFacts} facts={decisionFacts} label={`${product.name} decision facts`} />
         </div>
         <ContributionChips contributions={product.contributions} />
-        <a className={styles.evidenceEntry} href={`/open-lab/compound/${product.id}`}>
-          <span>OpenLab</span>
+        <div className={styles.evidenceEntry}>
           <EvidenceStatusChip state={product.evidenceState} />
-        </a>
+          <ActionLink href={`/open-lab/compound/${product.id}`} size="compact" variant="quiet">Check OpenLab status</ActionLink>
+        </div>
       </DecisionSurface>
     </div>
   );
 }
 
 function BaselineSurface({ baseline, onBaselineChange, productCount }: { baseline: StackBaseline; onBaselineChange?: (slug: string) => void; productCount: number }) {
+  const baselineFacts = [
+    { kind: "quality", label: "STACK ROLE", value: "STARTING PRODUCT" },
+    { kind: "tested", label: "OPENLAB", value: baseline.evidenceState === "unavailable" ? "UNAVAILABLE" : "VERIFIED EVIDENCE" },
+  ] as const;
+
   return (
-    <section className={styles.anchor} data-component="StackBaselineProduct">
-      <ProductCommerceCard
-        className={styles.baselineCard}
-        commerceTreatment="selection"
-        headingLevel="h2"
-        product={stackFixture(baseline)}
-        state="selected"
-        variant="compact"
-      />
-      <DecisionSurface
-        className={styles.baselineDecision}
-        compact
-        copy={onBaselineChange
-          ? "Keep this starting product or change it before adding the next product contribution."
-          : "This product is fixed as the starting point for the current page and its price is included in the stack total."}
-        eyebrow="Your starting product"
-        headingLevel="h3"
-        title={`${baseline.name} · ${baseline.price}`}
-      >
-        <div className={styles.anchorChips}>
-          <ContextChip label="PRODUCT" value={baseline.alias} />
-          <ContextChip label="STARTING PRICE" value={baseline.price} />
-          <ContextChip label="PRODUCTS SELECTED" value={String(productCount)} />
+    <DecisionSurface
+      className={styles.baselineSurface}
+      copy={onBaselineChange
+        ? "Keep this starting product or change it before adding the next product contribution."
+        : "This product is fixed as the starting point for the current page and its price is included in the stack total."}
+      eyebrow="Your starting product"
+      headingLevel="h2"
+      secondaryCopy={baseline.media ? undefined : "Product image coming soon. The labelled product details and price remain available below."}
+      title={`Start with ${baseline.name}.`}
+    >
+      <div className={styles.baselineEmbed} data-component="StackBaselineProduct" data-layout="two-row-cobalt-soft">
+        <div className={styles.baselineProductRow}>
+          <ProductCommerceCard
+            className={styles.baselineCard}
+            commerceTreatment="selection"
+            headingLevel="h3"
+            product={stackFixture(baseline)}
+            state="selected"
+            variant="compact"
+          />
+          <div className={styles.baselineFacts}>
+            <PriceBlock price={baseline.price} />
+            <QualitativeChipList facts={baselineFacts} label={`${baseline.name} starting product facts`} />
+            <ContributionChips contributions={baseline.contributions} />
+          </div>
         </div>
         {onBaselineChange ? (
           <fieldset className={styles.baselinePicker}>
@@ -469,16 +495,27 @@ function BaselineSurface({ baseline, onBaselineChange, productCount }: { baselin
               {baselineCandidates.map((slug) => {
                 const candidate = baselineFor(slug);
                 return (
-                  <button aria-pressed={baseline.slug === slug} key={slug} onClick={() => onBaselineChange(slug)} type="button">
-                    {candidate.name} · {candidate.price}
-                  </button>
+                  <ActionButton
+                    aria-pressed={baseline.slug === slug}
+                    key={slug}
+                    onClick={() => onBaselineChange(slug)}
+                    size="compact"
+                    variant={baseline.slug === slug ? "primary" : "secondary"}
+                  >
+                    {candidate.name}
+                  </ActionButton>
                 );
               })}
             </div>
           </fieldset>
-        ) : null}
-      </DecisionSurface>
-    </section>
+        ) : (
+          <div className={styles.fixedBaseline}>
+            <span>STARTING PRODUCT LOCKED TO THIS PAGE</span>
+            <strong>{productCount} {productCount === 1 ? "product selected" : "products selected"}</strong>
+          </div>
+        )}
+      </div>
+    </DecisionSurface>
   );
 }
 
@@ -522,59 +559,107 @@ function StackSummary({
 
   return (
     <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="guided-summary" data-variant={variant}>
-      <BaselineSurface baseline={baseline} productCount={productCount} />
+      <SurfaceGrid className={styles.stackGrid}>
+        <SurfaceGridZone zone="full">
+          <BaselineSurface baseline={baseline} productCount={productCount} />
+        </SurfaceGridZone>
 
-      <div className={styles.summaryBody} data-component="StackDecisionSurface">
-        <DecisionSurface
-          className={styles.summaryDecision}
-          compact
-          copy={stackGoals[goal].copy(baseline)}
-          eyebrow="Choose the result"
-          title={stackGoals[goal].headline(baseline)}
-        >
-          <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
-            {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
-              <button aria-pressed={goal === option} key={option} onClick={() => onGoal(option)} type="button">{option}</button>
-            ))}
-          </div>
-        </DecisionSurface>
-        {nextProduct ? (
+        <SurfaceGridZone zone="split-start">
           <DecisionSurface
-            actions={(
-              <div className={styles.summaryOptionActions}>
-                <strong>{nextProduct.price}</strong>
-                <button aria-pressed={added.includes(nextProduct.id)} onClick={() => onAdd(nextProduct.id)} type="button">
-                  {added.includes(nextProduct.id) ? "Added to stack" : `Add ${nextProduct.name}`}
-                </button>
-              </div>
-            )}
-            className={styles.summaryOption}
+            className={styles.summaryDecision}
             compact
-            copy={nextProduct.rationale}
-            eyebrow={nextProduct.series}
-            headingLevel="h3"
-            title={nextProduct.name}
+            copy={stackGoals[goal].copy(baseline)}
+            eyebrow="Choose the result"
+            title={stackGoals[goal].headline(baseline)}
           >
-            <ContributionChips contributions={nextProduct.contributions} />
+            <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
+              {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
+                <ActionButton aria-pressed={goal === option} key={option} onClick={() => onGoal(option)} size="compact" variant={goal === option ? "primary" : "secondary"}>
+                  {option}
+                </ActionButton>
+              ))}
+            </div>
           </DecisionSurface>
-        ) : null}
-      </div>
+        </SurfaceGridZone>
 
-      <div aria-live="polite" data-component="StackSummarySurface">
-        <DecisionSurface
-          actions={<a className={styles.summaryAction} href={action.href}>{action.label} →</a>}
-          className={styles.summaryOutcome}
-          compact
-          copy={`${stackGoals[goal].outcome} now define this product line-up.`}
-          eyebrow="Your selected stack"
-          title={`${selectedLineup} · £${stackTotal}`}
-        >
-          <StackCommercialLevel contributions={contributions} productCount={productCount} />
-        </DecisionSurface>
-      </div>
+        <SurfaceGridZone zone="split-end">
+          {nextProduct ? (
+            <DecisionSurface
+              actions={(
+                <ActionButton
+                  aria-pressed={added.includes(nextProduct.id)}
+                  onClick={() => onAdd(nextProduct.id)}
+                  variant={added.includes(nextProduct.id) ? "secondary" : "primary"}
+                >
+                  {added.includes(nextProduct.id) ? `Remove ${nextProduct.name}` : `Add ${nextProduct.name}`}
+                </ActionButton>
+              )}
+              className={styles.summaryOption}
+              compact
+              copy={nextProduct.rationale}
+              eyebrow={nextProduct.series}
+              headingLevel="h3"
+              title={nextProduct.name}
+            >
+              <QualitativeChipList
+                facts={[
+                  { kind: "quality", label: "PRODUCT ROLE", value: nextProduct.focus },
+                ]}
+                label={`${nextProduct.name} option facts`}
+              />
+              <PriceBlock price={nextProduct.price} />
+              <ContributionChips contributions={nextProduct.contributions} />
+            </DecisionSurface>
+          ) : null}
+        </SurfaceGridZone>
 
-      <OpenLabConfidenceSurface compact products={confidenceSelection(baseline, selectedProducts)} />
+        <SurfaceGridZone zone="split-start">
+          <div aria-live="polite" data-component="StackSummarySurface">
+            <DecisionSurface
+              actions={<ActionLink href={action.href}>{action.label}</ActionLink>}
+              className={styles.summaryOutcome}
+              compact
+              copy={`This product line-up now focuses on ${stackContributionPhrase(contributions)}.`}
+              eyebrow="Your selected stack"
+              title={`${stackLevelFor(productCount)} ${goal.toLowerCase()} stack.`}
+            >
+              <SelectedProductFacts baseline={baseline} selectedProducts={selectedProducts} stackTotal={stackTotal} />
+              <StackCommercialLevel contributions={contributions} productCount={productCount} />
+              <p className={styles.selectedLineup}>{selectedLineup}</p>
+            </DecisionSurface>
+          </div>
+        </SurfaceGridZone>
+
+        <SurfaceGridZone zone="split-end">
+          <OpenLabConfidenceSurface compact products={confidenceSelection(baseline, selectedProducts)} />
+        </SurfaceGridZone>
+      </SurfaceGrid>
     </div>
+  );
+}
+
+function SelectedProductFacts({
+  baseline,
+  selectedProducts,
+  stackTotal,
+}: Readonly<{
+  baseline: StackBaseline;
+  selectedProducts: readonly StackProduct[];
+  stackTotal: number;
+}>) {
+  return (
+    <ul aria-label="Selected product prices and stack total" className={styles.selectedProductFacts}>
+      <QualitativeChip kind="class" label={baseline.name} value={baseline.price} />
+      {selectedProducts.map((product, index) => (
+        <QualitativeChip
+          key={product.id}
+          kind={index % 2 === 0 ? "form" : "quality"}
+          label={product.name}
+          value={product.price}
+        />
+      ))}
+      <QualitativeChip kind="tested" label="STACK TOTAL" value={`£${stackTotal}`} state="selected" />
+    </ul>
   );
 }
 
@@ -627,64 +712,97 @@ function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host:
   const selectedLineup = [baseline.name, ...selectedProducts.map((product) => product.name)].join(" + ");
 
   return (
-    <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="guided-sequence" data-variant={variant}>
-      <div data-component="StackGoalSelector">
-        <DecisionSurface
-          className={styles.intro}
-          copy={stackGoals[goal].copy(baseline)}
-          eyebrow="Choose the result"
-          headingLevel="h1"
-          title={stackGoals[goal].headline(baseline)}
-        >
-          <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
-            {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
-              <button aria-pressed={goal === option} key={option} onClick={() => selectGoal(option)} type="button">{option}</button>
-            ))}
-          </div>
-        </DecisionSurface>
-      </div>
+    <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-grammar-strict={host === "standalone" ? "true" : undefined} data-host={host} data-mobile-strategy="guided-sequence" data-variant={variant}>
+      <SurfaceGrid className={styles.stackGrid}>
+        <SurfaceGridZone className={styles.introductionZone} zone="lead">
+          <SectionIntroduction eyebrow="Your Stack" headingLevel="h1" title={stackGoals[goal].headline(baseline)} />
+        </SurfaceGridZone>
 
-      <BaselineSurface baseline={baseline} onBaselineChange={host === "standalone" ? selectBaseline : undefined} productCount={productCount} />
-
-      <section aria-label={`${goal} stack additions`} className={styles.rail}>
-        {visibleProducts.map((product) => (
-          <StackOutcomeCard
-            added={added.includes(product.id)}
-            key={product.id}
-            onAdd={() => toggleAddition(product.id)}
-            product={product}
-          />
-        ))}
-      </section>
-
-      <div className={styles.outcomeGrid}>
-        <div aria-live="polite" data-component="StackSummarySurface">
+        <SurfaceGridZone data-component="StackGoalSelector" zone="support">
           <DecisionSurface
-            className={styles.outcome}
-            copy={productCount === 1
-              ? `${baseline.name} is your foundation. Add the first contribution to make the selected build stronger.`
-              : `${stackGoals[goal].outcome} now define this ${productCount}-product build.`}
-            eyebrow="Your stack is getting stronger"
-            title={`${selectedLineup} · £${stackTotal}`}
+            className={styles.goalSurface}
+            compact
+            copy={stackGoals[goal].copy(baseline)}
+            eyebrow="Choose the result"
+            title="Set the goal for this stack."
           >
-            <StackCommercialLevel contributions={contributions} productCount={productCount} />
+            <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
+              {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
+                <ActionButton aria-pressed={goal === option} key={option} onClick={() => selectGoal(option)} size="compact" variant={goal === option ? "primary" : "secondary"}>
+                  {option}
+                </ActionButton>
+              ))}
+            </div>
           </DecisionSurface>
-        </div>
-        <OpenLabConfidenceSurface products={confidenceSelection(baseline, selectedProducts)} />
-      </div>
+        </SurfaceGridZone>
 
-      <DecisionSurface
-        actions={productCount === 1
-          ? <button disabled type="button">Review selected products · {productCount}</button>
-          : <a className={styles.continueAction} href="/bundle-builder">Review selected products · {productCount}</a>}
-        className={styles.continue}
-        compact
-        copy={productCount === 1
-          ? "Set the goal, then choose what each new product should add to the result."
-          : `${selectedLineup} brings ${contributions.join(", ").toLowerCase()} into one clear product decision.`}
-        eyebrow="Your selected products"
-        title={productCount === 1 ? "Choose the first addition to your stack." : `Review your £${stackTotal} ${stackLevelFor(productCount).toLowerCase()} stack.`}
-      />
+        <SurfaceGridZone zone="full">
+          <BaselineSurface baseline={baseline} onBaselineChange={host === "standalone" ? selectBaseline : undefined} productCount={productCount} />
+        </SurfaceGridZone>
+
+        <SurfaceGridZone zone="full">
+          <DecisionSurface
+            className={styles.additionsSurface}
+            copy={`Choose the contribution that makes the ${goal.toLowerCase()} stack stronger. Each product keeps its own facts, price and OpenLab status.`}
+            eyebrow="Build beyond the starting product"
+            title="Add what makes the stack stronger."
+          >
+            <p className={styles.mobileRailCue}>
+              {visibleProducts.length} product options · Swipe to compare
+            </p>
+            <section
+              aria-label={`${goal} stack additions`}
+              className={styles.rail}
+              data-option-count={visibleProducts.length}
+            >
+              {visibleProducts.map((product) => (
+                <StackOutcomeCard
+                  added={added.includes(product.id)}
+                  key={product.id}
+                  onAdd={() => toggleAddition(product.id)}
+                  product={product}
+                />
+              ))}
+            </section>
+          </DecisionSurface>
+        </SurfaceGridZone>
+
+        <SurfaceGridZone zone="split-start">
+          <div aria-live="polite" data-component="StackSummarySurface">
+            <DecisionSurface
+              className={styles.outcome}
+              copy={productCount === 1
+                ? `${baseline.name} is your foundation. Add the first contribution to make the selected build stronger.`
+                : `This ${productCount}-product build now focuses on ${stackContributionPhrase(contributions)}.`}
+              eyebrow="Your stack is getting stronger"
+              title={`${stackLevelFor(productCount)} ${goal.toLowerCase()} stack.`}
+            >
+              <SelectedProductFacts baseline={baseline} selectedProducts={selectedProducts} stackTotal={stackTotal} />
+              <StackCommercialLevel contributions={contributions} productCount={productCount} />
+              <p className={styles.selectedLineup}>{selectedLineup}</p>
+            </DecisionSurface>
+          </div>
+        </SurfaceGridZone>
+
+        <SurfaceGridZone zone="split-end">
+          <OpenLabConfidenceSurface products={confidenceSelection(baseline, selectedProducts)} />
+        </SurfaceGridZone>
+
+        <SurfaceGridZone zone="full">
+          <DecisionSurface
+            actions={productCount === 1
+              ? <ActionButton disabled>Review one selected product</ActionButton>
+              : <ActionLink href="/bundle-builder">Review {productCount} selected products</ActionLink>}
+            className={styles.continue}
+            compact
+            copy={productCount === 1
+              ? "Set the goal, then choose what each new product should add to the result."
+              : `${selectedLineup} brings ${contributions.join(", ").toLowerCase()} into one clear product decision.`}
+            eyebrow="Your selected products"
+            title={productCount === 1 ? "Choose the first addition to your stack." : "Review the selected products together."}
+          />
+        </SurfaceGridZone>
+      </SurfaceGrid>
     </div>
   );
 }
