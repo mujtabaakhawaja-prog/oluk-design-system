@@ -1,50 +1,81 @@
-import { ActionLink } from "./customer-route-primitives";
+import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
+import { ActionLink, Arrow } from "./customer-route-primitives";
+import experience from "./openlab-product-depth.json";
+import styles from "./openlab-hero-light.module.css";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { mk2866Fixture } from "./product-fixtures";
+import { EvidenceStatusChip } from "./program-components";
 
-const categories = [
-  ["01", "SARMs", "Selective receptor modulators.", "/shop?family=sarms"],
-  ["02", "Prohormones", "Formulations grouped by the live catalogue family.", "/shop?family=prohormones"],
-  ["03", "Research Chemicals", "Research compounds in the current catalogue.", "/shop?family=research-chemicals"],
-  ["04", "Stacks", "Curated multi-product relationships and stacks.", "/shop?family=stacks"],
+const confidenceEntries = [
+  ["01", "Find the record", "Start with a product, batch or report reference.", "/open-lab/records"],
+  ["02", "Compare products", "Put product facts and record availability side by side.", "/open-lab/compare"],
+  ["03", "Build a stronger stack", "Add products by the outcome each one contributes.", "/open-lab/stack-builder"],
+  ["04", "Read the methodology", "Understand how labels, batches and reports stay distinct.", "/open-lab/methodology"],
 ] as const;
-
-const ticker = [
-  ["MK-677", "98.9%", "Verified 08 May 2026"],
-  ["BPC-157", "99.2%", "Verified 07 May 2026"],
-  ["CJC-1295", "99.0%", "Verified 06 May 2026"],
-] as const;
-
-function SearchGlyph() {
-  return <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" fill="none" r="6.2" stroke="currentColor" strokeWidth="1.6"/><path d="m15.2 15.2 4.2 4.2" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.6"/></svg>;
-}
 
 export function OpenLabHeroLight() {
+  const concentration = experience.visualizations.concentration;
+
   return (
-    <section className="section-blue-wash openlab-hero-light" data-figma-node="614:75995" data-module="OpenLabHeroLight" id="openlab-hero-light">
-      <div className="shell hero-composition">
-        <div className="hero-left-stack">
-          <article className="hero-panel portal-card">
-            <span className="eyebrow">OpenLab portal</span>
-            <h1>Shop the range and verify every batch.</h1>
-            <p>Browse products, check batch records, and access lab reports in one place.</p>
-            <label className="hero-search"><SearchGlyph/><span className="sr-only">Search OpenLab</span><input placeholder="Search products, batches, or compounds" type="search"/></label>
-            <div className="button-row"><ActionLink href="/shop">Shop the range</ActionLink><ActionLink href="/open-lab/records" secondary>View lab records</ActionLink></div>
-          </article>
-          <article className="hero-panel archive-card">
-            <div className="archive-card-copy"><span className="eyebrow">OpenLab archive</span><h2>Every batch. Every report. Public.</h2><p>Independent laboratory records remain connected to the batches and products they describe.</p></div>
-            <div className="archive-metrics"><div><strong>15</strong><span>Reports</span></div><div><strong>99.55%</strong><span>Avg purity</span></div><div><strong>0</strong><span>Failures</span></div></div>
-            <a href="/open-lab/records">View the records archive →</a>
-          </article>
+    <section
+      className={styles.hero}
+      data-figma-node="614:75995"
+      data-module="OpenLabHeroLight"
+      data-recomposed-from="sites-commerce-confidence"
+      id="openlab-hero-light"
+    >
+      <div className={styles.shell}>
+        <div className={styles.decisionField}>
+          <EditorialSurface
+            actions={<><ActionLink href="/shop">Shop the range</ActionLink><ActionLink href="/open-lab/records" secondary>Find a record</ActionLink></>}
+            copy="OpenLab turns named batches, source documents and reported values into product confidence—so you can understand what stands behind a product before returning to the buying decision."
+            eyebrow="OPENLAB"
+            headingLevel="h1"
+            title="See the product. Then see what stands behind it."
+          >
+            <div className={styles.valueChips} role="list" aria-label="OpenLab customer value">
+              <span role="listitem">PRODUCT CONFIDENCE</span>
+              <span role="listitem">SOURCE ACCESS</span>
+              <span role="listitem">CONNECTED COMMERCE</span>
+            </div>
+          </EditorialSurface>
+          <ProductCommerceCard headingLevel="h2" product={mk2866Fixture} variant="featured"/>
         </div>
-        <ProductCommerceCard headingLevel="h2" product={mk2866Fixture} variant="featured"/>
-        <div className="hero-category-cards">
-          {categories.map(([index,title,copy,href]) => <a href={href} key={title}><span>{index}</span><h3>{title}</h3><p>{copy}</p><strong>Browse →</strong></a>)}
+
+        <div className={styles.confidenceField}>
+          <TechnicalSurface
+            actions={<><ActionLink href="/open-lab/dossier/mk-2866">Open the MK-2866 dossier</ActionLink><ActionLink href={experience.record.sourceAction.href} secondary>Open original report</ActionLink></>}
+            copy="MK-2866 is the complete reference specimen: one product format connected to one named batch, one supplied report and the exact values available from that source."
+            eyebrow="FEATURED RECORD"
+            title="One product. One named batch. A direct source path."
+          >
+            <EvidenceStatusChip state="source-reported"/>
+            <dl className={styles.recordMetrics}>
+              <div><dt>Batch</dt><dd>{experience.record.batchCode}</dd></div>
+              <div><dt>Reported purity</dt><dd>{experience.visualizations.purity.displayValue}</dd></div>
+              <div><dt>Reported concentration</dt><dd>{concentration?.testedValue ?? "Unavailable"}</dd></div>
+              <div><dt>Laboratory</dt><dd>{experience.record.labName}</dd></div>
+            </dl>
+          </TechnicalSurface>
+
+          <DecisionSurface
+            compact
+            copy="Move into the product, the record, the comparison or a stronger multi-product composition without losing the confidence context."
+            eyebrow="CHOOSE YOUR NEXT STEP"
+            title="Turn record detail into a clearer product decision."
+          >
+            <div className={styles.entryGrid}>
+              {confidenceEntries.map(([index, title, copy, href]) => (
+                <a href={href} key={title}>
+                  <span>{index}</span>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
+                  <strong>Continue <Arrow/></strong>
+                </a>
+              ))}
+            </div>
+          </DecisionSurface>
         </div>
-        <article className="batch-ticker">
-          <div className="ticker-heading"><span><i/>Live batch verification feed</span><a href="/open-lab/records">All reports →</a></div>
-          <div className="ticker-grid">{ticker.map(([name,purity,status]) => <a href="/open-lab/records" key={name}><div><strong>{name}</strong><span>{status}</span></div><div><strong>{purity}</strong><span>HPLC</span></div></a>)}</div>
-        </article>
       </div>
     </section>
   );

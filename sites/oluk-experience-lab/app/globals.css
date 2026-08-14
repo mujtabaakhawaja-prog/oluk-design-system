@@ -2432,6 +2432,7 @@ a.button-secondary:hover {
   display: grid;
   gap: 18px;
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.82fr) minmax(0, 0.95fr);
+  margin-top: 18px;
   min-width: 0;
   padding: 22px;
 }

@@ -27,7 +27,7 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "contact", path: "/contact", label: "Contact", heading: "Start with the right team.", section: "support", authorityClass: "customer-candidate" },
   { key: "delivery", path: "/delivery", label: "Delivery information", heading: "Delivery information, kept clear.", section: "support", authorityClass: "customer-candidate" },
   { key: "lab-reports", path: "/lab-reports", label: "Lab reports", heading: "Every product. Its available record path.", section: "openlab", authorityClass: "customer-candidate" },
-  { key: "openlab", path: "/open-lab", label: "Open Lab", heading: "Shop the range and verify every batch.", section: "openlab", authorityClass: "customer-candidate" },
+  { key: "openlab", path: "/open-lab", label: "Open Lab", heading: "See the product. Then see what stands behind it.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "openlab-admin", path: "/open-lab/admin", label: "OpenLab admin", heading: "OpenLab command centre.", section: "owner", authorityClass: "owner-review" },
   { key: "records", path: "/open-lab/records", label: "Records", heading: "Every product. Its available record path.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "record", path: "/open-lab/records/source-bound-record", label: "Selected record", heading: "MK-2866 evidence record", section: "openlab", authorityClass: "customer-candidate" },
