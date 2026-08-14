@@ -11,13 +11,13 @@ import {
   PriceBlock,
   ProductIdentity,
   StaticPurchaseActions,
-  StaticQuantityStepper,
 } from "./commerce-parts";
 import { classes } from "./component-utils";
 import { MetricRail } from "./metric-rail";
 import type { ProductFixture } from "./product-fixtures";
 import { mk2866Fixture } from "./product-fixtures";
 import { QualitativeChipList } from "./qualitative-chip";
+import { QuantityStepper } from "./quantity-stepper";
 
 export type PurchasePanelProps = Readonly<{
   product?: ProductFixture;
@@ -101,7 +101,10 @@ export function PurchasePanel({
       </div>
       <div className="purchase-row">
         <PriceBlock price={product.price} />
-        <StaticQuantityStepper value={quantity ?? presentation.quantity} />
+        <QuantityStepper
+          unavailable={(inventory ?? presentation.inventory) !== "in-stock"}
+          value={quantity ?? presentation.quantity}
+        />
       </div>
       <StaticPurchaseActions
         evidenceHref={product.evidencePath}

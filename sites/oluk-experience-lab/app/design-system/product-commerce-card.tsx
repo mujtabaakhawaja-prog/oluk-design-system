@@ -5,18 +5,20 @@ import type {
   ProductCardState,
   ProductCardVariant,
 } from "./commerce-types";
+import { ActionButton, ActionLink } from "./action-control";
 import {
   FixtureStatusStack,
   PriceBlock,
   ProductIdentity,
   StaticPurchaseActions,
-  StaticQuantityStepper,
 } from "./commerce-parts";
 import { classes } from "./component-utils";
 import { MetricRail } from "./metric-rail";
 import type { ProductFixture } from "./product-fixtures";
 import { ProductMediaChamber } from "./product-media-chamber";
+import styles from "./product-commerce-card.module.css";
 import { QualitativeChipList } from "./qualitative-chip";
+import { QuantityStepper } from "./quantity-stepper";
 
 export type ProductCommerceCardProps = Readonly<{
   product: ProductFixture;
@@ -112,7 +114,10 @@ export function ProductCommerceCard({
           ) : null}
           <div className="purchase-row">
             <PriceBlock price={product.price} />
-            <StaticQuantityStepper value={quantity} />
+            <QuantityStepper
+              unavailable={resolved.inventory !== "in-stock"}
+              value={quantity}
+            />
           </div>
           <StaticPurchaseActions
             evidenceHref={secondaryHref ?? product.evidencePath}
@@ -152,17 +157,19 @@ export function ProductCommerceCard({
         {status ? <div className="oluk-candidate-compact-proof">{status}</div> : null}
         {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
         {commerceTreatment === "purchase" ? (
-          <div className="oluk-candidate-compact-buy">
+          <div className={classes("oluk-candidate-compact-buy", styles.compactPurchase)}>
             <strong>{product.price}</strong>
-            <div>
-              <a href={secondaryHref ?? product.customerPath}>View product</a>
-              <button disabled type="button">
+            <div className={styles.compactActions}>
+              <ActionLink href={secondaryHref ?? product.customerPath} size="compact" variant="quiet">
+                View product
+              </ActionLink>
+              <ActionButton disabled size="compact">
                 {resolved.primaryLabel === "Add to bag"
                   ? "Quick add"
                   : resolved.primaryLabel === "Added"
                     ? "Added ✓"
                     : resolved.primaryLabel}
-              </button>
+              </ActionButton>
             </div>
           </div>
         ) : null}
@@ -190,9 +197,11 @@ export function ProductCommerceCard({
         <div className="product-content-plane">
           <ProductIdentity headingLevel={headingLevel} product={product} status={status} />
           {variant === "featured" && product.sku ? (
-            <div className="card-sku">
+            <div className={styles.skuRow}>
               <span>SKU {product.sku}</span>
-              <a href={product.customerPath}>View product →</a>
+              <ActionLink className={styles.skuLink} href={product.customerPath} size="compact" variant="quiet">
+                View product
+              </ActionLink>
             </div>
           ) : null}
           <MetricRail product={product} />
@@ -203,7 +212,10 @@ export function ProductCommerceCard({
             <>
               <div className="purchase-row">
                 <PriceBlock price={product.price} />
-                <StaticQuantityStepper value={quantity} />
+                <QuantityStepper
+                  unavailable={resolved.inventory !== "in-stock"}
+                  value={quantity}
+                />
               </div>
               <StaticPurchaseActions
                 evidenceHref={secondaryHref ?? product.evidencePath}

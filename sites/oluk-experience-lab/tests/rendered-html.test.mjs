@@ -482,7 +482,11 @@ test("renders owner-review candidate anchors, direct Figma sources, and all comp
   assert.match(reviewHtml, /data-component=["']ProductCommerceCard\.Relation["']/i);
   assert.match(reviewHtml, /data-component=["']PurchasePanel["']/i);
   assert.match(reviewHtml, /data-component=["']AssuranceRail["']/i);
-  assert.match(reviewHtml, /<button\b(?=[^>]*\bdisabled\b)[^>]*>Add to bag<\/button>/i, "static actions use native disabled-button semantics");
+  assert.match(
+    reviewHtml,
+    /<button\b(?=[^>]*data-component=["']Button["'])(?=[^>]*data-control-kind=["']button["'])(?=[^>]*\bdisabled\b)[^>]*>[\s\S]*?Add to bag[\s\S]*?<\/button>/i,
+    "static actions use canonical ActionControl with native disabled-button semantics",
+  );
   assert.doesNotMatch(reviewHtml, /<span\b[^>]*\baria-disabled=/i, "button-like spans are not used for static controls");
 });
 

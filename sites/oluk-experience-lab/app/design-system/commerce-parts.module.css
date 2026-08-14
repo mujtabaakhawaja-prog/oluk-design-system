@@ -1,0 +1,11 @@
+.actions {
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: 1fr;
+  margin-block-start: var(--oluk-space-4);
+  min-width: 0;
+}
+
+.actions > * {
+  width: 100%;
+}

@@ -1,0 +1,61 @@
+.compactPurchase {
+  align-items: center;
+  border-block-start: var(--oluk-border-width) solid var(--oluk-border-card);
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: auto minmax(0, 1fr);
+  padding-block-start: var(--oluk-space-3);
+}
+
+.compactPurchase > strong {
+  color: var(--oluk-cobalt);
+  font-family: var(--oluk-font-display);
+  font-size: var(--oluk-type-display-md);
+}
+
+.compactActions {
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+}
+
+.compactActions > * {
+  width: 100%;
+}
+
+.skuRow {
+  align-items: center;
+  border-block: var(--oluk-border-width) solid var(--oluk-border-card);
+  color: var(--oluk-text-muted);
+  display: grid;
+  font-size: var(--oluk-type-eyebrow);
+  font-weight: 800;
+  gap: var(--oluk-space-2);
+  grid-template-columns: auto minmax(0, 1fr);
+  letter-spacing: 0.08em;
+  padding-block: var(--oluk-space-3);
+}
+
+.skuLink {
+  justify-self: end;
+  letter-spacing: 0;
+  width: fit-content;
+}
+
+@media (max-width: 540px) {
+  .compactPurchase,
+  .skuRow {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .compactActions {
+    grid-template-columns: 1fr;
+  }
+
+  .skuLink {
+    justify-self: stretch;
+    width: 100%;
+  }
+}

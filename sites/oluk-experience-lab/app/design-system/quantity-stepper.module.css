@@ -1,0 +1,42 @@
+.stepper {
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-control);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(44px, 1fr));
+  min-block-size: 44px;
+  min-inline-size: 132px;
+  overflow: hidden;
+  width: min(100%, 132px);
+}
+
+.stepper > * {
+  align-items: center;
+  background: var(--oluk-surface-card);
+  border: 0;
+  color: var(--oluk-cobalt);
+  display: flex;
+  font-size: var(--oluk-type-body-sm);
+  font-weight: 700;
+  justify-content: center;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  padding: 0;
+}
+
+.stepper > * + * {
+  border-inline-start: var(--oluk-border-width) solid var(--oluk-border-card);
+}
+
+.stepper output {
+  color: var(--oluk-text-primary);
+}
+
+.stepper button:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.stepper[data-state="unavailable"] > * {
+  background: var(--oluk-status-unavailable-soft);
+  color: var(--oluk-text-secondary);
+}

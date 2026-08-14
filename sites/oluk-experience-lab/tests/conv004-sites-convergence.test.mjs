@@ -221,6 +221,10 @@ test("CONV-004 reuses ProductMediaChamber and separates the atomic divider from 
   const contracts = await source("app/design-system/contracts.ts");
   const globals = await source("app/globals.css");
   const commerceParts = await source("app/design-system/commerce-parts.tsx");
+  const commercePartsCss = await source("app/design-system/commerce-parts.module.css");
+  const productCardCss = await source("app/design-system/product-commerce-card.module.css");
+  const quantityStepper = await source("app/design-system/quantity-stepper.tsx");
+  const quantityStepperCss = await source("app/design-system/quantity-stepper.module.css");
   const purchasePanel = await source("app/design-system/purchase-panel.tsx");
 
   assert.match(divider, /export function CobaltDivider\(/);
@@ -268,17 +272,18 @@ test("CONV-004 reuses ProductMediaChamber and separates the atomic divider from 
   assert.match(commerceParts, /data-state=\{state\}/);
   assert.match(purchasePanel, /state=\{inventory \?\? presentation\.inventory\}/);
   assert.match(decisionHero, /state=\{product\.presentationStatus\.inventory\}/);
-  assert.match(globals, /\.card-actions\[data-state="unavailable"\][\s\S]*?var\(--oluk-status-unavailable-soft\)/);
+  assert.match(commerceParts, /<ActionButton disabled>/);
+  assert.match(commercePartsCss, /\.actions\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(globals, /\.product-commerce-card-featured \.card-actions\s*\{[^}]*grid-template-columns:\s*1fr 1\.12fr/s);
-  assert.match(candidateReviewCss, /\.product-commerce-card-vertical \.oluk-candidate-actions\s*\{\s*grid-template-columns:\s*1fr/);
-  assert.match(candidateReviewCss, /\.product-commerce-card-featured \.oluk-candidate-actions\s*\{\s*grid-template-columns:\s*repeat\(2/);
+  assert.match(productCardCss, /\.compactActions\s*\{[^}]*grid-template-columns:\s*repeat\(2/s);
+  assert.match(quantityStepper, /data-component="QuantityStepper"/);
+  assert.match(quantityStepperCss, /grid-template-columns:\s*repeat\(3, minmax\(44px, 1fr\)\)/);
   assert.match(candidateReview, /<PurchasePanelMatrix product=\{mk2866Fixture\} \/>/);
   assert.match(candidateReviewCss, /data-width="desktop"[^}]*max-width:\s*420px/);
   assert.match(candidateReviewCss, /data-width="mobile"[^}]*max-width:\s*358px/);
   assert.match(candidateReview, /showQualitative=\{false\}[\s\S]*?state=\{state\}[\s\S]*?variant="compact"/);
   assert.match(candidateReviewCss, /data-state="hover"[^}]*border-color:\s*var\(--oluk-border-strong\)/);
   assert.match(candidateReviewCss, /data-state="selected"[^}]*border:\s*2px solid var\(--oluk-cobalt\)/);
-  assert.match(candidateReviewCss, /data-state="added"[^}]*compact-buy button[^}]*background:\s*var\(--oluk-surface-card\)[^}]*color:\s*var\(--oluk-cobalt\)/s);
   assert.match(commerceCard, /resolved\.primaryLabel === "Added"[\s\S]*?"Added ✓"/);
   assert.match(commerceCard, /const qualitativeVisible = showQualitative \?\? variant !== "compact"/);
   assert.match(commerceCard, /evidenceLabel=\{secondaryLabel \?\? \(resolved\.evidence === "unavailable" \? "Browse Lab Records" : "View Lab Record"\)\}/);
