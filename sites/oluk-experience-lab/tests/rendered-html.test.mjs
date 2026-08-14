@@ -201,7 +201,7 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
   assert.match(homeText, /direct access to available lab records/i, "LockedHero carries production-promotable customer copy");
 
   const shopHtml = await renderHtml(worker, "/shop");
-  assert.match(shopHtml, /data-component=["']ProductCommerceCard\.featured["']/i, "Shop renders the mapped canonical Featured component");
+  assert.match(shopHtml, /data-component=["']ProductCommerceCard\.compact["']/i, "Shop renders canonical Compact card instances throughout the grid");
   assert.match(shopHtml, /class=["'][^"']*shop-result-card-canonical[^"']*["']/i, "Shop exposes the canonical catalogue-result selector");
 
   const openLabText = visibleText(await renderHtml(worker, "/open-lab"));

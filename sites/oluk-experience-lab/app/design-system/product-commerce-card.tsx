@@ -148,13 +148,16 @@ export function ProductCommerceCard({
         {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
         <div className="oluk-candidate-compact-buy">
           <strong>{product.price}</strong>
-          <button disabled type="button">
-            {resolved.primaryLabel === "Add to bag"
-              ? "Quick add"
-              : resolved.primaryLabel === "Added"
-                ? "Added ✓"
-                : resolved.primaryLabel}
-          </button>
+          <div>
+            <a href={secondaryHref ?? product.customerPath}>View product</a>
+            <button disabled type="button">
+              {resolved.primaryLabel === "Add to bag"
+                ? "Quick add"
+                : resolved.primaryLabel === "Added"
+                  ? "Added ✓"
+                  : resolved.primaryLabel}
+            </button>
+          </div>
         </div>
       </article>
     );

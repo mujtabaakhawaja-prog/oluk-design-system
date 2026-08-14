@@ -2,9 +2,13 @@
 
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { ProductCommerceCard } from "./product-commerce-card";
-import { ProductMediaChamber } from "./product-media-chamber";
-import { mk2866Fixture, rad140Fixture, type ProductMediaAsset } from "./product-fixtures";
-import { StockPill } from "./product-status";
+import { actualProductMedia, getFrontierProduct } from "./frontier-content";
+import {
+  mk2866Fixture,
+  rad140Fixture,
+  type ProductFixture,
+  type ProductMediaAsset,
+} from "./product-fixtures";
 import {
   filterShopTaxonomyFixtures,
   SHOP_AVAILABILITY_OPTIONS,
@@ -142,67 +146,61 @@ function taxonomyMedia(product: ShopTaxonomyFixtureProduct): ProductMediaAsset {
   };
 }
 
-function stockState(product: ShopTaxonomyFixtureProduct) {
-  if (product.availabilityState === "in-stock") return "in-stock" as const;
-  if (product.availabilityState === "out-of-stock") return "out-of-stock" as const;
-  return "unavailable" as const;
-}
-
 /**
- * A taxonomy discovery projection, not a ProductCommerceCard substitute.
- * Only the locked MK-2866 record may instantiate the full commerce contract;
- * remaining audited catalogue entries reuse canonical media/status atoms until
- * their PDP and complete product truth are publication-authorized.
+ * Shop is a product-decision surface, so every catalogue result is rendered
+ * through the canonical ProductCommerceCard anatomy. The taxonomy drives
+ * filtering; the frontier record supplies the customer-facing facts and
+ * proposition. This deliberately removes the former parallel shop card.
  */
-function ShopDiscoveryResult({ product }: { product: ShopTaxonomyFixtureProduct }) {
-  const purchaseLabel =
-    product.availabilityState === "in-stock"
-      ? "Add to bag"
-      : product.availabilityState === "on-backorder"
-        ? "Backorder"
-        : product.availabilityState === "out-of-stock"
-          ? "Out of stock"
-          : "Unavailable";
-  return (
-    <article
-      aria-labelledby={`shop-product-${product.fixtureId}`}
-      className="shop-result-card shop-discovery-result"
-      data-component="ShopDiscoveryResult"
-      data-live-authority="false"
-    >
-      <ProductMediaChamber context="featured" media={taxonomyMedia(product)} />
-      <div className="shop-result-content">
-        <div className="shop-result-heading">
-          <div>
-            <span className="product-series">{product.familySlugs.map(familyLabel).join(" · ")}</span>
-            <h2 id={`shop-product-${product.fixtureId}`}>{product.displayName}</h2>
-            {product.displayAlias ? <p>{product.displayAlias}</p> : null}
-          </div>
-          <StockPill className="shop-result-availability" state={stockState(product)} />
-        </div>
-        <dl className="shop-result-facts">
-          <div>
-            <dt>Form</dt>
-            <dd>{product.formSlug === "capsules" ? "Capsules" : "Details pending"}</dd>
-          </div>
-          <div>
-            <dt>Pack</dt>
-            <dd>{product.servingsCount ? `${product.servingsCount} servings` : "Details pending"}</dd>
-          </div>
-        </dl>
-        <div className="shop-result-goals" aria-label="Product goals">
-          {product.goalTagSlugs.map((goal) => <span key={goal}>{goal.replaceAll("-", " ")}</span>)}
-        </div>
-        <div className="shop-result-commerce">
-          <strong>{formatPrice(product.capturedPriceMinor)}</strong>
-          <div>
-            <span className="button button-secondary" data-route-state="unavailable">Product page unavailable</span>
-            <button className={product.availabilityState === "in-stock" ? "button" : "button shop-result-action-unavailable"} disabled type="button">{purchaseLabel}</button>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
+function catalogueFixture(product: ShopTaxonomyFixtureProduct): ProductFixture {
+  if (product.fixtureId === "mk-2866") return mk2866Fixture;
+  if (product.fixtureId === "rad-140") return rad140Fixture;
+
+  const frontier = getFrontierProduct(product.fixtureId);
+  const mediaSource = actualProductMedia[product.fixtureId];
+  const media = mediaSource
+    ? {
+        ...taxonomyMedia(product),
+        src: mediaSource.src,
+        width: mediaSource.width,
+        height: mediaSource.height,
+        authority: "confirmed-product-asset" as const,
+        sourceRef: "OLUK registered product render library",
+      }
+    : taxonomyMedia(product);
+
+  return {
+    id: product.fixtureId as ProductFixture["id"],
+    series: frontier?.series ?? `${product.familySlugs.map(familyLabel).join(" ").toUpperCase()} SERIES`,
+    name: frontier?.name ?? product.displayName,
+    alias: frontier?.alias ?? product.displayAlias ?? product.displayName,
+    sku: frontier?.sku ?? product.sku ?? undefined,
+    strength: frontier?.strength ?? "FORMAT",
+    servings: frontier?.servings ?? (product.servingsCount ? `${product.servingsCount} SERVINGS` : "CAPSULE FORMAT"),
+    purity: frontier?.purity ?? "PRODUCT DETAIL",
+    price: frontier?.price ?? formatPrice(product.capturedPriceMinor),
+    customerPath: frontier ? `/product/${frontier.slug}` : product.customerPath,
+    evidencePath: "/open-lab/records",
+    media,
+    qualitativeFacts: [
+      { kind: "class", label: "FOCUS", value: frontier?.goal[0]?.toUpperCase() ?? "DISCOVERY" },
+      { kind: "form", label: "FORM", value: product.formSlug?.toUpperCase() ?? "CAPSULES" },
+      { kind: "quality", label: "RANGE", value: frontier?.family.toUpperCase() ?? "OLYMPUS" },
+      { kind: "tested", label: "DETAIL", value: "VIEW PRODUCT" },
+    ],
+    presentationStatus: {
+      inventory: product.availabilityState === "in-stock" ? "in-stock" : product.availabilityState === "out-of-stock" ? "out-of-stock" : "unavailable",
+      evidence: "available",
+    },
+    authority: {
+      classification: "design-review-fixture",
+      sourceRef: "Frontier product record plus audited catalogue taxonomy",
+      truthScope: "presentation-fixture",
+      runtimeOwner: "shopper-ssr-later",
+      publicationState: "owner-only-review",
+      live: false,
+    },
+  } as ProductFixture;
 }
 
 export function ShopDiscovery() {
@@ -342,18 +340,15 @@ export function ShopDiscovery() {
           </div>
           {results.length > 0 ? (
             <div className="shop-result-grid">
-              {results.map((product) =>
-                product.fixtureId === "mk-2866" ? (
-                  <ProductCommerceCard
-                    className="shop-result-card shop-result-card-canonical"
-                    key={product.fixtureId}
-                    product={mk2866Fixture}
-                    variant="featured"
-                  />
-                ) : (
-                  <ShopDiscoveryResult key={product.fixtureId} product={product} />
-                ),
-              )}
+              {results.map((product) => (
+                <ProductCommerceCard
+                  className="shop-result-card shop-result-card-canonical"
+                  key={product.fixtureId}
+                  product={catalogueFixture(product)}
+                  secondaryHref={catalogueFixture(product).customerPath}
+                  variant="compact"
+                />
+              ))}
             </div>
           ) : (
             <div className="shop-empty-state" role="status">

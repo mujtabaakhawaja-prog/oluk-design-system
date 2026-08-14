@@ -66,15 +66,16 @@ test("Shop uses independent combinable facets and keeps the candidate non-live",
   assert.match(discovery, /aria-live="polite"/);
   assert.match(discovery, /<fieldset>/g);
   assert.match(discovery, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
-  assert.match(discovery, /import \{ mk2866Fixture, rad140Fixture, type ProductMediaAsset \} from "\.\/product-fixtures"/);
+  assert.match(discovery, /import \{ actualProductMedia, getFrontierProduct \} from "\.\/frontier-content"/);
+  assert.match(discovery, /mk2866Fixture,[\s\S]*?rad140Fixture,[\s\S]*?type ProductFixture,[\s\S]*?type ProductMediaAsset/);
   assert.match(discovery, /product\.fixtureId === "rad-140"\) return rad140Fixture\.media/);
-  assert.match(discovery, /product\.fixtureId === "mk-2866"[\s\S]*?<ProductCommerceCard[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="featured"/);
+  assert.match(discovery, /function catalogueFixture\(product: ShopTaxonomyFixtureProduct\): ProductFixture/);
+  assert.match(discovery, /product=\{catalogueFixture\(product\)\}[\s\S]*?variant="compact"/);
   assert.match(discovery, /className="shop-result-card shop-result-card-canonical"/);
-  assert.match(discovery, /function ShopDiscoveryResult/);
-  assert.match(discovery, /<ProductMediaChamber context="featured" media=\{taxonomyMedia\(product\)\} \/>/);
-  assert.match(discovery, /<StockPill className="shop-result-availability" state=\{stockState\(product\)\} \/>/);
+  assert.doesNotMatch(discovery, /function ShopDiscoveryResult/);
+  assert.doesNotMatch(discovery, /<ProductMediaChamber context="featured" media=\{taxonomyMedia\(product\)\} \/>/);
   assert.doesNotMatch(discovery, /function ShopResultCard|shop-result-orbit|<img/);
-  assert.match(discovery, /<button className=\{[^}]+\} disabled type="button">\{purchaseLabel\}<\/button>/);
+  assert.match(discovery, /<ProductCommerceCard/);
   assert.match(discovery, /product\.imageSrc/);
 });
 

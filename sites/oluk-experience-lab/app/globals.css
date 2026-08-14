@@ -1866,6 +1866,41 @@ a.button-secondary:hover {
   overflow: hidden;
 }
 
+.shop-result-card-canonical {
+  display: flex;
+  min-height: 0;
+}
+
+.shop-result-card-canonical.product-commerce-card-compact {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
+.shop-result-card-canonical .oluk-candidate-compact-buy {
+  align-items: center;
+  gap: 12px;
+}
+
+.shop-result-card-canonical .oluk-candidate-compact-buy > div {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.shop-result-card-canonical .oluk-candidate-compact-buy a {
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  text-decoration: none;
+}
+
 .shop-result-content {
   padding: 24px;
 }
