@@ -2,9 +2,9 @@ import { classes } from "./component-utils";
 import type { ProductFixture } from "./product-fixtures";
 
 export type MetricRailValues = Readonly<{
-  strength: string;
-  servings: string;
-  purity: string;
+  strength: string | null;
+  servings: string | null;
+  purity: string | null;
 }>;
 
 export type MetricRailProps = Readonly<{
@@ -14,14 +14,16 @@ export type MetricRailProps = Readonly<{
   className?: string;
 }>;
 
-function quantifiedValue(value: string, label: string) {
+function quantifiedValue(value: string | null, label: string) {
+  if (!value?.trim()) return "—";
   const suffix = new RegExp(`\\s+${label}$`, "i");
   return value.replace(suffix, "");
 }
 
 function metricFit(value: string) {
-  if (value.length > 8) return "long";
-  if (value.length > 5) return "medium";
+  const length = [...value].length;
+  if (length > 8) return "long";
+  if (length > 5) return "medium";
   return "short";
 }
 
@@ -47,9 +49,16 @@ export function MetricRail({ product, values, compact = false, className }: Metr
         "oluk-metric-rail",
         className,
       )}
+      aria-label="Product specifications"
+      data-component="ProductMetricRail"
+      data-metric-count={cells.length}
     >
       {cells.map(([value, label]) => (
-        <div data-fit={metricFit(value)} key={label}>
+        <div
+          data-availability={value === "—" ? "unavailable" : "available"}
+          data-fit={metricFit(value)}
+          key={label}
+        >
           <dt>{value}</dt>
           <dd>{label}</dd>
         </div>

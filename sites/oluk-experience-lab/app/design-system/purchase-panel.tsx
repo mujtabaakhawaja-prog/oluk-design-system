@@ -69,6 +69,7 @@ export function PurchasePanel({
       aria-label={`${product.name} ${state} purchase presentation`}
       className={classes("purchase-panel", "oluk-candidate-purchase-panel", className)}
       data-component="PurchasePanel"
+      data-copy-surface="decision"
       data-state={state}
       data-width={width}
     >

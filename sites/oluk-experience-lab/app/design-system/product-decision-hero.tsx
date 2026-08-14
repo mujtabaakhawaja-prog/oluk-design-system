@@ -28,6 +28,7 @@ export function HeroDecisionSurface({
       aria-label={`Featured ${product.name} product decision surface`}
       className={classes("hero-decision-surface", "oluk-hero-decision-surface", className)}
       data-component="HeroDecisionSurface"
+      data-copy-surface="decision"
     >
       <div className="hero-decision-heading">
         <ProductIdentity

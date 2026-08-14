@@ -95,6 +95,7 @@ export function ProductCommerceCard({
         aria-label={`${product.name} related product presentation`}
         className={classes("horizontal-product-card", "product-commerce-card-relation", className)}
         data-component="ProductCommerceCard.Relation"
+        data-copy-surface="commerce"
         data-state={state}
         data-variant={variant}
       >
@@ -132,6 +133,7 @@ export function ProductCommerceCard({
           className,
         )}
         data-component="ProductCommerceCard.compact"
+        data-copy-surface="commerce"
         data-state={state}
         data-variant={variant}
       >
@@ -174,6 +176,7 @@ export function ProductCommerceCard({
         className,
       )}
       data-component={`ProductCommerceCard.${variant}`}
+      data-copy-surface="commerce"
       data-state={state}
       data-variant={variant}
     >

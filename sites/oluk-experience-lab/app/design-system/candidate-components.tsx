@@ -11,6 +11,12 @@ import type { ProductCardState, PurchasePanelState } from "./commerce-types";
 export { AssuranceRail } from "./assurance-rail";
 export { MetricRail } from "./metric-rail";
 export { ProductCommerceCard } from "./product-commerce-card";
+export {
+  DecisionSurface,
+  EditorialSurface,
+  TechnicalSurface,
+  TransactionIntroCard,
+} from "./content-surfaces";
 export { PurchasePanel } from "./purchase-panel";
 export { QualitativeChip, QualitativeChipList } from "./qualitative-chip";
 export { RelationCard } from "./related-rail";
