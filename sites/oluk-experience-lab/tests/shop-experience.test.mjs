@@ -34,7 +34,11 @@ test("customer shell mirrors the production navigation contract without orphan s
     "terms",
   ]) {
     const route = await readFile(new URL(`${pathname}/page.tsx`, appRoot), "utf8");
-    assert.match(route, /<ExperienceLab\s+route=/, `${pathname} is a static presentation route`);
+    assert.match(
+      route,
+      /<(?:ExperienceLab|CustomerSiteChrome)\s+route=/,
+      `${pathname} is a static customer route`,
+    );
   }
 
   assert.match(navigationSource, /By family/);

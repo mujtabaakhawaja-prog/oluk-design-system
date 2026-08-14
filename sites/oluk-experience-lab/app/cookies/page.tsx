@@ -1,1 +1,10 @@
-import { SupportSurface } from "../design-system/support-surface"; import { CustomerSiteChrome } from "../experience-lab"; export default function Page(){return <CustomerSiteChrome route="privacy"><SupportSurface kind="cookies"/></CustomerSiteChrome>}
+import { SupportSurface } from "../design-system/support-surface";
+import { CustomerSiteChrome } from "../experience-lab";
+
+export default function CookiesPage() {
+  return (
+    <CustomerSiteChrome route="privacy">
+      <SupportSurface kind="cookies" />
+    </CustomerSiteChrome>
+  );
+}

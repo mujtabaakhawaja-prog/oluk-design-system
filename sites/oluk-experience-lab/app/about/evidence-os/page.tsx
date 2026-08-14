@@ -1,5 +1,10 @@
-import { ExperienceLab } from "../../experience-lab";
+import { EvidenceOsExperience } from "../../design-system/support-surface";
+import { CustomerSiteChrome } from "../../experience-lab";
 
 export default function EvidenceOsPage() {
-  return <ExperienceLab route="evidence-os" />;
+  return (
+    <CustomerSiteChrome route="evidence-os">
+      <EvidenceOsExperience />
+    </CustomerSiteChrome>
+  );
 }

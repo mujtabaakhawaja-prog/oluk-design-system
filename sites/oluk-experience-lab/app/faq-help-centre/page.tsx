@@ -1,3 +1,3 @@
-import { SupportContent } from "../design-system/frontier-sections";
+import { SupportSurface } from "../design-system/support-surface";
 import { CustomerSiteChrome } from "../experience-lab";
-export default function FaqPage(){return <CustomerSiteChrome route="learn"><main><SupportContent kind="faq"/></main></CustomerSiteChrome>}
+export default function FaqPage(){return <CustomerSiteChrome route="learn"><SupportSurface kind="faq"/></CustomerSiteChrome>}

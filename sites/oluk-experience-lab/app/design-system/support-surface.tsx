@@ -1,21 +1,367 @@
 import Link from "next/link";
 
-type SupportSurfaceKind = "shipping-returns" | "faq" | "international" | "gift-cards" | "cookies" | "refunds" | "sitemap" | "legal";
+import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
+import { ProductCommerceCard } from "./product-commerce-card";
+import { mk2866Fixture } from "./product-fixtures";
+import { EvidenceStatusChip, type EvidenceAuthorityState } from "./program-components";
+import styles from "./support-surface.module.css";
 
-const content: Record<SupportSurfaceKind, { eyebrow: string; title: string; copy: string; cards: Array<[string, string, string]> }> = {
-  "shipping-returns": { eyebrow: "DELIVERY AND RETURNS", title: "Know what happens from checkout to delivery.", copy: "Find the delivery information, tracking path and return guidance you need before or after an order.", cards: [["Delivery", "Choose a delivery option at checkout and keep the order total clear before payment.", "Choose delivery"], ["Tracking", "Follow the order progress from dispatch through delivery.", "Track an order"], ["Returns", "Start with the order details and keep every next step clear.", "View return guidance"]] },
-  faq: { eyebrow: "HELP CENTRE", title: "Get the answer and keep moving.", copy: "Browse the essential product, delivery and OpenLab questions in one calm, useful place.", cards: [["Product questions", "Start with the product detail, metrics and the relevant OpenLab record.", "Browse products"], ["Delivery help", "Review delivery choices before payment and tracking after dispatch.", "Delivery information"], ["OpenLab", "Find a batch, compare products or open a report.", "Visit OpenLab"]] },
-  international: { eyebrow: "INTERNATIONAL", title: "Shop Olympus wherever your next order starts.", copy: "Explore delivery availability, order preparation and support information for international customers.", cards: [["Delivery availability", "Review destination-specific options at checkout.", "Choose a destination"], ["Order value", "Keep the selected customer currency clear all the way to payment.", "See payment information"], ["Support", "Get help with an existing order or a wholesale enquiry.", "Contact support"]] },
-  "gift-cards": { eyebrow: "GIFT CARDS", title: "Give someone a stronger next step.", copy: "Choose a gift amount, send it when the moment is right, and let the recipient build their own product direction.", cards: [["Choose an amount", "Pick the value that works for the occasion.", "Choose value"], ["Send it your way", "Keep delivery and recipient details simple.", "Plan delivery"], ["Shop the range", "Point them to clear product facts and useful comparisons.", "Browse products"]] },
-  cookies: { eyebrow: "COOKIE SETTINGS", title: "Keep your choices clear.", copy: "Read how cookies support the current customer experience and where to manage your preferences.", cards: [["Essential", "The basics that help the site work as expected.", "Read essentials"], ["Experience", "Settings that help the site remember useful preferences.", "Manage preferences"], ["More information", "Read the full privacy information alongside this summary.", "Privacy information"]] },
-  refunds: { eyebrow: "REFUNDS", title: "Start a refund request with the order in view.", copy: "Open the order details first, then review the refund amount and the next step for the original payment.", cards: [["Find the order", "Open the relevant order and keep the product and payment amount together.", "View orders"], ["Review the amount", "The original GBP total and fixed USD equivalent stay visible.", "View refund details"], ["Get support", "Ask for help when the order needs a closer look.", "Contact support"]] },
-  sitemap: { eyebrow: "SITEMAP", title: "Find what you came for.", copy: "Move directly into the shop, OpenLab, your account or customer support.", cards: [["Shop", "Browse product families, goals and product comparisons.", "Shop now"], ["OpenLab", "Find a batch, read a record or compare compounds.", "Explore OpenLab"], ["Your account", "Return to orders, restock and saved decisions.", "Open account"]] },
-  legal: { eyebrow: "LEGAL INFORMATION", title: "The information behind your order.", copy: "Open the current legal information for the customer experience and review the details that apply.", cards: [["Privacy", "Read how information is handled.", "Privacy policy"], ["Terms", "Read the current terms and conditions.", "Terms and conditions"], ["Cookies", "Review cookie settings and choices.", "Cookie settings"]] },
+export type SupportSurfaceKind =
+  | "shipping-returns"
+  | "faq"
+  | "international"
+  | "gift-cards"
+  | "cookies"
+  | "refunds"
+  | "sitemap"
+  | "legal"
+  | "contact"
+  | "delivery";
+
+type SupportAction = Readonly<{ label: string; href: string; external?: boolean }>;
+type SupportPathway = Readonly<{
+  label: string;
+  title: string;
+  copy: string;
+  action: SupportAction;
+}>;
+type SupportQuestion = Readonly<{ question: string; answer: string }>;
+type SupportGuide = Readonly<{
+  eyebrow: string;
+  title: string;
+  copy: string;
+  points: readonly string[];
+}>;
+type SupportSurfaceContent = Readonly<{
+  eyebrow: string;
+  title: string;
+  copy: string;
+  primary: SupportAction;
+  secondary?: SupportAction;
+  pathwayTitle: string;
+  pathwayCopy: string;
+  pathways: readonly SupportPathway[];
+  guide?: SupportGuide;
+  questions?: readonly SupportQuestion[];
+  unavailable?: boolean;
+  continuation: Readonly<{
+    eyebrow: string;
+    title: string;
+    copy: string;
+    action: SupportAction;
+  }>;
+}>;
+
+const content: Record<SupportSurfaceKind, SupportSurfaceContent> = {
+  contact: {
+    eyebrow: "Contact",
+    title: "Start with the question that needs answering.",
+    copy: "Choose the customer path that already holds the useful context for a product, order, wholesale or OpenLab question.",
+    primary: { label: "Open the help centre", href: "/faq-help-centre" },
+    secondary: { label: "View your orders", href: "/account/orders" },
+    pathwayTitle: "Bring the right context into the conversation.",
+    pathwayCopy: "Starting from the relevant product, record or order keeps the next answer focused and avoids repeating information.",
+    pathways: [
+      { label: "Order support", title: "Start from the order.", copy: "Keep the product, delivery and receipt details together before you ask for help.", action: { label: "View your orders", href: "/account/orders" } },
+      { label: "Wholesale", title: "Start from the range.", copy: "Review the products and available OpenLab paths before opening a wholesale conversation.", action: { label: "Explore wholesale", href: "/wholesale" } },
+      { label: "OpenLab", title: "Start from the batch.", copy: "Find the product or batch first when your question concerns a record, report or source.", action: { label: "Find a batch", href: "/open-lab/batch-lookup" } },
+    ],
+    continuation: {
+      eyebrow: "Product questions",
+      title: "Compare the product facts before you ask what comes next.",
+      copy: "The shop keeps strength, servings, price and available OpenLab context close to the customer decision.",
+      action: { label: "Browse products", href: "/shop" },
+    },
+  },
+  delivery: {
+    eyebrow: "Delivery",
+    title: "Choose delivery with the order in view.",
+    copy: "Enter the destination first, then review the delivery choices shown for that order before moving to payment.",
+    primary: { label: "Enter delivery details", href: "/checkout/information" },
+    secondary: { label: "Track an order", href: "/checkout/tracking" },
+    pathwayTitle: "One order, one clear delivery path.",
+    pathwayCopy: "Delivery details stay connected to the order rather than being presented as unsupported general promises.",
+    pathways: [
+      { label: "Destination", title: "Tell us where the order is going.", copy: "The destination is the input used to show the choices available for the order.", action: { label: "Enter the destination", href: "/checkout/information" } },
+      { label: "Choice", title: "Review the option before payment.", copy: "Keep the selected method and complete order value visible before the payment step.", action: { label: "Choose delivery", href: "/checkout/delivery" } },
+      { label: "Progress", title: "Return to the order after checkout.", copy: "Use the tracking path when delivery updates are available for the order.", action: { label: "Track an order", href: "/checkout/tracking" } },
+    ],
+    guide: {
+      eyebrow: "What is confirmed",
+      title: "The checkout shows what applies to this order.",
+      copy: "No delivery speed, method or destination coverage is assumed on this page. The order-specific choice is made after a destination is entered.",
+      points: ["Enter the destination before comparing delivery choices.", "Review the selected method beside the complete order value.", "Use the order record for tracking and post-purchase support."],
+    },
+    continuation: {
+      eyebrow: "Need order help?",
+      title: "Keep the order reference close.",
+      copy: "Order history is the fastest way back to the product, delivery and receipt information already connected to a purchase.",
+      action: { label: "View your orders", href: "/account/orders" },
+    },
+  },
+  "shipping-returns": {
+    eyebrow: "Delivery and returns",
+    title: "Keep the order clear from checkout to resolution.",
+    copy: "Choose delivery from the options shown for the order, follow its progress when updates exist, and begin any return or refund question from the original order details.",
+    primary: { label: "Choose delivery", href: "/checkout/information" },
+    secondary: { label: "View your orders", href: "/account/orders" },
+    pathwayTitle: "Stay with the order at every step.",
+    pathwayCopy: "The relevant product, delivery and payment context should remain attached to the customer journey.",
+    pathways: [
+      { label: "Before payment", title: "Choose the delivery shown for the order.", copy: "Enter the destination and review the available choice before payment.", action: { label: "Choose delivery", href: "/checkout/delivery" } },
+      { label: "After checkout", title: "Follow the order when updates exist.", copy: "Use the order reference to keep tracking connected to the products selected.", action: { label: "Track an order", href: "/checkout/tracking" } },
+      { label: "Need resolution", title: "Begin with the original order details.", copy: "Start there when a delivery, return or refund question needs a closer look.", action: { label: "Read refund guidance", href: "/refunds" } },
+    ],
+    guide: {
+      eyebrow: "Useful order context",
+      title: "Bring the information that changes the next step.",
+      copy: "This customer-facing guide does not invent delivery promises, return eligibility or refund timing.",
+      points: ["The destination determines which delivery choices are shown.", "The order remains the reference for tracking and support.", "Return and refund questions begin with the original order details."],
+    },
+    continuation: {
+      eyebrow: "Product question instead?",
+      title: "Return to the product or its OpenLab record.",
+      copy: "Product facts and available source context have a faster path than order support.",
+      action: { label: "Open the help centre", href: "/faq-help-centre" },
+    },
+  },
+  faq: {
+    eyebrow: "Help centre",
+    title: "Find the answer, then get back to the decision.",
+    copy: "Move between product facts, available OpenLab records and order support without losing the customer context that makes the answer useful.",
+    primary: { label: "Browse products", href: "/shop" },
+    secondary: { label: "Find a batch", href: "/open-lab/batch-lookup" },
+    pathwayTitle: "Choose the question you are trying to resolve.",
+    pathwayCopy: "Each pathway returns you to the place that contains the underlying product, evidence or order detail.",
+    pathways: [
+      { label: "Choose", title: "Compare products and outcomes.", copy: "Review strength, servings, price and contribution before opening a full product page.", action: { label: "Compare products", href: "/compare" } },
+      { label: "Check", title: "Find an available record.", copy: "Use the product or batch reference to open the record and source context that exists.", action: { label: "Explore OpenLab", href: "/open-lab" } },
+      { label: "Resolve", title: "Return to an existing order.", copy: "Keep delivery, tracking and receipt information attached to the order in question.", action: { label: "View your orders", href: "/account/orders" } },
+    ],
+    questions: [
+      { question: "Where can I find batch information?", answer: "Use Batch Lookup to search by the available product or batch reference, then open the connected record and source action." },
+      { question: "What can I compare before choosing a product?", answer: "Product pages and comparison views keep the product identity, strength, servings when known, price and available OpenLab path close to the decision." },
+      { question: "When are delivery choices shown?", answer: "Enter the destination at checkout to see the choices presented for that order before payment." },
+      { question: "How do I track an order?", answer: "Open the tracking view from your order pathway when delivery updates are available." },
+      { question: "What do the OpenLab evidence labels mean?", answer: "OpenLab uses Verified Evidence, Source Reported, Source Only and Unavailable so the source position stays clear without overstating what exists." },
+    ],
+    continuation: {
+      eyebrow: "Build the next decision",
+      title: "Start with a real product, then make the stack stronger.",
+      copy: "Choose a goal and baseline before comparing the additions that change the customer outcome.",
+      action: { label: "Build your stack", href: "/open-lab/stack-builder" },
+    },
+  },
+  international: {
+    eyebrow: "International orders",
+    title: "Start with the destination, then review the order.",
+    copy: "Enter the destination first so checkout can present the choices that apply to the order. No destination coverage or delivery promise is assumed here.",
+    primary: { label: "Enter the destination", href: "/checkout/information" },
+    secondary: { label: "Get customer support", href: "/contact" },
+    pathwayTitle: "Keep destination, order and support together.",
+    pathwayCopy: "The customer sees what the order supports after the destination is entered, rather than relying on a generic availability claim.",
+    pathways: [
+      { label: "Destination", title: "Enter the address first.", copy: "That gives checkout the information needed to present the next available choice.", action: { label: "Start checkout", href: "/checkout/information" } },
+      { label: "Review", title: "Check the complete order before payment.", copy: "Keep the products, delivery choice and displayed customer currency in view.", action: { label: "Review your order", href: "/checkout/review" } },
+      { label: "Support", title: "Return with the order reference.", copy: "Use your order history when you need tracking, receipt or customer support after checkout.", action: { label: "View your orders", href: "/account/orders" } },
+    ],
+    continuation: {
+      eyebrow: "Before checkout",
+      title: "Choose the products before you test a destination.",
+      copy: "Compare the product facts and available OpenLab context, then continue with the order you want to place.",
+      action: { label: "Browse products", href: "/shop" },
+    },
+  },
+  "gift-cards": {
+    eyebrow: "Gift cards",
+    title: "Gift card purchase is not available here yet.",
+    copy: "This destination will not imply a value, delivery method or redemption flow that has not been established. You can still help someone choose from the current product range.",
+    primary: { label: "Browse the range", href: "/shop" },
+    secondary: { label: "Compare products", href: "/compare" },
+    pathwayTitle: "Give them a useful product starting point instead.",
+    pathwayCopy: "Use the real product, comparison and stack pathways while the gift-card experience remains unavailable.",
+    pathways: [
+      { label: "Range", title: "Start with product discovery.", copy: "Compare formats, product facts and the outcomes the customer wants to pursue.", action: { label: "Browse products", href: "/shop" } },
+      { label: "Comparison", title: "Put product differences side by side.", copy: "Use quantified facts and customer-relevant contributions without inventing rankings.", action: { label: "Compare products", href: "/compare" } },
+      { label: "Stack", title: "Build from a real baseline.", copy: "Choose the goal, baseline and additions that make the selected composition stronger.", action: { label: "Build a stack", href: "/open-lab/stack-builder" } },
+    ],
+    unavailable: true,
+    continuation: {
+      eyebrow: "Need product confidence?",
+      title: "Open the record path before choosing.",
+      copy: "OpenLab connects available product records and source context back to commerce.",
+      action: { label: "Explore OpenLab", href: "/open-lab" },
+    },
+  },
+  cookies: {
+    eyebrow: "Cookie information",
+    title: "Read the published privacy information behind the experience.",
+    copy: "This page does not claim a preference manager that has not been connected. Use the published privacy information for the current policy detail.",
+    primary: { label: "Read the privacy policy", href: "https://olympuslabs.uk/privacy-policy/", external: true },
+    secondary: { label: "Open the help centre", href: "/faq-help-centre" },
+    pathwayTitle: "Choose the information that answers your question.",
+    pathwayCopy: "Policy questions and practical product or order questions have different customer paths.",
+    pathways: [
+      { label: "Privacy", title: "Read the current published policy.", copy: "Use the published privacy document for the complete information currently provided.", action: { label: "Read the privacy policy", href: "https://olympuslabs.uk/privacy-policy/", external: true } },
+      { label: "Terms", title: "Review the terms behind an order.", copy: "Open the published terms when the question concerns the customer service or purchase.", action: { label: "Read the terms", href: "/terms" } },
+      { label: "Practical help", title: "Resolve a product or order question.", copy: "Use the help centre when a policy document is not the useful next step.", action: { label: "Open the help centre", href: "/faq-help-centre" } },
+    ],
+    continuation: {
+      eyebrow: "Return to the customer journey",
+      title: "Find the product, record or order you came to manage.",
+      copy: "The sitemap groups the public customer destinations without creating unsupported services.",
+      action: { label: "Open the sitemap", href: "/sitemap" },
+    },
+  },
+  refunds: {
+    eyebrow: "Refund guidance",
+    title: "Start with the order, then see the next step clearly.",
+    copy: "Keep the original product, order value and order details together before asking for refund support. This page does not invent eligibility, timing or a refund amount.",
+    primary: { label: "View your orders", href: "/account/orders" },
+    secondary: { label: "Contact support", href: "/contact" },
+    pathwayTitle: "Use the original order as the source of context.",
+    pathwayCopy: "Order-specific detail should lead the customer resolution instead of a generic policy claim.",
+    pathways: [
+      { label: "Find", title: "Open the relevant order.", copy: "Keep the purchased product, delivery and original payment context together.", action: { label: "View your orders", href: "/account/orders" } },
+      { label: "Review", title: "Check the order details.", copy: "Use the recorded order values and status rather than estimating what applies.", action: { label: "Review the order", href: "/account/orders" } },
+      { label: "Resolve", title: "Ask for help with the order reference.", copy: "Bring the order context into customer support when the next step needs review.", action: { label: "Contact support", href: "/contact" } },
+    ],
+    continuation: {
+      eyebrow: "Different question?",
+      title: "Use the help centre for product, delivery or OpenLab answers.",
+      copy: "Move directly to the customer pathway that owns the information you need.",
+      action: { label: "Open the help centre", href: "/faq-help-centre" },
+    },
+  },
+  sitemap: {
+    eyebrow: "Sitemap",
+    title: "Go straight to the decision you came to make.",
+    copy: "Move directly into the range, OpenLab, a stronger stack, your orders or the customer support path that fits the moment.",
+    primary: { label: "Browse products", href: "/shop" },
+    secondary: { label: "Explore OpenLab", href: "/open-lab" },
+    pathwayTitle: "Choose a customer destination.",
+    pathwayCopy: "Every destination below has a defined customer job and a return path into product confidence or order resolution.",
+    pathways: [
+      { label: "Shop", title: "Discover and compare products.", copy: "Browse the range, compare products or build a stronger composition.", action: { label: "Browse products", href: "/shop" } },
+      { label: "OpenLab", title: "Find the confidence behind a product.", copy: "Open the portal, find a batch or read the methodology and source chain.", action: { label: "Explore OpenLab", href: "/open-lab" } },
+      { label: "Orders and help", title: "Return to an order or resolve a question.", copy: "Use account history, delivery guidance or the help centre with the right context.", action: { label: "Open the help centre", href: "/faq-help-centre" } },
+    ],
+    continuation: {
+      eyebrow: "Build from a baseline",
+      title: "Choose a goal and make the selected stack stronger.",
+      copy: "The Stack Builder keeps products, contributions, total and OpenLab paths together.",
+      action: { label: "Build your stack", href: "/open-lab/stack-builder" },
+    },
+  },
+  legal: {
+    eyebrow: "Legal information",
+    title: "Open the published information that supports your order.",
+    copy: "Use the current published privacy policy or terms for complete legal detail, then return to the customer path that owns a practical product or order question.",
+    primary: { label: "Read privacy information", href: "/privacy" },
+    secondary: { label: "Read the terms", href: "/terms" },
+    pathwayTitle: "Separate policy detail from practical customer help.",
+    pathwayCopy: "The legal hub connects to published documents without rewriting policy text on this page.",
+    pathways: [
+      { label: "Privacy", title: "Read the published privacy policy.", copy: "Open the current source document for complete privacy information.", action: { label: "Read privacy information", href: "/privacy" } },
+      { label: "Terms", title: "Read the published terms and conditions.", copy: "Open the current source document for the terms that apply to the customer service.", action: { label: "Read the terms", href: "/terms" } },
+      { label: "Customer help", title: "Resolve a product or order question.", copy: "Use the help centre when a legal document is not the useful next step.", action: { label: "Open the help centre", href: "/faq-help-centre" } },
+    ],
+    continuation: {
+      eyebrow: "Existing order",
+      title: "Return to the order when the question is specific to a purchase.",
+      copy: "Keep the product, delivery and receipt detail attached to the customer request.",
+      action: { label: "View your orders", href: "/account/orders" },
+    },
+  },
 };
 
-const links: Record<string, string> = { "Choose delivery": "/checkout/delivery", "Track an order": "/checkout/tracking", "View return guidance": "/refunds", "Browse products": "/shop", "Delivery information": "/delivery", "Visit OpenLab": "/open-lab", "Choose a destination": "/checkout/information", "See payment information": "/checkout/review", "Contact support": "/contact", "Choose value": "/gift-cards", "Plan delivery": "/checkout/information", "Read essentials": "/cookies", "Manage preferences": "/cookies", "Privacy information": "/privacy", "View orders": "/account/orders", "View refund details": "/refunds", "Shop now": "/shop", "Explore OpenLab": "/open-lab", "Open account": "/account/dashboard", "Privacy policy": "/privacy", "Terms and conditions": "/terms", "Cookie settings": "/cookies" };
+const evidenceStates: readonly EvidenceAuthorityState[] = ["verified-evidence", "source-reported", "source-only", "unavailable"];
 
-export function SupportSurface({ kind }: { kind: SupportSurfaceKind }) {
+function SupportActionLink({ action, secondary = false }: Readonly<{ action: SupportAction; secondary?: boolean }>) {
+  const className = secondary ? "button button-secondary" : "button";
+  const contents = <><span>{action.label}</span><span aria-hidden="true">→</span></>;
+  return action.external
+    ? <a className={className} href={action.href} rel="external">{contents}</a>
+    : <Link className={className} href={action.href} prefetch={false}>{contents}</Link>;
+}
+
+function PathwayList({ pathways }: Readonly<{ pathways: readonly SupportPathway[] }>) {
+  return <ol className={styles.pathwayList}>{pathways.map((pathway, index) => <li key={pathway.title}><span className={styles.pathwayIndex}>{String(index + 1).padStart(2, "0")}</span><div><span className={styles.pathwayLabel}>{pathway.label}</span><h3>{pathway.title}</h3><p>{pathway.copy}</p></div><SupportActionLink action={pathway.action} secondary /></li>)}</ol>;
+}
+
+function GuideList({ points }: Readonly<{ points: readonly string[] }>) {
+  return <ol className={styles.guideList}>{points.map((point, index) => <li key={point}><span>{String(index + 1).padStart(2, "0")}</span>{point}</li>)}</ol>;
+}
+
+function QuestionList({ questions }: Readonly<{ questions: readonly SupportQuestion[] }>) {
+  return <div className={styles.questions}>{questions.map((item) => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div>;
+}
+
+function EvidenceLegend() {
+  return <ul aria-label="OpenLab evidence states" className={styles.evidenceLegend}>{evidenceStates.map((state) => <li key={state}><EvidenceStatusChip state={state} /></li>)}</ul>;
+}
+
+export function SupportSurface({ kind }: Readonly<{ kind: SupportSurfaceKind }>) {
   const surface = content[kind];
-  return <main className="support-surface"><header className="page-hero"><div className="shell"><span className="eyebrow">{surface.eyebrow}</span><h1>{surface.title}</h1><p>{surface.copy}</p></div></header><div className="shell support-surface-grid">{surface.cards.map(([title, copy, action], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{title}</h2><p>{copy}</p><Link href={links[action]}>{action} →</Link></article>)}</div></main>;
+  return <main className={styles.page} data-support-surface={kind}><div className={styles.shell}>
+    <EditorialSurface actions={<><SupportActionLink action={surface.primary} />{surface.secondary ? <SupportActionLink action={surface.secondary} secondary /> : null}</>} eyebrow={surface.eyebrow} headingLevel="h1" state={surface.unavailable ? "unavailable" : "default"} title={surface.title} copy={surface.copy} />
+    <DecisionSurface eyebrow="Choose the next step" title={surface.pathwayTitle} copy={surface.pathwayCopy}><PathwayList pathways={surface.pathways} /></DecisionSurface>
+    {surface.guide ? <TechnicalSurface eyebrow={surface.guide.eyebrow} title={surface.guide.title} copy={surface.guide.copy}><GuideList points={surface.guide.points} /></TechnicalSurface> : null}
+    {surface.questions ? <TechnicalSurface eyebrow="Common questions" title="Clear answers before the next step." copy="Open the answer that matches your question, then return to the product, record or order that holds the useful detail."><QuestionList questions={surface.questions} /><EvidenceLegend /></TechnicalSurface> : null}
+    <DecisionSurface actions={<SupportActionLink action={surface.continuation.action} />} compact eyebrow={surface.continuation.eyebrow} title={surface.continuation.title} copy={surface.continuation.copy} />
+  </div></main>;
+}
+
+export function AboutExperience() {
+  return <main className={styles.page} data-support-surface="about"><div className={styles.shell}>
+    <EditorialSurface actions={<><SupportActionLink action={{ label: "Browse products", href: "/shop" }} /><SupportActionLink action={{ label: "Explore OpenLab", href: "/open-lab" }} secondary /></>} eyebrow="About Olympus Labs UK" headingLevel="h1" title="Quality, made visible at every product decision." copy="Olympus Labs UK brings a premium product experience, readable specifications and available source context into one customer journey designed to build confidence before purchase." />
+    <section aria-label="Product confidence" className={styles.commerceStory}>
+      <ProductCommerceCard className={styles.aboutProduct} commerceTreatment="selection" headingLevel="h2" product={mk2866Fixture} showQualitative variant="vertical" />
+      <DecisionSurface actions={<SupportActionLink action={{ label: "View MK-2866", href: "/product/mk-2866" }} />} eyebrow="Product confidence" title="Start with the product truth a customer can use." copy="Identity, strength, servings, purity and price remain together on the product card. OpenLab then adds source context without turning evidence into a marketing score."><ul className={styles.principles}><li>Product desire begins with a clear product and customer proposition.</li><li>Quantified product facts stay together and easy to compare.</li><li>Available records provide confidence and a return path to commerce.</li></ul></DecisionSurface>
+    </section>
+    <TechnicalSurface actions={<SupportActionLink action={{ label: "Find a batch", href: "/open-lab/batch-lookup" }} />} eyebrow="OpenLab confidence" title="Evidence adds another dimension to the product experience." copy="OpenLab gives customers a distinct place to find a batch, read an available record, compare reported values and return to the product with greater confidence."><EvidenceLegend /></TechnicalSurface>
+    <DecisionSurface actions={<SupportActionLink action={{ label: "Build your stack", href: "/open-lab/stack-builder" }} />} eyebrow="Make the next choice stronger" title="Build from a real product baseline." copy="Choose the goal, confirm the starting product and add the product contributions that make the selected composition stronger." />
+  </div></main>;
+}
+
+export function EvidenceOsExperience() {
+  return <main className={styles.page} data-support-surface="evidence-os"><div className={styles.shell}>
+    <EditorialSurface actions={<><SupportActionLink action={{ label: "Explore OpenLab", href: "/open-lab" }} /><SupportActionLink action={{ label: "Browse products", href: "/shop" }} secondary /></>} eyebrow="Evidence OS" headingLevel="h1" title="Turn product evidence into customer confidence." copy="Evidence OS is the connected experience behind OpenLab: product identity, record availability, source context and customer actions remain legible without overstating what the available data shows." />
+    <TechnicalSurface eyebrow="Evidence state" title="Make the source position visible before the customer goes deeper." copy="These four labels preserve the distinction between verified evidence, reported source content, source-only context and unavailable information."><EvidenceLegend /><GuideList points={["Start with the finished product and its available record state.", "Open the report, comparison or source action that exists.", "Return to the product, comparison or stack decision with the context intact."]} /></TechnicalSurface>
+    <section aria-label="Evidence to commerce" className={styles.commerceStory}>
+      <ProductCommerceCard className={styles.aboutProduct} commerceTreatment="selection" headingLevel="h2" product={mk2866Fixture} showQualitative variant="vertical" />
+      <DecisionSurface actions={<SupportActionLink action={{ label: "Open the MK-2866 dossier", href: "/open-lab/dossier/mk-2866" }} />} eyebrow="Confidence returns to commerce" title="The technical path should help close the product decision." copy="A customer can inspect the available batch and source context, then return to the product or compare it without losing the commercial journey." />
+    </section>
+  </div></main>;
+}
+
+export function WholesaleExperience() {
+  const pathways: readonly SupportPathway[] = [
+    { label: "Range", title: "Start with the products relevant to your channel.", copy: "Review the available formats and product facts before discussing a commercial relationship.", action: { label: "Browse the range", href: "/shop" } },
+    { label: "Confidence", title: "Bring available OpenLab context into the range review.", copy: "Open the product and batch pathways that exist instead of relying on generic quality language.", action: { label: "Explore OpenLab", href: "/open-lab" } },
+    { label: "Conversation", title: "Continue with the useful product context in hand.", copy: "Use the contact pathway to discuss the range without assuming pricing, minimums, eligibility or fulfilment terms.", action: { label: "Open contact pathways", href: "/contact" } },
+  ];
+  return <main className={styles.page} data-support-surface="wholesale"><div className={styles.shell}>
+    <EditorialSurface actions={<><SupportActionLink action={{ label: "Browse products", href: "/shop" }} /><SupportActionLink action={{ label: "Explore OpenLab", href: "/open-lab" }} secondary /></>} eyebrow="Wholesale" headingLevel="h1" title="Begin a wholesale conversation with product clarity." copy="Bring the relevant range, product facts and available OpenLab records into view before discussing a commercial relationship." />
+    <DecisionSurface eyebrow="Prepare the conversation" title="Start with what your customers need to understand." copy="This customer destination provides product and confidence pathways without inventing wholesale prices, minimums, availability or account terms."><PathwayList pathways={pathways} /></DecisionSurface>
+    <TechnicalSurface eyebrow="Details confirmed later" title="Commercial terms remain specific to the conversation." copy="Pricing, order minimums, destination support and fulfilment requirements are intentionally not presented until an authorised wholesale process provides them." state="unavailable" />
+  </div></main>;
+}
+
+export function PolicyBridge({ kind }: Readonly<{ kind: "privacy" | "terms" }>) {
+  const privacy = kind === "privacy";
+  const documentLabel = privacy ? "privacy policy" : "terms and conditions";
+  const href = privacy ? "https://olympuslabs.uk/privacy-policy/" : "https://olympuslabs.uk/terms-and-conditions/";
+  return <main className={styles.page} data-support-surface={kind}><div className={styles.shell}>
+    <EditorialSurface actions={<><SupportActionLink action={{ label: `Read the ${documentLabel}`, href, external: true }} /><SupportActionLink action={{ label: "Open the help centre", href: "/faq-help-centre" }} secondary /></>} eyebrow={privacy ? "Privacy" : "Terms"} headingLevel="h1" title={privacy ? "Read the published information behind your customer experience." : "Read the published terms behind your order."} copy={privacy ? "Open the published privacy policy for the complete information currently provided, then return to products, orders or support with the right context." : "Open the published terms and conditions for the complete information currently provided, then return to the customer path that fits your next step."} />
+    <TechnicalSurface eyebrow="Source document" title={`Use the published ${documentLabel} for the full detail.`} copy="This page does not reproduce, shorten or reinterpret the legal source. Product, delivery and order questions keep their own direct customer pathways."><GuideList points={[`Open the published ${documentLabel} for the complete information.`, "Use the help centre for practical product, delivery or OpenLab questions.", "Return to the relevant order when a question concerns an existing purchase."]} /></TechnicalSurface>
+    <DecisionSurface actions={<SupportActionLink action={{ label: "View your orders", href: "/account/orders" }} />} compact eyebrow="Existing purchase" title="Keep the order details attached to a customer request." copy="Order history holds the product, delivery and receipt context that a general policy page cannot provide." />
+  </div></main>;
+}
+
+export function LegalDocumentSurface({ doc }: Readonly<{ doc: string }>) {
+  if (doc === "privacy") return <PolicyBridge kind="privacy" />;
+  if (doc === "terms") return <PolicyBridge kind="terms" />;
+  if (doc === "cookies") return <SupportSurface kind="cookies" />;
+  return <SupportSurface kind="legal" />;
 }

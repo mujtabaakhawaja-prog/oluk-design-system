@@ -1,1 +1,10 @@
-import { SupportSurface } from "../design-system/support-surface"; import { CustomerSiteChrome } from "../experience-lab"; export default function Page(){return <CustomerSiteChrome route="checkout-confirmation"><SupportSurface kind="refunds"/></CustomerSiteChrome>}
+import { SupportSurface } from "../design-system/support-surface";
+import { CustomerSiteChrome } from "../experience-lab";
+
+export default function RefundsPage() {
+  return (
+    <CustomerSiteChrome route="learn">
+      <SupportSurface kind="refunds" />
+    </CustomerSiteChrome>
+  );
+}

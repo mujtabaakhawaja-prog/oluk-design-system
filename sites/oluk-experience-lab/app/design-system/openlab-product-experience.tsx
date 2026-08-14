@@ -344,7 +344,7 @@ function OpenLabAvailabilityPanel({
     >
       <dl className={styles.availabilityList}>
         <div><dt>Record</dt><dd>{partial ? "Partial" : "Unavailable"}</dd></div>
-        <div><dt>Original source</dt><dd>{partial ? "Source only" : "Unavailable"}</dd></div>
+        <div><dt>Original source</dt><dd>{partial ? "Source Only" : "Unavailable"}</dd></div>
         <div><dt>Reported analytes</dt><dd>Unavailable</dd></div>
         <div><dt>Product path</dt><dd>Available</dd></div>
       </dl>
