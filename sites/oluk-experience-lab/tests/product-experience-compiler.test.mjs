@@ -21,6 +21,7 @@ test("the product experience compiler emits the locked 16-product catalogue", as
   assert.deepEqual([product("rad-140").strength, product("rad-140").servings, product("rad-140").price], ["8 MG", "60 SERVINGS", "£55"]);
   assert.deepEqual([product("lgd-4033").strength, product("lgd-4033").servings, product("lgd-4033").price], ["5 MG", "", "£44"]);
   assert.equal(product("ment").series, "PROHORMONE SERIES");
+  assert.deepEqual([product("gw-501516").slug, product("gw-501516").name, product("gw-501516").strength], ["gw-501516", "GW-50156", "10 MG"]);
 });
 
 test("all 16 product experiences compile from an attributed customer editorial corpus", async () => {

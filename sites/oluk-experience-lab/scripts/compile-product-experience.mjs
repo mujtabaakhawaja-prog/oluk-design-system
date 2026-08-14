@@ -79,6 +79,7 @@ for (const [slug, strength, servings, price, sku] of locks) {
 }
 if (/RAD-140[^\n]{0,120}10 MG|10 MG[^\n]{0,120}RAD-140/i.test(productRaw)) throw new Error("RAD-140 10 MG is forbidden");
 if (bySlug.ment.series !== "PROHORMONE SERIES") throw new Error("MENT must remain PROHORMONE SERIES");
+if (bySlug["gw-501516"].name !== "GW-50156" || bySlug["gw-501516"].strength !== "10 MG") throw new Error("Cardarine must display as GW-50156 · 10 MG while retaining the legacy gw-501516 slug");
 
 const openLabRaw = await readFile(openLabPath, "utf8");
 const projection = JSON.parse(openLabRaw);

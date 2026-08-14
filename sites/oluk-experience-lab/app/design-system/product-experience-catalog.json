@@ -1,7 +1,7 @@
 {
   "schemaVersion": "oluk.product-experience.v2",
-  "productSourceHash": "c44eb1297135af3ebdbfa2c1d2a9ba5d3c87ffda28ad247f41dc2c273f2e980b",
-  "editorialCorpusHash": "6468943fa02feb8174304ce1d2f2b49abac05f0ca4c37f7da483a02e8945ba5d",
+  "productSourceHash": "fe302395e33d224b1f38374862515d09ca1e85e57105a686e1096d062bdfb6e2",
+  "editorialCorpusHash": "bff81919ee0181336b2dd2e3ea0a517547b6f03c512b1a268a93eb8c5ef63d0b",
   "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
   "products": [
     {
@@ -634,7 +634,7 @@
         "slug": "gw-501516",
         "sku": "GW501516-10",
         "series": "METABOLIC SERIES",
-        "name": "GW-501516",
+        "name": "GW-50156",
         "alias": "Cardarine",
         "strength": "10 MG",
         "servings": "60 SERVINGS",
@@ -646,8 +646,8 @@
           "Recomp"
         ],
         "summary": "A 10 MG Cardarine format for endurance and body-composition focused phases.",
-        "researchProfile": "GW-501516 is the endurance-led choice beside Ostarine when you want a cutting or recomp stack to feel more capable through demanding sessions.",
-        "guidance": "Build around Cardarine when training output and a sharper finish are the next priorities.",
+        "researchProfile": "GW-50156 is the endurance-led choice beside Ostarine when you want a cutting or recomp stack to feel more capable through demanding sessions.",
+        "guidance": "Build around Cardarine when training output and a stronger finish are the next priorities.",
         "considerations": "Read the full product details before choosing your stack.",
         "related": [
           "mk-2866",
@@ -661,13 +661,13 @@
       },
       "editorial": {
         "summary": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
-        "researchProfile": "GW-501516 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
+        "researchProfile": "GW-50156 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
         "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a sharper final phase, or keep it in a recomp build where training output matters.",
         "considerations": "Compare endurance focus with the strength, mass and finish options before making it part of the stack.",
         "customerProposition": {
           "eyebrow": "Endurance and cutting",
           "headline": "Make the cut feel more capable.",
-          "promise": "GW-501516 puts endurance and body-composition focus beside a leaner training goal.",
+          "promise": "GW-50156 puts endurance and body-composition focus beside a leaner training goal.",
           "benefits": [
             "Endurance-led direction",
             "Cutting focus",
@@ -728,7 +728,7 @@
         "decision": {
           "eyebrow": "Endurance and cutting",
           "headline": "Make the cut feel more capable.",
-          "promise": "GW-501516 puts endurance and body-composition focus beside a leaner training goal.",
+          "promise": "GW-50156 puts endurance and body-composition focus beside a leaner training goal.",
           "benefits": [
             "Endurance-led direction",
             "Cutting focus",
@@ -741,7 +741,7 @@
         },
         "details": {
           "summary": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
-          "researchProfile": "GW-501516 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
+          "researchProfile": "GW-50156 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
           "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a sharper final phase, or keep it in a recomp build where training output matters.",
           "considerations": "Compare endurance focus with the strength, mass and finish options before making it part of the stack."
         },
@@ -778,10 +778,10 @@
       },
       "seo": {
         "canonicalPath": "/product/gw-501516",
-        "title": "GW-501516 10 MG | Olympus Labs UK",
+        "title": "GW-50156 10 MG | Olympus Labs UK",
         "description": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
         "focusPhrases": [
-          "GW-501516",
+          "GW-50156",
           "Cardarine",
           "Cutting",
           "Recomp"
@@ -2470,5 +2470,5 @@
       }
     }
   },
-  "contentHash": "30639ed10d7c39b72260ccd9be96fbab8608957978e4d781fe5a0f632146fcf9"
+  "contentHash": "d74a1e1ef7001e221035804012df1130ebd4c4211725b76d5620d72d5b73915b"
 }
