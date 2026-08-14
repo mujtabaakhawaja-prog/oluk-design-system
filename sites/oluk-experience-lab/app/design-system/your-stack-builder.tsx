@@ -532,9 +532,9 @@ function StackSummary({
           eyebrow="Choose the result"
           title={stackGoals[goal].headline(baseline)}
         >
-          <div aria-label="Choose your stack goal" className={styles.goalPicker} role="tablist">
+          <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
             {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
-              <button aria-selected={goal === option} key={option} onClick={() => onGoal(option)} role="tab" type="button">{option}</button>
+              <button aria-pressed={goal === option} key={option} onClick={() => onGoal(option)} type="button">{option}</button>
             ))}
           </div>
         </DecisionSurface>
@@ -636,9 +636,9 @@ function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host:
           headingLevel="h1"
           title={stackGoals[goal].headline(baseline)}
         >
-          <div aria-label="Choose your stack goal" className={styles.goalPicker} role="tablist">
+          <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
             {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
-              <button aria-selected={goal === option} key={option} onClick={() => selectGoal(option)} role="tab" type="button">{option}</button>
+              <button aria-pressed={goal === option} key={option} onClick={() => selectGoal(option)} type="button">{option}</button>
             ))}
           </div>
         </DecisionSurface>
@@ -674,7 +674,9 @@ function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host:
       </div>
 
       <DecisionSurface
-        actions={<button aria-disabled={productCount === 1} type="button">Review selected products · {productCount}</button>}
+        actions={productCount === 1
+          ? <button disabled type="button">Review selected products · {productCount}</button>
+          : <a className={styles.continueAction} href="/bundle-builder">Review selected products · {productCount}</a>}
         className={styles.continue}
         compact
         copy={productCount === 1

@@ -39,7 +39,7 @@
   padding: 0 18px;
 }
 
-.goalPicker button[aria-selected="true"],
+.goalPicker button[aria-pressed="true"],
 .baselinePicker button[aria-pressed="true"] {
   background: var(--oluk-cobalt);
   border-color: var(--oluk-cobalt);
@@ -53,6 +53,7 @@
 .evidenceEntry:focus-visible,
 .confidence a:focus-visible,
 .continue button:focus-visible,
+.continueAction:focus-visible,
 .summaryOptionActions button:focus-visible,
 .summaryAction:focus-visible {
   outline: var(--oluk-focus-width) solid var(--oluk-cobalt);
@@ -231,7 +232,8 @@
 .summaryOptionActions button,
 .summaryAction,
 .confidenceActions a,
-.continue button {
+.continue button,
+.continueAction {
   align-items: center;
   border-radius: var(--oluk-radius-control);
   display: flex;
@@ -253,7 +255,8 @@
 .stackChoiceActions button,
 .summaryOptionActions button,
 .confidenceActions a:first-child,
-.continue button {
+.continue button,
+.continueAction {
   background: var(--oluk-cobalt);
   border: 1px solid var(--oluk-cobalt);
   color: var(--oluk-text-on-inverse);
@@ -355,15 +358,20 @@
   grid-template-columns: minmax(0, 1fr) auto;
 }
 
-.continue button {
+.continue button,
+.continueAction {
   min-height: 50px;
   padding-inline: 22px;
 }
 
-.continue button[aria-disabled="true"] {
+.continue button:disabled {
   background: var(--oluk-surface-cobalt-soft);
   border-color: var(--oluk-border-chip);
   color: var(--oluk-text-secondary);
+}
+
+.continueAction {
+  text-decoration: none;
 }
 
 /* Compact hosts retain the commercial contract while summarising the selection. */
@@ -505,7 +513,8 @@
   }
 
   .summaryAction,
-  .continue button {
+  .continue button,
+  .continueAction {
     width: 100%;
   }
 }
