@@ -13,8 +13,8 @@ export function CurrencyEqualityLock({ compact = false }: { compact?: boolean })
   </section>;
 }
 
-export function PaymentTrustPrimer() {
-  return <section aria-label="Payment trust" className={styles.primer} data-live-authority="false">
+export function PaymentTrustPrimer({ compact = false }: { compact?: boolean }) {
+  return <section aria-label="Payment trust" className={styles.primer} data-compact={compact || undefined} data-live-authority="false">
     <div><span>{paymentTrustCopy.shopIn}</span><strong>{paymentTrustCopy.currencies.join(" · ")}</strong></div>
     <div><span>{paymentTrustCopy.paymentTrust}</span><p>{paymentTrustCopy.continuity}</p><p>{paymentTrustCopy.protectedStep}</p></div>
   </section>;
@@ -29,4 +29,3 @@ export function LifecycleAmountRecord({ stage }: { stage: Exclude<PaymentTrustLi
     <p>{copy}</p>
   </section>;
 }
-

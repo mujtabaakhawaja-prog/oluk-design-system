@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element -- transparent product render is shared with the governed product stage. */
+
 import type { ReactNode } from "react";
 import styles from "../transaction-presentation.module.css";
 import { ActionLink, Breadcrumbs } from "./customer-route-primitives";
@@ -117,10 +119,7 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
 function ProductLine({ quantity = true }: Readonly<{ quantity?: boolean }>) {
   return (
     <article className={styles.productLine}>
-      <div className={styles.productMark} aria-hidden="true">
-        <span>MK</span>
-        <strong>2866</strong>
-      </div>
+      <div className={styles.productMark}><img alt="MK-2866 Ostarine bottle" decoding="async" height={mk2866Fixture.media.height} loading="lazy" sizes="112px" src={mk2866Fixture.media.src} width={mk2866Fixture.media.width}/></div>
       <div className={styles.productIdentity}>
         <span>{mk2866Fixture.series}</span>
         <h2>{mk2866Fixture.name}</h2>
@@ -218,7 +217,7 @@ function DetailsContent() {
           <ActionLink href="/checkout/delivery">Continue to delivery</ActionLink>
         </div>
       </section>
-      <div><OrderSummary compact /><PaymentTrustPrimer /></div>
+      <div className={styles.asideStack}><OrderSummary compact /><PaymentTrustPrimer compact /></div>
     </div>
   );
 }

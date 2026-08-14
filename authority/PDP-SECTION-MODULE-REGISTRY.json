@@ -2,9 +2,9 @@
   "schemaVersion": "oluk.pdp-section-module-registry.v1",
   "status": "IMPLEMENTED_SITES_CANDIDATE_HUMAN_REVIEW_REQUIRED",
   "runtimeAuthority": "NONE",
-  "composition": ["ProductMediaGallery", "PurchasePanel", "AssuranceRail", "ProductDetailDisclosure", "ProductDossier", "ProductEvidenceSnapshot", "UpsellContextRail", "RelatedRail", "MobileDecisionSummary"],
+  "composition": ["PdpFirstFold", "PurchasePanel", "AssuranceRail", "ProductDetailDisclosure", "ProductDossier", "ProductEvidenceSnapshot", "UpsellContextRail", "RelatedRail", "MobileDecisionSummary"],
   "modules": [
-    {"export":"ProductMediaGallery","dataOwner":"product projection","mounts":["/product/:slug"],"mobileStrategy":"summary","runtimeExclusions":["media mutation","asset inference"]},
+    {"export":"PdpFirstFold","dataOwner":"product projection","mounts":["/product/:slug"],"mobileStrategy":"reorder","runtimeExclusions":["media mutation","asset inference"]},
     {"export":"ProductDetailDisclosure","dataOwner":"approved supplied product content","mounts":["/product/:slug"],"mobileStrategy":"collapse","runtimeExclusions":["content invention"]},
     {"export":"ProductEvidenceSnapshot","dataOwner":"approved supplied OpenLab and product content","mounts":["/product/:slug","/open-lab"],"mobileStrategy":"summary","runtimeExclusions":["evidence inference"]},
     {"export":"MobileDecisionSummary","dataOwner":"product projection","mounts":["/product/:slug"],"mobileStrategy":"summary","runtimeExclusions":["cart mutation","inventory mutation"]}

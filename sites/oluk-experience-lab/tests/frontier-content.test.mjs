@@ -20,8 +20,13 @@ test("frontier section registry covers all 75 creative actions with explicit mob
 });
 
 test("frontier binds supplied product renders and ships bounded Make/agentic handoff kits", () => {
-  assert.match(content, /"mk-2866": "\/assets\/products\/mk-2866\/front\.png"/);
-  assert.match(content, /"rad-140": "\/assets\/products\/rad-140\/front-design-fixture\.png"/);
+  assert.match(content, /"mk-2866": \{ src: "\/assets\/products\/mk-2866\/front\.png", width: 1365, height: 2048 \}/);
+  assert.match(content, /"rad-140": \{ src: "\/assets\/products\/shop\/rad-140\.webp", width: 300, height: 450 \}/);
+  assert.match(content, /"mk-677": \{ src: "\/assets\/products\/hero\/mk-677\/front\.webp", width: 1024, height: 1536 \}/);
+  assert.match(content, /"ment": \{ src: "\/assets\/products\/hero\/ment\/front\.webp", width: 1024, height: 1536 \}/);
+  assert.match(content, /"gw-501516": \{ src: "\/assets\/products\/shop\/gw-501516\.jpeg", width: 300, height: 450 \}/);
+  assert.match(content, /"epistane": \{ src: "\/assets\/products\/shop\/epistane\.webp", width: 300, height: 450 \}/);
+  assert.match(content, /"m-sten": \{ src: "\/assets\/products\/shop\/m-sten\.webp", width: 300, height: 450 \}/);
   const kitRoot = new URL("../../../make-sessions/frontier-site-expansion/", import.meta.url);
   for (const file of ["README.md", "assets.json", "app.tsx", "PROMPTS.md", "AGENTIC_PROMPTS.md"]) {
     assert.ok(readFileSync(new URL(file, kitRoot), "utf8").length > 200, file);

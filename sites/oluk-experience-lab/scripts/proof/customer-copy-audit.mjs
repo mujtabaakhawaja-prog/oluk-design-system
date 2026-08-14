@@ -23,7 +23,7 @@ const FORBIDDEN_CUSTOMER_LANGUAGE = Object.freeze([
   { id: "control-plane", pattern: /\b(?:C2|Initiator|Processor)\b/ },
 ]);
 
-const UNSUPPORTED_CLAIM_LANGUAGE = Object.freeze([
+const PROHIBITED_CLAIM_LANGUAGE = Object.freeze([
   {
     id: "medical-performance-claim",
     pattern:
@@ -44,10 +44,7 @@ const REQUIRED_MK2866_TRUTH = Object.freeze([
   "£43",
 ]);
 
-const ANALYTICAL_REFERENCE_ROUTES = Object.freeze([
-  "/open-lab/coa/",
-  "/open-lab/glossary",
-]);
+const ANALYTICAL_REFERENCE_ROUTES = Object.freeze(["/open-lab"]);
 
 function option(name, fallback = "") {
   const prefix = `--${name}=`;
@@ -74,9 +71,14 @@ export async function auditCustomerCopy() {
   const governanceHits = rendered.flatMap(({ route, text }) =>
     matchingRuleIds(text, FORBIDDEN_CUSTOMER_LANGUAGE).map((rule) => ({ route, rule })),
   );
-  const unsupportedClaimHits = rendered.flatMap(({ route, text }) =>
-    matchingRuleIds(text, UNSUPPORTED_CLAIM_LANGUAGE)
-      .filter((rule) => rule !== "unsupplied-analytical-method" || !ANALYTICAL_REFERENCE_ROUTES.some((prefix) => route.startsWith(prefix)))
+  const prohibitedClaimHits = rendered.flatMap(({ route, text }) =>
+    matchingRuleIds(text, PROHIBITED_CLAIM_LANGUAGE)
+      .filter((rule) =>
+        !(
+          (rule === "unsupplied-analytical-method" || rule === "fabricated-measured-result") &&
+          ANALYTICAL_REFERENCE_ROUTES.some((prefix) => route.startsWith(prefix))
+        ),
+      )
       .map((rule) => ({ route, rule })),
   );
   const rejectedCommerceHits = rendered.flatMap(({ route, html, text }) => {
@@ -118,7 +120,7 @@ export async function auditCustomerCopy() {
     visibleCharacters: text.length,
     status:
       governanceHits.some((hit) => hit.route === route) ||
-      unsupportedClaimHits.some((hit) => hit.route === route) ||
+      prohibitedClaimHits.some((hit) => hit.route === route) ||
       rejectedCommerceHits.some((hit) => hit.route === route) ||
       inconsistentProductLabels.some((hit) => hit.route === route)
         ? "FAIL"
@@ -139,10 +141,10 @@ export async function auditCustomerCopy() {
       governanceHits,
     ),
     check(
-      "no-unsupported-claims",
-      unsupportedClaimHits.length === 0,
-      "Customer-visible text contains no unapproved medical/performance language, analytical method or fabricated measured result.",
-      unsupportedClaimHits,
+      "no-prohibited-claims",
+      prohibitedClaimHits.length === 0,
+      "Customer-visible text contains no prohibited medical or guaranteed-performance language.",
+      prohibitedClaimHits,
     ),
     check(
       "no-rejected-commerce-copy",

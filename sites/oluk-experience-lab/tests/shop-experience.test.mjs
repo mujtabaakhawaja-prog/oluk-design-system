@@ -6,17 +6,21 @@ const appRoot = new URL("../app/", import.meta.url);
 
 test("customer shell mirrors the production navigation contract without orphan static routes", async () => {
   const source = await readFile(new URL("experience-lab.tsx", appRoot), "utf8");
+  const headerSource = await readFile(new URL("design-system/site-header.tsx", appRoot), "utf8");
+  const navigationSource = await readFile(new URL("design-system/navigation-registry.ts", appRoot), "utf8");
   const { CUSTOMER_ROUTES, PRIMARY_NAV_ROUTE_KEYS } = await import("../app/design-system/site-route-data.mjs");
   assert.deepEqual(PRIMARY_NAV_ROUTE_KEYS, ["shop", "openlab", "lab-reports", "wholesale", "about"]);
   assert.deepEqual(
     PRIMARY_NAV_ROUTE_KEYS.map((key) => CUSTOMER_ROUTES.find((route) => route.key === key)?.path),
     ["/shop", "/open-lab", "/lab-reports", "/wholesale", "/about"],
   );
-  assert.match(source, /PRIMARY_NAV_ROUTE_KEYS\.map/);
-  assert.match(source, /getCustomerRoute\(key\)/);
+  assert.match(source, /<SiteHeader route=\{route\}/);
+  assert.match(headerSource, /NAVIGATION_TREE\.map/);
+  assert.match(navigationSource, /label: "LEARN"/);
+  assert.match(navigationSource, /Lab Records Archive/);
 
   for (const [label, href] of [["Search", "/search"], ["Bag", "/bag"]]) {
-    assert.match(source, new RegExp(`href="${href}"[^>]*aria-label="${label}`, "i"));
+    assert.match(headerSource, new RegExp(`<a(?=[^>]*href="${href}")(?=[^>]*aria-label="${label}")[^>]*>`, "i"));
   }
 
   for (const pathname of [
@@ -33,11 +37,11 @@ test("customer shell mirrors the production navigation contract without orphan s
     assert.match(route, /<ExperienceLab\s+route=/, `${pathname} is a static presentation route`);
   }
 
-  for (const sourceName of ["SHOP_FAMILY_OPTIONS", "SHOP_FORM_OPTIONS", "SHOP_SERVINGS_OPTIONS", "SHOP_GOAL_OPTIONS", "SHOP_AVAILABILITY_OPTIONS"]) {
-    assert.match(source, new RegExp(sourceName), `${sourceName} is projected into header discovery`);
-  }
-  assert.match(source, /aria-label="Shop by product family"/);
-  assert.match(source, /aria-label="Refine shop discovery"/);
+  assert.match(navigationSource, /By family/);
+  assert.match(navigationSource, /By goal/);
+  assert.match(navigationSource, /Stacks & bundles/);
+  assert.match(headerSource, /contextualNavigation\(route\)/);
+  assert.match(headerSource, /aria-label="Contextual navigation"/);
 });
 
 test("Shop uses independent combinable facets and keeps the candidate non-live", async () => {

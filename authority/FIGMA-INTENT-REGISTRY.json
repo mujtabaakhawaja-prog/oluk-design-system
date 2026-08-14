@@ -10,6 +10,22 @@
   },
   "sources": [
     {
+      "id": "final-design-corrected-baselines",
+      "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+      "rootNodeId": "1155:29963",
+      "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1155-29963",
+      "contributes": ["homepage LockedHero", "PDP first fold", "OpenLab HeroLight", "OptionB premium utility header"],
+      "dataOwners": ["design-fixture"],
+      "runtimeExclusions": ["commerce mutation", "payment integration"],
+      "intentNodes": [
+        {"nodeId":"1155:29963","target":"/","state":"Direction D LockedHero","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"462:4684","target":"LockedHomeHero.ProductStage","state":"runtime-motion-5-3-1","copy":"not-applicable","dataOwner":"design-fixture"},
+        {"nodeId":"1155:30632","target":"/product/mk-2866#purchase","state":"Section 1 first fold","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"614:75995","target":"/open-lab","state":"HeroLight","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"1176:28930","target":"SiteHeader","state":"OptionB-Premium-UtilityStack-V08","copy":"approved-structure","dataOwner":"design-fixture"}
+      ]
+    },
+    {
       "id": "commerce-growth",
       "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
       "rootNodeId": "2:2",

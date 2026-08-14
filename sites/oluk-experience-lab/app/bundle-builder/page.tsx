@@ -1,2 +1,3 @@
 import { SupportContent } from "../design-system/frontier-sections";
-export default function BundleBuilderPage(){return <SupportContent kind="bundle"/>}
+import { CustomerSiteChrome } from "../experience-lab";
+export default function BundleBuilderPage(){return <CustomerSiteChrome route="shop"><SupportContent kind="bundle"/></CustomerSiteChrome>}

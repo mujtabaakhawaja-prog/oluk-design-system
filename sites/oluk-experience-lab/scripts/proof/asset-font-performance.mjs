@@ -15,9 +15,10 @@ const KIB = 1024;
 const MIB = 1024 * KIB;
 
 export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
-  // The frontier’s dynamic PDP/account modules add a bounded local CSS/SSR split.
+  // The corrected LockedHero, HeroLight, PDP fold and three-band interactive header
+  // add four bounded, route-shared CSS modules while retaining a sub-256 KiB ceiling.
   clientJavaScriptBytes: 560 * KIB,
-  clientCssBytes: 232 * KIB,
+  clientCssBytes: 248 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,

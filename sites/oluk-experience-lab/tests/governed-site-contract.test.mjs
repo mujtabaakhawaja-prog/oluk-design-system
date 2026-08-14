@@ -18,9 +18,9 @@ test("the champion ledger has exactly 73 unique governed routes", async () => {
   assert.equal(ledger.routes.find(({ id }) => id === "open-lab-admin").disposition, "owner-only");
 });
 
-test("the four Figma sources remain intent-only and name their data owners", async () => {
+test("the four accessory Figma sources and corrected Final-Design baselines name their intent owners", async () => {
   const registry = await load(path.join(repoRoot, "authority/FIGMA-INTENT-REGISTRY.json"));
-  assert.equal(registry.sources.length, 4);
+  assert.equal(registry.sources.length, 5);
   assert.equal(registry.status, "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY");
   for (const source of registry.sources) {
     assert.ok(source.fileKey && source.rootNodeId);
@@ -38,6 +38,11 @@ test("the four Figma sources remain intent-only and name their data owners", asy
     .filter(({ dataOwner }) => dataOwner === "openlab-source");
   assert.ok(unsafeOpenLabCopy.length > 0);
   assert.ok(unsafeOpenLabCopy.every(({ copy }) => copy === "source-required" || copy === "prohibited-as-fact"));
+  const finalDesign = registry.sources.find(({ id }) => id === "final-design-corrected-baselines");
+  assert.deepEqual(
+    finalDesign.intentNodes.map(({ nodeId }) => nodeId),
+    ["1155:29963", "462:4684", "1155:30632", "614:75995", "1176:28930"],
+  );
 });
 
 test("the public governed contract is an exact authority projection", async () => {

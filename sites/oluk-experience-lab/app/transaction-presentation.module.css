@@ -90,6 +90,12 @@
   min-width: 0;
 }
 
+.asideStack {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
 .sectionLabel {
   color: var(--cobalt);
   display: block;
@@ -117,22 +123,16 @@
   background: var(--oluk-media-gradient);
   border: 1px solid var(--line);
   border-radius: 20px;
-  color: var(--cobalt);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
 }
 
-.productMark span {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
-.productMark strong {
-  font-family: var(--font-display), sans-serif;
-  font-size: 24px;
-  letter-spacing: -0.04em;
+.productMark img {
+  filter: drop-shadow(0 12px 10px rgba(20, 47, 94, 0.18));
+  height: 94%;
+  object-fit: contain;
+  width: 78%;
 }
 
 .productIdentity > span {

@@ -14,7 +14,6 @@ import {
   OpenLabComparison,
   OpenLabDossierComposition,
   OpenLabMethodologyPipeline,
-  OpenLabPortalHero,
   OpenLabRecordDetail,
   OpenLabRegistryArchive,
   OpenLabSourceChain,
@@ -23,13 +22,14 @@ import {
 } from "./design-system/openlab-sections";
 import { PresentationState, type PresentationStateKind } from "./design-system/presentation-state";
 import { ProductCommerceCard } from "./design-system/product-commerce-card";
-import { ProductDecisionHero } from "./design-system/product-decision-hero";
 import { ProductDossier } from "./design-system/product-dossier";
 import { mk2866Fixture, rad140Fixture } from "./design-system/product-fixtures";
 import { ProductMediaChamber } from "./design-system/product-media-chamber";
-import { MobileDecisionSummary, ProductDetailDisclosure, ProductEvidenceSnapshot, ProductMediaGallery } from "./design-system/pdp-sections";
+import { MobileDecisionSummary, ProductDetailDisclosure, ProductEvidenceSnapshot } from "./design-system/pdp-sections";
+import { LockedHomeHero } from "./design-system/locked-home-hero";
+import { OpenLabHeroLight } from "./design-system/openlab-hero-light";
+import { PdpFirstFold } from "./design-system/pdp-first-fold";
 import { EvidenceStatus } from "./design-system/product-status";
-import { PurchasePanel } from "./design-system/purchase-panel";
 import { RelatedRail } from "./design-system/related-rail";
 import { UpsellContextRail } from "./design-system/program-components";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
@@ -157,21 +157,7 @@ function EvidenceArchiveEntry({ id = "openlab-records" }: Readonly<{ id?: string
 export function HomeRoute() {
   return (
     <>
-      <section className={styles.heroWrap} id="hero">
-        <div className="shell">
-          <ProductDecisionHero
-            actions={
-              <>
-                <ActionLink href="/shop">Shop the range</ActionLink>
-                <ActionLink href="/open-lab/records" secondary>View Lab Records</ActionLink>
-              </>
-            }
-            copy="Strength, servings and fulfilment details remain clear before checkout. OpenLab records appear only when available."
-            eyebrow="FORMULATED. CLEARLY SPECIFIED. EVIDENCE-AWARE."
-            title="Formulated to a higher standard."
-          />
-        </div>
-      </section>
+      <LockedHomeHero />
       <div className="shell"><CobaltDensityBoundary /></div>
       <AssuranceSection />
       <FamilyDiscovery />
@@ -190,21 +176,7 @@ export function HomeRoute() {
 export function ProductRoute() {
   return (
     <>
-      <section className="pdp-first-fold" id="purchase">
-        <div className={`shell ${styles.pdpBreadcrumb}`}>
-          <Breadcrumbs
-            items={[
-              { label: "Shop", href: "/shop" },
-              { label: "SARMs", href: "/shop?family=sarms" },
-              { label: "MK-2866" },
-            ]}
-          />
-        </div>
-        <div className="shell pdp-grid">
-          <ProductMediaGallery product={mk2866Fixture}/>
-          <PurchasePanel headingLevel="h1" product={mk2866Fixture} />
-        </div>
-      </section>
+      <PdpFirstFold product={mk2866Fixture}/>
       <section className="section pdp-assurance" id="pdp-assurance">
         <div className="shell"><AssuranceRail variant="compact" /></div>
       </section>
@@ -225,8 +197,7 @@ export function ProductRoute() {
 export function OpenLabRoute() {
   return (
     <>
-      <OpenLabNav active="openlab" />
-      <OpenLabPortalHero />
+      <OpenLabHeroLight />
       <div className="shell"><CobaltDensityBoundary /></div>
       <OpenLabWayfinding />
       <EvidenceRecordExplainer />

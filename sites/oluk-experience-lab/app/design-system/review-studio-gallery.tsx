@@ -1,6 +1,7 @@
-import { SiteFooter, SiteHeader } from "../experience-lab";
+import { SiteFooter } from "../experience-lab";
 import { CurrencyEqualityLock, LifecycleAmountRecord } from "./payment-trust";
 import { ProductCommerceCard } from "./product-commerce-card";
+import { SiteHeader } from "./site-header";
 import { ProductDecisionHero } from "./product-decision-hero";
 import { ProductDossier } from "./product-dossier";
 import { mk2866Fixture } from "./product-fixtures";

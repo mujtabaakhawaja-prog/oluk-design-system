@@ -932,8 +932,8 @@
     "sectionModuleMappings": [
       {
         "dataOwner": "product projection",
-        "export": "ProductMediaGallery",
-        "mobileStrategy": "summary",
+        "export": "PdpFirstFold",
+        "mobileStrategy": "reorder",
         "mounts": [
           "/product/:slug"
         ],
@@ -2329,7 +2329,7 @@
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
-      "sha256": "028b156949b0c01e5ea6956df231c74f35b2bd4bca02d83e826ef69ae0661cd0"
+      "sha256": "949b203929da6c0db5b35231f154f3f833045d876e86102a20a538768679fc4c"
     },
     "openLabSections": {
       "file": "authority/OPENLAB-SECTION-MODULE-REGISTRY.json",
@@ -2337,7 +2337,7 @@
     },
     "pdpSections": {
       "file": "authority/PDP-SECTION-MODULE-REGISTRY.json",
-      "sha256": "c330dbd74cfc1f997e0b2d992461cf89eba3dafe7779884f1e72ee80e096fe3b"
+      "sha256": "8815cb4be26f6758a651f3a83c2e0b15f373000efe00130e80fd4b46da808b5c"
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
@@ -2380,6 +2380,62 @@
     },
     "schemaVersion": 1,
     "sources": [
+      {
+        "contributes": [
+          "homepage LockedHero",
+          "PDP first fold",
+          "OpenLab HeroLight",
+          "OptionB premium utility header"
+        ],
+        "dataOwners": [
+          "design-fixture"
+        ],
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "id": "final-design-corrected-baselines",
+        "intentNodes": [
+          {
+            "copy": "approved-structure",
+            "dataOwner": "design-fixture",
+            "nodeId": "1155:29963",
+            "state": "Direction D LockedHero",
+            "target": "/"
+          },
+          {
+            "copy": "not-applicable",
+            "dataOwner": "design-fixture",
+            "nodeId": "462:4684",
+            "state": "runtime-motion-5-3-1",
+            "target": "LockedHomeHero.ProductStage"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "design-fixture",
+            "nodeId": "1155:30632",
+            "state": "Section 1 first fold",
+            "target": "/product/mk-2866#purchase"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "design-fixture",
+            "nodeId": "614:75995",
+            "state": "HeroLight",
+            "target": "/open-lab"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "design-fixture",
+            "nodeId": "1176:28930",
+            "state": "OptionB-Premium-UtilityStack-V08",
+            "target": "SiteHeader"
+          }
+        ],
+        "rootNodeId": "1155:29963",
+        "runtimeExclusions": [
+          "commerce mutation",
+          "payment integration"
+        ],
+        "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1155-29963"
+      },
       {
         "contributes": [
           "recommendation hierarchy",
@@ -3264,5 +3320,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "7ce9593ab88f49b73a765331ba6571286a3b7ef88b0ce6a1e86e7cbb43a55a89"
+  "contractHash": "26c0e575220aaebb24c81332daf18f16cc863bfa7d5e2c5429c87fb39408dc0a"
 }

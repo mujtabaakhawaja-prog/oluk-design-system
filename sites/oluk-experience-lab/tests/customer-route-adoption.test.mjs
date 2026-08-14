@@ -74,6 +74,8 @@ test("customer routes adopt the canonical design-system modules without page-loc
     "MetricRail",
     "EvidenceStatus",
     "ProductDecisionHero",
+    "LockedHomeHero",
+    "PdpFirstFold",
   ]) {
     assert.doesNotMatch(
       shellSource,
@@ -84,12 +86,13 @@ test("customer routes adopt the canonical design-system modules without page-loc
 
   for (const canonicalComponent of [
     "ProductCommerceCard",
-    "PurchasePanel",
     "ProductDossier",
     "AssuranceRail",
     "RelatedRail",
-    "ProductDecisionHero",
     "PresentationState",
+    "LockedHomeHero",
+    "PdpFirstFold",
+    "OpenLabHeroLight",
   ]) {
     assert.match(routeSource, new RegExp(`<${canonicalComponent}\\b`), `${canonicalComponent} route adoption`);
   }
@@ -97,9 +100,10 @@ test("customer routes adopt the canonical design-system modules without page-loc
   const productRoute = routeSource.match(
     /export function ProductRoute\(\)[\s\S]*?\n}\n\nexport function OpenLabRoute/,
   )?.[0] ?? "";
-  assert.match(productRoute, /<ProductMediaGallery\b/, "PDP adopts the canonical media/view module");
+  assert.match(productRoute, /<PdpFirstFold\b/, "PDP adopts the approved Section 1 composition");
   assert.doesNotMatch(productRoute, /className="pdp-media-stage"/, "PDP no longer redraws its media chamber in the route");
-  assert.match(productRoute, /<PurchasePanel\b/);
+  const pdpFirstFold = await readFile(new URL("../app/design-system/pdp-first-fold.tsx", import.meta.url), "utf8");
+  assert.match(pdpFirstFold, /<PurchasePanel\b/, "approved Section 1 reuses the canonical PurchasePanel");
   assert.match(productRoute, /<ProductDossier\b/);
   assert.match(productRoute, /<RelatedRail\b/);
 
