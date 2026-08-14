@@ -929,6 +929,10 @@
       {
         "export": "StackOutcomeCard",
         "figmaComponentNodeId": "1257:5160",
+        "figmaComponentNodeIds": {
+          "desktop": "1257:5160",
+          "mobile": "1259:5390"
+        },
         "figmaIntent": {
           "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
           "nodeId": "1247:15844"
@@ -945,7 +949,8 @@
             "rad-140"
           ],
           "width": [
-            "desktop"
+            "desktop",
+            "mobile"
           ]
         }
       }
@@ -2364,7 +2369,7 @@
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
-      "sha256": "a8386d42851b55a79cad4ac34ec4131bb32eabd224624c7165661c19bdfe1bd6"
+      "sha256": "3826987af166e0814a521103bca87cf6e4d40c558c9f4e4e1986edb905e6045e"
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
@@ -3648,5 +3653,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "7ed092cd542c2287f050530de8ae5def7cc33f541701bf37cb5884e2f5c7f230"
+  "contractHash": "1c94b72ffe386117e05ed7414de1f30cff1bc57a7789a35ae5caa70381e8a0bc"
 }

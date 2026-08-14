@@ -52,10 +52,11 @@
       "id": "stack-outcome-card",
       "export": "StackOutcomeCard",
       "file": "sites/oluk-experience-lab/app/design-system/your-stack-builder.tsx",
-      "variants": { "product": ["rad-140"], "width": ["desktop"] },
+      "variants": { "product": ["rad-140"], "width": ["desktop", "mobile"] },
       "responsive": { "mobileStrategy": "carousel", "touchTargetPx": 44, "horizontalScrollAllowed": true },
       "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1247:15844" },
-      "figmaComponentNodeId": "1257:5160"
+      "figmaComponentNodeId": "1257:5160",
+      "figmaComponentNodeIds": { "desktop": "1257:5160", "mobile": "1259:5390" }
     }
   ],
   "mappingLaw": "Code and canonical Figma components both exist. The listed node IDs are native Page 09 component authorities; route-level dual-reference approval remains independently gated."

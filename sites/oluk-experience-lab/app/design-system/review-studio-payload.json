@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-14T06:16:00-04:00",
-  "sourceGitSha": "a7a8c5b24c18e3a0d4ad074eb3a3d62aac6ae7c9",
-  "sourceTreeHash": "d87fa12e23beebcea16268fc1e683a1873ac4b8ab823663228fdd5cd746d3069",
-  "designContractHash": "ce31fb77be37ed00a7fa9471ea3e2170b7e9a3fbdcb7ea6c7595ffa349457f97",
+  "generatedAt": "2026-08-14T06:20:51-04:00",
+  "sourceGitSha": "8b702439b403f01b1a4d38e6ca9f8c05bf2c83ad",
+  "sourceTreeHash": "b17b6d2e7de2f19990f9166ac1de399728622bb55e1455b43bce905ede29323c",
+  "designContractHash": "2905109c74738e81129f4de90bd55e17b4172349cdfcac45c3e902827354845a",
   "decisionCount": 12,
   "families": [
     {
