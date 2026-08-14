@@ -47,6 +47,7 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
   const registry = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
   const checkout = registry.records.find(({ id }) => id === "checkout-lifecycle");
   const postPurchase = registry.records.find(({ id }) => id === "post-purchase-surface");
+  const account = registry.records.find(({ id }) => id === "account-hub");
 
   assert.deepEqual(checkout.figmaReference, {
     fileKey: "BEPMuUt1HroEw8xjz8CVyN",
@@ -59,6 +60,12 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
     nodeId: "1237:1513",
     desktopNodeId: "1237:1513",
     mobileNodeId: "1237:1821",
+  });
+  assert.deepEqual(account.figmaReference, {
+    fileKey: "BEPMuUt1HroEw8xjz8CVyN",
+    nodeId: "1239:2088",
+    desktopNodeId: "1239:2088",
+    mobileNodeId: "1239:2206",
   });
 });
 
