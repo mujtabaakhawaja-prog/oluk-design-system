@@ -23,9 +23,9 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // Product-depth and cross-host stack continuations add bounded local selection
   // state without changing the largest-chunk law.
   clientJavaScriptBytes: 595 * KIB,
-  // Compact stack continuations reuse the existing component grammar and retain
-  // a bounded aggregate stylesheet budget.
-  clientCssBytes: 264 * KIB,
+  // The lifecycle cards and deliberate compact states extend the existing
+  // Option E grammar without changing the largest-file budget.
+  clientCssBytes: 268 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,
