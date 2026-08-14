@@ -174,6 +174,7 @@ const baseUrl = new URL(option("base-url", process.env.PROOF_BASE_URL ?? "http:/
 const routes = selectRoutes(option("routes", ""));
 const viewports = selectViewports(option("widths", ""));
 const mode = option("mode", "standard");
+const resumeFrom = option("resume-from", "");
 if (!new Set(["standard", "qa"]).has(mode)) throw new Error(`Unsupported MF-09 mode: ${mode}`);
 const capture = mode === "qa" || hasFlag("capture") || hasFlag("full-page");
 const fullPage = hasFlag("full-page");
@@ -191,12 +192,40 @@ if (mode === "qa") {
 }
 
 const chrome = await launchChrome();
-const results = [];
+let results = [];
 let failed = false;
+if (resumeFrom) {
+  const prior = JSON.parse(await readFile(resumeFrom, "utf8"));
+  results = prior.results?.filter((result) => result.status === "PASS") ?? [];
+}
+const completedCases = new Set(results.map((result) => `${result.route}::${result.viewport.width}`));
+
+const buildReceipt = () => ({
+  schemaVersion: 1,
+  run: "MF-09_FOUR_WIDTH_ROUTE_PROOF",
+  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  generatedAt: new Date().toISOString(),
+  baseUrl: baseUrl.href,
+  outputDirectory,
+  captureMode: capture ? (fullPage ? "full-page" : "viewport") : "none",
+  evidenceMode: mode,
+  resumedFrom: resumeFrom || null,
+  retainedCaptureCount: results.filter(({ screenshot }) => Boolean(screenshot)).length,
+  routeCount: routes.length,
+  widthCount: viewports.length,
+  caseCount: results.length,
+  passCount: results.filter(({ status }) => status === "PASS").length,
+  failCount: results.filter(({ status }) => status !== "PASS").length,
+  results,
+});
+const checkpoint = async () => {
+  await writeFile(path.join(outputDirectory, "mf09-four-width-progress.json"), `${JSON.stringify(buildReceipt(), null, 2)}\n`);
+};
 
 try {
   for (const route of routes) {
     for (const viewport of viewports) {
+      if (completedCases.has(`${route.path}::${viewport.width}`)) continue;
       const { client, targetId } = await createPage(chrome.port);
       const logs = [];
       const exceptions = [];
@@ -277,6 +306,7 @@ try {
           screenshot,
           screenshotSha256,
         });
+        await checkpoint();
       } catch (error) {
         failed = true;
         results.push({
@@ -288,6 +318,7 @@ try {
           logs,
           exceptions,
         });
+        await checkpoint();
       } finally {
         await closePage(chrome.port, client, targetId);
       }
@@ -297,23 +328,7 @@ try {
   await chrome.close();
 }
 
-const receipt = {
-  schemaVersion: 1,
-  run: "MF-09_FOUR_WIDTH_ROUTE_PROOF",
-  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  generatedAt: new Date().toISOString(),
-  baseUrl: baseUrl.href,
-  outputDirectory,
-  captureMode: capture ? (fullPage ? "full-page" : "viewport") : "none",
-  evidenceMode: mode,
-  retainedCaptureCount: results.filter(({ screenshot }) => Boolean(screenshot)).length,
-  routeCount: routes.length,
-  widthCount: viewports.length,
-  caseCount: results.length,
-  passCount: results.filter(({ status }) => status === "PASS").length,
-  failCount: results.filter(({ status }) => status !== "PASS").length,
-  results,
-};
+const receipt = buildReceipt();
 
 await writeFile(path.join(outputDirectory, "mf09-four-width-receipt.json"), `${JSON.stringify(receipt, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify({ ...receipt, results: results.map(({ route, viewport, status, failures, screenshotSha256 }) => ({ route, width: viewport.width, status, failures, screenshotSha256 })) }, null, 2)}\n`);
