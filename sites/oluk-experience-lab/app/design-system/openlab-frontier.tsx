@@ -1,6 +1,4 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex -- technical tables are intentional keyboard-reachable horizontal scrollers. */
-import Link from "next/link";
-
 import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
 import { ActionLink } from "./customer-route-primitives";
 import { getFrontierProduct } from "./frontier-content";
@@ -118,7 +116,7 @@ const incompleteToolCopy: Readonly<Record<Exclude<OpenLabFrontierTool, "evidence
 
 function ToolNav({ active }: Readonly<{ active: OpenLabFrontierTool }>) {
   return <nav className={styles.toolNav} aria-label="OpenLab tools">
-    {nav.map(([label, href, tool]) => <Link aria-current={tool === active ? "page" : undefined} href={href} key={href}>{label}</Link>)}
+    {nav.map(([label, href, tool]) => <a aria-current={tool === active ? "page" : undefined} href={href} key={href}>{label}</a>)}
   </nav>;
 }
 
@@ -204,7 +202,7 @@ function ProductAvailabilityList() {
     return <article key={product.slug} role="listitem">
       <div><span>{product.series}</span><h2>{product.name}</h2><p>{product.alias} · {product.strength}{product.servings ? ` · ${product.servings}` : ""}</p></div>
       <EvidenceStatusChip state={available ? "source-reported" : "unavailable"}/>
-      <Link href={`/open-lab/compound/${product.slug}`}>{available ? "Open record" : "View availability"} →</Link>
+      <a href={`/open-lab/compound/${product.slug}`}>{available ? "Open record" : "View availability"} →</a>
     </article>;
   })}</div>;
 }
