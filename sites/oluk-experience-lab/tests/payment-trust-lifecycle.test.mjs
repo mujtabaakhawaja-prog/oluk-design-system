@@ -37,6 +37,11 @@ test("currency equality is one reusable non-live component", () => {
   assert.match(component, /data-live-authority="false"/);
   assert.match(component, /CurrencyEqualityLock/);
   assert.match(component, /LifecycleAmountRecord/);
+  assert.match(
+    component,
+    /paymentTrustStudy\.customerAmount[\s\S]*?paymentTrustStudy\.customerCurrency[\s\S]*?aria-label="equals"[\s\S]*?paymentTrustStudy\.settlementAmount[\s\S]*?paymentTrustStudy\.settlementCurrency/,
+    "the equality surface must read from displayed GBP to its fixed USD equivalent",
+  );
   assert.match(program, /TransactionPresentation/);
   assert.match(transaction, /<CurrencyEqualityLock/);
 });
@@ -51,5 +56,5 @@ test("payment shell stays static and provider-free", () => {
   const combined = `${component}\n${program}\n${transaction}`;
   assert.doesNotMatch(combined, /fetch\(|axios|XMLHttpRequest|WebSocket|Stripe|stripe-js|onSubmit|<form/i);
   assert.match(program, /TransactionPresentation/);
-  assert.match(transaction, /disabled type="button">Pay securely/);
+  assert.match(transaction, /<ActionButton[^>]*disabled[^>]*>Pay securely<\/ActionButton>/);
 });

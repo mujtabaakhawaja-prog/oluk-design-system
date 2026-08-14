@@ -4,7 +4,9 @@ import { CustomerSiteChrome } from "../experience-lab";
 export function OrderStatusPage({ orderId, status }: { orderId: string; status: PostPurchaseStatus }) {
   return (
     <CustomerSiteChrome route="checkout-confirmation">
-      <PostPurchaseSurface orderId={orderId} status={status} />
+      <main data-live-authority="false">
+        <PostPurchaseSurface orderId={orderId} status={status} />
+      </main>
     </CustomerSiteChrome>
   );
 }

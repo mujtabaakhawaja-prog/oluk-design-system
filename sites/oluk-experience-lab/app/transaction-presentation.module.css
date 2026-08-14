@@ -16,6 +16,15 @@
   max-width: 980px;
 }
 
+.breadcrumbSurface {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--oluk-radius-control);
+  box-shadow: var(--shadow-compact);
+  display: inline-flex;
+  padding: 0 14px;
+}
+
 .content {
   padding: 70px 0 112px;
 }
@@ -100,6 +109,12 @@
   justify-content: center;
 }
 
+.quantityButton {
+  min-width: 44px;
+  padding-inline: 0;
+  width: 44px;
+}
+
 .quantity > * + * {
   border-left: 1px solid var(--line);
 }
@@ -145,7 +160,7 @@
 }
 
 .summary dt {
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
   line-height: 1.45;
 }
 
@@ -181,24 +196,7 @@
 }
 
 .labLink {
-  align-items: center;
-  color: var(--cobalt);
-  display: inline-flex;
-  font-size: 13px;
-  font-weight: 800;
   margin-top: 22px;
-  min-height: 44px;
-}
-
-.continueRow > a:not(:global(.button)),
-.confirmationHeading a,
-.paymentWindow > a {
-  align-items: center;
-  color: var(--cobalt);
-  display: inline-flex;
-  font-size: 13px;
-  font-weight: 800;
-  min-height: 44px;
 }
 
 .transaction :global(.breadcrumb a) {
@@ -237,7 +235,7 @@
 .panelHeading p,
 .handoffPanel > p,
 .retryPanel > p {
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
   line-height: 1.6;
   margin-top: 8px;
 }
@@ -306,7 +304,8 @@
 }
 
 .choice small {
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
+  font-size: 15px;
   line-height: 1.45;
 }
 
@@ -355,7 +354,7 @@
 }
 
 .handoffPanel li p {
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
   line-height: 1.5;
   margin-top: 5px;
 }
@@ -406,7 +405,7 @@
 }
 
 .paymentWindow p {
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
   line-height: 1.65;
   max-width: 48ch;
 }
@@ -534,7 +533,7 @@
 .returnPanel > p,
 .refundPanel > p,
 .processingPanel > p {
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
   line-height: 1.6;
   margin-top: 4px;
 }
@@ -605,16 +604,6 @@
   margin-top: 30px;
 }
 
-.processingActions a,
-.historyActions > a {
-  align-items: center;
-  color: var(--cobalt);
-  display: inline-flex;
-  font-size: 13px;
-  font-weight: 800;
-  min-height: 44px;
-}
-
 .timeline,
 .returnSteps {
   display: grid;
@@ -639,7 +628,7 @@
   background: var(--canvas);
   border: 1px solid var(--line);
   border-radius: 50%;
-  color: var(--ink-muted);
+  color: var(--oluk-text-secondary);
   display: flex;
   font-family: var(--font-display), sans-serif;
   font-size: 12px;
@@ -691,6 +680,14 @@
 .refundPanel > .continueRow { margin-top: 28px; }
 
 .refundPanel :global(.payment-trust_record) { margin-top: 30px; }
+
+.decisionBar {
+  min-width: 0;
+}
+
+.decisionBar .continueRow {
+  width: 100%;
+}
 
 @keyframes orderPulse {
   0%, 100% { opacity: 0.35; transform: translateY(0); }

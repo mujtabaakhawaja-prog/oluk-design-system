@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import styles from "../transaction-presentation.module.css";
 import { DecisionSurface, TechnicalSurface, TransactionIntroCard } from "./content-surfaces";
-import { ActionLink, Breadcrumbs } from "./customer-route-primitives";
+import { ActionButton, ActionLink, Breadcrumbs } from "./customer-route-primitives";
 import { mk2866Fixture } from "./product-fixtures";
 import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
 import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
@@ -123,12 +123,14 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
   return (
     <section className={styles.intro}>
       <div className="shell">
-        <Breadcrumbs
-          items={[
-            { label: "Shop", href: "/shop" },
-            { label: heading.title.replace(/\.$/, "") },
-          ]}
-        />
+        <div className={styles.breadcrumbSurface} data-component="BreadcrumbSurface" data-copy-surface="transaction">
+          <Breadcrumbs
+            items={[
+              { label: "Shop", href: "/shop" },
+              { label: heading.title.replace(/\.$/, "") },
+            ]}
+          />
+        </div>
         <TransactionIntroCard
           className={styles.introCard}
           copy={heading.copy}
@@ -140,6 +142,30 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
         </TransactionIntroCard>
       </div>
     </section>
+  );
+}
+
+function CheckoutDecisionBar({ backHref, backLabel, continueHref, continueLabel, title }: Readonly<{
+  backHref: string;
+  backLabel: string;
+  continueHref: string;
+  continueLabel: string;
+  title: string;
+}>) {
+  return (
+    <DecisionSurface
+      actions={(
+        <div className={styles.continueRow}>
+          <ActionLink href={backHref} secondary>{backLabel}</ActionLink>
+          <ActionLink href={continueHref}>{continueLabel}</ActionLink>
+        </div>
+      )}
+      className={styles.decisionBar}
+      compact
+      eyebrow="Next step"
+      headingLevel="h3"
+      title={title}
+    />
   );
 }
 
@@ -156,9 +182,9 @@ function ProductLine({ quantity = true }: Readonly<{ quantity?: boolean }>) {
         <span className={styles.sectionLabel}>{quantity ? "Quantity and price" : "Order price"}</span>
         {quantity ? (
           <div aria-label="Quantity" className={styles.quantity} role="group">
-            <button aria-label="Decrease quantity" disabled type="button">−</button>
+            <ActionButton aria-label="Decrease quantity" className={styles.quantityButton} disabled size="compact" variant="quiet">−</ActionButton>
             <output aria-label="Quantity">1</output>
-            <button aria-label="Increase quantity" disabled type="button">+</button>
+            <ActionButton aria-label="Increase quantity" className={styles.quantityButton} disabled size="compact" variant="quiet">+</ActionButton>
           </div>
         ) : null}
         <strong>{mk2866Fixture.price}</strong>
@@ -174,7 +200,7 @@ function OrderSummary({
   heading = "Order summary",
 }: Readonly<{ action?: ReactNode; compact?: boolean; confidenceLink?: boolean; heading?: string }>) {
   return (
-    <aside className={styles.summary} data-compact={compact || undefined}>
+    <aside className={styles.summary} data-compact={compact || undefined} data-component="OrderSummarySurface" data-copy-surface="transaction">
       <span className={styles.sectionLabel}>{heading}</span>
       <dl>
         <div><dt>MK-2866 × 1</dt><dd>{mk2866Fixture.price}</dd></div>
@@ -182,7 +208,7 @@ function OrderSummary({
         <div className={styles.total}><dt>Amount due</dt><dd>{mk2866Fixture.price}</dd></div>
       </dl>
       {action ? <div className={styles.summaryAction}>{action}</div> : null}
-      {confidenceLink ? <a className={styles.labLink} href={mk2866Fixture.evidencePath}>View MK-2866 Lab Record →</a> : null}
+      {confidenceLink ? <ActionLink className={styles.labLink} href={mk2866Fixture.evidencePath} secondary>View MK-2866 Lab Record</ActionLink> : null}
     </aside>
   );
 }
@@ -205,7 +231,6 @@ function BagContent() {
   return (
     <div className={styles.layout}>
       <div className={styles.primary}>
-        <span className={styles.sectionLabel}>1 item</span>
         <ProductLine />
         <TechnicalSurface
           actions={<ActionLink href="/shop" secondary>Return to the shop</ActionLink>}
@@ -243,10 +268,13 @@ function DetailsContent() {
             <Field autoComplete="postal-code" label="Postcode" placeholder="Postcode" />
           </div>
         </section>
-        <div className={styles.continueRow}>
-          <a href="/bag">← Back to bag</a>
-          <ActionLink href="/checkout/delivery">Continue to delivery</ActionLink>
-        </div>
+        <CheckoutDecisionBar
+          backHref="/bag"
+          backLabel="Back to bag"
+          continueHref="/checkout/delivery"
+          continueLabel="Continue to delivery"
+          title="Continue when your information is ready."
+        />
       </section>
       <div className={styles.asideStack}><OrderSummary compact /><PaymentTrustPrimer compact /></div>
     </div>
@@ -269,10 +297,13 @@ function DeliveryContent() {
           <div className={styles.panelHeading}><span>02</span><div><h2>Review</h2><p>Check the product and amount before continuing.</p></div></div>
           <ProductLine quantity={false} />
         </section>
-        <div className={styles.continueRow}>
-          <a href="/checkout">← Back to details</a>
-          <ActionLink href="/checkout/payment-handoff">Continue to payment</ActionLink>
-        </div>
+        <CheckoutDecisionBar
+          backHref="/checkout"
+          backLabel="Back to details"
+          continueHref="/checkout/payment-handoff"
+          continueLabel="Continue to payment"
+          title="Continue with this delivery choice."
+        />
       </div>
       <div><OrderSummary compact /><CurrencyEqualityLock compact /></div>
     </div>
@@ -292,10 +323,13 @@ function ReviewContent() {
           <strong>Standard delivery</strong>
           <p>Your delivery timing is shown with the confirmed address before payment.</p>
         </section>
-        <div className={styles.continueRow}>
-          <a href="/checkout/delivery">← Back to delivery</a>
-          <ActionLink href="/checkout/payment-handoff">Continue to payment</ActionLink>
-        </div>
+        <CheckoutDecisionBar
+          backHref="/checkout/delivery"
+          backLabel="Back to delivery"
+          continueHref="/checkout/payment-handoff"
+          continueLabel="Continue to payment"
+          title="Continue when this order looks right."
+        />
       </section>
       <div className={styles.asideStack}><OrderSummary compact /><CurrencyEqualityLock compact /></div>
     </div>
@@ -316,7 +350,7 @@ function HandoffContent() {
             <li><span>03</span><div><strong>Return</strong><p>Come back to Olympus for confirmation or help completing payment.</p></div></li>
           </ol>
           <div className={styles.continueRow}>
-            <a href="/checkout/delivery">← Back to delivery</a>
+            <ActionLink href="/checkout/delivery" secondary>Back to delivery</ActionLink>
             <ActionLink href="/checkout/order-pay">Open secure payment</ActionLink>
           </div>
         </div>
@@ -335,9 +369,9 @@ function OrderPayContent() {
         <h2>Payment amount</h2>
         <strong className={styles.paymentAmount}>{paymentTrustStudy.settlementAmount} USD</strong>
         <p>{paymentTrustCopy.equality}</p>
-        <button className="button" disabled type="button">Pay securely</button>
-        <a href="/checkout/payment-handoff">Return to order review</a>
-        <a href="/checkout/failure">Payment not completed?</a>
+        <ActionButton disabled>Pay securely</ActionButton>
+        <ActionLink href="/checkout/payment-handoff" secondary>Return to order review</ActionLink>
+        <ActionLink href="/checkout/failure" secondary>Payment not completed?</ActionLink>
       </section>
       <div><CurrencyEqualityLock compact /><OrderSummary compact heading="Payment summary" /></div>
     </div>
@@ -353,8 +387,8 @@ function ProcessingContent() {
         <h2>Keep this page open while your order update returns.</h2>
         <p>The order outcome appears here after the payment window returns you to Olympus.</p>
         <div className={styles.processingActions}>
-          <a href="/checkout/payment-handoff">Return to payment</a>
-          <a href="/checkout/confirmation">View order update</a>
+          <ActionLink href="/checkout/payment-handoff" secondary>Return to payment</ActionLink>
+          <ActionLink href="/checkout/confirmation">View order update</ActionLink>
         </div>
       </section>
       <div className={styles.asideStack}><OrderSummary compact heading="Order value" /><PaymentTrustPrimer compact /></div>
@@ -374,7 +408,7 @@ function ConfirmationContent({ orderReference }: Readonly<{ orderReference: stri
         <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.confirmationHeading}>
             <div><span className={styles.sectionLabel}>Order reference</span><strong>{orderReference}</strong></div>
-            <a href="/account">View your account →</a>
+            <ActionLink href="/account" secondary>View your account</ActionLink>
           </div>
           <ProductLine quantity={false} />
         </section>
@@ -403,7 +437,7 @@ function TrackingContent({ orderReference }: Readonly<{ orderReference: string }
     <div className={styles.layout}>
       <section className={styles.primary}>
         <section className={styles.trackingPanel} data-copy-surface="transaction">
-          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>Order reference</span><strong>{orderReference}</strong></div><a href="/checkout/order-details">View order details →</a></div>
+          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>Order reference</span><strong>{orderReference}</strong></div><ActionLink href="/checkout/order-details" secondary>View order details</ActionLink></div>
           <ol className={styles.timeline}>
             {milestones.map(([index, title, copy], milestone) => <li data-current={milestone === 1 || undefined} key={title}><span>{index}</span><div><strong>{title}</strong><p>{copy}</p></div></li>)}
           </ol>
@@ -423,7 +457,7 @@ function OrderHistoryContent({ orderReference }: Readonly<{ orderReference: stri
           <span className={styles.sectionLabel}>Latest order</span>
           <div className={styles.historyHeading}><div><h2>MK-2866</h2><p>Ostarine · 15 MG · 90 SERVINGS</p></div><strong>{orderReference}</strong></div>
           <LifecycleAmountRecord stage="history" />
-          <div className={styles.historyActions}><ActionLink href="/checkout/tracking">Track order</ActionLink><a href="/checkout/receipt">Open receipt →</a><a href="/product/mk-2866">Return to product →</a></div>
+          <div className={styles.historyActions}><ActionLink href="/checkout/tracking">Track order</ActionLink><ActionLink href="/checkout/receipt" secondary>Open receipt</ActionLink><ActionLink href="/product/mk-2866" secondary>Return to product</ActionLink></div>
         </section>
         <div className={styles.continuationSurface} data-copy-surface="commerce"><RestockCard state="due-soon" /></div>
       </section>
@@ -437,7 +471,7 @@ function OrderDetailsContent({ orderReference, receipt = false }: Readonly<{ ord
     <div className={styles.layout}>
       <section className={styles.primary}>
         <section className={styles.formPanel} data-copy-surface="transaction">
-          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>{receipt ? "Receipt" : "Order reference"}</span><strong>{orderReference}</strong></div><a href={receipt ? "/checkout/order-details" : "/checkout/receipt"}>{receipt ? "View order details →" : "Open receipt →"}</a></div>
+          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>{receipt ? "Receipt" : "Order reference"}</span><strong>{orderReference}</strong></div><ActionLink href={receipt ? "/checkout/order-details" : "/checkout/receipt"} secondary>{receipt ? "View order details" : "Open receipt"}</ActionLink></div>
           <ProductLine quantity={false} />
         </section>
         <LifecycleAmountRecord stage={receipt ? "receipt" : "order-details"} />
@@ -458,7 +492,7 @@ function ReturnContent({ orderReference }: Readonly<{ orderReference: string }>)
           <p>Keep the original product and order details in view before the return is reviewed.</p>
           <ProductLine quantity={false} />
           <ol className={styles.returnSteps}><li><span>01</span><div><strong>Review the order</strong><p>Check the product and order reference above.</p></div></li><li><span>02</span><div><strong>Share what you need</strong><p>Use the return guidance to prepare the next step.</p></div></li><li><span>03</span><div><strong>Keep the outcome close</strong><p>Return and refund updates stay attached to this order.</p></div></li></ol>
-          <div className={styles.continueRow}><a href="/checkout/order-details">View order details</a><ActionLink href="/refunds">View return guidance</ActionLink></div>
+          <div className={styles.continueRow}><ActionLink href="/checkout/order-details" secondary>View order details</ActionLink><ActionLink href="/refunds">View return guidance</ActionLink></div>
         </section>
       </section>
       <OrderSummary compact heading="Original order" />
@@ -475,7 +509,7 @@ function RefundContent({ orderReference }: Readonly<{ orderReference: string }>)
           <h2>Your refund record.</h2>
           <p>The original order value and the fixed payment equivalent stay together in the refund record.</p>
           <LifecycleAmountRecord stage="refund" />
-          <div className={styles.continueRow}><a href="/checkout/order-details">View order details</a><ActionLink href="/account/orders">View all orders</ActionLink></div>
+          <div className={styles.continueRow}><ActionLink href="/checkout/order-details" secondary>View order details</ActionLink><ActionLink href="/account/orders">View all orders</ActionLink></div>
         </section>
         <DecisionSurface
           actions={<ActionLink href="/shop">Browse the product range</ActionLink>}
@@ -501,7 +535,7 @@ function FailureContent() {
         <section className={styles.formPanel} data-copy-surface="transaction">
           <ProductLine quantity={false} />
           <div className={styles.continueRow}>
-            <a href="/bag">Return to bag</a>
+            <ActionLink href="/bag" secondary>Return to bag</ActionLink>
             <ActionLink href="/checkout/retry">Review and retry</ActionLink>
           </div>
         </section>
@@ -521,7 +555,7 @@ function RetryContent() {
           <p>MK-2866, quantity one and the amount due remain ready for review.</p>
           <ProductLine quantity={false} />
           <div className={styles.continueRow}>
-            <a href="/bag">Return to bag</a>
+            <ActionLink href="/bag" secondary>Return to bag</ActionLink>
             <ActionLink href="/checkout/order-pay">Try secure payment again</ActionLink>
           </div>
         </div>

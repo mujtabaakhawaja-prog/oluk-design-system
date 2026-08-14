@@ -5,9 +5,9 @@ export function CurrencyEqualityLock({ compact = false }: { compact?: boolean })
   return <section aria-label="Payment currency equivalence" className={styles.lock} data-compact={compact || undefined} data-copy-surface="transaction" data-live-authority="false">
     <div className={styles.lockHeading}><span aria-hidden="true">✓</span><div><strong>One order value</strong><p>The displayed order value is preserved at payment.</p></div></div>
     <div className={styles.equality}>
-      <strong>{paymentTrustStudy.settlementAmount} <small>{paymentTrustStudy.settlementCurrency}</small></strong>
-      <span aria-label="equals">=</span>
       <strong>{paymentTrustStudy.customerAmount} <small>{paymentTrustStudy.customerCurrency}</small></strong>
+      <span aria-label="equals">=</span>
+      <strong>{paymentTrustStudy.settlementAmount} <small>{paymentTrustStudy.settlementCurrency}</small></strong>
     </div>
     <p className={styles.explanation}>{paymentTrustCopy.equality}</p>
   </section>;

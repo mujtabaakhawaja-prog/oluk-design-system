@@ -71,10 +71,14 @@ test("transaction presentation preserves exact MK-2866 truth and deterministic i
   assert.match(source, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
   assert.match(source, /<ProductCommerceCard[\s\S]*?commerceTreatment="selection"[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="compact"/);
   assert.match(source, /<TransactionIntroCard/);
+  assert.match(source, /data-component="BreadcrumbSurface"/);
+  assert.match(source, /data-component="OrderSummarySurface"/);
+  assert.match(source, /function CheckoutDecisionBar/);
   assert.match(source, /data-live-authority="false"/);
-  assert.match(source, /<button[^>]*disabled[^>]*>Pay securely<\/button>/);
+  assert.match(source, /<ActionButton[^>]*disabled[^>]*>Pay securely<\/ActionButton>/);
   assert.match(source, /<CurrencyEqualityLock compact \/>/);
   assert.match(source, /<LifecycleAmountRecord stage="confirmation" \/>/);
+  assert.doesNotMatch(source, /<(?:a|button)\b/, "checkout-local actions must use the canonical action family");
   assert.doesNotMatch(source, /fetch\s*\(|axios|XMLHttpRequest|use server|server action|woocommerce|stripe|biaspay|initiator|tools-service|C2/i);
   assert.doesNotMatch(source, /90 CAPS(?:\b|ULES)|£43\.00|<del\b/i);
   assert.doesNotMatch(source, /<form\b|\bformAction\s*=|\bonSubmit\s*=/i);
@@ -157,6 +161,7 @@ test("every remaining checkout lifecycle stage uses the shared presentation-only
 
 test("post-purchase aliases reuse the canonical lifecycle without a competing status layout", async () => {
   const source = await readFile(new URL("design-system/post-purchase-surface.tsx", appRoot), "utf8");
+  const shell = await readFile(new URL("order/order-status-page.tsx", appRoot), "utf8");
   assert.match(source, /import \{ TransactionPresentation, type TransactionStage \}/);
   assert.match(source, /success: "confirmation"/);
   assert.match(source, /pending: "pending"/);
@@ -165,6 +170,7 @@ test("post-purchase aliases reuse the canonical lifecycle without a competing st
   assert.match(source, /tracking: "tracking"/);
   assert.match(source, /orderReference=\{orderId \?\? "OL-10428"\}/);
   assert.doesNotMatch(source, /RecommendationCard|RestockCard|page-hero|post-purchase-grid/);
+  assert.match(shell, /<main data-live-authority="false">[\s\S]*?<PostPurchaseSurface/);
 });
 
 test("payment-focused stages contain no promotional continuation", async () => {
@@ -187,4 +193,35 @@ test("transaction layout recomposes without overflow clipping", async () => {
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.fieldGrid,[\s\S]*?grid-template-columns:\s*1fr/);
   assert.doesNotMatch(css, /overflow-x:\s*(?:clip|hidden)/i);
   assert.match(paymentCss, /\.lock\[data-compact\] \.equality\{grid-template-columns:1fr\}/);
+  assert.doesNotMatch(`${css}\n${paymentCss}`, /--(?:ink-muted|oluk-text-muted)/, "customer subcopy must use the governed secondary text role");
+});
+
+test("affected checkout routes contain route copy in governed surfaces", async () => {
+  const audit = JSON.parse(await readFile(new URL("../../../authority/generated/CUSTOMER-SURFACE-GRAMMAR-AUDIT.json", import.meta.url), "utf8"));
+  const expectedSharedChromeCopy = new Set([
+    "Search a batch, compare compounds or open the report connected to the product in front of you.",
+    "Finished products, clear specifications and independently presented evidence.",
+    "Shop",
+    "OpenLab",
+    "Company",
+    "Help & legal",
+  ]);
+  for (const routeId of ["bag", "checkout-review", "checkout-confirmation", "checkout-tracking", "order-success", "order-tracking"]) {
+    const route = audit.routes.find((entry) => entry.routeId === routeId);
+    assert.ok(route, routeId);
+    assert.ok(route.containedCopyGroupCount > 0, `${routeId} must expose governed copy surfaces`);
+    assert.deepEqual(
+      new Set(route.looseCopyExamples.map((entry) => entry.text)),
+      expectedSharedChromeCopy,
+      `${routeId} may not add route-local loose canvas copy`,
+    );
+  }
+});
+
+test("checkout-mounted stack continuation consumes the canonical action family", async () => {
+  const source = await readFile(new URL("design-system/your-stack-builder.tsx", appRoot), "utf8");
+  const css = await readFile(new URL("design-system/your-stack-builder.module.css", appRoot), "utf8");
+  assert.match(source, /import \{ ActionButton, ActionLink \} from "\.\/customer-route-primitives"/);
+  assert.doesNotMatch(source, /<(?:a|button)\b/, "shared stack continuation may not restore raw controls on Bag or Confirmation");
+  assert.doesNotMatch(css, /\.goalPicker button,[\s\S]*?font-size:\s*14px/);
 });
