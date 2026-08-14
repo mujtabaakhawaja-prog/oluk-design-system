@@ -104,6 +104,7 @@ export const frontierFaq = [
 /** Dynamic compositions intentionally sampled by route-family review rather than the core 40-route regression matrix. */
 export const FRONTIER_ROUTE_PATTERNS = [
   "/product/[slug]", "/shop/[family]", "/collections/[slug]", "/compare", "/bundle-builder", "/faq-help-centre",
+  "/shipping-returns", "/faq", "/international", "/gift-cards", "/cookies", "/refunds", "/sitemap", "/legal/[doc]",
   "/account/[surface]", "/checkout/[stage]", "/open-lab/[tool]", "/open-lab/coa/[id]",
 ] as const;
 

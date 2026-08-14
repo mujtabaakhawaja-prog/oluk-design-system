@@ -1,0 +1,1 @@
+import { SupportSurface } from "../../design-system/support-surface"; import { CustomerSiteChrome } from "../../experience-lab"; export function generateStaticParams(){return ["privacy","terms","cookies"].map((doc)=>({doc}));} export default function Page(){return <CustomerSiteChrome route="privacy"><SupportSurface kind="legal"/></CustomerSiteChrome>}

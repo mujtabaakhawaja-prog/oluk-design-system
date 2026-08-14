@@ -1614,6 +1614,35 @@ a.button-secondary:hover {
   gap: 20px;
 }
 
+.support-surface-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-block: 72px 112px;
+}
+
+.support-surface-grid article {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--oluk-radius-card);
+  box-shadow: var(--shadow-compact);
+  display: grid;
+  gap: 14px;
+  min-height: 260px;
+  padding: 28px;
+}
+
+.support-surface-grid article > span {
+  color: var(--cobalt);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.support-surface-grid h2 { font-family: var(--font-display), sans-serif; font-size: 28px; letter-spacing: -.05em; }
+.support-surface-grid p { color: var(--ink-muted); line-height: 1.6; }
+.support-surface-grid a { align-self: end; color: var(--cobalt); font-weight: 800; min-height: 44px; }
+
 @media (max-width: 760px) {
   .product-relation-grid {
     display: flex;
@@ -1627,6 +1656,8 @@ a.button-secondary:hover {
     flex: 0 0 min(88vw, 360px);
     scroll-snap-align: start;
   }
+
+  .support-surface-grid { grid-template-columns: 1fr; padding-block: 44px 72px; }
 }
 
 .horizontal-media {

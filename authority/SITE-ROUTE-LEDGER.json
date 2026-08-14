@@ -318,9 +318,9 @@
       "path": "/shipping-returns",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -328,9 +328,9 @@
       "path": "/faq",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -499,9 +499,9 @@
       "path": "/international",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -600,9 +600,9 @@
       "path": "/order/success/:orderId?",
       "family": "post_purchase",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -661,9 +661,9 @@
       "path": "/legal/:doc",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -681,9 +681,9 @@
       "path": "/cookies",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -691,9 +691,9 @@
       "path": "/refunds",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -751,9 +751,9 @@
       "path": "/sitemap",
       "family": "support_content",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
