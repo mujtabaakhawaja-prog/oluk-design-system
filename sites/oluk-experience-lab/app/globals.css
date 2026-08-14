@@ -846,10 +846,11 @@ a.button-secondary:hover {
   color: var(--cobalt);
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.035em;
   line-height: var(--oluk-type-eyebrow-line);
   margin-top: 5px;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  white-space: nowrap;
 }
 
 .metric-rail [data-availability="unavailable"] dt {
