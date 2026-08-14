@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "oluk.sites-nativeization.v2",
+  "authority": "Codex Sites",
+  "module": "YourStackBuilder",
+  "moduleState": "FIGMA_NATIVE_MIRROR_CREATED",
+  "source": {
+    "commit": "e380bd4419913f00fb67cf986740c557b4b5140d",
+    "route": "/open-lab/stack-builder",
+    "componentIdentity": "sites:YourStackBuilder/baseline-aware",
+    "capturedStates": [
+      {
+        "viewport": 1440,
+        "state": "cutting-mk-2866-rad-140-selected",
+        "capture": "output/playwright/stack-capture-e380bd4/current-stack-builder-1440-cutting-rad140-selected.png",
+        "sha256": "88fe46997012d1f5a09f9b57ebb9a93ff0011b37506e4bab1c13c9a08261556d"
+      },
+      {
+        "viewport": 390,
+        "state": "cutting-mk-2866-rad-140-selected",
+        "capture": "output/playwright/stack-capture-e380bd4/current-stack-builder-390-cutting-rad140-selected.png",
+        "sha256": "9eb8609a3a81c697e9663b5cacd5c48eab9da68fd82d3548d9bb168a2d0372ce"
+      }
+    ],
+    "interactionEvidence": {
+      "selection": "RAD-140",
+      "count": { "from": 0, "to": 1 },
+      "total": { "from": "£43", "to": "£98" },
+      "outcomeProfile": {
+        "from": { "goalFit": 52, "intensity": 38, "complexity": 20, "recoveryEmphasis": 34, "evidenceVisibility": 92 },
+        "to": { "goalFit": 76, "intensity": 68, "complexity": 38, "recoveryEmphasis": 38, "evidenceVisibility": 100 }
+      }
+    }
+  },
+  "figma": {
+    "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "page": { "name": "Sites Sync — Routes", "nodeId": "1214:51" },
+    "desktop": { "nodeId": "1295:31435", "name": "SITES / Stack Builder / Current selected state / Desktop / 1440" },
+    "mobile": { "nodeId": "1300:25677", "name": "SITES / Stack Builder / Current selected state / Mobile / 390" },
+    "reusableComponents": [
+      { "nodeId": "743:51", "name": "ProductCommerceCard / Vertical / Width=Desktop" },
+      { "nodeId": "998:28862", "name": "ProductMediaChamber / Context=Vertical, Width=Desktop" },
+      { "nodeId": "732:2903", "name": "InventoryStatus / In stock" },
+      { "nodeId": "732:2912", "name": "EvidenceStatus" },
+      { "nodeId": "1292:6466", "name": "OLUK / StackOutcomeProfile" }
+    ],
+    "historicalIntent": {
+      "nodeId": "1210:31153",
+      "status": "REJECTED_AS_CONTROLLING_AUTHORITY",
+      "reason": "Good/Better/Best is not the Sites decision model."
+    }
+  },
+  "scope": {
+    "kind": "selected-state module mirror",
+    "isCompleteRouteMirror": false,
+    "reason": "The current editable reference proves the frozen baseline-plus-addition state without fabricating the unselected product media or presenting a historical proof board as current."
+  },
+  "knownGaps": [
+    {
+      "id": "page09-vertical-card-mobile-render-override",
+      "status": "OPEN",
+      "impact": "The mobile ProductCommerceCard variant resets the nested RAD-140 image override to the MK-2866 default.",
+      "currentMitigation": "The native mobile mirror uses the correctly bound RAD-140 Desktop card scaled inside a 390px constrained review wrapper.",
+      "requiredResolution": "Add a registered media override contract to the Page 09 ProductCommerceCard mobile variant before declaring a full-route visual sync."
+    }
+  ],
+  "nextState": "FIGMA_REVIEWED",
+  "visualSync": "PENDING_REPRESENTATIVE_COMPARISON",
+  "publicationAuthorized": false
+}
