@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -7,6 +7,18 @@ const contract = await readFile(new URL("app/design-system/payment-trust-contrac
 const component = await readFile(new URL("app/design-system/payment-trust.tsx", root), "utf8");
 const program = await readFile(new URL("app/program-routes.tsx", root), "utf8");
 const transaction = await readFile(new URL("app/design-system/transaction-presentation.tsx", root), "utf8");
+const frontier = await readFile(new URL("app/design-system/frontier-sections.tsx", root), "utf8");
+
+async function collectCustomerSource(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const sources = [];
+  for (const entry of entries) {
+    const child = new URL(`${entry.name}${entry.isDirectory() ? "/" : ""}`, directory);
+    if (entry.isDirectory()) sources.push(...await collectCustomerSource(child));
+    else if (/\.(?:ts|tsx)$/.test(entry.name)) sources.push(await readFile(child, "utf8"));
+  }
+  return sources;
+}
 
 test("payment-trust copy inherits the approved R6 lifecycle vocabulary", () => {
   for (const copy of [
@@ -27,6 +39,12 @@ test("currency equality is one reusable non-live component", () => {
   assert.match(component, /LifecycleAmountRecord/);
   assert.match(program, /TransactionPresentation/);
   assert.match(transaction, /<CurrencyEqualityLock/);
+});
+
+test("historical checkout exports reuse the canonical lifecycle and cannot restore stale amounts", async () => {
+  assert.match(frontier, /return <TransactionPresentation stage=\{checkoutLifecycleStage\[stage\] \?\? "details"\}\/>/);
+  const customerSource = (await collectCustomerSource(new URL("app/", root))).join("\n");
+  assert.doesNotMatch(customerSource, /£128\.97|\$175\.01/);
 });
 
 test("payment shell stays static and provider-free", () => {
