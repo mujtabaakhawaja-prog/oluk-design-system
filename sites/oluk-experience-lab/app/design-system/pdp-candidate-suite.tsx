@@ -93,8 +93,8 @@ function EvidenceAvailability({ compact = false, product, productSlug }: Readonl
   return (
     <TechnicalSurface
       actions={available
-        ? <Link href="/open-lab/compound/mk-2866">Open the MK-2866 dossier</Link>
-        : <Link href="/open-lab/records">Browse available OpenLab records</Link>}
+        ? <Link href="/open-lab/compound/mk-2866" prefetch={false}>Open the MK-2866 dossier</Link>
+        : <Link href="/open-lab/records" prefetch={false}>Browse available OpenLab records</Link>}
       compact={compact}
       copy={available
         ? "The available MK-2866 record keeps product identity, batch context, reported values and original-source access connected to this decision."

@@ -53,6 +53,7 @@ test("all three PDP candidates reuse one governed product and continuation modul
   assert.match(source, /replace\(\/\\btraining intensity\\b\/gi, "training output"\)/);
   assert.doesNotMatch(source, /proof board|fixture|current main|component authority/i);
   assert.match(source, /<YourStackBuilder baselineSlug=\{productSlug\} host="pdp"/);
+  assert.equal((source.match(/prefetch=\{false\}/g) ?? []).length, 2);
   assert.doesNotMatch(source, /product-count-level-pending/);
 });
 
