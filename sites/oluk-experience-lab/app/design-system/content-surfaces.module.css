@@ -45,8 +45,9 @@
   overflow-wrap: anywhere;
 }
 
-.copy {
-  color: var(--oluk-text-body);
+.copy,
+.secondaryCopy {
+  color: var(--oluk-text-secondary);
   font-family: var(--oluk-font-body);
   font-size: var(--oluk-type-body-size);
   line-height: var(--oluk-type-body-line);
@@ -55,8 +56,14 @@
   overflow-wrap: anywhere;
 }
 
+.secondaryCopy {
+  font-size: var(--oluk-type-body-sm-size);
+  line-height: var(--oluk-type-body-sm-line);
+  max-width: 68ch;
+}
+
 .body {
-  color: var(--oluk-text-body);
+  color: var(--oluk-text-secondary);
   display: grid;
   font-family: var(--oluk-font-body);
   font-size: var(--oluk-type-body-size);

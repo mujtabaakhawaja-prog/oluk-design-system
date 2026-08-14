@@ -1,0 +1,36 @@
+.page {
+  background: var(--oluk-canvas);
+  color: var(--oluk-text-primary);
+  min-height: 100vh;
+  padding-block: clamp(var(--oluk-space-12), 8vw, var(--oluk-space-24));
+}
+
+.intro {
+  padding-block: var(--oluk-space-8);
+}
+
+.mediaSpecimen {
+  align-items: flex-end;
+  background: var(--oluk-media-gradient);
+  border: var(--oluk-border-width) solid var(--oluk-border-inner);
+  border-radius: var(--oluk-radius-vertical);
+  color: var(--oluk-cobalt);
+  display: flex;
+  font-family: var(--oluk-font-body);
+  font-size: var(--oluk-type-eyebrow-size);
+  font-weight: 800;
+  justify-content: center;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+  min-height: 360px;
+  padding: var(--oluk-space-6);
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding-block: var(--oluk-space-8) var(--oluk-space-16);
+  }
+
+  .mediaSpecimen {
+    min-height: 280px;
+  }
+}

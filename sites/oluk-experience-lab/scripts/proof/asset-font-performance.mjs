@@ -22,9 +22,11 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
   // Product depth, cross-host Stack, keyboard-operable OpenLab views and the
   // owner-only PDP candidate selector share one bounded presentation path. The
-  // merged tree measures 632,658 bytes; retain modest headroom while the
-  // customer candidates remain route-shared and the largest-chunk law is unchanged.
-  clientJavaScriptBytes: 620 * KIB,
+  // merged tree measured 632,658 bytes. The shared semantic ActionControl adds
+  // one route-shared client path; the final foundation tree measures 635,473 bytes.
+  // Retain a bounded 622 KiB aggregate ceiling while the 224 KiB largest-chunk
+  // law remains unchanged.
+  clientJavaScriptBytes: 622 * KIB,
   // OpenLab technical states and three materially different PDP grids reuse the
   // governed surface grammar within one bounded aggregate stylesheet ceiling.
   clientCssBytes: 280 * KIB,

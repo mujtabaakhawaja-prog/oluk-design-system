@@ -13,6 +13,7 @@ import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRoot = path.join(siteRoot, "app");
+const PRIVATE_REVIEW_SPECIMEN_ROUTES = Object.freeze(["/review-studio/surface-grammar"]);
 
 async function pageRoutes(directory = appRoot) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -37,6 +38,7 @@ test("core registry controls 52 physical pages while the proof matrix resolves a
     ...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath),
     ...FRONTIER_ROUTE_PATTERNS,
     ...PDP_CANDIDATE_ROUTE_PATTERNS,
+    ...PRIVATE_REVIEW_SPECIMEN_ROUTES,
   ]);
   assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
   assert.equal(ROUTES.length, 73);
