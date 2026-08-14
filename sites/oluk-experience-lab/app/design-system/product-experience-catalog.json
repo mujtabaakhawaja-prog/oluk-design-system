@@ -1,6 +1,7 @@
 {
-  "schemaVersion": "oluk.product-experience.v1",
+  "schemaVersion": "oluk.product-experience.v2",
   "productSourceHash": "c44eb1297135af3ebdbfa2c1d2a9ba5d3c87ffda28ad247f41dc2c273f2e980b",
+  "editorialCorpusHash": "6468943fa02feb8174304ce1d2f2b49abac05f0ca4c37f7da483a02e8945ba5d",
   "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
   "products": [
     {
@@ -34,10 +35,47 @@
         ]
       },
       "editorial": {
-        "summary": "A 15 MG, 90-serving Ostarine format built for a leaner, more deliberate training phase.",
-        "researchProfile": "MK-2866 is the clean starting point for a cutting or recomp-focused stack: clear 15 MG strength, a 90-serving format and a direct view of its available lab record.",
-        "guidance": "Start with the format and outcome you want, then build the next phase around strength, endurance or recovery.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A clear Ostarine starting point for cutting and recomp phases where lean mass, training output and a sharper finish all matter.",
+        "researchProfile": "MK-2866 gives the plan a measured lean-mass foundation. Start here when the goal is to hold onto training quality while bringing body composition into tighter focus.",
+        "guidance": "Build from the outcome you want next: add Cardarine for endurance-led cutting work, compare S-4 for a sharper finish, or step into a lean-mass option when the phase changes.",
+        "considerations": "Compare the product facts, stack options and available OpenLab record before finalising the next product decision.",
+        "customerProposition": {
+          "eyebrow": "Cutting and recomp base",
+          "headline": "Build a leaner training phase without losing the plot.",
+          "promise": "MK-2866 puts lean-mass focus, clear product facts and a flexible stack starting point in one place.",
+          "benefits": [
+            "Lean-mass foundation",
+            "Cutting and recomp focus",
+            "Flexible next-step options"
+          ],
+          "differentiator": "A clear Ostarine base with direct access to the available batch record.",
+          "primaryAction": "Build my stack",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A lean-mass base for cutting and recomp."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: MK-2866 (Ostarine)"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "MK-2866 (Ostarine) product and training snippets"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Ostarine metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -52,8 +90,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Cutting and recomp base",
+          "headline": "Build a leaner training phase without losing the plot.",
+          "promise": "MK-2866 puts lean-mass focus, clear product facts and a flexible stack starting point in one place.",
+          "benefits": [
+            "Lean-mass foundation",
+            "Cutting and recomp focus",
+            "Flexible next-step options"
+          ],
+          "differentiator": "A clear Ostarine base with direct access to the available batch record.",
+          "primaryAction": "Build my stack",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A lean-mass base for cutting and recomp."
+        },
+        "details": {
+          "summary": "A clear Ostarine starting point for cutting and recomp phases where lean mass, training output and a sharper finish all matter.",
+          "researchProfile": "MK-2866 gives the plan a measured lean-mass foundation. Start here when the goal is to hold onto training quality while bringing body composition into tighter focus.",
+          "guidance": "Build from the outcome you want next: add Cardarine for endurance-led cutting work, compare S-4 for a sharper finish, or step into a lean-mass option when the phase changes.",
+          "considerations": "Compare the product facts, stack options and available OpenLab record before finalising the next product decision."
+        },
         "related": [
           "gw-501516",
           "s-4",
@@ -68,24 +127,35 @@
         "additions": [
           "gw-501516",
           "s-4"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Cutting and recomp base"
       },
       "openLab": {
         "recordId": "report-mk-2866-ol2201-2",
         "reportId": "28868",
-        "status": "available"
+        "status": "available",
+        "experience": "compiled-product-dossier"
       },
       "discovery": {
         "family": "Research Chemicals",
         "goals": [
           "Cutting",
           "Recomp"
-        ]
+        ],
+        "headline": "Build a leaner training phase without losing the plot.",
+        "mobileSummary": "A lean-mass base for cutting and recomp."
       },
       "seo": {
         "canonicalPath": "/product/mk-2866",
         "title": "MK-2866 15 MG | Olympus Labs UK",
-        "description": "A 15 MG, 90-serving Ostarine format built for a leaner, more deliberate training phase."
+        "description": "A clear Ostarine starting point for cutting and recomp phases where lean mass, training output and a sharper finish all matter.",
+        "focusPhrases": [
+          "MK-2866",
+          "Ostarine",
+          "Cutting",
+          "Recomp"
+        ]
       }
     },
     {
@@ -119,10 +189,54 @@
         ]
       },
       "editorial": {
-        "summary": "An 8 MG, 60-serving Testolone format for strength-led phases that demand more intensity.",
-        "researchProfile": "RAD-140 is the 8 MG step-up for customers looking to put strength and lean mass at the centre of a harder training block.",
-        "guidance": "Use RAD-140 when strength and lean mass are the next priority, then compare it with the mass and recovery options in Your Stack.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A strength-led Testolone format for a harder training block built around lean mass, lifting output and more intensity.",
+        "researchProfile": "RAD-140 is the step-up when strength and lean mass need to become the main event. It gives an advanced build a more forceful centre than a light recomp-only approach.",
+        "guidance": "Use RAD-140 as the intensity choice, then compare LGD-4033 for lean-mass emphasis, MK-677 for recovery support, or MENT for a heavyweight mass direction.",
+        "considerations": "See the full product details and compare the intensity profile with the rest of the stack before adding it.",
+        "customerProposition": {
+          "eyebrow": "Strength and lean mass",
+          "headline": "Turn the next block up.",
+          "promise": "RAD-140 brings serious strength and lean-mass focus to a training phase that needs more intensity.",
+          "benefits": [
+            "Strength-led focus",
+            "Lean-mass direction",
+            "Advanced stack step-up"
+          ],
+          "differentiator": "The 8 MG Testolone format for a more aggressive training phase.",
+          "primaryAction": "Add strength focus",
+          "secondaryAction": "Compare mass options",
+          "mobileSummary": "A strength-led 8 MG step-up."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: RAD-140 (Testolone)"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "RAD-140 product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "RAD140 customer and comparison entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "RAD-140 metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -137,8 +251,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Strength and lean mass",
+          "headline": "Turn the next block up.",
+          "promise": "RAD-140 brings serious strength and lean-mass focus to a training phase that needs more intensity.",
+          "benefits": [
+            "Strength-led focus",
+            "Lean-mass direction",
+            "Advanced stack step-up"
+          ],
+          "differentiator": "The 8 MG Testolone format for a more aggressive training phase.",
+          "primaryAction": "Add strength focus",
+          "secondaryAction": "Compare mass options",
+          "mobileSummary": "A strength-led 8 MG step-up."
+        },
+        "details": {
+          "summary": "A strength-led Testolone format for a harder training block built around lean mass, lifting output and more intensity.",
+          "researchProfile": "RAD-140 is the step-up when strength and lean mass need to become the main event. It gives an advanced build a more forceful centre than a light recomp-only approach.",
+          "guidance": "Use RAD-140 as the intensity choice, then compare LGD-4033 for lean-mass emphasis, MK-677 for recovery support, or MENT for a heavyweight mass direction.",
+          "considerations": "See the full product details and compare the intensity profile with the rest of the stack before adding it."
+        },
         "related": [
           "lgd-4033",
           "mk-677",
@@ -153,22 +288,33 @@
         "additions": [
           "lgd-4033",
           "mk-677"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Strength and lean mass"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Research Chemicals",
         "goals": [
           "Bulking",
           "Recomp"
-        ]
+        ],
+        "headline": "Turn the next block up.",
+        "mobileSummary": "A strength-led 8 MG step-up."
       },
       "seo": {
         "canonicalPath": "/product/rad-140",
         "title": "RAD-140 8 MG | Olympus Labs UK",
-        "description": "An 8 MG, 60-serving Testolone format for strength-led phases that demand more intensity."
+        "description": "A strength-led Testolone format for a harder training block built around lean mass, lifting output and more intensity.",
+        "focusPhrases": [
+          "RAD-140",
+          "Testolone",
+          "Bulking",
+          "Recomp"
+        ]
       }
     },
     {
@@ -200,10 +346,54 @@
         ]
       },
       "editorial": {
-        "summary": "A 5 MG Ligandrol format for building a heavier, mass-focused phase.",
-        "researchProfile": "LGD-4033 gives a bulk-focused stack a clear lean-mass direction and a natural next step into MK-677 or RAD-140.",
-        "guidance": "Choose LGD-4033 when lean mass is the priority, then compare the recovery and intensity options that can take the stack further.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A Ligandrol option for a heavier lean-mass phase where size, strength and a more substantial build are the priority.",
+        "researchProfile": "LGD-4033 anchors the lean-mass side of a bulk-focused plan. It is the product to compare when the next goal is more size without losing a clean, deliberate direction.",
+        "guidance": "Pair the lean-mass decision with MK-677 when recovery matters, compare RAD-140 when intensity is the deciding factor, or keep MK-2866 in view for a balanced recomp base.",
+        "considerations": "Use the comparison and stack views to decide whether lean mass, intensity or recovery should lead the next build.",
+        "customerProposition": {
+          "eyebrow": "Lean mass builder",
+          "headline": "Give a mass phase real substance.",
+          "promise": "LGD-4033 brings lean-mass focus and a more substantial build direction to the stack.",
+          "benefits": [
+            "Lean-mass priority",
+            "Bulk-phase focus",
+            "Recovery and intensity comparisons"
+          ],
+          "differentiator": "A clear Ligandrol choice when size and strength move to the front of the plan.",
+          "primaryAction": "Build lean mass",
+          "secondaryAction": "Compare stack options",
+          "mobileSummary": "A lean-mass anchor for a heavier phase."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: LGD-4033 (Ligandrol)"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "LGD-4033 product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "LGD-4033 comparison and upsell entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Ligandrol metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -218,8 +408,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Lean mass builder",
+          "headline": "Give a mass phase real substance.",
+          "promise": "LGD-4033 brings lean-mass focus and a more substantial build direction to the stack.",
+          "benefits": [
+            "Lean-mass priority",
+            "Bulk-phase focus",
+            "Recovery and intensity comparisons"
+          ],
+          "differentiator": "A clear Ligandrol choice when size and strength move to the front of the plan.",
+          "primaryAction": "Build lean mass",
+          "secondaryAction": "Compare stack options",
+          "mobileSummary": "A lean-mass anchor for a heavier phase."
+        },
+        "details": {
+          "summary": "A Ligandrol option for a heavier lean-mass phase where size, strength and a more substantial build are the priority.",
+          "researchProfile": "LGD-4033 anchors the lean-mass side of a bulk-focused plan. It is the product to compare when the next goal is more size without losing a clean, deliberate direction.",
+          "guidance": "Pair the lean-mass decision with MK-677 when recovery matters, compare RAD-140 when intensity is the deciding factor, or keep MK-2866 in view for a balanced recomp base.",
+          "considerations": "Use the comparison and stack views to decide whether lean mass, intensity or recovery should lead the next build."
+        },
         "related": [
           "mk-677",
           "rad-140"
@@ -232,21 +443,31 @@
         "additions": [
           "mk-677",
           "rad-140"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Lean mass builder"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Research Chemicals",
         "goals": [
           "Bulking"
-        ]
+        ],
+        "headline": "Give a mass phase real substance.",
+        "mobileSummary": "A lean-mass anchor for a heavier phase."
       },
       "seo": {
         "canonicalPath": "/product/lgd-4033",
         "title": "LGD-4033 5 MG | Olympus Labs UK",
-        "description": "A 5 MG Ligandrol format for building a heavier, mass-focused phase."
+        "description": "A Ligandrol option for a heavier lean-mass phase where size, strength and a more substantial build are the priority.",
+        "focusPhrases": [
+          "LGD-4033",
+          "Ligandrol",
+          "Bulking"
+        ]
       }
     },
     {
@@ -280,10 +501,54 @@
         ]
       },
       "editorial": {
-        "summary": "A 15 MG, 90-serving Ibutamoren format for appetite, sleep and recovery support between hard sessions.",
-        "researchProfile": "MK-677 brings the recovery side of a stack into focus with a familiar 90-serving format built around appetite, deeper sleep and day-to-day recovery.",
-        "guidance": "Choose MK-677 when the next phase needs better recovery capacity alongside the products already in your stack.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "An Ibutamoren format that brings appetite, sleep and recovery support into a hard-training plan.",
+        "researchProfile": "MK-677 is the recovery builder in the range. It gives a strength or mass-led phase more room to recover, eat and return ready for the next session.",
+        "guidance": "Use MK-677 beside LGD-4033 or RAD-140 when the build needs more recovery capacity, or alongside the peptide range when recovery is the whole story.",
+        "considerations": "Compare recovery emphasis, serving format and the role it plays beside the main product before adding it.",
+        "customerProposition": {
+          "eyebrow": "Growth and recovery",
+          "headline": "Build more recovery into the plan.",
+          "promise": "MK-677 adds appetite, deeper-sleep and recovery support around demanding training blocks.",
+          "benefits": [
+            "Recovery capacity",
+            "Appetite support",
+            "Longer-serving format"
+          ],
+          "differentiator": "A 90-serving Ibutamoren format that supports the work between hard sessions.",
+          "primaryAction": "Add recovery support",
+          "secondaryAction": "Compare growth options",
+          "mobileSummary": "Growth, appetite and recovery support."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: MK-677 (Ibutamoren)"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "MK-677 product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "MK-677 synergy entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Ibutamoren metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -298,8 +563,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Growth and recovery",
+          "headline": "Build more recovery into the plan.",
+          "promise": "MK-677 adds appetite, deeper-sleep and recovery support around demanding training blocks.",
+          "benefits": [
+            "Recovery capacity",
+            "Appetite support",
+            "Longer-serving format"
+          ],
+          "differentiator": "A 90-serving Ibutamoren format that supports the work between hard sessions.",
+          "primaryAction": "Add recovery support",
+          "secondaryAction": "Compare growth options",
+          "mobileSummary": "Growth, appetite and recovery support."
+        },
+        "details": {
+          "summary": "An Ibutamoren format that brings appetite, sleep and recovery support into a hard-training plan.",
+          "researchProfile": "MK-677 is the recovery builder in the range. It gives a strength or mass-led phase more room to recover, eat and return ready for the next session.",
+          "guidance": "Use MK-677 beside LGD-4033 or RAD-140 when the build needs more recovery capacity, or alongside the peptide range when recovery is the whole story.",
+          "considerations": "Compare recovery emphasis, serving format and the role it plays beside the main product before adding it."
+        },
         "related": [
           "lgd-4033",
           "rad-140",
@@ -314,22 +600,33 @@
         "additions": [
           "lgd-4033",
           "rad-140"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Growth and recovery"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Metabolics",
         "goals": [
           "Bulking",
           "Recovery"
-        ]
+        ],
+        "headline": "Build more recovery into the plan.",
+        "mobileSummary": "Growth, appetite and recovery support."
       },
       "seo": {
         "canonicalPath": "/product/mk-677",
         "title": "MK-677 15 MG | Olympus Labs UK",
-        "description": "A 15 MG, 90-serving Ibutamoren format for appetite, sleep and recovery support between hard sessions."
+        "description": "An Ibutamoren format that brings appetite, sleep and recovery support into a hard-training plan.",
+        "focusPhrases": [
+          "MK-677",
+          "Ibutamoren",
+          "Bulking",
+          "Recovery"
+        ]
       }
     },
     {
@@ -363,10 +660,54 @@
         ]
       },
       "editorial": {
-        "summary": "A 10 MG Cardarine format for endurance and body-composition focused phases.",
-        "researchProfile": "GW-501516 is the endurance-led choice beside Ostarine when you want a cutting or recomp stack to feel more capable through demanding sessions.",
-        "guidance": "Build around Cardarine when training output and a sharper finish are the next priorities.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
+        "researchProfile": "GW-501516 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
+        "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a sharper final phase, or keep it in a recomp build where training output matters.",
+        "considerations": "Compare endurance focus with the strength, mass and finish options before making it part of the stack.",
+        "customerProposition": {
+          "eyebrow": "Endurance and cutting",
+          "headline": "Make the cut feel more capable.",
+          "promise": "GW-501516 puts endurance and body-composition focus beside a leaner training goal.",
+          "benefits": [
+            "Endurance-led direction",
+            "Cutting focus",
+            "Recomp-friendly pairing"
+          ],
+          "differentiator": "A Cardarine choice for customers who want output to keep up with the goal.",
+          "primaryAction": "Build my cut",
+          "secondaryAction": "Compare cutting options",
+          "mobileSummary": "Endurance support for cutting and recomp."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: GW-501516 (Cardarine)"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "GW-501516 product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Cutting and recomp comparison entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Cardarine metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -381,8 +722,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Endurance and cutting",
+          "headline": "Make the cut feel more capable.",
+          "promise": "GW-501516 puts endurance and body-composition focus beside a leaner training goal.",
+          "benefits": [
+            "Endurance-led direction",
+            "Cutting focus",
+            "Recomp-friendly pairing"
+          ],
+          "differentiator": "A Cardarine choice for customers who want output to keep up with the goal.",
+          "primaryAction": "Build my cut",
+          "secondaryAction": "Compare cutting options",
+          "mobileSummary": "Endurance support for cutting and recomp."
+        },
+        "details": {
+          "summary": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
+          "researchProfile": "GW-501516 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
+          "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a sharper final phase, or keep it in a recomp build where training output matters.",
+          "considerations": "Compare endurance focus with the strength, mass and finish options before making it part of the stack."
+        },
         "related": [
           "mk-2866",
           "s-4",
@@ -397,22 +759,33 @@
         "additions": [
           "mk-2866",
           "s-4"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Endurance and cutting"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Metabolics",
         "goals": [
           "Cutting",
           "Recomp"
-        ]
+        ],
+        "headline": "Make the cut feel more capable.",
+        "mobileSummary": "Endurance support for cutting and recomp."
       },
       "seo": {
         "canonicalPath": "/product/gw-501516",
         "title": "GW-501516 10 MG | Olympus Labs UK",
-        "description": "A 10 MG Cardarine format for endurance and body-composition focused phases."
+        "description": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
+        "focusPhrases": [
+          "GW-501516",
+          "Cardarine",
+          "Cutting",
+          "Recomp"
+        ]
       }
     },
     {
@@ -444,10 +817,54 @@
         ]
       },
       "editorial": {
-        "summary": "A 25 MG Andarine format for a sharper cutting-focused finish.",
-        "researchProfile": "S-4 is the optional cutting add-on for customers who already have Ostarine and Cardarine at the centre of the plan.",
-        "guidance": "Add S-4 when a cutting stack calls for a more defined final phase.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "An Andarine option for a cutting phase that wants more definition and a sharper final presentation.",
+        "researchProfile": "S-4 is the finish-focused option to compare once the cutting base is already in place. It brings a more defined direction beside Ostarine and Cardarine.",
+        "guidance": "Add S-4 after choosing the cutting base, then use the comparison drawer to see how it changes intensity and the stack outcome.",
+        "considerations": "Review the full product detail and compare it with the broader cutting build before adding it.",
+        "customerProposition": {
+          "eyebrow": "Cutting finish",
+          "headline": "Sharpen the final phase.",
+          "promise": "S-4 adds a definition-led choice when a cutting build needs a more focused finish.",
+          "benefits": [
+            "Finish-focused role",
+            "Cutting comparison",
+            "Pairs with an established base"
+          ],
+          "differentiator": "An Andarine option for a more defined cutting direction.",
+          "primaryAction": "Sharpen my cut",
+          "secondaryAction": "Compare finish options",
+          "mobileSummary": "A sharper finish for a cutting build."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: Andarine (S-4)"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "S-4 product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Cutting stack entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Andarine metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -462,8 +879,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Cutting finish",
+          "headline": "Sharpen the final phase.",
+          "promise": "S-4 adds a definition-led choice when a cutting build needs a more focused finish.",
+          "benefits": [
+            "Finish-focused role",
+            "Cutting comparison",
+            "Pairs with an established base"
+          ],
+          "differentiator": "An Andarine option for a more defined cutting direction.",
+          "primaryAction": "Sharpen my cut",
+          "secondaryAction": "Compare finish options",
+          "mobileSummary": "A sharper finish for a cutting build."
+        },
+        "details": {
+          "summary": "An Andarine option for a cutting phase that wants more definition and a sharper final presentation.",
+          "researchProfile": "S-4 is the finish-focused option to compare once the cutting base is already in place. It brings a more defined direction beside Ostarine and Cardarine.",
+          "guidance": "Add S-4 after choosing the cutting base, then use the comparison drawer to see how it changes intensity and the stack outcome.",
+          "considerations": "Review the full product detail and compare it with the broader cutting build before adding it."
+        },
         "related": [
           "mk-2866",
           "gw-501516"
@@ -476,21 +914,31 @@
         "additions": [
           "mk-2866",
           "gw-501516"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Cutting finish"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Research Chemicals",
         "goals": [
           "Cutting"
-        ]
+        ],
+        "headline": "Sharpen the final phase.",
+        "mobileSummary": "A sharper finish for a cutting build."
       },
       "seo": {
         "canonicalPath": "/product/s-4",
         "title": "S-4 25 MG | Olympus Labs UK",
-        "description": "A 25 MG Andarine format for a sharper cutting-focused finish."
+        "description": "An Andarine option for a cutting phase that wants more definition and a sharper final presentation.",
+        "focusPhrases": [
+          "S-4",
+          "Andarine",
+          "Cutting"
+        ]
       }
     },
     {
@@ -521,10 +969,47 @@
         ]
       },
       "editorial": {
-        "summary": "A 10 MG YK-11 format for high-intensity size and strength goals.",
-        "researchProfile": "YK-11 is the higher-intensity option for customers who want to compare a bolder bulk-focused choice with LGD-4033 and RAD-140.",
-        "guidance": "Compare YK-11 with the other strength-led formats before choosing the next addition.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A higher-intensity YK-11 option for customers comparing size and strength choices at the bolder end of the range.",
+        "researchProfile": "YK-11 gives a bulk-focused product search a higher-intensity comparison point beside LGD-4033 and RAD-140.",
+        "guidance": "Use the compare view to decide whether lean mass, maximum intensity or recovery support should shape the next product choice.",
+        "considerations": "Review the intensity profile and product facts before choosing it as part of a multi-product build.",
+        "customerProposition": {
+          "eyebrow": "High-intensity build",
+          "headline": "Compare the bolder side of a mass phase.",
+          "promise": "YK-11 gives a size-and-strength build a higher-intensity option to weigh against the rest of the range.",
+          "benefits": [
+            "Size and strength focus",
+            "High-intensity comparison",
+            "Bulk-phase alternative"
+          ],
+          "differentiator": "A bolder choice beside LGD-4033 and RAD-140.",
+          "primaryAction": "Compare intensity",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A bolder mass-phase comparison."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: YK-11"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "YK-11 product and training snippets"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "YK-11 metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -539,8 +1024,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "High-intensity build",
+          "headline": "Compare the bolder side of a mass phase.",
+          "promise": "YK-11 gives a size-and-strength build a higher-intensity option to weigh against the rest of the range.",
+          "benefits": [
+            "Size and strength focus",
+            "High-intensity comparison",
+            "Bulk-phase alternative"
+          ],
+          "differentiator": "A bolder choice beside LGD-4033 and RAD-140.",
+          "primaryAction": "Compare intensity",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A bolder mass-phase comparison."
+        },
+        "details": {
+          "summary": "A higher-intensity YK-11 option for customers comparing size and strength choices at the bolder end of the range.",
+          "researchProfile": "YK-11 gives a bulk-focused product search a higher-intensity comparison point beside LGD-4033 and RAD-140.",
+          "guidance": "Use the compare view to decide whether lean mass, maximum intensity or recovery support should shape the next product choice.",
+          "considerations": "Review the intensity profile and product facts before choosing it as part of a multi-product build."
+        },
         "related": [
           "lgd-4033",
           "rad-140"
@@ -552,21 +1058,31 @@
         ],
         "additions": [
           "lgd-4033"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "High-intensity build"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Research Chemicals",
         "goals": [
           "Bulking"
-        ]
+        ],
+        "headline": "Compare the bolder side of a mass phase.",
+        "mobileSummary": "A bolder mass-phase comparison."
       },
       "seo": {
         "canonicalPath": "/product/yk-11",
         "title": "YK-11 10 MG | Olympus Labs UK",
-        "description": "A 10 MG YK-11 format for high-intensity size and strength goals."
+        "description": "A higher-intensity YK-11 option for customers comparing size and strength choices at the bolder end of the range.",
+        "focusPhrases": [
+          "YK-11",
+          "YK-11",
+          "Bulking"
+        ]
       }
     },
     {
@@ -597,10 +1113,47 @@
         ]
       },
       "editorial": {
-        "summary": "A 10 MG S-23 format for focused recomp phases.",
-        "researchProfile": "S-23 offers a distinct strength-and-definition direction when a recomp stack needs a harder edge.",
-        "guidance": "Compare S-23 with Ostarine and Cardarine to find the balance that fits the next phase.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
+        "researchProfile": "S-23 is a distinct comparison when a recomp plan needs more intensity than an Ostarine-led base alone.",
+        "guidance": "Compare S-23 with MK-2866 and Cardarine to see whether the next phase should lean toward a cleaner balance or a harder definition-led profile.",
+        "considerations": "Use the outcome profile and product comparison before adding it to a recomp build.",
+        "customerProposition": {
+          "eyebrow": "Focused recomp",
+          "headline": "Give recomp a harder edge.",
+          "promise": "S-23 adds a more intense strength-and-definition choice to a recomp-led build.",
+          "benefits": [
+            "Recomp focus",
+            "Strength and definition",
+            "Intensity comparison"
+          ],
+          "differentiator": "A focused alternative when a balanced recomp base needs more edge.",
+          "primaryAction": "Build my recomp",
+          "secondaryAction": "Compare recomp options",
+          "mobileSummary": "A harder edge for focused recomp."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: S-23"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "S-23 product and training snippets"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "S-23 metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -615,8 +1168,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Focused recomp",
+          "headline": "Give recomp a harder edge.",
+          "promise": "S-23 adds a more intense strength-and-definition choice to a recomp-led build.",
+          "benefits": [
+            "Recomp focus",
+            "Strength and definition",
+            "Intensity comparison"
+          ],
+          "differentiator": "A focused alternative when a balanced recomp base needs more edge.",
+          "primaryAction": "Build my recomp",
+          "secondaryAction": "Compare recomp options",
+          "mobileSummary": "A harder edge for focused recomp."
+        },
+        "details": {
+          "summary": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
+          "researchProfile": "S-23 is a distinct comparison when a recomp plan needs more intensity than an Ostarine-led base alone.",
+          "guidance": "Compare S-23 with MK-2866 and Cardarine to see whether the next phase should lean toward a cleaner balance or a harder definition-led profile.",
+          "considerations": "Use the outcome profile and product comparison before adding it to a recomp build."
+        },
         "related": [
           "mk-2866",
           "gw-501516"
@@ -628,21 +1202,31 @@
         ],
         "additions": [
           "mk-2866"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Focused recomp"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Research Chemicals",
         "goals": [
           "Recomp"
-        ]
+        ],
+        "headline": "Give recomp a harder edge.",
+        "mobileSummary": "A harder edge for focused recomp."
       },
       "seo": {
         "canonicalPath": "/product/s-23",
         "title": "S-23 10 MG | Olympus Labs UK",
-        "description": "A 10 MG S-23 format for focused recomp phases."
+        "description": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
+        "focusPhrases": [
+          "S-23",
+          "S-23",
+          "Recomp"
+        ]
       }
     },
     {
@@ -674,10 +1258,54 @@
         ]
       },
       "editorial": {
-        "summary": "A 20 MG Epistane format for the harder finishing phase of a recomp stack.",
-        "researchProfile": "Epistane is the optional finisher for customers who want to take an Ostarine and Cardarine base into a more intense final phase.",
-        "guidance": "Choose Epistane when the goal is a sharper finish after the base of your stack is already clear.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
+        "researchProfile": "Epistane is the finish-focused comparison for customers taking an Ostarine and Cardarine base into a more intense final phase.",
+        "guidance": "Keep it in the recomp comparison set, then see how it changes the outcome profile against a more endurance-led or lean-mass-led addition.",
+        "considerations": "Review the product detail and compare intensity before adding a prohormone option to the build.",
+        "customerProposition": {
+          "eyebrow": "Recomp finisher",
+          "headline": "Finish a recomp phase with intent.",
+          "promise": "Epistane brings a harder, leaner finishing direction to an established recomp build.",
+          "benefits": [
+            "Finish-focused role",
+            "Lean recomp direction",
+            "Advanced comparison"
+          ],
+          "differentiator": "A prohormone choice for the final stretch of a sharper recomp plan.",
+          "primaryAction": "Compare finishing options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A harder finishing option for recomp."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: Epistane"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "Epistane product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Recomp stack entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Epistane metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -692,8 +1320,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Recomp finisher",
+          "headline": "Finish a recomp phase with intent.",
+          "promise": "Epistane brings a harder, leaner finishing direction to an established recomp build.",
+          "benefits": [
+            "Finish-focused role",
+            "Lean recomp direction",
+            "Advanced comparison"
+          ],
+          "differentiator": "A prohormone choice for the final stretch of a sharper recomp plan.",
+          "primaryAction": "Compare finishing options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A harder finishing option for recomp."
+        },
+        "details": {
+          "summary": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
+          "researchProfile": "Epistane is the finish-focused comparison for customers taking an Ostarine and Cardarine base into a more intense final phase.",
+          "guidance": "Keep it in the recomp comparison set, then see how it changes the outcome profile against a more endurance-led or lean-mass-led addition.",
+          "considerations": "Review the product detail and compare intensity before adding a prohormone option to the build."
+        },
         "related": [
           "mk-2866",
           "gw-501516"
@@ -706,21 +1355,31 @@
         "additions": [
           "mk-2866",
           "gw-501516"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Recomp finisher"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Metabolics",
         "goals": [
           "Recomp"
-        ]
+        ],
+        "headline": "Finish a recomp phase with intent.",
+        "mobileSummary": "A harder finishing option for recomp."
       },
       "seo": {
         "canonicalPath": "/product/epistane",
         "title": "Epistane 20 MG | Olympus Labs UK",
-        "description": "A 20 MG Epistane format for the harder finishing phase of a recomp stack."
+        "description": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
+        "focusPhrases": [
+          "Epistane",
+          "Epistane",
+          "Recomp"
+        ]
       }
     },
     {
@@ -751,10 +1410,47 @@
         ]
       },
       "editorial": {
-        "summary": "A 20 MG, 30-serving Trestolone format for heavyweight size and power goals.",
-        "researchProfile": "MENT is the advanced builder in Your Stack: a high-intensity 20 MG option for customers moving beyond a SARM-only bulk phase.",
-        "guidance": "Choose MENT when maximum size and power are the next priorities in a more advanced stack.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "An advanced Trestolone option for customers pursuing a heavyweight size-and-power phase beyond a SARM-only build.",
+        "researchProfile": "MENT is the advanced mass choice in the range. It moves the stack into a heavier size-and-power direction when maximum build is the goal.",
+        "guidance": "Compare MENT with RAD-140 and LGD-4033 to decide whether the plan needs maximum mass, strength-led intensity or a lean-mass base.",
+        "considerations": "Review the full product detail and the advanced intensity profile before adding it.",
+        "customerProposition": {
+          "eyebrow": "Advanced mass and power",
+          "headline": "Take the build into heavyweight territory.",
+          "promise": "MENT gives an advanced stack a size-and-power choice beyond a SARM-only plan.",
+          "benefits": [
+            "Heavyweight mass focus",
+            "Power-led direction",
+            "Advanced stack comparison"
+          ],
+          "differentiator": "The PROHORMONE SERIES choice for a more substantial build.",
+          "primaryAction": "Build size and power",
+          "secondaryAction": "Compare mass options",
+          "mobileSummary": "Advanced size and power focus."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: Trestolone (MENT)"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "MENT product matrix and advanced stack entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Trestolone metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -769,8 +1465,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Advanced mass and power",
+          "headline": "Take the build into heavyweight territory.",
+          "promise": "MENT gives an advanced stack a size-and-power choice beyond a SARM-only plan.",
+          "benefits": [
+            "Heavyweight mass focus",
+            "Power-led direction",
+            "Advanced stack comparison"
+          ],
+          "differentiator": "The PROHORMONE SERIES choice for a more substantial build.",
+          "primaryAction": "Build size and power",
+          "secondaryAction": "Compare mass options",
+          "mobileSummary": "Advanced size and power focus."
+        },
+        "details": {
+          "summary": "An advanced Trestolone option for customers pursuing a heavyweight size-and-power phase beyond a SARM-only build.",
+          "researchProfile": "MENT is the advanced mass choice in the range. It moves the stack into a heavier size-and-power direction when maximum build is the goal.",
+          "guidance": "Compare MENT with RAD-140 and LGD-4033 to decide whether the plan needs maximum mass, strength-led intensity or a lean-mass base.",
+          "considerations": "Review the full product detail and the advanced intensity profile before adding it."
+        },
         "related": [
           "rad-140",
           "lgd-4033"
@@ -782,21 +1499,31 @@
         ],
         "additions": [
           "rad-140"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Advanced mass and power"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Metabolics",
         "goals": [
           "Bulking"
-        ]
+        ],
+        "headline": "Take the build into heavyweight territory.",
+        "mobileSummary": "Advanced size and power focus."
       },
       "seo": {
         "canonicalPath": "/product/ment",
         "title": "MENT 20 MG | Olympus Labs UK",
-        "description": "A 20 MG, 30-serving Trestolone format for heavyweight size and power goals."
+        "description": "An advanced Trestolone option for customers pursuing a heavyweight size-and-power phase beyond a SARM-only build.",
+        "focusPhrases": [
+          "MENT",
+          "Trestolone",
+          "Bulking"
+        ]
       }
     },
     {
@@ -827,10 +1554,54 @@
         ]
       },
       "editorial": {
-        "summary": "A 10 MG Methylstenbolone format for a denser, bulk-focused training phase.",
-        "researchProfile": "M-STEN provides another high-intensity mass option for customers comparing the heavier end of the Olympus range.",
-        "guidance": "Compare M-STEN with MENT and LGD-4033 to choose the type of mass-focused phase you want to build.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A Methylstenbolone option for a denser mass phase where a high-intensity prohormone comparison is needed.",
+        "researchProfile": "M-STEN gives the heavier end of a bulk search another mass-and-strength direction to compare with MENT and LGD-4033.",
+        "guidance": "Use the mass comparison to choose whether the next addition should prioritise lean mass, maximum size and power, or a different intensity profile.",
+        "considerations": "Review the product detail and compare the intensity profile before choosing a high-intensity mass option.",
+        "customerProposition": {
+          "eyebrow": "Dense mass phase",
+          "headline": "Build a denser mass direction.",
+          "promise": "M-STEN adds a high-intensity size-and-strength option to the heavyweight end of the range.",
+          "benefits": [
+            "Dense mass focus",
+            "Strength-led comparison",
+            "High-intensity alternative"
+          ],
+          "differentiator": "A Methylstenbolone choice for customers comparing the heavier mass options.",
+          "primaryAction": "Compare mass options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A denser high-intensity mass choice."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: M-Sten"
+          },
+          {
+            "id": "chatbot-training",
+            "kind": "chatbot-training",
+            "title": "Comprehensive Chatbot and SEO Training Data",
+            "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+            "locator": "M-Sten product and training snippets"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "M-Sten product matrix"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Methylstenbolone metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -845,8 +1616,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Dense mass phase",
+          "headline": "Build a denser mass direction.",
+          "promise": "M-STEN adds a high-intensity size-and-strength option to the heavyweight end of the range.",
+          "benefits": [
+            "Dense mass focus",
+            "Strength-led comparison",
+            "High-intensity alternative"
+          ],
+          "differentiator": "A Methylstenbolone choice for customers comparing the heavier mass options.",
+          "primaryAction": "Compare mass options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A denser high-intensity mass choice."
+        },
+        "details": {
+          "summary": "A Methylstenbolone option for a denser mass phase where a high-intensity prohormone comparison is needed.",
+          "researchProfile": "M-STEN gives the heavier end of a bulk search another mass-and-strength direction to compare with MENT and LGD-4033.",
+          "guidance": "Use the mass comparison to choose whether the next addition should prioritise lean mass, maximum size and power, or a different intensity profile.",
+          "considerations": "Review the product detail and compare the intensity profile before choosing a high-intensity mass option."
+        },
         "related": [
           "lgd-4033",
           "ment"
@@ -858,21 +1650,31 @@
         ],
         "additions": [
           "lgd-4033"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Dense mass phase"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Metabolics",
         "goals": [
           "Bulking"
-        ]
+        ],
+        "headline": "Build a denser mass direction.",
+        "mobileSummary": "A denser high-intensity mass choice."
       },
       "seo": {
         "canonicalPath": "/product/m-sten",
         "title": "M-STEN 10 MG | Olympus Labs UK",
-        "description": "A 10 MG Methylstenbolone format for a denser, bulk-focused training phase."
+        "description": "A Methylstenbolone option for a denser mass phase where a high-intensity prohormone comparison is needed.",
+        "focusPhrases": [
+          "M-STEN",
+          "Methylstenbolone",
+          "Bulking"
+        ]
       }
     },
     {
@@ -903,10 +1705,47 @@
         ]
       },
       "editorial": {
-        "summary": "A 30 MG Trenavar format for customers building a more aggressive size-focused phase.",
-        "researchProfile": "Trenavar sits alongside M-STEN and MENT for customers comparing the strongest mass-focused directions in the range.",
-        "guidance": "Compare the bulk-focused formats side by side, then choose the intensity that suits the next phase.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A Trenavar option for a more aggressive size-focused phase within the prohormone side of the range.",
+        "researchProfile": "Trenavar sits in the high-intensity mass set alongside M-STEN and MENT, giving customers a distinct route into the strongest size-focused choices.",
+        "guidance": "Compare Trenavar with the other heavyweight mass products, then choose the intensity and product role that fit the next phase.",
+        "considerations": "Review the product detail and advanced comparison before adding it to a mass-focused build.",
+        "customerProposition": {
+          "eyebrow": "Aggressive mass focus",
+          "headline": "Choose the strongest mass direction with clarity.",
+          "promise": "Trenavar gives a size-focused build another high-intensity prohormone option to compare.",
+          "benefits": [
+            "Aggressive mass direction",
+            "Heavyweight comparison",
+            "Prohormone alternative"
+          ],
+          "differentiator": "A Trenavar choice for the most size-focused end of the range.",
+          "primaryAction": "Compare heavyweight options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "An aggressive mass-phase comparison."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Product SEO Strategy: Trenavar (Trendione)"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Trenavar product matrix"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Trenavar metadata rows"
+          }
+        ]
       },
       "media": [
         {
@@ -921,8 +1760,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Aggressive mass focus",
+          "headline": "Choose the strongest mass direction with clarity.",
+          "promise": "Trenavar gives a size-focused build another high-intensity prohormone option to compare.",
+          "benefits": [
+            "Aggressive mass direction",
+            "Heavyweight comparison",
+            "Prohormone alternative"
+          ],
+          "differentiator": "A Trenavar choice for the most size-focused end of the range.",
+          "primaryAction": "Compare heavyweight options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "An aggressive mass-phase comparison."
+        },
+        "details": {
+          "summary": "A Trenavar option for a more aggressive size-focused phase within the prohormone side of the range.",
+          "researchProfile": "Trenavar sits in the high-intensity mass set alongside M-STEN and MENT, giving customers a distinct route into the strongest size-focused choices.",
+          "guidance": "Compare Trenavar with the other heavyweight mass products, then choose the intensity and product role that fit the next phase.",
+          "considerations": "Review the product detail and advanced comparison before adding it to a mass-focused build."
+        },
         "related": [
           "m-sten",
           "ment"
@@ -934,21 +1794,31 @@
         ],
         "additions": [
           "m-sten"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Aggressive mass focus"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Metabolics",
         "goals": [
           "Bulking"
-        ]
+        ],
+        "headline": "Choose the strongest mass direction with clarity.",
+        "mobileSummary": "An aggressive mass-phase comparison."
       },
       "seo": {
         "canonicalPath": "/product/trenavar",
         "title": "Trenavar 30 MG | Olympus Labs UK",
-        "description": "A 30 MG Trenavar format for customers building a more aggressive size-focused phase."
+        "description": "A Trenavar option for a more aggressive size-focused phase within the prohormone side of the range.",
+        "focusPhrases": [
+          "Trenavar",
+          "Trenavar",
+          "Bulking"
+        ]
       }
     },
     {
@@ -979,10 +1849,40 @@
         ]
       },
       "editorial": {
-        "summary": "A 500 MCG peptide format for recovery-focused product planning.",
-        "researchProfile": "BPC-157 is a recovery-led choice for customers building a more complete plan around hard training weeks and repeat performance.",
-        "guidance": "Pair BPC-157 with the products that support the way you train, recover and return to the gym.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
+        "researchProfile": "BPC-157 makes recovery a visible part of the product decision, giving a hard-training plan a dedicated support-oriented direction.",
+        "guidance": "Compare BPC-157 with TB-500 and MK-677 when the next addition should put recovery at the centre of the plan.",
+        "considerations": "Use the recovery comparison and product details to choose the format that fits the wider plan.",
+        "customerProposition": {
+          "eyebrow": "Recovery-led peptide",
+          "headline": "Put recovery on the front foot.",
+          "promise": "BPC-157 gives demanding training weeks a dedicated recovery-led product direction.",
+          "benefits": [
+            "Recovery-focused role",
+            "Peptide comparison",
+            "Pairs with wider recovery planning"
+          ],
+          "differentiator": "A peptide choice for customers building more recovery into the plan.",
+          "primaryAction": "Build recovery support",
+          "secondaryAction": "Compare peptide options",
+          "mobileSummary": "A recovery-led peptide choice."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Category Page Optimization: Peptides"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Recovery, support and product-discovery entries"
+          }
+        ]
       },
       "media": [
         {
@@ -997,8 +1897,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Recovery-led peptide",
+          "headline": "Put recovery on the front foot.",
+          "promise": "BPC-157 gives demanding training weeks a dedicated recovery-led product direction.",
+          "benefits": [
+            "Recovery-focused role",
+            "Peptide comparison",
+            "Pairs with wider recovery planning"
+          ],
+          "differentiator": "A peptide choice for customers building more recovery into the plan.",
+          "primaryAction": "Build recovery support",
+          "secondaryAction": "Compare peptide options",
+          "mobileSummary": "A recovery-led peptide choice."
+        },
+        "details": {
+          "summary": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
+          "researchProfile": "BPC-157 makes recovery a visible part of the product decision, giving a hard-training plan a dedicated support-oriented direction.",
+          "guidance": "Compare BPC-157 with TB-500 and MK-677 when the next addition should put recovery at the centre of the plan.",
+          "considerations": "Use the recovery comparison and product details to choose the format that fits the wider plan."
+        },
         "related": [
           "tb-500",
           "mk-677"
@@ -1010,21 +1931,31 @@
         ],
         "additions": [
           "tb-500"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Recovery-led peptide"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Peptides",
         "goals": [
           "Recovery"
-        ]
+        ],
+        "headline": "Put recovery on the front foot.",
+        "mobileSummary": "A recovery-led peptide choice."
       },
       "seo": {
         "canonicalPath": "/product/bpc-157",
         "title": "BPC-157 500 MCG | Olympus Labs UK",
-        "description": "A 500 MCG peptide format for recovery-focused product planning."
+        "description": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
+        "focusPhrases": [
+          "BPC-157",
+          "BPC-157",
+          "Recovery"
+        ]
       }
     },
     {
@@ -1055,10 +1986,40 @@
         ]
       },
       "editorial": {
-        "summary": "A 2 MG, 30-serving peptide format for recovery-led stacks.",
-        "researchProfile": "TB-500 is the companion peptide for customers who want to make recovery a clear part of their wider training plan.",
-        "guidance": "Compare TB-500 and BPC-157 when recovery is the product story you want to build around.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
+        "researchProfile": "TB-500 is the companion peptide to compare when recovery needs to be treated as a deliberate part of the wider product plan.",
+        "guidance": "View TB-500 beside BPC-157 and MK-677 to decide how the recovery side of the build should come together.",
+        "considerations": "Compare the recovery role, serving format and wider stack fit before adding it.",
+        "customerProposition": {
+          "eyebrow": "Recovery companion",
+          "headline": "Make recovery part of the build.",
+          "promise": "TB-500 gives a recovery-led plan a clear peptide companion to compare with the rest of the stack.",
+          "benefits": [
+            "Recovery-oriented role",
+            "Peptide companion",
+            "Cross-stack comparison"
+          ],
+          "differentiator": "A focused peptide option when recovery needs a more deliberate place in the plan.",
+          "primaryAction": "Compare recovery options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A recovery companion for the wider plan."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Category Page Optimization: Peptides"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Recovery, support and product-discovery entries"
+          }
+        ]
       },
       "media": [
         {
@@ -1073,8 +2034,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Recovery companion",
+          "headline": "Make recovery part of the build.",
+          "promise": "TB-500 gives a recovery-led plan a clear peptide companion to compare with the rest of the stack.",
+          "benefits": [
+            "Recovery-oriented role",
+            "Peptide companion",
+            "Cross-stack comparison"
+          ],
+          "differentiator": "A focused peptide option when recovery needs a more deliberate place in the plan.",
+          "primaryAction": "Compare recovery options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A recovery companion for the wider plan."
+        },
+        "details": {
+          "summary": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
+          "researchProfile": "TB-500 is the companion peptide to compare when recovery needs to be treated as a deliberate part of the wider product plan.",
+          "guidance": "View TB-500 beside BPC-157 and MK-677 to decide how the recovery side of the build should come together.",
+          "considerations": "Compare the recovery role, serving format and wider stack fit before adding it."
+        },
         "related": [
           "bpc-157",
           "mk-677"
@@ -1086,21 +2068,31 @@
         ],
         "additions": [
           "bpc-157"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Recovery companion"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Peptides",
         "goals": [
           "Recovery"
-        ]
+        ],
+        "headline": "Make recovery part of the build.",
+        "mobileSummary": "A recovery companion for the wider plan."
       },
       "seo": {
         "canonicalPath": "/product/tb-500",
         "title": "TB-500 2 MG | Olympus Labs UK",
-        "description": "A 2 MG, 30-serving peptide format for recovery-led stacks."
+        "description": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
+        "focusPhrases": [
+          "TB-500",
+          "TB-500",
+          "Recovery"
+        ]
       }
     },
     {
@@ -1131,10 +2123,40 @@
         ]
       },
       "editorial": {
-        "summary": "A 2 MG, 30-serving peptide format for customers prioritising recovery and consistency.",
-        "researchProfile": "CJC-1295 brings another recovery-focused direction into the peptide range for customers refining a longer-term plan.",
-        "guidance": "Browse the peptide range to compare recovery-focused formats and choose the right next addition.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
+        "researchProfile": "CJC-1295 broadens the recovery-focused peptide set, giving customers another way to compare how the supporting side of their plan is built.",
+        "guidance": "Browse CJC-1295 alongside BPC-157 and TB-500 when the next decision is about building a more complete recovery story.",
+        "considerations": "Use the peptide comparison and product facts to choose the right supporting direction.",
+        "customerProposition": {
+          "eyebrow": "Recovery consistency",
+          "headline": "Build a more consistent recovery story.",
+          "promise": "CJC-1295 gives the peptide range another recovery-focused direction to compare and build around.",
+          "benefits": [
+            "Recovery consistency",
+            "Peptide-range comparison",
+            "Longer-term planning"
+          ],
+          "differentiator": "A peptide option for customers refining the supporting side of the plan.",
+          "primaryAction": "Explore peptide options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A recovery-focused peptide direction."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Category Page Optimization: Peptides"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Recovery, support and product-discovery entries"
+          }
+        ]
       },
       "media": [
         {
@@ -1149,8 +2171,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Recovery consistency",
+          "headline": "Build a more consistent recovery story.",
+          "promise": "CJC-1295 gives the peptide range another recovery-focused direction to compare and build around.",
+          "benefits": [
+            "Recovery consistency",
+            "Peptide-range comparison",
+            "Longer-term planning"
+          ],
+          "differentiator": "A peptide option for customers refining the supporting side of the plan.",
+          "primaryAction": "Explore peptide options",
+          "secondaryAction": "View product details",
+          "mobileSummary": "A recovery-focused peptide direction."
+        },
+        "details": {
+          "summary": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
+          "researchProfile": "CJC-1295 broadens the recovery-focused peptide set, giving customers another way to compare how the supporting side of their plan is built.",
+          "guidance": "Browse CJC-1295 alongside BPC-157 and TB-500 when the next decision is about building a more complete recovery story.",
+          "considerations": "Use the peptide comparison and product facts to choose the right supporting direction."
+        },
         "related": [
           "bpc-157",
           "tb-500"
@@ -1162,21 +2205,31 @@
         ],
         "additions": [
           "bpc-157"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Recovery consistency"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Peptides",
         "goals": [
           "Recovery"
-        ]
+        ],
+        "headline": "Build a more consistent recovery story.",
+        "mobileSummary": "A recovery-focused peptide direction."
       },
       "seo": {
         "canonicalPath": "/product/cjc-1295",
         "title": "CJC-1295 2 MG | Olympus Labs UK",
-        "description": "A 2 MG, 30-serving peptide format for customers prioritising recovery and consistency."
+        "description": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
+        "focusPhrases": [
+          "CJC-1295",
+          "CJC-1295",
+          "Recovery"
+        ]
       }
     },
     {
@@ -1208,10 +2261,47 @@
         ]
       },
       "editorial": {
-        "summary": "A 500 MG L-Carnitine format for straightforward daily support in a cutting-focused plan.",
-        "researchProfile": "L-Carnitine is the accessible natural-range choice for customers who want a simple daily format alongside their training and body-composition goals.",
-        "guidance": "Choose L-Carnitine when you want to keep the next addition straightforward and easy to fit into the wider plan.",
-        "considerations": "Read the full product details before choosing your stack."
+        "summary": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
+        "researchProfile": "L-Carnitine is the accessible daily-format choice in the range, giving a cutting or wellness plan a cleaner, easier-to-place supporting direction.",
+        "guidance": "Compare it with Cardarine and MK-2866 when the goal is to keep the next addition simple while staying close to a body-composition focus.",
+        "considerations": "Use the category and comparison views to decide whether a simple daily format is the right next addition.",
+        "customerProposition": {
+          "eyebrow": "Simple daily support",
+          "headline": "Keep the next addition uncomplicated.",
+          "promise": "L-Carnitine gives cutting and wellness plans a straightforward daily-format option.",
+          "benefits": [
+            "Simple daily format",
+            "Cutting and wellness focus",
+            "Easy product comparison"
+          ],
+          "differentiator": "A clear natural-range choice for a simpler supporting role.",
+          "primaryAction": "Add daily support",
+          "secondaryAction": "Compare simple options",
+          "mobileSummary": "Straightforward daily support."
+        },
+        "sourceAttribution": [
+          {
+            "id": "handover-master-plan",
+            "kind": "seo-handover",
+            "title": "Olympus Labs UK – Master Plan v3",
+            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+            "locator": "Category Page Optimization: Naturals"
+          },
+          {
+            "id": "knowledge-base-handover",
+            "kind": "faq-handover",
+            "title": "Olympus UK Pro Chatbot Knowledge Base",
+            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+            "locator": "Goal-led product-discovery entries"
+          },
+          {
+            "id": "yoast-export",
+            "kind": "seo-export",
+            "title": "Olympus page SEO export",
+            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+            "locator": "Naturals search-intent rows"
+          }
+        ]
       },
       "media": [
         {
@@ -1226,8 +2316,29 @@
           "details",
           "evidence",
           "stack",
-          "related"
+          "related",
+          "reviews"
         ],
+        "decision": {
+          "eyebrow": "Simple daily support",
+          "headline": "Keep the next addition uncomplicated.",
+          "promise": "L-Carnitine gives cutting and wellness plans a straightforward daily-format option.",
+          "benefits": [
+            "Simple daily format",
+            "Cutting and wellness focus",
+            "Easy product comparison"
+          ],
+          "differentiator": "A clear natural-range choice for a simpler supporting role.",
+          "primaryAction": "Add daily support",
+          "secondaryAction": "Compare simple options",
+          "mobileSummary": "Straightforward daily support."
+        },
+        "details": {
+          "summary": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
+          "researchProfile": "L-Carnitine is the accessible daily-format choice in the range, giving a cutting or wellness plan a cleaner, easier-to-place supporting direction.",
+          "guidance": "Compare it with Cardarine and MK-2866 when the goal is to keep the next addition simple while staying close to a body-composition focus.",
+          "considerations": "Use the category and comparison views to decide whether a simple daily format is the right next addition."
+        },
         "related": [
           "gw-501516",
           "mk-2866"
@@ -1240,22 +2351,33 @@
         ],
         "additions": [
           "gw-501516"
-        ]
+        ],
+        "baselineEligible": true,
+        "outcomeRole": "Simple daily support"
       },
       "openLab": {
-        "status": "unavailable"
+        "status": "unavailable",
+        "experience": "availability-panel"
       },
       "discovery": {
         "family": "Naturals",
         "goals": [
           "Cutting",
           "Wellness"
-        ]
+        ],
+        "headline": "Keep the next addition uncomplicated.",
+        "mobileSummary": "Straightforward daily support."
       },
       "seo": {
         "canonicalPath": "/product/l-carnitine",
         "title": "L-Carnitine 500 MG | Olympus Labs UK",
-        "description": "A 500 MG L-Carnitine format for straightforward daily support in a cutting-focused plan."
+        "description": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
+        "focusPhrases": [
+          "L-Carnitine",
+          "L-Carnitine",
+          "Cutting",
+          "Wellness"
+        ]
       }
     }
   ],
@@ -1348,5 +2470,5 @@
       }
     }
   },
-  "contentHash": "7029479d65bd08f684bdc48995f3ada83495fe7086c8284015373416bf98624a"
+  "contentHash": "30639ed10d7c39b72260ccd9be96fbab8608957978e4d781fe5a0f632146fcf9"
 }
