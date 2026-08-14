@@ -97,6 +97,12 @@ test("every ledger route has an individual native Figma pair and a registered mo
 
   assert.equal(routePairs.fileKey, designRegistry.fileKey);
   assert.equal(routePairs.records.length, 73);
+  assert.equal(routePairs.captureEvidence.routeCount, 73);
+  assert.equal(routePairs.captureEvidence.caseCount, 146);
+  assert.deepEqual(routePairs.captureEvidence.reviewWidths, [1440, 390]);
+  assert.match(routePairs.captureEvidence.sourceCommit, /^[a-f0-9]{40}$/);
+  assert.match(routePairs.captureEvidence.sourceTreeHash, /^[a-f0-9]{40}$/);
+  assert.match(routePairs.captureEvidence.receiptSha256, /^[a-f0-9]{64}$/);
   assert.deepEqual(
     new Set(routePairs.records.map(({ routeId }) => routeId)),
     new Set(ledger.routes.map(({ id }) => id)),
@@ -107,6 +113,13 @@ test("every ledger route has an individual native Figma pair and a registered mo
     assert.match(record.desktopNodeId, /^\d+:\d+$/, `${record.routeId} desktop`);
     assert.match(record.mobileNodeId, /^\d+:\d+$/, `${record.routeId} mobile`);
     assert.notEqual(record.desktopNodeId, record.mobileNodeId, record.routeId);
+    assert.ok(record.siteReference, `${record.routeId} Sites capture evidence`);
+    assert.match(record.siteReference.sourceCommit, /^[a-f0-9]{40}$/, `${record.routeId} capture commit`);
+    assert.match(record.siteReference.sourceTreeHash, /^[a-f0-9]{40}$/, `${record.routeId} capture tree`);
+    for (const width of ["desktop", "mobile"]) {
+      assert.match(record.siteReference[width].screenshot, /--(?:1440|390)\.png$/, `${record.routeId} ${width} screenshot`);
+      assert.match(record.siteReference[width].sha256, /^[a-f0-9]{64}$/, `${record.routeId} ${width} hash`);
+    }
   }
 });
 
