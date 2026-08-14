@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "oluk.route-design-sync.v1",
+  "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+  "description": "Route-level native Figma references. A record is added only after the route has its own 1440 and 390 composition; module references do not substitute for a route pair.",
+  "records": [
+    {"routeId":"open-lab-batch-lookup","path":"/open-lab/batch-lookup","moduleRecord":"openlab-tools","desktopNodeId":"1243:4055","mobileNodeId":"1243:4069","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-methodology","path":"/open-lab/methodology","moduleRecord":"openlab-tools","desktopNodeId":"1243:4083","mobileNodeId":"1243:4097","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-source-chain","path":"/open-lab/source-chain","moduleRecord":"openlab-tools","desktopNodeId":"1243:4111","mobileNodeId":"1243:4125","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-compare","path":"/open-lab/compare","moduleRecord":"openlab-tools","desktopNodeId":"1243:4139","mobileNodeId":"1243:4153","mobileStrategy":"horizontal-scroll","status":"figma-backfilled"},
+    {"routeId":"open-lab-evidence","path":"/open-lab/evidence","moduleRecord":"openlab-frontier-guide","desktopNodeId":"1243:4167","mobileNodeId":"1243:4181","mobileStrategy":"reorder","status":"figma-backfilled"},
+    {"routeId":"open-lab-compound-guide","path":"/open-lab/compound-guide","moduleRecord":"openlab-frontier-guide","desktopNodeId":"1243:4195","mobileNodeId":"1243:4209","mobileStrategy":"reorder","status":"figma-backfilled"},
+    {"routeId":"open-lab-research-papers","path":"/open-lab/research-papers","moduleRecord":"openlab-frontier-guide","desktopNodeId":"1243:4223","mobileNodeId":"1243:4237","mobileStrategy":"reorder","status":"figma-backfilled"},
+    {"routeId":"open-lab-lab-partner","path":"/open-lab/lab-partner","moduleRecord":"openlab-frontier-guide","desktopNodeId":"1243:4251","mobileNodeId":"1243:4265","mobileStrategy":"reorder","status":"figma-backfilled"},
+    {"routeId":"open-lab-dosing-calculator","path":"/open-lab/dosing-calculator","moduleRecord":"openlab-sidebar-workspace","desktopNodeId":"1243:4279","mobileNodeId":"1243:4293","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-cycle-planner","path":"/open-lab/cycle-planner","moduleRecord":"openlab-sidebar-workspace","desktopNodeId":"1243:4307","mobileNodeId":"1243:4321","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-case-studies","path":"/open-lab/case-studies","moduleRecord":"openlab-sidebar-workspace","desktopNodeId":"1243:4335","mobileNodeId":"1243:4349","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-glossary","path":"/open-lab/glossary","moduleRecord":"openlab-sidebar-workspace","desktopNodeId":"1243:4363","mobileNodeId":"1243:4377","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"open-lab-coa-viewer","path":"/open-lab/coa/:id","moduleRecord":"openlab-document-viewer","desktopNodeId":"1243:4391","mobileNodeId":"1243:4405","mobileStrategy":"summary","status":"figma-backfilled"},
+    {"routeId":"open-lab-report","path":"/open-lab/report/:batchId","moduleRecord":"openlab-document-viewer","desktopNodeId":"1243:4419","mobileNodeId":"1243:4433","mobileStrategy":"summary","status":"figma-backfilled"}
+  ]
+}

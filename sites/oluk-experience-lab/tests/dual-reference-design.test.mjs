@@ -90,6 +90,22 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
   });
 });
 
+test("OpenLab tool routes have individual native Figma pairs rather than a generic tools board", async () => {
+  const routePairs = await readJson("authority/ROUTE-DESIGN-SYNC-REGISTRY.json");
+  const designRegistry = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
+  const ledger = await readJson("authority/SITE-ROUTE-LEDGER.json");
+
+  assert.equal(routePairs.fileKey, designRegistry.fileKey);
+  assert.equal(routePairs.records.length, 14);
+  for (const record of routePairs.records) {
+    assert.ok(ledger.routes.some(({ id, path: routePath }) => id === record.routeId && routePath === record.path), record.routeId);
+    assert.ok(designRegistry.records.some(({ id }) => id === record.moduleRecord), record.moduleRecord);
+    assert.match(record.desktopNodeId, /^\d+:\d+$/, `${record.routeId} desktop`);
+    assert.match(record.mobileNodeId, /^\d+:\d+$/, `${record.routeId} mobile`);
+    assert.notEqual(record.desktopNodeId, record.mobileNodeId, record.routeId);
+  }
+});
+
 test("navigation is sentence case and canonical contextual surfaces are split", async () => {
   const navigation = await readFile(path.join(siteRoot, "app/design-system/navigation-registry.ts"), "utf8");
   const header = await readFile(path.join(siteRoot, "app/design-system/site-header.tsx"), "utf8");
