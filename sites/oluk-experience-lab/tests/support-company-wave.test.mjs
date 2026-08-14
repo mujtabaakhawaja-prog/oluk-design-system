@@ -8,6 +8,7 @@ import { loadBuiltWorker, renderHtml, visibleText } from "../scripts/proof/rende
 const supportSource = readFileSync(new URL("../app/design-system/support-surface.tsx", import.meta.url), "utf8");
 const supportCss = readFileSync(new URL("../app/design-system/support-surface.module.css", import.meta.url), "utf8");
 const programSource = readFileSync(new URL("../app/design-system/program-components.tsx", import.meta.url), "utf8");
+const tokenSource = readFileSync(new URL("../app/design-system/candidate-tokens.css", import.meta.url), "utf8");
 
 function readTsxTree(directory) {
   return readdirSync(directory, { withFileTypes: true }).map((entry) => {
@@ -18,6 +19,23 @@ function readTsxTree(directory) {
 }
 
 const renderedAppSource = readTsxTree(new URL("../app/", import.meta.url));
+
+function tokenHex(name) {
+  const match = tokenSource.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})\\s*;`, "i"));
+  assert.ok(match, `${name}: governed six-digit color exists`);
+  return match[1];
+}
+
+function luminance(hex) {
+  const channels = [1, 3, 5].map((index) => Number.parseInt(hex.slice(index, index + 2), 16) / 255);
+  const linear = channels.map((channel) => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
+  return linear[0] * 0.2126 + linear[1] * 0.7152 + linear[2] * 0.0722;
+}
+
+function contrast(foreground, background) {
+  const values = [luminance(foreground), luminance(background)].sort((left, right) => right - left);
+  return (values[0] + 0.05) / (values[1] + 0.05);
+}
 
 const routes = new Map([
   ["/about", ["Quality, made visible at every product decision.", "Evidence adds another dimension", "Build your stack"]],
@@ -55,6 +73,9 @@ test("support and company routes resolve uncertainty and return to a customer de
     for (const phrase of required) assert.ok(text.includes(phrase), `${path}: ${phrase}`);
     assert.doesNotMatch(text, /\b(?:route|module|fixture|workspace|component|implementation|data owner|presentation)\b/i, path);
     assert.match(main, /href=["']\/(?:shop|product|compare|open-lab|account|checkout|contact|faq|refunds|sitemap|wholesale)/i, `${path}: onward customer link`);
+    assert.match(main, /data-component=["']Button["']/, `${path}: canonical action control`);
+    assert.match(main, /data-figma-intent-source=["']1337:8963["']/, `${path}: canonical action provenance`);
+    assert.doesNotMatch(main, /class=["'][^"']*\bbutton(?:-secondary)?\b/i, `${path}: no legacy button class`);
   }
 });
 
@@ -94,7 +115,16 @@ test("support styles preserve governed type, color and action laws", () => {
   assert.doesNotMatch(supportCss, /font-size\s*:\s*(?:[0-9]|1[0-1])px/i);
   assert.doesNotMatch(supportCss, /color\s*:\s*var\(--oluk-text-muted\)/);
   assert.doesNotMatch(supportCss, /border-radius\s*:\s*999px/);
-  assert.match(supportSource, /button button-secondary/);
+  assert.match(supportSource, /import \{ ActionLink \} from "\.\/action-control"/);
+  assert.match(supportSource, /<ActionLink\b/);
+  assert.doesNotMatch(supportSource, /className=["']button|button-secondary|<a\b|<button\b|next\/link/);
+
+  const surfaces = [tokenHex("oluk-surface-card"), tokenHex("oluk-surface-family"), tokenHex("oluk-canvas")];
+  for (const textToken of ["oluk-text-primary", "oluk-text-body", "oluk-text-secondary"]) {
+    for (const surface of surfaces) {
+      assert.ok(contrast(tokenHex(textToken), surface) >= 4.5, `${textToken} must remain AA on ${surface}`);
+    }
+  }
 });
 
 test("support copy does not manufacture legal, delivery or service detail", () => {

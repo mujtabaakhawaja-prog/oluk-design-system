@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { ActionLink } from "./action-control";
 import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { mk2866Fixture } from "./product-fixtures";
@@ -278,11 +277,7 @@ const content: Record<SupportSurfaceKind, SupportSurfaceContent> = {
 const evidenceStates: readonly EvidenceAuthorityState[] = ["verified-evidence", "source-reported", "source-only", "unavailable"];
 
 function SupportActionLink({ action, secondary = false }: Readonly<{ action: SupportAction; secondary?: boolean }>) {
-  const className = secondary ? "button button-secondary" : "button";
-  const contents = <><span>{action.label}</span><span aria-hidden="true">→</span></>;
-  return action.external
-    ? <a className={className} href={action.href} rel="external">{contents}</a>
-    : <Link className={className} href={action.href} prefetch={false}>{contents}</Link>;
+  return <ActionLink href={action.href} rel={action.external ? "external" : undefined} variant={secondary ? "secondary" : "primary"}>{action.label}</ActionLink>;
 }
 
 function PathwayList({ pathways }: Readonly<{ pathways: readonly SupportPathway[] }>) {
