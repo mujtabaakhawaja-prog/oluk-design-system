@@ -3,6 +3,8 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
+import { loadBuiltWorker, renderHtml, visibleText } from "../scripts/proof/rendered-audit-utils.mjs";
+
 const content = readFileSync(new URL("../app/design-system/frontier-content.ts", import.meta.url), "utf8");
 const registry = JSON.parse(readFileSync(new URL("../../../authority/FRONTIER-SECTION-MOUNT-REGISTRY.json", import.meta.url), "utf8"));
 
@@ -11,6 +13,51 @@ test("frontier catalogue preserves fixed MK-2866 truth and RAD-140 8 MG correcti
   assert.match(content, /slug:"rad-140"[\s\S]*?strength:"8 MG"/);
   assert.doesNotMatch(content, /RAD-140[\s\S]{0,280}10 MG/);
   assert.equal((content.match(/record\(\{slug:/g) ?? []).length, 16);
+});
+
+test("frontier product records use outcome-led copy and match the approved Your Stack product facts", () => {
+  const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
+  const kitRoot = new URL("../../../make-sessions/frontier-site-expansion/", import.meta.url);
+  const stackData = JSON.parse(readFileSync(new URL("runs/01-canonical-your-stack/product-data.json", kitRoot), "utf8"));
+
+  for (const product of stackData.recommendations) {
+    const escapedName = product.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.match(content, new RegExp(`slug:"${product.id}"[\\s\\S]*?strength:"${product.strength}"[\\s\\S]*?servings:"${product.servings}"[\\s\\S]*?price:"${product.price}"`));
+    assert.match(stackBuilder, new RegExp(`name: "${escapedName}"[\\s\\S]*?strength: "${product.strength}"[\\s\\S]*?servings: "${product.servings}"[\\s\\S]*?price: "${product.price}"`));
+  }
+
+  const productRecords = content.slice(content.indexOf("export const frontierProducts"), content.indexOf("export const productBySlug"));
+  assert.doesNotMatch(productRecords, /(?:research route|collection route|related collection|product decision|comparison presentation)/i);
+  assert.match(productRecords, /strength and lean mass/i);
+  assert.match(productRecords, /size and power/i);
+  assert.match(productRecords, /appetite, sleep and recovery/i);
+});
+
+test("every catalogue PDP renders its own customer proposition without implementation vocabulary", async () => {
+  const products = [
+    ["mk-2866", "MK-2866", "15 MG", "90 SERVINGS", "£43"],
+    ["rad-140", "RAD-140", "8 MG", "60 SERVINGS", "£55"],
+    ["lgd-4033", "LGD-4033", "10 MG", "60 SERVINGS", "£49"],
+    ["mk-677", "MK-677", "15 MG", "90 SERVINGS", "£45"],
+    ["gw-501516", "GW-501516", "10 MG", "60 SERVINGS", "£42"],
+    ["s-4", "S-4", "25 MG", "60 SERVINGS", "£40"],
+    ["yk-11", "YK-11", "10 MG", "60 SERVINGS", "£47"],
+    ["s-23", "S-23", "10 MG", "60 SERVINGS", "£47"],
+    ["epistane", "Epistane", "20 MG", "60 SERVINGS", "£44"],
+    ["ment", "MENT", "20 MG", "30 SERVINGS", "£49"],
+    ["m-sten", "M-STEN", "10 MG", "60 SERVINGS", "£48"],
+    ["trenavar", "Trenavar", "30 MG", "60 SERVINGS", "£48"],
+    ["bpc-157", "BPC-157", "500 MCG", "60 SERVINGS", "£54"],
+    ["tb-500", "TB-500", "2 MG", "30 SERVINGS", "£58"],
+    ["cjc-1295", "CJC-1295", "2 MG", "30 SERVINGS", "£59"],
+    ["l-carnitine", "L-Carnitine", "500 MG", "60 SERVINGS", "£29"],
+  ];
+  const worker = await loadBuiltWorker("frontier-product-propositions");
+  for (const [slug, name, strength, servings, price] of products) {
+    const text = visibleText(await renderHtml(worker, `/product/${slug}`, 200));
+    for (const value of [name, strength, servings, price]) assert.ok(text.includes(value), `${slug}: ${value}`);
+    assert.doesNotMatch(text, /\b(?:route|module|workspace|fixture|proof|presentation|component)\b/i, slug);
+  }
 });
 
 test("frontier section registry covers all 75 creative actions with explicit mobile strategies", () => {

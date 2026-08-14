@@ -179,3 +179,10 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Updated all 73 route records to `dual-reference-ready`: every route now has a Sites composition, a native 1440/390 Final-Design mirror, and an explicit mobile strategy. This design disposition remains independent of `presentation-only`, `projection-ready`, and `authority-deferred` runtime status.
 - Recorded the audit in `FIGMA-SITES-SYNC-STRUCTURAL-AUDIT-20260814.md` and strengthened the ledger test so a runtime-deferred route can still have complete design treatment.
 - No route is promoted to `sync-verified` or `champion-approved` by this structural reconciliation; visual comparison, the 12 Review Studio decisions, publishing, and deployment remain separate gates.
+
+## 2026-08-14 — Frontier catalogue proposition and native PDP sync
+
+- Reworked the full 16-SKU customer proposition layer from generic or implementation-shaped language to clear product outcomes, formats and reasons to choose each item. The corrected Your Stack facts remain aligned across Sites and the content registry: RAD-140 `8 MG · 60 SERVINGS · £55`; MENT `20 MG · 30 SERVINGS · £49`; MK-677 `15 MG · 90 SERVINGS · £45`.
+- Updated the current editable native PDP desktop (`1262:24455`) and mobile (`1262:25038`) mirrors in Final-Design with the same Your Stack pricing overrides, including the featured RAD-140 card. No new local Figma components, token values or library publication were introduced.
+- Added exact rendered-PDP checks for each catalogue item plus customer-copy lint coverage. Validation: typecheck pass, tests `96/96`, customer-copy audit `70/70`.
+- This remains a bounded content/reference alignment. Recapture and visual comparison still precede `sync-verified`; champion review, Figma publication and deployment remain separate.
