@@ -1529,6 +1529,21 @@
       "mobileNodeId": "1247:15863",
       "mobileStrategy": "carousel",
       "status": "figma-backfilled",
+      "figmaValidation": {
+        "validatedAt": "2026-08-14T10:15:03Z",
+        "result": "structure-and-facts-verified",
+        "desktop": {
+          "nodeId": "1247:15844",
+          "fullCompositionVisible": true,
+          "usesCanonicalProductCommerceCardVertical": true
+        },
+        "mobile": {
+          "nodeId": "1247:15863",
+          "usesCanonicalProductCommerceCardVertical": true,
+          "rad140Strength": "8 MG"
+        },
+        "notes": "Outcome headings convey focus and position; inherited evidence label text is cleared so it cannot misrepresent the stack decision."
+      },
       "siteReference": {
         "resolvedPath": "/open-lab/stack-builder",
         "sourceCommit": "2453e2c2e1e157f5cf55b6f012b5f091f41fb1bf",
