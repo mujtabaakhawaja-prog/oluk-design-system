@@ -27,7 +27,13 @@ The Figma work updated existing native component-instance overrides only. It did
 - `npm run typecheck`: pass.
 - `npm test`: 96/96 pass.
 - `npm run proof:cx45 -- --output=/tmp/oluk-customer-copy-20260814.json`: 70/70 customer-route cases pass; zero customer-copy failures.
+- Full current-branch regression rerun after the copy changes:
+  - MF-09 QA geometry: 292/292 route-width cases pass at 1440, 1024, 768 and 390; QA mode retained machine evidence without generating a manual-review set.
+  - Accessibility: 146/146 pass.
+  - Contrast, 200% reflow and long-copy: 70/70 pass; zero automated failures.
+  - Interaction and static transaction boundary: 35/35 pass, including 8/8 zero-callback cases.
+  - Current local receipts: `/tmp/oluk-mf09-catalogue-sync-20260814.json/mf09-four-width-receipt.json`, `/tmp/oluk-a11y-catalogue-sync-20260814/mf09-accessibility-smoke.json`, `/tmp/oluk-contrast-catalogue-sync-20260814.json/cx38-contrast-zoom-long-copy.json`, and `/tmp/oluk-interactions-catalogue-sync-20260814/cx37-interaction-state-proof.json`.
 
 ## Scope limit
 
-This is a content and native-reference alignment. Existing screenshot hashes remain historical capture evidence until the changed PDP representatives are recaptured. This receipt does not promote a Figma or Sites artifact to `sync-verified` or `champion-approved`.
+This is a content and native-reference alignment. The QA results are current machine evidence; representative Sites-to-Figma visual comparison and human champion decisions remain separate. This receipt does not promote a Figma or Sites artifact to `sync-verified` or `champion-approved`.
