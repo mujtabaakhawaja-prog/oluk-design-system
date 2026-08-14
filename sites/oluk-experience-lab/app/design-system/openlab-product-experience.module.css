@@ -6,14 +6,14 @@
   width: min(1248px, calc(100% - 48px));
 }
 
-.confidenceSummary {
+.confidenceFacts {
   align-items: center;
   display: grid;
   gap: var(--oluk-space-5);
   grid-template-columns: auto minmax(0, 1fr);
 }
 
-.confidenceSummary dl,
+.confidenceFacts dl,
 .recordIdentity,
 .availabilityList {
   display: grid;
@@ -21,11 +21,11 @@
   margin: 0;
 }
 
-.confidenceSummary dl {
+.confidenceFacts dl {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.confidenceSummary dl div,
+.confidenceFacts dl div,
 .recordIdentity div,
 .availabilityList div {
   border-top: var(--oluk-border-width) solid var(--oluk-border-subtle);
@@ -33,7 +33,7 @@
   padding-top: var(--oluk-space-3);
 }
 
-.confidenceSummary dt,
+.confidenceFacts dt,
 .recordIdentity dt,
 .availabilityList dt {
   color: var(--oluk-text-muted);
@@ -43,7 +43,7 @@
   line-height: 1.25;
 }
 
-.confidenceSummary dd,
+.confidenceFacts dd,
 .recordIdentity dd,
 .availabilityList dd {
   color: var(--oluk-text-primary);
@@ -325,14 +325,14 @@
     width: min(100% - 28px, 1248px);
   }
 
-  .confidenceSummary,
+  .confidenceFacts,
   .recordGrid,
   .comparisonValues,
   .unavailableIdentity {
     grid-template-columns: 1fr;
   }
 
-  .confidenceSummary dl,
+  .confidenceFacts dl,
   .recordIdentity,
   .availabilityList {
     grid-template-columns: 1fr;

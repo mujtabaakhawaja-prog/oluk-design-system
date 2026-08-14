@@ -105,7 +105,7 @@ export function OpenLabProductExperience({
         eyebrow="OPENLAB CONFIDENCE"
         title="See what stands behind MK-2866."
       >
-        <div className={styles.confidenceSummary}>
+        <div className={styles.confidenceFacts}>
           <EvidenceStatusChip state="source-reported" />
           <dl>
             <div><dt>Batch</dt><dd>{experience.record.batchCode}</dd></div>
