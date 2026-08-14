@@ -52,7 +52,9 @@ const candidateCopy = {
 }>>>;
 
 function strongerCustomerLanguage(copy: string) {
-  return copy.replace(/\bsharper\b/gi, "stronger");
+  return copy
+    .replace(/\bsharper\b/gi, "stronger")
+    .replace(/\btraining intensity\b/gi, "training output");
 }
 
 function CandidateActions({ product }: Readonly<{ product: FrontierProductRecord }>) {
@@ -208,14 +210,15 @@ function ProductStory({ product, productSlug }: Readonly<{ product: FrontierProd
   );
 }
 
-function OpenLabConfidence({ expanded, product, productSlug }: Readonly<{
+function OpenLabConfidence({ expanded, includeSummary = true, product, productSlug }: Readonly<{
   expanded: boolean;
+  includeSummary?: boolean;
   product: FrontierProductRecord;
   productSlug: PdpStressProductSlug;
 }>) {
   return (
     <section className={styles.lowerSection}>
-      <EvidenceAvailability product={product} productSlug={productSlug} />
+      {includeSummary ? <EvidenceAvailability product={product} productSlug={productSlug} /> : null}
       {expanded && productSlug === "mk-2866" ? (
         <TechnicalSurface
           copy="Move from the compact confidence summary into record identity, report history, label comparison, analytes and source context without leaving the product journey."
@@ -353,7 +356,7 @@ export function PdpCandidateSuite({ candidateId, productSlug }: CandidateProps) 
         <Breadcrumbs items={[{ label: "Shop", href: "/shop" }, { label: product.family, href: "/shop" }, { label: product.name }]} />
         <ProductDecision candidateId={candidateId} product={product} productSlug={productSlug} />
         <section className={styles.lowerSection}><TechnicalSurface compact copy="Product and evidence statements stay connected to their source context throughout the page." eyebrow="Decision assurance" title="Clear facts before the next click."><AssuranceRail variant="compact" /></TechnicalSurface></section>
-        {evidenceFirst ? <OpenLabConfidence expanded product={product} productSlug={productSlug} /> : null}
+        {evidenceFirst ? <OpenLabConfidence expanded includeSummary={false} product={product} productSlug={productSlug} /> : null}
         <section className={styles.lowerSection}><ProductStory product={product} productSlug={productSlug} /></section>
         {comparisonFirst ? <section className={styles.lowerSection}><ProductComparison product={product} /></section> : null}
         {!evidenceFirst ? <OpenLabConfidence expanded={false} product={product} productSlug={productSlug} /> : null}
