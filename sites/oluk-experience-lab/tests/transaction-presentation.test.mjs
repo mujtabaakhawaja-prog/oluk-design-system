@@ -90,6 +90,7 @@ test("named checkout stages adopt the canonical Option E lifecycle instead of a 
   assert.match(programRoutes, /information: "details"/);
   assert.match(programRoutes, /review: "handoff"/);
   assert.match(programRoutes, /payment: "order-pay"/);
+  assert.match(programRoutes, /<main data-live-authority="false">/);
   assert.match(programRoutes, /<TransactionPresentation stage=\{checkoutStageMap\[step\]\} \/>/);
   assert.doesNotMatch(programRoutes, /const checkoutCopy/);
 });

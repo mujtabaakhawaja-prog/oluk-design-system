@@ -24,7 +24,9 @@ const checkoutStageMap: Record<CheckoutStep, TransactionStage> = {
 export function CheckoutProgramPage({ step }: { step: CheckoutStep }) {
   return (
     <CustomerSiteChrome route="checkout">
-      <TransactionPresentation stage={checkoutStageMap[step]} />
+      <main data-live-authority="false">
+        <TransactionPresentation stage={checkoutStageMap[step]} />
+      </main>
     </CustomerSiteChrome>
   );
 }
