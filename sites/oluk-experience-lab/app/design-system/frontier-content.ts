@@ -3,14 +3,51 @@
  * Runtime adapters replace these records later without changing section anatomy.
  */
 export type ProductFamily = "Research Chemicals" | "Metabolics" | "Peptides" | "Naturals";
+export type CustomerProposition = Readonly<{
+  eyebrow: string;
+  headline: string;
+  promise: string;
+  benefits: ReadonlyArray<string>;
+  differentiator: string;
+  primaryAction: string;
+  secondaryAction?: string;
+  mobileSummary: string;
+}>;
 export type FrontierProductRecord = Readonly<{
   slug: string; sku: string; series: string; name: string; alias: string; strength: string;
   servings: string; purity: string; price: string; family: ProductFamily; goal: string[];
   summary: string; researchProfile: string; guidance: string; considerations: string;
-  related: string[]; stack: string[];
+  related: string[]; stack: string[]; proposition: CustomerProposition;
 }>;
 
-const record = (value: FrontierProductRecord) => value;
+type FrontierProductInput = Omit<FrontierProductRecord, "proposition"> & Readonly<{ proposition?: Partial<CustomerProposition> }>;
+
+const outcomeLanguage: Readonly<Record<string, Readonly<{headline:string;promise:string;benefits:ReadonlyArray<string>}>>> = {
+  Bulking: { headline: "Build a harder, heavier training phase.", promise: "Put strength, size and training intensity at the centre of the next product decision.", benefits: ["Strength-led formats", "Mass-focused stack options", "Clear step-up comparisons"] },
+  Cutting: { headline: "Keep strength in the plan while the goal gets leaner.", promise: "Compare products built around training output, body-composition focus and a sharper finish.", benefits: ["Lean-phase positioning", "Endurance-led pairings", "Clear add-on choices"] },
+  Recomp: { headline: "Push strength and a leaner look together.", promise: "Build a balanced product direction around performance, body composition and recovery.", benefits: ["Strength and recomp focus", "Flexible stack pairings", "Good, Better and Best paths"] },
+  Recovery: { headline: "Build more recovery into hard training weeks.", promise: "Bring sleep, appetite and between-session recovery support into the wider plan.", benefits: ["Daily support formats", "Recovery-led pairings", "Longer-serving options"] },
+  Wellness: { headline: "Keep everyday support simple.", promise: "Choose a straightforward format that fits cleanly into a wider performance routine.", benefits: ["Simple daily format", "Clear product facts", "Easy collection comparison"] },
+};
+
+const record = (value: FrontierProductInput): FrontierProductRecord => {
+  const primaryGoal = value.goal[0] ?? "Recomp";
+  const outcome = outcomeLanguage[primaryGoal] ?? outcomeLanguage.Recomp;
+  return {
+    ...value,
+    proposition: {
+      eyebrow: value.series,
+      headline: outcome.headline,
+      promise: outcome.promise,
+      benefits: outcome.benefits,
+      differentiator: `${value.strength} · ${value.servings} · ${value.purity}`,
+      primaryAction: "View product",
+      secondaryAction: "Build my stack",
+      mobileSummary: `${value.name}: ${outcome.headline}`,
+      ...value.proposition,
+    },
+  };
+};
 
 export const frontierProducts = [
   record({slug:"mk-2866",sku:"80529-01",series:"SARM SERIES",name:"MK-2866",alias:"Ostarine",strength:"15 MG",servings:"90 SERVINGS",purity:">99%",price:"£43",family:"Research Chemicals",goal:["Cutting","Recomp"],summary:"A measured capsule-format research product positioned for clear product comparison and a compact, information-led purchase decision.",researchProfile:"MK-2866 sits at the centre of the Olympus research-chemical range. Its product page pairs product facts with an OpenLab pathway, related research routes and a clear return to the wider collection.",guidance:"Explore the product facts, OpenLab pathway and related research catalogue before making a product decision.",considerations:"Read the complete product information and applicable customer guidance before purchase.",related:["gw-501516","s-4","lgd-4033"],stack:["gw-501516","s-4"]}),

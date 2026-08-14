@@ -16,132 +16,137 @@ export type NavigationNode = Readonly<{
   href: string;
   columns?: ReadonlyArray<NavigationColumn>;
   featured?: Readonly<{
+    kind: "product" | "openlab";
     eyebrow: string;
     title: string;
     copy: string;
     href: string;
+    action: string;
   }>;
 }>;
 
 export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
   {
     id: "shop",
-    label: "SHOP",
+    label: "Shop",
     href: "/shop",
     columns: [
       {
         heading: "By family",
         items: [
           { id: "sarms", label: "SARMs", href: "/shop?family=sarms" },
-          { id: "research-chemicals", label: "Research Chemicals", href: "/shop?family=research-chemicals" },
+          { id: "research-chemicals", label: "Research chemicals", href: "/shop?family=research-chemicals", detail: "Compare the complete research range" },
           { id: "prohormones", label: "Prohormones", href: "/shop?family=prohormones" },
           { id: "metabolics", label: "Metabolics", href: "/shop?family=metabolics" },
-          { id: "shop-all", label: "Shop All", href: "/shop" },
+          { id: "shop-all", label: "View all products", href: "/shop" },
         ],
       },
       {
         heading: "By goal",
         items: [
-          { id: "build", label: "Build", href: "/shop?goal=build" },
-          { id: "cut", label: "Cut", href: "/shop?goal=cut" },
-          { id: "recomp", label: "Recomp", href: "/shop?goal=recomp" },
-          { id: "recovery", label: "Recovery", href: "/shop?goal=recovery" },
-          { id: "strength", label: "Strength", href: "/shop?goal=strength" },
-          { id: "body-composition", label: "Body Composition", href: "/shop?goal=body-composition" },
+          { id: "build", label: "Build size", href: "/shop?goal=build", detail: "Mass and power focused" },
+          { id: "strength", label: "Increase strength", href: "/shop?goal=strength", detail: "Higher-intensity product directions" },
+          { id: "cut", label: "Cut leaner", href: "/shop?goal=cut", detail: "Strength and endurance through a cut" },
+          { id: "recomp", label: "Recomp", href: "/shop?goal=recomp", detail: "Build strength and a leaner look" },
+          { id: "recovery", label: "Support recovery", href: "/shop?goal=recovery", detail: "Sleep, appetite and between-session support" },
         ],
       },
       {
         heading: "Stacks & bundles",
         items: [
-          { id: "stacks", label: "Pre-made Stacks", href: "/shop?family=stacks" },
-          { id: "bundle-builder", label: "Bundle Builder", href: "/bundle-builder" },
-          { id: "capsules", label: "Capsules", href: "/shop?form=capsules" },
-          { id: "servings-90", label: "90 Servings", href: "/shop?servings=90" },
+          { id: "stacks", label: "Ready-built stacks", href: "/shop?family=stacks", detail: "Shop by training goal" },
+          { id: "bundle-builder", label: "Build my stack", href: "/bundle-builder", detail: "Choose the result and compare the build" },
+          { id: "capsules", label: "Capsule formats", href: "/shop?form=capsules" },
+          { id: "servings-90", label: "Longer formats", href: "/shop?servings=90" },
         ],
       },
     ],
     featured: {
+      kind: "product",
       eyebrow: "Featured",
       title: "RAD-140 · 8 MG",
-      copy: "Explore the product, its specifications and available OpenLab pathway.",
-      href: "/shop?search=RAD-140",
+      copy: "Push strength and lean-mass focus with the strongest SARM in the Olympus range.",
+      href: "/product/rad-140",
+      action: "View RAD-140",
     },
   },
   {
     id: "open-lab",
-    label: "OPEN LAB",
+    label: "OpenLab",
     href: "/open-lab",
     columns: [
       {
-        heading: "Evidence & testing",
+        heading: "Explore records",
         items: [
-          { id: "evidence", label: "Evidence Charts", href: "/open-lab/evidence" },
-          { id: "batch-lookup", label: "Batch Lookup", href: "/open-lab/batch-lookup" },
-          { id: "records", label: "Lab Records Archive", href: "/open-lab/records" },
-          { id: "methodology", label: "Methodology", href: "/open-lab/methodology" },
-          { id: "source-chain", label: "Source Chain", href: "/open-lab/source-chain" },
+          { id: "records", label: "Browse lab records", href: "/open-lab/records", detail: "Open product and batch records" },
+          { id: "batch-lookup", label: "Find my batch", href: "/open-lab/batch-lookup", detail: "Search the exact batch reference" },
+          { id: "evidence", label: "See the evidence", href: "/open-lab/evidence", detail: "Read results and testing history" },
+          { id: "source-chain", label: "Follow the source chain", href: "/open-lab/source-chain" },
         ],
       },
       {
-        heading: "Research tools",
+        heading: "Build and compare",
         items: [
-          { id: "stack-builder", label: "Stack Builder", href: "/open-lab/stack-builder" },
-          { id: "dose-calculator", label: "Dose Calculator", href: "/open-lab/dosing-calculator" },
-          { id: "cycle-planner", label: "Cycle Planner", href: "/open-lab/cycle-planner" },
-          { id: "interaction-checker", label: "Interaction Checker", href: "/open-lab/interaction-checker" },
-          { id: "lab-partner", label: "Lab Partner", href: "/open-lab/lab-partner" },
+          { id: "stack-builder", label: "Build my stack", href: "/open-lab/stack-builder", detail: "Start with the result you want" },
+          { id: "compare", label: "Compare compounds", href: "/open-lab/compare", detail: "See the differences side by side" },
+          { id: "dose-calculator", label: "Dose calculator", href: "/open-lab/dosing-calculator" },
+          { id: "cycle-planner", label: "Cycle planner", href: "/open-lab/cycle-planner" },
+          { id: "interaction-checker", label: "Interaction checker", href: "/open-lab/interaction-checker" },
         ],
       },
       {
-        heading: "Explore",
+        heading: "Learn",
         items: [
-          { id: "compound-guide", label: "Compound Guide", href: "/open-lab/compound-guide" },
-          { id: "compare", label: "Compound Compare", href: "/open-lab/compare" },
-          { id: "research-papers", label: "Research Papers", href: "/open-lab/research-papers" },
-          { id: "case-studies", label: "Case Studies", href: "/open-lab/case-studies" },
+          { id: "compound-guide", label: "Compound guide", href: "/open-lab/compound-guide" },
+          { id: "methodology", label: "How testing works", href: "/open-lab/methodology" },
+          { id: "research-papers", label: "Research papers", href: "/open-lab/research-papers" },
+          { id: "case-studies", label: "Case studies", href: "/open-lab/case-studies" },
           { id: "glossary", label: "Glossary", href: "/open-lab/glossary" },
+          { id: "lab-partner", label: "Become a lab partner", href: "/open-lab/lab-partner" },
         ],
       },
     ],
     featured: {
+      kind: "openlab",
       eyebrow: "OpenLab portal",
-      title: "Shop the range and verify every batch.",
-      copy: "Browse products, check batch records and access available lab reports in one place.",
+      title: "Find the record behind the product.",
+      copy: "Search a batch, compare compounds or open the report connected to the product in front of you.",
       href: "/open-lab",
+      action: "Enter OpenLab",
     },
   },
   {
     id: "learn",
-    label: "LEARN",
+    label: "Learn",
     href: "/open-lab/compound-guide",
     columns: [
       {
         heading: "Learn",
         items: [
-          { id: "learn-compounds", label: "Compound Guide", href: "/open-lab/compound-guide" },
-          { id: "learn-papers", label: "Research Papers", href: "/open-lab/research-papers" },
-          { id: "learn-cases", label: "Case Studies", href: "/open-lab/case-studies" },
+          { id: "learn-compounds", label: "Compound guide", href: "/open-lab/compound-guide" },
+          { id: "learn-papers", label: "Research papers", href: "/open-lab/research-papers" },
+          { id: "learn-cases", label: "Case studies", href: "/open-lab/case-studies" },
           { id: "learn-glossary", label: "Glossary", href: "/open-lab/glossary" },
-          { id: "learn-faq", label: "FAQ & Help Centre", href: "/faq-help-centre" },
-          { id: "learn-delivery", label: "Delivery Information", href: "/delivery" },
-          { id: "learn-contact", label: "Contact Us", href: "/contact" },
+          { id: "learn-faq", label: "FAQ and help centre", href: "/faq-help-centre" },
+          { id: "learn-delivery", label: "Delivery information", href: "/delivery" },
+          { id: "learn-contact", label: "Contact us", href: "/contact" },
         ],
       },
     ],
   },
-  { id: "wholesale", label: "WHOLESALE", href: "/wholesale" },
+  { id: "wholesale", label: "Wholesale", href: "/wholesale" },
   {
     id: "about",
-    label: "ABOUT",
+    label: "About",
     href: "/about",
     columns: [
       {
         heading: "Olympus Labs UK",
         items: [
-          { id: "our-story", label: "Our Story", href: "/about" },
-          { id: "testing-philosophy", label: "Testing Philosophy", href: "/open-lab/methodology" },
-          { id: "privacy", label: "Privacy Policy", href: "/privacy" },
-          { id: "terms", label: "Terms & Conditions", href: "/terms" },
+          { id: "our-story", label: "Our story", href: "/about" },
+          { id: "testing-philosophy", label: "Testing philosophy", href: "/open-lab/methodology" },
+          { id: "privacy", label: "Privacy policy", href: "/privacy" },
+          { id: "terms", label: "Terms and conditions", href: "/terms" },
         ],
       },
     ],

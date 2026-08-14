@@ -17,8 +17,11 @@ const MIB = 1024 * KIB;
 export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The corrected LockedHero, HeroLight, PDP fold and three-band interactive header
   // add four bounded, route-shared CSS modules while retaining a sub-256 KiB ceiling.
-  clientJavaScriptBytes: 560 * KIB,
-  clientCssBytes: 248 * KIB,
+  // The hydrated OptionB navigation adds the shared disclosure and focus-management client path.
+  clientJavaScriptBytes: 576 * KIB,
+  // The canonical Your Stack experience adds one shared product-decision stylesheet while
+  // preserving the original sub-256 KiB aggregate target.
+  clientCssBytes: 256 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,

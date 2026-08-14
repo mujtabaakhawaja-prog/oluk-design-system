@@ -813,7 +813,7 @@
     "programComponentMappings": [
       {
         "export": "EvidenceStatusChip",
-        "figmaComponentNodeId": null,
+        "figmaComponentNodeId": "1085:4390",
         "figmaIntent": {
           "fileKey": "GkC3KEt9V3RyG5K319iAUV",
           "nodeId": "3:66993"
@@ -836,7 +836,7 @@
       },
       {
         "export": "RecommendationCard",
-        "figmaComponentNodeId": null,
+        "figmaComponentNodeId": "1082:4465",
         "figmaIntent": {
           "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
           "nodeId": "2:2"
@@ -860,7 +860,7 @@
       },
       {
         "export": "RestockCard",
-        "figmaComponentNodeId": null,
+        "figmaComponentNodeId": "1082:4564",
         "figmaIntent": {
           "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
           "nodeId": "2:2"
@@ -883,7 +883,7 @@
       },
       {
         "export": "UpsellContextRail",
-        "figmaComponentNodeId": null,
+        "figmaComponentNodeId": "1082:4667",
         "figmaIntent": {
           "fileKey": "cGrvE3Fyj3ThKuqPZqceYv",
           "nodeId": "4:3545"
@@ -904,7 +904,7 @@
       },
       {
         "export": "CheckoutStepIndicator",
-        "figmaComponentNodeId": null,
+        "figmaComponentNodeId": "1085:4511",
         "figmaIntent": {
           "fileKey": "9jTrnlEWgbBpFi2idodVB2",
           "nodeId": "0:1"
@@ -2329,7 +2329,7 @@
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
-      "sha256": "ef1310d7878876868ab74de00f6897dd354dd7a17f81f3a921246236595ff5df"
+      "sha256": "7fb4ddefe2c5780700ef2f315195ccd97ff8daa7363449012a3f5ac1b4a19dbb"
     },
     "openLabSections": {
       "file": "authority/OPENLAB-SECTION-MODULE-REGISTRY.json",
@@ -2341,11 +2341,11 @@
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
-      "sha256": "50ce67013137f594866ca8c294a3d1c19c7e27c26dabe115f99e549afe3111f5"
+      "sha256": "88adf9f0a9f2b941238796b0b59c105dbbf1f36c06d3edb5549ccbb1433110b6"
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
-      "sha256": "e5956388875f505a3a317bea9851878fa9da817cee2c1bc13e8d9d9eaac8ceef"
+      "sha256": "d592dd83808dd8cde181279d5c14c30c958ea074064c6d2309f11e00fbc225dd"
     },
     "runtime": {
       "file": "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json",
@@ -2380,6 +2380,103 @@
     },
     "schemaVersion": 2,
     "sources": [
+      {
+        "contributes": [
+          "native Sites module mirrors",
+          "native representative route mirrors",
+          "approved navigation refactors"
+        ],
+        "dataOwners": [
+          "design-fixture"
+        ],
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "id": "sites-sync-dual-reference",
+        "intentNodes": [
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1214:50",
+            "state": "native-editable-sync-page",
+            "target": "Sites Sync — Modules"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1214:51",
+            "state": "native-editable-sync-page",
+            "target": "Sites Sync — Routes"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1214:52",
+            "state": "desktop-native-mirror",
+            "target": "GlobalShell"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1214:127",
+            "state": "mobile-native-mirror",
+            "target": "GlobalShell"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1216:874",
+            "state": "desktop-native-mirror",
+            "target": "StackExplorer"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1216:1239",
+            "state": "mobile-native-mirror",
+            "target": "StackExplorer"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1199:28749",
+            "state": "canonical-refactor",
+            "target": "ShopMegaMenu"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1199:28750",
+            "state": "canonical-refactor",
+            "target": "OpenLabMegaMenu"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1215:29652",
+            "state": "root-and-nested-panels",
+            "target": "MobileNavigation"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1215:29669",
+            "state": "desktop-and-mobile",
+            "target": "ProductContextNav"
+          },
+          {
+            "copy": "customer-facing",
+            "dataOwner": "design-fixture",
+            "nodeId": "1215:29690",
+            "state": "desktop-and-mobile",
+            "target": "OpenLabContextNav"
+          }
+        ],
+        "rootNodeId": "1214:50",
+        "runtimeExclusions": [
+          "runtime integration",
+          "Figma publication"
+        ],
+        "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1214-50"
+      },
       {
         "contributes": [
           "homepage LockedHero",
@@ -2777,598 +2874,744 @@
     "canonicalOpenLabNamespace": "/open-lab",
     "routes": [
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "homepage",
         "id": "home",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/"
+        "path": "/",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "shop",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/shop"
+        "path": "/shop",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "collection",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/collections/:slug"
+        "path": "/collections/:slug",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "search",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/search"
+        "path": "/search",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "product-compare",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/compare"
+        "path": "/compare",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "replace",
         "family": "product_detail",
         "id": "product",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/product/:slug"
+        "path": "/product/:slug",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "reviews",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/reviews"
+        "path": "/reviews",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "about",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/about"
+        "path": "/about",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "about-evidence-os",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/about/evidence-os"
+        "path": "/about/evidence-os",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "account",
         "id": "account",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/account"
+        "path": "/account",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "account",
         "id": "account-orders",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/account/orders"
+        "path": "/account/orders",
+        "runtimeReadiness": "presentation-only"
       },
       {
         "blocker": "Identity and signed order projection required",
+        "designMaturity": "scaffold",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-order",
         "maturity": "DEFERRED_BY_AUTHORITY",
         "owner": "identity-and-order-projection",
-        "path": "/account/orders/:orderId"
+        "path": "/account/orders/:orderId",
+        "runtimeReadiness": "authority-deferred"
       },
       {
         "blocker": "Identity contract required",
+        "designMaturity": "scaffold",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-profile",
         "maturity": "DEFERRED_BY_AUTHORITY",
         "owner": "identity",
-        "path": "/account/profile"
+        "path": "/account/profile",
+        "runtimeReadiness": "authority-deferred"
       },
       {
         "blocker": "Identity and Woo address projection required",
+        "designMaturity": "scaffold",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-addresses",
         "maturity": "DEFERRED_BY_AUTHORITY",
         "owner": "identity",
-        "path": "/account/addresses"
+        "path": "/account/addresses",
+        "runtimeReadiness": "authority-deferred"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "bag",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/bag"
+        "path": "/bag",
+        "runtimeReadiness": "presentation-only"
       },
       {
         "aliases": [
           "/checkout",
           "/checkout/info"
         ],
+        "designMaturity": "composed",
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-information",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/information"
+        "path": "/checkout/information",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "checkout-delivery",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/delivery"
+        "path": "/checkout/delivery",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-review",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/review"
+        "path": "/checkout/review",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-payment",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/payment"
+        "path": "/checkout/payment",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-processing",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/processing"
+        "path": "/checkout/processing",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-confirmation",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/confirmation"
+        "path": "/checkout/confirmation",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-failure",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/checkout/failure"
+        "path": "/checkout/failure",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-retry",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/checkout/retry"
+        "path": "/checkout/retry",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "post_purchase",
         "id": "checkout-tracking",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/checkout/tracking"
+        "path": "/checkout/tracking",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "existing",
         "family": "complete_payment",
         "id": "checkout-order-pay",
         "maturity": "SHAPE_COMPLETE",
         "owner": "preserve-only",
-        "path": "/checkout/order-pay"
+        "path": "/checkout/order-pay",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "existing",
         "family": "complete_payment",
         "id": "checkout-payment-handoff",
         "maturity": "SHAPE_COMPLETE",
         "owner": "preserve-only",
-        "path": "/checkout/payment-handoff"
+        "path": "/checkout/payment-handoff",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "contact",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/contact"
+        "path": "/contact",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "delivery",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/delivery"
+        "path": "/delivery",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "shipping-returns",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/shipping-returns"
+        "path": "/shipping-returns",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "faq",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/faq"
+        "path": "/faq",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "lab-reports",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/lab-reports"
+        "path": "/lab-reports",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_portal",
         "id": "open-lab",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/open-lab"
+        "path": "/open-lab",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-records",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/open-lab/records"
+        "path": "/open-lab/records",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "replace",
         "family": "openlab_product_record",
         "id": "open-lab-record",
         "maturity": "SOURCE_BOUND",
         "owner": "openlab-source",
-        "path": "/open-lab/records/:recordId"
+        "path": "/open-lab/records/:recordId",
+        "runtimeReadiness": "projection-ready"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_product_record",
         "id": "open-lab-compound",
         "maturity": "REVIEW_READY",
         "owner": "openlab-source",
-        "path": "/open-lab/compound/:slug"
+        "path": "/open-lab/compound/:slug",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-report",
         "maturity": "REVIEW_READY",
         "owner": "openlab-source",
-        "path": "/open-lab/report/:batchId"
+        "path": "/open-lab/report/:batchId",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-coa-viewer",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/coa/:id"
+        "path": "/open-lab/coa/:id",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-batch-lookup",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/open-lab/batch-lookup"
+        "path": "/open-lab/batch-lookup",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-methodology",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/open-lab/methodology"
+        "path": "/open-lab/methodology",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-source-chain",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/open-lab/source-chain"
+        "path": "/open-lab/source-chain",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-compare",
         "maturity": "REVIEW_READY",
         "owner": "sites-reference",
-        "path": "/open-lab/compare"
+        "path": "/open-lab/compare",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-evidence",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/evidence"
+        "path": "/open-lab/evidence",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "open-lab-admin",
         "maturity": "REVIEW_READY",
         "owner": "sites-owner-review",
         "path": "/open-lab/admin",
-        "public": false
+        "public": false,
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "privacy",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/privacy"
+        "path": "/privacy",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "terms",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/terms"
+        "path": "/terms",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "support_content",
         "id": "wholesale",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/wholesale"
+        "path": "/wholesale",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "international",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/international"
+        "path": "/international",
+        "runtimeReadiness": "presentation-only"
       },
       {
         "blocker": "Gift-card commercial authority not approved",
+        "designMaturity": "scaffold",
         "disposition": "authority-deferred",
         "family": "support_content",
         "id": "gift-cards",
         "maturity": "DEFERRED_BY_AUTHORITY",
         "owner": "commerce-policy",
-        "path": "/gift-cards"
+        "path": "/gift-cards",
+        "runtimeReadiness": "authority-deferred"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-research-papers",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/research-papers"
+        "path": "/open-lab/research-papers",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-case-studies",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/case-studies"
+        "path": "/open-lab/case-studies",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-glossary",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/glossary"
+        "path": "/open-lab/glossary",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-dosing-calculator",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/dosing-calculator"
+        "path": "/open-lab/dosing-calculator",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-compound-guide",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/compound-guide"
+        "path": "/open-lab/compound-guide",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-interaction-checker",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/interaction-checker"
+        "path": "/open-lab/interaction-checker",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-stack-builder",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/stack-builder"
+        "path": "/open-lab/stack-builder",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-cycle-planner",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/cycle-planner"
+        "path": "/open-lab/cycle-planner",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-success",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/order/success/:orderId?"
+        "path": "/order/success/:orderId?",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-pending",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/order/pending/:orderId?"
+        "path": "/order/pending/:orderId?",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-failed",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/order/failed/:orderId?"
+        "path": "/order/failed/:orderId?",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-cancelled",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/order/cancelled/:orderId?"
+        "path": "/order/cancelled/:orderId?",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-tracking",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/order/tracking/:orderId"
+        "path": "/order/tracking/:orderId",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "owner-review",
         "maturity": "INTERACTIVE",
         "owner": "sites-owner-review",
         "path": "/review",
-        "public": false
+        "public": false,
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "legal-document",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/legal/:doc"
+        "path": "/legal/:doc",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-lab-partner",
         "maturity": "SHAPE_COMPLETE",
         "owner": "sites-reference",
-        "path": "/open-lab/lab-partner"
+        "path": "/open-lab/lab-partner",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "cookies",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/cookies"
+        "path": "/cookies",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "refunds",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/refunds"
+        "path": "/refunds",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-sarms",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/collections/sarms"
+        "path": "/collections/sarms",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-research-chemicals",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/collections/research-chemicals"
+        "path": "/collections/research-chemicals",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-prohormones",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/collections/prohormones"
+        "path": "/collections/prohormones",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-stacks",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/collections/stacks"
+        "path": "/collections/stacks",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "composed",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "shop-goal",
         "maturity": "INTERACTIVE",
         "owner": "sites-reference",
-        "path": "/shop?goal=:goal"
+        "path": "/shop?goal=:goal",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "support_content",
         "id": "sitemap",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/sitemap"
+        "path": "/sitemap",
+        "runtimeReadiness": "presentation-only"
       },
       {
+        "designMaturity": "scaffold",
         "disposition": "new",
         "family": "shared_shell",
         "id": "not-found",
         "maturity": "SCAFFOLD",
         "owner": "sites-reference",
-        "path": "/404"
+        "path": "/404",
+        "runtimeReadiness": "presentation-only"
       }
     ],
     "terminalContract": "SITE_SURFACE_MATURITY_V2"
@@ -3382,5 +3625,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "a5515eb135f94313d294a0586208fba7e2765998e61a997526c4f0e80fffa6f7"
+  "contractHash": "af2e280a4873df9880176e9be6d5d26d4528384f74578e42c98bf2b79edde515"
 }

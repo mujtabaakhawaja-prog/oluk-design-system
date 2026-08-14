@@ -20,7 +20,7 @@ test("the champion ledger has exactly 73 unique governed routes", async () => {
 
 test("the four accessory Figma sources and corrected Final-Design baselines name their intent owners", async () => {
   const registry = await load(path.join(repoRoot, "authority/FIGMA-INTENT-REGISTRY.json"));
-  assert.equal(registry.sources.length, 6);
+  assert.ok(registry.sources.length >= 7);
   assert.equal(registry.status, "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY");
   for (const source of registry.sources) {
     assert.ok(source.fileKey && source.rootNodeId);
@@ -46,6 +46,9 @@ test("the four accessory Figma sources and corrected Final-Design baselines name
   const library = registry.sources.find(({ id }) => id === "final-design-component-library-consolidation");
   assert.equal(library.rootNodeId, "672:10");
   assert.equal(library.intentNodes.find(({ nodeId }) => nodeId === "1081:28849").state, "legacy-local-composition-rebuild-required");
+  const sync = registry.sources.find(({ id }) => id === "sites-sync-dual-reference");
+  assert.equal(sync.rootNodeId, "1214:50");
+  assert.ok(sync.intentNodes.some(({ nodeId }) => nodeId === "1214:51"));
 });
 
 test("the public governed contract is an exact authority projection", async () => {

@@ -3,7 +3,10 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 
-import { ACCOUNT_NAVIGATION, contextualNavigation, NAVIGATION_TREE, type NavigationNode } from "./navigation-registry";
+import { ContextualNavigation } from "./contextual-navigation";
+import { ACCOUNT_NAVIGATION, NAVIGATION_TREE, type NavigationNode } from "./navigation-registry";
+import { ProductCommerceCard } from "./product-commerce-card";
+import { rad140Fixture } from "./product-fixtures";
 import styles from "./site-header.module.css";
 
 const trustItems = [
@@ -34,13 +37,18 @@ function MegaMenu({ node, onNavigate }: Readonly<{ node: NavigationNode; onNavig
         {node.columns.map((column) => (
           <div className={styles.megaColumn} key={column.heading}>
             <span>{column.heading}</span>
-            {column.items.map((item) => <a href={item.href} key={item.id} onClick={onNavigate}>{item.label}<b aria-hidden="true">→</b></a>)}
+            {column.items.map((item) => <a href={item.href} key={item.id} onClick={onNavigate}><span><strong>{item.label}</strong>{item.detail ? <small>{item.detail}</small> : null}</span><b aria-hidden="true">→</b></a>)}
           </div>
         ))}
       </div>
-      {node.featured ? (
+      {node.featured?.kind === "product" ? (
+        <div className={styles.megaFeaturedProduct}>
+          <ProductCommerceCard className={styles.megaProductCard} product={rad140Fixture} variant="compact"/>
+          <a href={node.featured.href} onClick={onNavigate}>{node.featured.action} <b aria-hidden="true">→</b></a>
+        </div>
+      ) : node.featured ? (
         <a className={styles.megaFeatured} href={node.featured.href} onClick={onNavigate}>
-          <span>{node.featured.eyebrow}</span><strong>{node.featured.title}</strong><p>{node.featured.copy}</p><b>Explore →</b>
+          <span>{node.featured.eyebrow}</span><strong>{node.featured.title}</strong><p>{node.featured.copy}</p><b>{node.featured.action} →</b>
         </a>
       ) : null}
     </div>
@@ -54,7 +62,6 @@ export function SiteHeader({ route }: Readonly<{ route: string }>) {
   const [mobilePanel, setMobilePanel] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const mobileTitleId = useId();
-  const contextItems = contextualNavigation(route);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -106,7 +113,7 @@ export function SiteHeader({ route }: Readonly<{ route: string }>) {
           <div className={styles.actions}>
             <a className={styles.roundAction} href="/search" aria-label="Search"><SearchIcon/></a>
             <button aria-expanded={accountOpen} aria-label="Open account menu" className={styles.roundAction} onClick={() => setAccountOpen((value) => !value)} type="button"><UserIcon/></button>
-            <a aria-label="Bag" className={styles.bagAction} href="/bag"><BagIcon/><span>BAG</span><b aria-label="0 items">0</b></a>
+            <a aria-label="Bag" className={styles.bagAction} href="/bag"><BagIcon/><span>Bag</span><b aria-label="0 items">0</b></a>
             {accountOpen ? <div className={styles.accountMenu}>{ACCOUNT_NAVIGATION.map((item) => <a href={item.href} key={item.id}>{item.label}<span aria-hidden="true">→</span></a>)}</div> : null}
           </div>
           <button aria-expanded={mobileOpen} aria-label="Open navigation" className={`mobile-menu ${styles.mobileTrigger}`} onClick={() => setMobileOpen(true)} type="button"><span/><span/><span/></button>
@@ -118,20 +125,14 @@ export function SiteHeader({ route }: Readonly<{ route: string }>) {
           <div><span>Currency</span><strong>GBP £</strong><a href="?currency=USD">USD $</a><a href="?currency=EUR">EUR €</a><i aria-hidden="true"/><span>Appearance</span><strong>Light</strong></div>
         </div>
       </div>
-      {contextItems.length > 0 ? (
-        <div className={styles.contextRail} data-proof-allow-overflow="true">
-          <nav aria-label="Contextual navigation" className="shell">
-            {contextItems.map((item, index) => <a href={item.href} key={item.href} data-primary={index === 0 || undefined}>{item.label}</a>)}
-          </nav>
-        </div>
-      ) : null}
+      <ContextualNavigation route={route}/>
       {mobileOpen ? (
         <div aria-labelledby={mobileTitleId} aria-modal="true" className={styles.mobileSheet} role="dialog">
-          <div className={styles.mobileHeader}><strong id={mobileTitleId}>{mobilePanel ? NAVIGATION_TREE.find((node) => node.id === mobilePanel)?.label : "MENU"}</strong><button onClick={() => mobilePanel ? setMobilePanel(null) : setMobileOpen(false)} type="button">{mobilePanel ? "← Back" : "✕ Close"}</button></div>
+          <div className={styles.mobileHeader}><strong id={mobileTitleId}>{mobilePanel ? NAVIGATION_TREE.find((node) => node.id === mobilePanel)?.label : "Menu"}</strong><button onClick={() => mobilePanel ? setMobilePanel(null) : setMobileOpen(false)} type="button">{mobilePanel ? "← Back" : "✕ Close"}</button></div>
           {!mobilePanel ? (
             <nav aria-label="Mobile primary navigation" className={styles.mobileRoot}>
               {NAVIGATION_TREE.map((node) => node.columns ? <button key={node.id} onClick={() => setMobilePanel(node.id)} type="button"><span>{node.label}</span><b aria-hidden="true">›</b></button> : <a href={node.href} key={node.id}>{node.label}<b aria-hidden="true">→</b></a>)}
-              <a href="/search">SEARCH<b aria-hidden="true">→</b></a><a href="/bag">BAG · 0<b aria-hidden="true">→</b></a><a href="/account">ACCOUNT<b aria-hidden="true">→</b></a>
+              <a href="/search">Search<b aria-hidden="true">→</b></a><a href="/bag">Bag · 0<b aria-hidden="true">→</b></a><a href="/account">Account<b aria-hidden="true">→</b></a>
             </nav>
           ) : (
             <div className={styles.mobileSubpanel}>

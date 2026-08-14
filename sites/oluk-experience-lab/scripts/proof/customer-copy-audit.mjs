@@ -19,6 +19,10 @@ const FORBIDDEN_CUSTOMER_LANGUAGE = Object.freeze([
     id: "presentation-fixture",
     pattern: /\b(?:(?:design|presentation|route) fixture|demo state|mock state|prototype state|owner-only|not connected)\b/i,
   },
+  {
+    id: "implementation-language",
+    pattern: /\b(?:route|workspace|fixture|proof|presentation|system|module|component|data owner|explore by route|continue with a path|makes sense|complements)\b/i,
+  },
   { id: "source-bound", pattern: /\bsource[-\u2011\u2013 ]bound\b/i },
   { id: "control-plane", pattern: /\b(?:C2|Initiator|Processor)\b/ },
 ]);
@@ -55,8 +59,14 @@ function check(id, pass, detail, evidence = undefined) {
   return { id, status: pass ? "PASS" : "FAIL", detail, ...(evidence === undefined ? {} : { evidence }) };
 }
 
-function matchingRuleIds(text, rules) {
-  return rules.filter(({ pattern }) => pattern.test(text)).map(({ id }) => id);
+function matchingRules(text, rules) {
+  return rules.flatMap(({ id, pattern }) => {
+    const match = text.match(pattern);
+    if (!match || match.index === undefined) return [];
+    const start = Math.max(0, match.index - 48);
+    const end = Math.min(text.length, match.index + match[0].length + 48);
+    return [{ id, match: match[0], excerpt: text.slice(start, end).replace(/\s+/g, " ") }];
+  });
 }
 
 export async function auditCustomerCopy() {
@@ -69,17 +79,17 @@ export async function auditCustomerCopy() {
   }
 
   const governanceHits = rendered.flatMap(({ route, text }) =>
-    matchingRuleIds(text, FORBIDDEN_CUSTOMER_LANGUAGE).map((rule) => ({ route, rule })),
+    matchingRules(text, FORBIDDEN_CUSTOMER_LANGUAGE).map(({ id: rule, match, excerpt }) => ({ route, rule, match, excerpt })),
   );
   const prohibitedClaimHits = rendered.flatMap(({ route, text }) =>
-    matchingRuleIds(text, PROHIBITED_CLAIM_LANGUAGE)
-      .filter((rule) =>
+    matchingRules(text, PROHIBITED_CLAIM_LANGUAGE)
+      .filter(({ id: rule }) =>
         !(
           (rule === "unsupplied-analytical-method" || rule === "fabricated-measured-result") &&
           ANALYTICAL_REFERENCE_ROUTES.some((prefix) => route.startsWith(prefix))
         ),
       )
-      .map((rule) => ({ route, rule })),
+      .map(({ id: rule, match, excerpt }) => ({ route, rule, match, excerpt })),
   );
   const rejectedCommerceHits = rendered.flatMap(({ route, html, text }) => {
     const hits = [];

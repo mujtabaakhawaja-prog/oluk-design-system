@@ -1,6 +1,6 @@
 {
   "schemaVersion": "oluk.program-component-registry.v1",
-  "status": "IMPLEMENTED_CODE_FIGMA_BACKFILL_PENDING",
+  "status": "IMPLEMENTED_CODE_FIGMA_BACKFILL_IN_PROGRESS",
   "runtimeAuthority": "NONE",
   "components": [
     {
@@ -10,7 +10,7 @@
       "variants": { "state": ["verified-evidence", "source-reported", "source-only", "unavailable"] },
       "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "GkC3KEt9V3RyG5K319iAUV", "nodeId": "3:66993" },
-      "figmaComponentNodeId": null
+      "figmaComponentNodeId": "1085:4390"
     },
     {
       "id": "recommendation-card",
@@ -19,7 +19,7 @@
       "variants": { "state": ["default", "selected", "added", "unavailable", "out-of-stock"] },
       "responsive": { "mobileStrategy": "carousel", "touchTargetPx": 44, "horizontalScrollAllowed": true },
       "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
-      "figmaComponentNodeId": null
+      "figmaComponentNodeId": "1082:4465"
     },
     {
       "id": "restock-card",
@@ -28,7 +28,7 @@
       "variants": { "state": ["active", "due-soon", "overdue", "paused"] },
       "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
-      "figmaComponentNodeId": null
+      "figmaComponentNodeId": "1082:4564"
     },
     {
       "id": "upsell-context-rail",
@@ -37,7 +37,7 @@
       "variants": { "view": ["recommendations", "restock"] },
       "responsive": { "mobileStrategy": "collapse", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "cGrvE3Fyj3ThKuqPZqceYv", "nodeId": "4:3545" },
-      "figmaComponentNodeId": null
+      "figmaComponentNodeId": "1082:4667"
     },
     {
       "id": "checkout-step-indicator",
@@ -46,8 +46,8 @@
       "variants": { "current": ["information", "delivery", "review", "payment", "confirmation"] },
       "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
       "figmaIntent": { "fileKey": "9jTrnlEWgbBpFi2idodVB2", "nodeId": "0:1" },
-      "figmaComponentNodeId": null
+      "figmaComponentNodeId": "1085:4511"
     }
   ],
-  "mappingLaw": "Code exists and is executable; official Figma component mapping remains pending champion backfill and must not be fabricated from intent roots."
+  "mappingLaw": "Code and canonical Figma components both exist. The listed node IDs are native Page 09 component authorities; route-level dual-reference approval remains independently gated."
 }

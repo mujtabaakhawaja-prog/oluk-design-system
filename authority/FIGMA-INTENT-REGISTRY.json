@@ -10,6 +10,28 @@
   },
   "sources": [
     {
+      "id": "sites-sync-dual-reference",
+      "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+      "rootNodeId": "1214:50",
+      "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1214-50",
+      "contributes": ["native Sites module mirrors", "native representative route mirrors", "approved navigation refactors"],
+      "dataOwners": ["design-fixture"],
+      "runtimeExclusions": ["runtime integration", "Figma publication"],
+      "intentNodes": [
+        {"nodeId":"1214:50","target":"Sites Sync — Modules","state":"native-editable-sync-page","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1214:51","target":"Sites Sync — Routes","state":"native-editable-sync-page","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1214:52","target":"GlobalShell","state":"desktop-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1214:127","target":"GlobalShell","state":"mobile-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1216:874","target":"StackExplorer","state":"desktop-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1216:1239","target":"StackExplorer","state":"mobile-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1199:28749","target":"ShopMegaMenu","state":"canonical-refactor","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1199:28750","target":"OpenLabMegaMenu","state":"canonical-refactor","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1215:29652","target":"MobileNavigation","state":"root-and-nested-panels","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1215:29669","target":"ProductContextNav","state":"desktop-and-mobile","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1215:29690","target":"OpenLabContextNav","state":"desktop-and-mobile","copy":"customer-facing","dataOwner":"design-fixture"}
+      ]
+    },
+    {
       "id": "final-design-corrected-baselines",
       "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
       "rootNodeId": "1155:29963",

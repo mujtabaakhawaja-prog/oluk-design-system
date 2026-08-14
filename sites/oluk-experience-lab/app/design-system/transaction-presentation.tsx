@@ -254,12 +254,12 @@ function HandoffContent() {
       <section className={styles.primary}>
         <div className={styles.handoffPanel}>
           <span className={styles.sectionLabel}>Secure payment</span>
-          <h2>One clear step away. One clear route back.</h2>
+          <h2>One clear step away. One clear return to Olympus.</h2>
           <p>You’ll leave Olympus briefly to complete payment in the secure payment window. When it closes, return here to see the order outcome.</p>
           <ol>
             <li><span>01</span><div><strong>Review</strong><p>Confirm the product and amount due.</p></div></li>
             <li><span>02</span><div><strong>Pay securely</strong><p>Choose the available payment method in the secure window.</p></div></li>
-            <li><span>03</span><div><strong>Return</strong><p>Come back to Olympus for confirmation or a recovery route.</p></div></li>
+            <li><span>03</span><div><strong>Return</strong><p>Come back to Olympus for confirmation or help completing payment.</p></div></li>
           </ol>
           <div className={styles.continueRow}>
             <a href="/checkout/delivery">← Back to delivery</a>

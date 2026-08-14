@@ -14,6 +14,7 @@ const contract = await readJson("authority/REVIEW-STUDIO-CONTRACT.json");
 const routeLedger = await readJson("authority/SITE-ROUTE-LEDGER.json");
 const componentRegistry = await readJson("authority/PROGRAM-COMPONENT-REGISTRY.json");
 const figmaIntent = await readJson("authority/FIGMA-INTENT-REGISTRY.json");
+const designSync = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
 const currentState = await readJson("authority/CURRENT-STATE.json");
 const designContractRaw = await readFile(path.join(repoRoot, "authority/generated/OLUK-DESIGN-CONTRACT.json"), "utf8");
 const baseline = await readJson("sites/oluk-experience-lab/tests/visual-baselines/manifest.json");
@@ -48,6 +49,20 @@ const payload = {
   routeLedger: { routeCount: routeLedger.routes.length, maturityCounts },
   componentRegistry: { count: componentRegistry.components.length, runtimeAuthority: componentRegistry.runtimeAuthority },
   figmaIntent: { sourceCount: figmaIntent.sources.length, status: figmaIntent.status },
+  designSync: {
+    fileKey: designSync.fileKey,
+    modulesPage: designSync.figmaPages.modules,
+    routesPage: designSync.figmaPages.routes,
+    records: designSync.records.map((record) => ({
+      id: record.id,
+      codeExport: record.codeExport,
+      consumingRoutes: record.consumingRoutes,
+      mobileStrategy: record.mobileStrategy,
+      status: record.status,
+      desktopNodeId: record.figmaReference.desktopNodeId,
+      mobileNodeId: record.figmaReference.mobileNodeId,
+    })),
+  },
   visualEvidence: {
     routeCount: baseline.routeCount,
     widthCount: baseline.widthCount,

@@ -16,8 +16,8 @@ test("customer shell mirrors the production navigation contract without orphan s
   );
   assert.match(source, /<SiteHeader route=\{route\}/);
   assert.match(headerSource, /NAVIGATION_TREE\.map/);
-  assert.match(navigationSource, /label: "LEARN"/);
-  assert.match(navigationSource, /Lab Records Archive/);
+  assert.match(navigationSource, /label: "Learn"/);
+  assert.match(navigationSource, /label: "Browse lab records"/);
 
   for (const [label, href] of [["Search", "/search"], ["Bag", "/bag"]]) {
     assert.match(headerSource, new RegExp(`<a(?=[^>]*href="${href}")(?=[^>]*aria-label="${label}")[^>]*>`, "i"));
@@ -40,8 +40,9 @@ test("customer shell mirrors the production navigation contract without orphan s
   assert.match(navigationSource, /By family/);
   assert.match(navigationSource, /By goal/);
   assert.match(navigationSource, /Stacks & bundles/);
-  assert.match(headerSource, /contextualNavigation\(route\)/);
-  assert.match(headerSource, /aria-label="Contextual navigation"/);
+  assert.match(headerSource, /<ContextualNavigation route=\{route\}/);
+  const contextualSource = await readFile(new URL("design-system/contextual-navigation.tsx", appRoot), "utf8");
+  assert.match(contextualSource, /aria-label=\{product \? "Product sections" : openLab \? "OpenLab sections" : "Shop categories"\}/);
 });
 
 test("Shop uses independent combinable facets and keeps the candidate non-live", async () => {

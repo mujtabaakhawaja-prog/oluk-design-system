@@ -55,7 +55,7 @@ function ReviewsSection({ full = false }: Readonly<{ full?: boolean }>) {
         </div>
         {full ? (
           <p className={styles.reviewScope}>
-            This presentation does not claim live review authority. Product and evidence details remain available through their own routes.
+            Read every review alongside the product details and available OpenLab record before you decide.
           </p>
         ) : null}
       </div>
@@ -114,7 +114,7 @@ function FeaturedProduct() {
         <div className={styles.commerceEditorial}>
           <span className="eyebrow">PRODUCT FOCUS</span>
           <h2>Label truth stays close to the decision.</h2>
-          <p>Review MK-2866 product identity, specifications, availability and the OpenLab pathway from one shared commerce component.</p>
+          <p>Review MK-2866 product identity, specifications, availability and its direct connection to OpenLab.</p>
           <a href="/product/mk-2866">View MK-2866 <Arrow /></a>
         </div>
         <div className={styles.singleCard}>
@@ -141,7 +141,7 @@ function EvidenceArchiveEntry({ id = "openlab-records" }: Readonly<{ id?: string
         <article className="archive-summary-card">
           <span className="eyebrow">PRODUCT TO EVIDENCE</span>
           <h2>Facts first. Records when available.</h2>
-          <p>The route keeps product specifications readable without turning an unavailable report into an analytical claim.</p>
+          <p>Product specifications remain clear even when a report is unavailable.</p>
           <div className="summary-metrics">
             <div><strong>01</strong><span>PRODUCT</span></div>
             <div><strong>02</strong><span>BATCH</span></div>
@@ -415,7 +415,7 @@ export function EvidenceOsRoute() {
         }
         copy="A customer pathway that keeps product identity, source context and available records connected."
         eyebrow="EVIDENCEOS"
-        title="A clearer path from product to proof."
+        title="See what stands behind every product."
       />
       <section className="section">
         <div className="shell">
@@ -447,7 +447,7 @@ export function AboutRoute() {
         <div className="shell about-grid">
           {[
             ["01", "Product first.", "Every detail begins with a clear product identity and readable specifications."],
-            ["02", "Evidence connected.", "OpenLab keeps the available record path one direct route away from the product."],
+            ["02", "Evidence connected.", "OpenLab keeps the available record one direct step away from the product."],
             ["03", "Calm by design.", "Cool luminous surfaces and focused actions keep product decisions readable."],
             ["04", "Each area has a clear purpose.", "Shop, product, reviews and OpenLab each support a distinct decision."],
           ].map(([index, title, copy]) => (

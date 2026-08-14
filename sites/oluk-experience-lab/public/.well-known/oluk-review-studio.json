@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-13T22:53:37-04:00",
-  "sourceGitSha": "0df3ad0c25b9db75cfb37fd9d2da3de0f08d5c7f",
-  "sourceTreeHash": "56075e23401532afc41e5a94e7858c31ffb81f76e3e246aebfb93eab71c6d4a7",
-  "designContractHash": "1ae44920892379b83295abd331981cceee012a045aa2d8ca66a24edbaaa6576f",
+  "generatedAt": "2026-08-14T01:20:25-04:00",
+  "sourceGitSha": "e4153a227d6c3f38ea4c6682eb9183dae2efc748",
+  "sourceTreeHash": "b9792cd1f618c5cdaf1aa7729c85e748b851b15444bec8b5412afb1d6b906e4f",
+  "designContractHash": "eb4865150c81eec18f9bbacd457c54f61e975f59ff91b7d4768bc0033a097193",
   "decisionCount": 12,
   "families": [
     {
@@ -402,8 +402,214 @@
     "runtimeAuthority": "NONE"
   },
   "figmaIntent": {
-    "sourceCount": 6,
+    "sourceCount": 7,
     "status": "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY"
+  },
+  "designSync": {
+    "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "modulesPage": {
+      "name": "Sites Sync — Modules",
+      "nodeId": "1214:50"
+    },
+    "routesPage": {
+      "name": "Sites Sync — Routes",
+      "nodeId": "1214:51"
+    },
+    "records": [
+      {
+        "id": "global-shell-navigation",
+        "codeExport": "SiteHeader",
+        "consumingRoutes": [
+          "/*"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1214:52",
+        "mobileNodeId": "1214:127"
+      },
+      {
+        "id": "frontier-product-hero",
+        "codeExport": "ProductHero",
+        "consumingRoutes": [
+          "/product/:slug"
+        ],
+        "mobileStrategy": "summary",
+        "status": "sites-built",
+        "desktopNodeId": "1155:30632",
+        "mobileNodeId": null
+      },
+      {
+        "id": "product-narrative",
+        "codeExport": "ProductNarrative",
+        "consumingRoutes": [
+          "/product/:slug"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "product-continuation",
+        "codeExport": "YourStackBuilder",
+        "consumingRoutes": [
+          "/product/:slug",
+          "/bag",
+          "/checkout/confirmation",
+          "/account"
+        ],
+        "mobileStrategy": "carousel",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239"
+      },
+      {
+        "id": "stack-explorer",
+        "codeExport": "YourStackBuilder",
+        "consumingRoutes": [
+          "/bundle-builder",
+          "/product/:slug",
+          "/bag",
+          "/open-lab/stack-builder"
+        ],
+        "mobileStrategy": "carousel",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239"
+      },
+      {
+        "id": "catalogue-grid",
+        "codeExport": "ProductCollection",
+        "consumingRoutes": [
+          "/shop",
+          "/shop/:family",
+          "/collections/:slug",
+          "/search"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "openlab-record-suite",
+        "codeExport": "OpenLabRegistryArchive",
+        "consumingRoutes": [
+          "/open-lab",
+          "/open-lab/records",
+          "/open-lab/compound/:slug",
+          "/open-lab/report/:batchId"
+        ],
+        "mobileStrategy": "horizontal-scroll",
+        "status": "sites-built",
+        "desktopNodeId": "614:75995",
+        "mobileNodeId": null
+      },
+      {
+        "id": "openlab-tools",
+        "codeExport": "OpenLabToolComposition",
+        "consumingRoutes": [
+          "/open-lab/batch-lookup",
+          "/open-lab/methodology",
+          "/open-lab/source-chain",
+          "/open-lab/compare"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "openlab-frontier-guide",
+        "codeExport": "OpenLabFrontierGuide",
+        "consumingRoutes": [
+          "/open-lab/evidence",
+          "/open-lab/compound-guide",
+          "/open-lab/research-papers",
+          "/open-lab/lab-partner"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "openlab-frontier-planning",
+        "codeExport": "YourStackBuilder",
+        "consumingRoutes": [
+          "/open-lab/stack-builder",
+          "/open-lab/dosing-calculator",
+          "/open-lab/cycle-planner",
+          "/open-lab/interaction-checker"
+        ],
+        "mobileStrategy": "carousel",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239"
+      },
+      {
+        "id": "openlab-sidebar-workspace",
+        "codeExport": "OpenLabSidebarWorkspace",
+        "consumingRoutes": [
+          "/open-lab/dosing-calculator",
+          "/open-lab/cycle-planner",
+          "/open-lab/case-studies",
+          "/open-lab/glossary"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "openlab-document-viewer",
+        "codeExport": "OpenLabDocumentViewer",
+        "consumingRoutes": [
+          "/open-lab/coa/:id",
+          "/open-lab/report/:batchId"
+        ],
+        "mobileStrategy": "summary",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "checkout-lifecycle",
+        "codeExport": "CheckoutLifecycle",
+        "consumingRoutes": [
+          "/bag",
+          "/checkout/:stage"
+        ],
+        "mobileStrategy": "summary",
+        "status": "sites-built",
+        "desktopNodeId": "1085:4511",
+        "mobileNodeId": null
+      },
+      {
+        "id": "account-hub",
+        "codeExport": "AccountHub",
+        "consumingRoutes": [
+          "/account/:surface"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      },
+      {
+        "id": "faq-help",
+        "codeExport": "SupportContent",
+        "consumingRoutes": [
+          "/faq-help-centre",
+          "/about",
+          "/product/:slug"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "sites-built",
+        "desktopNodeId": null,
+        "mobileNodeId": null
+      }
+    ]
   },
   "visualEvidence": {
     "routeCount": 51,

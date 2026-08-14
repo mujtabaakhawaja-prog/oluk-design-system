@@ -100,7 +100,7 @@ function AccountPage() {
 }
 
 function ContactPage() {
-  return <><PageHero eyebrow="CONTACT" title="Start with the right team." copy="Choose the route that best matches your product, order or wholesale question." /><section className="section"><div className="shell about-grid">{[["01", "Order support", "Return to your account for order and delivery context.", "/account"], ["02", "Wholesale", "Open a product and fulfilment conversation with the wholesale team.", "/wholesale"], ["03", "OpenLab", "Find a product or batch record before asking an evidence question.", "/lab-reports"]].map(([index, title, copy, href]) => <article key={title}><span>{index}</span><h2>{title}</h2><p>{copy}</p><a href={href}>Continue <Arrow /></a></article>)}</div></section></>;
+  return <><PageHero eyebrow="CONTACT" title="Start with the right team." copy="Choose the team that best matches your product, order or wholesale question." /><section className="section"><div className="shell about-grid">{[["01", "Order support", "Return to your account for order and delivery context.", "/account"], ["02", "Wholesale", "Open a product and fulfilment conversation with the wholesale team.", "/wholesale"], ["03", "OpenLab", "Find a product or batch record before asking an evidence question.", "/lab-reports"]].map(([index, title, copy, href]) => <article key={title}><span>{index}</span><h2>{title}</h2><p>{copy}</p><a href={href}>Continue <Arrow /></a></article>)}</div></section></>;
 }
 
 function DeliveryPage() {

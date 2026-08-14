@@ -28,7 +28,7 @@ export const methodologyStages = [
   ["03", "Source review", "Present the named source and its supplied scope."],
   ["04", "Method", "Keep the stated analytical method distinct from product copy."],
   ["05", "Result", "Render analytical values exactly as supplied by the record."],
-  ["06", "Customer projection", "Carry source context into a readable OpenLab presentation."],
+  ["06", "Clear customer view", "Carry the source context into a record customers can read and revisit."],
 ] as const;
 
 export const sourceChainStages = [
@@ -37,7 +37,7 @@ export const sourceChainStages = [
   ["03", "Laboratory", "The named analytical source on the report"],
   ["04", "Report", "The original document and its stated scope"],
   ["05", "OpenLab", "The customer-facing projection of that source"],
-  ["06", "Product decision", "A direct route back to the matching product"],
+  ["06", "Product decision", "A direct link back to the matching product"],
 ] as const;
 
 export function OpenLabPortalHero() {
@@ -45,7 +45,7 @@ export function OpenLabPortalHero() {
 }
 
 export function OpenLabWayfinding() {
-  return <section className={styles.section} data-module="OpenLabWayfinding"><div className={styles.shell}><SectionHeading copy="Enter through a product, an exact reference, the testing method or a side-by-side comparison." eyebrow="CHOOSE THE WAY IN" title="One evidence system. Four clear paths."/><div className={styles.wayfinding}>{openLabPortalEntries.map((entry)=><a href={entry.href} key={entry.title}><span>{entry.index}</span><h3>{entry.title}</h3><p>{entry.copy}</p><Arrow/></a>)}</div></div></section>;
+  return <section className={styles.section} data-module="OpenLabWayfinding"><div className={styles.shell}><SectionHeading copy="Enter through a product, an exact reference, the testing method or a side-by-side comparison." eyebrow="CHOOSE THE WAY IN" title="Four clear ways to find what you need."/><div className={styles.wayfinding}>{openLabPortalEntries.map((entry)=><a href={entry.href} key={entry.title}><span>{entry.index}</span><h3>{entry.title}</h3><p>{entry.copy}</p><Arrow/></a>)}</div></div></section>;
 }
 
 export function EvidenceRecordExplainer() {

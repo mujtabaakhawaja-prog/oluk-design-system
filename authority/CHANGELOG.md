@@ -163,3 +163,12 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Gave RAD-140, MENT and MK-677 distinct customer-facing jobs and direct product-specific reasons to add each product instead of using stock/evidence posture as upsell persuasion.
 - Reserved all-caps typography for bounded chips, pills, metric cells and compact status atoms; section labels, headings, body copy and actions now use sentence case.
 - Updated the Sites frontier stack copy, Make data, correction prompt, agent prompts, executable tests and exact 1440/390 reference proofs as one reconciled source package.
+
+## 2026-08-14 — Dual-reference expansion tranche 01
+
+- Established `DESIGN-SYNC-REGISTRY.json`, `Sites Sync — Modules` and `Sites Sync — Routes` so every remaining module can converge through paired Sites and editable native-Figma references.
+- Split all 73 ledger entries into independent design-maturity and runtime-readiness axes; only the approved Your Stack implementation is currently dual-reference-ready.
+- Refactored the rough Shop, OpenLab, mobile and contextual navigation objects into governed Page 09 relationships and mirrored the resulting global shell at 1440 and 390.
+- Backfilled the approved Your Stack composition as native 1440 and 390 Figma sections using canonical ProductCommerceCard instances and registered RAD-140, MENT and MK-677 renders.
+- Added a customer-proposition contract and strengthened visible-copy rejection so route, system, module, component, workspace, fixture, proof and presentation terminology cannot leak onto customer surfaces.
+- Added exact native-Figma links to Review Studio. All output remains human-review-required, unpublished and undeployed.
