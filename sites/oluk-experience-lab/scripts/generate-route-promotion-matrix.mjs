@@ -11,11 +11,12 @@ const readJson = async (relative) => JSON.parse(await readFile(path.join(repoRoo
 const digest = (value) => createHash("sha256").update(value).digest("hex");
 const output = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
-const [ledgerRaw, ledger, mounts, topology] = await Promise.all([
+const [ledgerRaw, ledger, mounts, topology, catalogue] = await Promise.all([
   readFile(path.join(repoRoot, "authority/SITE-ROUTE-LEDGER.json"), "utf8"),
   readJson("authority/SITE-ROUTE-LEDGER.json"),
   readJson("authority/FRONTIER-SECTION-MOUNT-REGISTRY.json"),
   readJson("authority/ROUTE-PROMOTION-TOPOLOGY.json"),
+  readJson("authority/SITE-TEMPLATE-COMPOSITION-CATALOGUE.json"),
 ]);
 
 if (!Array.isArray(ledger.routes) || ledger.routes.length !== 73) throw new Error("The route ledger must contain exactly 73 routes");
@@ -29,6 +30,7 @@ const matchPath = (pattern, concretePath) => {
 
 const templateFor = (route) => topology.templates.find((template) => template.families.includes(route.family))?.id ?? "support";
 const moduleById = new Map(mounts.sections.map((section) => [section.id, section]));
+const catalogueByRouteId = new Map(catalogue.routes.map((route) => [route.routeId, route]));
 
 const placement = (moduleId, state, template, route) => {
   const section = moduleById.get(moduleId);
@@ -51,6 +53,8 @@ const placement = (moduleId, state, template, route) => {
 };
 
 const routeDispositions = ledger.routes.map((route) => {
+  const composition = catalogueByRouteId.get(route.id);
+  if (!composition) throw new Error(`Missing template composition for ${route.id}`);
   const template = templateFor(route);
   const definition = topology.templates.find(({ id }) => id === template);
   const actualModules = mounts.sections
@@ -65,6 +69,20 @@ const routeDispositions = ledger.routes.map((route) => {
     path: route.path,
     family: route.family,
     template,
+    templateComposition: {
+      templateId: composition.templateId,
+      profile: composition.profile,
+      candidateCompositions: composition.candidateCompositions,
+      ownerSelection: composition.ownerSelection,
+      plannedSectionOrder: composition.plannedSectionOrder,
+      currentSectionOrder: promotedPlacements.map((placement) => ({
+        id: placement.module,
+        customerPurpose: placement.customerPurpose,
+        mobileStrategy: placement.mobileStrategy,
+        dataRequirements: [placement.sourceContent],
+        mediaPolicy: placement.actualMediaPolicy,
+      })),
+    },
     designMaturity: route.designMaturity,
     runtimeReadiness: route.runtimeReadiness,
     disposition: route.disposition,
@@ -76,11 +94,12 @@ const routeDispositions = ledger.routes.map((route) => {
 });
 
 const compiled = {
-  schemaVersion: "oluk.route-promotion.v2",
+  schemaVersion: "oluk.route-promotion.v3",
   status: "LEDGER_BOUND_CURRENT_PLACEMENTS",
   authority: "Codex Sites is the composition source of truth. PROMOTED means a Section Mount Registry declaration currently matches this route; Figma references alone never establish a placement.",
   stateModel: "authority/DESIGN-SYNC-STATE-MODEL.json",
   topologySource: "authority/ROUTE-PROMOTION-TOPOLOGY.json",
+  templateCompositionSource: "authority/SITE-TEMPLATE-COMPOSITION-CATALOGUE.json",
   ledgerSource: {
     path: "authority/SITE-ROUTE-LEDGER.json",
     sha256: digest(ledgerRaw),

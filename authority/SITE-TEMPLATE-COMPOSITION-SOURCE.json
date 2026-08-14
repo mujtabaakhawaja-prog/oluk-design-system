@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "oluk.site-template-composition-source.v1",
+  "authority": "Codex Sites is the composition source of truth. This source defines unselected customer-composition architectures and eligible expansions; it does not declare a section mounted or an owner choice made.",
+  "candidateLayouts": {
+    "asymmetric-decision-field": {
+      "label": "Asymmetric decision field",
+      "desktopGrid": "12 columns; 5/7 or 4/8 split",
+      "commercialThesis": "Product theatre keeps the primary decision and the reason to make it in one high-impact field.",
+      "differentiator": "The strongest product or customer decision receives visible spatial priority.",
+      "tradeoffs": ["Needs disciplined supporting density", "Persistent secondary context is reduced"],
+      "recommendationStatus": "UNRANKED",
+      "readiness": "ARCHITECTURE_DEFINED",
+      "customerJob": "Keep the primary choice and the reason to make it together.",
+      "mobileStrategy": "Prioritize the decision, then reveal supporting context in short disclosures or a one-decision rail."
+    },
+    "central-decision-spine": {
+      "label": "Central decision spine",
+      "desktopGrid": "12 columns; 8-column task spine with a persistent 4-column context rail",
+      "commercialThesis": "Guided decision-making keeps the current task clear while preserving useful context.",
+      "differentiator": "A persistent context rail supports long or stateful customer journeys.",
+      "tradeoffs": ["Less theatrical than an asymmetric opening", "The context rail requires careful mobile reduction"],
+      "recommendationStatus": "UNRANKED",
+      "readiness": "ARCHITECTURE_DEFINED",
+      "customerJob": "Guide a task while keeping the relevant order, account, or support context visible.",
+      "mobileStrategy": "Place the task first, collapse context into a current-step summary, and retain one clear next action."
+    },
+    "evidence-workspace": {
+      "label": "Evidence workspace",
+      "desktopGrid": "12 columns; 3/6/3 selector, working surface, and source-context rails (or a 4/8 compact variant)",
+      "commercialThesis": "Confidence theatre turns technical context into an inspectable product and brand advantage.",
+      "differentiator": "Selection, evidence and source context stay visible as one customer decision system.",
+      "tradeoffs": ["Higher information density", "Requires progressive disclosure to remain persuasive on mobile"],
+      "recommendationStatus": "UNRANKED",
+      "readiness": "ARCHITECTURE_DEFINED",
+      "customerJob": "Let customers inspect records, comparisons, and technical detail without losing their place.",
+      "mobileStrategy": "Show a compact identity summary first, then use tabs or disclosures with intentional table scrolling."
+    }
+  },
+  "templates": {
+    "homepage": {
+      "candidateLayoutIds": ["asymmetric-decision-field", "central-decision-spine", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "homepage"
+    },
+    "commerce-discovery": {
+      "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "commerce-discovery"
+    },
+    "pdp": {
+      "candidateLayoutIds": ["asymmetric-decision-field", "evidence-workspace", "central-decision-spine"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "pdp"
+    },
+    "openlab-portal": {
+      "candidateLayoutIds": ["evidence-workspace", "asymmetric-decision-field", "central-decision-spine"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "openlab-portal"
+    },
+    "openlab-record": {
+      "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "openlab-record"
+    },
+    "openlab-report": {
+      "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "openlab-report"
+    },
+    "openlab-tool": {
+      "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "openlab-tool"
+    },
+    "checkout": {
+      "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "checkout"
+    },
+    "post-purchase": {
+      "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "post-purchase"
+    },
+    "account": {
+      "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "account"
+    },
+    "support": {
+      "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "support"
+    },
+    "governance-review": {
+      "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "governance-review"
+    },
+    "recovery": {
+      "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
+      "sectionProfile": "recovery"
+    }
+  },
+  "familyTemplates": {
+    "homepage": "homepage",
+    "catalogue_search_collections": "commerce-discovery",
+    "product_detail": "pdp",
+    "openlab_portal": "openlab-portal",
+    "openlab_archive": "openlab-record",
+    "openlab_product_record": "openlab-record",
+    "openlab_report_viewer": "openlab-report",
+    "openlab_methodology_compare_evidenceos": "openlab-tool",
+    "openlab_frontier_content": "openlab-tool",
+    "decision_tools": "openlab-tool",
+    "bag_checkout": "checkout",
+    "complete_payment": "checkout",
+    "post_purchase": "post-purchase",
+    "account": "account",
+    "support_content": "support",
+    "governance_review": "governance-review",
+    "shared_shell": "recovery"
+  },
+  "profiles": {
+    "homepage": [
+      {"id":"global-header","customerPurpose":"Start with navigation, account and bag access.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"locked-hero-product-stage","customerPurpose":"Choose a featured product direction from a focused product stage.","mobileStrategy":"carousel","dataRequirements":["featured product","registered renders"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"goal-discovery","customerPurpose":"Find products by the outcome the customer wants next.","mobileStrategy":"horizontal-scroll","dataRequirements":["goal taxonomy"],"mediaPolicy":"no media required"},
+      {"id":"catalogue-grid","customerPurpose":"Browse a concise range without leaving the entry page.","mobileStrategy":"carousel","dataRequirements":["ProductExperienceRecord[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"openlab-product-experience","customerPurpose":"See the available record path before choosing a product.","mobileStrategy":"summary","dataRequirements":["OpenLab experience"],"mediaPolicy":"no media required"},
+      {"id":"stack-explorer","customerPurpose":"Build toward a selected goal with a clear baseline and additions.","mobileStrategy":"guided-sequence","dataRequirements":["StackScenario[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"editorial-introduction","customerPurpose":"Explain what makes the range useful in plain customer language.","mobileStrategy":"collapse","dataRequirements":["editorial copy"],"mediaPolicy":"no media required"},
+      {"id":"assurance-closure","customerPurpose":"Close with delivery, product detail and support confidence.","mobileStrategy":"reorder","dataRequirements":["assurance content"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer useful onward destinations and support.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "commerce-discovery": [
+      {"id":"global-header","customerPurpose":"Keep shop, OpenLab, account and bag access available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"discovery-intro","customerPurpose":"Explain what can be found in this collection or search result.","mobileStrategy":"summary","dataRequirements":["category or query"],"mediaPolicy":"no media required"},
+      {"id":"discovery-filters","customerPurpose":"Narrow the range by family, goal, form, servings and availability.","mobileStrategy":"sheet","dataRequirements":["catalogue filters"],"mediaPolicy":"no media required"},
+      {"id":"catalogue-grid","customerPurpose":"Compare product formats and move directly to detail.","mobileStrategy":"reorder","dataRequirements":["ProductExperienceRecord[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"comparison-entry","customerPurpose":"Put side-by-side product decisions within reach.","mobileStrategy":"horizontal-scroll","dataRequirements":["comparison candidates"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"stack-entry","customerPurpose":"Move from browsing into an outcome-led stack.","mobileStrategy":"guided-sequence","dataRequirements":["StackScenario[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"category-narrative","customerPurpose":"Add useful product-family context after the range.","mobileStrategy":"collapse","dataRequirements":["editorial copy"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer support and continued discovery.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "pdp": [
+      {"id":"global-header","customerPurpose":"Keep primary navigation and bag access available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"pdp-decision-fold","customerPurpose":"Make identity, format, price and the next product choice clear.","mobileStrategy":"summary","dataRequirements":["ProductExperienceRecord","registered render"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"product-narrative","customerPurpose":"Explain the product and format in useful detail.","mobileStrategy":"collapse","dataRequirements":["PDP narrative"],"mediaPolicy":"no media required"},
+      {"id":"openlab-product-experience","customerPurpose":"Show the latest available record and direct route to evidence detail.","mobileStrategy":"progressive-disclosure","dataRequirements":["OpenLab experience"],"mediaPolicy":"no media required"},
+      {"id":"product-comparison","customerPurpose":"Compare a nearby product decision without restarting the search.","mobileStrategy":"horizontal-scroll","dataRequirements":["comparison candidates"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"stack-explorer","customerPurpose":"Build a goal-led product combination from the current baseline.","mobileStrategy":"guided-sequence","dataRequirements":["StackScenario[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"product-continuation","customerPurpose":"Show the next useful product choice and why it matters.","mobileStrategy":"carousel","dataRequirements":["related products"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"faq-help","customerPurpose":"Answer common questions before the customer leaves the product.","mobileStrategy":"collapse","dataRequirements":["FAQ"],"mediaPolicy":"no media required"},
+      {"id":"reviews-and-closure","customerPurpose":"Provide social context and a clear return to the range.","mobileStrategy":"collapse","dataRequirements":["reviews","assurance"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer support and continued research.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "openlab-portal": [
+      {"id":"global-header","customerPurpose":"Keep product, record and account destinations accessible.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"openlab-portal-hero","customerPurpose":"Choose whether to find a batch, read a record, compare compounds or build a stack.","mobileStrategy":"guided-sequence","dataRequirements":["OpenLab pathways"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"record-discovery","customerPurpose":"Find the available record that matches a product or batch.","mobileStrategy":"summary","dataRequirements":["record index"],"mediaPolicy":"no media required"},
+      {"id":"openlab-product-experience","customerPurpose":"Preview a product’s record, label comparison and source context.","mobileStrategy":"progressive-disclosure","dataRequirements":["OpenLab experience"],"mediaPolicy":"no media required"},
+      {"id":"compare-and-stack-pathways","customerPurpose":"Move from records into a product comparison or outcome-led stack.","mobileStrategy":"horizontal-scroll","dataRequirements":["comparison and stack data"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"methodology-and-archive-pathways","customerPurpose":"Understand the documents and continue into the archive.","mobileStrategy":"collapse","dataRequirements":["methodology copy"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer product and support destinations.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "openlab-record": [
+      {"id":"global-header","customerPurpose":"Keep product and OpenLab navigation available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"record-identity","customerPurpose":"Confirm the product, batch, report and availability context.","mobileStrategy":"summary","dataRequirements":["OpenLab record"],"mediaPolicy":"no media required"},
+      {"id":"openlab-product-experience","customerPurpose":"Inspect record detail, reported results and source context.","mobileStrategy":"progressive-disclosure","dataRequirements":["OpenLab experience"],"mediaPolicy":"no media required"},
+      {"id":"record-history-and-related-pathways","customerPurpose":"Continue into report history, product detail or compare.","mobileStrategy":"horizontal-scroll","dataRequirements":["record history","related products"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"site-footer","customerPurpose":"Offer useful onward destinations.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "openlab-report": [
+      {"id":"global-header","customerPurpose":"Keep product and record navigation available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"report-identity","customerPurpose":"Confirm the report, batch and document availability.","mobileStrategy":"summary","dataRequirements":["report metadata"],"mediaPolicy":"no media required"},
+      {"id":"report-viewer-and-table","customerPurpose":"Read the source-backed report summary with an accessible table equivalent.","mobileStrategy":"progressive-disclosure","dataRequirements":["report and analytes"],"mediaPolicy":"no media required"},
+      {"id":"source-and-product-pathways","customerPurpose":"Open the source context or return to the relevant product and record.","mobileStrategy":"collapse","dataRequirements":["source action","product links"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer useful onward destinations.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "openlab-tool": [
+      {"id":"global-header","customerPurpose":"Keep product, record and account access available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"tool-intro-and-context","customerPurpose":"Explain the tool and show the current selection or question.","mobileStrategy":"summary","dataRequirements":["tool content"],"mediaPolicy":"no media required"},
+      {"id":"tool-workspace","customerPurpose":"Complete the current comparison, lookup, planning or learning task.","mobileStrategy":"progressive-disclosure","dataRequirements":["tool input and output"],"mediaPolicy":"no media required"},
+      {"id":"record-and-product-pathways","customerPurpose":"Continue from the tool into records, product detail or a stack.","mobileStrategy":"horizontal-scroll","dataRequirements":["OpenLab and product links"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"methodology-support","customerPurpose":"Explain how to read the result and where it comes from.","mobileStrategy":"collapse","dataRequirements":["methodology content"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer useful onward destinations.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "checkout": [
+      {"id":"checkout-header-and-progress","customerPurpose":"Show the purchase stage and a safe route back to the bag.","mobileStrategy":"summary","dataRequirements":["checkout stage"],"mediaPolicy":"no media required"},
+      {"id":"checkout-primary-task","customerPurpose":"Complete the current information, delivery, review or payment handoff task.","mobileStrategy":"summary","dataRequirements":["CheckoutPresentation"],"mediaPolicy":"no media required"},
+      {"id":"order-summary-context","customerPurpose":"Keep chosen products, price and delivery context visible.","mobileStrategy":"summary","dataRequirements":["order summary"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"stack-continuation","customerPurpose":"Offer a compact next product decision only when it helps the order.","mobileStrategy":"collapse","dataRequirements":["StackScenario[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"checkout-footer","customerPurpose":"Close with support and clear checkout context.","mobileStrategy":"collapse","dataRequirements":["support links"],"mediaPolicy":"no media required"}
+    ],
+    "post-purchase": [
+      {"id":"checkout-header-and-progress","customerPurpose":"Keep the completed or recovering order state clear.","mobileStrategy":"summary","dataRequirements":["order state"],"mediaPolicy":"no media required"},
+      {"id":"order-state-summary","customerPurpose":"Explain what happened and what comes next.","mobileStrategy":"summary","dataRequirements":["OrderPresentation"],"mediaPolicy":"no media required"},
+      {"id":"tracking-or-recovery-detail","customerPurpose":"Show delivery progress or the next recovery action.","mobileStrategy":"progressive-disclosure","dataRequirements":["tracking or retry state"],"mediaPolicy":"no media required"},
+      {"id":"restock-and-research-continuation","customerPurpose":"Offer a useful return to products, saved stacks or record detail.","mobileStrategy":"collapse","dataRequirements":["recommendations","restock"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"checkout-footer","customerPurpose":"Close with support and receipt access.","mobileStrategy":"collapse","dataRequirements":["support links"],"mediaPolicy":"no media required"}
+    ],
+    "account": [
+      {"id":"global-header","customerPurpose":"Keep account, products and bag access available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"account-summary","customerPurpose":"Bring orders, saved choices and next actions together.","mobileStrategy":"summary","dataRequirements":["AccountPresentation"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"account-primary-task","customerPurpose":"Complete the current account task without losing context.","mobileStrategy":"progressive-disclosure","dataRequirements":["account detail"],"mediaPolicy":"no media required"},
+      {"id":"reorder-restock-and-stack","customerPurpose":"Continue from previous choices into a useful product, stack or reminder.","mobileStrategy":"carousel","dataRequirements":["orders","StackScenario[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},
+      {"id":"site-footer","customerPurpose":"Offer support and account help.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "support": [
+      {"id":"global-header","customerPurpose":"Keep product, OpenLab, account and bag access available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"support-intro","customerPurpose":"State the customer question or company topic clearly.","mobileStrategy":"summary","dataRequirements":["support or editorial content"],"mediaPolicy":"no media required"},
+      {"id":"support-content","customerPurpose":"Answer the question with clear, useful content.","mobileStrategy":"progressive-disclosure","dataRequirements":["support content"],"mediaPolicy":"no media required"},
+      {"id":"relevant-next-actions","customerPurpose":"Offer appropriate product, OpenLab or contact continuation.","mobileStrategy":"collapse","dataRequirements":["cross-links"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer support and continued discovery.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ],
+    "governance-review": [
+      {"id":"owner-navigation","customerPurpose":"Move between the review areas.","mobileStrategy":"summary","dataRequirements":["owner navigation"],"mediaPolicy":"no media required"},
+      {"id":"review-workspace","customerPurpose":"Inspect customer candidate composition and current evidence.","mobileStrategy":"horizontal-scroll","dataRequirements":["review payload"],"mediaPolicy":"no media required"},
+      {"id":"review-context","customerPurpose":"Keep the current decision and source context visible.","mobileStrategy":"collapse","dataRequirements":["review metadata"],"mediaPolicy":"no media required"}
+    ],
+    "recovery": [
+      {"id":"global-header","customerPurpose":"Keep the main destinations available.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"recovery-message","customerPurpose":"Explain the missing destination and give a useful next action.","mobileStrategy":"summary","dataRequirements":["recovery content"],"mediaPolicy":"no media required"},
+      {"id":"recovery-destinations","customerPurpose":"Return to shop, OpenLab or support.","mobileStrategy":"reorder","dataRequirements":["navigation"],"mediaPolicy":"no media required"},
+      {"id":"site-footer","customerPurpose":"Offer useful onward destinations.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}
+    ]
+  },
+  "routeProfileOverrides": {
+    "search": "commerce-search",
+    "product-compare": "commerce-compare",
+    "reviews": "reviews",
+    "about": "brand-story",
+    "about-evidence-os": "brand-story",
+    "contact": "support-contact",
+    "delivery": "support-delivery",
+    "shipping-returns": "support-delivery",
+    "faq": "support-faq",
+    "privacy": "support-legal",
+    "terms": "support-legal",
+    "legal-document": "support-legal",
+    "cookies": "support-legal",
+    "refunds": "support-delivery",
+    "sitemap": "support-sitemap",
+    "wholesale": "support-wholesale",
+    "international": "support-delivery",
+    "gift-cards": "support-gift-cards",
+    "account-orders": "account-orders",
+    "account-order": "account-orders",
+    "account-profile": "account-preferences",
+    "account-addresses": "account-preferences",
+    "bag": "bag",
+    "checkout-information": "checkout-information",
+    "checkout-delivery": "checkout-delivery",
+    "checkout-review": "checkout-review",
+    "checkout-payment": "checkout-payment",
+    "checkout-processing": "checkout-processing",
+    "checkout-confirmation": "order-confirmation",
+    "checkout-failure": "order-recovery",
+    "checkout-retry": "order-recovery",
+    "checkout-tracking": "order-tracking",
+    "order-success": "order-confirmation",
+    "order-pending": "order-recovery",
+    "order-failed": "order-recovery",
+    "order-cancelled": "order-recovery",
+    "order-tracking": "order-tracking",
+    "checkout-order-pay": "checkout-payment",
+    "checkout-payment-handoff": "checkout-payment",
+    "lab-reports": "openlab-archive",
+    "open-lab-records": "openlab-archive",
+    "open-lab-batch-lookup": "openlab-lookup",
+    "open-lab-methodology": "openlab-methodology",
+    "open-lab-source-chain": "openlab-methodology",
+    "open-lab-compare": "openlab-compare",
+    "open-lab-evidence": "openlab-evidence",
+    "open-lab-admin": "owner-workspace",
+    "owner-review": "owner-workspace",
+    "open-lab-research-papers": "openlab-research",
+    "open-lab-case-studies": "openlab-research",
+    "open-lab-glossary": "openlab-research",
+    "open-lab-lab-partner": "openlab-research",
+    "open-lab-dosing-calculator": "openlab-planner",
+    "open-lab-compound-guide": "openlab-guide",
+    "open-lab-interaction-checker": "openlab-planner",
+    "open-lab-stack-builder": "openlab-stack-builder",
+    "open-lab-cycle-planner": "openlab-planner"
+  },
+  "profilePatches": {
+    "commerce-search": {"replace":{"discovery-intro":{"id":"search-query-summary","customerPurpose":"Confirm the search and show only matching products.","mobileStrategy":"summary","dataRequirements":["query","matching products"],"mediaPolicy":"no media required"}}},
+    "commerce-compare": {"replace":{"discovery-intro":{"id":"comparison-intro","customerPurpose":"Set up a side-by-side product decision.","mobileStrategy":"summary","dataRequirements":["comparison candidates"],"mediaPolicy":"no media required"},"catalogue-grid":{"id":"product-comparison","customerPurpose":"Compare product formats and priorities in one view.","mobileStrategy":"horizontal-scroll","dataRequirements":["ProductExperienceRecord[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"}},"remove":["discovery-filters","comparison-entry","stack-entry","category-narrative"]},
+    "reviews": {"replace":{"support-intro":{"id":"reviews-intro","customerPurpose":"Read customer feedback alongside product detail.","mobileStrategy":"summary","dataRequirements":["review content"],"mediaPolicy":"no media required"},"support-content":{"id":"reviews-list","customerPurpose":"Browse available reviews and product links.","mobileStrategy":"progressive-disclosure","dataRequirements":["reviews"],"mediaPolicy":"no media required"}}},
+    "brand-story": {"replace":{"support-intro":{"id":"brand-story-hero","customerPurpose":"Explain Olympus Labs UK and its product-detail approach.","mobileStrategy":"summary","dataRequirements":["brand narrative"],"mediaPolicy":"no media required"},"support-content":{"id":"brand-story-sections","customerPurpose":"Explain product detail, testing philosophy and laboratory access.","mobileStrategy":"collapse","dataRequirements":["brand narrative","OpenLab links"],"mediaPolicy":"no media required"}}},
+    "support-contact": {"replace":{"support-intro":{"id":"contact-intro","customerPurpose":"Help the customer choose the right support destination.","mobileStrategy":"summary","dataRequirements":["contact content"],"mediaPolicy":"no media required"},"support-content":{"id":"contact-options","customerPurpose":"Provide clear ways to get help without hiding the answer.","mobileStrategy":"collapse","dataRequirements":["contact options"],"mediaPolicy":"no media required"}}},
+    "support-delivery": {"replace":{"support-intro":{"id":"delivery-intro","customerPurpose":"Explain delivery, returns or refund expectations clearly.","mobileStrategy":"summary","dataRequirements":["delivery content"],"mediaPolicy":"no media required"},"support-content":{"id":"delivery-answers","customerPurpose":"Give the relevant delivery, return or refund information.","mobileStrategy":"collapse","dataRequirements":["delivery and return content"],"mediaPolicy":"no media required"}}},
+    "support-faq": {"replace":{"support-intro":{"id":"faq-intro","customerPurpose":"Find a clear answer quickly.","mobileStrategy":"summary","dataRequirements":["FAQ categories"],"mediaPolicy":"no media required"},"support-content":{"id":"faq-help","customerPurpose":"Browse answers and continue to the relevant product, record or support action.","mobileStrategy":"collapse","dataRequirements":["FAQ"],"mediaPolicy":"no media required"}}},
+    "support-legal": {"replace":{"support-intro":{"id":"legal-intro","customerPurpose":"Identify the policy or document being read.","mobileStrategy":"summary","dataRequirements":["legal content"],"mediaPolicy":"no media required"},"support-content":{"id":"legal-content","customerPurpose":"Read the required policy in a clear, usable format.","mobileStrategy":"collapse","dataRequirements":["legal document"],"mediaPolicy":"no media required"}}},
+    "support-sitemap": {"replace":{"support-intro":{"id":"sitemap-intro","customerPurpose":"Find a destination across the site.","mobileStrategy":"summary","dataRequirements":["navigation"],"mediaPolicy":"no media required"},"support-content":{"id":"sitemap-links","customerPurpose":"Browse the available product, OpenLab, account and support destinations.","mobileStrategy":"collapse","dataRequirements":["navigation"],"mediaPolicy":"no media required"}}},
+    "support-wholesale": {"replace":{"support-intro":{"id":"wholesale-intro","customerPurpose":"Understand the wholesale proposition and next contact action.","mobileStrategy":"summary","dataRequirements":["wholesale content"],"mediaPolicy":"no media required"},"support-content":{"id":"wholesale-content","customerPurpose":"Review wholesale information and relevant contact options.","mobileStrategy":"collapse","dataRequirements":["wholesale content"],"mediaPolicy":"no media required"}}},
+    "support-gift-cards": {"replace":{"support-intro":{"id":"gift-card-intro","customerPurpose":"Understand gift-card options and the next action.","mobileStrategy":"summary","dataRequirements":["gift-card content"],"mediaPolicy":"no media required"},"support-content":{"id":"gift-card-content","customerPurpose":"Review gift-card information and support.","mobileStrategy":"collapse","dataRequirements":["gift-card content"],"mediaPolicy":"no media required"}}},
+    "account-orders": {"replace":{"account-primary-task":{"id":"order-history","customerPurpose":"Find an order and understand its current status.","mobileStrategy":"progressive-disclosure","dataRequirements":["order history"],"mediaPolicy":"no media required"}}},
+    "account-preferences": {"replace":{"account-primary-task":{"id":"account-preferences","customerPurpose":"Review profile, address or preference information.","mobileStrategy":"progressive-disclosure","dataRequirements":["account preferences"],"mediaPolicy":"no media required"}}},
+    "bag": {"replace":{"checkout-header-and-progress":{"id":"bag-header","customerPurpose":"Review the bag and continue when ready.","mobileStrategy":"summary","dataRequirements":["bag"],"mediaPolicy":"no media required"},"checkout-primary-task":{"id":"bag-line-items","customerPurpose":"Review product selections and quantities.","mobileStrategy":"progressive-disclosure","dataRequirements":["bag line items"],"mediaPolicy":"registered actual render or governed unpopulated chamber"}}},
+    "checkout-information": {"replace":{"checkout-primary-task":{"id":"checkout-information-task","customerPurpose":"Provide contact and delivery address information.","mobileStrategy":"summary","dataRequirements":["checkout information"],"mediaPolicy":"no media required"}}},
+    "checkout-delivery": {"replace":{"checkout-primary-task":{"id":"checkout-delivery-task","customerPurpose":"Choose a delivery option with timing and order value clear.","mobileStrategy":"summary","dataRequirements":["delivery options"],"mediaPolicy":"no media required"}}},
+    "checkout-review": {"replace":{"checkout-primary-task":{"id":"checkout-review-task","customerPurpose":"Review the order before the payment handoff.","mobileStrategy":"summary","dataRequirements":["order review"],"mediaPolicy":"no media required"}}},
+    "checkout-payment": {"replace":{"checkout-primary-task":{"id":"checkout-payment-handoff","customerPurpose":"Understand the payment handoff and fixed-currency context.","mobileStrategy":"summary","dataRequirements":["payment presentation"],"mediaPolicy":"no media required"}}},
+    "checkout-processing": {"replace":{"checkout-primary-task":{"id":"checkout-processing-state","customerPurpose":"See that the order is being processed and what happens next.","mobileStrategy":"summary","dataRequirements":["processing state"],"mediaPolicy":"no media required"}}},
+    "order-confirmation": {"replace":{"order-state-summary":{"id":"order-confirmation-summary","customerPurpose":"Confirm the order and explain what happens next.","mobileStrategy":"summary","dataRequirements":["confirmation"],"mediaPolicy":"no media required"}}},
+    "order-recovery": {"replace":{"order-state-summary":{"id":"order-recovery-summary","customerPurpose":"Explain the current order state and the next recovery action.","mobileStrategy":"summary","dataRequirements":["recovery state"],"mediaPolicy":"no media required"}}},
+    "order-tracking": {"replace":{"tracking-or-recovery-detail":{"id":"order-tracking-timeline","customerPurpose":"Follow the order from confirmation to delivery.","mobileStrategy":"progressive-disclosure","dataRequirements":["tracking status"],"mediaPolicy":"no media required"}}},
+    "openlab-archive": {"replace":{"record-identity":{"id":"records-archive-intro","customerPurpose":"Find an available record by product, batch or report.","mobileStrategy":"summary","dataRequirements":["record archive"],"mediaPolicy":"no media required"},"openlab-product-experience":{"id":"record-archive-table","customerPurpose":"Browse the record index and open an available record.","mobileStrategy":"horizontal-scroll","dataRequirements":["record archive"],"mediaPolicy":"no media required"}}},
+    "openlab-lookup": {"replace":{"tool-intro-and-context":{"id":"batch-lookup-intro","customerPurpose":"Find a batch or record with the exact available reference.","mobileStrategy":"summary","dataRequirements":["lookup input"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"batch-lookup-workspace","customerPurpose":"Enter a batch reference and see the matching available record state.","mobileStrategy":"summary","dataRequirements":["lookup result"],"mediaPolicy":"no media required"}}},
+    "openlab-methodology": {"replace":{"tool-intro-and-context":{"id":"methodology-intro","customerPurpose":"Understand how records move from product to source document.","mobileStrategy":"summary","dataRequirements":["methodology narrative"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"methodology-or-source-chain","customerPurpose":"Follow the testing or source-chain stages in a clear sequence.","mobileStrategy":"progressive-disclosure","dataRequirements":["methodology stages"],"mediaPolicy":"no media required"}}},
+    "openlab-compare": {"replace":{"tool-intro-and-context":{"id":"compare-intro","customerPurpose":"Choose products to compare using the same product and record detail.","mobileStrategy":"summary","dataRequirements":["comparison candidates"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"openlab-comparison-workspace","customerPurpose":"Compare specifications, available records and source context side by side.","mobileStrategy":"horizontal-scroll","dataRequirements":["comparison data"],"mediaPolicy":"no media required"}}},
+    "openlab-evidence": {"replace":{"tool-intro-and-context":{"id":"evidence-intro","customerPurpose":"Understand the available evidence states and find a record.","mobileStrategy":"summary","dataRequirements":["evidence overview"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"evidence-workspace","customerPurpose":"Review evidence summaries and continue to the relevant record.","mobileStrategy":"progressive-disclosure","dataRequirements":["evidence data"],"mediaPolicy":"no media required"}}},
+    "openlab-research": {"replace":{"tool-intro-and-context":{"id":"research-intro","customerPurpose":"Find the relevant guide, case study, term or partner information.","mobileStrategy":"summary","dataRequirements":["editorial index"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"research-content-index","customerPurpose":"Browse technical editorial content with clear onward links.","mobileStrategy":"progressive-disclosure","dataRequirements":["editorial content"],"mediaPolicy":"no media required"}}},
+    "openlab-planner": {"replace":{"tool-intro-and-context":{"id":"planning-intro","customerPurpose":"Set up the current calculation or planning question.","mobileStrategy":"summary","dataRequirements":["planning input"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"planning-workspace","customerPurpose":"Review the local planning result and related product detail.","mobileStrategy":"progressive-disclosure","dataRequirements":["planning output"],"mediaPolicy":"no media required"}}},
+    "openlab-guide": {"replace":{"tool-intro-and-context":{"id":"compound-guide-intro","customerPurpose":"Find a compound and understand its product and record context.","mobileStrategy":"summary","dataRequirements":["compound index"],"mediaPolicy":"no media required"},"tool-workspace":{"id":"compound-guide-workspace","customerPurpose":"Browse compound information with direct product and record pathways.","mobileStrategy":"progressive-disclosure","dataRequirements":["compound content"],"mediaPolicy":"no media required"}}},
+    "openlab-stack-builder": {"replace":{"tool-intro-and-context":{"id":"stack-builder-intro","customerPurpose":"Choose a goal and begin with a real baseline product.","mobileStrategy":"summary","dataRequirements":["StackScenario[]"],"mediaPolicy":"registered actual render or governed unpopulated chamber"},"tool-workspace":{"id":"stack-builder-workspace","customerPurpose":"Select additions, review the combined outcome and continue with the stack.","mobileStrategy":"guided-sequence","dataRequirements":["StackScenario[]","outcome profile"],"mediaPolicy":"registered actual render or governed unpopulated chamber"}}},
+    "owner-workspace": {"replace":{"owner-navigation":{"id":"owner-workspace-header","customerPurpose":"Move between owner review areas.","mobileStrategy":"summary","dataRequirements":["owner navigation"],"mediaPolicy":"no media required"},"review-workspace":{"id":"owner-workspace-content","customerPurpose":"Inspect the current owner-only information workspace.","mobileStrategy":"horizontal-scroll","dataRequirements":["owner data"],"mediaPolicy":"no media required"}}}
+  }
+}
