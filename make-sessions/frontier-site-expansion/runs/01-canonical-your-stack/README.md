@@ -18,6 +18,8 @@ The later PR review note did not introduce this finding after the run was built;
 5. Let Make complete all three directions before choosing relationships.
 6. Review the 1440 and 390 compositions as customer experiences. Do not review generated code.
 
+If first pass `1200:34256` already exists, do not restart. Paste `CORRECTION-PROMPT.md` into that Make session. It removes the internal MF navigation, replaces route/proof language with production stack copy, restores raised context chips, and corrects the MetricRail value/label contract.
+
 ## What the attachments establish
 
 - `app.tsx` supplies the current material, typography, card anatomy, interaction, and mobile-rail baseline.
@@ -30,8 +32,8 @@ The visible facts in the product data match their supplied renders. Prices and r
 
 The code attachment is pre-rendered so it can be reviewed even when an attachment sandbox cannot inspect TSX:
 
-- `reference-desktop.png` — 1440×1800, SHA-256 `02a7ea7b2bc42bd61b8a26daf0723ec604275253e5e1a88ae7f1455a256a94fd`
-- `reference-mobile.png` — 390×2200, SHA-256 `72910ead141eb6f08a2c6c0811793eda955847920a52a7901751851f0dc6ace4`
+- `reference-desktop.png` — 1440×1800, SHA-256 `fab3e347e8d6e8530e7a8656e78be0ec505ea47151484b9da799de200e695b27`
+- `reference-mobile.png` — 390×2200, SHA-256 `43fd9838b183852c7ac6ba988f76c9aaab566cc5d7a660ba006f507b21b8ce88`
 
 These are inspection references, not extra Make attachments and not a direction to trace. Make should design beyond this baseline while preserving its system relationships and compact mobile logic.
 

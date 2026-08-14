@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "oluk.make.your-stack.v1",
+  "schemaVersion": "oluk.make.your-stack.v2",
   "anchorProduct": {
     "series": "SARM SERIES",
     "name": "MK-2866",
@@ -10,8 +10,8 @@
     "purity": ">99%",
     "price": "£43"
   },
-  "heading": "Build on your MK-2866 research route.",
-  "introduction": "Compare complementary product directions with the same clear specifications, testing language and direct route to product detail.",
+  "heading": "Choose what complements MK-2866.",
+  "introduction": "Compare three distinct additions by series, strength and serving count. Select the product that best matches the stack you want to build, or open the full product page before adding it.",
   "recommendations": [
     {
       "id": "rad-140",
@@ -23,9 +23,9 @@
       "servings": "60 SERVINGS",
       "purity": ">99%",
       "price": "£55",
-      "inventory": "In stock",
-      "evidence": "Verified Evidence",
-      "rationale": "A strength-led direction with a clearly stated 8 MG format.",
+      "stackRole": "Strength-led",
+      "stackFit": "SARM pairing",
+      "rationale": "Add a higher-strength SARM option to build a more performance-led stack around MK-2866.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/rad-140.png",
       "imageSha256": "6ef50a629d1b4831750e713426beb6285fb4b366297e6e8e5b3c09813ebdd3fc"
@@ -40,9 +40,9 @@
       "servings": "30 SERVINGS",
       "purity": ">99%",
       "price": "£49",
-      "inventory": "In stock",
-      "evidence": "Source Reported",
-      "rationale": "A compact prohormone-format alternative for a different research direction.",
+      "stackRole": "High intensity",
+      "stackFit": "Prohormone pairing",
+      "rationale": "Choose a concentrated prohormone addition when you want a shorter, higher-intensity stack format.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/ment.webp",
       "imageSha256": "1cbd10faea35d3893be287119263566f6d204d54e22dc0273278c8f0a4b098e8"
@@ -57,16 +57,16 @@
       "servings": "90 SERVINGS",
       "purity": ">99%",
       "price": "£45",
-      "inventory": "In stock",
-      "evidence": "Source Only",
-      "rationale": "A research-series continuation with a familiar 90-serving format.",
+      "stackRole": "Longer format",
+      "stackFit": "Research pairing",
+      "rationale": "Add a 90-serving research-series option for a longer-format stack alongside MK-2866.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/mk-677.webp",
       "imageSha256": "5ab6415bc8a7c53ce0b696f03fbdf222bf753b95cd03fd260a3c86997a1f8481"
     }
   ],
   "interactionCopy": {
-    "primary": "Add to stack",
+    "primary": "Add",
     "selected": "Selected",
     "added": "Added ✓",
     "secondary": "View product"

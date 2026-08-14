@@ -37,8 +37,8 @@ Price and recommendation rationale fields are deterministic creative samples for
 
 ## Preflight evidence
 
-- Desktop reference: 1440×1800, SHA-256 `02a7ea7b2bc42bd61b8a26daf0723ec604275253e5e1a88ae7f1455a256a94fd`.
-- Mobile reference: 390×2200, SHA-256 `72910ead141eb6f08a2c6c0811793eda955847920a52a7901751851f0dc6ace4`.
+- Desktop reference: 1440×1800, SHA-256 `fab3e347e8d6e8530e7a8656e78be0ec505ea47151484b9da799de200e695b27`.
+- Mobile reference: 390×2200, SHA-256 `43fd9838b183852c7ac6ba988f76c9aaab566cc5d7a660ba006f507b21b8ce88`.
 - Rendered semantics expose product identities, metrics, statuses, prices, product links, selection, and Add to stack controls.
 - Local interaction changes `Add to stack` to `Added ✓` and increments the selection count.
 - The 390 layout uses a horizontal snap rail with one visible primary decision rather than vertically stacking three desktop cards.

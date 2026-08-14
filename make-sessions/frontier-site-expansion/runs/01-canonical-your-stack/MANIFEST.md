@@ -21,7 +21,8 @@ This is not MF-01 ProductCommerceCard Creative Frontier and does not alter its s
 
 ## Paste
 
-- `PROMPT.md`
+- For a new run: `PROMPT.md`.
+- To correct first pass `1200:34256`: `CORRECTION-PROMPT.md`.
 
 ## Attach exactly
 

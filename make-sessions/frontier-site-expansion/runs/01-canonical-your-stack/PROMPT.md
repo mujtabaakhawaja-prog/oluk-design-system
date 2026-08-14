@@ -11,6 +11,7 @@ Create the first Olympus Labs UK modular growth frontier: a production-quality *
 - PDP mount context comes from PdpD `1155:30632`. Use its confidence, scale, and clear decision hierarchy without copying the entire PDP.
 - Use the attached product renders exactly. Never generate, relabel, redraw, or substitute a bottle.
 - Treat the attached `product-data.json` as the complete customer content for this creative run. Do not show source, fixture, governance, or approval labels in the UI.
+- Render a customer module only. Never add internal navigation or visible labels such as `MF-01A`, `Card frontier`, `Icon library`, `Decision surfaces`, route names, node IDs, proof status, or programme names.
 
 ## THIS_RUN_DELTA
 
@@ -41,7 +42,7 @@ Create a more visual, media-led continuation inspired by the authored product-st
 For every direction:
 
 - Show RAD-140, MENT, and MK-677 using the attached renders and exact card copy.
-- Include product series, name, alias, strength, servings, purity, price, concise rationale, StockPill, EvidenceStatusChip, and a clear action.
+- Include product series, name, alias, strength, servings, purity, price, concise stack rationale, two context-relevance QualitativeChips, and a clear action. StockPill and EvidenceStatus remain available to the wider product system but are deliberately omitted from this focused upsell module because they do not explain why a recommendation complements the starting product.
 - Prove default, selected, and added states through real interaction. Added state must read `Added ✓`.
 - Provide an accessible focus state and a visible route to product detail.
 - Use at least 44×44 interaction targets.
@@ -62,6 +63,9 @@ At 390:
 - Do not create generic grey image placeholders, fake renders, gradient bottle silhouettes, dark product cards, cobalt outer outlines, decorative top-edge eyebrows, crossed prices, per-serving prices, discount badges, traffic-light evidence states, or dashboard/specimen-board UI.
 - Do not add cart, account, API, checkout, inventory, payment, or analytics plumbing. Local selection and Added interaction are visual prototype state only.
 - Do not output implementation notes inside the customer frames.
+- Use the exact customer copy in `product-data.json`; do not replace it with `research route`, `testing language`, `direct route to product detail`, or other internal/navigation phrasing.
+- In every MetricRail, render the quantified serving value (`60`, `30`, `90`) separately from the `SERVINGS` label. Never repeat `SERVINGS` inside both the value and label.
+- Use adaptive value fitting inside MetricRail cells: preserve the canonical size for short values, apply a bounded smaller fit only for genuinely longer values, and never overlap adjacent cells.
 
 ## REQUIRED DELIVERY
 

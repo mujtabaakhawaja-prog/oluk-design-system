@@ -19,6 +19,12 @@ function quantifiedValue(value: string, label: string) {
   return value.replace(suffix, "");
 }
 
+function metricFit(value: string) {
+  if (value.length > 8) return "long";
+  if (value.length > 5) return "medium";
+  return "short";
+}
+
 export function MetricRail({ product, values, compact = false, className }: MetricRailProps) {
   const metrics = values ?? product;
 
@@ -43,7 +49,7 @@ export function MetricRail({ product, values, compact = false, className }: Metr
       )}
     >
       {cells.map(([value, label]) => (
-        <div key={label}>
+        <div data-fit={metricFit(value)} key={label}>
           <dt>{value}</dt>
           <dd>{label}</dd>
         </div>

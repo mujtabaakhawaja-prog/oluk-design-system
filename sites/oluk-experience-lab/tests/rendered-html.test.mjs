@@ -366,6 +366,7 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
   const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
+  const metricRailSource = await readFile(new URL("../app/design-system/metric-rail.tsx", import.meta.url), "utf8");
   const iconSource = await readFile(new URL("../app/design-system/qualitative-icon.tsx", import.meta.url), "utf8");
   const mediaSource = await readFile(new URL("../app/design-system/product-media-chamber.tsx", import.meta.url), "utf8");
   const mediaCss = await readFile(new URL("../app/design-system/product-media-chamber.module.css", import.meta.url), "utf8");
@@ -409,6 +410,10 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   assert.match(css, /\.product-commerce-card \.product-series\s*\{(?=[^}]*var\(--oluk-surface-family\))(?=[^}]*var\(--oluk-border-family-bg\))[^}]*\}/i, "customer family marker uses the MF-01A family surface and border");
   assert.match(css, /\.metric-rail\s*\{[^}]*border:\s*1px solid var\(--line-strong\)[^}]*gap:\s*0[^}]*overflow:\s*hidden/i, "customer MetricRail is a joined bordered rail, not generic pills");
   assert.match(css, /\.metric-rail > div \+ div\s*\{[^}]*border-left:\s*1px solid var\(--line-strong\)/i, "customer MetricRail uses governed internal dividers");
+  assert.match(metricRailSource, /data-fit=\{metricFit\(value\)\}/, "MetricRail exposes deterministic per-value fitting");
+  assert.match(metricRailSource, /quantifiedValue\(metrics\.servings, "SERVINGS"\)/, "MetricRail separates the serving value from its label");
+  assert.match(css, /\.metric-rail \[data-fit="medium"\] dt\s*\{[^}]*font-size:\s*15px/i, "MetricRail has a bounded medium-value fit");
+  assert.match(css, /\.metric-rail \[data-fit="long"\] dt\s*\{[^}]*font-size:\s*13px[^}]*white-space:\s*normal/i, "MetricRail has a bounded long-value fit without sibling collision");
   assert.match(css, /\.qualitative-chips\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/i, "qualitative attributes form a 2x2 responsive grid");
   assert.match(css, /\.qualitative-chip\s*\{[^}]*background:\s*var\(--white\)[^}]*border:\s*1px solid var\(--oluk-border-chip\)[^}]*border-radius:\s*10px/i, "every qualitative chip is an independent MF-01A container");
   assert.match(css, /\.qualitative-chip dt\s*\{[^}]*color:\s*var\(--ink-muted\)[^}]*font-size:\s*11px[^}]*font-weight:\s*500[^}]*letter-spacing:\s*0\.66px[^}]*text-transform:\s*uppercase/i, "chip labels preserve the 11px Medium muted uppercase hierarchy");

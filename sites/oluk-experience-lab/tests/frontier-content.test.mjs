@@ -57,6 +57,7 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   const productData = JSON.parse(readFileSync(new URL("product-data.json", runRoot), "utf8"));
   const prompt = readFileSync(new URL("PROMPT.md", runRoot), "utf8");
   const app = readFileSync(new URL("app.tsx", runRoot), "utf8");
+  const correctionPrompt = readFileSync(new URL("CORRECTION-PROMPT.md", runRoot), "utf8");
 
   assert.equal(manifest.firstRun.id, "01");
   assert.equal(manifest.firstRun.directions, 3);
@@ -87,6 +88,13 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.match(prompt, /Vertical `743:50` as the default desktop recommendation card/);
   assert.match(prompt, /Compact `742:50` and show one decision at a time/);
   assert.match(prompt, /Relation `743:520` only for a truly horizontal related-product micro-context/);
+  assert.match(prompt, /customer module only/i);
+  assert.match(prompt, /quantified serving value/i);
+  assert.match(correctionPrompt, /1200:34256/);
+  assert.match(correctionPrompt, /three separate instances of the two-level QualitativeChip relationship from `733:17342`/);
+  assert.match(correctionPrompt, /ProductMetricRail must follow canonical `733:95`/);
+  assert.doesNotMatch(productData.heading, /research route/i);
+  assert.doesNotMatch(productData.introduction, /testing language|direct route/i);
   assert.match(prompt, /never simply stack the full desktop section vertically/i);
   assert.doesNotMatch(prompt, /10 MG[^\n]*RAD-140|RAD-140[^\n]*10 MG/i);
 
@@ -102,5 +110,8 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   }
   assert.match(app, /scroll-snap-type:x mandatory/);
   assert.match(app, /Added ✓/);
+  assert.match(app, /ContextChip label="PRODUCT" value=\{data\.anchorProduct\.alias\}/);
+  assert.match(app, /product\.servings\.replace\(\/\\s\+SERVINGS\$\/i, ""\)/);
+  assert.doesNotMatch(app, /product\.inventory|product\.evidence|research route|testing language|direct route to product detail/i);
   assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
 });

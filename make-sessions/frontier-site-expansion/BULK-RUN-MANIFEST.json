@@ -11,6 +11,7 @@
     "name": "canonical-your-stack-frontier",
     "manifest": "runs/01-canonical-your-stack/MANIFEST.md",
     "prompt": "runs/01-canonical-your-stack/PROMPT.md",
+    "correctionPrompt": "runs/01-canonical-your-stack/CORRECTION-PROMPT.md",
     "instructions": "runs/01-canonical-your-stack/README.md",
     "runbook": "runs/01-canonical-your-stack/RUN.md",
     "attachments": [
@@ -29,9 +30,15 @@
       "localAnatomyComposition": "REJECTED"
     },
     "referenceProofs": [
-      {"path":"runs/01-canonical-your-stack/reference-desktop.png","width":1440,"height":1800,"sha256":"02a7ea7b2bc42bd61b8a26daf0723ec604275253e5e1a88ae7f1455a256a94fd"},
-      {"path":"runs/01-canonical-your-stack/reference-mobile.png","width":390,"height":2200,"sha256":"72910ead141eb6f08a2c6c0811793eda955847920a52a7901751851f0dc6ace4"}
+      {"path":"runs/01-canonical-your-stack/reference-desktop.png","width":1440,"height":1800,"sha256":"fab3e347e8d6e8530e7a8656e78be0ec505ea47151484b9da799de200e695b27"},
+      {"path":"runs/01-canonical-your-stack/reference-mobile.png","width":390,"height":2200,"sha256":"43fd9838b183852c7ac6ba988f76c9aaab566cc5d7a660ba006f507b21b8ce88"}
     ],
+    "firstPassReview": {
+      "surfaceNodeId": "1200:34256",
+      "currentProductNodeId": "1200:34285",
+      "decision": "CORRECTION_REQUIRED",
+      "receipt": "../../authority/receipts/FRONTIER-MAKE-RUN-01-PASS-REVIEW.md"
+    },
     "reviewGroups": ["growth-continuation"],
     "widths": [1440, 390],
     "directions": 3

@@ -147,3 +147,12 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Closed the only meaningful ambiguity in that note by locking ProductCommerceCard Vertical `743:50` as the desktop owner, allowing at most one Featured `743:281` promotion per direction, and using Compact `742:50` for one-decision-at-a-time mobile reflow.
 - Reserved Relation `743:520` for genuine horizontal micro-contexts and added executable rejection of any locally spliced card anatomy masquerading as a canonical variant.
 - Kept mega-menu Figma authoring in independent shell/navigation Batch A and kept the remaining WS/LEGACY inventory in triage; neither concern is allowed to contaminate the Your Stack creative prompt.
+
+## 2026-08-14 — Frontier Make Run 01 first-pass correction
+
+- Reviewed Figma Make surface `1200:34256` and current-product strip `1200:34285` from structured Figma context and exact screenshots; classified the pass `CORRECTION_REQUIRED · DO_NOT_PROMOTE`.
+- Removed internal programme/navigation language and replaced the route/proof-oriented proposition with a production stack-completion story and product-specific pairing copy.
+- Replaced availability/evidence persuasion inside the focused upsell module with stack-role and fit QualitativeChips; evidence and stock remain valid system components outside this module job.
+- Added `CORRECTION-PROMPT.md` for the existing Make session, including exact 1440/390 corrections and customer copy.
+- Corrected ProductMetricRail semantics to separate serving value from label and added deterministic short/medium/long text fitting to the canonical Sites component.
+- Refreshed the 1440 and 390 Make reference images and hashes after the copy, chip and metric corrections.

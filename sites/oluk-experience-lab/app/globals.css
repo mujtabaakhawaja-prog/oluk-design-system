@@ -823,7 +823,20 @@ a.button-secondary:hover {
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 1.05;
+  white-space: nowrap;
+}
+
+.metric-rail [data-fit="medium"] dt {
+  font-size: 15px;
+  letter-spacing: -0.045em;
+}
+
+.metric-rail [data-fit="long"] dt {
+  font-size: 13px;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
   overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .metric-rail dd {
