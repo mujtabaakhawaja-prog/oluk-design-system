@@ -4,26 +4,22 @@
 .toolNav a{align-items:center;border:var(--oluk-border-width) solid var(--oluk-border-chip);border-radius:var(--oluk-radius-pill);color:var(--oluk-text-secondary);display:inline-flex;font-size:var(--oluk-type-eyebrow-size);font-weight:800;min-height:44px;padding-inline:var(--oluk-space-4);text-decoration:none;white-space:nowrap}
 .toolNav a[aria-current="page"]{background:var(--oluk-cobalt);border-color:var(--oluk-cobalt);color:var(--oluk-text-on-cobalt)}
 .valueChips{display:flex;flex-wrap:wrap;gap:var(--oluk-space-2)}
-.valueChips span,.cardHeader>span{background:var(--oluk-surface-cobalt-soft);border:var(--oluk-border-width) solid var(--oluk-border-strong);border-radius:var(--oluk-radius-pill);color:var(--oluk-cobalt);font-size:var(--oluk-type-eyebrow-size);font-weight:800;letter-spacing:var(--oluk-type-eyebrow-track);padding:var(--oluk-space-2) var(--oluk-space-3)}
+.valueChips span{background:var(--oluk-surface-cobalt-soft);border:var(--oluk-border-width) solid var(--oluk-border-strong);border-radius:var(--oluk-radius-pill);color:var(--oluk-cobalt);font-size:var(--oluk-type-eyebrow-size);font-weight:800;letter-spacing:var(--oluk-type-eyebrow-track);padding:var(--oluk-space-2) var(--oluk-space-3)}
 .availabilityList{display:grid;gap:var(--oluk-space-3)}
 .availabilityList article{align-items:center;background:var(--oluk-surface-card);border:var(--oluk-border-width) solid var(--oluk-border-card);border-radius:var(--oluk-radius-compact);display:grid;gap:var(--oluk-space-4);grid-template-columns:minmax(0,1fr) auto auto;padding:var(--oluk-space-5)}
-.availabilityList h2,.guideCard h2{font-family:var(--oluk-font-display);font-weight:800;margin:var(--oluk-space-2) 0 0}
+.availabilityList h2{font-family:var(--oluk-font-display);font-weight:800;margin:var(--oluk-space-2) 0 0}
 .availabilityList h2{font-size:var(--oluk-type-display-md-size)}
 .availabilityList span{color:var(--oluk-cobalt);font-size:var(--oluk-type-eyebrow-size);font-weight:800;letter-spacing:var(--oluk-type-eyebrow-track)}
 .availabilityList p{color:var(--oluk-text-body);font-size:var(--oluk-type-body-size);line-height:var(--oluk-type-body-line);margin:var(--oluk-space-2) 0 0}
-.availabilityList a,.cardActions a{color:var(--oluk-cobalt);font-size:14px;font-weight:800;min-height:44px;text-decoration:none}
+.availabilityList a{color:var(--oluk-cobalt);font-size:14px;font-weight:800;min-height:44px;text-decoration:none}
 .guideGrid{display:grid;gap:var(--oluk-space-4);grid-template-columns:repeat(2,minmax(0,1fr))}
-.guideCard{background:var(--oluk-surface-card);border:var(--oluk-border-width) solid var(--oluk-border-card);border-radius:var(--oluk-radius-compact);display:grid;gap:var(--oluk-space-3);min-width:0;padding:var(--oluk-space-5)}
-.cardHeader{align-items:center;display:flex;flex-wrap:wrap;gap:var(--oluk-space-2);justify-content:space-between}
-.guideCard h2{font-size:clamp(28px,3vw,38px)}
-.guideCard>p{color:var(--oluk-text-body);font-size:var(--oluk-type-body-size);line-height:var(--oluk-type-body-line);margin:0}
-.guideCard .alias{color:var(--oluk-text-secondary);font-weight:800}
-.guideCard dl,.stateList{display:grid;margin:0}
-.guideCard dl div,.stateList div{align-items:baseline;border-top:var(--oluk-border-width) solid var(--oluk-border-chip);display:flex;gap:var(--oluk-space-4);justify-content:space-between;padding-block:var(--oluk-space-3)}
-.guideCard dt,.stateList dt{color:var(--oluk-text-secondary);font-size:14px}
-.guideCard dd,.stateList dd{font-size:15px;font-weight:800;margin:0;text-align:right}
-.cardActions{display:flex;flex-wrap:wrap;gap:var(--oluk-space-4)}
-.cardActions a{align-items:center;display:inline-flex}
+.guideItem{display:grid;gap:var(--oluk-space-3);min-width:0}
+.recordState{align-items:center;display:flex;flex-wrap:wrap;gap:var(--oluk-space-3)}
+.recordState span{color:var(--oluk-text-body);font-size:var(--oluk-type-body-size);line-height:var(--oluk-type-body-line)}
+.stateList{display:grid;margin:0}
+.stateList div{align-items:baseline;border-top:var(--oluk-border-width) solid var(--oluk-border-chip);display:flex;gap:var(--oluk-space-4);justify-content:space-between;padding-block:var(--oluk-space-3)}
+.stateList dt{color:var(--oluk-text-secondary);font-size:14px}
+.stateList dd{font-size:15px;font-weight:800;margin:0;text-align:right}
 .documentGrid{display:grid;gap:var(--oluk-space-5);grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr)}
 .tableScroller{min-width:0;overflow-x:auto}
 .tableScroller table{border-collapse:collapse;min-width:540px;width:100%}
@@ -31,5 +27,5 @@
 .tableScroller th{color:var(--oluk-text-secondary);font-weight:800}
 .tableScroller td{color:var(--oluk-text-primary);font-weight:800}
 @media(max-width:900px){.documentGrid{grid-template-columns:1fr}.guideGrid{grid-template-columns:1fr}}
-@media(max-width:600px){.page{padding:var(--oluk-space-5) var(--oluk-space-4) var(--oluk-space-10)}.shell{gap:var(--oluk-space-4)}.availabilityList article{align-items:start;grid-template-columns:1fr}.availabilityList a{align-items:center;display:inline-flex}.guideCard{padding:var(--oluk-space-4)}.cardActions{display:grid;grid-template-columns:1fr}.cardActions a{width:100%}.tableScroller{margin-inline:calc(var(--oluk-space-2) * -1);padding-inline:var(--oluk-space-2)}}
+@media(max-width:600px){.page{padding:var(--oluk-space-5) var(--oluk-space-4) var(--oluk-space-10)}.shell{gap:var(--oluk-space-4)}.availabilityList article{align-items:start;grid-template-columns:1fr}.availabilityList a{align-items:center;display:inline-flex}.tableScroller{margin-inline:calc(var(--oluk-space-2) * -1);padding-inline:var(--oluk-space-2)}}
 @media(prefers-reduced-motion:reduce){.toolNav{scroll-behavior:auto}}

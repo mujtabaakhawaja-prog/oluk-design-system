@@ -3,9 +3,12 @@ import Link from "next/link";
 
 import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
 import { ActionLink } from "./customer-route-primitives";
+import { getFrontierProduct } from "./frontier-content";
+import { frontierProductPresentation } from "./frontier-product-presentation";
 import { OpenLabProductExperience } from "./openlab-product-experience";
 import openLabExperience from "./openlab-product-depth.json";
 import productCatalogue from "./product-experience-catalog.json";
+import { ProductCommerceCard } from "./product-commerce-card";
 import { EvidenceStatusChip } from "./program-components";
 import { YourStackBuilder } from "./your-stack-builder";
 import styles from "./openlab-frontier.module.css";
@@ -56,6 +59,12 @@ const featuredProductSlugs = ["mk-2866", "rad-140", "mk-677", "ment", "gw-501516
 const featuredProducts = productCatalogue.products.filter(({ product }) =>
   featuredProductSlugs.includes(product.slug as (typeof featuredProductSlugs)[number]),
 );
+
+function commerceFixtureFor(slug: string) {
+  const product = getFrontierProduct(slug);
+  if (!product) throw new Error(`OpenLab Compound Guide product is not registered: ${slug}`);
+  return frontierProductPresentation(product);
+}
 
 const incompleteToolCopy: Readonly<Record<Exclude<OpenLabFrontierTool, "evidence" | "compound-guide" | "stack-builder">, Readonly<{
   eyebrow: string;
@@ -162,19 +171,28 @@ function CompoundGuide() {
     >
       <div className={styles.guideGrid}>{featuredProducts.map(({ product, editorial, openLab }) => {
         const available = openLab.status === "available";
-        return <article className={styles.guideCard} key={product.slug}>
-          <div className={styles.cardHeader}><span>{product.series}</span><EvidenceStatusChip state={available ? "source-reported" : "unavailable"}/></div>
-          <h2>{product.name}</h2>
-          <p className={styles.alias}>{product.alias}</p>
-          <p>{editorial.customerProposition.mobileSummary}</p>
-          <dl>
-            <div><dt>Strength</dt><dd>{product.strength}</dd></div>
-            <div><dt>Servings</dt><dd>{product.servings || "Not supplied"}</dd></div>
-            <div><dt>Price</dt><dd>{product.price}</dd></div>
-            <div><dt>OpenLab record</dt><dd>{available ? "Available" : "Unavailable"}</dd></div>
-          </dl>
-          <div className={styles.cardActions}><Link href={`/product/${product.slug}`}>View product →</Link><Link href={`/open-lab/compound/${product.slug}`}>{available ? "Open record" : "View availability"} →</Link></div>
-        </article>;
+        const fixture = commerceFixtureFor(product.slug);
+        return <div className={styles.guideItem} key={product.slug}>
+          <ProductCommerceCard
+            evidence={available ? "available" : "unavailable"}
+            headingLevel="h2"
+            product={fixture}
+            secondaryHref={`/open-lab/compound/${product.slug}`}
+            secondaryLabel={available ? "Open OpenLab record" : "View record availability"}
+            showQualitative
+            variant="vertical"
+          />
+          <TechnicalSurface
+            actions={<><ActionLink href={`/product/${product.slug}`}>View {product.name}</ActionLink><ActionLink href={`/open-lab/compound/${product.slug}`} secondary>{available ? "Open record" : "View availability"}</ActionLink></>}
+            compact
+            copy={editorial.customerProposition.mobileSummary}
+            eyebrow="OPENLAB CONFIDENCE"
+            state={available ? "default" : "unavailable"}
+            title={available ? "A product-linked record is available." : "Product facts are ready. A linked record is unavailable."}
+          >
+            <div className={styles.recordState}><EvidenceStatusChip state={available ? "source-reported" : "unavailable"}/><span>{available ? "Open the source-connected dossier before returning to the product." : "No result from another product is used in its place."}</span></div>
+          </TechnicalSurface>
+        </div>;
       })}</div>
     </DecisionSurface>
   </PageFrame>;

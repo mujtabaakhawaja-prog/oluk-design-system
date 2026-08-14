@@ -43,6 +43,10 @@ test("uses compiler facts, canonical copy surfaces, and compact responsive treat
   const css = read("app/design-system/openlab-frontier.module.css");
   assert.match(source, /product-experience-catalog\.json/);
   assert.match(source, /openlab-product-depth\.json/);
+  assert.match(source, /ProductCommerceCard/);
+  assert.match(source, /frontierProductPresentation/);
+  assert.doesNotMatch(source, /styles\.guideCard|className=\{styles\.cardHeader\}/);
+  assert.doesNotMatch(css, /\.guideCard|\.cardHeader/);
   for (const surface of ["EditorialSurface", "DecisionSurface", "TechnicalSurface"]) assert.match(source, new RegExp(surface));
   assert.match(source, /GW-50156/);
   assert.doesNotMatch(source, /GW-501516|MK-677[^\n]+10 MG/);
