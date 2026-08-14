@@ -1,5 +1,6 @@
 import type { HeadingLevel } from "./commerce-types";
 import { classes } from "./component-utils";
+import { EditorialSurface, TechnicalSurface } from "./content-surfaces";
 import { MetricRail } from "./metric-rail";
 import type { ProductFixture } from "./product-fixtures";
 import { mk2866Fixture } from "./product-fixtures";
@@ -26,7 +27,6 @@ export function ProductDossier({
   id,
   evidenceHref,
 }: ProductDossierProps) {
-  const Heading = headingLevel;
   const form = product.qualitativeFacts.find((fact) => fact.kind === "form")?.value ?? "Unavailable";
 
   return (
@@ -36,46 +36,34 @@ export function ProductDossier({
       id={id}
     >
       <div className="shell">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">{eyebrow}</span>
-            <Heading>{title}</Heading>
-            <p>{copy}</p>
-          </div>
-        </div>
-        <ol aria-label="Dossier sections" className="dossier-section-index">
-          <li>01 Product facts</li>
-          <li>02 Product visual</li>
-          <li>03 Product composition</li>
-        </ol>
+        <EditorialSurface copy={copy} eyebrow={eyebrow} headingLevel={headingLevel} title={title}>
+          <ol aria-label="Dossier sections" className="dossier-section-index">
+            <li>01 Product facts</li>
+            <li>02 Product visual</li>
+            <li>03 Product composition</li>
+          </ol>
+        </EditorialSurface>
         <div className="dossier-card">
-          <article className="dossier-panel dossier-facts">
-            <span className="panel-index">01</span>
-            <h3>Product Facts</h3>
-            <p>Label information remains separate from analytical results.</p>
+          <TechnicalSurface className="dossier-panel dossier-facts" compact copy="Label information remains separate from analytical results." eyebrow="01 · PRODUCT FACTS" headingLevel="h3" title="Read the exact product format.">
             <dl>
               <div><dt>Series</dt><dd>{product.series}</dd></div>
               <div><dt>Strength</dt><dd>{product.strength}</dd></div>
               <div><dt>Servings</dt><dd>{product.servings}</dd></div>
               {product.sku ? <div><dt>SKU</dt><dd>{product.sku}</dd></div> : null}
             </dl>
-          </article>
+          </TechnicalSurface>
           <article className="dossier-media">
             <ProductMediaChamber context="dossier" media={product.media} />
             <MetricRail compact product={product} />
           </article>
-          <article className="dossier-panel dossier-composition">
-            <span className="panel-index">03</span>
-            <h3>Product Composition</h3>
-            <p>Presented as labelled product detail, with report results kept in their own record.</p>
+          <TechnicalSurface actions={<a href={evidenceHref ?? product.evidencePath}>Open evidence records →</a>} className="dossier-panel dossier-composition" compact copy="Product composition remains labelled product detail; reported results stay in their own OpenLab record." eyebrow="03 · PRODUCT COMPOSITION" headingLevel="h3" title="Connect the format to its evidence path.">
             <dl>
               <div><dt>Form</dt><dd>{form}</dd></div>
               <div><dt>Compound</dt><dd>{product.alias}</dd></div>
               <div><dt>Label purity</dt><dd>{product.purity}</dd></div>
               <div><dt>Pack</dt><dd>{product.servings}</dd></div>
             </dl>
-            <a href={evidenceHref ?? product.evidencePath}>Open evidence records →</a>
-          </article>
+          </TechnicalSurface>
         </div>
       </div>
     </section>

@@ -1,0 +1,170 @@
+.hero {
+  background:
+    radial-gradient(circle at 82% 14%, var(--oluk-surface-cobalt-soft), transparent 34%),
+    var(--oluk-surface-canvas);
+  padding: var(--oluk-space-12) 0 var(--oluk-space-14);
+}
+
+.shell {
+  display: grid;
+  gap: var(--oluk-space-5);
+  margin-inline: auto;
+  width: min(1248px, calc(100% - 48px));
+}
+
+.decisionField {
+  align-items: stretch;
+  display: grid;
+  gap: var(--oluk-space-5);
+  grid-template-columns: minmax(0, 1.15fr) minmax(390px, .85fr);
+}
+
+.decisionField > :last-child {
+  align-self: stretch;
+}
+
+.valueChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--oluk-space-2);
+}
+
+.valueChips span {
+  background: var(--oluk-surface-cobalt-soft);
+  border: var(--oluk-border-width) solid var(--oluk-border-strong);
+  border-radius: var(--oluk-radius-pill);
+  color: var(--oluk-cobalt);
+  font-family: var(--oluk-font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+  line-height: var(--oluk-type-eyebrow-line);
+  padding: var(--oluk-space-2) var(--oluk-space-3);
+}
+
+.confidenceField {
+  display: grid;
+  gap: var(--oluk-space-5);
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+}
+
+.recordMetrics {
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.recordMetrics div {
+  border-top: var(--oluk-border-width) solid var(--oluk-border-subtle);
+  min-width: 0;
+  padding-top: var(--oluk-space-3);
+}
+
+.recordMetrics dt {
+  color: var(--oluk-text-muted);
+  font-family: var(--oluk-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.recordMetrics dd {
+  color: var(--oluk-text-primary);
+  font-family: var(--oluk-font-display);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: var(--oluk-space-2) 0 0;
+  overflow-wrap: anywhere;
+}
+
+.entryGrid {
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.entryGrid a {
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-compact);
+  color: var(--oluk-text-primary);
+  display: grid;
+  gap: var(--oluk-space-2);
+  min-height: 190px;
+  padding: var(--oluk-space-5);
+  text-decoration: none;
+}
+
+.entryGrid a > span {
+  color: var(--oluk-cobalt);
+  font-family: var(--oluk-font-body);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.entryGrid h3 {
+  color: var(--oluk-text-primary);
+  font-family: var(--oluk-font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.08;
+  margin: var(--oluk-space-2) 0 0;
+}
+
+.entryGrid p {
+  color: var(--oluk-text-body);
+  font-family: var(--oluk-font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.entryGrid strong {
+  align-self: end;
+  color: var(--oluk-cobalt);
+  font-family: var(--oluk-font-body);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.entryGrid a:hover,
+.entryGrid a:focus-visible {
+  border-color: var(--oluk-border-strong);
+  box-shadow: var(--oluk-shadow-compact);
+}
+
+.entryGrid a:focus-visible {
+  outline: 3px solid var(--oluk-cobalt);
+  outline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+  .decisionField,
+  .confidenceField {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: var(--oluk-space-8) 0 var(--oluk-space-10);
+  }
+
+  .shell {
+    gap: var(--oluk-space-4);
+    width: min(100% - 28px, 1248px);
+  }
+
+  .recordMetrics,
+  .entryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .entryGrid a {
+    min-height: 0;
+  }
+}
