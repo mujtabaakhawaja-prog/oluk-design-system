@@ -183,7 +183,7 @@ export const productFixtures = {
     servings: "60 SERVINGS",
     purity: ">99%",
     price: "£55",
-    customerPath: "/shop",
+    customerPath: "/product/rad-140",
     evidencePath: "/open-lab/records",
     media: productMediaRegistry["rad-140"],
     qualitativeFacts: canonicalQualitativeFacts,

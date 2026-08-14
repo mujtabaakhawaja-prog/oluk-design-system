@@ -1,0 +1,212 @@
+.page {
+  background: var(--oluk-canvas);
+  color: var(--oluk-text-primary);
+  display: grid;
+  gap: var(--oluk-space-6);
+  min-height: 100vh;
+  padding: var(--oluk-space-8);
+}
+
+.hero,
+.controls,
+.brief,
+.preview {
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-vertical);
+  box-shadow: var(--oluk-shadow-card);
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: var(--oluk-space-8);
+  width: 100%;
+}
+
+.hero span,
+.brief > div:first-child > span,
+.preview header span {
+  color: var(--oluk-cobalt);
+  font-size: var(--oluk-type-eyebrow-size);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+}
+
+.hero h1 {
+  font-family: var(--oluk-font-display);
+  font-size: clamp(var(--oluk-type-display-lg-size), 6vw, var(--oluk-type-display-xl-size));
+  letter-spacing: var(--oluk-type-display-lg-track);
+  line-height: var(--oluk-type-display-xl-line);
+  margin: var(--oluk-space-3) 0;
+}
+
+.hero p,
+.brief p {
+  color: var(--oluk-text-body);
+  font-size: var(--oluk-type-body-size);
+  line-height: var(--oluk-type-body-line);
+  max-width: 78ch;
+}
+
+.hero a,
+.preview header a {
+  color: var(--oluk-cobalt);
+  font-size: var(--oluk-type-body-sm-size);
+  font-weight: 800;
+}
+
+.controls {
+  display: grid;
+  gap: var(--oluk-space-5);
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.controls > div {
+  display: grid;
+  gap: var(--oluk-space-3);
+}
+
+.controls strong {
+  font-family: var(--oluk-font-display);
+  font-size: var(--oluk-type-body-size);
+}
+
+.controls nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--oluk-space-2);
+}
+
+.controls button {
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-chip);
+  border-radius: var(--oluk-radius-control);
+  color: var(--oluk-text-primary);
+  font-family: var(--oluk-font-body);
+  font-size: var(--oluk-type-body-sm-size);
+  font-weight: 800;
+  min-height: 44px;
+  padding: var(--oluk-space-2) var(--oluk-space-4);
+}
+
+.controls button[aria-pressed="true"] {
+  background: var(--oluk-cobalt);
+  border-color: var(--oluk-cobalt);
+  color: var(--oluk-text-on-inverse);
+}
+
+.brief {
+  display: grid;
+  gap: var(--oluk-space-6);
+}
+
+.brief h2,
+.preview h2 {
+  font-family: var(--oluk-font-display);
+  font-size: var(--oluk-type-display-lg-size);
+  letter-spacing: var(--oluk-type-display-lg-track);
+  margin: var(--oluk-space-2) 0;
+}
+
+.brief dl {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.brief dl div {
+  border-top: var(--oluk-border-width) solid var(--oluk-border-chip);
+  display: grid;
+  gap: var(--oluk-space-4);
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 3fr);
+  padding: var(--oluk-space-3) 0;
+}
+
+.brief dt {
+  color: var(--oluk-text-muted);
+  font-size: var(--oluk-type-body-sm-size);
+  font-weight: 800;
+}
+
+.brief dd {
+  font-size: var(--oluk-type-body-size);
+  line-height: var(--oluk-type-body-line);
+  margin: 0;
+}
+
+.orderGrid {
+  display: grid;
+  gap: var(--oluk-space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.orderGrid > div {
+  background: var(--oluk-surface-family);
+  border: var(--oluk-border-width) solid var(--oluk-border-family);
+  border-radius: var(--oluk-radius-compact);
+  padding: var(--oluk-space-5);
+}
+
+.orderGrid h3 {
+  font-family: var(--oluk-font-display);
+  font-size: var(--oluk-type-display-md-size);
+  margin: 0;
+}
+
+.orderGrid ol,
+.orderGrid ul {
+  color: var(--oluk-text-body);
+  font-size: var(--oluk-type-body-size);
+  line-height: var(--oluk-type-body-line);
+  padding-left: var(--oluk-space-5);
+}
+
+.preview header {
+  align-items: end;
+  display: flex;
+  gap: var(--oluk-space-6);
+  justify-content: space-between;
+  margin-bottom: var(--oluk-space-5);
+}
+
+.frame {
+  background: var(--oluk-surface-media);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-compact);
+  overflow: hidden;
+  position: relative;
+}
+
+.frame iframe {
+  border: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: var(--oluk-space-4);
+  }
+
+  .hero,
+  .controls,
+  .brief,
+  .preview {
+    padding: var(--oluk-space-5);
+  }
+
+  .controls,
+  .orderGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brief dl div {
+    gap: var(--oluk-space-2);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preview header {
+    align-items: start;
+    flex-direction: column;
+  }
+}

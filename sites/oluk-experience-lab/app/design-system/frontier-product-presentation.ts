@@ -28,7 +28,6 @@ function mediaFor(product: FrontierProductRecord): ProductMediaAsset | null {
 /** Maps every catalogue record into the single PdpD/purchase-panel anatomy. */
 export function frontierProductPresentation(product: FrontierProductRecord): ProductFixture {
   if (product.slug === "mk-2866") return mk2866Fixture;
-  if (product.slug === "rad-140") return rad140Fixture;
 
   return {
     id: product.slug as ProductFixture["id"],
@@ -49,7 +48,7 @@ export function frontierProductPresentation(product: FrontierProductRecord): Pro
       { kind: "quality", label: "QUALITY", value: "LAB FORMULATED" },
       { kind: "tested", label: "TESTED", value: "THIRD PARTY" },
     ],
-    presentationStatus: { inventory: "in-stock", evidence: "available" },
+    presentationStatus: { inventory: "in-stock", evidence: "unavailable" },
     authority: {
       classification: "design-review-fixture",
       sourceRef: "Frontier product-content registry",

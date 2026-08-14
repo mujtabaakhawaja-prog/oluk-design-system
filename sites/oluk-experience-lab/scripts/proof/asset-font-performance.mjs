@@ -20,13 +20,14 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The hydrated OptionB navigation and the explicit post-purchase lifecycle entry pages
   // share one client path. The compiler-backed OpenLab record switcher adds a
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
-  // Product depth, cross-host stack continuations and keyboard-operable OpenLab
-  // technical views remain one bounded presentation-only client path. The
-  // largest-chunk law remains unchanged.
-  clientJavaScriptBytes: 609 * KIB,
-  // The commercial stack and OpenLab technical states reuse the governed surface
-  // grammar while retaining a bounded aggregate stylesheet ceiling.
-  clientCssBytes: 274 * KIB,
+  // Product depth, cross-host Stack, keyboard-operable OpenLab views and the
+  // owner-only PDP candidate selector share one bounded presentation path. The
+  // merged tree measures 632,658 bytes; retain modest headroom while the
+  // customer candidates remain route-shared and the largest-chunk law is unchanged.
+  clientJavaScriptBytes: 620 * KIB,
+  // OpenLab technical states and three materially different PDP grids reuse the
+  // governed surface grammar within one bounded aggregate stylesheet ceiling.
+  clientCssBytes: 280 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,
