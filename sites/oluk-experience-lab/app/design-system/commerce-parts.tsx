@@ -1,12 +1,10 @@
 import type { ReactNode } from "react";
+import { ActionButton, ActionLink } from "./action-control";
 import type { EvidenceState, HeadingLevel, InventoryState } from "./commerce-types";
 import { classes } from "./component-utils";
 import type { ProductFixture } from "./product-fixtures";
 import { ProductStatusStack } from "./product-status";
-
-function Arrow() {
-  return <span aria-hidden="true">→</span>;
-}
+import styles from "./commerce-parts.module.css";
 
 export type ProductIdentityProps = Readonly<{
   product: ProductFixture;
@@ -59,29 +57,6 @@ export function PriceBlock({ price }: Readonly<{ price: string }>) {
   );
 }
 
-export type StaticQuantityStepperProps = Readonly<{
-  value?: number;
-  className?: string;
-}>;
-
-export function StaticQuantityStepper({ value = 1, className }: StaticQuantityStepperProps) {
-  return (
-    <div
-      aria-label="Quantity presentation"
-      className={classes("quantity-stepper", "oluk-candidate-quantity", className)}
-      role="group"
-    >
-      <button aria-label="Decrease quantity" disabled type="button">
-        −
-      </button>
-      <output aria-label="Quantity">{value}</output>
-      <button aria-label="Increase quantity" disabled type="button">
-        +
-      </button>
-    </div>
-  );
-}
-
 export type StaticPurchaseActionsProps = Readonly<{
   primaryLabel?: string;
   evidenceHref?: string;
@@ -102,25 +77,15 @@ export function StaticPurchaseActions({
   state = "in-stock",
 }: StaticPurchaseActionsProps) {
   return (
-    <div className={classes("card-actions", "oluk-candidate-actions", className)} data-state={state}>
-      <button className={classes("button", "oluk-candidate-button")} disabled type="button">
+    <div className={classes("card-actions", styles.actions, className)} data-state={state}>
+      <ActionButton disabled>
         {primaryLabel}
-      </button>
+      </ActionButton>
       {showProductLink && productHref ? (
-        <a
-          className={classes("button", "button-secondary", "oluk-candidate-button", "oluk-candidate-button--secondary")}
-          href={productHref}
-        >
-          View product <Arrow />
-        </a>
+        <ActionLink href={productHref} variant="secondary">View product</ActionLink>
       ) : null}
       {evidenceHref ? (
-        <a
-          className={classes("button", "button-secondary", "oluk-candidate-button", "oluk-candidate-button--secondary")}
-          href={evidenceHref}
-        >
-          {evidenceLabel} <Arrow />
-        </a>
+        <ActionLink href={evidenceHref} variant="secondary">{evidenceLabel}</ActionLink>
       ) : null}
     </div>
   );
