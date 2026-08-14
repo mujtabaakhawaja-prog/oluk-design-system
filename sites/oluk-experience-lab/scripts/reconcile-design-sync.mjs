@@ -43,13 +43,17 @@ const historicalModule = (record) => ({
   figmaReference: { ...record.figmaReference, state: "HISTORICAL_REFERENCE" },
 });
 
+const preserveCurrentModule = (record) => record.reconciliationPolicy === "PRESERVE_CURRENT_NATIVE_MIRROR";
+
 const reconciledModules = {
   ...moduleRegistry,
   schemaVersion: "oluk.design-sync.v2",
-  status: "HISTORICAL_REFERENCES_RECONCILED",
+  status: moduleRegistry.records.some(preserveCurrentModule)
+    ? "CURRENT_AND_HISTORICAL_REFERENCES_RECONCILED"
+    : "HISTORICAL_REFERENCES_RECONCILED",
   synchronizationStates: stateModel.states,
   stateModel: "authority/DESIGN-SYNC-STATE-MODEL.json",
-  records: moduleRegistry.records.map(historicalModule),
+  records: moduleRegistry.records.map((record) => preserveCurrentModule(record) ? record : historicalModule(record)),
 };
 
 const historicalRoute = (record) => ({

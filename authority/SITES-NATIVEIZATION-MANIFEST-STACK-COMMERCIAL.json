@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "oluk.sites-nativeization.stack-commercial.v1",
+  "id": "stack-commercial-f6d380f",
+  "authority": "Codex Sites",
+  "status": "FIGMA_NATIVE_MIRROR_CREATED",
+  "sitesSource": {
+    "mergeCommit": "1f06342769ab3a8c1cac63c5b74f31797b3066e8",
+    "sourceHead": "77714ba09f041277d2faee2d0eb7373c354a7c82",
+    "coreSourceCommit": "f6d380f0bc11ac5d82d3d615306c22ac74e3e7df",
+    "sourceTreeHash": "14fedb03ca53047fd9637c59f1b69240b9a7b7c8",
+    "registryChangeBase": "dbf67bdc1bde5dadba1246650afa9b947a8f5573",
+    "registryChangeBaseTree": "03bbb867fc1eb4deb3c056c02971b36a67a3cc81",
+    "path": "/open-lab/stack-builder",
+    "codeExport": "YourStackBuilder"
+  },
+  "sitesCaptures": {
+    "foundationDesktop": {
+      "width": 1440,
+      "height": 3319,
+      "sha256": "14437130ec8967aba71feedd336e0ca028664f9078017f27a1d15324e09ad305"
+    },
+    "foundationMobile": {
+      "width": 390,
+      "height": 4933,
+      "sha256": "a892d896d08a87af3f47e24b0934c216f255a10f8f55f0559477cfaf46e94b9d"
+    },
+    "maximumDesktop": {
+      "width": 1440,
+      "height": 4576,
+      "sha256": "a0a69671f03cd546e7d64989a73b579410821d7eb96941c9ca965b418d3daf36"
+    }
+  },
+  "figma": {
+    "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "page09": "672:10",
+    "sitesSyncModules": "1214:50",
+    "sitesSyncRoutes": "1214:51",
+    "componentSets": {
+      "contentSurface": "1319:6409",
+      "goalSelector": "1321:6478",
+      "contributionChip": "1321:6497",
+      "levelPill": "1321:6504",
+      "baselineSelector": "1325:6516",
+      "additionCard": "1325:7801",
+      "commercialSummary": "1326:7562",
+      "openLabConfidence": "1326:7659",
+      "commercialBuilder": "1327:8810"
+    },
+    "builderVariants": {
+      "foundationDesktop": "1327:7550",
+      "foundationMobile": "1327:7911",
+      "maximumDesktop": "1327:8160",
+      "maximumMobile": "1327:8541"
+    },
+    "routeFrames": {
+      "foundationDesktop": "1332:26891",
+      "foundationMobile": "1332:27283",
+      "maximumDesktop": "1332:27960",
+      "maximumMobile": "1332:29007"
+    },
+    "state": "FIGMA_NATIVE_MIRROR_CREATED",
+    "publicationAuthorized": false
+  },
+  "componentProvenance": {
+    "productCompact": "742:174",
+    "productVerticalDesktop": "743:51",
+    "productVerticalMobile": "743:158",
+    "evidenceVerified": "1085:4378",
+    "evidenceUnavailable": "1085:4387",
+    "siteHeaderDesktop": "754:50",
+    "siteHeaderMobile": "754:121",
+    "openLabContextDesktop": "1215:29670",
+    "openLabContextMobile": "1215:29678",
+    "siteFooterDesktop": "754:75",
+    "siteFooterMobile": "754:146",
+    "mk2866RenderHash": "faf0bdaad548b4ed3805db96ab78ae4717d4e43a",
+    "rad140RenderHash": "02d82b76b71631012949780005c65cf8ff9c9abf",
+    "lgd4033MediaPolicy": "governed-unpopulated-chamber"
+  },
+  "commercialContract": {
+    "levels": ["FOUNDATION", "STRONGER", "MAXIMUM"],
+    "foundationComposition": "MK-2866 · £43",
+    "maximumComposition": "MK-2866 + LGD-4033 + RAD-140 · £142",
+    "scorePolicy": "No arbitrary efficacy, evidence, complexity or intensity scoring.",
+    "confidencePolicy": "OpenLab confidence is rendered separately for each selected product.",
+    "mobileStrategy": "One product decision at a time, followed by the complete composition and confidence summary."
+  },
+  "protectedHistoricalNodes": {
+    "goodBetterBest": "1210:31153",
+    "rejectedFiveAxisProfile": "1292:6466",
+    "rejectedRoute": "1295:31435",
+    "supersededDesktop": "1247:15844",
+    "supersededMobile": "1247:15863"
+  },
+  "makeGate": {
+    "eligible": true,
+    "eligiblePasses": ["cross-product-decision-systems"],
+    "prerequisites": [
+      "Sites component group is frozen.",
+      "Native Figma primitives are registered at FIGMA_NATIVE_MIRROR_CREATED."
+    ],
+    "generatedComponentsAreAuthority": false,
+    "selectedIdeasReturnToSitesFirst": true
+  },
+  "advancementGates": {
+    "figmaReviewed": false,
+    "visualSyncCurrent": false,
+    "ownerSelected": false,
+    "championApproved": false
+  }
+}

@@ -26,7 +26,7 @@ test("the 73-route ledger separates Sites maturity from runtime readiness withou
   assert.equal(ledger.routes.filter(({ designMaturity }) => designMaturity === "DESIGN_INCOMPLETE").length, 4);
 });
 
-test("every module reference is explicitly historical until a current Sites capture and native Figma mirror exist", async () => {
+test("module references stay historical unless they carry current Sites captures and a preserved native Figma mirror", async () => {
   const [registry, mounts] = await Promise.all([
     readJson("authority/DESIGN-SYNC-REGISTRY.json"),
     readJson("authority/FRONTIER-SECTION-MOUNT-REGISTRY.json"),
@@ -34,13 +34,24 @@ test("every module reference is explicitly historical until a current Sites capt
   assert.equal(registry.fileKey, "BEPMuUt1HroEw8xjz8CVyN");
   assert.equal(registry.authorityModel.sites, "design-ssot");
   assert.equal(registry.authorityModel.figma, "native-editable-inspection-mirror");
-  assert.equal(registry.status, "HISTORICAL_REFERENCES_RECONCILED");
+  assert.equal(registry.status, "CURRENT_AND_HISTORICAL_REFERENCES_RECONCILED");
   assert.equal(registry.records.length, mounts.sections.length + 1);
   for (const record of registry.records) {
-    assert.equal(record.status, "SITES_BUILT", record.id);
-    assert.equal(record.figmaMirrorState, "FIGMA_HISTORICAL_REFERENCE", record.id);
-    assert.equal(record.currentCapture.state, "NOT_CAPTURED_CURRENT", record.id);
-    assert.equal(record.figmaReference.state, "HISTORICAL_REFERENCE", record.id);
+    if (record.reconciliationPolicy === "PRESERVE_CURRENT_NATIVE_MIRROR") {
+      assert.equal(record.id, "stack-explorer");
+      assert.equal(record.status, "FIGMA_NATIVE_MIRROR_CREATED", record.id);
+      assert.equal(record.figmaMirrorState, "FIGMA_NATIVE_MIRROR_CREATED", record.id);
+      assert.equal(record.currentCapture.state, "SITES_CAPTURED_CURRENT", record.id);
+      assert.equal(record.figmaReference.state, "FIGMA_NATIVE_MIRROR_CREATED", record.id);
+      assert.equal(record.reviewGates.figmaReviewed, false);
+      assert.equal(record.reviewGates.visualSyncCurrent, false);
+      assert.equal(record.reviewGates.ownerSelected, false);
+    } else {
+      assert.equal(record.status, "SITES_BUILT", record.id);
+      assert.equal(record.figmaMirrorState, "FIGMA_HISTORICAL_REFERENCE", record.id);
+      assert.equal(record.currentCapture.state, "NOT_CAPTURED_CURRENT", record.id);
+      assert.equal(record.figmaReference.state, "HISTORICAL_REFERENCE", record.id);
+    }
     assert.ok(record.canonicalComponents.length > 0, record.id);
     assert.ok(["reorder", "collapse", "summary", "carousel", "horizontal-scroll", "stack-allowed"].includes(record.mobileStrategy), record.id);
   }
