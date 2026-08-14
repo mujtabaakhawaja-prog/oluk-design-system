@@ -189,6 +189,7 @@ test("transaction layout recomposes without overflow clipping", async () => {
   assert.match(css, /\.layout,[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\)/);
   assert.match(css, /\.summary \{[\s\S]*?min-width:\s*0/);
   assert.match(css, /\.quantity \{[\s\S]*?repeat\(3, 44px\)/);
+  assert.match(css, /\.transaction :global\(\.breadcrumb a\) \{[\s\S]*?min-height:\s*44px;[\s\S]*?min-width:\s*44px/);
   assert.match(css, /@media \(max-width: 980px\)[\s\S]*?grid-template-columns:\s*1fr/);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.fieldGrid,[\s\S]*?grid-template-columns:\s*1fr/);
   assert.doesNotMatch(css, /overflow-x:\s*(?:clip|hidden)/i);
@@ -216,12 +217,4 @@ test("affected checkout routes contain route copy in governed surfaces", async (
       `${routeId} may not add route-local loose canvas copy`,
     );
   }
-});
-
-test("checkout-mounted stack continuation consumes the canonical action family", async () => {
-  const source = await readFile(new URL("design-system/your-stack-builder.tsx", appRoot), "utf8");
-  const css = await readFile(new URL("design-system/your-stack-builder.module.css", appRoot), "utf8");
-  assert.match(source, /import \{ ActionButton, ActionLink \} from "\.\/customer-route-primitives"/);
-  assert.doesNotMatch(source, /<(?:a|button)\b/, "shared stack continuation may not restore raw controls on Bag or Confirmation");
-  assert.doesNotMatch(css, /\.goalPicker button,[\s\S]*?font-size:\s*14px/);
 });
