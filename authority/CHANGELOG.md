@@ -172,3 +172,10 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Backfilled the approved Your Stack composition as native 1440 and 390 Figma sections using canonical ProductCommerceCard instances and registered RAD-140, MENT and MK-677 renders.
 - Added a customer-proposition contract and strengthened visible-copy rejection so route, system, module, component, workspace, fixture, proof and presentation terminology cannot leak onto customer surfaces.
 - Added exact native-Figma links to Review Studio. All output remains human-review-required, unpublished and undeployed.
+
+## 2026-08-14 — 73-route native mirror reconciliation
+
+- Completed the live structural audit of Final-Design `Sites Sync — Routes` (`1214:51`): 156 native `SYNC / Route` frames form 78 desktop/mobile pairs, covering all 73 ledger entries and five intentional representative templates.
+- Updated all 73 route records to `dual-reference-ready`: every route now has a Sites composition, a native 1440/390 Final-Design mirror, and an explicit mobile strategy. This design disposition remains independent of `presentation-only`, `projection-ready`, and `authority-deferred` runtime status.
+- Recorded the audit in `FIGMA-SITES-SYNC-STRUCTURAL-AUDIT-20260814.md` and strengthened the ledger test so a runtime-deferred route can still have complete design treatment.
+- No route is promoted to `sync-verified` or `champion-approved` by this structural reconciliation; visual comparison, the 12 Review Studio decisions, publishing, and deployment remain separate gates.

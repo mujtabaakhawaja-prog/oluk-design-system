@@ -2484,7 +2484,7 @@
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
-      "sha256": "640956a93e02748dd7e32e311506ee98471678f3c0eb224c2dacc02464aad881"
+      "sha256": "4fc20d7a2fc9e696f4af92ee86f8cb1c96dc022b4bccabf53f0e259ad9cca37d"
     },
     "runtime": {
       "file": "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json",
@@ -3013,7 +3013,7 @@
     "canonicalOpenLabNamespace": "/open-lab",
     "routes": [
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "homepage",
         "id": "home",
@@ -3023,7 +3023,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "shop",
@@ -3033,7 +3033,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "collection",
@@ -3043,7 +3043,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "search",
@@ -3053,7 +3053,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "product-compare",
@@ -3063,7 +3063,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "replace",
         "family": "product_detail",
         "id": "product",
@@ -3073,7 +3073,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "reviews",
@@ -3083,7 +3083,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "about",
@@ -3093,7 +3093,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "about-evidence-os",
@@ -3103,7 +3103,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "account",
         "id": "account",
@@ -3113,7 +3113,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "account",
         "id": "account-orders",
@@ -3124,7 +3124,7 @@
       },
       {
         "blocker": "Identity and signed order projection required",
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-order",
@@ -3135,7 +3135,7 @@
       },
       {
         "blocker": "Identity contract required",
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-profile",
@@ -3146,7 +3146,7 @@
       },
       {
         "blocker": "Identity and Woo address projection required",
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-addresses",
@@ -3156,7 +3156,7 @@
         "runtimeReadiness": "authority-deferred"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "bag",
@@ -3170,7 +3170,7 @@
           "/checkout",
           "/checkout/info"
         ],
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-information",
@@ -3180,7 +3180,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "checkout-delivery",
@@ -3190,7 +3190,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-review",
@@ -3200,7 +3200,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-payment",
@@ -3210,7 +3210,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-processing",
@@ -3220,7 +3220,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-confirmation",
@@ -3230,7 +3230,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-failure",
@@ -3240,7 +3240,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-retry",
@@ -3250,7 +3250,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "post_purchase",
         "id": "checkout-tracking",
@@ -3260,7 +3260,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "existing",
         "family": "complete_payment",
         "id": "checkout-order-pay",
@@ -3270,7 +3270,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "existing",
         "family": "complete_payment",
         "id": "checkout-payment-handoff",
@@ -3280,7 +3280,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "contact",
@@ -3290,7 +3290,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "delivery",
@@ -3300,7 +3300,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "shipping-returns",
@@ -3310,7 +3310,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "faq",
@@ -3320,7 +3320,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "lab-reports",
@@ -3330,7 +3330,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_portal",
         "id": "open-lab",
@@ -3340,7 +3340,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-records",
@@ -3350,7 +3350,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "replace",
         "family": "openlab_product_record",
         "id": "open-lab-record",
@@ -3360,7 +3360,7 @@
         "runtimeReadiness": "projection-ready"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_product_record",
         "id": "open-lab-compound",
@@ -3370,7 +3370,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-report",
@@ -3380,7 +3380,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-coa-viewer",
@@ -3390,7 +3390,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-batch-lookup",
@@ -3400,7 +3400,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-methodology",
@@ -3410,7 +3410,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-source-chain",
@@ -3420,7 +3420,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-compare",
@@ -3430,7 +3430,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-evidence",
@@ -3440,7 +3440,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "open-lab-admin",
@@ -3451,7 +3451,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "privacy",
@@ -3461,7 +3461,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "terms",
@@ -3471,7 +3471,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "support_content",
         "id": "wholesale",
@@ -3481,7 +3481,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "international",
@@ -3492,7 +3492,7 @@
       },
       {
         "blocker": "Gift-card commercial authority not approved",
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "authority-deferred",
         "family": "support_content",
         "id": "gift-cards",
@@ -3502,7 +3502,7 @@
         "runtimeReadiness": "authority-deferred"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-research-papers",
@@ -3512,7 +3512,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-case-studies",
@@ -3522,7 +3522,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-glossary",
@@ -3532,7 +3532,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-dosing-calculator",
@@ -3542,7 +3542,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-compound-guide",
@@ -3552,7 +3552,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-interaction-checker",
@@ -3572,7 +3572,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-cycle-planner",
@@ -3582,7 +3582,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-success",
@@ -3592,7 +3592,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-pending",
@@ -3602,7 +3602,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-failed",
@@ -3612,7 +3612,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-cancelled",
@@ -3622,7 +3622,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-tracking",
@@ -3632,7 +3632,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "owner-review",
@@ -3643,7 +3643,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "legal-document",
@@ -3653,7 +3653,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-lab-partner",
@@ -3663,7 +3663,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "cookies",
@@ -3673,7 +3673,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "refunds",
@@ -3683,7 +3683,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-sarms",
@@ -3693,7 +3693,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-research-chemicals",
@@ -3703,7 +3703,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-prohormones",
@@ -3713,7 +3713,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-stacks",
@@ -3723,7 +3723,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "shop-goal",
@@ -3733,7 +3733,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "support_content",
         "id": "sitemap",
@@ -3743,7 +3743,7 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "composed",
+        "designMaturity": "dual-reference-ready",
         "disposition": "new",
         "family": "shared_shell",
         "id": "not-found",
@@ -3764,5 +3764,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "3ec02268fc3b9877978c61eb0029a46974a85a507d35cd9a1beb18ebf6b58e16"
+  "contractHash": "6214a563a5fa8f8f694221430d08434b1bf0f9eff9822a39dd1d6b8c354e4bf3"
 }

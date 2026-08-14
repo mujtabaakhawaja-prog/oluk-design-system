@@ -33,7 +33,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -43,7 +43,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -53,7 +53,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -63,7 +63,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -73,7 +73,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -83,7 +83,7 @@
       "disposition": "replace",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -93,7 +93,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -103,7 +103,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -113,7 +113,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -123,7 +123,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -133,7 +133,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -144,7 +144,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "identity-and-order-projection",
       "blocker": "Identity and signed order projection required",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -155,7 +155,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "identity",
       "blocker": "Identity contract required",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -166,7 +166,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "identity",
       "blocker": "Identity and Woo address projection required",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -176,7 +176,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -190,7 +190,7 @@
         "/checkout",
         "/checkout/info"
       ],
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -200,7 +200,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -210,7 +210,7 @@
       "disposition": "new",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -220,7 +220,7 @@
       "disposition": "replace",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -230,7 +230,7 @@
       "disposition": "new",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -240,7 +240,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -250,7 +250,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -260,7 +260,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -270,7 +270,7 @@
       "disposition": "new",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -280,7 +280,7 @@
       "disposition": "existing",
       "maturity": "SHAPE_COMPLETE",
       "owner": "preserve-only",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -290,7 +290,7 @@
       "disposition": "existing",
       "maturity": "SHAPE_COMPLETE",
       "owner": "preserve-only",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -300,7 +300,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -310,7 +310,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -320,7 +320,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -330,7 +330,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -340,7 +340,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -350,7 +350,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -360,7 +360,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -370,7 +370,7 @@
       "disposition": "replace",
       "maturity": "SOURCE_BOUND",
       "owner": "openlab-source",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "projection-ready"
     },
     {
@@ -380,7 +380,7 @@
       "disposition": "new",
       "maturity": "REVIEW_READY",
       "owner": "openlab-source",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -390,7 +390,7 @@
       "disposition": "new",
       "maturity": "REVIEW_READY",
       "owner": "openlab-source",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -400,7 +400,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -410,7 +410,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -420,7 +420,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -430,7 +430,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -440,7 +440,7 @@
       "disposition": "enhance",
       "maturity": "REVIEW_READY",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -450,7 +450,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -461,7 +461,7 @@
       "maturity": "REVIEW_READY",
       "owner": "sites-owner-review",
       "public": false,
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -471,7 +471,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -481,7 +481,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -491,7 +491,7 @@
       "disposition": "enhance",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -501,7 +501,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -512,7 +512,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "commerce-policy",
       "blocker": "Gift-card commercial authority not approved",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -522,7 +522,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -532,7 +532,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -542,7 +542,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -552,7 +552,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -562,7 +562,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -572,7 +572,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -592,7 +592,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -602,7 +602,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -612,7 +612,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -622,7 +622,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -632,7 +632,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -642,7 +642,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -653,7 +653,7 @@
       "maturity": "INTERACTIVE",
       "owner": "sites-owner-review",
       "public": false,
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -663,7 +663,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -673,7 +673,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -683,7 +683,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -693,7 +693,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -703,7 +703,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -713,7 +713,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -723,7 +723,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -733,7 +733,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -743,7 +743,7 @@
       "disposition": "enhance",
       "maturity": "INTERACTIVE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -753,7 +753,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -763,7 +763,7 @@
       "disposition": "new",
       "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "composed",
+      "designMaturity": "dual-reference-ready",
       "runtimeReadiness": "presentation-only"
     }
   ],

@@ -18,7 +18,10 @@ test("the 73-route ledger separates design maturity from runtime readiness", asy
     assert.ok(ledger.runtimeReadinessStates.includes(route.runtimeReadiness), `${route.id} runtime readiness`);
   }
   const deferred = ledger.routes.filter((route) => route.runtimeReadiness === "authority-deferred");
-  assert.ok(deferred.every((route) => route.designMaturity === "scaffold" || route.designMaturity === "composed"));
+  assert.ok(
+    deferred.every((route) => ["scaffold", "composed", "dual-reference-ready"].includes(route.designMaturity)),
+    "runtime deferral must not cap an independently complete design disposition",
+  );
 });
 
 test("every registered module has a Sites reference, Figma destination, and mobile strategy", async () => {
