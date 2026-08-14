@@ -610,9 +610,9 @@
       "path": "/order/pending/:orderId?",
       "family": "post_purchase",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -620,9 +620,9 @@
       "path": "/order/failed/:orderId?",
       "family": "post_purchase",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -630,9 +630,9 @@
       "path": "/order/cancelled/:orderId?",
       "family": "post_purchase",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -640,9 +640,9 @@
       "path": "/order/tracking/:orderId",
       "family": "post_purchase",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {

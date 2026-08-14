@@ -18,6 +18,7 @@
     {"id":"openlab-sidebar-workspace","mounts":["/open-lab/dosing-calculator","/open-lab/cycle-planner","/open-lab/case-studies","/open-lab/glossary"],"mobileStrategy":"collapse","states":["index","focused"],"dataContext":"OpenLabFrontierContent"},
     {"id":"openlab-document-viewer","mounts":["/open-lab/coa/:id"],"mobileStrategy":"summary","states":["document","table"],"dataContext":"OpenLabFrontierContent"},
     {"id":"checkout-lifecycle","mounts":["/bag","/checkout/:stage"],"mobileStrategy":"summary","states":["bag","information","delivery","review","payment","processing","confirmation","tracking","receipt","return","refund"],"dataContext":"CheckoutPresentation"},
+    {"id":"post-purchase-surface","mounts":["/order/success/:orderId?","/order/pending/:orderId?","/order/failed/:orderId?","/order/cancelled/:orderId?","/order/tracking/:orderId"],"mobileStrategy":"reorder","states":["success","pending","failed","cancelled","tracking"],"dataContext":"OrderPresentation"},
     {"id":"account-hub","mounts":["/account/:surface"],"mobileStrategy":"reorder","states":["empty","active","paused","due-soon"],"dataContext":"AccountPresentation"},
     {"id":"faq-help","mounts":["/faq-help-centre","/about","/product/:slug"],"mobileStrategy":"collapse","states":["default"],"dataContext":"FaqPresentation"},
     {"id":"support-surface","mounts":["/shipping-returns","/faq","/international","/gift-cards","/legal/:doc","/cookies","/refunds","/sitemap"],"mobileStrategy":"collapse","states":["default"],"dataContext":"SupportPresentation"}

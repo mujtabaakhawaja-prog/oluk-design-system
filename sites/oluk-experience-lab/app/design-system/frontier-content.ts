@@ -105,6 +105,7 @@ export const frontierFaq = [
 export const FRONTIER_ROUTE_PATTERNS = [
   "/product/[slug]", "/shop/[family]", "/collections/[slug]", "/compare", "/bundle-builder", "/faq-help-centre",
   "/shipping-returns", "/faq", "/international", "/gift-cards", "/cookies", "/refunds", "/sitemap", "/legal/[doc]",
+  "/order/[status]/[[...orderId]]",
   "/account/[surface]", "/checkout/[stage]", "/open-lab/[tool]", "/open-lab/coa/[id]",
 ] as const;
 
