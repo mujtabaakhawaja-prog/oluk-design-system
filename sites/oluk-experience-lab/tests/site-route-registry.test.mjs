@@ -9,6 +9,7 @@ import {
 } from "../app/design-system/site-route-data.mjs";
 import { FRONTIER_ROUTE_PATTERNS } from "../app/design-system/frontier-content.ts";
 import { PDP_CANDIDATE_ROUTE_PATTERNS } from "../app/design-system/pdp-candidate-manifest.ts";
+import { ACCOUNT_RETENTION_CANDIDATE_ROUTE_PATTERNS } from "../app/review-studio/account-retention-candidates/account-retention-candidate-manifest.ts";
 import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -30,7 +31,7 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("core registry controls 52 physical pages while the proof matrix resolves all 73 ledger dispositions", async () => {
+test("every physical page is declared while the core registry remains 52 routes and the proof matrix remains 73", async () => {
   assert.equal(CUSTOMER_ROUTES.length, 52);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
@@ -38,6 +39,7 @@ test("core registry controls 52 physical pages while the proof matrix resolves a
     ...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath),
     ...FRONTIER_ROUTE_PATTERNS,
     ...PDP_CANDIDATE_ROUTE_PATTERNS,
+    ...ACCOUNT_RETENTION_CANDIDATE_ROUTE_PATTERNS,
     ...PRIVATE_REVIEW_SPECIMEN_ROUTES,
   ]);
   assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
