@@ -15,6 +15,7 @@ const routeLedger = await readJson("authority/SITE-ROUTE-LEDGER.json");
 const componentRegistry = await readJson("authority/PROGRAM-COMPONENT-REGISTRY.json");
 const figmaIntent = await readJson("authority/FIGMA-INTENT-REGISTRY.json");
 const designSync = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
+const openLabExperience = await readJson("sites/oluk-experience-lab/app/design-system/openlab-product-experience.json");
 const currentState = await readJson("authority/CURRENT-STATE.json");
 const designContractRaw = await readFile(path.join(repoRoot, "authority/generated/OLUK-DESIGN-CONTRACT.json"), "utf8");
 const baseline = await readJson("sites/oluk-experience-lab/tests/visual-baselines/manifest.json");
@@ -62,6 +63,14 @@ const payload = {
       desktopNodeId: record.figmaReference.desktopNodeId,
       mobileNodeId: record.figmaReference.mobileNodeId,
     })),
+  },
+  openLabExperience: {
+    schemaVersion: openLabExperience.schemaVersion,
+    sourceContract: openLabExperience.sourceContract,
+    sourceHash: openLabExperience.sourceHash,
+    product: openLabExperience.product.slug,
+    chartPolicy: openLabExperience.interactionContract.chartPolicy,
+    figmaMirror: "PENDING_NATIVE_MIRROR",
   },
   visualEvidence: {
     routeCount: baseline.routeCount,

@@ -1067,7 +1067,7 @@
       }
     ],
     "publicationState": "UNPUBLISHED",
-    "sectionModuleCount": 22,
+    "sectionModuleCount": 23,
     "sectionModuleMappings": [
       {
         "dataOwner": "product projection",
@@ -1194,6 +1194,22 @@
         "runtimeExclusions": [
           "cart-mutation",
           "evidence-inference"
+        ]
+      },
+      {
+        "dataOwner": "OpenLabPublicProjection.v2 fixture compiler",
+        "export": "OpenLabProductExperience",
+        "id": "OL-PRODUCT-EXPERIENCE",
+        "mobileStrategy": "collapse",
+        "mounts": [
+          "/open-lab/compound/:slug",
+          "/open-lab/report/:batchId",
+          "/product/:slug"
+        ],
+        "runtimeExclusions": [
+          "runtime-fetch",
+          "analytical-reconstruction",
+          "source-substitution"
         ]
       },
       {
@@ -2472,7 +2488,7 @@
     },
     "openLabSections": {
       "file": "authority/OPENLAB-SECTION-MODULE-REGISTRY.json",
-      "sha256": "d118f2ae57c16a60e2ed919799ca04cb8b8a340126ba50f23ce200f2bc545919"
+      "sha256": "223c097b509e90a6b1ea98ac38ff01d3fcfb9bbf29ea5722715fe4441c78a5aa"
     },
     "pdpSections": {
       "file": "authority/PDP-SECTION-MODULE-REGISTRY.json",
@@ -3764,5 +3780,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "6214a563a5fa8f8f694221430d08434b1bf0f9eff9822a39dd1d6b8c354e4bf3"
+  "contractHash": "c8b54cd6db8824c5cc3b3c27e2a9bd8db3cc742928c06edec8544cb4dd422dc3"
 }

@@ -5,39 +5,1372 @@
   "templates": [
     {
       "id": "homepage",
-      "paths": ["/"],
-      "promoted": ["LockedHomeHero", "interactive 5-3-1 product stage", "category discovery", "featured ProductCommerceCard", "OpenLab entry", "trust closure"],
-      "promotable": ["ProductEvidenceSnapshot", "StackOutcomeCard", "related products", "OpenLab record preview", "collection campaign rail"],
-      "standaloneDestinations": ["/shop", "/open-lab", "/open-lab/records", "/open-lab/stack-builder"]
+      "paths": [
+        "/"
+      ],
+      "promoted": [
+        "LockedHomeHero",
+        "interactive 5-3-1 product stage",
+        "category discovery",
+        "featured ProductCommerceCard",
+        "OpenLab entry",
+        "trust closure"
+      ],
+      "promotable": [
+        "ProductEvidenceSnapshot",
+        "StackOutcomeCard",
+        "related products",
+        "OpenLab record preview",
+        "collection campaign rail"
+      ],
+      "standaloneDestinations": [
+        "/shop",
+        "/open-lab",
+        "/open-lab/records",
+        "/open-lab/stack-builder"
+      ]
     },
     {
       "id": "pdp",
-      "paths": ["/product/:slug", "/product/:slug/continuation"],
-      "promoted": ["PdpD first fold", "ProductMediaChamber", "PurchasePanel", "ProductNarrative", "ProductDossier", "ProductEvidenceSnapshot", "YourStackBuilder", "related products"],
-      "promotable": ["OpenLab record preview", "compound comparison", "report viewer preview", "RestockCard", "reviews", "collection continuation"],
-      "standaloneDestinations": ["/open-lab/compound/:slug", "/open-lab/report/:batchId", "/open-lab/compare", "/open-lab/stack-builder"]
+      "paths": [
+        "/product/:slug",
+        "/product/:slug/continuation"
+      ],
+      "promoted": [
+        "PdpD first fold",
+        "ProductMediaChamber",
+        "PurchasePanel",
+        "ProductNarrative",
+        "ProductDossier",
+        "ProductEvidenceSnapshot",
+        "YourStackBuilder",
+        "related products"
+      ],
+      "promotable": [
+        "OpenLab record preview",
+        "compound comparison",
+        "report viewer preview",
+        "RestockCard",
+        "reviews",
+        "collection continuation"
+      ],
+      "standaloneDestinations": [
+        "/open-lab/compound/:slug",
+        "/open-lab/report/:batchId",
+        "/open-lab/compare",
+        "/open-lab/stack-builder"
+      ]
     },
     {
       "id": "openlab",
-      "paths": ["/open-lab", "/open-lab/records", "/open-lab/compound/:slug", "/open-lab/report/:batchId", "/open-lab/:tool"],
-      "promoted": ["HeroLight entry", "record archive", "compound dossier", "report/document viewer", "technical evidence visualizations", "stack and comparison tools"],
-      "promotable": ["ProductCommerceCard return rail", "PDP evidence snapshot", "related product rail", "stack outcome cards", "methodology and source-chain storytelling"],
-      "standaloneDestinations": ["/product/:slug", "/open-lab/compare", "/open-lab/stack-builder", "/open-lab/batch-lookup"]
+      "paths": [
+        "/open-lab",
+        "/open-lab/records",
+        "/open-lab/compound/:slug",
+        "/open-lab/report/:batchId",
+        "/open-lab/:tool"
+      ],
+      "promoted": [
+        "HeroLight entry",
+        "record archive",
+        "compound dossier",
+        "report/document viewer",
+        "technical evidence visualizations",
+        "stack and comparison tools"
+      ],
+      "promotable": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ],
+      "standaloneDestinations": [
+        "/product/:slug",
+        "/open-lab/compare",
+        "/open-lab/stack-builder",
+        "/open-lab/batch-lookup"
+      ]
     },
     {
       "id": "commerce-continuation",
-      "paths": ["/bag", "/checkout/:stage", "/order/:state", "/account/:surface"],
-      "promoted": ["line items and summary", "checkout step indicator", "payment-trust equality lock", "receipt and tracking", "recommendation and restock continuation"],
-      "promotable": ["YourStackBuilder compact rail", "ProductEvidenceSnapshot", "related products", "quick reorder", "loyalty and saved stack"],
-      "standaloneDestinations": ["/open-lab/stack-builder", "/product/:slug", "/account/loyalty"]
+      "paths": [
+        "/bag",
+        "/checkout/:stage",
+        "/order/:state",
+        "/account/:surface"
+      ],
+      "promoted": [
+        "line items and summary",
+        "checkout step indicator",
+        "payment-trust equality lock",
+        "receipt and tracking",
+        "recommendation and restock continuation"
+      ],
+      "promotable": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ],
+      "standaloneDestinations": [
+        "/open-lab/stack-builder",
+        "/product/:slug",
+        "/account/loyalty"
+      ]
     },
     {
       "id": "discovery-support",
-      "paths": ["/shop", "/shop/:family", "/collections/:slug", "/search", "/compare", "/faq-help-centre", "/about"],
-      "promoted": ["CommerceDiscoveryFilters", "ProductCommerceCard grids", "comparison cards", "FAQ disclosure", "brand and trust storytelling"],
-      "promotable": ["StackOutcomeCard", "OpenLab record preview", "collection campaign rail", "ProductDossier preview"],
-      "standaloneDestinations": ["/open-lab", "/open-lab/compare", "/bundle-builder"]
+      "paths": [
+        "/shop",
+        "/shop/:family",
+        "/collections/:slug",
+        "/search",
+        "/compare",
+        "/faq-help-centre",
+        "/about"
+      ],
+      "promoted": [
+        "CommerceDiscoveryFilters",
+        "ProductCommerceCard grids",
+        "comparison cards",
+        "FAQ disclosure",
+        "brand and trust storytelling"
+      ],
+      "promotable": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ],
+      "standaloneDestinations": [
+        "/open-lab",
+        "/open-lab/compare",
+        "/bundle-builder"
+      ]
     }
   ],
-  "completionRule": "A section is promoted when it is deliberately composed on a customer page; it is promotable when the reusable Sites export and mobile strategy are ready but its host placement still needs a route-level composition decision."
+  "completionRule": "A section is promoted when it is deliberately composed on a customer page; it is promotable when the reusable Sites export and mobile strategy are ready but its host placement still needs a route-level composition decision.",
+  "ledgerSource": {
+    "path": "authority/SITE-ROUTE-LEDGER.json",
+    "sha256": "4fc20d7a2fc9e696f4af92ee86f8cb1c96dc022b4bccabf53f0e259ad9cca37d",
+    "routeCount": 73
+  },
+  "routeDispositions": [
+    {
+      "routeId": "home",
+      "path": "/",
+      "family": "homepage",
+      "template": "homepage",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductEvidenceSnapshot",
+        "StackOutcomeCard",
+        "related products",
+        "OpenLab record preview",
+        "collection campaign rail"
+      ]
+    },
+    {
+      "routeId": "shop",
+      "path": "/shop",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "collection",
+      "path": "/collections/:slug",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "search",
+      "path": "/search",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "product-compare",
+      "path": "/compare",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "product",
+      "path": "/product/:slug",
+      "family": "product_detail",
+      "template": "pdp",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "replace",
+      "promoted": true,
+      "promotableFrom": [
+        "OpenLab record preview",
+        "compound comparison",
+        "report viewer preview",
+        "RestockCard",
+        "reviews",
+        "collection continuation"
+      ]
+    },
+    {
+      "routeId": "reviews",
+      "path": "/reviews",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "about",
+      "path": "/about",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "about-evidence-os",
+      "path": "/about/evidence-os",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "account",
+      "path": "/account",
+      "family": "account",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "account-orders",
+      "path": "/account/orders",
+      "family": "account",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "account-order",
+      "path": "/account/orders/:orderId",
+      "family": "account",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred",
+      "disposition": "authority-deferred",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "account-profile",
+      "path": "/account/profile",
+      "family": "account",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred",
+      "disposition": "authority-deferred",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "account-addresses",
+      "path": "/account/addresses",
+      "family": "account",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred",
+      "disposition": "authority-deferred",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "bag",
+      "path": "/bag",
+      "family": "bag_checkout",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-information",
+      "path": "/checkout/information",
+      "family": "bag_checkout",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "replace",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-delivery",
+      "path": "/checkout/delivery",
+      "family": "bag_checkout",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-review",
+      "path": "/checkout/review",
+      "family": "bag_checkout",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-payment",
+      "path": "/checkout/payment",
+      "family": "bag_checkout",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "replace",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-processing",
+      "path": "/checkout/processing",
+      "family": "bag_checkout",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-confirmation",
+      "path": "/checkout/confirmation",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-failure",
+      "path": "/checkout/failure",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-retry",
+      "path": "/checkout/retry",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-tracking",
+      "path": "/checkout/tracking",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-order-pay",
+      "path": "/checkout/order-pay",
+      "family": "complete_payment",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "existing",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "checkout-payment-handoff",
+      "path": "/checkout/payment-handoff",
+      "family": "complete_payment",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "existing",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "contact",
+      "path": "/contact",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "delivery",
+      "path": "/delivery",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "shipping-returns",
+      "path": "/shipping-returns",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "faq",
+      "path": "/faq",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "lab-reports",
+      "path": "/lab-reports",
+      "family": "openlab_archive",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab",
+      "path": "/open-lab",
+      "family": "openlab_portal",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-records",
+      "path": "/open-lab/records",
+      "family": "openlab_archive",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-record",
+      "path": "/open-lab/records/:recordId",
+      "family": "openlab_product_record",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "projection-ready",
+      "disposition": "replace",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-compound",
+      "path": "/open-lab/compound/:slug",
+      "family": "openlab_product_record",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-report",
+      "path": "/open-lab/report/:batchId",
+      "family": "openlab_report_viewer",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-coa-viewer",
+      "path": "/open-lab/coa/:id",
+      "family": "openlab_report_viewer",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-batch-lookup",
+      "path": "/open-lab/batch-lookup",
+      "family": "openlab_archive",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-methodology",
+      "path": "/open-lab/methodology",
+      "family": "openlab_methodology_compare_evidenceos",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-source-chain",
+      "path": "/open-lab/source-chain",
+      "family": "openlab_methodology_compare_evidenceos",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-compare",
+      "path": "/open-lab/compare",
+      "family": "openlab_methodology_compare_evidenceos",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-evidence",
+      "path": "/open-lab/evidence",
+      "family": "openlab_methodology_compare_evidenceos",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-admin",
+      "path": "/open-lab/admin",
+      "family": "governance_review",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "owner-only",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "privacy",
+      "path": "/privacy",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "terms",
+      "path": "/terms",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "wholesale",
+      "path": "/wholesale",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "international",
+      "path": "/international",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "gift-cards",
+      "path": "/gift-cards",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred",
+      "disposition": "authority-deferred",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "open-lab-research-papers",
+      "path": "/open-lab/research-papers",
+      "family": "openlab_frontier_content",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-case-studies",
+      "path": "/open-lab/case-studies",
+      "family": "openlab_frontier_content",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-glossary",
+      "path": "/open-lab/glossary",
+      "family": "openlab_frontier_content",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-dosing-calculator",
+      "path": "/open-lab/dosing-calculator",
+      "family": "decision_tools",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-compound-guide",
+      "path": "/open-lab/compound-guide",
+      "family": "decision_tools",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-interaction-checker",
+      "path": "/open-lab/interaction-checker",
+      "family": "decision_tools",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-stack-builder",
+      "path": "/open-lab/stack-builder",
+      "family": "decision_tools",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "open-lab-cycle-planner",
+      "path": "/open-lab/cycle-planner",
+      "family": "decision_tools",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "order-success",
+      "path": "/order/success/:orderId?",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "order-pending",
+      "path": "/order/pending/:orderId?",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "order-failed",
+      "path": "/order/failed/:orderId?",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "order-cancelled",
+      "path": "/order/cancelled/:orderId?",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "order-tracking",
+      "path": "/order/tracking/:orderId",
+      "family": "post_purchase",
+      "template": "commerce-continuation",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "YourStackBuilder compact rail",
+        "ProductEvidenceSnapshot",
+        "related products",
+        "quick reorder",
+        "loyalty and saved stack"
+      ]
+    },
+    {
+      "routeId": "owner-review",
+      "path": "/review",
+      "family": "governance_review",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "owner-only",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "legal-document",
+      "path": "/legal/:doc",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "open-lab-lab-partner",
+      "path": "/open-lab/lab-partner",
+      "family": "openlab_frontier_content",
+      "template": "openlab",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "ProductCommerceCard return rail",
+        "PDP evidence snapshot",
+        "related product rail",
+        "stack outcome cards",
+        "methodology and source-chain storytelling"
+      ]
+    },
+    {
+      "routeId": "cookies",
+      "path": "/cookies",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "refunds",
+      "path": "/refunds",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "family-sarms",
+      "path": "/collections/sarms",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "family-research-chemicals",
+      "path": "/collections/research-chemicals",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "family-prohormones",
+      "path": "/collections/prohormones",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "family-stacks",
+      "path": "/collections/stacks",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "shop-goal",
+      "path": "/shop?goal=:goal",
+      "family": "catalogue_search_collections",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "enhance",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "sitemap",
+      "path": "/sitemap",
+      "family": "support_content",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    },
+    {
+      "routeId": "not-found",
+      "path": "/404",
+      "family": "shared_shell",
+      "template": "discovery-support",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only",
+      "disposition": "new",
+      "promoted": true,
+      "promotableFrom": [
+        "StackOutcomeCard",
+        "OpenLab record preview",
+        "collection campaign rail",
+        "ProductDossier preview"
+      ]
+    }
+  ]
 }

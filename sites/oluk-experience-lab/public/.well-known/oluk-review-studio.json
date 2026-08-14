@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-14T07:41:32-04:00",
-  "sourceGitSha": "94a88f9e7eea0e4e725e2686c8ac0e0ef9246bc8",
-  "sourceTreeHash": "79b3d94e52628241aa0d0661a0a7e4f02470ce1d35d2fe8f708f4095301d9904",
-  "designContractHash": "853c327c131770df03e75cc3f5066272fcbc046d44993f7d79c5c153f98bff19",
+  "generatedAt": "2026-08-14T09:24:18-04:00",
+  "sourceGitSha": "375677cf895a1ae2c03a4501809defb0facbf23a",
+  "sourceTreeHash": "1ac57191f2a5849362127807a3a597a3a524a014ce427a6a95da2b5e8c344713",
+  "designContractHash": "8b7df93286aadefb0af79e991db7a64e73302b7eacd643d61973054eb778a8f1",
   "decisionCount": 12,
   "families": [
     {
@@ -473,9 +473,9 @@
           "/open-lab/stack-builder"
         ],
         "mobileStrategy": "carousel",
-        "status": "figma-backfilled",
-        "desktopNodeId": "1216:874",
-        "mobileNodeId": "1216:1239"
+        "status": "sites-built-figma-mirror-rebuild-required",
+        "desktopNodeId": "1247:15844",
+        "mobileNodeId": "1247:15863"
       },
       {
         "id": "catalogue-grid",
@@ -547,6 +547,19 @@
         "status": "figma-backfilled",
         "desktopNodeId": "1235:2297",
         "mobileNodeId": "1235:2311"
+      },
+      {
+        "id": "openlab-product-experience",
+        "codeExport": "OpenLabProductExperience",
+        "consumingRoutes": [
+          "/open-lab/compound/:slug",
+          "/open-lab/report/:batchId",
+          "/product/:slug"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "sites-built-figma-mirror-rebuild-required",
+        "desktopNodeId": "PENDING_NATIVE_MIRROR",
+        "mobileNodeId": "PENDING_NATIVE_MIRROR"
       },
       {
         "id": "openlab-frontier-guide",
@@ -665,6 +678,14 @@
         "mobileNodeId": "1234:2292"
       }
     ]
+  },
+  "openLabExperience": {
+    "schemaVersion": "oluk.openlab-product-experience.v1",
+    "sourceContract": "OpenLabPublicProjection.v2",
+    "sourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
+    "product": "mk-2866",
+    "chartPolicy": "numeric bars and source-owned tabular values only",
+    "figmaMirror": "PENDING_NATIVE_MIRROR"
   },
   "visualEvidence": {
     "routeCount": 73,

@@ -10,6 +10,7 @@ import { PresentationState } from "./presentation-state";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { ProductDossier } from "./product-dossier";
 import { mk2866Fixture, rad140Fixture } from "./product-fixtures";
+import { OpenLabProductExperience } from "./openlab-product-experience";
 import { EvidenceStatusChip } from "./program-components";
 import styles from "./openlab-sections.module.css";
 
@@ -65,7 +66,7 @@ export function OpenLabRecordDetail({ record = selectedEvidenceRecord }: { recor
 }
 
 export function OpenLabDossierComposition() {
-  return <div data-module="OpenLabDossierComposition"><ProductDossier evidenceHref="#dossier-record-state" id="dossier" product={mk2866Fixture}/><section className={styles.section} id="dossier-record-state"><div className={styles.shell}><PresentationState action={<><ActionLink href="/open-lab/records">Browse records</ActionLink><ActionLink href="/open-lab/methodology" secondary>Read methodology</ActionLink></>} state="unavailable"/></div></section><section className={styles.section}><div className={styles.shell}><ProductCommerceCard contextKicker="RETURN TO COMMERCE" product={mk2866Fixture} secondaryHref={mk2866Fixture.customerPath} secondaryLabel="Return to MK-2866" showQualitative={false} variant="relation"/></div></section></div>;
+  return <div data-module="OpenLabDossierComposition"><ProductDossier evidenceHref="#dossier-record-state" id="dossier" product={mk2866Fixture}/><OpenLabProductExperience/><section className={styles.section} id="dossier-record-state"><div className={styles.shell}><PresentationState action={<><ActionLink href="/open-lab/records">Browse records</ActionLink><ActionLink href="/open-lab/methodology" secondary>Read methodology</ActionLink></>} state="unavailable"/></div></section><section className={styles.section}><div className={styles.shell}><ProductCommerceCard contextKicker="RETURN TO COMMERCE" product={mk2866Fixture} secondaryHref={mk2866Fixture.customerPath} secondaryLabel="Return to MK-2866" showQualitative={false} variant="relation"/></div></section></div>;
 }
 
 export function OpenLabMethodologyPipeline() {
