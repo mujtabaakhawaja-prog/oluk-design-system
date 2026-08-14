@@ -131,9 +131,9 @@
       "path": "/account/orders",
       "family": "account",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -144,7 +144,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "identity-and-order-projection",
       "blocker": "Identity and signed order projection required",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -155,7 +155,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "identity",
       "blocker": "Identity contract required",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -166,7 +166,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "identity",
       "blocker": "Identity and Woo address projection required",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "authority-deferred"
     },
     {
