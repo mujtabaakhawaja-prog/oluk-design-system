@@ -1,5 +1,10 @@
-import { ExperienceLab } from "../experience-lab";
+import { WholesaleExperience } from "../design-system/support-surface";
+import { CustomerSiteChrome } from "../experience-lab";
 
 export default function WholesalePage() {
-  return <ExperienceLab route="wholesale" />;
+  return (
+    <CustomerSiteChrome route="wholesale">
+      <WholesaleExperience />
+    </CustomerSiteChrome>
+  );
 }

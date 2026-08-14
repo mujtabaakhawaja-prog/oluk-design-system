@@ -1,5 +1,6 @@
-import { ExperienceLab } from "../experience-lab";
+import { AboutExperience } from "../design-system/support-surface";
+import { CustomerSiteChrome } from "../experience-lab";
 
 export default function AboutPage() {
-  return <ExperienceLab route="about" />;
+  return <CustomerSiteChrome route="about"><AboutExperience /></CustomerSiteChrome>;
 }
