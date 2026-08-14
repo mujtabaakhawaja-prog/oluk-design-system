@@ -2239,7 +2239,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "93249eaf6edb334b5dc33408600ca542023320acb264a57aefa8e288d0f93aa2",
+  "sourceHash": "6ee94d044c2e7670ec8f4ecd57fd0f58794fafa439d003825a66d76e0c1b42c2",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2259,5 +2259,5 @@
     "mobileReviewWidthPx": 390,
     "qualitativeChipLabelExceptionPx": 11
   },
-  "auditHash": "363f43469f5b340b8814baad782860a22ded327f1b1b753777eb35d7df2ed4f5"
+  "auditHash": "ce1c7bff9f749293456c461013a78b75f048dfbdc284cc84273ce079575765db"
 }
