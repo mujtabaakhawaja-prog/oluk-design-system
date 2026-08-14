@@ -40,9 +40,15 @@ For every generated object:
 
 If steps 1–4 fail, rebuild the object before polishing copy. Supplied product, trust, evidence, and checkout language is already accepted creative input for this frontier; preserve it. Do not weaken the design with governance labels, placeholder prose, or “this goes here” annotations.
 
-## Bulk execution
+## First run — start here
 
-`PROMPTS.md` contains six independent Make batches. Run batches in separate Make sessions so one large generation cannot flatten every module into the same layout.
+Run [`runs/01-canonical-your-stack/PROMPT.md`](runs/01-canonical-your-stack/PROMPT.md) before the broader batches. It rebuilds the only currently identified growth module that still bypasses the canonical component graph: `module-a-your-stack-desktop` (`1081:28849`).
+
+The run folder is self-contained and includes its own attachment instructions, interactive customer-facing `app.tsx`, render-bound product data, and three repository product assets. It asks for three materially different directions at 1440 and 390; it does not ask Make for a system board or developer proof.
+
+## Bulk execution after Run 01
+
+`PROMPTS.md` contains six independent Make batches. Run batches in separate Make sessions so one large generation cannot flatten every module into the same layout. Batch E consumes the relationship selected from Run 01 rather than regenerating the legacy Your Stack object.
 
 | Batch | Focus | Output |
 |---|---|---|

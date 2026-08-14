@@ -132,3 +132,11 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Refreshed the frontier Make kit into six independent bulk-run batches with explicit canonical-component, responsive-compaction, actual-media, and handoff requirements.
 - Updated the Figma intent and bridge projections for current Page 09 `672:10`, OptionB header `1176:28930`, TrustEvidenceSpine promotion, correct footer `754:18226`, and the rebuild-required manual Your Stack object `1081:28849`.
 - Validation passes production build, typecheck, lint, `83/83` tests, `112/112` variables, `128` CSS properties, `71/71` provenance checks, and `290/290` bridge checks. The work remains unpublished and undeployed.
+
+## 2026-08-13 — Frontier Make Run 01 ready
+
+- Added a self-contained first Make run for the unresolved `1081:28849` Your Stack module, with a paste-ready prompt, interactive customer-facing TSX baseline, deterministic product data and three repository product renders.
+- The prompt produces three materially distinct relationships at 1440 and 390 and explicitly rejects the legacy node's local cards, chambers, trust blocks and actions.
+- Added rendered 1440×1800 and 390×2200 baseline references so the visual input remains inspectable when TSX attachment reading is unavailable.
+- Added executable tests for prompt structure, attachment existence, asset hashes, render-bound product facts, mobile snap behavior and selected/added state copy.
+- The standalone Make baseline bundles successfully; build, typecheck and lint pass; the repository suite advances to `84/84` passing tests.

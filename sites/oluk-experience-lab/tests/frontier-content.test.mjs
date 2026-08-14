@@ -49,3 +49,49 @@ test("frontier binds supplied product renders and ships bounded Make/agentic han
   ]) assert.match(source, /\/assets\/products\/rad-140\/front\.png/);
   assert.doesNotMatch(readFileSync(new URL("PROMPTS.md", kitRoot), "utf8"), /RAD-140[^\n]{0,80}10 MG/);
 });
+
+test("first Make run is a self-contained canonical Your Stack frontier", () => {
+  const kitRoot = new URL("../../../make-sessions/frontier-site-expansion/", import.meta.url);
+  const runRoot = new URL("runs/01-canonical-your-stack/", kitRoot);
+  const manifest = JSON.parse(readFileSync(new URL("BULK-RUN-MANIFEST.json", kitRoot), "utf8"));
+  const productData = JSON.parse(readFileSync(new URL("product-data.json", runRoot), "utf8"));
+  const prompt = readFileSync(new URL("PROMPT.md", runRoot), "utf8");
+  const app = readFileSync(new URL("app.tsx", runRoot), "utf8");
+
+  assert.equal(manifest.firstRun.id, "01");
+  assert.equal(manifest.firstRun.directions, 3);
+  assert.deepEqual(manifest.firstRun.widths, [1440, 390]);
+  assert.equal(manifest.firstRun.attachments.length, 5);
+  for (const attachment of manifest.firstRun.attachments) assert.ok(readFileSync(new URL(attachment, kitRoot)).length > 100, attachment);
+  for (const controlFile of [manifest.firstRun.manifest, manifest.firstRun.prompt, manifest.firstRun.instructions, manifest.firstRun.runbook]) {
+    assert.ok(readFileSync(new URL(controlFile, kitRoot), "utf8").length > 200, controlFile);
+  }
+  assert.match(readFileSync(new URL(manifest.firstRun.manifest, kitRoot), "utf8"), /not MF-01 ProductCommerceCard/i);
+  for (const proof of manifest.firstRun.referenceProofs) {
+    const image = readFileSync(new URL(proof.path, kitRoot));
+    assert.equal(createHash("sha256").update(image).digest("hex"), proof.sha256);
+  }
+
+  assert.match(prompt, /INHERITED_CHAMPION_STATE/);
+  assert.match(prompt, /THIS_RUN_DELTA/);
+  assert.match(prompt, /DO_NOT_INHERIT/);
+  assert.match(prompt, /Direction 1 — Editorial Stack Rail/);
+  assert.match(prompt, /Direction 2 — Guided Decision Ladder/);
+  assert.match(prompt, /Direction 3 — Product Stage Continuation/);
+  assert.match(prompt, /never simply stack the full desktop section vertically/i);
+  assert.doesNotMatch(prompt, /10 MG[^\n]*RAD-140|RAD-140[^\n]*10 MG/i);
+
+  assert.deepEqual(productData.recommendations.map(({name, strength, servings}) => [name, strength, servings]), [
+    ["RAD-140", "8 MG", "60 SERVINGS"],
+    ["MENT", "20 MG", "30 SERVINGS"],
+    ["MK-677", "15 MG", "90 SERVINGS"],
+  ]);
+  assert.equal(productData.recommendations.find(({id}) => id === "ment").family, "Metabolics");
+  for (const product of productData.recommendations) {
+    const asset = readFileSync(new URL(product.image, runRoot));
+    assert.equal(createHash("sha256").update(asset).digest("hex"), product.imageSha256);
+  }
+  assert.match(app, /scroll-snap-type:x mandatory/);
+  assert.match(app, /Added ✓/);
+  assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
+});

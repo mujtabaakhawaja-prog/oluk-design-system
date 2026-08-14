@@ -34,6 +34,8 @@ This plan continues from the cumulative corrected candidate, not from the earlie
 
 Rebuild `Your Stack` and all recommendation/restock/bundle/account continuation modules from `ProductCommerceCard`, `ProductMediaChamber`, `ProductMetricRail`, `EvidenceStatusChip`, `StockPill` and registered actions. Reuse one contract across PDP, Bag, Confirmation and Account. The 390 layout presents one decision at a time; it is not a narrowed three-card row.
 
+The first executable Make prompt is `make-sessions/frontier-site-expansion/runs/01-canonical-your-stack/PROMPT.md`. It provides a five-file attachment packet, three distinct design directions, render-bound RAD-140/MENT/MK-677 facts, local selected/added interaction and pre-rendered 1440/390 customer-surface references. The legacy Figma object `1081:28849` supplies the module job only; its local card anatomy is explicitly excluded.
+
 ## Increment 2 — Navigation component backfill
 
 Translate the implemented OptionB behaviour into reusable Figma candidates: SHOP and OPEN LAB mega-menu panels, simple LEARN/ABOUT menus, a full-screen mobile navigation stack and route-aware contextual rail. Preserve SSR-safe flat links as the no-JS first-paint contract in code.
@@ -63,4 +65,4 @@ Compose dashboard, loyalty, referral, subscriptions, research profile, wishlist,
 
 ## Make handoff
 
-The executable creative kit is `make-sessions/frontier-site-expansion/`. It records completed versus pending work, the exact render registry, six bulk Make batches and implementation-agent follow-through. Make output is creative evidence; selected relationships must be rebuilt from the canonical graph before code/Figma bridge promotion.
+The executable creative kit is `make-sessions/frontier-site-expansion/`. It records completed versus pending work, the exact render registry, the focused Run 01 frontier, six subsequent bulk Make batches and implementation-agent follow-through. Make output is creative evidence; selected relationships must be rebuilt from the canonical graph before code/Figma bridge promotion.

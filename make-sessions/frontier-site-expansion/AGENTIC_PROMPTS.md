@@ -24,7 +24,7 @@ Reconcile the selected navigation relationships with `site-header.tsx` and `navi
 
 ## Product/PDP implementation
 
-Build selected PDP relationships from `pdp-first-fold.tsx`, canonical PurchasePanel/ProductMediaChamber/ProductMetricRail, PDP section modules and the frontier content registry. Preserve exact MK-2866 truth and RAD-140 8 MG. Bind RAD-140 to `/assets/products/rad-140/front.png` at its declared 2048×3072 intrinsic size. Cross-mount RecommendationCard, RestockCard and UpsellContextRail without alternate route-local anatomy. Validate details/disclosure semantics, sticky decision return, product links and 390 priority order.
+Build selected PDP relationships from `pdp-first-fold.tsx`, canonical PurchasePanel/ProductMediaChamber/ProductMetricRail, PDP section modules and the frontier content registry. Preserve exact MK-2866 truth and RAD-140 8 MG. Bind RAD-140 to `/assets/products/rad-140/front.png` at the delivery asset's declared 1024×1536 intrinsic size; retain the 2048×3072 source only as the Make/master asset. Cross-mount RecommendationCard, RestockCard and UpsellContextRail without alternate route-local anatomy. Validate details/disclosure semantics, sticky decision return, product links and 390 priority order.
 
 ## OpenLab implementation
 

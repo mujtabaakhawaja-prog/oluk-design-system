@@ -29,6 +29,18 @@
       "usage": ["LockedHero", "PDP", "ProductCommerceCard", "Your Stack", "comparison"]
     }
   ],
+  "firstRun": {
+    "id": "01-canonical-your-stack",
+    "root": "runs/01-canonical-your-stack",
+    "productData": "runs/01-canonical-your-stack/product-data.json",
+    "attachments": [
+      "runs/01-canonical-your-stack/app.tsx",
+      "runs/01-canonical-your-stack/product-data.json",
+      "runs/01-canonical-your-stack/assets/rad-140.png",
+      "runs/01-canonical-your-stack/assets/ment.webp",
+      "runs/01-canonical-your-stack/assets/mk-677.webp"
+    ]
+  },
   "figmaAuthority": {
     "homepageLockedHero": "1155:29963",
     "rangeProductStage": "462:4684",

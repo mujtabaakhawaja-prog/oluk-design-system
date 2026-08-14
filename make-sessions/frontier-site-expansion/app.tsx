@@ -49,9 +49,15 @@ function ProductCommerceCard({product}:{product:typeof products[number]}) {
 }
 
 function Header() {
-  const trust = ["🚚 FREE UK DELIVERY OVER £50","✈ FREE INT'L DELIVERY £200+","⚗ THIRD-PARTY LAB VERIFIED","✓ JANOSHIK VALIDATED","▣ ENCRYPTED CHECKOUT"];
+  const trust = [
+    ["/assets/icons/trust/delivery.svg", "FREE UK DELIVERY OVER £50"],
+    ["/assets/icons/trust/international.svg", "FREE INT'L DELIVERY £200+"],
+    ["/assets/icons/trust/tested.svg", "THIRD-PARTY LAB VERIFIED"],
+    ["/assets/icons/trust/validated.svg", "JANOSHIK VALIDATED"],
+    ["/assets/icons/trust/encrypted.svg", "ENCRYPTED CHECKOUT"],
+  ];
   return <header style={{...plane,maxWidth:1344,margin:"0 auto",borderRadius:18,overflow:"hidden",boxShadow:"none"}}>
-    <div style={{display:"flex",justifyContent:"space-between",gap:18,padding:"10px 24px",fontSize:10,color:C.muted,fontWeight:800,flexWrap:"wrap"}}>{trust.map(item=><span key={item}>{item}</span>)}</div>
+    <div style={{display:"flex",justifyContent:"space-between",gap:18,padding:"10px 24px",fontSize:10,color:C.muted,fontWeight:800,flexWrap:"wrap"}}>{trust.map(([icon,label])=><span key={label} style={{display:"flex",alignItems:"center",gap:7}}><img alt="" src={icon} style={{width:15,height:15}}/>{label}</span>)}</div>
     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:28,padding:"20px 28px",borderTop:`1px solid ${C.border}`}}>
       <div style={{display:"flex",alignItems:"center",gap:16}}><img src="/assets/brand/option-b/header-logo.png" alt="Olympus Labs UK" style={{width:214,height:58,objectFit:"contain"}}/><b style={{color:C.cobalt}}>////</b></div>
       <nav style={{display:"flex",gap:28,fontWeight:800,fontSize:13}}><span>SHOP</span><span>OPEN LAB</span><span>LEARN</span><span>WHOLESALE</span><span>ABOUT</span></nav>

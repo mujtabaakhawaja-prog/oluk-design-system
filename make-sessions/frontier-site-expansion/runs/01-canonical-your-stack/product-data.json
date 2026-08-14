@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "oluk.make.your-stack.v1",
+  "anchorProduct": {
+    "series": "SARM SERIES",
+    "name": "MK-2866",
+    "alias": "Ostarine",
+    "sku": "80529-01",
+    "strength": "15 MG",
+    "servings": "90 SERVINGS",
+    "purity": ">99%",
+    "price": "£43"
+  },
+  "heading": "Build on your MK-2866 research route.",
+  "introduction": "Compare complementary product directions with the same clear specifications, testing language and direct route to product detail.",
+  "recommendations": [
+    {
+      "id": "rad-140",
+      "series": "SARM SERIES",
+      "name": "RAD-140",
+      "alias": "Testolone",
+      "family": "Research Chemicals",
+      "strength": "8 MG",
+      "servings": "60 SERVINGS",
+      "purity": ">99%",
+      "price": "£55",
+      "inventory": "In stock",
+      "evidence": "Verified Evidence",
+      "rationale": "A strength-led direction with a clearly stated 8 MG format.",
+      "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
+      "image": "assets/rad-140.png",
+      "imageSha256": "6ef50a629d1b4831750e713426beb6285fb4b366297e6e8e5b3c09813ebdd3fc"
+    },
+    {
+      "id": "ment",
+      "series": "PROHORMONE SERIES",
+      "name": "MENT",
+      "alias": "Trestolone",
+      "family": "Metabolics",
+      "strength": "20 MG",
+      "servings": "30 SERVINGS",
+      "purity": ">99%",
+      "price": "£49",
+      "inventory": "In stock",
+      "evidence": "Source Reported",
+      "rationale": "A compact prohormone-format alternative for a different research direction.",
+      "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
+      "image": "assets/ment.webp",
+      "imageSha256": "1cbd10faea35d3893be287119263566f6d204d54e22dc0273278c8f0a4b098e8"
+    },
+    {
+      "id": "mk-677",
+      "series": "RESEARCH SERIES",
+      "name": "MK-677",
+      "alias": "Ibutamoren",
+      "family": "Metabolics",
+      "strength": "15 MG",
+      "servings": "90 SERVINGS",
+      "purity": ">99%",
+      "price": "£45",
+      "inventory": "In stock",
+      "evidence": "Source Only",
+      "rationale": "A research-series continuation with a familiar 90-serving format.",
+      "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
+      "image": "assets/mk-677.webp",
+      "imageSha256": "5ab6415bc8a7c53ce0b696f03fbdf222bf753b95cd03fd260a3c86997a1f8481"
+    }
+  ],
+  "interactionCopy": {
+    "primary": "Add to stack",
+    "selected": "Selected",
+    "added": "Added ✓",
+    "secondary": "View product"
+  }
+}

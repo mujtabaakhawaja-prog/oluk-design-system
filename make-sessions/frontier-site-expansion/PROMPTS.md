@@ -2,6 +2,10 @@
 
 Run each batch independently. Attach only the relevant product renders from `assets.json`. Each batch must return a 1440 frame, a 390 compact frame, a component/provenance list, a cross-mount list and a short relationship-selection note.
 
+## First prompt
+
+Start with `runs/01-canonical-your-stack/PROMPT.md` and its five-file attachment packet. This is the focused creative frontier for the unresolved `1081:28849` module. After a relationship is selected, use Batch E to expand that relationship across growth and account contexts. Do not run Batch E first.
+
 ## Shared preamble — paste into every batch
 
 Design a production-promotable Olympus Labs UK customer experience in the active light system. Use Plus Jakarta Sans for display, Inter Variable for UI/body, the cool luminous canvas, raised white planes, graduated blue borders and cobalt for actions, metrics, selected states and meaningful relationships. The footer is the only inverse surface.
@@ -67,7 +71,7 @@ Use the Option E hybrid central rail and collapsible context bands. Payment is a
 
 ## Batch E — Canonical growth, Your Stack and account continuation
 
-Rebuild `module-a-your-stack-desktop` (`1081:28849`) rather than polishing it. Replace its three locally assembled cards with canonical ProductCommerceCard instances using ProductMediaChamber, ProductMetricRail, EvidenceStatusChip/StockPill and canonical actions. Use the supplied RAD-140 render. MENT must use its Metabolics classification; product facts and stack rationale come from the shared frontier records.
+Begin from the relationship selected in Run 01. Do not polish or reuse `module-a-your-stack-desktop` (`1081:28849`). Replace its locally assembled cards with canonical ProductCommerceCard instances using ProductMediaChamber, ProductMetricRail, EvidenceStatusChip/StockPill and canonical actions. Use the supplied product renders and the selected one-decision-at-a-time compact relationship.
 
 Create:
 
