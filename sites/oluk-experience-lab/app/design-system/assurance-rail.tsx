@@ -72,6 +72,7 @@ export function AssuranceRail({
         className,
       )}
       data-component="AssuranceRail"
+      data-copy-surface="technical"
       data-live-authority="false"
       data-variant={variant}
     >

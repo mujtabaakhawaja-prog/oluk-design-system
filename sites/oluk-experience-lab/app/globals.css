@@ -795,6 +795,7 @@ a.button-secondary:hover {
 }
 
 .metric-rail {
+  container-type: inline-size;
   display: grid;
   border: 1px solid var(--line-strong);
   border-radius: 12px;
@@ -808,6 +809,7 @@ a.button-secondary:hover {
   background: var(--white);
   border: 0;
   min-width: 0;
+  overflow: hidden;
   padding: 12px 8px 10px;
   text-align: center;
 }
@@ -821,6 +823,7 @@ a.button-secondary:hover {
   font-family: var(--font-display), sans-serif;
   font-size: 17px;
   font-weight: 800;
+  font-variant-numeric: tabular-nums;
   letter-spacing: -0.035em;
   line-height: 1.05;
   white-space: nowrap;
@@ -844,7 +847,24 @@ a.button-secondary:hover {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
+  line-height: var(--oluk-type-eyebrow-line);
   margin-top: 5px;
+  overflow-wrap: anywhere;
+}
+
+.metric-rail [data-availability="unavailable"] dt {
+  color: var(--oluk-text-muted);
+  letter-spacing: 0;
+}
+
+@container (max-width: 240px) {
+  .metric-rail [data-fit="medium"] dt {
+    font-size: 13px;
+  }
+
+  .metric-rail [data-fit="long"] dt {
+    font-size: 12px;
+  }
 }
 
 .metric-rail-compact > div {
@@ -1381,7 +1401,7 @@ a.button-secondary:hover {
 
 .assurance-rail p {
   color: var(--ink-muted);
-  font-size: 13px;
+  font-size: var(--oluk-type-body-sm-size);
   line-height: 1.5;
   margin-top: 8px;
 }
