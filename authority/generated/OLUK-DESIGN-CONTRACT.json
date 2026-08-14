@@ -2500,7 +2500,7 @@
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
-      "sha256": "4fc20d7a2fc9e696f4af92ee86f8cb1c96dc022b4bccabf53f0e259ad9cca37d"
+      "sha256": "329b48a822b99de8728d1d0d28e037a8b5fcb2244c19421e8a0e12489de53ce7"
     },
     "runtime": {
       "file": "authority/generated/OLYMPUS-RUNTIME-CONTRACT.json",
@@ -3029,7 +3029,8 @@
     "canonicalOpenLabNamespace": "/open-lab",
     "routes": [
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "homepage",
         "id": "home",
@@ -3039,7 +3040,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "shop",
@@ -3049,7 +3051,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "collection",
@@ -3059,7 +3062,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "search",
@@ -3069,7 +3073,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "product-compare",
@@ -3079,7 +3084,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "replace",
         "family": "product_detail",
         "id": "product",
@@ -3089,7 +3095,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "reviews",
@@ -3099,7 +3106,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "about",
@@ -3109,7 +3117,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "about-evidence-os",
@@ -3119,7 +3128,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "account",
         "id": "account",
@@ -3129,7 +3139,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "account",
         "id": "account-orders",
@@ -3140,7 +3151,8 @@
       },
       {
         "blocker": "Identity and signed order projection required",
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "DESIGN_INCOMPLETE",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-order",
@@ -3151,7 +3163,8 @@
       },
       {
         "blocker": "Identity contract required",
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "DESIGN_INCOMPLETE",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-profile",
@@ -3162,7 +3175,8 @@
       },
       {
         "blocker": "Identity and Woo address projection required",
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "DESIGN_INCOMPLETE",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "authority-deferred",
         "family": "account",
         "id": "account-addresses",
@@ -3172,7 +3186,8 @@
         "runtimeReadiness": "authority-deferred"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "bag",
@@ -3186,7 +3201,8 @@
           "/checkout",
           "/checkout/info"
         ],
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-information",
@@ -3196,7 +3212,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "bag_checkout",
         "id": "checkout-delivery",
@@ -3206,7 +3223,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-review",
@@ -3216,7 +3234,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "replace",
         "family": "bag_checkout",
         "id": "checkout-payment",
@@ -3226,7 +3245,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "bag_checkout",
         "id": "checkout-processing",
@@ -3236,7 +3256,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-confirmation",
@@ -3246,7 +3267,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-failure",
@@ -3256,7 +3278,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "post_purchase",
         "id": "checkout-retry",
@@ -3266,7 +3289,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "post_purchase",
         "id": "checkout-tracking",
@@ -3276,7 +3300,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "existing",
         "family": "complete_payment",
         "id": "checkout-order-pay",
@@ -3286,7 +3311,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "existing",
         "family": "complete_payment",
         "id": "checkout-payment-handoff",
@@ -3296,7 +3322,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "contact",
@@ -3306,7 +3333,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "delivery",
@@ -3316,7 +3344,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "shipping-returns",
@@ -3326,7 +3355,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "faq",
@@ -3336,7 +3366,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "lab-reports",
@@ -3346,7 +3377,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_portal",
         "id": "open-lab",
@@ -3356,7 +3388,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-records",
@@ -3366,7 +3399,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "replace",
         "family": "openlab_product_record",
         "id": "open-lab-record",
@@ -3376,7 +3410,8 @@
         "runtimeReadiness": "projection-ready"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_product_record",
         "id": "open-lab-compound",
@@ -3386,7 +3421,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-report",
@@ -3396,7 +3432,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_report_viewer",
         "id": "open-lab-coa-viewer",
@@ -3406,7 +3443,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_archive",
         "id": "open-lab-batch-lookup",
@@ -3416,7 +3454,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-methodology",
@@ -3426,7 +3465,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-source-chain",
@@ -3436,7 +3476,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-compare",
@@ -3446,7 +3487,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_methodology_compare_evidenceos",
         "id": "open-lab-evidence",
@@ -3456,7 +3498,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "open-lab-admin",
@@ -3467,7 +3510,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "privacy",
@@ -3477,7 +3521,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "terms",
@@ -3487,7 +3532,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "support_content",
         "id": "wholesale",
@@ -3497,7 +3543,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "international",
@@ -3508,7 +3555,8 @@
       },
       {
         "blocker": "Gift-card commercial authority not approved",
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "DESIGN_INCOMPLETE",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "authority-deferred",
         "family": "support_content",
         "id": "gift-cards",
@@ -3518,7 +3566,8 @@
         "runtimeReadiness": "authority-deferred"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-research-papers",
@@ -3528,7 +3577,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-case-studies",
@@ -3538,7 +3588,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-glossary",
@@ -3548,7 +3599,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-dosing-calculator",
@@ -3558,7 +3610,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-compound-guide",
@@ -3568,7 +3621,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-interaction-checker",
@@ -3578,7 +3632,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-stack-builder",
@@ -3588,7 +3643,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "decision_tools",
         "id": "open-lab-cycle-planner",
@@ -3598,7 +3654,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-success",
@@ -3608,7 +3665,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-pending",
@@ -3618,7 +3676,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-failed",
@@ -3628,7 +3687,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-cancelled",
@@ -3638,7 +3698,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "post_purchase",
         "id": "order-tracking",
@@ -3648,7 +3709,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "owner-only",
         "family": "governance_review",
         "id": "owner-review",
@@ -3659,7 +3721,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "legal-document",
@@ -3669,7 +3732,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "openlab_frontier_content",
         "id": "open-lab-lab-partner",
@@ -3679,7 +3743,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "cookies",
@@ -3689,7 +3754,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "refunds",
@@ -3699,7 +3765,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-sarms",
@@ -3709,7 +3776,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-research-chemicals",
@@ -3719,7 +3787,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-prohormones",
@@ -3729,7 +3798,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "catalogue_search_collections",
         "id": "family-stacks",
@@ -3739,7 +3809,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "enhance",
         "family": "catalogue_search_collections",
         "id": "shop-goal",
@@ -3749,7 +3820,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "support_content",
         "id": "sitemap",
@@ -3759,7 +3831,8 @@
         "runtimeReadiness": "presentation-only"
       },
       {
-        "designMaturity": "dual-reference-ready",
+        "designMaturity": "SITES_BUILT",
+        "designSyncState": "FIGMA_HISTORICAL_REFERENCE",
         "disposition": "new",
         "family": "shared_shell",
         "id": "not-found",
@@ -3780,5 +3853,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "c8b54cd6db8824c5cc3b3c27e2a9bd8db3cc742928c06edec8544cb4dd422dc3"
+  "contractHash": "ba1d7bdee79f812661aff17eb65b7a7111692c02c027df1ba4eaba62d223ef37"
 }

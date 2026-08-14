@@ -2,9 +2,11 @@
 
 Run each batch independently. Attach only the relevant product renders from `assets.json`. Each batch must return a 1440 frame, a 390 compact frame, a component/provenance list, a cross-mount list and a short relationship-selection note.
 
-## First prompt
+## Make release gate
 
-Start with `runs/01-canonical-your-stack/PROMPT.md` and its five-file attachment packet. This is the focused creative frontier for the unresolved `1081:28849` module. After a relationship is selected, use Batch E to expand that relationship across growth and account contexts. Do not run Batch E first.
+Do not run Make for a completed Sites module. A Make exploration may begin only after its Sites component is frozen at 1440 and 390, registered with a current source hash, and rebuilt as editable native primitives in Final-Design. Make explores unresolved hierarchy only; Sites remains the implementation and composition source of truth.
+
+The historical `runs/01-canonical-your-stack` packet is retained for audit only. It must not be rerun or used as a source of Good/Better/Best layouts.
 
 ## Shared preamble — paste into every batch
 
@@ -69,19 +71,19 @@ Preserve the payment-trust language exactly:
 
 Use the Option E hybrid central rail and collapsible context bands. Payment is a designed protected handoff surface, not a real provider embed. At 390, compact completed steps, line items and secondary recommendations behind disclosure while keeping the current task, total and equality lock visible.
 
-## Batch E — Canonical growth, Your Stack and account continuation
+## Batch E — Cross-product decision systems
 
-Begin from the relationship selected in Run 01. Do not polish or reuse `module-a-your-stack-desktop` (`1081:28849`). Replace its locally assembled cards with canonical ProductCommerceCard instances using ProductMediaChamber, ProductMetricRail, EvidenceStatusChip/StockPill and canonical actions. Use the supplied product renders and the selected one-decision-at-a-time compact relationship.
+Run only after native Sites-derived product-card, metric-rail, qualitative-chip and action primitives are present in Final-Design. Do not polish or reuse `module-a-your-stack-desktop` (`1081:28849`). Explore comparison drawer, bundle relationships and outcome visualization with native primitives; selected decisions return to Sites before they become reusable Figma components.
 
-Create:
+Explore:
 
-- Your Stack Good/Better/Best goal presentations.
+- Goal-led Your Stack: baseline product, additive selections, combined outcome profile and clear total.
 - RecommendationCard: default, selected, added, unavailable, out-of-stock.
 - RestockCard: active, due-soon, overdue, paused.
 - UpsellContextRail: Recommendations and Restock Lab.
 - Bundle Builder, loyalty, referral, quick reorder, subscriptions, wishlist, saved stacks and account dashboard continuation.
 
-Cross-mount the same modules on PDP, Bag, Confirmation and Account. The 390 Your Stack composition shows one decision at a time with a compact rail or carousel; never squeeze a three-card desktop row into the viewport.
+The 390 Your Stack composition shows one decision at a time with a compact rail or carousel; never squeeze a three-card desktop row into the viewport.
 
 The customer proposition is outcome-led. Stack copy should explain how a product changes the plan: strength and lean mass, mass and power, cutting and endurance, recomp, or growth and recovery. Use product-specific “because” rationales and strong merchandising language. Never use `complements`, `makes sense`, `research route`, `product path`, `direction`, `testing language`, or `continuation` as the main customer proposition. Use all caps only inside bounded chips, pills, metric cells and compact status atoms.
 

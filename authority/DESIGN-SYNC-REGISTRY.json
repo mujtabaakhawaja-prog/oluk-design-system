@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "oluk.design-sync.v1",
-  "status": "ACTIVE_DUAL_REFERENCE_BUILD",
+  "schemaVersion": "oluk.design-sync.v2",
+  "status": "HISTORICAL_REFERENCES_RECONCILED",
   "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
   "authorityModel": {
     "sites": "design-ssot",
@@ -15,29 +15,714 @@
     "mobileHash": "d7e5440f9d104cf5a7939ff2b2a21e01dc3d7df4515f798912b0d83cc052b8ec"
   },
   "figmaPages": {
-    "modules": { "name": "Sites Sync — Modules", "nodeId": "1214:50" },
-    "routes": { "name": "Sites Sync — Routes", "nodeId": "1214:51" }
+    "modules": {
+      "name": "Sites Sync — Modules",
+      "nodeId": "1214:50"
+    },
+    "routes": {
+      "name": "Sites Sync — Routes",
+      "nodeId": "1214:51"
+    }
   },
   "records": [
-    {"id":"global-shell-navigation","codeExport":"SiteHeader","consumingRoutes":["/*"],"siteReference":{"path":"/","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"cce07e814512651cab0cdf94692877e2bb8bcb69276a595ed034ca7fe9f780a9","mobileHash":"241e06a4d895c8176ce4df37d98e7b0b1c746173c23f95bac6757510fe39c2f2"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1214:52","desktopNodeId":"1214:52","mobileNodeId":"1214:127"},"canonicalComponents":["OptionB-Premium-UtilityStack-V08","ProductCommerceCard.compact","CheckoutStepIndicator","ProductContextNav","OpenLabContextNav"],"mobileStrategy":"collapse","status":"figma-backfilled"},
-    {"id":"frontier-product-hero","codeExport":"PdpFirstFold","consumingRoutes":["/product/:slug"],"siteReference":{"path":"/product/mk-2866","sourceCommit":"a1c9bb7ed2ec1f492df14628697872dbbab0f249","desktopHash":"62dc8b02857ddde25991e9231047a65864d32e88dd2783beffe2ad673b830193","mobileHash":"506c6b9738d39c482b7f12549e2da8081b99352ed98ac07fccd6bb7e496f6727"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1262:24455","desktopNodeId":"1262:24455","mobileNodeId":"1262:25038"},"canonicalComponents":["OLUK / PdpDecisionHero","PdpD","PurchasePanel","ProductMediaChamber","ProductMetricRail"],"mobileStrategy":"summary","status":"figma-backfilled"},
-    {"id":"product-narrative","codeExport":"ProductNarrative","consumingRoutes":["/product/:slug"],"siteReference":{"path":"/product/mk-2866","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"62dc8b02857ddde25991e9231047a65864d32e88dd2783beffe2ad673b830193","mobileHash":"506c6b9738d39c482b7f12549e2da8081b99352ed98ac07fccd6bb7e496f6727"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1235:2269","desktopNodeId":"1235:2269","mobileNodeId":"1235:2283"},"canonicalComponents":["EvidenceStatusChip","CobaltDivider"],"mobileStrategy":"collapse","status":"figma-backfilled"},
-    {"id":"product-continuation","codeExport":"YourStackBuilder","consumingRoutes":["/product/:slug","/bag","/checkout/confirmation","/account"],"siteReference":{"path":"/open-lab/stack-builder","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"b64c983436a35cda9032d4c4f1cb5967879e6757f3a968985909e5d835776787","mobileHash":"6797edd72908fa9b9dadff751394cb91df069445d97792358c6f851c718612d3"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1216:874","desktopNodeId":"1216:874","mobileNodeId":"1216:1239"},"canonicalComponents":["ProductMediaChamber","ProductMetricRail","UpsellContextRail"],"mobileStrategy":"carousel","status":"figma-backfilled"},
-    {"id":"stack-explorer","codeExport":"YourStackBuilder","consumingRoutes":["/bundle-builder","/product/:slug","/bag","/open-lab/stack-builder"],"siteReference":{"path":"/open-lab/stack-builder","sourceCommit":"46b0c84","desktopHash":"PENDING_CURRENT_SOURCE_CAPTURE","mobileHash":"PENDING_CURRENT_SOURCE_CAPTURE"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1247:15844","desktopNodeId":"1247:15844","mobileNodeId":"1247:15863","role":"native-inspection-mirror","rejectedSourceNodeId":"1210:31153"},"canonicalComponents":["StackOutcomeCard","ProductMediaChamber","ProductMetricRail","RecommendationCard","UpsellContextRail"],"mobileStrategy":"carousel","status":"sites-built-figma-mirror-rebuild-required"},
-    {"id":"catalogue-grid","codeExport":"ShopDiscovery","consumingRoutes":["/shop","/shop/:family","/collections/:slug","/search"],"siteReference":{"path":"/shop","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"8aba4cf7a20ef12b6f9431726575234ad5d495f7f22c175d002d13e2abd2186d","mobileHash":"5d038dfc859c0d82ee0e7b1a28303758429a5769cafadb329768cf60aeee6f47"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1240:2293","desktopNodeId":"1240:2293","mobileNodeId":"1240:2737"},"canonicalComponents":["CommerceDiscoveryFilters","ProductCommerceCard.Compact","ProductMediaChamber","ProductMetricRail"],"mobileStrategy":"reorder","status":"figma-backfilled"},
-    {"id":"product-comparison","codeExport":"ProductCommerceCard.Relation","consumingRoutes":["/compare"],"siteReference":{"path":"/compare","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"839a622207be27f8a0ede6cf9492f15c28c9cb620e659d6cd12a175cd559ac72","mobileHash":"a4e4c67809816a3cb4d2cf873923a3be68c5fda077c64c5ccbd8a4720a12d97e"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1231:1501","desktopNodeId":"1231:1501","mobileNodeId":"1231:1861"},"canonicalComponents":["ProductCommerceCard.Relation","ProductMediaChamber","ProductMetricRail"],"mobileStrategy":"horizontal-scroll","status":"figma-backfilled"},
-    {"id":"support-surface","codeExport":"SupportSurface","consumingRoutes":["/shipping-returns","/faq","/international","/gift-cards","/legal/:doc","/cookies","/refunds","/sitemap"],"siteReference":{"path":"/faq","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"378f441044753f08a2e0017a1ee272e27d4880e3b613d10f409cc056a9674877","mobileHash":"bf7ace0379b3c2a87c4c2cdc27375b13dafe306c674c6bb0f6141c04c57e5449"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1232:2213","desktopNodeId":"1232:2213","mobileNodeId":"1232:2220"},"canonicalComponents":["CobaltDivider","OptionB-Premium-UtilityStack-V08"],"mobileStrategy":"collapse","status":"figma-backfilled"},
-    {"id":"openlab-record-suite","codeExport":"OpenLabRegistryArchive","consumingRoutes":["/open-lab","/open-lab/records","/open-lab/compound/:slug","/open-lab/report/:batchId"],"siteReference":{"path":"/open-lab","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"6603c15f73420d5021df183be79fc465b0635044ea3b5e974154caf2ff35873a","mobileHash":"bd579bcd3cd6350da65a1558e87b755f43dc218161ff507594b9af7af72d9795"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1242:3886","desktopNodeId":"1242:3886","mobileNodeId":"1242:4017"},"canonicalComponents":["HeroLight","EvidenceStatusChip","ProductCommerceCard"],"mobileStrategy":"horizontal-scroll","status":"figma-backfilled"},
-    {"id":"openlab-tools","codeExport":"OpenLabToolComposition","consumingRoutes":["/open-lab/batch-lookup","/open-lab/methodology","/open-lab/source-chain","/open-lab/compare"],"siteReference":{"path":"/open-lab/compare","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"80366d951faceff9b752a6d43f6482eff96b7008a17d8f259f72cc4263fd3a3e","mobileHash":"921c36906bad8570a14ef761ef716008c5d276a3455a046198707e78611bc2dc"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1235:2297","desktopNodeId":"1235:2297","mobileNodeId":"1235:2311"},"canonicalComponents":["EvidenceStatusChip","CobaltDivider"],"mobileStrategy":"collapse","status":"figma-backfilled"},
-    {"id":"openlab-product-experience","codeExport":"OpenLabProductExperience","consumingRoutes":["/open-lab/compound/:slug","/open-lab/report/:batchId","/product/:slug"],"siteReference":{"path":"/open-lab/compound/mk-2866","sourceCommit":"375677c","desktopHash":"PENDING_CURRENT_SOURCE_CAPTURE","mobileHash":"PENDING_CURRENT_SOURCE_CAPTURE"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"PENDING_NATIVE_MIRROR","desktopNodeId":"PENDING_NATIVE_MIRROR","mobileNodeId":"PENDING_NATIVE_MIRROR","role":"native-inspection-mirror-pending"},"canonicalComponents":["ProductDossier","EvidenceStatusChip","AnalyteTable"],"mobileStrategy":"collapse","status":"sites-built-figma-mirror-rebuild-required"},
-    {"id":"openlab-frontier-guide","codeExport":"OpenLabFrontierGuide","consumingRoutes":["/open-lab/evidence","/open-lab/compound-guide","/open-lab/research-papers","/open-lab/lab-partner"],"siteReference":{"path":"/open-lab/compound-guide","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"21a8ec43a453cb8b3d6229677850d0941b0018a80132082de9aedee7cbfd0882","mobileHash":"9176f2ea091fbb45fcc2483edf5e0c03c9115663f49ed7585b177eb8916eab5e"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1235:2325","desktopNodeId":"1235:2325","mobileNodeId":"1235:2339"},"canonicalComponents":["EvidenceStatusChip","CobaltDensityBoundary","CobaltDivider"],"mobileStrategy":"reorder","status":"figma-backfilled"},
-    {"id":"openlab-frontier-planning","codeExport":"YourStackBuilder","consumingRoutes":["/open-lab/stack-builder","/open-lab/dosing-calculator","/open-lab/cycle-planner","/open-lab/interaction-checker"],"siteReference":{"path":"/open-lab/stack-builder","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"b64c983436a35cda9032d4c4f1cb5967879e6757f3a968985909e5d835776787","mobileHash":"6797edd72908fa9b9dadff751394cb91df069445d97792358c6f851c718612d3"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1216:874","desktopNodeId":"1216:874","mobileNodeId":"1216:1239"},"canonicalComponents":["ProductMediaChamber","ProductMetricRail","UpsellContextRail"],"mobileStrategy":"carousel","status":"figma-backfilled"},
-    {"id":"openlab-sidebar-workspace","codeExport":"OpenLabSidebarWorkspace","consumingRoutes":["/open-lab/dosing-calculator","/open-lab/cycle-planner","/open-lab/case-studies","/open-lab/glossary"],"siteReference":{"path":"/open-lab/dosing-calculator","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"bb266c245687ae899e3b2d20aeb2b7e51cceca6655813bac25693c8678d7cf5a","mobileHash":"1278d3d0b1fdd8fe135ba6c2957dfceb96bbe40efb66ea8f18c158b900e7aef4"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1235:2353","desktopNodeId":"1235:2353","mobileNodeId":"1235:2367"},"canonicalComponents":["OpenLabContextNav","CobaltDensityBoundary","CobaltDivider"],"mobileStrategy":"collapse","status":"figma-backfilled"},
-    {"id":"openlab-document-viewer","codeExport":"OpenLabDocumentViewer","consumingRoutes":["/open-lab/coa/:id","/open-lab/report/:batchId"],"siteReference":{"path":"/open-lab/coa/sample","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"580cebf5cfab9f18629816a71022015c791a5c98b851f4dfe60b772998a9acd8","mobileHash":"91e1f5fbd461ba65dd7ead6d7ab88cc316a7848881954083b6926c53b89222aa"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1235:2381","desktopNodeId":"1235:2381","mobileNodeId":"1235:2395"},"canonicalComponents":["EvidenceStatusChip","CobaltDivider"],"mobileStrategy":"summary","status":"figma-backfilled"},
-    {"id":"checkout-lifecycle","codeExport":"TransactionPresentation","consumingRoutes":["/bag","/checkout/:stage"],"siteReference":{"path":"/checkout/review","sourceCommit":"e8efc2b6e31f36dd9bda1b797466a81f4efb158e","desktopHash":"4d41a1e05fed8b4f67fcfa1412c0e70bdd5a48d2d219fbb7eb16079986554348","mobileHash":"ba7a1e08c145625a13dc44c687d2b36991f0694575e66af5c5cfce0061fa6540"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1237:635","desktopNodeId":"1237:635","mobileNodeId":"1237:1084"},"canonicalComponents":["OLUK / CheckoutLifecycle","CheckoutStepIndicator","PurchasePanel","RecommendationCard","RelatedRail","SiteFooter"],"mobileStrategy":"summary","status":"figma-backfilled"},
-    {"id":"post-purchase-surface","codeExport":"PostPurchaseSurface","consumingRoutes":["/order/success/:orderId?","/order/pending/:orderId?","/order/failed/:orderId?","/order/cancelled/:orderId?","/order/tracking/:orderId"],"siteReference":{"path":"/order/success/OL-10428","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"eb3dcc6429551721a4d97a4bb469b443149b58850d02533ddb4432d26814124d","mobileHash":"93f93bbabff694d55245ddb65b46a9b2b26f8ae656669d8ca3e2ed17ac5ad961"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1237:1513","desktopNodeId":"1237:1513","mobileNodeId":"1237:1821"},"canonicalComponents":["RecommendationCard","RestockCard","CobaltDivider"],"mobileStrategy":"reorder","status":"figma-backfilled"},
-    {"id":"account-hub","codeExport":"AccountHub","consumingRoutes":["/account/:surface"],"siteReference":{"path":"/account","sourceCommit":"fd34245","desktopHash":"240d0bbe250ceebc1e657084d52ddd51f018fbca15c97a48dc6027dc68654a6c","mobileHash":"cf40b205ff021443af3f6c7de6c3f3278a0e8ffd91332d9b415d32f3dddb0259"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1239:2088","desktopNodeId":"1239:2088","mobileNodeId":"1239:2206"},"canonicalComponents":["OLUK / Section / AccountHub","RecommendationCard","RestockCard","ProductCommerceCard.Compact"],"mobileStrategy":"reorder","status":"figma-backfilled"},
-    {"id":"faq-help","codeExport":"SupportContent","consumingRoutes":["/faq-help-centre","/about","/product/:slug"],"siteReference":{"path":"/faq-help-centre","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"c80e3d1267331a4e88e7cc29bf9431226ffd714321a28b71fc0bde436e37b3d0","mobileHash":"6242df0bad2a5fa9ab301391cef37253448917e75c7998c4f5f024c3c9c62e10"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1235:2409","desktopNodeId":"1235:2409","mobileNodeId":"1235:2423"},"canonicalComponents":["CobaltDivider"],"mobileStrategy":"collapse","status":"figma-backfilled"},
-    {"id":"not-found-surface","codeExport":"NotFound","consumingRoutes":["/404"],"siteReference":{"path":"/404","sourceCommit":"022754cda325a59ae07bda8cbeaa3d44abc8987b","desktopHash":"a391fdfd8abe74056eeeaae748ef4675c02bec0dbaceabdac4ed7665776124af","mobileHash":"99af081806046f35739340f7f6bd4c303004f724d5838a3d00c6376f5dba2f9a"},"figmaReference":{"fileKey":"BEPMuUt1HroEw8xjz8CVyN","nodeId":"1234:2269","desktopNodeId":"1234:2269","mobileNodeId":"1234:2292"},"canonicalComponents":["CobaltDivider","ProductCommerceCard.Compact","OptionB-Premium-UtilityStack-V08"],"mobileStrategy":"collapse","status":"figma-backfilled"}
-  ]
+    {
+      "id": "global-shell-navigation",
+      "codeExport": "SiteHeader",
+      "consumingRoutes": [
+        "/*"
+      ],
+      "siteReference": {
+        "path": "/",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "cce07e814512651cab0cdf94692877e2bb8bcb69276a595ed034ca7fe9f780a9",
+        "mobileHash": "241e06a4d895c8176ce4df37d98e7b0b1c746173c23f95bac6757510fe39c2f2"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1214:52",
+        "desktopNodeId": "1214:52",
+        "mobileNodeId": "1214:127",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "OptionB-Premium-UtilityStack-V08",
+        "ProductCommerceCard.compact",
+        "CheckoutStepIndicator",
+        "ProductContextNav",
+        "OpenLabContextNav"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "frontier-product-hero",
+      "codeExport": "PdpFirstFold",
+      "consumingRoutes": [
+        "/product/:slug"
+      ],
+      "siteReference": {
+        "path": "/product/mk-2866",
+        "sourceCommit": "a1c9bb7ed2ec1f492df14628697872dbbab0f249",
+        "desktopHash": "62dc8b02857ddde25991e9231047a65864d32e88dd2783beffe2ad673b830193",
+        "mobileHash": "506c6b9738d39c482b7f12549e2da8081b99352ed98ac07fccd6bb7e496f6727"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1262:24455",
+        "desktopNodeId": "1262:24455",
+        "mobileNodeId": "1262:25038",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "OLUK / PdpDecisionHero",
+        "PdpD",
+        "PurchasePanel",
+        "ProductMediaChamber",
+        "ProductMetricRail"
+      ],
+      "mobileStrategy": "summary",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "product-narrative",
+      "codeExport": "ProductNarrative",
+      "consumingRoutes": [
+        "/product/:slug"
+      ],
+      "siteReference": {
+        "path": "/product/mk-2866",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "62dc8b02857ddde25991e9231047a65864d32e88dd2783beffe2ad673b830193",
+        "mobileHash": "506c6b9738d39c482b7f12549e2da8081b99352ed98ac07fccd6bb7e496f6727"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1235:2269",
+        "desktopNodeId": "1235:2269",
+        "mobileNodeId": "1235:2283",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "EvidenceStatusChip",
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "product-continuation",
+      "codeExport": "YourStackBuilder",
+      "consumingRoutes": [
+        "/product/:slug",
+        "/bag",
+        "/checkout/confirmation",
+        "/account"
+      ],
+      "siteReference": {
+        "path": "/open-lab/stack-builder",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "b64c983436a35cda9032d4c4f1cb5967879e6757f3a968985909e5d835776787",
+        "mobileHash": "6797edd72908fa9b9dadff751394cb91df069445d97792358c6f851c718612d3"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1216:874",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "ProductMediaChamber",
+        "ProductMetricRail",
+        "UpsellContextRail"
+      ],
+      "mobileStrategy": "carousel",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "stack-explorer",
+      "codeExport": "YourStackBuilder",
+      "consumingRoutes": [
+        "/bundle-builder",
+        "/product/:slug",
+        "/bag",
+        "/open-lab/stack-builder"
+      ],
+      "siteReference": {
+        "path": "/open-lab/stack-builder",
+        "sourceCommit": "46b0c84",
+        "desktopHash": "PENDING_CURRENT_SOURCE_CAPTURE",
+        "mobileHash": "PENDING_CURRENT_SOURCE_CAPTURE"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1247:15844",
+        "desktopNodeId": "1247:15844",
+        "mobileNodeId": "1247:15863",
+        "role": "native-inspection-mirror",
+        "rejectedSourceNodeId": "1210:31153",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "StackOutcomeCard",
+        "ProductMediaChamber",
+        "ProductMetricRail",
+        "RecommendationCard",
+        "UpsellContextRail"
+      ],
+      "mobileStrategy": "carousel",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "catalogue-grid",
+      "codeExport": "ShopDiscovery",
+      "consumingRoutes": [
+        "/shop",
+        "/shop/:family",
+        "/collections/:slug",
+        "/search"
+      ],
+      "siteReference": {
+        "path": "/shop",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "8aba4cf7a20ef12b6f9431726575234ad5d495f7f22c175d002d13e2abd2186d",
+        "mobileHash": "5d038dfc859c0d82ee0e7b1a28303758429a5769cafadb329768cf60aeee6f47"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1240:2293",
+        "desktopNodeId": "1240:2293",
+        "mobileNodeId": "1240:2737",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "CommerceDiscoveryFilters",
+        "ProductCommerceCard.Compact",
+        "ProductMediaChamber",
+        "ProductMetricRail"
+      ],
+      "mobileStrategy": "reorder",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "product-comparison",
+      "codeExport": "ProductCommerceCard.Relation",
+      "consumingRoutes": [
+        "/compare"
+      ],
+      "siteReference": {
+        "path": "/compare",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "839a622207be27f8a0ede6cf9492f15c28c9cb620e659d6cd12a175cd559ac72",
+        "mobileHash": "a4e4c67809816a3cb4d2cf873923a3be68c5fda077c64c5ccbd8a4720a12d97e"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1231:1501",
+        "desktopNodeId": "1231:1501",
+        "mobileNodeId": "1231:1861",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "ProductCommerceCard.Relation",
+        "ProductMediaChamber",
+        "ProductMetricRail"
+      ],
+      "mobileStrategy": "horizontal-scroll",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "support-surface",
+      "codeExport": "SupportSurface",
+      "consumingRoutes": [
+        "/shipping-returns",
+        "/faq",
+        "/international",
+        "/gift-cards",
+        "/legal/:doc",
+        "/cookies",
+        "/refunds",
+        "/sitemap"
+      ],
+      "siteReference": {
+        "path": "/faq",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "378f441044753f08a2e0017a1ee272e27d4880e3b613d10f409cc056a9674877",
+        "mobileHash": "bf7ace0379b3c2a87c4c2cdc27375b13dafe306c674c6bb0f6141c04c57e5449"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1232:2213",
+        "desktopNodeId": "1232:2213",
+        "mobileNodeId": "1232:2220",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "CobaltDivider",
+        "OptionB-Premium-UtilityStack-V08"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-record-suite",
+      "codeExport": "OpenLabRegistryArchive",
+      "consumingRoutes": [
+        "/open-lab",
+        "/open-lab/records",
+        "/open-lab/compound/:slug",
+        "/open-lab/report/:batchId"
+      ],
+      "siteReference": {
+        "path": "/open-lab",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "6603c15f73420d5021df183be79fc465b0635044ea3b5e974154caf2ff35873a",
+        "mobileHash": "bd579bcd3cd6350da65a1558e87b755f43dc218161ff507594b9af7af72d9795"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1242:3886",
+        "desktopNodeId": "1242:3886",
+        "mobileNodeId": "1242:4017",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "HeroLight",
+        "EvidenceStatusChip",
+        "ProductCommerceCard"
+      ],
+      "mobileStrategy": "horizontal-scroll",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-tools",
+      "codeExport": "OpenLabToolComposition",
+      "consumingRoutes": [
+        "/open-lab/batch-lookup",
+        "/open-lab/methodology",
+        "/open-lab/source-chain",
+        "/open-lab/compare"
+      ],
+      "siteReference": {
+        "path": "/open-lab/compare",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "80366d951faceff9b752a6d43f6482eff96b7008a17d8f259f72cc4263fd3a3e",
+        "mobileHash": "921c36906bad8570a14ef761ef716008c5d276a3455a046198707e78611bc2dc"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1235:2297",
+        "desktopNodeId": "1235:2297",
+        "mobileNodeId": "1235:2311",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "EvidenceStatusChip",
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-product-experience",
+      "codeExport": "OpenLabProductExperience",
+      "consumingRoutes": [
+        "/open-lab/compound/:slug",
+        "/open-lab/report/:batchId",
+        "/product/:slug"
+      ],
+      "siteReference": {
+        "path": "/open-lab/compound/mk-2866",
+        "sourceCommit": "375677c",
+        "desktopHash": "PENDING_CURRENT_SOURCE_CAPTURE",
+        "mobileHash": "PENDING_CURRENT_SOURCE_CAPTURE"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "PENDING_NATIVE_MIRROR",
+        "desktopNodeId": "PENDING_NATIVE_MIRROR",
+        "mobileNodeId": "PENDING_NATIVE_MIRROR",
+        "role": "native-inspection-mirror-pending",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "ProductDossier",
+        "EvidenceStatusChip",
+        "AnalyteTable"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-frontier-guide",
+      "codeExport": "OpenLabFrontierGuide",
+      "consumingRoutes": [
+        "/open-lab/evidence",
+        "/open-lab/compound-guide",
+        "/open-lab/research-papers",
+        "/open-lab/lab-partner"
+      ],
+      "siteReference": {
+        "path": "/open-lab/compound-guide",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "21a8ec43a453cb8b3d6229677850d0941b0018a80132082de9aedee7cbfd0882",
+        "mobileHash": "9176f2ea091fbb45fcc2483edf5e0c03c9115663f49ed7585b177eb8916eab5e"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1235:2325",
+        "desktopNodeId": "1235:2325",
+        "mobileNodeId": "1235:2339",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "EvidenceStatusChip",
+        "CobaltDensityBoundary",
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "reorder",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-frontier-planning",
+      "codeExport": "YourStackBuilder",
+      "consumingRoutes": [
+        "/open-lab/stack-builder",
+        "/open-lab/dosing-calculator",
+        "/open-lab/cycle-planner",
+        "/open-lab/interaction-checker"
+      ],
+      "siteReference": {
+        "path": "/open-lab/stack-builder",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "b64c983436a35cda9032d4c4f1cb5967879e6757f3a968985909e5d835776787",
+        "mobileHash": "6797edd72908fa9b9dadff751394cb91df069445d97792358c6f851c718612d3"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1216:874",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "ProductMediaChamber",
+        "ProductMetricRail",
+        "UpsellContextRail"
+      ],
+      "mobileStrategy": "carousel",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-sidebar-workspace",
+      "codeExport": "OpenLabSidebarWorkspace",
+      "consumingRoutes": [
+        "/open-lab/dosing-calculator",
+        "/open-lab/cycle-planner",
+        "/open-lab/case-studies",
+        "/open-lab/glossary"
+      ],
+      "siteReference": {
+        "path": "/open-lab/dosing-calculator",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "bb266c245687ae899e3b2d20aeb2b7e51cceca6655813bac25693c8678d7cf5a",
+        "mobileHash": "1278d3d0b1fdd8fe135ba6c2957dfceb96bbe40efb66ea8f18c158b900e7aef4"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1235:2353",
+        "desktopNodeId": "1235:2353",
+        "mobileNodeId": "1235:2367",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "OpenLabContextNav",
+        "CobaltDensityBoundary",
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "openlab-document-viewer",
+      "codeExport": "OpenLabDocumentViewer",
+      "consumingRoutes": [
+        "/open-lab/coa/:id",
+        "/open-lab/report/:batchId"
+      ],
+      "siteReference": {
+        "path": "/open-lab/coa/sample",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "580cebf5cfab9f18629816a71022015c791a5c98b851f4dfe60b772998a9acd8",
+        "mobileHash": "91e1f5fbd461ba65dd7ead6d7ab88cc316a7848881954083b6926c53b89222aa"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1235:2381",
+        "desktopNodeId": "1235:2381",
+        "mobileNodeId": "1235:2395",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "EvidenceStatusChip",
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "summary",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "checkout-lifecycle",
+      "codeExport": "TransactionPresentation",
+      "consumingRoutes": [
+        "/bag",
+        "/checkout/:stage"
+      ],
+      "siteReference": {
+        "path": "/checkout/review",
+        "sourceCommit": "e8efc2b6e31f36dd9bda1b797466a81f4efb158e",
+        "desktopHash": "4d41a1e05fed8b4f67fcfa1412c0e70bdd5a48d2d219fbb7eb16079986554348",
+        "mobileHash": "ba7a1e08c145625a13dc44c687d2b36991f0694575e66af5c5cfce0061fa6540"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1237:635",
+        "desktopNodeId": "1237:635",
+        "mobileNodeId": "1237:1084",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "OLUK / CheckoutLifecycle",
+        "CheckoutStepIndicator",
+        "PurchasePanel",
+        "RecommendationCard",
+        "RelatedRail",
+        "SiteFooter"
+      ],
+      "mobileStrategy": "summary",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "post-purchase-surface",
+      "codeExport": "PostPurchaseSurface",
+      "consumingRoutes": [
+        "/order/success/:orderId?",
+        "/order/pending/:orderId?",
+        "/order/failed/:orderId?",
+        "/order/cancelled/:orderId?",
+        "/order/tracking/:orderId"
+      ],
+      "siteReference": {
+        "path": "/order/success/OL-10428",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "eb3dcc6429551721a4d97a4bb469b443149b58850d02533ddb4432d26814124d",
+        "mobileHash": "93f93bbabff694d55245ddb65b46a9b2b26f8ae656669d8ca3e2ed17ac5ad961"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1237:1513",
+        "desktopNodeId": "1237:1513",
+        "mobileNodeId": "1237:1821",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "RecommendationCard",
+        "RestockCard",
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "reorder",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "account-hub",
+      "codeExport": "AccountHub",
+      "consumingRoutes": [
+        "/account/:surface"
+      ],
+      "siteReference": {
+        "path": "/account",
+        "sourceCommit": "fd34245",
+        "desktopHash": "240d0bbe250ceebc1e657084d52ddd51f018fbca15c97a48dc6027dc68654a6c",
+        "mobileHash": "cf40b205ff021443af3f6c7de6c3f3278a0e8ffd91332d9b415d32f3dddb0259"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1239:2088",
+        "desktopNodeId": "1239:2088",
+        "mobileNodeId": "1239:2206",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "OLUK / Section / AccountHub",
+        "RecommendationCard",
+        "RestockCard",
+        "ProductCommerceCard.Compact"
+      ],
+      "mobileStrategy": "reorder",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "faq-help",
+      "codeExport": "SupportContent",
+      "consumingRoutes": [
+        "/faq-help-centre",
+        "/about",
+        "/product/:slug"
+      ],
+      "siteReference": {
+        "path": "/faq-help-centre",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "c80e3d1267331a4e88e7cc29bf9431226ffd714321a28b71fc0bde436e37b3d0",
+        "mobileHash": "6242df0bad2a5fa9ab301391cef37253448917e75c7998c4f5f024c3c9c62e10"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1235:2409",
+        "desktopNodeId": "1235:2409",
+        "mobileNodeId": "1235:2423",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "CobaltDivider"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    },
+    {
+      "id": "not-found-surface",
+      "codeExport": "NotFound",
+      "consumingRoutes": [
+        "/404"
+      ],
+      "siteReference": {
+        "path": "/404",
+        "sourceCommit": "022754cda325a59ae07bda8cbeaa3d44abc8987b",
+        "desktopHash": "a391fdfd8abe74056eeeaae748ef4675c02bec0dbaceabdac4ed7665776124af",
+        "mobileHash": "99af081806046f35739340f7f6bd4c303004f724d5838a3d00c6376f5dba2f9a"
+      },
+      "figmaReference": {
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "nodeId": "1234:2269",
+        "desktopNodeId": "1234:2269",
+        "mobileNodeId": "1234:2292",
+        "state": "HISTORICAL_REFERENCE"
+      },
+      "canonicalComponents": [
+        "CobaltDivider",
+        "ProductCommerceCard.Compact",
+        "OptionB-Premium-UtilityStack-V08"
+      ],
+      "mobileStrategy": "collapse",
+      "status": "SITES_BUILT",
+      "figmaMirrorState": "FIGMA_HISTORICAL_REFERENCE",
+      "currentCapture": {
+        "state": "NOT_CAPTURED_CURRENT",
+        "reason": "Existing capture and node references predate the current Sites composition baseline."
+      }
+    }
+  ],
+  "synchronizationStates": [
+    "SITES_BUILT",
+    "SITES_CAPTURED_CURRENT",
+    "FIGMA_NATIVE_MIRROR_CREATED",
+    "FIGMA_REVIEWED",
+    "VISUAL_SYNC_CURRENT",
+    "CHAMPION_APPROVED",
+    "DESIGN_INCOMPLETE"
+  ],
+  "stateModel": "authority/DESIGN-SYNC-STATE-MODEL.json"
 }

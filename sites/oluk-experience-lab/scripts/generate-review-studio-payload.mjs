@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -22,17 +22,8 @@ const baseline = await readJson("sites/oluk-experience-lab/tests/visual-baseline
 const receipt = await readFile(path.join(repoRoot, "authority/receipts/WAVES-0-6-GOVERNED-SITE-REFERENCE.md"), "utf8");
 const studioReceipt = await readFile(path.join(repoRoot, "authority/receipts/CHAMPION-REVIEW-STUDIO.md"), "utf8");
 const sourceGitSha = execFileSync("git", ["rev-parse", "HEAD"], { cwd: repoRoot, encoding: "utf8" }).trim();
+const sourceTreeHash = execFileSync("git", ["rev-parse", "HEAD^{tree}"], { cwd: repoRoot, encoding: "utf8" }).trim();
 const generatedAt = execFileSync("git", ["show", "-s", "--format=%cI", "HEAD"], { cwd: repoRoot, encoding: "utf8" }).trim();
-const generatedOutputs = new Set([
-  "sites/oluk-experience-lab/public/.well-known/oluk-review-studio.json",
-  "sites/oluk-experience-lab/app/design-system/review-studio-payload.json",
-]);
-const changed = execFileSync("git", ["status", "--porcelain", "--untracked-files=all"], { cwd: repoRoot, encoding: "utf8" })
-  .split("\n").filter(Boolean).map((line) => line.slice(3)).filter((file)=>!generatedOutputs.has(file)).sort();
-const treeParts = [];
-for (const relative of changed) {
-  try { treeParts.push(`${relative}\0${await readFile(path.join(repoRoot, relative))}`); } catch { treeParts.push(`${relative}\0DELETED`); }
-}
 const maturityCounts = Object.fromEntries(routeLedger.maturityStates.map((state) => [state, routeLedger.routes.filter((route) => route.maturity === state).length]));
 const proof = (id, passed, detail) => ({ id, status: passed ? "PASS" : "MISSING", detail });
 const contractProof = currentState.sitesImplementation.validation.contractProofDetails;
@@ -41,7 +32,7 @@ const payload = {
   status: contract.status,
   generatedAt,
   sourceGitSha,
-  sourceTreeHash: sha(treeParts.join("\n")),
+  sourceTreeHash,
   designContractHash: sha(designContractRaw),
   decisionCount: contract.decisionCount,
   families: contract.families,
@@ -98,11 +89,14 @@ const moduleOutputPath = path.join(siteRoot, "app/design-system/review-studio-pa
 if (process.argv.includes("--check")) {
   const existing = await readFile(outputPath, "utf8");
   const moduleExisting = await readFile(moduleOutputPath, "utf8");
-  const compareStableProjection = (candidate) => {
-    const parsed = JSON.parse(candidate);
-    return JSON.stringify({ ...parsed, generatedAt:payload.generatedAt, sourceGitSha:payload.sourceGitSha, sourceTreeHash:payload.sourceTreeHash });
-  };
-  if (compareStableProjection(existing) !== JSON.stringify(payload) || compareStableProjection(moduleExisting) !== JSON.stringify(payload)) throw new Error("Review Studio payload is stale; run npm run review:generate");
+  const parsed = JSON.parse(existing);
+  const committedTree = execFileSync("git", ["rev-parse", `${parsed.sourceGitSha}^{tree}`], { cwd: repoRoot, encoding: "utf8" }).trim();
+  if (parsed.sourceTreeHash !== committedTree) throw new Error("Review Studio payload source tree does not match its recorded committed source SHA");
+  const materialDiff = spawnSync("git", ["diff", "--quiet", parsed.sourceGitSha, "--", ".", ":(exclude)sites/oluk-experience-lab/public/.well-known/oluk-review-studio.json", ":(exclude)sites/oluk-experience-lab/app/design-system/review-studio-payload.json"], { cwd: repoRoot });
+  if (materialDiff.status !== 0) throw new Error("Review Studio payload is stale for the committed source SHA/tree; run npm run review:generate after committing source inputs");
+  const stablePayload = { ...payload, generatedAt: execFileSync("git", ["show", "-s", "--format=%cI", parsed.sourceGitSha], { cwd: repoRoot, encoding: "utf8" }).trim(), sourceGitSha: parsed.sourceGitSha, sourceTreeHash: parsed.sourceTreeHash };
+  const stableOutput = `${JSON.stringify(stablePayload, null, 2)}\n`;
+  if (existing !== stableOutput || moduleExisting !== stableOutput) throw new Error("Review Studio payload content is stale; run npm run review:generate after committing source inputs");
   process.stdout.write(`PASS review studio payload ${payload.designContractHash}\n`);
 } else {
   await writeFile(outputPath, output);
