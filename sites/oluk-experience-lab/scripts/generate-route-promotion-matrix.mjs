@@ -72,8 +72,8 @@ const routeDispositions = ledger.routes.map((route) => {
     templateComposition: {
       templateId: composition.templateId,
       profile: composition.profile,
-      candidateLayouts: composition.candidateLayouts,
-      selectedLayout: composition.selectedLayout,
+      candidateCompositions: composition.candidateCompositions,
+      ownerSelection: composition.ownerSelection,
       plannedSectionOrder: composition.plannedSectionOrder,
       currentSectionOrder: promotedPlacements.map((placement) => ({
         id: placement.module,

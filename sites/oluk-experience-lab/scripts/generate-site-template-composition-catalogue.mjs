@@ -41,9 +41,7 @@ const compositionFor = (route) => {
     throw new Error(`Template ${templateId} must declare exactly three layout candidates`);
   }
   if (new Set(template.candidateLayoutIds).size !== 3) throw new Error(`Template ${templateId} repeats a layout candidate`);
-  if (!template.candidateLayoutIds.includes(template.selectedLayoutId)) {
-    throw new Error(`Template ${templateId} selected layout is not a candidate`);
-  }
+  if (template.ownerSelection !== "PENDING_COMPLETE_CANDIDATE_REVIEW") throw new Error(`Template ${templateId} must remain unselected until complete candidate review`);
   for (const candidateId of template.candidateLayoutIds) {
     if (!source.candidateLayouts[candidateId]) throw new Error(`Template ${templateId} references unknown candidate ${candidateId}`);
   }
@@ -67,15 +65,21 @@ const compositionFor = (route) => {
     runtimeReadiness: route.runtimeReadiness,
     templateId,
     profile: profileName,
-    candidateLayouts: template.candidateLayoutIds.map((id) => ({ id, ...source.candidateLayouts[id] })),
-    selectedLayout: { id: template.selectedLayoutId, ...source.candidateLayouts[template.selectedLayoutId] },
+    candidateCompositions: template.candidateLayoutIds.map((id) => ({
+      id,
+      ...source.candidateLayouts[id],
+      sectionOrder: sections,
+      state: "ARCHITECTURE_DEFINED",
+      ownerSelected: false,
+    })),
+    ownerSelection: template.ownerSelection,
     plannedSectionOrder: sections,
   };
 };
 
 const compiled = {
   schemaVersion: "oluk.site-template-composition-catalogue.v1",
-  status: "SITES_COMPOSITION_CANDIDATES_AND_SELECTED_LAYOUTS",
+  status: "SITES_COMPOSITION_ARCHITECTURES_UNSELECTED",
   authority: source.authority,
   source: {
     path: "authority/SITE-TEMPLATE-COMPOSITION-SOURCE.json",

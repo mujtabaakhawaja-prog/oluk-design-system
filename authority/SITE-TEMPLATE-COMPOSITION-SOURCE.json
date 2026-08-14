@@ -1,22 +1,37 @@
 {
   "schemaVersion": "oluk.site-template-composition-source.v1",
-  "authority": "Codex Sites is the composition source of truth. This source describes selected customer compositions and eligible expansions; it does not declare a section mounted.",
+  "authority": "Codex Sites is the composition source of truth. This source defines unselected customer-composition architectures and eligible expansions; it does not declare a section mounted or an owner choice made.",
   "candidateLayouts": {
     "asymmetric-decision-field": {
       "label": "Asymmetric decision field",
       "desktopGrid": "12 columns; 5/7 or 4/8 split",
+      "commercialThesis": "Product theatre keeps the primary decision and the reason to make it in one high-impact field.",
+      "differentiator": "The strongest product or customer decision receives visible spatial priority.",
+      "tradeoffs": ["Needs disciplined supporting density", "Persistent secondary context is reduced"],
+      "recommendationStatus": "UNRANKED",
+      "readiness": "ARCHITECTURE_DEFINED",
       "customerJob": "Keep the primary choice and the reason to make it together.",
       "mobileStrategy": "Prioritize the decision, then reveal supporting context in short disclosures or a one-decision rail."
     },
     "central-decision-spine": {
       "label": "Central decision spine",
       "desktopGrid": "12 columns; 8-column task spine with a persistent 4-column context rail",
+      "commercialThesis": "Guided decision-making keeps the current task clear while preserving useful context.",
+      "differentiator": "A persistent context rail supports long or stateful customer journeys.",
+      "tradeoffs": ["Less theatrical than an asymmetric opening", "The context rail requires careful mobile reduction"],
+      "recommendationStatus": "UNRANKED",
+      "readiness": "ARCHITECTURE_DEFINED",
       "customerJob": "Guide a task while keeping the relevant order, account, or support context visible.",
       "mobileStrategy": "Place the task first, collapse context into a current-step summary, and retain one clear next action."
     },
     "evidence-workspace": {
       "label": "Evidence workspace",
       "desktopGrid": "12 columns; 3/6/3 selector, working surface, and source-context rails (or a 4/8 compact variant)",
+      "commercialThesis": "Confidence theatre turns technical context into an inspectable product and brand advantage.",
+      "differentiator": "Selection, evidence and source context stay visible as one customer decision system.",
+      "tradeoffs": ["Higher information density", "Requires progressive disclosure to remain persuasive on mobile"],
+      "recommendationStatus": "UNRANKED",
+      "readiness": "ARCHITECTURE_DEFINED",
       "customerJob": "Let customers inspect records, comparisons, and technical detail without losing their place.",
       "mobileStrategy": "Show a compact identity summary first, then use tabs or disclosures with intentional table scrolling."
     }
@@ -24,67 +39,67 @@
   "templates": {
     "homepage": {
       "candidateLayoutIds": ["asymmetric-decision-field", "central-decision-spine", "evidence-workspace"],
-      "selectedLayoutId": "asymmetric-decision-field",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "homepage"
     },
     "commerce-discovery": {
       "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
-      "selectedLayoutId": "central-decision-spine",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "commerce-discovery"
     },
     "pdp": {
       "candidateLayoutIds": ["asymmetric-decision-field", "evidence-workspace", "central-decision-spine"],
-      "selectedLayoutId": "asymmetric-decision-field",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "pdp"
     },
     "openlab-portal": {
       "candidateLayoutIds": ["evidence-workspace", "asymmetric-decision-field", "central-decision-spine"],
-      "selectedLayoutId": "evidence-workspace",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "openlab-portal"
     },
     "openlab-record": {
       "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
-      "selectedLayoutId": "evidence-workspace",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "openlab-record"
     },
     "openlab-report": {
       "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
-      "selectedLayoutId": "evidence-workspace",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "openlab-report"
     },
     "openlab-tool": {
       "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
-      "selectedLayoutId": "evidence-workspace",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "openlab-tool"
     },
     "checkout": {
       "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
-      "selectedLayoutId": "central-decision-spine",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "checkout"
     },
     "post-purchase": {
       "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
-      "selectedLayoutId": "central-decision-spine",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "post-purchase"
     },
     "account": {
       "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
-      "selectedLayoutId": "central-decision-spine",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "account"
     },
     "support": {
       "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
-      "selectedLayoutId": "central-decision-spine",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "support"
     },
     "governance-review": {
       "candidateLayoutIds": ["evidence-workspace", "central-decision-spine", "asymmetric-decision-field"],
-      "selectedLayoutId": "evidence-workspace",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "governance-review"
     },
     "recovery": {
       "candidateLayoutIds": ["central-decision-spine", "asymmetric-decision-field", "evidence-workspace"],
-      "selectedLayoutId": "central-decision-spine",
+      "ownerSelection": "PENDING_COMPLETE_CANDIDATE_REVIEW",
       "sectionProfile": "recovery"
     }
   },
