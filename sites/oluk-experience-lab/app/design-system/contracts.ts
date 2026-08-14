@@ -80,7 +80,7 @@ export const rad140Specimen: ReviewFixture<ProductSpecimen> = {
     servings: "60 SERVINGS",
     purity: ">99%",
     price: "£46",
-    image: "/assets/products/rad-140/front-design-fixture.png",
+    image: "/assets/products/rad-140/front.png",
   },
 };
 

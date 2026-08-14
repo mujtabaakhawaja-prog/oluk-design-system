@@ -245,7 +245,7 @@ export const SHOP_TAXONOMY_FIXTURE_PRODUCTS = Object.freeze([
     displayName: "RAD-140",
     displayAlias: "Testolone",
     customerPath: "/product/rad140",
-    imageSrc: "/assets/products/shop/rad-140.webp",
+    imageSrc: "/assets/products/rad-140/front.png",
     imageSourceUrl: "https://olympuslabs.uk/wp-content/uploads/2023/05/relabel_render_mutipleface-09-300x450.webp",
     imageAlt: "RAD-140 Testolone bottle",
     capturedPriceMinor: 4300,

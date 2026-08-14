@@ -124,3 +124,11 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Refreshed the visual-baseline manifest from the final4 official receipt. All 124 screenshots exist and match SHA-256; they remain `CAPTURED_UNREVIEWED`, with `0` champion-reviewed.
 - Corrected the current Shop completion wording: the fully confirmed MK-2866 result instantiates the canonical Featured ProductCommerceCard, while incomplete catalogue fixtures remain truth-limited discovery projections rather than fabricated full commerce cards.
 - Sites remains a design/experience candidate with `runtimeAuthority: none`. Figma publication, official Code Connect, deployment, live commerce/evidence integration and MF++ remain blocked pending artifact-specific human review and separate authorization.
+
+## 2026-08-13 — Frontier Make bulk-run and product-render refresh
+
+- Reconciled the pre-correction visual audit against cumulative Sites baseline `0df3ad0`: LockedHero, PdpD, HeroLight, OptionB header, mountain-mark footer, and contained checkout trust rails are recorded as closed rather than repeated as pending work.
+- Preserved the supplied 2048×3072 RAD-140 source render and generated a 1024×1536 Sites delivery derivative; active hero, PDP, fixture, shop, taxonomy, and Make consumers now use the registered render instead of the retired design fixture. RAD-140 remains 8 MG.
+- Refreshed the frontier Make kit into six independent bulk-run batches with explicit canonical-component, responsive-compaction, actual-media, and handoff requirements.
+- Updated the Figma intent and bridge projections for current Page 09 `672:10`, OptionB header `1176:28930`, TrustEvidenceSpine promotion, correct footer `754:18226`, and the rebuild-required manual Your Stack object `1081:28849`.
+- Validation passes production build, typecheck, lint, `83/83` tests, `112/112` variables, `128` CSS properties, `71/71` provenance checks, and `290/290` bridge checks. The work remains unpublished and undeployed.

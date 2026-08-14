@@ -36,7 +36,7 @@ export const getFrontierProduct = (slug: string) => productBySlug[slug];
 /** The frontier reuses only repository-owned product renders; routes without a render keep the chamber unpopulated. */
 export const actualProductMedia: Readonly<Record<string, Readonly<{ src: string; width: number; height: number }>>> = {
   "mk-2866": { src: "/assets/products/mk-2866/front.png", width: 1365, height: 2048 },
-  "rad-140": { src: "/assets/products/shop/rad-140.webp", width: 300, height: 450 },
+  "rad-140": { src: "/assets/products/rad-140/front.png", width: 1024, height: 1536 },
   "mk-677": { src: "/assets/products/hero/mk-677/front.webp", width: 1024, height: 1536 },
   "gw-501516": { src: "/assets/products/shop/gw-501516.jpeg", width: 300, height: 450 },
   "epistane": { src: "/assets/products/shop/epistane.webp", width: 300, height: 450 },

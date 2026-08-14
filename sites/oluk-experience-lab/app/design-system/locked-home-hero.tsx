@@ -9,7 +9,7 @@ const products = [
   { id: "mk-2866", name: "MK-2866", alias: "Ostarine", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£43", image: "/assets/products/mk-2866/front.png", width: 1365, height: 2048, href: "/product/mk-2866" },
   { id: "ment", name: "MENT", alias: "Trestolone", strength: "20 MG", servings: "30 SERVINGS", purity: ">99%", price: "£49", image: "/assets/products/hero/ment/front.webp", width: 1024, height: 1536, href: "/shop?search=MENT" },
   { id: "endurashred", name: "ENDURASHRED", alias: "LGD-4033 + MK-2866", strength: "16.5 MG", servings: "90 SERVINGS", purity: ">99%", price: "£59", image: "/assets/products/hero/endurashred/front.webp", width: 1024, height: 1536, href: "/shop?search=ENDURASHRED" },
-  { id: "rad-140", name: "RAD-140", alias: "Testolone", strength: "8 MG", servings: "60 SERVINGS", purity: ">99%", price: "£55", image: "/assets/products/shop/rad-140.webp", width: 300, height: 450, href: "/shop?search=RAD-140" },
+  { id: "rad-140", name: "RAD-140", alias: "Testolone", strength: "8 MG", servings: "60 SERVINGS", purity: ">99%", price: "£55", image: "/assets/products/rad-140/front.png", width: 1024, height: 1536, href: "/shop?search=RAD-140" },
   { id: "mk-677", name: "MK-677", alias: "Ibutamoren", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£30", image: "/assets/products/hero/mk-677/front.webp", width: 1024, height: 1536, href: "/shop?search=MK-677" },
 ] as const;
 

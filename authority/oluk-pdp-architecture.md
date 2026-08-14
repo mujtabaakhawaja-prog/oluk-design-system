@@ -1,6 +1,6 @@
 ## PDP MK-2866 Page Architecture
 
-> **2026-08-11 CONV-001 supersession:** This native V4 architecture remains evidence. Current MF-04 composition uses the canonical candidate PurchasePanel `745:50`, Dossier `750:182`, AssuranceRail `752:167`, RelatedRail `753:18136`, SiteHeader `754:18224`, TrustRail `754:18225` and sole-inverse SiteFooter `754:18226`. All remain unpublished and require artifact-specific human review.
+> **2026-08-14 OptionB correction:** `1176:28930` supersedes flat header predecessor `754:18224`. The current Sites candidate implements the three-band OptionB Premium structure and retains `754:18226` as the sole-inverse footer source. This native V4 architecture remains evidence; all candidate artifacts remain unpublished and require artifact-specific human review.
 
 
 ### Current State — NR-02C Native V4 (node 126:4)

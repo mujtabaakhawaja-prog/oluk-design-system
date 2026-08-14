@@ -2325,11 +2325,11 @@
   "generatedFrom": {
     "bridge": {
       "file": "authority/FIGMA-CODE-BRIDGE.json",
-      "sha256": "9dbc84b31dd62192bce2c22ddaf1f9368ed5e2cd4b5bd896b92252d3a4215635"
+      "sha256": "7e59491240a4f83748337df05b4c0059e36c7f1601c026f014e183df9811a4d3"
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
-      "sha256": "949b203929da6c0db5b35231f154f3f833045d876e86102a20a538768679fc4c"
+      "sha256": "ef1310d7878876868ab74de00f6897dd354dd7a17f81f3a921246236595ff5df"
     },
     "openLabSections": {
       "file": "authority/OPENLAB-SECTION-MODULE-REGISTRY.json",
@@ -2369,7 +2369,7 @@
   "intentAuthority": {
     "registryId": "OLUK-FIGMA-INTENT-004",
     "rules": {
-      "copyDefault": "draft",
+      "copyDefault": "preserve-supplied-vetted-copy",
       "generatedCodeDisposition": "discard",
       "requiredTrace": [
         "intentNode",
@@ -2378,14 +2378,15 @@
       ],
       "runtimeBehavior": "excluded"
     },
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "sources": [
       {
         "contributes": [
           "homepage LockedHero",
           "PDP first fold",
           "OpenLab HeroLight",
-          "OptionB premium utility header"
+          "OptionB premium utility header",
+          "OptionB footer"
         ],
         "dataOwners": [
           "design-fixture"
@@ -2427,6 +2428,13 @@
             "nodeId": "1176:28930",
             "state": "OptionB-Premium-UtilityStack-V08",
             "target": "SiteHeader"
+          },
+          {
+            "copy": "approved-structure",
+            "dataOwner": "design-fixture",
+            "nodeId": "754:18226",
+            "state": "OptionB mountain-mark footer",
+            "target": "SiteFooter"
           }
         ],
         "rootNodeId": "1155:29963",
@@ -2435,6 +2443,62 @@
           "payment integration"
         ],
         "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1155-29963"
+      },
+      {
+        "contributes": [
+          "27 component sets",
+          "5 standalone components",
+          "promoted OptionB header",
+          "promoted TrustEvidenceSpine components"
+        ],
+        "dataOwners": [
+          "design-fixture"
+        ],
+        "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+        "id": "final-design-component-library-consolidation",
+        "intentNodes": [
+          {
+            "copy": "approved-structure",
+            "dataOwner": "design-fixture",
+            "nodeId": "1176:28930",
+            "state": "promoted-canonical-provenance",
+            "target": "SiteHeader"
+          },
+          {
+            "copy": "preserve-supplied",
+            "dataOwner": "design-fixture",
+            "nodeId": "556:34022",
+            "state": "promoted-canonical-provenance",
+            "target": "TrustEvidenceSpine.AssuranceCell"
+          },
+          {
+            "copy": "preserve-supplied",
+            "dataOwner": "design-fixture",
+            "nodeId": "556:34089",
+            "state": "promoted-canonical-provenance",
+            "target": "TrustEvidenceSpine.EvidenceLedgerIntro"
+          },
+          {
+            "copy": "preserve-supplied",
+            "dataOwner": "design-fixture",
+            "nodeId": "556:34122",
+            "state": "promoted-canonical-provenance",
+            "target": "TrustEvidenceSpine.AssuranceRail"
+          },
+          {
+            "copy": "replace-with-frontier-stack-record",
+            "dataOwner": "design-fixture",
+            "nodeId": "1081:28849",
+            "state": "legacy-local-composition-rebuild-required",
+            "target": "YourStackModule"
+          }
+        ],
+        "rootNodeId": "672:10",
+        "runtimeExclusions": [
+          "library publication",
+          "runtime promotion"
+        ],
+        "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=672-10"
       },
       {
         "contributes": [
@@ -2452,21 +2516,21 @@
         "id": "commerce-growth",
         "intentNodes": [
           {
-            "copy": "source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "design-fixture",
             "nodeId": "2:70",
             "state": "lab-reports-entry",
             "target": "/"
           },
           {
-            "copy": "prohibited-as-fact",
+            "copy": "preserve-supplied",
             "dataOwner": "openlab-source",
             "nodeId": "2:158",
             "state": "archive-hierarchy-dark-intent",
             "target": "/open-lab/records"
           },
           {
-            "copy": "prohibited-as-fact",
+            "copy": "preserve-supplied",
             "dataOwner": "openlab-source",
             "nodeId": "2:257",
             "state": "dossier-hierarchy-intent",
@@ -2499,28 +2563,28 @@
         "id": "pdp",
         "intentNodes": [
           {
-            "copy": "draft-and-source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "woo",
             "nodeId": "4:3578",
             "state": "complete-desktop-intent",
             "target": "/product/mk-2866"
           },
           {
-            "copy": "draft",
+            "copy": "preserve-supplied",
             "dataOwner": "woo",
             "nodeId": "4:3611",
             "state": "purchase-hierarchy",
             "target": "ProductDecisionHero"
           },
           {
-            "copy": "source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "openlab-source",
             "nodeId": "4:3664",
             "state": "evidence-placement",
             "target": "OpenLabSnapshot"
           },
           {
-            "copy": "draft-and-source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "woo",
             "nodeId": "4:3709",
             "state": "details-order",
@@ -2667,28 +2731,28 @@
         "id": "openlab",
         "intentNodes": [
           {
-            "copy": "source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "openlab-source",
             "nodeId": "12:2",
             "state": "evidence-page-hierarchy",
             "target": "/open-lab"
           },
           {
-            "copy": "source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "openlab-source",
             "nodeId": "12:22",
             "state": "source-status-card",
             "target": "EvidenceStatusChip"
           },
           {
-            "copy": "draft",
+            "copy": "preserve-supplied",
             "dataOwner": "design-fixture",
             "nodeId": "12:73",
             "state": "section-index",
             "target": "OpenLabNavigation"
           },
           {
-            "copy": "source-required",
+            "copy": "preserve-supplied",
             "dataOwner": "openlab-source",
             "nodeId": "12:120",
             "state": "related-record-hierarchy",
@@ -2697,15 +2761,13 @@
         ],
         "rootNodeId": "3:66993",
         "runtimeExclusions": [
-          "invented evidence",
-          "reconstructed chromatogram",
-          "inferred pass",
+          "runtime source binding",
           "public admin access"
         ],
         "url": "https://www.figma.com/design/GkC3KEt9V3RyG5K319iAUV/OPENLAB?node-id=3-66993"
       }
     ],
-    "status": "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY"
+    "status": "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY"
   },
   "routeAuthority": {
     "aliases": {
@@ -3320,5 +3382,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "26c0e575220aaebb24c81332daf18f16cc863bfa7d5e2c5429c87fb39408dc0a"
+  "contractHash": "a5515eb135f94313d294a0586208fba7e2765998e61a997526c4f0e80fffa6f7"
 }

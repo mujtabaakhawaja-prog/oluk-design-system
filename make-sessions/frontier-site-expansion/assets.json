@@ -1,9 +1,56 @@
 {
-  "schemaVersion": "oluk.frontier-make-assets.v1",
+  "schemaVersion": "oluk.frontier-make-assets.v2",
+  "generatedFor": "FRONTIER_SITE_EXPANSION",
+  "designFile": "BEPMuUt1HroEw8xjz8CVyN",
+  "canonicalLibraryPage": {
+    "nodeId": "672:10",
+    "observedInventory": "27 component sets + 5 standalone components",
+    "state": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED"
+  },
   "productRenders": [
-    {"product":"MK-2866","path":"../../sites/oluk-experience-lab/public/assets/products/mk-2866/front.png","usage":"PDP hero, product card and checkout line-item only"},
-    {"product":"RAD-140","path":"../../sites/oluk-experience-lab/public/assets/products/rad-140/front-design-fixture.png","usage":"PDP hero and comparison only; label strength remains 8 MG"}
+    {
+      "product": "MK-2866",
+      "path": "../../sites/oluk-experience-lab/public/assets/products/mk-2866/front.png",
+      "width": 1365,
+      "height": 2048,
+      "usage": ["LockedHero", "PDP", "ProductCommerceCard", "OpenLab", "checkout line item"]
+    },
+    {
+      "product": "RAD-140",
+      "path": "assets/rad-140-master.png",
+      "deliveryPath": "../../sites/oluk-experience-lab/public/assets/products/rad-140/front.png",
+      "width": 2048,
+      "height": 3072,
+      "sha256": "25bc23254db4986ccf374af5a299ef7ed12a689b8a347a3c7c0a71bee2c0507c",
+      "deliveryWidth": 1024,
+      "deliveryHeight": 1536,
+      "deliverySha256": "6ef50a629d1b4831750e713426beb6285fb4b366297e6e8e5b3c09813ebdd3fc",
+      "visibleLabelFacts": ["8 MG", "60 SERVINGS", ">99%"],
+      "usage": ["LockedHero", "PDP", "ProductCommerceCard", "Your Stack", "comparison"]
+    }
+  ],
+  "figmaAuthority": {
+    "homepageLockedHero": "1155:29963",
+    "rangeProductStage": "462:4684",
+    "pdpSection1": "1155:30632",
+    "openLabHeroLight": "614:75995",
+    "optionBHeader": "1176:28930",
+    "siteFooter": "754:18226",
+    "productCommerceCardCompact": "742:50",
+    "purchasePanel": "745:50",
+    "productTabs": "734:17326",
+    "evidenceStatusChip": "1085:4390",
+    "checkoutStepIndicator": "1085:4511",
+    "trustEvidenceAssuranceCellProvenance": "556:34022",
+    "trustEvidenceLedgerIntroProvenance": "556:34089",
+    "trustEvidenceAssuranceRailProvenance": "556:34122"
+  },
+  "historicalDoNotBind": [
+    "make-sessions/frontier-site-expansion/historical-assets/rad-140-front-design-fixture.png",
+    "sites/oluk-experience-lab/public/assets/products/shop/rad-140.webp",
+    "Figma 754:18224 old flat SiteHeader",
+    "Figma 1081:28849 locally assembled Your Stack cards"
   ],
   "sharedReferenceRoot": "../shared-kit",
-  "doNotUseAsRuntimeAssets": true
+  "doNotUseMakeCodeAsRuntime": true
 }

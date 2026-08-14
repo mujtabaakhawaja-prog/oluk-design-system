@@ -1,10 +1,10 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "registryId": "OLUK-FIGMA-INTENT-004",
-  "status": "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY",
+  "status": "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY",
   "rules": {
     "generatedCodeDisposition": "discard",
-    "copyDefault": "draft",
+    "copyDefault": "preserve-supplied-vetted-copy",
     "runtimeBehavior": "excluded",
     "requiredTrace": ["intentNode", "canonicalComponent", "dataOwner"]
   },
@@ -14,7 +14,7 @@
       "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
       "rootNodeId": "1155:29963",
       "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1155-29963",
-      "contributes": ["homepage LockedHero", "PDP first fold", "OpenLab HeroLight", "OptionB premium utility header"],
+      "contributes": ["homepage LockedHero", "PDP first fold", "OpenLab HeroLight", "OptionB premium utility header", "OptionB footer"],
       "dataOwners": ["design-fixture"],
       "runtimeExclusions": ["commerce mutation", "payment integration"],
       "intentNodes": [
@@ -22,7 +22,24 @@
         {"nodeId":"462:4684","target":"LockedHomeHero.ProductStage","state":"runtime-motion-5-3-1","copy":"not-applicable","dataOwner":"design-fixture"},
         {"nodeId":"1155:30632","target":"/product/mk-2866#purchase","state":"Section 1 first fold","copy":"approved-structure","dataOwner":"design-fixture"},
         {"nodeId":"614:75995","target":"/open-lab","state":"HeroLight","copy":"approved-structure","dataOwner":"design-fixture"},
-        {"nodeId":"1176:28930","target":"SiteHeader","state":"OptionB-Premium-UtilityStack-V08","copy":"approved-structure","dataOwner":"design-fixture"}
+        {"nodeId":"1176:28930","target":"SiteHeader","state":"OptionB-Premium-UtilityStack-V08","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"754:18226","target":"SiteFooter","state":"OptionB mountain-mark footer","copy":"approved-structure","dataOwner":"design-fixture"}
+      ]
+    },
+    {
+      "id": "final-design-component-library-consolidation",
+      "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+      "rootNodeId": "672:10",
+      "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=672-10",
+      "contributes": ["27 component sets", "5 standalone components", "promoted OptionB header", "promoted TrustEvidenceSpine components"],
+      "dataOwners": ["design-fixture"],
+      "runtimeExclusions": ["library publication", "runtime promotion"],
+      "intentNodes": [
+        {"nodeId":"1176:28930","target":"SiteHeader","state":"promoted-canonical-provenance","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"556:34022","target":"TrustEvidenceSpine.AssuranceCell","state":"promoted-canonical-provenance","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"556:34089","target":"TrustEvidenceSpine.EvidenceLedgerIntro","state":"promoted-canonical-provenance","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"556:34122","target":"TrustEvidenceSpine.AssuranceRail","state":"promoted-canonical-provenance","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"1081:28849","target":"YourStackModule","state":"legacy-local-composition-rebuild-required","copy":"replace-with-frontier-stack-record","dataOwner":"design-fixture"}
       ]
     },
     {
@@ -34,9 +51,9 @@
       "dataOwners": ["design-fixture", "tools-service-projection"],
       "runtimeExclusions": ["recommendation mutation", "discount authority", "inventory authority"],
       "intentNodes": [
-        {"nodeId":"2:70","target":"/","state":"lab-reports-entry","copy":"source-required","dataOwner":"design-fixture"},
-        {"nodeId":"2:158","target":"/open-lab/records","state":"archive-hierarchy-dark-intent","copy":"prohibited-as-fact","dataOwner":"openlab-source"},
-        {"nodeId":"2:257","target":"/open-lab/dossier/mk-2866","state":"dossier-hierarchy-intent","copy":"prohibited-as-fact","dataOwner":"openlab-source"}
+        {"nodeId":"2:70","target":"/","state":"lab-reports-entry","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"2:158","target":"/open-lab/records","state":"archive-hierarchy-dark-intent","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"2:257","target":"/open-lab/dossier/mk-2866","state":"dossier-hierarchy-intent","copy":"preserve-supplied","dataOwner":"openlab-source"}
       ]
     },
     {
@@ -48,10 +65,10 @@
       "dataOwners": ["woo", "tools-service-projection", "openlab-source"],
       "runtimeExclusions": ["cart mutation", "price calculation", "evidence inference"],
       "intentNodes": [
-        {"nodeId":"4:3578","target":"/product/mk-2866","state":"complete-desktop-intent","copy":"draft-and-source-required","dataOwner":"woo"},
-        {"nodeId":"4:3611","target":"ProductDecisionHero","state":"purchase-hierarchy","copy":"draft","dataOwner":"woo"},
-        {"nodeId":"4:3664","target":"OpenLabSnapshot","state":"evidence-placement","copy":"source-required","dataOwner":"openlab-source"},
-        {"nodeId":"4:3709","target":"ProductDossier","state":"details-order","copy":"draft-and-source-required","dataOwner":"woo"}
+        {"nodeId":"4:3578","target":"/product/mk-2866","state":"complete-desktop-intent","copy":"preserve-supplied","dataOwner":"woo"},
+        {"nodeId":"4:3611","target":"ProductDecisionHero","state":"purchase-hierarchy","copy":"preserve-supplied","dataOwner":"woo"},
+        {"nodeId":"4:3664","target":"OpenLabSnapshot","state":"evidence-placement","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"4:3709","target":"ProductDossier","state":"details-order","copy":"preserve-supplied","dataOwner":"woo"}
       ]
     },
     {
@@ -84,12 +101,12 @@
       "url": "https://www.figma.com/design/GkC3KEt9V3RyG5K319iAUV/OPENLAB?node-id=3-66993",
       "contributes": ["archive", "record", "compound dossier", "report presentation", "lookup", "methodology", "source chain", "comparison", "owner command center"],
       "dataOwners": ["openlab-source", "owner-only"],
-      "runtimeExclusions": ["invented evidence", "reconstructed chromatogram", "inferred pass", "public admin access"],
+      "runtimeExclusions": ["runtime source binding", "public admin access"],
       "intentNodes": [
-        {"nodeId":"12:2","target":"/open-lab","state":"evidence-page-hierarchy","copy":"source-required","dataOwner":"openlab-source"},
-        {"nodeId":"12:22","target":"EvidenceStatusChip","state":"source-status-card","copy":"source-required","dataOwner":"openlab-source"},
-        {"nodeId":"12:73","target":"OpenLabNavigation","state":"section-index","copy":"draft","dataOwner":"design-fixture"},
-        {"nodeId":"12:120","target":"RelatedOpenLabSurface","state":"related-record-hierarchy","copy":"source-required","dataOwner":"openlab-source"}
+        {"nodeId":"12:2","target":"/open-lab","state":"evidence-page-hierarchy","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"12:22","target":"EvidenceStatusChip","state":"source-status-card","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"12:73","target":"OpenLabNavigation","state":"section-index","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"12:120","target":"RelatedOpenLabSurface","state":"related-record-hierarchy","copy":"preserve-supplied","dataOwner":"openlab-source"}
       ]
     }
   ]

@@ -528,7 +528,7 @@ Total physical routes from all 4 reference files:
 /                           Homepage
 /shop                       Shop All
 /shop/:category             Category (White Series, etc.)
-/shop/:slug                 PDP
+/product/:slug              PDP
 /search                     Search Results
 /bundles                    Bundle Builder (dedicated)
 /gift-cards                 Gift Cards
@@ -660,7 +660,7 @@ Components from Final-Design (Page 09) and their cross-route usage:
 3. **OpenLab depth**: The evidence system alone is 20 routes. Lab Records component system has 22 components. This is a product within a product.
 4. **Growth modules are P1-P3**: Loyalty, referral, wholesale, ambassador, streak bonuses are future features. Codex should scaffold routes but NOT implement business logic
 5. **EvidenceOS is an admin tool**: Full dashboard (5571px tall at 1440). Separate auth, separate data access patterns. Should be its own wave.
-6. **Dynamic routes need source data contracts**: `/shop/:slug`, `/open-lab/records/:id`, `/open-lab/compounds/:slug`, `/account/orders/:id` all need typed data interfaces from tools-service
+6. **Dynamic routes need source data contracts**: `/product/:slug`, `/open-lab/records/:id`, `/open-lab/compounds/:slug`, `/account/orders/:id` all need typed data interfaces from tools-service
 
 ---
 

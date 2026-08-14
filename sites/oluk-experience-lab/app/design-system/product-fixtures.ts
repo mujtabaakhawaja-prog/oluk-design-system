@@ -115,14 +115,14 @@ export const productMediaRegistry = {
   "rad-140": {
     id: "rad-140-front",
     productId: "rad-140",
-    src: "/assets/products/rad-140/front-design-fixture.png",
+    src: "/assets/products/rad-140/front.png",
     alt: "RAD-140 Testolone bottle",
     width: 1024,
     height: 1536,
     fit: "contain",
     hasTransparency: true,
-    sourceRef: "CONV-002 confirmed RAD-140 relation design fixture",
-    authority: "confirmed-design-fixture",
+    sourceRef: "User-supplied transparent RAD-140 master · SHA-256 25bc23254db4986ccf374af5a299ef7ed12a689b8a347a3c7c0a71bee2c0507c · optimized delivery derivative 1024×1536",
+    authority: "confirmed-product-asset",
     live: false,
     crops: {
       ...defaultCrops,

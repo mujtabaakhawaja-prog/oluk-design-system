@@ -34,7 +34,7 @@ If prose conflicts with the append-only ledger, the latest accepted ledger event
 | Hero customer-data delta | `626:7994` | Inherit `IN STOCK`, `OPENLAB VERIFIED` and complete product truth |
 | Rejected hero wrapper | `713:1065` | Provenance only; accurately named Hero component with PurchasePanel geometry |
 | EvidenceStatus derivation | `518:13092` | Exact visual source |
-| Current canonical candidate graph | `732:2902`, `732:2912`, `733:95`, `733:17342`, `734:17326`, `736:17458`, `739:50`, `742:50`, `743:50`, `743:281`, `743:520`, `745:50`, `750:182`, `752:167`, `753:18136`, `754:18224`, `754:18225`, `754:18226`, MediaChamber `1022:4099`, CobaltDensityBoundary `1026:27046` | Instantiate; do not redraw page-local copies. Atomic divider `1010:27053` is supporting source; hidden `1010:27064` is superseded history. |
+| Current canonical candidate graph | `732:2902`, `732:2912`, `733:95`, `733:17342`, `734:17326`, `736:17458`, `739:50`, `742:50`, `743:50`, `743:281`, `743:520`, `745:50`, `750:182`, `752:167`, `753:18136`, OptionB Header `1176:28930`, `754:18225`, `754:18226`, MediaChamber `1022:4099`, CobaltDensityBoundary `1026:27046` | Instantiate; do not redraw page-local copies. Flat header `754:18224` is superseded history. Atomic divider `1010:27053` is supporting source; hidden `1010:27064` is superseded history. |
 
 ## Final CONV-004 closeout evidence
 

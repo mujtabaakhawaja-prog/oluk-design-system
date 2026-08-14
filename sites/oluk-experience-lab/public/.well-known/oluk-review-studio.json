@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-13T19:39:07-04:00",
-  "sourceGitSha": "55d6358b4071a21b5d31351ffa59b16cb3f2be79",
-  "sourceTreeHash": "c0c5c0c230d5c72f93c4e6a396072976dfe52d6ab8101a85f8acd03d734e44a9",
-  "designContractHash": "05719c3ec92abcdeb8992e66343d8be365ff21b7b578b3bb29bb0b9f6267c903",
+  "generatedAt": "2026-08-13T22:53:37-04:00",
+  "sourceGitSha": "0df3ad0c25b9db75cfb37fd9d2da3de0f08d5c7f",
+  "sourceTreeHash": "56075e23401532afc41e5a94e7858c31ffb81f76e3e246aebfb93eab71c6d4a7",
+  "designContractHash": "1ae44920892379b83295abd331981cceee012a045aa2d8ca66a24edbaaa6576f",
   "decisionCount": 12,
   "families": [
     {
@@ -263,7 +263,7 @@
       "unavailableState": "bag count defaults to unavailable/zero presentation",
       "errorState": "no customer runtime error inferred",
       "mobileStrategy": "collapse",
-      "figmaIntent": "754:18224 / 754:18226"
+      "figmaIntent": "1176:28930 / 754:18226"
     },
     {
       "id": "commerce-decision",
@@ -402,8 +402,8 @@
     "runtimeAuthority": "NONE"
   },
   "figmaIntent": {
-    "sourceCount": 5,
-    "status": "INTENT_ONLY_NOT_DATA_OR_RUNTIME_AUTHORITY"
+    "sourceCount": 6,
+    "status": "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY"
   },
   "visualEvidence": {
     "routeCount": 51,

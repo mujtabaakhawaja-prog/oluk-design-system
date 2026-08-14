@@ -166,7 +166,8 @@ test("deterministic fixtures are immutable, non-live and combine facets correctl
     assert.equal(product.reviewOnly, true);
     assert.equal(product.liveAuthority, false);
     assert.match(product.customerPath, /^\/product\//);
-    assert.match(product.imageSrc, /^\/assets\/products\/shop\//);
+    if (product.fixtureId === "rad-140") assert.equal(product.imageSrc, "/assets/products/rad-140/front.png");
+    else assert.match(product.imageSrc, /^\/assets\/products\/shop\//);
     assert.match(product.imageSourceUrl, /^https:\/\/olympuslabs\.uk\/wp-content\/uploads\//);
     assert.equal(product.currencyCode, "GBP");
     assert.ok(product.capturedPriceMinor > 0);

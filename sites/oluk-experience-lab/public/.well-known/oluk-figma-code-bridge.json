@@ -1401,9 +1401,9 @@
       "reason": "No standalone React export; Dossier currently renders a truthful static visual index."
     },
     {
-      "nodeId": "754:18224",
+      "nodeId": "1176:28930",
       "name": "SiteHeader",
-      "reason": "Current candidate is a route-shell-local function, not an exported design-system component."
+      "reason": "Exported OptionB implementation exists; exact prop mapping is pending the post-review shell component bridge increment."
     },
     {
       "nodeId": "754:18225",

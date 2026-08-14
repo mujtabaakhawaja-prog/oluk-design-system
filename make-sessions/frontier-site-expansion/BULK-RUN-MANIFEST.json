@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "oluk.figma-make.bulk-run.v1",
+  "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "source": {
+    "repositoryBaseline": "0df3ad0",
+    "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "libraryPageNode": "672:10"
+  },
+  "batches": [
+    {"id":"A","name":"shell-navigation","dependsOn":[],"reviewGroups":["shell-wayfinding"],"widths":[1440,390]},
+    {"id":"B","name":"pdp-commerce-decision","dependsOn":[],"reviewGroups":["commerce-decision","growth-continuation"],"widths":[1440,390]},
+    {"id":"C","name":"openlab-editorial-tools","dependsOn":[],"reviewGroups":["evidence-openlab"],"widths":[1440,390]},
+    {"id":"D","name":"checkout-post-purchase","dependsOn":["A"],"reviewGroups":["checkout-lifecycle"],"widths":[1440,390]},
+    {"id":"E","name":"growth-account-continuation","dependsOn":["B"],"reviewGroups":["growth-continuation"],"widths":[1440,390]},
+    {"id":"F","name":"discovery-support-templates","dependsOn":["A"],"reviewGroups":["shell-wayfinding","commerce-decision"],"widths":[1440,390]}
+  ],
+  "requiredOutput": [
+    "desktopFrame",
+    "mobileFrame",
+    "canonicalComponentsUsed",
+    "newComponentProposals",
+    "crossMounts",
+    "mobileCompactionDecisions",
+    "rejectedLocalRedraws",
+    "selectionNote"
+  ],
+  "promotion": "SELECT_RELATIONSHIPS_THEN_REBUILD_IN_SITES"
+}

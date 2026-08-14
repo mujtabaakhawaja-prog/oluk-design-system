@@ -2,45 +2,65 @@
 
 **Status:** `SITES_REFERENCE_BUILD · HUMAN_REVIEW_REQUIRED · UNPUBLISHED`
 
-This plan converts the 75-action frontier programme into bounded, composable increments. It uses the current Sites SSOT, adaptive surface contract, local product renders and Review Studio. It does not grant production, Shopper, Woo, payment, Tools, Figma publication or deployment authority.
+This plan continues from the cumulative corrected candidate, not from the earlier generic route scaffolds. Sites remains the governed implementation/reference surface; Make explores unresolved modular relationships; selected results return through canonical components and Review Studio.
 
-## Current delivered baseline
+## Delivered cumulative baseline
 
-- 16-SKU frontier content registry with an exact MK-2866 record and RAD-140 fixed to 8 MG.
-- Dynamic PDP, family collection, account, lifecycle, OpenLab tool, compound and report compositions.
-- 75-action Section Mount Registry with states and mobile strategy for every section family.
-- Owner-only Review Studio provides six family decisions, five canonical module decisions and one governance/mobile decision.
-- Actual local renders are bound for MK-2866 and RAD-140. Other product routes preserve the governed media chamber without counterfeiting a product render.
+- 73-row maturity ledger, 52 rendered routes and 51 customer routes in the four-width regression matrix.
+- 16-product frontier registry and 75-action Section Mount Registry.
+- Review Studio: six family decisions, five module-group decisions and one governance/mobile decision.
+- `LockedHero` Direction D (`1155:29963` + `462:4684`), PdpD first fold (`1155:30632`), OpenLab HeroLight (`614:75995`), OptionB header (`1176:28930`) and canonical footer (`754:18226`).
+- OpenLab P0/P1 and P2/P3 public tool/content compositions.
+- Static checkout/payment-trust lifecycle and PDP continuation compositions.
+- repository-owned MK-2866 and RAD-140 renders. The RAD-140 Make master is `2048×3072` (SHA-256 `25bc23254db4986ccf374af5a299ef7ed12a689b8a347a3c7c0a71bee2c0507c`); Sites binds its optimized `1024×1536` derivative at `public/assets/products/rad-140/front.png`.
 
-## Increment 1 — Product catalogue and commerce anchor
+## Reconciled design-side status
 
-Build route composition records for every SKU and family; wire static product cards to `FrontierProductRecord`; complete breadcrumbs, canonical metadata, social text, JSON-LD, related-product graph, comparison facts, category hero and FAQ cross-links. Add actual renders as they are supplied; do not fabricate replacements. Review: PDP/Growth and Commerce Discovery panels at 1440/390.
+| Finding from the pre-correction audit | Current disposition |
+|---|---|
+| wrong homepage hero | resolved in Sites; use LockedHero as baseline |
+| generic PDP Section 1 | resolved in Sites; use PdpD relationship |
+| wrong OpenLab hero | resolved in Sites; use HeroLight relationship |
+| flat/incorrect header and trust rail | resolved in Sites; OptionB + icons + hydrated hierarchy |
+| wrong footer mark | resolved in Sites |
+| Bag raw text leakage | resolved in Sites |
+| Page 09 missing promoted header/TrustEvidenceSpine | resolved in Figma; provenance retained |
+| split canonical instances and dead duplicates | 86 instances repointed; 12 dead definitions removed |
+| `Your Stack` local hand-built cards | **open design-system correction** |
+| mega-menu/mobile/contextual-nav Figma components | **open backfill candidates** |
+| remaining WS/LEGACY objects | **open triage; not proof of active drift** |
 
-## Increment 2 — OpenLab experience suite
+## Increment 1 — Canonical product and growth system
 
-Compose the portal, records archive, record detail, compound dossier, report, batch lookup, methodology, source chain, compare, Evidence workspace, compound guide, research archive, glossary and owner dashboard from `openlab-sections.tsx` plus new canonical submodules. The public workspace stays editorial and legible; dense tables compact to summary/disclosure or an intentional labelled scroll rail. Review: OpenLab panel at 1440/390.
+Rebuild `Your Stack` and all recommendation/restock/bundle/account continuation modules from `ProductCommerceCard`, `ProductMediaChamber`, `ProductMetricRail`, `EvidenceStatusChip`, `StockPill` and registered actions. Reuse one contract across PDP, Bag, Confirmation and Account. The 390 layout presents one decision at a time; it is not a narrowed three-card row.
 
-## Increment 3 — Checkout and post-purchase
+## Increment 2 — Navigation component backfill
 
-Complete Bag, Information, Delivery, Review, Payment Details, Processing, Confirmation, Tracking, Order Details, Receipt, Return and Refund as declared lifecycle compositions. Keep the inherited equality-lock language and typography throughout. Keep all actions static in Sites. Review: Checkout panel at 1440/390 and the checkout module group.
+Translate the implemented OptionB behaviour into reusable Figma candidates: SHOP and OPEN LAB mega-menu panels, simple LEARN/ABOUT menus, a full-screen mobile navigation stack and route-aware contextual rail. Preserve SSR-safe flat links as the no-JS first-paint contract in code.
 
-## Increment 4 — Growth and account
+## Increment 3 — OpenLab suite
 
-Mount the same Recommendation, Restock, Stack, Offer and Bundle modules on PDP, Bag, Confirmation and Account without separate implementations. Complete account dashboard, loyalty, referrals, subscriptions, research profile, wishlist, address book, notification, security, GDPR and affiliate variants as visual compositions. Review: PDP/Growth and Support/Account panels.
+Continue refining portal, archive, record, dossier, report, lookup, methodology, source-chain, comparison, evidence, compound guide, stack builder, calculators/planners, interaction checker, research archive, case studies, glossary and lab-partner compositions. Reuse editorial layouts and shared sidebars rather than generating one-off pages.
 
-## Increment 5 — Supporting routes and declared 73-route maturity
+## Increment 4 — Checkout and post-purchase
 
-Promote the remaining support, collection, journal, legal and decision-tool routes from scaffold to review-ready or explicitly deferred. Every route is a registered composition, not a generic placeholder. Update the ledger and review payload from generated source records; do not manually change a success count.
+Complete Bag, Information, Delivery, Review, Payment, Payment Details, Processing, Confirmation, Tracking, History, Details, Receipt, Return and Refund as one visual lifecycle. Preserve the inherited equality-lock language and Option E hierarchy. Sites remains static presentation.
 
-## Validation per increment
+## Increment 5 — Account, growth and supporting routes
 
-1. Content truth and no stale RAD-140 10 MG.
-2. Route-to-section mount coverage and canonical component provenance.
-3. Token, color, type-floor and actual-local-render checks.
-4. 390px order/compaction/touch-target/overflow checks plus 1440/1024/768 automated regression.
-5. Review Studio representative routes and module galleries at 1440/390.
-6. Build, typecheck, lint, static transaction proof, accessibility, contrast/reflow and interaction proof.
+Compose dashboard, loyalty, referral, subscriptions, research profile, wishlist, address book, notifications, security, GDPR, affiliate, journal, support and legal surfaces from registered modules. A route is review-ready only when its composition and compact mobile hierarchy are complete.
+
+## Quality gate per increment
+
+1. No local redraw of an existing canonical component.
+2. Product image resolves to the registry asset; no generic bottle substitution.
+3. All visual values resolve to the governed light system.
+4. Desktop and mobile content priority is declared; mobile uses reorder, disclosure, summary, carousel or authorized rail where appropriate.
+5. 44px controls, keyboard/focus semantics and no concealed/escaped content.
+6. Cross-mounted modules retain the same component anatomy and state vocabulary.
+7. Review Studio updates only the affected module group and consuming route families.
+8. Build, typecheck, lint, tests, contract, provenance, bridge and four-width proofs pass.
 
 ## Make handoff
 
-The companion kit is `make-sessions/frontier-site-expansion/`. Its `app.tsx` is a static reference baseline and its prompts are deliberately scoped to visual hierarchy and compact behaviour. Accepted Make outcomes must return through the Review Studio and canonical component route; they never become runtime code directly.
+The executable creative kit is `make-sessions/frontier-site-expansion/`. It records completed versus pending work, the exact render registry, six bulk Make batches and implementation-agent follow-through. Make output is creative evidence; selected relationships must be rebuilt from the canonical graph before code/Figma bridge promotion.

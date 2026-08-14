@@ -3,7 +3,7 @@
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { ProductMediaChamber } from "./product-media-chamber";
-import { mk2866Fixture, type ProductMediaAsset } from "./product-fixtures";
+import { mk2866Fixture, rad140Fixture, type ProductMediaAsset } from "./product-fixtures";
 import { StockPill } from "./product-status";
 import {
   filterShopTaxonomyFixtures,
@@ -125,6 +125,7 @@ function familyLabel(value: ShopFamilySlug): string {
 }
 
 function taxonomyMedia(product: ShopTaxonomyFixtureProduct): ProductMediaAsset {
+  if (product.fixtureId === "rad-140") return rad140Fixture.media;
   return {
     id: `${product.fixtureId}-front`,
     productId: product.fixtureId,
