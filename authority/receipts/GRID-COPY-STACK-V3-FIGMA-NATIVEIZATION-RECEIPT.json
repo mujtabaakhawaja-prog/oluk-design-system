@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "oluk.grid-copy-stack-v3.figma-nativeization.v1",
+  "recordedAt": "2026-08-14T22:25:09Z",
+  "status": "FIGMA_NATIVE_MIRROR_CREATED",
+  "authority": {
+    "compositionAuthority": "Codex Sites",
+    "figmaRole": "editable inspection and review mirror",
+    "ownerSelectionRecorded": false,
+    "figmaReviewed": false,
+    "visualSyncCurrent": false,
+    "championApproved": false,
+    "publicationAuthorized": false,
+    "makeAuthorized": false,
+    "codeConnectAuthorized": false,
+    "runtimeMutationAuthorized": false
+  },
+  "sitesSource": {
+    "repository": "mujtabaakhawaja-prog/oluk-design-system",
+    "branch": "main",
+    "commit": "c94d294b6ad776c8e0b6aebda097fed7b755f8dc",
+    "treeHash": "246c2a742f850363cf6fd61858d41bb6a7816599",
+    "includedMergeSequence": [
+      {
+        "pullRequest": 43,
+        "mergeCommit": "9b6631d",
+        "purpose": "Stack v3 commercial surface and capture baseline"
+      },
+      {
+        "pullRequest": 44,
+        "mergeCommit": "46a60a5",
+        "purpose": "disabled ActionLink semantics and suppressed trailing affordance"
+      },
+      {
+        "pullRequest": 45,
+        "mergeCommit": "2e34ceb",
+        "purpose": "canonical ProductCommerceCard actions"
+      },
+      {
+        "pullRequest": 46,
+        "mergeCommit": "c94d294",
+        "purpose": "governed heading word rhythm and mobile border-box geometry"
+      }
+    ],
+    "sourceHashes": {
+      "actionControlTsx": "a814382e002abbdb03d6101d0951de286d47995f5ae08b059771d4159845a4d7",
+      "actionControlCss": "a1648c91e1e36679b277340a1748e512f05f391db4e659c52da2747336026129",
+      "yourStackBuilderTsx": "0e0a8fee1c25857bcace1156ce3531df4b558d44dbcc5480b9c054868481da78",
+      "yourStackBuilderCss": "bb4f41562b3d25924b7b8e7ec795b86114269c75aa510724e76086bd8bfb1524",
+      "stackCommercialModel": "633d23e4f515a5dda1d220b7fec4c672464477bc30c8329eb7232198d6fc44d6",
+      "customerSurfaceGrammarProof": "50c3b320d919d18d0f38a24c3f62c9f330a1cda990cb902f7fdd08cc9d91ccf9"
+    }
+  },
+  "sitesCaptureProvenance": {
+    "receipt": "authority/receipts/STACK-SURFACE-V3-CAPTURE-RECEIPT.json",
+    "receiptSha256": "2f2472a2f800d347e291c6108b14b29ea12c5e199a4624a71721e1fc1e6b689a",
+    "captureSourceCommit": "c143d8b3d84261c59a829367dcfcf752c1b5c5d9",
+    "captureSourceTreeHash": "b3ba866fe4766dadbc0b6b91d58cf0798e5bfaf1",
+    "freshForCurrentTree": false,
+    "disposition": "HISTORICAL_SITES_CAPTURE_INPUT",
+    "reason": "The committed Stack capture receipt predates the merged heading-rhythm source tree. Its route state, product truth, media decoding, grid and rail geometry remain the construction input, but its hashes are not promoted as current-tree visual synchronization evidence.",
+    "captures": [
+      {
+        "state": "FOUNDATION",
+        "width": 1440,
+        "sha256": "992378a20220afa1c1013e3889a31c9b1d0b589f2df6767f30798dc44e392d7b"
+      },
+      {
+        "state": "FOUNDATION",
+        "width": 390,
+        "sha256": "382af968bac2ff54e30bc40bf79dc3b90d1643a60251e732bde99ea148a12cce"
+      },
+      {
+        "state": "MAXIMUM",
+        "width": 1440,
+        "sha256": "39784c0c24bdeafdef8c70282142b192d4e36170c6b59875af9354581d6ca76f"
+      },
+      {
+        "state": "MAXIMUM",
+        "width": 390,
+        "sha256": "90ee78200b53781e0a135b3c88131780b694a605f4fb3cc5835e43eba836f896"
+      }
+    ]
+  },
+  "figma": {
+    "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "fileName": "Final Design",
+    "componentLibraryPage": {
+      "nodeId": "672:10",
+      "name": "09 — Component Library"
+    },
+    "grammarPage": {
+      "nodeId": "1349:52",
+      "name": "Sites Sync — Grid & Copy Grammar"
+    },
+    "routesPage": {
+      "nodeId": "1214:51",
+      "name": "Sites Sync — Routes"
+    },
+    "statusCeiling": "FIGMA_NATIVE_MIRROR_CREATED"
+  },
+  "grammarProof": {
+    "desktop": {
+      "frameNodeId": "1349:53",
+      "width": 1440,
+      "height": 2514,
+      "screenshotSha256": "3d38bd94af17b290c11849ab2ff7832574e24983a4108f4aca40f5ddb937276f"
+    },
+    "mobile": {
+      "frameNodeId": "1349:54",
+      "width": 390,
+      "height": 4083,
+      "screenshotSha256": "ccf3eea48c9a98ed96b443d312d9754f5ca9ff6245861944d36821c2c4ec2bae"
+    },
+    "nativeComponentSets": [
+      {
+        "nodeId": "1352:8763",
+        "name": "OLUK / ActionControl v3",
+        "intentSourceNodeId": "1337:8963",
+        "states": [
+          "Primary Default",
+          "Primary Hover",
+          "Primary Pressed",
+          "Primary Disabled",
+          "Secondary",
+          "Quiet",
+          "Enabled Link",
+          "Disabled Link"
+        ],
+        "disabledLinkTrailingIcon": false
+      },
+      {
+        "nodeId": "1354:8952",
+        "name": "OLUK / CopySurface Grammar v1",
+        "variants": [
+          "Editorial Desktop",
+          "Decision Desktop",
+          "Technical Desktop",
+          "Controls Desktop",
+          "Editorial Mobile",
+          "Decision Mobile",
+          "Technical Mobile",
+          "Controls Mobile"
+        ]
+      },
+      {
+        "nodeId": "1361:10094",
+        "name": "OLUK / Grid Law v1",
+        "desktopColumns": 12,
+        "mobileColumns": 4
+      }
+    ],
+    "canonicalPrimitiveSources": [
+      {
+        "nodeId": "733:95",
+        "name": "ProductMetricRail"
+      },
+      {
+        "nodeId": "733:17342",
+        "name": "QualitativeChip"
+      },
+      {
+        "nodeId": "1022:4099",
+        "name": "OLUK / MediaChamber"
+      },
+      {
+        "nodeId": "745:50",
+        "name": "PurchasePanel"
+      }
+    ],
+    "lawsProved": {
+      "canvasCopyException": "eyebrow plus headline only",
+      "allSubcopyActionsMediaAndChipsUseGovernedSurfaces": true,
+      "bodyCopyToken": "text/secondary",
+      "metricTruth": [
+        "15 MG",
+        "90 SERVINGS",
+        ">99%"
+      ],
+      "evidenceStateLabels": [
+        "Verified Evidence",
+        "Source Reported",
+        "Source Only",
+        "Unavailable"
+      ],
+      "pdpPairedException": "MediaChamber plus PurchasePanel form one decision field",
+      "desktopGrid": "12 columns / 24 px route gutters / 64 px outer rhythm",
+      "mobileGrid": "4 columns / 16 px route gutters / 16 px outer rhythm"
+    }
+  },
+  "stackV3": {
+    "componentSet": {
+      "nodeId": "1360:8872",
+      "name": "OLUK / Stack / CommercialBuilder v3"
+    },
+    "variants": [
+      {
+        "state": "FOUNDATION",
+        "width": 1440,
+        "componentNodeId": "1360:8873",
+        "routeFrameNodeId": "1370:29984",
+        "routeFrameHeight": 4491.5625,
+        "screenshotSha256": "0fc158aa3cd8c3446bc43460bdac9f626eeeeed0febb56c1d9a50b400487a513"
+      },
+      {
+        "state": "FOUNDATION",
+        "width": 390,
+        "componentNodeId": "1360:8884",
+        "routeFrameNodeId": "1370:31321",
+        "routeFrameHeight": 4272.6796875,
+        "screenshotSha256": "a1679854833fdc8bdbdc6fa883793fcf7f1ffaa3994b658fb4556e0ba7b753a2"
+      },
+      {
+        "state": "MAXIMUM",
+        "width": 1440,
+        "componentNodeId": "1360:8893",
+        "routeFrameNodeId": "1370:32537",
+        "routeFrameHeight": 4790.5625,
+        "screenshotSha256": "7c4d3441471f6e9a3676a1c6d78237f219e2e26129f90524d92af9a9fb3484e3"
+      },
+      {
+        "state": "MAXIMUM",
+        "width": 390,
+        "componentNodeId": "1360:8904",
+        "routeFrameNodeId": "1370:34189",
+        "routeFrameHeight": 4902.6796875,
+        "screenshotSha256": "dff0304cca604fe13660c28798f3afbc3cd1a13dc0fad7563786f08aa149600a"
+      }
+    ],
+    "newNativeComponentSets": [
+      {
+        "nodeId": "1374:852",
+        "name": "OLUK / Stack / CommercialSummary v3",
+        "purpose": "mobile copy-complete Foundation and Maximum summaries"
+      },
+      {
+        "nodeId": "1374:853",
+        "name": "OLUK / Stack / OpenLabConfidence v3",
+        "purpose": "mobile copy-complete OpenLab confidence surfaces"
+      },
+      {
+        "nodeId": "1375:3619",
+        "name": "OLUK / Stack / AdditionCard v3 Mobile",
+        "purpose": "mobile proposition and governed-empty-media copy surfaces without clipping"
+      },
+      {
+        "nodeId": "1376:4243",
+        "name": "OLUK / Stack / AdditionCard v3 Desktop",
+        "purpose": "registered MK-677, MENT and GW-50156 desktop addition variants"
+      }
+    ],
+    "sharedAncestry": [
+      {
+        "nodeId": "1319:6409",
+        "name": "OLUK / ContentSurface"
+      },
+      {
+        "nodeId": "1321:6478",
+        "name": "OLUK / Stack / GoalSelector"
+      },
+      {
+        "nodeId": "1325:6516",
+        "name": "OLUK / Stack / BaselineSelector"
+      },
+      {
+        "nodeId": "1325:7801",
+        "name": "OLUK / Stack / AdditionCard"
+      },
+      {
+        "nodeId": "743:50",
+        "name": "ProductCommerceCard / Vertical"
+      },
+      {
+        "nodeId": "1022:4099",
+        "name": "OLUK / MediaChamber"
+      },
+      {
+        "nodeId": "732:2902",
+        "name": "OLUK / StockPill"
+      },
+      {
+        "nodeId": "1326:7562",
+        "name": "OLUK / Stack / CommercialSummary"
+      },
+      {
+        "nodeId": "1326:7659",
+        "name": "OLUK / Stack / OpenLabConfidence"
+      }
+    ],
+    "compositionAssertions": {
+      "headline": "Build a stronger Cutting stack.",
+      "baseline": "two-row cobalt-soft MK-2866 decision surface",
+      "desktopAdditionGrid": "2 by 2",
+      "mobileAdditionRail": "one decision at a time with explicit cue and 10 px next-card peek",
+      "levelLaw": {
+        "oneSelectedProduct": "FOUNDATION",
+        "twoSelectedProducts": "STRONGER",
+        "threeOrMoreSelectedProducts": "MAXIMUM"
+      },
+      "maximumLineup": "MK-2866 + LGD-4033 + RAD-140",
+      "maximumExactTotal": "£142",
+      "openLabIsSeparateConfidenceSurface": true,
+      "copySurfaceOverflowCount": 0,
+      "forbiddenCopyPresent": false,
+      "forbiddenCopy": [
+        "sharper",
+        "Good",
+        "Better",
+        "Best",
+        "Complexity",
+        "Intensity",
+        "Evidence visibility",
+        "92/100"
+      ]
+    }
+  },
+  "mediaBindings": [
+    {
+      "product": "MK-2866",
+      "figmaImageHash": "faf0bdaad548b4ed3805db96ab78ae4717d4e43a",
+      "state": "approved-render"
+    },
+    {
+      "product": "RAD-140",
+      "figmaImageHash": "02d82b76b71631012949780005c65cf8ff9c9abf",
+      "state": "approved-render"
+    },
+    {
+      "product": "MENT",
+      "figmaImageHash": "a22a98b9a53399fbf0dfdd2b606fa7b166ef106f",
+      "state": "approved-render"
+    },
+    {
+      "product": "MK-677",
+      "figmaImageHash": "493c781c0522b5cb90be00d5f1f8bd2055848f29",
+      "state": "approved-render"
+    },
+    {
+      "product": "GW-50156",
+      "figmaImageHash": "c63bf6eccb684e31e26a38bf2e38f913b61074c5",
+      "sourcePath": "/assets/products/shop/gw-501516.jpeg",
+      "state": "approved-render-with-legacy-asset-alias"
+    },
+    {
+      "product": "LGD-4033",
+      "figmaImageHash": null,
+      "state": "governed-unpopulated-chamber",
+      "reason": "No approved individual render is registered; no substitute bottle was introduced."
+    }
+  ],
+  "supersededFigmaEvidence": [
+    {
+      "nodeId": "1327:8810",
+      "disposition": "ZZ / SUPERSEDED — OLUK / Stack / CommercialBuilder v2"
+    },
+    {
+      "nodeId": "1292:6466",
+      "disposition": "ZZ / REJECTED — StackOutcomeProfile"
+    },
+    {
+      "nodeIds": [
+        "1332:26891",
+        "1332:27283",
+        "1332:27960",
+        "1332:29007",
+        "1295:31435",
+        "1300:25677"
+      ],
+      "disposition": "historical/superseded route mirrors; preserved and not deleted"
+    }
+  ],
+  "knownSourceDebt": [
+    {
+      "scope": "legacy PurchasePanel component main",
+      "debt": "The legacy primitive still carries uppercase OPENLAB VERIFIED copy.",
+      "nativeizationTreatment": "Only the grammar-page instances override this to the locked Verified Evidence label; the unrelated legacy primitive main was not silently changed."
+    },
+    {
+      "scope": "committed Sites capture receipt",
+      "debt": "No current-tree c94d294 Sites capture receipt exists in this isolated nativeization PR.",
+      "nativeizationTreatment": "The old capture hashes remain explicitly historical and the Figma status stops at FIGMA_NATIVE_MIRROR_CREATED."
+    }
+  ],
+  "validation": {
+    "figmaLiveInspection": true,
+    "nativeEditableNodes": true,
+    "temporaryWebCaptureUsedAsFinal": false,
+    "currentFigmaScreenshots": true,
+    "copySurfaceOverflowCount": 0,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": "PASS",
+    "unitTests": {
+      "status": "PASS",
+      "pass": 145,
+      "fail": 0
+    },
+    "proofContracts": {
+      "status": "PASS_WITH_DELEGATED_REVIEW_FRESHNESS",
+      "passedBeforeDelegatedGate": [
+        "contract:check",
+        "design-sync:check",
+        "product:check",
+        "openlab:check",
+        "template-catalogue:check",
+        "promotion:check",
+        "feature-intent:check"
+      ],
+      "delegated": "review:check",
+      "delegationReason": "This receipt-only lane is prohibited from regenerating the shared Review Studio payload. The integration owner must regenerate it after merge.",
+      "passedAfterDelegatedGate": [
+        "grammar:check",
+        "proof:tokens",
+        "proof:css-colors",
+        "proof:provenance",
+        "proof:taxonomy",
+        "proof:code-bridge",
+        "proof:visual-baselines"
+      ]
+    },
+    "exactProductTruth": {
+      "mk2866": "15 MG · 90 SERVINGS · >99% · £43",
+      "rad140": "8 MG · 60 SERVINGS · £55",
+      "lgd4033": "5 MG · £44 · no manufactured servings",
+      "ment": "20 MG · 30 SERVINGS · £49 · PROHORMONE SERIES",
+      "mk677": "15 MG · 90 SERVINGS · £45"
+    },
+    "reviewPayloadChanged": false,
+    "promotionRegistryChanged": false,
+    "figmaPublicationPerformed": false,
+    "makeRunPerformed": false,
+    "runtimeOrDeploymentPerformed": false,
+    "screenshotRetention": "Local proof files only; screenshot binaries are not committed by this receipt-only PR."
+  }
+}
