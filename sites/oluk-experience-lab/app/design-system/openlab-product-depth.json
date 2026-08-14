@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "oluk.openlab-product-depth.v1",
+  "sourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
+  "record": {
+    "id": "report-mk-2866-ol2201-2",
+    "reportId": "28868",
+    "batchCode": "OL2201",
+    "testedAt": "2023-04-16",
+    "labName": "Janoshik",
+    "bindingState": "current",
+    "availabilityState": "available",
+    "recordAction": {
+      "label": "Open Lab Record",
+      "href": "/lab-reports?record=report-mk-2866-ol2201-2",
+      "enabled": true
+    },
+    "sourceAction": {
+      "label": "View original report",
+      "href": "https://olympuslabs.uk/test-reports/mk-2866-ol2201-2/"
+    }
+  },
+  "analytes": [
+    {
+      "compoundName": "MK-2866",
+      "purity": {
+        "displayValue": ">99%",
+        "comparator": "greater_than"
+      },
+      "concentration": {
+        "value": 16.02,
+        "displayValue": "16.02 mg",
+        "unit": "mg",
+        "labelClaimValue": 15,
+        "labelClaimDisplayValue": "15 mg label claim"
+      }
+    }
+  ],
+  "visualizations": {
+    "purity": {
+      "title": "Reported purity",
+      "displayValue": ">99%",
+      "comparator": "greater_than",
+      "tableFallback": [
+        {
+          "label": "Reported purity",
+          "value": ">99%"
+        }
+      ]
+    },
+    "concentration": {
+      "title": "Label-to-test comparison",
+      "testedValue": "16.02 mg",
+      "labelClaim": "15 mg label claim",
+      "testedPercent": 100,
+      "claimPercent": 94,
+      "tableFallback": [
+        {
+          "label": "Label claim",
+          "value": "15 mg label claim"
+        },
+        {
+          "label": "Tested concentration",
+          "value": "16.02 mg"
+        }
+      ]
+    },
+    "history": [
+      {
+        "reportId": "28868",
+        "batchCode": "OL2201",
+        "testedAt": "2023-04-16",
+        "purity": ">99%",
+        "state": "current"
+      }
+    ]
+  },
+  "interactionContract": {
+    "selectableViews": [
+      "record",
+      "report history",
+      "label comparison",
+      "analytes",
+      "source context"
+    ],
+    "keyboard": "arrow-key tabs and direct focus",
+    "reducedMotion": "no animated analytical reconstruction",
+    "mobile": "summary then progressive disclosure"
+  },
+  "contentHash": "122f8539044aeba42e42203b226e2011eaa493c42b69eb35b0d0e85abafc797b"
+}

@@ -8,7 +8,7 @@ import type { ProductMediaAsset } from "./product-fixtures";
 import styles from "./your-stack-builder.module.css";
 
 type StackProduct = Readonly<{
-  id: "rad-140" | "ment" | "mk-677";
+  id: "rad-140" | "ment" | "mk-677" | "lgd-4033" | "gw-501516" | "epistane";
   series: string;
   name: string;
   alias: string;
@@ -21,7 +21,7 @@ type StackProduct = Readonly<{
   rationale: string;
   outcomes: readonly StackGoal[];
   profile: StackOutcomeProfile;
-  media: ProductMediaAsset;
+  media: ProductMediaAsset | null;
 }>;
 
 type StackGoal = "Cutting" | "Bulking" | "Recomp" | "PCT";
@@ -91,14 +91,14 @@ const crops = {
   },
 } as const;
 
-function media(id: StackProduct["id"], alias: string, src: string): ProductMediaAsset {
+function media(id: StackProduct["id"], alias: string, src: string, width = 1024, height = 1536): ProductMediaAsset {
   return {
     id: `${id}-front`,
     productId: id,
     src,
     alt: `${id.toUpperCase()} ${alias} bottle`,
-    width: 1024,
-    height: 1536,
+    width,
+    height,
     fit: "contain",
     hasTransparency: true,
     sourceRef: "OLUK product render library",
@@ -109,6 +109,11 @@ function media(id: StackProduct["id"], alias: string, src: string): ProductMedia
 }
 
 const products: readonly StackProduct[] = [
+  {
+    id: "lgd-4033", series: "SARM SERIES", name: "LGD-4033", alias: "Ligandrol", strength: "5 MG", servings: "", purity: ">99%", price: "£44",
+    focus: "Lean mass", position: "Mass option one", rationale: "Add a lean-mass direction without inventing a product render. The governed chamber stays intentionally unpopulated until the registered LGD-4033 render exists.",
+    outcomes: ["Bulking", "Recomp"], profile: { goalFit: 28, intensity: 22, complexity: 16, recoveryEmphasis: 2, evidenceVisibility: 66 }, media: null,
+  },
   {
     id: "rad-140",
     series: "SARM SERIES",
@@ -160,6 +165,16 @@ const products: readonly StackProduct[] = [
     profile: { goalFit: 18, intensity: 8, complexity: 14, recoveryEmphasis: 42, evidenceVisibility: 72 },
     media: media("mk-677", "Ibutamoren", "/assets/products/hero/mk-677/front.webp"),
   },
+  {
+    id: "gw-501516", series: "METABOLIC SERIES", name: "GW-501516", alias: "Cardarine", strength: "10 MG", servings: "60 SERVINGS", purity: ">99%", price: "£42",
+    focus: "Endurance + cutting", position: "Cutting pathway", rationale: "Add an endurance-led pathway around the MK-2866 baseline when the goal is a sharper cutting or recomp phase.",
+    outcomes: ["Cutting", "Recomp"], profile: { goalFit: 34, intensity: 12, complexity: 12, recoveryEmphasis: 8, evidenceVisibility: 70 }, media: media("gw-501516", "Cardarine", "/assets/products/shop/gw-501516.jpeg", 300, 450),
+  },
+  {
+    id: "epistane", series: "PROHORMONE SERIES", name: "Epistane", alias: "Epistane", strength: "20 MG", servings: "60 SERVINGS", purity: ">99%", price: "£44",
+    focus: "Recomp finish", position: "Finishing option", rationale: "Compare a harder finishing presentation after the MK-2866 and Cardarine base is already clear.",
+    outcomes: ["Recomp"], profile: { goalFit: 25, intensity: 26, complexity: 20, recoveryEmphasis: 2, evidenceVisibility: 64 }, media: media("epistane", "Epistane", "/assets/products/shop/epistane.webp", 300, 450),
+  },
 ] as const;
 
 function ContextChip({ label, value }: { label: string; value: string }) {
@@ -206,7 +221,7 @@ export function StackOutcomeCard({
         onClick={onAdd}
         type="button"
       >
-        <ProductMediaChamber context="card" media={product.media} />
+        {product.media ? <ProductMediaChamber context="card" media={product.media} /> : <div aria-label={`${product.name} render unavailable`} className={styles.unpopulatedChamber}><span>Registered render pending</span><strong>{product.name}</strong></div>}
         <div className={styles.identity}>
           <div>
             <span className={styles.seriesChip}>{product.series}</span>
@@ -243,7 +258,7 @@ export function StackOutcomeCard({
   );
 }
 
-export function YourStackBuilder() {
+export function YourStackBuilder({ baselineSlug = "mk-2866", host = "standalone" }: { baselineSlug?: string; host?: "pdp" | "bag" | "confirmation" | "account" | "standalone" }) {
   const [added, setAdded] = useState<StackProduct["id"][]>([]);
   const [goal, setGoal] = useState<StackGoal>("Cutting");
   const count = useMemo(() => added.length, [added]);
@@ -257,7 +272,7 @@ export function YourStackBuilder() {
   const stackTotal = 43 + selectedProducts.reduce((sum, product) => sum + Number(product.price.replace(/[^0-9.]/g, "")), 0);
 
   return (
-    <div className={styles.page} data-component="YourStackBuilder" data-mobile-strategy="carousel">
+    <div className={styles.page} data-baseline={baselineSlug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="carousel">
       <section className={styles.anchor}>
         <div>
           <span className={styles.sectionLabel}>Your starting product</span>
