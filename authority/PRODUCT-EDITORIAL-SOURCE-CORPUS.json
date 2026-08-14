@@ -36,9 +36,9 @@
       "sources": ["handover-master-plan", "chatbot-training", "yoast-export"],
       "locators": ["Product SEO Strategy: MK-2866 (Ostarine)", "MK-2866 (Ostarine) product and training snippets", "Ostarine metadata rows"],
       "editorial": {
-        "summary": "A clear Ostarine starting point for cutting and recomp phases where lean mass, training output and a sharper finish all matter.",
+        "summary": "A clear Ostarine starting point for cutting and recomp phases where lean mass, training output and a stronger finish all matter.",
         "researchProfile": "MK-2866 gives the plan a measured lean-mass foundation. Start here when the goal is to hold onto training quality while bringing body composition into tighter focus.",
-        "guidance": "Build from the outcome you want next: add Cardarine for endurance-led cutting work, compare S-4 for a sharper finish, or step into a lean-mass option when the phase changes.",
+        "guidance": "Build from the outcome you want next: add Cardarine for endurance-led cutting work, compare S-4 for a stronger finish, or step into a lean-mass option when the phase changes.",
         "considerations": "Compare the product facts, stack options and available OpenLab record before finalising the next product decision."
       },
       "proposition": {
@@ -118,7 +118,7 @@
       "editorial": {
         "summary": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
         "researchProfile": "GW-50156 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
-        "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a sharper final phase, or keep it in a recomp build where training output matters.",
+        "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a stronger final phase, or keep it in a recomp build where training output matters.",
         "considerations": "Compare endurance focus with the strength, mass and finish options before making it part of the stack."
       },
       "proposition": {
@@ -136,20 +136,20 @@
       "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
       "locators": ["Product SEO Strategy: Andarine (S-4)", "S-4 product and training snippets", "Cutting stack entries", "Andarine metadata rows"],
       "editorial": {
-        "summary": "An Andarine option for a cutting phase that wants more definition and a sharper final presentation.",
+        "summary": "An Andarine option for a cutting phase that wants more definition and a stronger final presentation.",
         "researchProfile": "S-4 is the finish-focused option to compare once the cutting base is already in place. It brings a more defined direction beside Ostarine and Cardarine.",
         "guidance": "Add S-4 after choosing the cutting base, then use the comparison drawer to see how it changes intensity and the stack outcome.",
         "considerations": "Review the full product detail and compare it with the broader cutting build before adding it."
       },
       "proposition": {
         "eyebrow": "Cutting finish",
-        "headline": "Sharpen the final phase.",
+        "headline": "Build a stronger final phase.",
         "promise": "S-4 adds a definition-led choice when a cutting build needs a more focused finish.",
         "benefits": ["Finish-focused role", "Cutting comparison", "Pairs with an established base"],
         "differentiator": "An Andarine option for a more defined cutting direction.",
-        "primaryAction": "Sharpen my cut",
+        "primaryAction": "Build a stronger cut",
         "secondaryAction": "Compare finish options",
-        "mobileSummary": "A sharper finish for a cutting build."
+        "mobileSummary": "A stronger finish for a cutting build."
       }
     },
     "yk-11": {
@@ -179,7 +179,7 @@
         "summary": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
         "researchProfile": "S-23 is a distinct comparison when a recomp plan needs more intensity than an Ostarine-led base alone.",
         "guidance": "Compare S-23 with MK-2866 and Cardarine to see whether the next phase should lean toward a cleaner balance or a harder definition-led profile.",
-        "considerations": "Use the outcome profile and product comparison before adding it to a recomp build."
+        "considerations": "Use the contribution summary and product comparison before adding it to a recomp build."
       },
       "proposition": {
         "eyebrow": "Focused recomp",
@@ -198,7 +198,7 @@
       "editorial": {
         "summary": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
         "researchProfile": "Epistane is the finish-focused comparison for customers taking an Ostarine and Cardarine base into a more intense final phase.",
-        "guidance": "Keep it in the recomp comparison set, then see how it changes the outcome profile against a more endurance-led or lean-mass-led addition.",
+        "guidance": "Keep it in the recomp comparison set, then see what it contributes beside an endurance-led or lean-mass-led addition.",
         "considerations": "Review the product detail and compare intensity before adding a prohormone option to the build."
       },
       "proposition": {
@@ -206,7 +206,7 @@
         "headline": "Finish a recomp phase with intent.",
         "promise": "Epistane brings a harder, leaner finishing direction to an established recomp build.",
         "benefits": ["Finish-focused role", "Lean recomp direction", "Advanced comparison"],
-        "differentiator": "A prohormone choice for the final stretch of a sharper recomp plan.",
+        "differentiator": "A prohormone choice for the final stretch of a stronger recomp plan.",
         "primaryAction": "Compare finishing options",
         "secondaryAction": "View product details",
         "mobileSummary": "A harder finishing option for recomp."

@@ -3,7 +3,7 @@
   "contractId": "oluk.customer-surface-grammar.v1",
   "currentState": "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 774,
+  "looseCopyGroupCount": 759,
   "routeRefactorCount": 44,
   "routes": [
     {
@@ -99,8 +99,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 4,
-      "copyGroupCount": 22,
+      "containedCopyGroupCount": 17,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -145,8 +145,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 4,
-      "copyGroupCount": 22,
+      "containedCopyGroupCount": 17,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -191,8 +191,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 4,
-      "copyGroupCount": 22,
+      "containedCopyGroupCount": 17,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -237,8 +237,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 4,
-      "copyGroupCount": 22,
+      "containedCopyGroupCount": 17,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -283,8 +283,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 14,
+      "containedCopyGroupCount": 15,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -329,8 +329,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "containedCopyGroupCount": 15,
+      "copyGroupCount": 37,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -1663,8 +1663,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 23,
+      "containedCopyGroupCount": 27,
+      "copyGroupCount": 33,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -1674,36 +1674,36 @@
         },
         {
           "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "text": "Build a sharper cutting stack."
-        },
-        {
-          "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
-          "text": "Add lean-mass intensity or recovery emphasis to MK-2866."
+          "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
-          "element": "h2",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
-          "text": "RAD-140"
+          "text": "Shop"
         },
         {
           "copySurface": null,
-          "element": "p",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
-          "text": "Testolone"
+          "text": "OpenLab"
         },
         {
           "copySurface": null,
-          "element": "p",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
-          "text": "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase."
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 21,
+      "looseCopyGroupCount": 6,
       "path": "/open-lab/stack-builder",
       "routeId": "open-lab-stack-builder",
       "status": "NEEDS_ROUTE_REFACTOR"
@@ -2032,7 +2032,7 @@
     }
   ],
   "schemaVersion": 1,
-  "sourceFindingCount": 48,
+  "sourceFindingCount": 34,
   "sourceFindings": [
     {
       "file": "app/design-system/frontier-sections.module.css",
@@ -2197,90 +2197,6 @@
       "value": "10px"
     },
     {
-      "file": "app/design-system/your-stack-builder.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".contextChip small",
-      "value": "10px"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".seriesChip",
-      "value": "11px"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".selection",
-      "value": "11px"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 4969,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/rad-140/front.png\""
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 5617,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/hero/ment/front.webp\""
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 6288,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/hero/mk-677/front.webp\""
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 6867,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/shop/gw-501516.jpeg\""
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 7419,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/shop/epistane.webp\""
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 1173,
-      "rule": "sharper-stack-copy",
-      "value": "Build a sharper"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 619,
-      "rule": "rejected-stack-profile",
-      "value": "StackOutcomeProfile"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 819,
-      "rule": "rejected-complexity-score",
-      "value": "complexity"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 798,
-      "rule": "rejected-intensity-score",
-      "value": "intensity"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 7996,
-      "rule": "rejected-evidence-visibility-score",
-      "value": "Evidence visibility"
-    },
-    {
-      "file": "app/design-system/your-stack-builder.tsx",
-      "offset": 8445,
-      "rule": "arbitrary-score-css",
-      "value": "--score"
-    },
-    {
       "file": "app/review-studio/review-studio.module.css",
       "offset": 438,
       "rule": "literal-color",
@@ -2323,7 +2239,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "fe472384be159034978e736314b87d03d200123ff5a1ba3db048d6960cbc8bf4",
+  "sourceHash": "6ee94d044c2e7670ec8f4ecd57fd0f58794fafa439d003825a66d76e0c1b42c2",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2343,5 +2259,5 @@
     "mobileReviewWidthPx": 390,
     "qualitativeChipLabelExceptionPx": 11
   },
-  "auditHash": "660bc0226515251dbfd95fa07368dcef04217d0d579e883080a54965b7494513"
+  "auditHash": "ce1c7bff9f749293456c461013a78b75f048dfbdc284cc84273ce079575765db"
 }

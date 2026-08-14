@@ -21,9 +21,8 @@ test("frontier product records use outcome-led copy and match the approved Your 
   const stackData = JSON.parse(readFileSync(new URL("runs/01-canonical-your-stack/product-data.json", kitRoot), "utf8"));
 
   for (const product of stackData.recommendations) {
-    const escapedName = product.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     assert.match(content, new RegExp(`slug:"${product.id}"[\\s\\S]*?strength:"${product.strength}"[\\s\\S]*?servings:"${product.servings}"[\\s\\S]*?price:"${product.price}"`));
-    assert.match(stackBuilder, new RegExp(`name: "${escapedName}"[\\s\\S]*?strength: "${product.strength}"[\\s\\S]*?servings: "${product.servings}"[\\s\\S]*?price: "${product.price}"`));
+    assert.match(stackBuilder, new RegExp(`targetProduct: "${product.id}"`));
   }
 
   const productRecords = content.slice(content.indexOf("export const frontierProducts"), content.indexOf("export const productBySlug"));
@@ -39,7 +38,7 @@ test("every catalogue PDP renders its own customer proposition without implement
     ["rad-140", "RAD-140", "8 MG", "60 SERVINGS", "£55"],
     ["lgd-4033", "LGD-4033", "5 MG", "", "£44"],
     ["mk-677", "MK-677", "15 MG", "90 SERVINGS", "£45"],
-    ["gw-501516", "GW-501516", "10 MG", "60 SERVINGS", "£42"],
+    ["gw-501516", "GW-50156", "10 MG", "60 SERVINGS", "£42"],
     ["s-4", "S-4", "25 MG", "60 SERVINGS", "£40"],
     ["yk-11", "YK-11", "10 MG", "60 SERVINGS", "£47"],
     ["s-23", "S-23", "10 MG", "60 SERVINGS", "£47"],
@@ -171,21 +170,37 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
 });
 
-test("Your Stack exposes the approved outcome-led card as one reusable Sites export", () => {
+test("Your Stack wraps the canonical commerce card with governed commercial decision content", () => {
   const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
   assert.match(stackBuilder, /export function StackOutcomeCard/);
-  assert.match(stackBuilder, /STACK FOCUS/);
-  assert.match(stackBuilder, /WHY ADD IT/);
-  assert.match(stackBuilder, /Build a sharper cutting stack[\s\S]*Build size and power into the plan[\s\S]*Build a more capable recomp stack/i);
-  assert.match(stackBuilder, /MK-2866.*\+.*selectedProducts|selectedProducts.*MK-2866/i);
-  assert.match(stackBuilder, /Focused build[\s\S]*Elevated build[\s\S]*Full build/);
+  assert.match(stackBuilder, /<ProductCommerceCard[\s\S]*commerceTreatment="selection"/);
+  assert.match(stackBuilder, /<DecisionSurface/);
+  assert.match(stackBuilder, /<TechnicalSurface/);
+  assert.doesNotMatch(stackBuilder, /<ProductMediaChamber|<MetricRail/);
+  assert.match(stackBuilder, /PRODUCT ROLE/);
+  assert.match(stackBuilder, /WHAT IT ADDS/);
+  assert.match(stackBuilder, /const stackRelationships/);
+  assert.match(stackBuilder, /function baselineFor[\s\S]*getFrontierProduct\(slug\)/);
+  assert.match(stackBuilder, /Build a stronger \$\{baseline\.alias\} cutting stack[\s\S]*Build a stronger size-and-power stack from \$\{baseline\.alias\}[\s\S]*Build a stronger recomp stack from \$\{baseline\.alias\}/i);
+  assert.match(stackBuilder, /baseline\.name.*selectedProducts|selectedProducts.*baseline\.name/i);
+  assert.match(stackBuilder, /FOUNDATION[\s\S]*STRONGER[\s\S]*MAXIMUM/);
+  assert.match(stackBuilder, /host === "bag" \|\| host === "confirmation"/);
+  assert.match(stackBuilder, /host === "account"/);
+  assert.match(stackBuilder, /function StackSummary/);
   assert.doesNotMatch(stackBuilder, /function StackCard/);
 });
 
-test("Your Stack renders a five-axis outcome profile and compiled total", () => {
+test("Your Stack uses deterministic commercial levels, contributions and separate OpenLab confidence", () => {
   const source = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
-  for (const axis of ["goalFit", "intensity", "complexity", "recoveryEmphasis", "evidenceVisibility"]) assert.match(source, new RegExp(axis));
-  assert.match(source, /data-component="StackOutcomeProfile"/);
+  const css = readFileSync(new URL("../app/design-system/your-stack-builder.module.css", import.meta.url), "utf8");
+  for (const level of ["FOUNDATION", "STRONGER", "MAXIMUM"]) assert.match(source, new RegExp(level));
+  for (const contribution of ["STRENGTH", "LEAN MASS", "BODY COMPOSITION", "RECOVERY", "APPETITE [+] SLEEP", "TRAINING OUTPUT"]) assert.match(source, new RegExp(contribution));
+  assert.match(source, /data-component="StackOpenLabConfidence"/);
+  assert.match(source, /confidenceSelection\(baseline, selectedProducts\)/);
+  assert.match(source, /Confirm or change your baseline/);
+  assert.match(source, /host === "standalone" \? selectBaseline : undefined/);
+  assert.match(source, /EvidenceStatusChip/);
   assert.match(source, /stackTotal/);
-  assert.doesNotMatch(source, /Good\s*\/\s*Better\s*\/\s*Best/i);
+  assert.doesNotMatch(css, /font-size:\s*11px/);
+  assert.doesNotMatch(source, /goalFit|evidenceVisibility|StackOutcomeProfile|out of 100|sharper/i);
 });

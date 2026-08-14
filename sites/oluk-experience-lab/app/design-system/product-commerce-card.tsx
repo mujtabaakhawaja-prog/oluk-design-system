@@ -31,6 +31,8 @@ export type ProductCommerceCardProps = Readonly<{
   secondaryHref?: string;
   secondaryLabel?: string;
   className?: string;
+  /** Selection contexts reuse the canonical anatomy while a parent owns price and action state. */
+  commerceTreatment?: "purchase" | "selection";
 }>;
 
 function presentationState(
@@ -78,10 +80,11 @@ export function ProductCommerceCard({
   secondaryHref,
   secondaryLabel,
   className,
+  commerceTreatment = "purchase",
 }: ProductCommerceCardProps) {
   const resolved = presentationState(product, state, inventory, evidence);
   const qualitativeVisible = showQualitative ?? variant !== "compact";
-  const status = (
+  const status = commerceTreatment === "selection" ? null : (
     <FixtureStatusStack
       evidence={resolved.evidence}
       inventory={resolved.inventory}
@@ -146,21 +149,23 @@ export function ProductCommerceCard({
           <ProductIdentity headingLevel={headingLevel} product={product} />
         </div>
         <MetricRail compact product={product} />
-        <div className="oluk-candidate-compact-proof">{status}</div>
+        {status ? <div className="oluk-candidate-compact-proof">{status}</div> : null}
         {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
-        <div className="oluk-candidate-compact-buy">
-          <strong>{product.price}</strong>
-          <div>
-            <a href={secondaryHref ?? product.customerPath}>View product</a>
-            <button disabled type="button">
-              {resolved.primaryLabel === "Add to bag"
-                ? "Quick add"
-                : resolved.primaryLabel === "Added"
-                  ? "Added ✓"
-                  : resolved.primaryLabel}
-            </button>
+        {commerceTreatment === "purchase" ? (
+          <div className="oluk-candidate-compact-buy">
+            <strong>{product.price}</strong>
+            <div>
+              <a href={secondaryHref ?? product.customerPath}>View product</a>
+              <button disabled type="button">
+                {resolved.primaryLabel === "Add to bag"
+                  ? "Quick add"
+                  : resolved.primaryLabel === "Added"
+                    ? "Added ✓"
+                    : resolved.primaryLabel}
+              </button>
+            </div>
           </div>
-        </div>
+        ) : null}
       </article>
     );
   }
@@ -194,16 +199,20 @@ export function ProductCommerceCard({
           {qualitativeVisible && product.qualitativeFacts.length > 0 ? (
             <QualitativeChipList facts={product.qualitativeFacts} />
           ) : null}
-          <div className="purchase-row">
-            <PriceBlock price={product.price} />
-            <StaticQuantityStepper value={quantity} />
-          </div>
-          <StaticPurchaseActions
-            evidenceHref={secondaryHref ?? product.evidencePath}
-            evidenceLabel={secondaryLabel}
-            primaryLabel={resolved.primaryLabel}
-            state={resolved.inventory}
-          />
+          {commerceTreatment === "purchase" ? (
+            <>
+              <div className="purchase-row">
+                <PriceBlock price={product.price} />
+                <StaticQuantityStepper value={quantity} />
+              </div>
+              <StaticPurchaseActions
+                evidenceHref={secondaryHref ?? product.evidencePath}
+                evidenceLabel={secondaryLabel}
+                primaryLabel={resolved.primaryLabel}
+                state={resolved.inventory}
+              />
+            </>
+          ) : null}
         </div>
       </div>
     </article>

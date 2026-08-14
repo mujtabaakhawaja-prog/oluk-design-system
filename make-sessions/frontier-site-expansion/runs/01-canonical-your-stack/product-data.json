@@ -24,8 +24,8 @@
       "purity": ">99%",
       "price": "£55",
       "primaryBenefit": "Strength + lean mass",
-      "stackPosition": "Maximum intensity",
-      "rationale": "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.",
+      "stackPosition": "Strength step-up",
+      "rationale": "Add serious strength and lean-mass focus with an 8 MG step-up built for a harder training phase.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/rad-140.png",
       "imageSha256": "6ef50a629d1b4831750e713426beb6285fb4b366297e6e8e5b3c09813ebdd3fc"
@@ -42,7 +42,7 @@
       "price": "£49",
       "primaryBenefit": "Mass + power",
       "stackPosition": "Advanced builder",
-      "rationale": "Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.",
+      "rationale": "Take the build toward heavyweight size and power with a 20 MG Trestolone option beyond a SARM-only line-up.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/ment.webp",
       "imageSha256": "1cbd10faea35d3893be287119263566f6d204d54e22dc0273278c8f0a4b098e8"

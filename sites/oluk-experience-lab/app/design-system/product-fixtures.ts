@@ -44,7 +44,8 @@ export type ProductMediaAsset = Readonly<{
 }>;
 
 export type ProductFixture = Readonly<{
-  id: ProductFixtureId;
+  /** Registry-backed product fixtures may extend beyond the two library specimens. */
+  id: string;
   series: string;
   name: string;
   alias: string;
@@ -181,7 +182,7 @@ export const productFixtures = {
     strength: "8 MG",
     servings: "60 SERVINGS",
     purity: ">99%",
-    price: "£46",
+    price: "£55",
     customerPath: "/shop",
     evidencePath: "/open-lab/records",
     media: productMediaRegistry["rad-140"],
