@@ -40,7 +40,7 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "report", path: "/open-lab/report/registered-record", label: "Report", heading: "Report registered-record", section: "openlab", authorityClass: "customer-candidate" },
   { key: "openlab-evidence", path: "/open-lab/evidence", label: "Evidence charts", heading: "See the record landscape at a glance.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "compound-guide", path: "/open-lab/compound-guide", label: "Compound guide", heading: "Start with the compound. Understand the context.", section: "openlab", authorityClass: "customer-candidate" },
-  { key: "stack-builder", path: "/open-lab/stack-builder", label: "Stack builder", heading: "Build a sharper Ostarine cutting stack.", section: "openlab", authorityClass: "customer-candidate" },
+  { key: "stack-builder", path: "/open-lab/stack-builder", label: "Stack builder", heading: "Build a stronger Ostarine cutting stack.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "dosing-calculator", path: "/open-lab/dosing-calculator", label: "Dose calculator", heading: "Translate a product format into a clear schedule.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "cycle-planner", path: "/open-lab/cycle-planner", label: "Cycle planner", heading: "See the whole plan before day one.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "interaction-checker", path: "/open-lab/interaction-checker", label: "Interaction checker", heading: "Compare two compounds before combining them.", section: "openlab", authorityClass: "customer-candidate" },

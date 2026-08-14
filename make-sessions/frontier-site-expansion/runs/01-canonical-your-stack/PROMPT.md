@@ -1,4 +1,6 @@
-# Paste this entire prompt into a new Figma Make session
+# HISTORICAL — DO NOT RUN
+
+This prompt records the first Your Stack exploration. The completed Sites builder now controls the composition, and any future Make exploration must wait for its current native Figma primitives. Do not rerun this prompt.
 
 Create the first Olympus Labs UK modular growth frontier: a production-quality **Your Stack** customer experience that can mount after the MK-2866 PDP decision content, below the Bag summary, and after order confirmation.
 
@@ -16,7 +18,7 @@ Create the first Olympus Labs UK modular growth frontier: a production-quality *
 
 ## THIS_RUN_DELTA
 
-The old `module-a-your-stack-desktop` frame `1081:28849` defines only the job: recommend complementary products around MK-2866. Its locally drawn cards, local chambers, local trust blocks, and local actions are rejected. Rebuild the experience from the canonical component relationships above.
+The old `module-a-your-stack-desktop` frame `1081:28849` defines only the job: build a stronger product selection around MK-2866. Its locally drawn cards, local chambers, local trust blocks, and local actions are rejected.
 
 The variant decision is now locked for this run:
 
@@ -34,7 +36,7 @@ Create a wide stack-building section with a confident outcome-led introduction, 
 
 ### Direction 2 — Guided Decision Ladder
 
-Create a Good / Better / Best decision sequence using the same three products. Keep the underlying desktop cards Vertical even as their placement creates a ladder; do not invent tier cards or pricing-table shells. Make the hierarchy feel like guided choice rather than a pricing table. Explain the relationship through short customer copy, product facts, and selection state. Avoid repeated rectangles and dashboard density.
+Create an additive sequence using the same three products. The selected-product count moves from `FOUNDATION` at one product, to `STRONGER` at two, to `MAXIMUM` at three or more. These bounded levels communicate basket completeness, not product performance. Explain every addition through its customer contribution, product facts and selection state. Avoid tier cards, pricing-table shells, repeated rectangles and dashboard density.
 
 ### Direction 3 — Product Stage Continuation
 
@@ -43,7 +45,7 @@ Create a more visual, media-led continuation inspired by the authored product-st
 For every direction:
 
 - Show RAD-140, MENT, and MK-677 using the attached renders and exact card copy.
-- Include product series, name, alias, strength, servings, purity, price, concise stack rationale, two context-relevance QualitativeChips, and a clear action. StockPill and EvidenceStatus remain available to the wider product system but are deliberately omitted from this focused upsell module because they do not explain why a recommendation complements the starting product.
+- Include product series, name, alias, strength, servings, purity, price, concise stack rationale, bounded contribution chips, and a clear action. OpenLab remains a separate confidence surface beside the commercial summary, never a performance score.
 - Sell the purpose of stacking: a more complete performance plan built around strength and lean mass, mass and power, or growth and recovery. Do not reduce the proposition to compatibility, catalogue navigation or product comparison.
 - Prove default, selected, and added states through real interaction. Added state must read `Added ✓`.
 - Provide an accessible focus state and a visible route to product detail.

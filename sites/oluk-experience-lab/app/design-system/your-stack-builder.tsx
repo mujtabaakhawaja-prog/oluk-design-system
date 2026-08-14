@@ -5,11 +5,34 @@ import { useMemo, useState } from "react";
 import { MetricRail } from "./metric-rail";
 import { ProductMediaChamber } from "./product-media-chamber";
 import type { ProductMediaAsset } from "./product-fixtures";
-import { getFrontierProduct } from "./frontier-content";
+import { EvidenceStatusChip, type EvidenceAuthorityState } from "./program-components";
+import { actualProductMedia, getFrontierProduct } from "./frontier-content";
+import { stackLevelFor, stackTotalFor, uniqueStackContributions } from "./stack-commercial-model.mjs";
 import styles from "./your-stack-builder.module.css";
 
+type StackGoal = "Cutting" | "Bulking" | "Recomp" | "PCT";
+type StackHost = "pdp" | "bag" | "confirmation" | "account" | "standalone";
+type StackVariant = "full" | "compact" | "summary";
+type StackProductId = "rad-140" | "ment" | "mk-677" | "lgd-4033" | "gw-501516" | "epistane";
+type StackContribution =
+  | "STRENGTH"
+  | "LEAN MASS"
+  | "BODY COMPOSITION"
+  | "RECOVERY"
+  | "APPETITE + SLEEP"
+  | "TRAINING OUTPUT";
+
+type StackRelationship = Readonly<{
+  targetProduct: StackProductId;
+  eligibleGoals: readonly StackGoal[];
+  contributions: readonly StackContribution[];
+  focus: string;
+  position: string;
+  customerRationale: string;
+}>;
+
 type StackProduct = Readonly<{
-  id: "rad-140" | "ment" | "mk-677" | "lgd-4033" | "gw-501516" | "epistane";
+  id: StackProductId;
   series: string;
   name: string;
   alias: string;
@@ -21,21 +44,11 @@ type StackProduct = Readonly<{
   position: string;
   rationale: string;
   outcomes: readonly StackGoal[];
-  profile: StackOutcomeProfile;
+  contributions: readonly StackContribution[];
+  evidenceState: EvidenceAuthorityState;
   media: ProductMediaAsset | null;
 }>;
 
-type StackGoal = "Cutting" | "Bulking" | "Recomp" | "PCT";
-type StackOutcomeProfile = Readonly<{
-  goalFit: number;
-  intensity: number;
-  complexity: number;
-  recoveryEmphasis: number;
-  evidenceVisibility: number;
-}>;
-
-type StackHost = "pdp" | "bag" | "confirmation" | "account" | "standalone";
-type StackVariant = "full" | "compact" | "summary";
 type StackBaseline = Readonly<{
   slug: string;
   series: string;
@@ -43,43 +56,38 @@ type StackBaseline = Readonly<{
   alias: string;
   strength: string;
   servings: string;
+  purity: string;
   price: string;
   goals: readonly string[];
-  profile: StackOutcomeProfile;
+  contributions: readonly StackContribution[];
+  evidenceState: EvidenceAuthorityState;
+  media: ProductMediaAsset | null;
 }>;
 
-const baselineProfiles: Readonly<Record<string, StackOutcomeProfile>> = {
-  "mk-2866": { goalFit: 52, intensity: 38, complexity: 20, recoveryEmphasis: 34, evidenceVisibility: 92 },
-  "rad-140": { goalFit: 54, intensity: 62, complexity: 30, recoveryEmphasis: 18, evidenceVisibility: 78 },
-  "lgd-4033": { goalFit: 56, intensity: 50, complexity: 28, recoveryEmphasis: 22, evidenceVisibility: 66 },
-  "mk-677": { goalFit: 48, intensity: 28, complexity: 18, recoveryEmphasis: 66, evidenceVisibility: 72 },
-  "gw-501516": { goalFit: 54, intensity: 34, complexity: 20, recoveryEmphasis: 30, evidenceVisibility: 70 },
-  epistane: { goalFit: 50, intensity: 54, complexity: 34, recoveryEmphasis: 16, evidenceVisibility: 64 },
-  ment: { goalFit: 58, intensity: 70, complexity: 42, recoveryEmphasis: 18, evidenceVisibility: 70 },
-};
-
-const fallbackBaselineProfile: StackOutcomeProfile = { goalFit: 50, intensity: 36, complexity: 22, recoveryEmphasis: 30, evidenceVisibility: 64 };
-
-const stackGoals: Readonly<Record<StackGoal, { headline: (baseline: StackBaseline) => string; copy: (baseline: StackBaseline) => string; outcome: string }>> = {
+const stackGoals: Readonly<Record<StackGoal, {
+  headline: (baseline: StackBaseline) => string;
+  copy: (baseline: StackBaseline) => string;
+  outcome: string;
+}>> = {
   Cutting: {
-    headline: (baseline) => `Build a sharper ${baseline.alias} cutting stack.`,
-    copy: (baseline) => `Keep ${baseline.name} at the centre, then add endurance, definition or lean-mass intensity where it earns its place.`,
-    outcome: "Leaner, harder training emphasis",
+    headline: (baseline) => `Build a stronger ${baseline.alias} cutting stack.`,
+    copy: (baseline) => `Start with ${baseline.name}, then add the product contribution that takes strength, body composition or training output further.`,
+    outcome: "Strength, body composition and training output",
   },
   Bulking: {
-    headline: (baseline) => `Build more size and power around ${baseline.alias}.`,
-    copy: (baseline) => `Use ${baseline.name} as the base, then choose the lean-mass, intensity and recovery additions that suit the next phase.`,
-    outcome: "Mass and power emphasis",
+    headline: (baseline) => `Build a stronger size-and-power stack from ${baseline.alias}.`,
+    copy: (baseline) => `Use ${baseline.name} as the base, then add lean mass, strength or recovery support to make the build more complete.`,
+    outcome: "Strength, lean mass and recovery",
   },
   Recomp: {
-    headline: (baseline) => `Build a more capable recomp stack around ${baseline.alias}.`,
-    copy: (baseline) => `Keep ${baseline.name} in the picture while you add training output, a harder finish or more recovery capacity.`,
-    outcome: "Strength and body-composition emphasis",
+    headline: (baseline) => `Build a stronger recomp stack from ${baseline.alias}.`,
+    copy: (baseline) => `Keep ${baseline.name} at the centre while you add lean mass, body-composition focus, training output or recovery support.`,
+    outcome: "Lean mass, body composition and recovery",
   },
   PCT: {
-    headline: (baseline) => `Plan the next phase from your ${baseline.alias} base.`,
-    copy: (baseline) => `Use ${baseline.name} as the reference point while you compare recovery-led additions and decide what comes next.`,
-    outcome: "Next-phase planning emphasis",
+    headline: (baseline) => `Build a stronger next-phase plan from ${baseline.alias}.`,
+    copy: (baseline) => `Use ${baseline.name} as the starting point, then bring recovery, appetite and sleep support into the next product decision.`,
+    outcome: "Recovery and next-phase support",
   },
 };
 
@@ -116,7 +124,7 @@ const crops = {
   },
 } as const;
 
-function media(id: StackProduct["id"], alias: string, src: string, width = 1024, height = 1536): ProductMediaAsset {
+function media(id: string, alias: string, src: string, width: number, height: number): ProductMediaAsset {
   return {
     id: `${id}-front`,
     productId: id,
@@ -133,81 +141,107 @@ function media(id: StackProduct["id"], alias: string, src: string, width = 1024,
   };
 }
 
-const products: readonly StackProduct[] = [
+function mediaForProduct(slug: string, alias: string) {
+  const asset = actualProductMedia[slug];
+  return asset ? media(slug, alias, asset.src, asset.width, asset.height) : null;
+}
+
+const evidenceStateByProduct: Readonly<Record<string, EvidenceAuthorityState>> = {
+  "mk-2866": "verified-evidence",
+};
+
+function evidenceStateFor(slug: string): EvidenceAuthorityState {
+  return evidenceStateByProduct[slug] ?? "unavailable";
+}
+
+const productContributionMap: Readonly<Record<string, readonly StackContribution[]>> = {
+  "mk-2866": ["LEAN MASS", "BODY COMPOSITION"],
+  "rad-140": ["STRENGTH", "LEAN MASS"],
+  "lgd-4033": ["LEAN MASS"],
+  "mk-677": ["RECOVERY", "APPETITE + SLEEP"],
+  "gw-501516": ["BODY COMPOSITION", "TRAINING OUTPUT"],
+  epistane: ["STRENGTH", "BODY COMPOSITION"],
+  ment: ["STRENGTH", "LEAN MASS"],
+};
+
+/** Relationship content is separate from product truth so cards always read facts from the product registry. */
+const stackRelationships: readonly StackRelationship[] = [
   {
-    id: "lgd-4033", series: "SARM SERIES", name: "LGD-4033", alias: "Ligandrol", strength: "5 MG", servings: "", purity: ">99%", price: "£44",
-    focus: "Lean mass", position: "Mass option one", rationale: "Add a 5 MG lean-mass direction when building a heavier phase around the products already selected.",
-    outcomes: ["Bulking", "Recomp"], profile: { goalFit: 28, intensity: 22, complexity: 16, recoveryEmphasis: 2, evidenceVisibility: 66 }, media: null,
+    targetProduct: "lgd-4033",
+    eligibleGoals: ["Bulking", "Recomp"],
+    contributions: productContributionMap["lgd-4033"],
+    focus: "Lean mass",
+    position: "Lean-mass expansion",
+    customerRationale: "Add a 5 MG lean-mass direction when you want the selected build to carry more mass focus.",
   },
   {
-    id: "rad-140",
-    series: "SARM SERIES",
-    name: "RAD-140",
-    alias: "Testolone",
-    strength: "8 MG",
-    servings: "60 SERVINGS",
-    purity: ">99%",
-    price: "£55",
+    targetProduct: "rad-140",
+    eligibleGoals: ["Cutting", "Bulking", "Recomp"],
+    contributions: productContributionMap["rad-140"],
     focus: "Strength + lean mass",
-    position: "Maximum intensity",
-    rationale:
-      "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.",
-    outcomes: ["Cutting", "Bulking", "Recomp"],
-    profile: { goalFit: 24, intensity: 30, complexity: 18, recoveryEmphasis: 4, evidenceVisibility: 78 },
-    media: media("rad-140", "Testolone", "/assets/products/rad-140/front.png"),
+    position: "Strength step-up",
+    customerRationale: "Add serious strength and lean-mass focus with an 8 MG step-up built for a harder training phase.",
   },
   {
-    id: "ment",
-    series: "PROHORMONE SERIES",
-    name: "MENT",
-    alias: "Trestolone",
-    strength: "20 MG",
-    servings: "30 SERVINGS",
-    purity: ">99%",
-    price: "£49",
+    targetProduct: "ment",
+    eligibleGoals: ["Bulking", "Recomp"],
+    contributions: productContributionMap.ment,
     focus: "Mass + power",
-    position: "Advanced builder",
-    rationale:
-      "Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.",
-    outcomes: ["Bulking", "Recomp"],
-    profile: { goalFit: 28, intensity: 38, complexity: 24, recoveryEmphasis: 5, evidenceVisibility: 70 },
-    media: media("ment", "Trestolone", "/assets/products/hero/ment/front.webp"),
+    position: "Heavyweight builder",
+    customerRationale: "Take the build toward heavyweight size and power with a 20 MG Trestolone option beyond a SARM-only line-up.",
   },
   {
-    id: "mk-677",
-    series: "RESEARCH SERIES",
-    name: "MK-677",
-    alias: "Ibutamoren",
-    strength: "15 MG",
-    servings: "90 SERVINGS",
-    purity: ">99%",
-    price: "£45",
-    focus: "Growth + recovery",
+    targetProduct: "mk-677",
+    eligibleGoals: ["Bulking", "Cutting", "Recomp", "PCT"],
+    contributions: productContributionMap["mk-677"],
+    focus: "Recovery + appetite",
     position: "Daily support",
-    rationale:
-      "Build recovery capacity around the stack with a 90-serving Ibutamoren format supporting appetite, deeper sleep and recovery between hard sessions.",
-    outcomes: ["Bulking", "Cutting", "Recomp", "PCT"],
-    profile: { goalFit: 18, intensity: 8, complexity: 14, recoveryEmphasis: 42, evidenceVisibility: 72 },
-    media: media("mk-677", "Ibutamoren", "/assets/products/hero/mk-677/front.webp"),
+    customerRationale: "Bring appetite, sleep and recovery support into the build with a 90-serving Ibutamoren format.",
   },
   {
-    id: "gw-501516", series: "METABOLIC SERIES", name: "GW-501516", alias: "Cardarine", strength: "10 MG", servings: "60 SERVINGS", purity: ">99%", price: "£42",
-    focus: "Endurance + cutting", position: "Cutting pathway", rationale: "Add endurance-led support when the goal is a sharper cutting or recomp phase.",
-    outcomes: ["Cutting", "Recomp"], profile: { goalFit: 34, intensity: 12, complexity: 12, recoveryEmphasis: 8, evidenceVisibility: 70 }, media: media("gw-501516", "Cardarine", "/assets/products/shop/gw-501516.jpeg", 300, 450),
+    targetProduct: "gw-501516",
+    eligibleGoals: ["Cutting", "Recomp"],
+    contributions: productContributionMap["gw-501516"],
+    focus: "Training output + cutting",
+    position: "Cutting pathway",
+    customerRationale: "Add training-output and body-composition focus when you want the cutting or recomp build to go further.",
   },
   {
-    id: "epistane", series: "PROHORMONE SERIES", name: "Epistane", alias: "Epistane", strength: "20 MG", servings: "60 SERVINGS", purity: ">99%", price: "£44",
-    focus: "Recomp finish", position: "Finishing option", rationale: "Compare a harder finishing option once the core recomp stack is already clear.",
-    outcomes: ["Recomp"], profile: { goalFit: 25, intensity: 26, complexity: 20, recoveryEmphasis: 2, evidenceVisibility: 64 }, media: media("epistane", "Epistane", "/assets/products/shop/epistane.webp", 300, 450),
+    targetProduct: "epistane",
+    eligibleGoals: ["Recomp"],
+    contributions: productContributionMap.epistane,
+    focus: "Strength + body composition",
+    position: "Finishing option",
+    customerRationale: "Add a more defined strength-and-body-composition finish after the core recomp products are clear.",
   },
 ] as const;
 
+const products: readonly StackProduct[] = stackRelationships.map((relationship) => {
+  const product = getFrontierProduct(relationship.targetProduct);
+  if (!product) throw new Error(`Missing stack product record: ${relationship.targetProduct}`);
+
+  return {
+    id: relationship.targetProduct,
+    series: product.series,
+    name: product.name,
+    alias: product.alias,
+    strength: product.strength,
+    servings: product.servings,
+    purity: product.purity,
+    price: product.price,
+    focus: relationship.focus,
+    position: relationship.position,
+    rationale: relationship.customerRationale,
+    outcomes: relationship.eligibleGoals,
+    contributions: relationship.contributions,
+    evidenceState: evidenceStateFor(product.slug),
+    media: mediaForProduct(product.slug, product.alias),
+  };
+});
+
 function baselineFor(slug: string): StackBaseline {
   const product = getFrontierProduct(slug) ?? getFrontierProduct("mk-2866");
-
-  if (!product) {
-    throw new Error("MK-2866 baseline record is required.");
-  }
+  if (!product) throw new Error("MK-2866 baseline record is required.");
 
   return {
     slug: product.slug,
@@ -216,9 +250,12 @@ function baselineFor(slug: string): StackBaseline {
     alias: product.alias,
     strength: product.strength,
     servings: product.servings,
+    purity: product.purity,
     price: product.price,
     goals: product.goal,
-    profile: baselineProfiles[product.slug] ?? fallbackBaselineProfile,
+    contributions: productContributionMap[product.slug] ?? [],
+    evidenceState: evidenceStateFor(product.slug),
+    media: mediaForProduct(product.slug, product.alias),
   };
 }
 
@@ -230,10 +267,6 @@ function hostVariant(host: StackHost): StackVariant {
   if (host === "bag" || host === "confirmation") return "compact";
   if (host === "account") return "summary";
   return "full";
-}
-
-function priceValue(value: string) {
-  return Number(value.replace(/[^0-9.]/g, ""));
 }
 
 const hostActions: Readonly<Record<Exclude<StackHost, "pdp" | "standalone">, { href: string; label: string }>> = {
@@ -254,33 +287,60 @@ function ContextChip({ label, value }: { label: string; value: string }) {
   );
 }
 
-const profileLabels: ReadonlyArray<readonly [keyof StackOutcomeProfile, string]> = [
-  ["goalFit", "Goal fit"], ["intensity", "Intensity"], ["complexity", "Complexity"],
-  ["recoveryEmphasis", "Recovery emphasis"], ["evidenceVisibility", "Evidence visibility"],
-];
-
-export function StackOutcomeProfileView({ profile }: { profile: StackOutcomeProfile }) {
-  return <div className={styles.profile} data-component="StackOutcomeProfile">{profileLabels.map(([key, label]) => <div key={key}><span><b>{label}</b><strong>{profile[key]}</strong></span><i aria-label={`${label}: ${profile[key]} out of 100`} aria-valuemax={100} aria-valuemin={0} aria-valuenow={profile[key]} role="meter" style={{ "--score": `${profile[key]}%` } as React.CSSProperties} /></div>)}</div>;
+function ContributionChips({ contributions }: { contributions: readonly string[] }) {
+  return (
+    <div aria-label="Selected product contributions" className={styles.contributionChips}>
+      {contributions.map((contribution) => <span key={contribution}>{contribution}</span>)}
+    </div>
+  );
 }
 
-/**
- * Canonical outcome-led stack card. Hosts reuse this rather than returning to
- * the generic commerce-card status treatment: the decision is the outcome,
- * the product format, and the reason to add it.
- */
-export function StackOutcomeCard({
-  baseline,
-  product,
-  added,
-  onAdd,
-}: {
-  baseline: StackBaseline;
-  product: StackProduct;
-  added: boolean;
-  onAdd: () => void;
-}) {
+const stackLevelCopy = {
+  FOUNDATION: "Your goal and starting product are set.",
+  STRONGER: "One deliberate product contribution has been added.",
+  MAXIMUM: "Multiple deliberate product contributions are selected in one build.",
+} as const;
+
+function StackCommercialLevel({ contributions, productCount }: { contributions: readonly string[]; productCount: number }) {
+  const level = stackLevelFor(productCount);
   return (
-    <article className={styles.card} data-selected={added || undefined}>
+    <div className={styles.level} data-component="StackCommercialLevel" data-level={level}>
+      <div>
+        <span>{level}</span>
+        <small>{productCount} {productCount === 1 ? "product" : "products"}</small>
+      </div>
+      <p>{stackLevelCopy[level]}</p>
+      <ContributionChips contributions={contributions} />
+    </div>
+  );
+}
+
+function OpenLabConfidenceSurface({ baseline, compact = false }: { baseline: StackBaseline; compact?: boolean }) {
+  const available = baseline.evidenceState !== "unavailable";
+  return (
+    <aside className={styles.confidence} data-compact={compact || undefined} data-component="StackOpenLabConfidence">
+      <div>
+        <span className={styles.sectionLabel}>OpenLab confidence</span>
+        <EvidenceStatusChip state={baseline.evidenceState} />
+      </div>
+      <h2>{available ? `See the batch behind ${baseline.name}.` : `Check the record status for ${baseline.name}.`}</h2>
+      <p>
+        {available
+          ? "Open the product dossier, compare the label with the available record and move from the source back to the product."
+          : "No public record is registered for this product yet. Its product facts stay visible and no substitute result is shown."}
+      </p>
+      <div className={styles.confidenceActions}>
+        <a href={`/open-lab/compound/${baseline.slug}`}>Open product dossier</a>
+        <a href="/open-lab/compare">Compare OpenLab status</a>
+      </div>
+    </aside>
+  );
+}
+
+/** Canonical addition card: product facts come from the registry and the reason to add it comes from relationship data. */
+export function StackOutcomeCard({ product, added, onAdd }: { product: StackProduct; added: boolean; onAdd: () => void }) {
+  return (
+    <article className={styles.card} data-component="StackAdditionCard" data-selected={added || undefined}>
       <button
         aria-label={`Select ${product.name}`}
         aria-pressed={added}
@@ -288,7 +348,7 @@ export function StackOutcomeCard({
         onClick={onAdd}
         type="button"
       >
-        {product.media ? <ProductMediaChamber context="card" media={product.media} /> : <div aria-label={`${product.name} product image coming soon`} className={styles.unpopulatedChamber}><span>Product image coming soon</span><strong>{product.name}</strong></div>}
+        <ProductMediaChamber context="card" media={product.media} />
         <div className={styles.identity}>
           <div>
             <span className={styles.seriesChip}>{product.series}</span>
@@ -300,24 +360,21 @@ export function StackOutcomeCard({
       </button>
       <div className={styles.content}>
         <div className={styles.relevanceRow}>
-          <ContextChip label="STACK FOCUS" value={product.focus} />
-          <ContextChip label="WHY ADD IT" value={product.position} />
+          <ContextChip label="PRODUCT ROLE" value={product.focus} />
+          <ContextChip label="WHAT IT ADDS" value={product.position} />
         </div>
-        <MetricRail
-          values={{
-            strength: product.strength,
-            servings: product.servings,
-            purity: product.purity,
-          }}
-        />
-        <p className={styles.rationale}>{product.rationale.replaceAll("MK-2866", baseline.name)}</p>
+        <MetricRail values={{ strength: product.strength, servings: product.servings, purity: product.purity }} />
+        <ContributionChips contributions={product.contributions} />
+        <p className={styles.rationale}>{product.rationale}</p>
+        <a className={styles.evidenceEntry} href={`/open-lab/compound/${product.id}`}>
+          <span>OpenLab</span>
+          <EvidenceStatusChip state={product.evidenceState} />
+        </a>
         <div className={styles.commerce}>
           <strong>{product.price}</strong>
           <div>
             <a href={`/product/${product.id}`}>View product</a>
-            <button onClick={onAdd} type="button">
-              {added ? "Added ✓" : "Add to stack"}
-            </button>
+            <button onClick={onAdd} type="button">{added ? "Added ✓" : "Add to stack"}</button>
           </div>
         </div>
       </div>
@@ -325,25 +382,51 @@ export function StackOutcomeCard({
   );
 }
 
+function BaselineSurface({ baseline, productCount }: { baseline: StackBaseline; productCount: number }) {
+  return (
+    <section className={styles.anchor} data-component="StackBaselineProduct">
+      <div className={styles.anchorIdentity}>
+        <ProductMediaChamber className={styles.anchorMedia} context="compact" media={baseline.media} />
+        <div>
+          <span className={styles.sectionLabel}>Your starting product</span>
+          <strong>{baseline.name}</strong>
+          <p>{baseline.alias} · {baseline.series}</p>
+          <div className={styles.anchorChips}>
+            <ContextChip label="PRODUCT" value={baseline.alias} />
+            <ContextChip label="STARTING PRICE" value={baseline.price} />
+          </div>
+        </div>
+      </div>
+      <MetricRail className={styles.baselineMetrics} values={{ strength: baseline.strength, servings: baseline.servings, purity: baseline.purity }} />
+      <div className={styles.count}>
+        <small>Products selected</small>
+        <b>{productCount}</b>
+      </div>
+    </section>
+  );
+}
+
 function StackSummary({
   added,
   baseline,
+  contributions,
   goal,
   onAdd,
   onGoal,
-  outcomeProfile,
+  productCount,
   selectedProducts,
   stackTotal,
   variant,
   host,
   visibleProducts,
 }: Readonly<{
-  added: readonly StackProduct["id"][];
+  added: readonly StackProductId[];
   baseline: StackBaseline;
+  contributions: readonly string[];
   goal: StackGoal;
-  onAdd: (id: StackProduct["id"]) => void;
+  onAdd: (id: StackProductId) => void;
   onGoal: (goal: StackGoal) => void;
-  outcomeProfile: StackOutcomeProfile;
+  productCount: number;
   selectedProducts: readonly StackProduct[];
   stackTotal: number;
   variant: Exclude<StackVariant, "full">;
@@ -355,26 +438,12 @@ function StackSummary({
   const selectedLineup = [baseline.name, ...selectedProducts.map((product) => product.name)].join(" + ");
 
   return (
-    <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="summary" data-variant={variant}>
-      <section className={styles.anchor}>
-        <div>
-          <span className={styles.sectionLabel}>{variant === "compact" ? "Build on this order" : "Your current product"}</span>
-          <strong>{baseline.name}</strong>
-          <div className={styles.anchorChips}>
-            <ContextChip label="PRODUCT" value={baseline.alias} />
-            <ContextChip label="STRENGTH" value={baseline.strength} />
-            <ContextChip label="FORMAT" value={baseline.servings || "FORMAT SHOWN ON PRODUCT"} />
-          </div>
-        </div>
-        <div className={styles.count}>
-          <small>{added.length ? "In your stack" : "Next addition"}</small>
-          <b>{added.length || 1}</b>
-        </div>
-      </section>
+    <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="guided-summary" data-variant={variant}>
+      <BaselineSurface baseline={baseline} productCount={productCount} />
 
-      <section className={styles.summaryBody}>
+      <section className={styles.summaryBody} data-component="StackDecisionSurface">
         <div>
-          <span className={styles.sectionLabel}>Your outcome</span>
+          <span className={styles.sectionLabel}>Choose the result</span>
           <h2>{stackGoals[goal].headline(baseline)}</h2>
           <p>{stackGoals[goal].copy(baseline)}</p>
           <div aria-label="Choose your stack goal" className={styles.goalPicker} role="tablist">
@@ -388,7 +457,8 @@ function StackSummary({
             <div>
               <span className={styles.seriesChip}>{nextProduct.series}</span>
               <h3>{nextProduct.name}</h3>
-              <p>{nextProduct.focus}. {nextProduct.position}.</p>
+              <p>{nextProduct.rationale}</p>
+              <ContributionChips contributions={nextProduct.contributions} />
             </div>
             <strong>{nextProduct.price}</strong>
             <button aria-pressed={added.includes(nextProduct.id)} onClick={() => onAdd(nextProduct.id)} type="button">
@@ -400,71 +470,79 @@ function StackSummary({
 
       <section aria-live="polite" className={styles.summaryOutcome}>
         <div>
-          <span className={styles.sectionLabel}>{added.length ? "Your selected stack" : "Your starting point"}</span>
-          <h2>{added.length ? `${selectedLineup} · £${stackTotal}` : `${baseline.name} · ${baseline.price}`}</h2>
-          <p>{added.length ? `${stackGoals[goal].outcome} now leads this selection.` : "Select an addition to see the combined stack outcome and total."}</p>
+          <span className={styles.sectionLabel}>Your selected stack</span>
+          <h2>{selectedLineup} · £{stackTotal}</h2>
+          <p>{stackGoals[goal].outcome} now define this product line-up.</p>
         </div>
-        <StackOutcomeProfileView profile={outcomeProfile} />
+        <StackCommercialLevel contributions={contributions} productCount={productCount} />
         <a href={action.href}>{action.label} →</a>
       </section>
+
+      <OpenLabConfidenceSurface baseline={baseline} compact />
     </div>
   );
 }
 
-export function YourStackBuilder({ baselineSlug = "mk-2866", host = "standalone" }: { baselineSlug?: string; host?: StackHost }) {
+function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host: StackHost }) {
   const baseline = useMemo(() => baselineFor(baselineSlug), [baselineSlug]);
   const variant = hostVariant(host);
-  const [added, setAdded] = useState<StackProduct["id"][]>([]);
+  const [added, setAdded] = useState<StackProductId[]>([]);
   const [goal, setGoal] = useState<StackGoal>(() => initialGoal(baseline));
-  const count = useMemo(() => added.length, [added]);
+
   const visibleProducts = products.filter((product) => product.id !== baseline.slug && product.outcomes.includes(goal));
   const selectedProducts = products.filter((product) => added.includes(product.id));
-  const stackSignal = count === 0 ? "Base set" : count === 1 ? "Focused build" : count === 2 ? "Elevated build" : "Full build";
-  const outcomeProfile = useMemo(() => {
-    const keys = Object.keys(baseline.profile) as Array<keyof StackOutcomeProfile>;
-    return Object.fromEntries(keys.map((key) => [key, Math.min(100, baseline.profile[key] + selectedProducts.reduce((sum, product) => sum + product.profile[key], 0))])) as unknown as StackOutcomeProfile;
-  }, [baseline.profile, selectedProducts]);
-  const stackTotal = priceValue(baseline.price) + selectedProducts.reduce((sum, product) => sum + priceValue(product.price), 0);
-  const toggleAddition = (id: StackProduct["id"]) => setAdded((current) => current.includes(id) ? current.filter((currentId) => currentId !== id) : [...current, id]);
+  const productCount = selectedProducts.length + 1;
+  const stackTotal = stackTotalFor(baseline.price, selectedProducts.map((product) => product.price));
+  const contributions = uniqueStackContributions([baseline.contributions, ...selectedProducts.map((product) => product.contributions)]);
+
+  const toggleAddition = (id: StackProductId) => {
+    setAdded((current) => current.includes(id) ? current.filter((currentId) => currentId !== id) : [...current, id]);
+  };
+  const selectGoal = (nextGoal: StackGoal) => {
+    setGoal(nextGoal);
+    setAdded((current) => current.filter((id) => products.find((product) => product.id === id)?.outcomes.includes(nextGoal)));
+  };
 
   if (variant !== "full") {
-    return <StackSummary added={added} baseline={baseline} goal={goal} host={host} onAdd={toggleAddition} onGoal={setGoal} outcomeProfile={outcomeProfile} selectedProducts={selectedProducts} stackTotal={stackTotal} variant={variant} visibleProducts={visibleProducts} />;
+    return (
+      <StackSummary
+        added={added}
+        baseline={baseline}
+        contributions={contributions}
+        goal={goal}
+        host={host}
+        onAdd={toggleAddition}
+        onGoal={selectGoal}
+        productCount={productCount}
+        selectedProducts={selectedProducts}
+        stackTotal={stackTotal}
+        variant={variant}
+        visibleProducts={visibleProducts}
+      />
+    );
   }
 
-  return (
-    <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="carousel" data-variant={variant}>
-      <section className={styles.anchor}>
-        <div>
-          <span className={styles.sectionLabel}>Your starting product</span>
-          <strong>{baseline.name}</strong>
-          <div className={styles.anchorChips}>
-            <ContextChip label="PRODUCT" value={baseline.alias} />
-            <ContextChip label="STRENGTH" value={baseline.strength} />
-            <ContextChip label="FORMAT" value={baseline.servings || "FORMAT SHOWN ON PRODUCT"} />
-          </div>
-        </div>
-        <div className={styles.count}>
-          <small>Added to stack</small>
-          <b>{count}</b>
-        </div>
-      </section>
+  const selectedLineup = [baseline.name, ...selectedProducts.map((product) => product.name)].join(" + ");
 
-      <section className={styles.intro}>
-        <span>Build your stack</span>
+  return (
+    <div className={styles.page} data-baseline={baseline.slug} data-component="YourStackBuilder" data-host={host} data-mobile-strategy="guided-sequence" data-variant={variant}>
+      <section className={styles.intro} data-component="StackGoalSelector">
+        <span>Choose the result</span>
         <h1>{stackGoals[goal].headline(baseline)}</h1>
         <p>{stackGoals[goal].copy(baseline)}</p>
         <div aria-label="Choose your stack goal" className={styles.goalPicker} role="tablist">
           {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
-            <button aria-selected={goal === option} key={option} onClick={() => setGoal(option)} role="tab" type="button">{option}</button>
+            <button aria-selected={goal === option} key={option} onClick={() => selectGoal(option)} role="tab" type="button">{option}</button>
           ))}
         </div>
       </section>
 
-      <section aria-label={`${goal} stack products`} className={styles.rail}>
+      <BaselineSurface baseline={baseline} productCount={productCount} />
+
+      <section aria-label={`${goal} stack additions`} className={styles.rail}>
         {visibleProducts.map((product) => (
           <StackOutcomeCard
             added={added.includes(product.id)}
-            baseline={baseline}
             key={product.id}
             onAdd={() => toggleAddition(product.id)}
             product={product}
@@ -472,29 +550,38 @@ export function YourStackBuilder({ baselineSlug = "mk-2866", host = "standalone"
         ))}
       </section>
 
-      <section aria-live="polite" className={styles.outcome}>
-        <div>
-          <span>Build outcome</span>
-          <h2>{stackSignal}: {stackGoals[goal].outcome}</h2>
-          <p>{count === 0 ? `${baseline.name} is your base. Select one or more additions to see the shape of the full stack.` : `${baseline.name}${selectedProducts.length ? ` + ${selectedProducts.map((product) => product.name).join(" + ")}` : ""} puts ${stackGoals[goal].outcome.toLowerCase()} at the centre of this selection.`}</p>
-        </div>
-        <StackOutcomeProfileView profile={outcomeProfile} />
-      </section>
+      <div className={styles.outcomeGrid}>
+        <section aria-live="polite" className={styles.outcome}>
+          <div>
+            <span className={styles.sectionLabel}>Your stack is getting stronger</span>
+            <h2>{selectedLineup} · £{stackTotal}</h2>
+            <p>
+              {productCount === 1
+                ? `${baseline.name} is your foundation. Add the first contribution to make the selected build stronger.`
+                : `${stackGoals[goal].outcome} now define this ${productCount}-product build.`}
+            </p>
+          </div>
+          <StackCommercialLevel contributions={contributions} productCount={productCount} />
+        </section>
+        <OpenLabConfidenceSurface baseline={baseline} />
+      </div>
 
       <section className={styles.continue}>
         <div>
-          <span>Your stack</span>
-          <h2>{count ? `Your £${stackTotal} stack is taking shape.` : "Choose the first addition to your stack."}</h2>
+          <span>Your selected products</span>
+          <h2>{productCount === 1 ? "Choose the first addition to your stack." : `Review your £${stackTotal} ${stackLevelFor(productCount).toLowerCase()} stack.`}</h2>
           <p>
-            {count
-              ? `You have added ${count} ${count === 1 ? "product" : "products"} around ${baseline.name}. Review the line-up or keep building toward ${goal.toLowerCase()}.`
-              : "Set your goal, then build the product line-up that moves the result forward."}
+            {productCount === 1
+              ? "Set the goal, then choose what each new product should add to the result."
+              : `${selectedLineup} brings ${contributions.join(", ").toLowerCase()} into one clear product decision.`}
           </p>
         </div>
-        <button aria-disabled={count === 0} type="button">
-          Review my stack · {count}
-        </button>
+        <button aria-disabled={productCount === 1} type="button">Review selected products · {productCount}</button>
       </section>
     </div>
   );
+}
+
+export function YourStackBuilder({ baselineSlug = "mk-2866", host = "standalone" }: { baselineSlug?: string; host?: StackHost }) {
+  return <StackBuilderState baselineSlug={baselineSlug} host={host} key={`${host}-${baselineSlug}`} />;
 }

@@ -59,6 +59,8 @@ test("outcome-led stack and OpenLab depth replace tier language and hard-coded c
   ]);
   assert.doesNotMatch(content, /Good, Better|tiers:/);
   for (const value of ["Cutting", "Bulking", "Recomp", "PCT", "lgd-4033", "gw-501516", "epistane"]) assert.match(builder, new RegExp(value));
+  for (const value of ["FOUNDATION", "STRONGER", "MAXIMUM", "StackOpenLabConfidence"]) assert.match(builder, new RegExp(value));
+  assert.doesNotMatch(builder, /StackOutcomeProfile|goalFit|evidenceVisibility|out of 100|sharper/i);
   for (const value of ["report history", "label comparison", "analytes", "source context"]) assert.match(openLab, new RegExp(value));
   assert.doesNotMatch(openLab, /74%|79%/);
   assert.equal(JSON.parse(catalogue).openLab["mk-2866"].visualizations.history.length, 1);
