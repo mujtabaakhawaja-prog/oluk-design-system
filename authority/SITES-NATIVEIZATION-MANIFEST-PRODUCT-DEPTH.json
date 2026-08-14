@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "oluk.sites-nativeization.v1",
+  "authority": "Codex Sites",
+  "status": "SITES_NATIVEIZED",
+  "figmaStatus": "PENDING_EDITABLE_MIRROR",
+  "modules": [
+    {
+      "sitesExport": "YourStackBuilder",
+      "componentIdentity": "sites:YourStackBuilder/outcome-led",
+      "variants": ["pdp", "standalone", "bag", "confirmation", "account"],
+      "representativeWidths": [1440, 390],
+      "rejectedHistoricalIntent": "Figma 1210:31153 Good/Better/Best",
+      "reviewState": "SITES_NATIVEIZED"
+    },
+    {
+      "sitesExport": "OpenLabProductExperience",
+      "componentIdentity": "sites:OpenLabProductExperience/mk-2866",
+      "variants": ["record", "report-history", "label-comparison", "analytes", "source-context"],
+      "representativeWidths": [1440, 390],
+      "reviewState": "SITES_NATIVEIZED"
+    }
+  ],
+  "figmaRules": {
+    "nodeIdsAreReviewReferencesOnly": true,
+    "genericCloneIsVisualSync": false,
+    "nextState": "FIGMA_REVIEWED",
+    "publicationAuthorized": false
+  }
+}

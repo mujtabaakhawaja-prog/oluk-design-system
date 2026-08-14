@@ -24,6 +24,17 @@ const templateFor = (route) => {
   if (["account", "bag_checkout", "post_purchase", "complete_payment"].includes(route.family)) return "commerce-continuation";
   return "support-and-account";
 };
+const placement = (module, template, state) => ({
+  module,
+  state,
+  insertionPoint: state === "PROMOTED" ? "current declared composition" : `next ${template} continuation slot`,
+  customerPurpose: `Help the customer continue from ${template} into ${module.replaceAll(/([A-Z])/g, " $1").trim().toLowerCase()}.`,
+  sourceContent: "Product Experience Compiler plus current Sites module registry",
+  mediaPolicy: "registered actual render or governed unpopulated chamber",
+  mobileStrategy: module.toLowerCase().includes("compare") ? "horizontal-scroll" : "summary",
+  standaloneDestination: matrix.templates.find((entry) => entry.id === template)?.standaloneDestinations?.[0] ?? null,
+  invalidatedConsumers: matrix.templates.find((entry) => entry.id === template)?.paths ?? [],
+});
 
 const compiled = {
   ...matrix,
@@ -32,17 +43,22 @@ const compiled = {
     sha256: digest(ledgerRaw),
     routeCount: ledger.routes.length,
   },
-  routeDispositions: ledger.routes.map((route) => ({
+  routeDispositions: ledger.routes.map((route) => {
+    const template = templateFor(route);
+    const definition = matrix.templates.find((entry) => entry.id === template);
+    return ({
     routeId: route.id,
     path: route.path,
     family: route.family,
-    template: templateFor(route),
+    template,
     designMaturity: route.designMaturity,
     runtimeReadiness: route.runtimeReadiness,
     disposition: route.disposition,
     promoted: route.designMaturity === "dual-reference-ready" || route.designMaturity === "champion-approved",
-    promotableFrom: matrix.templates.find((template) => template.id === templateFor(route))?.promotable ?? [],
-  })),
+    promotedPlacements: (definition?.promoted ?? []).map((module) => placement(module, template, "PROMOTED")),
+    promotableFrom: definition?.promotable ?? [],
+    promotablePlacements: (definition?.promotable ?? []).map((module) => placement(module, template, "PROMOTABLE")),
+  });}),
 };
 
 const output = `${JSON.stringify(compiled, null, 2)}\n`;
