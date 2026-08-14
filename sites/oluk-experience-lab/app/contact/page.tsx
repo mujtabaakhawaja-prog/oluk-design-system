@@ -1,5 +1,6 @@
-import { ExperienceLab } from "../experience-lab";
+import { SupportSurface } from "../design-system/support-surface";
+import { CustomerSiteChrome } from "../experience-lab";
 
 export default function ContactPage() {
-  return <ExperienceLab route="contact" />;
+  return <CustomerSiteChrome route="contact"><SupportSurface kind="contact" /></CustomerSiteChrome>;
 }

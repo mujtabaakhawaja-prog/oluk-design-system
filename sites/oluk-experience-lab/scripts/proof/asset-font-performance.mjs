@@ -18,12 +18,12 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The corrected LockedHero, HeroLight, PDP fold and three-band interactive header
   // add four bounded, route-shared CSS modules while retaining a sub-256 KiB ceiling.
   // The hydrated OptionB navigation and the explicit post-purchase lifecycle entry pages
-  // share one client path. The compiler-backed OpenLab record switcher adds a
-  // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
-  clientJavaScriptBytes: 586 * KIB,
-  // The OpenLab evidence visualisation adds one token-governed stylesheet while
-  // retaining a sub-260 KiB aggregate target.
-  clientCssBytes: 260 * KIB,
+  // share one client path. The compiler-backed OpenLab record switcher and
+  // customer-facing support disclosures retain a bounded sub-587 KiB aggregate ceiling.
+  clientJavaScriptBytes: 587 * KIB,
+  // The OpenLab evidence visualisation and responsive customer-support disclosures
+  // add token-governed styles while retaining a sub-262 KiB aggregate target.
+  clientCssBytes: 262 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,

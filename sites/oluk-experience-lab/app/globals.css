@@ -1643,6 +1643,24 @@ a.button-secondary:hover {
 .support-surface-grid p { color: var(--ink-muted); line-height: 1.6; }
 .support-surface-grid a { align-self: end; color: var(--cobalt); font-weight: 800; min-height: 44px; }
 
+.support-hero .button-row { margin-top: 28px; }
+.support-guide { align-items: start; border-top: 1px solid var(--line); display: grid; gap: clamp(28px, 6vw, 88px); grid-template-columns: minmax(0, 1fr) minmax(320px, .92fr); padding-block: 40px 92px; }
+.support-guide > div { max-width: 660px; }
+.support-label { color: var(--cobalt); display: inline-block; font-size: 13px; font-weight: 800; letter-spacing: .01em; line-height: 1.2; }
+.support-guide h2, .support-faq h2 { font-family: var(--font-display), sans-serif; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.06em; line-height: 1.02; margin: 12px 0; }
+.support-guide p, .support-faq > div > p { color: var(--ink-muted); font-size: 16px; line-height: 1.65; }
+.support-guide ol { border-bottom: 1px solid var(--line); list-style: none; margin: 0; padding: 0; }
+.support-guide li { align-items: start; border-top: 1px solid var(--line); display: grid; font-size: 16px; font-weight: 700; gap: 18px; grid-template-columns: 34px 1fr; line-height: 1.5; padding: 20px 0; }
+.support-guide li span { color: var(--cobalt); font-size: 12px; font-weight: 800; letter-spacing: .08em; padding-top: 3px; }
+.support-faq { display: grid; gap: clamp(28px, 6vw, 88px); grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); padding-bottom: 112px; }
+.support-faq > div:first-child { padding-top: 24px; }
+.support-faq details { border-top: 1px solid var(--line); padding: 0 0 18px; }
+.support-faq details:last-child { border-bottom: 1px solid var(--line); }
+.support-faq summary { cursor: pointer; font-family: var(--font-display), sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -.035em; line-height: 1.2; min-height: 66px; padding: 22px 34px 16px 0; position: relative; }
+.support-faq summary::after { color: var(--cobalt); content: "+"; font-family: var(--font-body), sans-serif; font-size: 25px; font-weight: 500; position: absolute; right: 2px; top: 18px; }
+.support-faq details[open] summary::after { content: "−"; }
+.support-faq details p { color: var(--ink-muted); line-height: 1.65; margin: 0; max-width: 680px; padding-bottom: 8px; }
+
 .post-purchase-grid { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr) minmax(320px, .42fr); padding-block: 72px 112px; }
 .post-purchase-main, .post-purchase-side { display: grid; gap: 20px; }
 .post-purchase-reference, .post-purchase-actions, .tracking-timeline { background: var(--white); border: 1px solid var(--line); border-radius: var(--oluk-radius-card); box-shadow: var(--shadow-compact); padding: 28px; }
@@ -1676,6 +1694,11 @@ a.button-secondary:hover {
   }
 
   .support-surface-grid { grid-template-columns: 1fr; padding-block: 44px 72px; }
+  .support-guide, .support-faq { grid-template-columns: 1fr; padding-bottom: 72px; }
+  .support-guide { gap: 28px; padding-top: 28px; }
+  .support-faq { gap: 14px; }
+  .support-faq > div:first-child { padding-top: 0; }
+  .support-faq summary { font-size: 19px; }
   .post-purchase-grid { grid-template-columns: 1fr; padding-block: 44px 72px; }
   .not-found-links { grid-template-columns: 1fr; padding-block: 44px 72px; }
 }
