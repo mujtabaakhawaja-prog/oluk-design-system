@@ -4,7 +4,6 @@ import {
   ActionLink,
   Arrow,
   Breadcrumbs,
-  OpenLabNav,
   PageHero,
   SectionHeading,
 } from "./design-system/customer-route-primitives";
@@ -216,7 +215,6 @@ export function OpenLabRoute() {
 export function RecordsRoute() {
   return (
     <>
-      <OpenLabNav active="records" />
       <PageHero
         actions={<ActionLink href="/open-lab/methodology" secondary>Testing methodology</ActionLink>}
         copy="Search product and record references while unavailable details remain clear."
@@ -233,7 +231,6 @@ export function RecordRoute() {
 
   return (
     <>
-      <OpenLabNav active="records" />
       <section className="record-hero">
         <div className="shell">
           <Breadcrumbs
@@ -266,7 +263,6 @@ export function RecordRoute() {
 export function DossierRoute() {
   return (
     <>
-      <OpenLabNav active="openlab" />
       <PageHero
         copy="Product facts, label detail and the current OpenLab evidence pathway in one continuous view."
         eyebrow="PRODUCT DOSSIER"
@@ -291,7 +287,6 @@ export function LookupRoute({ reference = "" }: Readonly<{ reference?: string }>
 
   return (
     <>
-      <OpenLabNav active="lookup" />
       <PageHero
         copy="Use the examples below to see empty, entered, found, no-result and unavailable outcomes."
         eyebrow="BATCH LOOKUP"
@@ -357,7 +352,6 @@ export function LookupRoute({ reference = "" }: Readonly<{ reference?: string }>
 export function MethodologyRoute() {
   return (
     <>
-      <OpenLabNav active="methodology" />
       <PageHero
         copy="A customer-readable guide to identity, purity, concentration and source context—without implying a result."
         eyebrow="TESTING METHODOLOGY"
@@ -377,7 +371,6 @@ export function MethodologyRoute() {
 export function SourceChainRoute() {
   return (
     <>
-      <OpenLabNav active="source-chain" />
       <PageHero
         copy="Follow the information relationship while leaving absent record values visibly unavailable."
         eyebrow="SOURCE CHAIN"
@@ -392,7 +385,6 @@ export function SourceChainRoute() {
 export function CompareRoute() {
   return (
     <>
-      <OpenLabNav active="compare" />
       <PageHero
         copy="Review label facts and record availability in a keyboard-accessible table."
         eyebrow="COMPARE RECORDS"

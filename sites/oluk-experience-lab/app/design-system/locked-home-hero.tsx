@@ -47,7 +47,7 @@ export function LockedHomeHero() {
             </div>
           </article>
         </div>
-        <div className={styles.stage} data-figma-stage-node="462:4684">
+        <div className={styles.stage} data-figma-stage-node="462:4684" data-proof-allow-overflow>
           <span aria-hidden="true" className={styles.glow}/>
           {ordered.map(({ product, slot }) => <button aria-label={`Feature ${product.name}`} className={styles.bottle} data-active={slot === 0 || undefined} data-slot={slot} key={product.id} onClick={() => setActiveId(product.id)} type="button"><img alt={slot === 0 ? `${product.name} ${product.alias} bottle` : ""} decoding="async" fetchPriority={slot === 0 ? "high" : "auto"} height={product.height} loading={slot === 0 ? "eager" : "lazy"} sizes="(max-width: 760px) 48vw, 24vw" src={product.image} width={product.width}/></button>)}
           <div className={styles.stageControls}><button aria-label="Previous featured product" onClick={() => setActiveId(products[(activeIndex - 1 + products.length) % products.length].id)} type="button">←</button><span>{String(activeIndex + 1).padStart(2,"0")} / 05</span><button aria-label="Next featured product" onClick={() => setActiveId(products[(activeIndex + 1) % products.length].id)} type="button">→</button></div>

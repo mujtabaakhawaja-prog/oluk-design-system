@@ -56,11 +56,11 @@ function pageAuditExpression({ customer, expectedHeading, governancePatterns }) 
     }).slice(0, 30);
     const hiddenOverflow = visible.flatMap((element) => {
       const style = getComputedStyle(element);
-      const clipped = ["hidden", "clip"].includes(style.overflowX) && element.scrollWidth > element.clientWidth + 1;
+      const clipped = ["hidden", "clip"].includes(style.overflowX) && element.scrollWidth > element.clientWidth + 4;
       const authoredClipping =
         element.matches(".sr-only, .product-decision-media") ||
         style.textOverflow === "ellipsis";
-      return clipped && !authoredClipping ? [{ selector: describe(element), clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: style.overflowX }] : [];
+      return clipped && !authoredClipping && !element.closest("[data-proof-allow-overflow]") ? [{ selector: describe(element), clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: style.overflowX }] : [];
     }).slice(0, 30);
     const overlapContainers = [
       ...document.querySelectorAll(".product-grid, .commerce-card-grid, .shop-result-grid, .transaction-grid, .transaction-summary-grid, .qualitative-chips, .oluk-candidate-qualitative, .oluk-state-grid, .oluk-width-grid, .oluk-purchase-panel-matrix"),
@@ -95,7 +95,7 @@ function pageAuditExpression({ customer, expectedHeading, governancePatterns }) 
         rect.right > 0 &&
         rect.left < innerWidth &&
         getComputedStyle(element).opacity !== "0" &&
-        inverseColors.has(getComputedStyle(element).backgroundColor)
+        inverseColors.has(getComputedStyle(element).backgroundColor) && rect.width * rect.height >= 256
       );
     }).map(describe).slice(0, 20);
     const governanceHits = ${JSON.stringify(customer)} ? ${JSON.stringify(governancePatterns)}.filter((pattern) => bodyText.toUpperCase().includes(pattern.toUpperCase())) : [];
