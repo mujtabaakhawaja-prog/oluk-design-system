@@ -10,7 +10,7 @@ const frontier = await readFile(new URL("app/design-system/frontier-sections.tsx
 test("one governed growth component family mounts on PDP, bag and confirmation", () => {
   assert.match(customer, /<UpsellContextRail \/>/);
   const recommendationMounts = transaction.match(/<RecommendationCard state="default" \/>/g) ?? [];
-  assert.equal(recommendationMounts.length, 2);
+  assert.equal(recommendationMounts.length, 4);
   assert.match(transaction, /<RestockCard state="active" \/>/);
 });
 

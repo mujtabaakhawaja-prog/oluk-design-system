@@ -88,7 +88,7 @@ test("named checkout stages adopt the canonical Option E lifecycle instead of a 
   const programRoutes = await readFile(new URL("program-routes.tsx", appRoot), "utf8");
   assert.match(programRoutes, /import \{ TransactionPresentation, type TransactionStage \}/);
   assert.match(programRoutes, /information: "details"/);
-  assert.match(programRoutes, /review: "handoff"/);
+  assert.match(programRoutes, /review: "review"/);
   assert.match(programRoutes, /payment: "order-pay"/);
   assert.match(programRoutes, /<main data-live-authority="false">/);
   assert.match(programRoutes, /<TransactionPresentation stage=\{checkoutStageMap\[step\]\} \/>/);
@@ -141,6 +141,22 @@ test("transaction lifecycle connects bag through recovery without customer-facin
   for (const forbidden of ["HUMAN_REVIEW_REQUIRED", "DESIGN FIXTURE", "DEMO STATE", "NOT CONNECTED", "RUNTIME OWNER", "SOURCE-BOUND"]) {
     assert.doesNotMatch(source, new RegExp(forbidden, "i"), forbidden);
   }
+});
+
+test("every remaining checkout lifecycle stage uses the shared presentation-only composition", async () => {
+  const source = await readFile(new URL("checkout/[stage]/page.tsx", appRoot), "utf8");
+  const transaction = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
+
+  for (const stage of ["processing", "tracking", "order-history", "order-details", "receipt", "return", "refund"]) {
+    assert.match(source, new RegExp(`(?:${stage.replaceAll("-", "\\-")}|"${stage.replaceAll("-", "\\-")}"): "`), stage);
+    assert.match(transaction, new RegExp(`case "${stage.replaceAll("-", "\\-")}"`), stage);
+  }
+
+  for (const stage of ["confirmation", "history", "refund"]) {
+    assert.match(transaction, new RegExp(`<LifecycleAmountRecord stage="${stage}"`), stage);
+  }
+
+  assert.doesNotMatch(source, /CheckoutLifecycle/);
 });
 
 test("transaction layout recomposes without overflow clipping", async () => {
