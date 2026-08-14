@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "receiptId": "oluk.stack-surface-v3.capture.v1",
-  "capturedAt": "2026-08-14T21:08:00Z",
+  "capturedAt": "2026-08-14T21:14:57Z",
   "route": "/open-lab/stack-builder",
   "authority": {
     "sitesIsCompositionAuthority": true,
     "baseCommit": "cd1838fab57ec5c34c6556a6f62af78c171bbba2",
-    "sourceCommit": "f5d64332afb90ccc93e2126bb391dfafdd524090",
+    "sourceCommit": "c143d8b3d84261c59a829367dcfcf752c1b5c5d9",
     "sourceTreeHash": "b3ba866fe4766dadbc0b6b91d58cf0798e5bfaf1",
     "runtimeReadiness": "presentation-only",
     "figmaWritten": false,
@@ -31,8 +31,8 @@
       "state": "FOUNDATION",
       "width": 390,
       "height": 6552,
-      "path": "/tmp/oluk-stack-v3-media-foundation-390.png",
-      "sha256": "183b536f6f4b40fc777cdcf93dc99cb4655dec18fbe416fe6787a43a9794d460"
+      "path": "/tmp/oluk-stack-v3-media-foundation-390-v3.png",
+      "sha256": "382af968bac2ff54e30bc40bf79dc3b90d1643a60251e732bde99ea148a12cce"
     },
     {
       "state": "MAXIMUM",
@@ -45,8 +45,8 @@
       "state": "MAXIMUM",
       "width": 390,
       "height": 7035,
-      "path": "/tmp/oluk-stack-v3-media-maximum-390.png",
-      "sha256": "03346abc08fbc08fd7adf91c70944c26aa3192ea8a70bada71f14d541a49ae0d"
+      "path": "/tmp/oluk-stack-v3-media-maximum-390-v3.png",
+      "sha256": "90ee78200b53781e0a135b3c88131780b694a605f4fb3cc5835e43eba836f896"
     }
   ],
   "captureConditions": {
@@ -54,7 +54,7 @@
     "temporaryCaptureCss": ".skip-link{display:none!important}",
     "temporaryCaptureCssReason": "The accessible skip link is positioned above the viewport; it was hidden only to prevent Playwright element-screenshot stitching from painting the off-canvas fixed element inside the long capture.",
     "otherVisualOverrides": [],
-    "mediaReadiness": "Each state was navigated through its rendered product cards, lazy images were brought into view, and natural dimensions were read after decoding before the full-page capture."
+    "mediaReadiness": "Every mobile rail card was traversed by its exact responsive instance. Each approved image was brought into view, decoded, then the rail was returned to scrollLeft 0 before capture."
   },
   "mediaLoadedEvidence": {
     "policy": "A registered render is valid only when currentSrc is non-empty and both natural dimensions are nonzero. LGD-4033 is the sole explicitly governed unpopulated chamber in these Stack states.",
@@ -130,6 +130,85 @@
         "reason": "No registered approved individual render."
       }
     ]
+  },
+  "responsiveMobileMediaInstances": {
+    "definition": "visibleAtCapture means the card occupies viewport space after the rail is restored to its intended first-card state. geometricallyRendered means the responsive instance has nonzero layout dimensions even when it is off-viewport in the horizontal rail.",
+    "foundation": {
+      "routeState": "Cutting / FOUNDATION",
+      "railScrollLeftAtCapture": 0,
+      "instances": [
+        {
+          "product": "RAD-140",
+          "geometricallyRendered": true,
+          "visibleAtCapture": true,
+          "traversedAndDecoded": true,
+          "currentSrc": "/assets/products/rad-140/front.png",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536
+        },
+        {
+          "product": "MK-677",
+          "geometricallyRendered": true,
+          "visibleAtCapture": true,
+          "traversedAndDecoded": true,
+          "currentSrc": "/assets/products/hero/mk-677/front.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536
+        },
+        {
+          "product": "GW-50156",
+          "geometricallyRendered": true,
+          "visibleAtCapture": false,
+          "traversedAndDecoded": true,
+          "currentSrc": "/assets/products/shop/gw-501516.jpeg",
+          "naturalWidth": 300,
+          "naturalHeight": 450
+        }
+      ],
+      "requiredVisibleFirstCard": "RAD-140 is visibly painted in the final 390 capture."
+    },
+    "maximum": {
+      "routeState": "Bulking / MAXIMUM / MK-2866 + LGD-4033 + RAD-140",
+      "railScrollLeftAtCapture": 0,
+      "instances": [
+        {
+          "product": "LGD-4033",
+          "geometricallyRendered": true,
+          "visibleAtCapture": true,
+          "traversedAndDecoded": false,
+          "state": "governed-unpopulated-chamber",
+          "reason": "No registered approved individual render."
+        },
+        {
+          "product": "RAD-140",
+          "geometricallyRendered": true,
+          "visibleAtCapture": true,
+          "traversedAndDecoded": true,
+          "currentSrc": "/assets/products/rad-140/front.png",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536
+        },
+        {
+          "product": "MENT",
+          "geometricallyRendered": true,
+          "visibleAtCapture": false,
+          "traversedAndDecoded": true,
+          "currentSrc": "/assets/products/hero/ment/front.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536
+        },
+        {
+          "product": "MK-677",
+          "geometricallyRendered": true,
+          "visibleAtCapture": false,
+          "traversedAndDecoded": true,
+          "currentSrc": "/assets/products/hero/mk-677/front.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536
+        }
+      ],
+      "requiredFirstCard": "LGD-4033 is intentionally the visible first governed-unpopulated chamber; every approved adjacent card was traversed and decoded before returning to this state."
+    }
   },
   "foundationState": {
     "goal": "Cutting",
