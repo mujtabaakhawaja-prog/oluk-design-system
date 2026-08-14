@@ -512,7 +512,7 @@
       "maturity": "DEFERRED_BY_AUTHORITY",
       "owner": "commerce-policy",
       "blocker": "Gift-card commercial authority not approved",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "authority-deferred"
     },
     {
@@ -761,9 +761,9 @@
       "path": "/404",
       "family": "shared_shell",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     }
   ],

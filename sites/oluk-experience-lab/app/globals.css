@@ -1657,6 +1657,9 @@ a.button-secondary:hover {
 .tracking-timeline b { align-items: center; background: var(--canvas); border: 1px solid var(--line); border-radius: 50%; color: var(--ink-muted); display: flex; height: 40px; justify-content: center; margin-left: -49px; width: 40px; }
 .tracking-timeline li[data-active] b { background: var(--cobalt); border-color: var(--cobalt); color: var(--white); }
 .tracking-timeline strong { display: block; font-size: 17px; }.tracking-timeline span { color: var(--ink-muted); display: block; line-height: 1.55; margin-top: 4px; }
+.not-found-links { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-block: 72px 112px; }
+.not-found-links a { background: var(--white); border: 1px solid var(--line); border-radius: var(--oluk-radius-card); box-shadow: var(--shadow-compact); display: grid; gap: 10px; min-height: 220px; padding: 28px; }
+.not-found-links span { color: var(--cobalt); font-size: 12px; font-weight: 800; letter-spacing: .12em; }.not-found-links strong { font-family: var(--font-display), sans-serif; font-size: 27px; letter-spacing: -.05em; }.not-found-links small { color: var(--ink-muted); font-size: 15px; line-height: 1.5; }
 
 @media (max-width: 760px) {
   .product-relation-grid {
@@ -1674,6 +1677,7 @@ a.button-secondary:hover {
 
   .support-surface-grid { grid-template-columns: 1fr; padding-block: 44px 72px; }
   .post-purchase-grid { grid-template-columns: 1fr; padding-block: 44px 72px; }
+  .not-found-links { grid-template-columns: 1fr; padding-block: 44px 72px; }
 }
 
 .horizontal-media {
