@@ -652,7 +652,8 @@
           "contextKicker",
           "secondaryHref",
           "secondaryLabel",
-          "className"
+          "className",
+          "commerceTreatment"
         ],
         "fixedProps": {
           "variant": "compact",
@@ -706,7 +707,8 @@
           "contextKicker",
           "secondaryHref",
           "secondaryLabel",
-          "className"
+          "className",
+          "commerceTreatment"
         ],
         "fixedProps": {
           "variant": "vertical"
@@ -759,7 +761,8 @@
           "contextKicker",
           "secondaryHref",
           "secondaryLabel",
-          "className"
+          "className",
+          "commerceTreatment"
         ],
         "fixedProps": {
           "variant": "featured"
@@ -810,7 +813,8 @@
           "contextKicker",
           "secondaryHref",
           "secondaryLabel",
-          "className"
+          "className",
+          "commerceTreatment"
         ],
         "fixedProps": {
           "variant": "relation"

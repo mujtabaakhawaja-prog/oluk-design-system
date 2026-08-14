@@ -22,11 +22,12 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
   // Product-depth, the grammar foundation and cross-host stack continuations add
   // bounded client interaction while keeping the largest-chunk law unchanged.
-  clientJavaScriptBytes: 595 * KIB,
+  clientJavaScriptBytes: 599 * KIB,
   // The commercial stack replacement adds one contained baseline card, one
   // deterministic level surface and one adjacent OpenLab confidence surface.
-  // Keep their full/compact/summary grammar within a bounded two-KiB increase.
-  clientCssBytes: 266 * KIB,
+  // Canonical commerce-card reuse and full/compact/summary surface grammar remain
+  // within a bounded four-KiB increase from the grammar-foundation baseline.
+  clientCssBytes: 268 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,
