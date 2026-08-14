@@ -20,30 +20,40 @@ type StackProduct = Readonly<{
   position: string;
   rationale: string;
   outcomes: readonly StackGoal[];
+  profile: StackOutcomeProfile;
   media: ProductMediaAsset;
 }>;
 
 type StackGoal = "Cutting" | "Bulking" | "Recomp" | "PCT";
+type StackOutcomeProfile = Readonly<{
+  goalFit: number;
+  intensity: number;
+  complexity: number;
+  recoveryEmphasis: number;
+  evidenceVisibility: number;
+}>;
+
+const baselineProfile: StackOutcomeProfile = { goalFit: 52, intensity: 38, complexity: 20, recoveryEmphasis: 34, evidenceVisibility: 92 };
 
 const stackGoals: Readonly<Record<StackGoal, { headline: string; copy: string; outcome: string }>> = {
   Cutting: {
     headline: "Build a sharper cutting stack.",
-    copy: "Keep MK-2866 as your base, then add the product direction that pushes training output, lean mass focus or recovery capacity further.",
+    copy: "Add lean-mass intensity or recovery emphasis to MK-2866.",
     outcome: "Leaner, harder training emphasis",
   },
   Bulking: {
     headline: "Build size and power into the plan.",
-    copy: "Start with MK-2866, then layer the products that put more weight behind strength, mass and recovery through a harder phase.",
+    copy: "Add strength, mass or recovery focus to MK-2866.",
     outcome: "Mass and power emphasis",
   },
   Recomp: {
     headline: "Build a more capable recomp stack.",
-    copy: "Keep the base clean, then select the additions that give your training phase more strength, body-composition and recovery support.",
+    copy: "Add strength, recomp or recovery emphasis to MK-2866.",
     outcome: "Strength and body-composition emphasis",
   },
   PCT: {
     headline: "Plan the next phase with intent.",
-    copy: "Use your MK-2866 starting point to compare the products you want in view before you move into the next training block.",
+    copy: "Use MK-2866 as the reference while you compare the next phase.",
     outcome: "Next-phase planning emphasis",
   },
 };
@@ -113,6 +123,7 @@ const products: readonly StackProduct[] = [
     rationale:
       "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.",
     outcomes: ["Cutting", "Bulking", "Recomp"],
+    profile: { goalFit: 24, intensity: 30, complexity: 18, recoveryEmphasis: 4, evidenceVisibility: 78 },
     media: media("rad-140", "Testolone", "/assets/products/rad-140/front.png"),
   },
   {
@@ -129,6 +140,7 @@ const products: readonly StackProduct[] = [
     rationale:
       "Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.",
     outcomes: ["Bulking", "Recomp"],
+    profile: { goalFit: 28, intensity: 38, complexity: 24, recoveryEmphasis: 5, evidenceVisibility: 70 },
     media: media("ment", "Trestolone", "/assets/products/hero/ment/front.webp"),
   },
   {
@@ -145,6 +157,7 @@ const products: readonly StackProduct[] = [
     rationale:
       "Build recovery capacity around the stack with a 90-serving Ibutamoren format supporting appetite, deeper sleep and recovery between hard sessions.",
     outcomes: ["Bulking", "Cutting", "Recomp", "PCT"],
+    profile: { goalFit: 18, intensity: 8, complexity: 14, recoveryEmphasis: 42, evidenceVisibility: 72 },
     media: media("mk-677", "Ibutamoren", "/assets/products/hero/mk-677/front.webp"),
   },
 ] as const;
@@ -161,6 +174,15 @@ function ContextChip({ label, value }: { label: string; value: string }) {
   );
 }
 
+const profileLabels: ReadonlyArray<readonly [keyof StackOutcomeProfile, string]> = [
+  ["goalFit", "Goal fit"], ["intensity", "Intensity"], ["complexity", "Complexity"],
+  ["recoveryEmphasis", "Recovery emphasis"], ["evidenceVisibility", "Evidence visibility"],
+];
+
+export function StackOutcomeProfileView({ profile }: { profile: StackOutcomeProfile }) {
+  return <div className={styles.profile} data-component="StackOutcomeProfile">{profileLabels.map(([key, label]) => <div key={key}><span><b>{label}</b><strong>{profile[key]}</strong></span><i aria-label={`${label}: ${profile[key]} out of 100`} aria-valuemax={100} aria-valuemin={0} aria-valuenow={profile[key]} role="meter" style={{ "--score": `${profile[key]}%` } as React.CSSProperties} /></div>)}</div>;
+}
+
 /**
  * Canonical outcome-led stack card. Hosts reuse this rather than returning to
  * the generic commerce-card status treatment: the decision is the outcome,
@@ -168,24 +190,20 @@ function ContextChip({ label, value }: { label: string; value: string }) {
  */
 export function StackOutcomeCard({
   product,
-  selected,
   added,
-  onSelect,
   onAdd,
 }: {
   product: StackProduct;
-  selected: boolean;
   added: boolean;
-  onSelect: () => void;
   onAdd: () => void;
 }) {
   return (
-    <article className={styles.card} data-selected={selected || undefined}>
+    <article className={styles.card} data-selected={added || undefined}>
       <button
         aria-label={`Select ${product.name}`}
-        aria-pressed={selected}
+        aria-pressed={added}
         className={styles.selectCard}
-        onClick={onSelect}
+        onClick={onAdd}
         type="button"
       >
         <ProductMediaChamber context="card" media={product.media} />
@@ -195,7 +213,7 @@ export function StackOutcomeCard({
             <h2>{product.name}</h2>
             <p>{product.alias}</p>
           </div>
-          <b className={styles.selection}>{selected ? "SELECTED" : "SELECT"}</b>
+          <b className={styles.selection}>{added ? "SELECTED" : "SELECT"}</b>
         </div>
       </button>
       <div className={styles.content}>
@@ -226,13 +244,17 @@ export function StackOutcomeCard({
 }
 
 export function YourStackBuilder() {
-  const [selected, setSelected] = useState<StackProduct["id"]>("rad-140");
   const [added, setAdded] = useState<StackProduct["id"][]>([]);
   const [goal, setGoal] = useState<StackGoal>("Cutting");
   const count = useMemo(() => added.length, [added]);
   const visibleProducts = products.filter((product) => product.outcomes.includes(goal));
   const selectedProducts = products.filter((product) => added.includes(product.id));
   const stackSignal = count === 0 ? "Base set" : count === 1 ? "Focused build" : count === 2 ? "Elevated build" : "Full build";
+  const outcomeProfile = useMemo(() => {
+    const keys = Object.keys(baselineProfile) as Array<keyof StackOutcomeProfile>;
+    return Object.fromEntries(keys.map((key) => [key, Math.min(100, baselineProfile[key] + selectedProducts.reduce((sum, product) => sum + product.profile[key], 0))])) as unknown as StackOutcomeProfile;
+  }, [selectedProducts]);
+  const stackTotal = 43 + selectedProducts.reduce((sum, product) => sum + Number(product.price.replace(/[^0-9.]/g, "")), 0);
 
   return (
     <div className={styles.page} data-component="YourStackBuilder" data-mobile-strategy="carousel">
@@ -275,9 +297,7 @@ export function YourStackBuilder() {
                   : [...current, product.id],
               )
             }
-            onSelect={() => setSelected(product.id)}
             product={product}
-            selected={selected === product.id}
           />
         ))}
       </section>
@@ -288,16 +308,13 @@ export function YourStackBuilder() {
           <h2>{stackSignal}: {stackGoals[goal].outcome}</h2>
           <p>{count === 0 ? "MK-2866 is your base. Select one or more additions to see the shape of the full stack." : `MK-2866${selectedProducts.length ? ` + ${selectedProducts.map((product) => product.name).join(" + ")}` : ""} puts ${stackGoals[goal].outcome.toLowerCase()} at the centre of this selection.`}</p>
         </div>
-        <div aria-label={`${count + 1} of 4 stack positions selected`} className={styles.signal}>
-          {[0, 1, 2, 3].map((step) => <i data-active={step <= count || undefined} key={step} />)}
-          <strong>{count + 1} product{count ? "s" : ""} selected</strong>
-        </div>
+        <StackOutcomeProfileView profile={outcomeProfile} />
       </section>
 
       <section className={styles.continue}>
         <div>
           <span>Your stack</span>
-          <h2>{count ? "Your stack is taking shape." : "Choose the first addition to your stack."}</h2>
+          <h2>{count ? `Your £${stackTotal} stack is taking shape.` : "Choose the first addition to your stack."}</h2>
           <p>
             {count
               ? `You have added ${count} ${count === 1 ? "product" : "products"} around MK-2866. Review the line-up or keep building toward ${goal.toLowerCase()}.`

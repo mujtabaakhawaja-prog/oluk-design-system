@@ -44,6 +44,12 @@
       "failures": 0
     }
   },
+  "sourceAttribution": {
+    "fixture": "authority/fixtures/OPENLAB-PUBLIC-PROJECTION-V2-MK2866.json",
+    "contract": "OpenLabPublicProjection.v2",
+    "recordId": "report-mk-2866-ol2201-2",
+    "reportId": "28868"
+  },
   "interactionContract": {
     "selectableViews": [
       "record",
@@ -52,5 +58,6 @@
     ],
     "reducedMotion": "no animated analytical reconstruction",
     "chartPolicy": "numeric bars and source-owned tabular values only"
-  }
+  },
+  "contentHash": "eb13473b04cc1e4cfba49c903d15a9da726862df8f4dc0b461a34d4c04c143e9"
 }

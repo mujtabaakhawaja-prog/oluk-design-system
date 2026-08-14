@@ -181,3 +181,11 @@ test("Your Stack exposes the approved outcome-led card as one reusable Sites exp
   assert.match(stackBuilder, /Focused build[\s\S]*Elevated build[\s\S]*Full build/);
   assert.doesNotMatch(stackBuilder, /function StackCard/);
 });
+
+test("Your Stack renders a five-axis outcome profile and compiled total", () => {
+  const source = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
+  for (const axis of ["goalFit", "intensity", "complexity", "recoveryEmphasis", "evidenceVisibility"]) assert.match(source, new RegExp(axis));
+  assert.match(source, /data-component="StackOutcomeProfile"/);
+  assert.match(source, /stackTotal/);
+  assert.doesNotMatch(source, /Good\s*\/\s*Better\s*\/\s*Best/i);
+});
