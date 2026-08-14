@@ -400,15 +400,19 @@ async function transactionSuite(chromePort, baseUrl) {
         await delay(250);
         callbackRequests.length = 0;
         webSockets.length = 0;
-        const surface = await inspect(client, `(() => ({
-          authority: document.querySelector("[data-live-authority='false']")?.getAttribute("data-live-authority"),
-          forms: document.querySelectorAll("form").length,
-          enabledButtons: [...document.querySelectorAll("button")].filter((button) => !button.disabled).length,
-          externalActions: [...document.querySelectorAll("a")].filter((link) => {
-            try { return new URL(link.href, location.href).origin !== location.origin; } catch { return true; }
-          }).length,
-          paymentScripts: [...document.scripts].filter((script) => /stripe|paypal|woocommerce|biaspay|payment/i.test(script.src)).map((script) => script.src),
-        }))()`);
+        const surface = await inspect(client, `(() => {
+          const transaction = document.querySelector("[data-live-authority='false'][data-transaction-stage]");
+          const withinTransaction = (selector) => transaction ? [...transaction.querySelectorAll(selector)] : [];
+          return {
+            authority: transaction?.getAttribute("data-live-authority"),
+            forms: withinTransaction("form").length,
+            enabledButtons: withinTransaction("button").filter((button) => !button.disabled).length,
+            externalActions: withinTransaction("a").filter((link) => {
+              try { return new URL(link.href, location.href).origin !== location.origin; } catch { return true; }
+            }).length,
+            paymentScripts: [...document.scripts].filter((script) => /stripe|paypal|woocommerce|biaspay|payment/i.test(script.src)).map((script) => script.src),
+          };
+        })()`);
         await delay(200);
         const requests = [...callbackRequests, ...webSockets];
         return requireCondition(
