@@ -16,6 +16,19 @@
     {"routeId":"open-lab-case-studies","path":"/open-lab/case-studies","moduleRecord":"openlab-sidebar-workspace","desktopNodeId":"1243:4335","mobileNodeId":"1243:4349","mobileStrategy":"collapse","status":"figma-backfilled"},
     {"routeId":"open-lab-glossary","path":"/open-lab/glossary","moduleRecord":"openlab-sidebar-workspace","desktopNodeId":"1243:4363","mobileNodeId":"1243:4377","mobileStrategy":"collapse","status":"figma-backfilled"},
     {"routeId":"open-lab-coa-viewer","path":"/open-lab/coa/:id","moduleRecord":"openlab-document-viewer","desktopNodeId":"1243:4391","mobileNodeId":"1243:4405","mobileStrategy":"summary","status":"figma-backfilled"},
-    {"routeId":"open-lab-report","path":"/open-lab/report/:batchId","moduleRecord":"openlab-document-viewer","desktopNodeId":"1243:4419","mobileNodeId":"1243:4433","mobileStrategy":"summary","status":"figma-backfilled"}
+    {"routeId":"open-lab-report","path":"/open-lab/report/:batchId","moduleRecord":"openlab-document-viewer","desktopNodeId":"1243:4419","mobileNodeId":"1243:4433","mobileStrategy":"summary","status":"figma-backfilled"},
+    {"routeId":"about","path":"/about","moduleRecord":"support-surface","desktopNodeId":"1244:4055","mobileNodeId":"1244:4062","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"contact","path":"/contact","moduleRecord":"support-surface","desktopNodeId":"1244:4069","mobileNodeId":"1244:4076","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"delivery","path":"/delivery","moduleRecord":"support-surface","desktopNodeId":"1244:4083","mobileNodeId":"1244:4090","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"shipping-returns","path":"/shipping-returns","moduleRecord":"support-surface","desktopNodeId":"1244:4097","mobileNodeId":"1244:4104","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"faq","path":"/faq","moduleRecord":"support-surface","desktopNodeId":"1244:4111","mobileNodeId":"1244:4118","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"privacy","path":"/privacy","moduleRecord":"support-surface","desktopNodeId":"1244:4125","mobileNodeId":"1244:4132","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"terms","path":"/terms","moduleRecord":"support-surface","desktopNodeId":"1244:4139","mobileNodeId":"1244:4146","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"cookies","path":"/cookies","moduleRecord":"support-surface","desktopNodeId":"1244:4153","mobileNodeId":"1244:4160","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"refunds","path":"/refunds","moduleRecord":"support-surface","desktopNodeId":"1244:4167","mobileNodeId":"1244:4174","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"wholesale","path":"/wholesale","moduleRecord":"support-surface","desktopNodeId":"1244:4181","mobileNodeId":"1244:4188","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"international","path":"/international","moduleRecord":"support-surface","desktopNodeId":"1244:4195","mobileNodeId":"1244:4202","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"gift-cards","path":"/gift-cards","moduleRecord":"support-surface","desktopNodeId":"1244:4209","mobileNodeId":"1244:4216","mobileStrategy":"collapse","status":"figma-backfilled"},
+    {"routeId":"sitemap","path":"/sitemap","moduleRecord":"support-surface","desktopNodeId":"1244:4223","mobileNodeId":"1244:4230","mobileStrategy":"collapse","status":"figma-backfilled"}
   ]
 }
