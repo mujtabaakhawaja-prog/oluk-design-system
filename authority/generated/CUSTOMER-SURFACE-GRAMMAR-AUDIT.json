@@ -5,7 +5,7 @@
   "debt": {
     "policy": "MONOTONIC_DECREASE",
     "sourceFindingCount": 39,
-    "untouchedRouteViolationCount": 560
+    "untouchedRouteViolationCount": 554
   },
   "grammarReadyRouteCount": 0,
   "looseCopyGroupCount": 560,
@@ -19,44 +19,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Formulated to a higher standard."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Ostarine"
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Six points of assurance."
         }
       ],
       "looseCopyGroupCount": 34,
       "path": "/",
       "routeId": "home",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -66,326 +76,396 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Orders and account access."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Use the account area to return to orders, delivery details and saved information."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Sign in"
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Browse before you create an account."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Compare the range and available Lab Records without signing in."
         }
       ],
       "looseCopyGroupCount": 11,
       "path": "/account",
       "routeId": "account",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 17,
-      "copyGroupCount": 35,
+      "containedCopyGroupCount": 18,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Manage your addresses."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Track the delivery, open the receipt, or return to the product in one place."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Ready for the next phase"
         }
       ],
       "looseCopyGroupCount": 18,
       "path": "/account/addresses",
       "routeId": "account-addresses",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 17,
-      "copyGroupCount": 35,
+      "containedCopyGroupCount": 18,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your orders, receipts and tracking in one place."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Track the delivery, open the receipt, or return to the product in one place."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Ready for the next phase"
         }
       ],
       "looseCopyGroupCount": 18,
       "path": "/account/orders",
       "routeId": "account-orders",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 17,
-      "copyGroupCount": 35,
+      "containedCopyGroupCount": 18,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your orders, receipts and tracking in one place."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Track the delivery, open the receipt, or return to the product in one place."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Ready for the next phase"
         }
       ],
       "looseCopyGroupCount": 18,
       "path": "/account/orders/OL-10428",
       "routeId": "account-order",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 17,
-      "copyGroupCount": 35,
+      "containedCopyGroupCount": 18,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Manage your profile."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Track the delivery, open the receipt, or return to the product in one place."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Ready for the next phase"
         }
       ],
       "looseCopyGroupCount": 18,
       "path": "/account/profile",
       "routeId": "account-profile",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 15,
-      "copyGroupCount": 27,
+      "containedCopyGroupCount": 16,
+      "copyGroupCount": 28,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your bag."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Review product truth, quantity and the current order total before checkout."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Ostarine"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 12,
       "path": "/bag",
       "routeId": "bag",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 15,
-      "copyGroupCount": 37,
+      "containedCopyGroupCount": 16,
+      "copyGroupCount": 38,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Order received."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your order summary and next steps stay together here."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "The order summary is ready below."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 22,
       "path": "/checkout/confirmation",
       "routeId": "checkout-confirmation",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -395,44 +475,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your product, order value and payment equivalent."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your selected shop currency stays clear through payment."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "One clear step away. One clear return to Olympus."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "You’ll leave Olympus briefly to complete payment in the secure payment window. When it closes, return here to see the order outcome."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Confirm the product and amount due."
         }
       ],
       "looseCopyGroupCount": 13,
       "path": "/checkout/review",
       "routeId": "checkout-review",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -442,44 +532,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Track an order."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Tracking stages render only from an order projection; this candidate does not advance them."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Source chain"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         }
       ],
       "looseCopyGroupCount": 9,
       "path": "/checkout/tracking",
       "routeId": "checkout-tracking",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -489,44 +589,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Featured products"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop proven combinations by outcome, then choose the products that make the next phase work harder."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with the result you want."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Browse by strength, body composition, recovery or product family, then compare the formats that fit your goal."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 26,
       "path": "/collections/featured",
       "routeId": "collection",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -536,44 +646,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Prohormones"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Endurance, recovery and body-composition options that give a stack more direction."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with the result you want."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Browse by strength, body composition, recovery or product family, then compare the formats that fit your goal."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-677"
         }
       ],
       "looseCopyGroupCount": 22,
       "path": "/collections/prohormones",
       "routeId": "family-prohormones",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -583,44 +703,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Research chemicals"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Strength, cutting and recomp-focused formats for building the next training phase."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with the result you want."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Browse by strength, body composition, recovery or product family, then compare the formats that fit your goal."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 22,
       "path": "/collections/research-chemicals",
       "routeId": "family-research-chemicals",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -630,44 +760,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "SARMs"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Strength, cutting and recomp-focused formats for building the next training phase."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with the result you want."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Browse by strength, body composition, recovery or product family, then compare the formats that fit your goal."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 22,
       "path": "/collections/sarms",
       "routeId": "family-sarms",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -677,44 +817,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Stacks"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop proven combinations by outcome, then choose the products that make the next phase work harder."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with the result you want."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Browse by strength, body composition, recovery or product family, then compare the formats that fit your goal."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 42,
       "path": "/collections/stacks",
       "routeId": "family-stacks",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 8,
@@ -724,44 +874,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Choose the product direction that matches the result you want."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Put strength, serving format and product focus side by side, then take the next decision into the full product detail."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "See the difference before you build."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         }
       ],
       "looseCopyGroupCount": 9,
       "path": "/compare",
       "routeId": "product-compare",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 8,
@@ -771,44 +931,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Every product. Its available record path."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search product and record references while unavailable details remain clear."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         }
       ],
       "looseCopyGroupCount": 8,
       "path": "/lab-reports",
       "routeId": "lab-reports",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 48,
@@ -818,44 +988,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Find an available record."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with the archive or use batch lookup to understand each possible result."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Facts first. Records when available."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Product specifications remain clear even when a report is unavailable."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Return to the product range."
         }
       ],
       "looseCopyGroupCount": 12,
       "path": "/open-lab",
       "routeId": "open-lab",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -865,44 +1045,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Find a batch record."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Use the examples below to see empty, entered, found, no-result and unavailable outcomes."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Batch or record number"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Try MK-2866, OL-MK2866-PENDING or NO-MATCH to see the possible outcomes."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Start with a reference."
         }
       ],
       "looseCopyGroupCount": 18,
       "path": "/open-lab/batch-lookup",
       "routeId": "open-lab-batch-lookup",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -912,44 +1102,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/case-studies",
       "routeId": "open-lab-case-studies",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 8,
@@ -959,44 +1159,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/coa/r28868",
       "routeId": "open-lab-coa-viewer",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 4,
@@ -1006,44 +1216,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Compare finished-product evidence paths."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Review label facts and record availability in a keyboard-accessible table."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         }
       ],
       "looseCopyGroupCount": 8,
       "path": "/open-lab/compare",
       "routeId": "open-lab-compare",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 26,
@@ -1053,44 +1273,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/compound-guide",
       "routeId": "open-lab-compound-guide",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 16,
@@ -1100,44 +1330,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866 / Ostarine"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         }
       ],
       "looseCopyGroupCount": 7,
       "path": "/open-lab/compound/mk-2866",
       "routeId": "open-lab-compound",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -1147,44 +1387,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/cycle-planner",
       "routeId": "open-lab-cycle-planner",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -1194,44 +1444,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/dosing-calculator",
       "routeId": "open-lab-dosing-calculator",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 22,
@@ -1241,44 +1501,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/evidence",
       "routeId": "open-lab-evidence",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -1288,44 +1558,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/glossary",
       "routeId": "open-lab-glossary",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -1335,44 +1615,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/interaction-checker",
       "routeId": "open-lab-interaction-checker",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -1382,44 +1672,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/lab-partner",
       "routeId": "open-lab-lab-partner",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 28,
@@ -1429,44 +1729,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "How finished-product records are read."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "A customer-readable guide to identity, purity, concentration and source context—without implying a result."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "One shared evidence vocabulary."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         }
       ],
       "looseCopyGroupCount": 9,
       "path": "/open-lab/methodology",
       "routeId": "open-lab-methodology",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 8,
@@ -1476,44 +1786,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Every product. Its available record path."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search product and record references while unavailable details remain clear."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         }
       ],
       "looseCopyGroupCount": 8,
       "path": "/open-lab/records",
       "routeId": "open-lab-records",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 8,
@@ -1523,44 +1843,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866 evidence record"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Record details remain unavailable until an original record supplies an ID, date, method and analytical result."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         }
       ],
       "looseCopyGroupCount": 8,
       "path": "/open-lab/records/source-bound-record",
       "routeId": "open-lab-record",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 8,
@@ -1570,44 +1900,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Report registered-record"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         }
       ],
       "looseCopyGroupCount": 7,
       "path": "/open-lab/report/registered-record",
       "routeId": "open-lab-report",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 6,
@@ -1617,44 +1957,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/research-papers",
       "routeId": "open-lab-research-papers",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 20,
@@ -1664,91 +2014,111 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "From finished product to original report."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Follow the information relationship while leaving absent record values visibly unavailable."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         }
       ],
       "looseCopyGroupCount": 8,
       "path": "/open-lab/source-chain",
       "routeId": "open-lab-source-chain",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 27,
-      "copyGroupCount": 33,
+      "containedCopyGroupCount": 32,
+      "copyGroupCount": 38,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Shop"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "OpenLab"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Company"
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Help & legal"
         }
       ],
       "looseCopyGroupCount": 6,
       "path": "/open-lab/stack-builder",
       "routeId": "open-lab-stack-builder",
-      "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
+      "status": "GRAMMAR_READY",
+      "strict": true,
+      "strictScopedCopyGroupCount": 30,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 6
     },
     {
       "containedCopyGroupCount": 2,
@@ -1758,44 +2128,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your order is in. Keep the next step clear."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your order details, delivery updates and the products you chose stay together from here."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Keep the next decision visible."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Timing and eligibility appear here when they are available for your order."
         }
       ],
       "looseCopyGroupCount": 13,
       "path": "/order/success/OL-10428",
       "routeId": "order-success",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -1805,44 +2185,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Follow your order from dispatch to delivery."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "The current delivery progress sits beside the product and order information you need."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Keep the next decision visible."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Timing and eligibility appear here when they are available for your order."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "MK-2866"
         }
       ],
       "looseCopyGroupCount": 12,
       "path": "/order/tracking/OL-10428",
       "routeId": "order-tracking",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 19,
@@ -1852,44 +2242,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Everything needed for a clear product decision."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Label truth, product composition and customer guidance remain grouped without competing with the purchase decision."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Review the product label and the applicable customer information before making a purchase decision."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Third-Party Tested."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "The product decision stays connected to its OpenLab pathway, with the approved product specifications carried through intact."
         }
       ],
       "looseCopyGroupCount": 15,
       "path": "/product/mk-2866",
       "routeId": "product",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -1899,44 +2299,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Experiences shared by Olympus customers."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Product, delivery and OpenLab feedback presented separately from product specifications and evidence records."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "A clear home for customer feedback."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Customer review content will appear here only when a source-owned review projection is connected."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "No customer reviews are available yet."
         }
       ],
       "looseCopyGroupCount": 15,
       "path": "/reviews",
       "routeId": "reviews",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 2,
@@ -1946,44 +2356,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Find a product."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search the Olympus Labs UK catalogue by product, compound or series."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Explore the full range."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Filter by family, goal, form, servings and availability from the catalogue."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
       "looseCopyGroupCount": 10,
       "path": "/search",
       "routeId": "search",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 18,
@@ -1993,44 +2413,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "The Olympus Labs UK range."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Compare clear product specifications, then move directly into available Lab Records."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Refine products"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "8 products are available in the current range."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
       "looseCopyGroupCount": 10,
       "path": "/shop",
       "routeId": "shop",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 18,
@@ -2040,44 +2470,54 @@
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
         },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "The Olympus Labs UK range."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Compare clear product specifications, then move directly into available Lab Records."
         },
         {
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Refine products"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "8 products are available in the current range."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
       "looseCopyGroupCount": 10,
       "path": "/shop?goal=build",
       "routeId": "shop-goal",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
       "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
     }
   ],
   "schemaVersion": 2,
@@ -2318,7 +2758,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "d948cd8f1aba2a75a8774bca126558183a19bce759858fffb64e6ad5dc2e6d5d",
+  "sourceHash": "5677a207ff2d80948c4a802ca3593f522e46e0a8dd4e11f786f1556eaa907b53",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2342,14 +2782,75 @@
   "strictScope": {
     "routes": [
       {
+        "containedCopyGroupCount": 32,
+        "copyGroupCount": 38,
+        "looseCopyExamples": [
+          {
+            "copySurface": null,
+            "element": "p",
+            "status": "LOOSE_CANVAS_COPY",
+            "strictScope": false,
+            "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
+          },
+          {
+            "copySurface": null,
+            "element": "p",
+            "status": "LOOSE_CANVAS_COPY",
+            "strictScope": false,
+            "text": "Finished products, clear specifications and independently presented evidence."
+          },
+          {
+            "copySurface": null,
+            "element": "h3",
+            "status": "LOOSE_CANVAS_COPY",
+            "strictScope": false,
+            "text": "Shop"
+          },
+          {
+            "copySurface": null,
+            "element": "h3",
+            "status": "LOOSE_CANVAS_COPY",
+            "strictScope": false,
+            "text": "OpenLab"
+          },
+          {
+            "copySurface": null,
+            "element": "h3",
+            "status": "LOOSE_CANVAS_COPY",
+            "strictScope": false,
+            "text": "Company"
+          },
+          {
+            "copySurface": null,
+            "element": "h3",
+            "status": "LOOSE_CANVAS_COPY",
+            "strictScope": false,
+            "text": "Help & legal"
+          }
+        ],
+        "looseCopyGroupCount": 6,
+        "path": "/open-lab/stack-builder",
+        "routeId": "open-lab-stack-builder",
+        "routeStatus": "NEEDS_ROUTE_REFACTOR",
+        "status": "GRAMMAR_READY",
+        "strict": true,
+        "strictScopedCopyGroupCount": 30,
+        "strictScopedLooseCopyGroupCount": 0,
+        "surroundingRouteLooseCopyGroupCount": 6
+      },
+      {
         "containedCopyGroupCount": 12,
         "copyGroupCount": 12,
         "looseCopyExamples": [],
         "looseCopyGroupCount": 0,
         "path": "/review-studio/surface-grammar",
         "routeId": "surface-grammar-specimen",
+        "routeStatus": "GRAMMAR_READY",
         "status": "GRAMMAR_READY",
-        "strict": true
+        "strict": true,
+        "strictScopedCopyGroupCount": 12,
+        "strictScopedLooseCopyGroupCount": 0,
+        "surroundingRouteLooseCopyGroupCount": 0
       }
     ],
     "sourceFiles": [
@@ -2362,11 +2863,13 @@
       "app/design-system/pdp-first-fold.tsx",
       "app/design-system/surface-grid.module.css",
       "app/design-system/surface-grid.tsx",
+      "app/design-system/your-stack-builder.module.css",
+      "app/design-system/your-stack-builder.tsx",
       "app/review-studio/surface-grammar/page.tsx",
       "app/review-studio/surface-grammar/surface-grammar.module.css"
     ],
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "1ccc36301297ea989a1237ae750bbd8344f2c931413b3b924c8209de1dc542fd"
+  "auditHash": "afb3847ee3b1897e5a696f1f7cbb3cecbe340eeb7f1f04e996b147aa1a091c4b"
 }

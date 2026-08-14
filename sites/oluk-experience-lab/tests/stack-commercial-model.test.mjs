@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  stackContributionPhrase,
   stackLevelFor,
   stackTotalFor,
   uniqueStackContributions,
@@ -13,6 +14,15 @@ test("stack completeness levels follow selected product count exactly", () => {
   assert.equal(stackLevelFor(3), "MAXIMUM");
   assert.equal(stackLevelFor(6), "MAXIMUM");
   assert.throws(() => stackLevelFor(0), /at least one selected product/);
+});
+
+test("stack contribution prose remains grammatical for one, two and multiple directions", () => {
+  assert.equal(stackContributionPhrase(["LEAN MASS"]), "lean mass");
+  assert.equal(stackContributionPhrase(["LEAN MASS", "STRENGTH"]), "lean mass and strength");
+  assert.equal(
+    stackContributionPhrase(["LEAN MASS", "BODY COMPOSITION", "STRENGTH"]),
+    "lean mass, body composition and strength",
+  );
 });
 
 test("MK-2866 plus LGD-4033 plus RAD-140 compiles the exact total", () => {

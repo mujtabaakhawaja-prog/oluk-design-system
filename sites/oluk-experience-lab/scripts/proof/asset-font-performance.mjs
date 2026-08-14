@@ -24,9 +24,16 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // owner-only PDP candidate selector share one bounded presentation path. The
   // merged tree measured 632,658 bytes. The shared semantic ActionControl adds
   // one route-shared client path; the final foundation tree measures 635,473 bytes.
-  // Retain a bounded 622 KiB aggregate ceiling while the 224 KiB largest-chunk
+  // The commercial Stack v3 freeze replaces local controls/chips with the
+  // canonical ActionControl and QualitativeChip families and adds live
+  // baseline, goal, contribution and exact-total state. The pre-v3 merged tree
+  // measured 635,653 bytes; the complete interaction tree, including the
+  // contained mobile rail affordance, measures 639,766 bytes (+4,113 bytes
+  // aggregate, with the Stack interaction chunk growing from 17,713 to 21,819
+  // bytes, a +4,106 byte delta).
+  // Retain a bounded 626 KiB aggregate ceiling while the 224 KiB largest-chunk
   // law remains unchanged.
-  clientJavaScriptBytes: 622 * KIB,
+  clientJavaScriptBytes: 626 * KIB,
   // OpenLab technical states and three materially different PDP grids reuse the
   // governed surface grammar within one bounded aggregate stylesheet ceiling.
   clientCssBytes: 280 * KIB,
