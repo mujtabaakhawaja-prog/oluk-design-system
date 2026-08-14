@@ -10,8 +10,9 @@ const readJson = async (relative) => JSON.parse(await readFile(path.join(repoRoo
 const nodeId = /^\d+:\d+$/;
 
 test("the commercial Stack nativeization manifest records current Sites captures and real editable Figma nodes without overstating review", async () => {
-  const [manifest, registry] = await Promise.all([
+  const [manifest, currentState, registry] = await Promise.all([
     readJson("authority/SITES-NATIVEIZATION-MANIFEST-STACK-COMMERCIAL.json"),
+    readJson("authority/SITES-NATIVEIZATION-STACK-CURRENT-STATE.json"),
     readJson("authority/DESIGN-SYNC-REGISTRY.json"),
   ]);
   assert.equal(manifest.status, "FIGMA_NATIVE_MIRROR_CREATED");
@@ -28,6 +29,23 @@ test("the commercial Stack nativeization manifest records current Sites captures
   assert.equal(manifest.advancementGates.ownerSelected, false);
   assert.equal(manifest.advancementGates.championApproved, false);
   assert.equal(manifest.figma.publicationAuthorized, false);
+
+  assert.equal(currentState.moduleState, "FIGMA_NATIVE_MIRROR_CREATED");
+  assert.equal(currentState.source.coreSourceCommit, manifest.sitesSource.coreSourceCommit);
+  assert.equal(currentState.source.sourceTreeHash, manifest.sitesSource.sourceTreeHash);
+  assert.deepEqual(currentState.source.commercialContract.levels, ["FOUNDATION", "STRONGER", "MAXIMUM"]);
+  assert.equal(currentState.source.commercialContract.maximumComposition, manifest.commercialContract.maximumComposition);
+  assert.equal(currentState.figma.componentFamily.nodeId, manifest.figma.componentSets.commercialBuilder);
+  assert.deepEqual(currentState.figma.routeFrames, manifest.figma.routeFrames);
+  assert.equal(currentState.supersedes.rejectedOutcomeProfileNodeId, "1292:6466");
+  assert.equal(currentState.supersedes.status, "SUPERSEDED_HISTORICAL_EVIDENCE");
+  assert.doesNotMatch(JSON.stringify(currentState.figma.reusableComponents), /1292:6466|StackOutcomeProfile/);
+  assert.doesNotMatch(JSON.stringify(currentState.source.commercialContract), /goalFit|intensity|complexity|evidenceVisibility|recoveryEmphasis/);
+  assert.equal(currentState.advancementGates.figmaReviewed, false);
+  assert.equal(currentState.advancementGates.visualSyncCurrent, false);
+  assert.equal(currentState.advancementGates.ownerSelected, false);
+  assert.equal(currentState.advancementGates.championApproved, false);
+  assert.equal(currentState.figma.publicationAuthorized, false);
 
   const stack = registry.records.find(({ id }) => id === "stack-explorer");
   assert.equal(stack.status, "FIGMA_NATIVE_MIRROR_CREATED");

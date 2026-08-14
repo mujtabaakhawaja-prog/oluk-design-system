@@ -8,8 +8,8 @@
     "sourceHead": "77714ba09f041277d2faee2d0eb7373c354a7c82",
     "coreSourceCommit": "f6d380f0bc11ac5d82d3d615306c22ac74e3e7df",
     "sourceTreeHash": "14fedb03ca53047fd9637c59f1b69240b9a7b7c8",
-    "registryChangeBase": "dbf67bdc1bde5dadba1246650afa9b947a8f5573",
-    "registryChangeBaseTree": "03bbb867fc1eb4deb3c056c02971b36a67a3cc81",
+    "registryChangeBase": "873c251c314a87c3e30d77c375417be5a7a54aff",
+    "registryChangeBaseTree": "a8ca0ce81e276fec8f0fbe88fbf4da64931f3b37",
     "path": "/open-lab/stack-builder",
     "codeExport": "YourStackBuilder"
   },
