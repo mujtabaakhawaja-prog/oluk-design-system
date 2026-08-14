@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { closePage, createPage, evaluate, launchChrome, navigate, setViewport } from "./chrome-cdp.mjs";
@@ -82,16 +82,41 @@ async function tabSequence(client, count = 10) {
 const baseUrl = new URL(option("base-url", process.env.PROOF_BASE_URL ?? "http://127.0.0.1:4173"));
 const routes = selectRoutes(option("routes", ""));
 const viewports = selectViewports(option("widths", "1440,390"));
+const resumeFrom = option("resume-from", "");
 const outputDirectory = option("output", "") || await mkdtemp(path.join(tmpdir(), "oluk-a11y-smoke-"));
 await mkdir(outputDirectory, { recursive: true });
 
 const chrome = await launchChrome();
-const results = [];
+let results = [];
 let failed = false;
+if (resumeFrom) {
+  const prior = JSON.parse(await readFile(resumeFrom, "utf8"));
+  results = prior.results?.filter((result) => result.status === "PASS") ?? [];
+}
+const completedCases = new Set(results.map((result) => `${result.route}::${result.viewport.width}`));
+const buildReceipt = () => ({
+  schemaVersion: 1,
+  run: "MF-09_ACCESSIBILITY_SMOKE",
+  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  generatedAt: new Date().toISOString(),
+  baseUrl: baseUrl.href,
+  outputDirectory,
+  resumedFrom: resumeFrom || null,
+  routeCount: routes.length,
+  widthCount: viewports.length,
+  caseCount: results.length,
+  passCount: results.filter(({ status }) => status === "PASS").length,
+  failCount: results.filter(({ status }) => status !== "PASS").length,
+  results,
+});
+const checkpoint = async () => {
+  await writeFile(path.join(outputDirectory, "mf09-accessibility-progress.json"), `${JSON.stringify(buildReceipt(), null, 2)}\n`);
+};
 
 try {
   for (const route of routes) {
     for (const viewport of viewports) {
+      if (completedCases.has(`${route.path}::${viewport.width}`)) continue;
       const { client, targetId } = await createPage(chrome.port);
       try {
         await setViewport(client, viewport);
@@ -126,9 +151,11 @@ try {
         if (reducedMotion.activeAnimations > 0) warnings.push(`${reducedMotion.activeAnimations} animation(s) remain active under reduced motion`);
         if (failures.length > 0) failed = true;
         results.push({ route: route.path, viewport, status: failures.length === 0 ? "PASS" : "FAIL", failures, warnings, dom, unnamedAxInteractive, focusSequence, reducedMotion });
+        await checkpoint();
       } catch (error) {
         failed = true;
         results.push({ route: route.path, viewport, status: "ERROR", failures: [error instanceof Error ? error.message : String(error)] });
+        await checkpoint();
       } finally {
         await closePage(chrome.port, client, targetId);
       }
@@ -138,20 +165,7 @@ try {
   await chrome.close();
 }
 
-const receipt = {
-  schemaVersion: 1,
-  run: "MF-09_ACCESSIBILITY_SMOKE",
-  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  generatedAt: new Date().toISOString(),
-  baseUrl: baseUrl.href,
-  outputDirectory,
-  routeCount: routes.length,
-  widthCount: viewports.length,
-  caseCount: results.length,
-  passCount: results.filter(({ status }) => status === "PASS").length,
-  failCount: results.filter(({ status }) => status !== "PASS").length,
-  results,
-};
+const receipt = buildReceipt();
 await writeFile(path.join(outputDirectory, "mf09-accessibility-smoke.json"), `${JSON.stringify(receipt, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify({ ...receipt, results: results.map(({ route, viewport, status, failures, warnings }) => ({ route, width: viewport.width, status, failures, warnings })) }, null, 2)}\n`);
 if (failed) process.exitCode = 1;
