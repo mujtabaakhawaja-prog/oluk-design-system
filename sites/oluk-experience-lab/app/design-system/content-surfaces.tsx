@@ -10,6 +10,7 @@ type ContentSurfaceProps = Readonly<{
   eyebrow?: string;
   title: string;
   copy?: string;
+  secondaryCopy?: string;
   headingLevel?: CopySurfaceHeadingLevel;
   state?: CopySurfaceState;
   compact?: boolean;
@@ -35,6 +36,7 @@ function GovernedContentSurface({
   eyebrow,
   title,
   copy,
+  secondaryCopy,
   headingLevel = "h2",
   state = "default",
   compact = false,
@@ -57,6 +59,7 @@ function GovernedContentSurface({
       data-component={componentNames[kind]}
       data-copy-state={state}
       data-copy-surface={kind}
+      data-copy-sequence={secondaryCopy ? "eyebrow-title-primary-secondary" : "eyebrow-title-primary"}
       data-mobile-strategy={compact ? "summary" : "recompose"}
       id={id}
     >
@@ -64,6 +67,7 @@ function GovernedContentSurface({
         {eyebrow ? <span className={styles.eyebrow}>{eyebrow}</span> : null}
         <Heading className={styles.title}>{title}</Heading>
         {copy ? <p className={styles.copy}>{copy}</p> : null}
+        {secondaryCopy ? <p className={styles.secondaryCopy}>{secondaryCopy}</p> : null}
       </header>
       {children ? <div className={styles.body}>{children}</div> : null}
       {actions ? <div className={styles.actions}>{actions}</div> : null}

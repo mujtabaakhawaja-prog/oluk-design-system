@@ -1,7 +1,12 @@
 {
   "auditedRouteCount": 44,
-  "contractId": "oluk.customer-surface-grammar.v1",
+  "contractId": "oluk.customer-surface-grammar.v2",
   "currentState": "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
+  "debt": {
+    "policy": "MONOTONIC_DECREASE",
+    "sourceFindingCount": 39,
+    "untouchedRouteViolationCount": 560
+  },
   "grammarReadyRouteCount": 0,
   "looseCopyGroupCount": 560,
   "routeRefactorCount": 44,
@@ -50,7 +55,8 @@
       "looseCopyGroupCount": 34,
       "path": "/",
       "routeId": "home",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -96,7 +102,8 @@
       "looseCopyGroupCount": 11,
       "path": "/account",
       "routeId": "account",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 17,
@@ -142,7 +149,8 @@
       "looseCopyGroupCount": 18,
       "path": "/account/addresses",
       "routeId": "account-addresses",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 17,
@@ -188,7 +196,8 @@
       "looseCopyGroupCount": 18,
       "path": "/account/orders",
       "routeId": "account-orders",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 17,
@@ -234,7 +243,8 @@
       "looseCopyGroupCount": 18,
       "path": "/account/orders/OL-10428",
       "routeId": "account-order",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 17,
@@ -280,7 +290,8 @@
       "looseCopyGroupCount": 18,
       "path": "/account/profile",
       "routeId": "account-profile",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 15,
@@ -326,7 +337,8 @@
       "looseCopyGroupCount": 12,
       "path": "/bag",
       "routeId": "bag",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 15,
@@ -372,7 +384,8 @@
       "looseCopyGroupCount": 22,
       "path": "/checkout/confirmation",
       "routeId": "checkout-confirmation",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -418,7 +431,8 @@
       "looseCopyGroupCount": 13,
       "path": "/checkout/review",
       "routeId": "checkout-review",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -464,7 +478,8 @@
       "looseCopyGroupCount": 9,
       "path": "/checkout/tracking",
       "routeId": "checkout-tracking",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -510,7 +525,8 @@
       "looseCopyGroupCount": 26,
       "path": "/collections/featured",
       "routeId": "collection",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -556,7 +572,8 @@
       "looseCopyGroupCount": 22,
       "path": "/collections/prohormones",
       "routeId": "family-prohormones",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -602,7 +619,8 @@
       "looseCopyGroupCount": 22,
       "path": "/collections/research-chemicals",
       "routeId": "family-research-chemicals",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -648,7 +666,8 @@
       "looseCopyGroupCount": 22,
       "path": "/collections/sarms",
       "routeId": "family-sarms",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -694,7 +713,8 @@
       "looseCopyGroupCount": 42,
       "path": "/collections/stacks",
       "routeId": "family-stacks",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 8,
@@ -740,7 +760,8 @@
       "looseCopyGroupCount": 9,
       "path": "/compare",
       "routeId": "product-compare",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 8,
@@ -786,7 +807,8 @@
       "looseCopyGroupCount": 8,
       "path": "/lab-reports",
       "routeId": "lab-reports",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 48,
@@ -832,7 +854,8 @@
       "looseCopyGroupCount": 12,
       "path": "/open-lab",
       "routeId": "open-lab",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -878,7 +901,8 @@
       "looseCopyGroupCount": 18,
       "path": "/open-lab/batch-lookup",
       "routeId": "open-lab-batch-lookup",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -924,7 +948,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/case-studies",
       "routeId": "open-lab-case-studies",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 8,
@@ -970,7 +995,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/coa/r28868",
       "routeId": "open-lab-coa-viewer",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 4,
@@ -1016,7 +1042,8 @@
       "looseCopyGroupCount": 8,
       "path": "/open-lab/compare",
       "routeId": "open-lab-compare",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 26,
@@ -1062,7 +1089,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/compound-guide",
       "routeId": "open-lab-compound-guide",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 16,
@@ -1108,7 +1136,8 @@
       "looseCopyGroupCount": 7,
       "path": "/open-lab/compound/mk-2866",
       "routeId": "open-lab-compound",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -1154,7 +1183,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/cycle-planner",
       "routeId": "open-lab-cycle-planner",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -1200,7 +1230,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/dosing-calculator",
       "routeId": "open-lab-dosing-calculator",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 22,
@@ -1246,7 +1277,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/evidence",
       "routeId": "open-lab-evidence",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -1292,7 +1324,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/glossary",
       "routeId": "open-lab-glossary",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -1338,7 +1371,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/interaction-checker",
       "routeId": "open-lab-interaction-checker",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -1384,7 +1418,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/lab-partner",
       "routeId": "open-lab-lab-partner",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 28,
@@ -1430,7 +1465,8 @@
       "looseCopyGroupCount": 9,
       "path": "/open-lab/methodology",
       "routeId": "open-lab-methodology",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 8,
@@ -1476,7 +1512,8 @@
       "looseCopyGroupCount": 8,
       "path": "/open-lab/records",
       "routeId": "open-lab-records",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 8,
@@ -1522,7 +1559,8 @@
       "looseCopyGroupCount": 8,
       "path": "/open-lab/records/source-bound-record",
       "routeId": "open-lab-record",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 8,
@@ -1568,7 +1606,8 @@
       "looseCopyGroupCount": 7,
       "path": "/open-lab/report/registered-record",
       "routeId": "open-lab-report",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 6,
@@ -1614,7 +1653,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/research-papers",
       "routeId": "open-lab-research-papers",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 20,
@@ -1660,7 +1700,8 @@
       "looseCopyGroupCount": 8,
       "path": "/open-lab/source-chain",
       "routeId": "open-lab-source-chain",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 27,
@@ -1706,7 +1747,8 @@
       "looseCopyGroupCount": 6,
       "path": "/open-lab/stack-builder",
       "routeId": "open-lab-stack-builder",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -1752,7 +1794,8 @@
       "looseCopyGroupCount": 13,
       "path": "/order/success/OL-10428",
       "routeId": "order-success",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -1798,7 +1841,8 @@
       "looseCopyGroupCount": 12,
       "path": "/order/tracking/OL-10428",
       "routeId": "order-tracking",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 19,
@@ -1844,7 +1888,8 @@
       "looseCopyGroupCount": 15,
       "path": "/product/mk-2866",
       "routeId": "product",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -1890,7 +1935,8 @@
       "looseCopyGroupCount": 15,
       "path": "/reviews",
       "routeId": "reviews",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 2,
@@ -1936,7 +1982,8 @@
       "looseCopyGroupCount": 10,
       "path": "/search",
       "routeId": "search",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 18,
@@ -1982,7 +2029,8 @@
       "looseCopyGroupCount": 10,
       "path": "/shop",
       "routeId": "shop",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     },
     {
       "containedCopyGroupCount": 18,
@@ -2028,11 +2076,12 @@
       "looseCopyGroupCount": 10,
       "path": "/shop?goal=build",
       "routeId": "shop-goal",
-      "status": "NEEDS_ROUTE_REFACTOR"
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false
     }
   ],
-  "schemaVersion": 1,
-  "sourceFindingCount": 33,
+  "schemaVersion": 2,
+  "sourceFindingCount": 39,
   "sourceFindings": [
     {
       "file": "app/design-system/frontier-sections.module.css",
@@ -2113,6 +2162,24 @@
       "value": "\"/assets/products/hero/mk-677/front.webp\""
     },
     {
+      "file": "app/design-system/openlab-sections.module.css",
+      "rule": "muted-customer-copy",
+      "selector": ".portalGrid>div>p",
+      "value": "var(--oluk-text-muted)"
+    },
+    {
+      "file": "app/design-system/openlab-sections.module.css",
+      "rule": "muted-customer-copy",
+      "selector": ".wayfinding p,.pipeline p,.chain p,.registryRow p,.productBridge p",
+      "value": "var(--oluk-text-muted)"
+    },
+    {
+      "file": "app/design-system/payment-trust.module.css",
+      "rule": "muted-customer-copy",
+      "selector": ".primer p,.lockHeading p,.record p",
+      "value": "var(--oluk-text-muted)"
+    },
+    {
       "file": "app/design-system/product-media-chamber.module.css",
       "offset": 98,
       "rule": "literal-color",
@@ -2147,6 +2214,12 @@
       "offset": 1436,
       "rule": "literal-color",
       "value": "#b4caf0"
+    },
+    {
+      "file": "app/design-system/program-components.module.css",
+      "rule": "muted-customer-copy",
+      "selector": ".recommendation p,.restock p,.openLabModule p",
+      "value": "var(--oluk-text-muted)"
     },
     {
       "file": "app/design-system/site-header.module.css",
@@ -2191,6 +2264,18 @@
       "value": "10px"
     },
     {
+      "file": "app/program-routes.module.css",
+      "rule": "muted-customer-copy",
+      "selector": ".hero p",
+      "value": "var(--oluk-text-muted)"
+    },
+    {
+      "file": "app/program-routes.module.css",
+      "rule": "muted-customer-copy",
+      "selector": ".card p",
+      "value": "var(--oluk-text-muted)"
+    },
+    {
       "file": "app/review-studio/review-studio.module.css",
       "offset": 438,
       "rule": "literal-color",
@@ -2233,7 +2318,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "ba4610204c7fce9c03cf63ebe8f1728887a4829ce79bb510bac728d63500f755",
+  "sourceHash": "488078727bb11cb882a5adac49776cd0d9c46f266bd6388fad8c399ed7d38b5c",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2251,7 +2336,37 @@
     ],
     "metadataTypeFloorPx": 12,
     "mobileReviewWidthPx": 390,
+    "paragraphColorRole": "--oluk-text-secondary",
     "qualitativeChipLabelExceptionPx": 11
   },
-  "auditHash": "5acfb11d58524a9621ada81d5f21ef3a701aaa6bd71c0f07f74e046de590f5b4"
+  "strictScope": {
+    "routes": [
+      {
+        "containedCopyGroupCount": 12,
+        "copyGroupCount": 12,
+        "looseCopyExamples": [],
+        "looseCopyGroupCount": 0,
+        "path": "/review-studio/surface-grammar",
+        "routeId": "surface-grammar-specimen",
+        "status": "GRAMMAR_READY",
+        "strict": true
+      }
+    ],
+    "sourceFiles": [
+      "app/design-system/action-control.module.css",
+      "app/design-system/action-control.tsx",
+      "app/design-system/content-surfaces.module.css",
+      "app/design-system/content-surfaces.tsx",
+      "app/design-system/customer-route-primitives.tsx",
+      "app/design-system/pdp-first-fold.module.css",
+      "app/design-system/pdp-first-fold.tsx",
+      "app/design-system/surface-grid.module.css",
+      "app/design-system/surface-grid.tsx",
+      "app/review-studio/surface-grammar/page.tsx",
+      "app/review-studio/surface-grammar/surface-grammar.module.css"
+    ],
+    "sourceFindings": [],
+    "status": "STRICT_READY"
+  },
+  "auditHash": "22cca46f221de267e09fae6c21d5d3072d2734e6370fb854663944c831fe8c56"
 }

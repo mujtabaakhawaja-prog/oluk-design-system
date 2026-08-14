@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- the OpenLab wordmark is a local authored asset. */
 
 import type { ReactNode } from "react";
+export { ActionButton, ActionControl, ActionLink } from "./action-control";
+export type { ActionButtonProps, ActionLinkProps, ActionSize, ActionVariant } from "./action-control";
 import type { CoreCustomerRouteKey } from "./site-route-map";
 import { getCustomerRoute, openLabNavigation } from "./site-route-map";
 
@@ -20,21 +22,6 @@ export function Chevron() {
         strokeWidth="1.8"
       />
     </svg>
-  );
-}
-
-export type ActionLinkProps = Readonly<{
-  href: string;
-  children: ReactNode;
-  secondary?: boolean;
-}>;
-
-export function ActionLink({ href, children, secondary = false }: ActionLinkProps) {
-  return (
-    <a className={secondary ? "button button-secondary" : "button"} href={href}>
-      <span>{children}</span>
-      <Arrow />
-    </a>
   );
 }
 

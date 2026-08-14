@@ -7,7 +7,12 @@ import styles from "./pdp-first-fold.module.css";
 
 export function PdpFirstFold({ product }: Readonly<{ product: ProductFixture }>) {
   return (
-    <section className={styles.fold} data-figma-node="1155:30632" id="purchase">
+    <section
+      className={styles.fold}
+      data-figma-node="1155:30632"
+      data-surface-exception="pdp-media-purchase-decision-pair"
+      id="purchase"
+    >
       <div className={`shell ${styles.breadcrumb}`}><Breadcrumbs items={[{ label: "Shop", href: "/shop" },{ label: "SARMs", href: "/shop?family=sarms" },{ label: product.name }]}/></div>
       <div className={`shell ${styles.composition}`}>
         <div className={styles.media}>

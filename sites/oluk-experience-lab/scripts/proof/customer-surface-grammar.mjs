@@ -25,6 +25,25 @@ const governedCopySurfaceKinds = new Set([
   "technical",
   "transaction",
 ]);
+const canvasIntroductionSurface = "section-introduction";
+
+const strictSupplementalRoutes = Object.freeze([
+  { routeId: "surface-grammar-specimen", path: "/review-studio/surface-grammar", expectedStatus: 200 },
+]);
+
+const strictFoundationFiles = new Set([
+  "app/design-system/action-control.module.css",
+  "app/design-system/action-control.tsx",
+  "app/design-system/content-surfaces.module.css",
+  "app/design-system/content-surfaces.tsx",
+  "app/design-system/customer-route-primitives.tsx",
+  "app/design-system/pdp-first-fold.module.css",
+  "app/design-system/pdp-first-fold.tsx",
+  "app/design-system/surface-grid.module.css",
+  "app/design-system/surface-grid.tsx",
+  "app/review-studio/surface-grammar/page.tsx",
+  "app/review-studio/surface-grammar/surface-grammar.module.css",
+]);
 
 const coreFamilies = new Set([
   "homepage",
@@ -126,6 +145,8 @@ export function auditRenderedCopySurfaces(html) {
     const inheritedSurface = [...stack].reverse().find((frame) => frame.copySurface)?.copySurface ?? null;
     const declaredSurface = governedCopySurfaceKinds.has(attributes["data-copy-surface"])
       ? attributes["data-copy-surface"]
+      : attributes["data-copy-surface"] === canvasIntroductionSurface
+        ? canvasIntroductionSurface
       : null;
     const copySurface = declaredSurface ?? inheritedSurface;
 
@@ -135,9 +156,26 @@ export function auditRenderedCopySurfaces(html) {
       const text = visibleText(closingMatch?.[0] ?? "").slice(0, 180);
       copyGroups.push({
         element: tag,
-        status: copySurface ? "CONTAINED" : "LOOSE_CANVAS_COPY",
+        status:
+          copySurface === canvasIntroductionSurface
+            ? tag === "p"
+              ? "INVALID_CANVAS_EXCEPTION"
+              : "CANVAS_INTRO_EXCEPTION"
+            : copySurface
+              ? "CONTAINED"
+              : "LOOSE_CANVAS_COPY",
         copySurface,
         text,
+      });
+    } else if (
+      copySurface === canvasIntroductionSurface &&
+      (tag === "a" || tag === "button" || tag === "img" || attributes["data-component"] || attributes.role === "listitem")
+    ) {
+      copyGroups.push({
+        element: tag,
+        status: "INVALID_CANVAS_EXCEPTION",
+        copySurface,
+        text: visibleText(token).slice(0, 180),
       });
     }
 
@@ -168,6 +206,15 @@ export function auditCssText(source, file = "fixture.module.css") {
   }
 
   for (const { selector, declarations } of cssRuleBlocks(source)) {
+    const customerParagraph = /(?:^|[\s,>+~])p(?:\b|[:.#])|copy|description|rationale|narrative|long[-_]?copy|body/i.test(selector);
+    if (customerParagraph && /color\s*:\s*var\(--oluk-text-muted\)/i.test(declarations)) {
+      findings.push({
+        rule: "muted-customer-copy",
+        file,
+        selector,
+        value: "var(--oluk-text-muted)",
+      });
+    }
     const sizes = [
       ...declarations.matchAll(/font-size\s*:\s*(\d+(?:\.\d+)?)px/gi),
       ...declarations.matchAll(/font\s*:[^;{}]*?\b(\d+(?:\.\d+)?)px\//gi),
@@ -212,6 +259,15 @@ export function auditTsxText(source, file = "fixture.tsx") {
       if (match) findings.push({ rule, file, value: match[0], offset: match.index });
     }
   }
+  for (const match of source.matchAll(/data-surface-exception=["']([^"']+)["']/g)) {
+    const allowed = file === "app/design-system/pdp-first-fold.tsx" && match[1] === "pdp-media-purchase-decision-pair";
+    if (!allowed) findings.push({ rule: "undeclared-canvas-exception", file, value: match[1], offset: match.index });
+  }
+  if (source.includes('data-grammar-strict="true"') && !file.endsWith("action-control.tsx")) {
+    for (const match of source.matchAll(/<(?:button\b|a\b[^>]*className=["'][^"']*\bbutton\b)/g)) {
+      findings.push({ rule: "noncanonical-action-control", file, value: match[0], offset: match.index });
+    }
+  }
   return findings;
 }
 
@@ -238,6 +294,21 @@ async function auditSources(files) {
   return findings;
 }
 
+function routeAudit(route, html, strict = false) {
+  const groups = auditRenderedCopySurfaces(html);
+  const violations = groups.filter(({ status }) => status === "LOOSE_CANVAS_COPY" || status === "INVALID_CANVAS_EXCEPTION");
+  return {
+    routeId: route.routeId ?? route.id,
+    path: route.path,
+    strict,
+    status: violations.length === 0 ? "GRAMMAR_READY" : strict ? "STRICT_SCOPE_FAILED" : "NEEDS_ROUTE_REFACTOR",
+    copyGroupCount: groups.length,
+    containedCopyGroupCount: groups.length - violations.length,
+    looseCopyGroupCount: violations.length,
+    looseCopyExamples: violations.slice(0, 6),
+  };
+}
+
 function selectCoreRoutes(ledger) {
   const families = new Map(ledger.routes.map((route) => [route.id, route.family]));
   const selected = ROUTES.filter((route) => coreFamilies.has(families.get(route.id)) || continuationRouteIds.has(route.id));
@@ -253,29 +324,34 @@ export async function buildCustomerSurfaceGrammarAudit() {
 
   for (const route of selectCoreRoutes(ledger)) {
     const html = await renderHtml(worker, route.path, route.expectedStatus);
-    const groups = auditRenderedCopySurfaces(html);
-    const loose = groups.filter(({ status }) => status === "LOOSE_CANVAS_COPY");
-    routes.push({
-      routeId: route.id,
-      path: route.path,
-      status: loose.length === 0 ? "GRAMMAR_READY" : "NEEDS_ROUTE_REFACTOR",
-      copyGroupCount: groups.length,
-      containedCopyGroupCount: groups.length - loose.length,
-      looseCopyGroupCount: loose.length,
-      looseCopyExamples: loose.slice(0, 6),
-    });
+    routes.push(routeAudit(route, html, html.includes('data-grammar-strict="true"')));
   }
 
   const sourceFindings = await auditSources(files);
+  const strictRoutes = routes.filter(({ strict }) => strict);
+  for (const route of strictSupplementalRoutes) {
+    const html = await renderHtml(worker, route.path, route.expectedStatus);
+    strictRoutes.push(routeAudit(route, html, true));
+  }
+  const strictSourceFindings = await auditSources(files.filter(({ file }) => strictFoundationFiles.has(file)));
+  const strictScopeReady =
+    strictRoutes.every(({ status }) => status === "GRAMMAR_READY") && strictSourceFindings.length === 0;
   const payload = stable({
-    schemaVersion: 1,
-    contractId: "oluk.customer-surface-grammar.v1",
+    schemaVersion: 2,
+    contractId: "oluk.customer-surface-grammar.v2",
     sourceHash,
     auditedRouteCount: routes.length,
     grammarReadyRouteCount: routes.filter(({ status }) => status === "GRAMMAR_READY").length,
     routeRefactorCount: routes.filter(({ status }) => status === "NEEDS_ROUTE_REFACTOR").length,
     looseCopyGroupCount: routes.reduce((total, route) => total + route.looseCopyGroupCount, 0),
     sourceFindingCount: sourceFindings.length,
+    debt: {
+      policy: "MONOTONIC_DECREASE",
+      sourceFindingCount: sourceFindings.length,
+      untouchedRouteViolationCount: routes
+        .filter(({ strict }) => !strict)
+        .reduce((total, route) => total + route.looseCopyGroupCount, 0),
+    },
     currentState:
       routes.every(({ status }) => status === "GRAMMAR_READY") && sourceFindings.length === 0
         ? "GRAMMAR_READY"
@@ -292,6 +368,13 @@ export async function buildCustomerSurfaceGrammarAudit() {
       metadataTypeFloorPx: 12,
       qualitativeChipLabelExceptionPx: 11,
       mobileReviewWidthPx: 390,
+      paragraphColorRole: "--oluk-text-secondary",
+    },
+    strictScope: {
+      status: strictScopeReady ? "STRICT_READY" : "STRICT_SCOPE_FAILED",
+      routes: strictRoutes,
+      sourceFiles: [...strictFoundationFiles].sort(),
+      sourceFindings: strictSourceFindings,
     },
     routes,
     sourceFindings,
@@ -309,7 +392,26 @@ async function checkCommittedAudit() {
   if (auditHash !== sha256(JSON.stringify(stable(payload)))) {
     throw new Error("invalid customer-surface grammar audit hash");
   }
+  if (current.strictScope?.status !== "STRICT_READY") {
+    throw new Error("strict customer-surface grammar scope is not ready");
+  }
   return current;
+}
+
+async function enforceMonotonicDebt(nextAudit) {
+  try {
+    const previous = JSON.parse(await readFile(outputPath, "utf8"));
+    if (previous.schemaVersion < 2 || !previous.debt) return;
+    if (nextAudit.debt.untouchedRouteViolationCount > previous.debt.untouchedRouteViolationCount) {
+      throw new Error("customer-surface route debt increased; strict work may not add loose canvas copy");
+    }
+    if (nextAudit.debt.sourceFindingCount > previous.debt.sourceFindingCount) {
+      throw new Error("customer-surface source debt increased; repair or explicitly scope the new finding");
+    }
+  } catch (error) {
+    if (error?.code === "ENOENT") return;
+    throw error;
+  }
 }
 
 async function main() {
@@ -321,7 +423,11 @@ async function main() {
     return;
   }
   const audit = await buildCustomerSurfaceGrammarAudit();
-  if (process.argv.includes("--write")) await writeFile(outputPath, `${JSON.stringify(audit, null, 2)}\n`);
+  if (process.argv.includes("--write")) {
+    if (audit.strictScope.status !== "STRICT_READY") throw new Error("strict customer-surface grammar scope failed");
+    await enforceMonotonicDebt(audit);
+    await writeFile(outputPath, `${JSON.stringify(audit, null, 2)}\n`);
+  }
   process.stdout.write(`${JSON.stringify(audit, null, 2)}\n`);
 }
 
