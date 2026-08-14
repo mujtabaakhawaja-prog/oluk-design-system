@@ -47,10 +47,11 @@ test("all three PDP candidates reuse one governed product and continuation modul
   ]) {
     assert.match(source, new RegExp(`function ${sharedSection}\\b`));
   }
+  assert.match(source, /import \{ YourStackBuilder \} from "\.\/your-stack-builder"/);
   assert.doesNotMatch(source, /StackOutcomeProfile|Evidence visibility|\bComplexity\b|Build a sharper/i);
   assert.doesNotMatch(source, /proof board|fixture|current main|component authority/i);
-  assert.match(source, /Build a stronger stack/);
-  assert.match(source, /data-stack-contract="product-count-level-pending"/);
+  assert.match(source, /<YourStackBuilder baselineSlug=\{productSlug\} host="pdp"/);
+  assert.doesNotMatch(source, /product-count-level-pending/);
 });
 
 test("PDP stress products preserve exact fact, media and evidence boundaries", async () => {

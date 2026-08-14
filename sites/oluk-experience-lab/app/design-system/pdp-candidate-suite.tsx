@@ -13,6 +13,7 @@ import { PurchasePanel } from "./purchase-panel";
 import { EvidenceStatusChip } from "./program-components";
 import { Breadcrumbs } from "./customer-route-primitives";
 import { MobileDecisionSummary } from "./pdp-sections";
+import { YourStackBuilder } from "./your-stack-builder";
 import styles from "./pdp-candidate-suite.module.css";
 
 type CandidateProps = Readonly<{
@@ -256,20 +257,11 @@ function ProductComparison({ product }: Readonly<{ product: FrontierProductRecor
   );
 }
 
-function StackBundleEntry({ product, productSlug }: Readonly<{ product: FrontierProductRecord; productSlug: PdpStressProductSlug }>) {
-  const copy = candidateCopy[productSlug];
+function StackBundleEntry({ productSlug }: Readonly<{ productSlug: PdpStressProductSlug }>) {
   return (
-    <DecisionSurface
-      actions={<div className={styles.actions}><Link className={styles.primaryAction} href="/open-lab/stack-builder">Build a stronger stack</Link><Link className={styles.secondaryAction} href="/bundle-builder">Open Bundle Builder</Link></div>}
-      copy={`Use ${product.name} as the real baseline, then add the product direction that contributes more to the goal. The selected products and exact total update together in the dedicated builder.`}
-      eyebrow="Build from this product"
-      id="product-continuation"
-      title={`Take ${product.name} further.`}
-    >
-      <div className={styles.contributionRow} data-stack-contract="product-count-level-pending">
-        {copy.contributions.map((contribution) => <span key={contribution}>{contribution}</span>)}
-      </div>
-    </DecisionSurface>
+    <div id="product-continuation">
+      <YourStackBuilder baselineSlug={productSlug} host="pdp" />
+    </div>
   );
 }
 
@@ -366,7 +358,7 @@ export function PdpCandidateSuite({ candidateId, productSlug }: CandidateProps) 
         {comparisonFirst ? <section className={styles.lowerSection}><ProductComparison product={product} /></section> : null}
         {!evidenceFirst ? <OpenLabConfidence expanded={false} product={product} productSlug={productSlug} /> : null}
         {!comparisonFirst ? <section className={styles.lowerSection}><ProductComparison product={product} /></section> : null}
-        <section className={styles.lowerSection}><StackBundleEntry product={product} productSlug={productSlug} /></section>
+        <section className={styles.lowerSection}><StackBundleEntry productSlug={productSlug} /></section>
         <section className={styles.lowerSection}><RelatedProducts product={product} /></section>
         <section className={styles.lowerSection}><QuestionsAndReviews product={product} /></section>
         <section className={styles.lowerSection}><AssuranceAndClosure product={product} /></section>
