@@ -1609,6 +1609,26 @@ a.button-secondary:hover {
   overflow: hidden;
 }
 
+.product-relation-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (max-width: 760px) {
+  .product-relation-grid {
+    display: flex;
+    margin-inline: -16px;
+    overflow-x: auto;
+    padding-inline: 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .product-relation-grid > * {
+    flex: 0 0 min(88vw, 360px);
+    scroll-snap-align: start;
+  }
+}
+
 .horizontal-media {
   align-items: center;
   background: radial-gradient(circle at 50% 45%, var(--white), transparent 32%), linear-gradient(140deg, var(--ice), var(--ice-deep));

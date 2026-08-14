@@ -51,9 +51,9 @@
       "path": "/collections/:slug",
       "family": "catalogue_search_collections",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -71,9 +71,9 @@
       "path": "/compare",
       "family": "catalogue_search_collections",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -701,9 +701,9 @@
       "path": "/collections/sarms",
       "family": "catalogue_search_collections",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -711,9 +711,9 @@
       "path": "/collections/research-chemicals",
       "family": "catalogue_search_collections",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -721,9 +721,9 @@
       "path": "/collections/prohormones",
       "family": "catalogue_search_collections",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
@@ -731,9 +731,9 @@
       "path": "/collections/stacks",
       "family": "catalogue_search_collections",
       "disposition": "new",
-      "maturity": "SCAFFOLD",
+      "maturity": "SHAPE_COMPLETE",
       "owner": "sites-reference",
-      "designMaturity": "scaffold",
+      "designMaturity": "composed",
       "runtimeReadiness": "presentation-only"
     },
     {
