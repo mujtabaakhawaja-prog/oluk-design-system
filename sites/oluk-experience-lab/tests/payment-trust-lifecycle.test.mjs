@@ -11,11 +11,12 @@ const transaction = await readFile(new URL("app/design-system/transaction-presen
 test("payment-trust copy inherits the approved R6 lifecycle vocabulary", () => {
   for (const copy of [
     "You are paying the USD equivalent of the displayed GBP amount.",
-    "Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD.",
-    "Your order amount of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD.",
-    "Paid as its fixed USD equivalent of $175.01 USD.",
-    "Your refund of £128.97 GBP was issued as the same fixed USD equivalent originally paid: $175.01 USD.",
+    "Your order total of £133.00 GBP was processed and paid as its fixed USD equivalent of $180.59 USD.",
+    "Your order amount of £133.00 GBP was processed and paid as its fixed USD equivalent of $180.59 USD.",
+    "Paid as its fixed USD equivalent of $180.59 USD.",
+    "Your refund of £133.00 GBP was issued as the same fixed USD equivalent originally paid: $180.59 USD.",
   ]) assert.match(contract, new RegExp(copy.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  assert.match(contract, /recordHeading: "Amount Processed"/);
   assert.match(contract, /065523a49da2d3920c75ad4659ccff132d15650e/);
   assert.match(contract, /paymentExpandedNodeId: "9:9401"/);
 });

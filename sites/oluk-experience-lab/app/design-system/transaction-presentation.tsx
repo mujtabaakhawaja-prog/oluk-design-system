@@ -1,13 +1,12 @@
-/* eslint-disable @next/next/no-img-element -- transparent product render is shared with the governed product stage. */
-
 import type { ReactNode } from "react";
 import styles from "../transaction-presentation.module.css";
+import { DecisionSurface, TechnicalSurface, TransactionIntroCard } from "./content-surfaces";
 import { ActionLink, Breadcrumbs } from "./customer-route-primitives";
-import { MetricRail } from "./metric-rail";
 import { mk2866Fixture } from "./product-fixtures";
 import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
 import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
-import { RecommendationCard, RestockCard } from "./program-components";
+import { ProductCommerceCard } from "./product-commerce-card";
+import { CheckoutStepIndicator, RestockCard, type CheckoutStep } from "./program-components";
 import { YourStackBuilder } from "./your-stack-builder";
 
 export type TransactionStage =
@@ -18,6 +17,7 @@ export type TransactionStage =
   | "handoff"
   | "order-pay"
   | "processing"
+  | "pending"
   | "confirmation"
   | "tracking"
   | "order-history"
@@ -26,6 +26,7 @@ export type TransactionStage =
   | "return"
   | "refund"
   | "failure"
+  | "cancelled"
   | "retry";
 
 const stageHeadings = {
@@ -56,6 +57,10 @@ const stageHeadings = {
   processing: {
     title: "Checking your order update.",
     copy: "Keep this page open while the payment window returns you to Olympus.",
+  },
+  pending: {
+    title: "Your order is waiting for an update.",
+    copy: "The order remains open while the next confirmed status is prepared.",
   },
   confirmation: {
     title: "Order received.",
@@ -89,14 +94,32 @@ const stageHeadings = {
     title: "Payment was not completed.",
     copy: "No payment was recorded. Your order summary is ready to review again.",
   },
+  cancelled: {
+    title: "This order will not move forward.",
+    copy: "The order is closed and no further payment or delivery step will be taken.",
+  },
   retry: {
     title: "Try payment again.",
     copy: "Review the amount and return to the secure payment step when ready.",
   },
 } as const satisfies Readonly<Record<TransactionStage, { title: string; copy: string }>>;
 
+const checkoutStepByStage: Partial<Record<TransactionStage, CheckoutStep>> = {
+  details: "information",
+  delivery: "delivery",
+  review: "review",
+  handoff: "payment",
+  "order-pay": "payment",
+  processing: "payment",
+  pending: "payment",
+  failure: "payment",
+  retry: "payment",
+  confirmation: "confirmation",
+};
+
 function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
   const heading = stageHeadings[stage];
+  const checkoutStep = checkoutStepByStage[stage];
   return (
     <section className={styles.intro}>
       <div className="shell">
@@ -106,10 +129,15 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
             { label: heading.title.replace(/\.$/, "") },
           ]}
         />
-        <div className={styles.introCopy}>
-          <h1>{heading.title}</h1>
-          <p>{heading.copy}</p>
-        </div>
+        <TransactionIntroCard
+          className={styles.introCard}
+          copy={heading.copy}
+          eyebrow={stage === "bag" ? "Your order" : stage === "tracking" ? "Delivery progress" : "Order journey"}
+          headingLevel="h1"
+          title={heading.title}
+        >
+          {checkoutStep ? <CheckoutStepIndicator current={checkoutStep} /> : null}
+        </TransactionIntroCard>
       </div>
     </section>
   );
@@ -117,15 +145,15 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
 
 function ProductLine({ quantity = true }: Readonly<{ quantity?: boolean }>) {
   return (
-    <article className={styles.productLine}>
-      <div className={styles.productMark}><img alt="MK-2866 Ostarine bottle" decoding="async" height={mk2866Fixture.media.height} loading="lazy" sizes="112px" src={mk2866Fixture.media.src} width={mk2866Fixture.media.width}/></div>
-      <div className={styles.productIdentity}>
-        <span>{mk2866Fixture.series}</span>
-        <h2>{mk2866Fixture.name}</h2>
-        <p>{mk2866Fixture.alias}</p>
-        <MetricRail compact product={mk2866Fixture} />
-      </div>
-      <div className={styles.productPrice}>
+    <section aria-label="MK-2866 order line" className={styles.productLine} data-copy-surface="transaction">
+      <ProductCommerceCard
+        commerceTreatment="selection"
+        product={mk2866Fixture}
+        showQualitative={false}
+        variant="compact"
+      />
+      <div className={styles.productPrice} data-component="OrderLineCommerce">
+        <span className={styles.sectionLabel}>{quantity ? "Quantity and price" : "Order price"}</span>
         {quantity ? (
           <div aria-label="Quantity" className={styles.quantity} role="group">
             <button aria-label="Decrease quantity" disabled type="button">−</button>
@@ -135,15 +163,16 @@ function ProductLine({ quantity = true }: Readonly<{ quantity?: boolean }>) {
         ) : null}
         <strong>{mk2866Fixture.price}</strong>
       </div>
-    </article>
+    </section>
   );
 }
 
 function OrderSummary({
   action,
   compact = false,
+  confidenceLink = false,
   heading = "Order summary",
-}: Readonly<{ action?: ReactNode; compact?: boolean; heading?: string }>) {
+}: Readonly<{ action?: ReactNode; compact?: boolean; confidenceLink?: boolean; heading?: string }>) {
   return (
     <aside className={styles.summary} data-compact={compact || undefined}>
       <span className={styles.sectionLabel}>{heading}</span>
@@ -153,7 +182,7 @@ function OrderSummary({
         <div className={styles.total}><dt>Amount due</dt><dd>{mk2866Fixture.price}</dd></div>
       </dl>
       {action ? <div className={styles.summaryAction}>{action}</div> : null}
-      <a className={styles.labLink} href={mk2866Fixture.evidencePath}>View MK-2866 Lab Record →</a>
+      {confidenceLink ? <a className={styles.labLink} href={mk2866Fixture.evidencePath}>View MK-2866 Lab Record →</a> : null}
     </aside>
   );
 }
@@ -178,14 +207,16 @@ function BagContent() {
       <div className={styles.primary}>
         <span className={styles.sectionLabel}>1 item</span>
         <ProductLine />
-        <div className={styles.bagHelp}>
-          <div><strong>Need to keep browsing?</strong><span>Your bag stays ready while you compare the range.</span></div>
-          <a href="/shop">Return to the shop →</a>
-        </div>
-        <RecommendationCard state="default" />
+        <TechnicalSurface
+          actions={<ActionLink href="/shop" secondary>Return to the shop</ActionLink>}
+          compact
+          copy="Add your delivery address during checkout to see the available timing and cost before payment."
+          eyebrow="Delivery"
+          title="See your delivery choices before payment."
+        />
         <YourStackBuilder baselineSlug="mk-2866" host="bag" />
       </div>
-      <OrderSummary action={<ActionLink href="/checkout">Continue to details</ActionLink>} />
+      <OrderSummary action={<ActionLink href="/checkout">Continue to details</ActionLink>} confidenceLink />
     </div>
   );
 }
@@ -194,14 +225,14 @@ function DetailsContent() {
   return (
     <div className={styles.layout}>
       <section aria-label="Checkout details presentation" className={styles.primary}>
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.panelHeading}><span>01</span><div><h2>Contact</h2><p>Used for the order confirmation and delivery updates.</p></div></div>
           <div className={styles.fieldGrid}>
             <Field autoComplete="email" label="Email address" placeholder="you@example.com" type="email" />
             <Field autoComplete="tel" label="Phone number" placeholder="Phone number" type="tel" />
           </div>
         </section>
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.panelHeading}><span>02</span><div><h2>Delivery address</h2><p>Enter the destination used to show delivery options.</p></div></div>
           <div className={styles.fieldGrid}>
             <Field autoComplete="given-name" label="First name" placeholder="First name" />
@@ -226,7 +257,7 @@ function DeliveryContent() {
   return (
     <div className={styles.layout}>
       <div className={styles.primary}>
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.panelHeading}><span>01</span><div><h2>Delivery option</h2><p>Timing and cost are confirmed against the delivery address before payment.</p></div></div>
           <label className={styles.choice}>
             <input checked readOnly type="radio" />
@@ -234,7 +265,7 @@ function DeliveryContent() {
             <b>Selected</b>
           </label>
         </section>
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.panelHeading}><span>02</span><div><h2>Review</h2><p>Check the product and amount before continuing.</p></div></div>
           <ProductLine quantity={false} />
         </section>
@@ -252,11 +283,11 @@ function ReviewContent() {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.panelHeading}><span>01</span><div><h2>Your order, ready to review.</h2><p>MK-2866, your delivery choice and the amount due are gathered in one final check.</p></div></div>
           <ProductLine quantity={false} />
         </section>
-        <section className={styles.deliveryRecap}>
+        <section className={styles.deliveryRecap} data-copy-surface="transaction">
           <span className={styles.sectionLabel}>Delivery</span>
           <strong>Standard delivery</strong>
           <p>Your delivery timing is shown with the confirmed address before payment.</p>
@@ -275,7 +306,7 @@ function HandoffContent() {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <div className={styles.handoffPanel}>
+        <div className={styles.handoffPanel} data-copy-surface="decision">
           <span className={styles.sectionLabel}>Secure payment</span>
           <h2>One clear step away. One clear return to Olympus.</h2>
           <p>You’ll leave Olympus briefly to complete payment in the secure payment window. When it closes, return here to see the order outcome.</p>
@@ -298,7 +329,7 @@ function HandoffContent() {
 function OrderPayContent() {
   return (
     <div className={styles.paymentLayout}>
-      <section className={styles.paymentWindow}>
+      <section className={styles.paymentWindow} data-copy-surface="transaction">
         <div className={styles.paymentLock} aria-hidden="true">✓</div>
         <span className={styles.sectionLabel}>Secure payment window</span>
         <h2>Payment amount</h2>
@@ -316,7 +347,7 @@ function OrderPayContent() {
 function ProcessingContent() {
   return (
     <div className={styles.processingLayout}>
-      <section className={styles.processingPanel}>
+      <section className={styles.processingPanel} data-copy-surface="technical">
         <div aria-hidden="true" className={styles.processingMark}><span /><span /><span /></div>
         <span className={styles.sectionLabel}>Payment update</span>
         <h2>Keep this page open while your order update returns.</h2>
@@ -331,37 +362,36 @@ function ProcessingContent() {
   );
 }
 
-function ConfirmationContent() {
+function ConfirmationContent({ orderReference }: Readonly<{ orderReference: string }>) {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <div className={styles.outcome} data-tone="success">
+        <div className={styles.outcome} data-copy-surface="transaction" data-tone="success">
           <span aria-hidden="true">✓</span>
           <div><strong>Thank you.</strong><p>The order summary is ready below.</p></div>
         </div>
         <LifecycleAmountRecord stage="confirmation" />
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <div className={styles.confirmationHeading}>
-            <div><span className={styles.sectionLabel}>Order reference</span><strong>OL-10428</strong></div>
+            <div><span className={styles.sectionLabel}>Order reference</span><strong>{orderReference}</strong></div>
             <a href="/account">View your account →</a>
           </div>
           <ProductLine quantity={false} />
         </section>
         <div className={styles.nextSteps}>
-          <article><span>01</span><h2>Confirmation</h2><p>Your order details stay connected to the reference above.</p></article>
-          <article><span>02</span><h2>Delivery</h2><p>Delivery progress appears with the order when available.</p></article>
-          <article><span>03</span><h2>Lab Record</h2><p>Product evidence remains available independently of the order.</p></article>
+          <DecisionSurface compact copy="Your product and paid amount stay connected to the order reference above." eyebrow="01" title="Keep the confirmation." />
+          <DecisionSurface compact copy="Delivery progress appears with the order when a confirmed update is available." eyebrow="02" title="Follow delivery." />
+          <TechnicalSurface compact copy="The available product record remains accessible independently of the order." eyebrow="03" title="Return to OpenLab." />
         </div>
-        <RestockCard state="active" />
-        <RecommendationCard state="default" />
+        <div className={styles.continuationSurface} data-copy-surface="commerce"><RestockCard state="active" /></div>
         <YourStackBuilder baselineSlug="mk-2866" host="confirmation" />
       </section>
-      <OrderSummary compact heading="Order total" />
+      <OrderSummary compact confidenceLink heading="Order total" />
     </div>
   );
 }
 
-function TrackingContent() {
+function TrackingContent({ orderReference }: Readonly<{ orderReference: string }>) {
   const milestones = [
     ["01", "Order received", "Your order reference and product details are ready to view."],
     ["02", "Preparing your order", "The next delivery update appears with the order when available."],
@@ -372,58 +402,58 @@ function TrackingContent() {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <section className={styles.trackingPanel}>
-          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>Order reference</span><strong>OL-10428</strong></div><a href="/checkout/order-details">View order details →</a></div>
+        <section className={styles.trackingPanel} data-copy-surface="transaction">
+          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>Order reference</span><strong>{orderReference}</strong></div><a href="/checkout/order-details">View order details →</a></div>
           <ol className={styles.timeline}>
             {milestones.map(([index, title, copy], milestone) => <li data-current={milestone === 1 || undefined} key={title}><span>{index}</span><div><strong>{title}</strong><p>{copy}</p></div></li>)}
           </ol>
         </section>
         <ProductLine quantity={false} />
       </section>
-      <OrderSummary compact heading="Order summary" />
+      <OrderSummary compact confidenceLink heading="Order summary" />
     </div>
   );
 }
 
-function OrderHistoryContent() {
+function OrderHistoryContent({ orderReference }: Readonly<{ orderReference: string }>) {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <section className={styles.historyPanel}>
+        <section className={styles.historyPanel} data-copy-surface="transaction">
           <span className={styles.sectionLabel}>Latest order</span>
-          <div className={styles.historyHeading}><div><h2>MK-2866</h2><p>Ostarine · 15 MG · 90 SERVINGS</p></div><strong>OL-10428</strong></div>
+          <div className={styles.historyHeading}><div><h2>MK-2866</h2><p>Ostarine · 15 MG · 90 SERVINGS</p></div><strong>{orderReference}</strong></div>
           <LifecycleAmountRecord stage="history" />
           <div className={styles.historyActions}><ActionLink href="/checkout/tracking">Track order</ActionLink><a href="/checkout/receipt">Open receipt →</a><a href="/product/mk-2866">Return to product →</a></div>
         </section>
-        <RecommendationCard state="default" />
+        <div className={styles.continuationSurface} data-copy-surface="commerce"><RestockCard state="due-soon" /></div>
       </section>
-      <OrderSummary compact heading="Latest order" />
+      <OrderSummary compact confidenceLink heading="Latest order" />
     </div>
   );
 }
 
-function OrderDetailsContent({ receipt = false }: Readonly<{ receipt?: boolean }>) {
+function OrderDetailsContent({ orderReference, receipt = false }: Readonly<{ orderReference: string; receipt?: boolean }>) {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <section className={styles.formPanel}>
-          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>{receipt ? "Receipt" : "Order reference"}</span><strong>OL-10428</strong></div><a href={receipt ? "/checkout/order-details" : "/checkout/receipt"}>{receipt ? "View order details →" : "Open receipt →"}</a></div>
+        <section className={styles.formPanel} data-copy-surface="transaction">
+          <div className={styles.confirmationHeading}><div><span className={styles.sectionLabel}>{receipt ? "Receipt" : "Order reference"}</span><strong>{orderReference}</strong></div><a href={receipt ? "/checkout/order-details" : "/checkout/receipt"}>{receipt ? "View order details →" : "Open receipt →"}</a></div>
           <ProductLine quantity={false} />
         </section>
         <LifecycleAmountRecord stage={receipt ? "receipt" : "order-details"} />
-        <section className={styles.orderNote}><strong>{receipt ? "Order receipt" : "Delivery and order details"}</strong><p>{receipt ? "This receipt keeps the product, order reference and processed amount together." : "Delivery updates stay connected to the order reference and product details above."}</p></section>
+        <section className={styles.orderNote} data-copy-surface="transaction"><strong>{receipt ? "Order receipt" : "Delivery and order details"}</strong><p>{receipt ? "This receipt keeps the product, order reference and processed amount together." : "Delivery updates stay connected to the order reference and product details above."}</p></section>
       </section>
-      <OrderSummary compact heading={receipt ? "Receipt summary" : "Order summary"} />
+      <OrderSummary compact confidenceLink heading={receipt ? "Receipt summary" : "Order summary"} />
     </div>
   );
 }
 
-function ReturnContent() {
+function ReturnContent({ orderReference }: Readonly<{ orderReference: string }>) {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <section className={styles.returnPanel}>
-          <span className={styles.sectionLabel}>Order OL-10428</span>
+        <section className={styles.returnPanel} data-copy-surface="decision">
+          <span className={styles.sectionLabel}>Order {orderReference}</span>
           <h2>Start with the item you need to return.</h2>
           <p>Keep the original product and order details in view before the return is reviewed.</p>
           <ProductLine quantity={false} />
@@ -436,18 +466,24 @@ function ReturnContent() {
   );
 }
 
-function RefundContent() {
+function RefundContent({ orderReference }: Readonly<{ orderReference: string }>) {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <section className={styles.refundPanel}>
-          <span className={styles.sectionLabel}>Order OL-10428</span>
+        <section className={styles.refundPanel} data-copy-surface="transaction">
+          <span className={styles.sectionLabel}>Order {orderReference}</span>
           <h2>Your refund record.</h2>
           <p>The original order value and the fixed payment equivalent stay together in the refund record.</p>
           <LifecycleAmountRecord stage="refund" />
           <div className={styles.continueRow}><a href="/checkout/order-details">View order details</a><ActionLink href="/account/orders">View all orders</ActionLink></div>
         </section>
-        <RecommendationCard state="default" />
+        <DecisionSurface
+          actions={<ActionLink href="/shop">Browse the product range</ActionLink>}
+          compact
+          copy="The refund record above resolves this order first. If you want a different product direction, return to the range when you are ready."
+          eyebrow="After resolution"
+          title="Choose what comes next on your terms."
+        />
       </section>
       <OrderSummary compact heading="Original order" />
     </div>
@@ -458,11 +494,11 @@ function FailureContent() {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <div className={styles.outcome} data-tone="attention">
+        <div className={styles.outcome} data-copy-surface="transaction" data-tone="attention">
           <span aria-hidden="true">!</span>
           <div><strong>No payment was recorded.</strong><p>Review the order before choosing whether to try again.</p></div>
         </div>
-        <section className={styles.formPanel}>
+        <section className={styles.formPanel} data-copy-surface="transaction">
           <ProductLine quantity={false} />
           <div className={styles.continueRow}>
             <a href="/bag">Return to bag</a>
@@ -479,7 +515,7 @@ function RetryContent() {
   return (
     <div className={styles.layout}>
       <section className={styles.primary}>
-        <div className={styles.retryPanel}>
+        <div className={styles.retryPanel} data-copy-surface="decision">
           <span className={styles.sectionLabel}>Ready when you are</span>
           <h2>Nothing changed while you were away.</h2>
           <p>MK-2866, quantity one and the amount due remain ready for review.</p>
@@ -495,7 +531,42 @@ function RetryContent() {
   );
 }
 
-function TransactionContent({ stage }: Readonly<{ stage: TransactionStage }>) {
+function PendingContent({ orderReference }: Readonly<{ orderReference: string }>) {
+  return (
+    <div className={styles.processingLayout}>
+      <TechnicalSurface
+        actions={<ActionLink href="/checkout/order-details" secondary>Review order details</ActionLink>}
+        className={styles.pendingPanel}
+        copy="No new payment or delivery outcome is being claimed. Return to this order after a confirmed update is available."
+        eyebrow={`Order ${orderReference}`}
+        title="Your order is still waiting for its next confirmed status."
+      >
+        <ProductLine quantity={false} />
+      </TechnicalSurface>
+      <OrderSummary compact heading="Pending order" />
+    </div>
+  );
+}
+
+function CancelledContent({ orderReference }: Readonly<{ orderReference: string }>) {
+  return (
+    <div className={styles.layout}>
+      <section className={styles.primary}>
+        <DecisionSurface
+          actions={<><ActionLink href="/account/orders" secondary>View all orders</ActionLink><ActionLink href="/shop">Return to the shop</ActionLink></>}
+          copy="No payment retry or delivery action is required for this order. The closed order remains available in your order history."
+          eyebrow={`Order ${orderReference}`}
+          title="This order is closed."
+        >
+          <ProductLine quantity={false} />
+        </DecisionSurface>
+      </section>
+      <OrderSummary compact heading="Closed order" />
+    </div>
+  );
+}
+
+function TransactionContent({ orderReference, stage }: Readonly<{ orderReference: string; stage: TransactionStage }>) {
   switch (stage) {
     case "bag": return <BagContent />;
     case "details": return <DetailsContent />;
@@ -504,24 +575,26 @@ function TransactionContent({ stage }: Readonly<{ stage: TransactionStage }>) {
     case "handoff": return <HandoffContent />;
     case "order-pay": return <OrderPayContent />;
     case "processing": return <ProcessingContent />;
-    case "confirmation": return <ConfirmationContent />;
-    case "tracking": return <TrackingContent />;
-    case "order-history": return <OrderHistoryContent />;
-    case "order-details": return <OrderDetailsContent />;
-    case "receipt": return <OrderDetailsContent receipt />;
-    case "return": return <ReturnContent />;
-    case "refund": return <RefundContent />;
+    case "pending": return <PendingContent orderReference={orderReference} />;
+    case "confirmation": return <ConfirmationContent orderReference={orderReference} />;
+    case "tracking": return <TrackingContent orderReference={orderReference} />;
+    case "order-history": return <OrderHistoryContent orderReference={orderReference} />;
+    case "order-details": return <OrderDetailsContent orderReference={orderReference} />;
+    case "receipt": return <OrderDetailsContent orderReference={orderReference} receipt />;
+    case "return": return <ReturnContent orderReference={orderReference} />;
+    case "refund": return <RefundContent orderReference={orderReference} />;
     case "failure": return <FailureContent />;
+    case "cancelled": return <CancelledContent orderReference={orderReference} />;
     case "retry": return <RetryContent />;
   }
 }
 
-export function TransactionPresentation({ stage }: Readonly<{ stage: TransactionStage }>) {
+export function TransactionPresentation({ orderReference = "OL-10428", stage }: Readonly<{ orderReference?: string; stage: TransactionStage }>) {
   return (
     <div className={styles.transaction} data-live-authority="false" data-transaction-stage={stage}>
       <TransactionIntro stage={stage} />
       <section className={styles.content}>
-        <div className="shell"><TransactionContent stage={stage} /></div>
+        <div className="shell"><TransactionContent orderReference={orderReference} stage={stage} /></div>
       </section>
     </div>
   );

@@ -9,9 +9,9 @@ const frontier = await readFile(new URL("app/design-system/frontier-sections.tsx
 
 test("one governed growth component family mounts on PDP, bag and confirmation", () => {
   assert.match(customer, /<UpsellContextRail \/>/);
-  const recommendationMounts = transaction.match(/<RecommendationCard state="default" \/>/g) ?? [];
-  assert.equal(recommendationMounts.length, 4);
+  assert.doesNotMatch(transaction, /RecommendationCard/, "checkout must not redraw product recommendations outside ProductCommerceCard");
   assert.match(transaction, /<RestockCard state="active" \/>/);
+  assert.match(transaction, /<RestockCard state="due-soon" \/>/);
 });
 
 test("the outcome-led stack continuation mounts compact customer compositions outside PDP", () => {

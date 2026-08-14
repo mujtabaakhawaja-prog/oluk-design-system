@@ -64,17 +64,13 @@ test("MF-07 route pages form one static transaction lifecycle", async () => {
 test("transaction presentation preserves exact MK-2866 truth and deterministic inert actions", async () => {
   const source = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
 
-  for (const truth of [
-    "mk2866Fixture.series",
-    "mk2866Fixture.name",
-    "mk2866Fixture.alias",
-    "mk2866Fixture.price",
-    "mk2866Fixture.evidencePath",
-  ]) {
+  for (const truth of ["mk2866Fixture.price", "mk2866Fixture.evidencePath"]) {
     assert.match(source, new RegExp(truth.replace(".", "\\.")), truth);
   }
 
-  assert.match(source, /<MetricRail compact product=\{mk2866Fixture\}\s*\/>/);
+  assert.match(source, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
+  assert.match(source, /<ProductCommerceCard[\s\S]*?commerceTreatment="selection"[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="compact"/);
+  assert.match(source, /<TransactionIntroCard/);
   assert.match(source, /data-live-authority="false"/);
   assert.match(source, /<button[^>]*disabled[^>]*>Pay securely<\/button>/);
   assert.match(source, /<CurrencyEqualityLock compact \/>/);
@@ -157,6 +153,28 @@ test("every remaining checkout lifecycle stage uses the shared presentation-only
   }
 
   assert.doesNotMatch(source, /CheckoutLifecycle/);
+});
+
+test("post-purchase aliases reuse the canonical lifecycle without a competing status layout", async () => {
+  const source = await readFile(new URL("design-system/post-purchase-surface.tsx", appRoot), "utf8");
+  assert.match(source, /import \{ TransactionPresentation, type TransactionStage \}/);
+  assert.match(source, /success: "confirmation"/);
+  assert.match(source, /pending: "pending"/);
+  assert.match(source, /failed: "failure"/);
+  assert.match(source, /cancelled: "cancelled"/);
+  assert.match(source, /tracking: "tracking"/);
+  assert.match(source, /orderReference=\{orderId \?\? "OL-10428"\}/);
+  assert.doesNotMatch(source, /RecommendationCard|RestockCard|page-hero|post-purchase-grid/);
+});
+
+test("payment-focused stages contain no promotional continuation", async () => {
+  const source = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
+  for (const functionName of ["DetailsContent", "ReviewContent", "OrderPayContent", "ProcessingContent", "FailureContent", "PendingContent"]) {
+    const start = source.indexOf(`function ${functionName}`);
+    const next = source.indexOf("\nfunction ", start + 1);
+    const body = source.slice(start, next < 0 ? undefined : next);
+    assert.doesNotMatch(body, /YourStackBuilder|RestockCard|ProductCommerceCard[^]*?rad-140|RecommendationCard/, functionName);
+  }
 });
 
 test("transaction layout recomposes without overflow clipping", async () => {
