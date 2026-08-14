@@ -2,6 +2,8 @@
 
 This is the first Figma Make run in the frontier-site-expansion package. It is not the sealed MF-01 ProductCommerceCard session. It addresses the highest-priority unresolved design object: legacy frame `1081:28849` uses locally drawn cards around one real ProductMetricRail instance.
 
+The later PR review note did not introduce this finding after the run was built; this run was created because of that same finding. The reconciliation now makes the previously implicit variant choice executable: Vertical owns desktop, one Featured card may carry deliberate prominence, Compact owns mobile, and Relation is not the default module anatomy.
+
 ## Start the run
 
 1. Start a new, empty Figma Make chat.

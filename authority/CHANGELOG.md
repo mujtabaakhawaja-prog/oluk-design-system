@@ -140,3 +140,10 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added rendered 1440×1800 and 390×2200 baseline references so the visual input remains inspectable when TSX attachment reading is unavailable.
 - Added executable tests for prompt structure, attachment existence, asset hashes, render-bound product facts, mobile snap behavior and selected/added state copy.
 - The standalone Make baseline bundles successfully; build, typecheck and lint pass; the repository suite advances to `84/84` passing tests.
+
+## 2026-08-14 — Frontier Make Run 01 bridge reconciliation
+
+- Confirmed that the later PR bridge summary and Run 01 describe the same pre-existing defect in manual Figma object `1081:28849`; the review note did not create a new post-run requirement.
+- Closed the only meaningful ambiguity in that note by locking ProductCommerceCard Vertical `743:50` as the desktop owner, allowing at most one Featured `743:281` promotion per direction, and using Compact `742:50` for one-decision-at-a-time mobile reflow.
+- Reserved Relation `743:520` for genuine horizontal micro-contexts and added executable rejection of any locally spliced card anatomy masquerading as a canonical variant.
+- Kept mega-menu Figma authoring in independent shell/navigation Batch A and kept the remaining WS/LEGACY inventory in triage; neither concern is allowed to contaminate the Your Stack creative prompt.

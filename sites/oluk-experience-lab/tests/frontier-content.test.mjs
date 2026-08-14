@@ -62,6 +62,12 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.equal(manifest.firstRun.directions, 3);
   assert.deepEqual(manifest.firstRun.widths, [1440, 390]);
   assert.equal(manifest.firstRun.attachments.length, 5);
+  assert.equal(manifest.firstRun.variantContract.desktopDefault.nodeId, "743:50");
+  assert.equal(manifest.firstRun.variantContract.desktopPromoted.nodeId, "743:281");
+  assert.equal(manifest.firstRun.variantContract.desktopPromoted.maximumPerDirection, 1);
+  assert.equal(manifest.firstRun.variantContract.mobileDefault.nodeId, "742:50");
+  assert.equal(manifest.firstRun.variantContract.horizontalMicroContextOnly.nodeId, "743:520");
+  assert.equal(manifest.firstRun.variantContract.localAnatomyComposition, "REJECTED");
   for (const attachment of manifest.firstRun.attachments) assert.ok(readFileSync(new URL(attachment, kitRoot)).length > 100, attachment);
   for (const controlFile of [manifest.firstRun.manifest, manifest.firstRun.prompt, manifest.firstRun.instructions, manifest.firstRun.runbook]) {
     assert.ok(readFileSync(new URL(controlFile, kitRoot), "utf8").length > 200, controlFile);
@@ -78,6 +84,9 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.match(prompt, /Direction 1 — Editorial Stack Rail/);
   assert.match(prompt, /Direction 2 — Guided Decision Ladder/);
   assert.match(prompt, /Direction 3 — Product Stage Continuation/);
+  assert.match(prompt, /Vertical `743:50` as the default desktop recommendation card/);
+  assert.match(prompt, /Compact `742:50` and show one decision at a time/);
+  assert.match(prompt, /Relation `743:520` only for a truly horizontal related-product micro-context/);
   assert.match(prompt, /never simply stack the full desktop section vertically/i);
   assert.doesNotMatch(prompt, /10 MG[^\n]*RAD-140|RAD-140[^\n]*10 MG/i);
 

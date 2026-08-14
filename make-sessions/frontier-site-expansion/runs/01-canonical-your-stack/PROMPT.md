@@ -16,19 +16,27 @@ Create the first Olympus Labs UK modular growth frontier: a production-quality *
 
 The old `module-a-your-stack-desktop` frame `1081:28849` defines only the job: recommend complementary products around MK-2866. Its locally drawn cards, local chambers, local trust blocks, and local actions are rejected. Rebuild the experience from the canonical component relationships above.
 
+The variant decision is now locked for this run:
+
+- Use ProductCommerceCard / Vertical `743:50` as the default desktop recommendation card.
+- A direction may promote exactly one recommendation with ProductCommerceCard / Featured `743:281` when that product is intentionally dominant.
+- At 390, recompose recommendations through ProductCommerceCard / Compact `742:50` and show one decision at a time.
+- Use Relation `743:520` only for a truly horizontal related-product micro-context, never as the default three-product anatomy.
+- Preserve each variant's complete canonical chamber, metric, status, price, and action hierarchy. Do not splice parts from multiple variants into a new local card.
+
 Design three materially different, fully resolved customer-facing directions. Each direction must include a 1440 desktop composition and a genuinely recomposed 390 mobile composition.
 
 ### Direction 1 — Editorial Stack Rail
 
-Create a wide continuation section with a concise editorial introduction, one prominent selected recommendation, and two supporting recommendations. Let canvas separate independent cards. Keep chamber and purchase content connected inside each card. The selected item should feel clearly more important without adding a cobalt outer outline.
+Create a wide continuation section with a concise editorial introduction, one prominent selected recommendation, and two supporting recommendations. Use Vertical cards for the three-product desktop rail; the promoted recommendation may use Featured if its added prominence materially improves the hierarchy. Let canvas separate independent cards. Keep chamber and purchase content connected inside each card. The selected item should feel clearly more important without adding a cobalt outer outline.
 
 ### Direction 2 — Guided Decision Ladder
 
-Create a Good / Better / Best decision sequence using the same three products. Make the hierarchy feel like guided choice rather than a pricing table. Explain the relationship through short customer copy, product facts, and selection state. Avoid repeated rectangles and dashboard density.
+Create a Good / Better / Best decision sequence using the same three products. Keep the underlying desktop cards Vertical even as their placement creates a ladder; do not invent tier cards or pricing-table shells. Make the hierarchy feel like guided choice rather than a pricing table. Explain the relationship through short customer copy, product facts, and selection state. Avoid repeated rectangles and dashboard density.
 
 ### Direction 3 — Product Stage Continuation
 
-Create a more visual, media-led continuation inspired by the authored product-stage confidence of `462:4684`, but keep each recommendation a canonical commerce decision. Use depth, scale, and product prominence without turning the section into a hero or hiding facts/actions.
+Create a more visual, media-led continuation inspired by the authored product-stage confidence of `462:4684`, but keep each recommendation a complete Vertical or Featured canonical commerce decision. Use depth, scale, and product prominence without turning the section into a hero, detaching bottles from their chambers, or hiding facts/actions.
 
 For every direction:
 

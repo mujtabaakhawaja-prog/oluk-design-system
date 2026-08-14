@@ -2,8 +2,8 @@
 
 - Date: 2026-08-13
 - Branch: `codex/oluk-full-site-reference`
-- Source baseline: `7aa301b`
-- State: `READY_FOR_PRIVATE_FIGMA_MAKE_EXECUTION · HUMAN_SELECTION_REQUIRED`
+- Source baseline: `6196ced`
+- State: `READY_FOR_PRIVATE_FIGMA_MAKE_EXECUTION · BRIDGE_RECONCILED · HUMAN_SELECTION_REQUIRED`
 
 ## Run
 
@@ -16,6 +16,8 @@ The prompt requests three customer-facing directions at 1440 and 390:
 3. Product Stage Continuation.
 
 Every direction must use the canonical commerce component relationships, actual attached product renders, complete customer copy, selected/added interaction, and one-decision-at-a-time compact mobile behavior.
+
+The subsequent PR bridge summary restated the same `1081:28849` defect; it did not postdate or supersede Run 01. Its unresolved variant question is now closed in the executable prompt: Vertical `743:50` owns desktop, one Featured `743:281` instance may express intentional prominence, Compact `742:50` owns mobile, and Relation `743:520` is limited to a genuine horizontal micro-context. Local variant splicing remains rejected.
 
 ## Attachment packet
 

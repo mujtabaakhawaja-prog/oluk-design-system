@@ -44,6 +44,8 @@ If steps 1–4 fail, rebuild the object before polishing copy. Supplied product,
 
 Run [`runs/01-canonical-your-stack/PROMPT.md`](runs/01-canonical-your-stack/PROMPT.md) before the broader batches. It rebuilds the only currently identified growth module that still bypasses the canonical component graph: `module-a-your-stack-desktop` (`1081:28849`).
 
+The reconciled bridge decision is explicit: `743:50` Vertical is the desktop owner, `743:281` Featured may promote one intentional primary choice, and `742:50` Compact owns the one-decision-at-a-time mobile treatment. `743:520` Relation remains available only for a genuinely horizontal micro-context. This closes the bridge note's Vertical-versus-Compact ambiguity without redesigning another card family.
+
 The run folder is self-contained and includes its own attachment instructions, interactive customer-facing `app.tsx`, render-bound product data, and three repository product assets. It asks for three materially different directions at 1440 and 390; it does not ask Make for a system board or developer proof.
 
 ## Bulk execution after Run 01

@@ -2,7 +2,7 @@
   "schemaVersion": "oluk.figma-make.bulk-run.v2",
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
   "source": {
-    "repositoryBaseline": "7aa301b",
+    "repositoryBaseline": "6196ced",
     "figmaFileKey": "BEPMuUt1HroEw8xjz8CVyN",
     "libraryPageNode": "672:10"
   },
@@ -21,6 +21,13 @@
       "runs/01-canonical-your-stack/assets/mk-677.webp"
     ],
     "figmaJobSourceOnly": "1081:28849",
+    "variantContract": {
+      "desktopDefault": {"name":"ProductCommerceCard / Vertical","nodeId":"743:50"},
+      "desktopPromoted": {"name":"ProductCommerceCard / Featured","nodeId":"743:281","maximumPerDirection":1},
+      "mobileDefault": {"name":"ProductCommerceCard / Compact","nodeId":"742:50"},
+      "horizontalMicroContextOnly": {"name":"ProductCommerceCard / Relation","nodeId":"743:520"},
+      "localAnatomyComposition": "REJECTED"
+    },
     "referenceProofs": [
       {"path":"runs/01-canonical-your-stack/reference-desktop.png","width":1440,"height":1800,"sha256":"02a7ea7b2bc42bd61b8a26daf0723ec604275253e5e1a88ae7f1455a256a94fd"},
       {"path":"runs/01-canonical-your-stack/reference-mobile.png","width":390,"height":2200,"sha256":"72910ead141eb6f08a2c6c0811793eda955847920a52a7901751851f0dc6ace4"}
