@@ -110,7 +110,7 @@ export function ActionControl(props: ActionControlProps) {
           leadingIcon={leadingIcon}
           pending={pending}
           pendingLabel={pendingLabel}
-          trailingIcon={trailingIcon}
+          trailingIcon={unavailable ? undefined : trailingIcon}
         >
           {children}
         </ActionContents>

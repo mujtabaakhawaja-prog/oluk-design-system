@@ -56,6 +56,7 @@ export default function SurfaceGrammarSpecimenPage() {
             actions={
               <>
                 <ActionButton disabled>Unavailable action</ActionButton>
+                <ActionLink disabled href="/shop">Unavailable link</ActionLink>
                 <ActionButton pending pendingLabel="Preparing your next step">Pending action</ActionButton>
                 <ActionLink href="/shop" variant="quiet">A deliberately long quiet action label that remains readable at 390</ActionLink>
               </>
