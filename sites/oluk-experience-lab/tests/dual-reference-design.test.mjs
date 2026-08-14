@@ -90,13 +90,17 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
   });
 });
 
-test("OpenLab, support, checkout, order and account routes have individual native Figma pairs", async () => {
+test("every ledger route has an individual native Figma pair and a registered mobile strategy", async () => {
   const routePairs = await readJson("authority/ROUTE-DESIGN-SYNC-REGISTRY.json");
   const designRegistry = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
   const ledger = await readJson("authority/SITE-ROUTE-LEDGER.json");
 
   assert.equal(routePairs.fileKey, designRegistry.fileKey);
-  assert.equal(routePairs.records.length, 49);
+  assert.equal(routePairs.records.length, 73);
+  assert.deepEqual(
+    new Set(routePairs.records.map(({ routeId }) => routeId)),
+    new Set(ledger.routes.map(({ id }) => id)),
+  );
   for (const record of routePairs.records) {
     assert.ok(ledger.routes.some(({ id, path: routePath }) => id === record.routeId && routePath === record.path), record.routeId);
     assert.ok(designRegistry.records.some(({ id }) => id === record.moduleRecord), record.moduleRecord);
