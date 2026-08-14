@@ -1,7 +1,7 @@
 {
   "schemaVersion": "oluk.product-experience.v2",
   "productSourceHash": "14a45a575fa4c9c591add66835c8713f23f9f93e195d1daad37d25ada3bf435e",
-  "editorialCorpusHash": "1fcc2ee2db6139dfbddfd73be222856fcddf19c19aa87fdf973277aca9bedc4b",
+  "editorialCorpusHash": "3a6219e2c75adc4d94c7b0694e804a92d848c6dd288f8058462d6f8c38e458e2",
   "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
   "products": [
     {
@@ -823,7 +823,7 @@
         "considerations": "Review the full product detail and compare it with the broader cutting build before adding it.",
         "customerProposition": {
           "eyebrow": "Cutting finish",
-          "headline": "Sharpen the final phase.",
+          "headline": "Build a stronger final phase.",
           "promise": "S-4 adds a definition-led choice when a cutting build needs a more focused finish.",
           "benefits": [
             "Finish-focused role",
@@ -831,7 +831,7 @@
             "Pairs with an established base"
           ],
           "differentiator": "An Andarine option for a more defined cutting direction.",
-          "primaryAction": "Sharpen my cut",
+          "primaryAction": "Build a stronger cut",
           "secondaryAction": "Compare finish options",
           "mobileSummary": "A stronger finish for a cutting build."
         },
@@ -884,7 +884,7 @@
         ],
         "decision": {
           "eyebrow": "Cutting finish",
-          "headline": "Sharpen the final phase.",
+          "headline": "Build a stronger final phase.",
           "promise": "S-4 adds a definition-led choice when a cutting build needs a more focused finish.",
           "benefits": [
             "Finish-focused role",
@@ -892,7 +892,7 @@
             "Pairs with an established base"
           ],
           "differentiator": "An Andarine option for a more defined cutting direction.",
-          "primaryAction": "Sharpen my cut",
+          "primaryAction": "Build a stronger cut",
           "secondaryAction": "Compare finish options",
           "mobileSummary": "A stronger finish for a cutting build."
         },
@@ -927,7 +927,7 @@
         "goals": [
           "Cutting"
         ],
-        "headline": "Sharpen the final phase.",
+        "headline": "Build a stronger final phase.",
         "mobileSummary": "A stronger finish for a cutting build."
       },
       "seo": {
@@ -2470,5 +2470,5 @@
       }
     }
   },
-  "contentHash": "93d6859f9310c650885cb4d988a5f08c40d119476dab8bb0cedbb7fa8bd0d27b"
+  "contentHash": "4e04b6cf7dae51d1e5658bccfe65020d818c65f48c73bd07d3bcb9a9061ef517"
 }
