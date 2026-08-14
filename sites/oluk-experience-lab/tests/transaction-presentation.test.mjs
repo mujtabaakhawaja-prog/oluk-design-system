@@ -179,8 +179,12 @@ test("payment-focused stages contain no promotional continuation", async () => {
 
 test("transaction layout recomposes without overflow clipping", async () => {
   const css = await readFile(new URL("transaction-presentation.module.css", appRoot), "utf8");
+  const paymentCss = await readFile(new URL("design-system/payment-trust.module.css", appRoot), "utf8");
   assert.match(css, /\.layout,[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\)/);
+  assert.match(css, /\.summary \{[\s\S]*?min-width:\s*0/);
+  assert.match(css, /\.quantity \{[\s\S]*?repeat\(3, 44px\)/);
   assert.match(css, /@media \(max-width: 980px\)[\s\S]*?grid-template-columns:\s*1fr/);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.fieldGrid,[\s\S]*?grid-template-columns:\s*1fr/);
   assert.doesNotMatch(css, /overflow-x:\s*(?:clip|hidden)/i);
+  assert.match(paymentCss, /\.lock\[data-compact\] \.equality\{grid-template-columns:1fr\}/);
 });
