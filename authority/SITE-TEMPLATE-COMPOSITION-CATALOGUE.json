@@ -4,7 +4,7 @@
   "authority": "Codex Sites is the composition source of truth. This source defines unselected customer-composition architectures and eligible expansions; it does not declare a section mounted or an owner choice made.",
   "source": {
     "path": "authority/SITE-TEMPLATE-COMPOSITION-SOURCE.json",
-    "sha256": "a5a629c10a3a5a176bb1597f73f3e40e23ce8dd0821d9a8baf62cb4cd375f0da"
+    "sha256": "ce1e1f4c3c9a145b759e96d65af96f602c0708a5e99023cdc292e23411e7c455"
   },
   "ledgerSource": {
     "path": "authority/SITE-ROUTE-LEDGER.json",
@@ -7539,11 +7539,12 @@
         },
         {
           "id": "stack-builder-workspace",
-          "customerPurpose": "Select additions, review the combined outcome and continue with the stack.",
+          "customerPurpose": "Select additions, review the exact total and contribution summary, then continue with the stack.",
           "mobileStrategy": "guided-sequence",
           "dataRequirements": [
             "StackScenario[]",
-            "outcome profile"
+            "selected-product count level",
+            "contribution summary"
           ],
           "mediaPolicy": "registered actual render or governed unpopulated chamber"
         },

@@ -170,9 +170,13 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
 });
 
-test("Your Stack exposes the approved outcome-led card as one reusable Sites export", () => {
+test("Your Stack wraps the canonical commerce card with governed commercial decision content", () => {
   const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
   assert.match(stackBuilder, /export function StackOutcomeCard/);
+  assert.match(stackBuilder, /<ProductCommerceCard[\s\S]*commerceTreatment="selection"/);
+  assert.match(stackBuilder, /<DecisionSurface/);
+  assert.match(stackBuilder, /<TechnicalSurface/);
+  assert.doesNotMatch(stackBuilder, /<ProductMediaChamber|<MetricRail/);
   assert.match(stackBuilder, /PRODUCT ROLE/);
   assert.match(stackBuilder, /WHAT IT ADDS/);
   assert.match(stackBuilder, /const stackRelationships/);
@@ -188,10 +192,15 @@ test("Your Stack exposes the approved outcome-led card as one reusable Sites exp
 
 test("Your Stack uses deterministic commercial levels, contributions and separate OpenLab confidence", () => {
   const source = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
+  const css = readFileSync(new URL("../app/design-system/your-stack-builder.module.css", import.meta.url), "utf8");
   for (const level of ["FOUNDATION", "STRONGER", "MAXIMUM"]) assert.match(source, new RegExp(level));
   for (const contribution of ["STRENGTH", "LEAN MASS", "BODY COMPOSITION", "RECOVERY", "APPETITE [+] SLEEP", "TRAINING OUTPUT"]) assert.match(source, new RegExp(contribution));
   assert.match(source, /data-component="StackOpenLabConfidence"/);
+  assert.match(source, /confidenceSelection\(baseline, selectedProducts\)/);
+  assert.match(source, /Confirm or change your baseline/);
+  assert.match(source, /host === "standalone" \? selectBaseline : undefined/);
   assert.match(source, /EvidenceStatusChip/);
   assert.match(source, /stackTotal/);
+  assert.doesNotMatch(css, /font-size:\s*11px/);
   assert.doesNotMatch(source, /goalFit|evidenceVisibility|StackOutcomeProfile|out of 100|sharper/i);
 });

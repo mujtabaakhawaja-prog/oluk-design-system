@@ -261,7 +261,7 @@
     {
       "id": "product-commerce-card-compact",
       "figma": { "nodeId": "742:50", "name": "ProductCommerceCard / Compact", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className"], "fixedProps": { "variant": "compact", "showQualitative": false } },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "compact", "showQualitative": false } },
       "variants": { "state": ["default", "hover", "focus", "selected", "added", "unavailable", "out-of-stock", "disabled"] },
       "routes": ["/review"],
       "tokens": ["--oluk-surface-card", "--oluk-radius-compact", "--oluk-shadow-compact", "--oluk-media-gradient", "--oluk-cobalt"]
@@ -269,7 +269,7 @@
     {
       "id": "product-commerce-card-vertical",
       "figma": { "nodeId": "743:50", "name": "ProductCommerceCard / Vertical", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className"], "fixedProps": { "variant": "vertical" } },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "vertical" } },
       "variants": { "width": ["desktop", "mobile"] },
       "routes": ["/open-lab", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-vertical", "--oluk-shadow-card", "--oluk-media-gradient", "--oluk-border-chip", "--oluk-text-chip-value", "--oluk-cobalt"]
@@ -277,7 +277,7 @@
     {
       "id": "product-commerce-card-featured",
       "figma": { "nodeId": "743:281", "name": "ProductCommerceCard / Featured", "kind": "COMPONENT_SET", "registeredDesktopVariant": "743:282", "downstreamShopInstance": "765:98" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className"], "fixedProps": { "variant": "featured" } },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "featured" } },
       "variants": { "width": ["desktop", "mobile"] },
       "routes": ["/shop", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-vertical", "--oluk-shadow-card", "--oluk-media-gradient", "--oluk-border-chip", "--oluk-text-chip-value", "--oluk-cobalt"]
@@ -285,7 +285,7 @@
     {
       "id": "product-commerce-card-relation",
       "figma": { "nodeId": "743:520", "name": "ProductCommerceCard / Relation", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className"], "fixedProps": { "variant": "relation" } },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "relation" } },
       "variants": { "width": ["desktop-horizontal", "tablet-stacked", "mobile-stacked"] },
       "routes": ["/", "/product/mk-2866", "/open-lab", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-horizontal", "--oluk-shadow-relation", "--oluk-media-gradient", "--oluk-cobalt"]

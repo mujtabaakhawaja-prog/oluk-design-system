@@ -77,7 +77,7 @@ Run only after native Sites-derived product-card, metric-rail, qualitative-chip 
 
 Explore:
 
-- Goal-led Your Stack: baseline product, additive selections, combined outcome profile and clear total.
+- Goal-led Your Stack: baseline product, additive selections, deterministic `FOUNDATION / STRONGER / MAXIMUM` level, contribution summary and exact total.
 - RecommendationCard: default, selected, added, unavailable, out-of-stock.
 - RestockCard: active, due-soon, overdue, paused.
 - UpsellContextRail: Recommendations and Restock Lab.

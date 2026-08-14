@@ -14232,11 +14232,12 @@
           },
           {
             "id": "stack-builder-workspace",
-            "customerPurpose": "Select additions, review the combined outcome and continue with the stack.",
+            "customerPurpose": "Select additions, review the exact total and contribution summary, then continue with the stack.",
             "mobileStrategy": "guided-sequence",
             "dataRequirements": [
               "StackScenario[]",
-              "outcome profile"
+              "selected-product count level",
+              "contribution summary"
             ],
             "mediaPolicy": "registered actual render or governed unpopulated chamber"
           },

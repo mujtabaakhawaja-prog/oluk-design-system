@@ -1,7 +1,7 @@
 {
   "schemaVersion": "oluk.product-experience.v2",
   "productSourceHash": "14a45a575fa4c9c591add66835c8713f23f9f93e195d1daad37d25ada3bf435e",
-  "editorialCorpusHash": "df4291ce178655529e39601a60ed99dabce57e93337c82a4b291c43e6eb87bd9",
+  "editorialCorpusHash": "1fcc2ee2db6139dfbddfd73be222856fcddf19c19aa87fdf973277aca9bedc4b",
   "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
   "products": [
     {
@@ -1116,7 +1116,7 @@
         "summary": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
         "researchProfile": "S-23 is a distinct comparison when a recomp plan needs more intensity than an Ostarine-led base alone.",
         "guidance": "Compare S-23 with MK-2866 and Cardarine to see whether the next phase should lean toward a cleaner balance or a harder definition-led profile.",
-        "considerations": "Use the outcome profile and product comparison before adding it to a recomp build.",
+        "considerations": "Use the contribution summary and product comparison before adding it to a recomp build.",
         "customerProposition": {
           "eyebrow": "Focused recomp",
           "headline": "Give recomp a harder edge.",
@@ -1189,7 +1189,7 @@
           "summary": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
           "researchProfile": "S-23 is a distinct comparison when a recomp plan needs more intensity than an Ostarine-led base alone.",
           "guidance": "Compare S-23 with MK-2866 and Cardarine to see whether the next phase should lean toward a cleaner balance or a harder definition-led profile.",
-          "considerations": "Use the outcome profile and product comparison before adding it to a recomp build."
+          "considerations": "Use the contribution summary and product comparison before adding it to a recomp build."
         },
         "related": [
           "mk-2866",
@@ -1260,7 +1260,7 @@
       "editorial": {
         "summary": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
         "researchProfile": "Epistane is the finish-focused comparison for customers taking an Ostarine and Cardarine base into a more intense final phase.",
-        "guidance": "Keep it in the recomp comparison set, then see how it changes the outcome profile against a more endurance-led or lean-mass-led addition.",
+        "guidance": "Keep it in the recomp comparison set, then see what it contributes beside an endurance-led or lean-mass-led addition.",
         "considerations": "Review the product detail and compare intensity before adding a prohormone option to the build.",
         "customerProposition": {
           "eyebrow": "Recomp finisher",
@@ -1340,7 +1340,7 @@
         "details": {
           "summary": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
           "researchProfile": "Epistane is the finish-focused comparison for customers taking an Ostarine and Cardarine base into a more intense final phase.",
-          "guidance": "Keep it in the recomp comparison set, then see how it changes the outcome profile against a more endurance-led or lean-mass-led addition.",
+          "guidance": "Keep it in the recomp comparison set, then see what it contributes beside an endurance-led or lean-mass-led addition.",
           "considerations": "Review the product detail and compare intensity before adding a prohormone option to the build."
         },
         "related": [
@@ -2470,5 +2470,5 @@
       }
     }
   },
-  "contentHash": "5aaa56a47978098ba2fc83410328fe97ba5bf61ea7a0e9168d37845cadf7b1d0"
+  "contentHash": "93d6859f9310c650885cb4d988a5f08c40d119476dab8bb0cedbb7fa8bd0d27b"
 }
