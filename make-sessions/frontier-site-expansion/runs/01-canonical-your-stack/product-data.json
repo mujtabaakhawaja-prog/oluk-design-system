@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "oluk.make.your-stack.v2",
+  "schemaVersion": "oluk.make.your-stack.v3",
   "anchorProduct": {
     "series": "SARM SERIES",
     "name": "MK-2866",
@@ -10,8 +10,8 @@
     "purity": ">99%",
     "price": "£43"
   },
-  "heading": "Choose what complements MK-2866.",
-  "introduction": "Compare three distinct additions by series, strength and serving count. Select the product that best matches the stack you want to build, or open the full product page before adding it.",
+  "heading": "Build more from your MK-2866 stack.",
+  "introduction": "Choose the result you want next: push strength and lean mass with RAD-140, add heavyweight size and power with MENT, or bring growth, appetite, sleep and recovery support into the plan with MK-677.",
   "recommendations": [
     {
       "id": "rad-140",
@@ -23,9 +23,9 @@
       "servings": "60 SERVINGS",
       "purity": ">99%",
       "price": "£55",
-      "stackRole": "Strength-led",
-      "stackFit": "SARM pairing",
-      "rationale": "Add a higher-strength SARM option to build a more performance-led stack around MK-2866.",
+      "primaryBenefit": "Strength + lean mass",
+      "stackPosition": "Maximum intensity",
+      "rationale": "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/rad-140.png",
       "imageSha256": "6ef50a629d1b4831750e713426beb6285fb4b366297e6e8e5b3c09813ebdd3fc"
@@ -40,9 +40,9 @@
       "servings": "30 SERVINGS",
       "purity": ">99%",
       "price": "£49",
-      "stackRole": "High intensity",
-      "stackFit": "Prohormone pairing",
-      "rationale": "Choose a concentrated prohormone addition when you want a shorter, higher-intensity stack format.",
+      "primaryBenefit": "Mass + power",
+      "stackPosition": "Advanced builder",
+      "rationale": "Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/ment.webp",
       "imageSha256": "1cbd10faea35d3893be287119263566f6d204d54e22dc0273278c8f0a4b098e8"
@@ -57,9 +57,9 @@
       "servings": "90 SERVINGS",
       "purity": ">99%",
       "price": "£45",
-      "stackRole": "Longer format",
-      "stackFit": "Research pairing",
-      "rationale": "Add a 90-serving research-series option for a longer-format stack alongside MK-2866.",
+      "primaryBenefit": "Growth + recovery",
+      "stackPosition": "Daily support",
+      "rationale": "Build recovery capacity around the stack with a 90-serving Ibutamoren format supporting appetite, deeper sleep and recovery between hard sessions.",
       "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
       "image": "assets/mk-677.webp",
       "imageSha256": "5ab6415bc8a7c53ce0b696f03fbdf222bf753b95cd03fd260a3c86997a1f8481"

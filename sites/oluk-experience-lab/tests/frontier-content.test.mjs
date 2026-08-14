@@ -93,8 +93,11 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.match(correctionPrompt, /1200:34256/);
   assert.match(correctionPrompt, /three separate instances of the two-level QualitativeChip relationship from `733:17342`/);
   assert.match(correctionPrompt, /ProductMetricRail must follow canonical `733:95`/);
+  assert.equal(productData.heading, "Build more from your MK-2866 stack.");
+  assert.match(productData.introduction, /strength and lean mass[\s\S]*size and power[\s\S]*growth, appetite, sleep and recovery/i);
   assert.doesNotMatch(productData.heading, /research route/i);
-  assert.doesNotMatch(productData.introduction, /testing language|direct route/i);
+  assert.doesNotMatch(productData.introduction, /testing language|direct route|complements|makes sense|product path|direction|continuation/i);
+  assert.match(correctionPrompt, /Use all caps only inside visibly bounded chips, pills, metric cells, or compact status atoms/i);
   assert.match(prompt, /never simply stack the full desktop section vertically/i);
   assert.doesNotMatch(prompt, /10 MG[^\n]*RAD-140|RAD-140[^\n]*10 MG/i);
 
@@ -105,13 +108,18 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   ]);
   assert.equal(productData.recommendations.find(({id}) => id === "ment").family, "Metabolics");
   for (const product of productData.recommendations) {
+    assert.ok(product.primaryBenefit.length > 5);
+    assert.ok(product.stackPosition.length > 5);
+    assert.ok(product.rationale.length > 90);
     const asset = readFileSync(new URL(product.image, runRoot));
     assert.equal(createHash("sha256").update(asset).digest("hex"), product.imageSha256);
   }
   assert.match(app, /scroll-snap-type:x mandatory/);
   assert.match(app, /Added ✓/);
   assert.match(app, /ContextChip label="PRODUCT" value=\{data\.anchorProduct\.alias\}/);
+  assert.match(app, /product\.primaryBenefit/);
+  assert.match(app, /product\.stackPosition/);
   assert.match(app, /product\.servings\.replace\(\/\\s\+SERVINGS\$\/i, ""\)/);
-  assert.doesNotMatch(app, /product\.inventory|product\.evidence|research route|testing language|direct route to product detail/i);
+  assert.doesNotMatch(app, /product\.inventory|product\.evidence|stackRole|stackFit|research route|testing language|direct route to product detail|Choose what complements|performance direction/i);
   assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
 });

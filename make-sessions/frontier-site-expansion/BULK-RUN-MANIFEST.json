@@ -30,8 +30,8 @@
       "localAnatomyComposition": "REJECTED"
     },
     "referenceProofs": [
-      {"path":"runs/01-canonical-your-stack/reference-desktop.png","width":1440,"height":1800,"sha256":"fab3e347e8d6e8530e7a8656e78be0ec505ea47151484b9da799de200e695b27"},
-      {"path":"runs/01-canonical-your-stack/reference-mobile.png","width":390,"height":2200,"sha256":"43fd9838b183852c7ac6ba988f76c9aaab566cc5d7a660ba006f507b21b8ce88"}
+      {"path":"runs/01-canonical-your-stack/reference-desktop.png","width":1440,"height":1800,"sha256":"e50109853fcabf4861027ff96a03873c4eb4dcd9fc000d62f6bd8207d9e2a4a3"},
+      {"path":"runs/01-canonical-your-stack/reference-mobile.png","width":390,"height":2200,"sha256":"d7e5440f9d104cf5a7939ff2b2a21e01dc3d7df4515f798912b0d83cc052b8ec"}
     ],
     "firstPassReview": {
       "surfaceNodeId": "1200:34256",

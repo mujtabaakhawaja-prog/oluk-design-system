@@ -32,8 +32,8 @@ The visible facts in the product data match their supplied renders. Prices and r
 
 The code attachment is pre-rendered so it can be reviewed even when an attachment sandbox cannot inspect TSX:
 
-- `reference-desktop.png` — 1440×1800, SHA-256 `fab3e347e8d6e8530e7a8656e78be0ec505ea47151484b9da799de200e695b27`
-- `reference-mobile.png` — 390×2200, SHA-256 `43fd9838b183852c7ac6ba988f76c9aaab566cc5d7a660ba006f507b21b8ce88`
+- `reference-desktop.png` — 1440×1800, SHA-256 `e50109853fcabf4861027ff96a03873c4eb4dcd9fc000d62f6bd8207d9e2a4a3`
+- `reference-mobile.png` — 390×2200, SHA-256 `d7e5440f9d104cf5a7939ff2b2a21e01dc3d7df4515f798912b0d83cc052b8ec`
 
 These are inspection references, not extra Make attachments and not a direction to trace. Make should design beyond this baseline while preserving its system relationships and compact mobile logic.
 

@@ -156,3 +156,10 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added `CORRECTION-PROMPT.md` for the existing Make session, including exact 1440/390 corrections and customer copy.
 - Corrected ProductMetricRail semantics to separate serving value from label and added deterministic short/medium/long text fitting to the canonical Sites component.
 - Refreshed the 1440 and 390 Make reference images and hashes after the copy, chip and metric corrections.
+
+## 2026-08-14 — Frontier Make Run 01 performance-commerce correction
+
+- Replaced the remaining compatibility and workflow language with an outcome-led stack proposition: strength and lean mass, heavyweight size and power, and growth and recovery.
+- Gave RAD-140, MENT and MK-677 distinct customer-facing jobs and direct product-specific reasons to add each product instead of using stock/evidence posture as upsell persuasion.
+- Reserved all-caps typography for bounded chips, pills, metric cells and compact status atoms; section labels, headings, body copy and actions now use sentence case.
+- Updated the Sites frontier stack copy, Make data, correction prompt, agent prompts, executable tests and exact 1440/390 reference proofs as one reconciled source package.

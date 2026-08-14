@@ -83,6 +83,8 @@ Create:
 
 Cross-mount the same modules on PDP, Bag, Confirmation and Account. The 390 Your Stack composition shows one decision at a time with a compact rail or carousel; never squeeze a three-card desktop row into the viewport.
 
+The customer proposition is outcome-led. Stack copy should explain how a product changes the plan: strength and lean mass, mass and power, cutting and endurance, recomp, or growth and recovery. Use product-specific “because” rationales and strong merchandising language. Never use `complements`, `makes sense`, `research route`, `product path`, `direction`, `testing language`, or `continuation` as the main customer proposition. Use all caps only inside bounded chips, pills, metric cells and compact status atoms.
+
 ## Batch F — Discovery, content, support and route-family templates
 
 Design reusable route-family compositions for Homepage continuation, Shop, category, search, bundle/gift routes, About, journal, FAQ/help, delivery, contact, legal and account-support surfaces. Use declared canonical modules—CategoryHero, ShopGrid, SearchResults, BlogFeed, FAQAccordion, CTA band, assurance and footer—rather than bespoke page-card arrangements.

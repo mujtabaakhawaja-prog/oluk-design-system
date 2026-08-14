@@ -15,9 +15,9 @@
 
 ## Why the pass is not acceptable
 
-The page behaves like an internal design-programme demo rather than a customer upsell surface. It exposes `MF-01A`, `Card frontier`, `Icon library`, `Decision surfaces` and other review navigation. The proposition uses internal language—`research route`, `testing language`, `direct route to product detail` and `Keep the product decision clear`—instead of explaining what each recommendation adds to the stack.
+The submitted Figma page behaves like an internal design-programme demo rather than a customer upsell surface. It exposes `MF-01A`, `Card frontier`, `Icon library`, `Decision surfaces` and other review navigation. Its proposition uses internal language—`research route`, `testing language`, `direct route to product detail` and `Keep the product decision clear`—instead of selling a stronger stack outcome.
 
-The recommendation context is also misallocated. `In stock` plus evidence-state chips answer product availability/provenance questions but do not explain relevance to MK-2866. This module needs pairing role, format and stack-direction language.
+The recommendation context is also misallocated. `In stock` plus evidence-state chips answer product availability/provenance questions but do not sell the role each addition plays. The corrected source now leads with strength and lean mass, size and power, and growth and recovery, then gives each recommendation a specific performance job.
 
 ## Component defects confirmed from Figma readback
 
@@ -30,9 +30,9 @@ The recommendation context is also misallocated. `In stock` plus evidence-state 
 - Existing Make session correction: `make-sessions/frontier-site-expansion/runs/01-canonical-your-stack/CORRECTION-PROMPT.md`.
 - New-run source: updated `PROMPT.md`, `product-data.json` and `app.tsx` in the same run folder.
 - Updated reference proofs:
-  - desktop: `fab3e347e8d6e8530e7a8656e78be0ec505ea47151484b9da799de200e695b27`
-  - mobile: `43fd9838b183852c7ac6ba988f76c9aaab566cc5d7a660ba006f507b21b8ce88`
+  - desktop: `e50109853fcabf4861027ff96a03873c4eb4dcd9fc000d62f6bd8207d9e2a4a3`
+  - mobile: `d7e5440f9d104cf5a7939ff2b2a21e01dc3d7df4515f798912b0d83cc052b8ec`
 
 ## Promotion gate
 
-Do not promote `1200:34256` or derive a Page 09 component from it. Re-run the correction in the existing Make session, then review the corrected 1440 and 390 customer frames. The next review checks production copy, canonical chip instances, MetricRail separation/fitting, one-decision-at-a-time mobile composition and removal of every internal programme label.
+Do not promote `1200:34256` or derive a Page 09 component from it. Re-run the correction in the existing Make session, then review the corrected 1440 and 390 customer frames. The next review checks the outcome-led stack proposition, canonical chip instances, MetricRail separation/fitting, one-decision-at-a-time mobile composition, sentence-case customer copy outside bounded chips, and removal of every internal programme label.

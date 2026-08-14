@@ -20,60 +20,66 @@ Do not display any of these phrases anywhere:
 
 Availability and evidence remain valid elsewhere in the system, but they are not the persuasive content job of this stack module.
 
+## Copy posture
+
+This is a performance-oriented stack builder. Lead with the result the customer wants, then explain the distinct job each product performs in the stack. Do not use compatibility-only language such as `complements`, `makes sense`, `product path`, `direction`, or `continuation`. Do not soften the module into product comparison. It should create desire to build a stronger, more complete stack.
+
+Use all caps only inside visibly bounded chips, pills, metric cells, or compact status atoms. Headlines, body copy, section labels and buttons use sentence case.
+
 ## Use this exact production copy
 
 Current-product strip:
 
-- Eyebrow: `YOUR STARTING PRODUCT`
+- Section label: `Your starting product`
 - Product: `MK-2866`
 - Three raised qualitative chips:
   - `PRODUCT` / `Ostarine`
   - `STRENGTH` / `15 MG`
   - `FORMAT` / `90 SERVINGS`
-- Counter label: `ADDED TO STACK`
+- Counter label: `Added to stack`
 
 Module introduction:
 
-- Eyebrow: `COMPLETE YOUR STACK`
-- Heading: `Choose what complements MK-2866.`
-- Body: `Compare three distinct additions by series, strength and serving count. Select the product that best matches the stack you want to build, or open the full product page before adding it.`
+- Section label: `Build your stack`
+- Heading: `Build more from your MK-2866 stack.`
+- Body: `Choose the result you want next: push strength and lean mass with RAD-140, add heavyweight size and power with MENT, or bring growth, appetite, sleep and recovery support into the plan with MK-677.`
 
 RAD-140:
 
-- Context chip 1: `STACK ROLE` / `Strength-led`
-- Context chip 2: `BEST FOR` / `SARM pairing`
-- Body: `Add a higher-strength SARM option to build a more performance-led stack around MK-2866.`
+- Context chip 1: `STACK FOCUS` / `STRENGTH + LEAN MASS`
+- Context chip 2: `WHY ADD IT` / `MAXIMUM INTENSITY`
+- Body: `Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.`
 - Secondary action: `View RAD-140`
 - Primary action: `Add RAD-140`
 
 MENT:
 
-- Context chip 1: `STACK ROLE` / `High intensity`
-- Context chip 2: `BEST FOR` / `Prohormone pairing`
-- Body: `Choose a concentrated prohormone addition when you want a shorter, higher-intensity stack format.`
+- Context chip 1: `STACK FOCUS` / `MASS + POWER`
+- Context chip 2: `WHY ADD IT` / `ADVANCED BUILDER`
+- Body: `Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.`
 - Secondary action: `View MENT`
 - Primary action: `Add MENT`
 
 MK-677:
 
-- Context chip 1: `STACK ROLE` / `Longer format`
-- Context chip 2: `BEST FOR` / `Research pairing`
-- Body: `Add a 90-serving research-series option for a longer-format stack alongside MK-2866.`
+- Context chip 1: `STACK FOCUS` / `GROWTH + RECOVERY`
+- Context chip 2: `WHY ADD IT` / `DAILY SUPPORT`
+- Body: `Build recovery capacity around the stack with a 90-serving Ibutamoren format supporting appetite, deeper sleep and recovery between hard sessions.`
 - Secondary action: `View MK-677`
 - Primary action: `Add MK-677`
 
 Continuation surface at zero products:
 
-- Eyebrow: `YOUR STACK`
-- Heading: `Start with one complementary product.`
-- Body: `Add a product above to build your stack around MK-2866.`
-- Disabled action: `Review stack · 0`
+- Section label: `Your stack`
+- Heading: `Pick your next performance advantage.`
+- Body: `Add strength and lean mass, size and power, or growth and recovery support.`
+- Disabled action: `Review my stack · 0`
 
 After one or more additions:
 
-- Heading: `Review your selected products.`
-- Body: `Check your selection before continuing, or add another product above.`
-- Enabled action: `Review stack · {count}`
+- Heading: `Your stronger stack is taking shape.`
+- Body: `You have added {count} product(s). Review the full stack or keep building around your goal.`
+- Enabled action: `Review my stack · {count}`
 
 Added actions must change to `Added ✓`.
 

@@ -51,10 +51,10 @@ export const productFamilies: ReadonlyArray<{name: ProductFamily; summary: strin
 ];
 
 export const stackPresentations = [
-  {goal:"Bulking",hero:"LGD-4033 + MK-677",alternates:["RAD-140 · 8 MG","MK-677"],tiers:["Good · LGD-4033","Better · LGD-4033 + MK-677","Best · RAD-140 · 8 MG + MK-677"]},
-  {goal:"Cutting",hero:"MK-2866 + Cardarine",alternates:["S-4 Andarine"],tiers:["Good · MK-2866","Better · MK-2866 + Cardarine","Best · MK-2866 + Cardarine + S-4"]},
-  {goal:"Recomp",hero:"MK-2866 + Cardarine",alternates:["Epistane"],tiers:["Good · MK-2866","Better · MK-2866 + Cardarine","Best · MK-2866 + Cardarine + Epistane"]},
-  {goal:"PCT",hero:"Research profile",alternates:["Explore the catalogue"],tiers:["Good · Product guide","Better · Comparison view","Best · Research profile"]},
+  {goal:"Bulking",headline:"Build for more size and strength.",hero:"LGD-4033 + MK-677",promise:"Pair a mass-focused SARM with longer-format growth and recovery support, then step up intensity with RAD-140 at 8 MG.",alternates:["RAD-140 · 8 MG","MK-677"],tiers:["Good · LGD-4033","Better · LGD-4033 + MK-677","Best · RAD-140 · 8 MG + MK-677"]},
+  {goal:"Cutting",headline:"Hold the line on strength while you cut.",hero:"MK-2866 + Cardarine",promise:"Combine Ostarine's lean-mass focus with Cardarine's endurance-led role, then add S-4 when you want a sharper final phase.",alternates:["S-4 Andarine"],tiers:["Good · MK-2866","Better · MK-2866 + Cardarine","Best · MK-2866 + Cardarine + S-4"]},
+  {goal:"Recomp",headline:"Push leaner gains from both sides.",hero:"MK-2866 + Cardarine",promise:"Build around Ostarine for lean-mass support, add Cardarine for training output, and introduce Epistane as the harder finishing option.",alternates:["Epistane"],tiers:["Good · MK-2866","Better · MK-2866 + Cardarine","Best · MK-2866 + Cardarine + Epistane"]},
+  {goal:"PCT",headline:"Plan the next phase with clarity.",hero:"Recovery-led planning",promise:"Bring post-cycle priorities, recovery support and your saved product history into one structured next-step plan.",alternates:["Research profile","Saved stacks"],tiers:["Good · Recovery guide","Better · Saved plan","Best · Personal research profile"]},
 ] as const;
 
 export const frontierFaq = [

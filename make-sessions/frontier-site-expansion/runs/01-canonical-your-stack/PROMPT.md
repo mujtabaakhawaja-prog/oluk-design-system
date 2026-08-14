@@ -12,6 +12,7 @@ Create the first Olympus Labs UK modular growth frontier: a production-quality *
 - Use the attached product renders exactly. Never generate, relabel, redraw, or substitute a bottle.
 - Treat the attached `product-data.json` as the complete customer content for this creative run. Do not show source, fixture, governance, or approval labels in the UI.
 - Render a customer module only. Never add internal navigation or visible labels such as `MF-01A`, `Card frontier`, `Icon library`, `Decision surfaces`, route names, node IDs, proof status, or programme names.
+- Use all caps only inside visibly bounded chips, pills, metric cells or compact status atoms. Headlines, body copy, section labels and buttons use sentence case.
 
 ## THIS_RUN_DELTA
 
@@ -29,7 +30,7 @@ Design three materially different, fully resolved customer-facing directions. Ea
 
 ### Direction 1 — Editorial Stack Rail
 
-Create a wide continuation section with a concise editorial introduction, one prominent selected recommendation, and two supporting recommendations. Use Vertical cards for the three-product desktop rail; the promoted recommendation may use Featured if its added prominence materially improves the hierarchy. Let canvas separate independent cards. Keep chamber and purchase content connected inside each card. The selected item should feel clearly more important without adding a cobalt outer outline.
+Create a wide stack-building section with a confident outcome-led introduction, one prominent selected recommendation, and two supporting recommendations. Use Vertical cards for the three-product desktop rail; the promoted recommendation may use Featured if its added prominence materially improves the hierarchy. Let canvas separate independent cards. Keep chamber and purchase content connected inside each card. The selected item should feel clearly more important without adding a cobalt outer outline.
 
 ### Direction 2 — Guided Decision Ladder
 
@@ -43,6 +44,7 @@ For every direction:
 
 - Show RAD-140, MENT, and MK-677 using the attached renders and exact card copy.
 - Include product series, name, alias, strength, servings, purity, price, concise stack rationale, two context-relevance QualitativeChips, and a clear action. StockPill and EvidenceStatus remain available to the wider product system but are deliberately omitted from this focused upsell module because they do not explain why a recommendation complements the starting product.
+- Sell the purpose of stacking: a more complete performance plan built around strength and lean mass, mass and power, or growth and recovery. Do not reduce the proposition to compatibility, catalogue navigation or product comparison.
 - Prove default, selected, and added states through real interaction. Added state must read `Added ✓`.
 - Provide an accessible focus state and a visible route to product detail.
 - Use at least 44×44 interaction targets.
