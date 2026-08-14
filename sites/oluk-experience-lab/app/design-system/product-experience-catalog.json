@@ -1,0 +1,1352 @@
+{
+  "schemaVersion": "oluk.product-experience.v1",
+  "productSourceHash": "c44eb1297135af3ebdbfa2c1d2a9ba5d3c87ffda28ad247f41dc2c273f2e980b",
+  "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
+  "products": [
+    {
+      "product": {
+        "slug": "mk-2866",
+        "sku": "80529-01",
+        "series": "SARM SERIES",
+        "name": "MK-2866",
+        "alias": "Ostarine",
+        "strength": "15 MG",
+        "servings": "90 SERVINGS",
+        "purity": ">99%",
+        "price": "£43",
+        "family": "Research Chemicals",
+        "goal": [
+          "Cutting",
+          "Recomp"
+        ],
+        "summary": "A 15 MG, 90-serving Ostarine format built for a leaner, more deliberate training phase.",
+        "researchProfile": "MK-2866 is the clean starting point for a cutting or recomp-focused stack: clear 15 MG strength, a 90-serving format and a direct view of its available lab record.",
+        "guidance": "Start with the format and outcome you want, then build the next phase around strength, endurance or recovery.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "gw-501516",
+          "s-4",
+          "lgd-4033"
+        ],
+        "stack": [
+          "gw-501516",
+          "s-4"
+        ]
+      },
+      "editorial": {
+        "summary": "A 15 MG, 90-serving Ostarine format built for a leaner, more deliberate training phase.",
+        "researchProfile": "MK-2866 is the clean starting point for a cutting or recomp-focused stack: clear 15 MG strength, a 90-serving format and a direct view of its available lab record.",
+        "guidance": "Start with the format and outcome you want, then build the next phase around strength, endurance or recovery.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/mk-2866/front.png",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "gw-501516",
+          "s-4",
+          "lgd-4033"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Cutting",
+          "Recomp"
+        ],
+        "additions": [
+          "gw-501516",
+          "s-4"
+        ]
+      },
+      "openLab": {
+        "recordId": "report-mk-2866-ol2201-2",
+        "reportId": "28868",
+        "status": "available"
+      },
+      "discovery": {
+        "family": "Research Chemicals",
+        "goals": [
+          "Cutting",
+          "Recomp"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/mk-2866",
+        "title": "MK-2866 15 MG | Olympus Labs UK",
+        "description": "A 15 MG, 90-serving Ostarine format built for a leaner, more deliberate training phase."
+      }
+    },
+    {
+      "product": {
+        "slug": "rad-140",
+        "sku": "RAD140-08",
+        "series": "SARM SERIES",
+        "name": "RAD-140",
+        "alias": "Testolone",
+        "strength": "8 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£55",
+        "family": "Research Chemicals",
+        "goal": [
+          "Bulking",
+          "Recomp"
+        ],
+        "summary": "An 8 MG, 60-serving Testolone format for strength-led phases that demand more intensity.",
+        "researchProfile": "RAD-140 is the 8 MG step-up for customers looking to put strength and lean mass at the centre of a harder training block.",
+        "guidance": "Use RAD-140 when strength and lean mass are the next priority, then compare it with the mass and recovery options in Your Stack.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "lgd-4033",
+          "mk-677",
+          "ment"
+        ],
+        "stack": [
+          "lgd-4033",
+          "mk-677"
+        ]
+      },
+      "editorial": {
+        "summary": "An 8 MG, 60-serving Testolone format for strength-led phases that demand more intensity.",
+        "researchProfile": "RAD-140 is the 8 MG step-up for customers looking to put strength and lean mass at the centre of a harder training block.",
+        "guidance": "Use RAD-140 when strength and lean mass are the next priority, then compare it with the mass and recovery options in Your Stack.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/rad-140/front.png",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "lgd-4033",
+          "mk-677",
+          "ment"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking",
+          "Recomp"
+        ],
+        "additions": [
+          "lgd-4033",
+          "mk-677"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Research Chemicals",
+        "goals": [
+          "Bulking",
+          "Recomp"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/rad-140",
+        "title": "RAD-140 8 MG | Olympus Labs UK",
+        "description": "An 8 MG, 60-serving Testolone format for strength-led phases that demand more intensity."
+      }
+    },
+    {
+      "product": {
+        "slug": "lgd-4033",
+        "sku": "LGD4033-05",
+        "series": "SARM SERIES",
+        "name": "LGD-4033",
+        "alias": "Ligandrol",
+        "strength": "5 MG",
+        "servings": "",
+        "purity": ">99%",
+        "price": "£44",
+        "family": "Research Chemicals",
+        "goal": [
+          "Bulking"
+        ],
+        "summary": "A 5 MG Ligandrol format for building a heavier, mass-focused phase.",
+        "researchProfile": "LGD-4033 gives a bulk-focused stack a clear lean-mass direction and a natural next step into MK-677 or RAD-140.",
+        "guidance": "Choose LGD-4033 when lean mass is the priority, then compare the recovery and intensity options that can take the stack further.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "mk-677",
+          "rad-140"
+        ],
+        "stack": [
+          "mk-677",
+          "rad-140"
+        ]
+      },
+      "editorial": {
+        "summary": "A 5 MG Ligandrol format for building a heavier, mass-focused phase.",
+        "researchProfile": "LGD-4033 gives a bulk-focused stack a clear lean-mass direction and a natural next step into MK-677 or RAD-140.",
+        "guidance": "Choose LGD-4033 when lean mass is the priority, then compare the recovery and intensity options that can take the stack further.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "mk-677",
+          "rad-140"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking"
+        ],
+        "additions": [
+          "mk-677",
+          "rad-140"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Research Chemicals",
+        "goals": [
+          "Bulking"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/lgd-4033",
+        "title": "LGD-4033 5 MG | Olympus Labs UK",
+        "description": "A 5 MG Ligandrol format for building a heavier, mass-focused phase."
+      }
+    },
+    {
+      "product": {
+        "slug": "mk-677",
+        "sku": "MK677-15",
+        "series": "RESEARCH SERIES",
+        "name": "MK-677",
+        "alias": "Ibutamoren",
+        "strength": "15 MG",
+        "servings": "90 SERVINGS",
+        "purity": ">99%",
+        "price": "£45",
+        "family": "Metabolics",
+        "goal": [
+          "Bulking",
+          "Recovery"
+        ],
+        "summary": "A 15 MG, 90-serving Ibutamoren format for appetite, sleep and recovery support between hard sessions.",
+        "researchProfile": "MK-677 brings the recovery side of a stack into focus with a familiar 90-serving format built around appetite, deeper sleep and day-to-day recovery.",
+        "guidance": "Choose MK-677 when the next phase needs better recovery capacity alongside the products already in your stack.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "lgd-4033",
+          "rad-140",
+          "bpc-157"
+        ],
+        "stack": [
+          "lgd-4033",
+          "rad-140"
+        ]
+      },
+      "editorial": {
+        "summary": "A 15 MG, 90-serving Ibutamoren format for appetite, sleep and recovery support between hard sessions.",
+        "researchProfile": "MK-677 brings the recovery side of a stack into focus with a familiar 90-serving format built around appetite, deeper sleep and day-to-day recovery.",
+        "guidance": "Choose MK-677 when the next phase needs better recovery capacity alongside the products already in your stack.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/hero/mk-677/front.webp",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "lgd-4033",
+          "rad-140",
+          "bpc-157"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking",
+          "Recovery"
+        ],
+        "additions": [
+          "lgd-4033",
+          "rad-140"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Metabolics",
+        "goals": [
+          "Bulking",
+          "Recovery"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/mk-677",
+        "title": "MK-677 15 MG | Olympus Labs UK",
+        "description": "A 15 MG, 90-serving Ibutamoren format for appetite, sleep and recovery support between hard sessions."
+      }
+    },
+    {
+      "product": {
+        "slug": "gw-501516",
+        "sku": "GW501516-10",
+        "series": "METABOLIC SERIES",
+        "name": "GW-501516",
+        "alias": "Cardarine",
+        "strength": "10 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£42",
+        "family": "Metabolics",
+        "goal": [
+          "Cutting",
+          "Recomp"
+        ],
+        "summary": "A 10 MG Cardarine format for endurance and body-composition focused phases.",
+        "researchProfile": "GW-501516 is the endurance-led choice beside Ostarine when you want a cutting or recomp stack to feel more capable through demanding sessions.",
+        "guidance": "Build around Cardarine when training output and a sharper finish are the next priorities.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "mk-2866",
+          "s-4",
+          "epistane"
+        ],
+        "stack": [
+          "mk-2866",
+          "s-4"
+        ]
+      },
+      "editorial": {
+        "summary": "A 10 MG Cardarine format for endurance and body-composition focused phases.",
+        "researchProfile": "GW-501516 is the endurance-led choice beside Ostarine when you want a cutting or recomp stack to feel more capable through demanding sessions.",
+        "guidance": "Build around Cardarine when training output and a sharper finish are the next priorities.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/shop/gw-501516.jpeg",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "mk-2866",
+          "s-4",
+          "epistane"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Cutting",
+          "Recomp"
+        ],
+        "additions": [
+          "mk-2866",
+          "s-4"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Metabolics",
+        "goals": [
+          "Cutting",
+          "Recomp"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/gw-501516",
+        "title": "GW-501516 10 MG | Olympus Labs UK",
+        "description": "A 10 MG Cardarine format for endurance and body-composition focused phases."
+      }
+    },
+    {
+      "product": {
+        "slug": "s-4",
+        "sku": "S4-25",
+        "series": "SARM SERIES",
+        "name": "S-4",
+        "alias": "Andarine",
+        "strength": "25 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£40",
+        "family": "Research Chemicals",
+        "goal": [
+          "Cutting"
+        ],
+        "summary": "A 25 MG Andarine format for a sharper cutting-focused finish.",
+        "researchProfile": "S-4 is the optional cutting add-on for customers who already have Ostarine and Cardarine at the centre of the plan.",
+        "guidance": "Add S-4 when a cutting stack calls for a more defined final phase.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "mk-2866",
+          "gw-501516"
+        ],
+        "stack": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "editorial": {
+        "summary": "A 25 MG Andarine format for a sharper cutting-focused finish.",
+        "researchProfile": "S-4 is the optional cutting add-on for customers who already have Ostarine and Cardarine at the centre of the plan.",
+        "guidance": "Add S-4 when a cutting stack calls for a more defined final phase.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Cutting"
+        ],
+        "additions": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Research Chemicals",
+        "goals": [
+          "Cutting"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/s-4",
+        "title": "S-4 25 MG | Olympus Labs UK",
+        "description": "A 25 MG Andarine format for a sharper cutting-focused finish."
+      }
+    },
+    {
+      "product": {
+        "slug": "yk-11",
+        "sku": "YK11-10",
+        "series": "SARM SERIES",
+        "name": "YK-11",
+        "alias": "YK-11",
+        "strength": "10 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£47",
+        "family": "Research Chemicals",
+        "goal": [
+          "Bulking"
+        ],
+        "summary": "A 10 MG YK-11 format for high-intensity size and strength goals.",
+        "researchProfile": "YK-11 is the higher-intensity option for customers who want to compare a bolder bulk-focused choice with LGD-4033 and RAD-140.",
+        "guidance": "Compare YK-11 with the other strength-led formats before choosing the next addition.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "lgd-4033",
+          "rad-140"
+        ],
+        "stack": [
+          "lgd-4033"
+        ]
+      },
+      "editorial": {
+        "summary": "A 10 MG YK-11 format for high-intensity size and strength goals.",
+        "researchProfile": "YK-11 is the higher-intensity option for customers who want to compare a bolder bulk-focused choice with LGD-4033 and RAD-140.",
+        "guidance": "Compare YK-11 with the other strength-led formats before choosing the next addition.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "lgd-4033",
+          "rad-140"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking"
+        ],
+        "additions": [
+          "lgd-4033"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Research Chemicals",
+        "goals": [
+          "Bulking"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/yk-11",
+        "title": "YK-11 10 MG | Olympus Labs UK",
+        "description": "A 10 MG YK-11 format for high-intensity size and strength goals."
+      }
+    },
+    {
+      "product": {
+        "slug": "s-23",
+        "sku": "S23-10",
+        "series": "SARM SERIES",
+        "name": "S-23",
+        "alias": "S-23",
+        "strength": "10 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£47",
+        "family": "Research Chemicals",
+        "goal": [
+          "Recomp"
+        ],
+        "summary": "A 10 MG S-23 format for focused recomp phases.",
+        "researchProfile": "S-23 offers a distinct strength-and-definition direction when a recomp stack needs a harder edge.",
+        "guidance": "Compare S-23 with Ostarine and Cardarine to find the balance that fits the next phase.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "mk-2866",
+          "gw-501516"
+        ],
+        "stack": [
+          "mk-2866"
+        ]
+      },
+      "editorial": {
+        "summary": "A 10 MG S-23 format for focused recomp phases.",
+        "researchProfile": "S-23 offers a distinct strength-and-definition direction when a recomp stack needs a harder edge.",
+        "guidance": "Compare S-23 with Ostarine and Cardarine to find the balance that fits the next phase.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Recomp"
+        ],
+        "additions": [
+          "mk-2866"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Research Chemicals",
+        "goals": [
+          "Recomp"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/s-23",
+        "title": "S-23 10 MG | Olympus Labs UK",
+        "description": "A 10 MG S-23 format for focused recomp phases."
+      }
+    },
+    {
+      "product": {
+        "slug": "epistane",
+        "sku": "EPI-20",
+        "series": "PROHORMONE SERIES",
+        "name": "Epistane",
+        "alias": "Epistane",
+        "strength": "20 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£44",
+        "family": "Metabolics",
+        "goal": [
+          "Recomp"
+        ],
+        "summary": "A 20 MG Epistane format for the harder finishing phase of a recomp stack.",
+        "researchProfile": "Epistane is the optional finisher for customers who want to take an Ostarine and Cardarine base into a more intense final phase.",
+        "guidance": "Choose Epistane when the goal is a sharper finish after the base of your stack is already clear.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "mk-2866",
+          "gw-501516"
+        ],
+        "stack": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "editorial": {
+        "summary": "A 20 MG Epistane format for the harder finishing phase of a recomp stack.",
+        "researchProfile": "Epistane is the optional finisher for customers who want to take an Ostarine and Cardarine base into a more intense final phase.",
+        "guidance": "Choose Epistane when the goal is a sharper finish after the base of your stack is already clear.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/shop/epistane.webp",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Recomp"
+        ],
+        "additions": [
+          "mk-2866",
+          "gw-501516"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Metabolics",
+        "goals": [
+          "Recomp"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/epistane",
+        "title": "Epistane 20 MG | Olympus Labs UK",
+        "description": "A 20 MG Epistane format for the harder finishing phase of a recomp stack."
+      }
+    },
+    {
+      "product": {
+        "slug": "ment",
+        "sku": "MENT-20",
+        "series": "PROHORMONE SERIES",
+        "name": "MENT",
+        "alias": "Trestolone",
+        "strength": "20 MG",
+        "servings": "30 SERVINGS",
+        "purity": ">99%",
+        "price": "£49",
+        "family": "Metabolics",
+        "goal": [
+          "Bulking"
+        ],
+        "summary": "A 20 MG, 30-serving Trestolone format for heavyweight size and power goals.",
+        "researchProfile": "MENT is the advanced builder in Your Stack: a high-intensity 20 MG option for customers moving beyond a SARM-only bulk phase.",
+        "guidance": "Choose MENT when maximum size and power are the next priorities in a more advanced stack.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "rad-140",
+          "lgd-4033"
+        ],
+        "stack": [
+          "rad-140"
+        ]
+      },
+      "editorial": {
+        "summary": "A 20 MG, 30-serving Trestolone format for heavyweight size and power goals.",
+        "researchProfile": "MENT is the advanced builder in Your Stack: a high-intensity 20 MG option for customers moving beyond a SARM-only bulk phase.",
+        "guidance": "Choose MENT when maximum size and power are the next priorities in a more advanced stack.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/hero/ment/front.webp",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "rad-140",
+          "lgd-4033"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking"
+        ],
+        "additions": [
+          "rad-140"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Metabolics",
+        "goals": [
+          "Bulking"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/ment",
+        "title": "MENT 20 MG | Olympus Labs UK",
+        "description": "A 20 MG, 30-serving Trestolone format for heavyweight size and power goals."
+      }
+    },
+    {
+      "product": {
+        "slug": "m-sten",
+        "sku": "MSTEN-10",
+        "series": "PROHORMONE SERIES",
+        "name": "M-STEN",
+        "alias": "Methylstenbolone",
+        "strength": "10 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£48",
+        "family": "Metabolics",
+        "goal": [
+          "Bulking"
+        ],
+        "summary": "A 10 MG Methylstenbolone format for a denser, bulk-focused training phase.",
+        "researchProfile": "M-STEN provides another high-intensity mass option for customers comparing the heavier end of the Olympus range.",
+        "guidance": "Compare M-STEN with MENT and LGD-4033 to choose the type of mass-focused phase you want to build.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "lgd-4033",
+          "ment"
+        ],
+        "stack": [
+          "lgd-4033"
+        ]
+      },
+      "editorial": {
+        "summary": "A 10 MG Methylstenbolone format for a denser, bulk-focused training phase.",
+        "researchProfile": "M-STEN provides another high-intensity mass option for customers comparing the heavier end of the Olympus range.",
+        "guidance": "Compare M-STEN with MENT and LGD-4033 to choose the type of mass-focused phase you want to build.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": "/assets/products/shop/m-sten.webp",
+          "authority": "registered-actual-render"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "lgd-4033",
+          "ment"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking"
+        ],
+        "additions": [
+          "lgd-4033"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Metabolics",
+        "goals": [
+          "Bulking"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/m-sten",
+        "title": "M-STEN 10 MG | Olympus Labs UK",
+        "description": "A 10 MG Methylstenbolone format for a denser, bulk-focused training phase."
+      }
+    },
+    {
+      "product": {
+        "slug": "trenavar",
+        "sku": "TREN-30",
+        "series": "PROHORMONE SERIES",
+        "name": "Trenavar",
+        "alias": "Trenavar",
+        "strength": "30 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£48",
+        "family": "Metabolics",
+        "goal": [
+          "Bulking"
+        ],
+        "summary": "A 30 MG Trenavar format for customers building a more aggressive size-focused phase.",
+        "researchProfile": "Trenavar sits alongside M-STEN and MENT for customers comparing the strongest mass-focused directions in the range.",
+        "guidance": "Compare the bulk-focused formats side by side, then choose the intensity that suits the next phase.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "m-sten",
+          "ment"
+        ],
+        "stack": [
+          "m-sten"
+        ]
+      },
+      "editorial": {
+        "summary": "A 30 MG Trenavar format for customers building a more aggressive size-focused phase.",
+        "researchProfile": "Trenavar sits alongside M-STEN and MENT for customers comparing the strongest mass-focused directions in the range.",
+        "guidance": "Compare the bulk-focused formats side by side, then choose the intensity that suits the next phase.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "m-sten",
+          "ment"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Bulking"
+        ],
+        "additions": [
+          "m-sten"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Metabolics",
+        "goals": [
+          "Bulking"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/trenavar",
+        "title": "Trenavar 30 MG | Olympus Labs UK",
+        "description": "A 30 MG Trenavar format for customers building a more aggressive size-focused phase."
+      }
+    },
+    {
+      "product": {
+        "slug": "bpc-157",
+        "sku": "BPC157-500",
+        "series": "PEPTIDE SERIES",
+        "name": "BPC-157",
+        "alias": "BPC-157",
+        "strength": "500 MCG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£54",
+        "family": "Peptides",
+        "goal": [
+          "Recovery"
+        ],
+        "summary": "A 500 MCG peptide format for recovery-focused product planning.",
+        "researchProfile": "BPC-157 is a recovery-led choice for customers building a more complete plan around hard training weeks and repeat performance.",
+        "guidance": "Pair BPC-157 with the products that support the way you train, recover and return to the gym.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "tb-500",
+          "mk-677"
+        ],
+        "stack": [
+          "tb-500"
+        ]
+      },
+      "editorial": {
+        "summary": "A 500 MCG peptide format for recovery-focused product planning.",
+        "researchProfile": "BPC-157 is a recovery-led choice for customers building a more complete plan around hard training weeks and repeat performance.",
+        "guidance": "Pair BPC-157 with the products that support the way you train, recover and return to the gym.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "tb-500",
+          "mk-677"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Recovery"
+        ],
+        "additions": [
+          "tb-500"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Peptides",
+        "goals": [
+          "Recovery"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/bpc-157",
+        "title": "BPC-157 500 MCG | Olympus Labs UK",
+        "description": "A 500 MCG peptide format for recovery-focused product planning."
+      }
+    },
+    {
+      "product": {
+        "slug": "tb-500",
+        "sku": "TB500-2",
+        "series": "PEPTIDE SERIES",
+        "name": "TB-500",
+        "alias": "TB-500",
+        "strength": "2 MG",
+        "servings": "30 SERVINGS",
+        "purity": ">99%",
+        "price": "£58",
+        "family": "Peptides",
+        "goal": [
+          "Recovery"
+        ],
+        "summary": "A 2 MG, 30-serving peptide format for recovery-led stacks.",
+        "researchProfile": "TB-500 is the companion peptide for customers who want to make recovery a clear part of their wider training plan.",
+        "guidance": "Compare TB-500 and BPC-157 when recovery is the product story you want to build around.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "bpc-157",
+          "mk-677"
+        ],
+        "stack": [
+          "bpc-157"
+        ]
+      },
+      "editorial": {
+        "summary": "A 2 MG, 30-serving peptide format for recovery-led stacks.",
+        "researchProfile": "TB-500 is the companion peptide for customers who want to make recovery a clear part of their wider training plan.",
+        "guidance": "Compare TB-500 and BPC-157 when recovery is the product story you want to build around.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "bpc-157",
+          "mk-677"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Recovery"
+        ],
+        "additions": [
+          "bpc-157"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Peptides",
+        "goals": [
+          "Recovery"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/tb-500",
+        "title": "TB-500 2 MG | Olympus Labs UK",
+        "description": "A 2 MG, 30-serving peptide format for recovery-led stacks."
+      }
+    },
+    {
+      "product": {
+        "slug": "cjc-1295",
+        "sku": "CJC1295-2",
+        "series": "PEPTIDE SERIES",
+        "name": "CJC-1295",
+        "alias": "CJC-1295",
+        "strength": "2 MG",
+        "servings": "30 SERVINGS",
+        "purity": ">99%",
+        "price": "£59",
+        "family": "Peptides",
+        "goal": [
+          "Recovery"
+        ],
+        "summary": "A 2 MG, 30-serving peptide format for customers prioritising recovery and consistency.",
+        "researchProfile": "CJC-1295 brings another recovery-focused direction into the peptide range for customers refining a longer-term plan.",
+        "guidance": "Browse the peptide range to compare recovery-focused formats and choose the right next addition.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "bpc-157",
+          "tb-500"
+        ],
+        "stack": [
+          "bpc-157"
+        ]
+      },
+      "editorial": {
+        "summary": "A 2 MG, 30-serving peptide format for customers prioritising recovery and consistency.",
+        "researchProfile": "CJC-1295 brings another recovery-focused direction into the peptide range for customers refining a longer-term plan.",
+        "guidance": "Browse the peptide range to compare recovery-focused formats and choose the right next addition.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "bpc-157",
+          "tb-500"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Recovery"
+        ],
+        "additions": [
+          "bpc-157"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Peptides",
+        "goals": [
+          "Recovery"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/cjc-1295",
+        "title": "CJC-1295 2 MG | Olympus Labs UK",
+        "description": "A 2 MG, 30-serving peptide format for customers prioritising recovery and consistency."
+      }
+    },
+    {
+      "product": {
+        "slug": "l-carnitine",
+        "sku": "LCARN-500",
+        "series": "NATURALS SERIES",
+        "name": "L-Carnitine",
+        "alias": "L-Carnitine",
+        "strength": "500 MG",
+        "servings": "60 SERVINGS",
+        "purity": ">99%",
+        "price": "£29",
+        "family": "Naturals",
+        "goal": [
+          "Cutting",
+          "Wellness"
+        ],
+        "summary": "A 500 MG L-Carnitine format for straightforward daily support in a cutting-focused plan.",
+        "researchProfile": "L-Carnitine is the accessible natural-range choice for customers who want a simple daily format alongside their training and body-composition goals.",
+        "guidance": "Choose L-Carnitine when you want to keep the next addition straightforward and easy to fit into the wider plan.",
+        "considerations": "Read the full product details before choosing your stack.",
+        "related": [
+          "gw-501516",
+          "mk-2866"
+        ],
+        "stack": [
+          "gw-501516"
+        ]
+      },
+      "editorial": {
+        "summary": "A 500 MG L-Carnitine format for straightforward daily support in a cutting-focused plan.",
+        "researchProfile": "L-Carnitine is the accessible natural-range choice for customers who want a simple daily format alongside their training and body-composition goals.",
+        "guidance": "Choose L-Carnitine when you want to keep the next addition straightforward and easy to fit into the wider plan.",
+        "considerations": "Read the full product details before choosing your stack."
+      },
+      "media": [
+        {
+          "role": "front",
+          "src": null,
+          "authority": "governed-unpopulated-chamber"
+        }
+      ],
+      "pdp": {
+        "sections": [
+          "decision",
+          "details",
+          "evidence",
+          "stack",
+          "related"
+        ],
+        "related": [
+          "gw-501516",
+          "mk-2866"
+        ]
+      },
+      "stacks": {
+        "goals": [
+          "Cutting",
+          "Wellness"
+        ],
+        "additions": [
+          "gw-501516"
+        ]
+      },
+      "openLab": {
+        "status": "unavailable"
+      },
+      "discovery": {
+        "family": "Naturals",
+        "goals": [
+          "Cutting",
+          "Wellness"
+        ]
+      },
+      "seo": {
+        "canonicalPath": "/product/l-carnitine",
+        "title": "L-Carnitine 500 MG | Olympus Labs UK",
+        "description": "A 500 MG L-Carnitine format for straightforward daily support in a cutting-focused plan."
+      }
+    }
+  ],
+  "openLab": {
+    "mk-2866": {
+      "record": {
+        "id": "report-mk-2866-ol2201-2",
+        "reportId": "28868",
+        "batchCode": "OL2201",
+        "testedAt": "2023-04-16",
+        "labName": "Janoshik",
+        "bindingState": "current",
+        "availabilityState": "available",
+        "recordAction": {
+          "label": "Open Lab Record",
+          "href": "/lab-reports?record=report-mk-2866-ol2201-2",
+          "enabled": true
+        },
+        "sourceAction": {
+          "label": "View original report",
+          "href": "https://olympuslabs.uk/test-reports/mk-2866-ol2201-2/"
+        }
+      },
+      "analytes": [
+        {
+          "compoundName": "MK-2866",
+          "purity": {
+            "displayValue": ">99%",
+            "comparator": "greater_than"
+          },
+          "concentration": {
+            "value": 16.02,
+            "displayValue": "16.02 mg",
+            "unit": "mg",
+            "labelClaimValue": 15,
+            "labelClaimDisplayValue": "15 mg label claim"
+          }
+        }
+      ],
+      "visualizations": {
+        "purity": {
+          "title": "Reported purity",
+          "displayValue": ">99%",
+          "comparator": "greater_than",
+          "tableFallback": [
+            {
+              "label": "Reported purity",
+              "value": ">99%"
+            }
+          ]
+        },
+        "concentration": {
+          "title": "Label-to-test comparison",
+          "testedValue": "16.02 mg",
+          "labelClaim": "15 mg label claim",
+          "testedPercent": 100,
+          "claimPercent": 94,
+          "tableFallback": [
+            {
+              "label": "Label claim",
+              "value": "15 mg label claim"
+            },
+            {
+              "label": "Tested concentration",
+              "value": "16.02 mg"
+            }
+          ]
+        },
+        "history": [
+          {
+            "reportId": "28868",
+            "batchCode": "OL2201",
+            "testedAt": "2023-04-16",
+            "purity": ">99%",
+            "state": "current"
+          }
+        ]
+      },
+      "interactionContract": {
+        "selectableViews": [
+          "record",
+          "report history",
+          "label comparison",
+          "analytes",
+          "source context"
+        ],
+        "keyboard": "arrow-key tabs and direct focus",
+        "reducedMotion": "no animated analytical reconstruction",
+        "mobile": "summary then progressive disclosure"
+      }
+    }
+  },
+  "contentHash": "7029479d65bd08f684bdc48995f3ada83495fe7086c8284015373416bf98624a"
+}

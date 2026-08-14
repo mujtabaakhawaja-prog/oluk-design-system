@@ -37,7 +37,7 @@ test("every catalogue PDP renders its own customer proposition without implement
   const products = [
     ["mk-2866", "MK-2866", "15 MG", "90 SERVINGS", "£43"],
     ["rad-140", "RAD-140", "8 MG", "60 SERVINGS", "£55"],
-    ["lgd-4033", "LGD-4033", "10 MG", "60 SERVINGS", "£49"],
+    ["lgd-4033", "LGD-4033", "5 MG", "", "£44"],
     ["mk-677", "MK-677", "15 MG", "90 SERVINGS", "£45"],
     ["gw-501516", "GW-501516", "10 MG", "60 SERVINGS", "£42"],
     ["s-4", "S-4", "25 MG", "60 SERVINGS", "£40"],
