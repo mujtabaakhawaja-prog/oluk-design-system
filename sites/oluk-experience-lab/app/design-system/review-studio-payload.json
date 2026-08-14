@@ -1,9 +1,9 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-14T14:57:19-04:00",
-  "sourceGitSha": "0f5dda9f8c6516e842677b20300077ed4cc950e2",
-  "sourceTreeHash": "4bae210e2cafdb43159816675e03c53fe226bba7",
+  "generatedAt": "2026-08-14T15:04:04-04:00",
+  "sourceGitSha": "165b3741097ac3160a4bda939a7a2f48dbc6ceeb",
+  "sourceTreeHash": "f12b63503c18383104b6f874ff4e575ff023c807",
   "designContractHash": "acf0dbce674e6d2660d486621faa619082a06390efc80b1b1fd172377f4005af",
   "decisionCount": 12,
   "families": [
@@ -473,9 +473,9 @@
           "/open-lab/stack-builder"
         ],
         "mobileStrategy": "carousel",
-        "status": "SITES_BUILT",
-        "desktopNodeId": "1247:15844",
-        "mobileNodeId": "1247:15863"
+        "status": "FIGMA_NATIVE_MIRROR_CREATED",
+        "desktopNodeId": "1332:26891",
+        "mobileNodeId": "1332:27283"
       },
       {
         "id": "catalogue-grid",
