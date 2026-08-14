@@ -34,10 +34,10 @@ test("outcome-led stack and OpenLab depth replace tier language and hard-coded c
 test("every promotion placement carries execution metadata", async () => {
   const matrix = JSON.parse(await read("../../authority/ROUTE-PROMOTION-MATRIX.json"));
   for (const route of matrix.routeDispositions) {
-    assert.ok(route.promotedPlacements.length);
-    assert.ok(route.promotablePlacements.length);
+    assert.equal(route.promoted, route.promotedPlacements.length > 0);
+    assert.ok(route.promotedPlacements.length + route.promotablePlacements.length > 0);
     for (const placement of [...route.promotedPlacements, ...route.promotablePlacements]) {
-      for (const key of ["customerPurpose", "sourceContent", "mediaPolicy", "mobileStrategy", "invalidatedConsumers"]) assert.ok(placement[key]);
+      for (const key of ["customerPurpose", "sourceContent", "actualMediaPolicy", "mobileStrategy", "invalidatedConsumers"]) assert.ok(placement[key]);
     }
   }
 });
