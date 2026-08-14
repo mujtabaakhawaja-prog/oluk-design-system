@@ -90,13 +90,13 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
   });
 });
 
-test("OpenLab tools and support routes have individual native Figma pairs rather than generic family boards", async () => {
+test("OpenLab, support, checkout, order and account routes have individual native Figma pairs", async () => {
   const routePairs = await readJson("authority/ROUTE-DESIGN-SYNC-REGISTRY.json");
   const designRegistry = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
   const ledger = await readJson("authority/SITE-ROUTE-LEDGER.json");
 
   assert.equal(routePairs.fileKey, designRegistry.fileKey);
-  assert.equal(routePairs.records.length, 27);
+  assert.equal(routePairs.records.length, 49);
   for (const record of routePairs.records) {
     assert.ok(ledger.routes.some(({ id, path: routePath }) => id === record.routeId && routePath === record.path), record.routeId);
     assert.ok(designRegistry.records.some(({ id }) => id === record.moduleRecord), record.moduleRecord);
