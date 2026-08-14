@@ -5,10 +5,10 @@
   "debt": {
     "policy": "MONOTONIC_DECREASE",
     "sourceFindingCount": 28,
-    "untouchedRouteViolationCount": 550
+    "untouchedRouteViolationCount": 518
   },
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 556,
+  "looseCopyGroupCount": 524,
   "routeRefactorCount": 44,
   "routes": [
     {
@@ -126,7 +126,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 18,
+      "containedCopyGroupCount": 22,
       "copyGroupCount": 36,
       "looseCopyExamples": [
         {
@@ -172,7 +172,7 @@
           "text": "Ready for the next phase"
         }
       ],
-      "looseCopyGroupCount": 18,
+      "looseCopyGroupCount": 14,
       "path": "/account/addresses",
       "routeId": "account-addresses",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -183,7 +183,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 18,
+      "containedCopyGroupCount": 22,
       "copyGroupCount": 36,
       "looseCopyExamples": [
         {
@@ -229,7 +229,7 @@
           "text": "Ready for the next phase"
         }
       ],
-      "looseCopyGroupCount": 18,
+      "looseCopyGroupCount": 14,
       "path": "/account/orders",
       "routeId": "account-orders",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -240,7 +240,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 18,
+      "containedCopyGroupCount": 22,
       "copyGroupCount": 36,
       "looseCopyExamples": [
         {
@@ -286,7 +286,7 @@
           "text": "Ready for the next phase"
         }
       ],
-      "looseCopyGroupCount": 18,
+      "looseCopyGroupCount": 14,
       "path": "/account/orders/OL-10428",
       "routeId": "account-order",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -297,7 +297,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 18,
+      "containedCopyGroupCount": 22,
       "copyGroupCount": 36,
       "looseCopyExamples": [
         {
@@ -343,7 +343,7 @@
           "text": "Ready for the next phase"
         }
       ],
-      "looseCopyGroupCount": 18,
+      "looseCopyGroupCount": 14,
       "path": "/account/profile",
       "routeId": "account-profile",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -354,7 +354,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 16,
+      "containedCopyGroupCount": 18,
       "copyGroupCount": 28,
       "looseCopyExamples": [
         {
@@ -394,13 +394,13 @@
         },
         {
           "copySurface": null,
-          "element": "h3",
+          "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "MK-2866"
+          "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
-      "looseCopyGroupCount": 12,
+      "looseCopyGroupCount": 10,
       "path": "/bag",
       "routeId": "bag",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -411,7 +411,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 16,
+      "containedCopyGroupCount": 20,
       "copyGroupCount": 38,
       "looseCopyExamples": [
         {
@@ -457,7 +457,7 @@
           "text": "MK-2866"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 18,
       "path": "/checkout/confirmation",
       "routeId": "checkout-confirmation",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2121,7 +2121,7 @@
       "surroundingRouteLooseCopyGroupCount": 6
     },
     {
-      "containedCopyGroupCount": 2,
+      "containedCopyGroupCount": 6,
       "copyGroupCount": 15,
       "looseCopyExamples": [
         {
@@ -2154,20 +2154,20 @@
         },
         {
           "copySurface": null,
-          "element": "h3",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Keep the next decision visible."
-        },
-        {
-          "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Timing and eligibility appear here when they are available for your order."
+          "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
         }
       ],
-      "looseCopyGroupCount": 13,
+      "looseCopyGroupCount": 9,
       "path": "/order/success/OL-10428",
       "routeId": "order-success",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2178,7 +2178,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 2,
+      "containedCopyGroupCount": 6,
       "copyGroupCount": 14,
       "looseCopyExamples": [
         {
@@ -2204,27 +2204,27 @@
         },
         {
           "copySurface": null,
-          "element": "h3",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Keep the next decision visible."
-        },
-        {
-          "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Timing and eligibility appear here when they are available for your order."
+          "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "MK-2866"
+          "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
         }
       ],
-      "looseCopyGroupCount": 12,
+      "looseCopyGroupCount": 8,
       "path": "/order/tracking/OL-10428",
       "routeId": "order-tracking",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2235,7 +2235,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 19,
+      "containedCopyGroupCount": 21,
       "copyGroupCount": 34,
       "looseCopyExamples": [
         {
@@ -2281,7 +2281,7 @@
           "text": "The product decision stays connected to its OpenLab pathway, with the approved product specifications carried through intact."
         }
       ],
-      "looseCopyGroupCount": 15,
+      "looseCopyGroupCount": 13,
       "path": "/product/mk-2866",
       "routeId": "product",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2592,7 +2592,7 @@
     {
       "file": "app/design-system/program-components.module.css",
       "rule": "muted-customer-copy",
-      "selector": ".recommendation p,.restock p,.openLabModule p",
+      "selector": ".openLabModule p",
       "value": "var(--oluk-text-muted)"
     },
     {
@@ -2692,7 +2692,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "adb641a5c9e157f74e98c3aeeef6a5387e78f97c38cd00a2ac118cff6846c61c",
+  "sourceHash": "1142f97f0c35282368529c13c8f9014304d5a3a1f94f9bb0b41bd91284128c5d",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2805,5 +2805,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "385df99eeb52abbd8b4164f6790bd99a89af36444faa0d9dd4fcb7025bd9e536"
+  "auditHash": "71fdf947450ff2ad5d6cd98129f4ad5eb08886ca95c3d6e8af81952d543c71f4"
 }
