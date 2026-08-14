@@ -449,7 +449,8 @@
             "contextKicker",
             "secondaryHref",
             "secondaryLabel",
-            "className"
+            "className",
+            "commerceTreatment"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -502,7 +503,8 @@
             "contextKicker",
             "secondaryHref",
             "secondaryLabel",
-            "className"
+            "className",
+            "commerceTreatment"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -553,7 +555,8 @@
             "contextKicker",
             "secondaryHref",
             "secondaryLabel",
-            "className"
+            "className",
+            "commerceTreatment"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -606,7 +609,8 @@
             "contextKicker",
             "secondaryHref",
             "secondaryLabel",
-            "className"
+            "className",
+            "commerceTreatment"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -2480,7 +2484,7 @@
   "generatedFrom": {
     "bridge": {
       "file": "authority/FIGMA-CODE-BRIDGE.json",
-      "sha256": "7e59491240a4f83748337df05b4c0059e36c7f1601c026f014e183df9811a4d3"
+      "sha256": "1feca7c220e89a1feccd26047f3ece95dbc37c691154a546ce21b43fda4ce884"
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
@@ -3853,5 +3857,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "ba1d7bdee79f812661aff17eb65b7a7111692c02c027df1ba4eaba62d223ef37"
+  "contractHash": "6feb898675f7e395fd5365d0e2e30ffedbf86c9793b6db20f7153c4e8ade09d4"
 }
