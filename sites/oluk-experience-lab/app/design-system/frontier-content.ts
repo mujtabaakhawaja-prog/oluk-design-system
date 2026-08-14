@@ -110,7 +110,7 @@ export const FRONTIER_ROUTE_PATTERNS = [
   "/order/failed/[orderId]",
   "/order/cancelled/[orderId]",
   "/order/tracking/[orderId]",
-  "/account/[surface]", "/checkout/[stage]", "/open-lab/[tool]", "/open-lab/coa/[id]",
+  "/account/[surface]", "/account/orders/[orderId]", "/checkout/[stage]", "/open-lab/[tool]", "/open-lab/coa/[id]",
 ] as const;
 
 export function productJsonLd(product: FrontierProductRecord) {

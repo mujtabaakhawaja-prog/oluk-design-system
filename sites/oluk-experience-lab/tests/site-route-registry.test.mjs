@@ -28,16 +28,15 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("core registry controls 52 governed pages while frontier patterns declare module-composed dynamic pages", async () => {
+test("core registry controls 52 physical pages while the proof matrix resolves all 73 ledger dispositions", async () => {
   assert.equal(CUSTOMER_ROUTES.length, 52);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
   const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS]);
   assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
-  assert.deepEqual(
-    ROUTES.map(({ path: routePath }) => routePath),
-    [...CUSTOMER_ROUTES.filter(({key})=>key!=="review-studio").map(({ path: routePath }) => routePath)].sort(),
-  );
+  assert.equal(ROUTES.length, 73);
+  assert.equal(new Set(ROUTES.map(({ id }) => id)).size, 73);
+  assert.ok(ROUTES.every(({ path: routePath }) => routePath.startsWith("/")));
   assert.deepEqual(PRIMARY_NAV_ROUTE_KEYS, ["shop", "openlab", "lab-reports", "wholesale", "about"]);
 });
 

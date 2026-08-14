@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 import { ROUTES as EXECUTABLE_ROUTES } from "./route-matrix.mjs";
+import { CUSTOMER_ROUTES } from "../../app/design-system/site-route-data.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const repositoryRoot = path.resolve(siteRoot, "../..");
@@ -196,7 +197,12 @@ check(
   "CobaltDensityBoundary exact Sites call routes are registered",
 );
 
-const executableRoutePaths = new Set(EXECUTABLE_ROUTES.map(({ path: routePath }) => routePath));
+const executableRoutePaths = new Set([
+  ...EXECUTABLE_ROUTES.map(({ path: routePath }) => routePath),
+  // The bridge also maps two retained physical aliases which are intentionally
+  // not independent entries in the 73-route maturity ledger.
+  ...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath),
+]);
 for (const route of registry.routeMappings) {
   for (const codeFile of route.codeFiles) {
     check(await exists(path.join(repositoryRoot, codeFile)), `${route.id} route source ${codeFile} exists`);

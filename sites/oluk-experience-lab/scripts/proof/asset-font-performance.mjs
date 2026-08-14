@@ -233,7 +233,7 @@ export async function auditAssetFontPerformance() {
   const remoteRenderedImages = [];
   const missingRenderedProductAssets = [];
   for (const route of customerRoutes) {
-    const html = await renderHtml(worker, route.path);
+    const html = await renderHtml(worker, route.path, route.expectedStatus);
     for (const tag of html.match(/<img\b[^>]*>/gi) ?? []) {
       const attributes = parseTagAttributes(tag);
       const sources = [attributes.src, attributes.srcset].filter(Boolean);

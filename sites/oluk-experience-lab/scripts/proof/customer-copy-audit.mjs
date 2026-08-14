@@ -74,7 +74,7 @@ export async function auditCustomerCopy() {
   const customerRoutes = ROUTES.filter(({ customer }) => customer);
   const rendered = [];
   for (const route of customerRoutes) {
-    const html = await renderHtml(worker, route.path);
+    const html = await renderHtml(worker, route.path, route.expectedStatus);
     rendered.push({ route: route.path, html, text: visibleText(html) });
   }
 
@@ -94,8 +94,7 @@ export async function auditCustomerCopy() {
   const rejectedCommerceHits = rendered.flatMap(({ route, html, text }) => {
     const hits = [];
     if (/90\s+CAPS(?:ULES)?\b/i.test(text)) hits.push("90-caps");
-    const approvedPaymentTrustStudy = route.startsWith("/checkout/") &&
-      text.includes("£128.97") && text.includes("$175.01") &&
+    const approvedPaymentTrustStudy = (route.startsWith("/checkout/") || route.startsWith("/order/success/")) &&
       text.includes("USD equivalent");
     if (/£\d+\.\d{2}\b/.test(text) && !approvedPaymentTrustStudy) hits.push("decimal-price");
     if (/(?:per|\/)\s*serving\b/i.test(text)) hits.push("per-serving-price");

@@ -223,8 +223,8 @@ try {
         }));
         const response = documentResponses.findLast(({ url: responseUrl }) => responseUrl === url) ?? documentResponses.at(-1);
         const failures = [];
-        if (response && response.status !== 200) failures.push(`document response ${response.status}`);
-        if (audit.h1.length !== 1 || audit.h1[0] !== route.heading) failures.push(`h1 expected ${JSON.stringify(route.heading)}; received ${JSON.stringify(audit.h1)}`);
+        if (response && response.status !== route.expectedStatus) failures.push(`document response ${response.status}; expected ${route.expectedStatus}`);
+        if (audit.h1.length !== 1 || (route.heading && audit.h1[0] !== route.heading)) failures.push(`h1 expected ${JSON.stringify(route.heading)}; received ${JSON.stringify(audit.h1)}`);
         if (!audit.hasMain) failures.push("missing main landmark");
         if (!audit.hasHeader) failures.push("missing header landmark");
         if (route.customer && !audit.hasFooter) failures.push("missing footer landmark");

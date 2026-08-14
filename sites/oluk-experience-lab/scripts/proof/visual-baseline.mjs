@@ -21,7 +21,9 @@ function expectedCases() {
     route: route.path,
     width: viewport.width,
     height: viewport.height,
-    customer: route.customer,
+    // The manifest uses this historical field to denote inclusion in the QA
+    // matrix. It is not the public-route classification.
+    customer: route.qa,
     artifact: `screenshots/${routeSlug(route.path)}--${viewport.width}.png`,
   })));
 }
@@ -69,7 +71,27 @@ if (process.argv.includes("--initialize")) {
   lint(initialized);
   await writeFile(path.resolve(writeTarget), `${JSON.stringify(initialized, null, 2)}\n`);
 }
-const manifest = JSON.parse(await readFile(process.argv.includes("--initialize") ? path.resolve(writeTarget) : manifestPath, "utf8"));
+if (process.argv.includes("--expand")) {
+  assert.ok(writeTarget, "--expand requires --write=<manifest path>");
+  const current = JSON.parse(await readFile(defaultManifestPath, "utf8"));
+  const existingCases = new Map(current.cases.map((entry) => [entry.id, entry]));
+  const expanded = {
+    ...current,
+    routeCount: ROUTES.length,
+    widthCount: VIEWPORTS.length,
+    cases: expectedCases().map((entry) => {
+      const existing = existingCases.get(entry.id);
+      // Keep the historical evidence state and hash, but always regenerate
+      // route metadata from the authoritative ledger-derived matrix.
+      return existing
+        ? { ...existing, ...entry }
+        : { ...entry, state: "PENDING_CAPTURE", sha256: null };
+    }),
+  };
+  lint(expanded);
+  await writeFile(path.resolve(writeTarget), `${JSON.stringify(expanded, null, 2)}\n`);
+}
+const manifest = JSON.parse(await readFile(process.argv.includes("--initialize") || process.argv.includes("--expand") ? path.resolve(writeTarget) : manifestPath, "utf8"));
 lint(manifest);
 
 const receiptPath = option("from-receipt") ?? option("compare-receipt");
