@@ -9,6 +9,7 @@ import { selectedEvidenceRecord } from "./evidence-record-fixtures";
 import { PresentationState } from "./presentation-state";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { ProductDossier } from "./product-dossier";
+import { getFrontierProduct } from "./frontier-content";
 import { mk2866Fixture, rad140Fixture } from "./product-fixtures";
 import { OpenLabProductExperience } from "./openlab-product-experience";
 import { EvidenceStatusChip } from "./program-components";
@@ -65,8 +66,15 @@ export function OpenLabRecordDetail({ record = selectedEvidenceRecord }: { recor
   return <section className={styles.section} data-module="OpenLabRecordDetail"><div className={`${styles.shell} ${styles.recordDetail}`}><div><PresentationState action={<><ActionLink href="/open-lab/records">Return to records</ActionLink><ActionLink href="/open-lab/source-chain" secondary>View source chain</ActionLink></>} state="unavailable"/><article className={styles.factCard}><span className="eyebrow">CURRENT DETAIL</span><dl><div><dt>Product</dt><dd>{record.product.name}</dd></div><div><dt>SKU</dt><dd>{record.product.sku}</dd></div><div><dt>Published</dt><dd>Unavailable</dd></div><div><dt>Result</dt><dd>Unavailable</dd></div></dl></article></div><aside className={styles.productBridge}><span className="eyebrow">CONNECTED PRODUCT</span><h2>{record.product.name}</h2><p>{record.product.alias} · {record.product.strength} · {record.product.servings} · {record.product.purity}</p><a href={record.product.customerPath}>View product · {record.product.price} <Arrow/></a><a href="/open-lab/dossier/mk-2866">Open product dossier <Arrow/></a></aside></div></section>;
 }
 
-export function OpenLabDossierComposition() {
-  return <div data-module="OpenLabDossierComposition"><ProductDossier evidenceHref="#dossier-record-state" id="dossier" product={mk2866Fixture}/><OpenLabProductExperience/><section className={styles.section} id="dossier-record-state"><div className={styles.shell}><PresentationState action={<><ActionLink href="/open-lab/records">Browse records</ActionLink><ActionLink href="/open-lab/methodology" secondary>Read methodology</ActionLink></>} state="unavailable"/></div></section><section className={styles.section}><div className={styles.shell}><ProductCommerceCard contextKicker="RETURN TO COMMERCE" product={mk2866Fixture} secondaryHref={mk2866Fixture.customerPath} secondaryLabel="Return to MK-2866" showQualitative={false} variant="relation"/></div></section></div>;
+export function OpenLabDossierComposition({ productSlug = "mk-2866" }: Readonly<{ productSlug?: string }>) {
+  const isReferenceProduct = productSlug === "mk-2866";
+  const product = getFrontierProduct(productSlug);
+  const productReference = product ? { name: product.name, series: product.series, alias: product.alias, strength: product.strength, servings: product.servings } : undefined;
+  return <div data-module="OpenLabDossierComposition" data-product-slug={productSlug}>
+    {isReferenceProduct ? <ProductDossier evidenceHref="#openlab-product-experience" id="dossier" product={mk2866Fixture}/> : null}
+    <OpenLabProductExperience id="openlab-product-experience" product={productReference} productSlug={productSlug}/>
+    {isReferenceProduct ? <section className={styles.section}><div className={styles.shell}><ProductCommerceCard contextKicker="RETURN TO COMMERCE" product={mk2866Fixture} secondaryHref={mk2866Fixture.customerPath} secondaryLabel="Return to MK-2866" showQualitative={false} variant="relation"/></div></section> : null}
+  </div>;
 }
 
 export function OpenLabMethodologyPipeline() {

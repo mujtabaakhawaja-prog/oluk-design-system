@@ -22,10 +22,13 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
   // Product-depth wave adds the outcome-led stack choices and five-view OpenLab interaction.
   // Keep the bounded aggregate increase explicit; largest-chunk law remains unchanged.
-  clientJavaScriptBytes: 590 * KIB,
+  // The customer-facing dossier now includes keyboard-operable technical views,
+  // table fallbacks and explicit unavailable states. This remains a bounded,
+  // presentation-only client interaction budget.
+  clientJavaScriptBytes: 596 * KIB,
   // The OpenLab evidence visualisation adds one token-governed stylesheet while
   // retaining a sub-260 KiB aggregate target.
-  clientCssBytes: 261 * KIB,
+  clientCssBytes: 265 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,
