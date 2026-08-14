@@ -1,9 +1,11 @@
 .section {
-  display: grid;
-  gap: var(--oluk-space-5);
-  margin: 0 auto;
-  padding: var(--oluk-space-14) 0;
-  width: min(1248px, calc(100% - 48px));
+  background: var(--oluk-canvas);
+  padding: var(--oluk-space-16) 0;
+  width: 100%;
+}
+
+.layout {
+  row-gap: var(--oluk-space-5);
 }
 
 .confidenceFacts {
@@ -36,7 +38,7 @@
 .confidenceFacts dt,
 .recordIdentity dt,
 .availabilityList dt {
-  color: var(--oluk-text-muted);
+  color: var(--oluk-text-secondary);
   font-family: var(--oluk-font-body);
   font-size: 12px;
   font-weight: 700;
@@ -59,33 +61,20 @@
   display: flex;
   gap: var(--oluk-space-2);
   min-width: 0;
+  overscroll-behavior-inline: contain;
   overflow-x: auto;
   padding: var(--oluk-space-1) 0 var(--oluk-space-2);
+  scroll-snap-type: x proximity;
   scrollbar-width: thin;
 }
 
-.tabs button {
-  background: var(--oluk-surface-card);
-  border: var(--oluk-border-width) solid var(--oluk-border-control);
-  border-radius: var(--oluk-radius-control);
-  color: var(--oluk-text-primary);
+.tabControl {
   flex: 0 0 auto;
-  font-family: var(--oluk-font-body);
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1;
-  min-height: 44px;
-  padding: 0 var(--oluk-space-4);
+  scroll-snap-align: start;
   white-space: nowrap;
+  width: auto;
 }
 
-.tabs button[aria-selected="true"] {
-  background: var(--oluk-cobalt);
-  border-color: var(--oluk-cobalt);
-  color: var(--oluk-text-on-inverse);
-}
-
-.tabs button:focus-visible,
 .panel:focus-visible,
 .tableScroller:focus-visible {
   outline: 3px solid var(--oluk-cobalt);
@@ -140,7 +129,7 @@
 
 .primaryMetric small,
 .unavailableIdentity small {
-  color: var(--oluk-text-muted);
+  color: var(--oluk-text-secondary);
   display: block;
   font-family: var(--oluk-font-body);
   font-size: 15px;
@@ -195,7 +184,7 @@
 .history span,
 .timeline span,
 .sourceChain span {
-  color: var(--oluk-text-muted);
+  color: var(--oluk-text-secondary);
   font-family: var(--oluk-font-body);
   font-size: 15px;
   line-height: 1.45;
@@ -255,7 +244,7 @@
 }
 
 .bars span {
-  color: var(--oluk-text-muted);
+  color: var(--oluk-text-secondary);
   font-family: var(--oluk-font-body);
   font-size: 13px;
   font-weight: 700;
@@ -271,6 +260,15 @@
   border-collapse: collapse;
   min-width: 520px;
   width: 100%;
+}
+
+.compactTable table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.compactTable :is(th, td) {
+  overflow-wrap: anywhere;
 }
 
 .tableScroller th,
@@ -319,10 +317,13 @@
   padding-block: var(--oluk-space-8);
 }
 
+.compact .layout {
+  padding-inline: 0;
+}
+
 @media (max-width: 760px) {
   .section {
     padding: var(--oluk-space-10) 0;
-    width: min(100% - 28px, 1248px);
   }
 
   .confidenceFacts,

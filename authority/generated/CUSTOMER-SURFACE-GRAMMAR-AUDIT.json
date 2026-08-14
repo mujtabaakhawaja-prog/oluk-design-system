@@ -4,16 +4,16 @@
   "currentState": "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
   "debt": {
     "policy": "MONOTONIC_DECREASE",
-    "sourceFindingCount": 39,
-    "untouchedRouteViolationCount": 554
+    "sourceFindingCount": 28,
+    "untouchedRouteViolationCount": 550
   },
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 560,
+  "looseCopyGroupCount": 556,
   "routeRefactorCount": 44,
   "routes": [
     {
-      "containedCopyGroupCount": 18,
-      "copyGroupCount": 52,
+      "containedCopyGroupCount": 23,
+      "copyGroupCount": 53,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -24,41 +24,41 @@
         },
         {
           "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Formulated to a higher standard."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose."
-        },
-        {
-          "copySurface": null,
-          "element": "h2",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "MK-2866"
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Ostarine"
-        },
-        {
-          "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Six points of assurance."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "A consistent vocabulary connects product identity with the available evidence pathway."
+        },
+        {
+          "copySurface": null,
+          "element": "h2",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Find the right starting point."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Browse the catalogue by its current family taxonomy, then combine goal, form, servings and availability filters."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "SARMs"
         }
       ],
-      "looseCopyGroupCount": 34,
+      "looseCopyGroupCount": 30,
       "path": "/",
       "routeId": "home",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2521,7 +2521,7 @@
     }
   ],
   "schemaVersion": 2,
-  "sourceFindingCount": 39,
+  "sourceFindingCount": 28,
   "sourceFindings": [
     {
       "file": "app/design-system/frontier-sections.module.css",
@@ -2534,72 +2534,6 @@
       "rule": "metadata-type-below-12",
       "selector": ".stackGrid .goalChip",
       "value": "11px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.module.css",
-      "rule": "body-type-below-15",
-      "selector": ".copy>span,.identity>span,.buyRow>div>span",
-      "value": "12px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".metrics dt",
-      "value": "10px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".tabs button",
-      "value": "11px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".stageControls span",
-      "value": "11px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.module.css",
-      "rule": "metadata-type-below-12",
-      "selector": ".metrics dt",
-      "value": "9px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.module.css",
-      "rule": "body-type-below-15",
-      "selector": ".copy>span",
-      "value": "11px"
-    },
-    {
-      "file": "app/design-system/locked-home-hero.tsx",
-      "offset": 402,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/mk-2866/front.png\""
-    },
-    {
-      "file": "app/design-system/locked-home-hero.tsx",
-      "offset": 627,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/hero/ment/front.webp\""
-    },
-    {
-      "file": "app/design-system/locked-home-hero.tsx",
-      "offset": 880,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/hero/endurashred/front.webp\""
-    },
-    {
-      "file": "app/design-system/locked-home-hero.tsx",
-      "offset": 1127,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/rad-140/front.png\""
-    },
-    {
-      "file": "app/design-system/locked-home-hero.tsx",
-      "offset": 1360,
-      "rule": "direct-unregistered-product-media",
-      "value": "\"/assets/products/hero/mk-677/front.webp\""
     },
     {
       "file": "app/design-system/openlab-sections.module.css",
@@ -2758,7 +2692,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "7a1a7d0fd90bd108d4107d49a2c4d0859adcd4cc28821850c8fe632134b09448",
+  "sourceHash": "adb641a5c9e157f74e98c3aeeef6a5387e78f97c38cd00a2ac118cff6846c61c",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2871,5 +2805,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "29eb6fd36b86a70afdc5eae4da4b6c5658b7fcbd1a96d44a26d8885ef1a793ca"
+  "auditHash": "385df99eeb52abbd8b4164f6790bd99a89af36444faa0d9dd4fcb7025bd9e536"
 }
