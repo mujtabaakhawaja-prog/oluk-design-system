@@ -8,6 +8,7 @@ import {
   PRIMARY_NAV_ROUTE_KEYS,
 } from "../app/design-system/site-route-data.mjs";
 import { FRONTIER_ROUTE_PATTERNS } from "../app/design-system/frontier-content.ts";
+import { PDP_CANDIDATE_ROUTE_PATTERNS } from "../app/design-system/pdp-candidate-manifest.ts";
 import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -32,7 +33,11 @@ test("core registry controls 52 physical pages while the proof matrix resolves a
   assert.equal(CUSTOMER_ROUTES.length, 52);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
   assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
-  const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS]);
+  const declaredPaths = new Set([
+    ...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath),
+    ...FRONTIER_ROUTE_PATTERNS,
+    ...PDP_CANDIDATE_ROUTE_PATTERNS,
+  ]);
   assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
   assert.equal(ROUTES.length, 73);
   assert.equal(new Set(ROUTES.map(({ id }) => id)).size, 73);

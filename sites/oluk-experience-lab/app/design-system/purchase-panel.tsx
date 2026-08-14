@@ -63,6 +63,8 @@ export function PurchasePanel({
   className,
 }: PurchasePanelProps) {
   const presentation = statePresentation(product, state);
+  const servingsLabel = product.servings.trim() || "Not supplied";
+  const introFacts = [product.alias, product.strength, product.servings.trim() || "Servings not supplied", product.purity];
 
   return (
     <article
@@ -85,7 +87,7 @@ export function PurchasePanel({
         }
       />
       <p className="product-intro">
-        {product.alias} · {product.strength} · {product.servings} · {product.purity}
+        {introFacts.join(" · ")}
       </p>
       <MetricRail product={product} />
       <QualitativeChipList facts={product.qualitativeFacts} />
@@ -95,7 +97,7 @@ export function PurchasePanel({
       </div>
       <div className="oluk-candidate-pack-size">
         <span>PACK SIZE</span>
-        <strong>{product.servings}</strong>
+        <strong>{servingsLabel}</strong>
       </div>
       <div className="purchase-row">
         <PriceBlock price={product.price} />
