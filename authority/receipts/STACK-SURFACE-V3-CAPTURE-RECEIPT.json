@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "oluk.stack-surface-v3.capture.v1",
+  "capturedAt": "2026-08-14T20:56:04Z",
+  "route": "/open-lab/stack-builder",
+  "authority": {
+    "sitesIsCompositionAuthority": true,
+    "baseCommit": "cd1838fab57ec5c34c6556a6f62af78c171bbba2",
+    "sourceCommit": "07378bd91b9d3f35c193f4d36f093e07c83ca30a",
+    "sourceTreeHash": "b3ba866fe4766dadbc0b6b91d58cf0798e5bfaf1",
+    "runtimeReadiness": "presentation-only",
+    "figmaWritten": false,
+    "reviewPayloadChanged": false
+  },
+  "sourceHashes": {
+    "yourStackBuilderTsx": "0e0a8fee1c25857bcace1156ce3531df4b558d44dbcc5480b9c054868481da78",
+    "yourStackBuilderCss": "bb4f41562b3d25924b7b8e7ec795b86114269c75aa510724e76086bd8bfb1524",
+    "stackCommercialModel": "633d23e4f515a5dda1d220b7fec4c672464477bc30c8329eb7232198d6fc44d6",
+    "assetPerformanceProof": "ef5f5f51911254f2be64e50114fe48c42c55b46cb2e136cd7b7b9be739f6425f",
+    "grammarAudit": "db08231b2a339a0948665cc870c51eee881d943bf34c7974b9fbdb41fa985da9"
+  },
+  "captures": [
+    {
+      "state": "FOUNDATION",
+      "width": 1440,
+      "height": 3644,
+      "path": "/tmp/oluk-stack-v3-final-foundation-1440.png",
+      "sha256": "e35df642be2f8db17c8a5cf9f433d86478ccfc93b8736ecc99f98044b5af2ed0"
+    },
+    {
+      "state": "FOUNDATION",
+      "width": 390,
+      "height": 5427,
+      "path": "/tmp/oluk-stack-v3-final-foundation-390.png",
+      "sha256": "1c23aa0ed93134e43f678e75110b177f6ab2589aa2339755dae92f6517fdc961"
+    },
+    {
+      "state": "MAXIMUM",
+      "width": 1440,
+      "height": 4822,
+      "path": "/tmp/oluk-stack-v3-final-maximum-1440.png",
+      "sha256": "2726c027a6e639862acc55fa97f2a3a85b8b632db0343c4567cfb7fb69976b8e"
+    },
+    {
+      "state": "MAXIMUM",
+      "width": 390,
+      "height": 5911,
+      "path": "/tmp/oluk-stack-v3-final-maximum-390.png",
+      "sha256": "45094015244af3f3e0b5ecdc8e8b60e5edd0df4aa8222faa6502c22972cc893a"
+    }
+  ],
+  "captureConditions": {
+    "server": "cold local production build at http://127.0.0.1:4177",
+    "temporaryCaptureCss": ".skip-link{display:none!important}",
+    "temporaryCaptureCssReason": "The accessible skip link is positioned above the viewport; it was hidden only to prevent Playwright element-screenshot stitching from painting the off-canvas fixed element inside the long capture.",
+    "otherVisualOverrides": []
+  },
+  "foundationState": {
+    "goal": "Cutting",
+    "baseline": "MK-2866",
+    "level": "FOUNDATION",
+    "total": "£43",
+    "desktop": {
+      "rootClientWidth": 1440,
+      "rootScrollWidth": 1440,
+      "pageClientWidth": 1440,
+      "pageScrollWidth": 1440
+    },
+    "mobile": {
+      "rootClientWidth": 390,
+      "rootScrollWidth": 390,
+      "pageClientWidth": 390,
+      "pageScrollWidth": 390,
+      "additionOptionCount": 3,
+      "additionRail": "intentional horizontal one-decision-at-a-time rail",
+      "additionRailDisplay": "flex",
+      "additionRailClientWidthPx": 356,
+      "additionRailScrollWidthPx": 1002,
+      "horizontalOverflowConfirmed": true,
+      "additionCardFlexBasisPx": 310,
+      "cueText": "3 product options · Swipe to compare",
+      "cueVisible": true,
+      "nextCardPeekPx": 10,
+      "nextCardVisible": true,
+      "documentOverflowPx": 0,
+      "pageOverflowPx": 0,
+      "pageHeightPx": 5427
+    }
+  },
+  "maximumState": {
+    "goal": "Bulking",
+    "baseline": {
+      "product": "MK-2866",
+      "price": "£43"
+    },
+    "selectedAdditions": [
+      {
+        "product": "LGD-4033",
+        "strength": "5 MG",
+        "servings": "—",
+        "price": "£44",
+        "media": "Product image coming soon",
+        "openLab": "Unavailable",
+        "action": "Remove LGD-4033"
+      },
+      {
+        "product": "RAD-140",
+        "strength": "8 MG",
+        "servings": "60 SERVINGS",
+        "price": "£55",
+        "openLab": "Unavailable",
+        "action": "Remove RAD-140"
+      }
+    ],
+    "level": "MAXIMUM",
+    "exactTotal": "£142",
+    "lineup": "MK-2866 + LGD-4033 + RAD-140",
+    "summaryCopy": "This 3-product build now focuses on lean mass, body composition and strength.",
+    "desktop": {
+      "rootClientWidth": 1440,
+      "rootScrollWidth": 1440,
+      "pageClientWidth": 1440,
+      "pageScrollWidth": 1440,
+      "additionOptionCount": 4,
+      "additionComputedGridTemplateColumns": "573px 573px",
+      "additionComputedTrackCount": 2,
+      "additionComputedRowCount": 2,
+      "pageHeightPx": 4822,
+      "layout": "deliberate 2x2"
+    },
+    "mobile": {
+      "rootClientWidth": 390,
+      "rootScrollWidth": 390,
+      "pageClientWidth": 390,
+      "pageScrollWidth": 390,
+      "additionOptionCount": 4,
+      "additionRailDisplay": "flex",
+      "additionRailClientWidthPx": 356,
+      "additionRailScrollWidthPx": 1328,
+      "horizontalOverflowConfirmed": true,
+      "additionCardFlexBasisPx": 310,
+      "cueText": "4 product options · Swipe to compare",
+      "cueVisible": true,
+      "nextCardPeekPx": 10,
+      "nextCardVisible": true,
+      "documentOverflowPx": 0,
+      "pageOverflowPx": 0,
+      "pageHeightPx": 5910,
+      "layout": "guided horizontal one-card rail"
+    }
+  },
+  "interactionAssertions": {
+    "baselineSwitch": {
+      "from": "MK-2866 · £43",
+      "to": "RAD-140 · £55",
+      "headlineUpdated": true,
+      "startingPriceUpdated": true,
+      "startingTotalUpdated": true
+    },
+    "maximumStateReachedByCustomerActions": true,
+    "selectedActionsUseRemoveSemantics": true,
+    "oneProductReviewActionDisabled": true,
+    "multiProductReviewActionEnabled": true,
+    "openLabRemainsSeparateConfidenceSurface": true
+  },
+  "grammarAndProvenance": {
+    "surfaceGrid": "12-column",
+    "strictScopedLooseCopyCount": 0,
+    "canvasIntroductionChildren": [
+      "SPAN",
+      "H1"
+    ],
+    "canvasIntroductionHasParagraphActionMediaOrChip": false,
+    "baselineLayout": "two-row-cobalt-soft",
+    "baselineDirectRows": 2,
+    "baselineProductComponent": "ProductCommerceCard.compact",
+    "baselineMetricRailCount": 1,
+    "allCommercialActionsUseActionControl": true,
+    "maximumActionControlCount": 26,
+    "allActionControlsIntentSource": "1337:8963",
+    "legacyButtonClassCount": 0,
+    "actionControlMinimumHeightPx": 44,
+    "actionControlRadiusPx": 8,
+    "actionControlLabelSizePx": 16,
+    "longCopySizePx": 16,
+    "longCopyColor": "rgb(83, 97, 125)",
+    "longCopyToken": "--oluk-text-secondary",
+    "contributionComponents": "QualitativeChip",
+    "plainContributionSpanCount": 0,
+    "stackLevelComponent": "QualitativeChip selected state",
+    "maximumProductCardCount": 5,
+    "maximumMetricRailCount": 5,
+    "maximumQualitativeChipItemCount": 23,
+    "desktopHeadingLetterSpacing": "-0.01em",
+    "desktopHeadingWordSpacing": "0.12em",
+    "mobileHeadingLetterSpacing": "0",
+    "mobileHeadingWordSpacing": "0.14em",
+    "minimumRenderedDesktopHeadingWordSpacingPx": 2.88,
+    "minimumRenderedMobileHeadingWordSpacingPx": 3.36
+  },
+  "contrastRatios": {
+    "minimumRequired": 4.5,
+    "primaryLabelOnCobalt": 5.516,
+    "secondaryAndQuietLabelOnWhite": 5.516,
+    "disabledLabelOnSubtleSurface": 5.949,
+    "bodyCopyOnCard": 6.224,
+    "bodyCopyOnCanvas": 5.854,
+    "allPass": true
+  },
+  "reducedMotion": {
+    "stackAdditionTransitionProperty": "none",
+    "stackAdditionTransform": "none",
+    "playwrightReportedDuration": "1e-05s",
+    "durationNote": "Chromium reports its reduced-motion epsilon duration while transition-property is none; no Stack addition property animates."
+  },
+  "performance": {
+    "preV3MergedClientJavaScriptBytes": 635653,
+    "v3ClientJavaScriptBytes": 639766,
+    "aggregateDeltaBytes": 4113,
+    "preV3StackChunkBytes": 17713,
+    "v3StackChunkBytes": 21819,
+    "stackChunkDeltaBytes": 4106,
+    "aggregateBudgetBeforeBytes": 636928,
+    "aggregateBudgetAfterBytes": 641024,
+    "largestChunkBytes": 202924,
+    "largestChunkBudgetBytes": 229376,
+    "reason": "The complete Stack interaction uses canonical ActionControl and QualitativeChip components while supporting live goal, baseline, contribution, selected-product and exact-total state plus an explicit mobile rail cue and next-card peek. No customer functionality was removed to save the bounded 4.1 KiB delta.",
+    "largestChunkCeilingChanged": false
+  },
+  "grammarAudit": {
+    "sourceHash": "5677a207ff2d80948c4a802ca3593f522e46e0a8dd4e11f786f1556eaa907b53",
+    "auditHash": "afb3847ee3b1897e5a696f1f7cbb3cecbe340eeb7f1f04e996b147aa1a091c4b",
+    "strictFoundationStatus": "STRICT_READY",
+    "stackStrictScopeStatus": "GRAMMAR_READY",
+    "stackStrictCopyGroupCount": 30,
+    "stackStrictLooseCopyGroupCount": 0,
+    "surroundingLegacyRouteLooseCopyGroupCount": 6,
+    "surroundingDebtPreserved": true
+  }
+}
