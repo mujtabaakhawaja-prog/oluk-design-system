@@ -1,4 +1,5 @@
 .grid {
+  box-sizing: border-box;
   display: grid;
   gap: var(--oluk-doc-grid-gap);
   grid-template-columns: repeat(var(--oluk-doc-grid-columns), minmax(0, 1fr));
@@ -45,10 +46,11 @@
   font-family: var(--oluk-font-display);
   font-size: clamp(var(--oluk-type-display-lg-size), 5vw, var(--oluk-type-display-xl-size));
   font-weight: 800;
-  letter-spacing: var(--oluk-type-display-lg-track);
+  letter-spacing: -0.01em;
   line-height: 1.02;
   margin: 0;
   overflow-wrap: anywhere;
+  word-spacing: 0.12em;
 }
 
 @media (max-width: 960px) {
@@ -79,5 +81,9 @@
   .pdp-media,
   .pdp-purchase {
     grid-column: 1;
+  }
+
+  .introduction > :is(h1, h2, h3) {
+    word-spacing: 0.14em;
   }
 }

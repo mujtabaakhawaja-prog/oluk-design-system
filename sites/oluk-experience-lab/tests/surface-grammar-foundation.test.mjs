@@ -86,6 +86,8 @@ test("every ActionControl label treatment meets the AA 4.5 contrast floor", asyn
 test("the surface grid exposes declared 12-column zones and a bounded canvas introduction", async () => {
   const source = await readFile(new URL("surface-grid.tsx", designSystem), "utf8");
   const css = await readFile(new URL("surface-grid.module.css", designSystem), "utf8");
+  const contentCss = await readFile(new URL("content-surfaces.module.css", designSystem), "utf8");
+  const tokens = await readFile(new URL("candidate-tokens.css", designSystem), "utf8");
   const specimen = await readFile(new URL("../review-studio/surface-grammar/page.tsx", designSystem), "utf8");
 
   assert.match(source, /data-grid-contract="12-column"/);
@@ -95,11 +97,20 @@ test("the surface grid exposes declared 12-column zones and a bounded canvas int
   assert.doesNotMatch(source, /copy\?:/);
   assert.doesNotMatch(source, /actions\?:/);
   assert.match(css, /repeat\(var\(--oluk-doc-grid-columns\), minmax\(0, 1fr\)\)/);
+  assert.match(css, /\.grid \{[\s\S]*?box-sizing: border-box;/);
   assert.match(css, /\.full \{ grid-column: 1 \/ 13; \}/);
   assert.match(css, /\.pdp-media \{ grid-column: 1 \/ 8; \}/);
   assert.match(css, /\.pdp-purchase \{ grid-column: 8 \/ 13; \}/);
   assert.doesNotMatch(css, /\.introduction > span \{[^}]*(?:background|border|border-radius|padding):/);
+  assert.match(css, /\.introduction > :is\(h1, h2, h3\) \{[\s\S]*?letter-spacing: -0\.01em;[\s\S]*?word-spacing: 0\.12em;/);
+  assert.match(css, /@media \(max-width: 700px\)[\s\S]*?\.introduction > :is\(h1, h2, h3\) \{[\s\S]*?word-spacing: 0\.14em;/);
   assert.match(css, /@media \(max-width: 700px\)/);
+  assert.match(contentCss, /\.title \{[\s\S]*?letter-spacing: -0\.01em;[\s\S]*?word-spacing: 0\.12em;/);
+  assert.match(contentCss, /@media \(max-width: 540px\)[\s\S]*?\.title,[\s\S]*?word-spacing: 0\.14em;/);
+  assert.match(contentCss, /\.copy,[\s\S]*?color: var\(--oluk-text-secondary\);/);
+  assert.match(contentCss, /\.secondaryCopy \{[\s\S]*?font-size: var\(--oluk-type-body-sm-size\);/);
+  assert.match(tokens, /--oluk-type-body-size:\s*16px;/);
+  assert.match(tokens, /--oluk-type-body-sm-size:\s*15px;/);
   assert.match(specimen, /data-grammar-strict="true"/);
   assert.match(specimen, /<ActionLink disabled href="\/shop">Unavailable link<\/ActionLink>/);
   assert.match(specimen, /A deliberately long quiet action label that remains readable at 390/);

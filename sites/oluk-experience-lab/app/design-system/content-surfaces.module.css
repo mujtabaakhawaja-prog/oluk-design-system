@@ -39,10 +39,11 @@
   font-family: var(--oluk-font-display);
   font-size: clamp(var(--oluk-type-display-md-size), 3vw, var(--oluk-type-display-lg-size));
   font-weight: 800;
-  letter-spacing: var(--oluk-type-display-md-track);
+  letter-spacing: -0.01em;
   line-height: 1.08;
   margin: 0;
   overflow-wrap: anywhere;
+  word-spacing: 0.12em;
 }
 
 .copy,
@@ -108,7 +109,7 @@
 
 .compact .title {
   font-size: var(--oluk-type-display-md-size);
-  letter-spacing: var(--oluk-type-display-md-track);
+  letter-spacing: -0.01em;
   line-height: var(--oluk-type-display-md-line);
 }
 
@@ -122,8 +123,9 @@
   .title,
   .compact .title {
     font-size: var(--oluk-type-display-md-size);
-    letter-spacing: var(--oluk-type-display-md-track);
+    letter-spacing: -0.01em;
     line-height: var(--oluk-type-display-md-line);
+    word-spacing: 0.14em;
   }
 
   .actions {
