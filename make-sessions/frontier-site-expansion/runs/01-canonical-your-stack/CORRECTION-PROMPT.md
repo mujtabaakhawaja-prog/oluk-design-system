@@ -1,4 +1,6 @@
-# Paste into the existing Make session to correct pass 01
+# HISTORICAL — DO NOT RUN
+
+This correction prompt is retained as evidence of the superseded Make pass. The current additive Sites builder must be nativeized before any new Make exploration.
 
 Correct the existing Your Stack pass at Final-Design `1200:34256`. Keep the overall cool luminous material direction and the three supplied product renders, but rebuild the surface as a production customer upsell module rather than an MF review or internal programme page.
 
@@ -47,8 +49,8 @@ Module introduction:
 RAD-140:
 
 - Context chip 1: `STACK FOCUS` / `STRENGTH + LEAN MASS`
-- Context chip 2: `WHY ADD IT` / `MAXIMUM INTENSITY`
-- Body: `Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.`
+- Context chip 2: `WHAT IT ADDS` / `STRENGTH STEP-UP`
+- Body: `Add serious strength and lean-mass focus with an 8 MG step-up built for a harder training phase.`
 - Secondary action: `View RAD-140`
 - Primary action: `Add RAD-140`
 
@@ -56,7 +58,7 @@ MENT:
 
 - Context chip 1: `STACK FOCUS` / `MASS + POWER`
 - Context chip 2: `WHY ADD IT` / `ADVANCED BUILDER`
-- Body: `Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.`
+- Body: `Take the build toward heavyweight size and power with a 20 MG Trestolone option beyond a SARM-only line-up.`
 - Secondary action: `View MENT`
 - Primary action: `Add MENT`
 
