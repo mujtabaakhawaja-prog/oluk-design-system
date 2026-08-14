@@ -90,6 +90,15 @@
   z-index: 2;
 }
 
+.unpopulated {
+  border: 1px solid var(--oluk-border-inner);
+  border-radius: var(--oluk-radius-card);
+  height: 58%;
+  position: relative;
+  width: 42%;
+  z-index: 2;
+}
+
 @media (max-width: 960px) {
   .chamber[data-context="relation"] {
     min-height: 360px;

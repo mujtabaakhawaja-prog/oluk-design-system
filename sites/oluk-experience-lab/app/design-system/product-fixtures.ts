@@ -55,7 +55,8 @@ export type ProductFixture = Readonly<{
   price: string;
   customerPath: string;
   evidencePath: string;
-  media: ProductMediaAsset;
+  /** A missing approved render is intentionally shown as an unpopulated governed chamber. */
+  media: ProductMediaAsset | null;
   qualitativeFacts: ReadonlyArray<QualitativeFact>;
   presentationStatus: Readonly<{
     inventory: InventoryState;

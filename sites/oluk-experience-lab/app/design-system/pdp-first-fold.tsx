@@ -12,7 +12,7 @@ export function PdpFirstFold({ product }: Readonly<{ product: ProductFixture }>)
       <div className={`shell ${styles.composition}`}>
         <div className={styles.media}>
           <span aria-hidden="true" className={styles.atmosphere}/>
-          <img alt={`${product.name} ${product.alias} bottle`} decoding="async" fetchPriority="high" height={product.media.height} loading="eager" sizes="(max-width: 760px) 82vw, 48vw" src={product.media.src} width={product.media.width}/>
+          {product.media ? <img alt={`${product.name} ${product.alias} bottle`} decoding="async" fetchPriority="high" height={product.media.height} loading="eager" sizes="(max-width: 760px) 82vw, 48vw" src={product.media.src} width={product.media.width}/> : <div aria-label={`${product.name} product render coming soon`} className={styles.unpopulatedMedia}><span>{product.series}</span><strong>{product.name}</strong><small>Product render coming soon</small></div>}
         </div>
         <PurchasePanel className={styles.panel} headingLevel="h1" product={product}/>
       </div>
