@@ -40,6 +40,7 @@ test("ActionControl is the sole canonical link and button source", async () => {
   assert.match(source, /aria-disabled=/);
   assert.match(source, /leadingIcon/);
   assert.match(source, /trailingIcon/);
+  assert.match(source, /trailingIcon=\{unavailable \? undefined : trailingIcon\}/);
   assert.match(source, /pendingLabel/);
   assert.doesNotMatch(source, /"button button-secondary"/);
   assert.doesNotMatch(source, /&& "button"/);
@@ -100,6 +101,7 @@ test("the surface grid exposes declared 12-column zones and a bounded canvas int
   assert.doesNotMatch(css, /\.introduction > span \{[^}]*(?:background|border|border-radius|padding):/);
   assert.match(css, /@media \(max-width: 700px\)/);
   assert.match(specimen, /data-grammar-strict="true"/);
+  assert.match(specimen, /<ActionLink disabled href="\/shop">Unavailable link<\/ActionLink>/);
   assert.match(specimen, /A deliberately long quiet action label that remains readable at 390/);
 });
 

@@ -147,6 +147,30 @@ test("server-renders all 52 governed routes with their expected headings and pri
   }
 });
 
+test("disabled ActionLink removes navigation semantics and its arrow while enabled links retain both", async () => {
+  const worker = await loadWorker();
+  const html = await renderHtml(worker, "/review-studio/surface-grammar");
+  const disabledLink = html.match(
+    /<a\b(?=[^>]*\bdata-control-kind=["']link["'])(?=[^>]*\baria-disabled=["']true["'])[^>]*>[\s\S]*?Unavailable link[\s\S]*?<\/a>/i,
+  )?.[0];
+  const enabledLink = html.match(
+    /<a\b(?=[^>]*\bdata-control-kind=["']link["'])(?=[^>]*\bhref=["']\/open-lab\/methodology["'])[^>]*>[\s\S]*?See the method[\s\S]*?<\/a>/i,
+  )?.[0];
+
+  assert.ok(disabledLink, "the grammar specimen renders its disabled ActionLink");
+  const disabledOpeningTag = disabledLink.match(/^<a\b[^>]*>/i)?.[0] ?? "";
+  assert.match(disabledOpeningTag, /\baria-disabled=["']true["']/i);
+  assert.match(disabledOpeningTag, /\btabindex=["']-1["']/i);
+  assert.doesNotMatch(disabledOpeningTag, /\bhref=/i);
+  assert.equal(visibleText(disabledLink), "Unavailable link");
+  assert.doesNotMatch(disabledLink, /\baria-hidden=/i, "disabled link renders no trailing icon wrapper");
+
+  assert.ok(enabledLink, "the grammar specimen renders its enabled ActionLink");
+  assert.match(enabledLink, /\bhref=["']\/open-lab\/methodology["']/i);
+  assert.match(enabledLink, /\baria-hidden=["']true["']/i);
+  assert.match(visibleText(enabledLink), /See the method\s*→/);
+});
+
 test("preserves exact MK-2866 commerce truth and removes backend vocabulary from customer routes", async () => {
   const worker = await loadWorker();
   const productHtml = await renderHtml(worker, "/product/mk-2866");
