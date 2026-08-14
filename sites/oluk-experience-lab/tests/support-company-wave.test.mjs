@@ -43,19 +43,19 @@ const routes = new Map([
   ["/faq", ["Find the answer, then get back to the decision.", "Where can I find batch information?", "Build your stack"]],
   ["/faq-help-centre", ["Find the answer, then get back to the decision.", "Source Reported", "View your orders"]],
   ["/contact", ["Start with the question that needs answering.", "Start from the order.", "Find a batch"]],
-  ["/delivery", ["Choose delivery with the order in view.", "No delivery speed", "Track an order"]],
-  ["/shipping-returns", ["Keep the order clear from checkout to resolution.", "does not invent delivery promises", "Read refund guidance"]],
-  ["/international", ["Start with the destination, then review the order.", "No destination coverage", "Browse products"]],
+  ["/delivery", ["Choose delivery with the order in view.", "Delivery choices appear", "Track an order"]],
+  ["/shipping-returns", ["Keep the order clear from checkout to resolution.", "Return and refund guidance begins", "Read refund guidance"]],
+  ["/international", ["Start with the destination, then review the order.", "review the products, delivery and total", "Browse products"]],
   ["/gift-cards", ["Gift card purchase is not available here yet.", "Compare products", "Explore OpenLab"]],
   ["/privacy", ["Read the published information behind your customer experience.", "Read the privacy policy", "View your orders"]],
   ["/terms", ["Read the published terms behind your order.", "Read the terms and conditions", "View your orders"]],
-  ["/cookies", ["Read the published privacy information", "does not claim a preference manager", "Open the sitemap"]],
-  ["/refunds", ["Start with the order, then see the next step clearly.", "does not invent eligibility", "Open the help centre"]],
+  ["/cookies", ["Read the published privacy information", "A preference manager is not available", "Open the sitemap"]],
+  ["/refunds", ["Start with the order, then see the next step clearly.", "Eligibility, timing and amount are confirmed", "Open the help centre"]],
   ["/legal/privacy", ["Read the published information behind your customer experience.", "Source document", "View your orders"]],
   ["/legal/terms", ["Read the published terms behind your order.", "Source document", "View your orders"]],
   ["/legal/cookies", ["Cookie information", "Read the privacy policy", "Open the sitemap"]],
   ["/sitemap", ["Go straight to the decision you came to make.", "Find the confidence behind a product.", "Build your stack"]],
-  ["/wholesale", ["Begin a wholesale conversation with product clarity.", "Explore OpenLab", "Commercial terms remain specific"]],
+  ["/wholesale", ["Begin a wholesale conversation with product clarity.", "Explore OpenLab", "Commercial terms stay specific"]],
 ]);
 
 function supportMain(html, path) {
@@ -129,10 +129,14 @@ test("support styles preserve governed type, color and action laws", () => {
 
 test("support copy does not manufacture legal, delivery or service detail", () => {
   assert.doesNotMatch(supportSource, /\b(?:next-day|same-day|business days?|free shipping|guaranteed delivery|refund within|return window|minimum order|wholesale price)\b/i);
-  assert.match(supportSource, /does not invent delivery promises/);
-  assert.match(supportSource, /does not invent eligibility/);
-  assert.match(supportSource, /does not claim a preference manager/);
+  assert.match(supportSource, /Delivery choices appear after you enter a destination/);
+  assert.match(supportSource, /Eligibility, timing and amount are confirmed through support using those details/);
+  assert.match(supportSource, /A preference manager is not available on this page/);
   assert.match(supportSource, /Gift card purchase is not available here yet/);
+});
+
+test("support copy uses customer production language rather than audit disclaimers", () => {
+  assert.doesNotMatch(supportSource, /customer-facing|does not (?:invent|assume|claim)|without (?:inventing|assuming)|unsupported (?:general )?(?:promise|service)|no destination coverage|intentionally not presented|this customer destination/i);
 });
 
 test("public delivery and refund guidance do not masquerade as active checkout steps", async () => {
