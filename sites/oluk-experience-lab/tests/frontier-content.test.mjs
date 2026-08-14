@@ -176,6 +176,8 @@ test("Your Stack exposes the approved outcome-led card as one reusable Sites exp
   assert.match(stackBuilder, /export function StackOutcomeCard/);
   assert.match(stackBuilder, /STACK FOCUS/);
   assert.match(stackBuilder, /WHY ADD IT/);
-  assert.match(stackBuilder, /strength and lean mass[\s\S]*size and power[\s\S]*growth, appetite, sleep and recovery/i);
+  assert.match(stackBuilder, /Build a sharper cutting stack[\s\S]*Build size and power into the plan[\s\S]*Build a more capable recomp stack/i);
+  assert.match(stackBuilder, /MK-2866.*\+.*selectedProducts|selectedProducts.*MK-2866/i);
+  assert.match(stackBuilder, /Focused build[\s\S]*Elevated build[\s\S]*Full build/);
   assert.doesNotMatch(stackBuilder, /function StackCard/);
 });

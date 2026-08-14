@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "oluk.route-promotion.v1",
+  "status": "ACTIVE_DESIGN_PROGRAM",
+  "authority": "Codex Sites is the source of truth. This map defines customer-facing placements, not runtime ownership or Figma authority.",
+  "templates": [
+    {
+      "id": "homepage",
+      "paths": ["/"],
+      "promoted": ["LockedHomeHero", "interactive 5-3-1 product stage", "category discovery", "featured ProductCommerceCard", "OpenLab entry", "trust closure"],
+      "promotable": ["ProductEvidenceSnapshot", "StackOutcomeCard", "related products", "OpenLab record preview", "collection campaign rail"],
+      "standaloneDestinations": ["/shop", "/open-lab", "/open-lab/records", "/open-lab/stack-builder"]
+    },
+    {
+      "id": "pdp",
+      "paths": ["/product/:slug", "/product/:slug/continuation"],
+      "promoted": ["PdpD first fold", "ProductMediaChamber", "PurchasePanel", "ProductNarrative", "ProductDossier", "ProductEvidenceSnapshot", "YourStackBuilder", "related products"],
+      "promotable": ["OpenLab record preview", "compound comparison", "report viewer preview", "RestockCard", "reviews", "collection continuation"],
+      "standaloneDestinations": ["/open-lab/compound/:slug", "/open-lab/report/:batchId", "/open-lab/compare", "/open-lab/stack-builder"]
+    },
+    {
+      "id": "openlab",
+      "paths": ["/open-lab", "/open-lab/records", "/open-lab/compound/:slug", "/open-lab/report/:batchId", "/open-lab/:tool"],
+      "promoted": ["HeroLight entry", "record archive", "compound dossier", "report/document viewer", "technical evidence visualizations", "stack and comparison tools"],
+      "promotable": ["ProductCommerceCard return rail", "PDP evidence snapshot", "related product rail", "stack outcome cards", "methodology and source-chain storytelling"],
+      "standaloneDestinations": ["/product/:slug", "/open-lab/compare", "/open-lab/stack-builder", "/open-lab/batch-lookup"]
+    },
+    {
+      "id": "commerce-continuation",
+      "paths": ["/bag", "/checkout/:stage", "/order/:state", "/account/:surface"],
+      "promoted": ["line items and summary", "checkout step indicator", "payment-trust equality lock", "receipt and tracking", "recommendation and restock continuation"],
+      "promotable": ["YourStackBuilder compact rail", "ProductEvidenceSnapshot", "related products", "quick reorder", "loyalty and saved stack"],
+      "standaloneDestinations": ["/open-lab/stack-builder", "/product/:slug", "/account/loyalty"]
+    },
+    {
+      "id": "discovery-support",
+      "paths": ["/shop", "/shop/:family", "/collections/:slug", "/search", "/compare", "/faq-help-centre", "/about"],
+      "promoted": ["CommerceDiscoveryFilters", "ProductCommerceCard grids", "comparison cards", "FAQ disclosure", "brand and trust storytelling"],
+      "promotable": ["StackOutcomeCard", "OpenLab record preview", "collection campaign rail", "ProductDossier preview"],
+      "standaloneDestinations": ["/open-lab", "/open-lab/compare", "/bundle-builder"]
+    }
+  ],
+  "completionRule": "A section is promoted when it is deliberately composed on a customer page; it is promotable when the reusable Sites export and mobile strategy are ready but its host placement still needs a route-level composition decision."
+}

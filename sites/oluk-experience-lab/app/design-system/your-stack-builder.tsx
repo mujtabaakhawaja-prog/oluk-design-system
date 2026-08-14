@@ -19,8 +19,34 @@ type StackProduct = Readonly<{
   focus: string;
   position: string;
   rationale: string;
+  outcomes: readonly StackGoal[];
   media: ProductMediaAsset;
 }>;
+
+type StackGoal = "Cutting" | "Bulking" | "Recomp" | "PCT";
+
+const stackGoals: Readonly<Record<StackGoal, { headline: string; copy: string; outcome: string }>> = {
+  Cutting: {
+    headline: "Build a sharper cutting stack.",
+    copy: "Keep MK-2866 as your base, then add the product direction that pushes training output, lean mass focus or recovery capacity further.",
+    outcome: "Leaner, harder training emphasis",
+  },
+  Bulking: {
+    headline: "Build size and power into the plan.",
+    copy: "Start with MK-2866, then layer the products that put more weight behind strength, mass and recovery through a harder phase.",
+    outcome: "Mass and power emphasis",
+  },
+  Recomp: {
+    headline: "Build a more capable recomp stack.",
+    copy: "Keep the base clean, then select the additions that give your training phase more strength, body-composition and recovery support.",
+    outcome: "Strength and body-composition emphasis",
+  },
+  PCT: {
+    headline: "Plan the next phase with intent.",
+    copy: "Use your MK-2866 starting point to compare the products you want in view before you move into the next training block.",
+    outcome: "Next-phase planning emphasis",
+  },
+};
 
 const crops = {
   card: {
@@ -86,6 +112,7 @@ const products: readonly StackProduct[] = [
     position: "Maximum intensity",
     rationale:
       "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.",
+    outcomes: ["Cutting", "Bulking", "Recomp"],
     media: media("rad-140", "Testolone", "/assets/products/rad-140/front.png"),
   },
   {
@@ -101,6 +128,7 @@ const products: readonly StackProduct[] = [
     position: "Advanced builder",
     rationale:
       "Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.",
+    outcomes: ["Bulking", "Recomp"],
     media: media("ment", "Trestolone", "/assets/products/hero/ment/front.webp"),
   },
   {
@@ -116,6 +144,7 @@ const products: readonly StackProduct[] = [
     position: "Daily support",
     rationale:
       "Build recovery capacity around the stack with a 90-serving Ibutamoren format supporting appetite, deeper sleep and recovery between hard sessions.",
+    outcomes: ["Bulking", "Cutting", "Recomp", "PCT"],
     media: media("mk-677", "Ibutamoren", "/assets/products/hero/mk-677/front.webp"),
   },
 ] as const;
@@ -199,7 +228,11 @@ export function StackOutcomeCard({
 export function YourStackBuilder() {
   const [selected, setSelected] = useState<StackProduct["id"]>("rad-140");
   const [added, setAdded] = useState<StackProduct["id"][]>([]);
+  const [goal, setGoal] = useState<StackGoal>("Cutting");
   const count = useMemo(() => added.length, [added]);
+  const visibleProducts = products.filter((product) => product.outcomes.includes(goal));
+  const selectedProducts = products.filter((product) => added.includes(product.id));
+  const stackSignal = count === 0 ? "Base set" : count === 1 ? "Focused build" : count === 2 ? "Elevated build" : "Full build";
 
   return (
     <div className={styles.page} data-component="YourStackBuilder" data-mobile-strategy="carousel">
@@ -221,16 +254,17 @@ export function YourStackBuilder() {
 
       <section className={styles.intro}>
         <span>Build your stack</span>
-        <h1>Build more from your MK-2866 stack.</h1>
-        <p>
-          Choose the result you want next: push strength and lean mass with RAD-140, add
-          heavyweight size and power with MENT, or bring growth, appetite, sleep and recovery
-          support into the plan with MK-677.
-        </p>
+        <h1>{stackGoals[goal].headline}</h1>
+        <p>{stackGoals[goal].copy}</p>
+        <div aria-label="Choose your stack goal" className={styles.goalPicker} role="tablist">
+          {(Object.keys(stackGoals) as StackGoal[]).map((option) => (
+            <button aria-selected={goal === option} key={option} onClick={() => setGoal(option)} role="tab" type="button">{option}</button>
+          ))}
+        </div>
       </section>
 
-      <section aria-label="Stack products" className={styles.rail}>
-        {products.map((product) => (
+      <section aria-label={`${goal} stack products`} className={styles.rail}>
+        {visibleProducts.map((product) => (
           <StackOutcomeCard
             added={added.includes(product.id)}
             key={product.id}
@@ -248,14 +282,26 @@ export function YourStackBuilder() {
         ))}
       </section>
 
+      <section aria-live="polite" className={styles.outcome}>
+        <div>
+          <span>Build outcome</span>
+          <h2>{stackSignal}: {stackGoals[goal].outcome}</h2>
+          <p>{count === 0 ? "MK-2866 is your base. Select one or more additions to see the shape of the full stack." : `MK-2866${selectedProducts.length ? ` + ${selectedProducts.map((product) => product.name).join(" + ")}` : ""} puts ${stackGoals[goal].outcome.toLowerCase()} at the centre of this selection.`}</p>
+        </div>
+        <div aria-label={`${count + 1} of 4 stack positions selected`} className={styles.signal}>
+          {[0, 1, 2, 3].map((step) => <i data-active={step <= count || undefined} key={step} />)}
+          <strong>{count + 1} product{count ? "s" : ""} selected</strong>
+        </div>
+      </section>
+
       <section className={styles.continue}>
         <div>
           <span>Your stack</span>
-          <h2>{count ? "Your stronger stack is taking shape." : "Pick your next performance advantage."}</h2>
+          <h2>{count ? "Your stack is taking shape." : "Choose the first addition to your stack."}</h2>
           <p>
             {count
-              ? `You have added ${count} ${count === 1 ? "product" : "products"}. Review the full stack or keep building around your goal.`
-              : "Add strength and lean mass, size and power, or growth and recovery support."}
+              ? `You have added ${count} ${count === 1 ? "product" : "products"} around MK-2866. Review the line-up or keep building toward ${goal.toLowerCase()}.`
+              : "Set your goal, then build the product line-up that moves the result forward."}
           </p>
         </div>
         <button aria-disabled={count === 0} type="button">

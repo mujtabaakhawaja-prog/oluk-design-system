@@ -11,14 +11,17 @@ test("Figma Agent passes remain honest about native component provenance and dua
 
   assert.equal(reconciliation.passes.length, 8);
   assert.equal(reconciliation.rules.sitesFirst, true);
+  assert.equal(reconciliation.rules.figmaIsDesignAuthority, false);
+  assert.equal(reconciliation.rules.figmaNodeMayNotOverrideSites, true);
   assert.equal(reconciliation.rules.nativeFigmaRequiredForSync, true);
   assert.equal(reconciliation.rules.portedProofBoardsOverrideAuthority, false);
   assert.equal(reconciliation.maturitySnapshot.routeLedger.total, 73);
-  assert.equal(reconciliation.maturitySnapshot.routeLedger.dualReferenceReady, 1);
+  assert.equal(reconciliation.maturitySnapshot.routeLedger.structurallyDualReferenceReady, 73);
+  assert.equal(reconciliation.maturitySnapshot.routeLedger.pixelCompared, 1);
 
   const byId = Object.fromEntries(reconciliation.passes.map((pass) => [pass.id, pass]));
-  assert.equal(byId["pass-1-your-stack"].result, "sites-and-figma-paired");
+  assert.equal(byId["pass-1-your-stack"].result, "sites-authored-quality-standard-with-native-inspection-mirror");
   assert.match(byId["pass-2-catalogue-discovery"].result, /awaiting-sync-capture/);
   assert.equal(byId["pass-6-faq-about"].result, "local-composition");
-  assert.match(byId["pass-7-bundle-stack-explorer"].result, /superseded-by-your-stack-standard/);
+  assert.match(byId["pass-7-bundle-stack-explorer"].result, /rejected-as-source/);
 });

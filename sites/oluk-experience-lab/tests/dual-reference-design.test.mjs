@@ -28,6 +28,8 @@ test("every registered module has a Sites reference, Figma destination, and mobi
   const registry = await readJson("authority/DESIGN-SYNC-REGISTRY.json");
   const mounts = await readJson("authority/FRONTIER-SECTION-MOUNT-REGISTRY.json");
   assert.equal(registry.fileKey, "BEPMuUt1HroEw8xjz8CVyN");
+  assert.equal(registry.authorityModel.sites, "design-ssot");
+  assert.equal(registry.authorityModel.figma, "native-editable-inspection-mirror");
   assert.equal(registry.sourceStandard.commit, "e4153a2");
   assert.equal(registry.records.length, mounts.sections.length + 1);
   assert.ok(registry.records.some(({ id }) => id === "global-shell-navigation"));
@@ -35,8 +37,13 @@ test("every registered module has a Sites reference, Figma destination, and mobi
   for (const record of registry.records) {
     assert.ok(record.siteReference.path.startsWith("/"), record.id);
     assert.match(record.siteReference.sourceCommit, /^[0-9a-f]{7,40}$/, `${record.id} capture commit`);
-    assert.match(record.siteReference.desktopHash, /^[0-9a-f]{64}$/, `${record.id} desktop capture hash`);
-    assert.match(record.siteReference.mobileHash, /^[0-9a-f]{64}$/, `${record.id} mobile capture hash`);
+    if (record.status === "sites-built-figma-mirror-rebuild-required") {
+      assert.equal(record.siteReference.desktopHash, "PENDING_CURRENT_SOURCE_CAPTURE", `${record.id} invalidates stale desktop evidence`);
+      assert.equal(record.siteReference.mobileHash, "PENDING_CURRENT_SOURCE_CAPTURE", `${record.id} invalidates stale mobile evidence`);
+    } else {
+      assert.match(record.siteReference.desktopHash, /^[0-9a-f]{64}$/, `${record.id} desktop capture hash`);
+      assert.match(record.siteReference.mobileHash, /^[0-9a-f]{64}$/, `${record.id} mobile capture hash`);
+    }
     assert.equal(record.figmaReference.fileKey, registry.fileKey, record.id);
     assert.ok(record.canonicalComponents.length > 0, record.id);
     assert.ok(["reorder", "collapse", "summary", "carousel", "horizontal-scroll", "stack-allowed"].includes(record.mobileStrategy), record.id);

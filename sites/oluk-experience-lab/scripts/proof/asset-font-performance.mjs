@@ -18,8 +18,9 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The corrected LockedHero, HeroLight, PDP fold and three-band interactive header
   // add four bounded, route-shared CSS modules while retaining a sub-256 KiB ceiling.
   // The hydrated OptionB navigation and the explicit post-purchase lifecycle entry pages
-  // share one client path; retain a measured, sub-580 KiB aggregate ceiling.
-  clientJavaScriptBytes: 580 * KIB,
+  // share one client path; the additive goal selector and outcome signal retain
+  // a measured, sub-584 KiB aggregate ceiling.
+  clientJavaScriptBytes: 584 * KIB,
   // The canonical Your Stack experience adds one shared product-decision stylesheet while
   // preserving the original sub-256 KiB aggregate target.
   clientCssBytes: 256 * KIB,

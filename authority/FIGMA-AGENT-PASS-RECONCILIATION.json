@@ -1,16 +1,21 @@
 {
   "schemaVersion": "oluk.figma-agent-pass-reconciliation.v1",
   "status": "ACTIVE_UNPUBLISHED",
-  "purpose": "Records what the eight Figma Agent passes actually contain before a Sites-to-Figma pair is promoted into the dual-reference registry.",
+  "purpose": "Records Figma inputs and native inspection mirrors against the Sites-authored implementation. It prevents imported, Make, or locally assembled Figma work from silently becoming a design source.",
   "authorityOrder": [
-    "Page 09 canonical components and governed variables",
-    "approved corrected Final-Design nodes",
     "approved Sites implementation",
+    "Sites component exports, token contract and approved render registry",
+    "native Figma inspection mirrors explicitly linked from Sites",
+    "Page 09 reusable primitives when their Sites export relationship is declared",
+    "approved corrected Final-Design nodes as relationship references",
     "accessory-file intent",
     "Make and imported proof boards"
   ],
   "rules": {
     "sitesFirst": true,
+    "figmaIsDesignAuthority": false,
+    "figmaRole": "editable-inspection-aggregation-and-native-porting",
+    "figmaNodeMayNotOverrideSites": true,
     "nativeFigmaRequiredForSync": true,
     "requiredWidths": [1440, 390],
     "portedProofBoardsOverrideAuthority": false,
@@ -35,8 +40,8 @@
       "targets": ["1210:4020", "1216:874", "1216:1239"],
       "canonicalEvidence": ["ProductCommerceCard.Compact", "StockPill", "EvidenceStatusChip", "YourStackBuilder"],
       "sitesCounterpart": "YourStackBuilder",
-      "result": "sites-and-figma-paired",
-      "nextAction": "Use as the quality bar; keep the approved 1440/390 pair as the sole accepted Stack Explorer reference."
+      "result": "sites-authored-quality-standard-with-native-inspection-mirror",
+      "nextAction": "Use the approved Sites composition as the quality bar. Keep the Figma pair as an editable inspection mirror, not an upstream source."
     },
     {
       "id": "pass-2-catalogue-discovery",
@@ -83,13 +88,13 @@
       "targets": ["1210:31153"],
       "canonicalEvidence": [],
       "sitesCounterpart": "YourStackBuilder",
-      "result": "local-composition-superseded-by-your-stack-standard",
-      "nextAction": "Mount the approved YourStackBuilder across bundle and continuation surfaces; do not use the legacy Good/Better/Best local card frame as a source of component authority."
+      "result": "rejected-as-source-good-better-best-superseded-by-additive-goal-builder",
+      "nextAction": "Preserve 1210:31153 as rejected historical input. Sites owns the replacement: MK-2866 baseline plus additive goal-selected products and an outcome signal. Native Figma follows the completed Sites composition."
     }
   ],
   "maturitySnapshot": {
-    "routeLedger": {"total": 73, "composed": 48, "dualReferenceReady": 1, "scaffold": 24},
-    "syncRegistry": {"records": 15, "figmaBackfilled": 5, "sitesBuilt": 10},
-    "statement": "The Figma Agent passes are useful inputs, not evidence that the remaining Waves 2 through 9 are complete or champion-approved."
+    "routeLedger": {"total": 73, "structurallyDualReferenceReady": 73, "pixelCompared": 1, "championApproved": 0},
+    "syncRegistry": {"moduleRecords": 19, "nativeInspectionMirrors": 19, "sitesSourceHashCurrent": false},
+    "statement": "Route and module pairs are structural navigation/inspection coverage. Only Stack Builder has a frozen paired visual hash; the rest remain pending current-source visual comparison and human review."
   }
 }
