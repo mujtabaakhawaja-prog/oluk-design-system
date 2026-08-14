@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-14T09:24:18-04:00",
-  "sourceGitSha": "375677cf895a1ae2c03a4501809defb0facbf23a",
-  "sourceTreeHash": "1ac57191f2a5849362127807a3a597a3a524a014ce427a6a95da2b5e8c344713",
-  "designContractHash": "8b7df93286aadefb0af79e991db7a64e73302b7eacd643d61973054eb778a8f1",
+  "generatedAt": "2026-08-14T11:05:27-04:00",
+  "sourceGitSha": "fbff5dd6c5c53523105214aceff832b3ea589c91",
+  "sourceTreeHash": "50217c4d1341377aa18fd9f0fd227e0d350aa3aa",
+  "designContractHash": "8e4fd872fa1c1d89beab652e5b1e61321b3e9f9ebfc8fc3be24db12ebd4a1969",
   "decisionCount": 12,
   "families": [
     {
@@ -423,7 +423,7 @@
           "/*"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1214:52",
         "mobileNodeId": "1214:127"
       },
@@ -434,7 +434,7 @@
           "/product/:slug"
         ],
         "mobileStrategy": "summary",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1262:24455",
         "mobileNodeId": "1262:25038"
       },
@@ -445,7 +445,7 @@
           "/product/:slug"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1235:2269",
         "mobileNodeId": "1235:2283"
       },
@@ -459,7 +459,7 @@
           "/account"
         ],
         "mobileStrategy": "carousel",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1216:874",
         "mobileNodeId": "1216:1239"
       },
@@ -473,7 +473,7 @@
           "/open-lab/stack-builder"
         ],
         "mobileStrategy": "carousel",
-        "status": "sites-built-figma-mirror-rebuild-required",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1247:15844",
         "mobileNodeId": "1247:15863"
       },
@@ -487,7 +487,7 @@
           "/search"
         ],
         "mobileStrategy": "reorder",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1240:2293",
         "mobileNodeId": "1240:2737"
       },
@@ -498,7 +498,7 @@
           "/compare"
         ],
         "mobileStrategy": "horizontal-scroll",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1231:1501",
         "mobileNodeId": "1231:1861"
       },
@@ -516,7 +516,7 @@
           "/sitemap"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1232:2213",
         "mobileNodeId": "1232:2220"
       },
@@ -530,7 +530,7 @@
           "/open-lab/report/:batchId"
         ],
         "mobileStrategy": "horizontal-scroll",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1242:3886",
         "mobileNodeId": "1242:4017"
       },
@@ -544,7 +544,7 @@
           "/open-lab/compare"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1235:2297",
         "mobileNodeId": "1235:2311"
       },
@@ -557,7 +557,7 @@
           "/product/:slug"
         ],
         "mobileStrategy": "collapse",
-        "status": "sites-built-figma-mirror-rebuild-required",
+        "status": "SITES_BUILT",
         "desktopNodeId": "PENDING_NATIVE_MIRROR",
         "mobileNodeId": "PENDING_NATIVE_MIRROR"
       },
@@ -571,7 +571,7 @@
           "/open-lab/lab-partner"
         ],
         "mobileStrategy": "reorder",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1235:2325",
         "mobileNodeId": "1235:2339"
       },
@@ -585,7 +585,7 @@
           "/open-lab/interaction-checker"
         ],
         "mobileStrategy": "carousel",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1216:874",
         "mobileNodeId": "1216:1239"
       },
@@ -599,7 +599,7 @@
           "/open-lab/glossary"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1235:2353",
         "mobileNodeId": "1235:2367"
       },
@@ -611,7 +611,7 @@
           "/open-lab/report/:batchId"
         ],
         "mobileStrategy": "summary",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1235:2381",
         "mobileNodeId": "1235:2395"
       },
@@ -623,7 +623,7 @@
           "/checkout/:stage"
         ],
         "mobileStrategy": "summary",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1237:635",
         "mobileNodeId": "1237:1084"
       },
@@ -638,7 +638,7 @@
           "/order/tracking/:orderId"
         ],
         "mobileStrategy": "reorder",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1237:1513",
         "mobileNodeId": "1237:1821"
       },
@@ -649,7 +649,7 @@
           "/account/:surface"
         ],
         "mobileStrategy": "reorder",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1239:2088",
         "mobileNodeId": "1239:2206"
       },
@@ -662,7 +662,7 @@
           "/product/:slug"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1235:2409",
         "mobileNodeId": "1235:2423"
       },
@@ -673,7 +673,7 @@
           "/404"
         ],
         "mobileStrategy": "collapse",
-        "status": "figma-backfilled",
+        "status": "SITES_BUILT",
         "desktopNodeId": "1234:2269",
         "mobileNodeId": "1234:2292"
       }

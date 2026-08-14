@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "oluk.route-promotion-topology.v1",
+  "templates": [
+    {"id":"homepage","families":["homepage"],"promotable":["catalogue-grid","openlab-record-suite","stack-explorer"],"standaloneDestinations":["/shop","/open-lab","/open-lab/stack-builder"]},
+    {"id":"pdp","families":["product_detail"],"promotable":["openlab-product-experience","product-comparison","faq-help"],"standaloneDestinations":["/open-lab/compound/:slug","/open-lab/compare","/open-lab/stack-builder"]},
+    {"id":"openlab","families":["openlab_portal","openlab_archive","openlab_product_record","openlab_report_viewer","openlab_frontier_content","openlab_methodology_compare_evidenceos","decision_tools"],"promotable":["openlab-record-suite","openlab-product-experience","product-continuation","product-comparison"],"standaloneDestinations":["/product/:slug","/open-lab/compare","/open-lab/stack-builder"]},
+    {"id":"commerce","families":["bag_checkout","post_purchase","complete_payment"],"promotable":["product-continuation","stack-explorer","openlab-product-experience","account-hub"],"standaloneDestinations":["/open-lab/stack-builder","/product/:slug","/account/dashboard"]},
+    {"id":"discovery","families":["catalogue_search_collections"],"promotable":["product-comparison","product-continuation","openlab-record-suite"],"standaloneDestinations":["/compare","/product/:slug","/open-lab"]},
+    {"id":"support","families":["support_content","account","shared_shell","governance_review"],"promotable":["faq-help","support-surface","account-hub","product-continuation"],"standaloneDestinations":["/faq-help-centre","/account/dashboard","/shop"]}
+  ],
+  "modules": {
+    "frontier-product-hero":{"insertionPoint":"opening decision","customerPurpose":"Make the product identity, format and primary decision clear.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/product/:slug"},
+    "product-narrative":{"insertionPoint":"after primary decision","customerPurpose":"Explain the product in useful, decision-supporting detail.","actualMediaPolicy":"no media required","standaloneDestination":"/product/:slug"},
+    "product-continuation":{"insertionPoint":"after product detail","customerPurpose":"Show the next product choice and why it changes the experience.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/open-lab/stack-builder"},
+    "stack-explorer":{"insertionPoint":"outcome-led continuation","customerPurpose":"Build a goal-led selection and show the combined outcome.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/open-lab/stack-builder"},
+    "catalogue-grid":{"insertionPoint":"product discovery","customerPurpose":"Help customers narrow the range and choose a product.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/shop"},
+    "product-comparison":{"insertionPoint":"comparison workspace","customerPurpose":"Compare product formats and priorities side by side.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/compare"},
+    "openlab-record-suite":{"insertionPoint":"evidence workspace","customerPurpose":"Find and understand product records.","actualMediaPolicy":"no media required","standaloneDestination":"/open-lab/records"},
+    "openlab-product-experience":{"insertionPoint":"product evidence detail","customerPurpose":"Read the product record, reported result and source context.","actualMediaPolicy":"no media required","standaloneDestination":"/open-lab/compound/:slug"},
+    "openlab-tools":{"insertionPoint":"OpenLab tool workspace","customerPurpose":"Find a record, compare information or understand the process.","actualMediaPolicy":"no media required","standaloneDestination":"/open-lab/batch-lookup"},
+    "openlab-frontier-guide":{"insertionPoint":"OpenLab learning path","customerPurpose":"Learn the terms, documents and research pathways.","actualMediaPolicy":"no media required","standaloneDestination":"/open-lab/compound-guide"},
+    "openlab-frontier-planning":{"insertionPoint":"guided planning workspace","customerPurpose":"Build a goal-led product plan and review its outcome.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/open-lab/stack-builder"},
+    "openlab-sidebar-workspace":{"insertionPoint":"technical workspace","customerPurpose":"Keep the current tool, context and result together.","actualMediaPolicy":"no media required","standaloneDestination":"/open-lab/dosing-calculator"},
+    "openlab-document-viewer":{"insertionPoint":"report detail","customerPurpose":"Read the available document and its structured summary.","actualMediaPolicy":"no media required","standaloneDestination":"/open-lab/coa/:id"},
+    "checkout-lifecycle":{"insertionPoint":"checkout primary task","customerPurpose":"Complete the current purchase step with the total and context visible.","actualMediaPolicy":"no media required","standaloneDestination":"/checkout/review"},
+    "post-purchase-surface":{"insertionPoint":"order follow-up","customerPurpose":"Understand what happened next and return to useful actions.","actualMediaPolicy":"no media required","standaloneDestination":"/order/tracking/:orderId"},
+    "account-hub":{"insertionPoint":"account summary","customerPurpose":"Bring orders, saved choices and next actions together.","actualMediaPolicy":"registered actual render or governed unpopulated chamber","standaloneDestination":"/account/dashboard"},
+    "faq-help":{"insertionPoint":"supporting answers","customerPurpose":"Answer a customer question without losing the next action.","actualMediaPolicy":"no media required","standaloneDestination":"/faq-help-centre"},
+    "support-surface":{"insertionPoint":"support content","customerPurpose":"Provide clear help and relevant onward choices.","actualMediaPolicy":"no media required","standaloneDestination":"/contact"},
+    "not-found-surface":{"insertionPoint":"recovery action","customerPurpose":"Return the customer to a useful destination.","actualMediaPolicy":"no media required","standaloneDestination":"/shop"}
+  }
+}

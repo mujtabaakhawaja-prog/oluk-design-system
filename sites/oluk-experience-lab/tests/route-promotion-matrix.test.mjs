@@ -19,7 +19,17 @@ test("the promotion matrix derives a promoted and promotable disposition for eve
   assert.deepEqual(new Set(matrix.routeDispositions.map(({ routeId }) => routeId)), new Set(ledger.routes.map(({ id }) => id)));
   for (const route of matrix.routeDispositions) {
     assert.ok(route.template);
-    assert.ok(Array.isArray(route.promotableFrom));
+    assert.ok(Array.isArray(route.promotedPlacements));
+    assert.ok(Array.isArray(route.promotablePlacements));
     assert.equal(typeof route.promoted, "boolean");
+    for (const placement of [...route.promotedPlacements, ...route.promotablePlacements]) {
+      assert.ok(["PROMOTED", "PROMOTABLE"].includes(placement.state));
+      assert.ok(placement.insertionPoint);
+      assert.ok(placement.customerPurpose);
+      assert.ok(placement.sourceContent);
+      assert.ok(placement.actualMediaPolicy);
+      assert.ok(placement.mobileStrategy);
+      assert.ok(Array.isArray(placement.invalidatedConsumers));
+    }
   }
 });

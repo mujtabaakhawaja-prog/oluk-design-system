@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "oluk.design-sync-state.v1",
+  "authority": "Codex Sites",
+  "description": "Sites is the composition source of truth. Figma nodes are editable inspection mirrors and cannot establish visual synchronization by themselves.",
+  "states": [
+    "SITES_BUILT",
+    "SITES_CAPTURED_CURRENT",
+    "FIGMA_NATIVE_MIRROR_CREATED",
+    "FIGMA_REVIEWED",
+    "VISUAL_SYNC_CURRENT",
+    "CHAMPION_APPROVED",
+    "DESIGN_INCOMPLETE"
+  ],
+  "transitions": {
+    "SITES_BUILT": ["SITES_CAPTURED_CURRENT", "DESIGN_INCOMPLETE"],
+    "SITES_CAPTURED_CURRENT": ["FIGMA_NATIVE_MIRROR_CREATED", "SITES_BUILT"],
+    "FIGMA_NATIVE_MIRROR_CREATED": ["FIGMA_REVIEWED", "SITES_BUILT"],
+    "FIGMA_REVIEWED": ["VISUAL_SYNC_CURRENT", "SITES_BUILT"],
+    "VISUAL_SYNC_CURRENT": ["CHAMPION_APPROVED", "SITES_BUILT"],
+    "CHAMPION_APPROVED": ["SITES_BUILT"],
+    "DESIGN_INCOMPLETE": ["SITES_BUILT"]
+  },
+  "invalidation": {
+    "sitesCompositionChanged": "SITES_BUILT",
+    "siteCaptureChanged": "SITES_CAPTURED_CURRENT",
+    "figmaMirrorChanged": "FIGMA_NATIVE_MIRROR_CREATED",
+    "historicalFigmaReference": "FIGMA_HISTORICAL_REFERENCE"
+  },
+  "publicationAuthorized": false
+}

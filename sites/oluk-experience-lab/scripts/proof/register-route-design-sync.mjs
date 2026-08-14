@@ -42,6 +42,13 @@ const nextRecords = registry.records.map((record) => {
   assert.ok(mobile?.screenshotSha256, `${record.routeId} lacks a mobile capture hash`);
   return {
     ...record,
+    status: "SITES_CAPTURED_CURRENT",
+    figmaMirrorState: "FIGMA_HISTORICAL_REFERENCE",
+    currentCapture: {
+      state: "CURRENT_CAPTURE_REGISTERED",
+      sourceCommit,
+      sourceTreeHash,
+    },
     siteReference: {
       resolvedPath: route.path,
       sourceCommit,
@@ -64,6 +71,7 @@ const next = {
     routeCount: ROUTES.length,
     caseCount: receipt.caseCount,
     candidateState: receipt.candidateState,
+    state: "CURRENT_CAPTURE_REGISTERED",
   },
   records: nextRecords,
 };
