@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(siteRoot, "../..");
 const productSourcePath = path.join(siteRoot, "app/design-system/frontier-content.ts");
+const editorialCorpusPath = path.join(repoRoot, "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json");
 const openLabPath = path.join(repoRoot, "authority/fixtures/OPENLAB-PUBLIC-PROJECTION-V2-MK2866.json");
 const outputPath = path.join(siteRoot, "app/design-system/product-experience-catalog.json");
 const openLabOutputPath = path.join(siteRoot, "app/design-system/openlab-product-depth.json");
@@ -26,6 +27,8 @@ function valueOf(node) {
 }
 
 const productRaw = await readFile(productSourcePath, "utf8");
+const editorialCorpusRaw = await readFile(editorialCorpusPath, "utf8");
+const editorialCorpus = JSON.parse(editorialCorpusRaw);
 const source = ts.createSourceFile(productSourcePath, productRaw, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);
 let products = [];
 source.forEachChild((node) => {
@@ -42,6 +45,27 @@ source.forEachChild((node) => {
 });
 
 const bySlug = Object.fromEntries(products.map((product) => [product.slug, product]));
+const editorialBySlug = editorialCorpus.products ?? {};
+const sourceCatalogue = editorialCorpus.sources ?? {};
+if (editorialCorpus.schemaVersion !== "oluk.product-editorial-corpus.v1") throw new Error("Unsupported product editorial corpus schema");
+if (products.length !== 16) throw new Error(`Expected 16 products, found ${products.length}`);
+if (Object.keys(editorialBySlug).length !== products.length) throw new Error("Editorial corpus must cover every catalogue product exactly once");
+for (const product of products) {
+  const editorial = editorialBySlug[product.slug];
+  if (!editorial) throw new Error(`Missing editorial corpus record for ${product.slug}`);
+  if (!Array.isArray(editorial.sources) || !editorial.sources.length || !Array.isArray(editorial.locators) || editorial.sources.length !== editorial.locators.length) throw new Error(`Invalid editorial source attribution for ${product.slug}`);
+  for (const sourceId of editorial.sources) {
+    const sourceRecord = sourceCatalogue[sourceId];
+    if (!sourceRecord?.sha256 || !sourceRecord?.kind || !sourceRecord?.title) throw new Error(`Unknown editorial source ${sourceId} for ${product.slug}`);
+  }
+  for (const field of ["summary", "researchProfile", "guidance", "considerations"]) {
+    if (typeof editorial.editorial?.[field] !== "string" || editorial.editorial[field].trim().length < 24) throw new Error(`Editorial ${field} is incomplete for ${product.slug}`);
+  }
+  for (const field of ["eyebrow", "headline", "promise", "differentiator", "primaryAction", "mobileSummary"]) {
+    if (typeof editorial.proposition?.[field] !== "string" || !editorial.proposition[field].trim()) throw new Error(`Customer proposition ${field} is incomplete for ${product.slug}`);
+  }
+  if (!Array.isArray(editorial.proposition.benefits) || editorial.proposition.benefits.length < 3) throw new Error(`Customer proposition benefits are incomplete for ${product.slug}`);
+}
 const locks = [
   ["mk-2866", "15 MG", "90 SERVINGS", "£43", "80529-01"],
   ["rad-140", "8 MG", "60 SERVINGS", "£55", "RAD140-08"],
@@ -55,6 +79,7 @@ for (const [slug, strength, servings, price, sku] of locks) {
 }
 if (/RAD-140[^\n]{0,120}10 MG|10 MG[^\n]{0,120}RAD-140/i.test(productRaw)) throw new Error("RAD-140 10 MG is forbidden");
 if (bySlug.ment.series !== "PROHORMONE SERIES") throw new Error("MENT must remain PROHORMONE SERIES");
+if (bySlug["gw-501516"].name !== "GW-50156" || bySlug["gw-501516"].strength !== "10 MG") throw new Error("Cardarine must display as GW-50156 · 10 MG while retaining the legacy gw-501516 slug");
 
 const openLabRaw = await readFile(openLabPath, "utf8");
 const projection = JSON.parse(openLabRaw);
@@ -66,15 +91,38 @@ const media = {
   "mk-677": "/assets/products/hero/mk-677/front.webp", "gw-501516": "/assets/products/shop/gw-501516.jpeg",
   epistane: "/assets/products/shop/epistane.webp", ment: "/assets/products/hero/ment/front.webp", "m-sten": "/assets/products/shop/m-sten.webp",
 };
+const attributionFor = (editorial) => editorial.sources.map((sourceId, index) => ({
+  id: sourceId,
+  kind: sourceCatalogue[sourceId].kind,
+  title: sourceCatalogue[sourceId].title,
+  sha256: sourceCatalogue[sourceId].sha256,
+  locator: editorial.locators[index],
+}));
 const catalogue = products.map((product) => ({
   product,
-  editorial: { summary: product.summary, researchProfile: product.researchProfile, guidance: product.guidance, considerations: product.considerations },
+  editorial: {
+    ...editorialBySlug[product.slug].editorial,
+    customerProposition: editorialBySlug[product.slug].proposition,
+    sourceAttribution: attributionFor(editorialBySlug[product.slug]),
+  },
   media: media[product.slug] ? [{ role: "front", src: media[product.slug], authority: "registered-actual-render" }] : [{ role: "front", src: null, authority: "governed-unpopulated-chamber" }],
-  pdp: { sections: ["decision", "details", "evidence", "stack", "related"], related: product.related },
-  stacks: { goals: product.goal, additions: product.stack },
-  openLab: product.slug === "mk-2866" ? { recordId: record.labRecordId, reportId: record.reportId, status: record.availabilityState } : { status: "unavailable" },
-  discovery: { family: product.family, goals: product.goal },
-  seo: { canonicalPath: `/product/${product.slug}`, title: `${product.name} ${product.strength} | Olympus Labs UK`, description: product.summary },
+  pdp: {
+    sections: ["decision", "details", "evidence", "stack", "related", "reviews"],
+    decision: editorialBySlug[product.slug].proposition,
+    details: editorialBySlug[product.slug].editorial,
+    related: product.related,
+  },
+  stacks: { goals: product.goal, additions: product.stack, baselineEligible: true, outcomeRole: editorialBySlug[product.slug].proposition.eyebrow },
+  openLab: product.slug === "mk-2866"
+    ? { recordId: record.labRecordId, reportId: record.reportId, status: record.availabilityState, experience: "compiled-product-dossier" }
+    : { status: "unavailable", experience: "availability-panel" },
+  discovery: { family: product.family, goals: product.goal, headline: editorialBySlug[product.slug].proposition.headline, mobileSummary: editorialBySlug[product.slug].proposition.mobileSummary },
+  seo: {
+    canonicalPath: `/product/${product.slug}`,
+    title: `${product.name} ${product.strength} | Olympus Labs UK`,
+    description: editorialBySlug[product.slug].editorial.summary,
+    focusPhrases: [product.name, product.alias, ...product.goal],
+  },
 }));
 const mkExperience = {
   record: { id: record.labRecordId, reportId: record.reportId, batchCode: record.batchCode, testedAt: record.sourceDrawer.testedAt, labName: record.sourceDrawer.labName, bindingState: record.bindingState, availabilityState: record.availabilityState, recordAction: record.compiledAction, sourceAction: record.sourceDrawer.reportUrl ? { label: "View original report", href: record.sourceDrawer.reportUrl } : null },
@@ -86,7 +134,14 @@ const mkExperience = {
   },
   interactionContract: { selectableViews: ["record", "report history", "label comparison", "analytes", "source context"], keyboard: "arrow-key tabs and direct focus", reducedMotion: "no animated analytical reconstruction", mobile: "summary then progressive disclosure" },
 };
-const compiled = { schemaVersion: "oluk.product-experience.v1", productSourceHash: digest(productRaw), openLabSourceHash: digest(openLabRaw), products: catalogue, openLab: { "mk-2866": mkExperience } };
+const compiled = {
+  schemaVersion: "oluk.product-experience.v2",
+  productSourceHash: digest(productRaw),
+  editorialCorpusHash: digest(editorialCorpusRaw),
+  openLabSourceHash: digest(openLabRaw),
+  products: catalogue,
+  openLab: { "mk-2866": mkExperience },
+};
 const output = { ...compiled, contentHash: digest(JSON.stringify(compiled)) };
 const rendered = `${JSON.stringify(output, null, 2)}\n`;
 const openLabRendered = `${JSON.stringify({ schemaVersion: "oluk.openlab-product-depth.v1", sourceHash: digest(openLabRaw), ...mkExperience, contentHash: digest(JSON.stringify(mkExperience)) }, null, 2)}\n`;

@@ -1,0 +1,356 @@
+{
+  "schemaVersion": "oluk.product-editorial-corpus.v1",
+  "purpose": "Deterministic customer editorial inputs for the Sites Product Experience Compiler. Product facts remain resolved from frontier-content.ts; this corpus records source lineage and approved creative-frontier copy only.",
+  "sources": {
+    "handover-master-plan": {
+      "kind": "seo-handover",
+      "title": "Olympus Labs UK – Master Plan v3",
+      "originalPath": "/Users/mujtabakhawaja/Downloads/SEO and chatbot/Handover/Master Plan VLatest.md",
+      "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
+      "use": "Product SEO strategy, category positioning, internal-linking intent and product-page editorial structure."
+    },
+    "chatbot-training": {
+      "kind": "chatbot-training",
+      "title": "Comprehensive Chatbot and SEO Training Data",
+      "originalPath": "/Users/mujtabakhawaja/Downloads/SEO and chatbot/Comprehensive Chatbot and seo training data.md",
+      "sha256": "d4ff3c0c66ad068c4e318051f9d5a8b8b76f06d53ab2827be6e1253d804f8a67",
+      "use": "Compound identity, goal-oriented product context, stack relationships and product comparison intent."
+    },
+    "knowledge-base-handover": {
+      "kind": "faq-handover",
+      "title": "Olympus UK Pro Chatbot Knowledge Base",
+      "originalPath": "/Users/mujtabakhawaja/Downloads/SEO and chatbot/Handover/Olympus UK Pro Chatbot Knowledge Base.md",
+      "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
+      "use": "Customer questions, goal-led comparison, support language and cross-sell context."
+    },
+    "yoast-export": {
+      "kind": "seo-export",
+      "title": "Olympus page SEO export",
+      "originalPath": "/Users/mujtabakhawaja/Downloads/SEO and chatbot/yoast_olympus_pages_seo_v2.csv",
+      "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
+      "use": "Search-intent and concise title/description direction."
+    }
+  },
+  "products": {
+    "mk-2866": {
+      "sources": ["handover-master-plan", "chatbot-training", "yoast-export"],
+      "locators": ["Product SEO Strategy: MK-2866 (Ostarine)", "MK-2866 (Ostarine) product and training snippets", "Ostarine metadata rows"],
+      "editorial": {
+        "summary": "A clear Ostarine starting point for cutting and recomp phases where lean mass, training output and a sharper finish all matter.",
+        "researchProfile": "MK-2866 gives the plan a measured lean-mass foundation. Start here when the goal is to hold onto training quality while bringing body composition into tighter focus.",
+        "guidance": "Build from the outcome you want next: add Cardarine for endurance-led cutting work, compare S-4 for a sharper finish, or step into a lean-mass option when the phase changes.",
+        "considerations": "Compare the product facts, stack options and available OpenLab record before finalising the next product decision."
+      },
+      "proposition": {
+        "eyebrow": "Cutting and recomp base",
+        "headline": "Build a leaner training phase without losing the plot.",
+        "promise": "MK-2866 puts lean-mass focus, clear product facts and a flexible stack starting point in one place.",
+        "benefits": ["Lean-mass foundation", "Cutting and recomp focus", "Flexible next-step options"],
+        "differentiator": "A clear Ostarine base with direct access to the available batch record.",
+        "primaryAction": "Build my stack",
+        "secondaryAction": "View product details",
+        "mobileSummary": "A lean-mass base for cutting and recomp."
+      }
+    },
+    "rad-140": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: RAD-140 (Testolone)", "RAD-140 product and training snippets", "RAD140 customer and comparison entries", "RAD-140 metadata rows"],
+      "editorial": {
+        "summary": "A strength-led Testolone format for a harder training block built around lean mass, lifting output and more intensity.",
+        "researchProfile": "RAD-140 is the step-up when strength and lean mass need to become the main event. It gives an advanced build a more forceful centre than a light recomp-only approach.",
+        "guidance": "Use RAD-140 as the intensity choice, then compare LGD-4033 for lean-mass emphasis, MK-677 for recovery support, or MENT for a heavyweight mass direction.",
+        "considerations": "See the full product details and compare the intensity profile with the rest of the stack before adding it."
+      },
+      "proposition": {
+        "eyebrow": "Strength and lean mass",
+        "headline": "Turn the next block up.",
+        "promise": "RAD-140 brings serious strength and lean-mass focus to a training phase that needs more intensity.",
+        "benefits": ["Strength-led focus", "Lean-mass direction", "Advanced stack step-up"],
+        "differentiator": "The 8 MG Testolone format for a more aggressive training phase.",
+        "primaryAction": "Add strength focus",
+        "secondaryAction": "Compare mass options",
+        "mobileSummary": "A strength-led 8 MG step-up."
+      }
+    },
+    "lgd-4033": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: LGD-4033 (Ligandrol)", "LGD-4033 product and training snippets", "LGD-4033 comparison and upsell entries", "Ligandrol metadata rows"],
+      "editorial": {
+        "summary": "A Ligandrol option for a heavier lean-mass phase where size, strength and a more substantial build are the priority.",
+        "researchProfile": "LGD-4033 anchors the lean-mass side of a bulk-focused plan. It is the product to compare when the next goal is more size without losing a clean, deliberate direction.",
+        "guidance": "Pair the lean-mass decision with MK-677 when recovery matters, compare RAD-140 when intensity is the deciding factor, or keep MK-2866 in view for a balanced recomp base.",
+        "considerations": "Use the comparison and stack views to decide whether lean mass, intensity or recovery should lead the next build."
+      },
+      "proposition": {
+        "eyebrow": "Lean mass builder",
+        "headline": "Give a mass phase real substance.",
+        "promise": "LGD-4033 brings lean-mass focus and a more substantial build direction to the stack.",
+        "benefits": ["Lean-mass priority", "Bulk-phase focus", "Recovery and intensity comparisons"],
+        "differentiator": "A clear Ligandrol choice when size and strength move to the front of the plan.",
+        "primaryAction": "Build lean mass",
+        "secondaryAction": "Compare stack options",
+        "mobileSummary": "A lean-mass anchor for a heavier phase."
+      }
+    },
+    "mk-677": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: MK-677 (Ibutamoren)", "MK-677 product and training snippets", "MK-677 synergy entries", "Ibutamoren metadata rows"],
+      "editorial": {
+        "summary": "An Ibutamoren format that brings appetite, sleep and recovery support into a hard-training plan.",
+        "researchProfile": "MK-677 is the recovery builder in the range. It gives a strength or mass-led phase more room to recover, eat and return ready for the next session.",
+        "guidance": "Use MK-677 beside LGD-4033 or RAD-140 when the build needs more recovery capacity, or alongside the peptide range when recovery is the whole story.",
+        "considerations": "Compare recovery emphasis, serving format and the role it plays beside the main product before adding it."
+      },
+      "proposition": {
+        "eyebrow": "Growth and recovery",
+        "headline": "Build more recovery into the plan.",
+        "promise": "MK-677 adds appetite, deeper-sleep and recovery support around demanding training blocks.",
+        "benefits": ["Recovery capacity", "Appetite support", "Longer-serving format"],
+        "differentiator": "A 90-serving Ibutamoren format that supports the work between hard sessions.",
+        "primaryAction": "Add recovery support",
+        "secondaryAction": "Compare growth options",
+        "mobileSummary": "Growth, appetite and recovery support."
+      }
+    },
+    "gw-501516": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: GW-501516 (Cardarine)", "GW-501516 product and training snippets", "Cutting and recomp comparison entries", "Cardarine metadata rows"],
+      "editorial": {
+        "summary": "A Cardarine option for cutting and recomp phases that need more endurance, output and body-composition focus.",
+        "researchProfile": "GW-50156 is the endurance-led addition for customers who want a cut to feel more capable through demanding sessions.",
+        "guidance": "Use it beside MK-2866 for a cutting base, compare S-4 for a sharper final phase, or keep it in a recomp build where training output matters.",
+        "considerations": "Compare endurance focus with the strength, mass and finish options before making it part of the stack."
+      },
+      "proposition": {
+        "eyebrow": "Endurance and cutting",
+        "headline": "Make the cut feel more capable.",
+        "promise": "GW-50156 puts endurance and body-composition focus beside a leaner training goal.",
+        "benefits": ["Endurance-led direction", "Cutting focus", "Recomp-friendly pairing"],
+        "differentiator": "A Cardarine choice for customers who want output to keep up with the goal.",
+        "primaryAction": "Build my cut",
+        "secondaryAction": "Compare cutting options",
+        "mobileSummary": "Endurance support for cutting and recomp."
+      }
+    },
+    "s-4": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: Andarine (S-4)", "S-4 product and training snippets", "Cutting stack entries", "Andarine metadata rows"],
+      "editorial": {
+        "summary": "An Andarine option for a cutting phase that wants more definition and a sharper final presentation.",
+        "researchProfile": "S-4 is the finish-focused option to compare once the cutting base is already in place. It brings a more defined direction beside Ostarine and Cardarine.",
+        "guidance": "Add S-4 after choosing the cutting base, then use the comparison drawer to see how it changes intensity and the stack outcome.",
+        "considerations": "Review the full product detail and compare it with the broader cutting build before adding it."
+      },
+      "proposition": {
+        "eyebrow": "Cutting finish",
+        "headline": "Sharpen the final phase.",
+        "promise": "S-4 adds a definition-led choice when a cutting build needs a more focused finish.",
+        "benefits": ["Finish-focused role", "Cutting comparison", "Pairs with an established base"],
+        "differentiator": "An Andarine option for a more defined cutting direction.",
+        "primaryAction": "Sharpen my cut",
+        "secondaryAction": "Compare finish options",
+        "mobileSummary": "A sharper finish for a cutting build."
+      }
+    },
+    "yk-11": {
+      "sources": ["handover-master-plan", "chatbot-training", "yoast-export"],
+      "locators": ["Product SEO Strategy: YK-11", "YK-11 product and training snippets", "YK-11 metadata rows"],
+      "editorial": {
+        "summary": "A higher-intensity YK-11 option for customers comparing size and strength choices at the bolder end of the range.",
+        "researchProfile": "YK-11 gives a bulk-focused product search a higher-intensity comparison point beside LGD-4033 and RAD-140.",
+        "guidance": "Use the compare view to decide whether lean mass, maximum intensity or recovery support should shape the next product choice.",
+        "considerations": "Review the intensity profile and product facts before choosing it as part of a multi-product build."
+      },
+      "proposition": {
+        "eyebrow": "High-intensity build",
+        "headline": "Compare the bolder side of a mass phase.",
+        "promise": "YK-11 gives a size-and-strength build a higher-intensity option to weigh against the rest of the range.",
+        "benefits": ["Size and strength focus", "High-intensity comparison", "Bulk-phase alternative"],
+        "differentiator": "A bolder choice beside LGD-4033 and RAD-140.",
+        "primaryAction": "Compare intensity",
+        "secondaryAction": "View product details",
+        "mobileSummary": "A bolder mass-phase comparison."
+      }
+    },
+    "s-23": {
+      "sources": ["handover-master-plan", "chatbot-training", "yoast-export"],
+      "locators": ["Product SEO Strategy: S-23", "S-23 product and training snippets", "S-23 metadata rows"],
+      "editorial": {
+        "summary": "A focused S-23 option for a recomp phase that wants a stronger edge on strength and definition.",
+        "researchProfile": "S-23 is a distinct comparison when a recomp plan needs more intensity than an Ostarine-led base alone.",
+        "guidance": "Compare S-23 with MK-2866 and Cardarine to see whether the next phase should lean toward a cleaner balance or a harder definition-led profile.",
+        "considerations": "Use the outcome profile and product comparison before adding it to a recomp build."
+      },
+      "proposition": {
+        "eyebrow": "Focused recomp",
+        "headline": "Give recomp a harder edge.",
+        "promise": "S-23 adds a more intense strength-and-definition choice to a recomp-led build.",
+        "benefits": ["Recomp focus", "Strength and definition", "Intensity comparison"],
+        "differentiator": "A focused alternative when a balanced recomp base needs more edge.",
+        "primaryAction": "Build my recomp",
+        "secondaryAction": "Compare recomp options",
+        "mobileSummary": "A harder edge for focused recomp."
+      }
+    },
+    "epistane": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: Epistane", "Epistane product and training snippets", "Recomp stack entries", "Epistane metadata rows"],
+      "editorial": {
+        "summary": "A prohormone option for the harder finishing phase of a recomp build, with a lean, dry presentation at the centre of the story.",
+        "researchProfile": "Epistane is the finish-focused comparison for customers taking an Ostarine and Cardarine base into a more intense final phase.",
+        "guidance": "Keep it in the recomp comparison set, then see how it changes the outcome profile against a more endurance-led or lean-mass-led addition.",
+        "considerations": "Review the product detail and compare intensity before adding a prohormone option to the build."
+      },
+      "proposition": {
+        "eyebrow": "Recomp finisher",
+        "headline": "Finish a recomp phase with intent.",
+        "promise": "Epistane brings a harder, leaner finishing direction to an established recomp build.",
+        "benefits": ["Finish-focused role", "Lean recomp direction", "Advanced comparison"],
+        "differentiator": "A prohormone choice for the final stretch of a sharper recomp plan.",
+        "primaryAction": "Compare finishing options",
+        "secondaryAction": "View product details",
+        "mobileSummary": "A harder finishing option for recomp."
+      }
+    },
+    "ment": {
+      "sources": ["handover-master-plan", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: Trestolone (MENT)", "MENT product matrix and advanced stack entries", "Trestolone metadata rows"],
+      "editorial": {
+        "summary": "An advanced Trestolone option for customers pursuing a heavyweight size-and-power phase beyond a SARM-only build.",
+        "researchProfile": "MENT is the advanced mass choice in the range. It moves the stack into a heavier size-and-power direction when maximum build is the goal.",
+        "guidance": "Compare MENT with RAD-140 and LGD-4033 to decide whether the plan needs maximum mass, strength-led intensity or a lean-mass base.",
+        "considerations": "Review the full product detail and the advanced intensity profile before adding it."
+      },
+      "proposition": {
+        "eyebrow": "Advanced mass and power",
+        "headline": "Take the build into heavyweight territory.",
+        "promise": "MENT gives an advanced stack a size-and-power choice beyond a SARM-only plan.",
+        "benefits": ["Heavyweight mass focus", "Power-led direction", "Advanced stack comparison"],
+        "differentiator": "The PROHORMONE SERIES choice for a more substantial build.",
+        "primaryAction": "Build size and power",
+        "secondaryAction": "Compare mass options",
+        "mobileSummary": "Advanced size and power focus."
+      }
+    },
+    "m-sten": {
+      "sources": ["handover-master-plan", "chatbot-training", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: M-Sten", "M-Sten product and training snippets", "M-Sten product matrix", "Methylstenbolone metadata rows"],
+      "editorial": {
+        "summary": "A Methylstenbolone option for a denser mass phase where a high-intensity prohormone comparison is needed.",
+        "researchProfile": "M-STEN gives the heavier end of a bulk search another mass-and-strength direction to compare with MENT and LGD-4033.",
+        "guidance": "Use the mass comparison to choose whether the next addition should prioritise lean mass, maximum size and power, or a different intensity profile.",
+        "considerations": "Review the product detail and compare the intensity profile before choosing a high-intensity mass option."
+      },
+      "proposition": {
+        "eyebrow": "Dense mass phase",
+        "headline": "Build a denser mass direction.",
+        "promise": "M-STEN adds a high-intensity size-and-strength option to the heavyweight end of the range.",
+        "benefits": ["Dense mass focus", "Strength-led comparison", "High-intensity alternative"],
+        "differentiator": "A Methylstenbolone choice for customers comparing the heavier mass options.",
+        "primaryAction": "Compare mass options",
+        "secondaryAction": "View product details",
+        "mobileSummary": "A denser high-intensity mass choice."
+      }
+    },
+    "trenavar": {
+      "sources": ["handover-master-plan", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Product SEO Strategy: Trenavar (Trendione)", "Trenavar product matrix", "Trenavar metadata rows"],
+      "editorial": {
+        "summary": "A Trenavar option for a more aggressive size-focused phase within the prohormone side of the range.",
+        "researchProfile": "Trenavar sits in the high-intensity mass set alongside M-STEN and MENT, giving customers a distinct route into the strongest size-focused choices.",
+        "guidance": "Compare Trenavar with the other heavyweight mass products, then choose the intensity and product role that fit the next phase.",
+        "considerations": "Review the product detail and advanced comparison before adding it to a mass-focused build."
+      },
+      "proposition": {
+        "eyebrow": "Aggressive mass focus",
+        "headline": "Choose the strongest mass direction with clarity.",
+        "promise": "Trenavar gives a size-focused build another high-intensity prohormone option to compare.",
+        "benefits": ["Aggressive mass direction", "Heavyweight comparison", "Prohormone alternative"],
+        "differentiator": "A Trenavar choice for the most size-focused end of the range.",
+        "primaryAction": "Compare heavyweight options",
+        "secondaryAction": "View product details",
+        "mobileSummary": "An aggressive mass-phase comparison."
+      }
+    },
+    "bpc-157": {
+      "sources": ["handover-master-plan", "knowledge-base-handover"],
+      "locators": ["Category Page Optimization: Peptides", "Recovery, support and product-discovery entries"],
+      "editorial": {
+        "summary": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
+        "researchProfile": "BPC-157 makes recovery a visible part of the product decision, giving a hard-training plan a dedicated support-oriented direction.",
+        "guidance": "Compare BPC-157 with TB-500 and MK-677 when the next addition should put recovery at the centre of the plan.",
+        "considerations": "Use the recovery comparison and product details to choose the format that fits the wider plan."
+      },
+      "proposition": {
+        "eyebrow": "Recovery-led peptide",
+        "headline": "Put recovery on the front foot.",
+        "promise": "BPC-157 gives demanding training weeks a dedicated recovery-led product direction.",
+        "benefits": ["Recovery-focused role", "Peptide comparison", "Pairs with wider recovery planning"],
+        "differentiator": "A peptide choice for customers building more recovery into the plan.",
+        "primaryAction": "Build recovery support",
+        "secondaryAction": "Compare peptide options",
+        "mobileSummary": "A recovery-led peptide choice."
+      }
+    },
+    "tb-500": {
+      "sources": ["handover-master-plan", "knowledge-base-handover"],
+      "locators": ["Category Page Optimization: Peptides", "Recovery, support and product-discovery entries"],
+      "editorial": {
+        "summary": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
+        "researchProfile": "TB-500 is the companion peptide to compare when recovery needs to be treated as a deliberate part of the wider product plan.",
+        "guidance": "View TB-500 beside BPC-157 and MK-677 to decide how the recovery side of the build should come together.",
+        "considerations": "Compare the recovery role, serving format and wider stack fit before adding it."
+      },
+      "proposition": {
+        "eyebrow": "Recovery companion",
+        "headline": "Make recovery part of the build.",
+        "promise": "TB-500 gives a recovery-led plan a clear peptide companion to compare with the rest of the stack.",
+        "benefits": ["Recovery-oriented role", "Peptide companion", "Cross-stack comparison"],
+        "differentiator": "A focused peptide option when recovery needs a more deliberate place in the plan.",
+        "primaryAction": "Compare recovery options",
+        "secondaryAction": "View product details",
+        "mobileSummary": "A recovery companion for the wider plan."
+      }
+    },
+    "cjc-1295": {
+      "sources": ["handover-master-plan", "knowledge-base-handover"],
+      "locators": ["Category Page Optimization: Peptides", "Recovery, support and product-discovery entries"],
+      "editorial": {
+        "summary": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
+        "researchProfile": "CJC-1295 broadens the recovery-focused peptide set, giving customers another way to compare how the supporting side of their plan is built.",
+        "guidance": "Browse CJC-1295 alongside BPC-157 and TB-500 when the next decision is about building a more complete recovery story.",
+        "considerations": "Use the peptide comparison and product facts to choose the right supporting direction."
+      },
+      "proposition": {
+        "eyebrow": "Recovery consistency",
+        "headline": "Build a more consistent recovery story.",
+        "promise": "CJC-1295 gives the peptide range another recovery-focused direction to compare and build around.",
+        "benefits": ["Recovery consistency", "Peptide-range comparison", "Longer-term planning"],
+        "differentiator": "A peptide option for customers refining the supporting side of the plan.",
+        "primaryAction": "Explore peptide options",
+        "secondaryAction": "View product details",
+        "mobileSummary": "A recovery-focused peptide direction."
+      }
+    },
+    "l-carnitine": {
+      "sources": ["handover-master-plan", "knowledge-base-handover", "yoast-export"],
+      "locators": ["Category Page Optimization: Naturals", "Goal-led product-discovery entries", "Naturals search-intent rows"],
+      "editorial": {
+        "summary": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
+        "researchProfile": "L-Carnitine is the accessible daily-format choice in the range, giving a cutting or wellness plan a cleaner, easier-to-place supporting direction.",
+        "guidance": "Compare it with Cardarine and MK-2866 when the goal is to keep the next addition simple while staying close to a body-composition focus.",
+        "considerations": "Use the category and comparison views to decide whether a simple daily format is the right next addition."
+      },
+      "proposition": {
+        "eyebrow": "Simple daily support",
+        "headline": "Keep the next addition uncomplicated.",
+        "promise": "L-Carnitine gives cutting and wellness plans a straightforward daily-format option.",
+        "benefits": ["Simple daily format", "Cutting and wellness focus", "Easy product comparison"],
+        "differentiator": "A clear natural-range choice for a simpler supporting role.",
+        "primaryAction": "Add daily support",
+        "secondaryAction": "Compare simple options",
+        "mobileSummary": "Straightforward daily support."
+      }
+    }
+  }
+}
