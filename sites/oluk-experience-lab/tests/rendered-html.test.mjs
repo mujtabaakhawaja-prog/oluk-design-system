@@ -205,7 +205,7 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
   assert.match(shopHtml, /class=["'][^"']*shop-result-card-canonical[^"']*["']/i, "Shop exposes the canonical catalogue-result selector");
 
   const openLabText = visibleText(await renderHtml(worker, "/open-lab"));
-  for (const lens of ["OpenLab", "Product confidence", "Featured record", "Build a stronger stack"]) {
+  for (const lens of ["OpenLab", "PRODUCT CONFIDENCE", "FEATURED RECORD", "Build a stronger stack"]) {
     assert.match(openLabText, new RegExp(escapeRegExp(lens)), `OpenLab lens: ${lens}`);
   }
 
