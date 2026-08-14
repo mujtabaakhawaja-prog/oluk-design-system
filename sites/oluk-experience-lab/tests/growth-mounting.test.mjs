@@ -18,4 +18,5 @@ test("the outcome-led stack continuation mounts compact customer compositions ou
   assert.match(transaction, /<YourStackBuilder baselineSlug="mk-2866" host="bag" \/>/);
   assert.match(transaction, /<YourStackBuilder baselineSlug="mk-2866" host="confirmation" \/>/);
   assert.match(frontier, /<YourStackBuilder baselineSlug="mk-2866" host="account"\/>/);
+  assert.match(frontier, /<YourStackBuilder baselineSlug=\{product\.slug\} host="pdp"\/>/);
 });

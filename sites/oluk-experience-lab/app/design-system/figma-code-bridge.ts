@@ -120,6 +120,7 @@ export const codeBridgeComponentContracts = Object.freeze({
       "secondaryHref",
       "secondaryLabel",
       "className",
+      "commerceTreatment",
     ]),
   },
   PurchasePanel: {

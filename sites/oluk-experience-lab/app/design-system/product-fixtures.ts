@@ -44,7 +44,8 @@ export type ProductMediaAsset = Readonly<{
 }>;
 
 export type ProductFixture = Readonly<{
-  id: ProductFixtureId;
+  /** Registry-backed product fixtures may extend beyond the two library specimens. */
+  id: string;
   series: string;
   name: string;
   alias: string;
