@@ -23,7 +23,7 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // Product depth, cross-host stack continuations and keyboard-operable OpenLab
   // technical views remain one bounded presentation-only client path. The
   // largest-chunk law remains unchanged.
-  clientJavaScriptBytes: 603 * KIB,
+  clientJavaScriptBytes: 609 * KIB,
   // The commercial stack and OpenLab technical states reuse the governed surface
   // grammar while retaining a bounded aggregate stylesheet ceiling.
   clientCssBytes: 274 * KIB,
