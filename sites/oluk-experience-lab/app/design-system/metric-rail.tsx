@@ -16,7 +16,9 @@ export type MetricRailProps = Readonly<{
 
 function quantifiedValue(value: string, label: string) {
   const suffix = new RegExp(`\\s+${label}$`, "i");
-  return value.replace(suffix, "");
+  // A source may intentionally omit a serving count. Present the absence without
+  // fabricating a number or collapsing the shared three-cell metric anatomy.
+  return value.replace(suffix, "") || "—";
 }
 
 function metricFit(value: string) {

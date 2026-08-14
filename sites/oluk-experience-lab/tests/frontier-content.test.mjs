@@ -176,9 +176,13 @@ test("Your Stack exposes the approved outcome-led card as one reusable Sites exp
   assert.match(stackBuilder, /export function StackOutcomeCard/);
   assert.match(stackBuilder, /STACK FOCUS/);
   assert.match(stackBuilder, /WHY ADD IT/);
-  assert.match(stackBuilder, /Build a sharper cutting stack[\s\S]*Build size and power into the plan[\s\S]*Build a more capable recomp stack/i);
-  assert.match(stackBuilder, /MK-2866.*\+.*selectedProducts|selectedProducts.*MK-2866/i);
+  assert.match(stackBuilder, /function baselineFor[\s\S]*getFrontierProduct\(slug\)/);
+  assert.match(stackBuilder, /Build a sharper \$\{baseline\.alias\} cutting stack[\s\S]*Build more size and power around \$\{baseline\.alias\}[\s\S]*Build a more capable recomp stack around \$\{baseline\.alias\}/i);
+  assert.match(stackBuilder, /baseline\.name.*selectedProducts|selectedProducts.*baseline\.name/i);
   assert.match(stackBuilder, /Focused build[\s\S]*Elevated build[\s\S]*Full build/);
+  assert.match(stackBuilder, /host === "bag" \|\| host === "confirmation"/);
+  assert.match(stackBuilder, /host === "account"/);
+  assert.match(stackBuilder, /function StackSummary/);
   assert.doesNotMatch(stackBuilder, /function StackCard/);
 });
 

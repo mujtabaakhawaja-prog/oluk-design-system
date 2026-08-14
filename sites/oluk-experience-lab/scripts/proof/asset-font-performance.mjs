@@ -20,12 +20,12 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   // The hydrated OptionB navigation and the explicit post-purchase lifecycle entry pages
   // share one client path. The compiler-backed OpenLab record switcher adds a
   // bounded client interaction while retaining a sub-586 KiB aggregate ceiling.
-  // Product-depth wave adds the outcome-led stack choices and five-view OpenLab interaction.
-  // Keep the bounded aggregate increase explicit; largest-chunk law remains unchanged.
-  clientJavaScriptBytes: 590 * KIB,
-  // The OpenLab evidence visualisation adds one token-governed stylesheet while
-  // retaining a sub-260 KiB aggregate target.
-  clientCssBytes: 261 * KIB,
+  // Product-depth and cross-host stack continuations add bounded local selection
+  // state without changing the largest-chunk law.
+  clientJavaScriptBytes: 595 * KIB,
+  // Compact stack continuations reuse the existing component grammar and retain
+  // a bounded aggregate stylesheet budget.
+  clientCssBytes: 264 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,

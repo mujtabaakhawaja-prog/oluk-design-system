@@ -181,7 +181,7 @@ export const productFixtures = {
     strength: "8 MG",
     servings: "60 SERVINGS",
     purity: ">99%",
-    price: "£46",
+    price: "£55",
     customerPath: "/shop",
     evidencePath: "/open-lab/records",
     media: productMediaRegistry["rad-140"],
