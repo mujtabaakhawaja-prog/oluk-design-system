@@ -77,6 +77,16 @@
       "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "614:75995" },
       "figmaComponentNodeId": "1263:5683",
       "figmaComponentNodeIds": { "desktop": "1263:5683", "mobile": "1263:5814" }
+    },
+    {
+      "id": "checkout-lifecycle-shell",
+      "export": "TransactionPresentation",
+      "file": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
+      "variants": { "state": ["review"], "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1200:34285" },
+      "figmaComponentNodeId": "1265:5804",
+      "figmaComponentNodeIds": { "desktop": "1265:5804", "mobile": "1265:6412" }
     }
   ],
   "mappingLaw": "Code and canonical Figma components both exist. The listed node IDs are native Page 09 component authorities; route-level dual-reference approval remains independently gated."

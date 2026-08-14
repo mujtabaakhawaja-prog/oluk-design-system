@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-14T06:29:37-04:00",
-  "sourceGitSha": "a50c6f439ab2fd6eeddb9d76654cefe2952a4189",
-  "sourceTreeHash": "8e77dc8f9756cf02038e1388cd5513cfb8f530988b2068407e84556af6955d99",
-  "designContractHash": "ed0ee102869bdfcf9e27ab709acf1577f6f3a66a916b5c3f37992a5e621e5229",
+  "generatedAt": "2026-08-14T06:31:16-04:00",
+  "sourceGitSha": "e8efc2baa884715f6901a5674d7b7ce47df373c1",
+  "sourceTreeHash": "b5be01a020e2177966aa0b397435804109618192c090b38ba7804707929f62f9",
+  "designContractHash": "4b4f8ab42cce58bb65f32a0d4d9d6889967deafb340f951fe358e344ce1d9a66",
   "decisionCount": 12,
   "families": [
     {
@@ -398,7 +398,7 @@
     }
   },
   "componentRegistry": {
-    "count": 8,
+    "count": 9,
     "runtimeAuthority": "NONE"
   },
   "figmaIntent": {
@@ -604,7 +604,7 @@
       },
       {
         "id": "checkout-lifecycle",
-        "codeExport": "CheckoutLifecycle",
+        "codeExport": "TransactionPresentation",
         "consumingRoutes": [
           "/bag",
           "/checkout/:stage"

@@ -46,12 +46,12 @@ const stageHeadings = {
     copy: "Review product truth, quantity and the current order total before checkout.",
   },
   details: {
-    title: "Your details.",
+    title: "Your information.",
     copy: "Add the contact and delivery information needed to prepare the order.",
   },
   delivery: {
     title: "Choose delivery.",
-    copy: "Review the available delivery presentation before moving to payment.",
+    copy: "Review the available delivery options before moving to payment.",
   },
   handoff: {
     title: "Your product, order value and payment equivalent.",

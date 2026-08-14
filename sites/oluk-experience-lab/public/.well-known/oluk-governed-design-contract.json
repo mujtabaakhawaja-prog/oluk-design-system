@@ -9,7 +9,7 @@
   },
   "contractId": "oluk.governed-design-contract.v1",
   "designSystem": {
-    "componentCount": 26,
+    "componentCount": 27,
     "componentMappings": [
       {
         "code": {
@@ -1001,6 +1001,34 @@
           "touchTargetPx": 44
         },
         "variants": {
+          "width": [
+            "desktop",
+            "mobile"
+          ]
+        }
+      },
+      {
+        "export": "TransactionPresentation",
+        "figmaComponentNodeId": "1265:5804",
+        "figmaComponentNodeIds": {
+          "desktop": "1265:5804",
+          "mobile": "1265:6412"
+        },
+        "figmaIntent": {
+          "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+          "nodeId": "1200:34285"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
+        "id": "checkout-lifecycle-shell",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "summary",
+          "touchTargetPx": 44
+        },
+        "variants": {
+          "state": [
+            "review"
+          ],
           "width": [
             "desktop",
             "mobile"
@@ -2422,7 +2450,7 @@
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
-      "sha256": "f40e5410be3c0e9abad4f48e0d166f7bbc2709f3fbd329e9382ec2f59408e992"
+      "sha256": "fd718367c99cc36a1acbb7a2a8ce4f2766cee88e8d8a22f98b03b61a4380fe46"
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
@@ -3706,5 +3734,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "ee7a0276451a767938718a38927edb6bfb289be93c23ce7a90b25fb71bcb5d92"
+  "contractHash": "a3f59e834b3b82013f588db6735c85d31a341fdd69bc37ff0760246c1f076407"
 }

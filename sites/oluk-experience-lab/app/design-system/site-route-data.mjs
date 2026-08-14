@@ -12,7 +12,7 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "evidence-os", path: "/about/evidence-os", label: "EvidenceOS", heading: "See what stands behind every product.", section: "company", authorityClass: "customer-candidate" },
   { key: "account", path: "/account", label: "Account", heading: "Orders and account access.", section: "support", authorityClass: "customer-candidate" },
   { key: "bag", path: "/bag", label: "Bag", heading: "Your bag.", section: "transaction", authorityClass: "static-transaction-candidate" },
-  { key: "checkout", path: "/checkout", label: "Checkout", heading: "Your details.", section: "transaction", authorityClass: "static-transaction-candidate" },
+  { key: "checkout", path: "/checkout", label: "Checkout", heading: "Your information.", section: "transaction", authorityClass: "static-transaction-candidate" },
   { key: "checkout-information", path: "/checkout/information", label: "Information", heading: "Your information.", section: "transaction", authorityClass: "static-transaction-candidate" },
   { key: "checkout-delivery", path: "/checkout/delivery", label: "Delivery", heading: "Choose delivery.", section: "transaction", authorityClass: "static-transaction-candidate" },
   { key: "checkout-payment-handoff", path: "/checkout/payment-handoff", label: "Payment handoff", heading: "Your product, order value and payment equivalent.", section: "transaction", authorityClass: "static-transaction-candidate" },

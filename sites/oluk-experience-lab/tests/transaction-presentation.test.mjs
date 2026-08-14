@@ -84,6 +84,16 @@ test("transaction presentation preserves exact MK-2866 truth and deterministic i
   assert.doesNotMatch(source, /<form\b|\bformAction\s*=|\bonSubmit\s*=/i);
 });
 
+test("named checkout stages adopt the canonical Option E lifecycle instead of a second generic layout", async () => {
+  const programRoutes = await readFile(new URL("program-routes.tsx", appRoot), "utf8");
+  assert.match(programRoutes, /import \{ TransactionPresentation, type TransactionStage \}/);
+  assert.match(programRoutes, /information: "details"/);
+  assert.match(programRoutes, /review: "handoff"/);
+  assert.match(programRoutes, /payment: "order-pay"/);
+  assert.match(programRoutes, /<TransactionPresentation stage=\{checkoutStageMap\[step\]\} \/>/);
+  assert.doesNotMatch(programRoutes, /const checkoutCopy/);
+});
+
 test("transaction import graph and dependencies cannot acquire runtime callbacks", async () => {
   const graph = new Set();
   const bareImports = new Set();
