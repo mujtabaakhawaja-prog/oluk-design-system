@@ -238,7 +238,10 @@ try {
         if (route.customer && !audit.footerIsInverse) failures.push(`footer is not the sole-inverse color (${audit.footerBackground})`);
         if (route.customer && audit.inverseOutsideFooter.length > 0) failures.push(`inverse surface outside footer: ${audit.inverseOutsideFooter.join(", ")}`);
         if (exceptions.length > 0) failures.push(`${exceptions.length} uncaught browser exception(s)`);
-        if (logs.some(({ level }) => level === "error")) failures.push(`${logs.filter(({ level }) => level === "error").length} browser console error(s)`);
+        const consoleErrors = logs.filter(({ level, url: logUrl }) =>
+          level === "error" && !(route.expectedStatus === 404 && logUrl === url),
+        );
+        if (consoleErrors.length > 0) failures.push(`${consoleErrors.length} browser console error(s)`);
 
         let screenshot = null;
         let screenshotSha256 = null;

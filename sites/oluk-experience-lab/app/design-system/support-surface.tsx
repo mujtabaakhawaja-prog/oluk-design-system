@@ -17,5 +17,5 @@ const links: Record<string, string> = { "Choose delivery": "/checkout/delivery",
 
 export function SupportSurface({ kind }: { kind: SupportSurfaceKind }) {
   const surface = content[kind];
-  return <section className="support-surface"><header className="page-hero"><div className="shell"><span className="eyebrow">{surface.eyebrow}</span><h1>{surface.title}</h1><p>{surface.copy}</p></div></header><div className="shell support-surface-grid">{surface.cards.map(([title, copy, action], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{title}</h2><p>{copy}</p><Link href={links[action]}>{action} →</Link></article>)}</div></section>;
+  return <main className="support-surface"><header className="page-hero"><div className="shell"><span className="eyebrow">{surface.eyebrow}</span><h1>{surface.title}</h1><p>{surface.copy}</p></div></header><div className="shell support-surface-grid">{surface.cards.map(([title, copy, action], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{title}</h2><p>{copy}</p><Link href={links[action]}>{action} →</Link></article>)}</div></main>;
 }
