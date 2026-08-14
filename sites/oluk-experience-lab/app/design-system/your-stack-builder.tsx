@@ -132,7 +132,12 @@ function ContextChip({ label, value }: { label: string; value: string }) {
   );
 }
 
-function StackCard({
+/**
+ * Canonical outcome-led stack card. Hosts reuse this rather than returning to
+ * the generic commerce-card status treatment: the decision is the outcome,
+ * the product format, and the reason to add it.
+ */
+export function StackOutcomeCard({
   product,
   selected,
   added,
@@ -226,7 +231,7 @@ export function YourStackBuilder() {
 
       <section aria-label="Stack products" className={styles.rail}>
         {products.map((product) => (
-          <StackCard
+          <StackOutcomeCard
             added={added.includes(product.id)}
             key={product.id}
             onAdd={() =>

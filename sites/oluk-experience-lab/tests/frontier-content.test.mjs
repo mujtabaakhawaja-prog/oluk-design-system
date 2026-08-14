@@ -123,3 +123,12 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.doesNotMatch(app, /product\.inventory|product\.evidence|stackRole|stackFit|research route|testing language|direct route to product detail|Choose what complements|performance direction/i);
   assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
 });
+
+test("Your Stack exposes the approved outcome-led card as one reusable Sites export", () => {
+  const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
+  assert.match(stackBuilder, /export function StackOutcomeCard/);
+  assert.match(stackBuilder, /STACK FOCUS/);
+  assert.match(stackBuilder, /WHY ADD IT/);
+  assert.match(stackBuilder, /strength and lean mass[\s\S]*size and power[\s\S]*growth, appetite, sleep and recovery/i);
+  assert.doesNotMatch(stackBuilder, /function StackCard/);
+});
