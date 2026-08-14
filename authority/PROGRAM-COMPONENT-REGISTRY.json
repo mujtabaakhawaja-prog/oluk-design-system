@@ -57,6 +57,16 @@
       "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1247:15844" },
       "figmaComponentNodeId": "1257:5160",
       "figmaComponentNodeIds": { "desktop": "1257:5160", "mobile": "1259:5390" }
+    },
+    {
+      "id": "pdp-decision-hero",
+      "export": "PdpFirstFold",
+      "file": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+      "variants": { "product": ["mk-2866"], "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1155:30632" },
+      "figmaComponentNodeId": "1261:5390",
+      "figmaComponentNodeIds": { "desktop": "1261:5390", "mobile": "1261:5516" }
     }
   ],
   "mappingLaw": "Code and canonical Figma components both exist. The listed node IDs are native Page 09 component authorities; route-level dual-reference approval remains independently gated."

@@ -58,8 +58,8 @@ test("the public governed contract is an exact authority projection", async () =
   const contract = JSON.parse(authority);
   assert.equal(contract.routeAuthority.routes.length, 73);
   assert.equal(contract.designSystem.variableCount, 112);
-  assert.equal(contract.designSystem.componentCount, 24);
-  assert.equal(contract.designSystem.programComponentMappings.length, 6);
+  assert.equal(contract.designSystem.componentCount, 25);
+  assert.equal(contract.designSystem.programComponentMappings.length, 7);
   assert.equal(contract.immutableProductTruth.servings, "90 SERVINGS");
   assert.equal(contract.boundaries.browserDirectServiceCalls, false);
   assert.equal(contract.runtimeContractSnapshot.browserDirectServiceCallsAllowed, false);

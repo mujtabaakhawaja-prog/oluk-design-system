@@ -78,9 +78,9 @@ test("checkout and post-purchase native route mirrors bind the current Figma com
   });
   assert.deepEqual(pdp.figmaReference, {
     fileKey: "BEPMuUt1HroEw8xjz8CVyN",
-    nodeId: "1241:2984",
-    desktopNodeId: "1241:2984",
-    mobileNodeId: "1241:3486",
+    nodeId: "1262:24455",
+    desktopNodeId: "1262:24455",
+    mobileNodeId: "1262:25038",
   });
   assert.deepEqual(openLab.figmaReference, {
     fileKey: "BEPMuUt1HroEw8xjz8CVyN",

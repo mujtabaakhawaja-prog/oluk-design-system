@@ -9,7 +9,7 @@
   },
   "contractId": "oluk.governed-design-contract.v1",
   "designSystem": {
-    "componentCount": 24,
+    "componentCount": 25,
     "componentMappings": [
       {
         "code": {
@@ -947,6 +947,34 @@
         "variants": {
           "product": [
             "rad-140"
+          ],
+          "width": [
+            "desktop",
+            "mobile"
+          ]
+        }
+      },
+      {
+        "export": "PdpFirstFold",
+        "figmaComponentNodeId": "1261:5390",
+        "figmaComponentNodeIds": {
+          "desktop": "1261:5390",
+          "mobile": "1261:5516"
+        },
+        "figmaIntent": {
+          "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+          "nodeId": "1155:30632"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "id": "pdp-decision-hero",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "summary",
+          "touchTargetPx": 44
+        },
+        "variants": {
+          "product": [
+            "mk-2866"
           ],
           "width": [
             "desktop",
@@ -2369,7 +2397,7 @@
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
-      "sha256": "3826987af166e0814a521103bca87cf6e4d40c558c9f4e4e1986edb905e6045e"
+      "sha256": "da874e78fd0aeffa04bd31b5065d959ed2a2fa0274f0944c542e2af7c0cdcce0"
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
@@ -3653,5 +3681,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "1c94b72ffe386117e05ed7414de1f30cff1bc57a7789a35ae5caa70381e8a0bc"
+  "contractHash": "2819e07d36cb1bda3480ae7f3cf1f972983a9f4d1b14152116b215f6d46a66ba"
 }
