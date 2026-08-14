@@ -67,6 +67,16 @@
       "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1155:30632" },
       "figmaComponentNodeId": "1261:5390",
       "figmaComponentNodeIds": { "desktop": "1261:5390", "mobile": "1261:5516" }
+    },
+    {
+      "id": "openlab-portal-hero",
+      "export": "OpenLabHeroLight",
+      "file": "sites/oluk-experience-lab/app/design-system/openlab-hero-light.tsx",
+      "variants": { "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "reorder", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "614:75995" },
+      "figmaComponentNodeId": "1263:5683",
+      "figmaComponentNodeIds": { "desktop": "1263:5683", "mobile": "1263:5814" }
     }
   ],
   "mappingLaw": "Code and canonical Figma components both exist. The listed node IDs are native Page 09 component authorities; route-level dual-reference approval remains independently gated."

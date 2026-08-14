@@ -1,10 +1,10 @@
 {
   "schemaVersion": "oluk.review-studio-payload.v1",
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "generatedAt": "2026-08-14T06:21:59-04:00",
-  "sourceGitSha": "a1c9bb7ed2ec1f492df14628697872dbbab0f249",
-  "sourceTreeHash": "438ed7fc642d3385d138037c1ca7f84edec9448c3e9e5509210de9e64e233e68",
-  "designContractHash": "8a15db52b7874fb51e048d104be5a48f48c601328ea54470e18f24a11cab21b9",
+  "generatedAt": "2026-08-14T06:29:37-04:00",
+  "sourceGitSha": "a50c6f439ab2fd6eeddb9d76654cefe2952a4189",
+  "sourceTreeHash": "8e77dc8f9756cf02038e1388cd5513cfb8f530988b2068407e84556af6955d99",
+  "designContractHash": "ed0ee102869bdfcf9e27ab709acf1577f6f3a66a916b5c3f37992a5e621e5229",
   "decisionCount": 12,
   "families": [
     {
@@ -398,7 +398,7 @@
     }
   },
   "componentRegistry": {
-    "count": 7,
+    "count": 8,
     "runtimeAuthority": "NONE"
   },
   "figmaIntent": {

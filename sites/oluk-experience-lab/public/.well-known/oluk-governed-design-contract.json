@@ -9,7 +9,7 @@
   },
   "contractId": "oluk.governed-design-contract.v1",
   "designSystem": {
-    "componentCount": 25,
+    "componentCount": 26,
     "componentMappings": [
       {
         "code": {
@@ -976,6 +976,31 @@
           "product": [
             "mk-2866"
           ],
+          "width": [
+            "desktop",
+            "mobile"
+          ]
+        }
+      },
+      {
+        "export": "OpenLabHeroLight",
+        "figmaComponentNodeId": "1263:5683",
+        "figmaComponentNodeIds": {
+          "desktop": "1263:5683",
+          "mobile": "1263:5814"
+        },
+        "figmaIntent": {
+          "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+          "nodeId": "614:75995"
+        },
+        "file": "sites/oluk-experience-lab/app/design-system/openlab-hero-light.tsx",
+        "id": "openlab-portal-hero",
+        "responsive": {
+          "horizontalScrollAllowed": false,
+          "mobileStrategy": "reorder",
+          "touchTargetPx": 44
+        },
+        "variants": {
           "width": [
             "desktop",
             "mobile"
@@ -2397,7 +2422,7 @@
     },
     "programComponents": {
       "file": "authority/PROGRAM-COMPONENT-REGISTRY.json",
-      "sha256": "da874e78fd0aeffa04bd31b5065d959ed2a2fa0274f0944c542e2af7c0cdcce0"
+      "sha256": "f40e5410be3c0e9abad4f48e0d166f7bbc2709f3fbd329e9382ec2f59408e992"
     },
     "routes": {
       "file": "authority/SITE-ROUTE-LEDGER.json",
@@ -3681,5 +3706,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "2819e07d36cb1bda3480ae7f3cf1f972983a9f4d1b14152116b215f6d46a66ba"
+  "contractHash": "ee7a0276451a767938718a38927edb6bfb289be93c23ce7a90b25fb71bcb5d92"
 }
