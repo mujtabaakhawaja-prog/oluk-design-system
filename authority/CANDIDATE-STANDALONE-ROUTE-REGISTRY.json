@@ -1,0 +1,366 @@
+{
+  "schemaVersion": "oluk.candidate-standalone-route-registry.v1",
+  "registryId": "OLUK-CANDIDATE-STANDALONE-ROUTES-001",
+  "status": "CANDIDATES_SEPARATE_FROM_CANONICAL_73_ROUTE_LEDGER",
+  "featureRegistry": {
+    "path": "authority/FEATURE-INTENT-REGISTRY.json",
+    "contentHash": "d4062005fccef3ad2b22f4caeaa6521a21fcc8b2e981f997a753b837dfe3072a"
+  },
+  "canonicalRouteLedger": {
+    "path": "authority/SITE-ROUTE-LEDGER.json",
+    "sha256": "329b48a822b99de8728d1d0d28e037a8b5fcb2244c19421e8a0e12489de53ce7",
+    "routeCount": 73,
+    "mutation": "NONE"
+  },
+  "allowedStates": [
+    "CONTENT_INCOMPLETE",
+    "DESIGN_INCOMPLETE",
+    "STANDALONE_READY"
+  ],
+  "candidateCount": 19,
+  "routes": [
+    {
+      "path": "/accessibility",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "service-status-accessibility"
+      ],
+      "customerJob": "Understand accessibility support and request assistance.",
+      "commercialJob": "Build trust and remove access barriers.",
+      "standaloneValue": "Accessibility statement and contact.",
+      "crossMountValue": "Support links across Help and Contact.",
+      "navigationCandidates": [
+        "Footer"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/account/research-profile",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "saved-stacks-research-profile",
+        "openlab-confidence-card"
+      ],
+      "customerJob": "Return to saved stacks and connected records.",
+      "commercialJob": "Increase confident reorder and multi-product retention.",
+      "standaloneValue": "Personal product and evidence history.",
+      "crossMountValue": "Saved-stack preview on Account and Quick Reorder.",
+      "navigationCandidates": [
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/api",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "public-api"
+      ],
+      "customerJob": "Understand whether a supported public integration exists.",
+      "commercialJob": "Create a technical partner path only after an API is approved.",
+      "standaloneValue": "API documentation or clear unavailable state.",
+      "crossMountValue": "Lab Partner technical entry.",
+      "navigationCandidates": [
+        "Footer",
+        "Lab Partner"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/ar-viewer",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "ar-viewer",
+        "product-media-gallery"
+      ],
+      "customerJob": "Inspect a product with an approved 3D model.",
+      "commercialJob": "Increase product tangibility where the required asset exists.",
+      "standaloneValue": "Immersive product view.",
+      "crossMountValue": "PDP media action.",
+      "navigationCandidates": [
+        "PDP only"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/bundle-builder",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "bundle-builder",
+        "comparison-drawer"
+      ],
+      "customerJob": "Build a multi-product bundle from a goal, freeform choice or curated start.",
+      "commercialJob": "Increase product count and AOV with clear contribution and total.",
+      "standaloneValue": "A complete additive bundle decision surface.",
+      "crossMountValue": "Compact bundle and comparison entries on PDP, Shop and Bag.",
+      "navigationCandidates": [
+        "Shop mega-menu",
+        "Homepage",
+        "PDP"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/careers",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "careers-press-media-community"
+      ],
+      "customerJob": "Explore verified roles and team information.",
+      "commercialJob": "Support employer brand.",
+      "standaloneValue": "Careers destination when roles exist.",
+      "crossMountValue": "About callout.",
+      "navigationCandidates": [
+        "Footer",
+        "About"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/community",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "careers-press-media-community",
+        "referrals-ambassador"
+      ],
+      "customerJob": "Understand available community and ambassador participation.",
+      "commercialJob": "Support advocacy and retention when a programme exists.",
+      "standaloneValue": "Community destination.",
+      "crossMountValue": "Account and referral entry.",
+      "navigationCandidates": [
+        "Learn/About menu",
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/expert-qa",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "journal-and-expert-qa",
+        "product-faq"
+      ],
+      "customerJob": "Explore attributed answers to customer questions.",
+      "commercialJob": "Remove objections and create qualified product paths.",
+      "standaloneValue": "Question-led expert archive.",
+      "crossMountValue": "Q&A excerpts on PDP and FAQ.",
+      "navigationCandidates": [
+        "Learn/About menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/journal",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "journal-and-expert-qa",
+        "campaign-and-collection-cards",
+        "openlab-research-library"
+      ],
+      "customerJob": "Explore product education and brand stories.",
+      "commercialJob": "Build organic discovery and return paths to commerce.",
+      "standaloneValue": "Editorial archive.",
+      "crossMountValue": "Article cards on Homepage, PDP and OpenLab.",
+      "navigationCandidates": [
+        "Learn/About menu",
+        "Footer"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/loyalty",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "loyalty"
+      ],
+      "customerJob": "Understand points, tiers and valid benefits.",
+      "commercialJob": "Increase retention and repeat purchase.",
+      "standaloneValue": "Complete loyalty balance and activity.",
+      "crossMountValue": "Tier preview on Account and Confirmation.",
+      "navigationCandidates": [
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/podcast",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "careers-press-media-community"
+      ],
+      "customerJob": "Explore verified audio content.",
+      "commercialJob": "Build an owned audience when content exists.",
+      "standaloneValue": "Podcast archive.",
+      "crossMountValue": "Editorial cards.",
+      "navigationCandidates": [
+        "Learn/About menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/press",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "careers-press-media-community"
+      ],
+      "customerJob": "Access approved brand media and press information.",
+      "commercialJob": "Support press relationships and brand authority.",
+      "standaloneValue": "Press archive.",
+      "crossMountValue": "About callout.",
+      "navigationCandidates": [
+        "Footer",
+        "About"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/quick-reorder",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "quick-reorder",
+        "compact-guided-stack"
+      ],
+      "customerJob": "Reorder a prior product or saved composition quickly.",
+      "commercialJob": "Increase repeat purchase.",
+      "standaloneValue": "Focused reorder history and saved stack decision.",
+      "crossMountValue": "Quick reorder card on Account, Orders and Confirmation.",
+      "navigationCandidates": [
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/recommendations",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "recommendations",
+        "goal-led-discovery"
+      ],
+      "customerJob": "Explore explainable product recommendations.",
+      "commercialJob": "Create a reusable discovery and repeat-purchase destination.",
+      "standaloneValue": "A customer-controlled recommendation catalogue.",
+      "crossMountValue": "Recommendation cards across product and retention hosts.",
+      "navigationCandidates": [
+        "Shop mega-menu",
+        "Account"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/referrals",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "referrals-ambassador"
+      ],
+      "customerJob": "Share the brand under clear approved terms.",
+      "commercialJob": "Acquire customers and support advocacy.",
+      "standaloneValue": "Referral status and activity.",
+      "crossMountValue": "Compact referral card on Account and Community.",
+      "navigationCandidates": [
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/service-status",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "service-status-accessibility"
+      ],
+      "customerJob": "Understand current customer-service availability.",
+      "commercialJob": "Protect trust during service disruption.",
+      "standaloneValue": "Status and incident communication.",
+      "crossMountValue": "Compact status link in support contexts.",
+      "navigationCandidates": [
+        "Footer"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/subscriptions",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "subscriptions",
+        "restock-lab"
+      ],
+      "customerJob": "Manage a recurring product plan.",
+      "commercialJob": "Support predictable repeat purchase.",
+      "standaloneValue": "Full subscription lifecycle.",
+      "crossMountValue": "Subscription preview on Account, PDP and Confirmation.",
+      "navigationCandidates": [
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/video",
+      "state": "CONTENT_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "careers-press-media-community"
+      ],
+      "customerJob": "Explore verified video content.",
+      "commercialJob": "Increase engagement and product education.",
+      "standaloneValue": "Video archive.",
+      "crossMountValue": "Product and OpenLab explainers.",
+      "navigationCandidates": [
+        "Learn/About menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    },
+    {
+      "path": "/wishlist",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalLedgerMembership": false,
+      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "featureIds": [
+        "wishlist",
+        "product-compare-tray"
+      ],
+      "customerJob": "Save and compare products for later.",
+      "commercialJob": "Retain product consideration.",
+      "standaloneValue": "Persistent saved-product workspace.",
+      "crossMountValue": "Save action and shortlist state across discovery and PDP.",
+      "navigationCandidates": [
+        "Account menu"
+      ],
+      "publicNavigationState": "NOT_PROMOTED"
+    }
+  ],
+  "contentHash": "375a189e2a2c31c1e55814f9815fea7ef5c653feebd1224a5b81ed17c834b614"
+}
