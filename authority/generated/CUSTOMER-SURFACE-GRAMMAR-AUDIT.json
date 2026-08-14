@@ -2233,7 +2233,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "fa45aa06a24fa02b3bdbedd317a12109d870efb5e3176b72cb0b0519d3e16d89",
+  "sourceHash": "ba4610204c7fce9c03cf63ebe8f1728887a4829ce79bb510bac728d63500f755",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2253,5 +2253,5 @@
     "mobileReviewWidthPx": 390,
     "qualitativeChipLabelExceptionPx": 11
   },
-  "auditHash": "338fad3504454c0c6306784bb3234374f19cb4e66ca624b44dc8f77e118ce88c"
+  "auditHash": "5acfb11d58524a9621ada81d5f21ef3a701aaa6bd71c0f07f74e046de590f5b4"
 }
