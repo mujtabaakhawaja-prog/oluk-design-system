@@ -31,6 +31,9 @@ test("every registered module has a Sites reference, Figma destination, and mobi
   assert.equal(new Set(registry.records.map(({ id }) => id)).size, registry.records.length);
   for (const record of registry.records) {
     assert.ok(record.siteReference.path.startsWith("/"), record.id);
+    assert.match(record.siteReference.sourceCommit, /^[0-9a-f]{7,40}$/, `${record.id} capture commit`);
+    assert.match(record.siteReference.desktopHash, /^[0-9a-f]{64}$/, `${record.id} desktop capture hash`);
+    assert.match(record.siteReference.mobileHash, /^[0-9a-f]{64}$/, `${record.id} mobile capture hash`);
     assert.equal(record.figmaReference.fileKey, registry.fileKey, record.id);
     assert.ok(record.canonicalComponents.length > 0, record.id);
     assert.ok(["reorder", "collapse", "summary", "carousel", "horizontal-scroll", "stack-allowed"].includes(record.mobileStrategy), record.id);
