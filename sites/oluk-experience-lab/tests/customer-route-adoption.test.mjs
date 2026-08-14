@@ -74,6 +74,8 @@ test("customer routes adopt the canonical design-system modules without page-loc
     "MetricRail",
     "EvidenceStatus",
     "ProductDecisionHero",
+    "LockedHomeHero",
+    "PdpFirstFold",
   ]) {
     assert.doesNotMatch(
       shellSource,
@@ -84,12 +86,13 @@ test("customer routes adopt the canonical design-system modules without page-loc
 
   for (const canonicalComponent of [
     "ProductCommerceCard",
-    "PurchasePanel",
     "ProductDossier",
     "AssuranceRail",
     "RelatedRail",
-    "ProductDecisionHero",
     "PresentationState",
+    "LockedHomeHero",
+    "PdpFirstFold",
+    "OpenLabHeroLight",
   ]) {
     assert.match(routeSource, new RegExp(`<${canonicalComponent}\\b`), `${canonicalComponent} route adoption`);
   }
@@ -97,18 +100,22 @@ test("customer routes adopt the canonical design-system modules without page-loc
   const productRoute = routeSource.match(
     /export function ProductRoute\(\)[\s\S]*?\n}\n\nexport function OpenLabRoute/,
   )?.[0] ?? "";
-  assert.match(productRoute, /className="pdp-media-stage"/, "PDP retains its flat atmospheric media exception");
-  assert.doesNotMatch(productRoute, /<ProductMediaChamber\b/, "PDP first fold does not consume the bounded chamber master");
-  assert.match(productRoute, /<PurchasePanel\b/);
+  assert.match(productRoute, /<PdpFirstFold\b/, "PDP adopts the approved Section 1 composition");
+  assert.doesNotMatch(productRoute, /className="pdp-media-stage"/, "PDP no longer redraws its media chamber in the route");
+  const pdpFirstFold = await readFile(new URL("../app/design-system/pdp-first-fold.tsx", import.meta.url), "utf8");
+  assert.match(pdpFirstFold, /<PurchasePanel\b/, "approved Section 1 reuses the canonical PurchasePanel");
   assert.match(productRoute, /<ProductDossier\b/);
   assert.match(productRoute, /<RelatedRail\b/);
 
   const dossierRoute = routeSource.match(
     /export function DossierRoute\(\)[\s\S]*?\n}\n\nfunction lookupStateFromReference/,
   )?.[0] ?? "";
-  assert.match(dossierRoute, /<ProductDossier\b/, "OpenLab dossier reuses the PDP dossier component");
-  assert.match(dossierRoute, /secondaryHref=\{mk2866Fixture\.customerPath\}/, "dossier return-to-commerce action targets the PDP");
-  assert.match(dossierRoute, /secondaryLabel="Return to MK-2866"/, "dossier does not self-link through a lab-record label");
+  assert.match(dossierRoute, /<OpenLabDossierComposition\b/, "OpenLab dossier uses the canonical dossier composition");
+
+  const openLabModules = await readFile(new URL("../app/design-system/openlab-sections.tsx", import.meta.url), "utf8");
+  assert.match(openLabModules, /<ProductDossier\b/, "canonical OpenLab dossier composition reuses ProductDossier");
+  assert.match(openLabModules, /secondaryHref=\{mk2866Fixture\.customerPath\}/, "dossier return-to-commerce action targets the PDP");
+  assert.match(openLabModules, /secondaryLabel="Return to MK-2866"/, "dossier does not self-link through a lab-record label");
 });
 
 test("batch lookup renders accessible deterministic empty, entered, found, no-result and unavailable states", async () => {

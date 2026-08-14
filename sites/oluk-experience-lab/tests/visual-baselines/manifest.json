@@ -6,7 +6,7 @@
     "publication": "NONE",
     "promotion": "HUMAN_REVIEW_REQUIRED"
   },
-  "routeCount": 31,
+  "routeCount": 73,
   "widthCount": 4,
   "comparison": {
     "hashAlgorithm": "sha256",
@@ -53,6 +53,46 @@
       "artifact": "screenshots/home--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "f648ffbf5af9833be35ea29319cea11789fbbcdfeaf022bdea339ad1404be831"
+    },
+    {
+      "id": "404--1440",
+      "route": "/404",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/404--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "404--1024",
+      "route": "/404",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/404--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "404--768",
+      "route": "/404",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/404--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "404--390",
+      "route": "/404",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/404--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "about--1440",
@@ -175,6 +215,166 @@
       "sha256": "9d9d93ac342b3b8e15ab4966294c6662c2c7ca973b77139082b5be5ce42f1cbb"
     },
     {
+      "id": "account--addresses--1440",
+      "route": "/account/addresses",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/account--addresses--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--addresses--1024",
+      "route": "/account/addresses",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--addresses--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--addresses--768",
+      "route": "/account/addresses",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--addresses--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--addresses--390",
+      "route": "/account/addresses",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/account--addresses--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--1440",
+      "route": "/account/orders",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/account--orders--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--1024",
+      "route": "/account/orders",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--orders--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--768",
+      "route": "/account/orders",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--orders--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--390",
+      "route": "/account/orders",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/account--orders--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--OL-10428--1440",
+      "route": "/account/orders/OL-10428",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/account--orders--OL-10428--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--OL-10428--1024",
+      "route": "/account/orders/OL-10428",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--orders--OL-10428--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--OL-10428--768",
+      "route": "/account/orders/OL-10428",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--orders--OL-10428--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--orders--OL-10428--390",
+      "route": "/account/orders/OL-10428",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/account--orders--OL-10428--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--profile--1440",
+      "route": "/account/profile",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/account--profile--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--profile--1024",
+      "route": "/account/profile",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--profile--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--profile--768",
+      "route": "/account/profile",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/account--profile--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "account--profile--390",
+      "route": "/account/profile",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/account--profile--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "bag--1440",
       "route": "/bag",
       "width": 1440,
@@ -213,46 +413,6 @@
       "artifact": "screenshots/bag--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "4c4090e671325dcb8751f25782de51606f359238284a2d8c3e63359b3668a7c7"
-    },
-    {
-      "id": "checkout--1440",
-      "route": "/checkout",
-      "width": 1440,
-      "height": 1000,
-      "customer": true,
-      "artifact": "screenshots/checkout--1440.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "f44d2323718b0a439fc3d73aec62e46b38203122b5c36317b47ee6752aaae594"
-    },
-    {
-      "id": "checkout--1024",
-      "route": "/checkout",
-      "width": 1024,
-      "height": 900,
-      "customer": true,
-      "artifact": "screenshots/checkout--1024.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "95de53c84285b34d5f7f81f0263f0a4f18e93ec58482301368051aa777f5cba8"
-    },
-    {
-      "id": "checkout--768",
-      "route": "/checkout",
-      "width": 768,
-      "height": 900,
-      "customer": true,
-      "artifact": "screenshots/checkout--768.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "3b4e137de5fd87d608939c764c78f638569e02b971d6d3c1e7c1776ab0db0221"
-    },
-    {
-      "id": "checkout--390",
-      "route": "/checkout",
-      "width": 390,
-      "height": 844,
-      "customer": true,
-      "artifact": "screenshots/checkout--390.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "c03decee6d23fef4ab6d6a144925c39243004f7fe275cb49d824f036d63484e3"
     },
     {
       "id": "checkout--confirmation--1440",
@@ -375,6 +535,46 @@
       "sha256": "c86b125fd669a57c980d75691e16e016ea81ff280dfd433ed048df14f16b8963"
     },
     {
+      "id": "checkout--information--1440",
+      "route": "/checkout/information",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--information--1024",
+      "route": "/checkout/information",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--information--768",
+      "route": "/checkout/information",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--information--390",
+      "route": "/checkout/information",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--information--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "checkout--order-pay--1440",
       "route": "/checkout/order-pay",
       "width": 1440,
@@ -413,6 +613,46 @@
       "artifact": "screenshots/checkout--order-pay--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "9f5a9072f21ef246bffb6ad33b894716fad36abbae90b47440420c30f5fa49a0"
+    },
+    {
+      "id": "checkout--payment--1440",
+      "route": "/checkout/payment",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--payment--1024",
+      "route": "/checkout/payment",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--payment--768",
+      "route": "/checkout/payment",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--payment--390",
+      "route": "/checkout/payment",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--payment--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "checkout--payment-handoff--1440",
@@ -455,6 +695,46 @@
       "sha256": "3cdc7a14df24c020c4f8f159551839b675d75a3f06730dd42801b2e63e08364e"
     },
     {
+      "id": "checkout--processing--1440",
+      "route": "/checkout/processing",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--processing--1024",
+      "route": "/checkout/processing",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--processing--768",
+      "route": "/checkout/processing",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--processing--390",
+      "route": "/checkout/processing",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--processing--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "checkout--retry--1440",
       "route": "/checkout/retry",
       "width": 1440,
@@ -493,6 +773,326 @@
       "artifact": "screenshots/checkout--retry--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "b69e797f2699a9de9ecf270f4836a10a8ba30c115768c62709035582ee750b0d"
+    },
+    {
+      "id": "checkout--review--1440",
+      "route": "/checkout/review",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--review--1024",
+      "route": "/checkout/review",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--review--768",
+      "route": "/checkout/review",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--review--390",
+      "route": "/checkout/review",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--review--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--1440",
+      "route": "/checkout/tracking",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--1024",
+      "route": "/checkout/tracking",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--768",
+      "route": "/checkout/tracking",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "checkout--tracking--390",
+      "route": "/checkout/tracking",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/checkout--tracking--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--featured--1440",
+      "route": "/collections/featured",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/collections--featured--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--featured--1024",
+      "route": "/collections/featured",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--featured--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--featured--768",
+      "route": "/collections/featured",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--featured--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--featured--390",
+      "route": "/collections/featured",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/collections--featured--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--prohormones--1440",
+      "route": "/collections/prohormones",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/collections--prohormones--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--prohormones--1024",
+      "route": "/collections/prohormones",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--prohormones--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--prohormones--768",
+      "route": "/collections/prohormones",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--prohormones--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--prohormones--390",
+      "route": "/collections/prohormones",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/collections--prohormones--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--research-chemicals--1440",
+      "route": "/collections/research-chemicals",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/collections--research-chemicals--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--research-chemicals--1024",
+      "route": "/collections/research-chemicals",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--research-chemicals--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--research-chemicals--768",
+      "route": "/collections/research-chemicals",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--research-chemicals--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--research-chemicals--390",
+      "route": "/collections/research-chemicals",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/collections--research-chemicals--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--sarms--1440",
+      "route": "/collections/sarms",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/collections--sarms--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--sarms--1024",
+      "route": "/collections/sarms",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--sarms--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--sarms--768",
+      "route": "/collections/sarms",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--sarms--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--sarms--390",
+      "route": "/collections/sarms",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/collections--sarms--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--stacks--1440",
+      "route": "/collections/stacks",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/collections--stacks--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--stacks--1024",
+      "route": "/collections/stacks",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--stacks--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--stacks--768",
+      "route": "/collections/stacks",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/collections--stacks--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "collections--stacks--390",
+      "route": "/collections/stacks",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/collections--stacks--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "compare--1440",
+      "route": "/compare",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/compare--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "compare--1024",
+      "route": "/compare",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/compare--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "compare--768",
+      "route": "/compare",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/compare--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "compare--390",
+      "route": "/compare",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/compare--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "contact--1440",
@@ -535,6 +1135,46 @@
       "sha256": "27912ea58d7e87b137236f178ef94392be931cdc73b6d7d58592083e741db24c"
     },
     {
+      "id": "cookies--1440",
+      "route": "/cookies",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/cookies--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "cookies--1024",
+      "route": "/cookies",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/cookies--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "cookies--768",
+      "route": "/cookies",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/cookies--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "cookies--390",
+      "route": "/cookies",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/cookies--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "delivery--1440",
       "route": "/delivery",
       "width": 1440,
@@ -573,6 +1213,126 @@
       "artifact": "screenshots/delivery--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "40727d6f5197633390e77dd8138c7f24bc7e23ddfe889aa26e4b4574c1214ab8"
+    },
+    {
+      "id": "faq--1440",
+      "route": "/faq",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/faq--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "faq--1024",
+      "route": "/faq",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/faq--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "faq--768",
+      "route": "/faq",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/faq--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "faq--390",
+      "route": "/faq",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/faq--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "gift-cards--1440",
+      "route": "/gift-cards",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/gift-cards--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "gift-cards--1024",
+      "route": "/gift-cards",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/gift-cards--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "gift-cards--768",
+      "route": "/gift-cards",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/gift-cards--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "gift-cards--390",
+      "route": "/gift-cards",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/gift-cards--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "international--1440",
+      "route": "/international",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/international--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "international--1024",
+      "route": "/international",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/international--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "international--768",
+      "route": "/international",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/international--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "international--390",
+      "route": "/international",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/international--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "lab-reports--1440",
@@ -615,6 +1375,46 @@
       "sha256": "e98bcd123221630ed2ffb4f3f1fe5c241cee98076546e737264c41feab3a59e3"
     },
     {
+      "id": "legal--privacy--1440",
+      "route": "/legal/privacy",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/legal--privacy--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "legal--privacy--1024",
+      "route": "/legal/privacy",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/legal--privacy--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "legal--privacy--768",
+      "route": "/legal/privacy",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/legal--privacy--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "legal--privacy--390",
+      "route": "/legal/privacy",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/legal--privacy--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--1440",
       "route": "/open-lab",
       "width": 1440,
@@ -653,6 +1453,46 @@
       "artifact": "screenshots/open-lab--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "282f9728f2fd57a42af680ec0d044f723bdc4392083db57bfc97b6748360555e"
+    },
+    {
+      "id": "open-lab--admin--1440",
+      "route": "/open-lab/admin",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--admin--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--admin--1024",
+      "route": "/open-lab/admin",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--admin--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--admin--768",
+      "route": "/open-lab/admin",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--admin--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--admin--390",
+      "route": "/open-lab/admin",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--admin--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "open-lab--batch-lookup--1440",
@@ -695,6 +1535,86 @@
       "sha256": "2fc0adbe4d0122ea13289d3c525751ea5db0a5ba21828eb2e587be8d542a7a3d"
     },
     {
+      "id": "open-lab--case-studies--1440",
+      "route": "/open-lab/case-studies",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--case-studies--1024",
+      "route": "/open-lab/case-studies",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--case-studies--768",
+      "route": "/open-lab/case-studies",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--case-studies--390",
+      "route": "/open-lab/case-studies",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--case-studies--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--1440",
+      "route": "/open-lab/coa/r28868",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--1024",
+      "route": "/open-lab/coa/r28868",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--768",
+      "route": "/open-lab/coa/r28868",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--coa--r28868--390",
+      "route": "/open-lab/coa/r28868",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--coa--r28868--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--compare--1440",
       "route": "/open-lab/compare",
       "width": 1440,
@@ -735,44 +1655,324 @@
       "sha256": "e1960246b1903f50fbd6246ca7a7532146a9431e833541af0ff00bde010f973f"
     },
     {
-      "id": "open-lab--dossier--mk-2866--1440",
-      "route": "/open-lab/dossier/mk-2866",
+      "id": "open-lab--compound-guide--1440",
+      "route": "/open-lab/compound-guide",
       "width": 1440,
       "height": 1000,
       "customer": true,
-      "artifact": "screenshots/open-lab--dossier--mk-2866--1440.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "e6fd5b7a45f57fdacb37f29f44d248ec1b731ead07960637a3da826d2fa75358"
+      "artifact": "screenshots/open-lab--compound-guide--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
-      "id": "open-lab--dossier--mk-2866--1024",
-      "route": "/open-lab/dossier/mk-2866",
+      "id": "open-lab--compound-guide--1024",
+      "route": "/open-lab/compound-guide",
       "width": 1024,
       "height": 900,
       "customer": true,
-      "artifact": "screenshots/open-lab--dossier--mk-2866--1024.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "bb2da4ccef5fd6fdeb3ce058c80ea2237e7ecaa3f3df424fe4d1995ede484bbd"
+      "artifact": "screenshots/open-lab--compound-guide--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
-      "id": "open-lab--dossier--mk-2866--768",
-      "route": "/open-lab/dossier/mk-2866",
+      "id": "open-lab--compound-guide--768",
+      "route": "/open-lab/compound-guide",
       "width": 768,
       "height": 900,
       "customer": true,
-      "artifact": "screenshots/open-lab--dossier--mk-2866--768.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "df92a2d7590b44c1cf3c969b63a482f361551b0e42e98f0a8bfd51093804c250"
+      "artifact": "screenshots/open-lab--compound-guide--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
-      "id": "open-lab--dossier--mk-2866--390",
-      "route": "/open-lab/dossier/mk-2866",
+      "id": "open-lab--compound-guide--390",
+      "route": "/open-lab/compound-guide",
       "width": 390,
       "height": 844,
       "customer": true,
-      "artifact": "screenshots/open-lab--dossier--mk-2866--390.png",
-      "state": "CAPTURED_UNREVIEWED",
-      "sha256": "3b66749b7a23eb9190c14869d23b4a49afb30bc3d2e08b0222cbce3cff31b99a"
+      "artifact": "screenshots/open-lab--compound-guide--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--1440",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--1024",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--768",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--compound--mk-2866--390",
+      "route": "/open-lab/compound/mk-2866",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--compound--mk-2866--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--1440",
+      "route": "/open-lab/cycle-planner",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--1024",
+      "route": "/open-lab/cycle-planner",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--768",
+      "route": "/open-lab/cycle-planner",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--cycle-planner--390",
+      "route": "/open-lab/cycle-planner",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--cycle-planner--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--1440",
+      "route": "/open-lab/dosing-calculator",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--1024",
+      "route": "/open-lab/dosing-calculator",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--768",
+      "route": "/open-lab/dosing-calculator",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--dosing-calculator--390",
+      "route": "/open-lab/dosing-calculator",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--dosing-calculator--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--1440",
+      "route": "/open-lab/evidence",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--1024",
+      "route": "/open-lab/evidence",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--768",
+      "route": "/open-lab/evidence",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--evidence--390",
+      "route": "/open-lab/evidence",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--evidence--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--1440",
+      "route": "/open-lab/glossary",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--1024",
+      "route": "/open-lab/glossary",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--768",
+      "route": "/open-lab/glossary",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--glossary--390",
+      "route": "/open-lab/glossary",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--glossary--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--1440",
+      "route": "/open-lab/interaction-checker",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--1024",
+      "route": "/open-lab/interaction-checker",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--768",
+      "route": "/open-lab/interaction-checker",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--interaction-checker--390",
+      "route": "/open-lab/interaction-checker",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--interaction-checker--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--1440",
+      "route": "/open-lab/lab-partner",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--1024",
+      "route": "/open-lab/lab-partner",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--768",
+      "route": "/open-lab/lab-partner",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--lab-partner--390",
+      "route": "/open-lab/lab-partner",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--lab-partner--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "open-lab--methodology--1440",
@@ -895,6 +2095,86 @@
       "sha256": "aacd14e71d13e93999d9ec099d9abbe7121f9b0c847c8b38d7db01ed60b4e9b1"
     },
     {
+      "id": "open-lab--report--registered-record--1440",
+      "route": "/open-lab/report/registered-record",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--report--registered-record--1024",
+      "route": "/open-lab/report/registered-record",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--report--registered-record--768",
+      "route": "/open-lab/report/registered-record",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--report--registered-record--390",
+      "route": "/open-lab/report/registered-record",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--report--registered-record--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--1440",
+      "route": "/open-lab/research-papers",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--1024",
+      "route": "/open-lab/research-papers",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--768",
+      "route": "/open-lab/research-papers",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--research-papers--390",
+      "route": "/open-lab/research-papers",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--research-papers--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "open-lab--source-chain--1440",
       "route": "/open-lab/source-chain",
       "width": 1440,
@@ -933,6 +2213,246 @@
       "artifact": "screenshots/open-lab--source-chain--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "3ff97a8618f9dec12ece448ba0bc7fc4430aaf8898cbca79eca6f1ae9412f7f4"
+    },
+    {
+      "id": "open-lab--stack-builder--1440",
+      "route": "/open-lab/stack-builder",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--stack-builder--1024",
+      "route": "/open-lab/stack-builder",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--stack-builder--768",
+      "route": "/open-lab/stack-builder",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "open-lab--stack-builder--390",
+      "route": "/open-lab/stack-builder",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/open-lab--stack-builder--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--cancelled--OL-10428--1440",
+      "route": "/order/cancelled/OL-10428",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/order--cancelled--OL-10428--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--cancelled--OL-10428--1024",
+      "route": "/order/cancelled/OL-10428",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--cancelled--OL-10428--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--cancelled--OL-10428--768",
+      "route": "/order/cancelled/OL-10428",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--cancelled--OL-10428--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--cancelled--OL-10428--390",
+      "route": "/order/cancelled/OL-10428",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/order--cancelled--OL-10428--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--failed--OL-10428--1440",
+      "route": "/order/failed/OL-10428",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/order--failed--OL-10428--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--failed--OL-10428--1024",
+      "route": "/order/failed/OL-10428",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--failed--OL-10428--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--failed--OL-10428--768",
+      "route": "/order/failed/OL-10428",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--failed--OL-10428--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--failed--OL-10428--390",
+      "route": "/order/failed/OL-10428",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/order--failed--OL-10428--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--pending--OL-10428--1440",
+      "route": "/order/pending/OL-10428",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/order--pending--OL-10428--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--pending--OL-10428--1024",
+      "route": "/order/pending/OL-10428",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--pending--OL-10428--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--pending--OL-10428--768",
+      "route": "/order/pending/OL-10428",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--pending--OL-10428--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--pending--OL-10428--390",
+      "route": "/order/pending/OL-10428",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/order--pending--OL-10428--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--success--OL-10428--1440",
+      "route": "/order/success/OL-10428",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/order--success--OL-10428--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--success--OL-10428--1024",
+      "route": "/order/success/OL-10428",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--success--OL-10428--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--success--OL-10428--768",
+      "route": "/order/success/OL-10428",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--success--OL-10428--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--success--OL-10428--390",
+      "route": "/order/success/OL-10428",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/order--success--OL-10428--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--tracking--OL-10428--1440",
+      "route": "/order/tracking/OL-10428",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/order--tracking--OL-10428--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--tracking--OL-10428--1024",
+      "route": "/order/tracking/OL-10428",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--tracking--OL-10428--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--tracking--OL-10428--768",
+      "route": "/order/tracking/OL-10428",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/order--tracking--OL-10428--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "order--tracking--OL-10428--390",
+      "route": "/order/tracking/OL-10428",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/order--tracking--OL-10428--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "privacy--1440",
@@ -1015,11 +2535,51 @@
       "sha256": "2987d319e3ad76000aaa2505092116e509743a76e0e7ec41ee4d209518286d30"
     },
     {
+      "id": "refunds--1440",
+      "route": "/refunds",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/refunds--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "refunds--1024",
+      "route": "/refunds",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/refunds--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "refunds--768",
+      "route": "/refunds",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/refunds--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "refunds--390",
+      "route": "/refunds",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/refunds--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "review--1440",
       "route": "/review",
       "width": 1440,
       "height": 1000,
-      "customer": false,
+      "customer": true,
       "artifact": "screenshots/review--1440.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "c5d2ccb63d78a2db6472ee14f97b7a259b811d6081d43d4714101fadb1e07c6d"
@@ -1029,7 +2589,7 @@
       "route": "/review",
       "width": 1024,
       "height": 900,
-      "customer": false,
+      "customer": true,
       "artifact": "screenshots/review--1024.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "132561365657c043a829d9cda8b81bd3a1c411b9bc24a7f59d9e249bb55d7e4b"
@@ -1039,7 +2599,7 @@
       "route": "/review",
       "width": 768,
       "height": 900,
-      "customer": false,
+      "customer": true,
       "artifact": "screenshots/review--768.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "e2b13945d4e1891f3a92733c111bd8f863948decc2addfc0a32108a3613c1d6b"
@@ -1049,7 +2609,7 @@
       "route": "/review",
       "width": 390,
       "height": 844,
-      "customer": false,
+      "customer": true,
       "artifact": "screenshots/review--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "0831763efa201749b641d7b85d003422c4d7cb14cc0ea57255f003ecbc0678a6"
@@ -1135,6 +2695,46 @@
       "sha256": "d31e10d8e04594a3e7ddccdac51520d97750276fac28fe720f0b9bb826c11365"
     },
     {
+      "id": "shipping-returns--1440",
+      "route": "/shipping-returns",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/shipping-returns--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "shipping-returns--1024",
+      "route": "/shipping-returns",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/shipping-returns--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "shipping-returns--768",
+      "route": "/shipping-returns",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/shipping-returns--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "shipping-returns--390",
+      "route": "/shipping-returns",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/shipping-returns--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
       "id": "shop--1440",
       "route": "/shop",
       "width": 1440,
@@ -1173,6 +2773,86 @@
       "artifact": "screenshots/shop--390.png",
       "state": "CAPTURED_UNREVIEWED",
       "sha256": "4bd15c23f4902d15be06725bced96004f3bb7b5e7ea3550ee8701a2ff33aa94f"
+    },
+    {
+      "id": "shop?goal=build--1440",
+      "route": "/shop?goal=build",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/shop?goal=build--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "shop?goal=build--1024",
+      "route": "/shop?goal=build",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/shop?goal=build--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "shop?goal=build--768",
+      "route": "/shop?goal=build",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/shop?goal=build--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "shop?goal=build--390",
+      "route": "/shop?goal=build",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/shop?goal=build--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "sitemap--1440",
+      "route": "/sitemap",
+      "width": 1440,
+      "height": 1000,
+      "customer": true,
+      "artifact": "screenshots/sitemap--1440.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "sitemap--1024",
+      "route": "/sitemap",
+      "width": 1024,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/sitemap--1024.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "sitemap--768",
+      "route": "/sitemap",
+      "width": 768,
+      "height": 900,
+      "customer": true,
+      "artifact": "screenshots/sitemap--768.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
+    },
+    {
+      "id": "sitemap--390",
+      "route": "/sitemap",
+      "width": 390,
+      "height": 844,
+      "customer": true,
+      "artifact": "screenshots/sitemap--390.png",
+      "state": "PENDING_CAPTURE",
+      "sha256": null
     },
     {
       "id": "terms--1440",

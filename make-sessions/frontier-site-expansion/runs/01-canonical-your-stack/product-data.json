@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "oluk.make.your-stack.v3",
+  "anchorProduct": {
+    "series": "SARM SERIES",
+    "name": "MK-2866",
+    "alias": "Ostarine",
+    "sku": "80529-01",
+    "strength": "15 MG",
+    "servings": "90 SERVINGS",
+    "purity": ">99%",
+    "price": "£43"
+  },
+  "heading": "Build more from your MK-2866 stack.",
+  "introduction": "Choose the result you want next: push strength and lean mass with RAD-140, add heavyweight size and power with MENT, or bring growth, appetite, sleep and recovery support into the plan with MK-677.",
+  "recommendations": [
+    {
+      "id": "rad-140",
+      "series": "SARM SERIES",
+      "name": "RAD-140",
+      "alias": "Testolone",
+      "family": "Research Chemicals",
+      "strength": "8 MG",
+      "servings": "60 SERVINGS",
+      "purity": ">99%",
+      "price": "£55",
+      "primaryBenefit": "Strength + lean mass",
+      "stackPosition": "Maximum intensity",
+      "rationale": "Add serious strength and lean-mass focus with the strongest SARM in the Olympus range—an 8 MG step up for a more aggressive training phase.",
+      "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
+      "image": "assets/rad-140.png",
+      "imageSha256": "6ef50a629d1b4831750e713426beb6285fb4b366297e6e8e5b3c09813ebdd3fc"
+    },
+    {
+      "id": "ment",
+      "series": "PROHORMONE SERIES",
+      "name": "MENT",
+      "alias": "Trestolone",
+      "family": "Metabolics",
+      "strength": "20 MG",
+      "servings": "30 SERVINGS",
+      "purity": ">99%",
+      "price": "£49",
+      "primaryBenefit": "Mass + power",
+      "stackPosition": "Advanced builder",
+      "rationale": "Take the stack into a heavier mass-and-power phase with Trestolone—a high-intensity choice for experienced customers building beyond a SARM-only plan.",
+      "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
+      "image": "assets/ment.webp",
+      "imageSha256": "1cbd10faea35d3893be287119263566f6d204d54e22dc0273278c8f0a4b098e8"
+    },
+    {
+      "id": "mk-677",
+      "series": "RESEARCH SERIES",
+      "name": "MK-677",
+      "alias": "Ibutamoren",
+      "family": "Metabolics",
+      "strength": "15 MG",
+      "servings": "90 SERVINGS",
+      "purity": ">99%",
+      "price": "£45",
+      "primaryBenefit": "Growth + recovery",
+      "stackPosition": "Daily support",
+      "rationale": "Build recovery capacity around the stack with a 90-serving Ibutamoren format supporting appetite, deeper sleep and recovery between hard sessions.",
+      "fieldStatus": {"labelFacts": "render-bound", "price": "creative-sample", "rationale": "creative-sample"},
+      "image": "assets/mk-677.webp",
+      "imageSha256": "5ab6415bc8a7c53ce0b696f03fbdf222bf753b95cd03fd260a3c86997a1f8481"
+    }
+  ],
+  "interactionCopy": {
+    "primary": "Add",
+    "selected": "Selected",
+    "added": "Added ✓",
+    "secondary": "View product"
+  }
+}

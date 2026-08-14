@@ -5,7 +5,7 @@ import { CUSTOMER_ROUTES } from "../app/design-system/site-route-data.mjs";
 
 const routes = CUSTOMER_ROUTES.map(({ path, heading }) => [path, heading]);
 
-const customerRoutes = routes.filter(([pathname]) => pathname !== "/review");
+const customerRoutes = routes.filter(([pathname]) => !["/review","/review-studio"].includes(pathname));
 
 const candidateReviewAnchors = [
   "mf02b-provenance",
@@ -42,7 +42,7 @@ const candidateReviewAnchors = [
   "mf02b-selection-receipt",
 ];
 
-const baselineRouteLinks = routes.map(([pathname]) => pathname);
+const baselineRouteLinks = routes.filter(([pathname])=>pathname!=="/review-studio").map(([pathname]) => pathname);
 
 const stableCustomerReviewAnchors = [
   ["/", ["hero", "assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
@@ -129,8 +129,8 @@ async function renderHtml(worker, pathname) {
   return response.text();
 }
 
-test("server-renders all 31 governed routes with their expected headings and private indexing policy", async () => {
-  assert.equal(routes.length, 31);
+test("server-renders all 52 governed routes with their expected headings and private indexing policy", async () => {
+  assert.equal(routes.length, 52);
   const worker = await loadWorker();
 
   for (const [pathname, heading] of routes) {
@@ -187,39 +187,44 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
 
   const homeText = visibleText(await renderHtml(worker, "/"));
   for (const expected of [
-    "FORMULATED. CLEARLY SPECIFIED. EVIDENCE-AWARE.",
+    "Formulated. Verified. Batch tracked.",
     "Formulated to a higher standard.",
     "15 MG",
     "90 SERVINGS",
     ">99%",
-    "IN STOCK",
-    "OPENLAB VERIFIED",
     "£43",
   ]) {
     assert.match(homeText, new RegExp(escapeRegExp(expected)), `homepage decision truth: ${expected}`);
   }
   assert.doesNotMatch(homeText, /90 CAPS(?:\b|ULES)/i);
-  assert.doesNotMatch(homeText, /Third-party tested|FORMULATED\. VERIFIED\. BATCH TRACKED\./i);
+  assert.match(homeText, /Third-Party Tested/i, "approved trust statement remains visible");
+  assert.match(homeText, /direct access to available lab records/i, "LockedHero carries production-promotable customer copy");
 
   const shopHtml = await renderHtml(worker, "/shop");
-  assert.match(shopHtml, /data-component=["']ProductCommerceCard\.featured["']/i, "Shop renders the mapped canonical Featured component");
+  assert.match(shopHtml, /data-component=["']ProductCommerceCard\.compact["']/i, "Shop renders canonical Compact card instances throughout the grid");
   assert.match(shopHtml, /class=["'][^"']*shop-result-card-canonical[^"']*["']/i, "Shop exposes the canonical catalogue-result selector");
 
   const openLabText = visibleText(await renderHtml(worker, "/open-lab"));
-  for (const lens of ["Technical", "Product evidence", "Commerce"]) {
+  for (const lens of ["OpenLab portal", "OpenLab archive", "Research Chemicals", "Live batch verification feed"]) {
     assert.match(openLabText, new RegExp(escapeRegExp(lens)), `OpenLab lens: ${lens}`);
   }
 
   const routeSource = await readFile(new URL("../app/customer-routes.tsx", import.meta.url), "utf8");
-  const heroSource = await readFile(new URL("../app/design-system/product-decision-hero.tsx", import.meta.url), "utf8");
+  const heroSource = await readFile(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8");
+  const pdpSource = await readFile(new URL("../app/design-system/pdp-first-fold.tsx", import.meta.url), "utf8");
+  const openLabSource = await readFile(new URL("../app/design-system/openlab-hero-light.tsx", import.meta.url), "utf8");
   const homeHero = routeSource.match(/export function HomeRoute\(\)[\s\S]*?\n}\n\nexport function ProductRoute/)?.[0] ?? "";
-  assert.match(heroSource, /export function HeroDecisionSurface\(/, "purpose-built hero decision surface exists");
-  assert.match(homeHero, /<ProductDecisionHero\b/, "homepage uses the shared purpose-built hero");
+  assert.match(heroSource, /data-figma-node="1155:29963"/, "homepage uses the locked Direction D authority node");
+  assert.match(heroSource, /data-figma-stage-node="462:4684"/, "homepage stage uses the authored 5-3-1 media intent");
+  assert.match(pdpSource, /data-figma-node="1155:30632"/, "PDP first fold uses the corrected authority node");
+  assert.match(openLabSource, /data-figma-node="614:75995"/, "OpenLab uses the HeroLight authority node");
+  assert.match(homeHero, /<LockedHomeHero\b/, "homepage uses the corrected LockedHero implementation");
   assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
 });
 
 test("locks the unpublished candidate foundation with CONV-002 graduated tokens and media gradient", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const headerCss = await readFile(new URL("../app/design-system/site-header.module.css", import.meta.url), "utf8");
   const candidateTokens = await readFile(new URL("../app/design-system/candidate-tokens.css", import.meta.url), "utf8");
   const candidateCss = await readFile(new URL("../app/design-system/candidate-review.css", import.meta.url), "utf8");
   const candidateComponents = await readFile(new URL("../app/design-system/candidate-components.tsx", import.meta.url), "utf8");
@@ -336,7 +341,7 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.match(candidateCss, /\.oluk-candidate-qualitative dd\s*\{[^}]*color:\s*var\(--oluk-text-chip-value\)/i, "chip values must use text/chip-value (#17213F), not text/primary");
 
   assert.equal((css.match(/background:\s*var\(--inverse\)\s*;/gi) ?? []).length, 1, "footer is the sole inverse surface");
-  assert.match(css, /\.trust-rail\s*\{[\s\S]*?background:\s*var\(--white\)\s*;/i, "trust rail remains light");
+  assert.match(headerCss, /\.trustRail\s*\{[^}]*background:\s*var\(--white\)\s*;/i, "OptionB trust rail remains light");
   assert.match(css, /\.product-commerce-card\s*\{[\s\S]*?box-shadow:\s*var\(--shadow-card\)\s*;/i);
   assert.match(css, /\.purchase-panel\s*\{[\s\S]*?box-shadow:\s*var\(--shadow-purchase\)\s*;/i);
   assert.match(css, /\.horizontal-product-card\s*\{[\s\S]*?box-shadow:\s*var\(--shadow-relation\)\s*;/i);
@@ -361,6 +366,7 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
   const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
+  const metricRailSource = await readFile(new URL("../app/design-system/metric-rail.tsx", import.meta.url), "utf8");
   const iconSource = await readFile(new URL("../app/design-system/qualitative-icon.tsx", import.meta.url), "utf8");
   const mediaSource = await readFile(new URL("../app/design-system/product-media-chamber.tsx", import.meta.url), "utf8");
   const mediaCss = await readFile(new URL("../app/design-system/product-media-chamber.module.css", import.meta.url), "utf8");
@@ -404,6 +410,10 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   assert.match(css, /\.product-commerce-card \.product-series\s*\{(?=[^}]*var\(--oluk-surface-family\))(?=[^}]*var\(--oluk-border-family-bg\))[^}]*\}/i, "customer family marker uses the MF-01A family surface and border");
   assert.match(css, /\.metric-rail\s*\{[^}]*border:\s*1px solid var\(--line-strong\)[^}]*gap:\s*0[^}]*overflow:\s*hidden/i, "customer MetricRail is a joined bordered rail, not generic pills");
   assert.match(css, /\.metric-rail > div \+ div\s*\{[^}]*border-left:\s*1px solid var\(--line-strong\)/i, "customer MetricRail uses governed internal dividers");
+  assert.match(metricRailSource, /data-fit=\{metricFit\(value\)\}/, "MetricRail exposes deterministic per-value fitting");
+  assert.match(metricRailSource, /quantifiedValue\(metrics\.servings, "SERVINGS"\)/, "MetricRail separates the serving value from its label");
+  assert.match(css, /\.metric-rail \[data-fit="medium"\] dt\s*\{[^}]*font-size:\s*15px/i, "MetricRail has a bounded medium-value fit");
+  assert.match(css, /\.metric-rail \[data-fit="long"\] dt\s*\{[^}]*font-size:\s*13px[^}]*white-space:\s*normal/i, "MetricRail has a bounded long-value fit without sibling collision");
   assert.match(css, /\.qualitative-chips\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/i, "qualitative attributes form a 2x2 responsive grid");
   assert.match(css, /\.qualitative-chip\s*\{[^}]*background:\s*var\(--white\)[^}]*border:\s*1px solid var\(--oluk-border-chip\)[^}]*border-radius:\s*10px/i, "every qualitative chip is an independent MF-01A container");
   assert.match(css, /\.qualitative-chip dt\s*\{[^}]*color:\s*var\(--ink-muted\)[^}]*font-size:\s*11px[^}]*font-weight:\s*500[^}]*letter-spacing:\s*0\.66px[^}]*text-transform:\s*uppercase/i, "chip labels preserve the 11px Medium muted uppercase hierarchy");

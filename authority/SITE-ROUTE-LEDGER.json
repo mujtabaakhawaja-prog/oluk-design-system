@@ -1,0 +1,782 @@
+{
+  "schemaVersion": 2,
+  "ledgerId": "OLUK-SITE-ROUTES-073",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "terminalContract": "SITE_SURFACE_MATURITY_V2",
+  "canonicalOpenLabNamespace": "/open-lab",
+  "aliasPolicy": {
+    "/openlab": "/open-lab",
+    "/openlab/*": "/open-lab/*"
+  },
+  "dispositions": [
+    "existing",
+    "enhance",
+    "replace",
+    "alias",
+    "new",
+    "owner-only",
+    "authority-deferred"
+  ],
+  "maturityStates": [
+    "SCAFFOLD",
+    "SHAPE_COMPLETE",
+    "SOURCE_BOUND",
+    "INTERACTIVE",
+    "REVIEW_READY",
+    "DEFERRED_BY_AUTHORITY"
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "family": "homepage",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "shop",
+      "path": "/shop",
+      "family": "catalogue_search_collections",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "collection",
+      "path": "/collections/:slug",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "search",
+      "path": "/search",
+      "family": "catalogue_search_collections",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "product-compare",
+      "path": "/compare",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "product",
+      "path": "/product/:slug",
+      "family": "product_detail",
+      "disposition": "replace",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "reviews",
+      "path": "/reviews",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "about-evidence-os",
+      "path": "/about/evidence-os",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "account",
+      "path": "/account",
+      "family": "account",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "account-orders",
+      "path": "/account/orders",
+      "family": "account",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "account-order",
+      "path": "/account/orders/:orderId",
+      "family": "account",
+      "disposition": "authority-deferred",
+      "maturity": "DEFERRED_BY_AUTHORITY",
+      "owner": "identity-and-order-projection",
+      "blocker": "Identity and signed order projection required",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred"
+    },
+    {
+      "id": "account-profile",
+      "path": "/account/profile",
+      "family": "account",
+      "disposition": "authority-deferred",
+      "maturity": "DEFERRED_BY_AUTHORITY",
+      "owner": "identity",
+      "blocker": "Identity contract required",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred"
+    },
+    {
+      "id": "account-addresses",
+      "path": "/account/addresses",
+      "family": "account",
+      "disposition": "authority-deferred",
+      "maturity": "DEFERRED_BY_AUTHORITY",
+      "owner": "identity",
+      "blocker": "Identity and Woo address projection required",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred"
+    },
+    {
+      "id": "bag",
+      "path": "/bag",
+      "family": "bag_checkout",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-information",
+      "path": "/checkout/information",
+      "family": "bag_checkout",
+      "disposition": "replace",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "aliases": [
+        "/checkout",
+        "/checkout/info"
+      ],
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-delivery",
+      "path": "/checkout/delivery",
+      "family": "bag_checkout",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-review",
+      "path": "/checkout/review",
+      "family": "bag_checkout",
+      "disposition": "new",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-payment",
+      "path": "/checkout/payment",
+      "family": "bag_checkout",
+      "disposition": "replace",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-processing",
+      "path": "/checkout/processing",
+      "family": "bag_checkout",
+      "disposition": "new",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-confirmation",
+      "path": "/checkout/confirmation",
+      "family": "post_purchase",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-failure",
+      "path": "/checkout/failure",
+      "family": "post_purchase",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-retry",
+      "path": "/checkout/retry",
+      "family": "post_purchase",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-tracking",
+      "path": "/checkout/tracking",
+      "family": "post_purchase",
+      "disposition": "new",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-order-pay",
+      "path": "/checkout/order-pay",
+      "family": "complete_payment",
+      "disposition": "existing",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "preserve-only",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "checkout-payment-handoff",
+      "path": "/checkout/payment-handoff",
+      "family": "complete_payment",
+      "disposition": "existing",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "preserve-only",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "contact",
+      "path": "/contact",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "delivery",
+      "path": "/delivery",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "shipping-returns",
+      "path": "/shipping-returns",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "faq",
+      "path": "/faq",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "lab-reports",
+      "path": "/lab-reports",
+      "family": "openlab_archive",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab",
+      "path": "/open-lab",
+      "family": "openlab_portal",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-records",
+      "path": "/open-lab/records",
+      "family": "openlab_archive",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-record",
+      "path": "/open-lab/records/:recordId",
+      "family": "openlab_product_record",
+      "disposition": "replace",
+      "maturity": "SOURCE_BOUND",
+      "owner": "openlab-source",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "projection-ready"
+    },
+    {
+      "id": "open-lab-compound",
+      "path": "/open-lab/compound/:slug",
+      "family": "openlab_product_record",
+      "disposition": "new",
+      "maturity": "REVIEW_READY",
+      "owner": "openlab-source",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-report",
+      "path": "/open-lab/report/:batchId",
+      "family": "openlab_report_viewer",
+      "disposition": "new",
+      "maturity": "REVIEW_READY",
+      "owner": "openlab-source",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-coa-viewer",
+      "path": "/open-lab/coa/:id",
+      "family": "openlab_report_viewer",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-batch-lookup",
+      "path": "/open-lab/batch-lookup",
+      "family": "openlab_archive",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-methodology",
+      "path": "/open-lab/methodology",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-source-chain",
+      "path": "/open-lab/source-chain",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-compare",
+      "path": "/open-lab/compare",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "enhance",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-evidence",
+      "path": "/open-lab/evidence",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-admin",
+      "path": "/open-lab/admin",
+      "family": "governance_review",
+      "disposition": "owner-only",
+      "maturity": "REVIEW_READY",
+      "owner": "sites-owner-review",
+      "public": false,
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "privacy",
+      "path": "/privacy",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "terms",
+      "path": "/terms",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "wholesale",
+      "path": "/wholesale",
+      "family": "support_content",
+      "disposition": "enhance",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "international",
+      "path": "/international",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "gift-cards",
+      "path": "/gift-cards",
+      "family": "support_content",
+      "disposition": "authority-deferred",
+      "maturity": "DEFERRED_BY_AUTHORITY",
+      "owner": "commerce-policy",
+      "blocker": "Gift-card commercial authority not approved",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "authority-deferred"
+    },
+    {
+      "id": "open-lab-research-papers",
+      "path": "/open-lab/research-papers",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-case-studies",
+      "path": "/open-lab/case-studies",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-glossary",
+      "path": "/open-lab/glossary",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-dosing-calculator",
+      "path": "/open-lab/dosing-calculator",
+      "family": "decision_tools",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-compound-guide",
+      "path": "/open-lab/compound-guide",
+      "family": "decision_tools",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-interaction-checker",
+      "path": "/open-lab/interaction-checker",
+      "family": "decision_tools",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-stack-builder",
+      "path": "/open-lab/stack-builder",
+      "family": "decision_tools",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-cycle-planner",
+      "path": "/open-lab/cycle-planner",
+      "family": "decision_tools",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "order-success",
+      "path": "/order/success/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "order-pending",
+      "path": "/order/pending/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "order-failed",
+      "path": "/order/failed/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "order-cancelled",
+      "path": "/order/cancelled/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "order-tracking",
+      "path": "/order/tracking/:orderId",
+      "family": "post_purchase",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "owner-review",
+      "path": "/review",
+      "family": "governance_review",
+      "disposition": "owner-only",
+      "maturity": "INTERACTIVE",
+      "owner": "sites-owner-review",
+      "public": false,
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "legal-document",
+      "path": "/legal/:doc",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "open-lab-lab-partner",
+      "path": "/open-lab/lab-partner",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "cookies",
+      "path": "/cookies",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "refunds",
+      "path": "/refunds",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "family-sarms",
+      "path": "/collections/sarms",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "family-research-chemicals",
+      "path": "/collections/research-chemicals",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "family-prohormones",
+      "path": "/collections/prohormones",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "family-stacks",
+      "path": "/collections/stacks",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "shop-goal",
+      "path": "/shop?goal=:goal",
+      "family": "catalogue_search_collections",
+      "disposition": "enhance",
+      "maturity": "INTERACTIVE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "sitemap",
+      "path": "/sitemap",
+      "family": "support_content",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    },
+    {
+      "id": "not-found",
+      "path": "/404",
+      "family": "shared_shell",
+      "disposition": "new",
+      "maturity": "SHAPE_COMPLETE",
+      "owner": "sites-reference",
+      "designMaturity": "dual-reference-ready",
+      "runtimeReadiness": "presentation-only"
+    }
+  ],
+  "designMaturityStates": [
+    "scaffold",
+    "composed",
+    "dual-reference-ready",
+    "champion-approved"
+  ],
+  "runtimeReadinessStates": [
+    "presentation-only",
+    "projection-ready",
+    "authority-deferred",
+    "live-integrated"
+  ]
+}

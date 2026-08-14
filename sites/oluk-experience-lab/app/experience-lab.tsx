@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element -- local transparent Figma assets require authored object-fit treatment. */
-/* eslint-disable @next/next/no-html-link-for-pages -- plain anchors preserve stable Vinext hydration in the private Sites build. */
 
 import type { ReactNode } from "react";
 
@@ -19,42 +18,13 @@ import {
   SourceChainRoute,
 } from "./customer-routes";
 import { ShopDiscovery } from "./design-system/shop-discovery";
-import {
-  getCustomerRoute,
-  PRIMARY_NAV_ROUTE_KEYS,
-  type CoreCustomerRouteKey,
-} from "./design-system/site-route-map";
-import {
-  SHOP_AVAILABILITY_OPTIONS,
-  SHOP_FAMILY_OPTIONS,
-  SHOP_FORM_OPTIONS,
-  SHOP_GOAL_OPTIONS,
-  SHOP_SERVINGS_OPTIONS,
-} from "./design-system/shop-taxonomy";
+import { type CoreCustomerRouteKey } from "./design-system/site-route-map";
+import { SiteHeader } from "./design-system/site-header";
 import { TransactionPresentation } from "./design-system/transaction-presentation";
 
-type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review">;
-type PrimaryNavRouteKey = (typeof PRIMARY_NAV_ROUTE_KEYS)[number];
+type ProgramRouteKey = "product-continuation" | "checkout-information" | "checkout-payment" | "checkout-processing" | "checkout-review" | "checkout-tracking" | "openlab-admin" | "compound" | "report" | "openlab-evidence" | "compound-guide" | "stack-builder" | "dosing-calculator" | "cycle-planner" | "interaction-checker" | "coa" | "research-papers" | "case-studies" | "glossary" | "lab-partner";
+type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" | "review-studio" | ProgramRouteKey>;
 type ExperienceLabProps = { route: ExperienceRouteKey; lookupReference?: string };
-
-const PRIMARY_NAV_LABELS = {
-  shop: "SHOP",
-  openlab: "OPEN LAB",
-  "lab-reports": "LAB RECORDS",
-  wholesale: "WHOLESALE",
-  about: "ABOUT",
-} as const satisfies Readonly<Record<PrimaryNavRouteKey, string>>;
-
-function activePrimaryRoute(route: ExperienceRouteKey): PrimaryNavRouteKey | null {
-  const definition = getCustomerRoute(route);
-  if (definition.section === "shop") return "shop";
-  if (definition.section === "company") return "about";
-  if (route === "wholesale") return "wholesale";
-  if (definition.section !== "openlab") return null;
-  return ["openlab", "methodology", "source-chain"].includes(route)
-    ? "openlab"
-    : "lab-reports";
-}
 
 function Arrow() {
   return <span aria-hidden="true">→</span>;
@@ -69,15 +39,6 @@ function SearchIcon() {
   );
 }
 
-function BagIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M5.5 8.5h13l-1 11h-11l-1-11Z" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.6" />
-      <path d="M9 9V6.8a3 3 0 0 1 6 0V9" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
 function ActionLink({ href, children, secondary = false }: { href: string; children: ReactNode; secondary?: boolean }) {
   return (
     <a className={secondary ? "button button-secondary" : "button"} href={href}>
@@ -87,90 +48,12 @@ function ActionLink({ href, children, secondary = false }: { href: string; child
   );
 }
 
-function SiteHeader({ route }: { route: ExperienceRouteKey }) {
-  const activeRoute = activePrimaryRoute(route);
-  return (
-    <header className="site-header">
-      <div className="trust-rail">
-        <div className="shell trust-rail-inner">
-          <span><i />Free UK Delivery Over £50</span>
-          <span><i />Free Int&apos;l Delivery £300+</span>
-          <span><i />Specifications Visible</span>
-          <span><i />Records When Available</span>
-          <span><i />Encrypted Checkout</span>
-          <a href="/lab-reports">Browse Lab Records <Arrow /></a>
-        </div>
-      </div>
-      <div className="nav-plane">
-        <div className="shell primary-nav">
-          <a className="brand-link" href="/" aria-label="Olympus Labs UK home">
-            <img src="/assets/brand/oluk-logo-on-light.png" alt="Olympus Labs UK" />
-          </a>
-          <nav className="desktop-nav" aria-label="Primary navigation">
-            {PRIMARY_NAV_ROUTE_KEYS.map((key) => {
-              const destination = getCustomerRoute(key);
-              return (
-                <a aria-current={activeRoute === key ? "page" : undefined} href={destination.path} key={key}>
-                  {PRIMARY_NAV_LABELS[key]}
-                </a>
-              );
-            })}
-          </nav>
-          <div className="nav-actions">
-            <a className="icon-action" href="/search" aria-label="Search"><SearchIcon /><span className="sr-only">Search</span></a>
-            <a className="bag-action" href="/bag" aria-label="Bag, 0 items"><BagIcon /><span>BAG</span><b aria-hidden="true">0</b></a>
-          </div>
-          <details className="mobile-menu">
-            <summary>Menu</summary>
-            <nav aria-label="Mobile navigation">
-              {PRIMARY_NAV_ROUTE_KEYS.map((key) => {
-                const destination = getCustomerRoute(key);
-                return <a href={destination.path} key={key}>{PRIMARY_NAV_LABELS[key]}</a>;
-              })}
-              <span className="mobile-menu-actions"><a href="/search">SEARCH</a><a href="/bag">BAG · 0</a></span>
-            </nav>
-          </details>
-        </div>
-      </div>
-      <div className="shop-taxonomy-plane">
-        <div className="shell shop-taxonomy-shell">
-          <span className="shop-taxonomy-label">SHOP BY FAMILY</span>
-          <nav aria-label="Shop by product family">
-            {SHOP_FAMILY_OPTIONS.map(({ label, slug }) => (
-              <a href={`/shop?family=${slug}`} key={slug}>{label}</a>
-            ))}
-          </nav>
-          <span aria-hidden="true" className="shop-taxonomy-separator" />
-          <span className="shop-taxonomy-label">REFINE</span>
-          <nav aria-label="Refine shop discovery">
-            {SHOP_FORM_OPTIONS.map(({ label, slug }) => (
-              <a href={`/shop?form=${slug}`} key={`form-${slug}`}>{label}</a>
-            ))}
-            {SHOP_SERVINGS_OPTIONS.map(({ count, label }) => (
-              <a href={`/shop?servings=${count}`} key={`servings-${count}`}>{label}</a>
-            ))}
-            {SHOP_GOAL_OPTIONS.map(({ label, slug }) => (
-              <a href={`/shop?goal=${slug}`} key={`goal-${slug}`}>{label}</a>
-            ))}
-            {SHOP_AVAILABILITY_OPTIONS.map(({ label, slug }) => (
-              <a href={`/shop?availability=${slug}`} key={`availability-${slug}`}>{label}</a>
-            ))}
-          </nav>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function SiteFooter() {
+export function SiteFooter() {
   return (
     <footer className="site-footer" id="footer">
       <div className="shell footer-grid">
         <div className="footer-intro">
-          <div className="footer-lockup">
-            <span className="footer-mark">OL</span>
-            <div><strong>OLYMPUS</strong><span>LABS / UK</span></div>
-          </div>
+          <div className="footer-lockup"><img alt="Olympus Labs UK" src="/assets/brand/option-b/footer-logo.svg" /></div>
           <p>Finished products, clear specifications and independently presented evidence.</p>
           <a href="/open-lab">Enter OpenLab <Arrow /></a>
         </div>
@@ -182,6 +65,14 @@ function SiteFooter() {
       <div className="shell footer-base"><span>© 2026 Olympus Labs UK</span><span>Quality, made visible.</span></div>
     </footer>
   );
+}
+
+export function GovernedProgramShell({ children, lane = "openlab" }: { children: ReactNode; lane?: "openlab" | "checkout" }) {
+  return <><SiteHeader route={lane === "openlab" ? "openlab" : "checkout"}/><main data-live-authority={lane === "checkout" ? "false" : undefined} id="main-content">{children}</main><SiteFooter/></>;
+}
+
+export function CustomerSiteChrome({ children, route }: { children: ReactNode; route: string }) {
+  return <><SiteHeader route={route}/><div id="main-content">{children}</div><SiteFooter/></>;
 }
 function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: string; copy: string; actions?: ReactNode }) {
   return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p>{actions && <div className="button-row">{actions}</div>}</div></section>;
@@ -209,7 +100,7 @@ function AccountPage() {
 }
 
 function ContactPage() {
-  return <><PageHero eyebrow="CONTACT" title="Start with the right team." copy="Choose the route that best matches your product, order or wholesale question." /><section className="section"><div className="shell about-grid">{[["01", "Order support", "Return to your account for order and delivery context.", "/account"], ["02", "Wholesale", "Open a product and fulfilment conversation with the wholesale team.", "/wholesale"], ["03", "OpenLab", "Find a product or batch record before asking an evidence question.", "/lab-reports"]].map(([index, title, copy, href]) => <article key={title}><span>{index}</span><h2>{title}</h2><p>{copy}</p><a href={href}>Continue <Arrow /></a></article>)}</div></section></>;
+  return <><PageHero eyebrow="CONTACT" title="Start with the right team." copy="Choose the team that best matches your product, order or wholesale question." /><section className="section"><div className="shell about-grid">{[["01", "Order support", "Return to your account for order and delivery context.", "/account"], ["02", "Wholesale", "Open a product and fulfilment conversation with the wholesale team.", "/wholesale"], ["03", "OpenLab", "Find a product or batch record before asking an evidence question.", "/lab-reports"]].map(([index, title, copy, href]) => <article key={title}><span>{index}</span><h2>{title}</h2><p>{copy}</p><a href={href}>Continue <Arrow /></a></article>)}</div></section></>;
 }
 
 function DeliveryPage() {

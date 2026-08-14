@@ -7,6 +7,7 @@ import {
   CUSTOMER_ROUTES,
   PRIMARY_NAV_ROUTE_KEYS,
 } from "../app/design-system/site-route-data.mjs";
+import { FRONTIER_ROUTE_PATTERNS } from "../app/design-system/frontier-content.ts";
 import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -20,36 +21,34 @@ async function pageRoutes(directory = appRoot) {
     if (entry.isDirectory()) paths.push(...await pageRoutes(absolute));
     if (entry.isFile() && entry.name === "page.tsx") {
       const relative = path.relative(appRoot, path.dirname(absolute));
-      paths.push(relative ? `/${relative}` : "/");
+      const routePath = relative ? `/${relative}` : "/";
+      paths.push(routePath.replace("/open-lab/compound/[slug]", "/open-lab/compound/mk-2866").replace("/open-lab/report/[batchId]", "/open-lab/report/registered-record"));
     }
   }
   return paths.sort();
 }
 
-test("one executable registry controls all 31 physical pages and browser proof routes", async () => {
-  assert.equal(CUSTOMER_ROUTES.length, 31);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 31);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 31);
-  assert.deepEqual(
-    [...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)].sort(),
-    await pageRoutes(),
-  );
-  assert.deepEqual(
-    ROUTES.map(({ path: routePath }) => routePath),
-    [...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)].sort(),
-  );
+test("core registry controls 52 physical pages while the proof matrix resolves all 73 ledger dispositions", async () => {
+  assert.equal(CUSTOMER_ROUTES.length, 52);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
+  const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS]);
+  assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
+  assert.equal(ROUTES.length, 73);
+  assert.equal(new Set(ROUTES.map(({ id }) => id)).size, 73);
+  assert.ok(ROUTES.every(({ path: routePath }) => routePath.startsWith("/")));
   assert.deepEqual(PRIMARY_NAV_ROUTE_KEYS, ["shop", "openlab", "lab-reports", "wholesale", "about"]);
 });
 
 test("React route execution is exhaustive against the shared route key type", async () => {
   const source = await readFile(path.join(appRoot, "experience-lab.tsx"), "utf8");
-  assert.match(source, /type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review">/);
+  assert.match(source, /type ExperienceRouteKey = Exclude<CoreCustomerRouteKey, "review" \| "review-studio" \| ProgramRouteKey>/);
   assert.match(source, /satisfies Readonly<Record<ExperienceRouteKey, \(lookupReference\?: string\) => ReactNode>>/);
   assert.doesNotMatch(source, /type RouteKey\s*=/);
   assert.match(source, /const content = routeRenderers\[route\]\(lookupReference\)/);
 });
 
-test("owner review derives all 31 links from the route registry and current Figma targets", async () => {
+test("owner review derives the governed route links from the route registry and current Figma targets", async () => {
   const routeMap = await readFile(path.join(appRoot, "design-system/site-route-map.ts"), "utf8");
   const review = await readFile(path.join(appRoot, "design-system/candidate-review.tsx"), "utf8");
 

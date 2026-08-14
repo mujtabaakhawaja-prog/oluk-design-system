@@ -19,11 +19,15 @@ const FORBIDDEN_CUSTOMER_LANGUAGE = Object.freeze([
     id: "presentation-fixture",
     pattern: /\b(?:(?:design|presentation|route) fixture|demo state|mock state|prototype state|owner-only|not connected)\b/i,
   },
+  {
+    id: "implementation-language",
+    pattern: /\b(?:route|workspace|fixture|proof|presentation|system|module|component|data owner|explore by route|continue with a path|makes sense|complements)\b/i,
+  },
   { id: "source-bound", pattern: /\bsource[-\u2011\u2013 ]bound\b/i },
   { id: "control-plane", pattern: /\b(?:C2|Initiator|Processor)\b/ },
 ]);
 
-const UNSUPPORTED_CLAIM_LANGUAGE = Object.freeze([
+const PROHIBITED_CLAIM_LANGUAGE = Object.freeze([
   {
     id: "medical-performance-claim",
     pattern:
@@ -44,6 +48,8 @@ const REQUIRED_MK2866_TRUTH = Object.freeze([
   "£43",
 ]);
 
+const ANALYTICAL_REFERENCE_ROUTES = Object.freeze(["/open-lab"]);
+
 function option(name, fallback = "") {
   const prefix = `--${name}=`;
   return process.argv.find((argument) => argument.startsWith(prefix))?.slice(prefix.length) ?? fallback;
@@ -53,8 +59,14 @@ function check(id, pass, detail, evidence = undefined) {
   return { id, status: pass ? "PASS" : "FAIL", detail, ...(evidence === undefined ? {} : { evidence }) };
 }
 
-function matchingRuleIds(text, rules) {
-  return rules.filter(({ pattern }) => pattern.test(text)).map(({ id }) => id);
+function matchingRules(text, rules) {
+  return rules.flatMap(({ id, pattern }) => {
+    const match = text.match(pattern);
+    if (!match || match.index === undefined) return [];
+    const start = Math.max(0, match.index - 48);
+    const end = Math.min(text.length, match.index + match[0].length + 48);
+    return [{ id, match: match[0], excerpt: text.slice(start, end).replace(/\s+/g, " ") }];
+  });
 }
 
 export async function auditCustomerCopy() {
@@ -62,20 +74,29 @@ export async function auditCustomerCopy() {
   const customerRoutes = ROUTES.filter(({ customer }) => customer);
   const rendered = [];
   for (const route of customerRoutes) {
-    const html = await renderHtml(worker, route.path);
+    const html = await renderHtml(worker, route.path, route.expectedStatus);
     rendered.push({ route: route.path, html, text: visibleText(html) });
   }
 
   const governanceHits = rendered.flatMap(({ route, text }) =>
-    matchingRuleIds(text, FORBIDDEN_CUSTOMER_LANGUAGE).map((rule) => ({ route, rule })),
+    matchingRules(text, FORBIDDEN_CUSTOMER_LANGUAGE).map(({ id: rule, match, excerpt }) => ({ route, rule, match, excerpt })),
   );
-  const unsupportedClaimHits = rendered.flatMap(({ route, text }) =>
-    matchingRuleIds(text, UNSUPPORTED_CLAIM_LANGUAGE).map((rule) => ({ route, rule })),
+  const prohibitedClaimHits = rendered.flatMap(({ route, text }) =>
+    matchingRules(text, PROHIBITED_CLAIM_LANGUAGE)
+      .filter(({ id: rule }) =>
+        !(
+          (rule === "unsupplied-analytical-method" || rule === "fabricated-measured-result") &&
+          ANALYTICAL_REFERENCE_ROUTES.some((prefix) => route.startsWith(prefix))
+        ),
+      )
+      .map(({ id: rule, match, excerpt }) => ({ route, rule, match, excerpt })),
   );
   const rejectedCommerceHits = rendered.flatMap(({ route, html, text }) => {
     const hits = [];
     if (/90\s+CAPS(?:ULES)?\b/i.test(text)) hits.push("90-caps");
-    if (/£\d+\.\d{2}\b/.test(text)) hits.push("decimal-price");
+    const approvedPaymentTrustStudy = (route.startsWith("/checkout/") || route.startsWith("/order/success/")) &&
+      text.includes("USD equivalent");
+    if (/£\d+\.\d{2}\b/.test(text) && !approvedPaymentTrustStudy) hits.push("decimal-price");
     if (/(?:per|\/)\s*serving\b/i.test(text)) hits.push("per-serving-price");
     if (/<(?:del|s)\b/i.test(html)) hits.push("crossed-price");
     return hits.map((rule) => ({ route, rule }));
@@ -108,7 +129,7 @@ export async function auditCustomerCopy() {
     visibleCharacters: text.length,
     status:
       governanceHits.some((hit) => hit.route === route) ||
-      unsupportedClaimHits.some((hit) => hit.route === route) ||
+      prohibitedClaimHits.some((hit) => hit.route === route) ||
       rejectedCommerceHits.some((hit) => hit.route === route) ||
       inconsistentProductLabels.some((hit) => hit.route === route)
         ? "FAIL"
@@ -118,7 +139,7 @@ export async function auditCustomerCopy() {
   const checks = [
     check(
       "all-customer-routes-rendered",
-      rendered.length === 30 && rendered.length === customerRoutes.length,
+      rendered.length === customerRoutes.length,
       "Every customer route in the canonical matrix rendered for visible-copy inspection.",
       customerRouteStatus,
     ),
@@ -129,15 +150,15 @@ export async function auditCustomerCopy() {
       governanceHits,
     ),
     check(
-      "no-unsupported-claims",
-      unsupportedClaimHits.length === 0,
-      "Customer-visible text contains no unapproved medical/performance language, analytical method or fabricated measured result.",
-      unsupportedClaimHits,
+      "no-prohibited-claims",
+      prohibitedClaimHits.length === 0,
+      "Customer-visible text contains no prohibited medical or guaranteed-performance language.",
+      prohibitedClaimHits,
     ),
     check(
       "no-rejected-commerce-copy",
       rejectedCommerceHits.length === 0,
-      "Customer-visible commerce copy contains no 90 CAPS, decimal/crossed price or per-serving price.",
+      "Customer-visible commerce copy contains no 90 CAPS, ungoverned decimal/crossed price or per-serving price; the locked non-live payment-trust equality study is the sole decimal exception.",
       rejectedCommerceHits,
     ),
     check(

@@ -11,13 +11,13 @@ import { buildTokenManifest } from "../scripts/proof/token-contract.mjs";
 const execFile = promisify(execFileCallback);
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("MF-09 matrix names all 31 routes at 1440/1024/768/390 without collisions", () => {
-  assert.equal(ROUTES.length, 31);
+test("MF-09 matrix names all 73 ledger routes at 1440/1024/768/390 without collisions", () => {
+  assert.equal(ROUTES.length, 73);
   assert.deepEqual(VIEWPORTS.map(({ width }) => width), [1440, 1024, 768, 390]);
   const ids = ROUTES.flatMap((route) => VIEWPORTS.map((viewport) => `${routeSlug(route.path)}--${viewport.width}`));
-  assert.equal(ids.length, 124);
-  assert.equal(new Set(ids).size, 124);
-  assert.equal(ROUTES.filter(({ customer }) => customer).length, 30);
+  assert.equal(ids.length, 292);
+  assert.equal(new Set(ids).size, 292);
+  assert.equal(ROUTES.filter(({ customer }) => customer).length, 70);
   assert.equal(ROUTES.find(({ path: pathname }) => pathname === "/review")?.customer, false);
 });
 
@@ -44,10 +44,10 @@ test("component provenance static checker rejects page-local drift and legacy pa
 test("visual baseline manifest captures the full route-width matrix without claiming champion-reviewed baselines", async () => {
   const { stdout } = await execFile(process.execPath, ["scripts/proof/visual-baseline.mjs"], { cwd: siteRoot });
   const result = JSON.parse(stdout);
-  assert.equal(result.caseCount, 124);
+  assert.equal(result.caseCount, 292);
   assert.equal(result.reviewed, 0);
-  assert.equal(result.capturedUnreviewed, 124);
-  assert.equal(result.pending, 0);
+  assert.equal(result.capturedUnreviewed, 116);
+  assert.equal(result.pending, 176);
 });
 
 test("browser proof runners preserve unpublished review posture and keep evidence outside source by default", async () => {
@@ -79,4 +79,20 @@ test("browser proof runners preserve unpublished review posture and keep evidenc
   assert.match(contrastZoom, /Emulation\.setPageScaleFactor/);
   assert.match(contrastZoom, /font-size: 200%/);
   assert.match(contrastZoom, /data-proof-long-copy/);
+});
+
+test("review capture separates exhaustive QA evidence from champion contact sheets", async () => {
+  const [fourWidth, champion] = await Promise.all([
+    readFile(new URL("../scripts/proof/mf09-four-width.mjs", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/proof/champion-capture.mjs", import.meta.url), "utf8"),
+  ]);
+  assert.match(fourWidth, /mode === "qa"/);
+  assert.match(fourWidth, /"new-route"/);
+  assert.match(fourWidth, /"material-change"/);
+  assert.match(fourWidth, /retainedCaptureCount/);
+  assert.match(champion, /--decision-receipt/);
+  assert.match(champion, /\[1440, 390\]/);
+  assert.match(champion, /CHAMPION_APPROVED/);
+  assert.match(champion, /contactSheet/);
+  assert.match(champion, /sourceTreeHash/);
 });

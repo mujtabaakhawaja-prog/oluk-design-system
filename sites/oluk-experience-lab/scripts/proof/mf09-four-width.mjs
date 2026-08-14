@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
-import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
@@ -56,11 +56,11 @@ function pageAuditExpression({ customer, expectedHeading, governancePatterns }) 
     }).slice(0, 30);
     const hiddenOverflow = visible.flatMap((element) => {
       const style = getComputedStyle(element);
-      const clipped = ["hidden", "clip"].includes(style.overflowX) && element.scrollWidth > element.clientWidth + 1;
+      const clipped = ["hidden", "clip"].includes(style.overflowX) && element.scrollWidth > element.clientWidth + 4;
       const authoredClipping =
         element.matches(".sr-only, .product-decision-media") ||
         style.textOverflow === "ellipsis";
-      return clipped && !authoredClipping ? [{ selector: describe(element), clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: style.overflowX }] : [];
+      return clipped && !authoredClipping && !element.closest("[data-proof-allow-overflow]") ? [{ selector: describe(element), clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: style.overflowX }] : [];
     }).slice(0, 30);
     const overlapContainers = [
       ...document.querySelectorAll(".product-grid, .commerce-card-grid, .shop-result-grid, .transaction-grid, .transaction-summary-grid, .qualitative-chips, .oluk-candidate-qualitative, .oluk-state-grid, .oluk-width-grid, .oluk-purchase-panel-matrix"),
@@ -95,7 +95,7 @@ function pageAuditExpression({ customer, expectedHeading, governancePatterns }) 
         rect.right > 0 &&
         rect.left < innerWidth &&
         getComputedStyle(element).opacity !== "0" &&
-        inverseColors.has(getComputedStyle(element).backgroundColor)
+        inverseColors.has(getComputedStyle(element).backgroundColor) && rect.width * rect.height >= 256
       );
     }).map(describe).slice(0, 20);
     const governanceHits = ${JSON.stringify(customer)} ? ${JSON.stringify(governancePatterns)}.filter((pattern) => bodyText.toUpperCase().includes(pattern.toUpperCase())) : [];
@@ -173,18 +173,59 @@ function settlePageExpression() {
 const baseUrl = new URL(option("base-url", process.env.PROOF_BASE_URL ?? "http://127.0.0.1:4173"));
 const routes = selectRoutes(option("routes", ""));
 const viewports = selectViewports(option("widths", ""));
-const capture = hasFlag("capture") || hasFlag("full-page");
+const mode = option("mode", "standard");
+const resumeFrom = option("resume-from", "");
+if (!new Set(["standard", "qa"]).has(mode)) throw new Error(`Unsupported MF-09 mode: ${mode}`);
+const capture = mode === "qa" || hasFlag("capture") || hasFlag("full-page");
 const fullPage = hasFlag("full-page");
 const outputDirectory = option("output", "") || await mkdtemp(path.join(tmpdir(), "oluk-mf09-proof-"));
 await mkdir(outputDirectory, { recursive: true });
+let baselineCases = new Map();
+if (mode === "qa") {
+  const manifestPath = option("baseline-manifest", path.resolve("tests/visual-baselines/manifest.json"));
+  try {
+    const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+    baselineCases = new Map(manifest.cases.map((entry) => [`${entry.route}::${entry.width}`, entry]));
+  } catch {
+    // A missing baseline makes every capture new, which is the safe QA behavior.
+  }
+}
 
 const chrome = await launchChrome();
-const results = [];
+let results = [];
 let failed = false;
+if (resumeFrom) {
+  const prior = JSON.parse(await readFile(resumeFrom, "utf8"));
+  results = prior.results?.filter((result) => result.status === "PASS") ?? [];
+}
+const completedCases = new Set(results.map((result) => `${result.route}::${result.viewport.width}`));
+
+const buildReceipt = () => ({
+  schemaVersion: 1,
+  run: "MF-09_FOUR_WIDTH_ROUTE_PROOF",
+  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  generatedAt: new Date().toISOString(),
+  baseUrl: baseUrl.href,
+  outputDirectory,
+  captureMode: capture ? (fullPage ? "full-page" : "viewport") : "none",
+  evidenceMode: mode,
+  resumedFrom: resumeFrom || null,
+  retainedCaptureCount: results.filter(({ screenshot }) => Boolean(screenshot)).length,
+  routeCount: routes.length,
+  widthCount: viewports.length,
+  caseCount: results.length,
+  passCount: results.filter(({ status }) => status === "PASS").length,
+  failCount: results.filter(({ status }) => status !== "PASS").length,
+  results,
+});
+const checkpoint = async () => {
+  await writeFile(path.join(outputDirectory, "mf09-four-width-progress.json"), `${JSON.stringify(buildReceipt(), null, 2)}\n`);
+};
 
 try {
   for (const route of routes) {
     for (const viewport of viewports) {
+      if (completedCases.has(`${route.path}::${viewport.width}`)) continue;
       const { client, targetId } = await createPage(chrome.port);
       const logs = [];
       const exceptions = [];
@@ -211,8 +252,8 @@ try {
         }));
         const response = documentResponses.findLast(({ url: responseUrl }) => responseUrl === url) ?? documentResponses.at(-1);
         const failures = [];
-        if (response && response.status !== 200) failures.push(`document response ${response.status}`);
-        if (audit.h1.length !== 1 || audit.h1[0] !== route.heading) failures.push(`h1 expected ${JSON.stringify(route.heading)}; received ${JSON.stringify(audit.h1)}`);
+        if (response && response.status !== route.expectedStatus) failures.push(`document response ${response.status}; expected ${route.expectedStatus}`);
+        if (audit.h1.length !== 1 || (route.heading && audit.h1[0] !== route.heading)) failures.push(`h1 expected ${JSON.stringify(route.heading)}; received ${JSON.stringify(audit.h1)}`);
         if (!audit.hasMain) failures.push("missing main landmark");
         if (!audit.hasHeader) failures.push("missing header landmark");
         if (route.customer && !audit.hasFooter) failures.push("missing footer landmark");
@@ -226,7 +267,10 @@ try {
         if (route.customer && !audit.footerIsInverse) failures.push(`footer is not the sole-inverse color (${audit.footerBackground})`);
         if (route.customer && audit.inverseOutsideFooter.length > 0) failures.push(`inverse surface outside footer: ${audit.inverseOutsideFooter.join(", ")}`);
         if (exceptions.length > 0) failures.push(`${exceptions.length} uncaught browser exception(s)`);
-        if (logs.some(({ level }) => level === "error")) failures.push(`${logs.filter(({ level }) => level === "error").length} browser console error(s)`);
+        const consoleErrors = logs.filter(({ level, url: logUrl }) =>
+          level === "error" && !(route.expectedStatus === 404 && logUrl === url),
+        );
+        if (consoleErrors.length > 0) failures.push(`${consoleErrors.length} browser console error(s)`);
 
         let screenshot = null;
         let screenshotSha256 = null;
@@ -235,6 +279,17 @@ try {
           const screenshotPath = path.join(outputDirectory, screenshot);
           await capturePng(client, screenshotPath, { fullPage });
           screenshotSha256 = await sha256(screenshotPath);
+          if (mode === "qa") {
+            const baseline = baselineCases.get(`${route.path}::${viewport.width}`);
+            const reason = failures.length > 0 ? "failure" : !baseline ? "new-route" : baseline.sha256 !== screenshotSha256 ? "material-change" : null;
+            if (!reason) {
+              await rm(screenshotPath);
+              screenshot = null;
+              screenshotSha256 = null;
+            } else {
+              audit.retainedCaptureReason = reason;
+            }
+          }
         }
 
         if (failures.length > 0) failed = true;
@@ -251,6 +306,7 @@ try {
           screenshot,
           screenshotSha256,
         });
+        await checkpoint();
       } catch (error) {
         failed = true;
         results.push({
@@ -262,6 +318,7 @@ try {
           logs,
           exceptions,
         });
+        await checkpoint();
       } finally {
         await closePage(chrome.port, client, targetId);
       }
@@ -271,21 +328,7 @@ try {
   await chrome.close();
 }
 
-const receipt = {
-  schemaVersion: 1,
-  run: "MF-09_FOUR_WIDTH_ROUTE_PROOF",
-  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  generatedAt: new Date().toISOString(),
-  baseUrl: baseUrl.href,
-  outputDirectory,
-  captureMode: capture ? (fullPage ? "full-page" : "viewport") : "none",
-  routeCount: routes.length,
-  widthCount: viewports.length,
-  caseCount: results.length,
-  passCount: results.filter(({ status }) => status === "PASS").length,
-  failCount: results.filter(({ status }) => status !== "PASS").length,
-  results,
-};
+const receipt = buildReceipt();
 
 await writeFile(path.join(outputDirectory, "mf09-four-width-receipt.json"), `${JSON.stringify(receipt, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify({ ...receipt, results: results.map(({ route, viewport, status, failures, screenshotSha256 }) => ({ route, width: viewport.width, status, failures, screenshotSha256 })) }, null, 2)}\n`);

@@ -53,7 +53,11 @@ const routes = [
 test("MF-07 route pages form one static transaction lifecycle", async () => {
   for (const [pathname, route] of routes) {
     const source = await readFile(new URL(`${pathname}/page.tsx`, appRoot), "utf8");
-    assert.match(source, new RegExp(`<ExperienceLab\\s+route="${route}"\\s*/>`), pathname);
+    if (["checkout/delivery", "checkout/confirmation"].includes(pathname)) {
+      assert.match(source, /<CheckoutProgramPage step="(?:delivery|confirmation)"\s*\/>/, pathname);
+    } else {
+      assert.match(source, new RegExp(`<ExperienceLab\\s+route="${route}"\\s*/>`), pathname);
+    }
   }
 });
 
@@ -72,10 +76,23 @@ test("transaction presentation preserves exact MK-2866 truth and deterministic i
 
   assert.match(source, /<MetricRail compact product=\{mk2866Fixture\}\s*\/>/);
   assert.match(source, /data-live-authority="false"/);
-  assert.match(source, /<button[^>]*disabled[^>]*>Pay \{mk2866Fixture\.price\}<\/button>/);
+  assert.match(source, /<button[^>]*disabled[^>]*>Pay securely<\/button>/);
+  assert.match(source, /<CurrencyEqualityLock compact \/>/);
+  assert.match(source, /<LifecycleAmountRecord stage="confirmation" \/>/);
   assert.doesNotMatch(source, /fetch\s*\(|axios|XMLHttpRequest|use server|server action|woocommerce|stripe|biaspay|initiator|tools-service|C2/i);
   assert.doesNotMatch(source, /90 CAPS(?:\b|ULES)|£43\.00|<del\b/i);
   assert.doesNotMatch(source, /<form\b|\bformAction\s*=|\bonSubmit\s*=/i);
+});
+
+test("named checkout stages adopt the canonical Option E lifecycle instead of a second generic layout", async () => {
+  const programRoutes = await readFile(new URL("program-routes.tsx", appRoot), "utf8");
+  assert.match(programRoutes, /import \{ TransactionPresentation, type TransactionStage \}/);
+  assert.match(programRoutes, /information: "details"/);
+  assert.match(programRoutes, /review: "handoff"/);
+  assert.match(programRoutes, /payment: "order-pay"/);
+  assert.match(programRoutes, /<main data-live-authority="false">/);
+  assert.match(programRoutes, /<TransactionPresentation stage=\{checkoutStageMap\[step\]\} \/>/);
+  assert.doesNotMatch(programRoutes, /const checkoutCopy/);
 });
 
 test("transaction import graph and dependencies cannot acquire runtime callbacks", async () => {

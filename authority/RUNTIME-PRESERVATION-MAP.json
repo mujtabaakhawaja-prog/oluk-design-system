@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "oluk.runtime-preservation.v1",
+  "status": "READ_ONLY_DISCOVERY_COMPLETE",
+  "boundary": "This is a design decision map. It records runtime interaction behavior to preserve in Sites without wiring Shopper SSR, Tools, Woo, payment, or production services.",
+  "surfaces": [
+    {
+      "id": "homepage-product-stage",
+      "sitesExport": "LockedHomeHero",
+      "sitesContract": ["five-product 5-3-1 spatial stage", "tab selection", "previous and next controls", "lazy secondary media", "reduced-motion-safe transitions"],
+      "runtimeReferences": ["apps/olympus-shopper-ui/src/components/hero/VariantHeroE4.tsx", "apps/olympus-shopper-ui/src/components/home/VariantHeroEV4Homepage.tsx", "apps/olympus-shopper-ui/src/components/hero/ProductRenderStage.tsx", "apps/olympus-shopper-ui/src/components/hero/FeaturedProductCard.tsx", "apps/olympus-shopper-ui/src/styles/animations.css", "apps/olympus-shopper-ui/src/styles/variant-hero.css"],
+      "decision": "Preserve the interaction job—product selection, focusable controls, image priority and reduced motion—while keeping the newer LockedHero visual hierarchy. Do not copy runtime styling wholesale.",
+      "sitesState": "implemented-and-needs-current-interaction-proof",
+      "runtimeIntegration": "not-authorized"
+    },
+    {
+      "id": "product-dossier",
+      "sitesExport": "ProductDossier + OpenLabDossierComposition",
+      "sitesContract": ["indexed facts", "visual chamber", "composition detail", "record return action", "source/report continuation"],
+      "runtimeReferences": ["apps/olympus-shopper-ui/src/components/openlab/OpenLabEvidence.tsx", "apps/olympus-shopper-ui/src/App.tsx product route and OpenLab route branches", "apps/olympus-shopper-ui/src/contracts/openlab-table.ts", "apps/olympus-shopper-ui/src/server/openlab-table-tools-service.ts"],
+      "decision": "Preserve selectable record, label-comparison and source-context views; recompose their material, hierarchy and controls in the Sites system. The content compiler deepens charts, report views and dossier comparisons from OpenLabPublicProjection.v2 without blocking design work on runtime projection availability.",
+      "sitesState": "implemented-with-compiler-backed-visualizations",
+      "runtimeIntegration": "not-authorized"
+    }
+  ],
+  "decisionProcess": ["Inspect the current shopper implementation read-only.", "Describe the customer interaction job independently of its old visual form.", "Implement the job against the Sites tokens and components.", "Prove keyboard, reduced-motion, 1440 and 390 behavior in Sites.", "Nativeise the accepted Sites composition in Figma as an editable inspection mirror.", "Only then consider Shopper SSR adaptation under its separate runtime gate."]
+}

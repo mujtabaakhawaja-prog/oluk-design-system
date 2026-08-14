@@ -113,12 +113,14 @@ test("CONV-004 clears complete Shop URL state and keeps unfiltered records free 
   assert.doesNotMatch(routes, /Verified purchase/);
   assert.doesNotMatch(routes, /A\. Morgan|Daniel R\.|M\. Lewis/);
   assert.match(routes, /data-live-authority="false" id="reviews"/);
-  assert.match(shop, /product\.fixtureId === "mk-2866"[\s\S]*?<ProductCommerceCard[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="featured"/);
+  assert.match(shop, /function catalogueFixture\(product: ShopTaxonomyFixtureProduct\): ProductFixture/);
+  assert.match(shop, /every catalogue result is rendered[\s\S]*?canonical ProductCommerceCard anatomy/);
+  assert.match(shop, /product=\{catalogueFixture\(product\)\}[\s\S]*?variant="compact"/);
   assert.match(shop, /className="shop-result-card shop-result-card-canonical"/);
-  assert.match(shop, /data-component="ShopDiscoveryResult"/);
-  assert.match(shop, /<ProductMediaChamber context="featured"/);
+  assert.doesNotMatch(shop, /data-component="ShopDiscoveryResult"/);
+  assert.doesNotMatch(shop, /<ProductMediaChamber context="featured"/);
   assert.doesNotMatch(shop, /function ShopResultCard|shop-result-orbit|<img/);
-  assert.match(shop, /Product page unavailable/);
+  assert.doesNotMatch(shop, /Product page unavailable/);
   assert.match(shop, /const familyTerms = product\.familySlugs\.flatMap/);
   assert.match(shop, /const goalTerms = product\.goalTagSlugs\.flatMap/);
   assert.match(shop, /product\.sku,[\s\S]*?product\.formSlug,[\s\S]*?servings/);

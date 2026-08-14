@@ -27,7 +27,7 @@ Every section MUST make sense standalone AND be modularly insertable across page
 - No local cart authority — cart/checkout/order state from tools-service projections only
 - Evidence boundary: OpenLab data is source-owned. No invented lab claims
 - Search is fail-closed — never substitute, never "did you mean"
-- EvidenceOS Command Center (/openlab/admin) needs auth gating
+- EvidenceOS Command Center (`/open-lab/admin`) is an owner-only, noindex Sites specimen; identity/authentication remains deferred
 - Stripe iframe on payment step is visual shell only
 - 4-state honesty: Verified Evidence / Source Reported / Source Only / Unavailable
 - Zero Grey Rule: all neutrals blue-shifted per CONV-004
@@ -136,9 +136,9 @@ These mount on EVERY route. They are not optional.
 
 ---
 
-## IV. PRODUCT DETAIL PAGE (`/shop/:slug`)
+## IV. PRODUCT DETAIL PAGE (`/product/:slug`)
 
-### Route: `/shop/:slug` — PDP
+### Route: `/product/:slug` — PDP
 **Journey stage**: Consideration / Decision
 **Function**: Product deep-dive, evidence presentation, purchase conversion
 **Figma sources**: PDP file (4 compound variants: MK-2866, MENT, RAD-140, MK-677), each at 1440/1024/390 x Light/Dark
@@ -528,7 +528,7 @@ Total physical routes from all 4 reference files:
 /                           Homepage
 /shop                       Shop All
 /shop/:category             Category (White Series, etc.)
-/shop/:slug                 PDP
+/product/:slug              PDP
 /search                     Search Results
 /bundles                    Bundle Builder (dedicated)
 /gift-cards                 Gift Cards
@@ -660,7 +660,7 @@ Components from Final-Design (Page 09) and their cross-route usage:
 3. **OpenLab depth**: The evidence system alone is 20 routes. Lab Records component system has 22 components. This is a product within a product.
 4. **Growth modules are P1-P3**: Loyalty, referral, wholesale, ambassador, streak bonuses are future features. Codex should scaffold routes but NOT implement business logic
 5. **EvidenceOS is an admin tool**: Full dashboard (5571px tall at 1440). Separate auth, separate data access patterns. Should be its own wave.
-6. **Dynamic routes need source data contracts**: `/shop/:slug`, `/open-lab/records/:id`, `/open-lab/compounds/:slug`, `/account/orders/:id` all need typed data interfaces from tools-service
+6. **Dynamic routes need source data contracts**: `/product/:slug`, `/open-lab/records/:id`, `/open-lab/compounds/:slug`, `/account/orders/:id` all need typed data interfaces from tools-service
 
 ---
 

@@ -1,8 +1,13 @@
+/* eslint-disable @next/next/no-img-element -- transparent product render is shared with the governed product stage. */
+
 import type { ReactNode } from "react";
 import styles from "../transaction-presentation.module.css";
 import { ActionLink, Breadcrumbs } from "./customer-route-primitives";
 import { MetricRail } from "./metric-rail";
 import { mk2866Fixture } from "./product-fixtures";
+import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
+import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
+import { RecommendationCard, RestockCard } from "./program-components";
 
 export type TransactionStage =
   | "bag"
@@ -41,20 +46,20 @@ const stageHeadings = {
     copy: "Review product truth, quantity and the current order total before checkout.",
   },
   details: {
-    title: "Your details.",
+    title: "Your information.",
     copy: "Add the contact and delivery information needed to prepare the order.",
   },
   delivery: {
     title: "Choose delivery.",
-    copy: "Review the available delivery presentation before moving to payment.",
+    copy: "Review the available delivery options before moving to payment.",
   },
   handoff: {
-    title: "Continue to secure payment.",
-    copy: "Review the order once more before opening the secure payment step.",
+    title: "Your product, order value and payment equivalent.",
+    copy: paymentTrustCopy.continuity,
   },
   "order-pay": {
-    title: "Complete payment.",
-    copy: "Confirm the amount due in the secure payment window.",
+    title: "Make a card payment.",
+    copy: paymentTrustCopy.protectedStep,
   },
   confirmation: {
     title: "Order received.",
@@ -114,10 +119,7 @@ function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
 function ProductLine({ quantity = true }: Readonly<{ quantity?: boolean }>) {
   return (
     <article className={styles.productLine}>
-      <div className={styles.productMark} aria-hidden="true">
-        <span>MK</span>
-        <strong>2866</strong>
-      </div>
+      <div className={styles.productMark}><img alt="MK-2866 Ostarine bottle" decoding="async" height={mk2866Fixture.media.height} loading="lazy" sizes="112px" src={mk2866Fixture.media.src} width={mk2866Fixture.media.width}/></div>
       <div className={styles.productIdentity}>
         <span>{mk2866Fixture.series}</span>
         <h2>{mk2866Fixture.name}</h2>
@@ -181,6 +183,7 @@ function BagContent() {
           <div><strong>Need to keep browsing?</strong><span>Your bag stays ready while you compare the range.</span></div>
           <a href="/shop">Return to the shop →</a>
         </div>
+        <RecommendationCard state="default" />
       </div>
       <OrderSummary action={<ActionLink href="/checkout">Continue to details</ActionLink>} />
     </div>
@@ -214,7 +217,7 @@ function DetailsContent() {
           <ActionLink href="/checkout/delivery">Continue to delivery</ActionLink>
         </div>
       </section>
-      <OrderSummary compact />
+      <div className={styles.asideStack}><OrderSummary compact /><PaymentTrustPrimer compact /></div>
     </div>
   );
 }
@@ -240,7 +243,7 @@ function DeliveryContent() {
           <ActionLink href="/checkout/payment-handoff">Continue to payment</ActionLink>
         </div>
       </div>
-      <OrderSummary compact />
+      <div><OrderSummary compact /><CurrencyEqualityLock compact /></div>
     </div>
   );
 }
@@ -251,12 +254,12 @@ function HandoffContent() {
       <section className={styles.primary}>
         <div className={styles.handoffPanel}>
           <span className={styles.sectionLabel}>Secure payment</span>
-          <h2>One clear step away. One clear route back.</h2>
+          <h2>One clear step away. One clear return to Olympus.</h2>
           <p>You’ll leave Olympus briefly to complete payment in the secure payment window. When it closes, return here to see the order outcome.</p>
           <ol>
             <li><span>01</span><div><strong>Review</strong><p>Confirm the product and amount due.</p></div></li>
             <li><span>02</span><div><strong>Pay securely</strong><p>Choose the available payment method in the secure window.</p></div></li>
-            <li><span>03</span><div><strong>Return</strong><p>Come back to Olympus for confirmation or a recovery route.</p></div></li>
+            <li><span>03</span><div><strong>Return</strong><p>Come back to Olympus for confirmation or help completing payment.</p></div></li>
           </ol>
           <div className={styles.continueRow}>
             <a href="/checkout/delivery">← Back to delivery</a>
@@ -275,14 +278,14 @@ function OrderPayContent() {
       <section className={styles.paymentWindow}>
         <div className={styles.paymentLock} aria-hidden="true">✓</div>
         <span className={styles.sectionLabel}>Secure payment window</span>
-        <h2>Amount due</h2>
-        <strong className={styles.paymentAmount}>{mk2866Fixture.price}</strong>
-        <p>Choose your payment method in this window. You’ll return to Olympus when the payment step closes.</p>
-        <button className="button" disabled type="button">Pay {mk2866Fixture.price}</button>
+        <h2>Payment amount</h2>
+        <strong className={styles.paymentAmount}>{paymentTrustStudy.settlementAmount} USD</strong>
+        <p>{paymentTrustCopy.equality}</p>
+        <button className="button" disabled type="button">Pay securely</button>
         <a href="/checkout/payment-handoff">Return to order review</a>
         <a href="/checkout/failure">Payment not completed?</a>
       </section>
-      <OrderSummary compact heading="Payment summary" />
+      <div><CurrencyEqualityLock compact /><OrderSummary compact heading="Payment summary" /></div>
     </div>
   );
 }
@@ -295,6 +298,7 @@ function ConfirmationContent() {
           <span aria-hidden="true">✓</span>
           <div><strong>Thank you.</strong><p>The order summary is ready below.</p></div>
         </div>
+        <LifecycleAmountRecord stage="confirmation" />
         <section className={styles.formPanel}>
           <div className={styles.confirmationHeading}>
             <div><span className={styles.sectionLabel}>Order reference</span><strong>OL-10428</strong></div>
@@ -307,6 +311,8 @@ function ConfirmationContent() {
           <article><span>02</span><h2>Delivery</h2><p>Delivery progress appears with the order when available.</p></article>
           <article><span>03</span><h2>Lab Record</h2><p>Product evidence remains available independently of the order.</p></article>
         </div>
+        <RestockCard state="active" />
+        <RecommendationCard state="default" />
       </section>
       <OrderSummary compact heading="Order total" />
     </div>

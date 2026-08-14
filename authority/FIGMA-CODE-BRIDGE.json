@@ -383,7 +383,7 @@
   ],
   "unmappedCanonicalCandidates": [
     { "nodeId": "734:17326", "name": "ProductTabs", "reason": "No standalone React export; Dossier currently renders a truthful static visual index." },
-    { "nodeId": "754:18224", "name": "SiteHeader", "reason": "Current candidate is a route-shell-local function, not an exported design-system component." },
+    { "nodeId": "1176:28930", "name": "SiteHeader", "reason": "Exported OptionB implementation exists; exact prop mapping is pending the post-review shell component bridge increment." },
     { "nodeId": "754:18225", "name": "TrustRail", "reason": "Current candidate is embedded inside SiteHeader and has no exact exported component." },
     { "nodeId": "754:18226", "name": "SiteFooter", "reason": "Current candidate is a route-shell-local function, not an exported design-system component." }
   ],

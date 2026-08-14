@@ -35,6 +35,11 @@ const eslintConfig = defineConfig([
         version: "detect",
       },
     },
+    // Vinext preserves direct same-origin anchors across the static Sites reference.
+    // Route modules remain typed and independently validated by the registry proof.
+    rules: {
+      "@next/next/no-html-link-for-pages": "off",
+    },
   },
 ]);
 

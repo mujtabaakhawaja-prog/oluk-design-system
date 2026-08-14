@@ -55,7 +55,7 @@ export async function loadBuiltWorker(label = "audit") {
   }
 }
 
-export async function renderHtml(worker, pathname) {
+export async function renderHtml(worker, pathname, expectedStatus = 200) {
   const response = await worker.fetch(
     new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }),
     {
@@ -68,7 +68,7 @@ export async function renderHtml(worker, pathname) {
       passThroughOnException() {},
     },
   );
-  if (response.status !== 200) throw new Error(`${pathname} rendered HTTP ${response.status}`);
+  if (response.status !== expectedStatus) throw new Error(`${pathname} rendered HTTP ${response.status}`);
   const contentType = response.headers.get("content-type") ?? "";
   if (!/^text\/html\b/i.test(contentType)) {
     throw new Error(`${pathname} rendered unexpected content type ${JSON.stringify(contentType)}`);

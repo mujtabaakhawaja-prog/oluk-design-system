@@ -1,5 +1,5 @@
-import { ExperienceLab } from "../../experience-lab";
+import { CheckoutProgramPage } from "../../program-routes";
 
 export default function CheckoutDeliveryPage() {
-  return <ExperienceLab route="checkout-delivery" />;
+  return <CheckoutProgramPage step="delivery" />;
 }

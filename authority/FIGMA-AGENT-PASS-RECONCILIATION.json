@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "oluk.figma-agent-pass-reconciliation.v1",
+  "status": "ACTIVE_UNPUBLISHED",
+  "purpose": "Records Figma inputs and native inspection mirrors against the Sites-authored implementation. It prevents imported, Make, or locally assembled Figma work from silently becoming a design source.",
+  "authorityOrder": [
+    "approved Sites implementation",
+    "Sites component exports, token contract and approved render registry",
+    "native Figma inspection mirrors explicitly linked from Sites",
+    "Page 09 reusable primitives when their Sites export relationship is declared",
+    "approved corrected Final-Design nodes as relationship references",
+    "accessory-file intent",
+    "Make and imported proof boards"
+  ],
+  "rules": {
+    "sitesFirst": true,
+    "figmaIsDesignAuthority": false,
+    "figmaRole": "editable-inspection-aggregation-and-native-porting",
+    "figmaNodeMayNotOverrideSites": true,
+    "nativeFigmaRequiredForSync": true,
+    "requiredWidths": [1440, 390],
+    "portedProofBoardsOverrideAuthority": false,
+    "localCompositionMayNotBePromoted": true,
+    "runtimeDeferralBlocksDesignCompletion": false
+  },
+  "passes": [
+    {
+      "id": "pass-0-navigation",
+      "targets": ["1199:28749", "1199:28750", "1215:29652", "1215:29669", "1215:29690"],
+      "canonicalEvidence": {
+        "shopMega": ["ProductCommerceCard.Featured", "ProductMediaChamber", "StockPill", "EvidenceStatusChip"],
+        "openLabMega": ["EvidenceStatusChip"],
+        "mobileAndContext": ["component-set-only"]
+      },
+      "sitesCounterpart": "SiteHeader + navigation-registry",
+      "result": "partial-component-provenance",
+      "nextAction": "Replace remaining local OpenLab, mobile-sheet and context-nav anatomy with canonical exports before a native route mirror is registered."
+    },
+    {
+      "id": "pass-1-your-stack",
+      "targets": ["1210:4020", "1216:874", "1216:1239"],
+      "canonicalEvidence": ["ProductCommerceCard.Compact", "StockPill", "EvidenceStatusChip", "YourStackBuilder"],
+      "sitesCounterpart": "YourStackBuilder",
+      "result": "sites-authored-quality-standard-with-native-inspection-mirror",
+      "nextAction": "Use the approved Sites composition as the quality bar. Keep the Figma pair as an editable inspection mirror, not an upstream source."
+    },
+    {
+      "id": "pass-2-catalogue-discovery",
+      "targets": ["1210:4295"],
+      "canonicalEvidence": ["CommerceDiscoveryFilters", "ProductCommerceCard.Compact", "StockPill", "EvidenceStatusChip"],
+      "sitesCounterpart": "ShopDiscovery",
+      "result": "sites-remediated-native-pair-awaiting-sync-capture",
+      "nextAction": "Compare the repaired 1440 Shop route and native 390 mirror (1226:985) against the exact current-wave screenshots before changing the pair to sync-verified."
+    },
+    {
+      "id": "pass-3-pdp-continuation",
+      "targets": ["1210:4738"],
+      "canonicalEvidence": ["ProductTabs", "AssuranceRail", "UpsellContextRail", "RelatedRail", "ProductCommerceCard.Relation"],
+      "sitesCounterpart": "PdpFirstFold + ProductNarrative + YourStackBuilder",
+      "result": "desktop-component-provenance-mobile-mirror-pending",
+      "nextAction": "Replace the remaining local continuation-card composition in Sites with the approved growth contract, then create the paired 1440/390 native Figma mirror."
+    },
+    {
+      "id": "pass-4-checkout-lifecycle",
+      "targets": ["1210:5000", "1210:30848", "1210:30892"],
+      "canonicalEvidence": ["CheckoutStepIndicator"],
+      "sitesCounterpart": "TransactionPresentation + PaymentTrust",
+      "result": "step-indicator-only",
+      "nextAction": "Build canonical line-item, summary, equality-lock, handoff and lifecycle state modules in Sites before Figma backfill."
+    },
+    {
+      "id": "pass-5-account-hub",
+      "targets": ["1210:30946"],
+      "canonicalEvidence": ["ProductCommerceCard.Compact", "StockPill", "EvidenceStatusChip"],
+      "sitesCounterpart": "AccountHub",
+      "result": "desktop-component-provenance-mobile-mirror-pending",
+      "nextAction": "Replace generic account tiles with canonical restock, recommendation and order-card compositions, then pair both widths."
+    },
+    {
+      "id": "pass-6-faq-about",
+      "targets": ["1210:31119"],
+      "canonicalEvidence": [],
+      "sitesCounterpart": "SupportContent",
+      "result": "local-composition",
+      "nextAction": "Build reusable disclosure and brand-story sections in Sites, then promote only the reusable canonical parts to Page 09."
+    },
+    {
+      "id": "pass-7-bundle-stack-explorer",
+      "targets": ["1210:31153"],
+      "canonicalEvidence": [],
+      "sitesCounterpart": "YourStackBuilder",
+      "result": "rejected-as-source-good-better-best-superseded-by-additive-goal-builder",
+      "nextAction": "Preserve 1210:31153 as rejected historical input. Sites owns the replacement: MK-2866 baseline plus additive goal-selected products and an outcome signal. Native Figma follows the completed Sites composition."
+    }
+  ],
+  "maturitySnapshot": {
+    "routeLedger": {"total": 73, "structurallyDualReferenceReady": 73, "pixelCompared": 1, "championApproved": 0},
+    "syncRegistry": {"moduleRecords": 19, "nativeInspectionMirrors": 19, "sitesSourceHashCurrent": false},
+    "statement": "Route and module pairs are structural navigation/inspection coverage. Only Stack Builder has a frozen paired visual hash; the rest remain pending current-source visual comparison and human review."
+  }
+}

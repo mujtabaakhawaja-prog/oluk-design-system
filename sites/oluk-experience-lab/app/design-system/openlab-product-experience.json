@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "oluk.openlab-product-experience.v1",
+  "sourceContract": "OpenLabPublicProjection.v2",
+  "sourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
+  "product": {
+    "slug": "mk-2866",
+    "displayName": "MK-2866 (OSTARINE)",
+    "compoundName": "MK-2866"
+  },
+  "record": {
+    "id": "report-mk-2866-ol2201-2",
+    "reportId": "28868",
+    "batchCode": "OL2201",
+    "testedAt": "2023-04-16",
+    "labName": "Janoshik",
+    "bindingState": "current",
+    "availabilityState": "available",
+    "recordAction": {
+      "label": "Open Lab Record",
+      "href": "/lab-reports?record=report-mk-2866-ol2201-2",
+      "enabled": true
+    },
+    "sourceAction": {
+      "label": "View original report",
+      "href": "https://olympuslabs.uk/test-reports/mk-2866-ol2201-2/"
+    }
+  },
+  "visualizations": {
+    "purity": {
+      "label": "Reported purity",
+      "displayValue": ">99%",
+      "comparator": "greater_than",
+      "source": "report-level display"
+    },
+    "concentration": {
+      "label": "Tested concentration",
+      "testedValue": "16.02 mg",
+      "labelClaim": "15 mg label claim",
+      "deltaMg": 1.02
+    },
+    "register": {
+      "labRecords": 15,
+      "sarmsAveragePurity": "99.5%",
+      "failures": 0
+    }
+  },
+  "sourceAttribution": {
+    "fixture": "authority/fixtures/OPENLAB-PUBLIC-PROJECTION-V2-MK2866.json",
+    "contract": "OpenLabPublicProjection.v2",
+    "recordId": "report-mk-2866-ol2201-2",
+    "reportId": "28868"
+  },
+  "interactionContract": {
+    "selectableViews": [
+      "record",
+      "label comparison",
+      "source context"
+    ],
+    "reducedMotion": "no animated analytical reconstruction",
+    "chartPolicy": "numeric bars and source-owned tabular values only"
+  },
+  "contentHash": "eb13473b04cc1e4cfba49c903d15a9da726862df8f4dc0b461a34d4c04c143e9"
+}

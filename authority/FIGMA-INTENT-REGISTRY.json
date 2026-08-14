@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "registryId": "OLUK-FIGMA-INTENT-004",
+  "status": "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY",
+  "rules": {
+    "generatedCodeDisposition": "discard",
+    "copyDefault": "preserve-supplied-vetted-copy",
+    "runtimeBehavior": "excluded",
+    "requiredTrace": ["intentNode", "canonicalComponent", "dataOwner"]
+  },
+  "sources": [
+    {
+      "id": "sites-sync-dual-reference",
+      "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+      "rootNodeId": "1214:50",
+      "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1214-50",
+      "contributes": ["native Sites module mirrors", "native representative route mirrors", "approved navigation refactors"],
+      "dataOwners": ["design-fixture"],
+      "runtimeExclusions": ["runtime integration", "Figma publication"],
+      "intentNodes": [
+        {"nodeId":"1214:50","target":"Sites Sync — Modules","state":"native-editable-sync-page","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1214:51","target":"Sites Sync — Routes","state":"native-editable-sync-page","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1214:52","target":"GlobalShell","state":"desktop-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1214:127","target":"GlobalShell","state":"mobile-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1216:874","target":"StackExplorer","state":"desktop-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1216:1239","target":"StackExplorer","state":"mobile-native-mirror","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1199:28749","target":"ShopMegaMenu","state":"canonical-refactor","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1199:28750","target":"OpenLabMegaMenu","state":"canonical-refactor","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1215:29652","target":"MobileNavigation","state":"root-and-nested-panels","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1215:29669","target":"ProductContextNav","state":"desktop-and-mobile","copy":"customer-facing","dataOwner":"design-fixture"},
+        {"nodeId":"1215:29690","target":"OpenLabContextNav","state":"desktop-and-mobile","copy":"customer-facing","dataOwner":"design-fixture"}
+      ]
+    },
+    {
+      "id": "final-design-corrected-baselines",
+      "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+      "rootNodeId": "1155:29963",
+      "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1155-29963",
+      "contributes": ["homepage LockedHero", "PDP first fold", "OpenLab HeroLight", "OptionB premium utility header", "OptionB footer"],
+      "dataOwners": ["design-fixture"],
+      "runtimeExclusions": ["commerce mutation", "payment integration"],
+      "intentNodes": [
+        {"nodeId":"1155:29963","target":"/","state":"Direction D LockedHero","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"462:4684","target":"LockedHomeHero.ProductStage","state":"runtime-motion-5-3-1","copy":"not-applicable","dataOwner":"design-fixture"},
+        {"nodeId":"1155:30632","target":"/product/mk-2866#purchase","state":"Section 1 first fold","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"614:75995","target":"/open-lab","state":"HeroLight","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"1176:28930","target":"SiteHeader","state":"OptionB-Premium-UtilityStack-V08","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"754:18226","target":"SiteFooter","state":"OptionB mountain-mark footer","copy":"approved-structure","dataOwner":"design-fixture"}
+      ]
+    },
+    {
+      "id": "final-design-component-library-consolidation",
+      "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+      "rootNodeId": "672:10",
+      "url": "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=672-10",
+      "contributes": ["27 component sets", "5 standalone components", "promoted OptionB header", "promoted TrustEvidenceSpine components"],
+      "dataOwners": ["design-fixture"],
+      "runtimeExclusions": ["library publication", "runtime promotion"],
+      "intentNodes": [
+        {"nodeId":"1176:28930","target":"SiteHeader","state":"promoted-canonical-provenance","copy":"approved-structure","dataOwner":"design-fixture"},
+        {"nodeId":"556:34022","target":"TrustEvidenceSpine.AssuranceCell","state":"promoted-canonical-provenance","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"556:34089","target":"TrustEvidenceSpine.EvidenceLedgerIntro","state":"promoted-canonical-provenance","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"556:34122","target":"TrustEvidenceSpine.AssuranceRail","state":"promoted-canonical-provenance","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"1081:28849","target":"YourStackModule","state":"legacy-local-composition-rebuild-required","copy":"replace-with-frontier-stack-record","dataOwner":"design-fixture"}
+      ]
+    },
+    {
+      "id": "commerce-growth",
+      "fileKey": "PEFpFuw4CWdFMRNtbEiUzS",
+      "rootNodeId": "2:2",
+      "url": "https://www.figma.com/design/PEFpFuw4CWdFMRNtbEiUzS/Commerce---GROWTH?node-id=2-2",
+      "contributes": ["recommendation hierarchy", "cross-sell placement", "restock lifecycle", "campaign hierarchy", "post-purchase continuation"],
+      "dataOwners": ["design-fixture", "tools-service-projection"],
+      "runtimeExclusions": ["recommendation mutation", "discount authority", "inventory authority"],
+      "intentNodes": [
+        {"nodeId":"2:70","target":"/","state":"lab-reports-entry","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"2:158","target":"/open-lab/records","state":"archive-hierarchy-dark-intent","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"2:257","target":"/open-lab/dossier/mk-2866","state":"dossier-hierarchy-intent","copy":"preserve-supplied","dataOwner":"openlab-source"}
+      ]
+    },
+    {
+      "id": "pdp",
+      "fileKey": "cGrvE3Fyj3ThKuqPZqceYv",
+      "rootNodeId": "4:3545",
+      "url": "https://www.figma.com/design/cGrvE3Fyj3ThKuqPZqceYv/PDP?node-id=4-3545",
+      "contributes": ["purchase hierarchy", "evidence snapshot", "recommendations", "restock context", "responsive section order", "unavailable states"],
+      "dataOwners": ["woo", "tools-service-projection", "openlab-source"],
+      "runtimeExclusions": ["cart mutation", "price calculation", "evidence inference"],
+      "intentNodes": [
+        {"nodeId":"4:3578","target":"/product/mk-2866","state":"complete-desktop-intent","copy":"preserve-supplied","dataOwner":"woo"},
+        {"nodeId":"4:3611","target":"ProductDecisionHero","state":"purchase-hierarchy","copy":"preserve-supplied","dataOwner":"woo"},
+        {"nodeId":"4:3664","target":"OpenLabSnapshot","state":"evidence-placement","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"4:3709","target":"ProductDossier","state":"details-order","copy":"preserve-supplied","dataOwner":"woo"}
+      ]
+    },
+    {
+      "id": "commerce-checkout",
+      "fileKey": "9jTrnlEWgbBpFi2idodVB2",
+      "rootNodeId": "0:1",
+      "url": "https://www.figma.com/design/9jTrnlEWgbBpFi2idodVB2/Commerce---Checkout?node-id=0-1",
+      "contributes": ["transaction hierarchy", "delivery choice", "FX reveal", "payment handoff", "processing", "confirmation", "tracking", "recovery"],
+      "dataOwners": ["tools-service-projection", "initiator-terminal"],
+      "runtimeExclusions": ["form submission", "payment SDK", "payment callback", "Woo mutation"],
+      "intentNodes": [
+        {"nodeId":"9:9416","target":"/bag","state":"desktop-light","copy":"approved-structure","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9414","target":"/checkout/information","state":"desktop-light","copy":"approved-structure","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9413","target":"/checkout/delivery","state":"desktop-light","copy":"approved-structure","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9415","target":"/checkout/review","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9401","target":"/checkout/payment","state":"expanded-desktop-light","copy":"approved-lifecycle","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9412","target":"/checkout/processing","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"tools-service-projection"},
+        {"nodeId":"9:9410","target":"/checkout/confirmation","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9409","target":"/checkout/tracking","state":"desktop-light","copy":"approved-structure","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9403","target":"order-details","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9404","target":"receipt","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9407","target":"order-history","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"},
+        {"nodeId":"9:9402","target":"refund","state":"desktop-light","copy":"approved-lifecycle","dataOwner":"terminal-order-projection"}
+      ]
+    },
+    {
+      "id": "openlab",
+      "fileKey": "GkC3KEt9V3RyG5K319iAUV",
+      "rootNodeId": "3:66993",
+      "url": "https://www.figma.com/design/GkC3KEt9V3RyG5K319iAUV/OPENLAB?node-id=3-66993",
+      "contributes": ["archive", "record", "compound dossier", "report presentation", "lookup", "methodology", "source chain", "comparison", "owner command center"],
+      "dataOwners": ["openlab-source", "owner-only"],
+      "runtimeExclusions": ["runtime source binding", "public admin access"],
+      "intentNodes": [
+        {"nodeId":"12:2","target":"/open-lab","state":"evidence-page-hierarchy","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"12:22","target":"EvidenceStatusChip","state":"source-status-card","copy":"preserve-supplied","dataOwner":"openlab-source"},
+        {"nodeId":"12:73","target":"OpenLabNavigation","state":"section-index","copy":"preserve-supplied","dataOwner":"design-fixture"},
+        {"nodeId":"12:120","target":"RelatedOpenLabSurface","state":"related-record-hierarchy","copy":"preserve-supplied","dataOwner":"openlab-source"}
+      ]
+    }
+  ]
+}

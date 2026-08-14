@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "oluk.program-component-registry.v1",
+  "status": "IMPLEMENTED_CODE_FIGMA_BACKFILL_IN_PROGRESS",
+  "runtimeAuthority": "NONE",
+  "components": [
+    {
+      "id": "evidence-status-chip-v2",
+      "export": "EvidenceStatusChip",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "state": ["verified-evidence", "source-reported", "source-only", "unavailable"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "GkC3KEt9V3RyG5K319iAUV", "nodeId": "3:66993" },
+      "figmaComponentNodeId": "1085:4390"
+    },
+    {
+      "id": "recommendation-card",
+      "export": "RecommendationCard",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "state": ["default", "selected", "added", "unavailable", "out-of-stock"] },
+      "responsive": { "mobileStrategy": "carousel", "touchTargetPx": 44, "horizontalScrollAllowed": true },
+      "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
+      "figmaComponentNodeId": "1082:4465"
+    },
+    {
+      "id": "restock-card",
+      "export": "RestockCard",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "state": ["active", "due-soon", "overdue", "paused"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
+      "figmaComponentNodeId": "1082:4564"
+    },
+    {
+      "id": "upsell-context-rail",
+      "export": "UpsellContextRail",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "view": ["recommendations", "restock"] },
+      "responsive": { "mobileStrategy": "collapse", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "cGrvE3Fyj3ThKuqPZqceYv", "nodeId": "4:3545" },
+      "figmaComponentNodeId": "1082:4667"
+    },
+    {
+      "id": "checkout-step-indicator",
+      "export": "CheckoutStepIndicator",
+      "file": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "variants": { "current": ["information", "delivery", "review", "payment", "confirmation"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "9jTrnlEWgbBpFi2idodVB2", "nodeId": "0:1" },
+      "figmaComponentNodeId": "1085:4511"
+    },
+    {
+      "id": "stack-outcome-card",
+      "export": "StackOutcomeCard",
+      "file": "sites/oluk-experience-lab/app/design-system/your-stack-builder.tsx",
+      "variants": { "product": ["rad-140"], "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "carousel", "touchTargetPx": 44, "horizontalScrollAllowed": true },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1247:15844" },
+      "figmaComponentNodeId": "1257:5160",
+      "figmaComponentNodeIds": { "desktop": "1257:5160", "mobile": "1259:5390" }
+    },
+    {
+      "id": "pdp-decision-hero",
+      "export": "PdpFirstFold",
+      "file": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+      "variants": { "product": ["mk-2866"], "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1155:30632" },
+      "figmaComponentNodeId": "1261:5390",
+      "figmaComponentNodeIds": { "desktop": "1261:5390", "mobile": "1261:5516" }
+    },
+    {
+      "id": "openlab-portal-hero",
+      "export": "OpenLabHeroLight",
+      "file": "sites/oluk-experience-lab/app/design-system/openlab-hero-light.tsx",
+      "variants": { "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "reorder", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "614:75995" },
+      "figmaComponentNodeId": "1263:5683",
+      "figmaComponentNodeIds": { "desktop": "1263:5683", "mobile": "1263:5814" }
+    },
+    {
+      "id": "checkout-lifecycle-shell",
+      "export": "TransactionPresentation",
+      "file": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
+      "variants": { "state": ["review"], "width": ["desktop", "mobile"] },
+      "responsive": { "mobileStrategy": "summary", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "BEPMuUt1HroEw8xjz8CVyN", "nodeId": "1200:34285" },
+      "figmaComponentNodeId": "1265:5804",
+      "figmaComponentNodeIds": { "desktop": "1265:5804", "mobile": "1265:6412" }
+    },
+    {
+      "id": "account-hub",
+      "export": "AccountHub",
+      "file": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "variants": { "surface": ["dashboard", "orders", "profile", "addresses", "loyalty", "subscriptions", "research-profile"] },
+      "responsive": { "mobileStrategy": "reorder", "touchTargetPx": 44, "horizontalScrollAllowed": false },
+      "figmaIntent": { "fileKey": "PEFpFuw4CWdFMRNtbEiUzS", "nodeId": "2:2" },
+      "figmaComponentNodeId": "1210:30946",
+      "figmaComponentNodeIds": { "desktop": "1210:30946", "mobile": "1239:2206" }
+    }
+  ],
+  "mappingLaw": "Code and canonical Figma components both exist. The listed node IDs are native Page 09 component authorities; route-level dual-reference approval remains independently gated."
+}

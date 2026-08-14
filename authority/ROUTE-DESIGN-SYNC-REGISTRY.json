@@ -1,0 +1,1714 @@
+{
+  "schemaVersion": "oluk.route-design-sync.v1",
+  "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+  "description": "Route-level native Figma references. A record is added only after the route has its own 1440 and 390 composition; module references do not substitute for a route pair.",
+  "records": [
+    {
+      "routeId": "open-lab-batch-lookup",
+      "path": "/open-lab/batch-lookup",
+      "moduleRecord": "openlab-tools",
+      "desktopNodeId": "1243:4055",
+      "mobileNodeId": "1243:4069",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/batch-lookup",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--batch-lookup--1440.png",
+          "sha256": "6ebf7c7041f29d4e008f1fc9fd77b0057c19b65733b597a7d3612f0c26064809"
+        },
+        "mobile": {
+          "screenshot": "open-lab--batch-lookup--390.png",
+          "sha256": "345d25f3feb5a4d0abc3f51eb4337692c1d26fec641cbd787edbc01548954540"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-methodology",
+      "path": "/open-lab/methodology",
+      "moduleRecord": "openlab-tools",
+      "desktopNodeId": "1243:4083",
+      "mobileNodeId": "1243:4097",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/methodology",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--methodology--1440.png",
+          "sha256": "947168a40db8d8db96bdd0d7cc300de6c20ada8d04d8a950b7ceab5ae8c39c60"
+        },
+        "mobile": {
+          "screenshot": "open-lab--methodology--390.png",
+          "sha256": "32563b8504d5f8d316e22b3796e5bb6334790e3d3b7acbe862b3d6f0fbaee44b"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-source-chain",
+      "path": "/open-lab/source-chain",
+      "moduleRecord": "openlab-tools",
+      "desktopNodeId": "1243:4111",
+      "mobileNodeId": "1243:4125",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/source-chain",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--source-chain--1440.png",
+          "sha256": "f2951d2cb549353500a00cbe37c23fcbf8b681f882d4a5dbe82dac2f79870ae8"
+        },
+        "mobile": {
+          "screenshot": "open-lab--source-chain--390.png",
+          "sha256": "91e8cb4839be2b02d9101a65829f25f8d53d2512a3c1971e8352dee3a6da3c62"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-compare",
+      "path": "/open-lab/compare",
+      "moduleRecord": "openlab-tools",
+      "desktopNodeId": "1243:4139",
+      "mobileNodeId": "1243:4153",
+      "mobileStrategy": "horizontal-scroll",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/compare",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--compare--1440.png",
+          "sha256": "4e7f68ed41d2dda8910301d074f37af0182898a854a68dbf019bb2401d40b591"
+        },
+        "mobile": {
+          "screenshot": "open-lab--compare--390.png",
+          "sha256": "ba24b79d392c2cf8aa8c281b303c67393321917c476361d4cafccdd92ec71344"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-evidence",
+      "path": "/open-lab/evidence",
+      "moduleRecord": "openlab-frontier-guide",
+      "desktopNodeId": "1243:4167",
+      "mobileNodeId": "1243:4181",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/evidence",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--evidence--1440.png",
+          "sha256": "16126c5796c36b201dc10d80a5bf4650597c6e1ac9c9a52cc76981c1aa2e637d"
+        },
+        "mobile": {
+          "screenshot": "open-lab--evidence--390.png",
+          "sha256": "83b77bad55aad1b4325cc06dfc97ad4d27aad46de29f361b133157de923f768a"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-compound-guide",
+      "path": "/open-lab/compound-guide",
+      "moduleRecord": "openlab-frontier-guide",
+      "desktopNodeId": "1243:4195",
+      "mobileNodeId": "1243:4209",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/compound-guide",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--compound-guide--1440.png",
+          "sha256": "fb8dc669d09b101f6b77135f0f5e64f386d4e6fa527c33cffab40e1467162834"
+        },
+        "mobile": {
+          "screenshot": "open-lab--compound-guide--390.png",
+          "sha256": "abd4677a8d3c58637cbae6809a9e50714aadca07668fa04bed733ae5ac824342"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-research-papers",
+      "path": "/open-lab/research-papers",
+      "moduleRecord": "openlab-frontier-guide",
+      "desktopNodeId": "1243:4223",
+      "mobileNodeId": "1243:4237",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/research-papers",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--research-papers--1440.png",
+          "sha256": "9fc0fbf42dff311260fa70f444d5c7c4c1ad1919919960f709872edf7b8b488e"
+        },
+        "mobile": {
+          "screenshot": "open-lab--research-papers--390.png",
+          "sha256": "b633cbcb77b50c8a082beb5df6c3c50d5e6b0dbd21c7ad3d6fded87645eb5188"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-lab-partner",
+      "path": "/open-lab/lab-partner",
+      "moduleRecord": "openlab-frontier-guide",
+      "desktopNodeId": "1243:4251",
+      "mobileNodeId": "1243:4265",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/lab-partner",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--lab-partner--1440.png",
+          "sha256": "afc85f7b5ffa4cfbcb9a97973778877ff460b54115e7b4658c91088afe053e89"
+        },
+        "mobile": {
+          "screenshot": "open-lab--lab-partner--390.png",
+          "sha256": "3023b0468e3c55ac86e20a531a23cc043846e4640ce88dfbddd5205f7e3f5fd3"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-dosing-calculator",
+      "path": "/open-lab/dosing-calculator",
+      "moduleRecord": "openlab-sidebar-workspace",
+      "desktopNodeId": "1243:4279",
+      "mobileNodeId": "1243:4293",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/dosing-calculator",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--dosing-calculator--1440.png",
+          "sha256": "fed6348c781fa48d565f8d4c94512d293d90097fa918c2b29d00815c73594465"
+        },
+        "mobile": {
+          "screenshot": "open-lab--dosing-calculator--390.png",
+          "sha256": "b718d6e9684a8598094768082239d27191e8e80f0cffd27e961178893f62e9c3"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-cycle-planner",
+      "path": "/open-lab/cycle-planner",
+      "moduleRecord": "openlab-sidebar-workspace",
+      "desktopNodeId": "1243:4307",
+      "mobileNodeId": "1243:4321",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/cycle-planner",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--cycle-planner--1440.png",
+          "sha256": "18d166a050b288e416a516e81829fd11991e1fd80e3433209e298941d81c92f5"
+        },
+        "mobile": {
+          "screenshot": "open-lab--cycle-planner--390.png",
+          "sha256": "b350e25c9f9404ff485390bc42ed78cb9358f9dd010e5348190fdf715e8dadea"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-case-studies",
+      "path": "/open-lab/case-studies",
+      "moduleRecord": "openlab-sidebar-workspace",
+      "desktopNodeId": "1243:4335",
+      "mobileNodeId": "1243:4349",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/case-studies",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--case-studies--1440.png",
+          "sha256": "6e51e4fc943a3d5784555052f4f36ae335b89ec30e6dddc46770e6247a26175d"
+        },
+        "mobile": {
+          "screenshot": "open-lab--case-studies--390.png",
+          "sha256": "053ea2d0a483dc86fa55c8bb8623b52df048f201fb671c2c91db20676824834b"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-glossary",
+      "path": "/open-lab/glossary",
+      "moduleRecord": "openlab-sidebar-workspace",
+      "desktopNodeId": "1243:4363",
+      "mobileNodeId": "1243:4377",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/glossary",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--glossary--1440.png",
+          "sha256": "06a7c2dd0e04eb6f8bd708ffec5e3b238702242c7a4c8febf7008ab29f281d7b"
+        },
+        "mobile": {
+          "screenshot": "open-lab--glossary--390.png",
+          "sha256": "b27ae1b7d15bbb257990b300525c6c37267da496acf8fcb289c32b067bb30450"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-coa-viewer",
+      "path": "/open-lab/coa/:id",
+      "moduleRecord": "openlab-document-viewer",
+      "desktopNodeId": "1243:4391",
+      "mobileNodeId": "1243:4405",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/coa/r28868",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--coa--r28868--1440.png",
+          "sha256": "38d4c5759189cc943fff11756fdc74d32ec5c8359af1ce5d7a9f4b34eca4fd1c"
+        },
+        "mobile": {
+          "screenshot": "open-lab--coa--r28868--390.png",
+          "sha256": "9ebe47965457fc346e4ff2e7b7a0d3fcf5fd7916c9f0be6dea0cd8ba84d0001e"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-report",
+      "path": "/open-lab/report/:batchId",
+      "moduleRecord": "openlab-document-viewer",
+      "desktopNodeId": "1243:4419",
+      "mobileNodeId": "1243:4433",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/report/registered-record",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--report--registered-record--1440.png",
+          "sha256": "7385e3a6c554def67e1546a2b74e215c29e490b9d2ea4765c7ba7c12cde73410"
+        },
+        "mobile": {
+          "screenshot": "open-lab--report--registered-record--390.png",
+          "sha256": "feb58b038b8a223b7abd3fea8d3509f68d8804c315dcd28905a073a6b8ca48a5"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "about",
+      "path": "/about",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4055",
+      "mobileNodeId": "1244:4062",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/about",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "about--1440.png",
+          "sha256": "c66ac1cd1ba071a01aab98dffe60dc307d8e03547b35d12903ad10efe5e1a20b"
+        },
+        "mobile": {
+          "screenshot": "about--390.png",
+          "sha256": "fdd6444b1188addbfcc4d2364a4e7ec9d4221d469b2eee23f861d1253166ef48"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "contact",
+      "path": "/contact",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4069",
+      "mobileNodeId": "1244:4076",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/contact",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "contact--1440.png",
+          "sha256": "2e461755fc88de942e84dcd4baedc18e26233e24c994cd4a11bfd99b451b0f3e"
+        },
+        "mobile": {
+          "screenshot": "contact--390.png",
+          "sha256": "ae757e7b4e0291c197a94c2882128d958f959ab56a510619a9f29fa51165b4f7"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "delivery",
+      "path": "/delivery",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4083",
+      "mobileNodeId": "1244:4090",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/delivery",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "delivery--1440.png",
+          "sha256": "494ce4ff755a18fb1f684d8b619ccddbf66d59c5b7ee6893c1486bace79a48a0"
+        },
+        "mobile": {
+          "screenshot": "delivery--390.png",
+          "sha256": "2d35f816872b4319c74255e843d7c17872a94e12ec09708f7786bbdef7e5245a"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "shipping-returns",
+      "path": "/shipping-returns",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4097",
+      "mobileNodeId": "1244:4104",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/shipping-returns",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "shipping-returns--1440.png",
+          "sha256": "86f5a8a4d5acff3d0e542d70102f6d6010be6d323858591b01cde89d88304675"
+        },
+        "mobile": {
+          "screenshot": "shipping-returns--390.png",
+          "sha256": "d1ca106dd94ae298a03d220e25a1627183db2232a45da93c926005e8fdb3bff8"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "faq",
+      "path": "/faq",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4111",
+      "mobileNodeId": "1244:4118",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/faq",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "faq--1440.png",
+          "sha256": "3fcd6bf77442ced0b45d69ef4e3b7c2669f6f86dfa211bf9fadccb3517d4e56e"
+        },
+        "mobile": {
+          "screenshot": "faq--390.png",
+          "sha256": "a40cacfcad621890032ff65c785e9ae1431ee418bfc12375fe2c2a8955554497"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "privacy",
+      "path": "/privacy",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4125",
+      "mobileNodeId": "1244:4132",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/privacy",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "privacy--1440.png",
+          "sha256": "d65c7c4777c0d4e6795456ed7f389d4a0cdaab75b3fcee2f12930656fee15efb"
+        },
+        "mobile": {
+          "screenshot": "privacy--390.png",
+          "sha256": "ca62f22f30b9fafc866241f392787762389b8f09ddee820dd82d70112f6f0e46"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "terms",
+      "path": "/terms",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4139",
+      "mobileNodeId": "1244:4146",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/terms",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "terms--1440.png",
+          "sha256": "a6a9b8b3f8309d7d8863618a133f1d6c0d9b39abdf440bfc10c609ece827ed6d"
+        },
+        "mobile": {
+          "screenshot": "terms--390.png",
+          "sha256": "67f7aa4c0db345197c54e8d27cdb553d5c1f347b06f1cbde8fee16655ab0d9c5"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "cookies",
+      "path": "/cookies",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4153",
+      "mobileNodeId": "1244:4160",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/cookies",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "cookies--1440.png",
+          "sha256": "e14414aa6814714242fb30880e479cf05a8a9633331f77c867496dbabe1886a6"
+        },
+        "mobile": {
+          "screenshot": "cookies--390.png",
+          "sha256": "d8e492d2cc8de4330c3c96fc3bf409bc2036f5daf09a5d9a62834fd18a075796"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "refunds",
+      "path": "/refunds",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4167",
+      "mobileNodeId": "1244:4174",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/refunds",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "refunds--1440.png",
+          "sha256": "6457e4f246e1c9f949db4d1d84a20d09ed7c8e8f9a64bf13b9ae30ef901cc89b"
+        },
+        "mobile": {
+          "screenshot": "refunds--390.png",
+          "sha256": "7bdb354813c84a63cd4e4d695ff10526dcfccc891932d824f4729a964f8afc3d"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "wholesale",
+      "path": "/wholesale",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4181",
+      "mobileNodeId": "1244:4188",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/wholesale",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "wholesale--1440.png",
+          "sha256": "660e1b11b09a7e867e04105a558b2020281f6f9c6eb59da2931ec4249f345757"
+        },
+        "mobile": {
+          "screenshot": "wholesale--390.png",
+          "sha256": "20736e0690e698ec692b9278346eca2a8d9fcf6783ed25d62b9216f0e45fd06b"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "international",
+      "path": "/international",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4195",
+      "mobileNodeId": "1244:4202",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/international",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "international--1440.png",
+          "sha256": "cda08f336f25534977ef6e044690f464c814438361265ca0c56d912905682465"
+        },
+        "mobile": {
+          "screenshot": "international--390.png",
+          "sha256": "57b93ffd859b6c5c3e6ea211badf4824357959b05b1da4ae983740ba48ec3aa9"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "gift-cards",
+      "path": "/gift-cards",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4209",
+      "mobileNodeId": "1244:4216",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/gift-cards",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "gift-cards--1440.png",
+          "sha256": "8cdebb145060d80f411b52981c33df92467d1a046614d2a9877ce998b35a56f1"
+        },
+        "mobile": {
+          "screenshot": "gift-cards--390.png",
+          "sha256": "0012ea74db998544613c3d04b80bfbad6f0f9519a3c4a30b9e63eb325e7bc1f6"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "sitemap",
+      "path": "/sitemap",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1244:4223",
+      "mobileNodeId": "1244:4230",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/sitemap",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "sitemap--1440.png",
+          "sha256": "d25367dec67fce5e87811f29d83a0f95215e6a4441bd50247e3b7d9e3f593b68"
+        },
+        "mobile": {
+          "screenshot": "sitemap--390.png",
+          "sha256": "b473a15f2a6b78142ec590d8f93146fbe838c8036b95e61343148b37f7ed5050"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "bag",
+      "path": "/bag",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4055",
+      "mobileNodeId": "1245:4063",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/bag",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "bag--1440.png",
+          "sha256": "2556dfd9ba0301760f3bd2b85641c8bf46f7c8a9ff7322ad3645f083f1af1a6c"
+        },
+        "mobile": {
+          "screenshot": "bag--390.png",
+          "sha256": "0493d78bcab1d87c066a8094beaa5002b37fdc2e061774dcfba9c2e3cdfa2e25"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-information",
+      "path": "/checkout/information",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4070",
+      "mobileNodeId": "1245:4078",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/information",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--information--1440.png",
+          "sha256": "fd308cc202bf631576a8d1a0a507bab641e55eecf9d26f703c8c4b47d6bcf366"
+        },
+        "mobile": {
+          "screenshot": "checkout--information--390.png",
+          "sha256": "5b5c3360454dbb6929290f4f2853c7f1a711af24c7b3c995499b136f4787c7e4"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-delivery",
+      "path": "/checkout/delivery",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4085",
+      "mobileNodeId": "1245:4093",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/delivery",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--delivery--1440.png",
+          "sha256": "ef1a5035015e67feabeb14cab7eaa950f0ad36c04720b2413db1b5bd8d63a4ce"
+        },
+        "mobile": {
+          "screenshot": "checkout--delivery--390.png",
+          "sha256": "7c26ceaad18ee1a993ff6087984dc73eaecde9591e3baa003c083fdc76a13189"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-review",
+      "path": "/checkout/review",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4100",
+      "mobileNodeId": "1245:4108",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/review",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--review--1440.png",
+          "sha256": "bb2f2b81e15c039048bd9174d140775dd989947d8d83c506e80fe8e8151680c3"
+        },
+        "mobile": {
+          "screenshot": "checkout--review--390.png",
+          "sha256": "477f3453ce8a78987885dbbe1eab67edfce40cbcc95c27b583115a3c4eac611a"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-payment",
+      "path": "/checkout/payment",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4115",
+      "mobileNodeId": "1245:4123",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/payment",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--payment--1440.png",
+          "sha256": "caaa541d8623ec70926c25e9b28b347c4a2c951ce5a874ea3f448f954faa9ce1"
+        },
+        "mobile": {
+          "screenshot": "checkout--payment--390.png",
+          "sha256": "8a8f4aab9bfc7045677cae4478fe89dde12778676edc835a25b97ec2e1deb1f4"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-processing",
+      "path": "/checkout/processing",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4130",
+      "mobileNodeId": "1245:4138",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/processing",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--processing--1440.png",
+          "sha256": "67c83eee25b17b50b984ef0512e50303682be31eaa32c2bc9f3f2b6855d4101c"
+        },
+        "mobile": {
+          "screenshot": "checkout--processing--390.png",
+          "sha256": "247a5ea7c7ff836b7151ef43f5e02fb977924a011802f68594cdbcea075acb43"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-confirmation",
+      "path": "/checkout/confirmation",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4145",
+      "mobileNodeId": "1245:4153",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/confirmation",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--confirmation--1440.png",
+          "sha256": "e160515af60afe460ae6ca6eaf32687ab69bdc3ba75a236caef7bc95b84e7cd1"
+        },
+        "mobile": {
+          "screenshot": "checkout--confirmation--390.png",
+          "sha256": "e98eff92fd55081c7838569d5760b8c5d997de5c01fcd3ccdd0a03590d9750a4"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-failure",
+      "path": "/checkout/failure",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4160",
+      "mobileNodeId": "1245:4168",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/failure",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--failure--1440.png",
+          "sha256": "bef8e683941c7a0aa34cf2581a165a18c9907026b7aa242eeff64a0ba098b0f1"
+        },
+        "mobile": {
+          "screenshot": "checkout--failure--390.png",
+          "sha256": "bbbf6db4faa252298476520b1f4fb44b5cc4a8106598225ea63e2236c14c5fc6"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-retry",
+      "path": "/checkout/retry",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4175",
+      "mobileNodeId": "1245:4183",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/retry",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--retry--1440.png",
+          "sha256": "0812d3459cfe3cb35e2d27bc5610fa658bf091362b2329f71f3aa9c6556dbb30"
+        },
+        "mobile": {
+          "screenshot": "checkout--retry--390.png",
+          "sha256": "4210cdf5ebaeb4e9980f61d000c1e53383a1da9dcda6290f10eae64a4f92a7dd"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-tracking",
+      "path": "/checkout/tracking",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4190",
+      "mobileNodeId": "1245:4198",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/tracking",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--tracking--1440.png",
+          "sha256": "2115f87a7acb5c7ff795dcdb9be74d8d5aa4a03534e3ee91dc7a07504b210784"
+        },
+        "mobile": {
+          "screenshot": "checkout--tracking--390.png",
+          "sha256": "33e273622f810a674a59b125fb3006ad607ea3e78c4b561e655315434aaa27d1"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-order-pay",
+      "path": "/checkout/order-pay",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4205",
+      "mobileNodeId": "1245:4213",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/order-pay",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--order-pay--1440.png",
+          "sha256": "f03a65e3bab58a60ad82b51fc68859bf44040db3902f50d2fa0ba31b077c4af4"
+        },
+        "mobile": {
+          "screenshot": "checkout--order-pay--390.png",
+          "sha256": "4619d959ceeea5085e4e0d94f4708ef3395a9594a1eb8e48e880d2889d55c1a8"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "checkout-payment-handoff",
+      "path": "/checkout/payment-handoff",
+      "moduleRecord": "checkout-lifecycle",
+      "desktopNodeId": "1245:4220",
+      "mobileNodeId": "1245:4228",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/checkout/payment-handoff",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "checkout--payment-handoff--1440.png",
+          "sha256": "01e3e564022436f642a3d6ec80a96f174f10f0a86099e5af3461c51fe9d8cab8"
+        },
+        "mobile": {
+          "screenshot": "checkout--payment-handoff--390.png",
+          "sha256": "4af5d69a029ee65a00d10a2a3fa6f7102c2eff20dedd66b7883a20318055dc47"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "order-success",
+      "path": "/order/success/:orderId?",
+      "moduleRecord": "post-purchase-surface",
+      "desktopNodeId": "1245:4235",
+      "mobileNodeId": "1245:4243",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/order/success/OL-10428",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "order--success--OL-10428--1440.png",
+          "sha256": "f17445ced82282fdc372a77771f39d202a593eaf511b967074d3dba0e8ad7c98"
+        },
+        "mobile": {
+          "screenshot": "order--success--OL-10428--390.png",
+          "sha256": "edaac4c9fc50da67a699fbcb6730dd8c6cd785455bb16cc2709fe24672ef1428"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "order-pending",
+      "path": "/order/pending/:orderId?",
+      "moduleRecord": "post-purchase-surface",
+      "desktopNodeId": "1245:4250",
+      "mobileNodeId": "1245:4258",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/order/pending/OL-10428",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "order--pending--OL-10428--1440.png",
+          "sha256": "0879ffff2f8f2e7688e1fac53e7e20b83bcc439f4c9290ebf44a39eb99e142c9"
+        },
+        "mobile": {
+          "screenshot": "order--pending--OL-10428--390.png",
+          "sha256": "5547c51e9cda70a1c3692f1b9f84afb651151013c940ccd13bb347d814716382"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "order-failed",
+      "path": "/order/failed/:orderId?",
+      "moduleRecord": "post-purchase-surface",
+      "desktopNodeId": "1245:4265",
+      "mobileNodeId": "1245:4273",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/order/failed/OL-10428",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "order--failed--OL-10428--1440.png",
+          "sha256": "3e30054330a874d475028cb063b7e5d8963114df15a75f8c53cedfc27468f06d"
+        },
+        "mobile": {
+          "screenshot": "order--failed--OL-10428--390.png",
+          "sha256": "14140929009b05d3a36e9ca98a1146790771609491e81516dd85e2b765aa7c33"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "order-cancelled",
+      "path": "/order/cancelled/:orderId?",
+      "moduleRecord": "post-purchase-surface",
+      "desktopNodeId": "1245:4280",
+      "mobileNodeId": "1245:4288",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/order/cancelled/OL-10428",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "order--cancelled--OL-10428--1440.png",
+          "sha256": "65d2d66309db92e7d51cfe94202483d1c2c065e9f3f7728d07938d1fea9a9755"
+        },
+        "mobile": {
+          "screenshot": "order--cancelled--OL-10428--390.png",
+          "sha256": "c9cdf2bba1ab10a9ff69e0d0850374c889550ba1bdef52e2f42567aa750d694d"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "order-tracking",
+      "path": "/order/tracking/:orderId",
+      "moduleRecord": "post-purchase-surface",
+      "desktopNodeId": "1245:4295",
+      "mobileNodeId": "1245:4303",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/order/tracking/OL-10428",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "order--tracking--OL-10428--1440.png",
+          "sha256": "4e096ae825118f5b11e8df56f15195bf55b1ddf83ab942dbca2039c37039a277"
+        },
+        "mobile": {
+          "screenshot": "order--tracking--OL-10428--390.png",
+          "sha256": "55873c026dd107cf51d48bf52ff477181d194b6a6f63c936b7788bde855aeb37"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "account",
+      "path": "/account",
+      "moduleRecord": "account-hub",
+      "desktopNodeId": "1245:4310",
+      "mobileNodeId": "1245:4317",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/account",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "account--1440.png",
+          "sha256": "2ab99343bee5e9566e3b893135dff36a126bc610df6acd06b1e223b0e360ab98"
+        },
+        "mobile": {
+          "screenshot": "account--390.png",
+          "sha256": "2733c28e29cdcb67da69e3574c5da397f7647682e265aa4f39df70ceaf6ffc84"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "account-orders",
+      "path": "/account/orders",
+      "moduleRecord": "account-hub",
+      "desktopNodeId": "1245:4323",
+      "mobileNodeId": "1245:4330",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/account/orders",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "account--orders--1440.png",
+          "sha256": "bda83313165b9296d7f20682763e54e47355e5f721dcae9b7e9a8866f9767d40"
+        },
+        "mobile": {
+          "screenshot": "account--orders--390.png",
+          "sha256": "e724eba783388e37a412d98967090277666c9b4b583ad0c14ce2fad5345a0e84"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "account-order",
+      "path": "/account/orders/:orderId",
+      "moduleRecord": "account-hub",
+      "desktopNodeId": "1245:4336",
+      "mobileNodeId": "1245:4343",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/account/orders/OL-10428",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "account--orders--OL-10428--1440.png",
+          "sha256": "3982fd733333d96a999e68a2e793f4f7bebde56823f2211ef01039155ab8f03c"
+        },
+        "mobile": {
+          "screenshot": "account--orders--OL-10428--390.png",
+          "sha256": "79a7cd9c14690d74723fe2eb65289936003c604f10eacb114891ec53d6aca8ea"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "account-profile",
+      "path": "/account/profile",
+      "moduleRecord": "account-hub",
+      "desktopNodeId": "1245:4349",
+      "mobileNodeId": "1245:4356",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/account/profile",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "account--profile--1440.png",
+          "sha256": "31abb5dbc64d172f5bc87482aa82d2056ba3a52b9e6a9fbd06bb35f520704117"
+        },
+        "mobile": {
+          "screenshot": "account--profile--390.png",
+          "sha256": "3d3e2b9d7532c71066a298a2b0e4e5dee54643b184e254282a8f378af965da25"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "account-addresses",
+      "path": "/account/addresses",
+      "moduleRecord": "account-hub",
+      "desktopNodeId": "1245:4362",
+      "mobileNodeId": "1245:4369",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/account/addresses",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "account--addresses--1440.png",
+          "sha256": "d56ae92c458c640a41365477cae55afec26a875a182a5f52728e118bc3361270"
+        },
+        "mobile": {
+          "screenshot": "account--addresses--390.png",
+          "sha256": "1e403ff26d655709f52fa58b67db92ae003f968a3a4d936d1685da0cee188348"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "home",
+      "path": "/",
+      "moduleRecord": "global-shell-navigation",
+      "desktopNodeId": "1247:15070",
+      "mobileNodeId": "1247:15147",
+      "mobileStrategy": "carousel",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "home--1440.png",
+          "sha256": "8b75a0c3743f716d6d801579a67290d810e4ba30eab3a3b8a44f40ab26c97a5f"
+        },
+        "mobile": {
+          "screenshot": "home--390.png",
+          "sha256": "9d5f481d6fd8fc9c2853eaa70ac4d91e86bc4ec624b501fd560883b03a4b5438"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "shop",
+      "path": "/shop",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15158",
+      "mobileNodeId": "1247:15170",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/shop",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "shop--1440.png",
+          "sha256": "dc9ef99893c932f2ea0082b79b95f9c480b009477fa478a8bdaea9df7ce9bb9c"
+        },
+        "mobile": {
+          "screenshot": "shop--390.png",
+          "sha256": "b063e9be8405e30e3af1e44776c36e4e3872226f386b7606a6635aabd3a3684f"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "collection",
+      "path": "/collections/:slug",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15178",
+      "mobileNodeId": "1247:15190",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/collections/featured",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "collections--featured--1440.png",
+          "sha256": "bed4f4cc5eacbc02d4f5587ffabd42b1876578bbb92919287e04fa4b1c8e19c0"
+        },
+        "mobile": {
+          "screenshot": "collections--featured--390.png",
+          "sha256": "ac5eb3b00f8102e8b6d1a86061f518a35fd0d053999efe5a26eec69446d98116"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "shop-goal",
+      "path": "/shop?goal=:goal",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15198",
+      "mobileNodeId": "1247:15210",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/shop?goal=build",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "shop?goal=build--1440.png",
+          "sha256": "258bab79d586e67b34db6817366ec1eb7143ce74bc664a1d5071711f38447844"
+        },
+        "mobile": {
+          "screenshot": "shop?goal=build--390.png",
+          "sha256": "fa0df5bf28630ca7014337071acae1ad6340ed8006c5f1d8af98e51ae047c6f9"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "family-sarms",
+      "path": "/collections/sarms",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15218",
+      "mobileNodeId": "1247:15230",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/collections/sarms",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "collections--sarms--1440.png",
+          "sha256": "d7ca60413803f008e11a0324a9a12f141fe0e95a258eab2bc8aadf09ea72681b"
+        },
+        "mobile": {
+          "screenshot": "collections--sarms--390.png",
+          "sha256": "ce7dd0939ff269a63d5845cfe1251e644c3667649bb389f9f5f89c38caf6f745"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "family-research-chemicals",
+      "path": "/collections/research-chemicals",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15238",
+      "mobileNodeId": "1247:15250",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/collections/research-chemicals",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "collections--research-chemicals--1440.png",
+          "sha256": "a273c0d61bc29ea8ff58beb4b18740621c9240b0d2c028387f1da2f4b748dbd1"
+        },
+        "mobile": {
+          "screenshot": "collections--research-chemicals--390.png",
+          "sha256": "8742305635a4312e2f6ca62052ceaf3a9ed5cc9a73b15acbaa926cf3ac1cc694"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "family-prohormones",
+      "path": "/collections/prohormones",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15258",
+      "mobileNodeId": "1247:15270",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/collections/prohormones",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "collections--prohormones--1440.png",
+          "sha256": "6ecd2b46d400dc361aad002516b6db0ccf2d155aa99c737cb33b63fea6184f5b"
+        },
+        "mobile": {
+          "screenshot": "collections--prohormones--390.png",
+          "sha256": "125b3151a0930d8d4bc437f4a92d83639b0a422b5e46679f56561df705aa0c5c"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "family-stacks",
+      "path": "/collections/stacks",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15278",
+      "mobileNodeId": "1247:15290",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/collections/stacks",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "collections--stacks--1440.png",
+          "sha256": "e7240f9154c9f47add92a453f10d8a0b7011439d7038b2645a06087e85b1d79b"
+        },
+        "mobile": {
+          "screenshot": "collections--stacks--390.png",
+          "sha256": "a1def8becaf5f4dfa323a48f708eddf09f6625ddb863e94776183622767614c0"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "search",
+      "path": "/search",
+      "moduleRecord": "catalogue-grid",
+      "desktopNodeId": "1247:15298",
+      "mobileNodeId": "1247:15310",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/search",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "search--1440.png",
+          "sha256": "935e320b9e06f1fc81ed54058b5b2035c16bcd3753b1fe9ed8044852af32b4a9"
+        },
+        "mobile": {
+          "screenshot": "search--390.png",
+          "sha256": "4b263c1a1dd5e49cc79d84d23fc57587c249de4bc489ef10ffba44c2a9008a3f"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "product-compare",
+      "path": "/compare",
+      "moduleRecord": "product-comparison",
+      "desktopNodeId": "1247:15318",
+      "mobileNodeId": "1247:15322",
+      "mobileStrategy": "horizontal-scroll",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/compare",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "compare--1440.png",
+          "sha256": "5a826eb1d5646e4d828b579ce76330a7f05207df7b835afaa93405d0fba44468"
+        },
+        "mobile": {
+          "screenshot": "compare--390.png",
+          "sha256": "b9a11b4c67ab911598dc8dd8ea623703699ea8b856023c7c85851af624813e65"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "product",
+      "path": "/product/:slug",
+      "moduleRecord": "frontier-product-hero",
+      "desktopNodeId": "1247:15326",
+      "mobileNodeId": "1247:15336",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/product/mk-2866",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "product--mk-2866--1440.png",
+          "sha256": "4041bb6b0c020f3b804046431930d67e8e171549ec94db4f53622e1f834c4611"
+        },
+        "mobile": {
+          "screenshot": "product--mk-2866--390.png",
+          "sha256": "7965567388dff67a98cf5eca07854ad65dc5afd820b022abdf2e3cd703df8a1d"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "reviews",
+      "path": "/reviews",
+      "moduleRecord": "product-narrative",
+      "desktopNodeId": "1247:15344",
+      "mobileNodeId": "1247:15354",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/reviews",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "reviews--1440.png",
+          "sha256": "b3c290c993f4b2ec6e40529a7248890ad70f6c9a894e8e3e0accedcb50f50813"
+        },
+        "mobile": {
+          "screenshot": "reviews--390.png",
+          "sha256": "dc4eb6215d661f55e89ea45f768dd69b746906dcc570a2bb0400ffcafb79c697"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "not-found",
+      "path": "/404",
+      "moduleRecord": "not-found-surface",
+      "desktopNodeId": "1247:15362",
+      "mobileNodeId": "1247:15385",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/404",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "404--1440.png",
+          "sha256": "b03f696d8122ea953b38df547f260f6c90467c4951140a389324b70fae43900f"
+        },
+        "mobile": {
+          "screenshot": "404--390.png",
+          "sha256": "55e4ed7ca195dc118765d282d7979f4b88ffc6ab9fd90f861605247562c09fc7"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-records",
+      "path": "/open-lab/records",
+      "moduleRecord": "openlab-record-suite",
+      "desktopNodeId": "1247:15408",
+      "mobileNodeId": "1247:15539",
+      "mobileStrategy": "horizontal-scroll",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/records",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--records--1440.png",
+          "sha256": "ee705d6b210edfae7b12f13d4540fa41aeec0dd13823b1d997c3848e475cb96a"
+        },
+        "mobile": {
+          "screenshot": "open-lab--records--390.png",
+          "sha256": "5bdd881392bbd09b19a336275b89afd62ad0680391acb77714b773985df22d1c"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-record",
+      "path": "/open-lab/records/:recordId",
+      "moduleRecord": "openlab-record-suite",
+      "desktopNodeId": "1247:15544",
+      "mobileNodeId": "1247:15675",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/records/source-bound-record",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--records--source-bound-record--1440.png",
+          "sha256": "7e855f2fc5ff374d88e23af1a07fd38eb4ab7598a3f40c1a054f6659fd3b2dc9"
+        },
+        "mobile": {
+          "screenshot": "open-lab--records--source-bound-record--390.png",
+          "sha256": "22d826a60b5b1ebff27e162a506b5c790735dcce729b735e28495381e3570d9c"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-compound",
+      "path": "/open-lab/compound/:slug",
+      "moduleRecord": "openlab-record-suite",
+      "desktopNodeId": "1247:15680",
+      "mobileNodeId": "1247:15811",
+      "mobileStrategy": "reorder",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/compound/mk-2866",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--compound--mk-2866--1440.png",
+          "sha256": "128654a5bd951dee1c64446755134ce7d7bb6125063114413f4cecd2cceac14d"
+        },
+        "mobile": {
+          "screenshot": "open-lab--compound--mk-2866--390.png",
+          "sha256": "cc72f9904120daeb8a91701dfb962e226cf2c5a6695981e9dae9e484b8174922"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-admin",
+      "path": "/open-lab/admin",
+      "moduleRecord": "openlab-sidebar-workspace",
+      "desktopNodeId": "1247:15816",
+      "mobileNodeId": "1247:15830",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/admin",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--admin--1440.png",
+          "sha256": "4739e3cbc35655a856d41f16c5a70e2353db3991241b9e0529a6e4752c06f716"
+        },
+        "mobile": {
+          "screenshot": "open-lab--admin--390.png",
+          "sha256": "bdd890ce8cf1d54931bf535aa9c6507eb8ba4478d5da0d990985903235b95e78"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-stack-builder",
+      "path": "/open-lab/stack-builder",
+      "moduleRecord": "stack-explorer",
+      "desktopNodeId": "1247:15844",
+      "mobileNodeId": "1247:15863",
+      "mobileStrategy": "carousel",
+      "status": "figma-backfilled",
+      "figmaValidation": {
+        "validatedAt": "2026-08-14T10:15:03Z",
+        "result": "structure-and-facts-verified",
+        "desktop": {
+          "nodeId": "1247:15844",
+          "fullCompositionVisible": true,
+          "usesCanonicalProductCommerceCardVertical": true
+        },
+        "mobile": {
+          "nodeId": "1247:15863",
+          "usesCanonicalProductCommerceCardVertical": true,
+          "rad140Strength": "8 MG"
+        },
+        "notes": "Outcome headings convey focus and position; inherited evidence label text is cleared so it cannot misrepresent the stack decision."
+      },
+      "siteReference": {
+        "resolvedPath": "/open-lab/stack-builder",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--stack-builder--1440.png",
+          "sha256": "87372bf358b0bff6daa8e7198ec75ae4780a7b6f50fbaef6b7274f84c40f7377"
+        },
+        "mobile": {
+          "screenshot": "open-lab--stack-builder--390.png",
+          "sha256": "c407ccb8adddf861078f3e965c8965cf8b7e63c08ff99105688ac468f7c08ec1"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "about-evidence-os",
+      "path": "/about/evidence-os",
+      "moduleRecord": "openlab-sidebar-workspace",
+      "desktopNodeId": "1247:15873",
+      "mobileNodeId": "1247:15887",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/about/evidence-os",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "about--evidence-os--1440.png",
+          "sha256": "d08937a8410a02510af92b64419072c55610e044b5b0d8acff11297d91c42ca4"
+        },
+        "mobile": {
+          "screenshot": "about--evidence-os--390.png",
+          "sha256": "0757ae449c17b965e8b159ce0fccb7bea3c41c3292dbb50cf2161ef4eb2419e5"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "lab-reports",
+      "path": "/lab-reports",
+      "moduleRecord": "openlab-document-viewer",
+      "desktopNodeId": "1247:15901",
+      "mobileNodeId": "1247:15915",
+      "mobileStrategy": "summary",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/lab-reports",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "lab-reports--1440.png",
+          "sha256": "8b128397725699785f97188d18ebbc141bc19178b35118bced2003c5e81ba195"
+        },
+        "mobile": {
+          "screenshot": "lab-reports--390.png",
+          "sha256": "ad261d7236923b4570e073b5fc0ed34bb1839c616067a70a14e9d1b6e786da24"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "legal-document",
+      "path": "/legal/:doc",
+      "moduleRecord": "support-surface",
+      "desktopNodeId": "1247:15929",
+      "mobileNodeId": "1247:15936",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/legal/privacy",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "legal--privacy--1440.png",
+          "sha256": "a371d31bfadb93947b7795581c422edf0ce713d9431eae5978d8821f5d3bf00e"
+        },
+        "mobile": {
+          "screenshot": "legal--privacy--390.png",
+          "sha256": "0bc1320fc39097ad96e14a33a83a712826352dc5ea8f9da5cd17e0932012c1f9"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "owner-review",
+      "path": "/review",
+      "moduleRecord": "global-shell-navigation",
+      "desktopNodeId": "1247:15943",
+      "mobileNodeId": "1247:15953",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/review",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "review--1440.png",
+          "sha256": "1fdf21a34a44258791f06e9db5a8581fa04e9a3104885bf00227492fae137ed4"
+        },
+        "mobile": {
+          "screenshot": "review--390.png",
+          "sha256": "8ab5344648a029ec77ec5607ca61ed2995b3db7ac5c01f7e9527e1d53f5434ea"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab",
+      "path": "/open-lab",
+      "moduleRecord": "openlab-record-suite",
+      "desktopNodeId": "1242:3886",
+      "mobileNodeId": "1242:4017",
+      "mobileStrategy": "horizontal-scroll",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--1440.png",
+          "sha256": "33421cd6eeba2ac607aeb48606b6f7662d6d984fde9a24cef7ed0377121dce3b"
+        },
+        "mobile": {
+          "screenshot": "open-lab--390.png",
+          "sha256": "cfed1cfbb19ea4034edeb30dcd868ff08b99b986a9df674bf78fb6710ecfbde1"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    },
+    {
+      "routeId": "open-lab-interaction-checker",
+      "path": "/open-lab/interaction-checker",
+      "moduleRecord": "openlab-frontier-planning",
+      "desktopNodeId": "1247:57126",
+      "mobileNodeId": "1247:57140",
+      "mobileStrategy": "collapse",
+      "status": "figma-backfilled",
+      "siteReference": {
+        "resolvedPath": "/open-lab/interaction-checker",
+        "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+        "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+        "desktop": {
+          "screenshot": "open-lab--interaction-checker--1440.png",
+          "sha256": "ae1cbdefcc6454f2fe6b93518ed1a37bc3ceffdeea6efbe17c2599ac3cad5d8e"
+        },
+        "mobile": {
+          "screenshot": "open-lab--interaction-checker--390.png",
+          "sha256": "77ab8440fe221d954b7e9cbe0584e2374aa3dd9a6aa33f3a675bc903b83e3c61"
+        },
+        "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json"
+      }
+    }
+  ],
+  "captureEvidence": {
+    "receipt": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-mf09-0be4aaa-resumable-20260814/mf09-four-width-receipt.json",
+    "receiptSha256": "eb9f55b97d36f3112d0784abe4275a8749da65d29b19b54ea00db68775601953",
+    "sourceCommit": "0be4aaa11ffa46f755445ec750dc1411bfaa5b00",
+    "sourceTreeHash": "fa4a75b7bbe04de73823b07ea0760b0bf7cb7025",
+    "reviewWidths": [
+      1440,
+      390
+    ],
+    "routeCount": 73,
+    "caseCount": 146,
+    "candidateState": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED"
+  }
+}

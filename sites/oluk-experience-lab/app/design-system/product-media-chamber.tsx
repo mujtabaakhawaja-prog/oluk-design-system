@@ -19,7 +19,7 @@ type MediaCustomProperties = CSSProperties & {
 };
 
 export type ProductMediaChamberProps = Readonly<{
-  media: ProductMediaAsset;
+  media: ProductMediaAsset | null;
   context?: ProductMediaContext;
   alt?: string;
   className?: string;
@@ -46,7 +46,10 @@ export function ProductMediaChamber({
   priority = false,
   sizes,
 }: ProductMediaChamberProps) {
-  const { desktop, tablet, mobile } = media.crops[context];
+  const crop = media?.crops[context];
+  const desktop = crop?.desktop ?? { objectPosition: "50% 50%", scale: 1, translateY: "0" };
+  const tablet = crop?.tablet ?? desktop;
+  const mobile = crop?.mobile ?? desktop;
   const customProperties: MediaCustomProperties = {
     "--oluk-media-object-position-desktop": desktop.objectPosition,
     "--oluk-media-object-position-tablet": tablet.objectPosition,
@@ -65,8 +68,8 @@ export function ProductMediaChamber({
       className={classes(styles.chamber, "oluk-product-media-chamber", className)}
       data-authored-layers="outer-gradient luminous-halo identity-pane contact-shelf product"
       data-context={context}
-      data-media-authority={media.authority}
-      data-media-id={media.id}
+      data-media-authority={media?.authority ?? "unpopulated-governed-chamber"}
+      data-media-id={media?.id ?? "unpopulated"}
       style={customProperties}
     >
       <span aria-hidden="true" className={classes(styles.halo, "oluk-product-media-chamber__halo")} />
@@ -78,17 +81,19 @@ export function ProductMediaChamber({
         aria-hidden="true"
         className={classes(styles.contactShelf, "oluk-product-media-chamber__contact-shelf")}
       />
-      <img
-        alt={decorative ? "" : (alt ?? media.alt)}
-        className={classes(styles.image, "oluk-product-media-chamber__image")}
-        decoding="async"
-        fetchPriority={priority ? "high" : "auto"}
-        height={media.height}
-        loading={priority ? "eager" : "lazy"}
-        sizes={sizes ?? defaultSizes[context]}
-        src={media.src}
-        width={media.width}
-      />
+      {media ? (
+        <img
+          alt={decorative ? "" : (alt ?? media.alt)}
+          className={classes(styles.image, "oluk-product-media-chamber__image")}
+          decoding="async"
+          fetchPriority={priority ? "high" : "auto"}
+          height={media.height}
+          loading={priority ? "eager" : "lazy"}
+          sizes={sizes ?? defaultSizes[context]}
+          src={media.src}
+          width={media.width}
+        />
+      ) : <span aria-hidden="true" className={styles.unpopulated} />}
     </div>
   );
 }

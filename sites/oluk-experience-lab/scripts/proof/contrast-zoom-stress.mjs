@@ -39,7 +39,10 @@ function settleExpression() {
         image.addEventListener("load", resolve, { once: true });
         image.addEventListener("error", resolve, { once: true });
       }))),
-      pause(10_000),
+      // All 1440/1024/768/390 assets are checked by the geometry matrix. This
+      // reflow audit still waits for load/decode, but does not add a ten-second
+      // timeout to every local route once the document has been traversed.
+      pause(2_000),
     ]);
     await pause(40);
     return true;
@@ -96,6 +99,7 @@ function layoutAuditExpression() {
 
 const baseUrl = new URL(option("base-url", process.env.PROOF_BASE_URL ?? "http://127.0.0.1:4173"));
 const outputDirectory = option("output") || await mkdtemp(path.join(tmpdir(), "oluk-contrast-zoom-"));
+const resumeFrom = option("resume-from");
 const routeFilter = option("routes");
 const requested = routeFilter ? new Set(routeFilter.split(",").map((value) => value.trim()).filter(Boolean)) : null;
 const routes = requested ? ROUTES.filter(({ path: routePath }) => requested.has(routePath)) : ROUTES;
@@ -111,11 +115,51 @@ const axeSource = await readFile(fileURLToPath(import.meta.resolve("axe-core/axe
 await mkdir(outputDirectory, { recursive: true });
 
 const chrome = await launchChrome();
-const results = [];
-let failed = false;
+let results = [];
+if (resumeFrom) {
+  const previous = JSON.parse(await readFile(resumeFrom, "utf8"));
+  results = (previous.results ?? []).filter((result) => result.status === "PASS");
+}
+const completedRoutes = new Set(results.map((result) => result.route));
+let failed = results.some((result) => result.status !== "PASS");
+
+function buildReceipt() {
+  const receiptPath = path.join(outputDirectory, "cx38-contrast-zoom-long-copy.json");
+  return {
+    schemaVersion: 1,
+    run: "CX-NEXT-038_CONTRAST_ZOOM_LONG_COPY",
+    candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    generatedAt: new Date().toISOString(),
+    baseUrl: baseUrl.href,
+    outputDirectory,
+    receiptPath,
+    coverage: "All customer routes by default; owner-only /review excluded unless --include-review is supplied.",
+    contrastEngine: "axe-core",
+    axeVersion: null,
+    zoomMethod: "Verify Chrome page scale 2, reset it, then apply deterministic 200% root text scaling for reflow inspection.",
+    longCopyMethod: "Inject an extended 131-character customer phrase into the first visible main text/action target.",
+    routeCount: auditedRoutes.length,
+    completedRouteCount: results.length,
+    passCount: results.filter(({ status }) => status === "PASS").length,
+    failCount: results.filter(({ status }) => status !== "PASS").length,
+    contrastViolationRuleCount: results.reduce((total, result) => total + (result.axe?.violations.length ?? 0), 0),
+    contrastIncompleteRuleCount: results.reduce((total, result) => total + (result.axe?.incomplete.length ?? 0), 0),
+    zoomOverflowRouteCount: results.filter((result) => (result.layout?.documentOverflowPx ?? 0) > 1).length,
+    longCopyFailureRouteCount: results.filter((result) => result.layout && !result.layout.markerPresent).length,
+    results,
+  };
+}
+
+async function checkpoint() {
+  await writeFile(
+    path.join(outputDirectory, "cx38-contrast-zoom-progress.json"),
+    `${JSON.stringify({ ...buildReceipt(), status: failed ? "FAIL" : "IN_PROGRESS" }, null, 2)}\n`,
+  );
+}
 
 try {
   for (const route of auditedRoutes) {
+    if (completedRoutes.has(route.path)) continue;
     const { client, targetId } = await createPage(chrome.port);
     const logs = [];
     const exceptions = [];
@@ -217,35 +261,16 @@ try {
       });
     } finally {
       await closePage(chrome.port, client, targetId);
+      await checkpoint();
     }
   }
 } finally {
   await chrome.close();
 }
 
-const receiptPath = path.join(outputDirectory, "cx38-contrast-zoom-long-copy.json");
-const receipt = {
-  schemaVersion: 1,
-  run: "CX-NEXT-038_CONTRAST_ZOOM_LONG_COPY",
-  candidateState: "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  generatedAt: new Date().toISOString(),
-  baseUrl: baseUrl.href,
-  outputDirectory,
-  receiptPath,
-  coverage: "All customer routes by default; owner-only /review excluded unless --include-review is supplied.",
-  contrastEngine: "axe-core",
-  axeVersion: (await import("axe-core/package.json", { with: { type: "json" } })).default.version,
-  zoomMethod: "Verify Chrome page scale 2, reset it, then apply deterministic 200% root text scaling for reflow inspection.",
-  longCopyMethod: "Inject an extended 131-character customer phrase into the first visible main text/action target.",
-  routeCount: auditedRoutes.length,
-  passCount: results.filter(({ status }) => status === "PASS").length,
-  failCount: results.filter(({ status }) => status !== "PASS").length,
-  contrastViolationRuleCount: results.reduce((total, result) => total + (result.axe?.violations.length ?? 0), 0),
-  contrastIncompleteRuleCount: results.reduce((total, result) => total + (result.axe?.incomplete.length ?? 0), 0),
-  zoomOverflowRouteCount: results.filter((result) => (result.layout?.documentOverflowPx ?? 0) > 1).length,
-  longCopyFailureRouteCount: results.filter((result) => result.layout && !result.layout.markerPresent).length,
-  results,
-};
+const receipt = buildReceipt();
+receipt.axeVersion = (await import("axe-core/package.json", { with: { type: "json" } })).default.version;
+const receiptPath = receipt.receiptPath;
 
 await writeFile(receiptPath, `${JSON.stringify(receipt, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify({

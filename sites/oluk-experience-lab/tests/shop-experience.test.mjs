@@ -6,17 +6,21 @@ const appRoot = new URL("../app/", import.meta.url);
 
 test("customer shell mirrors the production navigation contract without orphan static routes", async () => {
   const source = await readFile(new URL("experience-lab.tsx", appRoot), "utf8");
+  const headerSource = await readFile(new URL("design-system/site-header.tsx", appRoot), "utf8");
+  const navigationSource = await readFile(new URL("design-system/navigation-registry.ts", appRoot), "utf8");
   const { CUSTOMER_ROUTES, PRIMARY_NAV_ROUTE_KEYS } = await import("../app/design-system/site-route-data.mjs");
   assert.deepEqual(PRIMARY_NAV_ROUTE_KEYS, ["shop", "openlab", "lab-reports", "wholesale", "about"]);
   assert.deepEqual(
     PRIMARY_NAV_ROUTE_KEYS.map((key) => CUSTOMER_ROUTES.find((route) => route.key === key)?.path),
     ["/shop", "/open-lab", "/lab-reports", "/wholesale", "/about"],
   );
-  assert.match(source, /PRIMARY_NAV_ROUTE_KEYS\.map/);
-  assert.match(source, /getCustomerRoute\(key\)/);
+  assert.match(source, /<SiteHeader route=\{route\}/);
+  assert.match(headerSource, /NAVIGATION_TREE\.map/);
+  assert.match(navigationSource, /label: "Learn"/);
+  assert.match(navigationSource, /label: "Browse lab records"/);
 
   for (const [label, href] of [["Search", "/search"], ["Bag", "/bag"]]) {
-    assert.match(source, new RegExp(`href="${href}"[^>]*aria-label="${label}`, "i"));
+    assert.match(headerSource, new RegExp(`<a(?=[^>]*href="${href}")(?=[^>]*aria-label="${label}")[^>]*>`, "i"));
   }
 
   for (const pathname of [
@@ -33,11 +37,12 @@ test("customer shell mirrors the production navigation contract without orphan s
     assert.match(route, /<ExperienceLab\s+route=/, `${pathname} is a static presentation route`);
   }
 
-  for (const sourceName of ["SHOP_FAMILY_OPTIONS", "SHOP_FORM_OPTIONS", "SHOP_SERVINGS_OPTIONS", "SHOP_GOAL_OPTIONS", "SHOP_AVAILABILITY_OPTIONS"]) {
-    assert.match(source, new RegExp(sourceName), `${sourceName} is projected into header discovery`);
-  }
-  assert.match(source, /aria-label="Shop by product family"/);
-  assert.match(source, /aria-label="Refine shop discovery"/);
+  assert.match(navigationSource, /By family/);
+  assert.match(navigationSource, /By goal/);
+  assert.match(navigationSource, /Stacks & bundles/);
+  assert.match(headerSource, /<ContextualNavigation route=\{route\}/);
+  const contextualSource = await readFile(new URL("design-system/contextual-navigation.tsx", appRoot), "utf8");
+  assert.match(contextualSource, /aria-label=\{product \? "Product sections" : openLab \? "OpenLab sections" : "Shop categories"\}/);
 });
 
 test("Shop uses independent combinable facets and keeps the candidate non-live", async () => {
@@ -61,14 +66,16 @@ test("Shop uses independent combinable facets and keeps the candidate non-live",
   assert.match(discovery, /aria-live="polite"/);
   assert.match(discovery, /<fieldset>/g);
   assert.match(discovery, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
-  assert.match(discovery, /import \{ mk2866Fixture, type ProductMediaAsset \} from "\.\/product-fixtures"/);
-  assert.match(discovery, /product\.fixtureId === "mk-2866"[\s\S]*?<ProductCommerceCard[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="featured"/);
+  assert.match(discovery, /import \{ actualProductMedia, getFrontierProduct \} from "\.\/frontier-content"/);
+  assert.match(discovery, /mk2866Fixture,[\s\S]*?rad140Fixture,[\s\S]*?type ProductFixture,[\s\S]*?type ProductMediaAsset/);
+  assert.match(discovery, /product\.fixtureId === "rad-140"\) return rad140Fixture\.media/);
+  assert.match(discovery, /function catalogueFixture\(product: ShopTaxonomyFixtureProduct\): ProductFixture/);
+  assert.match(discovery, /product=\{catalogueFixture\(product\)\}[\s\S]*?variant="compact"/);
   assert.match(discovery, /className="shop-result-card shop-result-card-canonical"/);
-  assert.match(discovery, /function ShopDiscoveryResult/);
-  assert.match(discovery, /<ProductMediaChamber context="featured" media=\{taxonomyMedia\(product\)\} \/>/);
-  assert.match(discovery, /<StockPill className="shop-result-availability" state=\{stockState\(product\)\} \/>/);
+  assert.doesNotMatch(discovery, /function ShopDiscoveryResult/);
+  assert.doesNotMatch(discovery, /<ProductMediaChamber context="featured" media=\{taxonomyMedia\(product\)\} \/>/);
   assert.doesNotMatch(discovery, /function ShopResultCard|shop-result-orbit|<img/);
-  assert.match(discovery, /<button className=\{[^}]+\} disabled type="button">\{purchaseLabel\}<\/button>/);
+  assert.match(discovery, /<ProductCommerceCard/);
   assert.match(discovery, /product\.imageSrc/);
 });
 

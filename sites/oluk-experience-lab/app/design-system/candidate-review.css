@@ -246,8 +246,8 @@
 .oluk-candidate-qualitative dd { margin: var(--oluk-space-1) 0 0; color: var(--oluk-text-chip-value); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.02em; overflow-wrap: anywhere; }
 .oluk-candidate-purchase-line { display: flex; align-items: center; justify-content: space-between; gap: var(--oluk-space-3); }
 .oluk-candidate-purchase-line > strong { color: var(--oluk-cobalt); font-family: var(--oluk-font-display); font-size: var(--oluk-type-product); }
-.oluk-candidate-quantity { display: grid; grid-template-columns: repeat(3, var(--oluk-quantity-cell)); height: var(--oluk-quantity-height); border: var(--oluk-border-width) solid var(--oluk-border-card); border-radius: var(--oluk-radius-control); overflow: hidden; }
-.oluk-candidate-quantity > * { display: grid; place-items: center; color: var(--oluk-cobalt); font-size: var(--oluk-type-body-sm); font-weight: 500; }
+.oluk-candidate-quantity { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: min(100%, calc(3 * var(--oluk-quantity-cell))); min-width: 0; height: var(--oluk-quantity-height); border: var(--oluk-border-width) solid var(--oluk-border-card); border-radius: var(--oluk-radius-control); overflow: visible; }
+.oluk-candidate-quantity > * { display: grid; min-width: 0; place-items: center; color: var(--oluk-cobalt); font-size: var(--oluk-type-body-sm); font-weight: 500; }
 .oluk-candidate-quantity > * + * { border-left: var(--oluk-border-width) solid var(--oluk-border-card); }
 .oluk-candidate-quantity button { padding: 0; border: 0; background: transparent; opacity: 1; }
 .oluk-candidate-quantity output { color: var(--oluk-text-primary); }
@@ -413,4 +413,22 @@
   .oluk-candidate-root *,
   .oluk-candidate-root *::before,
   .oluk-candidate-root *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
+@media (max-width: 540px) {
+  .oluk-candidate-root button,
+  .oluk-candidate-root input,
+  .oluk-candidate-root select,
+  .oluk-candidate-root textarea,
+  .oluk-candidate-root summary,
+  .oluk-candidate-root a.button,
+  .oluk-candidate-root [role="tab"] {
+    min-height: 44px;
+  }
+
+  .oluk-candidate-root button,
+  .oluk-candidate-root summary,
+  .oluk-candidate-root [role="tab"] {
+    min-width: 44px;
+  }
 }

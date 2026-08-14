@@ -27,6 +27,7 @@ const files = {
   candidateCss: "app/design-system/candidate-review.css",
   cobaltDivider: "app/design-system/cobalt-divider.tsx",
   mediaChamber: "app/design-system/product-media-chamber.tsx",
+  siteHeader: "app/design-system/site-header.tsx",
 };
 
 const canonicalComponents = Object.freeze([
@@ -44,7 +45,7 @@ const canonicalComponents = Object.freeze([
   { role: "Dossier", figma: "750:182", customerDefinition: "function ProductDossier", candidateDefinition: null },
   { role: "AssuranceRail", figma: "752:167", customerDefinition: "function AssuranceRail", candidateDefinition: null },
   { role: "RelatedRail", figma: "753:18136", customerDefinition: "function RelatedRail", candidateDefinition: null },
-  { role: "SiteHeader", figma: "754:18224", customerDefinition: "function SiteHeader", candidateDefinition: null },
+  { role: "SiteHeader", figma: "1176:28930", customerDefinition: "function SiteHeader", candidateDefinition: null },
   { role: "SiteFooter", figma: "754:18226", customerDefinition: "function SiteFooter", candidateDefinition: null },
 ]);
 
@@ -68,7 +69,7 @@ const source = Object.fromEntries(
 const customerComponentSources = Object.fromEntries(
   Object.entries(source).filter(([key]) => [
     "assuranceRail", "metricRail", "productCard", "productHero", "productDossier",
-    "productStatus", "purchasePanel", "qualitativeChip", "relatedRail", "cobaltDivider", "mediaChamber",
+    "productStatus", "purchasePanel", "qualitativeChip", "relatedRail", "cobaltDivider", "mediaChamber", "siteHeader",
   ].includes(key)),
 );
 const customerSource = Object.values(customerComponentSources).join("\n") + `\n${source.experience}\n${source.customerRoutes}`;

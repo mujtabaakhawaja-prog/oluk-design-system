@@ -124,3 +124,66 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Refreshed the visual-baseline manifest from the final4 official receipt. All 124 screenshots exist and match SHA-256; they remain `CAPTURED_UNREVIEWED`, with `0` champion-reviewed.
 - Corrected the current Shop completion wording: the fully confirmed MK-2866 result instantiates the canonical Featured ProductCommerceCard, while incomplete catalogue fixtures remain truth-limited discovery projections rather than fabricated full commerce cards.
 - Sites remains a design/experience candidate with `runtimeAuthority: none`. Figma publication, official Code Connect, deployment, live commerce/evidence integration and MF++ remain blocked pending artifact-specific human review and separate authorization.
+
+## 2026-08-13 — Frontier Make bulk-run and product-render refresh
+
+- Reconciled the pre-correction visual audit against cumulative Sites baseline `0df3ad0`: LockedHero, PdpD, HeroLight, OptionB header, mountain-mark footer, and contained checkout trust rails are recorded as closed rather than repeated as pending work.
+- Preserved the supplied 2048×3072 RAD-140 source render and generated a 1024×1536 Sites delivery derivative; active hero, PDP, fixture, shop, taxonomy, and Make consumers now use the registered render instead of the retired design fixture. RAD-140 remains 8 MG.
+- Refreshed the frontier Make kit into six independent bulk-run batches with explicit canonical-component, responsive-compaction, actual-media, and handoff requirements.
+- Updated the Figma intent and bridge projections for current Page 09 `672:10`, OptionB header `1176:28930`, TrustEvidenceSpine promotion, correct footer `754:18226`, and the rebuild-required manual Your Stack object `1081:28849`.
+- Validation passes production build, typecheck, lint, `83/83` tests, `112/112` variables, `128` CSS properties, `71/71` provenance checks, and `290/290` bridge checks. The work remains unpublished and undeployed.
+
+## 2026-08-13 — Frontier Make Run 01 ready
+
+- Added a self-contained first Make run for the unresolved `1081:28849` Your Stack module, with a paste-ready prompt, interactive customer-facing TSX baseline, deterministic product data and three repository product renders.
+- The prompt produces three materially distinct relationships at 1440 and 390 and explicitly rejects the legacy node's local cards, chambers, trust blocks and actions.
+- Added rendered 1440×1800 and 390×2200 baseline references so the visual input remains inspectable when TSX attachment reading is unavailable.
+- Added executable tests for prompt structure, attachment existence, asset hashes, render-bound product facts, mobile snap behavior and selected/added state copy.
+- The standalone Make baseline bundles successfully; build, typecheck and lint pass; the repository suite advances to `84/84` passing tests.
+
+## 2026-08-14 — Frontier Make Run 01 bridge reconciliation
+
+- Confirmed that the later PR bridge summary and Run 01 describe the same pre-existing defect in manual Figma object `1081:28849`; the review note did not create a new post-run requirement.
+- Closed the only meaningful ambiguity in that note by locking ProductCommerceCard Vertical `743:50` as the desktop owner, allowing at most one Featured `743:281` promotion per direction, and using Compact `742:50` for one-decision-at-a-time mobile reflow.
+- Reserved Relation `743:520` for genuine horizontal micro-contexts and added executable rejection of any locally spliced card anatomy masquerading as a canonical variant.
+- Kept mega-menu Figma authoring in independent shell/navigation Batch A and kept the remaining WS/LEGACY inventory in triage; neither concern is allowed to contaminate the Your Stack creative prompt.
+
+## 2026-08-14 — Frontier Make Run 01 first-pass correction
+
+- Reviewed Figma Make surface `1200:34256` and current-product strip `1200:34285` from structured Figma context and exact screenshots; classified the pass `CORRECTION_REQUIRED · DO_NOT_PROMOTE`.
+- Removed internal programme/navigation language and replaced the route/proof-oriented proposition with a production stack-completion story and product-specific pairing copy.
+- Replaced availability/evidence persuasion inside the focused upsell module with stack-role and fit QualitativeChips; evidence and stock remain valid system components outside this module job.
+- Added `CORRECTION-PROMPT.md` for the existing Make session, including exact 1440/390 corrections and customer copy.
+- Corrected ProductMetricRail semantics to separate serving value from label and added deterministic short/medium/long text fitting to the canonical Sites component.
+- Refreshed the 1440 and 390 Make reference images and hashes after the copy, chip and metric corrections.
+
+## 2026-08-14 — Frontier Make Run 01 performance-commerce correction
+
+- Replaced the remaining compatibility and workflow language with an outcome-led stack proposition: strength and lean mass, heavyweight size and power, and growth and recovery.
+- Gave RAD-140, MENT and MK-677 distinct customer-facing jobs and direct product-specific reasons to add each product instead of using stock/evidence posture as upsell persuasion.
+- Reserved all-caps typography for bounded chips, pills, metric cells and compact status atoms; section labels, headings, body copy and actions now use sentence case.
+- Updated the Sites frontier stack copy, Make data, correction prompt, agent prompts, executable tests and exact 1440/390 reference proofs as one reconciled source package.
+
+## 2026-08-14 — Dual-reference expansion tranche 01
+
+- Established `DESIGN-SYNC-REGISTRY.json`, `Sites Sync — Modules` and `Sites Sync — Routes` so every remaining module can converge through paired Sites and editable native-Figma references.
+- Split all 73 ledger entries into independent design-maturity and runtime-readiness axes; only the approved Your Stack implementation is currently dual-reference-ready.
+- Refactored the rough Shop, OpenLab, mobile and contextual navigation objects into governed Page 09 relationships and mirrored the resulting global shell at 1440 and 390.
+- Backfilled the approved Your Stack composition as native 1440 and 390 Figma sections using canonical ProductCommerceCard instances and registered RAD-140, MENT and MK-677 renders.
+- Added a customer-proposition contract and strengthened visible-copy rejection so route, system, module, component, workspace, fixture, proof and presentation terminology cannot leak onto customer surfaces.
+- Added exact native-Figma links to Review Studio. All output remains human-review-required, unpublished and undeployed.
+
+## 2026-08-14 — 73-route native mirror reconciliation
+
+- Completed the live structural audit of Final-Design `Sites Sync — Routes` (`1214:51`): 156 native `SYNC / Route` frames form 78 desktop/mobile pairs, covering all 73 ledger entries and five intentional representative templates.
+- Updated all 73 route records to `dual-reference-ready`: every route now has a Sites composition, a native 1440/390 Final-Design mirror, and an explicit mobile strategy. This design disposition remains independent of `presentation-only`, `projection-ready`, and `authority-deferred` runtime status.
+- Recorded the audit in `FIGMA-SITES-SYNC-STRUCTURAL-AUDIT-20260814.md` and strengthened the ledger test so a runtime-deferred route can still have complete design treatment.
+- No route is promoted to `sync-verified` or `champion-approved` by this structural reconciliation; visual comparison, the 12 Review Studio decisions, publishing, and deployment remain separate gates.
+
+## 2026-08-14 — Frontier catalogue proposition and native PDP sync
+
+- Reworked the full 16-SKU customer proposition layer from generic or implementation-shaped language to clear product outcomes, formats and reasons to choose each item. The corrected Your Stack facts remain aligned across Sites and the content registry: RAD-140 `8 MG · 60 SERVINGS · £55`; MENT `20 MG · 30 SERVINGS · £49`; MK-677 `15 MG · 90 SERVINGS · £45`.
+- Updated the current editable native PDP desktop (`1262:24455`) and mobile (`1262:25038`) mirrors in Final-Design with the same Your Stack pricing overrides, including the featured RAD-140 card. No new local Figma components, token values or library publication were introduced.
+- Added exact rendered-PDP checks for each catalogue item plus customer-copy lint coverage. Validation: typecheck pass, tests `96/96`, customer-copy audit `70/70`.
+- Re-ran current-branch browser QA after the copy change: MF-09 geometry `292/292`, accessibility `146/146`, contrast/reflow/long-copy `70/70`, and interactions `35/35` including transaction zero-callback `8/8`.
+- This remains a bounded content/reference alignment. Recapture and visual comparison still precede `sync-verified`; champion review, Figma publication and deployment remain separate.

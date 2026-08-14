@@ -1,0 +1,744 @@
+{
+  "schemaVersion": "oluk.review-studio-payload.v1",
+  "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "generatedAt": "2026-08-14T09:24:18-04:00",
+  "sourceGitSha": "375677cf895a1ae2c03a4501809defb0facbf23a",
+  "sourceTreeHash": "1ac57191f2a5849362127807a3a597a3a524a014ce427a6a95da2b5e8c344713",
+  "designContractHash": "8b7df93286aadefb0af79e991db7a64e73302b7eacd643d61973054eb778a8f1",
+  "decisionCount": 12,
+  "families": [
+    {
+      "id": "commerce-discovery",
+      "label": "Commerce discovery",
+      "routes": [
+        "/",
+        "/shop",
+        "/shop/research-chemicals",
+        "/search"
+      ],
+      "representativeRoutes": [
+        "/",
+        "/shop",
+        "/shop/research-chemicals"
+      ],
+      "mobileStrategy": "collapse",
+      "mobileOrder": [
+        "navigation",
+        "hero",
+        "discovery",
+        "evidence",
+        "footer"
+      ],
+      "desktopOrder": [
+        "navigation",
+        "hero",
+        "discovery",
+        "evidence",
+        "footer"
+      ],
+      "hiddenOrDisclosed": [
+        "filter groups",
+        "secondary navigation"
+      ],
+      "horizontalScrollAllowed": true,
+      "scrollDepthWarningVh": 14,
+      "compactNavigationRequired": true
+    },
+    {
+      "id": "pdp-growth",
+      "label": "PDP and growth",
+      "routes": [
+        "/product/mk-2866",
+        "/product/rad-140",
+        "/product/mk-2866/continuation",
+        "/bundle-builder"
+      ],
+      "representativeRoutes": [
+        "/product/mk-2866",
+        "/product/rad-140",
+        "/bundle-builder"
+      ],
+      "mobileStrategy": "reorder",
+      "mobileOrder": [
+        "identity",
+        "media",
+        "purchase",
+        "evidence",
+        "details",
+        "continuation"
+      ],
+      "desktopOrder": [
+        "identity",
+        "media",
+        "purchase",
+        "details",
+        "evidence",
+        "continuation"
+      ],
+      "hiddenOrDisclosed": [
+        "secondary product detail"
+      ],
+      "horizontalScrollAllowed": false,
+      "scrollDepthWarningVh": 18,
+      "compactNavigationRequired": true
+    },
+    {
+      "id": "openlab",
+      "label": "OpenLab",
+      "routes": [
+        "/open-lab",
+        "/open-lab/records",
+        "/open-lab/compound/mk-2866",
+        "/open-lab/report/registered-record",
+        "/open-lab/batch-lookup",
+        "/open-lab/methodology",
+        "/open-lab/source-chain",
+        "/open-lab/compare",
+        "/open-lab/compound-guide"
+      ],
+      "representativeRoutes": [
+        "/open-lab",
+        "/open-lab/records",
+        "/open-lab/compound/mk-2866",
+        "/open-lab/batch-lookup",
+        "/open-lab/compound-guide"
+      ],
+      "mobileStrategy": "summary",
+      "mobileOrder": [
+        "identity",
+        "status",
+        "source action",
+        "facts",
+        "detail"
+      ],
+      "desktopOrder": [
+        "identity",
+        "facts",
+        "status",
+        "source action",
+        "detail"
+      ],
+      "hiddenOrDisclosed": [
+        "dense table columns",
+        "secondary methodology detail"
+      ],
+      "horizontalScrollAllowed": true,
+      "scrollDepthWarningVh": 18,
+      "compactNavigationRequired": true
+    },
+    {
+      "id": "checkout",
+      "label": "Checkout lifecycle",
+      "routes": [
+        "/bag",
+        "/checkout/information",
+        "/checkout/delivery",
+        "/checkout/review",
+        "/checkout/payment",
+        "/checkout/payment-details",
+        "/checkout/processing",
+        "/checkout/confirmation",
+        "/checkout/tracking",
+        "/checkout/receipt",
+        "/checkout/refund"
+      ],
+      "representativeRoutes": [
+        "/bag",
+        "/checkout/review",
+        "/checkout/payment",
+        "/checkout/confirmation",
+        "/checkout/refund"
+      ],
+      "mobileStrategy": "summary",
+      "mobileOrder": [
+        "progress",
+        "primary task",
+        "order summary",
+        "assurance"
+      ],
+      "desktopOrder": [
+        "progress",
+        "primary task",
+        "order summary",
+        "assurance"
+      ],
+      "hiddenOrDisclosed": [
+        "completed step detail",
+        "secondary recommendation detail"
+      ],
+      "horizontalScrollAllowed": false,
+      "scrollDepthWarningVh": 12,
+      "compactNavigationRequired": true
+    },
+    {
+      "id": "support-account",
+      "label": "Support and account",
+      "routes": [
+        "/about",
+        "/faq-help-centre",
+        "/account",
+        "/account/dashboard",
+        "/account/loyalty",
+        "/account/subscriptions",
+        "/account/research-profile",
+        "/contact",
+        "/delivery",
+        "/privacy",
+        "/terms",
+        "/wholesale"
+      ],
+      "representativeRoutes": [
+        "/about",
+        "/faq-help-centre",
+        "/account/dashboard",
+        "/account/loyalty"
+      ],
+      "mobileStrategy": "collapse",
+      "mobileOrder": [
+        "identity",
+        "primary content",
+        "related actions",
+        "footer"
+      ],
+      "desktopOrder": [
+        "identity",
+        "primary content",
+        "related actions",
+        "footer"
+      ],
+      "hiddenOrDisclosed": [
+        "secondary navigation groups"
+      ],
+      "horizontalScrollAllowed": false,
+      "scrollDepthWarningVh": 12,
+      "compactNavigationRequired": true
+    },
+    {
+      "id": "owner-surfaces",
+      "label": "Owner surfaces",
+      "routes": [
+        "/open-lab/admin",
+        "/review"
+      ],
+      "representativeRoutes": [
+        "/open-lab/admin",
+        "/review"
+      ],
+      "mobileStrategy": "collapse",
+      "mobileOrder": [
+        "owner status",
+        "primary review",
+        "supporting evidence"
+      ],
+      "desktopOrder": [
+        "owner status",
+        "primary review",
+        "supporting evidence"
+      ],
+      "hiddenOrDisclosed": [
+        "supporting proof detail"
+      ],
+      "horizontalScrollAllowed": true,
+      "scrollDepthWarningVh": 20,
+      "compactNavigationRequired": false
+    }
+  ],
+  "moduleGroups": [
+    {
+      "id": "shell-wayfinding",
+      "label": "Shell and wayfinding",
+      "exports": [
+        "SiteHeader",
+        "SiteFooter"
+      ],
+      "dataOwner": "shopper-ssr-shell-projection",
+      "runtimeExclusions": [
+        "identity mutation",
+        "cart mutation"
+      ],
+      "mounts": [
+        "all routes"
+      ],
+      "emptyState": "navigation remains available",
+      "unavailableState": "bag count defaults to unavailable/zero presentation",
+      "errorState": "no customer runtime error inferred",
+      "mobileStrategy": "collapse",
+      "figmaIntent": "1176:28930 / 754:18226"
+    },
+    {
+      "id": "commerce-decision",
+      "label": "Commerce decision",
+      "exports": [
+        "ProductHero",
+        "ProductNarrative",
+        "ProductContinuation",
+        "ProductDecisionHero",
+        "PurchasePanel",
+        "ProductCommerceCard",
+        "ProductDossier"
+      ],
+      "dataOwner": "frontier-product-content",
+      "runtimeExclusions": [
+        "browser mutation",
+        "price inference"
+      ],
+      "mounts": [
+        "/product/:slug",
+        "/shop"
+      ],
+      "emptyState": "product route unavailable",
+      "unavailableState": "disabled purchase action",
+      "errorState": "no substituted product",
+      "mobileStrategy": "reorder",
+      "figmaIntent": "4:3578 / 766:50"
+    },
+    {
+      "id": "growth-continuation",
+      "label": "Growth and continuation",
+      "exports": [
+        "StackExplorer",
+        "GrowthModules",
+        "RecommendationCard",
+        "RestockCard",
+        "UpsellContextRail"
+      ],
+      "dataOwner": "frontier-stack-content",
+      "runtimeExclusions": [
+        "recommendation mutation",
+        "discount authority",
+        "inventory authority"
+      ],
+      "mounts": [
+        "/product/:slug",
+        "/bag",
+        "/checkout/confirmation",
+        "/account/dashboard"
+      ],
+      "emptyState": "rail omitted",
+      "unavailableState": "disabled explicit unavailable card",
+      "errorState": "no substitute recommendation",
+      "mobileStrategy": "carousel",
+      "figmaIntent": "2:257 / 4:3578"
+    },
+    {
+      "id": "evidence-openlab",
+      "label": "Evidence and OpenLab",
+      "exports": [
+        "EvidenceStatusChip",
+        "UnavailableEvidencePanel",
+        "AnalyteTable",
+        "CustodyTimeline"
+      ],
+      "dataOwner": "openlab-source",
+      "runtimeExclusions": [
+        "invented evidence",
+        "inferred pass",
+        "reconstructed chromatogram"
+      ],
+      "mounts": [
+        "/open-lab/*",
+        "/product/:slug"
+      ],
+      "emptyState": "explicit no-result or no-record state",
+      "unavailableState": "Unavailable label and source action disabled",
+      "errorState": "fail closed",
+      "mobileStrategy": "summary",
+      "figmaIntent": "12:2 / 12:22"
+    },
+    {
+      "id": "checkout-lifecycle",
+      "label": "Checkout lifecycle",
+      "exports": [
+        "CheckoutLifecycle",
+        "CheckoutStepIndicator",
+        "CurrencyEqualityLock",
+        "LifecycleAmountRecord"
+      ],
+      "dataOwner": "frontier-checkout-content",
+      "runtimeExclusions": [
+        "form submission",
+        "payment SDK",
+        "provider callback",
+        "local order mutation"
+      ],
+      "mounts": [
+        "/bag",
+        "/checkout/*"
+      ],
+      "emptyState": "unknown remains unknown",
+      "unavailableState": "disabled static action",
+      "errorState": "explicit failure/retry presentation",
+      "mobileStrategy": "summary",
+      "figmaIntent": "9:9416 / 9:9401 / 9:9410"
+    }
+  ],
+  "governance": {
+    "id": "governance-mobile",
+    "label": "Governance and mobile compaction",
+    "touchTargetPx": 44,
+    "lightModeOnly": true,
+    "canonicalPdp": "/product/:slug",
+    "canonicalOpenLab": "/open-lab",
+    "ownerOnlyIsAuthenticated": false,
+    "contentAuthority": "PRESERVE_APPROVED_SUPPLIED_CONTENT",
+    "approvedTrustStatements": [
+      "Third-Party Tested"
+    ],
+    "prohibition": "NEWLY_INVENTED_MATERIAL_ONLY"
+  },
+  "routeLedger": {
+    "routeCount": 73,
+    "maturityCounts": {
+      "SCAFFOLD": 0,
+      "SHAPE_COMPLETE": 48,
+      "SOURCE_BOUND": 1,
+      "INTERACTIVE": 2,
+      "REVIEW_READY": 18,
+      "DEFERRED_BY_AUTHORITY": 4
+    }
+  },
+  "componentRegistry": {
+    "count": 10,
+    "runtimeAuthority": "NONE"
+  },
+  "figmaIntent": {
+    "sourceCount": 7,
+    "status": "INTENT_AND_COMPONENT_PROVENANCE_NOT_RUNTIME_AUTHORITY"
+  },
+  "designSync": {
+    "fileKey": "BEPMuUt1HroEw8xjz8CVyN",
+    "modulesPage": {
+      "name": "Sites Sync — Modules",
+      "nodeId": "1214:50"
+    },
+    "routesPage": {
+      "name": "Sites Sync — Routes",
+      "nodeId": "1214:51"
+    },
+    "records": [
+      {
+        "id": "global-shell-navigation",
+        "codeExport": "SiteHeader",
+        "consumingRoutes": [
+          "/*"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1214:52",
+        "mobileNodeId": "1214:127"
+      },
+      {
+        "id": "frontier-product-hero",
+        "codeExport": "PdpFirstFold",
+        "consumingRoutes": [
+          "/product/:slug"
+        ],
+        "mobileStrategy": "summary",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1262:24455",
+        "mobileNodeId": "1262:25038"
+      },
+      {
+        "id": "product-narrative",
+        "codeExport": "ProductNarrative",
+        "consumingRoutes": [
+          "/product/:slug"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1235:2269",
+        "mobileNodeId": "1235:2283"
+      },
+      {
+        "id": "product-continuation",
+        "codeExport": "YourStackBuilder",
+        "consumingRoutes": [
+          "/product/:slug",
+          "/bag",
+          "/checkout/confirmation",
+          "/account"
+        ],
+        "mobileStrategy": "carousel",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239"
+      },
+      {
+        "id": "stack-explorer",
+        "codeExport": "YourStackBuilder",
+        "consumingRoutes": [
+          "/bundle-builder",
+          "/product/:slug",
+          "/bag",
+          "/open-lab/stack-builder"
+        ],
+        "mobileStrategy": "carousel",
+        "status": "sites-built-figma-mirror-rebuild-required",
+        "desktopNodeId": "1247:15844",
+        "mobileNodeId": "1247:15863"
+      },
+      {
+        "id": "catalogue-grid",
+        "codeExport": "ShopDiscovery",
+        "consumingRoutes": [
+          "/shop",
+          "/shop/:family",
+          "/collections/:slug",
+          "/search"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1240:2293",
+        "mobileNodeId": "1240:2737"
+      },
+      {
+        "id": "product-comparison",
+        "codeExport": "ProductCommerceCard.Relation",
+        "consumingRoutes": [
+          "/compare"
+        ],
+        "mobileStrategy": "horizontal-scroll",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1231:1501",
+        "mobileNodeId": "1231:1861"
+      },
+      {
+        "id": "support-surface",
+        "codeExport": "SupportSurface",
+        "consumingRoutes": [
+          "/shipping-returns",
+          "/faq",
+          "/international",
+          "/gift-cards",
+          "/legal/:doc",
+          "/cookies",
+          "/refunds",
+          "/sitemap"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1232:2213",
+        "mobileNodeId": "1232:2220"
+      },
+      {
+        "id": "openlab-record-suite",
+        "codeExport": "OpenLabRegistryArchive",
+        "consumingRoutes": [
+          "/open-lab",
+          "/open-lab/records",
+          "/open-lab/compound/:slug",
+          "/open-lab/report/:batchId"
+        ],
+        "mobileStrategy": "horizontal-scroll",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1242:3886",
+        "mobileNodeId": "1242:4017"
+      },
+      {
+        "id": "openlab-tools",
+        "codeExport": "OpenLabToolComposition",
+        "consumingRoutes": [
+          "/open-lab/batch-lookup",
+          "/open-lab/methodology",
+          "/open-lab/source-chain",
+          "/open-lab/compare"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1235:2297",
+        "mobileNodeId": "1235:2311"
+      },
+      {
+        "id": "openlab-product-experience",
+        "codeExport": "OpenLabProductExperience",
+        "consumingRoutes": [
+          "/open-lab/compound/:slug",
+          "/open-lab/report/:batchId",
+          "/product/:slug"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "sites-built-figma-mirror-rebuild-required",
+        "desktopNodeId": "PENDING_NATIVE_MIRROR",
+        "mobileNodeId": "PENDING_NATIVE_MIRROR"
+      },
+      {
+        "id": "openlab-frontier-guide",
+        "codeExport": "OpenLabFrontierGuide",
+        "consumingRoutes": [
+          "/open-lab/evidence",
+          "/open-lab/compound-guide",
+          "/open-lab/research-papers",
+          "/open-lab/lab-partner"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1235:2325",
+        "mobileNodeId": "1235:2339"
+      },
+      {
+        "id": "openlab-frontier-planning",
+        "codeExport": "YourStackBuilder",
+        "consumingRoutes": [
+          "/open-lab/stack-builder",
+          "/open-lab/dosing-calculator",
+          "/open-lab/cycle-planner",
+          "/open-lab/interaction-checker"
+        ],
+        "mobileStrategy": "carousel",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1216:874",
+        "mobileNodeId": "1216:1239"
+      },
+      {
+        "id": "openlab-sidebar-workspace",
+        "codeExport": "OpenLabSidebarWorkspace",
+        "consumingRoutes": [
+          "/open-lab/dosing-calculator",
+          "/open-lab/cycle-planner",
+          "/open-lab/case-studies",
+          "/open-lab/glossary"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1235:2353",
+        "mobileNodeId": "1235:2367"
+      },
+      {
+        "id": "openlab-document-viewer",
+        "codeExport": "OpenLabDocumentViewer",
+        "consumingRoutes": [
+          "/open-lab/coa/:id",
+          "/open-lab/report/:batchId"
+        ],
+        "mobileStrategy": "summary",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1235:2381",
+        "mobileNodeId": "1235:2395"
+      },
+      {
+        "id": "checkout-lifecycle",
+        "codeExport": "TransactionPresentation",
+        "consumingRoutes": [
+          "/bag",
+          "/checkout/:stage"
+        ],
+        "mobileStrategy": "summary",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1237:635",
+        "mobileNodeId": "1237:1084"
+      },
+      {
+        "id": "post-purchase-surface",
+        "codeExport": "PostPurchaseSurface",
+        "consumingRoutes": [
+          "/order/success/:orderId?",
+          "/order/pending/:orderId?",
+          "/order/failed/:orderId?",
+          "/order/cancelled/:orderId?",
+          "/order/tracking/:orderId"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1237:1513",
+        "mobileNodeId": "1237:1821"
+      },
+      {
+        "id": "account-hub",
+        "codeExport": "AccountHub",
+        "consumingRoutes": [
+          "/account/:surface"
+        ],
+        "mobileStrategy": "reorder",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1239:2088",
+        "mobileNodeId": "1239:2206"
+      },
+      {
+        "id": "faq-help",
+        "codeExport": "SupportContent",
+        "consumingRoutes": [
+          "/faq-help-centre",
+          "/about",
+          "/product/:slug"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1235:2409",
+        "mobileNodeId": "1235:2423"
+      },
+      {
+        "id": "not-found-surface",
+        "codeExport": "NotFound",
+        "consumingRoutes": [
+          "/404"
+        ],
+        "mobileStrategy": "collapse",
+        "status": "figma-backfilled",
+        "desktopNodeId": "1234:2269",
+        "mobileNodeId": "1234:2292"
+      }
+    ]
+  },
+  "openLabExperience": {
+    "schemaVersion": "oluk.openlab-product-experience.v1",
+    "sourceContract": "OpenLabPublicProjection.v2",
+    "sourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
+    "product": "mk-2866",
+    "chartPolicy": "numeric bars and source-owned tabular values only",
+    "figmaMirror": "PENDING_NATIVE_MIRROR"
+  },
+  "visualEvidence": {
+    "routeCount": 73,
+    "widthCount": 4,
+    "reviewed": 0,
+    "capturedUnreviewed": 116,
+    "pending": 176,
+    "disposition": "MACHINE_EVIDENCE_NOT_CHAMPION_REVIEW_WORKLOAD"
+  },
+  "proofs": [
+    {
+      "id": "static",
+      "status": "PASS",
+      "detail": "Build, typecheck, lint and static test suite"
+    },
+    {
+      "id": "tokens",
+      "status": "PASS",
+      "detail": "112 governed variables and 128 CSS properties"
+    },
+    {
+      "id": "provenance",
+      "status": "PASS",
+      "detail": "Canonical component provenance"
+    },
+    {
+      "id": "bridge",
+      "status": "PASS",
+      "detail": "Repository-owned mapping bridge"
+    },
+    {
+      "id": "four-width",
+      "status": "PASS",
+      "detail": "40 routes at 1440, 1024, 768 and 390"
+    },
+    {
+      "id": "accessibility",
+      "status": "PASS",
+      "detail": "Automated accessibility smoke"
+    },
+    {
+      "id": "contrast",
+      "status": "PASS",
+      "detail": "Contrast, 200% reflow and long-copy"
+    },
+    {
+      "id": "interactions",
+      "status": "PASS",
+      "detail": "Interactions and static transaction boundary"
+    }
+  ],
+  "manualReview": {
+    "axeIncompleteCount": 38,
+    "classification": "MANUAL_REVIEW_REQUIRED_NOT_VIOLATION"
+  }
+}

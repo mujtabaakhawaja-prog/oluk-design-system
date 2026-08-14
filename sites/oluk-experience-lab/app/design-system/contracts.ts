@@ -80,7 +80,7 @@ export const rad140Specimen: ReviewFixture<ProductSpecimen> = {
     servings: "60 SERVINGS",
     purity: ">99%",
     price: "£46",
-    image: "/assets/products/rad-140/front-design-fixture.png",
+    image: "/assets/products/rad-140/front.png",
   },
 };
 
@@ -187,7 +187,7 @@ export const figmaReviewLinks = {
   assurance: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=752-167",
   dossier: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=750-182",
   relatedRail: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=753-18136",
-  siteHeader: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=754-18224",
+  siteHeader: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=1176-28930",
   trustRail: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=754-18225",
   siteFooter: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=754-18226",
   review1440: "https://www.figma.com/design/BEPMuUt1HroEw8xjz8CVyN/Final-Design?node-id=737-50",

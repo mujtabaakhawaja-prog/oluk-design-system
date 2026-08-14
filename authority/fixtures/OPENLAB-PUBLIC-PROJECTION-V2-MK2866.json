@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "contract": "OpenLabPublicProjection.v2",
+  "initialRecordCount": 5,
+  "totalLabRecordCount": 15,
+  "filteredLabRecordCount": 15,
+  "stats": {
+    "labRecords": { "value": 15, "label": "LAB RECORDS", "basis": "customer_lab_record_register", "stateCounts": { "current": 15, "historical": 0, "pending": 0, "unavailable": 0 } },
+    "sarmsAveragePurity": { "value": 99.5, "displayValue": "99.5%", "unit": "%", "reportCount": 7, "purityEligibleReportCount": 7, "category": "SARMS", "policy": "report_mean_then_equal_report_weight", "thresholdPolicy": "numeric_lower_bound", "displayPrecision": 1, "maximumReportedValuePrecision": 2 },
+    "failures": { "value": 0, "label": "FAILURES", "policy": "fixed_zero_all_frontend_projections" }
+  },
+  "records": [
+    {
+      "labRecordId": "report-mk-2866-ol2201-2",
+      "reportId": "28868",
+      "productSlug": "mk-2866",
+      "productName": "MK-2866 (OSTARINE)",
+      "batchCode": "OL2201",
+      "compoundName": "MK-2866",
+      "analytes": [{ "compoundName": "MK-2866", "purity": { "displayValue": ">99%", "comparator": "greater_than" }, "concentration": { "value": 16.02, "displayValue": "16.02 mg", "unit": "mg", "labelClaimValue": 15, "labelClaimDisplayValue": "15 mg label claim" } }],
+      "reportPurityDisplayValue": ">99%",
+      "bindingState": "current",
+      "availabilityState": "available",
+      "compiledAction": { "label": "Open Lab Record", "href": "/lab-reports?record=report-mk-2866-ol2201-2", "enabled": true },
+      "sourceDrawer": { "reportId": "28868", "labName": "Janoshik", "batchCode": "OL2201", "compoundName": "MK-2866", "testedAt": "2023-04-16", "verificationStatus": "reported", "reportUrl": "https://olympuslabs.uk/test-reports/mk-2866-ol2201-2/" }
+    }
+  ]
+}
