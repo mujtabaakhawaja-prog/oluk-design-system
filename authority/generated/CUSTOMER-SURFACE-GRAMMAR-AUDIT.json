@@ -4,11 +4,11 @@
   "currentState": "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
   "debt": {
     "policy": "MONOTONIC_DECREASE",
-    "sourceFindingCount": 28,
-    "untouchedRouteViolationCount": 518
+    "sourceFindingCount": 22,
+    "untouchedRouteViolationCount": 487
   },
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 524,
+  "looseCopyGroupCount": 493,
   "routeRefactorCount": 44,
   "routes": [
     {
@@ -354,7 +354,7 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 18,
+      "containedCopyGroupCount": 22,
       "copyGroupCount": 28,
       "looseCopyExamples": [
         {
@@ -363,198 +363,6 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your bag."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Review product truth, quantity and the current order total before checkout."
-        },
-        {
-          "copySurface": null,
-          "element": "h2",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "MK-2866"
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Ostarine"
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Finished products, clear specifications and independently presented evidence."
-        }
-      ],
-      "looseCopyGroupCount": 10,
-      "path": "/bag",
-      "routeId": "bag",
-      "routeStatus": "NEEDS_ROUTE_REFACTOR",
-      "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false,
-      "strictScopedCopyGroupCount": 0,
-      "strictScopedLooseCopyGroupCount": 0,
-      "surroundingRouteLooseCopyGroupCount": 0
-    },
-    {
-      "containedCopyGroupCount": 20,
-      "copyGroupCount": 38,
-      "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Order received."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your order summary and next steps stay together here."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "The order summary is ready below."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD."
-        },
-        {
-          "copySurface": null,
-          "element": "h2",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "MK-2866"
-        }
-      ],
-      "looseCopyGroupCount": 18,
-      "path": "/checkout/confirmation",
-      "routeId": "checkout-confirmation",
-      "routeStatus": "NEEDS_ROUTE_REFACTOR",
-      "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false,
-      "strictScopedCopyGroupCount": 0,
-      "strictScopedLooseCopyGroupCount": 0,
-      "surroundingRouteLooseCopyGroupCount": 0
-    },
-    {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 15,
-      "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your product, order value and payment equivalent."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your selected shop currency stays clear through payment."
-        },
-        {
-          "copySurface": null,
-          "element": "h2",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "One clear step away. One clear return to Olympus."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "You’ll leave Olympus briefly to complete payment in the secure payment window. When it closes, return here to see the order outcome."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Confirm the product and amount due."
-        }
-      ],
-      "looseCopyGroupCount": 13,
-      "path": "/checkout/review",
-      "routeId": "checkout-review",
-      "routeStatus": "NEEDS_ROUTE_REFACTOR",
-      "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false,
-      "strictScopedCopyGroupCount": 0,
-      "strictScopedLooseCopyGroupCount": 0,
-      "surroundingRouteLooseCopyGroupCount": 0
-    },
-    {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 11,
-      "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Track an order."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Tracking stages render only from an order projection; this candidate does not advance them."
-        },
-        {
-          "copySurface": null,
-          "element": "h3",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Source chain"
         },
         {
           "copySurface": null,
@@ -569,9 +377,201 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 9,
+      "looseCopyGroupCount": 6,
+      "path": "/bag",
+      "routeId": "bag",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
+    },
+    {
+      "containedCopyGroupCount": 30,
+      "copyGroupCount": 36,
+      "looseCopyExamples": [
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
+        }
+      ],
+      "looseCopyGroupCount": 6,
+      "path": "/checkout/confirmation",
+      "routeId": "checkout-confirmation",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
+    },
+    {
+      "containedCopyGroupCount": 12,
+      "copyGroupCount": 18,
+      "looseCopyExamples": [
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
+        }
+      ],
+      "looseCopyGroupCount": 6,
+      "path": "/checkout/review",
+      "routeId": "checkout-review",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
+    },
+    {
+      "containedCopyGroupCount": 10,
+      "copyGroupCount": 16,
+      "looseCopyExamples": [
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
+        }
+      ],
+      "looseCopyGroupCount": 6,
       "path": "/checkout/tracking",
       "routeId": "checkout-tracking",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2121,8 +2121,8 @@
       "surroundingRouteLooseCopyGroupCount": 6
     },
     {
-      "containedCopyGroupCount": 6,
-      "copyGroupCount": 15,
+      "containedCopyGroupCount": 30,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2130,77 +2130,6 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your order is in. Keep the next step clear."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your order details, delivery updates and the products you chose stay together from here."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Finished products, clear specifications and independently presented evidence."
-        },
-        {
-          "copySurface": null,
-          "element": "h3",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Shop"
-        }
-      ],
-      "looseCopyGroupCount": 9,
-      "path": "/order/success/OL-10428",
-      "routeId": "order-success",
-      "routeStatus": "NEEDS_ROUTE_REFACTOR",
-      "status": "NEEDS_ROUTE_REFACTOR",
-      "strict": false,
-      "strictScopedCopyGroupCount": 0,
-      "strictScopedLooseCopyGroupCount": 0,
-      "surroundingRouteLooseCopyGroupCount": 0
-    },
-    {
-      "containedCopyGroupCount": 6,
-      "copyGroupCount": 14,
-      "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h1",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Follow your order from dispatch to delivery."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "The current delivery progress sits beside the product and order information you need."
         },
         {
           "copySurface": null,
@@ -2222,9 +2151,80 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 8,
+      "looseCopyGroupCount": 6,
+      "path": "/order/success/OL-10428",
+      "routeId": "order-success",
+      "routeStatus": "NEEDS_ROUTE_REFACTOR",
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
+      "strictScopedLooseCopyGroupCount": 0,
+      "surroundingRouteLooseCopyGroupCount": 0
+    },
+    {
+      "containedCopyGroupCount": 10,
+      "copyGroupCount": 16,
+      "looseCopyExamples": [
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
+        }
+      ],
+      "looseCopyGroupCount": 6,
       "path": "/order/tracking/OL-10428",
       "routeId": "order-tracking",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2521,7 +2521,7 @@
     }
   ],
   "schemaVersion": 2,
-  "sourceFindingCount": 28,
+  "sourceFindingCount": 22,
   "sourceFindings": [
     {
       "file": "app/design-system/frontier-sections.module.css",
@@ -2545,12 +2545,6 @@
       "file": "app/design-system/openlab-sections.module.css",
       "rule": "muted-customer-copy",
       "selector": ".wayfinding p,.pipeline p,.chain p,.registryRow p,.productBridge p",
-      "value": "var(--oluk-text-muted)"
-    },
-    {
-      "file": "app/design-system/payment-trust.module.css",
-      "rule": "muted-customer-copy",
-      "selector": ".primer p,.lockHeading p,.record p",
       "value": "var(--oluk-text-muted)"
     },
     {
@@ -2660,39 +2654,9 @@
       "offset": 449,
       "rule": "literal-color",
       "value": "#e4ecfa"
-    },
-    {
-      "file": "app/transaction-presentation.module.css",
-      "offset": 7844,
-      "rule": "literal-color",
-      "value": "#15803d"
-    },
-    {
-      "file": "app/transaction-presentation.module.css",
-      "offset": 7967,
-      "rule": "literal-color",
-      "value": "#15803d"
-    },
-    {
-      "file": "app/transaction-presentation.module.css",
-      "offset": 8883,
-      "rule": "literal-color",
-      "value": "#15803d"
-    },
-    {
-      "file": "app/transaction-presentation.module.css",
-      "offset": 8981,
-      "rule": "literal-color",
-      "value": "#15803d"
-    },
-    {
-      "file": "app/transaction-presentation.module.css",
-      "offset": 9521,
-      "rule": "literal-color",
-      "value": "#53617d"
     }
   ],
-  "sourceHash": "1142f97f0c35282368529c13c8f9014304d5a3a1f94f9bb0b41bd91284128c5d",
+  "sourceHash": "566fca8986f4e748af9aa9209d67aa1e45551301e278271f87cb1e05001b985e",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2805,5 +2769,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "71fdf947450ff2ad5d6cd98129f4ad5eb08886ca95c3d6e8af81952d543c71f4"
+  "auditHash": "fdb25ce33562fcef13256d1c5c8a5ba1962c7415aea06cdf0ec72049ef97e0ae"
 }

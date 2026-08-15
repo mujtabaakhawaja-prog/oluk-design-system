@@ -16,14 +16,14 @@ export function OpenLabAdminPage() { return <GovernedProgramShell><Hero eyebrow=
 const checkoutStageMap: Record<CheckoutStep, TransactionStage> = {
   information: "details",
   delivery: "delivery",
-  review: "handoff",
+  review: "review",
   payment: "order-pay",
   confirmation: "confirmation",
 };
 
 export function CheckoutProgramPage({ step }: { step: CheckoutStep }) {
   return (
-    <CustomerSiteChrome route="checkout">
+    <CustomerSiteChrome route={`checkout-${step}`}>
       <main data-live-authority="false">
         <TransactionPresentation stage={checkoutStageMap[step]} />
       </main>
@@ -31,6 +31,6 @@ export function CheckoutProgramPage({ step }: { step: CheckoutStep }) {
   );
 }
 
-export function CheckoutProcessingPage() { return <GovernedProgramShell lane="checkout"><Hero eyebrow="CHECKOUT · STATIC STATE" title="Payment status pending." copy="Do not close this window. This candidate makes no provider request and advances no order state."/><section className={styles.section}><div className={styles.shell}><div className={styles.notice}>Awaiting a server-owned terminal projection. Unknown remains unknown.</div></div></section></GovernedProgramShell>; }
-export function CheckoutTrackingPage() { return <GovernedProgramShell lane="checkout"><Hero eyebrow="ORDER TRACKING · READ ONLY" title="Track an order." copy="Tracking stages render only from an order projection; this candidate does not advance them."/><section className={styles.section}><div className={styles.shell}><CustodyTimeline stages={["Order reference received","Fulfilment status unavailable","Carrier status unavailable","Delivery confirmation unavailable"]}/></div></section></GovernedProgramShell>; }
+export function CheckoutProcessingPage() { return <CustomerSiteChrome route="checkout-processing"><main data-live-authority="false"><TransactionPresentation stage="processing" /></main></CustomerSiteChrome>; }
+export function CheckoutTrackingPage() { return <CustomerSiteChrome route="checkout-tracking"><main data-live-authority="false"><TransactionPresentation stage="tracking" /></main></CustomerSiteChrome>; }
 export function GrowthRailPage() { return <GovernedProgramShell><Hero eyebrow="PRODUCT CONTINUATION" title="Recommendations and restock, kept together." copy="Explore related products or return to a future restock decision without interrupting the first purchase choice."/><section className={styles.section}><div className={styles.shell}><UpsellContextRail/></div></section></GovernedProgramShell>; }

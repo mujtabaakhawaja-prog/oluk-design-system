@@ -64,21 +64,21 @@ test("MF-07 route pages form one static transaction lifecycle", async () => {
 test("transaction presentation preserves exact MK-2866 truth and deterministic inert actions", async () => {
   const source = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
 
-  for (const truth of [
-    "mk2866Fixture.series",
-    "mk2866Fixture.name",
-    "mk2866Fixture.alias",
-    "mk2866Fixture.price",
-    "mk2866Fixture.evidencePath",
-  ]) {
+  for (const truth of ["mk2866Fixture.price", "mk2866Fixture.evidencePath"]) {
     assert.match(source, new RegExp(truth.replace(".", "\\.")), truth);
   }
 
-  assert.match(source, /<MetricRail compact product=\{mk2866Fixture\}\s*\/>/);
+  assert.match(source, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
+  assert.match(source, /<ProductCommerceCard[\s\S]*?commerceTreatment="selection"[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="compact"/);
+  assert.match(source, /<TransactionIntroCard/);
+  assert.match(source, /data-component="BreadcrumbSurface"/);
+  assert.match(source, /data-component="OrderSummarySurface"/);
+  assert.match(source, /function CheckoutDecisionBar/);
   assert.match(source, /data-live-authority="false"/);
-  assert.match(source, /<button[^>]*disabled[^>]*>Pay securely<\/button>/);
+  assert.match(source, /<ActionButton[^>]*disabled[^>]*>Pay securely<\/ActionButton>/);
   assert.match(source, /<CurrencyEqualityLock compact \/>/);
   assert.match(source, /<LifecycleAmountRecord stage="confirmation" \/>/);
+  assert.doesNotMatch(source, /<(?:a|button)\b/, "checkout-local actions must use the canonical action family");
   assert.doesNotMatch(source, /fetch\s*\(|axios|XMLHttpRequest|use server|server action|woocommerce|stripe|biaspay|initiator|tools-service|C2/i);
   assert.doesNotMatch(source, /90 CAPS(?:\b|ULES)|£43\.00|<del\b/i);
   assert.doesNotMatch(source, /<form\b|\bformAction\s*=|\bonSubmit\s*=/i);
@@ -88,7 +88,7 @@ test("named checkout stages adopt the canonical Option E lifecycle instead of a 
   const programRoutes = await readFile(new URL("program-routes.tsx", appRoot), "utf8");
   assert.match(programRoutes, /import \{ TransactionPresentation, type TransactionStage \}/);
   assert.match(programRoutes, /information: "details"/);
-  assert.match(programRoutes, /review: "handoff"/);
+  assert.match(programRoutes, /review: "review"/);
   assert.match(programRoutes, /payment: "order-pay"/);
   assert.match(programRoutes, /<main data-live-authority="false">/);
   assert.match(programRoutes, /<TransactionPresentation stage=\{checkoutStageMap\[step\]\} \/>/);
@@ -143,10 +143,93 @@ test("transaction lifecycle connects bag through recovery without customer-facin
   }
 });
 
+test("every remaining checkout lifecycle stage uses the shared presentation-only composition", async () => {
+  const source = await readFile(new URL("checkout/[stage]/page.tsx", appRoot), "utf8");
+  const transaction = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
+
+  for (const stage of ["processing", "tracking", "order-history", "order-details", "receipt", "return", "refund"]) {
+    assert.match(source, new RegExp(`(?:${stage.replaceAll("-", "\\-")}|"${stage.replaceAll("-", "\\-")}"): "`), stage);
+    assert.match(transaction, new RegExp(`case "${stage.replaceAll("-", "\\-")}"`), stage);
+  }
+
+  for (const stage of ["confirmation", "history", "refund"]) {
+    assert.match(transaction, new RegExp(`<LifecycleAmountRecord stage="${stage}"`), stage);
+  }
+
+  assert.doesNotMatch(source, /CheckoutLifecycle/);
+});
+
+test("post-purchase aliases reuse the canonical lifecycle without a competing status layout", async () => {
+  const source = await readFile(new URL("design-system/post-purchase-surface.tsx", appRoot), "utf8");
+  const shell = await readFile(new URL("order/order-status-page.tsx", appRoot), "utf8");
+  assert.match(source, /import \{ TransactionPresentation, type TransactionStage \}/);
+  assert.match(source, /success: "confirmation"/);
+  assert.match(source, /pending: "pending"/);
+  assert.match(source, /failed: "failure"/);
+  assert.match(source, /cancelled: "cancelled"/);
+  assert.match(source, /tracking: "tracking"/);
+  assert.match(source, /orderReference=\{orderId \?\? "OL-10428"\}/);
+  assert.doesNotMatch(source, /RecommendationCard|RestockCard|page-hero|post-purchase-grid/);
+  assert.match(shell, /<main data-live-authority="false">[\s\S]*?<PostPurchaseSurface/);
+  assert.match(shell, /route=\{`checkout-\$\{checkoutContext\}`\}/);
+});
+
+test("checkout progress is route-aware and rendered once in the shared shell", async () => {
+  const transaction = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
+  const context = await readFile(new URL("design-system/contextual-navigation.tsx", appRoot), "utf8");
+  const dynamicStage = await readFile(new URL("checkout/[stage]/page.tsx", appRoot), "utf8");
+  const programRoutes = await readFile(new URL("program-routes.tsx", appRoot), "utf8");
+
+  assert.doesNotMatch(transaction, /CheckoutStepIndicator/, "the lifecycle body must not duplicate shell progress");
+  assert.match(dynamicStage, /route=\{`checkout-\$\{params\.stage\}`\}/);
+  assert.match(programRoutes, /route=\{`checkout-\$\{step\}`\}/);
+  for (const stage of ["information", "delivery", "review", "payment", "processing", "pending", "failure", "confirmation", "tracking", "receipt", "return", "refund"]) {
+    assert.match(context, new RegExp(`(?:\\"${stage}\\"|${stage}): \\"(?:information|delivery|review|payment|confirmation)\\"`), stage);
+  }
+});
+
+test("payment-focused stages contain no promotional continuation", async () => {
+  const source = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
+  for (const functionName of ["DetailsContent", "ReviewContent", "OrderPayContent", "ProcessingContent", "FailureContent", "PendingContent"]) {
+    const start = source.indexOf(`function ${functionName}`);
+    const next = source.indexOf("\nfunction ", start + 1);
+    const body = source.slice(start, next < 0 ? undefined : next);
+    assert.doesNotMatch(body, /YourStackBuilder|RestockCard|ProductCommerceCard[^]*?rad-140|RecommendationCard/, functionName);
+  }
+});
+
 test("transaction layout recomposes without overflow clipping", async () => {
   const css = await readFile(new URL("transaction-presentation.module.css", appRoot), "utf8");
+  const paymentCss = await readFile(new URL("design-system/payment-trust.module.css", appRoot), "utf8");
   assert.match(css, /\.layout,[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\)/);
+  assert.match(css, /\.summary \{[\s\S]*?min-width:\s*0/);
+  assert.match(css, /\.quantity \{[\s\S]*?repeat\(3, 44px\)/);
+  assert.match(css, /\.transaction :global\(\.breadcrumb a\) \{[\s\S]*?min-height:\s*44px;[\s\S]*?min-width:\s*44px/);
   assert.match(css, /@media \(max-width: 980px\)[\s\S]*?grid-template-columns:\s*1fr/);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*?\.fieldGrid,[\s\S]*?grid-template-columns:\s*1fr/);
   assert.doesNotMatch(css, /overflow-x:\s*(?:clip|hidden)/i);
+  assert.match(paymentCss, /\.lock\[data-compact\] \.equality\{grid-template-columns:1fr\}/);
+  assert.doesNotMatch(`${css}\n${paymentCss}`, /--(?:ink-muted|oluk-text-muted)/, "customer subcopy must use the governed secondary text role");
+});
+
+test("affected checkout routes contain route copy in governed surfaces", async () => {
+  const audit = JSON.parse(await readFile(new URL("../../../authority/generated/CUSTOMER-SURFACE-GRAMMAR-AUDIT.json", import.meta.url), "utf8"));
+  const expectedSharedChromeCopy = new Set([
+    "Search a batch, compare compounds or open the report connected to the product in front of you.",
+    "Finished products, clear specifications and independently presented evidence.",
+    "Shop",
+    "OpenLab",
+    "Company",
+    "Help & legal",
+  ]);
+  for (const routeId of ["bag", "checkout-review", "checkout-confirmation", "checkout-tracking", "order-success", "order-tracking"]) {
+    const route = audit.routes.find((entry) => entry.routeId === routeId);
+    assert.ok(route, routeId);
+    assert.ok(route.containedCopyGroupCount > 0, `${routeId} must expose governed copy surfaces`);
+    assert.deepEqual(
+      new Set(route.looseCopyExamples.map((entry) => entry.text)),
+      expectedSharedChromeCopy,
+      `${routeId} may not add route-local loose canvas copy`,
+    );
+  }
 });

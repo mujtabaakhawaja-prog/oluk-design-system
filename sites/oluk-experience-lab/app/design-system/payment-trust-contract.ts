@@ -1,8 +1,8 @@
 export const paymentTrustStudy = Object.freeze({
   customerCurrency: "GBP",
-  customerAmount: "£128.97",
+  customerAmount: "£133.00",
   settlementCurrency: "USD",
-  settlementAmount: "$175.01",
+  settlementAmount: "$180.59",
   classification: "LOCKED_DESIGN_STUDY_FIXTURE",
   liveAuthority: false,
   source: {
@@ -20,12 +20,12 @@ export const paymentTrustCopy = Object.freeze({
   protectedStep: "The protected payment step carries the same order value into its fixed USD equivalent.",
   equality: "You are paying the USD equivalent of the displayed GBP amount.",
   confirmationHeading: "Your order total",
-  confirmation: "Your order total of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD.",
+  confirmation: "Your order total of £133.00 GBP was processed and paid as its fixed USD equivalent of $180.59 USD.",
   recordHeading: "Amount Processed",
-  record: "Your order amount of £128.97 GBP was processed and paid as its fixed USD equivalent of $175.01 USD.",
-  history: "Paid as its fixed USD equivalent of $175.01 USD.",
-  refundHeading: "Refund Amount",
-  refund: "Your refund of £128.97 GBP was issued as the same fixed USD equivalent originally paid: $175.01 USD.",
+  record: "Your order amount of £133.00 GBP was processed and paid as its fixed USD equivalent of $180.59 USD.",
+  history: "Paid as its fixed USD equivalent of $180.59 USD.",
+  refundHeading: "Refund amount",
+  refund: "Your refund of £133.00 GBP was issued as the same fixed USD equivalent originally paid: $180.59 USD.",
 } as const);
 
 export type PaymentTrustLifecycleStage =
@@ -36,4 +36,3 @@ export type PaymentTrustLifecycleStage =
   | "order-details"
   | "history"
   | "refund";
-
