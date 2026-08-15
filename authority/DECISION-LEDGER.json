@@ -339,6 +339,39 @@
       "appliesTo": ["Codex Sites customer routes", "Figma customer surfaces", "accessibility proof"],
       "supersedes": ["DEC-TYPE-001 PROPOSED_NON_CONTROLLING disposition"],
       "guardrails": ["QualitativeChip label exception only", "HUMAN_REVIEW_REQUIRED", "UNPUBLISHED"]
+    },
+    {
+      "id": "DEC-ACCOUNT-RETENTION-001",
+      "recordedDate": "2026-08-14",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "reviewStatus": "OWNER_REVIEWED_AND_SELECTED_FOR_FUTURE_ACCOUNT_WAVE",
+      "decision": "The future Account and Retention composition is a C-led Retention Lab hybrid. Retention Lab and product-continuation framing lead; when a known order or product is available, the Central Decision Spine becomes the first available action; Activity and History remains supporting context only when genuine records exist. Saved stacks, Smart Restock, rewards and subscriptions must remain truthful secondary unavailable states until their accountable runtime projections exist.",
+      "candidateSource": {
+        "pullRequest": "https://github.com/mujtabaakhaja-prog/oluk-design-system/pull/42",
+        "branch": "codex/oluk-account-retention-candidates",
+        "head": "e597d24b369b6b1c524efc95923b8fc537082301",
+        "candidateIds": ["retention-lab", "decision-spine", "activity-history"],
+        "reviewedViewports": [1440, 390]
+      },
+      "selection": {
+        "primaryComposition": "retention-lab",
+        "primaryRole": "C-led Retention Lab and product-continuation framing",
+        "firstAvailableAction": "decision-spine when a known order or product exists",
+        "supportingContext": "activity-history only when genuine order records exist",
+        "truthfulSecondaryStates": ["saved stacks", "Smart Restock", "rewards", "subscriptions"]
+      },
+      "appliesTo": ["future Account and Retention Sites composition", "later Account runtime wave after separate authorization"],
+      "scope": "COMPOSITION_DIRECTIVE_ONLY",
+      "canonical73RouteLedger": {
+        "path": "authority/SITE-ROUTE-LEDGER.json",
+        "routeCount": 73,
+        "mutation": "NONE",
+        "promotion": "NONE"
+      },
+      "excluded": ["current Commerce and Checkout runtime tranche", "Account runtime implementation", "Figma", "Figma Make", "Figma publication", "Review Studio payload refresh", "candidate PR #42 rebase or merge", "route promotion", "runtime service mutation"],
+      "implementationStatus": "NO_IMPLEMENTATION_OR_PROMOTION",
+      "supersedes": []
     }
   ]
 }
