@@ -1,13 +1,22 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex -- technical tables are intentional keyboard-reachable horizontal scrollers. */
 "use client";
 
-import { useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type CSSProperties,
+  type KeyboardEvent,
+} from "react";
 
+import { ActionButton, ActionLink } from "./action-control";
 import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
-import { ActionLink } from "./customer-route-primitives";
 import experience from "./openlab-product-depth.json";
 import styles from "./openlab-product-experience.module.css";
 import { EvidenceStatusChip } from "./program-components";
+import { SurfaceGrid, SurfaceGridZone } from "./surface-grid";
 
 const referenceViews = [
   "record",
@@ -39,6 +48,30 @@ type OpenLabProductExperienceProps = Readonly<{
 
 const viewLabel = (view: ExperienceView) => view.replace(/\b\w/g, (letter) => letter.toUpperCase());
 
+function viewSlug(view: ExperienceView) {
+  return view.replaceAll(" ", "-");
+}
+
+function viewHash(view: ExperienceView) {
+  return `#openlab-${viewSlug(view)}`;
+}
+
+function isExperienceView(value: string | null): value is ExperienceView {
+  return Boolean(value) && referenceViews.includes(value as ExperienceView);
+}
+
+function viewFromLocationHash() {
+  if (typeof window === "undefined") return null;
+  const candidate = window.location.hash.replace(/^#openlab-/, "").replaceAll("-", " ");
+  return isExperienceView(candidate) ? candidate : null;
+}
+
+function writeViewToLocation(view: ExperienceView) {
+  const url = new URL(window.location.href);
+  url.hash = viewHash(view);
+  window.history.replaceState(window.history.state, "", url);
+}
+
 /**
  * Customer-facing confidence theatre backed by the deterministic
  * OpenLabPublicProjection.v2 presentation. Every analytical value comes from
@@ -53,10 +86,45 @@ export function OpenLabProductExperience({
   variant = "full",
 }: OpenLabProductExperienceProps) {
   const [view, setView] = useState<ExperienceView>("record");
-  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const panelId = useId();
+  const rootRef = useRef<HTMLElement | null>(null);
+  const generatedId = useId().replaceAll(":", "");
+  const instanceId = id ? `${id}-views` : `openlab-product-experience-${generatedId}`;
+  const available = productSlug === "mk-2866" && evidenceState === "available";
 
-  if (productSlug !== "mk-2866" || evidenceState !== "available") {
+  const selectView = useCallback((
+    next: ExperienceView,
+    options?: Readonly<{ focus?: boolean; writeLocation?: boolean }>,
+  ) => {
+    setView(next);
+    if (options?.writeLocation !== false) writeViewToLocation(next);
+    if (options?.focus) {
+      window.requestAnimationFrame(() => {
+        rootRef.current
+          ?.querySelector<HTMLButtonElement>(`[data-openlab-view="${viewSlug(next)}"]`)
+          ?.focus();
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!available) return;
+    const restoreView = () => {
+      const next = viewFromLocationHash();
+      setView(next ?? "record");
+    };
+
+    restoreView();
+    window.addEventListener("hashchange", restoreView);
+    window.addEventListener("popstate", restoreView);
+    window.addEventListener("pageshow", restoreView);
+    return () => {
+      window.removeEventListener("hashchange", restoreView);
+      window.removeEventListener("popstate", restoreView);
+      window.removeEventListener("pageshow", restoreView);
+    };
+  }, [available]);
+
+  if (!available) {
     return (
       <OpenLabAvailabilityPanel
         evidenceState={evidenceState === "available" ? "partial" : evidenceState}
@@ -67,91 +135,102 @@ export function OpenLabProductExperience({
     );
   }
 
-  const selectView = (next: ExperienceView, focus = false) => {
-    setView(next);
-    if (focus) window.requestAnimationFrame(() => tabRefs.current[referenceViews.indexOf(next)]?.focus());
-  };
-
-  const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    const current = referenceViews.indexOf(view);
-    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-      event.preventDefault();
-      const offset = event.key === "ArrowRight" ? 1 : -1;
-      selectView(referenceViews[(current + offset + referenceViews.length) % referenceViews.length], true);
-    }
-    if (event.key === "Home") {
-      event.preventDefault();
-      selectView(referenceViews[0], true);
-    }
-    if (event.key === "End") {
-      event.preventDefault();
-      selectView(referenceViews.at(-1)!, true);
-    }
+  const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let nextIndex: number | null = null;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % referenceViews.length;
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + referenceViews.length) % referenceViews.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = referenceViews.length - 1;
+    if (nextIndex === null) return;
+    event.preventDefault();
+    selectView(referenceViews[nextIndex], { focus: true });
   };
 
   return (
     <section
       className={`${styles.section} ${variant === "compact" ? styles.compact : ""}`}
       data-component="OpenLabProductExperience"
+      data-deep-link-contract="openlab-view-hash"
+      data-focus-contract="roving-tabs"
       data-mobile-strategy="summary-progressive-disclosure"
       data-openlab-state="available"
-      data-reduced-motion="no-analytical-reconstruction"
+      data-reduced-motion="static-data-views"
+      data-visualization-contract="chart-with-table-equivalent"
       id={id}
+      ref={rootRef}
     >
-      <EditorialSurface
-        actions={<><ActionLink href="/product/mk-2866">View MK-2866</ActionLink><ActionLink href="/open-lab/records" secondary>Browse records</ActionLink></>}
-        compact={variant === "compact"}
-        copy="OpenLab connects the exact MK-2866 format to its named batch, supplied report and reported values, giving you a clearer reason to trust the product decision."
-        eyebrow="OPENLAB CONFIDENCE"
-        title="See what stands behind MK-2866."
-      >
-        <div className={styles.confidenceFacts}>
-          <EvidenceStatusChip state="source-reported" />
-          <dl>
-            <div><dt>Batch</dt><dd>{experience.record.batchCode}</dd></div>
-            <div><dt>Report</dt><dd>{experience.record.reportId}</dd></div>
-            <div><dt>Reported purity</dt><dd>{experience.visualizations.purity.displayValue}</dd></div>
-          </dl>
-        </div>
-      </EditorialSurface>
+      <span aria-atomic="true" aria-live="polite" className="sr-only">Showing {viewLabel(view)}.</span>
+      <SurfaceGrid className={styles.layout}>
+        <SurfaceGridZone zone="full">
+          <EditorialSurface
+            actions={<><ActionLink href="/product/mk-2866">View MK-2866</ActionLink><ActionLink href="/open-lab/records" variant="secondary">Browse records</ActionLink></>}
+            compact={variant === "compact"}
+            copy="OpenLab connects the exact MK-2866 format to its named batch, supplied report and reported values, giving you a clearer reason to trust the product decision."
+            eyebrow="OPENLAB CONFIDENCE"
+            title="See what stands behind MK-2866."
+          >
+            <div className={styles.confidenceFacts}>
+              <EvidenceStatusChip state="source-reported" />
+              <dl>
+                <div><dt>Batch</dt><dd>{experience.record.batchCode}</dd></div>
+                <div><dt>Report</dt><dd>{experience.record.reportId}</dd></div>
+                <div><dt>Reported purity</dt><dd>{experience.visualizations.purity.displayValue}</dd></div>
+              </dl>
+            </div>
+          </EditorialSurface>
+        </SurfaceGridZone>
 
-      <DecisionSurface
-        compact
-        copy="Start with the named record, then move into the label comparison, analytes, chronology or original-source context without leaving the product journey."
-        eyebrow="CHOOSE YOUR VIEW"
-        title="Open the detail that gives you confidence."
-      >
-        <div aria-label="MK-2866 OpenLab views" className={styles.tabs} role="tablist">
-          {referenceViews.map((option, index) => (
-            <button
-              aria-controls={`${panelId}-${option.replaceAll(" ", "-")}`}
-              aria-selected={view === option}
-              id={`${panelId}-tab-${option.replaceAll(" ", "-")}`}
-              key={option}
-              onClick={() => selectView(option)}
-              onKeyDown={onTabKeyDown}
-              ref={(element) => { tabRefs.current[index] = element; }}
-              role="tab"
-              tabIndex={view === option ? 0 : -1}
-              type="button"
+        <SurfaceGridZone zone="full">
+          <DecisionSurface
+            compact
+            copy="Start with the named record, then move into the label comparison, analytes, chronology or original-source context without leaving the product journey."
+            eyebrow="CHOOSE YOUR VIEW"
+            title="Open the detail that gives you confidence."
+          >
+            <div
+              aria-label="MK-2866 OpenLab views"
+              aria-orientation="horizontal"
+              className={styles.tabs}
+              role="tablist"
             >
-              {viewLabel(option)}
-            </button>
-          ))}
-        </div>
-      </DecisionSurface>
+              {referenceViews.map((option, index) => (
+                <ActionButton
+                  aria-controls={`${instanceId}-panel-${viewSlug(option)}`}
+                  aria-selected={view === option}
+                  className={styles.tabControl}
+                  data-openlab-view={viewSlug(option)}
+                  id={`${instanceId}-tab-${viewSlug(option)}`}
+                  key={option}
+                  onClick={() => selectView(option)}
+                  onKeyDown={(event) => onTabKeyDown(event, index)}
+                  role="tab"
+                  size="compact"
+                  tabIndex={view === option ? 0 : -1}
+                  variant={view === option ? "primary" : "secondary"}
+                >
+                  {viewLabel(option)}
+                </ActionButton>
+              ))}
+            </div>
+          </DecisionSurface>
+        </SurfaceGridZone>
 
-      <OpenLabTechnicalPanel panelId={panelId} view={view}/>
+        <SurfaceGridZone zone="full">
+          <OpenLabTechnicalPanel instanceId={instanceId} view={view}/>
+        </SurfaceGridZone>
+      </SurfaceGrid>
     </section>
   );
 }
 
-function OpenLabTechnicalPanel({ panelId, view }: Readonly<{ panelId: string; view: ExperienceView }>) {
+function OpenLabTechnicalPanel({ instanceId, view }: Readonly<{ instanceId: string; view: ExperienceView }>) {
   const concentration = experience.visualizations.concentration;
   const panelProps = {
-    "aria-labelledby": `${panelId}-tab-${view.replaceAll(" ", "-")}`,
+    "aria-labelledby": `${instanceId}-tab-${viewSlug(view)}`,
     className: styles.panel,
-    id: `${panelId}-${view.replaceAll(" ", "-")}`,
+    "data-focus-target": "technical-view",
+    "data-openlab-panel": viewSlug(view),
+    id: `${instanceId}-panel-${viewSlug(view)}`,
     role: "tabpanel" as const,
     tabIndex: 0,
   };
@@ -212,11 +291,15 @@ function OpenLabTechnicalPanel({ panelId, view }: Readonly<{ panelId: string; vi
           <div><span>Label claim</span><strong>{concentration.labelClaim}</strong></div>
           <div><span>Reported concentration</span><strong>{concentration.testedValue}</strong></div>
         </div>
-        <div aria-label="Label claim and reported concentration comparison" className={styles.bars}>
+        <div
+          aria-label="Label claim and reported concentration comparison"
+          className={styles.bars}
+          data-visualization="numeric-comparison"
+        >
           <div><i style={{ "--value": `${concentration.claimPercent}%` } as CSSProperties}/><span>Label claim</span></div>
           <div><i style={{ "--value": `${concentration.testedPercent}%` } as CSSProperties}/><span>Reported value</span></div>
         </div>
-        <TechnicalTable caption="Label claim and reported concentration" rows={concentration.tableFallback}/>
+        <TechnicalTable compact caption="Label claim and reported concentration" rows={concentration.tableFallback}/>
       </TechnicalSurface>
     </div>;
   }
@@ -294,8 +377,8 @@ function OpenLabTechnicalPanel({ panelId, view }: Readonly<{ panelId: string; vi
 function ConfidenceActions({ sourceHref }: Readonly<{ sourceHref?: string }>) {
   return <>
     {sourceHref ? <ActionLink href={sourceHref}>Open original report</ActionLink> : <ActionLink href="/product/mk-2866">View MK-2866</ActionLink>}
-    <ActionLink href="/open-lab/compare" secondary>Compare products</ActionLink>
-    <ActionLink href="/open-lab/stack-builder" secondary>Build a stronger stack</ActionLink>
+    <ActionLink href="/open-lab/compare" variant="secondary">Compare products</ActionLink>
+    <ActionLink href="/open-lab/stack-builder" variant="secondary">Build a stronger stack</ActionLink>
   </>;
 }
 
@@ -318,42 +401,49 @@ function OpenLabAvailabilityPanel({
     data-component="OpenLabProductExperience"
     data-mobile-strategy="summary-progressive-disclosure"
     data-openlab-state={evidenceState}
+    data-reduced-motion="static-data-views"
   >
-    <EditorialSurface
-      actions={<><ActionLink href={`/product/${productSlug}`}>View {product.name}</ActionLink><ActionLink href="/open-lab/stack-builder" secondary>Build a stronger stack</ActionLink></>}
-      compact={variant === "compact"}
-      copy={partial
-        ? `OpenLab can show the source context currently connected to ${product.name}, while unavailable report fields remain visibly withheld.`
-        : `${product.name} keeps its labelled product facts and commerce path visible without borrowing the MK-2866 report or inventing technical results.`}
-      eyebrow="OPENLAB CONFIDENCE"
-      state={partial ? "default" : "unavailable"}
-      title={partial ? "A source path exists. Full record detail is still pending." : "Product details are ready. A linked record is not yet available."}
-    >
-      <div className={styles.unavailableIdentity}>
-        <EvidenceStatusChip state={partial ? "source-only" : "unavailable"}/>
-        <div><span>{product.series}</span><strong>{product.name}</strong><small>{facts || "Product facts available on the product page"}</small></div>
-      </div>
-    </EditorialSurface>
-    <TechnicalSurface
-      actions={<><ActionLink href="/open-lab/methodology">How OpenLab works</ActionLink><ActionLink href="/open-lab/compare" secondary>Compare availability</ActionLink></>}
-      compact
-      copy="OpenLab does not clone values from another product. Each product receives its own record only when its projection supplies one."
-      eyebrow="CURRENT AVAILABILITY"
-      state={partial ? "default" : "unavailable"}
-      title={partial ? "Source context only." : "No product-linked record supplied."}
-    >
-      <dl className={styles.availabilityList}>
-        <div><dt>Record</dt><dd>{partial ? "Partial" : "Unavailable"}</dd></div>
-        <div><dt>Original source</dt><dd>{partial ? "Source Only" : "Unavailable"}</dd></div>
-        <div><dt>Reported analytes</dt><dd>Unavailable</dd></div>
-        <div><dt>Product path</dt><dd>Available</dd></div>
-      </dl>
-    </TechnicalSurface>
+    <SurfaceGrid className={styles.layout}>
+      <SurfaceGridZone zone="full">
+        <EditorialSurface
+          actions={<><ActionLink href={`/product/${productSlug}`}>View {product.name}</ActionLink><ActionLink href="/open-lab/stack-builder" variant="secondary">Build a stronger stack</ActionLink></>}
+          compact={variant === "compact"}
+          copy={partial
+            ? `OpenLab can show the source context currently connected to ${product.name}, while unavailable report fields remain visibly withheld.`
+            : `${product.name} keeps its labelled product facts and commerce path visible without borrowing the MK-2866 report or inventing technical results.`}
+          eyebrow="OPENLAB CONFIDENCE"
+          state={partial ? "default" : "unavailable"}
+          title={partial ? "A source path exists. Full record detail is still pending." : "Product details are ready. A linked record is not yet available."}
+        >
+          <div className={styles.unavailableIdentity}>
+            <EvidenceStatusChip state={partial ? "source-only" : "unavailable"}/>
+            <div><span>{product.series}</span><strong>{product.name}</strong><small>{facts || "Product facts available on the product page"}</small></div>
+          </div>
+        </EditorialSurface>
+      </SurfaceGridZone>
+      <SurfaceGridZone zone="full">
+        <TechnicalSurface
+          actions={<><ActionLink href="/open-lab/methodology">How OpenLab works</ActionLink><ActionLink href="/open-lab/compare" variant="secondary">Compare availability</ActionLink></>}
+          compact
+          copy="OpenLab does not clone values from another product. Each product receives its own record only when its projection supplies one."
+          eyebrow="CURRENT AVAILABILITY"
+          state={partial ? "default" : "unavailable"}
+          title={partial ? "Source context only." : "No product-linked record supplied."}
+        >
+          <dl className={styles.availabilityList}>
+            <div><dt>Record</dt><dd>{partial ? "Partial" : "Unavailable"}</dd></div>
+            <div><dt>Original source</dt><dd>{partial ? "Source Only" : "Unavailable"}</dd></div>
+            <div><dt>Reported analytes</dt><dd>Unavailable</dd></div>
+            <div><dt>Product path</dt><dd>Available</dd></div>
+          </dl>
+        </TechnicalSurface>
+      </SurfaceGridZone>
+    </SurfaceGrid>
   </section>;
 }
 
-function TechnicalTable({ caption, rows }: Readonly<{ caption: string; rows: ReadonlyArray<Readonly<{ label: string; value: string }>> }>) {
-  return <div className={styles.tableScroller} role="region" aria-label={caption} tabIndex={0}>
+function TechnicalTable({ caption, compact = false, rows }: Readonly<{ caption: string; compact?: boolean; rows: ReadonlyArray<Readonly<{ label: string; value: string }>> }>) {
+  return <div className={`${styles.tableScroller} ${compact ? styles.compactTable : ""}`} role="region" aria-label={caption} tabIndex={0}>
     <table><caption className="sr-only">{caption}</caption><tbody>{rows.map((row) => <tr key={row.label}><th scope="row">{row.label}</th><td>{row.value}</td></tr>)}</tbody></table>
   </div>;
 }

@@ -11,6 +11,7 @@ const packageJson = JSON.parse(packageSource);
 test("interaction proof exposes a caller-owned output receipt and unpublished posture", () => {
   assert.equal(packageJson.scripts["proof:interactions"], "node scripts/proof/interaction-state-proof.mjs");
   assert.match(proof, /option\("output"/);
+  assert.match(proof, /option\("suites"/);
   assert.match(proof, /cx37-interaction-state-proof\.json/);
   assert.match(proof, /oluk\.interaction-state-proof\.v1/);
   assert.match(proof, /HUMAN_REVIEW_REQUIRED_UNPUBLISHED/);
@@ -37,6 +38,12 @@ test("interaction proof covers the three required real-browser state suites", ()
     "lookup-no-result-transition",
     "lookup-found-transition",
     "lookup-unavailable-transition",
+    "hero-url-selection-restoration",
+    "hero-roving-tab-focus-and-next-control",
+    "hero-mobile-priority-and-reduced-motion",
+    "dossier-hash-selection-and-keyboard-focus",
+    "dossier-hash-restoration-and-mobile-disclosure",
+    "motion-surfaces-zero-runtime-callbacks",
   ]) {
     assert.match(proof, new RegExp(caseId));
   }

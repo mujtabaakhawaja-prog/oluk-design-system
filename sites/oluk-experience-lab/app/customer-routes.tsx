@@ -1,5 +1,6 @@
 import { AssuranceRail } from "./design-system/assurance-rail";
 import { CobaltDensityBoundary } from "./design-system/cobalt-divider";
+import { EditorialSurface } from "./design-system/content-surfaces";
 import {
   ActionLink,
   Arrow,
@@ -30,6 +31,7 @@ import { OpenLabHeroLight } from "./design-system/openlab-hero-light";
 import { PdpFirstFold } from "./design-system/pdp-first-fold";
 import { EvidenceStatus } from "./design-system/product-status";
 import { RelatedRail } from "./design-system/related-rail";
+import { SurfaceGrid, SurfaceGridZone } from "./design-system/surface-grid";
 import { UpsellContextRail } from "./design-system/program-components";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
 import styles from "./customer-routes.module.css";
@@ -263,11 +265,18 @@ export function RecordRoute() {
 export function DossierRoute() {
   return (
     <>
-      <PageHero
-        copy="Product facts, label detail and the current OpenLab evidence pathway in one continuous view."
-        eyebrow="PRODUCT DOSSIER"
-        title="MK-2866 product dossier."
-      />
+      <section className={styles.dossierIntro}>
+        <SurfaceGrid>
+          <SurfaceGridZone zone="full">
+            <EditorialSurface
+              copy="Product facts, label detail and the current OpenLab evidence pathway in one continuous view."
+              eyebrow="PRODUCT DOSSIER"
+              headingLevel="h1"
+              title="MK-2866 product dossier."
+            />
+          </SurfaceGridZone>
+        </SurfaceGrid>
+      </section>
       <OpenLabDossierComposition />
     </>
   );

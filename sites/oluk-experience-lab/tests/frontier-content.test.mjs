@@ -90,9 +90,10 @@ test("frontier binds supplied product renders and ships bounded Make/agentic han
   assert.equal(createHash("sha256").update(radAsset).digest("hex"), radManifest.deliverySha256);
   for (const source of [
     readFileSync(new URL("../app/design-system/product-fixtures.ts", import.meta.url), "utf8"),
-    readFileSync(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8"),
     readFileSync(new URL("../app/design-system/shop-taxonomy.ts", import.meta.url), "utf8"),
+    readFileSync(new URL("../app/design-system/locked-home-hero-media.ts", import.meta.url), "utf8"),
   ]) assert.match(source, /\/assets\/products\/rad-140\/front\.png/);
+  assert.match(readFileSync(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8"), /lockedHomeHeroMedia\["rad-140"\]/);
   assert.doesNotMatch(readFileSync(new URL("PROMPTS.md", kitRoot), "utf8"), /RAD-140[^\n]{0,80}10 MG/);
 });
 
