@@ -1,6 +1,10 @@
 "use client";
 
 import { useId, useState } from "react";
+import { ActionButton } from "./action-control";
+import { DecisionSurface } from "./content-surfaces";
+import { ProductCommerceCard } from "./product-commerce-card";
+import { mk2866Fixture } from "./product-fixtures";
 import styles from "./program-components.module.css";
 
 export type EvidenceAuthorityState = "verified-evidence" | "source-reported" | "source-only" | "unavailable";
@@ -16,15 +20,36 @@ export function EvidenceStatusChip({ state }: { state: EvidenceAuthorityState })
 }
 
 export type RecommendationState = "default" | "selected" | "added" | "unavailable" | "out-of-stock";
-export function RecommendationCard({ state = "default", name = "MK-2866", alias = "Ostarine" }: { state?: RecommendationState; name?: string; alias?: string }) {
-  const disabled = state === "unavailable" || state === "out-of-stock";
-  return <article className={styles.recommendation} data-candidate-component="RecommendationCard" data-state={state}><EvidenceStatusChip state={disabled ? "unavailable" : "source-only"}/><div><span className="eyebrow">SARM SERIES</span><h3>{name}</h3><p>{alias}</p></div><dl className={styles.facts}><div><dt>Strength</dt><dd>15 MG</dd></div><div><dt>Servings</dt><dd>90 SERVINGS</dd></div><div><dt>Price</dt><dd>£43</dd></div></dl><button aria-disabled="true" className={styles.action} disabled type="button">{state === "added" ? "Added ✓" : disabled ? "Unavailable" : "Add to bag"}</button></article>;
+export function RecommendationCard({ state = "default" }: { state?: RecommendationState }) {
+  return (
+    <div data-candidate-component="RecommendationCard" data-state={state}>
+      <ProductCommerceCard
+        contextKicker="RECOMMENDED NEXT"
+        product={mk2866Fixture}
+        state={state}
+        variant="compact"
+      />
+    </div>
+  );
 }
 
 export type RestockState = "active" | "due-soon" | "overdue" | "paused";
 export function RestockCard({ state = "active" }: { state?: RestockState }) {
   const progress = { active: 38, "due-soon": 76, overdue: 100, paused: 52 }[state];
-  return <article className={styles.restock} data-candidate-component="RestockCard" data-state={state}><span className="eyebrow">RESTOCK LAB · {state.replace("-", " ")}</span><h3>Keep the next decision visible.</h3><p>Timing and eligibility appear here when they are available for your order.</p><progress aria-label="Illustrative restock cycle" max="100" value={progress}/><button className={styles.action} disabled type="button">Not available</button></article>;
+  return (
+    <div data-candidate-component="RestockCard" data-state={state}>
+      <DecisionSurface
+        actions={<ActionButton disabled>Not available</ActionButton>}
+        className={styles.restock}
+        copy="Timing and eligibility appear here when they are available for your order."
+        eyebrow={`RESTOCK LAB · ${state.replace("-", " ")}`}
+        headingLevel="h3"
+        title="Keep the next decision visible."
+      >
+        <progress aria-label="Illustrative restock cycle" max="100" value={progress} />
+      </DecisionSurface>
+    </div>
+  );
 }
 
 export function UpsellContextRail() {
