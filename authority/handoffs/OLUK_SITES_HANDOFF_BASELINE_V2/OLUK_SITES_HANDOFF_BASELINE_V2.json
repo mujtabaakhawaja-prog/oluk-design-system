@@ -1,0 +1,1322 @@
+{
+  "contract": "OLUK_SITES_HANDOFF_BASELINE_V2",
+  "version": 2,
+  "status": "SOURCE_ATTESTED_CANDIDATE_CONSUMER_INPUT",
+  "releaseState": "NOT_DEPLOYED_NOT_CUSTOMER_ROUTE_ADOPTION",
+  "purpose": "A runnable, code-native Sites handoff derived from reconciled customer source. Shopper consumes these contracts; it does not create an independent visual system.",
+  "authority": {
+    "sourceSlice": {
+      "branch": "codex/oluk-sites-reconciliation-w05",
+      "commit": "7fc8bcd46e5d9ffa3489455ecd7b04f14d6ba9a0",
+      "role": "first reconciled, code-native Sites vertical slice"
+    },
+    "compositionReference": {
+      "worktree": "/Users/mujtabakhawaja/Worktrees/oluk-champion-integration",
+      "commit": "4d697e180300a6381d96ca50c2e80b27894f25de",
+      "role": "primary visual and customer-composition authority"
+    },
+    "tokenBase": {
+      "commit": "b0227a13faf7320f7d13fbc693e922b00bd471d3",
+      "source": "sites/oluk-experience-lab/app/design-system/candidate-tokens.css",
+      "expectedSha256": "c93ad3fedf4d54d0693c416c65bc37f394b77ef254ac9a060f15832d3c833b8d",
+      "resolvedSha256": "c93ad3fedf4d54d0693c416c65bc37f394b77ef254ac9a060f15832d3c833b8d",
+      "declarationCount": 128
+    },
+    "historicalCandidate": {
+      "commit": "02185547c2409b2ca4cf8acc882c6051b3b6a846",
+      "tag": "OLUK_SITES_HANDOFF_BASELINE_V1",
+      "role": "historical candidate evidence only; never a substitute for reconciled source"
+    },
+    "runtimeBoundary": {
+      "shopper": "SSR first paint, hydration, presentation and same-origin browser bridge",
+      "c2": "canonical identity, evidence, stack/cart and lifecycle projections",
+      "woo": "product ID, price, stock, backorders and purchasability",
+      "initiator": "payment-terminal compatibility boundary only",
+      "forbiddenConsumerChanges": [
+        "C2 CSS/components",
+        "Woo mutation",
+        "Initiator/payment behavior",
+        "direct browser authority calls"
+      ]
+    }
+  },
+  "tokenManifest": {
+    "source": "sites/oluk-experience-lab/app/design-system/candidate-tokens.css",
+    "sha256": "c93ad3fedf4d54d0693c416c65bc37f394b77ef254ac9a060f15832d3c833b8d",
+    "uniqueOlukDeclarations": [
+      "--oluk-border-card",
+      "--oluk-border-chip",
+      "--oluk-border-family",
+      "--oluk-border-family-bg",
+      "--oluk-border-identity",
+      "--oluk-border-inner",
+      "--oluk-border-outer",
+      "--oluk-border-strong",
+      "--oluk-border-width",
+      "--oluk-canvas",
+      "--oluk-card-mobile-width",
+      "--oluk-card-vertical-width",
+      "--oluk-cobalt",
+      "--oluk-cobalt-alt",
+      "--oluk-cobalt-focus",
+      "--oluk-content-max",
+      "--oluk-control-height",
+      "--oluk-divider-rhythm",
+      "--oluk-divider-width",
+      "--oluk-doc-grid-columns",
+      "--oluk-doc-grid-gap",
+      "--oluk-focus-width",
+      "--oluk-font-body",
+      "--oluk-font-display",
+      "--oluk-font-mono",
+      "--oluk-grid-gap",
+      "--oluk-gutter-desktop",
+      "--oluk-gutter-mobile",
+      "--oluk-gutter-tablet",
+      "--oluk-ink-dark",
+      "--oluk-inverse",
+      "--oluk-media-contact-shelf-gradient",
+      "--oluk-media-gradient",
+      "--oluk-media-mobile-height",
+      "--oluk-motion-ease",
+      "--oluk-motion-fast",
+      "--oluk-motion-standard",
+      "--oluk-page-gutter-desktop",
+      "--oluk-page-gutter-mobile",
+      "--oluk-page-gutter-tablet",
+      "--oluk-page-padding",
+      "--oluk-purchase-panel-padding",
+      "--oluk-quantity-cell",
+      "--oluk-quantity-height",
+      "--oluk-radius-chip",
+      "--oluk-radius-compact",
+      "--oluk-radius-content-plane",
+      "--oluk-radius-control",
+      "--oluk-radius-horizontal",
+      "--oluk-radius-media-seam",
+      "--oluk-radius-metric",
+      "--oluk-radius-pill",
+      "--oluk-radius-purchase",
+      "--oluk-radius-vertical",
+      "--oluk-section-gap",
+      "--oluk-shadow-card",
+      "--oluk-shadow-compact",
+      "--oluk-shadow-purchase",
+      "--oluk-shadow-relation",
+      "--oluk-space-1",
+      "--oluk-space-10",
+      "--oluk-space-12",
+      "--oluk-space-16",
+      "--oluk-space-18",
+      "--oluk-space-2",
+      "--oluk-space-24",
+      "--oluk-space-3",
+      "--oluk-space-4",
+      "--oluk-space-5",
+      "--oluk-space-6",
+      "--oluk-space-8",
+      "--oluk-status-disabled",
+      "--oluk-status-error",
+      "--oluk-status-error-soft",
+      "--oluk-status-success",
+      "--oluk-status-success-soft",
+      "--oluk-status-unavailable-soft",
+      "--oluk-status-warning",
+      "--oluk-stock-in-stock",
+      "--oluk-stock-in-stock-soft",
+      "--oluk-stock-out-of-stock",
+      "--oluk-stock-out-of-stock-soft",
+      "--oluk-stock-unavailable",
+      "--oluk-stock-unavailable-soft",
+      "--oluk-surface-card",
+      "--oluk-surface-cobalt-soft",
+      "--oluk-surface-family",
+      "--oluk-surface-media",
+      "--oluk-text-body",
+      "--oluk-text-chip-value",
+      "--oluk-text-dark",
+      "--oluk-text-disabled",
+      "--oluk-text-muted",
+      "--oluk-text-on-inverse",
+      "--oluk-text-on-inverse-muted",
+      "--oluk-text-primary",
+      "--oluk-text-secondary",
+      "--oluk-type-body",
+      "--oluk-type-body-lg",
+      "--oluk-type-body-lg-line",
+      "--oluk-type-body-lg-size",
+      "--oluk-type-body-line",
+      "--oluk-type-body-size",
+      "--oluk-type-body-sm",
+      "--oluk-type-body-sm-line",
+      "--oluk-type-body-sm-size",
+      "--oluk-type-chip-label",
+      "--oluk-type-display-lg",
+      "--oluk-type-display-lg-line",
+      "--oluk-type-display-lg-size",
+      "--oluk-type-display-lg-track",
+      "--oluk-type-display-md",
+      "--oluk-type-display-md-line",
+      "--oluk-type-display-md-size",
+      "--oluk-type-display-md-track",
+      "--oluk-type-display-xl",
+      "--oluk-type-display-xl-line",
+      "--oluk-type-display-xl-size",
+      "--oluk-type-display-xl-track",
+      "--oluk-type-eyebrow",
+      "--oluk-type-eyebrow-line",
+      "--oluk-type-eyebrow-size",
+      "--oluk-type-eyebrow-track",
+      "--oluk-type-label",
+      "--oluk-type-label-line",
+      "--oluk-type-label-size",
+      "--oluk-type-metric",
+      "--oluk-type-product"
+    ],
+    "lightOnly": true,
+    "darkMode": "DEFERRED_UNTIL_ALL_LIGHT_FAMILY_PROOF_COMPLETES",
+    "forbiddenConsumerPattern": "--oluk-* values may not alias Majestic or a parallel namespace"
+  },
+  "availabilityEvidenceContract": {
+    "inventory": {
+      "component": "StockPill",
+      "stateKind": "availability",
+      "foreground": "--oluk-cobalt",
+      "surface": "--oluk-surface-cobalt-soft",
+      "ownership": "Woo/C2 availability projection"
+    },
+    "actionSuccess": {
+      "component": "ActionControl",
+      "role": "separate reviewed completion treatment",
+      "ownership": "interaction state"
+    },
+    "evidence": {
+      "component": "EvidenceStatus",
+      "stateKind": "evidence",
+      "ownership": "OpenLab/C2 source projection"
+    },
+    "systemPass": {
+      "role": "non-customer diagnostic only",
+      "prohibition": "never substitute for inventory"
+    },
+    "prohibitedCollision": "generic green success must never represent customer inventory"
+  },
+  "typeAndMaterialContract": {
+    "fontLoading": [
+      "@fontsource/plus-jakarta-sans/700.css",
+      "@fontsource/plus-jakarta-sans/800.css",
+      "@fontsource-variable/inter",
+      "@fontsource/jetbrains-mono/700.css"
+    ],
+    "display": {
+      "family": "Plus Jakarta Sans",
+      "baselineWeight": 800,
+      "source": "app/globals.css"
+    },
+    "bodyUi": {
+      "family": "Inter Variable",
+      "source": "app/globals.css"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "source": "app/globals.css"
+    },
+    "minCustomerBodyPx": 15,
+    "materialLaw": "visible cool canvas; bounded media chambers; independently raised decision and information planes; cobalt is relational signal rather than wallpaper"
+  },
+  "primitiveCatalog": [
+    {
+      "id": "site-header",
+      "source": "app/design-system/site-header.tsx",
+      "responsibility": "shell, navigation, account and bag access"
+    },
+    {
+      "id": "action-control",
+      "source": "app/design-system/action-control.tsx",
+      "responsibility": "canonical action anatomy and native semantics"
+    },
+    {
+      "id": "surface-grid",
+      "source": "app/design-system/surface-grid.tsx",
+      "responsibility": "page grid and surface zones"
+    },
+    {
+      "id": "content-surfaces",
+      "source": "app/design-system/content-surfaces.tsx",
+      "responsibility": "editorial, decision, technical and transaction surfaces"
+    },
+    {
+      "id": "product-commerce-card",
+      "source": "app/design-system/product-commerce-card.tsx",
+      "responsibility": "customer product identity, metric, availability and action composition"
+    },
+    {
+      "id": "product-media-chamber",
+      "source": "app/design-system/product-media-chamber.tsx",
+      "responsibility": "bounded product-local media atmosphere"
+    },
+    {
+      "id": "metric-rail",
+      "source": "app/design-system/metric-rail.tsx",
+      "responsibility": "quantified product truth; never generic chips"
+    },
+    {
+      "id": "purchase-panel",
+      "source": "app/design-system/purchase-panel.tsx",
+      "responsibility": "decision anatomy without local cart authority"
+    },
+    {
+      "id": "stock-pill",
+      "source": "app/design-system/product-status.tsx",
+      "responsibility": "Woo/C2-backed availability presentation"
+    },
+    {
+      "id": "evidence-status",
+      "source": "app/design-system/product-status.tsx",
+      "responsibility": "separate OpenLab evidence state"
+    },
+    {
+      "id": "locked-home-hero",
+      "source": "app/design-system/locked-home-hero.tsx",
+      "responsibility": "5-3-1 homepage selection and history-safe interaction"
+    },
+    {
+      "id": "pdp-first-fold",
+      "source": "app/design-system/pdp-first-fold.tsx",
+      "responsibility": "PDP media and purchase exception surface"
+    },
+    {
+      "id": "product-dossier",
+      "source": "app/design-system/product-dossier.tsx",
+      "responsibility": "PDP source, tabs and technical disclosure grammar"
+    },
+    {
+      "id": "openlab-sections",
+      "source": "app/design-system/openlab-sections.tsx",
+      "responsibility": "evidence and record-bound explanatory modules"
+    },
+    {
+      "id": "transaction-presentation",
+      "source": "app/design-system/transaction-presentation.tsx",
+      "responsibility": "quiet lifecycle presentation; no payment execution"
+    }
+  ],
+  "familyTemplateCatalog": [
+    {
+      "family": "homepage",
+      "sources": [
+        "app/experience-lab.tsx",
+        "app/design-system/locked-home-hero.tsx",
+        "app/design-system/site-header.tsx"
+      ],
+      "templateCoverage": 1
+    },
+    {
+      "family": "catalogue_search_collections",
+      "sources": [
+        "app/customer-routes.tsx",
+        "app/design-system/shop-discovery.tsx",
+        "app/design-system/product-commerce-card.tsx"
+      ],
+      "templateCoverage": 9
+    },
+    {
+      "family": "product_detail",
+      "sources": [
+        "app/product/[slug]/page.tsx",
+        "app/design-system/pdp-first-fold.tsx",
+        "app/design-system/product-dossier.tsx"
+      ],
+      "templateCoverage": 1
+    },
+    {
+      "family": "bag_checkout",
+      "sources": [
+        "app/bag/page.tsx",
+        "app/checkout/[stage]/page.tsx",
+        "app/design-system/transaction-presentation.tsx"
+      ],
+      "templateCoverage": 6
+    },
+    {
+      "family": "complete_payment",
+      "sources": [
+        "app/checkout/order-pay/page.tsx",
+        "app/checkout/payment-handoff/page.tsx",
+        "app/design-system/transaction-presentation.tsx"
+      ],
+      "templateCoverage": 2
+    },
+    {
+      "family": "post_purchase",
+      "sources": [
+        "app/order/order-status-page.tsx",
+        "app/design-system/post-purchase-surface.tsx",
+        "app/design-system/transaction-presentation.tsx"
+      ],
+      "templateCoverage": 9
+    },
+    {
+      "family": "openlab_portal",
+      "sources": [
+        "app/open-lab/page.tsx",
+        "app/design-system/openlab-frontier.tsx",
+        "app/design-system/openlab-sections.tsx"
+      ],
+      "templateCoverage": 1
+    },
+    {
+      "family": "openlab_archive",
+      "sources": [
+        "app/lab-reports/page.tsx",
+        "app/open-lab/records/page.tsx",
+        "app/design-system/openlab-sections.tsx"
+      ],
+      "templateCoverage": 3
+    },
+    {
+      "family": "openlab_product_record",
+      "sources": [
+        "app/open-lab/[tool]/page.tsx",
+        "app/design-system/openlab-product-experience.tsx"
+      ],
+      "templateCoverage": 2
+    },
+    {
+      "family": "openlab_report_viewer",
+      "sources": [
+        "app/open-lab/[tool]/page.tsx",
+        "app/design-system/openlab-authority.ts"
+      ],
+      "templateCoverage": 2
+    },
+    {
+      "family": "openlab_methodology_compare_evidenceos",
+      "sources": [
+        "app/open-lab/methodology/page.tsx",
+        "app/open-lab/source-chain/page.tsx",
+        "app/open-lab/compare/page.tsx"
+      ],
+      "templateCoverage": 4
+    },
+    {
+      "family": "openlab_frontier_content",
+      "sources": [
+        "app/open-lab/[tool]/page.tsx",
+        "app/design-system/openlab-frontier.tsx"
+      ],
+      "templateCoverage": 4
+    },
+    {
+      "family": "decision_tools",
+      "sources": [
+        "app/open-lab/[tool]/page.tsx",
+        "app/design-system/your-stack-builder.tsx"
+      ],
+      "templateCoverage": 5
+    },
+    {
+      "family": "support_content",
+      "sources": [
+        "app/customer-routes.tsx",
+        "app/design-system/support-surface.tsx"
+      ],
+      "templateCoverage": 16
+    },
+    {
+      "family": "account",
+      "sources": [
+        "app/account/page.tsx",
+        "app/account/[surface]/page.tsx",
+        "app/design-system/frontier-sections.tsx"
+      ],
+      "templateCoverage": 5
+    },
+    {
+      "family": "governance_review",
+      "sources": [
+        "app/review/page.tsx",
+        "app/open-lab/admin/page.tsx"
+      ],
+      "templateCoverage": 2
+    },
+    {
+      "family": "shared_shell",
+      "sources": [
+        "app/not-found.tsx",
+        "app/design-system/site-header.tsx"
+      ],
+      "templateCoverage": 1
+    }
+  ],
+  "routeRenderManifest": {
+    "ledgerId": "OLUK-SITE-ROUTES-073",
+    "ledgerStatus": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    "canonicalPatternCount": 73,
+    "entries": [
+      {
+        "id": "home",
+        "path": "/",
+        "family": "homepage",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "shop",
+        "path": "/shop",
+        "family": "catalogue_search_collections",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "collection",
+        "path": "/collections/:slug",
+        "family": "catalogue_search_collections",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "search",
+        "path": "/search",
+        "family": "catalogue_search_collections",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "product-compare",
+        "path": "/compare",
+        "family": "catalogue_search_collections",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "product",
+        "path": "/product/:slug",
+        "family": "product_detail",
+        "disposition": "replace",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "reviews",
+        "path": "/reviews",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "about",
+        "path": "/about",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "about-evidence-os",
+        "path": "/about/evidence-os",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "account",
+        "path": "/account",
+        "family": "account",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "account-orders",
+        "path": "/account/orders",
+        "family": "account",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "account-order",
+        "path": "/account/orders/:orderId",
+        "family": "account",
+        "disposition": "authority-deferred",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "identity-and-order-projection",
+        "aliases": [],
+        "blocker": "Identity and signed order projection required",
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "account-profile",
+        "path": "/account/profile",
+        "family": "account",
+        "disposition": "authority-deferred",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "identity",
+        "aliases": [],
+        "blocker": "Identity contract required",
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "account-addresses",
+        "path": "/account/addresses",
+        "family": "account",
+        "disposition": "authority-deferred",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "identity",
+        "aliases": [],
+        "blocker": "Identity and Woo address projection required",
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "bag",
+        "path": "/bag",
+        "family": "bag_checkout",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-information",
+        "path": "/checkout/information",
+        "family": "bag_checkout",
+        "disposition": "replace",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [
+          "/checkout",
+          "/checkout/info"
+        ],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-delivery",
+        "path": "/checkout/delivery",
+        "family": "bag_checkout",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-review",
+        "path": "/checkout/review",
+        "family": "bag_checkout",
+        "disposition": "new",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-payment",
+        "path": "/checkout/payment",
+        "family": "bag_checkout",
+        "disposition": "replace",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-processing",
+        "path": "/checkout/processing",
+        "family": "bag_checkout",
+        "disposition": "new",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-confirmation",
+        "path": "/checkout/confirmation",
+        "family": "post_purchase",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-failure",
+        "path": "/checkout/failure",
+        "family": "post_purchase",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-retry",
+        "path": "/checkout/retry",
+        "family": "post_purchase",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-tracking",
+        "path": "/checkout/tracking",
+        "family": "post_purchase",
+        "disposition": "new",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-order-pay",
+        "path": "/checkout/order-pay",
+        "family": "complete_payment",
+        "disposition": "existing",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "preserve-only",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "checkout-payment-handoff",
+        "path": "/checkout/payment-handoff",
+        "family": "complete_payment",
+        "disposition": "existing",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "preserve-only",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "contact",
+        "path": "/contact",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "delivery",
+        "path": "/delivery",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "shipping-returns",
+        "path": "/shipping-returns",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "faq",
+        "path": "/faq",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "lab-reports",
+        "path": "/lab-reports",
+        "family": "openlab_archive",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab",
+        "path": "/open-lab",
+        "family": "openlab_portal",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-records",
+        "path": "/open-lab/records",
+        "family": "openlab_archive",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-record",
+        "path": "/open-lab/records/:recordId",
+        "family": "openlab_product_record",
+        "disposition": "replace",
+        "maturity": "SOURCE_BOUND",
+        "owner": "openlab-source",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-compound",
+        "path": "/open-lab/compound/:slug",
+        "family": "openlab_product_record",
+        "disposition": "new",
+        "maturity": "REVIEW_READY",
+        "owner": "openlab-source",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-report",
+        "path": "/open-lab/report/:batchId",
+        "family": "openlab_report_viewer",
+        "disposition": "new",
+        "maturity": "REVIEW_READY",
+        "owner": "openlab-source",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-coa-viewer",
+        "path": "/open-lab/coa/:id",
+        "family": "openlab_report_viewer",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-batch-lookup",
+        "path": "/open-lab/batch-lookup",
+        "family": "openlab_archive",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-methodology",
+        "path": "/open-lab/methodology",
+        "family": "openlab_methodology_compare_evidenceos",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-source-chain",
+        "path": "/open-lab/source-chain",
+        "family": "openlab_methodology_compare_evidenceos",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-compare",
+        "path": "/open-lab/compare",
+        "family": "openlab_methodology_compare_evidenceos",
+        "disposition": "enhance",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-evidence",
+        "path": "/open-lab/evidence",
+        "family": "openlab_methodology_compare_evidenceos",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-admin",
+        "path": "/open-lab/admin",
+        "family": "governance_review",
+        "disposition": "owner-only",
+        "maturity": "REVIEW_READY",
+        "owner": "sites-owner-review",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "privacy",
+        "path": "/privacy",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "terms",
+        "path": "/terms",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "wholesale",
+        "path": "/wholesale",
+        "family": "support_content",
+        "disposition": "enhance",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "international",
+        "path": "/international",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "gift-cards",
+        "path": "/gift-cards",
+        "family": "support_content",
+        "disposition": "authority-deferred",
+        "maturity": "DEFERRED_BY_AUTHORITY",
+        "owner": "commerce-policy",
+        "aliases": [],
+        "blocker": "Gift-card commercial authority not approved",
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-research-papers",
+        "path": "/open-lab/research-papers",
+        "family": "openlab_frontier_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-case-studies",
+        "path": "/open-lab/case-studies",
+        "family": "openlab_frontier_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-glossary",
+        "path": "/open-lab/glossary",
+        "family": "openlab_frontier_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-dosing-calculator",
+        "path": "/open-lab/dosing-calculator",
+        "family": "decision_tools",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-compound-guide",
+        "path": "/open-lab/compound-guide",
+        "family": "decision_tools",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-interaction-checker",
+        "path": "/open-lab/interaction-checker",
+        "family": "decision_tools",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-stack-builder",
+        "path": "/open-lab/stack-builder",
+        "family": "decision_tools",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-cycle-planner",
+        "path": "/open-lab/cycle-planner",
+        "family": "decision_tools",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "order-success",
+        "path": "/order/success/:orderId?",
+        "family": "post_purchase",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "order-pending",
+        "path": "/order/pending/:orderId?",
+        "family": "post_purchase",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "order-failed",
+        "path": "/order/failed/:orderId?",
+        "family": "post_purchase",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "order-cancelled",
+        "path": "/order/cancelled/:orderId?",
+        "family": "post_purchase",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "order-tracking",
+        "path": "/order/tracking/:orderId",
+        "family": "post_purchase",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "owner-review",
+        "path": "/review",
+        "family": "governance_review",
+        "disposition": "owner-only",
+        "maturity": "INTERACTIVE",
+        "owner": "sites-owner-review",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "legal-document",
+        "path": "/legal/:doc",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "open-lab-lab-partner",
+        "path": "/open-lab/lab-partner",
+        "family": "openlab_frontier_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "cookies",
+        "path": "/cookies",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "refunds",
+        "path": "/refunds",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "family-sarms",
+        "path": "/collections/sarms",
+        "family": "catalogue_search_collections",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "family-research-chemicals",
+        "path": "/collections/research-chemicals",
+        "family": "catalogue_search_collections",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "family-prohormones",
+        "path": "/collections/prohormones",
+        "family": "catalogue_search_collections",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "family-stacks",
+        "path": "/collections/stacks",
+        "family": "catalogue_search_collections",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "shop-goal",
+        "path": "/shop?goal=:goal",
+        "family": "catalogue_search_collections",
+        "disposition": "enhance",
+        "maturity": "INTERACTIVE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "sitemap",
+        "path": "/sitemap",
+        "family": "support_content",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      },
+      {
+        "id": "not-found",
+        "path": "/404",
+        "family": "shared_shell",
+        "disposition": "new",
+        "maturity": "SHAPE_COMPLETE",
+        "owner": "sites-reference",
+        "aliases": [],
+        "blocker": null,
+        "visualAdoption": "NOT_CLAIMED_BY_HANDOFF"
+      }
+    ],
+    "canonicalization": {
+      "product": "/product/:slug",
+      "openLab": "/open-lab",
+      "aliases": "must remain compatibility metadata and never inflate the 73-pattern count"
+    }
+  },
+  "mobileCompactionManifest": [
+    {
+      "primitive": "locked-home-hero",
+      "source": "app/design-system/locked-home-hero.module.css",
+      "behavior": "desktop 5-3-1 field recomposes into selected-product first decision sequence"
+    },
+    {
+      "primitive": "site-header",
+      "source": "app/design-system/site-header.module.css",
+      "behavior": "desktop navigation becomes labelled modal mobile navigation"
+    },
+    {
+      "primitive": "product-commerce-card",
+      "source": "app/design-system/product-commerce-card.module.css",
+      "behavior": "media, identity, metric rail and actions retain declared semantic order"
+    },
+    {
+      "primitive": "pdp-first-fold",
+      "source": "app/design-system/pdp-first-fold.module.css",
+      "behavior": "media and purchase remain the explicit first-fold surface-law exception"
+    },
+    {
+      "primitive": "openlab-sections",
+      "source": "app/design-system/openlab-sections.module.css",
+      "behavior": "record density compacts without becoming dashboard-card stacks"
+    },
+    {
+      "primitive": "transaction-presentation",
+      "source": "app/transaction-presentation.module.css",
+      "behavior": "quiet transaction hierarchy preserves current-state priority"
+    }
+  ],
+  "proofRegister": {
+    "sourceSlice": {
+      "family": "homepage",
+      "source": [
+        "app/design-system/locked-home-hero.tsx",
+        "app/design-system/locked-home-hero.module.css",
+        "app/design-system/site-header.tsx"
+      ],
+      "requiredViewports": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "state": "LOCAL_SOURCE_PROOF_COMPLETE",
+      "evidenceLocation": "/Users/mujtabakhawaja/Downloads/Codex-Cold-Store/oluk-sites-reconciliation-w05/home-comparison"
+    },
+    "remainingFamilies": "SOURCE_INVENTORIED_ONLY; no runtime or customer visual adoption claim until individual family comparison proof exists",
+    "consumerGate": "Shopper may begin only as a consumer of this source-attested contract; each migrated family must retain C2/Woo/Initiator ownership boundaries and prove 1440/1024/768/390 composition."
+  }
+}
