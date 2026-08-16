@@ -1,0 +1,15 @@
+{
+  "contract": "OLUK_ROUTE_PROOF_REGISTER_V1",
+  "status": "CANDIDATE_EVIDENCE_NOT_RUNTIME_OR_VISUAL_ADOPTION",
+  "sources": [
+    {"kind": "candidate-browser-proof", "path": "sites/oluk-experience-lab/scripts/proof/mf09-four-width.mjs", "recorded": "292 geometry cases in the current source history", "limitation": "candidate capture; not customer-route adoption"},
+    {"kind": "candidate-accessibility-proof", "path": "sites/oluk-experience-lab/scripts/proof/accessibility-smoke.mjs", "limitation": "does not replace real runtime proof"},
+    {"kind": "candidate-interaction-proof", "path": "sites/oluk-experience-lab/scripts/proof/interaction-state-proof.mjs", "limitation": "does not authorize runtime callbacks or payment behavior"}
+  ],
+  "consumerProofRequirement": {
+    "structuralCasesPerTheme": 352,
+    "themes": ["light", "dark after Sites dark-map review"],
+    "visualAdoptionRule": "HTTP 200, SSR markup, a main element, no overflow, or a historical screenshot cannot promote a route beyond NOT_PROVEN.",
+    "requiredAxes": ["route/family/context markers", "source-to-live token trace", "composition", "keyboard/focus", "state coverage", "SSR/hydration", "C2/Woo fidelity", "no browser-direct authority calls"]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "contract": "OLUK_TOKEN_MANIFEST_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "mode": "light",
+  "authoritativeDeclarationSet": {
+    "repository": "oluk-design-system",
+    "commit": "b0227a13faf7320f7d13fbc693e922b00bd471d3",
+    "path": "sites/oluk-experience-lab/app/design-system/candidate-tokens.css",
+    "gitBlob": "58663169372f6eda27db721fab38a6fe385c15f5",
+    "sha256": "c93ad3fedf4d54d0693c416c65bc37f394b77ef254ac9a060f15832d3c833b8d",
+    "selector": ":root",
+    "declarationPrefix": "--oluk-",
+    "declarationCount": 128,
+    "roleSourceRule": "Every --oluk-* declaration in the hash-locked source file is the complete light role set. Consumers must preserve its value graph and may not alias a role to Majestic."
+  },
+  "roleGroups": {
+    "surfacesAndText": ["canvas", "surface-*", "text-*", "ink-dark", "inverse"],
+    "interactionAndState": ["cobalt", "cobalt-alt", "cobalt-focus", "status-*", "stock-*"],
+    "structure": ["border-*", "border-width", "divider-width", "focus-width", "radius-*", "shadow-*"],
+    "media": ["media-gradient", "media-contact-shelf-gradient"],
+    "type": ["font-*", "type-*"],
+    "layoutAndMotion": ["space-*", "page-*", "gutter-*", "grid-*", "card-*", "control-*", "motion-*"]
+  },
+  "requiredSemanticSeparations": {
+    "stock": ["--oluk-stock-in-stock", "--oluk-stock-in-stock-soft", "--oluk-stock-out-of-stock", "--oluk-stock-unavailable"],
+    "success": ["--oluk-status-success", "--oluk-status-success-soft"],
+    "evidence": "Evidence has its own primitive and state contract; it is not a colour alias of stock or success.",
+    "rule": "Stock uses cobalt/cobalt-soft. Green success is non-inventory only."
+  },
+  "themePolicy": {
+    "light": "current exact source",
+    "dark": "deferred pending a role-for-role Sites review; no Shopper prototype value is imported by this manifest",
+    "invariants": ["fonts", "type metrics", "grid", "spacing", "radii", "border widths", "anatomy", "accessibility behavior", "motion"]
+  },
+  "consumerGuards": [
+    "No --oluk-* value may reference a --majestic-* value.",
+    "No consumer may rename the stock roles as success roles.",
+    "A local token extension requires an explicit handoff-baseline amendment."
+  ]
+}

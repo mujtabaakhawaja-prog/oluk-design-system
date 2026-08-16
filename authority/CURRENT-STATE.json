@@ -498,5 +498,21 @@
     "doesNotPromoteOrPublishFigma": true,
     "doesNotGrantProductionRuntimeAuthority": true
   },
+  "sitesHandoffBaselineV1": {
+    "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    "contract": "OLUK_SITES_HANDOFF_BASELINE_V1",
+    "path": "authority/handoffs/OLUK_SITES_HANDOFF_BASELINE_V1/",
+    "selectedCompositionCommit": "4d697e180300a6381d96ca50c2e80b27894f25de",
+    "publishedLightTokenSource": {
+      "commit": "b0227a13faf7320f7d13fbc693e922b00bd471d3",
+      "blob": "58663169372f6eda27db721fab38a6fe385c15f5",
+      "sha256": "c93ad3fedf4d54d0693c416c65bc37f394b77ef254ac9a060f15832d3c833b8d"
+    },
+    "routeScope": {"ledgerEntries": 73, "currentExecutableRouteDataEntries": 52, "currentNextPageFiles": 65},
+    "authority": "Sites controls visual composition and primitives; Shopper is a later consumer; C2/Woo/Initiator ownership remains unchanged.",
+    "darkMode": "DEFERRED_PENDING_ROLE_FOR_ROLE_SITES_REVIEW",
+    "publicationState": "UNPUBLISHED",
+    "runtimeAuthority": "NONE"
+  },
   "runtimeAuthority": "NONE_UNTIL_ARTIFACT_SPECIFIC_CONV004_MF10_CHAMPION_APPROVAL_AND_SEPARATE_MF_PLUS_PLUS_AUTHORIZATION"
 }

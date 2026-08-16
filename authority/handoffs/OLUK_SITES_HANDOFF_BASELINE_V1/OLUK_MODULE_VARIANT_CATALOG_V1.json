@@ -1,0 +1,15 @@
+{
+  "contract": "OLUK_MODULE_VARIANT_CATALOG_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "variants": [
+    {"module": "ProductCommerceCard", "variants": ["Compact", "Vertical", "Featured", "Relation"], "source": "product-commerce-card.tsx"},
+    {"module": "MediaChamber", "variants": ["Vertical desktop", "Vertical mobile", "Featured desktop", "Featured mobile"], "source": "product-media-chamber.tsx"},
+    {"module": "PurchasePanel", "variants": ["available", "out-of-stock", "unavailable", "quantity", "desktop", "mobile"], "source": "purchase-panel.tsx"},
+    {"module": "StockPill", "variants": ["in-stock", "out-of-stock", "unavailable"], "source": "product-status.tsx"},
+    {"module": "EvidenceStatus", "variants": ["verified", "available", "unavailable", "compact"], "source": "product-status.tsx"},
+    {"module": "ProductMetricRail", "variants": ["regular", "compact"], "source": "metric-rail.tsx"},
+    {"module": "CobaltDensityBoundary", "variants": ["hero", "OpenLab"], "source": "cobalt-divider.tsx"},
+    {"module": "TransactionPresentation", "variants": ["bag", "information", "delivery", "review", "processing", "confirmation", "failure", "retry", "tracking"], "source": "transaction-presentation.tsx"}
+  ],
+  "anatomyRule": "Variants share canonical anatomy. A consumer may not splice locally invented card, status, surface or transaction anatomy under a canonical variant name."
+}

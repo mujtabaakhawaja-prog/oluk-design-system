@@ -1,0 +1,33 @@
+{
+  "contract": "OLUK_ROUTE_RENDER_MANIFEST_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "ledger": {
+    "path": "authority/SITE-ROUTE-LEDGER.json",
+    "sha256": "329b48a822b99de8728d1d0d28e037a8b5fcb2244c19421e8a0e12489de53ce7",
+    "ledgerId": "OLUK-SITE-ROUTES-073",
+    "entryCount": 73,
+    "entryUnit": "canonical route pattern",
+    "sourceOfEntries": "The complete serializable entries are the routes array in the hash-locked ledger; this wrapper does not duplicate or dilute them."
+  },
+  "canonicalization": {
+    "product": "/product/:slug",
+    "openLab": "/open-lab",
+    "checkoutInformation": "/checkout/info",
+    "productLegacy": "/products/:slug -> /product/:slug (GET/HEAD 308 only)",
+    "openLabLegacy": "/openlab/* -> /open-lab/* (GET/HEAD 308 only)",
+    "checkoutLegacy": "/checkout/information remains render-equivalent until checkout-family proof; no POST redirect",
+    "unknown": "declared 404 response",
+    "aliasesCountAsCanonicalEntries": false
+  },
+  "instances": {
+    "productPattern": "/product/:slug",
+    "canonicalProducts": ["mk-2866", "lgd-4033", "rad-140", "mk-677", "gw-501516", "s-4", "yk-11", "s-23", "epistane", "ment", "m-sten", "trenavar", "bpc-157", "tb-500", "cjc-1295", "l-carnitine"],
+    "rule": "Instances are attached to the product pattern and do not inflate the 73-entry count."
+  },
+  "knownReconciliationGap": {
+    "currentExecutableRouteDataEntries": 52,
+    "currentNextPageFiles": 65,
+    "resolution": "The ledger is the consumer contract. A later Shopper route lane must implement a typed resolver/renderer registry and prove actual renderer selection."
+  },
+  "requiredRootMarkers": ["data-oluk-route-id", "data-oluk-family", "data-oluk-context-variant", "data-oluk-migration-state"]
+}

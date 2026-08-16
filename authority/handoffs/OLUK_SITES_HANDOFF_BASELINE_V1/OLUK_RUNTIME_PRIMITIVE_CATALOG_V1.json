@@ -1,0 +1,21 @@
+{
+  "contract": "OLUK_RUNTIME_PRIMITIVE_CATALOG_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "sourceRoot": "sites/oluk-experience-lab/app/design-system",
+  "primitives": [
+    {"id": "StockPill", "module": "product-status.tsx", "job": "inventory atom", "states": ["in-stock", "out-of-stock", "unavailable"]},
+    {"id": "EvidenceStatus", "module": "product-status.tsx", "job": "evidence/source-state atom", "states": ["verified", "available", "unavailable"]},
+    {"id": "ProductMetricRail", "module": "metric-rail.tsx", "job": "quantified product facts; never generic pills"},
+    {"id": "QualitativeChip", "module": "qualitative-chip.tsx", "job": "bounded qualitative fact", "states": ["default", "selected", "disabled"]},
+    {"id": "ProductMediaChamber", "module": "product-media-chamber.tsx", "job": "bounded authored product environment", "variants": ["hero", "dossier", "vertical", "featured"]},
+    {"id": "PurchasePanel", "module": "purchase-panel.tsx", "job": "decision/purchase presentation", "rule": "no owned media chamber"},
+    {"id": "ProductCommerceCard", "module": "product-commerce-card.tsx", "job": "product-card composition", "variants": ["compact", "vertical", "featured", "relation"]},
+    {"id": "ProductDossier", "module": "product-dossier.tsx", "job": "product technical/evidence composition"},
+    {"id": "CobaltDensityBoundary", "module": "cobalt-divider.tsx", "job": "meaningful density boundary", "rhythm": "32px / 2px / 32px"},
+    {"id": "SiteHeader", "module": "site-header.tsx", "job": "shared shell/navigation"},
+    {"id": "ContentSurfaces", "module": "content-surfaces.tsx", "job": "editorial, decision and technical surface grammar"},
+    {"id": "YourStackBuilder", "module": "your-stack-builder.tsx", "job": "decision-tool composition; source of visual grammar only"},
+    {"id": "TransactionPresentation", "module": "transaction-presentation.tsx", "job": "quiet lifecycle presentation; no payment execution"}
+  ],
+  "consumerRule": "A Shopper consumer may adapt the implementation host but must retain semantic role, native behavior, state boundaries and source ownership."
+}

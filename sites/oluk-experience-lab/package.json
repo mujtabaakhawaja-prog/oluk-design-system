@@ -11,6 +11,7 @@
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run build && node --test tests/*.test.mjs",
     "proof:tokens": "node scripts/proof/token-contract.mjs --check=tests/contracts/governed-token-manifest.json",
+    "proof:sites-handoff-baseline": "node scripts/proof/sites-handoff-baseline.mjs",
     "proof:provenance": "node scripts/proof/component-provenance.mjs",
     "proof:taxonomy": "node scripts/proof/taxonomy-contract-smoke.mjs",
     "proof:code-bridge": "node scripts/proof/figma-code-bridge.mjs",

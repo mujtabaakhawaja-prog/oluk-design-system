@@ -1,0 +1,31 @@
+{
+  "contract": "OLUK_AVAILABILITY_EVIDENCE_CONTRACT_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "inventory": {
+    "owner": "Woo/C2 availability projection",
+    "primitive": {
+      "module": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+      "export": "StockPill",
+      "props": ["state", "className"]
+    },
+    "states": {
+      "in-stock": {"label": "IN STOCK", "foreground": "#0057FF", "surface": "#EEF4FF", "tokens": ["--oluk-stock-in-stock", "--oluk-stock-in-stock-soft"]},
+      "out-of-stock": {"label": "OUT OF STOCK", "foreground": "#B42318", "surface": "#FEF3F2", "tokens": ["--oluk-stock-out-of-stock", "--oluk-stock-out-of-stock-soft"]},
+      "unavailable": {"label": "UNAVAILABLE", "foreground": "#64718A", "surface": "#F4F5F7", "tokens": ["--oluk-stock-unavailable", "--oluk-stock-unavailable-soft"]}
+    }
+  },
+  "evidence": {
+    "owner": "OpenLab/C2 source projection",
+    "primitive": {"module": "sites/oluk-experience-lab/app/design-system/product-status.tsx", "export": "EvidenceStatus", "props": ["state", "compact", "className"]},
+    "states": ["verified", "available", "unavailable"],
+    "rule": "Evidence reports source availability or verification state. It never implies product efficacy and never substitutes for inventory."
+  },
+  "actionAndSystemState": {
+    "success": {"token": "--oluk-status-success", "value": "#15803D", "use": "non-inventory completed action only"},
+    "forbidden": ["Use of #4ADE80 as StockPill in-stock state", "stock-to-success token aliasing", "using an internal pass state as customer availability"]
+  },
+  "composition": {
+    "combinedPrimitive": "ProductStatusStack",
+    "rule": "StockPill and EvidenceStatus may be composed together but remain separately addressable atoms and separately owned fields."
+  }
+}

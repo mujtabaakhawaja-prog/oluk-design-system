@@ -1,0 +1,16 @@
+{
+  "contract": "OLUK_MOBILE_COMPACTION_MANIFEST_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "widthsPx": [1440, 1024, 768, 390],
+  "order": "desktop and tablet hierarchy settle before mobile compaction; accessibility and final polish follow compaction",
+  "familyRules": [
+    {"family": "shared_shell", "rule": "preserve navigation intent and keyboard access while compacting utility/navigation density"},
+    {"family": "catalogue_discovery", "rule": "Vertical desktop cards recompose as one-decision-at-a-time Compact mobile cards"},
+    {"family": "product_detail", "rule": "preserve MediaChamber/PurchasePanel first-fold relationship; use deliberate disclosure for later dossier material"},
+    {"family": "openlab", "rule": "preserve source-state distinction and readable table/chart alternatives"},
+    {"family": "decision_tools", "rule": "preserve selected state and product-role comparison without stacked visual noise"},
+    {"family": "transaction_lifecycle", "rule": "remain quiet, linear and payment-sterile"}
+  ],
+  "requiredChecks": ["child bounds", "scroll width", "clipping", "overlap", "wrapping", "touch targets", "slot order", "long copy", "missing data", "media states", "keyboard focus", "reduced motion"],
+  "sourceEvidence": "sites/oluk-experience-lab/scripts/proof/mf09-four-width.mjs and the route ledger's per-entry mobile strategy"
+}

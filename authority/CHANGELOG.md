@@ -187,3 +187,11 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added exact rendered-PDP checks for each catalogue item plus customer-copy lint coverage. Validation: typecheck pass, tests `96/96`, customer-copy audit `70/70`.
 - Re-ran current-branch browser QA after the copy change: MF-09 geometry `292/292`, accessibility `146/146`, contrast/reflow/long-copy `70/70`, and interactions `35/35` including transaction zero-callback `8/8`.
 - This remains a bounded content/reference alignment. Recapture and visual comparison still precede `sync-verified`; champion review, Figma publication and deployment remain separate.
+
+## 2026-08-15 — OLUK Sites Handoff Baseline V1
+
+- Recorded `DEC-SITES-HANDOFF-001`: Codex Sites composition is the primary visual-system authority; Shopper is a later consumer and cannot author a parallel visual substrate.
+- Added the versioned `authority/handoffs/OLUK_SITES_HANDOFF_BASELINE_V1/` package. It binds the real 5175 composition commit `4d697e1`, the exact published 128-role light-token blob `58663169…`, the 73-pattern structural ledger, primitive/module/family/mobile contracts and the candidate-proof limitations.
+- Resolved the availability collision in the handoff: StockPill in-stock is cobalt on cobalt-soft; green success is a distinct non-inventory state; evidence is a separate source-state primitive.
+- Recorded rather than concealed the source discrepancy: the selected composition tree has 65 Next page files, executable route data has 52 entries, and the canonical structural ledger has 73 patterns. A later consumer must implement a typed resolver/renderer registry; no source count is silently substituted for another.
+- The handoff remains `CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED`. No Figma publication, deployment, Shopper/C2/Woo/Initiator mutation or runtime promotion occurred.

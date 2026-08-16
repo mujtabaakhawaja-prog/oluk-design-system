@@ -1,0 +1,27 @@
+{
+  "contract": "OLUK_TYPE_AND_MATERIAL_CONTRACT_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "fontLoadingSource": "sites/oluk-experience-lab/app/layout.tsx",
+  "typefaces": {
+    "displayAndHeading": {"family": "Plus Jakarta Sans", "weights": [700, 800], "governedWeight": 800},
+    "bodyAndUi": {"family": "Inter Variable", "minimumCustomerBodyPx": 15, "preferredBodyPx": [15, 16]},
+    "codeOnly": {"family": "JetBrains Mono", "restriction": "intentional code specimen only"},
+    "rejected": ["Cousine", "Barlow Condensed", "large Inter display headings", "static Inter body/UI"]
+  },
+  "typeRoles": {
+    "display": ["--oluk-type-display-xl", "--oluk-type-display-lg", "--oluk-type-display-md"],
+    "body": ["--oluk-type-body-lg", "--oluk-type-body", "--oluk-type-body-sm"],
+    "metadata": ["--oluk-type-label", "--oluk-type-eyebrow"],
+    "metric": ["--oluk-type-product", "--oluk-type-metric"],
+    "exception": "--oluk-type-chip-label at 11px is the one named QualitativeChip exception."
+  },
+  "material": {
+    "canvas": "cool luminous; never cream, beige, blanket grey or broad inverse",
+    "surfaceRule": "raised white content and purchase planes use restrained cool elevation",
+    "media": "bounded authored MediaChamber atmosphere; not a generic section background",
+    "inverse": "current candidate permits the dark footer as the sole persistent inverse surface",
+    "literalPaintException": ["outer #F8FBFF to #E4ECFA", "contact shelf #FFFFFF to #E6EDFA"],
+    "literalPaintScope": "DEC-MEDIA-003 atmospheric MediaChamber recipe only"
+  },
+  "layout": {"contentMaxPx": 1344, "columns": 12, "documentGutterPx": 24, "pageGuttersPx": {"desktop": 48, "tablet": 32, "mobile": 16}}
+}

@@ -339,6 +339,18 @@
       "appliesTo": ["Codex Sites customer routes", "Figma customer surfaces", "accessibility proof"],
       "supersedes": ["DEC-TYPE-001 PROPOSED_NON_CONTROLLING disposition"],
       "guardrails": ["QualitativeChip label exception only", "HUMAN_REVIEW_REQUIRED", "UNPUBLISHED"]
+    },
+    {
+      "id": "DEC-SITES-HANDOFF-001",
+      "recordedDate": "2026-08-15",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Codex Sites real route composition is the primary visual-system authority. Reconcile it with the published b022 token/primitive source in a versioned OLUK_SITES_HANDOFF_BASELINE_V1 before Shopper starts further visual-family work. Shopper is a consumer of that baseline, not a design-system author. C2 owns semantic projections, Woo owns live price/stock/purchasability, and Initiator remains payment-terminal only.",
+      "sources": ["Sites composition commit 4d697e180300a6381d96ca50c2e80b27894f25de", "published token commit b0227a13faf7320f7d13fbc693e922b00bd471d3", "StockPill 626:12001", "DEC-STOCK-001"],
+      "appliesTo": ["Sites handoff", "Shopper consumer lanes", "token authority", "primitive authority", "route composition", "status semantics"],
+      "clarifies": ["DEC-COLOR-001", "DEC-STOCK-001", "DEC-TYPEFACE-001", "DEC-RUN-002"],
+      "supersedes": ["Shopper-only foundation as visual-system authority", "green inventory interpretation"],
+      "guardrails": ["HUMAN_REVIEW_REQUIRED", "UNPUBLISHED", "no Figma publication", "no deployment", "no Shopper/C2/Woo/Initiator mutation by this handoff"]
     }
   ]
 }

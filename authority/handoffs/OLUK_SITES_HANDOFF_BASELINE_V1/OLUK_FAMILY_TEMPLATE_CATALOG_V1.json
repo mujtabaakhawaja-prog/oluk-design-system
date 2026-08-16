@@ -1,0 +1,15 @@
+{
+  "contract": "OLUK_FAMILY_TEMPLATE_CATALOG_V1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "compositionLaw": "FAMILY_TEMPLATE + EXPLICIT_ROUTE_ENTRY + CONTROLLER_SELECTED_CONTEXT_VARIANT",
+  "families": [
+    {"id": "shared_shell", "modules": ["SiteHeader", "footer", "content surface"], "source": ["site-header.tsx", "globals.css"]},
+    {"id": "homepage", "modules": ["LockedHomeHero", "product rails", "assurance"], "source": ["locked-home-hero.tsx", "assurance-rail.tsx"], "interaction": "preserve selection, keyboard and history behavior"},
+    {"id": "catalogue_discovery", "modules": ["shop discovery", "ProductCommerceCard", "filters"], "source": ["shop-discovery.tsx", "product-commerce-card.tsx"]},
+    {"id": "product_detail", "modules": ["ProductMediaChamber", "PurchasePanel", "ProductMetricRail", "ProductDossier"], "source": ["pdp-first-fold.tsx", "product-dossier.tsx"], "exception": "first fold deliberately joins media chamber and PurchasePanel"},
+    {"id": "openlab", "modules": ["OpenLab surfaces", "EvidenceStatus", "record states"], "source": ["openlab-sections.tsx", "openlab-product-experience.tsx"]},
+    {"id": "decision_tools", "modules": ["YourStackBuilder", "ProductCommerceCard", "evidence states"], "source": ["your-stack-builder.tsx"]},
+    {"id": "transaction_lifecycle", "modules": ["TransactionPresentation", "payment trust"], "source": ["transaction-presentation.tsx", "payment-trust.tsx"], "rule": "quiet presentation; payment execution remains outside the family"},
+    {"id": "support_legal_account", "modules": ["support surface", "customer route primitives"], "source": ["support-surface.tsx", "customer-route-primitives.tsx"]}
+  ]
+}
