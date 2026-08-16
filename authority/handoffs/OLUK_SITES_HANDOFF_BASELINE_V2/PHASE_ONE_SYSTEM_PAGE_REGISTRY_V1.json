@@ -1,0 +1,30 @@
+{
+  "contract": "OLUK_SITES_PHASE_ONE_SYSTEM_PAGE_REGISTRY_V1",
+  "status": "SOURCE_ATTESTED_CANDIDATE_CONSUMER_INPUT",
+  "source": {
+    "revision": "0949175",
+    "module": "sites/oluk-experience-lab/app/design-system/phase-one-system.tsx",
+    "indexRoute": "/design-system",
+    "detailRoute": "/design-system/:page"
+  },
+  "pages": [
+    {"order": 1, "route": "/design-system/law", "kind": "law"},
+    {"order": 2, "route": "/design-system/route-contract", "kind": "law"},
+    {"order": 3, "route": "/design-system/tokens", "kind": "grammar"},
+    {"order": 4, "route": "/design-system/type-layout", "kind": "grammar"},
+    {"order": 5, "route": "/design-system/material-motion", "kind": "grammar"},
+    {"order": 6, "route": "/design-system/components", "kind": "component-documentation"},
+    {"order": 7, "route": "/design-system/commerce-atoms", "kind": "component-documentation"},
+    {"order": 8, "route": "/design-system/homepage", "kind": "applied-template-specimen"},
+    {"order": 9, "route": "/design-system/pdp-mk-2866", "kind": "applied-template-specimen"},
+    {"order": 10, "route": "/design-system/commerce-openlab", "kind": "applied-template-specimen"},
+    {"order": 11, "route": "/design-system/proof", "kind": "proof"},
+    {"order": 12, "route": "/design-system/consumer-bridge", "kind": "consumer-bridge"}
+  ],
+  "darkMode": {
+    "state": "DEFERRED",
+    "allowedFutureScope": ["semantic colour roles", "fills", "colour-token inheritance"],
+    "inheritedLightSystem": ["typography", "fonts", "grids", "spacing", "radii", "anatomy", "responsive grammar", "accessibility", "motion"]
+  },
+  "fixtureBoundary": "Applied specimens prove source composition only. Shopper must replace fixture values with server-owned projections before customer adoption."
+}
