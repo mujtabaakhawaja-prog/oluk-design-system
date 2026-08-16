@@ -1,0 +1,44 @@
+{
+  "contract": "OLUK_SITES_RECONCILIATION_SOURCE_TOPOLOGY_V1",
+  "status": "W05_HOME_FAMILY_VERTICAL_SLICE",
+  "reconciliationBase": {
+    "repository": "oluk-design-system",
+    "commit": "b0227a13faf7320f7d13fbc693e922b00bd471d3",
+    "role": "reproducible pushed token and primitive base"
+  },
+  "compositionReference": {
+    "worktree": "/Users/mujtabakhawaja/Worktrees/oluk-champion-integration",
+    "commit": "4d697e180300a6381d96ca50c2e80b27894f25de",
+    "paths": [
+      "sites/oluk-experience-lab/app/customer-routes.tsx",
+      "sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx",
+      "sites/oluk-experience-lab/app/design-system/locked-home-hero.module.css"
+    ],
+    "role": "primary customer composition reference"
+  },
+  "historicalCandidate": {
+    "commit": "02185547c2409b2ca4cf8acc882c6051b3b6a846",
+    "tag": "OLUK_SITES_HANDOFF_BASELINE_V1",
+    "role": "reusable evidence only; not the source of this vertical slice"
+  },
+  "implementedSource": {
+    "homepageRoute": "sites/oluk-experience-lab/app/customer-routes.tsx#HomeRoute",
+    "hero": "sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx",
+    "statusPrimitives": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+    "derivedReceipt": "authority/generated/CUSTOMER-SURFACE-GRAMMAR-AUDIT.json"
+  },
+  "selection": {
+    "heroComposition": "5175 joined 5-3-1 hero silhouette",
+    "tokensAndPrimitives": "b022 governed OLUK token and component contracts",
+    "availability": "StockPill is cobalt on cobalt-soft and is distinct from EvidenceStatus and generic success"
+  },
+  "exclusions": [
+    "Shopper runtime",
+    "C2",
+    "Woo",
+    "Initiator",
+    "payment",
+    "deployment",
+    "Figma and Make mutation"
+  ]
+}

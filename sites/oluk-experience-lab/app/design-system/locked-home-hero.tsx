@@ -11,10 +11,8 @@ import {
 } from "react";
 
 import { ActionButton, ActionLink } from "./action-control";
-import { DecisionSurface, EditorialSurface } from "./content-surfaces";
 import { lockedHomeHeroMedia } from "./locked-home-hero-media";
 import { MetricRail } from "./metric-rail";
-import { SurfaceGrid, SurfaceGridZone } from "./surface-grid";
 import styles from "./locked-home-hero.module.css";
 
 const products = [
@@ -133,24 +131,79 @@ export function LockedHomeHero() {
       id="hero"
       ref={rootRef}
     >
-      <SurfaceGrid className={styles.composition}>
-        <SurfaceGridZone className={styles.editorialZone} zone="split-start">
-          <EditorialSurface
-            actions={(
-              <>
-                <ActionLink href="/shop">Shop the range</ActionLink>
-                <ActionLink href="/open-lab/records" variant="secondary">View Lab Records</ActionLink>
-              </>
-            )}
-            className={styles.editorialSurface}
-            copy="Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose."
-            eyebrow="Formulated. Verified. Batch tracked."
-            headingLevel="h1"
-            title="Formulated to a higher standard."
-          />
-        </SurfaceGridZone>
+      <div className={styles.hero} data-home-family="locked-5-3-1">
+        <div className={styles.editorial}>
+          <div
+            className={styles.copy}
+            data-copy-sequence="eyebrow-title-primary-actions"
+            data-copy-surface="editorial"
+            data-mobile-strategy="recompose"
+          >
+            <span>Formulated. Verified. Batch tracked.</span>
+            <h1>Formulated to a higher standard.</h1>
+            <p>Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose.</p>
+            <div className={styles.actions}>
+              <ActionLink href="/shop">Shop the range</ActionLink>
+              <ActionLink href="/open-lab/records" variant="secondary">View Lab Records</ActionLink>
+            </div>
+          </div>
+          <div aria-hidden="true" className={styles.divider} />
+          <section className={styles.decision} data-copy-surface="decision">
+            <div className={styles.identity}>
+              <span>Featured product</span>
+              <h2>{active.name}</h2>
+              <p>{active.alias}</p>
+            </div>
+            <p aria-atomic="true" aria-live="polite" className="sr-only">
+              Featured product changed to {active.name}, {active.alias}.
+            </p>
+            <MetricRail
+              className={styles.metrics}
+              values={{
+                purity: active.purity,
+                servings: active.servings,
+                strength: active.strength,
+              }}
+            />
+            <div className={styles.commerceRow}>
+              <div className={styles.price}>
+                <span>Price</span>
+                <strong>{active.price}</strong>
+              </div>
+              <div className={styles.commerceActions}>
+                <ActionLink href={active.href} size="compact">View product</ActionLink>
+                <ActionButton disabled size="compact" variant="secondary">Add to bag</ActionButton>
+              </div>
+            </div>
+            <div
+              aria-label="Featured product"
+              aria-orientation="horizontal"
+              className={styles.tabs}
+              role="tablist"
+            >
+              {products.map((product, index) => (
+                <ActionButton
+                  aria-controls="hero-product-stage"
+                  aria-selected={product.id === active.id}
+                  className={styles.tabControl}
+                  data-hero-product={product.id}
+                  id={`hero-product-tab-${product.id}`}
+                  key={product.id}
+                  onClick={() => selectProduct(product.id)}
+                  onKeyDown={(event) => onTabKeyDown(event, index)}
+                  role="tab"
+                  size="compact"
+                  tabIndex={product.id === active.id ? 0 : -1}
+                  variant={product.id === active.id ? "primary" : "secondary"}
+                >
+                  {product.name}
+                </ActionButton>
+              ))}
+            </div>
+          </section>
+        </div>
 
-        <SurfaceGridZone className={styles.stageZone} zone="split-end">
+        <div className={styles.stageColumn}>
           <div
             aria-labelledby={`hero-product-tab-${active.id}`}
             className={styles.stage}
@@ -215,65 +268,8 @@ export function LockedHomeHero() {
               </ActionButton>
             </div>
           </div>
-        </SurfaceGridZone>
-
-        <SurfaceGridZone className={styles.decisionZone} zone="split-start">
-          <DecisionSurface
-            className={styles.decisionSurface}
-            compact
-            copy={active.alias}
-            eyebrow="FEATURED PRODUCT"
-            title={active.name}
-          >
-            <p aria-atomic="true" aria-live="polite" className="sr-only">
-              Featured product changed to {active.name}, {active.alias}.
-            </p>
-            <MetricRail
-              className={styles.metrics}
-              values={{
-                purity: active.purity,
-                servings: active.servings,
-                strength: active.strength,
-              }}
-            />
-            <div className={styles.commerceRow}>
-              <div className={styles.price}>
-                <span>Price</span>
-                <strong>{active.price}</strong>
-              </div>
-              <div className={styles.commerceActions}>
-                <ActionLink href={active.href} size="compact">View product</ActionLink>
-                <ActionButton disabled size="compact" variant="secondary">Add to bag</ActionButton>
-              </div>
-            </div>
-            <div
-              aria-label="Featured product"
-              aria-orientation="horizontal"
-              className={styles.tabs}
-              role="tablist"
-            >
-              {products.map((product, index) => (
-                <ActionButton
-                  aria-controls="hero-product-stage"
-                  aria-selected={product.id === active.id}
-                  className={styles.tabControl}
-                  data-hero-product={product.id}
-                  id={`hero-product-tab-${product.id}`}
-                  key={product.id}
-                  onClick={() => selectProduct(product.id)}
-                  onKeyDown={(event) => onTabKeyDown(event, index)}
-                  role="tab"
-                  size="compact"
-                  tabIndex={product.id === active.id ? 0 : -1}
-                  variant={product.id === active.id ? "primary" : "secondary"}
-                >
-                  {product.name}
-                </ActionButton>
-              ))}
-            </div>
-          </DecisionSurface>
-        </SurfaceGridZone>
-      </SurfaceGrid>
+        </div>
+      </div>
     </section>
   );
 }

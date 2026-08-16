@@ -30,6 +30,7 @@ export function StockPill({ state = "in-stock", className }: StockPillProps) {
         "oluk-inventory-status",
         className,
       )}
+      data-oluk-status-kind="availability"
       data-state={state}
     >
       <i aria-hidden="true" />
@@ -61,6 +62,7 @@ export function EvidenceStatus({ state = "verified", compact = false, className 
         "oluk-evidence-status",
         className,
       )}
+      data-oluk-status-kind="evidence"
       data-state={state}
     >
       <span className="oluk-candidate-evidence-icon">
