@@ -25,7 +25,6 @@ export const routeReviewTargets = {
   home: { nodeId: "764:50", kind: "route-frame" },
   shop: { nodeId: "765:50", kind: "route-frame" },
   product: { nodeId: "766:50", kind: "route-frame" },
-  "product-continuation": { nodeId: "766:50", kind: "route-frame" },
   reviews: { nodeId: "921:2717", kind: "group-review-board" },
   about: { nodeId: "921:2717", kind: "group-review-board" },
   "evidence-os": { nodeId: "921:2717", kind: "group-review-board" },

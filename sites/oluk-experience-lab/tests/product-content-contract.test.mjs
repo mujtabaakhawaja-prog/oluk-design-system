@@ -120,7 +120,7 @@ test("route and slot contracts cover responsive, unavailable, and transaction-si
     assert.match(routeText, new RegExp(required, "i"), required);
   }
   assert.equal(matrix.scopeReconciliation.historicalFourWidthCandidateSubset, 31);
-  assert.equal(matrix.scopeReconciliation.exactCustomerRouteRegistry, 52);
+  assert.equal(matrix.scopeReconciliation.exactCustomerRouteRegistry, 51);
   assert.equal(matrix.scopeReconciliation.physicalNextPagePatterns, 68);
   assert.equal(matrix.scopeReconciliation.canonicalLedgerDispositionPatterns, 73);
   assert.equal(matrix.scopeReconciliation.candidateStandaloneOutsideLedger, 19);

@@ -1,5 +1,17 @@
-import { FrontierShell, ProductCollection } from "../../design-system/frontier-sections";
-import { frontierProducts, productFamilies } from "../../design-system/frontier-content";
-import { CustomerSiteChrome } from "../../experience-lab";
-export function generateStaticParams(){return productFamilies.map(({name})=>({family:name.toLowerCase().replaceAll(" ","-")}));}
-export default function CollectionPage({params}:{params:{family:string}}){const family=productFamilies.find((item)=>item.name.toLowerCase().replaceAll(" ","-")===params.family);const products=frontierProducts.filter((product)=>product.family===family?.name);return <CustomerSiteChrome route="shop"><FrontierShell eyebrow="COLLECTION" title={family?.name??"Collection"}><ProductCollection products={products}/></FrontierShell></CustomerSiteChrome>}
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Shop family specimen | Olympus Labs UK",
+  robots: { index: false, follow: false },
+};
+
+export default function ShopFamilySpecimen({ params }: { params: { family: string } }) {
+  return (
+    <main data-owner-specimen="shop-family" data-route-disposition="specimen-only">
+      <h1>Shop family specimen</h1>
+      <p>
+        The <code>{params.family}</code> family path is retained for owner review only. Customer
+        discovery uses the finite collection and Shop facet destinations.
+      </p>
+    </main>
+  );
+}

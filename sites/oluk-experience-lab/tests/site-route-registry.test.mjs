@@ -13,7 +13,10 @@ import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRoot = path.join(siteRoot, "app");
-const PRIVATE_REVIEW_SPECIMEN_ROUTES = Object.freeze(["/review-studio/surface-grammar"]);
+const PRIVATE_REVIEW_SPECIMEN_ROUTES = Object.freeze([
+  "/product/mk-2866/continuation",
+  "/review-studio/surface-grammar",
+]);
 
 async function pageRoutes(directory = appRoot) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -30,10 +33,10 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("core registry controls 52 physical pages while the proof matrix resolves all 73 ledger dispositions", async () => {
-  assert.equal(CUSTOMER_ROUTES.length, 52);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
+test("core registry controls 51 physical pages while the proof matrix resolves all 73 ledger dispositions", async () => {
+  assert.equal(CUSTOMER_ROUTES.length, 51);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 51);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 51);
   const declaredPaths = new Set([
     ...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath),
     ...FRONTIER_ROUTE_PATTERNS,

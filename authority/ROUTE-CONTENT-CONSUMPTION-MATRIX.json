@@ -11,14 +11,14 @@
   ],
   "scopeReconciliation": {
     "historicalFourWidthCandidateSubset": 31,
-    "exactCustomerRouteRegistry": 52,
+    "exactCustomerRouteRegistry": 51,
     "physicalNextPagePatterns": 68,
     "canonicalLedgerDispositionPatterns": 73,
     "candidateStandaloneOutsideLedger": 19,
     "countsAreNotAdditive": true,
     "interpretation": [
       "31 is the historical exact four-width candidate subset recorded by CONV-003/CONV-004; it is not the current route inventory.",
-      "52 is the current exact CUSTOMER_ROUTES review and proof registry in site-route-data.mjs.",
+      "51 is the current exact CUSTOMER_ROUTES review and proof registry in site-route-data.mjs.",
       "68 is the current count of physical Next.js page patterns: 39 exact core paths plus 29 declared dynamic, frontier or owner patterns.",
       "73 is the canonical ledger disposition and pattern count, including query and pattern dispositions that are not all physical pages.",
       "19 is the CANDIDATE-STANDALONE registry count outside the canonical ledger, including the physically implemented but DESIGN_INCOMPLETE and NOT_PROMOTED /bundle-builder.",
@@ -86,7 +86,7 @@
     },
     {
       "id": "catalogue-shop-collections-search",
-      "routePatterns": ["/shop", "/shop/:family", "/collections/:slug", "/search"],
+      "routePatterns": ["/shop", "/collections/:slug", "/search"],
       "scopeClass": "CANONICAL_AND_CANDIDATE_PATTERN_GROUP",
       "module": "catalogue discovery grid and filters",
       "component": "CommerceDiscoveryFilters / ProductCommerceCard.Compact / ProductCommerceCard.Vertical",
@@ -154,7 +154,7 @@
     },
     {
       "id": "pdp-related-continuation",
-      "routePatterns": ["/product/:slug", "/product/:slug/continuation"],
+      "routePatterns": ["/product/:slug"],
       "scopeClass": "CANONICAL_WITH_EXECUTABLE_FIXTURE_DETAIL",
       "module": "related products and continuation",
       "component": "RelatedRail / RelationCard / UpsellContextRail",
