@@ -153,21 +153,25 @@ async function ownerReviewSuite(chromePort, baseUrl) {
 
     await proofCase(targetSuite, "exact-mk-2866-truth", async () => {
       const text = await inspect(client, `document.querySelector("[data-owner-only='true']")?.textContent?.replace(/\\s+/g, " ").trim() ?? ""`);
-      const exact = ["SARM SERIES", "MK-2866", "Ostarine", "80529-01", "15 MG", "90 SERVINGS", ">99%", "£43", "OPENLAB VERIFIED"];
+      const exact = ["SARM SERIES", "MK-2866", "Ostarine", "80529-01", "15 MG", "90 SERVINGS", ">99%", "£43", "SOURCE REPORTED"];
       const missing = exact.filter((value) => !text.includes(value));
       return requireCondition(missing.length === 0 && !/90 CAPS(?:\\b|ULES)/i.test(text), `MK truth drift: ${missing.join(", ")}`, { exact, missing, has90Caps: /90 CAPS(?:\\b|ULES)/i.test(text) });
     });
 
     await proofCase(targetSuite, "keyboard-tabs-arrow-navigation", async () => {
-      await inspect(client, `(() => {
-        const tab = [...document.querySelectorAll("[role='tab']")].find((candidate) => candidate.textContent?.trim() === "Product");
-        tab?.focus();
-        return Boolean(tab);
+      const focused = await inspect(client, `(() => {
+        const tab = [...document.querySelectorAll("[data-owner-only='true'] [role='tab']")].find((candidate) => candidate.textContent?.trim() === "Product");
+        if (!tab) return false;
+        tab.focus();
+        return true;
       })()`);
-      await client.send("Input.dispatchKeyEvent", { type: "keyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39 });
-      await client.send("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39 });
-      await waitFor(client, `[...document.querySelectorAll("[role='tab']")].some((tab) => tab.textContent?.trim() === "Evidence" && tab.getAttribute("aria-selected") === "true" && document.activeElement === tab)`, "Evidence tab keyboard selection");
-      return inspect(client, `({ selected: document.activeElement?.textContent?.trim(), role: document.activeElement?.getAttribute("role") })`);
+      await waitFor(client, `document.activeElement?.textContent?.trim() === "Product" && document.activeElement?.getAttribute("role") === "tab"`, "Product tab focus");
+      await client.send("Page.bringToFront");
+      await client.send("Input.dispatchKeyEvent", { type: "rawKeyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 124 });
+      await client.send("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39, nativeVirtualKeyCode: 124 });
+      await waitFor(client, `[...document.querySelectorAll("[data-owner-only='true'] [role='tab']")].some((tab) => tab.textContent?.trim() === "Evidence" && tab.getAttribute("aria-selected") === "true" && document.activeElement === tab)`, "Evidence tab keyboard selection");
+      const evidence = await inspect(client, `({ selected: document.activeElement?.textContent?.trim(), role: document.activeElement?.getAttribute("role") })`);
+      return requireCondition(focused && evidence.selected === "Evidence" && evidence.role === "tab", "owner tab keyboard event did not select Evidence", { focused, ...evidence });
     });
 
     await proofCase(targetSuite, "record-search", async () => {
@@ -389,12 +393,22 @@ async function motionPreservationSuite(chromePort, baseUrl) {
   const { client, targetId } = await createPage(chromePort);
   const callbackRequests = [];
   const webSockets = [];
+  const localPreviewSockets = [];
   client.on("Network.requestWillBeSent", (request) => {
     if (["Fetch", "XHR", "EventSource"].includes(request.type)) {
       callbackRequests.push({ type: request.type, method: request.request?.method, url: request.request?.url });
     }
   });
   client.on("Network.webSocketCreated", (request) => {
+    try {
+      const socket = new URL(request.url);
+      if (socket.hostname === baseUrl.hostname && socket.port === baseUrl.port && socket.pathname === "/" && socket.searchParams.has("token")) {
+        localPreviewSockets.push(request.url);
+        return;
+      }
+    } catch {
+      // An unparseable socket remains a runtime callback and is recorded below.
+    }
     webSockets.push({ type: "WebSocket", url: request.url });
   });
 
@@ -405,13 +419,14 @@ async function motionPreservationSuite(chromePort, baseUrl) {
     callbackRequests.length = 0;
     webSockets.length = 0;
 
-    await proofCase(targetSuite, "hero-url-selection-restoration", async () => {
-      await waitFor(client, `document.querySelector("#hero-product-tab-rad-140")?.getAttribute("aria-selected") === "true"`, "RAD-140 featured state");
+    await proofCase(targetSuite, "hero-unapproved-url-fails-closed", async () => {
+      await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true"`, "source-ready featured state");
       const initial = await inspect(client, `({
         selected: document.querySelector("#hero [role='tab'][aria-selected='true']")?.textContent?.trim(),
         heading: document.querySelector("#hero-product-stage")?.getAttribute("aria-labelledby"),
         stateRestoration: document.querySelector("#hero")?.getAttribute("data-state-restoration"),
         featured: new URLSearchParams(location.search).get("featured"),
+        tabCount: document.querySelectorAll("#hero [role='tab']").length,
         grid: document.querySelector("#hero [data-grid-contract]")?.getAttribute("data-grid-contract"),
         surfaces: document.querySelectorAll("#hero [data-copy-surface]").length,
         actionControls: [...document.querySelectorAll("#hero :is(a,button):not([data-stage-media-selector])")]
@@ -420,32 +435,33 @@ async function motionPreservationSuite(chromePort, baseUrl) {
       })`);
       await inspect(client, `(() => {
         const url = new URL(location.href);
-        url.searchParams.set("featured", "ment");
+        url.searchParams.set("featured", "rad-140");
         history.pushState({}, "", url);
         dispatchEvent(new PopStateEvent("popstate"));
       })()`);
-      await waitFor(client, `document.querySelector("#hero-product-tab-ment")?.getAttribute("aria-selected") === "true"`, "MENT popstate restoration");
+      await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true" && new URLSearchParams(location.search).get("featured") === null`, "unapproved product fail-closed restoration");
       await inspect(client, `(() => {
         const url = new URL(location.href);
         url.searchParams.set("featured", "rad-140");
         history.replaceState({}, "", url);
         dispatchEvent(new PageTransitionEvent("pageshow"));
       })()`);
-      await waitFor(client, `document.querySelector("#hero-product-tab-rad-140")?.getAttribute("aria-selected") === "true"`, "RAD-140 pageshow restoration");
+      await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true" && new URLSearchParams(location.search).get("featured") === null`, "pageshow fail-closed restoration");
       const restoration = await inspect(client, `({ selected: document.querySelector("#hero [role='tab'][aria-selected='true']")?.textContent?.trim(), featured: new URLSearchParams(location.search).get("featured") })`);
       return requireCondition(
-        initial.selected === "RAD-140"
-          && initial.heading === "hero-product-tab-rad-140"
+        initial.selected === "MK-2866"
+          && initial.heading === "hero-product-tab-mk-2866"
           && initial.stateRestoration === "url-featured-product"
           && initial.featured === "rad-140"
+          && initial.tabCount === 1
           && initial.grid === "12-column"
           && initial.surfaces >= 2
           && initial.actionControls.length > 0
           && initial.actionControls.every((component) => component === "Button")
-          && initial.mediaSelectors === 5
-          && restoration.selected === "RAD-140"
-          && restoration.featured === "rad-140",
-        `hero URL restoration mismatch: ${JSON.stringify({ initial, restoration })}`,
+          && initial.mediaSelectors === 1
+          && restoration.selected === "MK-2866"
+          && restoration.featured === null,
+        `hero fail-closed URL restoration mismatch: ${JSON.stringify({ initial, restoration })}`,
         { initial, restoration },
       );
     });
@@ -453,10 +469,10 @@ async function motionPreservationSuite(chromePort, baseUrl) {
     webSockets.length = 0;
 
     await proofCase(targetSuite, "hero-roving-tab-focus-and-next-control", async () => {
-      await inspect(client, `document.querySelector("#hero-product-tab-rad-140")?.focus()`);
+      await inspect(client, `document.querySelector("#hero-product-tab-mk-2866")?.focus()`);
       await client.send("Input.dispatchKeyEvent", { type: "keyDown", key: "End", code: "End", windowsVirtualKeyCode: 35 });
       await client.send("Input.dispatchKeyEvent", { type: "keyUp", key: "End", code: "End", windowsVirtualKeyCode: 35 });
-      await waitFor(client, `document.querySelector("#hero-product-tab-mk-677")?.getAttribute("aria-selected") === "true" && document.activeElement?.id === "hero-product-tab-mk-677"`, "hero End-key selection");
+      await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true" && document.activeElement?.id === "hero-product-tab-mk-2866"`, "single-product End-key selection");
       const keyboardState = await inspect(client, `({ selected: document.querySelector("#hero [role='tab'][aria-selected='true']")?.textContent?.trim(), focus: document.activeElement?.id, featured: new URLSearchParams(location.search).get("featured") })`);
       await inspect(client, `(() => {
         const button = document.querySelector("button[aria-label='Next featured product']");
@@ -467,9 +483,9 @@ async function motionPreservationSuite(chromePort, baseUrl) {
       await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true"`, "hero next control wrap");
       const controlState = await inspect(client, `({ selected: document.querySelector("#hero [role='tab'][aria-selected='true']")?.textContent?.trim(), featured: new URLSearchParams(location.search).get("featured"), canonical: document.querySelector("button[aria-label='Next featured product']")?.getAttribute("data-component") })`);
       return requireCondition(
-        keyboardState.selected === "MK-677"
-          && keyboardState.focus === "hero-product-tab-mk-677"
-          && keyboardState.featured === "mk-677"
+        keyboardState.selected === "MK-2866"
+          && keyboardState.focus === "hero-product-tab-mk-2866"
+          && keyboardState.featured === null
           && controlState.selected === "MK-2866"
           && controlState.featured === null
           && controlState.canonical === "Button",
@@ -480,7 +496,7 @@ async function motionPreservationSuite(chromePort, baseUrl) {
 
     await setViewport(client, { width: 390, height: 844 });
     await navigate(client, new URL("/?featured=rad-140", baseUrl).href);
-    await waitFor(client, `document.querySelector("#hero-product-tab-rad-140")?.getAttribute("aria-selected") === "true"`, "mobile hero selection");
+    await waitFor(client, `document.querySelector("#hero-product-tab-mk-2866")?.getAttribute("aria-selected") === "true" && new URLSearchParams(location.search).get("featured") === null`, "mobile source-ready hero selection");
 
     await proofCase(targetSuite, "hero-mobile-priority-and-reduced-motion", async () => {
       await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
@@ -623,7 +639,11 @@ async function motionPreservationSuite(chromePort, baseUrl) {
     await proofCase(targetSuite, "motion-surfaces-zero-runtime-callbacks", async () => {
       await delay(250);
       const requests = [...callbackRequests, ...webSockets];
-      return requireCondition(requests.length === 0, `motion surfaces emitted runtime callbacks: ${JSON.stringify(requests)}`, { requestCount: requests.length, requests });
+      return requireCondition(requests.length === 0, `motion surfaces emitted runtime callbacks: ${JSON.stringify(requests)}`, {
+        requestCount: requests.length,
+        requests,
+        ignoredLocalPreviewSocketCount: localPreviewSockets.length,
+      });
     });
   } finally {
     await closePage(chromePort, client, targetId);

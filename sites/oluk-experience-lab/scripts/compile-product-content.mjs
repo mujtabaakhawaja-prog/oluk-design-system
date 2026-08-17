@@ -16,6 +16,7 @@ const inputs = {
 };
 const outputPath = path.join(siteRoot, "app/design-system/product-content.generated.json");
 const cardOutputPath = path.join(siteRoot, "app/design-system/product-content-card.generated.json");
+const routeSelectorOutputPath = path.join(siteRoot, "app/design-system/product-content-route-selectors.generated.json");
 
 const CONTENT_STATES = new Set([
   "CONTENT_READY",
@@ -69,6 +70,14 @@ function hasPath(value, dottedPath) {
     }
   }
   return true;
+}
+
+function readPath(value, dottedPath) {
+  for (const segment of dottedPath.split(".")) {
+    if (!isObject(value) || !Object.hasOwn(value, segment)) return undefined;
+    value = value[segment];
+  }
+  return value;
 }
 
 function fail(message) {
@@ -152,6 +161,52 @@ for (const id of EXPECTED_PRODUCTS) if (!productIds.includes(id)) fail(`missing 
 const bindings = asArray(provenance.bindings ?? provenance.fieldBindings ?? provenance.sourceBindings);
 const bindingById = new Map(bindings.map((binding) => [idFor(binding), binding]));
 if (!bindingById.size || bindingById.has(undefined)) fail("provenance ledger has invalid binding identities");
+
+function fieldAtoms(value) {
+  if (isAtom(value)) return [value];
+  if (Array.isArray(value)) return value.flatMap(fieldAtoms);
+  if (!isObject(value) || value.owner === "WOO_C2") return [];
+  return Object.values(value).flatMap(fieldAtoms);
+}
+
+function fieldSelector(product, customer, fieldRef) {
+  const source = readPath(product, fieldRef);
+  const emittedValue = readPath(customer, fieldRef);
+  if (isObject(source) && source.owner === "WOO_C2") {
+    return {
+      fieldRef,
+      kind: "RUNTIME_RESOLVER",
+      states: ["RUNTIME_RESOLVER_REQUIRED"],
+      emission: "RUNTIME_RESOLVER_ONLY",
+      provenanceBindingIds: provenanceIds(source),
+      sourceLayers: ["WOO_C2"],
+      resolver: {
+        owner: "WOO_C2",
+        resolverKey: source.resolverKey,
+        fallback: source.fallback,
+      },
+    };
+  }
+
+  const atoms = fieldAtoms(source);
+  const states = [...new Set(atoms.map((atom) => atom.state))];
+  const bindingIds = [...new Set(atoms.flatMap(provenanceIds))];
+  const sourceLayers = [...new Set(bindingIds.flatMap((bindingId) => asArray(bindingById.get(bindingId)?.sourceLayers ?? bindingById.get(bindingId)?.sourceLayer)))];
+  const explicitUnavailable = atoms.some(isUnavailableBoundary) && emittedValue !== undefined;
+
+  return {
+    fieldRef,
+    kind: atoms.length ? (Array.isArray(source) ? "ATOM_COLLECTION" : "CONTENT_ATOM") : "STRUCTURAL_FIELD",
+    states: states.length ? states : [emittedValue === undefined ? "UNMAPPED" : "CONTENT_READY"],
+    emission: emittedValue === undefined
+      ? "OMIT"
+      : explicitUnavailable
+        ? "EXPLICIT_UNAVAILABLE"
+        : "CUSTOMER_VALUE",
+    provenanceBindingIds: bindingIds,
+    sourceLayers,
+  };
+}
 
 const assetPaths = [];
 const referencedBindingIds = new Set();
@@ -274,11 +329,60 @@ const cardProjection = {
 const cardOutput = { ...cardProjection, contentHash: digest(JSON.stringify(cardProjection)) };
 const cardRendered = `${JSON.stringify(cardOutput, null, 2)}\n`;
 
+const routeSelectorProjection = {
+  schemaVersion: "oluk.product-content-route-selectors.v1",
+  attachmentPolicy: {
+    state: "PREPARED_NOT_ATTACHED",
+    prerequisite: "BOUNDED_SHOPPER_C2_V1_INTEGRATION_PROOF",
+    credentials: "NONE",
+    browserAuthorityCalls: false,
+    runtimeMutationAuthorized: false,
+    publicationAuthorized: false,
+  },
+  sourceHashes: {
+    registry: digest(raw.registry),
+    provenance: digest(raw.provenance),
+    routes: digest(raw.routes),
+  },
+  routeSelectors: routeRows.map((row) => ({
+    id: row.id,
+    routePatterns: row.routePatterns,
+    scopeClass: row.scopeClass,
+    module: row.module,
+    component: row.component,
+    audience: row.audience,
+    sourceLayers: row.sourceLayers,
+    fieldRefs: row.fieldRefs,
+    missingContentBehavior: row.missingContentBehavior,
+    forbidden: row.forbidden,
+    stateReadiness: row.stateReadiness,
+  })),
+  products: generatedProducts.map(({ canonicalProductId, customer }) => ({
+    canonicalProductId,
+    slug: customer.slug ?? canonicalProductId,
+    fields: Object.fromEntries([...new Set(routeRows.flatMap((row) => asArray(row.fieldRefs)))].map((fieldRef) => [
+      fieldRef,
+      fieldSelector(
+        products.find((product) => product.canonicalProductId === canonicalProductId),
+        customer,
+        fieldRef,
+      ),
+    ])),
+  })),
+};
+const routeSelectorOutput = { ...routeSelectorProjection, contentHash: digest(JSON.stringify(routeSelectorProjection)) };
+const routeSelectorRendered = `${JSON.stringify(routeSelectorOutput, null, 2)}\n`;
+
 if (process.argv.includes("--check")) {
   if (await readFile(outputPath, "utf8") !== rendered) fail("generated projection is stale; run npm run product:compile");
   if (await readFile(cardOutputPath, "utf8") !== cardRendered) fail("generated card projection is stale; run npm run product:compile");
-  process.stdout.write(`PASS Product content ${digest(rendered)} ${digest(cardRendered)}\n`);
+  if (await readFile(routeSelectorOutputPath, "utf8") !== routeSelectorRendered) fail("generated route-selector projection is stale; run npm run product:compile");
+  process.stdout.write(`PASS Product content ${digest(rendered)} ${digest(cardRendered)} ${digest(routeSelectorRendered)}\n`);
 } else {
-  await Promise.all([writeFile(outputPath, rendered), writeFile(cardOutputPath, cardRendered)]);
-  process.stdout.write(`WROTE Product content ${digest(rendered)} ${digest(cardRendered)}\n`);
+  await Promise.all([
+    writeFile(outputPath, rendered),
+    writeFile(cardOutputPath, cardRendered),
+    writeFile(routeSelectorOutputPath, routeSelectorRendered),
+  ]);
+  process.stdout.write(`WROTE Product content ${digest(rendered)} ${digest(cardRendered)} ${digest(routeSelectorRendered)}\n`);
 }

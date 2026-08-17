@@ -21,9 +21,10 @@ function atoms(value, pointer = "$") {
 
 test("the Wave 2 compiler emits a deterministic fail-closed customer projection", async () => {
   await execFileAsync("node", ["scripts/compile-product-content.mjs", "--check"], { cwd: siteRoot });
-  const [generated, cardProjection] = await Promise.all([
+  const [generated, cardProjection, routeSelectors] = await Promise.all([
     readSite("app/design-system/product-content.generated.json").then(JSON.parse),
     readSite("app/design-system/product-content-card.generated.json").then(JSON.parse),
+    readSite("app/design-system/product-content-route-selectors.generated.json").then(JSON.parse),
   ]);
   assert.equal(generated.schemaVersion, "oluk.product-content-projection.v1");
   assert.equal(generated.products.length, 16);
@@ -44,6 +45,24 @@ test("the Wave 2 compiler emits a deterministic fail-closed customer projection"
   assert.equal(cardProjection.schemaVersion, "oluk.product-content-card-projection.v1");
   assert.deepEqual(cardProjection.products.map((product) => product.canonicalProductId), ["mk-2866"]);
   assert.doesNotMatch(JSON.stringify(cardProjection), /(?:£|InStock|offers|inventory|purchasability)/i);
+
+  assert.equal(routeSelectors.schemaVersion, "oluk.product-content-route-selectors.v1");
+  assert.equal(routeSelectors.attachmentPolicy.state, "PREPARED_NOT_ATTACHED");
+  assert.equal(routeSelectors.attachmentPolicy.prerequisite, "BOUNDED_SHOPPER_C2_V1_INTEGRATION_PROOF");
+  assert.equal(routeSelectors.attachmentPolicy.credentials, "NONE");
+  assert.equal(routeSelectors.attachmentPolicy.browserAuthorityCalls, false);
+  assert.equal(routeSelectors.routeSelectors.length, 21);
+  assert.equal(routeSelectors.products.length, 16);
+  assert.match(routeSelectors.contentHash, /^[a-f0-9]{64}$/);
+  const mkSelectors = routeSelectors.products.find((product) => product.canonicalProductId === "mk-2866");
+  const radSelectors = routeSelectors.products.find((product) => product.canonicalProductId === "rad-140");
+  assert.equal(mkSelectors.fields["content.routeVariants.homepageCard"].emission, "CUSTOMER_VALUE");
+  assert.deepEqual(mkSelectors.fields["content.routeVariants.homepageCard"].provenanceBindingIds, ["BIND-MK2866-LABEL", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"]);
+  assert.equal(mkSelectors.fields["commerce.price"].emission, "RUNTIME_RESOLVER_ONLY");
+  assert.equal(mkSelectors.fields["commerce.price"].resolver.owner, "WOO_C2");
+  assert.equal(radSelectors.fields["content.routeVariants.openLab"].emission, "OMIT");
+  assert.equal(radSelectors.fields["content.evidence.availability"].emission, "EXPLICIT_UNAVAILABLE");
+  assert.doesNotMatch(JSON.stringify(routeSelectors), /serviceToken|credentialValue|tenantId|providerAdmin/i);
 });
 
 test("every product atom has an explicit state and field provenance while commerce stays resolver-only", async () => {
@@ -107,7 +126,7 @@ test("route and slot contracts cover responsive, unavailable, and transaction-si
 });
 
 test("customer adopters do not default commerce, offers, or evidence and exact documents fail closed", async () => {
-  const [status, presentation, frontier, pdp, reportRoute, coaRoute, productRoute, adapter] = await Promise.all([
+  const [status, presentation, frontier, pdp, reportRoute, coaRoute, productRoute, adapter, routeSelectorAdapter] = await Promise.all([
     readSite("app/design-system/product-status.tsx"),
     readSite("app/design-system/frontier-product-presentation.ts"),
     readSite("app/design-system/frontier-content.ts"),
@@ -116,6 +135,7 @@ test("customer adopters do not default commerce, offers, or evidence and exact d
     readSite("app/open-lab/coa/[id]/page.tsx"),
     readSite("app/product/[slug]/page.tsx"),
     readSite("app/design-system/product-content-adapter.ts"),
+    readSite("app/design-system/product-content-route-selector.ts"),
   ]);
   assert.match(status, /state = "unavailable"/);
   assert.match(presentation, /qualitativeFacts: \[\]/);
@@ -130,4 +150,8 @@ test("customer adopters do not default commerce, offers, or evidence and exact d
   assert.doesNotMatch(productRoute, /frontierProductPresentation|ProductNarrative|ProductContinuation/);
   assert.match(adapter, /price: ""/);
   assert.match(adapter, /inventory: "unavailable"/);
+  assert.match(routeSelectorAdapter, /PREPARED_NOT_ATTACHED/);
+  assert.match(routeSelectorAdapter, /BOUNDED_SHOPPER_C2_V1_INTEGRATION_PROOF/);
+  assert.match(routeSelectorAdapter, /RESOLVE_AT_REQUEST_TIME/);
+  assert.doesNotMatch(routeSelectorAdapter, /fetch\(|serviceToken|tenantId|providerAdmin/i);
 });

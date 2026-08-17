@@ -6,8 +6,6 @@ import { mk2866Fixture } from "./product-fixtures";
 import { CurrencyEqualityLock, LifecycleAmountRecord, PaymentTrustPrimer } from "./payment-trust";
 import { paymentTrustCopy, paymentTrustStudy } from "./payment-trust-contract";
 import { ProductCommerceCard } from "./product-commerce-card";
-import { RestockCard } from "./program-components";
-import { YourStackBuilder } from "./your-stack-builder";
 
 export type TransactionStage =
   | "bag"
@@ -223,7 +221,6 @@ function BagContent() {
           eyebrow="Delivery"
           title="See your delivery choices before payment."
         />
-        <YourStackBuilder baselineSlug="mk-2866" host="bag" />
       </div>
       <OrderSummary action={<ActionLink href="/checkout">Continue to details</ActionLink>} confidenceLink />
     </div>
@@ -401,8 +398,6 @@ function ConfirmationContent({ orderReference }: Readonly<{ orderReference: stri
           <DecisionSurface compact copy="Delivery progress appears with the order when a confirmed update is available." eyebrow="02" title="Follow delivery." />
           <TechnicalSurface compact copy="The available product record remains accessible independently of the order." eyebrow="03" title="Return to OpenLab." />
         </div>
-        <div className={styles.continuationSurface} data-copy-surface="commerce"><RestockCard state="active" /></div>
-        <YourStackBuilder baselineSlug="mk-2866" host="confirmation" />
       </section>
       <OrderSummary compact confidenceLink heading="Order total" />
     </div>
@@ -443,7 +438,6 @@ function OrderHistoryContent({ orderReference }: Readonly<{ orderReference: stri
           <LifecycleAmountRecord stage="history" />
           <div className={styles.historyActions}><ActionLink href="/checkout/tracking">Track order</ActionLink><ActionLink href="/checkout/receipt" secondary>Open receipt</ActionLink><ActionLink href="/product/mk-2866" secondary>Return to product</ActionLink></div>
         </section>
-        <div className={styles.continuationSurface} data-copy-surface="commerce"><RestockCard state="due-soon" /></div>
       </section>
       <OrderSummary compact confidenceLink heading="Latest order" />
     </div>
