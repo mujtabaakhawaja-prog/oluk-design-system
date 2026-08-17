@@ -354,8 +354,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 22,
-      "copyGroupCount": 27,
+      "containedCopyGroupCount": 8,
+      "copyGroupCount": 13,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -404,8 +404,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 30,
-      "copyGroupCount": 35,
+      "containedCopyGroupCount": 14,
+      "copyGroupCount": 19,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2016,8 +2016,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 30,
-      "copyGroupCount": 35,
+      "containedCopyGroupCount": 14,
+      "copyGroupCount": 19,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2530,7 +2530,7 @@
       "value": "#e4ecfa"
     }
   ],
-  "sourceHash": "ff7304f5cd8f33666ad7dc32116f0440b3aebb2cdd9925ce16760e221e176775",
+  "sourceHash": "8b2bbf1166d3bcdf4cc10f1038973b62ca135d5036d46ef90880af976126b1dc",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2586,5 +2586,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "268af8ba402b6be64d98c24da29c6814e5c8b89d6bc886939630e8f8e8cd81ac"
+  "auditHash": "b10180d8071a6762246547387f89ad154242884779992c5029be54d07cb07465"
 }

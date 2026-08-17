@@ -38,7 +38,7 @@ test("interaction proof covers the three required real-browser state suites", ()
     "lookup-no-result-transition",
     "lookup-found-transition",
     "lookup-unavailable-transition",
-    "hero-url-selection-restoration",
+    "hero-unapproved-url-fails-closed",
     "hero-roving-tab-focus-and-next-control",
     "hero-mobile-priority-and-reduced-motion",
     "dossier-hash-selection-and-keyboard-focus",
