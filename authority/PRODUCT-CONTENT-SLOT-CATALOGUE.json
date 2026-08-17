@@ -55,6 +55,19 @@
       "forbidden": ["generic bottle substitution", "cross-product render", "Figma-drawn label facts", "unregistered crop", "claim encoded into alt text"]
     },
     {
+      "id": "discovery-search-forwarder",
+      "type": "DiscoverySearchForwarderSlot",
+      "fieldRefs": [],
+      "sourceLayers": ["FIGMA_SITES_COMPOSITION"],
+      "dataOwner": "Sites final utility-entry composition; the product registry is intentionally not consumed",
+      "requiredness": {"mode": "UTILITY_ENTRY_ONLY", "contentInputs": 0, "formAction": "/shop", "queryParameter": "search", "browseFallback": "/shop"},
+      "allowedStates": [],
+      "desktopBehavior": "Expose a labelled GET search control and Browse fallback in the Sites-defined utility region; successful submission forwards the encoded search value to Shop.",
+      "mobileBehavior": "Preserve the same labelled control, query key and Browse fallback without mounting a second results surface.",
+      "fallback": "An empty query submits or returns to /shop. No product facts, result count, exact match, zero-result narrative or recommendation is emitted here.",
+      "forbidden": ["product result template", "exact-hit or zero-result copy", "product-fact lookup", "price, stock or purchasability", "cart or checkout behavior", "recommendation", "provider-document action", "query coercion"]
+    },
+    {
       "id": "customer-thesis",
       "type": "CustomerThesisSlot",
       "fieldRefs": ["content.customerThesis"],

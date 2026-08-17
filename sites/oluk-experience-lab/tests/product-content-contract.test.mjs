@@ -81,6 +81,15 @@ test("the Wave 2 compiler emits a deterministic fail-closed customer projection"
     "evidence-document-action",
   ]);
   assert.match(JSON.stringify(openLab.forbidden), /generic verified|cross-product record|provider-file-status inference/i);
+  const discovery = familyTemplates.families.find((family) => family.id === "family-1-discovery");
+  assert.equal(discovery.consumerRows.length, 10);
+  assert.deepEqual(discovery.consumerRows.map((row) => row.path), [
+    "/", "/shop", "/collections/:slug", "/search", "/compare",
+    "/collections/sarms", "/collections/research-chemicals", "/collections/prohormones", "/collections/stacks", "/shop?goal=:goal",
+  ]);
+  const searchRow = discovery.consumerRows.find((row) => row.path === "/search");
+  assert.deepEqual(searchRow.slots, ["discovery-search-forwarder"]);
+  assert.match(searchRow.semantics, /utility-only GET forwarder.*no results template/i);
 });
 
 test("every product atom has an explicit state and field provenance while commerce stays resolver-only", async () => {

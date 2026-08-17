@@ -300,6 +300,16 @@ for (const family of familyRows) {
     for (const fieldRef of asArray(slot.fieldRefs)) if (!hasPath(products[0], fieldRef)) fail(`family template ${family.id}.${slot.id} references unknown field ${fieldRef}`);
     for (const state of asArray(slot.allowedStates)) if (!CONTENT_STATES.has(state)) fail(`family template ${family.id}.${slot.id} has invalid content state ${state}`);
   }
+  if (family.id === "family-1-discovery") {
+    const consumerRows = asArray(family.consumerRows);
+    const expectedPaths = ["/", "/shop", "/collections/:slug", "/search", "/compare", "/collections/sarms", "/collections/research-chemicals", "/collections/prohormones", "/collections/stacks", "/shop?goal=:goal"];
+    if (consumerRows.length !== expectedPaths.length || new Set(consumerRows.map((row) => row.path)).size !== expectedPaths.length) fail("Discovery family must contain ten unique canonical consumer rows");
+    for (const expectedPath of expectedPaths) if (!consumerRows.some((row) => row.path === expectedPath)) fail(`Discovery family is missing ${expectedPath}`);
+    for (const row of consumerRows) {
+      if (!row.id || !row.semantics || !asArray(row.slots).length) fail("Discovery consumer row is incomplete");
+      for (const slotId of row.slots) if (!family.slots.some((slot) => slot.id === slotId) && !slotById.has(slotId)) fail(`Discovery consumer row ${row.id} references unknown slot ${slotId}`);
+    }
+  }
   if (!family.responsiveBehavior?.desktop || !family.responsiveBehavior?.mobile) fail(`family template ${family.id} lacks responsive behavior`);
 }
 
