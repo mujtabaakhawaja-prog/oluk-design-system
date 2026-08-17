@@ -21,10 +21,11 @@ function atoms(value, pointer = "$") {
 
 test("the Wave 2 compiler emits a deterministic fail-closed customer projection", async () => {
   await execFileAsync("node", ["scripts/compile-product-content.mjs", "--check"], { cwd: siteRoot });
-  const [generated, cardProjection, routeSelectors] = await Promise.all([
+  const [generated, cardProjection, routeSelectors, familyTemplates] = await Promise.all([
     readSite("app/design-system/product-content.generated.json").then(JSON.parse),
     readSite("app/design-system/product-content-card.generated.json").then(JSON.parse),
     readSite("app/design-system/product-content-route-selectors.generated.json").then(JSON.parse),
+    readSite("app/design-system/family-content-template-contracts.generated.json").then(JSON.parse),
   ]);
   assert.equal(generated.schemaVersion, "oluk.product-content-projection.v1");
   assert.equal(generated.products.length, 16);
@@ -63,6 +64,15 @@ test("the Wave 2 compiler emits a deterministic fail-closed customer projection"
   assert.equal(radSelectors.fields["content.routeVariants.openLab"].emission, "OMIT");
   assert.equal(radSelectors.fields["content.evidence.availability"].emission, "EXPLICIT_UNAVAILABLE");
   assert.doesNotMatch(JSON.stringify(routeSelectors), /serviceToken|credentialValue|tenantId|providerAdmin/i);
+
+  assert.equal(familyTemplates.schemaVersion, "oluk.family-content-template-projection.v1");
+  assert.equal(familyTemplates.runtimeAuthority, "NONE");
+  assert.deepEqual(familyTemplates.families.map((family) => family.id), ["family-1-discovery", "family-2-product"]);
+  assert.doesNotMatch(JSON.stringify(familyTemplates), /routePatterns|"(?:price|inventory|purchasability)"\s*:/i);
+  for (const family of familyTemplates.families) {
+    assert.ok(family.responsiveBehavior.desktop && family.responsiveBehavior.mobile, family.id);
+    assert.ok(family.slots.every((slot) => slot.referencedSlot && slot.fieldRefs.length && slot.missingBehavior), family.id);
+  }
 });
 
 test("every product atom has an explicit state and field provenance while commerce stays resolver-only", async () => {

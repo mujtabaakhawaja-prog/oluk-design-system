@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "oluk.family-content-template-projection.v1",
+  "status": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "runtimeAuthority": "NONE",
+  "sourceHashes": {
+    "registry": "677b342af3be679b10dcb0a84bc22e49c6ce4a16e4e1420bac5eda5baeb1c04a",
+    "provenance": "df5fa31613e9ef4fe8d26bb4d76f3fc7ae8b3cd80fe1c56f940bc795bd54a498",
+    "slots": "cb8cb15ef006429cae47e1c67adf01de048adbd501ebb677a1e648fd235a762a",
+    "templates": "5cdb55e754d9f3cd212bb7b7b7bdf424980e14eb20cb9fd5617045deaec22e27"
+  },
+  "globalLaws": [
+    "Every rendered value is selected from a canonical field reference and retains its declared content state.",
+    "CONTENT_READY is the only static customer-copy state; SOURCE_BOUND and EDITORIAL_CHOICE remain owner-review only.",
+    "PENDING_EVIDENCE_BINDING carries no factual value except an explicitly constrained unavailable state.",
+    "Evidence language is record-specific and source-reported; labels, renders and OpenLab values remain separate authority layers.",
+    "Commerce is a WOO_C2 runtime resolver only and may not be represented by a template value, fallback, CTA or structured-data Offer.",
+    "A missing render remains an unpopulated governed chamber; it never borrows another product or studio asset."
+  ],
+  "families": [
+    {
+      "id": "family-1-discovery",
+      "name": "Discovery",
+      "scope": "Reusable browse, search, collection, commercial-card and comparison-entry composition. This is a template family, not a route list.",
+      "audience": "Customers identifying and comparing labelled products before a product decision.",
+      "sourceLayers": [
+        "LABEL",
+        "FINAL_TRANSPARENT_RENDER",
+        "OPENLAB_JANOSHIK",
+        "APPROVED_EDITORIAL",
+        "FIGMA_SITES_COMPOSITION"
+      ],
+      "slots": [
+        {
+          "id": "discovery-identity",
+          "referencedSlot": "product-identity-lockup",
+          "fieldRefs": [
+            "canonicalProductId",
+            "canonicalIdentity.name",
+            "canonicalIdentity.aliases",
+            "content.facts.series"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Render unambiguous identity; optional aliases and series may be omitted.",
+          "missingBehavior": "Do not render a product card when canonical identity is unresolved."
+        },
+        {
+          "id": "discovery-render",
+          "referencedSlot": "product-media",
+          "fieldRefs": [
+            "media.render"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Use only the confirmed transparent final render in the governed card chamber.",
+          "missingBehavior": "Render the unpopulated chamber; never substitute another product or studio view."
+        },
+        {
+          "id": "discovery-summary",
+          "referencedSlot": "product-description-set",
+          "fieldRefs": [
+            "content.descriptions.short",
+            "content.routeVariants.homepageCard",
+            "content.routeVariants.collectionCard"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Use one approved compact label-backed summary.",
+          "missingBehavior": "Omit narrative rather than promote source-bound or editorial draft copy."
+        },
+        {
+          "id": "discovery-evidence-state",
+          "referencedSlot": "evidence-status",
+          "fieldRefs": [
+            "content.evidence.availability",
+            "content.evidence.summary"
+          ],
+          "allowedStates": [
+            "CONTENT_READY",
+            "PENDING_EVIDENCE_BINDING"
+          ],
+          "customerBehavior": "Show available evidence only where bound; otherwise present the explicit unavailable state.",
+          "missingBehavior": "Never borrow a record, provider action or generic verified label."
+        }
+      ],
+      "forbidden": [
+        "price",
+        "inventory",
+        "purchasability",
+        "Add to bag default",
+        "recommendation or ranking",
+        "medical, dosage or outcome claim",
+        "cross-product evidence or imagery"
+      ],
+      "responsiveBehavior": {
+        "desktop": "Cards retain identity, render and discrete evidence state without conflating them.",
+        "mobile": "Preserve identity and state; compact narrative may omit but cannot change meaning."
+      }
+    },
+    {
+      "id": "family-2-product",
+      "name": "Product",
+      "scope": "Reusable product-decision, dossier and source-record composition. This is a template family, not a route list.",
+      "audience": "Customers reviewing a labelled product and its separately bounded source record.",
+      "sourceLayers": [
+        "LABEL",
+        "FINAL_TRANSPARENT_RENDER",
+        "OPENLAB_JANOSHIK",
+        "APPROVED_EDITORIAL",
+        "FIGMA_SITES_COMPOSITION"
+      ],
+      "slots": [
+        {
+          "id": "product-identity-and-render",
+          "referencedSlot": "product-identity-lockup",
+          "fieldRefs": [
+            "canonicalProductId",
+            "canonicalIdentity.name",
+            "canonicalIdentity.aliases",
+            "media.render"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Pair exact identity with its confirmed transparent final render.",
+          "missingBehavior": "Leave media unpopulated or suppress the unresolved product module."
+        },
+        {
+          "id": "product-long-copy",
+          "referencedSlot": "product-description-set",
+          "fieldRefs": [
+            "content.customerThesis",
+            "content.descriptions.medium",
+            "content.descriptions.long",
+            "content.useContext",
+            "content.claimsConstraints"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Mount approved long copy only in the dedicated narrative region and retain all source qualifiers.",
+          "missingBehavior": "Omit the affected narrative block; never expand compact or source-bound copy into long form."
+        },
+        {
+          "id": "product-facts-and-composition",
+          "referencedSlot": "product-facts",
+          "fieldRefs": [
+            "content.facts.series",
+            "content.facts.sku",
+            "content.facts.strength",
+            "content.facts.servings",
+            "content.facts.form",
+            "content.composition"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Use labelled definition rows and explicitly incomplete composition wording.",
+          "missingBehavior": "Omit unready rows and never infer excipients, formula or dosage."
+        },
+        {
+          "id": "product-evidence-dossier",
+          "referencedSlot": "evidence-status",
+          "fieldRefs": [
+            "content.evidence.availability",
+            "content.evidence.summary",
+            "content.evidence.statements",
+            "content.routeVariants.openLab"
+          ],
+          "allowedStates": [
+            "CONTENT_READY",
+            "PENDING_EVIDENCE_BINDING"
+          ],
+          "customerBehavior": "Separate source-reported batch values from label facts and retain record qualifiers.",
+          "missingBehavior": "Render explicit unavailable state only; do not manufacture a report, result, file or verdict."
+        },
+        {
+          "id": "product-faq",
+          "referencedSlot": "product-faq-item",
+          "fieldRefs": [
+            "content.faqs",
+            "content.routeVariants.educationSupport"
+          ],
+          "allowedStates": [
+            "CONTENT_READY"
+          ],
+          "customerBehavior": "Mount only fully bound customer FAQs with source-scope answers.",
+          "missingBehavior": "Omit the FAQ group when no approved entries exist."
+        }
+      ],
+      "forbidden": [
+        "price",
+        "inventory",
+        "purchasability",
+        "cart or checkout copy",
+        "static Offer/InStock",
+        "medical, dosage or performance guidance",
+        "unbound purity or provider-file claim",
+        "studio or generic render fallback"
+      ],
+      "responsiveBehavior": {
+        "desktop": "Keep narrative, facts, composition and evidence in distinct modules.",
+        "mobile": "Collapse information progressively while preserving labels, qualifiers and explicit unavailable states."
+      }
+    }
+  ],
+  "contentHash": "c17a2efc197c118f895f120be9438d2888c1898847de353119d911ea9c5ca61c"
+}

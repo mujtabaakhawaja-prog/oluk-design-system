@@ -13,10 +13,12 @@ const inputs = {
   provenance: path.join(repoRoot, "authority/COPY-SOURCE-PROVENANCE-LEDGER.json"),
   routes: path.join(repoRoot, "authority/ROUTE-CONTENT-CONSUMPTION-MATRIX.json"),
   slots: path.join(repoRoot, "authority/PRODUCT-CONTENT-SLOT-CATALOGUE.json"),
+  familyTemplates: path.join(repoRoot, "authority/FAMILY-CONTENT-TEMPLATE-CONTRACTS.json"),
 };
 const outputPath = path.join(siteRoot, "app/design-system/product-content.generated.json");
 const cardOutputPath = path.join(siteRoot, "app/design-system/product-content-card.generated.json");
 const routeSelectorOutputPath = path.join(siteRoot, "app/design-system/product-content-route-selectors.generated.json");
+const familyTemplateOutputPath = path.join(siteRoot, "app/design-system/family-content-template-contracts.generated.json");
 
 const CONTENT_STATES = new Set([
   "CONTENT_READY",
@@ -145,13 +147,14 @@ function compactProjection(value) {
 const rawEntries = await Promise.all(Object.entries(inputs).map(async ([key, file]) => [key, await readFile(file, "utf8")]));
 const raw = Object.fromEntries(rawEntries);
 const documents = Object.fromEntries(Object.entries(raw).map(([key, value]) => [key, JSON.parse(value)]));
-const { schema, registry, provenance, routes, slots } = documents;
+const { schema, registry, provenance, routes, slots, familyTemplates } = documents;
 
 if (schema.properties?.schemaVersion?.const !== "oluk.product-content.v1" || !String(schema.title ?? "").startsWith("OLUK Product Content Contract")) fail("unexpected JSON schema identity");
 if (registry.schemaVersion !== "oluk.product-content.v1") fail(`unsupported registry ${registry.schemaVersion}`);
 if (!String(provenance.schemaVersion ?? "").startsWith("oluk.copy-source-provenance")) fail("unsupported provenance ledger");
 if (!String(routes.schemaVersion ?? "").startsWith("oluk.route-content-consumption")) fail("unsupported route matrix");
 if (!String(slots.schemaVersion ?? "").startsWith("oluk.product-content-slot")) fail("unsupported slot catalogue");
+if (familyTemplates.schemaVersion !== "oluk.family-content-template-contracts.v1") fail("unsupported family template contract");
 
 const products = asArray(registry.products);
 const productIds = products.map((product) => product.canonicalProductId ?? product.productId ?? product.id);
@@ -283,6 +286,23 @@ for (const [index, slot] of slotRows.entries()) {
   for (const fieldRef of asArray(slot.fieldRefs)) if (!hasPath(products[0], fieldRef)) fail(`slot ${index} references unknown field ${fieldRef}`);
 }
 
+const familyRows = asArray(familyTemplates.families);
+if (familyRows.length !== 2 || new Set(familyRows.map((family) => family.id)).size !== 2) fail("family template contract must contain two unique families");
+const slotById = new Map(slotRows.map((slot) => [slot.id, slot]));
+for (const family of familyRows) {
+  for (const key of ["id", "name", "scope", "audience", "sourceLayers", "slots", "forbidden", "responsiveBehavior"]) {
+    if (family[key] === undefined) fail(`family template ${family.id ?? "unknown"} is missing ${key}`);
+  }
+  for (const sourceLayer of asArray(family.sourceLayers)) if (!SOURCE_LAYERS.has(sourceLayer)) fail(`family template ${family.id} has invalid source layer ${sourceLayer}`);
+  if (!asArray(family.slots).length) fail(`family template ${family.id} has no slots`);
+  for (const slot of family.slots) {
+    if (!slotById.has(slot.referencedSlot)) fail(`family template ${family.id}.${slot.id} references unknown reusable slot ${slot.referencedSlot}`);
+    for (const fieldRef of asArray(slot.fieldRefs)) if (!hasPath(products[0], fieldRef)) fail(`family template ${family.id}.${slot.id} references unknown field ${fieldRef}`);
+    for (const state of asArray(slot.allowedStates)) if (!CONTENT_STATES.has(state)) fail(`family template ${family.id}.${slot.id} has invalid content state ${state}`);
+  }
+  if (!family.responsiveBehavior?.desktop || !family.responsiveBehavior?.mobile) fail(`family template ${family.id} lacks responsive behavior`);
+}
+
 const generatedProducts = products.map((product) => {
   const canonicalProductId = product.canonicalProductId ?? product.productId ?? product.id;
   const stateIndex = stateIndexFor(product);
@@ -373,16 +393,34 @@ const routeSelectorProjection = {
 const routeSelectorOutput = { ...routeSelectorProjection, contentHash: digest(JSON.stringify(routeSelectorProjection)) };
 const routeSelectorRendered = `${JSON.stringify(routeSelectorOutput, null, 2)}\n`;
 
+const familyTemplateProjection = {
+  schemaVersion: "oluk.family-content-template-projection.v1",
+  status: familyTemplates.status,
+  runtimeAuthority: "NONE",
+  sourceHashes: {
+    registry: digest(raw.registry),
+    provenance: digest(raw.provenance),
+    slots: digest(raw.slots),
+    templates: digest(raw.familyTemplates),
+  },
+  globalLaws: familyTemplates.globalLaws,
+  families: familyRows,
+};
+const familyTemplateOutput = { ...familyTemplateProjection, contentHash: digest(JSON.stringify(familyTemplateProjection)) };
+const familyTemplateRendered = `${JSON.stringify(familyTemplateOutput, null, 2)}\n`;
+
 if (process.argv.includes("--check")) {
   if (await readFile(outputPath, "utf8") !== rendered) fail("generated projection is stale; run npm run product:compile");
   if (await readFile(cardOutputPath, "utf8") !== cardRendered) fail("generated card projection is stale; run npm run product:compile");
   if (await readFile(routeSelectorOutputPath, "utf8") !== routeSelectorRendered) fail("generated route-selector projection is stale; run npm run product:compile");
-  process.stdout.write(`PASS Product content ${digest(rendered)} ${digest(cardRendered)} ${digest(routeSelectorRendered)}\n`);
+  if (await readFile(familyTemplateOutputPath, "utf8") !== familyTemplateRendered) fail("generated family template projection is stale; run npm run product:compile");
+  process.stdout.write(`PASS Product content ${digest(rendered)} ${digest(cardRendered)} ${digest(routeSelectorRendered)} ${digest(familyTemplateRendered)}\n`);
 } else {
   await Promise.all([
     writeFile(outputPath, rendered),
     writeFile(cardOutputPath, cardRendered),
     writeFile(routeSelectorOutputPath, routeSelectorRendered),
+    writeFile(familyTemplateOutputPath, familyTemplateRendered),
   ]);
-  process.stdout.write(`WROTE Product content ${digest(rendered)} ${digest(cardRendered)} ${digest(routeSelectorRendered)}\n`);
+  process.stdout.write(`WROTE Product content ${digest(rendered)} ${digest(cardRendered)} ${digest(routeSelectorRendered)} ${digest(familyTemplateRendered)}\n`);
 }

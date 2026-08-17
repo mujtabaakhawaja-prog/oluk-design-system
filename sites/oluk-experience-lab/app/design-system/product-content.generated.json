@@ -5,7 +5,8 @@
     "registry": "677b342af3be679b10dcb0a84bc22e49c6ce4a16e4e1420bac5eda5baeb1c04a",
     "provenance": "df5fa31613e9ef4fe8d26bb4d76f3fc7ae8b3cd80fe1c56f940bc795bd54a498",
     "routes": "c6bde4cfef033974775cfa68cf2abc2a27e87fe2d98e86508aa9aaad05a32edc",
-    "slots": "cb8cb15ef006429cae47e1c67adf01de048adbd501ebb677a1e648fd235a762a"
+    "slots": "cb8cb15ef006429cae47e1c67adf01de048adbd501ebb677a1e648fd235a762a",
+    "familyTemplates": "5cdb55e754d9f3cd212bb7b7b7bdf424980e14eb20cb9fd5617045deaec22e27"
   },
   "products": [
     {
@@ -806,5 +807,5 @@
     "rowCount": 21,
     "slotCount": 20
   },
-  "contentHash": "b95f248d06052325d83a84a95c79734109941bfe25c9ecba79b8791270292cf3"
+  "contentHash": "7690f063869c319d2e48e5030dcfa979844cdb4a5bda29a88cc6596ac05ba55b"
 }
