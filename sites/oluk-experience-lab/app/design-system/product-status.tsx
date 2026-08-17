@@ -10,7 +10,7 @@ const inventoryLabels: Readonly<Record<InventoryState, string>> = {
 };
 
 const evidenceLabels: Readonly<Record<EvidenceState, string>> = {
-  verified: "OPENLAB VERIFIED",
+  verified: "SOURCE REPORTED",
   available: "RECORD AVAILABLE",
   unavailable: "EVIDENCE UNAVAILABLE",
 };
@@ -20,7 +20,8 @@ export type StockPillProps = Readonly<{
   className?: string;
 }>;
 
-export function StockPill({ state = "in-stock", className }: StockPillProps) {
+/** Missing commerce state fails closed; Woo/C2 must opt a customer surface into a live state. */
+export function StockPill({ state = "unavailable", className }: StockPillProps) {
   return (
     <span
       className={classes(
@@ -51,7 +52,8 @@ export type EvidenceStatusProps = Readonly<{
   className?: string;
 }>;
 
-export function EvidenceStatus({ state = "verified", compact = false, className }: EvidenceStatusProps) {
+/** Missing evidence state is unavailable; an exact OpenLab binding must opt into another state. */
+export function EvidenceStatus({ state = "unavailable", compact = false, className }: EvidenceStatusProps) {
   return (
     <span
       className={classes(
@@ -79,8 +81,8 @@ export type ProductStatusStackProps = Readonly<{
 }>;
 
 export function ProductStatusStack({
-  inventory = "in-stock",
-  evidence = "verified",
+  inventory = "unavailable",
+  evidence = "unavailable",
   compactEvidence = true,
   className,
 }: ProductStatusStackProps) {

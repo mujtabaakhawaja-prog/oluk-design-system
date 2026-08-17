@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "oluk.copy-source-provenance.v1",
+  "ledgerId": "OLUK-COPY-SOURCE-PROVENANCE-001",
+  "registrySchemaVersion": "oluk.product-content.v1",
+  "publicationState": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "sourceLayers": [
+    "LABEL",
+    "FINAL_TRANSPARENT_RENDER",
+    "OPENLAB_JANOSHIK",
+    "WOO_C2",
+    "APPROVED_EDITORIAL",
+    "FIGMA_SITES_COMPOSITION"
+  ],
+  "bindingLaw": {
+    "nonNullAtom": "Every non-null registry atom must reference at least one binding ID in this ledger and carry its own constraints.",
+    "sourcePrecedence": [
+      "LABEL_AND_FINAL_TRANSPARENT_RENDER_OWN_VISUAL_FACTS",
+      "OPENLAB_JANOSHIK_OWNS_ANALYTICAL_CLAIMS",
+      "WOO_C2_OWNS_DYNAMIC_COMMERCE_STATE",
+      "APPROVED_EDITORIAL_MAY_SHAPE_COPY_BUT_NOT_INVENT_FACTS",
+      "FIGMA_SITES_COMPOSITION_OWNS_SLOT_AND_LAYOUT_ONLY"
+    ],
+    "failureLaw": "A failed locator cannot back a content atom. It remains recorded under provenanceFailures with no binding ID exposed to the registry."
+  },
+  "bindings": [
+    {
+      "id": "BIND-GLOBAL-EDITORIAL-SAFETY",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "VERIFIED_GLOBAL_GUARDRAIL",
+      "source": {"path": "/Users/mujtabakhawaja/Downloads/SEO and chatbot/yoast_olympus_pages_seo_v2.csv", "locator": "global FAQ row only", "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03"},
+      "supports": ["products.*.content.claimsConstraints", "mk-2866.content.faqs", "neutral source-scope explanations"],
+      "allowedUse": ["RESEARCH_ONLY_CONTEXT", "NO_DOSING_OR_MEDICAL_ADVICE", "COA_OR_RECORD_LOOKUP_GUIDANCE"],
+      "constraints": ["DO_NOT_TREAT_GLOBAL_PAGE_ROW_AS_PRODUCT_METADATA", "DO_NOT_AUTHORIZE_PRODUCT_BENEFIT_COPY"]
+    },
+    {
+      "id": "BIND-GLOBAL-FIGMA-SITES-COMPOSITION",
+      "sourceLayer": "FIGMA_SITES_COMPOSITION",
+      "status": "COMPOSITION_ONLY",
+      "source": {"path": "authority/CURRENT-STATE.json", "locator": "canonicalCandidateSources and settledFigmaBoards"},
+      "supports": ["products.*.content.routeVariants"],
+      "allowedUse": ["SLOT_SELECTION", "RESPONSIVE_VARIANT_SELECTION", "COMPONENT_COMPOSITION"],
+      "constraints": ["NO_PRODUCT_FACT_AUTHORITY", "NO_ANALYTICAL_CLAIM_AUTHORITY", "NO_COMMERCE_STATE_AUTHORITY", "UNPUBLISHED_HUMAN_REVIEW_REQUIRED"]
+    },
+    {
+      "id": "BIND-GLOBAL-WOO-C2-RESOLVER",
+      "sourceLayer": "WOO_C2",
+      "status": "RESOLVER_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "sourcePrecedence, productProjection.runtimeVolatileFields and dimensions.availability"},
+      "supports": ["products.*.commerce.price", "products.*.commerce.inventory", "products.*.commerce.purchasability", "products.*.content.claimsConstraints"],
+      "allowedUse": ["REQUEST_TIME_PRICE_RESOLUTION", "REQUEST_TIME_INVENTORY_RESOLUTION", "REQUEST_TIME_PURCHASABILITY_RESOLUTION"],
+      "constraints": ["REGISTRY_VALUE_MUST_REMAIN_NULL", "PRICE_FALLBACK_OMIT", "INVENTORY_AND_PURCHASABILITY_FALLBACK_UNAVAILABLE", "NO_STATIC_COMMERCE_CONTENT"]
+    },
+    {
+      "id": "BIND-OPENLAB-NON-MK-UNAVAILABLE",
+      "sourceLayer": "OPENLAB_JANOSHIK",
+      "status": "VERIFIED_FAIL_CLOSED_BOUNDARY",
+      "source": {"path": "sites/oluk-experience-lab/app/design-system/openlab-product-experience.tsx", "locator": "lines 75-92: only productSlug mk-2866 can resolve available"},
+      "supports": ["products.rad-140.content.evidence", "products.lgd-4033.content.evidence", "products.mk-677.content.evidence", "products.gw-501516.content.evidence", "products.s-4.content.evidence", "products.yk-11.content.evidence", "products.s-23.content.evidence", "products.epistane.content.evidence", "products.ment.content.evidence", "products.m-sten.content.evidence", "products.trenavar.content.evidence", "products.bpc-157.content.evidence", "products.tb-500.content.evidence", "products.cjc-1295.content.evidence", "products.l-carnitine.content.evidence"],
+      "allowedUse": ["UNAVAILABLE_STATE", "PENDING_EVIDENCE_BINDING_STATE"],
+      "constraints": ["NO_PROVIDER_NAME", "NO_REPORT_ID", "NO_BATCH_ID", "NO_PURITY_OR_CONCENTRATION_VALUE", "NO_CLONED_MK2866_RECORD"]
+    },
+    {
+      "id": "BIND-MK2866-LABEL",
+      "sourceLayer": "LABEL",
+      "status": "VERIFIED_CONTENT_READY",
+      "source": {"path": "authority/CURRENT-STATE.json; sites/oluk-experience-lab/app/design-system/product-fixtures.ts", "locator": "productTruth; canonicalQualitativeFacts and productFixtures.mk-2866"},
+      "supports": ["mk-2866.canonicalIdentity", "mk-2866.content.descriptions", "mk-2866.content.facts", "mk-2866.content.composition", "mk-2866.content.seo", "mk-2866.content.faqs", "mk-2866.content.routeVariants"],
+      "allowedUse": ["SARM SERIES", "MK-2866", "Ostarine", "SKU 80529-01", "15 MG", "90 SERVINGS", ">99%", "CAPSULES"],
+      "constraints": ["REJECT_90_CAPS", "LABEL_STRENGTH_IS_NOT_DOSAGE_GUIDANCE", "PURITY_MUST_NOT_BE_GENERALIZED_BEYOND_BOUND_SOURCE"]
+    },
+    {
+      "id": "BIND-MK2866-FINAL-RENDER",
+      "sourceLayer": "FINAL_TRANSPARENT_RENDER",
+      "status": "VERIFIED_CONTENT_READY",
+      "source": {"path": "authority/identity-design-system-authoritative-plan-and-build-receipt.md; sites/oluk-experience-lab/app/design-system/product-fixtures.ts", "locator": "NR-01 asset and fixture result, Figma 66:14 approved MK-2866 transparent master; productMediaRegistry.mk-2866 delivery path"},
+      "supports": ["mk-2866.media.render", "mk-2866 visual label fact corroboration"],
+      "allowedUse": ["CONFIRMED_PRODUCT_MEDIA", "LABEL_VISUAL_CORROBORATION"],
+      "constraints": ["DO_NOT_REDRAW", "DO_NOT_RELABEL", "USE_REGISTERED_DERIVATIVE_ONLY"]
+    },
+    {
+      "id": "BIND-MK2866-OPENLAB",
+      "sourceLayer": "OPENLAB_JANOSHIK",
+      "status": "VERIFIED_CONTENT_READY",
+      "source": {"path": "authority/fixtures/OPENLAB-PUBLIC-PROJECTION-V2-MK2866.json", "locator": "records[0] report-mk-2866-ol2201-2"},
+      "supports": ["mk-2866.content.customerThesis", "mk-2866.content.descriptions.medium", "mk-2866.content.descriptions.long", "mk-2866.content.evidence", "mk-2866.content.seo", "mk-2866.content.faqs", "mk-2866.content.routeVariants"],
+      "allowedUse": ["REPORT 28868", "BATCH OL2201", "JANOSHIK", "TESTED 2023-04-16", "REPORTED PURITY >99%", "REPORTED CONCENTRATION 16.02 MG", "15 MG LABEL CLAIM"],
+      "constraints": ["RETAIN_REPORTED_QUALIFIER", "RECORD_SPECIFIC", "NO_FABRICATED_TREND", "NO_EXTRA_ANALYTES", "NO_PERFORMANCE_OR_MEDICAL_INFERENCE"]
+    },
+    {
+      "id": "BIND-RAD140-LABEL",
+      "sourceLayer": "LABEL",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/receipts/FRONTIER-MAKE-BULK-RUN-REFRESH.md; sites/oluk-experience-lab/app/design-system/product-fixtures.ts", "locator": "Actual render binding and visible package source; canonicalQualitativeFacts and productFixtures.rad-140"},
+      "supports": ["rad-140.canonicalIdentity", "rad-140.content.descriptions", "rad-140.content.facts", "rad-140.content.composition", "rad-140.content.seo", "rad-140.content.routeVariants"],
+      "allowedUse": ["SARM SERIES", "RAD-140", "Testolone", "8 MG", "60 SERVINGS", ">99%", "CAPSULES"],
+      "constraints": ["LABEL_TRANSCRIPTION_ONLY", "NO_OPENLAB_OR_JANOSHIK_CLAIM", "NO_PERFORMANCE_OR_DOSAGE_CLAIM"]
+    },
+    {
+      "id": "BIND-RAD140-FINAL-RENDER",
+      "sourceLayer": "FINAL_TRANSPARENT_RENDER",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "sites/oluk-experience-lab/app/design-system/product-fixtures.ts", "locator": "productMediaRegistry.rad-140; source master SHA-256 25bc23254db4986ccf374af5a299ef7ed12a689b8a347a3c7c0a71bee2c0507c"},
+      "supports": ["rad-140.media.render", "rad-140 visual label fact corroboration"],
+      "allowedUse": ["CONFIRMED_PRODUCT_MEDIA", "LABEL_VISUAL_CORROBORATION"],
+      "constraints": ["OWNER_ONLY_REVIEW", "UNPUBLISHED", "DO_NOT_REDRAW_OR_RELABEL"]
+    },
+    {
+      "id": "BIND-RAD140-WOO-IDENTITY",
+      "sourceLayer": "WOO_C2",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "deterministicFixtures.products fixtureId rad-140"},
+      "supports": ["rad-140.canonicalIdentity", "rad-140.content.facts.sku"],
+      "allowedUse": ["WOO PRODUCT 7435", "WOO SLUG rad140", "SKU 80529-05", "SARMS FAMILY", "STRENGTH GOAL"],
+      "constraints": ["DESIGN_REVIEW_FIXTURE_NON_LIVE", "PRODUCT_ID_OUTRANKS_SKU", "NO_STATIC_PRICE_STOCK_OR_PURCHASABILITY"]
+    },
+    {
+      "id": "BIND-WOO-MK677",
+      "sourceLayer": "WOO_C2",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "deterministicFixtures.products fixtureId mk-677"},
+      "supports": ["mk-677.canonicalIdentity", "mk-677.content.facts.sku", "mk-677.content.facts.servings", "mk-677.content.facts.form"],
+      "allowedUse": ["WOO PRODUCT 7413", "MK-677", "Ibutamoren", "SKU 80529-02", "90 SERVINGS", "CAPSULES"],
+      "constraints": ["DESIGN_REVIEW_FIXTURE_NON_LIVE", "NO_STATIC_PRICE_STOCK_OR_PURCHASABILITY"]
+    },
+    {
+      "id": "BIND-LABEL-MK677-CANDIDATE",
+      "sourceLayer": "LABEL",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "make-sessions/frontier-site-expansion/runs/01-canonical-your-stack/product-data.json", "locator": "recommendations[id=mk-677].fieldStatus.labelFacts=render-bound"},
+      "supports": ["mk-677.content.facts.series", "mk-677.content.facts.strength", "mk-677.content.facts.servings", "mk-677.content.facts.purity", "mk-677.content.facts.form"],
+      "allowedUse": ["RESEARCH SERIES", "15 MG", "90 SERVINGS", ">99%", "CAPSULES"],
+      "constraints": ["REVIEW_ONLY", "NO_APPROVED_MASTER_RECEIPT_FOUND", "NO_CUSTOMER_ROUTE_COPY_UNTIL_RENDER_GOVERNED", "NO_OPENLAB_CLAIM"]
+    },
+    {
+      "id": "BIND-WOO-GW501516",
+      "sourceLayer": "WOO_C2",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "deterministicFixtures.products fixtureId gw-501516"},
+      "supports": ["gw-501516.canonicalIdentity", "gw-501516.content.facts.servings", "gw-501516.content.facts.form"],
+      "allowedUse": ["WOO PRODUCT 8817", "GW-501516", "Cardarine", "90 SERVINGS", "CAPSULES"],
+      "constraints": ["CANONICAL_DISPLAY_NAME_IS_GW-501516", "WOO_SOURCE_HAS_NO_SKU", "DESIGN_REVIEW_FIXTURE_NON_LIVE", "NO_STATIC_PRICE_STOCK_OR_PURCHASABILITY"]
+    },
+    {
+      "id": "BIND-WOO-EPISTANE",
+      "sourceLayer": "WOO_C2",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "deterministicFixtures.products fixtureId epistane"},
+      "supports": ["epistane.canonicalIdentity", "epistane.content.facts.sku", "epistane.content.facts.form"],
+      "allowedUse": ["WOO PRODUCT 7408", "EPISTANE", "SKU 80529-12", "CAPSULES"],
+      "constraints": ["SERVINGS_REMAINS_NULL", "CANDIDATE_AND_THUMBNAIL_VALUES_CONFLICT", "NO_STATIC_PRICE_STOCK_OR_PURCHASABILITY"]
+    },
+    {
+      "id": "BIND-WOO-MENT",
+      "sourceLayer": "WOO_C2",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "deterministicFixtures.products fixtureId ment"},
+      "supports": ["ment.canonicalIdentity", "ment.content.facts.sku", "ment.content.facts.servings", "ment.content.facts.form"],
+      "allowedUse": ["WOO PRODUCT 7446", "MENT", "Trestolone", "SKU 80529-08", "30 SERVINGS", "CAPSULES"],
+      "constraints": ["DESIGN_REVIEW_FIXTURE_NON_LIVE", "NO_STATIC_PRICE_STOCK_OR_PURCHASABILITY"]
+    },
+    {
+      "id": "BIND-LABEL-MENT-CANDIDATE",
+      "sourceLayer": "LABEL",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "make-sessions/frontier-site-expansion/runs/01-canonical-your-stack/product-data.json", "locator": "recommendations[id=ment].fieldStatus.labelFacts=render-bound"},
+      "supports": ["ment.content.facts.series", "ment.content.facts.strength", "ment.content.facts.servings", "ment.content.facts.purity", "ment.content.facts.form"],
+      "allowedUse": ["PROHORMONE SERIES", "20 MG", "30 SERVINGS", ">99%", "CAPSULES"],
+      "constraints": ["SUPPLIED_RENDER_NOT_GOVERNED_MASTER", "REVIEW_ONLY", "NO_CUSTOMER_ROUTE_COPY_UNTIL_RENDER_GOVERNED", "NO_OPENLAB_CLAIM"]
+    },
+    {
+      "id": "BIND-WOO-MSTEN",
+      "sourceLayer": "WOO_C2",
+      "status": "SOURCE_BOUND_REVIEW_ONLY",
+      "source": {"path": "authority/SHOP-TAXONOMY-CONTRACT.json", "locator": "deterministicFixtures.products fixtureId m-sten"},
+      "supports": ["m-sten.canonicalIdentity", "m-sten.content.facts.sku", "m-sten.content.facts.servings", "m-sten.content.facts.form"],
+      "allowedUse": ["WOO PRODUCT 7428", "M-STEN", "Methylstenbolone", "SKU 80529-10", "90 SERVINGS", "CAPSULES"],
+      "constraints": ["CANDIDATE_STRENGTH_AND_SERVINGS_CONFLICT_WITH_SOURCE_THUMBNAIL", "DESIGN_REVIEW_FIXTURE_NON_LIVE", "NO_STATIC_PRICE_STOCK_OR_PURCHASABILITY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-MK2866",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.mk-2866"},
+      "supports": ["mk-2866.content.bundleStack.relationships"],
+      "allowedUse": ["RELATIONSHIP_CANDIDATE gw-501516", "RELATIONSHIP_CANDIDATE s-4", "RELATIONSHIP_CANDIDATE lgd-4033"],
+      "constraints": ["NOT_CUSTOMER_READY", "NO_LEAN_MASS_CUTTING_RECOMP_OR_TRAINING_OUTPUT_CLAIM", "REQUIRES_EDITORIAL_APPROVAL_AND_TYPED_REASON"]
+    },
+    {
+      "id": "BIND-EDITORIAL-RAD140",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.rad-140"},
+      "supports": ["rad-140.content.bundleStack.relationships"],
+      "allowedUse": ["RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NOT_CUSTOMER_READY", "NO_STRENGTH_LEAN_MASS_OR_INTENSITY_CLAIM", "REQUIRES_EDITORIAL_APPROVAL_AND_TYPED_REASON"]
+    },
+    {
+      "id": "BIND-EDITORIAL-LGD4033",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.lgd-4033"},
+      "supports": ["lgd-4033.canonicalIdentity", "lgd-4033.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY", "RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_OWNER_LOCKED_PRODUCT_RECORD", "NO_NUMERIC_FACTS", "NO_LEAN_MASS_BULK_OR_STRENGTH_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-MK677",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.mk-677"},
+      "supports": ["mk-677.content.bundleStack.relationships"],
+      "allowedUse": ["RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_APPETITE_SLEEP_GROWTH_OR_RECOVERY_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-GW501516",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.gw-501516"},
+      "supports": ["gw-501516.canonicalIdentity.aliases[kind=LEGACY_EDITORIAL]", "gw-501516.content.bundleStack.relationships"],
+      "allowedUse": ["GW-50156 AS LEGACY_EDITORIAL_ALIAS_ONLY", "RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["GW-501516_REMAINS_CANONICAL", "NO_ENDURANCE_CUTTING_OR_BODY_COMPOSITION_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-S4",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.s-4"},
+      "supports": ["s-4.canonicalIdentity", "s-4.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY", "RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["CONFLICTING_NUMERIC_SOURCES", "NO_CUTTING_OR_DEFINITION_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-YK11",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.yk-11"},
+      "supports": ["yk-11.canonicalIdentity", "yk-11.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY", "RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["GENERAL_REFERENCE_RANGE_IS_NOT_PRODUCT_FACT", "NO_SIZE_STRENGTH_OR_INTENSITY_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-S23",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.s-23"},
+      "supports": ["s-23.canonicalIdentity", "s-23.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY", "RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["CONFLICTING_NUMERIC_SOURCES", "NO_RECOMP_STRENGTH_OR_DEFINITION_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-EPISTANE",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.epistane"},
+      "supports": ["epistane.content.bundleStack.relationships"],
+      "allowedUse": ["RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_RECOMP_FINISH_OR_BODY_COMPOSITION_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-MENT",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.ment"},
+      "supports": ["ment.content.bundleStack.relationships"],
+      "allowedUse": ["RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_MASS_POWER_OR_INTENSITY_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-MSTEN",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.m-sten"},
+      "supports": ["m-sten.content.bundleStack.relationships"],
+      "allowedUse": ["RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_MASS_STRENGTH_OR_INTENSITY_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-TRENAVAR",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.trenavar"},
+      "supports": ["trenavar.canonicalIdentity", "trenavar.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY", "RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["CONFLICTING_PACK_VALUES", "NO_MASS_OR_INTENSITY_CLAIM", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-BPC157",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.bpc-157"},
+      "supports": ["bpc-157.canonicalIdentity", "bpc-157.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY_AND_RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["CATEGORY_LEVEL_EXPANSION_WITHOUT_PRODUCT_RECORD", "NO_RECOVERY_OR_MEDICAL_CLAIM", "NO_NUMERIC_FACTS", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-TB500",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.tb-500"},
+      "supports": ["tb-500.canonicalIdentity", "tb-500.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY_AND_RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["CATEGORY_LEVEL_EXPANSION_WITHOUT_PRODUCT_RECORD", "NO_RECOVERY_OR_MEDICAL_CLAIM", "NO_NUMERIC_FACTS", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-CJC1295",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.cjc-1295"},
+      "supports": ["cjc-1295.canonicalIdentity", "cjc-1295.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY_AND_RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_OLUK_PRODUCT_RECORD_IN_DECLARED_SOURCES", "NO_RECOVERY_OR_MEDICAL_CLAIM", "NO_NUMERIC_FACTS", "NOT_CUSTOMER_READY"]
+    },
+    {
+      "id": "BIND-EDITORIAL-LCARNITINE",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "status": "EDITORIAL_CHOICE",
+      "source": {"path": "authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json", "locator": "products.l-carnitine"},
+      "supports": ["l-carnitine.canonicalIdentity", "l-carnitine.content.bundleStack.relationships"],
+      "allowedUse": ["PROVISIONAL_IDENTITY_AND_RELATIONSHIP_CANDIDATES_ONLY"],
+      "constraints": ["NO_PRODUCT_RECORD_IN_DECLARED_SOURCES", "NO_DAILY_SUPPORT_CUTTING_WELLNESS_OR_BODY_COMPOSITION_CLAIM", "NO_NUMERIC_FACTS", "NOT_CUSTOMER_READY"]
+    }
+  ],
+  "provenanceFailures": [
+    {
+      "id": "FAIL-YOAST-PER-PRODUCT-LOCATORS",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "source": {"path": "/Users/mujtabakhawaja/Downloads/SEO and chatbot/yoast_olympus_pages_seo_v2.csv", "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03"},
+      "claimedLocators": ["Ostarine metadata rows", "RAD-140 metadata rows", "Ligandrol metadata rows", "Ibutamoren metadata rows", "Cardarine metadata rows", "Andarine metadata rows", "YK-11 metadata rows", "S-23 metadata rows", "Epistane metadata rows", "Trestolone metadata rows", "Methylstenbolone metadata rows", "Trenavar metadata rows", "Naturals search-intent rows"],
+      "finding": "The CSV contains only the header and global rows for our-quality-control, test-reports, faq and shop. It contains no per-product metadata rows.",
+      "disposition": "PROVENANCE_FAILURE_NOT_USED",
+      "usedByBindingIds": [],
+      "constraints": ["DO_NOT_GENERATE_PRODUCT_TITLE_DESCRIPTION_FOCUS_PHRASE_OR_STRUCTURED_DATA_FROM_CLAIMED_LOCATORS"]
+    },
+    {
+      "id": "FAIL-GW50156-CANONICALIZATION",
+      "sourceLayer": "APPROVED_EDITORIAL",
+      "source": {"path": "sites/oluk-experience-lab/scripts/compile-product-experience.mjs", "locator": "compiler guard forcing GW-50156"},
+      "finding": "The creative compiler forces GW-50156, while the Woo identity and source label use GW-501516.",
+      "disposition": "GW-501516_CANONICAL_GW-50156_LEGACY_EDITORIAL_ALIAS_ONLY",
+      "usedByBindingIds": ["BIND-EDITORIAL-GW501516"],
+      "constraints": ["NEVER_USE_GW-50156_AS_CANONICAL_NAME_SLUG_OR_PRODUCT_ID"]
+    },
+    {
+      "id": "FAIL-STATIC-COMMERCE-FIXTURES",
+      "sourceLayer": "WOO_C2",
+      "source": {"path": "sites/oluk-experience-lab/app/design-system/frontier-content.ts", "locator": "frontierProducts candidate price fields and productJsonLd static availability"},
+      "finding": "Candidate prices, inventory and purchasability are presentation fixtures and conflict with Woo-owned dynamic state.",
+      "disposition": "REPLACED_BY_RESOLVER_ONLY_NULL_CONTRACT",
+      "usedByBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"],
+      "constraints": ["NO_STATIC_PRICE", "NO_STATIC_INVENTORY", "NO_STATIC_PURCHASABILITY", "NO_COMMERCE_STRUCTURED_DATA_FROM_CONTENT_REGISTRY"]
+    }
+  ]
+}

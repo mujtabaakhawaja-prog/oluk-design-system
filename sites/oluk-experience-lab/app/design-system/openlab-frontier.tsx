@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex -- technical tables are intentional keyboard-reachable horizontal scrollers. */
 import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
 import { ActionLink } from "./customer-route-primitives";
-import { getFrontierProduct } from "./frontier-content";
-import { frontierProductPresentation } from "./frontier-product-presentation";
 import { OpenLabProductExperience } from "./openlab-product-experience";
 import openLabExperience from "./openlab-product-depth.json";
-import productCatalogue from "./product-experience-catalog.json";
 import { ProductCommerceCard } from "./product-commerce-card";
+import { getCustomerProductFixture, getProductRouteVariant } from "./product-content-adapter";
+import { PresentationState } from "./presentation-state";
 import { EvidenceStatusChip } from "./program-components";
-import { YourStackBuilder } from "./your-stack-builder";
 import styles from "./openlab-frontier.module.css";
 
 export const openLabFrontierTools = [
@@ -30,7 +28,7 @@ export type OpenLabToolMaturity = "SITES_FROZEN" | "DESIGN_INCOMPLETE";
 export const openLabToolMaturity: Readonly<Record<OpenLabFrontierTool, OpenLabToolMaturity>> = {
   evidence: "SITES_FROZEN",
   "compound-guide": "SITES_FROZEN",
-  "stack-builder": "SITES_FROZEN",
+  "stack-builder": "DESIGN_INCOMPLETE",
   "dosing-calculator": "DESIGN_INCOMPLETE",
   "cycle-planner": "DESIGN_INCOMPLETE",
   "interaction-checker": "DESIGN_INCOMPLETE",
@@ -54,15 +52,14 @@ const nav = [
 ] as const;
 
 const featuredProductSlugs = ["mk-2866", "rad-140", "mk-677", "ment", "gw-501516"] as const;
-const featuredProducts = productCatalogue.products.filter(({ product }) =>
-  featuredProductSlugs.includes(product.slug as (typeof featuredProductSlugs)[number]),
-);
-
-function commerceFixtureFor(slug: string) {
-  const product = getFrontierProduct(slug);
-  if (!product) throw new Error(`OpenLab Compound Guide product is not registered: ${slug}`);
-  return frontierProductPresentation(product);
-}
+const featuredProducts = featuredProductSlugs.flatMap((slug) => {
+  const product = getCustomerProductFixture(slug);
+  return product ? [{
+    product,
+    available: product.content?.evidence.availability === "AVAILABLE",
+    summary: getProductRouteVariant(slug, "collectionCard") ?? product.content?.descriptions.short ?? "",
+  }] : [];
+});
 
 const incompleteToolCopy: Readonly<Record<Exclude<OpenLabFrontierTool, "evidence" | "compound-guide" | "stack-builder">, Readonly<{
   eyebrow: string;
@@ -163,27 +160,26 @@ function CompoundGuide() {
       title="Choose the product direction. Then inspect the facts."
     />
     <DecisionSurface
-      copy="Cardarine keeps its customer-facing GW-50156 identity alongside the exact strength, servings, price and OpenLab availability supplied for each product."
+      copy="Only customer-ready identity, labelled facts and each product’s own OpenLab availability enter this guide."
       eyebrow="FEATURED PRODUCT DIRECTIONS"
-      title="Compare formats without borrowing another product's record."
+      title="Compare available facts without borrowing another product's record."
     >
-      <div className={styles.guideGrid}>{featuredProducts.map(({ product, editorial, openLab }) => {
-        const available = openLab.status === "available";
-        const fixture = commerceFixtureFor(product.slug);
-        return <div className={styles.guideItem} key={product.slug}>
+      <div className={styles.guideGrid}>{featuredProducts.map(({ product, available, summary }) => {
+        return <div className={styles.guideItem} key={product.id}>
           <ProductCommerceCard
+            commerceTreatment="selection"
             evidence={available ? "available" : "unavailable"}
             headingLevel="h2"
-            product={fixture}
-            secondaryHref={`/open-lab/compound/${product.slug}`}
+            product={product}
+            secondaryHref={product.evidencePath}
             secondaryLabel={available ? "Open OpenLab record" : "View record availability"}
             showQualitative
             variant="vertical"
           />
           <TechnicalSurface
-            actions={<><ActionLink href={`/product/${product.slug}`}>View {product.name}</ActionLink><ActionLink href={`/open-lab/compound/${product.slug}`} secondary>{available ? "Open record" : "View availability"}</ActionLink></>}
+            actions={<><ActionLink href={product.customerPath}>View {product.name}</ActionLink><ActionLink href={product.evidencePath} secondary>{available ? "Open record" : "View availability"}</ActionLink></>}
             compact
-            copy={editorial.customerProposition.mobileSummary}
+            copy={summary}
             eyebrow="OPENLAB CONFIDENCE"
             state={available ? "default" : "unavailable"}
             title={available ? "A product-linked record is available." : "Product facts are ready. A linked record is unavailable."}
@@ -197,18 +193,17 @@ function CompoundGuide() {
 }
 
 function ProductAvailabilityList() {
-  return <div className={styles.availabilityList} role="list">{featuredProducts.map(({ product, openLab }) => {
-    const available = openLab.status === "available";
-    return <article key={product.slug} role="listitem">
+  return <div className={styles.availabilityList} role="list">{featuredProducts.map(({ product, available }) => {
+    return <article key={product.id} role="listitem">
       <div><span>{product.series}</span><h2>{product.name}</h2><p>{product.alias} · {product.strength}{product.servings ? ` · ${product.servings}` : ""}</p></div>
       <EvidenceStatusChip state={available ? "source-reported" : "unavailable"}/>
-      <a href={`/open-lab/compound/${product.slug}`}>{available ? "Open record" : "View availability"} →</a>
+      <a href={product.evidencePath}>{available ? "Open record" : "View availability"} →</a>
     </article>;
   })}</div>;
 }
 
 function StackBuilder() {
-  return <YourStackBuilder host="standalone"/>;
+  return <PageFrame active="stack-builder"><EditorialSurface copy="Product facts and each product’s own evidence state must be ready before a relationship can enter a customer stack." eyebrow="STACK BUILDER" headingLevel="h1" title="Build only from approved product relationships."/><PresentationState action={<a href="/shop">Browse available products →</a>} copy="No customer-ready stack rationale is approved. No compatibility, outcome or combined-use claim is inferred." eyebrow="STACK RELATIONSHIPS" state="unavailable" title="Stack building is not available yet."/></PageFrame>;
 }
 
 function DesignIncompletePage({ tool }: Readonly<{ tool: Exclude<OpenLabFrontierTool, "evidence" | "compound-guide" | "stack-builder"> }>) {

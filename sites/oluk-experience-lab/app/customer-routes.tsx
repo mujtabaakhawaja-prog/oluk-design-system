@@ -22,17 +22,16 @@ import {
 } from "./design-system/openlab-sections";
 import { PresentationState, type PresentationStateKind } from "./design-system/presentation-state";
 import { ProductCommerceCard } from "./design-system/product-commerce-card";
+import { getCustomerProductFixture, getProductRouteVariant } from "./design-system/product-content-adapter";
 import { ProductDossier } from "./design-system/product-dossier";
-import { mk2866Fixture, rad140Fixture } from "./design-system/product-fixtures";
+import type { ProductFixture, ProductMediaAsset } from "./design-system/product-fixtures";
 import { ProductMediaChamber } from "./design-system/product-media-chamber";
-import { MobileDecisionSummary, ProductDetailDisclosure, ProductEvidenceSnapshot } from "./design-system/pdp-sections";
+import { MobileDecisionSummary, ProductContentFaqs, ProductContentNarrative, ProductDetailDisclosure, ProductEvidenceSnapshot } from "./design-system/pdp-sections";
 import { LockedHomeHero } from "./design-system/locked-home-hero";
 import { OpenLabHeroLight } from "./design-system/openlab-hero-light";
 import { PdpFirstFold } from "./design-system/pdp-first-fold";
 import { EvidenceStatus } from "./design-system/product-status";
-import { RelatedRail } from "./design-system/related-rail";
 import { SurfaceGrid, SurfaceGridZone } from "./design-system/surface-grid";
-import { UpsellContextRail } from "./design-system/program-components";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
 import styles from "./customer-routes.module.css";
 
@@ -109,17 +108,19 @@ function FamilyDiscovery() {
 }
 
 function FeaturedProduct() {
+  const product = getCustomerProductFixture("mk-2866");
+  if (!product) return <section className="section"><div className="shell"><PresentationState state="unavailable" title="Featured product information is unavailable."/></div></section>;
   return (
     <section className="section section-blue-wash" id="featured-products">
       <div className={`shell ${styles.commerceFocus}`}>
         <div className={styles.commerceEditorial}>
           <span className="eyebrow">PRODUCT FOCUS</span>
           <h2>Label truth stays close to the decision.</h2>
-          <p>Review MK-2866 product identity, specifications, availability and its direct connection to OpenLab.</p>
+          <p>{getProductRouteVariant("mk-2866", "homepageCard") ?? "Review source-ready product facts and available OpenLab context."}</p>
           <a href="/product/mk-2866">View MK-2866 <Arrow /></a>
         </div>
         <div className={styles.singleCard}>
-          <ProductCommerceCard product={mk2866Fixture} variant="featured" />
+          <ProductCommerceCard product={product} variant="featured" />
         </div>
       </div>
     </section>
@@ -156,41 +157,37 @@ function EvidenceArchiveEntry({ id = "openlab-records" }: Readonly<{ id?: string
 }
 
 export function HomeRoute() {
+  const heroProduct = getCustomerProductFixture("mk-2866");
   return (
     <>
-      <LockedHomeHero />
+      {hasHeroMedia(heroProduct)
+        ? <LockedHomeHero product={heroProduct} />
+        : <section className="section"><div className="shell"><PresentationState state="unavailable" title="Featured product media is unavailable."/></div></section>}
       <div className="shell"><CobaltDensityBoundary /></div>
-      <AssuranceSection />
       <FamilyDiscovery />
       <FeaturedProduct />
       <EvidenceArchiveEntry />
       <ReviewsSection />
-      <RelatedRail
-        anchorProduct={mk2866Fixture}
-        id="related-products"
-        products={[rad140Fixture]}
-      />
     </>
   );
 }
 
+function hasHeroMedia(product: ProductFixture | null): product is ProductFixture & Readonly<{ media: ProductMediaAsset }> {
+  return Boolean(product?.media);
+}
+
 export function ProductRoute() {
+  const product = getCustomerProductFixture("mk-2866");
+  if (!product) return <section className="section"><div className="shell"><PresentationState state="unavailable" title="Product information is unavailable."/></div></section>;
   return (
     <>
-      <PdpFirstFold product={mk2866Fixture}/>
-      <section className="section pdp-assurance" id="pdp-assurance">
-        <div className="shell"><AssuranceRail variant="compact" /></div>
-      </section>
-      <ProductDetailDisclosure product={mk2866Fixture}/>
-      <ProductDossier evidenceHref="#lab-records" id="dossier" product={mk2866Fixture} />
-      <ProductEvidenceSnapshot product={mk2866Fixture}/>
-      <section className="section" id="product-continuation"><div className="shell"><UpsellContextRail /></div></section>
-      <RelatedRail
-        anchorProduct={mk2866Fixture}
-        id="related-products"
-        products={[rad140Fixture]}
-      />
-      <MobileDecisionSummary product={mk2866Fixture}/>
+      <PdpFirstFold product={product}/>
+      <ProductDetailDisclosure product={product}/>
+      <ProductContentNarrative product={product}/>
+      <ProductDossier copy={getProductRouteVariant("mk-2866", "pdpDossier") ?? undefined} evidenceHref="#lab-records" id="dossier" product={product} />
+      <ProductEvidenceSnapshot product={product}/>
+      <ProductContentFaqs product={product}/>
+      <MobileDecisionSummary product={product}/>
     </>
   );
 }
@@ -203,13 +200,7 @@ export function OpenLabRoute() {
       <OpenLabWayfinding />
       <EvidenceRecordExplainer />
       <EvidenceArchiveEntry id="embedded-evidence" />
-      <RelatedRail
-        anchorProduct={mk2866Fixture}
-        eyebrow="COMMERCE CONNECTION"
-        id="openlab-commerce-bridge"
-        products={[rad140Fixture]}
-        title="Return to the product range."
-      />
+      <section className="section" id="openlab-commerce-bridge"><div className="shell"><PresentationState copy="No customer-ready product relationship is approved. OpenLab does not infer compatibility or reuse another product’s evidence." eyebrow="PRODUCT RELATIONSHIPS" state="unavailable" title="Relationship guidance is unavailable."/></div></section>
     </>
   );
 }
@@ -293,6 +284,7 @@ function lookupStateFromReference(reference: string): PresentationStateKind {
 
 export function LookupRoute({ reference = "" }: Readonly<{ reference?: string }>) {
   const state = lookupStateFromReference(reference);
+  const product = getCustomerProductFixture("mk-2866");
 
   return (
     <>
@@ -335,11 +327,10 @@ export function LookupRoute({ reference = "" }: Readonly<{ reference?: string }>
                 id="lookup-state"
                 state={state}
               />
-              {state === "found" ? (
+              {state === "found" && product ? (
                 <div className={styles.lookupProduct}>
                   <ProductCommerceCard
-                    evidence="unavailable"
-                    product={mk2866Fixture}
+                    product={product}
                     showQualitative={false}
                     variant="compact"
                   />
@@ -456,7 +447,7 @@ export function AboutRoute() {
           ))}
         </div>
       </section>
-      <RelatedRail anchorProduct={mk2866Fixture} products={[rad140Fixture]} />
+      <section className="section"><div className="shell"><PresentationState copy="Product relationships remain absent until a source-backed rationale is approved." eyebrow="PRODUCT RELATIONSHIPS" state="unavailable" title="No relationship guidance is available yet."/></div></section>
     </>
   );
 }

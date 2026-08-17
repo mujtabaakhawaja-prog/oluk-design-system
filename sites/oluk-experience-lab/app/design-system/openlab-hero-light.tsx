@@ -3,15 +3,23 @@ import { ActionLink, Arrow } from "./customer-route-primitives";
 import experience from "./openlab-product-depth.json";
 import styles from "./openlab-hero-light.module.css";
 import { ProductCommerceCard } from "./product-commerce-card";
-import { mk2866Fixture } from "./product-fixtures";
+import { getCustomerProductFixture } from "./product-content-adapter";
 import { EvidenceStatusChip } from "./program-components";
 
 const confidenceEntries = [
   ["01", "Find the record", "Start with a product, batch or report reference.", "/open-lab/records"],
   ["02", "Compare products", "Put product facts and record availability side by side.", "/open-lab/compare"],
-  ["03", "Build a stronger stack", "Add products by the outcome each one contributes.", "/open-lab/stack-builder"],
+  ["03", "Stack builder", "See whether approved product relationships are available.", "/open-lab/stack-builder"],
   ["04", "Read the methodology", "Understand how labels, batches and reports stay distinct.", "/open-lab/methodology"],
 ] as const;
+
+function requireFeaturedProduct() {
+  const product = getCustomerProductFixture("mk-2866");
+  if (!product) throw new Error("MK-2866 customer content projection is unavailable");
+  return product;
+}
+
+const featuredProduct = requireFeaturedProduct();
 
 export function OpenLabHeroLight() {
   const concentration = experience.visualizations.concentration;
@@ -39,7 +47,7 @@ export function OpenLabHeroLight() {
               <span role="listitem">CONNECTED COMMERCE</span>
             </div>
           </EditorialSurface>
-          <ProductCommerceCard headingLevel="h2" product={mk2866Fixture} variant="featured"/>
+          <ProductCommerceCard headingLevel="h2" product={featuredProduct} variant="featured"/>
         </div>
 
         <div className={styles.confidenceField}>
@@ -60,7 +68,7 @@ export function OpenLabHeroLight() {
 
           <DecisionSurface
             compact
-            copy="Move into the product, the record, the comparison or a stronger multi-product composition without losing the confidence context."
+            copy="Move into the product, the record, comparison availability or the relationship builder without losing the source context."
             eyebrow="CHOOSE YOUR NEXT STEP"
             title="Turn record detail into a clearer product decision."
           >

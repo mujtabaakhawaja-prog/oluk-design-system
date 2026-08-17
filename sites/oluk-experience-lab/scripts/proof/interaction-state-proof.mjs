@@ -347,12 +347,29 @@ async function lookupSuite(chromePort, baseUrl) {
         const card = document.querySelector(".lookup-card .product-commerce-card");
         const metrics = [...(card?.querySelectorAll(".metric-rail > div") ?? [])].map((cell) => ({ value: cell.querySelector("dt")?.textContent?.trim(), label: cell.querySelector("dd")?.textContent?.trim() }));
         const text = card?.textContent?.replace(/\\s+/g, " ").trim() ?? "";
-        return { text, metrics, name: card?.querySelector("h3")?.textContent?.trim(), price: [...(card?.querySelectorAll("strong") ?? [])].map((node) => node.textContent?.trim()).find((value) => value === "£43"), fabricatedMeasuredPurity: /99\\.\\d+%/.test(text) };
+        return {
+          text,
+          metrics,
+          name: card?.querySelector("h3")?.textContent?.trim(),
+          priceUnavailable: text.includes("Price unavailable"),
+          staticPrice: /£\\s*\\d/.test(text),
+          unavailableAction: [...(card?.querySelectorAll("button") ?? [])].some((button) => button.textContent?.trim() === "Unavailable" && button.disabled),
+          fabricatedMeasuredPurity: /99\\.\\d+%/.test(text),
+        };
       })()`);
       const metricTruth = evidence.metrics.some((metric) => metric.value === "15 MG" && metric.label === "STRENGTH")
         && evidence.metrics.some((metric) => metric.value === "90" && metric.label === "SERVINGS")
         && evidence.metrics.some((metric) => metric.value === ">99%" && metric.label === "PURITY");
-      return requireCondition(evidence.name === "MK-2866" && evidence.price === "£43" && metricTruth && !evidence.fabricatedMeasuredPurity, "lookup found truth drift", evidence);
+      return requireCondition(
+        evidence.name === "MK-2866"
+          && evidence.priceUnavailable
+          && !evidence.staticPrice
+          && evidence.unavailableAction
+          && metricTruth
+          && !evidence.fabricatedMeasuredPurity,
+        "lookup found truth drift",
+        evidence,
+      );
     });
 
     await proofCase(targetSuite, "lookup-unavailable-transition", async () => {

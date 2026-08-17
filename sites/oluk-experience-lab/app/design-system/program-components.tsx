@@ -9,7 +9,7 @@ import styles from "./program-components.module.css";
 
 export type EvidenceAuthorityState = "verified-evidence" | "source-reported" | "source-only" | "unavailable";
 const evidenceLabels: Record<EvidenceAuthorityState, string> = {
-  "verified-evidence": "Verified Evidence",
+  "verified-evidence": "Source Reported",
   "source-reported": "Source Reported",
   "source-only": "Source Only",
   unavailable: "Unavailable",

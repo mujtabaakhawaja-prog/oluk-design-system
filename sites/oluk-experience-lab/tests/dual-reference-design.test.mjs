@@ -74,8 +74,10 @@ test("navigation is sentence case and canonical contextual surfaces are split", 
     readFile(path.join(siteRoot, "app/design-system/contextual-navigation.tsx"), "utf8"),
   ]);
   for (const label of ['label: "Shop"', 'label: "OpenLab"', 'label: "Learn"', 'label: "Wholesale"', 'label: "About"']) assert.match(navigation, new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-  assert.match(header, /ProductCommerceCard/);
-  assert.match(header, /rad140Fixture/);
+  assert.match(header, /data-copy-surface="editorial"/);
+  assert.doesNotMatch(header, /ProductCommerceCard|rad140Fixture|£55/, "the shared header does not promote a source-bound product or static commerce fixture");
+  assert.match(navigation, /kind: "editorial"/);
+  assert.match(navigation, /Browse customer-ready product facts/);
   assert.match(contextual, /ProductContextNav/);
   assert.match(contextual, /OpenLabContextNav/);
   assert.match(contextual, /CheckoutStepIndicator\.Context/);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { SiteFooter } from "./experience-lab";
+import { SiteFooter } from "./design-system/site-footer";
 import { SiteHeader } from "./design-system/site-header";
 
 export default function NotFound() {

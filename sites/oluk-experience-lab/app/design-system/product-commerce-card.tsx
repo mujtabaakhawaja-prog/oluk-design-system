@@ -158,7 +158,7 @@ export function ProductCommerceCard({
         {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
         {commerceTreatment === "purchase" ? (
           <div className={classes("oluk-candidate-compact-buy", styles.compactPurchase)}>
-            <strong>{product.price}</strong>
+            <strong>{product.price.trim() ? product.price : "Price unavailable"}</strong>
             <div className={styles.compactActions}>
               <ActionLink href={secondaryHref ?? product.customerPath} size="compact" variant="quiet">
                 View product

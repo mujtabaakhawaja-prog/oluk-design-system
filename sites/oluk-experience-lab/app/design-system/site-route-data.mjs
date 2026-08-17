@@ -3,7 +3,7 @@
  * Both the React renderer and the browser-proof matrix consume this table.
  */
 export const CUSTOMER_ROUTES = /** @type {const} */ ([
-  { key: "home", path: "/", label: "Home", heading: "Formulated to a higher standard.", section: "site", authorityClass: "customer-candidate" },
+  { key: "home", path: "/", label: "Home", heading: "Product facts, made easier to review.", section: "site", authorityClass: "customer-candidate" },
   { key: "shop", path: "/shop", label: "Shop", heading: "The Olympus Labs UK range.", section: "shop", authorityClass: "customer-candidate" },
   { key: "product", path: "/product/mk-2866", label: "MK-2866", heading: "MK-2866", section: "shop", authorityClass: "customer-candidate" },
   { key: "product-continuation", path: "/product/mk-2866/continuation", label: "Product continuation", heading: "Recommendations and restock, kept together.", section: "shop", authorityClass: "customer-candidate" },
@@ -40,7 +40,7 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "report", path: "/open-lab/report/registered-record", label: "Report", heading: "Report registered-record", section: "openlab", authorityClass: "customer-candidate" },
   { key: "openlab-evidence", path: "/open-lab/evidence", label: "Evidence", heading: "See what stands behind the product.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "compound-guide", path: "/open-lab/compound-guide", label: "Compound guide", heading: "Choose the product direction. Then inspect the facts.", section: "openlab", authorityClass: "customer-candidate" },
-  { key: "stack-builder", path: "/open-lab/stack-builder", label: "Stack builder", heading: "Build a stronger Ostarine cutting stack.", section: "openlab", authorityClass: "customer-candidate" },
+  { key: "stack-builder", path: "/open-lab/stack-builder", label: "Stack builder", heading: "Build only from approved product relationships.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "dosing-calculator", path: "/open-lab/dosing-calculator", label: "Dose calculator", heading: "Start with labelled product facts.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "cycle-planner", path: "/open-lab/cycle-planner", label: "Cycle planner", heading: "Keep product selection separate from a personal schedule.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "interaction-checker", path: "/open-lab/interaction-checker", label: "Interaction checker", heading: "Compare each product on its own facts.", section: "openlab", authorityClass: "customer-candidate" },

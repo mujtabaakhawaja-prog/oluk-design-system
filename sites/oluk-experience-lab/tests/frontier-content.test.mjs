@@ -7,55 +7,60 @@ import { loadBuiltWorker, renderHtml, visibleText } from "../scripts/proof/rende
 
 const content = readFileSync(new URL("../app/design-system/frontier-content.ts", import.meta.url), "utf8");
 const registry = JSON.parse(readFileSync(new URL("../../../authority/FRONTIER-SECTION-MOUNT-REGISTRY.json", import.meta.url), "utf8"));
+const generatedContent = JSON.parse(readFileSync(new URL("../app/design-system/product-content.generated.json", import.meta.url), "utf8"));
+const productAdapter = readFileSync(new URL("../app/design-system/product-content-adapter.ts", import.meta.url), "utf8");
+const productPage = readFileSync(new URL("../app/product/[slug]/page.tsx", import.meta.url), "utf8");
+const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
 
-test("frontier catalogue preserves fixed MK-2866 truth and RAD-140 8 MG correction", () => {
-  assert.match(content, /slug:"mk-2866"[\s\S]*?strength:"15 MG"[\s\S]*?servings:"90 SERVINGS"[\s\S]*?purity:">99%"[\s\S]*?price:"£43"/);
-  assert.match(content, /slug:"rad-140"[\s\S]*?strength:"8 MG"/);
-  assert.doesNotMatch(content, /RAD-140[\s\S]{0,280}10 MG/);
+test("Wave 2 quarantines the legacy frontier catalogue behind the generated product-content projection", () => {
   assert.equal((content.match(/record\(\{slug:/g) ?? []).length, 16);
+  assert.equal(generatedContent.schemaVersion, "oluk.product-content-projection.v1");
+  assert.equal(generatedContent.products.length, 16);
+  assert.equal(generatedContent.products.filter(({ customer }) => customer.readinessState === "CONTENT_READY").length, 1);
+
+  const mk2866 = generatedContent.products.find(({ canonicalProductId }) => canonicalProductId === "mk-2866");
+  const rad140 = generatedContent.products.find(({ canonicalProductId }) => canonicalProductId === "rad-140");
+  assert.deepEqual(
+    [mk2866.customer.content.facts.strength, mk2866.customer.content.facts.servings, mk2866.customer.content.facts.purity],
+    ["15 MG", "90 SERVINGS", ">99%"],
+  );
+  assert.equal(mk2866.customer.commerce.price.value, null);
+  assert.equal(mk2866.customer.commerce.inventory.value, null);
+  assert.equal(rad140.customer.readinessState, "SOURCE_BOUND");
+  assert.equal(rad140.customer.canonicalIdentity, undefined, "source-bound identity does not enter customer output before content readiness");
+
+  assert.match(productAdapter, /product-content\.generated\.json/);
+  assert.match(productPage, /getCustomerProductFixture/);
+  assert.doesNotMatch(productPage, /frontier-content|product-experience-catalog/);
+  assert.doesNotMatch(content.slice(content.indexOf("export function productJsonLd")), /offers|InStock|priceCurrency/);
 });
 
-test("frontier product records use outcome-led copy and match the approved Your Stack product facts", () => {
-  const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
-  const kitRoot = new URL("../../../make-sessions/frontier-site-expansion/", import.meta.url);
-  const stackData = JSON.parse(readFileSync(new URL("runs/01-canonical-your-stack/product-data.json", kitRoot), "utf8"));
-
-  for (const product of stackData.recommendations) {
-    assert.match(content, new RegExp(`slug:"${product.id}"[\\s\\S]*?strength:"${product.strength}"[\\s\\S]*?servings:"${product.servings}"[\\s\\S]*?price:"${product.price}"`));
-    assert.match(stackBuilder, new RegExp(`targetProduct: "${product.id}"`));
-  }
-
-  const productRecords = content.slice(content.indexOf("export const frontierProducts"), content.indexOf("export const productBySlug"));
-  assert.doesNotMatch(productRecords, /(?:research route|collection route|related collection|product decision|comparison presentation)/i);
-  assert.match(productRecords, /strength and lean mass/i);
-  assert.match(productRecords, /size and power/i);
-  assert.match(productRecords, /appetite, sleep and recovery/i);
+test("the former product-experience compiler remains an explicitly isolated legacy command", () => {
+  assert.equal(packageJson.scripts["product:compile"], "node scripts/compile-product-content.mjs");
+  assert.equal(packageJson.scripts["product:check"], "node scripts/compile-product-content.mjs --check");
+  assert.equal(packageJson.scripts["product:legacy:compile"], "node scripts/compile-product-experience.mjs");
+  assert.equal(packageJson.scripts["product:legacy:check"], "node scripts/compile-product-experience.mjs --check");
+  assert.doesNotMatch(productAdapter, /product-experience-catalog|PRODUCT-EDITORIAL-SOURCE-CORPUS|frontier-content/);
 });
 
-test("every catalogue PDP renders its own customer proposition without implementation vocabulary", async () => {
-  const products = [
-    ["mk-2866", "MK-2866", "15 MG", "90 SERVINGS", "£43"],
-    ["rad-140", "RAD-140", "8 MG", "60 SERVINGS", "£55"],
-    ["lgd-4033", "LGD-4033", "5 MG", "", "£44"],
-    ["mk-677", "MK-677", "15 MG", "90 SERVINGS", "£45"],
-    ["gw-501516", "GW-50156", "10 MG", "60 SERVINGS", "£42"],
-    ["s-4", "S-4", "25 MG", "60 SERVINGS", "£40"],
-    ["yk-11", "YK-11", "10 MG", "60 SERVINGS", "£47"],
-    ["s-23", "S-23", "10 MG", "60 SERVINGS", "£47"],
-    ["epistane", "Epistane", "20 MG", "60 SERVINGS", "£44"],
-    ["ment", "MENT", "20 MG", "30 SERVINGS", "£49"],
-    ["m-sten", "M-STEN", "10 MG", "60 SERVINGS", "£48"],
-    ["trenavar", "Trenavar", "30 MG", "60 SERVINGS", "£48"],
-    ["bpc-157", "BPC-157", "500 MCG", "60 SERVINGS", "£54"],
-    ["tb-500", "TB-500", "2 MG", "30 SERVINGS", "£58"],
-    ["cjc-1295", "CJC-1295", "2 MG", "30 SERVINGS", "£59"],
-    ["l-carnitine", "L-Carnitine", "500 MG", "60 SERVINGS", "£29"],
-  ];
+test("dynamic PDPs render MK-2866 source-ready copy and fail closed for every non-ready product", async () => {
   const worker = await loadBuiltWorker("frontier-product-propositions");
-  for (const [slug, name, strength, servings, price] of products) {
-    const text = visibleText(await renderHtml(worker, `/product/${slug}`, 200));
-    for (const value of [name, strength, servings, price]) assert.ok(text.includes(value), `${slug}: ${value}`);
-    assert.doesNotMatch(text, /\b(?:route|module|workspace|fixture|proof|presentation|component)\b/i, slug);
+
+  const mkText = visibleText(await renderHtml(worker, "/product/mk-2866", 200));
+  for (const value of ["MK-2866", "Ostarine", "15 MG", "90 SERVINGS", ">99%", "Source Reported", "Price unavailable"]) {
+    assert.ok(mkText.includes(value), `mk-2866: ${value}`);
+  }
+  assert.doesNotMatch(mkText, /£43|\bIN STOCK\b|OPENLAB VERIFIED|Third-Party Tested/i);
+  assert.doesNotMatch(mkText, /strength and lean mass|size and power|appetite, sleep and recovery/i);
+
+  for (const { canonicalProductId, customer } of generatedContent.products) {
+    if (customer.readinessState === "CONTENT_READY") continue;
+    const html = await renderHtml(worker, `/product/${canonicalProductId}`, 200);
+    const text = visibleText(html.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? "");
+    assert.match(text, /Product information is not available yet\./, canonicalProductId);
+    assert.match(text, /until its customer information is ready\./, canonicalProductId);
+    assert.doesNotMatch(text, /£\d|\bIN STOCK\b|OPENLAB VERIFIED|Third-Party Tested/i, canonicalProductId);
+    assert.doesNotMatch(text, /strength and lean mass|size and power|appetite, sleep and recovery/i, canonicalProductId);
   }
 });
 
@@ -93,11 +98,16 @@ test("frontier binds supplied product renders and ships bounded Make/agentic han
     readFileSync(new URL("../app/design-system/shop-taxonomy.ts", import.meta.url), "utf8"),
     readFileSync(new URL("../app/design-system/locked-home-hero-media.ts", import.meta.url), "utf8"),
   ]) assert.match(source, /\/assets\/products\/rad-140\/front\.png/);
-  assert.match(readFileSync(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8"), /lockedHomeHeroMedia\["rad-140"\]/);
+  const heroSource = readFileSync(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8");
+  const routeSource = readFileSync(new URL("../app/customer-routes.tsx", import.meta.url), "utf8");
+  assert.match(heroSource, /LockedHomeHero\(\{ product: readyProduct \}/);
+  assert.match(routeSource, /const heroProduct = getCustomerProductFixture\("mk-2866"\)/);
+  assert.match(routeSource, /<LockedHomeHero product=\{heroProduct\}/);
+  assert.doesNotMatch(heroSource, /lockedHomeHeroMedia|£43|£55|£49/);
   assert.doesNotMatch(readFileSync(new URL("PROMPTS.md", kitRoot), "utf8"), /RAD-140[^\n]{0,80}10 MG/);
 });
 
-test("first Make run is a self-contained canonical Your Stack frontier", () => {
+test("the first Make run remains self-contained, unpublished historical evidence", () => {
   const kitRoot = new URL("../../../make-sessions/frontier-site-expansion/", import.meta.url);
   const runRoot = new URL("runs/01-canonical-your-stack/", kitRoot);
   const manifest = JSON.parse(readFileSync(new URL("BULK-RUN-MANIFEST.json", kitRoot), "utf8"));
@@ -107,6 +117,8 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   const correctionPrompt = readFileSync(new URL("CORRECTION-PROMPT.md", runRoot), "utf8");
 
   assert.equal(manifest.firstRun.id, "01");
+  assert.equal(manifest.status, "HUMAN_REVIEW_REQUIRED_UNPUBLISHED");
+  assert.equal(manifest.promotion, "SELECT_RELATIONSHIPS_THEN_REBUILD_IN_SITES");
   assert.equal(manifest.firstRun.directions, 3);
   assert.deepEqual(manifest.firstRun.widths, [1440, 390]);
   assert.equal(manifest.firstRun.attachments.length, 5);
@@ -140,68 +152,33 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
   assert.match(correctionPrompt, /1200:34256/);
   assert.match(correctionPrompt, /three separate instances of the two-level QualitativeChip relationship from `733:17342`/);
   assert.match(correctionPrompt, /ProductMetricRail must follow canonical `733:95`/);
-  assert.equal(productData.heading, "Build more from your MK-2866 stack.");
-  assert.match(productData.introduction, /strength and lean mass[\s\S]*size and power[\s\S]*growth, appetite, sleep and recovery/i);
-  assert.doesNotMatch(productData.heading, /research route/i);
-  assert.doesNotMatch(productData.introduction, /testing language|direct route|complements|makes sense|product path|direction|continuation/i);
   assert.match(correctionPrompt, /Use all caps only inside visibly bounded chips, pills, metric cells, or compact status atoms/i);
   assert.match(prompt, /never simply stack the full desktop section vertically/i);
   assert.doesNotMatch(prompt, /10 MG[^\n]*RAD-140|RAD-140[^\n]*10 MG/i);
 
-  assert.deepEqual(productData.recommendations.map(({name, strength, servings}) => [name, strength, servings]), [
-    ["RAD-140", "8 MG", "60 SERVINGS"],
-    ["MENT", "20 MG", "30 SERVINGS"],
-    ["MK-677", "15 MG", "90 SERVINGS"],
-  ]);
-  assert.equal(productData.recommendations.find(({id}) => id === "ment").family, "Metabolics");
   for (const product of productData.recommendations) {
-    assert.ok(product.primaryBenefit.length > 5);
-    assert.ok(product.stackPosition.length > 5);
-    assert.ok(product.rationale.length > 90);
     const asset = readFileSync(new URL(product.image, runRoot));
     assert.equal(createHash("sha256").update(asset).digest("hex"), product.imageSha256);
   }
   assert.match(app, /scroll-snap-type:x mandatory/);
-  assert.match(app, /Added ✓/);
-  assert.match(app, /ContextChip label="PRODUCT" value=\{data\.anchorProduct\.alias\}/);
-  assert.match(app, /product\.primaryBenefit/);
-  assert.match(app, /product\.stackPosition/);
-  assert.match(app, /product\.servings\.replace\(\/\\s\+SERVINGS\$\/i, ""\)/);
-  assert.doesNotMatch(app, /product\.inventory|product\.evidence|stackRole|stackFit|research route|testing language|direct route to product detail|Choose what complements|performance direction/i);
   assert.doesNotMatch(app, /lorem ipsum|placeholder|this goes here/i);
+  assert.doesNotMatch(productAdapter, /frontier-site-expansion|canonical-your-stack/);
 });
 
-test("Your Stack wraps the canonical commerce card with governed commercial decision content", () => {
-  const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
-  assert.match(stackBuilder, /export function StackOutcomeCard/);
-  assert.match(stackBuilder, /<ProductCommerceCard[\s\S]*commerceTreatment="selection"/);
-  assert.match(stackBuilder, /<DecisionSurface/);
-  assert.match(stackBuilder, /<TechnicalSurface/);
-  assert.doesNotMatch(stackBuilder, /<ProductMediaChamber|<MetricRail/);
-  assert.match(stackBuilder, /PRODUCT ROLE/);
-  assert.match(stackBuilder, /WHAT IT ADDS/);
-  assert.match(stackBuilder, /const stackRelationships/);
-  assert.match(stackBuilder, /function baselineFor[\s\S]*getFrontierProduct\(slug\)/);
-  assert.match(stackBuilder, /Build a stronger \$\{baseline\.alias\} cutting stack[\s\S]*Build a stronger size-and-power stack from \$\{baseline\.alias\}[\s\S]*Build a stronger recomp stack from \$\{baseline\.alias\}/i);
-  assert.match(stackBuilder, /baseline\.name.*selectedProducts|selectedProducts.*baseline\.name/i);
-  assert.match(stackBuilder, /FOUNDATION[\s\S]*STRONGER[\s\S]*MAXIMUM/);
-  assert.match(stackBuilder, /host === "bag" \|\| host === "confirmation"/);
-  assert.match(stackBuilder, /host === "account"/);
-  assert.match(stackBuilder, /function StackSummary/);
-  assert.doesNotMatch(stackBuilder, /function StackCard/);
-});
+test("the public stack-builder fails closed until product relationships have approved customer copy", async () => {
+  const openLabFrontier = readFileSync(new URL("../app/design-system/openlab-frontier.tsx", import.meta.url), "utf8");
+  const legacyBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
+  assert.match(openLabFrontier, /"stack-builder": "DESIGN_INCOMPLETE"/);
+  assert.match(openLabFrontier, /Stack building is not available yet\./);
+  assert.match(openLabFrontier, /No customer-ready stack rationale is approved\./);
+  assert.doesNotMatch(openLabFrontier, /<YourStackBuilder|product-experience-catalog|frontier-content/);
+  assert.match(legacyBuilder, /evidence: product\.evidenceState === "verified-evidence" \? "available" : "unavailable"/);
+  assert.doesNotMatch(legacyBuilder, /evidence: product\.evidenceState === "verified-evidence" \? "verified"/);
 
-test("Your Stack uses deterministic commercial levels, contributions and separate OpenLab confidence", () => {
-  const source = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
-  const css = readFileSync(new URL("../app/design-system/your-stack-builder.module.css", import.meta.url), "utf8");
-  for (const level of ["FOUNDATION", "STRONGER", "MAXIMUM"]) assert.match(source, new RegExp(level));
-  for (const contribution of ["STRENGTH", "LEAN MASS", "BODY COMPOSITION", "RECOVERY", "APPETITE [+] SLEEP", "TRAINING OUTPUT"]) assert.match(source, new RegExp(contribution));
-  assert.match(source, /data-component="StackOpenLabConfidence"/);
-  assert.match(source, /confidenceSelection\(baseline, selectedProducts\)/);
-  assert.match(source, /Confirm or change your baseline/);
-  assert.match(source, /host === "standalone" \? selectBaseline : undefined/);
-  assert.match(source, /EvidenceStatusChip/);
-  assert.match(source, /stackTotal/);
-  assert.doesNotMatch(css, /font-size:\s*11px/);
-  assert.doesNotMatch(source, /goalFit|evidenceVisibility|StackOutcomeProfile|out of 100|sharper/i);
+  const worker = await loadBuiltWorker("frontier-stack-unavailable");
+  const html = await renderHtml(worker, "/open-lab/stack-builder", 200);
+  const text = visibleText(html.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? "");
+  assert.match(text, /Stack building is not available yet\./);
+  assert.match(text, /No customer-ready stack rationale is approved\./);
+  assert.doesNotMatch(text, /£\d|\bIN STOCK\b|OPENLAB VERIFIED|strength and lean mass|size and power|appetite, sleep and recovery/i);
 });

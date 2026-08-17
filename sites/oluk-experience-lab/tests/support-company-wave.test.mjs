@@ -38,9 +38,9 @@ function contrast(foreground, background) {
 }
 
 const routes = new Map([
-  ["/about", ["Quality, made visible at every product decision.", "Evidence adds another dimension", "Build your stack"]],
-  ["/about/evidence-os", ["Turn product evidence into customer confidence.", "Verified Evidence", "Open the MK-2866 dossier"]],
-  ["/faq", ["Find the answer, then get back to the decision.", "Where can I find batch information?", "Build your stack"]],
+  ["/about", ["Quality, made visible at every product decision.", "Evidence adds another dimension", "Check relationship availability"]],
+  ["/about/evidence-os", ["Turn product evidence into customer confidence.", "Source Reported", "Open the MK-2866 dossier"]],
+  ["/faq", ["Find the answer, then get back to the decision.", "Where can I find batch information?", "Browse products"]],
   ["/faq-help-centre", ["Find the answer, then get back to the decision.", "Source Reported", "View your orders"]],
   ["/contact", ["Start with the question that needs answering.", "Start from the order.", "Find a batch"]],
   ["/delivery", ["Choose delivery with the order in view.", "Delivery choices appear", "Track an order"]],
@@ -54,7 +54,7 @@ const routes = new Map([
   ["/legal/privacy", ["Read the published information behind your customer experience.", "Source document", "View your orders"]],
   ["/legal/terms", ["Read the published terms behind your order.", "Source document", "View your orders"]],
   ["/legal/cookies", ["Cookie information", "Read the privacy policy", "Open the sitemap"]],
-  ["/sitemap", ["Go straight to the decision you came to make.", "Find the confidence behind a product.", "Build your stack"]],
+  ["/sitemap", ["Go straight to the decision you came to make.", "Find the confidence behind a product.", "Browse products"]],
   ["/wholesale", ["Begin a wholesale conversation with product clarity.", "Explore OpenLab", "Commercial terms stay specific"]],
 ]);
 
@@ -90,7 +90,7 @@ test("every support and company heading or paragraph stays inside a governed cop
   }
 });
 
-test("support work uses canonical surfaces, product anatomy and exact evidence labels", async () => {
+test("support work uses canonical surfaces, product anatomy and customer-safe evidence labels", async () => {
   assert.match(supportSource, /EditorialSurface/);
   assert.match(supportSource, /DecisionSurface/);
   assert.match(supportSource, /TechnicalSurface/);
@@ -99,10 +99,15 @@ test("support work uses canonical surfaces, product anatomy and exact evidence l
 
   const worker = await loadBuiltWorker("support-company-evidence-states");
   const text = visibleText(supportMain(await renderHtml(worker, "/about/evidence-os", 200), "/about/evidence-os"));
-  for (const label of ["Verified Evidence", "Source Reported", "Source Only", "Unavailable"]) {
+  for (const label of ["Source Reported", "Source Only", "Unavailable"]) {
     assert.ok(text.includes(label), label);
     assert.match(programSource, new RegExp(`"${label}"`));
   }
+  assert.match(text, /available record/i);
+  assert.doesNotMatch(text, /Verified Evidence|OPENLAB VERIFIED/i);
+  assert.match(programSource, /"verified-evidence": "Source Reported"/);
+  assert.doesNotMatch(programSource, /"verified-evidence": "Verified Evidence"/);
+  assert.doesNotMatch(text, /£43|\bIN STOCK\b|Third-Party Tested/i);
   assert.doesNotMatch(text, /Verified evidence|Source reported|Source only/);
   assert.doesNotMatch(renderedAppSource, /Verified evidence|Source reported|Source only/);
 });

@@ -42,13 +42,8 @@ export function frontierProductPresentation(product: FrontierProductRecord): Pro
     customerPath: `/product/${product.slug}`,
     evidencePath: `/open-lab/compound/${product.slug}`,
     media: mediaFor(product),
-    qualitativeFacts: [
-      { kind: "class", label: "FOCUS", value: product.goal[0] ?? "RESEARCH" },
-      { kind: "form", label: "FORM", value: "CAPSULES" },
-      { kind: "quality", label: "QUALITY", value: "LAB FORMULATED" },
-      { kind: "tested", label: "TESTED", value: "THIRD PARTY" },
-    ],
-    presentationStatus: { inventory: "in-stock", evidence: "unavailable" },
+    qualitativeFacts: [],
+    presentationStatus: { inventory: "unavailable", evidence: "unavailable" },
     authority: {
       classification: "design-review-fixture",
       sourceRef: "Frontier product-content registry",

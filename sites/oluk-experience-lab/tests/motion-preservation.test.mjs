@@ -12,10 +12,11 @@ async function readSite(file) {
 }
 
 test("LockedHero preserves its valuable stage behavior inside the current surface grammar", async () => {
-  const [source, css, mapSource] = await Promise.all([
+  const [source, css, mapSource, routeSource] = await Promise.all([
     readSite("app/design-system/locked-home-hero.tsx"),
     readSite("app/design-system/locked-home-hero.module.css"),
     readFile(path.join(repoRoot, "authority/RUNTIME-PRESERVATION-MAP.json"), "utf8"),
+    readSite("app/customer-routes.tsx"),
   ]);
 
   assert.match(mapSource, /homepage-product-stage/);
@@ -36,7 +37,13 @@ test("LockedHero preserves its valuable stage behavior inside the current surfac
   assert.match(source, /<MetricRail/);
   assert.match(source, /<ActionButton/);
   assert.match(source, /<ActionLink/);
-  assert.match(source, /id: "mk-677"[\s\S]*price: "£45"/);
+  assert.match(routeSource, /const heroProduct = getCustomerProductFixture\("mk-2866"\)/, "the server route binds the generated customer product projection");
+  assert.match(routeSource, /<LockedHomeHero product=\{heroProduct\}/, "the client stage receives source-filtered product content as a prop");
+  assert.match(source, /product: readyProduct/);
+  assert.match(source, /const products = useMemo[\s\S]*price: readyProduct\.price/);
+  assert.match(source, /active\.price \|\| "Price unavailable"/);
+  assert.match(source, /<ActionButton disabled size="compact" variant="secondary">Unavailable<\/ActionButton>/);
+  assert.doesNotMatch(source, /£\d+|id: "(?:mk-677|rad-140|lgd-4033|gw-50156)"/, "the preserved stage no longer embeds catalogue commerce fixtures");
   assert.doesNotMatch(source, /className="button|styles\.buyRow|<dl className=\{styles\.metrics\}/);
   assert.match(css, /\.bottle\[data-slot="-2"\]/);
   assert.match(css, /\.bottle\[data-slot="-2"\],[\s\S]*\.bottle\[data-slot="2"\][\s\S]*display: none/);

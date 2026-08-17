@@ -1,0 +1,810 @@
+{
+  "schemaVersion": "oluk.product-content-projection.v1",
+  "sourceHashes": {
+    "schema": "5921149b8915e044cdcf1459501e6168d2497a9744b6fdc04a04d4610f6bb93a",
+    "registry": "677b342af3be679b10dcb0a84bc22e49c6ce4a16e4e1420bac5eda5baeb1c04a",
+    "provenance": "df5fa31613e9ef4fe8d26bb4d76f3fc7ae8b3cd80fe1c56f940bc795bd54a498",
+    "routes": "c6bde4cfef033974775cfa68cf2abc2a27e87fe2d98e86508aa9aaad05a32edc",
+    "slots": "cb8cb15ef006429cae47e1c67adf01de048adbd501ebb677a1e648fd235a762a"
+  },
+  "products": [
+    {
+      "canonicalProductId": "mk-2866",
+      "customer": {
+        "canonicalProductId": "mk-2866",
+        "slug": "mk-2866",
+        "readinessState": "CONTENT_READY",
+        "canonicalIdentity": {
+          "name": "MK-2866",
+          "aliases": [
+            "Ostarine"
+          ]
+        },
+        "media": {
+          "render": "/assets/products/mk-2866/front.png"
+        },
+        "content": {
+          "customerThesis": "Choose MK-2866 by its labelled format and available batch record, with product facts and source-reported evidence kept clearly separated.",
+          "descriptions": {
+            "short": "MK-2866 (Ostarine) is a SARM Series product in a 15 MG, 90-serving format.",
+            "medium": "MK-2866 (Ostarine) is a SARM Series product in a 15 MG, 90-serving format. Its available OpenLab record connects batch OL2201 to Janoshik report 28868 and presents source-reported analytical values.",
+            "long": "MK-2866, also identified as Ostarine, is presented in the SARM Series as a 15 MG capsule format with 90 servings. The available OpenLab record for batch OL2201 links to Janoshik report 28868, dated 16 April 2023. That named report records reported purity above 99% and a reported concentration of 16.02 mg against the 15 mg label claim."
+          },
+          "facts": {
+            "series": "SARM SERIES",
+            "sku": "80529-01",
+            "strength": "15 MG",
+            "servings": "90 SERVINGS",
+            "purity": ">99%",
+            "form": "CAPSULES"
+          },
+          "composition": "Label-backed detail is limited to MK-2866 as the named compound and capsules as the form; excipients and the full formula are unavailable.",
+          "useContext": "Compare the labelled format, serving count and available source record when reviewing this product.",
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PERFORMANCE_OR_OUTCOME_PROMISES",
+            "RETAIN_REPORTED_QUALIFIER_FOR_ANALYTICAL_VALUES",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "AVAILABLE",
+            "summary": "The available record connects batch OL2201 to Janoshik report 28868 and displays source-reported values.",
+            "statements": [
+              "Janoshik report 28868 records reported purity above 99% for batch OL2201.",
+              "The same record reports a concentration of 16.02 mg against the 15 mg label claim.",
+              "The named record is dated 16 April 2023."
+            ]
+          },
+          "seo": {
+            "titleBase": "MK-2866 (Ostarine) 15 MG | Olympus Labs UK",
+            "descriptionBase": "Explore MK-2866 (Ostarine), a 15 MG, 90-serving SARM Series format, with access to its available OpenLab batch record.",
+            "focusTerms": [
+              "MK-2866",
+              "Ostarine",
+              "15 MG",
+              "90 servings",
+              "OpenLab"
+            ]
+          },
+          "faqs": [
+            {
+              "question": "What product facts are available for MK-2866?",
+              "answer": "MK-2866 is labelled as Ostarine in the SARM Series, with a 15 MG format and 90 servings."
+            },
+            {
+              "question": "Is there an OpenLab record for MK-2866?",
+              "answer": "Yes. The available record connects batch OL2201 to Janoshik report 28868 and displays source-reported values."
+            },
+            {
+              "question": "Does the OpenLab record make a performance or medical claim?",
+              "answer": "No. It reports analytical values for the named batch and does not provide dosage, medical or performance guidance."
+            }
+          ],
+          "routeVariants": {
+            "homepageCard": "MK-2866 (Ostarine). 15 MG. 90 servings.",
+            "pdpHero": "MK-2866 (Ostarine) pairs a clear 15 MG, 90-serving label format with access to its available OpenLab record.",
+            "pdpDossier": "Read the labelled product facts beside the named source record; full excipient composition is unavailable.",
+            "openLab": "For batch OL2201, Janoshik report 28868 records reported purity above 99% and a reported concentration of 16.02 mg against the 15 mg label claim.",
+            "collectionCard": "MK-2866 (Ostarine), 15 MG and 90 servings, with an available OpenLab record.",
+            "comparison": "Compare labelled format, serving count and available source record.",
+            "educationSupport": "OpenLab reports the supplied analytical values for the named batch; it does not provide dosage, medical or performance guidance."
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "CONTENT_READY": 37,
+        "EDITORIAL_CHOICE": 4
+      }
+    },
+    {
+      "canonicalProductId": "rad-140",
+      "customer": {
+        "canonicalProductId": "rad-140",
+        "slug": "rad-140",
+        "readinessState": "SOURCE_BOUND",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PERFORMANCE_OR_OUTCOME_PROMISES",
+            "NO_OPENLAB_OR_JANOSHIK_CLAIM",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE",
+            "summary": "No product-specific OpenLab record is bound to this contract."
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "SOURCE_BOUND": 22,
+        "PENDING_EVIDENCE_BINDING": 4,
+        "EDITORIAL_CHOICE": 5,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "lgd-4033",
+      "customer": {
+        "canonicalProductId": "lgd-4033",
+        "slug": "lgd-4033",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PERFORMANCE_OR_OUTCOME_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 18,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "mk-677",
+      "customer": {
+        "canonicalProductId": "mk-677",
+        "slug": "mk-677",
+        "readinessState": "SOURCE_BOUND",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_APPETITE_SLEEP_OR_RECOVERY_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "SOURCE_BOUND": 18,
+        "EDITORIAL_CHOICE": 7,
+        "PENDING_EVIDENCE_BINDING": 6,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "gw-501516",
+      "customer": {
+        "canonicalProductId": "gw-501516",
+        "slug": "gw-501516",
+        "readinessState": "SOURCE_BOUND",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_ENDURANCE_CUTTING_OR_BODY_COMPOSITION_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "SOURCE_BOUND": 13,
+        "EDITORIAL_CHOICE": 11,
+        "PENDING_EVIDENCE_BINDING": 8,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "s-4",
+      "customer": {
+        "canonicalProductId": "s-4",
+        "slug": "s-4",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_CUTTING_OR_DEFINITION_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 18,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "yk-11",
+      "customer": {
+        "canonicalProductId": "yk-11",
+        "slug": "yk-11",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_SIZE_STRENGTH_OR_INTENSITY_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 17,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "s-23",
+      "customer": {
+        "canonicalProductId": "s-23",
+        "slug": "s-23",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_RECOMP_STRENGTH_OR_DEFINITION_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 17,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "epistane",
+      "customer": {
+        "canonicalProductId": "epistane",
+        "slug": "epistane",
+        "readinessState": "SOURCE_BOUND",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_RECOMP_OR_FINISH_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "SOURCE_BOUND": 13,
+        "EDITORIAL_CHOICE": 7,
+        "PENDING_EVIDENCE_BINDING": 10,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "ment",
+      "customer": {
+        "canonicalProductId": "ment",
+        "slug": "ment",
+        "readinessState": "SOURCE_BOUND",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_MASS_POWER_OR_INTENSITY_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "SOURCE_BOUND": 18,
+        "EDITORIAL_CHOICE": 7,
+        "PENDING_EVIDENCE_BINDING": 6,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "m-sten",
+      "customer": {
+        "canonicalProductId": "m-sten",
+        "slug": "m-sten",
+        "readinessState": "SOURCE_BOUND",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_MASS_STRENGTH_OR_INTENSITY_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "SOURCE_BOUND": 15,
+        "EDITORIAL_CHOICE": 7,
+        "PENDING_EVIDENCE_BINDING": 9,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "trenavar",
+      "customer": {
+        "canonicalProductId": "trenavar",
+        "slug": "trenavar",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_MASS_OR_INTENSITY_PROMISES",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 18,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "bpc-157",
+      "customer": {
+        "canonicalProductId": "bpc-157",
+        "slug": "bpc-157",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_OR_RECOVERY_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 17,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "tb-500",
+      "customer": {
+        "canonicalProductId": "tb-500",
+        "slug": "tb-500",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_OR_RECOVERY_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 17,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "cjc-1295",
+      "customer": {
+        "canonicalProductId": "cjc-1295",
+        "slug": "cjc-1295",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_OR_RECOVERY_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 17,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    },
+    {
+      "canonicalProductId": "l-carnitine",
+      "customer": {
+        "canonicalProductId": "l-carnitine",
+        "slug": "l-carnitine",
+        "readinessState": "EDITORIAL_CHOICE",
+        "content": {
+          "claimsConstraints": [
+            "NO_MEDICAL_WELLNESS_OR_BODY_COMPOSITION_CLAIMS",
+            "NO_DOSAGE_OR_USAGE_INSTRUCTIONS",
+            "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS",
+            "NO_ANALYTICAL_CLAIMS",
+            "NO_STATIC_COMMERCE_STATE"
+          ],
+          "evidence": {
+            "availability": "UNAVAILABLE"
+          }
+        },
+        "commerce": {
+          "price": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPrice",
+            "fallback": "OMIT",
+            "value": null
+          },
+          "inventory": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentInventory",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          },
+          "purchasability": {
+            "owner": "WOO_C2",
+            "resolverKey": "currentPurchasability",
+            "fallback": "UNAVAILABLE",
+            "value": null
+          }
+        }
+      },
+      "readiness": {
+        "EDITORIAL_CHOICE": 17,
+        "PENDING_EVIDENCE_BINDING": 13,
+        "CONTENT_READY": 1
+      }
+    }
+  ],
+  "routeConsumption": {
+    "matrixId": null,
+    "slotCatalogueId": null,
+    "rowCount": 21,
+    "slotCount": 20
+  },
+  "contentHash": "b95f248d06052325d83a84a95c79734109941bfe25c9ecba79b8791270292cf3"
+}

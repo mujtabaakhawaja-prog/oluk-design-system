@@ -215,7 +215,6 @@ test("transaction layout recomposes without overflow clipping", async () => {
 test("affected checkout routes contain route copy in governed surfaces", async () => {
   const audit = JSON.parse(await readFile(new URL("../../../authority/generated/CUSTOMER-SURFACE-GRAMMAR-AUDIT.json", import.meta.url), "utf8"));
   const expectedSharedChromeCopy = new Set([
-    "Search a batch, compare compounds or open the report connected to the product in front of you.",
     "Finished products, clear specifications and independently presented evidence.",
     "Shop",
     "OpenLab",

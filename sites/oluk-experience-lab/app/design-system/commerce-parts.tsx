@@ -50,9 +50,9 @@ export function FixtureStatusStack({ product, inventory, evidence }: FixtureStat
 
 export function PriceBlock({ price }: Readonly<{ price: string }>) {
   return (
-    <div className="price-block">
+    <div className="price-block" data-state={price.trim() ? "available" : "unavailable"}>
       <span>PRICE</span>
-      <strong>{price}</strong>
+      <strong>{price.trim() ? price : "Price unavailable"}</strong>
     </div>
   );
 }
@@ -74,7 +74,7 @@ export function StaticPurchaseActions({
   productHref,
   showProductLink = false,
   className,
-  state = "in-stock",
+  state = "unavailable",
 }: StaticPurchaseActionsProps) {
   return (
     <div className={classes("card-actions", styles.actions, className)} data-state={state}>

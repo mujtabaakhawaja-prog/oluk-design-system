@@ -47,7 +47,11 @@ function statePresentation(product: ProductFixture, state: PurchasePanelState) {
           ? "Unavailable"
           : state === "disabled"
             ? "Disabled"
-            : "Add to bag";
+            : inventory === "out-of-stock"
+              ? "Out of stock"
+              : inventory === "unavailable"
+                ? "Unavailable"
+                : "Add to bag";
 
   return { inventory, quantity, actionLabel } as const;
 }

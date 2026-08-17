@@ -16,7 +16,7 @@ export type NavigationNode = Readonly<{
   href: string;
   columns?: ReadonlyArray<NavigationColumn>;
   featured?: Readonly<{
-    kind: "product" | "openlab";
+    kind: "editorial" | "openlab";
     eyebrow: string;
     title: string;
     copy: string;
@@ -37,37 +37,37 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
           { id: "sarms", label: "SARMs", href: "/shop?family=sarms" },
           { id: "research-chemicals", label: "Research chemicals", href: "/shop?family=research-chemicals", detail: "Compare the complete research range" },
           { id: "prohormones", label: "Prohormones", href: "/shop?family=prohormones" },
-          { id: "metabolics", label: "Metabolics", href: "/shop?family=metabolics" },
+          { id: "stacks", label: "Stacks", href: "/shop?family=stacks" },
           { id: "shop-all", label: "View all products", href: "/shop" },
         ],
       },
       {
         heading: "By goal",
         items: [
-          { id: "build", label: "Build size", href: "/shop?goal=build", detail: "Mass and power focused" },
-          { id: "strength", label: "Increase strength", href: "/shop?goal=strength", detail: "Higher-intensity product directions" },
-          { id: "cut", label: "Cut leaner", href: "/shop?goal=cut", detail: "Strength and endurance through a cut" },
-          { id: "recomp", label: "Recomp", href: "/shop?goal=recomp", detail: "Build strength and a leaner look" },
-          { id: "recovery", label: "Support recovery", href: "/shop?goal=recovery", detail: "Sleep, appetite and between-session support" },
+          { id: "strength", label: "Strength", href: "/shop?goal=strength" },
+          { id: "body-composition", label: "Body composition", href: "/shop?goal=body-composition" },
+          { id: "bulk", label: "Bulk", href: "/shop?goal=bulk" },
+          { id: "cutting", label: "Cutting", href: "/shop?goal=cutting" },
+          { id: "endurance", label: "Endurance", href: "/shop?goal=endurance" },
         ],
       },
       {
-        heading: "Stacks & bundles",
+        heading: "Formats and relationships",
         items: [
-          { id: "stacks", label: "Ready-built stacks", href: "/shop?family=stacks", detail: "Shop by training goal" },
-          { id: "bundle-builder", label: "Build my stack", href: "/bundle-builder", detail: "Choose the result and compare the build" },
+          { id: "stacks", label: "Stacks", href: "/shop?family=stacks" },
+          { id: "bundle-builder", label: "Relationship availability", href: "/bundle-builder", detail: "Only approved product relationships appear" },
           { id: "capsules", label: "Capsule formats", href: "/shop?form=capsules" },
           { id: "servings-90", label: "Longer formats", href: "/shop?servings=90" },
         ],
       },
     ],
     featured: {
-      kind: "product",
-      eyebrow: "Featured",
-      title: "RAD-140 · 8 MG",
-      copy: "Push strength and lean-mass focus with the strongest SARM in the Olympus range.",
-      href: "/product/rad-140",
-      action: "View RAD-140",
+      kind: "editorial",
+      eyebrow: "Product catalogue",
+      title: "Browse customer-ready product facts.",
+      copy: "Unavailable facts and commerce state remain explicit until their owner source resolves.",
+      href: "/shop",
+      action: "Open the catalogue",
     },
   },
   {
@@ -87,11 +87,8 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
       {
         heading: "Build and compare",
         items: [
-          { id: "stack-builder", label: "Build my stack", href: "/open-lab/stack-builder", detail: "Start with the result you want" },
-          { id: "compare", label: "Compare compounds", href: "/open-lab/compare", detail: "See the differences side by side" },
-          { id: "dose-calculator", label: "Dose calculator", href: "/open-lab/dosing-calculator" },
-          { id: "cycle-planner", label: "Cycle planner", href: "/open-lab/cycle-planner" },
-          { id: "interaction-checker", label: "Interaction checker", href: "/open-lab/interaction-checker" },
+          { id: "stack-builder", label: "Relationship availability", href: "/open-lab/stack-builder", detail: "No relationship is inferred while approval is pending" },
+          { id: "compare", label: "Comparison availability", href: "/open-lab/compare", detail: "Only customer-ready records can be compared" },
         ],
       },
       {
@@ -109,8 +106,8 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
     featured: {
       kind: "openlab",
       eyebrow: "OpenLab portal",
-      title: "Find the record behind the product.",
-      copy: "Search a batch, compare compounds or open the report connected to the product in front of you.",
+      title: "See which records are available.",
+      copy: "Find available product and batch records without borrowing results between products.",
       href: "/open-lab",
       action: "Enter OpenLab",
     },
@@ -174,20 +171,17 @@ const SHOP_CONTEXT = [
 const OPEN_LAB_CONTEXT = [
   { label: "Evidence", href: "/open-lab/evidence" },
   { label: "Compound guide", href: "/open-lab/compound-guide" },
-  { label: "Stack builder", href: "/open-lab/stack-builder" },
-  { label: "Dose calculator", href: "/open-lab/dosing-calculator" },
-  { label: "Cycle planner", href: "/open-lab/cycle-planner" },
-  { label: "Interaction checker", href: "/open-lab/interaction-checker" },
+  { label: "Relationship availability", href: "/open-lab/stack-builder" },
+  { label: "Comparison availability", href: "/open-lab/compare" },
   { label: "Research", href: "/open-lab/research-papers" },
   { label: "Glossary", href: "/open-lab/glossary" },
 ] as const;
 
 const PRODUCT_CONTEXT = [
   { label: "Overview", href: "#purchase" },
-  { label: "Research profile", href: "#product-details" },
+  { label: "Product facts", href: "#product-details" },
   { label: "Evidence", href: "#lab-records" },
-  { label: "Stacking", href: "#product-continuation" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Questions", href: "#product-questions" },
 ] as const;
 
 const ACCOUNT_CONTEXT = [

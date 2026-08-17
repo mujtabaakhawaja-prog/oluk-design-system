@@ -87,15 +87,19 @@ test("customer routes adopt the canonical design-system modules without page-loc
   for (const canonicalComponent of [
     "ProductCommerceCard",
     "ProductDossier",
-    "AssuranceRail",
-    "RelatedRail",
     "PresentationState",
     "LockedHomeHero",
     "PdpFirstFold",
+    "ProductContentNarrative",
+    "ProductContentFaqs",
     "OpenLabHeroLight",
   ]) {
     assert.match(routeSource, new RegExp(`<${canonicalComponent}\\b`), `${canonicalComponent} route adoption`);
   }
+
+  assert.match(routeSource, /from "\.\/design-system\/product-content-adapter"/);
+  assert.match(routeSource, /getCustomerProductFixture\("mk-2866"\)/);
+  assert.match(routeSource, /getProductRouteVariant\("mk-2866", "pdpDossier"\)/);
 
   const productRoute = routeSource.match(
     /export function ProductRoute\(\)[\s\S]*?\n}\n\nexport function OpenLabRoute/,
@@ -105,7 +109,10 @@ test("customer routes adopt the canonical design-system modules without page-loc
   const pdpFirstFold = await readFile(new URL("../app/design-system/pdp-first-fold.tsx", import.meta.url), "utf8");
   assert.match(pdpFirstFold, /<PurchasePanel\b/, "approved Section 1 reuses the canonical PurchasePanel");
   assert.match(productRoute, /<ProductDossier\b/);
-  assert.match(productRoute, /<RelatedRail\b/);
+  assert.match(productRoute, /<ProductContentNarrative\b/);
+  assert.match(productRoute, /<ProductContentFaqs\b/);
+  assert.match(productRoute, /<ProductEvidenceSnapshot\b/);
+  assert.doesNotMatch(productRoute, /<(?:AssuranceRail|RelatedRail|UpsellContextRail)\b/, "unapproved relationship and assurance copy stays outside the adopted PDP");
 
   const dossierRoute = routeSource.match(
     /export function DossierRoute\(\)[\s\S]*?\n}\n\nfunction lookupStateFromReference/,
@@ -114,8 +121,8 @@ test("customer routes adopt the canonical design-system modules without page-loc
 
   const openLabModules = await readFile(new URL("../app/design-system/openlab-sections.tsx", import.meta.url), "utf8");
   assert.match(openLabModules, /<ProductDossier\b/, "canonical OpenLab dossier composition reuses ProductDossier");
-  assert.match(openLabModules, /secondaryHref=\{mk2866Fixture\.customerPath\}/, "dossier return-to-commerce action targets the PDP");
-  assert.match(openLabModules, /secondaryLabel="Return to MK-2866"/, "dossier does not self-link through a lab-record label");
+  assert.match(openLabModules, /secondaryHref=\{product\.customerPath\}/, "dossier return-to-commerce action targets the PDP");
+  assert.match(openLabModules, /secondaryLabel=\{`Return to \$\{product\.name\}`\}/, "dossier does not self-link through a lab-record label");
 });
 
 test("batch lookup renders accessible deterministic empty, entered, found, no-result and unavailable states", async () => {
@@ -174,10 +181,16 @@ test("core and shell destination paths resolve with coherent landmarks and no or
   }
 
   const compareHtml = await renderHtml(worker, "/open-lab/compare");
-  assert.match(compareHtml, /role=["']region["'][^>]*tabindex=["']0["']/i, "comparison overflow region is keyboard operable");
-  assert.match(compareHtml, /<caption\b[^>]*>Product facts and evidence availability comparison<\/caption>/i);
+  assert.match(visibleText(compareHtml), /Product comparison is not available yet/i, "comparison fails closed until two records are customer-ready");
+  assert.doesNotMatch(compareHtml, /<table\b|role=["']region["'][^>]*tabindex=["']0["']/i, "no incomplete comparison table is rendered");
 
   const productHtml = await renderHtml(worker, "/product/mk-2866");
   assert.match(productHtml, /<nav\b[^>]*aria-label=["']Breadcrumb["']/i);
   assert.match(productHtml, /aria-current=["']page["']/i);
+  assert.match(productHtml, /data-component=["']ProductContentNarrative["']/i, "long registry copy is consumed by the PDP");
+  assert.match(productHtml, /data-component=["']ProductContentFaqs["']/i, "registry FAQs are consumed by the PDP");
+  const productText = visibleText(productHtml);
+  assert.match(productText, /Price unavailable/i, "unresolved commerce price fails closed");
+  assert.match(productText, /SOURCE REPORTED/i, "the bound record is described as source reported");
+  assert.doesNotMatch(productText, /£43|\bIN STOCK\b|Third-Party Tested/i, "static commerce and default verification copy are quarantined");
 });

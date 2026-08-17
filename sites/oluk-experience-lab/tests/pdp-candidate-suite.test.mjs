@@ -22,7 +22,7 @@ test("the PDP option catalogue contains three complete unselected architectures"
   assert.match(manifest, /3-column product context \/ 6-column decision field \/ 3-column OpenLab confidence rail/);
 });
 
-test("all three PDP candidates reuse one governed product and continuation module suite", async () => {
+test("all three PDP candidates preserve the governed decision and content-surface suite", async () => {
   const source = await readFile(new URL("pdp-candidate-suite.tsx", designSystem), "utf8");
 
   for (const component of [
@@ -32,56 +32,57 @@ test("all three PDP candidates reuse one governed product and continuation modul
     "ProductMediaChamber",
     "PurchasePanel",
     "ProductCommerceCard",
-    "AssuranceRail",
   ]) {
     assert.match(source, new RegExp(`\\b${component}\\b`));
   }
   for (const sharedSection of [
     "ProductStory",
     "OpenLabConfidence",
-    "ProductComparison",
-    "StackBundleEntry",
-    "RelatedProducts",
     "QuestionsAndReviews",
-    "AssuranceAndClosure",
   ]) {
     assert.match(source, new RegExp(`function ${sharedSection}\\b`));
   }
-  assert.match(source, /import \{ YourStackBuilder \} from "\.\/your-stack-builder"/);
-  assert.doesNotMatch(source, /StackOutcomeProfile|Evidence visibility|\bComplexity\b|Build a sharper/i);
   assert.match(source, /<OpenLabConfidence expanded includeSummary=\{false\}/);
-  assert.match(source, /replace\(\/\\btraining intensity\\b\/gi, "training output"\)/);
+  assert.match(source, /<EvidenceStatusChip state=\{available \? "source-reported" : "unavailable"\}/);
   assert.doesNotMatch(source, /proof board|fixture|current main|component authority/i);
-  assert.match(source, /<YourStackBuilder baselineSlug=\{productSlug\} host="pdp"/);
   assert.equal((source.match(/prefetch=\{false\}/g) ?? []).length, 2);
   assert.doesNotMatch(source, /product-count-level-pending/);
 });
 
-test("PDP stress products preserve exact fact, media and evidence boundaries", async () => {
-  const content = await readFile(new URL("frontier-content.ts", designSystem), "utf8");
-  const presentation = await readFile(new URL("frontier-product-presentation.ts", designSystem), "utf8");
-  const purchasePanel = await readFile(new URL("purchase-panel.tsx", designSystem), "utf8");
-  const catalogue = JSON.parse(await readFile(new URL("product-experience-catalog.json", designSystem), "utf8"));
-  const products = Object.fromEntries(catalogue.products.map((item) => [item.product.slug, item]));
+test("the product content projection keeps source facts separate from customer readiness and commerce state", async () => {
+  const registry = JSON.parse(await readFile(new URL("../../../authority/PRODUCT-CONTENT-REGISTRY.json", import.meta.url), "utf8"));
+  const generated = JSON.parse(await readFile(new URL("product-content.generated.json", designSystem), "utf8"));
+  const adapter = await readFile(new URL("product-content-adapter.ts", designSystem), "utf8");
+  const status = await readFile(new URL("product-status.tsx", designSystem), "utf8");
+  const products = Object.fromEntries(registry.products.map((item) => [item.canonicalProductId, item]));
 
+  assert.equal(registry.products.length, 16);
+  assert.equal(products["mk-2866"].readinessState, "CONTENT_READY");
+  assert.equal(products["rad-140"].readinessState, "SOURCE_BOUND");
+  assert.equal(products["lgd-4033"].readinessState, "EDITORIAL_CHOICE");
   assert.deepEqual(
-    [products["mk-2866"].product.strength, products["mk-2866"].product.servings, products["mk-2866"].product.purity, products["mk-2866"].product.price, products["mk-2866"].product.sku],
-    ["15 MG", "90 SERVINGS", ">99%", "£43", "80529-01"],
+    [products["rad-140"].content.facts.strength.value, products["rad-140"].content.facts.servings.value],
+    ["8 MG", "60 SERVINGS"],
   );
-  assert.deepEqual(
-    [products["rad-140"].product.strength, products["rad-140"].product.servings, products["rad-140"].product.price, products["rad-140"].openLab.status],
-    ["8 MG", "60 SERVINGS", "£55", "unavailable"],
-  );
-  assert.deepEqual(
-    [products["lgd-4033"].product.strength, products["lgd-4033"].product.servings, products["lgd-4033"].product.price, products["lgd-4033"].media[0].authority],
-    ["5 MG", "", "£44", "governed-unpopulated-chamber"],
-  );
-  assert.match(content, /"rad-140"[^\n]+strength:"8 MG",servings:"60 SERVINGS"[^\n]+price:"£55"/);
-  assert.match(content, /"lgd-4033"[^\n]+strength:"5 MG",servings:""[^\n]+price:"£44"/);
-  assert.doesNotMatch(presentation, /export function frontierProductPresentation[\s\S]*?if \(product\.slug === "rad-140"\) return rad140Fixture/);
-  assert.match(presentation, /presentationStatus: \{ inventory: "in-stock", evidence: "unavailable" \}/);
-  assert.match(purchasePanel, /product\.servings\.trim\(\) \|\| "Not supplied"/);
-  assert.match(purchasePanel, /product\.servings\.trim\(\) \|\| "Servings not supplied"/);
+  assert.equal(products["lgd-4033"].content.facts.strength.value, null);
+  assert.equal(products["lgd-4033"].media.render.value, null);
+
+  for (const product of Object.values(products)) {
+    for (const resolver of Object.values(product.commerce)) {
+      assert.equal(resolver.owner, "WOO_C2");
+      assert.equal(resolver.value, null);
+    }
+  }
+
+  const projected = Object.fromEntries(generated.products.map((item) => [item.canonicalProductId, item.customer]));
+  assert.ok(projected["mk-2866"].content.descriptions.long.length > 280);
+  assert.equal(projected["mk-2866"].content.faqs.length, 3);
+  assert.equal(projected["rad-140"].canonicalIdentity, undefined, "source-bound identity is not emitted as customer-ready copy");
+  assert.equal(projected["lgd-4033"].canonicalIdentity, undefined, "editorial-choice identity is not emitted as customer-ready copy");
+  assert.match(adapter, /price: ""/);
+  assert.match(adapter, /inventory: "unavailable"/);
+  assert.match(status, /state = "unavailable"/);
+  assert.match(status, /verified: "SOURCE REPORTED"/);
 });
 
 test("owner review exposes live 1440 and 390 previews without a selection control", async () => {

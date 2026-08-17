@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "oluk.product-content-card-projection.v1",
+  "products": [
+    {
+      "canonicalProductId": "mk-2866",
+      "slug": "mk-2866",
+      "name": "MK-2866",
+      "aliases": [
+        "Ostarine"
+      ],
+      "render": "/assets/products/mk-2866/front.png",
+      "facts": {
+        "series": "SARM SERIES",
+        "sku": "80529-01",
+        "strength": "15 MG",
+        "servings": "90 SERVINGS",
+        "purity": ">99%",
+        "form": "CAPSULES"
+      },
+      "evidence": {
+        "availability": "AVAILABLE",
+        "summary": "The available record connects batch OL2201 to Janoshik report 28868 and displays source-reported values."
+      }
+    }
+  ],
+  "contentHash": "e9c3b9688b309c858f98911e7ea6a61e8bf23b9138bb7099f9112aa83213e595"
+}

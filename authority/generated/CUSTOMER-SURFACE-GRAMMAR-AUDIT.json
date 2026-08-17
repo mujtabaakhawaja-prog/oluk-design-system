@@ -5,37 +5,16 @@
   "debt": {
     "policy": "MONOTONIC_DECREASE",
     "sourceFindingCount": 22,
-    "untouchedRouteViolationCount": 487
+    "untouchedRouteViolationCount": 431
   },
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 493,
+  "looseCopyGroupCount": 431,
   "routeRefactorCount": 44,
   "routes": [
     {
-      "containedCopyGroupCount": 23,
-      "copyGroupCount": 53,
+      "containedCopyGroupCount": 9,
+      "copyGroupCount": 34,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
-        {
-          "copySurface": null,
-          "element": "h2",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Six points of assurance."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "A consistent vocabulary connects product identity with the available evidence pathway."
-        },
         {
           "copySurface": null,
           "element": "h2",
@@ -56,9 +35,30 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "SARMs"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Open this family, then refine it with the independent catalogue filters."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Research Chemicals"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Open this family, then refine it with the independent catalogue filters."
         }
       ],
-      "looseCopyGroupCount": 30,
+      "looseCopyGroupCount": 25,
       "path": "/",
       "routeId": "home",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -70,15 +70,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 13,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -113,9 +106,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Compare the range and available Lab Records without signing in."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
-      "looseCopyGroupCount": 11,
+      "looseCopyGroupCount": 10,
       "path": "/account",
       "routeId": "account",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -127,15 +127,8 @@
     },
     {
       "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -170,9 +163,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Ready for the next phase"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Stay ahead of your next order with a clear return window and a one-tap path back to the product."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 13,
       "path": "/account/addresses",
       "routeId": "account-addresses",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -184,15 +184,8 @@
     },
     {
       "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -227,9 +220,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Ready for the next phase"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Stay ahead of your next order with a clear return window and a one-tap path back to the product."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 13,
       "path": "/account/orders",
       "routeId": "account-orders",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -241,15 +241,8 @@
     },
     {
       "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -284,9 +277,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Ready for the next phase"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Stay ahead of your next order with a clear return window and a one-tap path back to the product."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 13,
       "path": "/account/orders/OL-10428",
       "routeId": "account-order",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -298,15 +298,8 @@
     },
     {
       "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -341,9 +334,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Ready for the next phase"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Stay ahead of your next order with a clear return window and a one-tap path back to the product."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 13,
       "path": "/account/profile",
       "routeId": "account-profile",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -355,15 +355,8 @@
     },
     {
       "containedCopyGroupCount": 22,
-      "copyGroupCount": 28,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -400,7 +393,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/bag",
       "routeId": "bag",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -412,15 +405,8 @@
     },
     {
       "containedCopyGroupCount": 30,
-      "copyGroupCount": 36,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -457,7 +443,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/checkout/confirmation",
       "routeId": "checkout-confirmation",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -469,15 +455,8 @@
     },
     {
       "containedCopyGroupCount": 12,
-      "copyGroupCount": 18,
+      "copyGroupCount": 17,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -514,7 +493,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/checkout/review",
       "routeId": "checkout-review",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -526,15 +505,8 @@
     },
     {
       "containedCopyGroupCount": 10,
-      "copyGroupCount": 16,
+      "copyGroupCount": 15,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -571,7 +543,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/checkout/tracking",
       "routeId": "checkout-tracking",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -583,15 +555,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 28,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -626,9 +591,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "MK-2866"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Ostarine"
         }
       ],
-      "looseCopyGroupCount": 26,
+      "looseCopyGroupCount": 25,
       "path": "/collections/featured",
       "routeId": "collection",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -640,15 +612,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "copyGroupCount": 23,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -683,9 +648,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "MK-677"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Ibutamoren"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 21,
       "path": "/collections/prohormones",
       "routeId": "family-prohormones",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -697,15 +669,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "copyGroupCount": 23,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -740,9 +705,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "MK-2866"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Ostarine"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 21,
       "path": "/collections/research-chemicals",
       "routeId": "family-research-chemicals",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -754,15 +726,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "copyGroupCount": 23,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -797,9 +762,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "MK-2866"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Ostarine"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 21,
       "path": "/collections/sarms",
       "routeId": "family-sarms",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -811,15 +783,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 44,
+      "copyGroupCount": 43,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -854,9 +819,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "MK-2866"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Ostarine"
         }
       ],
-      "looseCopyGroupCount": 42,
+      "looseCopyGroupCount": 41,
       "path": "/collections/stacks",
       "routeId": "family-stacks",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -867,36 +839,22 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 8,
-      "copyGroupCount": 17,
+      "containedCopyGroupCount": 4,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Choose the product direction that matches the result you want."
+          "text": "Compare source-ready product facts."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Put strength, serving format and product focus side by side, then take the next decision into the full product detail."
-        },
-        {
-          "copySurface": null,
-          "element": "h2",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "See the difference before you build."
+          "text": "Only customer-ready facts from each product’s own content record can enter this view."
         },
         {
           "copySurface": null,
@@ -911,9 +869,23 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
         }
       ],
-      "looseCopyGroupCount": 9,
+      "looseCopyGroupCount": 7,
       "path": "/compare",
       "routeId": "product-compare",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -925,15 +897,8 @@
     },
     {
       "containedCopyGroupCount": 8,
-      "copyGroupCount": 16,
+      "copyGroupCount": 15,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -968,9 +933,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
         }
       ],
-      "looseCopyGroupCount": 8,
+      "looseCopyGroupCount": 7,
       "path": "/lab-reports",
       "routeId": "lab-reports",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -982,15 +954,8 @@
     },
     {
       "containedCopyGroupCount": 48,
-      "copyGroupCount": 60,
+      "copyGroupCount": 57,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h2",
@@ -1021,13 +986,20 @@
         },
         {
           "copySurface": null,
-          "element": "h2",
+          "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Return to the product range."
+          "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
         }
       ],
-      "looseCopyGroupCount": 12,
+      "looseCopyGroupCount": 9,
       "path": "/open-lab",
       "routeId": "open-lab",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1038,16 +1010,9 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 20,
+      "containedCopyGroupCount": 4,
+      "copyGroupCount": 19,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1081,10 +1046,17 @@
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Start with a reference."
+          "text": "Find the reference"
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Locate the product, batch or record reference."
         }
       ],
-      "looseCopyGroupCount": 18,
+      "looseCopyGroupCount": 15,
       "path": "/open-lab/batch-lookup",
       "routeId": "open-lab-batch-lookup",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1096,15 +1068,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1141,7 +1106,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/case-studies",
       "routeId": "open-lab-case-studies",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1153,15 +1118,8 @@
     },
     {
       "containedCopyGroupCount": 8,
-      "copyGroupCount": 14,
+      "copyGroupCount": 13,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1198,7 +1156,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/coa/r28868",
       "routeId": "open-lab-coa-viewer",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1210,15 +1168,8 @@
     },
     {
       "containedCopyGroupCount": 4,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1253,9 +1204,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
         }
       ],
-      "looseCopyGroupCount": 8,
+      "looseCopyGroupCount": 7,
       "path": "/open-lab/compare",
       "routeId": "open-lab-compare",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1266,16 +1224,9 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 26,
-      "copyGroupCount": 32,
+      "containedCopyGroupCount": 10,
+      "copyGroupCount": 15,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1312,7 +1263,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/compound-guide",
       "routeId": "open-lab-compound-guide",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1324,15 +1275,8 @@
     },
     {
       "containedCopyGroupCount": 16,
-      "copyGroupCount": 23,
+      "copyGroupCount": 22,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1367,9 +1311,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 7,
+      "looseCopyGroupCount": 6,
       "path": "/open-lab/compound/mk-2866",
       "routeId": "open-lab-compound",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1381,15 +1332,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1426,7 +1370,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/cycle-planner",
       "routeId": "open-lab-cycle-planner",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1438,15 +1382,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1483,7 +1420,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/dosing-calculator",
       "routeId": "open-lab-dosing-calculator",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1494,16 +1431,9 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 22,
-      "copyGroupCount": 28,
+      "containedCopyGroupCount": 14,
+      "copyGroupCount": 19,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1540,7 +1470,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/evidence",
       "routeId": "open-lab-evidence",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1552,15 +1482,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1597,7 +1520,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/glossary",
       "routeId": "open-lab-glossary",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1609,15 +1532,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1654,7 +1570,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/interaction-checker",
       "routeId": "open-lab-interaction-checker",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1666,15 +1582,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1711,7 +1620,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/lab-partner",
       "routeId": "open-lab-lab-partner",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1723,15 +1632,8 @@
     },
     {
       "containedCopyGroupCount": 28,
-      "copyGroupCount": 37,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1766,9 +1668,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Shop"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "OpenLab"
         }
       ],
-      "looseCopyGroupCount": 9,
+      "looseCopyGroupCount": 8,
       "path": "/open-lab/methodology",
       "routeId": "open-lab-methodology",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1780,15 +1689,8 @@
     },
     {
       "containedCopyGroupCount": 8,
-      "copyGroupCount": 16,
+      "copyGroupCount": 15,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1823,9 +1725,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
         }
       ],
-      "looseCopyGroupCount": 8,
+      "looseCopyGroupCount": 7,
       "path": "/open-lab/records",
       "routeId": "open-lab-records",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1837,15 +1746,8 @@
     },
     {
       "containedCopyGroupCount": 8,
-      "copyGroupCount": 16,
+      "copyGroupCount": 15,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1880,9 +1782,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
         }
       ],
-      "looseCopyGroupCount": 8,
+      "looseCopyGroupCount": 7,
       "path": "/open-lab/records/source-bound-record",
       "routeId": "open-lab-record",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1894,15 +1803,8 @@
     },
     {
       "containedCopyGroupCount": 8,
-      "copyGroupCount": 15,
+      "copyGroupCount": 14,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -1937,9 +1839,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Company"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 7,
+      "looseCopyGroupCount": 6,
       "path": "/open-lab/report/registered-record",
       "routeId": "open-lab-report",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -1951,15 +1860,8 @@
     },
     {
       "containedCopyGroupCount": 6,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -1996,7 +1898,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/research-papers",
       "routeId": "open-lab-research-papers",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2008,15 +1910,8 @@
     },
     {
       "containedCopyGroupCount": 20,
-      "copyGroupCount": 28,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -2051,9 +1946,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "OpenLab"
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Company"
         }
       ],
-      "looseCopyGroupCount": 8,
+      "looseCopyGroupCount": 7,
       "path": "/open-lab/source-chain",
       "routeId": "open-lab-source-chain",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2064,16 +1966,9 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 32,
-      "copyGroupCount": 38,
+      "containedCopyGroupCount": 6,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -2110,27 +2005,20 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/open-lab/stack-builder",
       "routeId": "open-lab-stack-builder",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
-      "status": "GRAMMAR_READY",
-      "strict": true,
-      "strictScopedCopyGroupCount": 30,
+      "status": "NEEDS_ROUTE_REFACTOR",
+      "strict": false,
+      "strictScopedCopyGroupCount": 0,
       "strictScopedLooseCopyGroupCount": 0,
-      "surroundingRouteLooseCopyGroupCount": 6
+      "surroundingRouteLooseCopyGroupCount": 0
     },
     {
       "containedCopyGroupCount": 30,
-      "copyGroupCount": 36,
+      "copyGroupCount": 35,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -2167,7 +2055,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/order/success/OL-10428",
       "routeId": "order-success",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2179,15 +2067,8 @@
     },
     {
       "containedCopyGroupCount": 10,
-      "copyGroupCount": 16,
+      "copyGroupCount": 15,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "p",
@@ -2224,7 +2105,7 @@
           "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 6,
+      "looseCopyGroupCount": 5,
       "path": "/order/tracking/OL-10428",
       "routeId": "order-tracking",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2235,53 +2116,46 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 21,
-      "copyGroupCount": 34,
+      "containedCopyGroupCount": 22,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
+          "text": "Finished products, clear specifications and independently presented evidence."
         },
         {
           "copySurface": null,
-          "element": "h2",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Everything needed for a clear product decision."
+          "text": "Shop"
         },
         {
           "copySurface": null,
-          "element": "p",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Label truth, product composition and customer guidance remain grouped without competing with the purchase decision."
+          "text": "OpenLab"
         },
         {
           "copySurface": null,
-          "element": "p",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Review the product label and the applicable customer information before making a purchase decision."
+          "text": "Company"
         },
         {
           "copySurface": null,
-          "element": "h2",
+          "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Third-Party Tested."
-        },
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "The product decision stays connected to its OpenLab pathway, with the approved product specifications carried through intact."
+          "text": "Help & legal"
         }
       ],
-      "looseCopyGroupCount": 13,
+      "looseCopyGroupCount": 5,
       "path": "/product/mk-2866",
       "routeId": "product",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2292,16 +2166,9 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 2,
-      "copyGroupCount": 17,
+      "containedCopyGroupCount": 4,
+      "copyGroupCount": 16,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -2336,9 +2203,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "No customer reviews are available yet."
+        },
+        {
+          "copySurface": null,
+          "element": "p",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Product facts and OpenLab availability remain accessible without inventing customer names, dates or purchase claims."
         }
       ],
-      "looseCopyGroupCount": 15,
+      "looseCopyGroupCount": 12,
       "path": "/reviews",
       "routeId": "reviews",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2350,15 +2224,8 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 12,
+      "copyGroupCount": 11,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -2393,9 +2260,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
         }
       ],
-      "looseCopyGroupCount": 10,
+      "looseCopyGroupCount": 9,
       "path": "/search",
       "routeId": "search",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2407,15 +2281,8 @@
     },
     {
       "containedCopyGroupCount": 18,
-      "copyGroupCount": 28,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -2450,9 +2317,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
         }
       ],
-      "looseCopyGroupCount": 10,
+      "looseCopyGroupCount": 9,
       "path": "/shop",
       "routeId": "shop",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2464,15 +2338,8 @@
     },
     {
       "containedCopyGroupCount": 18,
-      "copyGroupCount": 28,
+      "copyGroupCount": 27,
       "looseCopyExamples": [
-        {
-          "copySurface": null,
-          "element": "p",
-          "status": "LOOSE_CANVAS_COPY",
-          "strictScope": false,
-          "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-        },
         {
           "copySurface": null,
           "element": "h1",
@@ -2507,9 +2374,16 @@
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
           "text": "Finished products, clear specifications and independently presented evidence."
+        },
+        {
+          "copySurface": null,
+          "element": "h3",
+          "status": "LOOSE_CANVAS_COPY",
+          "strictScope": false,
+          "text": "Shop"
         }
       ],
-      "looseCopyGroupCount": 10,
+      "looseCopyGroupCount": 9,
       "path": "/shop?goal=build",
       "routeId": "shop-goal",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2656,7 +2530,7 @@
       "value": "#e4ecfa"
     }
   ],
-  "sourceHash": "566fca8986f4e748af9aa9209d67aa1e45551301e278271f87cb1e05001b985e",
+  "sourceHash": "ff7304f5cd8f33666ad7dc32116f0440b3aebb2cdd9925ce16760e221e176775",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2679,63 +2553,6 @@
   },
   "strictScope": {
     "routes": [
-      {
-        "containedCopyGroupCount": 32,
-        "copyGroupCount": 38,
-        "looseCopyExamples": [
-          {
-            "copySurface": null,
-            "element": "p",
-            "status": "LOOSE_CANVAS_COPY",
-            "strictScope": false,
-            "text": "Search a batch, compare compounds or open the report connected to the product in front of you."
-          },
-          {
-            "copySurface": null,
-            "element": "p",
-            "status": "LOOSE_CANVAS_COPY",
-            "strictScope": false,
-            "text": "Finished products, clear specifications and independently presented evidence."
-          },
-          {
-            "copySurface": null,
-            "element": "h3",
-            "status": "LOOSE_CANVAS_COPY",
-            "strictScope": false,
-            "text": "Shop"
-          },
-          {
-            "copySurface": null,
-            "element": "h3",
-            "status": "LOOSE_CANVAS_COPY",
-            "strictScope": false,
-            "text": "OpenLab"
-          },
-          {
-            "copySurface": null,
-            "element": "h3",
-            "status": "LOOSE_CANVAS_COPY",
-            "strictScope": false,
-            "text": "Company"
-          },
-          {
-            "copySurface": null,
-            "element": "h3",
-            "status": "LOOSE_CANVAS_COPY",
-            "strictScope": false,
-            "text": "Help & legal"
-          }
-        ],
-        "looseCopyGroupCount": 6,
-        "path": "/open-lab/stack-builder",
-        "routeId": "open-lab-stack-builder",
-        "routeStatus": "NEEDS_ROUTE_REFACTOR",
-        "status": "GRAMMAR_READY",
-        "strict": true,
-        "strictScopedCopyGroupCount": 30,
-        "strictScopedLooseCopyGroupCount": 0,
-        "surroundingRouteLooseCopyGroupCount": 6
-      },
       {
         "containedCopyGroupCount": 12,
         "copyGroupCount": 12,
@@ -2769,5 +2586,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "fdb25ce33562fcef13256d1c5c8a5ba1962c7415aea06cdf0ec72049ef97e0ae"
+  "auditHash": "268af8ba402b6be64d98c24da29c6814e5c8b89d6bc886939630e8f8e8cd81ac"
 }

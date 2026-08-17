@@ -99,6 +99,7 @@ export function PresentationState({
     <article
       aria-live="polite"
       className={classes("presentation-state", className)}
+      data-copy-surface="technical"
       data-live-authority="false"
       data-presentation-state={state}
       id={id}

@@ -3942,6 +3942,11 @@ a.button-secondary:hover {
     right: 20px;
   }
 
+  .product-commerce-card .purchase-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
   .product-identity-row {
     align-items: start;
     flex-direction: column;

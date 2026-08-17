@@ -45,7 +45,6 @@ const REQUIRED_MK2866_TRUTH = Object.freeze([
   "15 MG",
   "90 SERVINGS",
   ">99%",
-  "£43",
 ]);
 
 const ANALYTICAL_REFERENCE_ROUTES = Object.freeze(["/open-lab"]);
@@ -113,13 +112,17 @@ export async function auditCustomerCopy() {
   const product = rendered.find(({ route }) => route === "/product/mk-2866");
   const missingProductTruth = REQUIRED_MK2866_TRUTH.filter((value) => !product?.text.includes(value));
   const home = rendered.find(({ route }) => route === "/");
-  const missingHomeTruth = ["MK-2866", "Ostarine", "15 MG", "90 SERVINGS", ">99%", "£43"].filter(
+  const missingHomeTruth = ["MK-2866", "Ostarine", "15 MG", "90 SERVINGS", ">99%"].filter(
     (value) => !home?.text.includes(value),
   );
   const shop = rendered.find(({ route }) => route === "/shop");
-  const missingShopTruth = ["MK-2866", "Ostarine", "90 SERVINGS", "£43"].filter(
+  const missingShopTruth = ["MK-2866", "Ostarine", "90 SERVINGS"].filter(
     (value) => !shop?.text.includes(value),
   );
+  const missingCommerceBoundary = [
+    ["/", home?.text],
+    ["/product/mk-2866", product?.text],
+  ].flatMap(([route, text]) => text?.includes("Price unavailable") ? [] : [route]);
   const unavailableRecord = rendered.find(({ route }) => route === "/open-lab/records/source-bound-record");
   const unavailableRecordTruth = ["MK-2866 evidence record", "Record details are unavailable.", "Unavailable"].filter(
     (value) => !unavailableRecord?.text.includes(value),
@@ -170,14 +173,20 @@ export async function auditCustomerCopy() {
     check(
       "mk2866-pdp-truth",
       missingProductTruth.length === 0,
-      "The PDP visibly carries every locked MK-2866 product-truth field.",
+      "The PDP visibly carries every source-backed MK-2866 identity and label fact without freezing commerce state.",
       { required: REQUIRED_MK2866_TRUTH, missing: missingProductTruth },
     ),
     check(
       "mk2866-cross-route-truth",
       missingHomeTruth.length === 0 && missingShopTruth.length === 0,
-      "Homepage and Shop use the same locked MK-2866 name, alias, metric and whole-pound price vocabulary.",
+      "Homepage and Shop use the same source-backed MK-2866 name, alias and metric vocabulary.",
       { missingHomeTruth, missingShopTruth },
+    ),
+    check(
+      "adopted-commerce-boundary",
+      missingCommerceBoundary.length === 0,
+      "Homepage and PDP show the explicit unavailable boundary until the C2/Woo commerce projection resolves.",
+      { missing: missingCommerceBoundary },
     ),
     check(
       "unavailable-evidence-language",

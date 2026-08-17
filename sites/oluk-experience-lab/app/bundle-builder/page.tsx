@@ -1,3 +1,4 @@
-import { SupportContent } from "../design-system/frontier-sections";
+import { PresentationState } from "../design-system/presentation-state";
 import { CustomerSiteChrome } from "../experience-lab";
-export default function BundleBuilderPage(){return <CustomerSiteChrome route="shop"><SupportContent kind="bundle"/></CustomerSiteChrome>}
+
+export default function BundleBuilderPage(){return <CustomerSiteChrome route="shop"><main><section className="page-hero"><div className="shell"><span className="eyebrow">BUNDLE BUILDER</span><h1>Build from approved product relationships.</h1><p>Product facts, evidence and commerce state remain separate while bundle relationships are prepared.</p></div></section><section className="section"><div className="shell"><PresentationState action={<a href="/shop">Browse available products →</a>} copy="No customer-ready bundle rationale is approved. Products are not grouped by assumed compatibility or outcome." eyebrow="BUNDLE RELATIONSHIPS" state="unavailable" title="Bundle building is not available yet."/></div></section></main></CustomerSiteChrome>}

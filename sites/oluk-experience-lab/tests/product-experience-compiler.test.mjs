@@ -10,64 +10,84 @@ const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const read = async (file) => readFile(path.join(siteRoot, file), "utf8");
 const execFileAsync = promisify(execFile);
 
-test("the product experience compiler emits the locked 16-product catalogue", async () => {
-  const catalogue = JSON.parse(await read("app/design-system/product-experience-catalog.json"));
-  assert.equal(catalogue.schemaVersion, "oluk.product-experience.v2");
-  assert.equal(catalogue.products.length, 16);
-  assert.match(catalogue.contentHash, /^[a-f0-9]{64}$/);
-  assert.match(catalogue.editorialCorpusHash, /^[a-f0-9]{64}$/);
-  const product = (slug) => catalogue.products.find((entry) => entry.product.slug === slug).product;
-  assert.deepEqual([product("mk-2866").strength, product("mk-2866").servings, product("mk-2866").price, product("mk-2866").sku], ["15 MG", "90 SERVINGS", "£43", "80529-01"]);
-  assert.deepEqual([product("rad-140").strength, product("rad-140").servings, product("rad-140").price], ["8 MG", "60 SERVINGS", "£55"]);
-  assert.deepEqual([product("lgd-4033").strength, product("lgd-4033").servings, product("lgd-4033").price], ["5 MG", "", "£44"]);
-  assert.equal(product("ment").series, "PROHORMONE SERIES");
-  assert.deepEqual([product("gw-501516").slug, product("gw-501516").name, product("gw-501516").strength], ["gw-501516", "GW-50156", "10 MG"]);
-});
-
-test("all 16 product experiences compile from an attributed customer editorial corpus", async () => {
-  const [catalogue, corpus] = await Promise.all([
+test("the Wave 2 compiler emits a 16-product fail-closed customer projection", async () => {
+  const [projection, packageJson, legacyCatalogue] = await Promise.all([
+    read("app/design-system/product-content.generated.json").then(JSON.parse),
+    read("package.json").then(JSON.parse),
     read("app/design-system/product-experience-catalog.json").then(JSON.parse),
-    read("../../authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json").then(JSON.parse),
   ]);
-  assert.equal(corpus.schemaVersion, "oluk.product-editorial-corpus.v1");
-  assert.equal(Object.keys(corpus.products).length, 16);
-  assert.equal(Object.keys(corpus.sources).length, 4);
-  for (const entry of catalogue.products) {
-    const editorial = entry.editorial;
-    assert.equal(editorial.sourceAttribution.length, corpus.products[entry.product.slug].sources.length, entry.product.slug);
-    assert.ok(editorial.sourceAttribution.every((source) => source.sha256 === corpus.sources[source.id].sha256), entry.product.slug);
-    assert.equal(editorial.summary, corpus.products[entry.product.slug].editorial.summary, entry.product.slug);
-    assert.equal(editorial.customerProposition.headline, corpus.products[entry.product.slug].proposition.headline, entry.product.slug);
-    assert.equal(editorial.customerProposition.benefits.length, 3, entry.product.slug);
-    assert.equal(entry.pdp.decision.primaryAction, editorial.customerProposition.primaryAction, entry.product.slug);
-    assert.equal(entry.discovery.mobileSummary, editorial.customerProposition.mobileSummary, entry.product.slug);
+  assert.equal(projection.schemaVersion, "oluk.product-content-projection.v1");
+  assert.equal(projection.products.length, 16);
+  assert.match(projection.contentHash, /^[a-f0-9]{64}$/);
+  assert.equal(projection.products.filter(({ customer }) => customer.readinessState === "CONTENT_READY").length, 1);
+  assert.equal(legacyCatalogue.schemaVersion, "oluk.product-experience.v2", "historical output remains readable but is not the active product contract");
+
+  const product = (slug) => projection.products.find(({ canonicalProductId }) => canonicalProductId === slug);
+  const mk2866 = product("mk-2866");
+  assert.deepEqual(
+    [mk2866.customer.content.facts.strength, mk2866.customer.content.facts.servings, mk2866.customer.content.facts.purity, mk2866.customer.content.facts.sku],
+    ["15 MG", "90 SERVINGS", ">99%", "80529-01"],
+  );
+  for (const entry of projection.products) {
+    assert.equal(entry.customer.commerce.price.value, null, `${entry.canonicalProductId}: price`);
+    assert.equal(entry.customer.commerce.inventory.value, null, `${entry.canonicalProductId}: inventory`);
+    assert.equal(entry.customer.commerce.purchasability.value, null, `${entry.canonicalProductId}: purchasability`);
   }
+  assert.equal(product("rad-140").customer.canonicalIdentity, undefined);
+  assert.equal(product("gw-501516").customer.canonicalIdentity, undefined);
+  assert.equal(packageJson.scripts["product:compile"], "node scripts/compile-product-content.mjs");
+  assert.equal(packageJson.scripts["product:legacy:compile"], "node scripts/compile-product-experience.mjs");
 });
 
-test("the product compiler is deterministic and rejects stale generated editorial output", async () => {
-  await execFileAsync("node", ["scripts/compile-product-experience.mjs", "--check"], { cwd: siteRoot });
-  const first = await read("app/design-system/product-experience-catalog.json");
-  await execFileAsync("node", ["scripts/compile-product-experience.mjs"], { cwd: siteRoot });
-  const second = await read("app/design-system/product-experience-catalog.json");
+test("source-bound facts stay in authority until their customer-ready state is approved", async () => {
+  const [registry, projection, ledger] = await Promise.all([
+    read("../../authority/PRODUCT-CONTENT-REGISTRY.json").then(JSON.parse),
+    read("app/design-system/product-content.generated.json").then(JSON.parse),
+    read("../../authority/COPY-SOURCE-PROVENANCE-LEDGER.json").then(JSON.parse),
+  ]);
+  assert.equal(registry.schemaVersion, "oluk.product-content.v1");
+  assert.equal(registry.products.length, 16);
+  assert.ok(ledger.bindings.length > 0);
+
+  const authorityProduct = (id) => registry.products.find(({ canonicalProductId }) => canonicalProductId === id);
+  const customerProduct = (id) => projection.products.find(({ canonicalProductId }) => canonicalProductId === id);
+  const rad140 = authorityProduct("rad-140");
+  assert.equal(rad140.readinessState, "SOURCE_BOUND");
+  assert.equal(rad140.canonicalIdentity.name.value, "RAD-140");
+  assert.equal(rad140.content.facts.strength.value, "8 MG");
+  assert.equal(rad140.content.facts.servings.value, "60 SERVINGS");
+  assert.equal(customerProduct("rad-140").customer.canonicalIdentity, undefined);
+  assert.equal(customerProduct("rad-140").customer.content.facts, undefined);
+
+  const gw = authorityProduct("gw-501516");
+  assert.equal(gw.canonicalIdentity.name.value, "GW-501516");
+  assert.equal(gw.canonicalIdentity.aliases.find(({ kind }) => kind === "LEGACY_EDITORIAL").value, "GW-50156");
+  assert.equal(gw.canonicalIdentity.aliases.find(({ kind }) => kind === "LEGACY_EDITORIAL").state, "EDITORIAL_CHOICE");
+  assert.equal(customerProduct("gw-501516").customer.canonicalIdentity, undefined);
+});
+
+test("the active product-content compiler is deterministic and the legacy compiler stays isolated", async () => {
+  await execFileAsync("node", ["scripts/compile-product-content.mjs", "--check"], { cwd: siteRoot });
+  const first = await read("app/design-system/product-content.generated.json");
+  await execFileAsync("node", ["scripts/compile-product-content.mjs"], { cwd: siteRoot });
+  const second = await read("app/design-system/product-content.generated.json");
   assert.equal(second, first);
 });
 
-test("outcome-led stack and OpenLab depth replace tier language and hard-coded charts", async () => {
-  const [content, builder, openLab, catalogue] = await Promise.all([
-    read("app/design-system/frontier-content.ts"), read("app/design-system/your-stack-builder.tsx"),
-    read("app/design-system/openlab-product-experience.tsx"), read("app/design-system/product-experience-catalog.json"),
+test("OpenLab adopts generated product content and fails closed for unapproved stack relationships", async () => {
+  const [openLabFrontier, adapter, openLab] = await Promise.all([
+    read("app/design-system/openlab-frontier.tsx"),
+    read("app/design-system/product-content-adapter.ts"),
+    read("app/design-system/openlab-product-experience.tsx"),
   ]);
-  assert.doesNotMatch(content, /Good, Better|tiers:/);
-  for (const value of ["Cutting", "Bulking", "Recomp", "PCT", "lgd-4033", "gw-501516", "epistane"]) assert.match(builder, new RegExp(value));
-  for (const value of ["FOUNDATION", "STRONGER", "MAXIMUM", "StackOpenLabConfidence"]) assert.match(builder, new RegExp(value));
-  assert.match(builder, /ProductCommerceCard/);
-  assert.match(builder, /DecisionSurface/);
-  assert.match(builder, /TechnicalSurface/);
-  assert.match(builder, /confidenceSelection\(baseline, selectedProducts\)/);
-  assert.doesNotMatch(builder, /StackOutcomeProfile|goalFit|evidenceVisibility|out of 100|sharper/i);
+  assert.match(openLabFrontier, /getCustomerProductFixture/);
+  assert.match(openLabFrontier, /getProductRouteVariant/);
+  assert.match(openLabFrontier, /"stack-builder": "DESIGN_INCOMPLETE"/);
+  assert.match(openLabFrontier, /Stack building is not available yet\./);
+  assert.doesNotMatch(openLabFrontier, /product-experience-catalog|frontier-content|<YourStackBuilder/);
+  assert.doesNotMatch(adapter, /product-experience-catalog|frontier-content/);
   for (const value of ["report history", "label comparison", "analytes", "source context"]) assert.match(openLab, new RegExp(value));
   assert.doesNotMatch(openLab, /74%|79%/);
-  assert.equal(JSON.parse(catalogue).openLab["mk-2866"].visualizations.history.length, 1);
 });
 
 test("every promotion placement carries execution metadata", async () => {

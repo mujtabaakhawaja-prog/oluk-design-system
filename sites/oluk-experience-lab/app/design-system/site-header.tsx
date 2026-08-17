@@ -5,15 +5,13 @@ import { useEffect, useId, useRef, useState } from "react";
 
 import { ContextualNavigation } from "./contextual-navigation";
 import { ACCOUNT_NAVIGATION, NAVIGATION_TREE, type NavigationNode } from "./navigation-registry";
-import { ProductCommerceCard } from "./product-commerce-card";
-import { rad140Fixture } from "./product-fixtures";
 import styles from "./site-header.module.css";
 
 const trustItems = [
-  { icon: "/assets/icons/trust/delivery.svg", label: "Free UK delivery over £50" },
-  { icon: "/assets/icons/trust/international.svg", label: "Free int'l delivery £200+" },
-  { icon: "/assets/icons/trust/tested.svg", label: "Third-party tested" },
-  { icon: "/assets/icons/trust/validated.svg", label: "Janoshik validated" },
+  { icon: "/assets/icons/trust/delivery.svg", label: "Delivery options" },
+  { icon: "/assets/icons/trust/international.svg", label: "International orders" },
+  { icon: "/assets/icons/trust/tested.svg", label: "Evidence availability shown" },
+  { icon: "/assets/icons/trust/validated.svg", label: "Source reports where available" },
   { icon: "/assets/icons/trust/encrypted.svg", label: "Encrypted checkout" },
 ] as const;
 
@@ -41,13 +39,8 @@ function MegaMenu({ node, onNavigate }: Readonly<{ node: NavigationNode; onNavig
           </div>
         ))}
       </div>
-      {node.featured?.kind === "product" ? (
-        <div className={styles.megaFeaturedProduct}>
-          <ProductCommerceCard className={styles.megaProductCard} product={rad140Fixture} variant="compact"/>
-          <a href={node.featured.href} onClick={onNavigate}>{node.featured.action} <b aria-hidden="true">→</b></a>
-        </div>
-      ) : node.featured ? (
-        <a className={styles.megaFeatured} href={node.featured.href} onClick={onNavigate}>
+      {node.featured ? (
+        <a className={styles.megaFeatured} data-copy-surface="editorial" href={node.featured.href} onClick={onNavigate}>
           <span>{node.featured.eyebrow}</span><strong>{node.featured.title}</strong><p>{node.featured.copy}</p><b>{node.featured.action} →</b>
         </a>
       ) : null}

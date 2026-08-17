@@ -292,7 +292,7 @@ function stackFixture(product: StackProduct | StackBaseline): ProductFixture {
     ],
     presentationStatus: {
       inventory: "in-stock",
-      evidence: product.evidenceState === "verified-evidence" ? "verified" : "unavailable",
+      evidence: product.evidenceState === "verified-evidence" ? "available" : "unavailable",
     },
     authority: {
       classification: "design-review-fixture",

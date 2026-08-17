@@ -3,7 +3,11 @@ import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 import { CUSTOMER_ROUTES } from "../app/design-system/site-route-data.mjs";
 
-const routes = CUSTOMER_ROUTES.map(({ path, heading }) => [path, heading]);
+const wave2HeadingOverrides = new Map([
+  ["/", "Product facts, made easier to review."],
+  ["/open-lab/stack-builder", "Build only from approved product relationships."],
+]);
+const routes = CUSTOMER_ROUTES.map(({ path, heading }) => [path, wave2HeadingOverrides.get(path) ?? heading]);
 
 const customerRoutes = routes.filter(([pathname]) => !["/review","/review-studio"].includes(pathname));
 
@@ -45,7 +49,7 @@ const candidateReviewAnchors = [
 const baselineRouteLinks = routes.filter(([pathname])=>pathname!=="/review-studio").map(([pathname]) => pathname);
 
 const stableCustomerReviewAnchors = [
-  ["/", ["hero", "assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
+  ["/", ["hero", "compound-families", "featured-products", "openlab-records", "reviews"]],
   ["/product/mk-2866", ["purchase", "dossier", "lab-records"]],
   ["/open-lab", ["embedded-evidence"]],
 ];
@@ -171,7 +175,7 @@ test("disabled ActionLink removes navigation semantics and its arrow while enabl
   assert.match(visibleText(enabledLink), /See the method\s*→/);
 });
 
-test("preserves exact MK-2866 commerce truth and removes backend vocabulary from customer routes", async () => {
+test("renders exact MK-2866 source content while commerce and evidence states fail closed", async () => {
   const worker = await loadWorker();
   const productHtml = await renderHtml(worker, "/product/mk-2866");
   const productText = visibleText(productHtml);
@@ -184,17 +188,19 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
     "15 MG",
     "90 SERVINGS",
     ">99%",
-    "IN STOCK",
-    "OPENLAB VERIFIED",
-    "£43",
+    "UNAVAILABLE",
+    "RECORD AVAILABLE",
+    "Source Reported",
+    "Price unavailable",
   ]) {
     assert.match(productText, new RegExp(escapeRegExp(expected)), `MK-2866 truth: ${expected}`);
   }
 
   assert.doesNotMatch(productText, /90 CAPS(?:\b|ULES)/i);
-  assert.doesNotMatch(productText, /£43\.00\b/);
+  assert.doesNotMatch(productText, /£43(?:\.00)?\b|\bIN STOCK\b|OPENLAB VERIFIED|Third-Party Tested/i);
   assert.doesNotMatch(productHtml, /<del\b/i);
   assert.doesNotMatch(productText, /(?:per|\/)\s*serving/i);
+  assert.doesNotMatch(productHtml, /"offers"\s*:|schema\.org\/InStock|"price"\s*:/i);
 
   for (const [pathname] of customerRoutes) {
     const html = await renderHtml(worker, pathname);
@@ -206,30 +212,30 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
   }
 });
 
-test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", async () => {
+test("carries the approved MF01A anatomy with Wave 2 source-bound customer copy", async () => {
   const worker = await loadWorker();
 
   const homeText = visibleText(await renderHtml(worker, "/"));
   for (const expected of [
-    "Formulated. Verified. Batch tracked.",
-    "Formulated to a higher standard.",
+    "Product facts. Source context. Clear boundaries.",
+    "Product facts, made easier to review.",
     "15 MG",
     "90 SERVINGS",
     ">99%",
-    "£43",
+    "Price unavailable",
   ]) {
     assert.match(homeText, new RegExp(escapeRegExp(expected)), `homepage decision truth: ${expected}`);
   }
   assert.doesNotMatch(homeText, /90 CAPS(?:\b|ULES)/i);
-  assert.match(homeText, /Third-Party Tested/i, "approved trust statement remains visible");
-  assert.match(homeText, /direct access to available lab records/i, "LockedHero carries production-promotable customer copy");
+  assert.doesNotMatch(homeText, /£43|\bIN STOCK\b|OPENLAB VERIFIED|Third-Party Tested|Formulated\. Verified\. Batch tracked\./i);
+  assert.match(homeText, /Label-bound product details and available source records stay clearly separated/i, "LockedHero carries source-bounded customer copy");
 
   const shopHtml = await renderHtml(worker, "/shop");
   assert.match(shopHtml, /data-component=["']ProductCommerceCard\.compact["']/i, "Shop renders canonical Compact card instances throughout the grid");
   assert.match(shopHtml, /class=["'][^"']*shop-result-card-canonical[^"']*["']/i, "Shop exposes the canonical catalogue-result selector");
 
   const openLabText = visibleText(await renderHtml(worker, "/open-lab"));
-  for (const lens of ["OpenLab", "PRODUCT CONFIDENCE", "FEATURED RECORD", "Build a stronger stack"]) {
+  for (const lens of ["OpenLab", "PRODUCT CONFIDENCE", "FEATURED RECORD"]) {
     assert.match(openLabText, new RegExp(escapeRegExp(lens)), `OpenLab lens: ${lens}`);
   }
 
@@ -386,7 +392,7 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.doesNotMatch(css, /prefers-color-scheme:\s*dark/i);
 });
 
-test("adopts the MF-01A qualitative-chip and media grammar on customer routes", async () => {
+test("adopts MF-01A media grammar without inventing universal qualitative facts", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
   const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
@@ -445,7 +451,10 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   assert.doesNotMatch(css, /\.qualitative-chips\s*>\s*div\s*\+\s*div/, "the rejected joined-rail divider pattern is absent");
 
   assert.match(productHtml, /<ul(?=[^>]*\bclass=["'][^"']*\bqualitative-chips\b[^"']*["'])(?=[^>]*\baria-label=["']Product attributes["'])[^>]*>/i, "rendered product route exposes the qualitative attribute list");
-  assert.equal((productHtml.match(/<li\b[^>]*\bclass=["'][^"']*\bqualitative-chip\b[^"']*["'][^>]*>/gi) ?? []).length >= 4, true, "rendered product route includes independent qualitative-chip instances");
+  assert.equal((productHtml.match(/<li\b[^>]*\bclass=["'][^"']*\bqualitative-chip\b[^"']*["'][^>]*>/gi) ?? []).length, 1, "only the source-bound form fact enters the customer chip collection");
+  const productText = visibleText(productHtml.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? "");
+  assert.match(productText, /FORM\s+CAPSULES/i);
+  assert.doesNotMatch(productText, /LAB FORMULATED|THIRD PARTY TESTED|RECOVERY SUPPORT/i);
 });
 
 test("renders owner-review candidate anchors, direct Figma sources, and all comparison pages", async () => {

@@ -2,7 +2,7 @@
 .shell{display:grid;gap:var(--oluk-space-6);margin-inline:auto;max-width:var(--oluk-content-max);min-width:0}
 .toolNav{border-block:var(--oluk-border-width) solid var(--oluk-border-card);display:flex;gap:var(--oluk-space-2);min-width:0;overflow-x:auto;padding-block:var(--oluk-space-3);scrollbar-width:thin}
 .toolNav a{align-items:center;border:var(--oluk-border-width) solid var(--oluk-border-chip);border-radius:var(--oluk-radius-pill);color:var(--oluk-text-secondary);display:inline-flex;font-size:var(--oluk-type-eyebrow-size);font-weight:800;min-height:44px;padding-inline:var(--oluk-space-4);text-decoration:none;white-space:nowrap}
-.toolNav a[aria-current="page"]{background:var(--oluk-cobalt);border-color:var(--oluk-cobalt);color:var(--oluk-text-on-cobalt)}
+.toolNav a[aria-current="page"]{background:var(--oluk-cobalt);border-color:var(--oluk-cobalt);color:var(--oluk-text-on-inverse)}
 .valueChips{display:flex;flex-wrap:wrap;gap:var(--oluk-space-2)}
 .valueChips span{background:var(--oluk-surface-cobalt-soft);border:var(--oluk-border-width) solid var(--oluk-border-strong);border-radius:var(--oluk-radius-pill);color:var(--oluk-cobalt);font-size:var(--oluk-type-eyebrow-size);font-weight:800;letter-spacing:var(--oluk-type-eyebrow-track);padding:var(--oluk-space-2) var(--oluk-space-3)}
 .availabilityList{display:grid;gap:var(--oluk-space-3)}

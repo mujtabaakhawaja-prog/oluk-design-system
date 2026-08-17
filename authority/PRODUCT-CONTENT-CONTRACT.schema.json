@@ -1,0 +1,366 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://olympuslabs.uk/authority/PRODUCT-CONTENT-CONTRACT.schema.json",
+  "title": "OLUK Product Content Contract Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "registryId",
+    "publicationState",
+    "authorityStates",
+    "sourceLayers",
+    "contractLaw",
+    "products"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "oluk.product-content.v1" },
+    "registryId": { "type": "string", "minLength": 1 },
+    "publicationState": { "const": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED" },
+    "authorityStates": {
+      "const": [
+        "CONTENT_READY",
+        "SOURCE_BOUND",
+        "PENDING_EVIDENCE_BINDING",
+        "EDITORIAL_CHOICE"
+      ]
+    },
+    "sourceLayers": {
+      "const": [
+        "LABEL",
+        "FINAL_TRANSPARENT_RENDER",
+        "OPENLAB_JANOSHIK",
+        "WOO_C2",
+        "APPROVED_EDITORIAL",
+        "FIGMA_SITES_COMPOSITION"
+      ]
+    },
+    "contractLaw": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contentAtomLaw",
+        "analyticalClaimOwner",
+        "commerceOwner",
+        "visualFactOwners",
+        "compositionOwner",
+        "forbiddenCustomerContent"
+      ],
+      "properties": {
+        "contentAtomLaw": { "type": "string", "minLength": 1 },
+        "analyticalClaimOwner": { "const": "OPENLAB_JANOSHIK" },
+        "commerceOwner": { "const": "WOO_C2" },
+        "visualFactOwners": {
+          "const": ["LABEL", "FINAL_TRANSPARENT_RENDER"]
+        },
+        "compositionOwner": { "const": "FIGMA_SITES_COMPOSITION" },
+        "forbiddenCustomerContent": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": { "$ref": "#/$defs/productContract" }
+    }
+  },
+  "$defs": {
+    "authorityState": {
+      "enum": [
+        "CONTENT_READY",
+        "SOURCE_BOUND",
+        "PENDING_EVIDENCE_BINDING",
+        "EDITORIAL_CHOICE"
+      ]
+    },
+    "sourceLayer": {
+      "enum": [
+        "LABEL",
+        "FINAL_TRANSPARENT_RENDER",
+        "OPENLAB_JANOSHIK",
+        "WOO_C2",
+        "APPROVED_EDITORIAL",
+        "FIGMA_SITES_COMPOSITION"
+      ]
+    },
+    "atomValue": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "string" },
+        { "type": "number" },
+        { "type": "boolean" },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "number" },
+              { "type": "boolean" }
+            ]
+          }
+        }
+      ]
+    },
+    "contentAtom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "state", "provenanceBindingIds", "constraints"],
+      "properties": {
+        "value": { "$ref": "#/$defs/atomValue" },
+        "state": { "$ref": "#/$defs/authorityState" },
+        "provenanceBindingIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "constraints": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "value": { "not": { "type": "null" } } },
+            "required": ["value"]
+          },
+          "then": {
+            "properties": {
+              "provenanceBindingIds": { "type": "array", "minItems": 1 },
+              "constraints": { "type": "array", "minItems": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "aliasAtom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "kind", "state", "provenanceBindingIds", "constraints"],
+      "properties": {
+        "value": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["COMMON", "CHEMICAL", "LEGACY_EDITORIAL"] },
+        "state": { "$ref": "#/$defs/authorityState" },
+        "provenanceBindingIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "constraints": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "commerceResolver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "owner",
+        "resolverKey",
+        "fallback",
+        "provenanceBindingIds",
+        "constraints"
+      ],
+      "properties": {
+        "value": { "type": "null" },
+        "owner": { "const": "WOO_C2" },
+        "resolverKey": { "type": "string", "minLength": 1 },
+        "fallback": { "enum": ["OMIT", "UNAVAILABLE"] },
+        "provenanceBindingIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "constraints": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["series", "sku", "strength", "servings", "purity", "form"],
+      "properties": {
+        "series": { "$ref": "#/$defs/contentAtom" },
+        "sku": { "$ref": "#/$defs/contentAtom" },
+        "strength": { "$ref": "#/$defs/contentAtom" },
+        "servings": { "$ref": "#/$defs/contentAtom" },
+        "purity": { "$ref": "#/$defs/contentAtom" },
+        "form": { "$ref": "#/$defs/contentAtom" }
+      }
+    },
+    "descriptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["short", "medium", "long"],
+      "properties": {
+        "short": { "$ref": "#/$defs/contentAtom" },
+        "medium": { "$ref": "#/$defs/contentAtom" },
+        "long": { "$ref": "#/$defs/contentAtom" }
+      }
+    },
+    "evidenceContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["availability", "summary", "statements"],
+      "properties": {
+        "availability": { "$ref": "#/$defs/contentAtom" },
+        "summary": { "$ref": "#/$defs/contentAtom" },
+        "statements": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contentAtom" }
+        }
+      }
+    },
+    "seoContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["titleBase", "descriptionBase", "focusTerms"],
+      "properties": {
+        "titleBase": { "$ref": "#/$defs/contentAtom" },
+        "descriptionBase": { "$ref": "#/$defs/contentAtom" },
+        "focusTerms": { "$ref": "#/$defs/contentAtom" }
+      }
+    },
+    "bundleStackContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["positioning", "relationships"],
+      "properties": {
+        "positioning": { "$ref": "#/$defs/contentAtom" },
+        "relationships": { "$ref": "#/$defs/contentAtom" }
+      }
+    },
+    "faq": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question", "answer"],
+      "properties": {
+        "question": { "$ref": "#/$defs/contentAtom" },
+        "answer": { "$ref": "#/$defs/contentAtom" }
+      }
+    },
+    "routeVariants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "homepageCard",
+        "pdpHero",
+        "pdpDossier",
+        "openLab",
+        "collectionCard",
+        "bundleBuilder",
+        "stackBuilder",
+        "comparison",
+        "educationSupport"
+      ],
+      "properties": {
+        "homepageCard": { "$ref": "#/$defs/contentAtom" },
+        "pdpHero": { "$ref": "#/$defs/contentAtom" },
+        "pdpDossier": { "$ref": "#/$defs/contentAtom" },
+        "openLab": { "$ref": "#/$defs/contentAtom" },
+        "collectionCard": { "$ref": "#/$defs/contentAtom" },
+        "bundleBuilder": { "$ref": "#/$defs/contentAtom" },
+        "stackBuilder": { "$ref": "#/$defs/contentAtom" },
+        "comparison": { "$ref": "#/$defs/contentAtom" },
+        "educationSupport": { "$ref": "#/$defs/contentAtom" }
+      }
+    },
+    "productContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonicalProductId",
+        "slug",
+        "readinessState",
+        "canonicalIdentity",
+        "media",
+        "content",
+        "commerce"
+      ],
+      "properties": {
+        "canonicalProductId": { "type": "string", "minLength": 1 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "readinessState": { "$ref": "#/$defs/authorityState" },
+        "canonicalIdentity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "aliases"],
+          "properties": {
+            "name": { "$ref": "#/$defs/contentAtom" },
+            "aliases": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/aliasAtom" }
+            }
+          }
+        },
+        "media": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["render"],
+          "properties": {
+            "render": { "$ref": "#/$defs/contentAtom" }
+          }
+        },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "customerThesis",
+            "descriptions",
+            "facts",
+            "composition",
+            "useContext",
+            "claimsConstraints",
+            "evidence",
+            "seo",
+            "bundleStack",
+            "faqs",
+            "routeVariants"
+          ],
+          "properties": {
+            "customerThesis": { "$ref": "#/$defs/contentAtom" },
+            "descriptions": { "$ref": "#/$defs/descriptions" },
+            "facts": { "$ref": "#/$defs/facts" },
+            "composition": { "$ref": "#/$defs/contentAtom" },
+            "useContext": { "$ref": "#/$defs/contentAtom" },
+            "claimsConstraints": { "$ref": "#/$defs/contentAtom" },
+            "evidence": { "$ref": "#/$defs/evidenceContent" },
+            "seo": { "$ref": "#/$defs/seoContent" },
+            "bundleStack": { "$ref": "#/$defs/bundleStackContent" },
+            "faqs": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/faq" }
+            },
+            "routeVariants": { "$ref": "#/$defs/routeVariants" }
+          }
+        },
+        "commerce": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["price", "inventory", "purchasability"],
+          "properties": {
+            "price": { "$ref": "#/$defs/commerceResolver" },
+            "inventory": { "$ref": "#/$defs/commerceResolver" },
+            "purchasability": { "$ref": "#/$defs/commerceResolver" }
+          }
+        }
+      }
+    }
+  }
+}

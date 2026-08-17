@@ -17,14 +17,16 @@ test("registers the eleven OpenLab frontier routes as executable route truth", (
   for (const path of expected) assert.ok(routePaths.has(path), `missing ${path}`);
 });
 
-test("renders source-backed OpenLab tools and the canonical Stack Builder", () => {
+test("renders source-backed OpenLab tools and keeps Stack Builder fail closed", () => {
   const source = read("app/design-system/openlab-frontier.tsx");
   const dynamicPage = read("app/open-lab/[tool]/page.tsx");
   for (const marker of ["EvidencePage", "CompoundGuide", "StackBuilder", "DesignIncompletePage", "CoaViewer"]) {
     assert.match(source, new RegExp(`function ${marker}`));
   }
-  assert.match(source, /YourStackBuilder host="standalone"/);
-  assert.match(source, /"stack-builder": "SITES_FROZEN"/);
+  assert.match(source, /"stack-builder": "DESIGN_INCOMPLETE"/);
+  assert.match(source, /Stack building is not available yet/);
+  assert.match(source, /No customer-ready stack rationale is approved/);
+  assert.doesNotMatch(source, /YourStackBuilder|host="standalone"/);
   assert.doesNotMatch(source, /StackBuilderHandoff|StackOutcomeProfile|effectiveness score|evidence visibility/i);
   assert.doesNotMatch(dynamicPage, /SupportContent/);
   assert.match(dynamicPage, /OpenLabFrontierPage/);
@@ -38,22 +40,26 @@ test("classifies unfinished tools honestly instead of exposing fabricated output
   assert.doesNotMatch(source, /12 records|Registry coverage|Recorded result series|scheduled days|8-WEEK VIEW|840 MG|Common recomp pairing/);
 });
 
-test("uses compiler facts, canonical copy surfaces, and compact responsive treatments", () => {
+test("uses generated content authority, the exact MK-2866 record, and compact responsive treatments", () => {
   const source = read("app/design-system/openlab-frontier.tsx");
   const css = read("app/design-system/openlab-frontier.module.css");
-  assert.match(source, /product-experience-catalog\.json/);
+  assert.match(source, /product-content-adapter/);
+  assert.match(source, /getCustomerProductFixture/);
+  assert.match(source, /getProductRouteVariant/);
+  assert.doesNotMatch(source, /product-experience-catalog\.json/);
   assert.match(source, /openlab-product-depth\.json/);
   assert.match(source, /ProductCommerceCard/);
-  assert.match(source, /frontierProductPresentation/);
+  assert.doesNotMatch(source, /frontierProductPresentation/);
   assert.doesNotMatch(source, /styles\.guideCard|className=\{styles\.cardHeader\}/);
   assert.doesNotMatch(css, /\.guideCard|\.cardHeader/);
   for (const surface of ["EditorialSurface", "DecisionSurface", "TechnicalSurface"]) assert.match(source, new RegExp(surface));
-  assert.match(source, /GW-50156/);
-  assert.doesNotMatch(source, /GW-501516|MK-677[^\n]+10 MG/);
+  assert.match(source, /featuredProductSlugs = \["mk-2866", "rad-140", "mk-677", "ment", "gw-501516"\]/);
+  assert.doesNotMatch(source, /GW-50156|MK-677[^\n]+10 MG/);
   assert.match(source, /The MK-2866 record is never copied into another product/);
   assert.doesNotMatch(source, /compiler-owned|deterministic product catalogue|legacy URL|another product's proof/);
   assert.match(source, /Open original report/);
-  assert.match(source, /Build a stronger stack/);
+  assert.match(source, /Build only from approved product relationships/);
+  assert.match(source, /No result from another product is used in its place/);
   assert.match(css, /@media\(max-width:600px\)/);
   assert.match(css, /overflow-x:auto/);
   assert.match(css, /min-height:44px/);

@@ -1,9 +1,17 @@
 import { ActionLink } from "./action-control";
 import { DecisionSurface, EditorialSurface, TechnicalSurface } from "./content-surfaces";
 import { ProductCommerceCard } from "./product-commerce-card";
-import { mk2866Fixture } from "./product-fixtures";
+import { getCustomerProductFixture } from "./product-content-adapter";
 import { EvidenceStatusChip, type EvidenceAuthorityState } from "./program-components";
 import styles from "./support-surface.module.css";
+
+function requireSupportProduct() {
+  const product = getCustomerProductFixture("mk-2866");
+  if (!product) throw new Error("MK-2866 customer content projection is unavailable");
+  return product;
+}
+
+const mk2866ContentFixture = requireSupportProduct();
 
 export type SupportSurfaceKind =
   | "shipping-returns"
@@ -68,7 +76,7 @@ const content: Record<SupportSurfaceKind, SupportSurfaceContent> = {
     continuation: {
       eyebrow: "Product questions",
       title: "Compare the product facts before you ask what comes next.",
-      copy: "The shop keeps strength, servings, price and available OpenLab context close to the customer decision.",
+      copy: "The shop keeps source-ready product facts and available OpenLab context close to the customer decision.",
       action: { label: "Browse products", href: "/shop" },
     },
   },
@@ -133,22 +141,22 @@ const content: Record<SupportSurfaceKind, SupportSurfaceContent> = {
     pathwayTitle: "Choose the question you are trying to resolve.",
     pathwayCopy: "Each pathway returns you to the place that contains the underlying product, evidence or order detail.",
     pathways: [
-      { label: "Choose", title: "Compare products and outcomes.", copy: "Review strength, servings, price and contribution before opening a full product page.", action: { label: "Compare products", href: "/compare" } },
+      { label: "Choose", title: "Compare source-ready product facts.", copy: "Comparison stays unavailable until at least two products have customer-ready records.", action: { label: "Check comparison availability", href: "/compare" } },
       { label: "Check", title: "Find an available record.", copy: "Use the product or batch reference to open the record and source context that exists.", action: { label: "Explore OpenLab", href: "/open-lab" } },
       { label: "Resolve", title: "Return to an existing order.", copy: "Keep delivery, tracking and receipt information attached to the order in question.", action: { label: "View your orders", href: "/account/orders" } },
     ],
     questions: [
       { question: "Where can I find batch information?", answer: "Use Batch Lookup to search by the available product or batch reference, then open the connected record and source action." },
-      { question: "What can I compare before choosing a product?", answer: "Product pages and comparison views keep the product identity, strength, servings when known, price and available OpenLab path close to the decision." },
+      { question: "What can I compare before choosing a product?", answer: "A product page can show customer-ready identity, labelled facts and its own OpenLab availability. A comparison appears only when at least two eligible product records exist." },
       { question: "When are delivery choices shown?", answer: "Enter the destination at checkout to see the choices presented for that order before payment." },
       { question: "How do I track an order?", answer: "Open the tracking view from your order pathway when delivery updates are available." },
-      { question: "What do the OpenLab evidence labels mean?", answer: "OpenLab uses Verified Evidence, Source Reported, Source Only and Unavailable so the source position stays clear without overstating what exists." },
+      { question: "What do the OpenLab evidence labels mean?", answer: "OpenLab uses Available Record, Source Reported, Source Only and Unavailable so the source position stays clear without overstating what exists." },
     ],
     continuation: {
-      eyebrow: "Build the next decision",
-      title: "Start with a real product, then make the stack stronger.",
-      copy: "Choose a goal and baseline before comparing the additions that change the customer outcome.",
-      action: { label: "Build your stack", href: "/open-lab/stack-builder" },
+      eyebrow: "Product relationships",
+      title: "Check whether approved product relationships are available.",
+      copy: "No compatibility, outcome or combined-use relationship is inferred while editorial approval is pending.",
+      action: { label: "Check relationship availability", href: "/open-lab/stack-builder" },
     },
   },
   international: {
@@ -178,11 +186,11 @@ const content: Record<SupportSurfaceKind, SupportSurfaceContent> = {
     primary: { label: "Browse the range", href: "/shop" },
     secondary: { label: "Compare products", href: "/compare" },
     pathwayTitle: "Give them a useful product starting point instead.",
-    pathwayCopy: "Use the real product, comparison and stack pathways while the gift-card experience remains unavailable.",
+    pathwayCopy: "Use product and OpenLab pathways while the gift-card experience remains unavailable.",
     pathways: [
-      { label: "Range", title: "Start with product discovery.", copy: "Compare formats, product facts and the outcomes the customer wants to pursue.", action: { label: "Browse products", href: "/shop" } },
-      { label: "Comparison", title: "Put product differences side by side.", copy: "Compare quantified facts and customer-relevant contributions before choosing.", action: { label: "Compare products", href: "/compare" } },
-      { label: "Stack", title: "Build from a real baseline.", copy: "Choose the goal, baseline and additions that make the selected composition stronger.", action: { label: "Build a stack", href: "/open-lab/stack-builder" } },
+      { label: "Range", title: "Start with product discovery.", copy: "Review product formats and customer-ready facts without filling missing information.", action: { label: "Browse products", href: "/shop" } },
+      { label: "Comparison", title: "Check whether comparison is available.", copy: "The comparison view stays unavailable until at least two eligible product records exist.", action: { label: "Check comparison availability", href: "/compare" } },
+      { label: "OpenLab", title: "Check the record path.", copy: "OpenLab shows whether a record is available for the product being reviewed.", action: { label: "Explore OpenLab", href: "/open-lab" } },
     ],
     unavailable: true,
     continuation: {
@@ -235,21 +243,21 @@ const content: Record<SupportSurfaceKind, SupportSurfaceContent> = {
   sitemap: {
     eyebrow: "Sitemap",
     title: "Go straight to the decision you came to make.",
-    copy: "Move directly into the range, OpenLab, a stronger stack, your orders or the customer support path that fits the moment.",
+    copy: "Move directly into the range, OpenLab, your orders or the customer support path that fits the moment.",
     primary: { label: "Browse products", href: "/shop" },
     secondary: { label: "Explore OpenLab", href: "/open-lab" },
     pathwayTitle: "Choose a customer destination.",
     pathwayCopy: "Choose the product, confidence, order or support path that matches what you need.",
     pathways: [
-      { label: "Shop", title: "Discover and compare products.", copy: "Browse the range, compare products or build a stronger composition.", action: { label: "Browse products", href: "/shop" } },
+      { label: "Shop", title: "Discover products by their available facts.", copy: "Browse the range and open a product record without substituting missing copy or commerce state.", action: { label: "Browse products", href: "/shop" } },
       { label: "OpenLab", title: "Find the confidence behind a product.", copy: "Open the portal, find a batch or read the methodology and source chain.", action: { label: "Explore OpenLab", href: "/open-lab" } },
       { label: "Orders and help", title: "Return to an order or resolve a question.", copy: "Use account history, delivery guidance or the help centre with the right context.", action: { label: "Open the help centre", href: "/faq-help-centre" } },
     ],
     continuation: {
-      eyebrow: "Build from a baseline",
-      title: "Choose a goal and make the selected stack stronger.",
-      copy: "The Stack Builder keeps products, contributions, total and OpenLab paths together.",
-      action: { label: "Build your stack", href: "/open-lab/stack-builder" },
+      eyebrow: "Product relationships",
+      title: "Relationship guidance remains unavailable until approved.",
+      copy: "The relationship view does not infer compatibility, combined use or outcomes from incomplete product records.",
+      action: { label: "Check relationship availability", href: "/open-lab/stack-builder" },
     },
   },
   legal: {
@@ -311,20 +319,20 @@ export function AboutExperience() {
   return <main className={styles.page} data-support-surface="about"><div className={styles.shell}>
     <EditorialSurface actions={<><SupportActionLink action={{ label: "Browse products", href: "/shop" }} /><SupportActionLink action={{ label: "Explore OpenLab", href: "/open-lab" }} secondary /></>} eyebrow="About Olympus Labs UK" headingLevel="h1" title="Quality, made visible at every product decision." copy="Olympus Labs UK brings a premium product experience, readable specifications and available source context into one customer journey designed to build confidence before purchase." />
     <section aria-label="Product confidence" className={styles.commerceStory}>
-      <ProductCommerceCard className={styles.aboutProduct} commerceTreatment="selection" headingLevel="h2" product={mk2866Fixture} showQualitative variant="vertical" />
-      <DecisionSurface actions={<SupportActionLink action={{ label: "View MK-2866", href: "/product/mk-2866" }} />} eyebrow="Product confidence" title="Start with the product truth a customer can use." copy="Identity, strength, servings, purity and price remain together on the product card. OpenLab adds available record and source context beside the product decision."><ul className={styles.principles}><li>Product desire begins with a clear product and customer proposition.</li><li>Quantified product facts stay together and easy to compare.</li><li>Available records provide confidence and a return path to commerce.</li></ul></DecisionSurface>
+      <ProductCommerceCard className={styles.aboutProduct} commerceTreatment="selection" headingLevel="h2" product={mk2866ContentFixture} showQualitative variant="vertical" />
+      <DecisionSurface actions={<SupportActionLink action={{ label: "View MK-2866", href: "/product/mk-2866" }} />} eyebrow="Product confidence" title="Start with the product truth a customer can use." copy="Identity, labelled strength, servings and label purity claim remain together on the product card. OpenLab adds available record and source context beside the product decision."><ul className={styles.principles}><li>Product desire begins with a clear product and customer proposition.</li><li>Quantified product facts stay together and easy to compare.</li><li>Available records provide confidence and a return path to commerce.</li></ul></DecisionSurface>
     </section>
     <TechnicalSurface actions={<SupportActionLink action={{ label: "Find a batch", href: "/open-lab/batch-lookup" }} />} eyebrow="OpenLab confidence" title="Evidence adds another dimension to the product experience." copy="OpenLab gives customers a distinct place to find a batch, read an available record, compare reported values and return to the product with greater confidence."><EvidenceLegend /></TechnicalSurface>
-    <DecisionSurface actions={<SupportActionLink action={{ label: "Build your stack", href: "/open-lab/stack-builder" }} />} eyebrow="Make the next choice stronger" title="Build from a real product baseline." copy="Choose the goal, confirm the starting product and add the product contributions that make the selected composition stronger." />
+    <DecisionSurface actions={<SupportActionLink action={{ label: "Check relationship availability", href: "/open-lab/stack-builder" }} />} eyebrow="Product relationships" title="Use only approved relationship guidance." copy="No compatibility, outcome or combined-use relationship is shown while editorial approval is pending." state="unavailable" />
   </div></main>;
 }
 
 export function EvidenceOsExperience() {
   return <main className={styles.page} data-support-surface="evidence-os"><div className={styles.shell}>
     <EditorialSurface actions={<><SupportActionLink action={{ label: "Explore OpenLab", href: "/open-lab" }} /><SupportActionLink action={{ label: "Browse products", href: "/shop" }} secondary /></>} eyebrow="Evidence OS" headingLevel="h1" title="Turn product evidence into customer confidence." copy="Evidence OS connects product identity, record availability, source context and the next customer action across OpenLab and commerce." />
-    <TechnicalSurface eyebrow="Evidence state" title="Make the source position visible before the customer goes deeper." copy="These four labels preserve the distinction between verified evidence, reported source content, source-only context and unavailable information."><EvidenceLegend /><GuideList points={["Start with the finished product and its available record state.", "Open the report, comparison or source action that exists.", "Return to the product, comparison or stack decision with the context intact."]} /></TechnicalSurface>
+    <TechnicalSurface eyebrow="Evidence state" title="Make the source position visible before the customer goes deeper." copy="These labels preserve the distinction between an available record, reported source content, source-only context and unavailable information."><EvidenceLegend /><GuideList points={["Start with the finished product and its available record state.", "Open only the report or source action that exists.", "Return to the product with the source context intact."]} /></TechnicalSurface>
     <section aria-label="Evidence to commerce" className={styles.commerceStory}>
-      <ProductCommerceCard className={styles.aboutProduct} commerceTreatment="selection" headingLevel="h2" product={mk2866Fixture} showQualitative variant="vertical" />
+      <ProductCommerceCard className={styles.aboutProduct} commerceTreatment="selection" headingLevel="h2" product={mk2866ContentFixture} showQualitative variant="vertical" />
       <DecisionSurface actions={<SupportActionLink action={{ label: "Open the MK-2866 dossier", href: "/open-lab/dossier/mk-2866" }} />} eyebrow="Confidence returns to commerce" title="The technical path should help close the product decision." copy="A customer can inspect the available batch and source context, then return to the product or compare it without losing the commercial journey." />
     </section>
   </div></main>;

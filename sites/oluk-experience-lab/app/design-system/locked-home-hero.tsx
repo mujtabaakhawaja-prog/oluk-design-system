@@ -12,44 +12,47 @@ import {
 
 import { ActionButton, ActionLink } from "./action-control";
 import { DecisionSurface, EditorialSurface } from "./content-surfaces";
-import { lockedHomeHeroMedia } from "./locked-home-hero-media";
 import { MetricRail } from "./metric-rail";
+import type { ProductFixture, ProductMediaAsset } from "./product-fixtures";
 import { SurfaceGrid, SurfaceGridZone } from "./surface-grid";
 import styles from "./locked-home-hero.module.css";
 
-const products = [
-  { id: "mk-2866", name: "MK-2866", alias: "Ostarine", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£43", media: lockedHomeHeroMedia["mk-2866"], href: "/product/mk-2866" },
-  { id: "ment", name: "MENT", alias: "Trestolone", strength: "20 MG", servings: "30 SERVINGS", purity: ">99%", price: "£49", media: lockedHomeHeroMedia.ment, href: "/shop?search=MENT" },
-  { id: "endurashred", name: "ENDURASHRED", alias: "LGD-4033 + MK-2866", strength: "16.5 MG", servings: "90 SERVINGS", purity: ">99%", price: "£59", media: lockedHomeHeroMedia.endurashred, href: "/shop?search=ENDURASHRED" },
-  { id: "rad-140", name: "RAD-140", alias: "Testolone", strength: "8 MG", servings: "60 SERVINGS", purity: ">99%", price: "£55", media: lockedHomeHeroMedia["rad-140"], href: "/shop?search=RAD-140" },
-  { id: "mk-677", name: "MK-677", alias: "Ibutamoren", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£45", media: lockedHomeHeroMedia["mk-677"], href: "/shop?search=MK-677" },
-] as const;
+type HeroProduct = Readonly<{
+  id: string;
+  name: string;
+  alias: string;
+  strength: string;
+  servings: string;
+  purity: string;
+  price: string;
+  media: ProductMediaAsset;
+  href: string;
+}>;
+type HeroProductId = string;
+type LockedHomeHeroProps = Readonly<{
+  product: ProductFixture & Readonly<{ media: ProductMediaAsset }>;
+}>;
 
-type HeroProduct = (typeof products)[number];
-type HeroProductId = HeroProduct["id"];
-
-const defaultProductId = products[0].id;
 const featuredProductParam = "featured";
 
-function isHeroProductId(value: string | null): value is HeroProductId {
+function isHeroProductId(products: readonly HeroProduct[], value: string | null): value is HeroProductId {
   return products.some((product) => product.id === value);
 }
 
-function featuredProductFromLocation(): HeroProductId {
+function featuredProductFromLocation(products: readonly HeroProduct[], defaultProductId: HeroProductId): HeroProductId {
   if (typeof window === "undefined") return defaultProductId;
   const featured = new URL(window.location.href).searchParams.get(featuredProductParam);
-  return isHeroProductId(featured) ? featured : defaultProductId;
+  return isHeroProductId(products, featured) ? featured : defaultProductId;
 }
 
-function writeFeaturedProductToLocation(productId: HeroProductId) {
+function writeFeaturedProductToLocation(productId: HeroProductId, defaultProductId: HeroProductId) {
   const url = new URL(window.location.href);
   if (productId === defaultProductId) url.searchParams.delete(featuredProductParam);
   else url.searchParams.set(featuredProductParam, productId);
   window.history.replaceState(window.history.state, "", url);
 }
 
-function relativeSlot(index: number, activeIndex: number) {
-  const count = products.length;
+function relativeSlot(index: number, activeIndex: number, count: number) {
   let delta = index - activeIndex;
   if (delta > count / 2) delta -= count;
   if (delta < -count / 2) delta += count;
@@ -71,14 +74,26 @@ function ArrowIcon({ direction }: Readonly<{ direction: "previous" | "next" }>) 
   );
 }
 
-export function LockedHomeHero() {
+export function LockedHomeHero({ product: readyProduct }: LockedHomeHeroProps) {
+  const products = useMemo<readonly HeroProduct[]>(() => [{
+    id: readyProduct.id,
+    name: readyProduct.name,
+    alias: readyProduct.alias,
+    strength: readyProduct.strength,
+    servings: readyProduct.servings,
+    purity: readyProduct.purity,
+    price: readyProduct.price,
+    media: readyProduct.media,
+    href: readyProduct.customerPath,
+  }], [readyProduct]);
+  const defaultProductId = products[0].id;
   const [activeId, setActiveId] = useState<HeroProductId>(defaultProductId);
   const rootRef = useRef<HTMLElement | null>(null);
   const activeIndex = products.findIndex((product) => product.id === activeId);
   const active = products[activeIndex];
   const ordered = useMemo(
-    () => products.map((product, index) => ({ product, slot: relativeSlot(index, activeIndex) })),
-    [activeIndex],
+    () => products.map((product, index) => ({ product, slot: relativeSlot(index, activeIndex, products.length) })),
+    [activeIndex, products],
   );
 
   const selectProduct = useCallback((
@@ -86,7 +101,7 @@ export function LockedHomeHero() {
     options?: Readonly<{ focus?: boolean; writeLocation?: boolean }>,
   ) => {
     setActiveId(productId);
-    if (options?.writeLocation !== false) writeFeaturedProductToLocation(productId);
+    if (options?.writeLocation !== false) writeFeaturedProductToLocation(productId, defaultProductId);
     if (options?.focus) {
       window.requestAnimationFrame(() => {
         rootRef.current
@@ -94,10 +109,14 @@ export function LockedHomeHero() {
           ?.focus();
       });
     }
-  }, []);
+  }, [defaultProductId]);
 
   useEffect(() => {
-    const restoreProduct = () => setActiveId(featuredProductFromLocation());
+    const restoreProduct = () => {
+      const productId = featuredProductFromLocation(products, defaultProductId);
+      setActiveId(productId);
+      writeFeaturedProductToLocation(productId, defaultProductId);
+    };
 
     restoreProduct();
     window.addEventListener("popstate", restoreProduct);
@@ -106,12 +125,12 @@ export function LockedHomeHero() {
       window.removeEventListener("popstate", restoreProduct);
       window.removeEventListener("pageshow", restoreProduct);
     };
-  }, []);
+  }, [defaultProductId, products]);
 
   const moveFrom = useCallback((index: number, direction: -1 | 1) => {
     const nextIndex = (index + direction + products.length) % products.length;
     selectProduct(products[nextIndex].id, { focus: true });
-  }, [selectProduct]);
+  }, [products, selectProduct]);
 
   const onTabKeyDown = useCallback((event: KeyboardEvent<HTMLButtonElement>, index: number) => {
     let nextIndex: number | null = null;
@@ -122,7 +141,7 @@ export function LockedHomeHero() {
     if (nextIndex === null) return;
     event.preventDefault();
     selectProduct(products[nextIndex].id, { focus: true });
-  }, [selectProduct]);
+  }, [products, selectProduct]);
 
   return (
     <section
@@ -143,10 +162,10 @@ export function LockedHomeHero() {
               </>
             )}
             className={styles.editorialSurface}
-            copy="Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose."
-            eyebrow="Formulated. Verified. Batch tracked."
+            copy="Label-bound product details and available source records stay clearly separated before you choose."
+            eyebrow="Product facts. Source context. Clear boundaries."
             headingLevel="h1"
-            title="Formulated to a higher standard."
+            title="Product facts, made easier to review."
           />
         </SurfaceGridZone>
 
@@ -239,11 +258,11 @@ export function LockedHomeHero() {
             <div className={styles.commerceRow}>
               <div className={styles.price}>
                 <span>Price</span>
-                <strong>{active.price}</strong>
+                <strong>{active.price || "Price unavailable"}</strong>
               </div>
               <div className={styles.commerceActions}>
                 <ActionLink href={active.href} size="compact">View product</ActionLink>
-                <ActionButton disabled size="compact" variant="secondary">Add to bag</ActionButton>
+                <ActionButton disabled size="compact" variant="secondary">Unavailable</ActionButton>
               </div>
             </div>
             <div

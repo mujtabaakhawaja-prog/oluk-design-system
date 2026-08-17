@@ -27,6 +27,7 @@ const files = {
   candidateCss: "app/design-system/candidate-review.css",
   cobaltDivider: "app/design-system/cobalt-divider.tsx",
   mediaChamber: "app/design-system/product-media-chamber.tsx",
+  siteFooter: "app/design-system/site-footer.tsx",
   siteHeader: "app/design-system/site-header.tsx",
 };
 
@@ -69,7 +70,7 @@ const source = Object.fromEntries(
 const customerComponentSources = Object.fromEntries(
   Object.entries(source).filter(([key]) => [
     "assuranceRail", "metricRail", "productCard", "productHero", "productDossier",
-    "productStatus", "purchasePanel", "qualitativeChip", "relatedRail", "cobaltDivider", "mediaChamber", "siteHeader",
+    "productStatus", "purchasePanel", "qualitativeChip", "relatedRail", "cobaltDivider", "mediaChamber", "siteFooter", "siteHeader",
   ].includes(key)),
 );
 const customerSource = Object.values(customerComponentSources).join("\n") + `\n${source.experience}\n${source.customerRoutes}`;

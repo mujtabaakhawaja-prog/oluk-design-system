@@ -9,7 +9,7 @@ import {
   PDP_STRESS_PRODUCT_SLUGS,
 } from "../../../../design-system/pdp-candidate-manifest";
 import { SiteHeader } from "../../../../design-system/site-header";
-import { SiteFooter } from "../../../../experience-lab";
+import { SiteFooter } from "../../../../design-system/site-footer";
 
 type CandidatePageProps = Readonly<{ params: { candidate: string; slug: string } }>;
 

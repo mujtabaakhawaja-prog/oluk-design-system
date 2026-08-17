@@ -43,6 +43,29 @@ export type ProductMediaAsset = Readonly<{
   crops: Readonly<Record<ProductMediaContext, ProductMediaCropSet>>;
 }>;
 
+export type ProductContentPresentation = Readonly<{
+  thesis: string | null;
+  descriptions: Readonly<{
+    short: string | null;
+    medium: string | null;
+    long: string | null;
+  }>;
+  evidence: Readonly<{
+    availability: "AVAILABLE" | "UNAVAILABLE";
+    statusLabel: string;
+    summary: string;
+    batchCode?: string;
+    reportId?: string;
+    reportedPurity?: string;
+    reportedConcentration?: string;
+    labelClaim?: string;
+    testedAt?: string;
+    labName?: string;
+  }>;
+  faqs: ReadonlyArray<Readonly<{ question: string; answer: string }>>;
+  routeVariants: Readonly<Record<string, string | null>>;
+}>;
+
 export type ProductFixture = Readonly<{
   /** Registry-backed product fixtures may extend beyond the two library specimens. */
   id: string;
@@ -63,6 +86,8 @@ export type ProductFixture = Readonly<{
     inventory: InventoryState;
     evidence: EvidenceState;
   }>;
+  /** Generated Wave 2 copy/evidence projection. Legacy visual fixtures intentionally omit it. */
+  content?: ProductContentPresentation;
   authority: ProductFixtureAuthority;
 }>;
 
@@ -145,8 +170,6 @@ export const productMediaRegistry = {
 const canonicalQualitativeFacts = [
   { kind: "class", label: "CLASS", value: "SARM" },
   { kind: "form", label: "FORM", value: "CAPSULES" },
-  { kind: "quality", label: "QUALITY", value: "LAB FORMULATED" },
-  { kind: "tested", label: "TESTED", value: "THIRD PARTY" },
 ] as const satisfies ReadonlyArray<QualitativeFact>;
 
 export const productFixtures = {

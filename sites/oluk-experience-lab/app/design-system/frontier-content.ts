@@ -114,5 +114,5 @@ export const FRONTIER_ROUTE_PATTERNS = [
 ] as const;
 
 export function productJsonLd(product: FrontierProductRecord) {
-  return {"@context":"https://schema.org","@type":"Product",name:product.name,sku:product.sku,description:product.summary,brand:{"@type":"Brand",name:"Olympus Labs UK"},offers:{"@type":"Offer",price:product.price.replace("£", ""),priceCurrency:"GBP",availability:"https://schema.org/InStock"}};
+  return {"@context":"https://schema.org","@type":"Product",name:product.name,sku:product.sku,brand:{"@type":"Brand",name:"Olympus Labs UK"}};
 }

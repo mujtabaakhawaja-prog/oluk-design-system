@@ -1,0 +1,572 @@
+{
+  "schemaVersion": "oluk.product-content.v1",
+  "registryId": "OLUK-PRODUCT-CONTENT-001",
+  "publicationState": "CANDIDATE_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+  "authorityStates": [
+    "CONTENT_READY",
+    "SOURCE_BOUND",
+    "PENDING_EVIDENCE_BINDING",
+    "EDITORIAL_CHOICE"
+  ],
+  "sourceLayers": [
+    "LABEL",
+    "FINAL_TRANSPARENT_RENDER",
+    "OPENLAB_JANOSHIK",
+    "WOO_C2",
+    "APPROVED_EDITORIAL",
+    "FIGMA_SITES_COMPOSITION"
+  ],
+  "contractLaw": {
+    "contentAtomLaw": "Every non-null atom names field-level provenance bindings and explicit constraints. Null means omit or show an unavailable state; consumers must never infer a value.",
+    "analyticalClaimOwner": "OPENLAB_JANOSHIK",
+    "commerceOwner": "WOO_C2",
+    "visualFactOwners": ["LABEL", "FINAL_TRANSPARENT_RENDER"],
+    "compositionOwner": "FIGMA_SITES_COMPOSITION",
+    "forbiddenCustomerContent": [
+      "UNBOUND_MEDICAL_CLAIMS",
+      "DOSAGE_OR_USAGE_INSTRUCTIONS",
+      "UNBOUND_PERFORMANCE_OR_OUTCOME_CLAIMS",
+      "UNBOUND_PURITY_OR_ANALYTICAL_CLAIMS",
+      "PROVIDER_FILE_STATUS_WITHOUT_SOURCE_RECORD",
+      "STATIC_PRICE",
+      "STATIC_INVENTORY",
+      "STATIC_PURCHASABILITY",
+      "SCHEMA_COMMERCE_DATA_FROM_CONTENT_FIXTURES"
+    ]
+  },
+  "products": [
+    {
+      "canonicalProductId": "mk-2866",
+      "slug": "mk-2866",
+      "readinessState": "CONTENT_READY",
+      "canonicalIdentity": {
+        "name": {
+          "value": "MK-2866",
+          "state": "CONTENT_READY",
+          "provenanceBindingIds": ["BIND-MK2866-LABEL"],
+          "constraints": ["PRESERVE_EXACT_HYPHENATION"]
+        },
+        "aliases": [
+          {
+            "value": "Ostarine",
+            "kind": "COMMON",
+            "state": "CONTENT_READY",
+            "provenanceBindingIds": ["BIND-MK2866-LABEL"],
+            "constraints": ["PRESENT_AS_ALIAS_NOT_SEPARATE_PRODUCT"]
+          }
+        ]
+      },
+      "media": {
+        "render": {
+          "value": "/assets/products/mk-2866/front.png",
+          "state": "CONTENT_READY",
+          "provenanceBindingIds": ["BIND-MK2866-FINAL-RENDER"],
+          "constraints": ["USE_CONFIRMED_TRANSPARENT_RENDER", "DO_NOT_REDRAW_OR_RELABEL"]
+        }
+      },
+      "content": {
+        "customerThesis": {
+          "value": "Choose MK-2866 by its labelled format and available batch record, with product facts and source-reported evidence kept clearly separated.",
+          "state": "CONTENT_READY",
+          "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-EDITORIAL-SAFETY"],
+          "constraints": ["NEUTRAL_DECISION_COPY_ONLY", "NO_PERFORMANCE_OR_MEDICAL_PROMISE"]
+        },
+        "descriptions": {
+          "short": {
+            "value": "MK-2866 (Ostarine) is a SARM Series product in a 15 MG, 90-serving format.",
+            "state": "CONTENT_READY",
+            "provenanceBindingIds": ["BIND-MK2866-LABEL"],
+            "constraints": ["FACTUAL_LABEL_SUMMARY_ONLY"]
+          },
+          "medium": {
+            "value": "MK-2866 (Ostarine) is a SARM Series product in a 15 MG, 90-serving format. Its available OpenLab record connects batch OL2201 to Janoshik report 28868 and presents source-reported analytical values.",
+            "state": "CONTENT_READY",
+            "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB"],
+            "constraints": ["KEEP_LABEL_FACTS_SEPARATE_FROM_REPORTED_VALUES", "NO_PERFORMANCE_OR_MEDICAL_PROMISE"]
+          },
+          "long": {
+            "value": "MK-2866, also identified as Ostarine, is presented in the SARM Series as a 15 MG capsule format with 90 servings. The available OpenLab record for batch OL2201 links to Janoshik report 28868, dated 16 April 2023. That named report records reported purity above 99% and a reported concentration of 16.02 mg against the 15 mg label claim.",
+            "state": "CONTENT_READY",
+            "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB"],
+            "constraints": ["RETAIN_REPORTED_QUALIFIER", "DO_NOT_GENERALIZE_ONE_BATCH", "NO_PERFORMANCE_OR_MEDICAL_PROMISE"]
+          }
+        },
+        "facts": {
+          "series": {"value": "SARM SERIES", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["PRESERVE_EXACT_LABEL_CASE"]},
+          "sku": {"value": "80529-01", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["IDENTITY_ONLY_NOT_COMMERCE_LOOKUP_AUTHORITY"]},
+          "strength": {"value": "15 MG", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["LABEL_FACT_NOT_DOSAGE_INSTRUCTION"]},
+          "servings": {"value": "90 SERVINGS", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["NEVER_REPLACE_WITH_90_CAPS"]},
+          "purity": {"value": ">99%", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB"], "constraints": ["DISPLAY_AS_LABEL_OR_SOURCE_REPORTED_FACT", "DO_NOT_GENERALIZE_BEYOND_BOUND_RECORD"]},
+          "form": {"value": "CAPSULES", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["FORM_ONLY_NOT_DOSAGE_INSTRUCTION"]}
+        },
+        "composition": {
+          "value": "Label-backed detail is limited to MK-2866 as the named compound and capsules as the form; excipients and the full formula are unavailable.",
+          "state": "CONTENT_READY",
+          "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-GLOBAL-EDITORIAL-SAFETY"],
+          "constraints": ["DO_NOT_CALL_THIS_A_COMPLETE_FORMULA", "OMIT_EXCIPIENTS_UNTIL_LABEL_BOUND"]
+        },
+        "useContext": {
+          "value": "Compare the labelled format, serving count and available source record when reviewing this product.",
+          "state": "CONTENT_READY",
+          "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-EDITORIAL-SAFETY"],
+          "constraints": ["DECISION_CONTEXT_ONLY", "NO_DOSAGE_OR_USAGE_INSTRUCTION"]
+        },
+        "claimsConstraints": {
+          "value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PERFORMANCE_OR_OUTCOME_PROMISES", "RETAIN_REPORTED_QUALIFIER_FOR_ANALYTICAL_VALUES", "NO_STATIC_COMMERCE_STATE"],
+          "state": "CONTENT_READY",
+          "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-WOO-C2-RESOLVER"],
+          "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]
+        },
+        "evidence": {
+          "availability": {"value": "AVAILABLE", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB"], "constraints": ["ONLY_FOR_BOUND_RECORD_REPORT_28868"]},
+          "summary": {"value": "The available record connects batch OL2201 to Janoshik report 28868 and displays source-reported values.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB"], "constraints": ["RETAIN_SOURCE_REPORTED_WORDING", "NO_VERIFIED_PERFORMANCE_LANGUAGE"]},
+          "statements": [
+            {"value": "Janoshik report 28868 records reported purity above 99% for batch OL2201.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB"], "constraints": ["REPORT_SPECIFIC", "DO_NOT_GENERALIZE"]},
+            {"value": "The same record reports a concentration of 16.02 mg against the 15 mg label claim.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB", "BIND-MK2866-LABEL"], "constraints": ["REPORT_SPECIFIC", "NOT_A_PERFORMANCE_SCORE"]},
+            {"value": "The named record is dated 16 April 2023.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB"], "constraints": ["PRESERVE_SOURCE_DATE"]}
+          ]
+        },
+        "seo": {
+          "titleBase": {"value": "MK-2866 (Ostarine) 15 MG | Olympus Labs UK", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["NO_PRICE_STOCK_OR_PERFORMANCE_TERM"]},
+          "descriptionBase": {"value": "Explore MK-2866 (Ostarine), a 15 MG, 90-serving SARM Series format, with access to its available OpenLab batch record.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB"], "constraints": ["NO_UNBOUND_ANALYTICAL_VALUE", "NO_STATIC_COMMERCE_STATE"]},
+          "focusTerms": {"value": ["MK-2866", "Ostarine", "15 MG", "90 servings", "OpenLab"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB"], "constraints": ["KEYWORDS_DO_NOT_AUTHORIZE_CLAIMS"]}
+        },
+        "bundleStack": {
+          "positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]},
+          "relationships": {"value": ["gw-501516", "s-4", "lgd-4033"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-MK2866"], "constraints": ["NOT_CUSTOMER_READY", "REQUIRES_TYPED_CUSTOMER_REASON", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}
+        },
+        "faqs": [
+          {
+            "question": {"value": "What product facts are available for MK-2866?", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["NEUTRAL_CUSTOMER_QUESTION"]},
+            "answer": {"value": "MK-2866 is labelled as Ostarine in the SARM Series, with a 15 MG format and 90 servings.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL"], "constraints": ["LABEL_FACTS_ONLY"]}
+          },
+          {
+            "question": {"value": "Is there an OpenLab record for MK-2866?", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB"], "constraints": ["NEUTRAL_CUSTOMER_QUESTION"]},
+            "answer": {"value": "Yes. The available record connects batch OL2201 to Janoshik report 28868 and displays source-reported values.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB"], "constraints": ["RECORD_SPECIFIC", "RETAIN_SOURCE_REPORTED_WORDING"]}
+          },
+          {
+            "question": {"value": "Does the OpenLab record make a performance or medical claim?", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-MK2866-OPENLAB"], "constraints": ["NEUTRAL_CUSTOMER_QUESTION"]},
+            "answer": {"value": "No. It reports analytical values for the named batch and does not provide dosage, medical or performance guidance.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-MK2866-OPENLAB"], "constraints": ["DO_NOT_EXTEND_BEYOND_SOURCE_SCOPE"]}
+          }
+        ],
+        "routeVariants": {
+          "homepageCard": {"value": "MK-2866 (Ostarine). 15 MG. 90 servings.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["COMPACT_FACTS_ONLY"]},
+          "pdpHero": {"value": "MK-2866 (Ostarine) pairs a clear 15 MG, 90-serving label format with access to its available OpenLab record.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["NO_STATIC_PRICE_OR_INVENTORY", "NO_PERFORMANCE_PROMISE"]},
+          "pdpDossier": {"value": "Read the labelled product facts beside the named source record; full excipient composition is unavailable.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["DO_NOT_IMPLY_COMPLETE_FORMULA"]},
+          "openLab": {"value": "For batch OL2201, Janoshik report 28868 records reported purity above 99% and a reported concentration of 16.02 mg against the 15 mg label claim.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB", "BIND-MK2866-LABEL", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["REPORT_SPECIFIC", "RETAIN_REPORTED_QUALIFIER"]},
+          "collectionCard": {"value": "MK-2866 (Ostarine), 15 MG and 90 servings, with an available OpenLab record.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["NO_PERFORMANCE_OR_COMMERCE_CLAIM"]},
+          "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RELATIONSHIP_REASON_APPROVED"]},
+          "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RELATIONSHIP_REASON_APPROVED"]},
+          "comparison": {"value": "Compare labelled format, serving count and available source record.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-LABEL", "BIND-MK2866-OPENLAB", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["FACT_COMPARISON_ONLY", "NO_EFFECTIVENESS_SCORE"]},
+          "educationSupport": {"value": "OpenLab reports the supplied analytical values for the named batch; it does not provide dosage, medical or performance guidance.", "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-MK2866-OPENLAB", "BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["SOURCE_SCOPE_EXPLANATION_ONLY"]}
+        }
+      },
+      "commerce": {
+        "price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]},
+        "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]},
+        "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}
+      }
+    },
+    {
+      "canonicalProductId": "rad-140",
+      "slug": "rad-140",
+      "readinessState": "SOURCE_BOUND",
+      "canonicalIdentity": {
+        "name": {"value": "RAD-140", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-RAD140-WOO-IDENTITY"], "constraints": ["PRESERVE_EXACT_HYPHENATION"]},
+        "aliases": [
+          {"value": "Testolone", "kind": "COMMON", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-RAD140-WOO-IDENTITY"], "constraints": ["PRESENT_AS_ALIAS_NOT_SEPARATE_PRODUCT"]}
+        ]
+      },
+      "media": {
+        "render": {"value": "/assets/products/rad-140/front.png", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-FINAL-RENDER"], "constraints": ["USE_CONFIRMED_TRANSPARENT_RENDER", "DO_NOT_REDRAW_OR_RELABEL"]}
+      },
+      "content": {
+        "customerThesis": {"value": "Evaluate RAD-140 through its labelled 8 MG, 60-serving format; no product-specific OpenLab record is currently bound.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-EDITORIAL-SAFETY"], "constraints": ["NEUTRAL_DECISION_COPY_ONLY", "NO_ANALYTICAL_OR_PERFORMANCE_CLAIM"]},
+        "descriptions": {
+          "short": {"value": "RAD-140 (Testolone) is labelled as a SARM Series product in an 8 MG, 60-serving format.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["LABEL_TRANSCRIPTION_ONLY"]},
+          "medium": {"value": "RAD-140, also identified as Testolone, is presented in the SARM Series. The confirmed package label states 8 MG, 60 servings and greater than 99%; no product-specific OpenLab record is bound.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["LABEL_TRANSCRIPTION_ONLY", "DO_NOT_RECAST_LABEL_PURITY_AS_ANALYTICAL_VERIFICATION"]},
+          "long": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_PRODUCT_AND_EVIDENCE_CONTRACT_EXPANDS"]}
+        },
+        "facts": {
+          "series": {"value": "SARM SERIES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["PRESERVE_EXACT_LABEL_CASE"]},
+          "sku": {"value": "80529-05", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-WOO-IDENTITY"], "constraints": ["IDENTITY_ONLY_NOT_COMMERCE_LOOKUP_AUTHORITY"]},
+          "strength": {"value": "8 MG", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["LABEL_FACT_NOT_DOSAGE_INSTRUCTION"]},
+          "servings": {"value": "60 SERVINGS", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["LABEL_TRANSCRIPTION_ONLY"]},
+          "purity": {"value": ">99%", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["LABEL_TRANSCRIPTION_ONLY", "NO_OPENLAB_OR_JANOSHIK_CLAIM"]},
+          "form": {"value": "CAPSULES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["FORM_ONLY_NOT_DOSAGE_INSTRUCTION"]}
+        },
+        "composition": {"value": "Label-backed detail is limited to RAD-140 as the named product and capsules as the form; excipients and the full formula are unavailable.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-GLOBAL-EDITORIAL-SAFETY"], "constraints": ["DO_NOT_CALL_THIS_A_COMPLETE_FORMULA"]},
+        "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PERFORMANCE_OR_OUTCOME_PROMISES", "NO_OPENLAB_OR_JANOSHIK_CLAIM", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {
+          "availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["DO_NOT_INFER_FROM_LABEL_OR_RENDER"]},
+          "summary": {"value": "No product-specific OpenLab record is bound to this contract.", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["UNAVAILABLE_STATE_ONLY", "NO_PROVIDER_NAME_OR_ANALYTICAL_VALUE"]},
+          "statements": []
+        },
+        "seo": {
+          "titleBase": {"value": "RAD-140 (Testolone) 8 MG | Olympus Labs UK", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["NO_PRICE_STOCK_PERFORMANCE_OR_EVIDENCE_TERM"]},
+          "descriptionBase": {"value": "Review RAD-140 (Testolone), labelled as an 8 MG, 60-serving SARM Series format.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["LABEL_FACTS_ONLY", "NO_STATIC_COMMERCE_STATE"]},
+          "focusTerms": {"value": ["RAD-140", "Testolone", "8 MG", "60 servings"], "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL"], "constraints": ["KEYWORDS_DO_NOT_AUTHORIZE_CLAIMS"]}
+        },
+        "bundleStack": {
+          "positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]},
+          "relationships": {"value": ["lgd-4033", "mk-677", "ment"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-RAD140"], "constraints": ["NOT_CUSTOMER_READY", "REQUIRES_TYPED_CUSTOMER_REASON", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}
+        },
+        "faqs": [],
+        "routeVariants": {
+          "homepageCard": {"value": "RAD-140 (Testolone). Labelled 8 MG. 60 servings.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["LABEL_FACTS_ONLY", "NO_EVIDENCE_OR_COMMERCE_CLAIM"]},
+          "pdpHero": {"value": "RAD-140 (Testolone) is labelled as an 8 MG, 60-serving SARM Series format.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["LABEL_FACTS_ONLY", "NO_EVIDENCE_OR_PERFORMANCE_CLAIM"]},
+          "pdpDossier": {"value": "Read the available label facts; full composition and product-specific analytical evidence are unavailable.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["DO_NOT_IMPLY_COMPLETE_FORMULA"]},
+          "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]},
+          "collectionCard": {"value": "RAD-140 (Testolone), labelled 8 MG and 60 servings.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["LABEL_FACTS_ONLY"]},
+          "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RELATIONSHIP_REASON_APPROVED"]},
+          "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RELATIONSHIP_REASON_APPROVED"]},
+          "comparison": {"value": "Compare the labelled 8 MG format and 60-serving pack without treating label purity as bound analytical evidence.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["FACT_COMPARISON_ONLY", "NO_EFFECTIVENESS_SCORE"]},
+          "educationSupport": {"value": "No product-specific OpenLab record is currently bound; the visible greater-than-99% value is label copy, not a product-specific OpenLab claim.", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-RAD140-LABEL", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-FIGMA-SITES-COMPOSITION"], "constraints": ["SOURCE_SCOPE_EXPLANATION_ONLY"]}
+        }
+      },
+      "commerce": {
+        "price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]},
+        "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]},
+        "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}
+      }
+    },
+    {
+      "canonicalProductId": "lgd-4033",
+      "slug": "lgd-4033",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {
+        "name": {"value": "LGD-4033", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-LGD4033"], "constraints": ["PROVISIONAL_IDENTITY_UNTIL_OWNER_SOURCE_BINDS"]},
+        "aliases": [{"value": "Ligandrol", "kind": "COMMON", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-LGD4033"], "constraints": ["PROVISIONAL_ALIAS_UNTIL_OWNER_SOURCE_BINDS"]}]
+      },
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_APPROVED_INDIVIDUAL_RENDER"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]},
+        "descriptions": {
+          "short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_PRODUCT_FACTS_BIND"]},
+          "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_PRODUCT_FACTS_BIND"]},
+          "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_PRODUCT_FACTS_BIND"]}
+        },
+        "facts": {
+          "series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_USE_CANDIDATE_SERIES"]},
+          "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_USE_CANDIDATE_SKU"]},
+          "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_USE_CANDIDATE_STRENGTH"]},
+          "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_USE_CANDIDATE_SERVINGS"]},
+          "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_ANALYTICAL_VALUE_WITHOUT_OPENLAB_BINDING"]},
+          "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_INFER_FORM_FROM_PROSE"]}
+        },
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_FORMULA_SOURCE_BOUND"]},
+        "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_OUTCOME_OR_USAGE_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PERFORMANCE_OR_OUTCOME_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {
+          "availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["DO_NOT_INFER_FROM_EDITORIAL_SOURCE"]},
+          "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]},
+          "statements": []
+        },
+        "seo": {
+          "titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]},
+          "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]},
+          "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}
+        },
+        "bundleStack": {
+          "positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]},
+          "relationships": {"value": ["mk-677", "rad-140"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-LGD4033"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}
+        },
+        "faqs": [],
+        "routeVariants": {
+          "homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]},
+          "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]},
+          "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]},
+          "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]},
+          "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]},
+          "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]},
+          "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]},
+          "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]},
+          "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}
+        }
+      },
+      "commerce": {
+        "price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]},
+        "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]},
+        "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}
+      }
+    },
+    {
+      "canonicalProductId": "mk-677",
+      "slug": "mk-677",
+      "readinessState": "SOURCE_BOUND",
+      "canonicalIdentity": {
+        "name": {"value": "MK-677", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MK677"], "constraints": ["IDENTITY_ONLY_UNTIL_RENDER_GOVERNED"]},
+        "aliases": [{"value": "Ibutamoren", "kind": "COMMON", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MK677"], "constraints": ["PRESENT_AS_ALIAS_NOT_SEPARATE_PRODUCT"]}]
+      },
+      "media": {"render": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["REPOSITORY_RENDER_IS_NOT_APPROVED_MASTER", "OMIT_FROM_CUSTOMER_SURFACE"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OUTCOME_COPY_NOT_APPROVED"]},
+        "descriptions": {
+          "short": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RENDER_GOVERNANCE_CLOSES"]},
+          "medium": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RENDER_GOVERNANCE_CLOSES"]},
+          "long": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RENDER_GOVERNANCE_CLOSES"]}
+        },
+        "facts": {
+          "series": {"value": "RESEARCH SERIES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MK677-CANDIDATE"], "constraints": ["REVIEW_ONLY_UNTIL_FINAL_RENDER_APPROVED"]},
+          "sku": {"value": "80529-02", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MK677"], "constraints": ["IDENTITY_ONLY_NOT_COMMERCE_LOOKUP_AUTHORITY"]},
+          "strength": {"value": "15 MG", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MK677-CANDIDATE"], "constraints": ["REVIEW_ONLY_UNTIL_FINAL_RENDER_APPROVED", "NOT_DOSAGE_INSTRUCTION"]},
+          "servings": {"value": "90 SERVINGS", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MK677-CANDIDATE", "BIND-WOO-MK677"], "constraints": ["REVIEW_ONLY_UNTIL_FINAL_RENDER_APPROVED"]},
+          "purity": {"value": ">99%", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MK677-CANDIDATE"], "constraints": ["LABEL_TRANSCRIPTION_ONLY", "NO_OPENLAB_CLAIM"]},
+          "form": {"value": "CAPSULES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MK677-CANDIDATE", "BIND-WOO-MK677"], "constraints": ["FORM_ONLY_NOT_DOSAGE_INSTRUCTION"]}
+        },
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_COMPLETE_FORMULA_SOURCE"]},
+        "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["APPETITE_SLEEP_RECOVERY_COPY_NOT_APPROVED"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_APPETITE_SLEEP_OR_RECOVERY_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "descriptionBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "focusTerms": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]}, "relationships": {"value": ["lgd-4033", "rad-140", "bpc-157"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-MK677"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_RECOVERY_CLAIM"]}},
+        "faqs": [],
+        "routeVariants": {
+          "homepageCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "pdpHero": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}
+        }
+      },
+      "commerce": {
+        "price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}
+      }
+    },
+    {
+      "canonicalProductId": "gw-501516",
+      "slug": "gw-501516",
+      "readinessState": "SOURCE_BOUND",
+      "canonicalIdentity": {
+        "name": {"value": "GW-501516", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-GW501516"], "constraints": ["CANONICAL_NAME", "DO_NOT_DROP_DIGIT_1"]},
+        "aliases": [
+          {"value": "Cardarine", "kind": "COMMON", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-GW501516"], "constraints": ["PRESENT_AS_ALIAS_NOT_SEPARATE_PRODUCT"]},
+          {"value": "GW-50156", "kind": "LEGACY_EDITORIAL", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-GW501516"], "constraints": ["LEGACY_EDITORIAL_ALIAS_ONLY", "NEVER_USE_AS_CANONICAL_DISPLAY_NAME_OR_SLUG"]}
+        ]
+      },
+      "media": {"render": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["WOO_THUMBNAIL_IS_NOT_FINAL_TRANSPARENT_RENDER", "OMIT_FROM_CANONICAL_MEDIA_SLOT"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["ENDURANCE_AND_CUTTING_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_LABEL_AND_RENDER_BIND"]}, "medium": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_LABEL_AND_RENDER_BIND"]}, "long": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_LABEL_AND_RENDER_BIND"]}},
+        "facts": {
+          "series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_USE_CANDIDATE_SERIES"]},
+          "sku": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["WOO_SOURCE_HAS_NO_SKU"]},
+          "strength": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["THUMBNAIL_VALUE_NOT_PROMOTED"]},
+          "servings": {"value": "90 SERVINGS", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-GW501516"], "constraints": ["OWNER_LOCKED_REVIEW_PROJECTION_ONLY"]},
+          "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]},
+          "form": {"value": "CAPSULES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-GW501516"], "constraints": ["OWNER_LOCKED_REVIEW_PROJECTION_ONLY"]}
+        },
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_COMPLETE_FORMULA_SOURCE"]},
+        "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_ENDURANCE_OR_CUTTING_CLAIM"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_ENDURANCE_CUTTING_OR_BODY_COMPOSITION_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_EDITORIALLY_APPROVED"]}, "relationships": {"value": ["mk-2866", "s-4", "epistane"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-GW501516"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}},
+        "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "s-4",
+      "slug": "s-4",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "S-4", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-S4"], "constraints": ["PROVISIONAL_IDENTITY_UNTIL_OWNER_SOURCE_BINDS"]}, "aliases": [{"value": "Andarine", "kind": "COMMON", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-S4"], "constraints": ["PROVISIONAL_ALIAS_UNTIL_OWNER_SOURCE_BINDS"]}]},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_APPROVED_RENDER"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["CUTTING_AND_DEFINITION_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CONFLICTING_SOURCE_VALUES"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CONFLICTING_SOURCE_VALUES"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["DO_NOT_INFER_FROM_PROSE"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_OUTCOME_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_CUTTING_OR_DEFINITION_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["mk-2866", "gw-501516"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-S4"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "yk-11",
+      "slug": "yk-11",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "YK-11", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-YK11"], "constraints": ["PROVISIONAL_IDENTITY_UNTIL_OWNER_SOURCE_BINDS"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_APPROVED_RENDER"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["HIGH_INTENSITY_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["GENERAL_REFERENCE_RANGE_IS_NOT_PRODUCT_FACT"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_OUTCOME_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_SIZE_STRENGTH_OR_INTENSITY_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["lgd-4033", "rad-140"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-YK11"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "s-23",
+      "slug": "s-23",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "S-23", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-S23"], "constraints": ["PROVISIONAL_IDENTITY_UNTIL_OWNER_SOURCE_BINDS"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_APPROVED_RENDER"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["RECOMP_STRENGTH_AND_DEFINITION_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CONFLICTING_SOURCE_VALUES"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CONFLICTING_SOURCE_VALUES"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_OUTCOME_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_RECOMP_STRENGTH_OR_DEFINITION_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["mk-2866", "gw-501516"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-S23"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "epistane",
+      "slug": "epistane",
+      "readinessState": "SOURCE_BOUND",
+      "canonicalIdentity": {"name": {"value": "Epistane", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-EPISTANE"], "constraints": ["IDENTITY_ONLY_UNTIL_FINAL_LABEL_BINDS"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["WOO_THUMBNAIL_IS_NOT_FINAL_TRANSPARENT_RENDER", "OMIT_FROM_CANONICAL_MEDIA_SLOT"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["RECOMP_FINISH_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_LABEL_BINDS"]}, "medium": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_LABEL_BINDS"]}, "long": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_LABEL_BINDS"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": "80529-12", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-EPISTANE"], "constraints": ["IDENTITY_ONLY_NOT_COMMERCE_LOOKUP_AUTHORITY"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_AND_THUMBNAIL_CONFLICT"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["OWNER_LOCKED_SOURCE_IS_NULL"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]}, "form": {"value": "CAPSULES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-EPISTANE"], "constraints": ["OWNER_LOCKED_REVIEW_PROJECTION_ONLY"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_COMPLETE_FORMULA_SOURCE"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_RECOMP_OR_FINISH_CLAIM"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_RECOMP_OR_FINISH_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["mk-2866", "gw-501516"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-EPISTANE"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "ment",
+      "slug": "ment",
+      "readinessState": "SOURCE_BOUND",
+      "canonicalIdentity": {"name": {"value": "MENT", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MENT"], "constraints": ["IDENTITY_ONLY_UNTIL_RENDER_GOVERNED"]}, "aliases": [{"value": "Trestolone", "kind": "COMMON", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MENT"], "constraints": ["PRESENT_AS_ALIAS_NOT_SEPARATE_PRODUCT"]}]},
+      "media": {"render": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["SUPPLIED_RENDER_IS_NOT_GOVERNED_MASTER", "OMIT_FROM_CUSTOMER_SURFACE"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["MASS_AND_POWER_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RENDER_GOVERNANCE_CLOSES"]}, "medium": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RENDER_GOVERNANCE_CLOSES"]}, "long": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_RENDER_GOVERNANCE_CLOSES"]}},
+        "facts": {"series": {"value": "PROHORMONE SERIES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MENT-CANDIDATE"], "constraints": ["REVIEW_ONLY_UNTIL_FINAL_RENDER_APPROVED"]}, "sku": {"value": "80529-08", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MENT"], "constraints": ["IDENTITY_ONLY_NOT_COMMERCE_LOOKUP_AUTHORITY"]}, "strength": {"value": "20 MG", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MENT-CANDIDATE"], "constraints": ["REVIEW_ONLY_UNTIL_FINAL_RENDER_APPROVED", "NOT_DOSAGE_INSTRUCTION"]}, "servings": {"value": "30 SERVINGS", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MENT-CANDIDATE", "BIND-WOO-MENT"], "constraints": ["REVIEW_ONLY_UNTIL_FINAL_RENDER_APPROVED"]}, "purity": {"value": ">99%", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MENT-CANDIDATE"], "constraints": ["LABEL_TRANSCRIPTION_ONLY", "NO_OPENLAB_CLAIM"]}, "form": {"value": "CAPSULES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-LABEL-MENT-CANDIDATE", "BIND-WOO-MENT"], "constraints": ["FORM_ONLY_NOT_DOSAGE_INSTRUCTION"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_COMPLETE_FORMULA_SOURCE"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_MASS_POWER_OR_INTENSITY_CLAIM"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_MASS_POWER_OR_INTENSITY_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "descriptionBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "focusTerms": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["rad-140", "lgd-4033"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-MENT"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "pdpHero": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_RENDER_APPROVED"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "m-sten",
+      "slug": "m-sten",
+      "readinessState": "SOURCE_BOUND",
+      "canonicalIdentity": {"name": {"value": "M-STEN", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MSTEN"], "constraints": ["IDENTITY_ONLY_UNTIL_FINAL_LABEL_BINDS"]}, "aliases": [{"value": "Methylstenbolone", "kind": "CHEMICAL", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MSTEN"], "constraints": ["PRESENT_AS_ALIAS_NOT_SEPARATE_PRODUCT"]}]},
+      "media": {"render": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["WOO_THUMBNAIL_IS_NOT_FINAL_TRANSPARENT_RENDER", "OMIT_FROM_CANONICAL_MEDIA_SLOT"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["DENSE_MASS_AND_STRENGTH_COPY_NOT_APPROVED"]},
+        "descriptions": {"short": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_LABEL_BINDS"]}, "medium": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_LABEL_BINDS"]}, "long": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT_UNTIL_FINAL_LABEL_BINDS"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": "80529-10", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MSTEN"], "constraints": ["IDENTITY_ONLY_NOT_COMMERCE_LOOKUP_AUTHORITY"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_AND_THUMBNAIL_CONFLICT"]}, "servings": {"value": "90 SERVINGS", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MSTEN"], "constraints": ["OWNER_LOCKED_REVIEW_PROJECTION_ONLY"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]}, "form": {"value": "CAPSULES", "state": "SOURCE_BOUND", "provenanceBindingIds": ["BIND-WOO-MSTEN"], "constraints": ["OWNER_LOCKED_REVIEW_PROJECTION_ONLY"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_COMPLETE_FORMULA_SOURCE"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_MASS_OR_STRENGTH_CLAIM"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_MASS_STRENGTH_OR_INTENSITY_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["lgd-4033", "ment"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-MSTEN"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "SOURCE_BOUND", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "trenavar",
+      "slug": "trenavar",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "Trenavar", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-TRENAVAR"], "constraints": ["PROVISIONAL_IDENTITY_UNTIL_OWNER_SOURCE_BINDS"]}, "aliases": [{"value": "Trendione", "kind": "CHEMICAL", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-TRENAVAR"], "constraints": ["PROVISIONAL_ALIAS_UNTIL_OWNER_SOURCE_BINDS"]}]},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_APPROVED_RENDER"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["AGGRESSIVE_MASS_COPY_NOT_APPROVED"]}, "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_AND_SOURCE_PACK_CONFLICT"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_AND_SOURCE_PACK_CONFLICT"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_OPENLAB_VALUE_BOUND"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_OUTCOME_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_MASS_OR_INTENSITY_PROMISES", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["INVALID_YOAST_PRODUCT_LOCATOR_NOT_USABLE"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["m-sten", "ment"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-TRENAVAR"], "constraints": ["NOT_CUSTOMER_READY", "NO_SYNERGY_OR_EFFECTIVENESS_CLAIM"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "bpc-157",
+      "slug": "bpc-157",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "BPC-157", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-BPC157"], "constraints": ["CATEGORY_LEVEL_EDITORIAL_EXPANSION_NOT_PRODUCT_AUTHORITY"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_RENDER_OR_PRODUCT_RECORD"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["RECOVERY_COPY_NOT_GROUNDED"]}, "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_RECOVERY_OR_MEDICAL_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_OR_RECOVERY_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["tb-500", "mk-677"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-BPC157"], "constraints": ["UNGROUNDED_EDITORIAL_EXPANSION", "NOT_CUSTOMER_READY"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "tb-500",
+      "slug": "tb-500",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "TB-500", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-TB500"], "constraints": ["CATEGORY_LEVEL_EDITORIAL_EXPANSION_NOT_PRODUCT_AUTHORITY"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_RENDER_OR_PRODUCT_RECORD"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["RECOVERY_COPY_NOT_GROUNDED"]}, "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_RECOVERY_OR_MEDICAL_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_OR_RECOVERY_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["bpc-157", "mk-677"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-TB500"], "constraints": ["UNGROUNDED_EDITORIAL_EXPANSION", "NOT_CUSTOMER_READY"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "cjc-1295",
+      "slug": "cjc-1295",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "CJC-1295", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-CJC1295"], "constraints": ["CATEGORY_LEVEL_EDITORIAL_EXPANSION_NOT_PRODUCT_AUTHORITY"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_RENDER_OR_PRODUCT_RECORD"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["RECOVERY_COPY_NOT_GROUNDED"]}, "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_RECOVERY_OR_MEDICAL_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_OR_RECOVERY_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["bpc-157", "tb-500"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-CJC1295"], "constraints": ["UNGROUNDED_EDITORIAL_EXPANSION", "NOT_CUSTOMER_READY"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    },
+    {
+      "canonicalProductId": "l-carnitine",
+      "slug": "l-carnitine",
+      "readinessState": "EDITORIAL_CHOICE",
+      "canonicalIdentity": {"name": {"value": "L-Carnitine", "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-LCARNITINE"], "constraints": ["CATEGORY_LEVEL_EDITORIAL_EXPANSION_NOT_PRODUCT_AUTHORITY"]}, "aliases": []},
+      "media": {"render": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["NO_RENDER_OR_PRODUCT_RECORD"]}},
+      "content": {
+        "customerThesis": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["DAILY_SUPPORT_COPY_NOT_GROUNDED"]}, "descriptions": {"short": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "medium": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "long": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}},
+        "facts": {"series": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "sku": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "strength": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "servings": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "purity": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["CANDIDATE_VALUE_UNGROUNDED"]}, "form": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}},
+        "composition": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["UNBOUND"]}, "useContext": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_DAILY_SUPPORT_CUTTING_OR_WELLNESS_COPY"]},
+        "claimsConstraints": {"value": ["NO_MEDICAL_WELLNESS_OR_BODY_COMPOSITION_CLAIMS", "NO_DOSAGE_OR_USAGE_INSTRUCTIONS", "NO_PRODUCT_FACTS_UNTIL_OWNER_RECORD_BINDS", "NO_ANALYTICAL_CLAIMS", "NO_STATIC_COMMERCE_STATE"], "state": "CONTENT_READY", "provenanceBindingIds": ["BIND-GLOBAL-EDITORIAL-SAFETY", "BIND-OPENLAB-NON-MK-UNAVAILABLE", "BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["APPLIES_TO_EVERY_ROUTE_VARIANT"]},
+        "evidence": {"availability": {"value": "UNAVAILABLE", "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": ["BIND-OPENLAB-NON-MK-UNAVAILABLE"], "constraints": ["NO_OPENLAB_OR_JANOSHIK_CLAIM"]}, "summary": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "statements": []},
+        "seo": {"titleBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "descriptionBase": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}, "focusTerms": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["NO_PRODUCT_SPECIFIC_SOURCE_ROW"]}},
+        "bundleStack": {"positioning": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "relationships": {"value": ["gw-501516", "mk-2866"], "state": "EDITORIAL_CHOICE", "provenanceBindingIds": ["BIND-EDITORIAL-LCARNITINE"], "constraints": ["UNGROUNDED_EDITORIAL_EXPANSION", "NOT_CUSTOMER_READY"]}}, "faqs": [],
+        "routeVariants": {"homepageCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpHero": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "pdpDossier": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "openLab": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}, "collectionCard": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "bundleBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "stackBuilder": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "comparison": {"value": null, "state": "EDITORIAL_CHOICE", "provenanceBindingIds": [], "constraints": ["OMIT"]}, "educationSupport": {"value": null, "state": "PENDING_EVIDENCE_BINDING", "provenanceBindingIds": [], "constraints": ["SHOW_UNAVAILABLE_STATE_ONLY"]}}
+      },
+      "commerce": {"price": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPrice", "fallback": "OMIT", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "inventory": {"value": null, "owner": "WOO_C2", "resolverKey": "currentInventory", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}, "purchasability": {"value": null, "owner": "WOO_C2", "resolverKey": "currentPurchasability", "fallback": "UNAVAILABLE", "provenanceBindingIds": ["BIND-GLOBAL-WOO-C2-RESOLVER"], "constraints": ["RESOLVE_AT_REQUEST_TIME", "NEVER_PERSIST_AS_CONTENT"]}}
+    }
+  ]
+}

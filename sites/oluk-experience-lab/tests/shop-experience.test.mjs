@@ -43,7 +43,16 @@ test("customer shell mirrors the production navigation contract without orphan s
 
   assert.match(navigationSource, /By family/);
   assert.match(navigationSource, /By goal/);
-  assert.match(navigationSource, /Stacks & bundles/);
+  assert.match(navigationSource, /Formats and relationships/);
+  assert.match(navigationSource, /Relationship availability/);
+  assert.doesNotMatch(headerSource, /rad140Fixture|£55|ProductCommerceCard/, "the global shell does not freeze product commerce state");
+  assert.match(headerSource, /label: "Delivery options"/);
+  assert.match(headerSource, /label: "International orders"/);
+  assert.doesNotMatch(
+    headerSource,
+    /(?:£\s?\d|free UK delivery|free int'l delivery)/i,
+    "the global shell does not invent delivery thresholds or price-like copy",
+  );
   assert.match(headerSource, /<ContextualNavigation route=\{route\}/);
   const contextualSource = await readFile(new URL("design-system/contextual-navigation.tsx", appRoot), "utf8");
   assert.match(contextualSource, /aria-label=\{product \? "Product sections" : openLab \? "OpenLab sections" : "Shop categories"\}/);

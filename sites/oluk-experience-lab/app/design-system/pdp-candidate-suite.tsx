@@ -105,7 +105,7 @@ function EvidenceAvailability({ compact = false, product, productSlug }: Readonl
       title={available ? "See the record behind the product." : "See the product evidence currently available."}
     >
       <div className={styles.evidenceStatus}>
-        <EvidenceStatusChip state={available ? "verified-evidence" : "unavailable"} />
+        <EvidenceStatusChip state={available ? "source-reported" : "unavailable"} />
         <dl>
           <div><dt>Product</dt><dd>{product.name}</dd></div>
           <div><dt>Compound</dt><dd>{product.alias}</dd></div>

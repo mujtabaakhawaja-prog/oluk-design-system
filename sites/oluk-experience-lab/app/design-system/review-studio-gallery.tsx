@@ -1,4 +1,4 @@
-import { SiteFooter } from "../experience-lab";
+import { SiteFooter } from "./site-footer";
 import { CurrencyEqualityLock, LifecycleAmountRecord } from "./payment-trust";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { SiteHeader } from "./site-header";
