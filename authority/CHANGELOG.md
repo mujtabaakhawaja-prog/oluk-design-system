@@ -187,3 +187,12 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added exact rendered-PDP checks for each catalogue item plus customer-copy lint coverage. Validation: typecheck pass, tests `96/96`, customer-copy audit `70/70`.
 - Re-ran current-branch browser QA after the copy change: MF-09 geometry `292/292`, accessibility `146/146`, contrast/reflow/long-copy `70/70`, and interactions `35/35` including transaction zero-callback `8/8`.
 - This remains a bounded content/reference alignment. Recapture and visual comparison still precede `sync-verified`; champion review, Figma publication and deployment remain separate.
+
+## 2026-08-17 — Wave 2 product-content source-binding increment
+
+- Added the canonical product-content schema and 16-product registry, 33-binding provenance ledger, 21-row route-consumption matrix, 20-slot catalogue, compiler and generated customer/card projections.
+- Bound the registry as `1 CONTENT_READY / 6 SOURCE_BOUND / 9 EDITORIAL_CHOICE`; MK-2866 is the first complete customer projection, while unresolved copy and evidence remain explicit omitted, unavailable or editorial states.
+- Added the credential-free 21-route/16-product provenance selector handoff at content hash `0b7bfb5bafa1f7045dd9ae732527d960b922b7772a0c324e16a0b09a0fc64fc5`. It carries field paths, source layers, binding IDs and resolver metadata only; design-repository state remains `PREPARED_NOT_ATTACHED` until independently proven consumer attachment.
+- Adopted source-ready content into the named Sites route families and quarantined static commerce, Offer/InStock JSON-LD, default evidence, render substitution and unapproved relationship/continuation fixtures.
+- Validation passes five authority JSON parses, product compiler checks, typecheck, lint, the 68-pattern production build, `159/159` Node tests, `41/41` interaction cases and exact root geometry at `1440 / 1024 / 768 / 390`. The grammar audit remains honestly `FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED` with 44 routes, 431 loose groups and 22 source findings.
+- This is repository candidate evidence only. State is `IMPLEMENTED_VERIFIED_HUMAN_REVIEW_REQUIRED_UNPUBLISHED`; deployment and runtime authority remain `NONE`.
