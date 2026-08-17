@@ -67,12 +67,20 @@ test("the Wave 2 compiler emits a deterministic fail-closed customer projection"
 
   assert.equal(familyTemplates.schemaVersion, "oluk.family-content-template-projection.v1");
   assert.equal(familyTemplates.runtimeAuthority, "NONE");
-  assert.deepEqual(familyTemplates.families.map((family) => family.id), ["family-1-discovery", "family-2-product"]);
+  assert.deepEqual(familyTemplates.families.map((family) => family.id), ["family-1-discovery", "family-2-product", "family-3-openlab"]);
   assert.doesNotMatch(JSON.stringify(familyTemplates), /routePatterns|"(?:price|inventory|purchasability)"\s*:/i);
   for (const family of familyTemplates.families) {
     assert.ok(family.responsiveBehavior.desktop && family.responsiveBehavior.mobile, family.id);
     assert.ok(family.slots.every((slot) => slot.referencedSlot && slot.fieldRefs.length && slot.missingBehavior), family.id);
   }
+  const openLab = familyTemplates.families.find((family) => family.id === "family-3-openlab");
+  assert.deepEqual(openLab.slots.map((slot) => slot.referencedSlot), [
+    "product-identity-lockup",
+    "evidence-status",
+    "openlab-record-summary",
+    "evidence-document-action",
+  ]);
+  assert.match(JSON.stringify(openLab.forbidden), /generic verified|cross-product record|provider-file-status inference/i);
 });
 
 test("every product atom has an explicit state and field provenance while commerce stays resolver-only", async () => {

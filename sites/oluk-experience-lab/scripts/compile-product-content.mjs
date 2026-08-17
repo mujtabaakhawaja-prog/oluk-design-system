@@ -287,7 +287,7 @@ for (const [index, slot] of slotRows.entries()) {
 }
 
 const familyRows = asArray(familyTemplates.families);
-if (familyRows.length !== 2 || new Set(familyRows.map((family) => family.id)).size !== 2) fail("family template contract must contain two unique families");
+if (familyRows.length !== 3 || new Set(familyRows.map((family) => family.id)).size !== 3) fail("family template contract must contain three unique families");
 const slotById = new Map(slotRows.map((slot) => [slot.id, slot]));
 for (const family of familyRows) {
   for (const key of ["id", "name", "scope", "audience", "sourceLayers", "slots", "forbidden", "responsiveBehavior"]) {

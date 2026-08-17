@@ -43,6 +43,21 @@
       ],
       "forbidden": ["price", "inventory", "purchasability", "cart or checkout copy", "static Offer/InStock", "medical, dosage or performance guidance", "unbound purity or provider-file claim", "studio or generic render fallback"],
       "responsiveBehavior": {"desktop": "Keep narrative, facts, composition and evidence in distinct modules.", "mobile": "Collapse information progressively while preserving labels, qualifiers and explicit unavailable states."}
+    },
+    {
+      "id": "family-3-openlab",
+      "name": "OpenLab",
+      "scope": "Reusable evidence portal, product-record, report and document content slots. This is a source-bound family contract, not a route composition or evidence projection.",
+      "audience": "Customers reviewing the availability and scope of a named product evidence record.",
+      "sourceLayers": ["LABEL", "OPENLAB_JANOSHIK", "APPROVED_EDITORIAL", "FIGMA_SITES_COMPOSITION"],
+      "slots": [
+        {"id": "openlab-product-identity", "referencedSlot": "product-identity-lockup", "fieldRefs": ["canonicalProductId", "canonicalIdentity.name", "canonicalIdentity.aliases"], "allowedStates": ["CONTENT_READY"], "customerBehavior": "Render exact product identity only when its canonical identity is customer-ready.", "missingBehavior": "Do not identify an unresolved record with a substituted product name or alias."},
+        {"id": "openlab-evidence-boundary", "referencedSlot": "evidence-status", "fieldRefs": ["content.evidence.availability", "content.evidence.summary"], "allowedStates": ["CONTENT_READY", "PENDING_EVIDENCE_BINDING"], "customerBehavior": "Render the named record state where bound; a pending binding may render only the explicit evidence-unavailable state.", "missingBehavior": "Omit the evidence status when no source-contract state is supplied; never use verified, tested, or provider-file defaults."},
+        {"id": "openlab-record-summary", "referencedSlot": "openlab-record-summary", "fieldRefs": ["content.evidence.availability", "content.evidence.summary", "content.evidence.statements", "content.routeVariants.openLab"], "allowedStates": ["CONTENT_READY", "PENDING_EVIDENCE_BINDING"], "customerBehavior": "Present record-specific source-reported wording only after exact record binding; retain separate label and analytical qualifiers.", "missingBehavior": "Use an explicit unavailable boundary with no values, substitute record, or analytical reconstruction."},
+        {"id": "openlab-document-action", "referencedSlot": "evidence-document-action", "fieldRefs": ["content.evidence.statements"], "allowedStates": ["CONTENT_READY"], "customerBehavior": "Expose an original-source or record action only when the OpenLab projection supplies the exact applicable action.", "missingBehavior": "Omit the action rather than infer a document URL, file status, filename, or download availability."}
+      ],
+      "forbidden": ["price", "inventory", "purchasability", "cart or checkout copy", "recommendation or relationship rationale", "generic verified or third-party-tested evidence", "cross-product record or render", "provider-file-status inference", "medical, dosage or performance guidance", "Figma or Sites composition as factual authority"],
+      "responsiveBehavior": {"desktop": "Keep product identity, availability, record summary and document action in their distinct Sites-defined regions.", "mobile": "Preserve the source qualifier and unavailable boundary before progressively disclosing any record detail; no state changes by breakpoint."}
     }
   ]
 }
