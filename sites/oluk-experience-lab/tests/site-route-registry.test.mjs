@@ -5,6 +5,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 import {
   CUSTOMER_ROUTES,
+  OWNER_REVIEW_SPECIMEN_PATHS,
   PRIMARY_NAV_ROUTE_KEYS,
 } from "../app/design-system/site-route-data.mjs";
 import { FRONTIER_ROUTE_PATTERNS } from "../app/design-system/frontier-content.ts";
@@ -28,11 +29,12 @@ async function pageRoutes(directory = appRoot) {
   return paths.sort();
 }
 
-test("core registry controls 52 physical pages while the proof matrix resolves all 73 ledger dispositions", async () => {
-  assert.equal(CUSTOMER_ROUTES.length, 52);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 52);
-  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 52);
-  const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS]);
+test("core registry excludes owner specimens while the proof matrix keeps its 73 ledger dispositions", async () => {
+  assert.equal(CUSTOMER_ROUTES.length, 51);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ key }) => key)).size, 51);
+  assert.equal(new Set(CUSTOMER_ROUTES.map(({ path: routePath }) => routePath)).size, 51);
+  assert.deepEqual(OWNER_REVIEW_SPECIMEN_PATHS, ["/shop/[family]", "/product/mk-2866/continuation"]);
+  const declaredPaths = new Set([...CUSTOMER_ROUTES.map(({ path: routePath }) => routePath), ...FRONTIER_ROUTE_PATTERNS, ...OWNER_REVIEW_SPECIMEN_PATHS]);
   assert.ok((await pageRoutes()).every((routePath) => declaredPaths.has(routePath)), "every physical page is core-governed or declared as a frontier pattern");
   assert.equal(ROUTES.length, 73);
   assert.equal(new Set(ROUTES.map(({ id }) => id)).size, 73);

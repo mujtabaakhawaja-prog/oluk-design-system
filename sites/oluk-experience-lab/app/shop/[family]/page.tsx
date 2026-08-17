@@ -1,5 +1,9 @@
-import { FrontierShell, ProductCollection } from "../../design-system/frontier-sections";
-import { frontierProducts, productFamilies } from "../../design-system/frontier-content";
-import { CustomerSiteChrome } from "../../experience-lab";
-export function generateStaticParams(){return productFamilies.map(({name})=>({family:name.toLowerCase().replaceAll(" ","-")}));}
-export default function CollectionPage({params}:{params:{family:string}}){const family=productFamilies.find((item)=>item.name.toLowerCase().replaceAll(" ","-")===params.family);const products=frontierProducts.filter((product)=>product.family===family?.name);return <CustomerSiteChrome route="shop"><FrontierShell eyebrow="COLLECTION" title={family?.name??"Collection"}><ProductCollection products={products}/></FrontierShell></CustomerSiteChrome>}
+import type { Metadata } from "next";
+import { OwnerReviewSpecimen } from "../../design-system/owner-review-specimen";
+
+export const metadata: Metadata = { title: "Collection review specimen", robots: { index: false, follow: false } };
+
+/** Not a public collection destination: canonical discovery stays finite at /shop. */
+export default function CollectionFamilyReviewSpecimen() {
+  return <OwnerReviewSpecimen id="shop-family" eyebrow="OWNER REVIEW · NOT PUBLIC" title="Collection-family specimen." copy="Family filtering is reviewed through the canonical shop rather than emitted as a duplicate public collection." returnHref="/shop" returnLabel="Return to the shop" />;
+}

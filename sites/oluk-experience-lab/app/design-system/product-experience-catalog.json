@@ -1,6 +1,6 @@
 {
   "schemaVersion": "oluk.product-experience.v2",
-  "productSourceHash": "14a45a575fa4c9c591add66835c8713f23f9f93e195d1daad37d25ada3bf435e",
+  "productSourceHash": "d1504f7d7c31acd3c5ee0e0e8dc168f7d630582cc02d13f6bd314b7a529827cd",
   "editorialCorpusHash": "3a6219e2c75adc4d94c7b0694e804a92d848c6dd288f8058462d6f8c38e458e2",
   "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
   "products": [
@@ -2470,5 +2470,5 @@
       }
     }
   },
-  "contentHash": "4e04b6cf7dae51d1e5658bccfe65020d818c65f48c73bd07d3bcb9a9061ef517"
+  "contentHash": "2da5e34a10e0bb1882b0d69de2f608c256a815e8d555c012f7c535d907be4122"
 }

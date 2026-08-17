@@ -578,7 +578,7 @@ function StackSummary({
   );
 }
 
-function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host: StackHost }) {
+function StackBuilderState({ baselineSlug, host, headingLevel }: { baselineSlug: string; host: StackHost; headingLevel: "h1" | "h2" }) {
   const [currentBaselineSlug, setCurrentBaselineSlug] = useState(baselineSlug);
   const baseline = useMemo(() => baselineFor(currentBaselineSlug), [currentBaselineSlug]);
   const variant = hostVariant(host);
@@ -633,7 +633,7 @@ function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host:
           className={styles.intro}
           copy={stackGoals[goal].copy(baseline)}
           eyebrow="Choose the result"
-          headingLevel="h1"
+          headingLevel={headingLevel}
           title={stackGoals[goal].headline(baseline)}
         >
           <div aria-label="Choose your stack goal" className={styles.goalPicker} role="group">
@@ -689,6 +689,6 @@ function StackBuilderState({ baselineSlug, host }: { baselineSlug: string; host:
   );
 }
 
-export function YourStackBuilder({ baselineSlug = "mk-2866", host = "standalone" }: { baselineSlug?: string; host?: StackHost }) {
-  return <StackBuilderState baselineSlug={baselineSlug} host={host} key={`${host}-${baselineSlug}`} />;
+export function YourStackBuilder({ baselineSlug = "mk-2866", host = "standalone", headingLevel = "h1" }: { baselineSlug?: string; host?: StackHost; headingLevel?: "h1" | "h2" }) {
+  return <StackBuilderState baselineSlug={baselineSlug} headingLevel={headingLevel} host={host} key={`${host}-${baselineSlug}`} />;
 }

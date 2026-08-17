@@ -1,6 +1,6 @@
-import { CUSTOMER_ROUTES, PRIMARY_NAV_ROUTE_KEYS } from "./site-route-data.mjs";
+import { CUSTOMER_ROUTES, OWNER_REVIEW_SPECIMEN_PATHS, PRIMARY_NAV_ROUTE_KEYS } from "./site-route-data.mjs";
 
-export { CUSTOMER_ROUTES, PRIMARY_NAV_ROUTE_KEYS };
+export { CUSTOMER_ROUTES, OWNER_REVIEW_SPECIMEN_PATHS, PRIMARY_NAV_ROUTE_KEYS };
 
 export type CustomerRouteDefinition = (typeof CUSTOMER_ROUTES)[number];
 export type CoreCustomerRouteKey = CustomerRouteDefinition["key"];
@@ -25,7 +25,6 @@ export const routeReviewTargets = {
   home: { nodeId: "764:50", kind: "route-frame" },
   shop: { nodeId: "765:50", kind: "route-frame" },
   product: { nodeId: "766:50", kind: "route-frame" },
-  "product-continuation": { nodeId: "766:50", kind: "route-frame" },
   reviews: { nodeId: "921:2717", kind: "group-review-board" },
   about: { nodeId: "921:2717", kind: "group-review-board" },
   "evidence-os": { nodeId: "921:2717", kind: "group-review-board" },

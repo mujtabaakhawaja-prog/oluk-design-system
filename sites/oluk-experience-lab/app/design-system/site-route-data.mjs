@@ -6,7 +6,6 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "home", path: "/", label: "Home", heading: "Formulated to a higher standard.", section: "site", authorityClass: "customer-candidate" },
   { key: "shop", path: "/shop", label: "Shop", heading: "The Olympus Labs UK range.", section: "shop", authorityClass: "customer-candidate" },
   { key: "product", path: "/product/mk-2866", label: "MK-2866", heading: "MK-2866", section: "shop", authorityClass: "customer-candidate" },
-  { key: "product-continuation", path: "/product/mk-2866/continuation", label: "Product continuation", heading: "Recommendations and restock, kept together.", section: "shop", authorityClass: "customer-candidate" },
   { key: "reviews", path: "/reviews", label: "Customer reviews", heading: "Experiences shared by Olympus customers.", section: "shop", authorityClass: "customer-candidate" },
   { key: "about", path: "/about", label: "About", heading: "Quality, made visible.", section: "company", authorityClass: "customer-candidate" },
   { key: "evidence-os", path: "/about/evidence-os", label: "EvidenceOS", heading: "See what stands behind every product.", section: "company", authorityClass: "customer-candidate" },
@@ -63,4 +62,10 @@ export const PRIMARY_NAV_ROUTE_KEYS = /** @type {const} */ ([
   "lab-reports",
   "wholesale",
   "about",
+]);
+
+/** Reachable owner fixtures are excluded from customer navigation, sitemap and proof cardinality. */
+export const OWNER_REVIEW_SPECIMEN_PATHS = /** @type {const} */ ([
+  "/shop/[family]",
+  "/product/mk-2866/continuation",
 ]);

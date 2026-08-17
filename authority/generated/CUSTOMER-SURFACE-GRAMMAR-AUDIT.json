@@ -3,7 +3,7 @@
   "contractId": "oluk.customer-surface-grammar.v1",
   "currentState": "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 759,
+  "looseCopyGroupCount": 763,
   "routeRefactorCount": 44,
   "routes": [
     {
@@ -1801,8 +1801,8 @@
       "status": "NEEDS_ROUTE_REFACTOR"
     },
     {
-      "containedCopyGroupCount": 13,
-      "copyGroupCount": 34,
+      "containedCopyGroupCount": 36,
+      "copyGroupCount": 61,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -1832,16 +1832,16 @@
           "copySurface": null,
           "element": "h2",
           "status": "LOOSE_CANVAS_COPY",
-          "text": "Product facts, label truth and batch evidence."
+          "text": "Understand what makes Ostarine different."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
-          "text": "Product identity, specifications and evidence access in one continuous view."
+          "text": "MK-2866 is the clean starting point for a cutting or recomp-focused stack: clear 15 MG strength, a 90-serving format and a direct view of its available lab record."
         }
       ],
-      "looseCopyGroupCount": 21,
+      "looseCopyGroupCount": 25,
       "path": "/product/mk-2866",
       "routeId": "product",
       "status": "NEEDS_ROUTE_REFACTOR"
@@ -2239,7 +2239,7 @@
       "value": "#53617d"
     }
   ],
-  "sourceHash": "6ee94d044c2e7670ec8f4ecd57fd0f58794fafa439d003825a66d76e0c1b42c2",
+  "sourceHash": "eae7e866f39911db1cf67d0879e262493a267d5b0c962ef8f493e1980477dda0",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2259,5 +2259,5 @@
     "mobileReviewWidthPx": 390,
     "qualitativeChipLabelExceptionPx": 11
   },
-  "auditHash": "ce1c7bff9f749293456c461013a78b75f048dfbdc284cc84273ce079575765db"
+  "auditHash": "e382bcf9839dec2d0f17e6568feee9d2016032fc3c7a28fc1400443549dd05a6"
 }
