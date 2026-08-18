@@ -4,28 +4,25 @@
 import { useMemo, useState } from "react";
 
 import styles from "./locked-home-hero.module.css";
+import { MK2866_RENDER } from "../runtime-adapters/sites-canonical-render";
+import { resolveCanonicalRender } from "../runtime-adapters/sites-canonical-render";
+import type { SitesDiscoveryModel } from "../runtime-adapters/sites-discovery-server";
 
-const products = [
-  { id: "mk-2866", name: "MK-2866", alias: "Ostarine", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£43", image: "/assets/products/mk-2866/front.png", width: 1365, height: 2048, href: "/product/mk-2866" },
-  { id: "ment", name: "MENT", alias: "Trestolone", strength: "20 MG", servings: "30 SERVINGS", purity: ">99%", price: "£49", image: "/assets/products/hero/ment/front.webp", width: 1024, height: 1536, href: "/shop?search=MENT" },
-  { id: "endurashred", name: "ENDURASHRED", alias: "LGD-4033 + MK-2866", strength: "16.5 MG", servings: "90 SERVINGS", purity: ">99%", price: "£59", image: "/assets/products/hero/endurashred/front.webp", width: 1024, height: 1536, href: "/shop?search=ENDURASHRED" },
-  { id: "rad-140", name: "RAD-140", alias: "Testolone", strength: "8 MG", servings: "60 SERVINGS", purity: ">99%", price: "£55", image: "/assets/products/rad-140/front.png", width: 1024, height: 1536, href: "/shop?search=RAD-140" },
-  { id: "mk-677", name: "MK-677", alias: "Ibutamoren", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£30", image: "/assets/products/hero/mk-677/front.webp", width: 1024, height: 1536, href: "/shop?search=MK-677" },
-] as const;
+const slots = ["01", "02", "03", "04", "05"] as const;
 
 function relativeSlot(index: number, activeIndex: number) {
-  const count = products.length;
+  const count = slots.length;
   let delta = index - activeIndex;
   if (delta > count / 2) delta -= count;
   if (delta < -count / 2) delta += count;
   return delta;
 }
 
-export function LockedHomeHero() {
-  const [activeId, setActiveId] = useState<(typeof products)[number]["id"]>("mk-2866");
-  const activeIndex = products.findIndex((product) => product.id === activeId);
-  const active = products[activeIndex];
-  const ordered = useMemo(() => products.map((product, index) => ({ product, slot: relativeSlot(index, activeIndex) })), [activeIndex]);
+export function LockedHomeHero({ models = [] }: Readonly<{ models?: readonly SitesDiscoveryModel[] }>) {
+  const bound = models.find((model) => model.canonicalSlug === "mk-2866");
+  const renderUrl = bound?.render ? resolveCanonicalRender(bound.render) : null;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const ordered = useMemo(() => slots.map((slot, index) => ({ slot, position: relativeSlot(index, activeIndex) })), [activeIndex]);
 
   return (
     <section className={styles.canvas} data-figma-node="1155:29963" data-motion-contract="runtime-product-stage-5-3-1" id="hero">
@@ -35,22 +32,22 @@ export function LockedHomeHero() {
             <span>Formulated. Verified. Batch tracked.</span>
             <h1>Formulated to a higher standard.</h1>
             <p>Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose.</p>
-            <div className={styles.actions}><a className="button" href="/shop">Shop the range <b aria-hidden="true">→</b></a><a className="button button-secondary" href="/open-lab/records">View Lab Records <b aria-hidden="true">→</b></a></div>
+            <div className={styles.actions}><a className="button" href="/shop">Browse the range <b aria-hidden="true">→</b></a><a className="button button-secondary" href="/open-lab/records">OpenLab <b aria-hidden="true">→</b></a></div>
           </div>
           <div className={styles.divider}/>
           <article aria-live="polite" className={styles.decision}>
-            <div className={styles.identity}><span>Featured product</span><h2>{active.name}</h2><p>{active.alias}</p></div>
-            <dl className={styles.metrics}><div><dd>{active.strength}</dd><dt>Strength</dt></div><div><dd>{active.servings}</dd><dt>Quantity</dt></div><div><dd>{active.purity}</dd><dt>Purity</dt></div></dl>
-            <div className={styles.buyRow}><div><span>Price</span><strong>{active.price}</strong></div><div><a href={active.href}>View product</a><button disabled type="button">Add to bag</button></div></div>
+            <div className={styles.identity}><span>Featured product</span><h2>{bound?.canonicalProductId ?? "Product information pending"}</h2><p>{bound ? "Source-bound canonical identity" : "Source-owned details will appear when available."}</p></div>
+            <dl className={styles.metrics}><div><dd>{bound?.label?.strengthMg ? `${bound.label.strengthMg} MG` : "—"}</dd><dt>Strength</dt></div><div><dd>{bound?.label?.capsuleCount ?? "—"}</dd><dt>Quantity</dt></div><div><dd>{bound?.evidence ?? "—"}</dd><dt>Evidence</dt></div></dl>
+            <div className={styles.buyRow}><div><span>Commerce</span><strong>Unavailable</strong></div><div><button disabled type="button">Purchase unavailable</button></div></div>
             <div aria-label="Featured product" className={styles.tabs} role="tablist">
-              {products.map((product) => <button aria-selected={product.id === active.id} key={product.id} onClick={() => setActiveId(product.id)} role="tab" type="button">{product.name}</button>)}
+              {slots.map((slot, index) => <button aria-selected={index === activeIndex} key={slot} onClick={() => setActiveIndex(index)} role="tab" type="button">Slot {slot}</button>)}
             </div>
           </article>
         </div>
         <div className={styles.stage} data-figma-stage-node="462:4684" data-proof-allow-overflow>
           <span aria-hidden="true" className={styles.glow}/>
-          {ordered.map(({ product, slot }) => <button aria-label={`Feature ${product.name}`} className={styles.bottle} data-active={slot === 0 || undefined} data-slot={slot} key={product.id} onClick={() => setActiveId(product.id)} type="button"><img alt={slot === 0 ? `${product.name} ${product.alias} bottle` : ""} decoding="async" fetchPriority={slot === 0 ? "high" : "auto"} height={product.height} loading={slot === 0 ? "eager" : "lazy"} sizes="(max-width: 760px) 48vw, 24vw" src={product.image} width={product.width}/></button>)}
-          <div className={styles.stageControls}><button aria-label="Previous featured product" onClick={() => setActiveId(products[(activeIndex - 1 + products.length) % products.length].id)} type="button">←</button><span>{String(activeIndex + 1).padStart(2,"0")} / 05</span><button aria-label="Next featured product" onClick={() => setActiveId(products[(activeIndex + 1) % products.length].id)} type="button">→</button></div>
+          {ordered.map(({ slot, position }) => <button aria-label={slot === "01" && renderUrl ? "MK-2866 product render" : `Product slot ${slot} pending`} className={styles.bottle} data-active={position === 0 || undefined} data-slot={position} key={slot} onClick={() => setActiveIndex(slots.indexOf(slot))} type="button">{slot === "01" && renderUrl ? <img alt="MK-2866 product render" height="1536" src={renderUrl} width="1024"/> : <span aria-hidden="true">{position === 0 ? "Pending" : ""}</span>}</button>)}
+          <div className={styles.stageControls}><button aria-label="Previous product slot" onClick={() => setActiveIndex((activeIndex - 1 + slots.length) % slots.length)} type="button">←</button><span>{String(activeIndex + 1).padStart(2,"0")} / 05</span><button aria-label="Next product slot" onClick={() => setActiveIndex((activeIndex + 1) % slots.length)} type="button">→</button></div>
         </div>
       </div>
     </section>

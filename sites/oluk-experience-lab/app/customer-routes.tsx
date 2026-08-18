@@ -33,6 +33,7 @@ import { RelatedRail } from "./design-system/related-rail";
 import { UpsellContextRail } from "./design-system/program-components";
 import { SHOP_FAMILY_OPTIONS } from "./design-system/shop-taxonomy";
 import styles from "./customer-routes.module.css";
+import type { SitesDiscoveryModel } from "./runtime-adapters/sites-discovery-server";
 
 function ReviewsSection({ full = false }: Readonly<{ full?: boolean }>) {
   return (
@@ -153,10 +154,10 @@ function EvidenceArchiveEntry({ id = "openlab-records" }: Readonly<{ id?: string
   );
 }
 
-export function HomeRoute() {
+export function HomeRoute({ models = [] }: Readonly<{ models?: readonly SitesDiscoveryModel[] }>) {
   return (
     <>
-      <LockedHomeHero />
+      <LockedHomeHero models={models} />
       <div className="shell"><CobaltDensityBoundary /></div>
       <AssuranceSection />
       <FamilyDiscovery />

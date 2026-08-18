@@ -5,6 +5,8 @@ import "@fontsource/plus-jakarta-sans/700.css";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "./design-system/candidate-tokens.css";
 import "./globals.css";
+import { SitesRuntimeBoundaryGate } from "./runtime-adapters/sites-runtime-boundary-gate";
+import { loadSitesDiscoveryProjection } from "./runtime-adapters/sites-discovery-server";
 
 export const metadata: Metadata = {
   title: {
@@ -41,18 +43,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const discovery = await loadSitesDiscoveryProjection();
   return (
     <html lang="en-GB">
       <body>
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
-        {children}
+        <SitesRuntimeBoundaryGate boundary={discovery.boundary} family="discovery">{children}</SitesRuntimeBoundaryGate>
       </body>
     </html>
   );
