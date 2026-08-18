@@ -50,7 +50,9 @@ export async function loadSitesDiscoveryProjection(): Promise<SitesDiscoveryLoad
   const audit = process.env.OLYMPUS_SITES_DISCOVERY_AUDIT_ID;
   if (!origin || !token || !session || !audit) return pending();
   try {
-    const response = await fetch(`${origin}${ENDPOINT_PATH}`, { cache: "no-store", headers: { "X-Olympus-Sites-Discovery-Token": token, "X-Olympus-Caller": "olympus-shopper-ssr", "X-Olympus-Capability": "sites-discovery-projection-v1-read", "X-Olympus-Client-Boundary": "server-only", "X-Session-ID": session, "X-Olympus-Audit-ID": audit, "X-Olympus-Sites-Schema-Sha256": SCHEMA_SHA256, "X-Olympus-Sites-Family-Packet-Sha256": FAMILY_PACKET_SHA256 } });
+    const endpoint = new URL(`${origin}${ENDPOINT_PATH}`);
+    endpoint.search = new URLSearchParams({ routeId: "home" }).toString();
+    const response = await fetch(endpoint, { cache: "no-store", headers: { "X-Olympus-Sites-Discovery-Token": token, "X-Olympus-Caller": "olympus-shopper-ssr", "X-Olympus-Capability": "sites-discovery-projection-v1-read", "X-Olympus-Client-Boundary": "server-only", "X-Session-ID": session, "X-Olympus-Audit-ID": audit, "X-Olympus-Sites-Schema-Sha256": SCHEMA_SHA256, "X-Olympus-Sites-Family-Packet-Sha256": FAMILY_PACKET_SHA256 } });
     const models = response.ok ? decode(await response.json()) : null;
     return models ? { boundary: { ...pending().boundary, source: "host-server", families: { ...pending().boundary.families, discovery: "ready" }, c2Projection: null }, models } : pending();
   } catch { return pending(); }

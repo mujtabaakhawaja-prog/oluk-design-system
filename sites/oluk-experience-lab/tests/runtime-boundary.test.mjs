@@ -18,5 +18,7 @@ test("the Sites runtime boundary is source-local and fail-closed by default", as
   );
   assert.match(gateSource, /function SitesRuntimeBoundaryGate/);
   assert.match(gateSource, /Nothing is available to purchase yet/);
+  const loaderSource = await readFile(new URL("../app/runtime-adapters/sites-discovery-server.ts", import.meta.url), "utf8");
+  assert.match(loaderSource, /new URLSearchParams\(\{ routeId: "home" \}\)/);
   assert.doesNotMatch(source, /from\s+["'](?:https?:|@c2|woo|initiator)/i);
 });
