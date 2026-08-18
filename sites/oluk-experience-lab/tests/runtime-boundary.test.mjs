@@ -21,5 +21,6 @@ test("the Sites runtime boundary is source-local and fail-closed by default", as
   const loaderSource = await readFile(new URL("../app/runtime-adapters/sites-discovery-server.ts", import.meta.url), "utf8");
   assert.match(loaderSource, /new URLSearchParams\(\{ routeId: "home" \}\)/);
   assert.doesNotMatch(loaderSource, /X-Olympus-Sites-(?:Schema|Family-Packet)-Sha256/);
+  assert.match(loaderSource, /"sec-fetch-mode": ""/);
   assert.doesNotMatch(source, /from\s+["'](?:https?:|@c2|woo|initiator)/i);
 });
