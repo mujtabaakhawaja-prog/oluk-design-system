@@ -1,63 +1,109 @@
 .canvas {
-  background:
-    radial-gradient(circle at 78% 24%, var(--oluk-surface-cobalt-soft), transparent 27%),
-    var(--oluk-canvas);
+  background: var(--oluk-canvas);
   padding-block: var(--oluk-space-10) var(--oluk-space-12);
 }
 
-.composition {
-  align-items: stretch;
-}
-
-.editorialZone {
-  grid-row: 1;
-}
-
-.stageZone {
-  grid-row: 1 / span 2;
-  min-height: 0;
-}
-
-.decisionZone {
-  grid-row: 2;
-}
-
-.editorialSurface,
-.decisionSurface,
-.stage {
-  height: 100%;
-}
-
-.editorialSurface {
-  align-content: center;
+.hero {
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-purchase);
   box-shadow: var(--oluk-shadow-card);
-  min-height: 390px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  margin-inline: auto;
+  max-width: var(--oluk-content-max);
+  min-height: 760px;
+  overflow: hidden;
+}
+
+.editorial,
+.stageColumn,
+.stage {
+  min-width: 0;
+}
+
+.editorial {
+  display: flex;
+  flex-direction: column;
+}
+
+.copy {
+  align-content: center;
+  display: grid;
+  flex: 1 1 auto;
   padding: clamp(var(--oluk-space-8), 4vw, 56px);
 }
 
-.editorialSurface :global(h1) {
+.copy > span,
+.identity > span,
+.price span {
+  color: var(--oluk-cobalt);
+  font-family: var(--oluk-font-body);
+  font-size: var(--oluk-type-eyebrow-size);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+  line-height: var(--oluk-type-eyebrow-line);
+  text-transform: uppercase;
+}
+
+.copy h1 {
+  color: var(--oluk-text-primary);
+  font-family: var(--oluk-font-display);
   font-size: clamp(48px, 5.2vw, 76px);
+  font-weight: 800;
   letter-spacing: -0.065em;
   line-height: 0.97;
+  margin: var(--oluk-space-3) 0 var(--oluk-space-5);
   max-width: 9ch;
 }
 
-.editorialSurface :global(p) {
-  font-size: 17px;
-  line-height: 1.65;
-  max-width: 48ch;
+.copy p {
+  color: var(--oluk-text-body);
+  font-size: var(--oluk-type-body-lg-size);
+  line-height: 1.62;
+  margin: 0;
+  max-width: 44ch;
 }
 
-.decisionSurface {
-  align-content: start;
-  background:
-    linear-gradient(112deg, var(--oluk-surface-card) 0 62%, var(--oluk-surface-cobalt-soft) 100%);
-  border-color: var(--oluk-border-strong);
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--oluk-space-3);
+  margin-top: var(--oluk-space-6);
 }
 
-.decisionSurface :global(h2) {
+.divider {
+  background: var(--oluk-cobalt);
+  flex: 0 0 var(--oluk-divider-width);
+  height: var(--oluk-divider-width);
+}
+
+.decision {
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-vertical);
+  box-shadow: var(--oluk-shadow-compact);
+  display: grid;
+  gap: var(--oluk-space-4);
+  margin: var(--oluk-space-5);
+  padding: var(--oluk-space-5);
+}
+
+.identity h2 {
+  color: var(--oluk-text-primary);
+  font-family: var(--oluk-font-display);
   font-size: clamp(30px, 3vw, 40px);
+  font-weight: 800;
   letter-spacing: -0.045em;
+  line-height: 1;
+  margin: var(--oluk-space-2) 0 var(--oluk-space-1);
+}
+
+.identity p {
+  color: var(--oluk-text-body);
+  font-size: var(--oluk-type-body-sm-size);
+  line-height: var(--oluk-type-body-sm-line);
+  margin: 0;
 }
 
 .metrics {
@@ -76,16 +122,6 @@
 .price {
   display: grid;
   gap: var(--oluk-space-1);
-}
-
-.price span {
-  color: var(--oluk-text-secondary);
-  font-family: var(--oluk-font-body);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: var(--oluk-type-eyebrow-track);
-  line-height: var(--oluk-type-eyebrow-line);
-  text-transform: uppercase;
 }
 
 .price strong {
@@ -117,7 +153,7 @@
 
 .tabControl {
   flex: 0 0 auto;
-  font-size: 13px;
+  font-size: var(--oluk-type-label-size);
   scroll-snap-align: start;
   white-space: nowrap;
   width: auto;
@@ -125,11 +161,9 @@
 
 .stage {
   background:
-    radial-gradient(circle at 50% 59%, var(--oluk-surface-card) 0 12%, rgba(238, 244, 255, 0.82) 43%, transparent 70%),
+    radial-gradient(circle at 50% 59%, var(--oluk-surface-card) 0 12%, var(--oluk-surface-cobalt-soft) 43%, transparent 70%),
     linear-gradient(135deg, var(--oluk-surface-media), var(--oluk-canvas));
-  border: var(--oluk-border-width) solid var(--oluk-border-card);
-  border-radius: var(--oluk-radius-purchase);
-  box-shadow: var(--oluk-shadow-card);
+  height: 100%;
   min-height: 760px;
   overflow: hidden;
   position: relative;
@@ -137,11 +171,11 @@
 
 .stage:focus-visible {
   outline: 3px solid var(--oluk-cobalt-focus);
-  outline-offset: 3px;
+  outline-offset: -6px;
 }
 
 .glow {
-  background: rgba(0, 87, 255, 0.13);
+  background: var(--oluk-surface-cobalt-soft);
   bottom: 104px;
   filter: blur(46px);
   height: 62px;
@@ -177,7 +211,7 @@
 }
 
 .bottle img {
-  filter: drop-shadow(0 30px 25px rgba(20, 47, 94, 0.24));
+  filter: drop-shadow(var(--oluk-shadow-relation));
   height: auto;
   max-height: 550px;
   object-fit: contain;
@@ -251,17 +285,21 @@
   color: var(--oluk-text-secondary);
   display: inline-flex;
   font-family: var(--oluk-font-body);
-  font-size: 12px;
+  font-size: var(--oluk-type-eyebrow-size);
   font-weight: 800;
   justify-content: center;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--oluk-type-eyebrow-track);
   min-height: 44px;
   min-width: 86px;
   padding-inline: var(--oluk-space-4);
 }
 
 @media (max-width: 1100px) {
-  .editorialSurface :global(h1) {
+  .hero {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .copy h1 {
     font-size: 50px;
   }
 
@@ -272,7 +310,7 @@
 
   .commerceActions {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -281,33 +319,45 @@
     padding-block: var(--oluk-space-4) var(--oluk-space-10);
   }
 
-  .editorialZone {
-    grid-row: 1;
-  }
-
-  .stageZone {
-    grid-row: 2;
-  }
-
-  .decisionZone {
-    grid-row: 3;
-  }
-
-  .editorialSurface {
+  .hero {
+    display: flex;
+    flex-direction: column;
     min-height: 0;
   }
 
-  .editorialSurface :global(h1) {
-    font-size: clamp(42px, 13vw, 54px);
-    max-width: 10ch;
+  .editorial {
+    display: contents;
   }
 
-  .editorialSurface :global(p) {
-    font-size: 16px;
+  .copy {
+    order: 1;
+  }
+
+  .stageColumn {
+    display: contents;
   }
 
   .stage {
     min-height: 500px;
+    order: 2;
+  }
+
+  .divider {
+    order: 3;
+  }
+
+  .decision {
+    margin: var(--oluk-space-4);
+    order: 4;
+  }
+
+  .copy h1 {
+    font-size: clamp(42px, 13vw, 54px);
+    max-width: 10ch;
+  }
+
+  .copy p {
+    font-size: var(--oluk-type-body-size);
   }
 
   .bottle {

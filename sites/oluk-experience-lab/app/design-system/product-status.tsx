@@ -10,8 +10,8 @@ const inventoryLabels: Readonly<Record<InventoryState, string>> = {
 };
 
 const evidenceLabels: Readonly<Record<EvidenceState, string>> = {
-  verified: "OPENLAB VERIFIED",
-  available: "RECORD AVAILABLE",
+  verified: "OPENLAB REPORTED",
+  available: "EVIDENCE UNAVAILABLE",
   unavailable: "EVIDENCE UNAVAILABLE",
 };
 
@@ -30,6 +30,7 @@ export function StockPill({ state = "in-stock", className }: StockPillProps) {
         "oluk-inventory-status",
         className,
       )}
+      data-oluk-status-kind="availability"
       data-state={state}
     >
       <i aria-hidden="true" />
@@ -51,7 +52,7 @@ export type EvidenceStatusProps = Readonly<{
   className?: string;
 }>;
 
-export function EvidenceStatus({ state = "verified", compact = false, className }: EvidenceStatusProps) {
+export function EvidenceStatus({ state = "unavailable", compact = false, className }: EvidenceStatusProps) {
   return (
     <span
       className={classes(
@@ -61,6 +62,7 @@ export function EvidenceStatus({ state = "verified", compact = false, className 
         "oluk-evidence-status",
         className,
       )}
+      data-oluk-status-kind="evidence"
       data-state={state}
     >
       <span className="oluk-candidate-evidence-icon">
@@ -80,7 +82,7 @@ export type ProductStatusStackProps = Readonly<{
 
 export function ProductStatusStack({
   inventory = "in-stock",
-  evidence = "verified",
+  evidence = "unavailable",
   compactEvidence = true,
   className,
 }: ProductStatusStackProps) {
