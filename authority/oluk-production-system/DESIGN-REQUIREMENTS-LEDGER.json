@@ -9,7 +9,7 @@
   },
   "sourcePins": {
     "programmeAmendmentSha256": "f33b2713377160b46b84151dd52f71415393d341ebcf452b6e7c316a5e192ca0",
-    "runtimeContractSha256": "233a99f87c0164edafed71e850c65c9d6d8ae371af7cdd44e883ccff78343967",
+    "runtimeContractSha256": "7aa1f4cfc02d441d672626067ab65979c3c7184f73dfe545322e43e14899154c",
     "legacyDispositionRegistrySha256": "ece13e6003a615caed395186f9ce547a7d06bf17bc607eead48f40d760c29458"
   },
   "requirements": [

@@ -19,7 +19,7 @@ The only runtime contract referenced by this Wave 0 Design lane is:
 | Source | Exact pin | Role |
 | --- | --- | --- |
 | Programme amendment | `f33b2713377160b46b84151dd52f71415393d341ebcf452b6e7c316a5e192ca0` | Governs the provider-neutral Wave 0 authority correction. |
-| Production runtime contract | `233a99f87c0164edafed71e850c65c9d6d8ae371af7cdd44e883ccff78343967` | Owns field meaning, values, allowed states, mutation, and lifecycle behavior. |
+| Production runtime contract | `7aa1f4cfc02d441d672626067ab65979c3c7184f73dfe545322e43e14899154c` | Owns field meaning, values, allowed states, mutation, and lifecycle behavior. |
 | Legacy disposition registry | `ece13e6003a615caed395186f9ce547a7d06bf17bc607eead48f40d760c29458` | Classifies historical and compatibility material without granting it authority. |
 
 These SHA-256 pins are immutable content digests. Design remains a reference consumer of the runtime field contract and cannot promote itself into runtime or commerce authority.

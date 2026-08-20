@@ -21,10 +21,7 @@
       "const": "oluk.design-requirements-ledger.v1"
     },
     "status": {
-      "enum": [
-        "REFERENCE_ONLY_PENDING_EXACT_SHAS",
-        "REFERENCE_ONLY_PINNED"
-      ]
+      "const": "REFERENCE_ONLY_PINNED"
     },
     "authorityPin": {
       "type": "object",
