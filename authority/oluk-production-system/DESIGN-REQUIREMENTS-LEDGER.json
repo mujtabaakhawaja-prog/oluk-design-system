@@ -1,0 +1,590 @@
+{
+  "$schema": "./schemas/design-requirements-ledger.schema.json",
+  "schemaVersion": "oluk.design-requirements-ledger.v1",
+  "status": "REFERENCE_ONLY_PINNED",
+  "authorityPin": {
+    "document": "DESIGN-AUTHORITY-PIN.md",
+    "runtimeContractId": "OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1",
+    "runtimeContractVersion": "1.0.0"
+  },
+  "sourcePins": {
+    "programmeAmendmentSha256": "f33b2713377160b46b84151dd52f71415393d341ebcf452b6e7c316a5e192ca0",
+    "runtimeContractSha256": "7aa1f4cfc02d441d672626067ab65979c3c7184f73dfe545322e43e14899154c",
+    "legacyDispositionRegistrySha256": "ece13e6003a615caed395186f9ce547a7d06bf17bc607eead48f40d760c29458"
+  },
+  "requirements": [
+    {
+      "requirementId": "DSR-001",
+      "kind": "component",
+      "name": "ProductCommerceCard",
+      "componentOwner": "OLUK Design System / commerce components",
+      "surfaceContexts": [
+        "product discovery",
+        "product relation",
+        "product promotion"
+      ],
+      "contractRef": {
+        "contractId": "OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1",
+        "version": "1.0.0"
+      },
+      "fieldRefs": [
+        {
+          "fieldId": "product.canonicalProductId",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-component",
+            "requirement": "Do not render an addressable commerce card without canonical product identity."
+          }
+        },
+        {
+          "fieldId": "product.canonicalSku",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Omit the SKU element without inventing a label or deriving identity."
+          }
+        },
+        {
+          "fieldId": "product.customerName",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-component",
+            "requirement": "Do not substitute a fixture or catalogue alias for the customer-facing name."
+          }
+        },
+        {
+          "fieldId": "commerce.price.amountMinor",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Keep the product identifiable but remove purchase affordance and present a non-priced unavailable treatment."
+          }
+        },
+        {
+          "fieldId": "commerce.price.currency",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Do not format or infer a currency; remove purchase affordance with the price."
+          }
+        },
+        {
+          "fieldId": "commerce.availability.state",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Use the neutral unavailable presentation and do not infer availability from quantity or price."
+          }
+        },
+        {
+          "fieldId": "commerce.purchasability.state",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "disable-interaction",
+            "requirement": "Disable the purchase action without deriving purchasability from any other field."
+          }
+        },
+        {
+          "fieldId": "commerce.quantity.minimum",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Omit quantity controls that require a minimum and leave quantity choice to the owning host."
+          }
+        },
+        {
+          "fieldId": "commerce.quantity.maximum",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Do not expose an unconstrained quantity control when the maximum is absent."
+          }
+        },
+        {
+          "fieldId": "commerce.quantity.step",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Do not assume a step; omit the local quantity control."
+          }
+        },
+        {
+          "fieldId": "media.primary.handle",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "preserve-layout-without-value",
+            "requirement": "Preserve the authored media region as intentionally unpopulated without substituting another product render."
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "discovery",
+          "requirement": "Support repeated product discovery without changing field ownership or inventing missing commerce truth."
+        },
+        {
+          "id": "relation",
+          "requirement": "Support a related-product context while preserving the same identity and commerce reference obligations."
+        },
+        {
+          "id": "featured",
+          "requirement": "Support single-product emphasis without gaining additional runtime fields or mutation authority."
+        }
+      ],
+      "stateObligations": [
+        {
+          "id": "data-complete",
+          "requirement": "Expose the runtime-projected identity, price, availability, and purchasability without local derivation."
+        },
+        {
+          "id": "commerce-unavailable",
+          "requirement": "Keep identity readable, remove purchase affordance, and avoid optimistic stock or price presentation."
+        },
+        {
+          "id": "interaction-disabled",
+          "requirement": "Show the purchase action as unavailable and preserve a programmatic explanation supplied by the host."
+        },
+        {
+          "id": "media-missing",
+          "requirement": "Retain coherent structure without substituting unregistered media."
+        }
+      ],
+      "responsiveObligations": [
+        {
+          "id": "wide",
+          "requirement": "Permit media, facts, status, price, and action to coexist without changing reading order."
+        },
+        {
+          "id": "compact",
+          "requirement": "Reflow to one product decision at a time with identity and status before the purchase action."
+        },
+        {
+          "id": "content-stress",
+          "requirement": "Wrap customer names and localized price output without collision, clipping, or action displacement."
+        }
+      ],
+      "accessibilityObligations": [
+        {
+          "id": "semantic-group",
+          "requirement": "Expose one coherent product group with an unambiguous accessible name."
+        },
+        {
+          "id": "focus-order",
+          "requirement": "Keep focus order aligned with identity, supporting link, quantity if present, and purchase action."
+        },
+        {
+          "id": "non-color-status",
+          "requirement": "Communicate availability and disabled action state with text or semantics in addition to color."
+        },
+        {
+          "id": "image-alternative",
+          "requirement": "Treat the registered product media as informative or decorative consistently with the host context."
+        }
+      ],
+      "forbiddenBehaviors": [
+        "Do not format amountMinor without the referenced currency.",
+        "Do not infer availability or purchasability from price, media, quantity, or historical fixtures.",
+        "Do not perform commerce mutation from the component.",
+        "Do not branch presentation by provider identity."
+      ]
+    },
+    {
+      "requirementId": "DSR-002",
+      "kind": "surface",
+      "name": "Shipping choice",
+      "componentOwner": "OLUK Design System / checkout choice surfaces",
+      "surfaceContexts": [
+        "checkout shipping selection"
+      ],
+      "contractRef": {
+        "contractId": "OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1",
+        "version": "1.0.0"
+      },
+      "fieldRefs": [
+        {
+          "fieldId": "shipping.options[].shippingOptionId",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-item",
+            "requirement": "Do not render or select a shipping option without runtime identity."
+          }
+        },
+        {
+          "fieldId": "shipping.options[].label",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-item",
+            "requirement": "Do not invent a customer label for an unidentified choice."
+          }
+        },
+        {
+          "fieldId": "shipping.options[].amountMinor",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Keep the option non-selectable and do not infer a free or estimated amount."
+          }
+        },
+        {
+          "fieldId": "shipping.options[].currency",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Do not format the amount or allow selection without its currency."
+          }
+        },
+        {
+          "fieldId": "shipping.options[].eligible",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "disable-interaction",
+            "requirement": "Treat eligibility as unresolved; do not infer it from the option's presence."
+          }
+        },
+        {
+          "fieldId": "shipping.options[].selected",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "disable-interaction",
+            "requirement": "Do not create a local default selection or continue with an assumed option."
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "single-choice",
+          "requirement": "Present the sole runtime option without implying that Design selected it."
+        },
+        {
+          "id": "multiple-choice",
+          "requirement": "Present mutually exclusive runtime choices with stable option identity."
+        }
+      ],
+      "stateObligations": [
+        {
+          "id": "choice-ready",
+          "requirement": "Expose eligible choices and the runtime-projected selection."
+        },
+        {
+          "id": "choice-unavailable",
+          "requirement": "Retain the option label when safe, block selection, and avoid a fabricated amount."
+        },
+        {
+          "id": "choice-unresolved",
+          "requirement": "Block continuation that depends on a shipping choice until the host supplies resolved data."
+        }
+      ],
+      "responsiveObligations": [
+        {
+          "id": "wide",
+          "requirement": "Keep label, amount, eligibility explanation, and selection control associated per option."
+        },
+        {
+          "id": "compact",
+          "requirement": "Stack option content without separating the control from its label or amount."
+        },
+        {
+          "id": "localized-content",
+          "requirement": "Allow labels and formatted amounts to wrap without overlap or loss of selection affordance."
+        }
+      ],
+      "accessibilityObligations": [
+        {
+          "id": "group-label",
+          "requirement": "Expose the shipping choices as one programmatically named selection group."
+        },
+        {
+          "id": "selection-state",
+          "requirement": "Expose the selected state through native or equivalent programmatic semantics."
+        },
+        {
+          "id": "disabled-explanation",
+          "requirement": "Associate an unavailable option with its runtime-supplied explanation when one is provided."
+        },
+        {
+          "id": "keyboard-operation",
+          "requirement": "Support complete keyboard traversal and mutually exclusive selection behavior."
+        }
+      ],
+      "forbiddenBehaviors": [
+        "Do not calculate shipping amounts in Design.",
+        "Do not infer eligibility or selection from array order.",
+        "Do not persist a local shipping choice as authority.",
+        "Do not continue checkout from this presentation contract."
+      ]
+    },
+    {
+      "requirementId": "DSR-003",
+      "kind": "surface",
+      "name": "OPENLAB evidence",
+      "componentOwner": "OLUK Design System / evidence surfaces",
+      "surfaceContexts": [
+        "product evidence summary",
+        "OPENLAB evidence record"
+      ],
+      "contractRef": {
+        "contractId": "OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1",
+        "version": "1.0.0"
+      },
+      "fieldRefs": [
+        {
+          "fieldId": "openlab.evidenceRecords[].evidenceRecordId",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-item",
+            "requirement": "Do not render an evidence record without its source-owned identity."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].reportId",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-item",
+            "requirement": "Do not merge the record with another report or infer report identity."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].batchId",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Omit batch identification without deriving it from product, report, or document identity."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].documents[].documentId",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "suppress-item",
+            "requirement": "Do not expose an evidence-document action without a source-owned document identity."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].methodology",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Omit methodology rather than substituting a generic test method."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].analytes[].analyteId",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-item",
+            "requirement": "Do not render or combine an analyte row without its source-owned identity."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].analytes[].result",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Present the analyte result as unavailable without interpreting other evidence fields."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].analytes[].displayValue",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Omit the customer display value; do not format or calculate one from result."
+          }
+        },
+        {
+          "fieldId": "openlab.evidenceRecords[].analytes[].unit",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Omit the unit and any dependent display; do not infer one from methodology or analyte identity."
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "summary",
+          "requirement": "Present source-projected evidence identity and availability without collapsing records or analytes."
+        },
+        {
+          "id": "record-detail",
+          "requirement": "Present one evidence record with its projected report, document, methodology, and analyte relationships intact."
+        }
+      ],
+      "stateObligations": [
+        {
+          "id": "evidence-available",
+          "requirement": "Render only fields present in the source-owned projection and preserve record boundaries."
+        },
+        {
+          "id": "evidence-incomplete",
+          "requirement": "Identify missing optional evidence presentation without implying a failed or passed result."
+        },
+        {
+          "id": "evidence-unavailable",
+          "requirement": "Use a neutral unavailable presentation and expose no inferred evidence claim."
+        }
+      ],
+      "responsiveObligations": [
+        {
+          "id": "wide",
+          "requirement": "Keep report, batch when present, methodology, documents, and analytes within the same record boundary."
+        },
+        {
+          "id": "compact",
+          "requirement": "Reflow records and analytes without converting relationships into an ambiguous flat list."
+        },
+        {
+          "id": "dense-evidence",
+          "requirement": "Support long methodology and multiple analytes without clipping, horizontal page overflow, or detached units."
+        }
+      ],
+      "accessibilityObligations": [
+        {
+          "id": "record-structure",
+          "requirement": "Expose each evidence record and analyte collection with navigable semantic structure."
+        },
+        {
+          "id": "document-purpose",
+          "requirement": "Give each available evidence-document action a purpose that distinguishes its record."
+        },
+        {
+          "id": "non-color-result",
+          "requirement": "Do not rely on color alone to communicate result or availability presentation."
+        },
+        {
+          "id": "reading-order",
+          "requirement": "Preserve report context before methodology, documents, and analytes in visual and programmatic order."
+        }
+      ],
+      "forbiddenBehaviors": [
+        "Do not infer evidence, aggregate reports, or combine analytes in Design.",
+        "Do not calculate or reformat analyte display values.",
+        "Do not substitute product, batch, report, document, or analyte identity.",
+        "Do not encode source wire types, allowed values, defaults, or thresholds in this ledger."
+      ]
+    },
+    {
+      "requirementId": "DSR-004",
+      "kind": "surface",
+      "name": "Order status",
+      "componentOwner": "OLUK Design System / post-purchase status surfaces",
+      "surfaceContexts": [
+        "order completion",
+        "order received",
+        "order revisit"
+      ],
+      "contractRef": {
+        "contractId": "OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1",
+        "version": "1.0.0"
+      },
+      "fieldRefs": [
+        {
+          "fieldId": "lifecycle.cart.state",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Do not infer or reconstruct prior cart progression on a post-purchase status surface."
+          }
+        },
+        {
+          "fieldId": "lifecycle.checkout.state",
+          "necessity": "optional",
+          "missingBehavior": {
+            "mode": "omit-element",
+            "requirement": "Do not infer or reconstruct prior checkout progression on a post-purchase status surface."
+          }
+        },
+        {
+          "fieldId": "lifecycle.order.state",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Present unresolved order status without converting payment or route context into an order state."
+          }
+        },
+        {
+          "fieldId": "order.publicOrderId",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "suppress-component",
+            "requirement": "Do not render a customer order-status record without its public order identity."
+          }
+        },
+        {
+          "fieldId": "order.paymentState",
+          "necessity": "required",
+          "missingBehavior": {
+            "mode": "render-unavailable",
+            "requirement": "Present payment status as unresolved and do not derive it from order state."
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "completion",
+          "requirement": "Support the immediate post-checkout status surface without asserting finality beyond runtime fields."
+        },
+        {
+          "id": "received",
+          "requirement": "Support the order-received context using the same public order identity and independent status refs."
+        },
+        {
+          "id": "revisit",
+          "requirement": "Support later status retrieval without replaying or locally advancing lifecycle state."
+        }
+      ],
+      "stateObligations": [
+        {
+          "id": "status-resolved",
+          "requirement": "Render lifecycle order state and payment state as separate runtime-owned facts."
+        },
+        {
+          "id": "status-unresolved",
+          "requirement": "Use a neutral unresolved presentation without asserting success, failure, or cancellation."
+        },
+        {
+          "id": "identity-missing",
+          "requirement": "Suppress the order record and defer recovery or lookup behavior to the runtime owner."
+        }
+      ],
+      "responsiveObligations": [
+        {
+          "id": "wide",
+          "requirement": "Keep public order identity, order state, payment state, and any host actions in a clear hierarchy."
+        },
+        {
+          "id": "compact",
+          "requirement": "Preserve public order identity before statuses and actions in a single-column reading order."
+        },
+        {
+          "id": "status-stress",
+          "requirement": "Allow runtime-projected customer-safe status content to wrap without clipping or action overlap."
+        }
+      ],
+      "accessibilityObligations": [
+        {
+          "id": "status-heading",
+          "requirement": "Provide an ordered heading structure that identifies the order-status region."
+        },
+        {
+          "id": "status-announcement",
+          "requirement": "Permit host-controlled announcement when a displayed status changes without forcing unsolicited repeated announcements."
+        },
+        {
+          "id": "state-distinction",
+          "requirement": "Distinguish order and payment status through explicit labels and semantics, not color alone."
+        },
+        {
+          "id": "action-purpose",
+          "requirement": "Keep any runtime-supplied action purpose explicit and associated with the public order identity."
+        }
+      ],
+      "forbiddenBehaviors": [
+        "Do not derive order state from payment state or payment state from order state.",
+        "Do not locally advance, retry, or persist lifecycle state.",
+        "Do not expose provider identity or provider-specific status language.",
+        "Do not treat completion, received, or revisit presentation as payment authority."
+      ]
+    }
+  ]
+}
