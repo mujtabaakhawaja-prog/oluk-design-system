@@ -11,45 +11,68 @@ import {
 } from "react";
 
 import { ActionButton, ActionLink } from "./action-control";
-import { DecisionSurface, EditorialSurface } from "./content-surfaces";
-import { lockedHomeHeroMedia } from "./locked-home-hero-media";
 import { MetricRail } from "./metric-rail";
-import { SurfaceGrid, SurfaceGridZone } from "./surface-grid";
 import styles from "./locked-home-hero.module.css";
 
-const products = [
-  { id: "mk-2866", name: "MK-2866", alias: "Ostarine", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£43", media: lockedHomeHeroMedia["mk-2866"], href: "/product/mk-2866" },
-  { id: "ment", name: "MENT", alias: "Trestolone", strength: "20 MG", servings: "30 SERVINGS", purity: ">99%", price: "£49", media: lockedHomeHeroMedia.ment, href: "/shop?search=MENT" },
-  { id: "endurashred", name: "ENDURASHRED", alias: "LGD-4033 + MK-2866", strength: "16.5 MG", servings: "90 SERVINGS", purity: ">99%", price: "£59", media: lockedHomeHeroMedia.endurashred, href: "/shop?search=ENDURASHRED" },
-  { id: "rad-140", name: "RAD-140", alias: "Testolone", strength: "8 MG", servings: "60 SERVINGS", purity: ">99%", price: "£55", media: lockedHomeHeroMedia["rad-140"], href: "/shop?search=RAD-140" },
-  { id: "mk-677", name: "MK-677", alias: "Ibutamoren", strength: "15 MG", servings: "90 SERVINGS", purity: ">99%", price: "£45", media: lockedHomeHeroMedia["mk-677"], href: "/shop?search=MK-677" },
-] as const;
+export type LockedHomeHeroProduct = Readonly<{
+  canonicalProductId: string;
+  productName: string;
+  alias?: string | null;
+  strengthDisplay?: string | null;
+  servingsDisplay?: string | null;
+  purityDisplay?: string | null;
+  priceDisplay?: string | null;
+  href: string;
+  media: Readonly<{
+    src: string;
+    width: number;
+    height: number;
+  }>;
+}>;
 
-type HeroProduct = (typeof products)[number];
-type HeroProductId = HeroProduct["id"];
+export type LockedHomeHeroContent = Readonly<{
+  eyebrow: string;
+  title: string;
+  description?: string | null;
+  primaryAction: Readonly<{ href: string; label: string }>;
+  secondaryAction?: Readonly<{ href: string; label: string }> | null;
+}>;
 
-const defaultProductId = products[0].id;
+export type LockedHomeHeroProps = Readonly<{
+  /**
+   * Exactly five canonical, server-bound products are required by the 5-3-1
+   * stage. The component suppresses itself rather than restoring fixtures.
+   */
+  products?: readonly LockedHomeHeroProduct[];
+  /** Owner-approved customer copy. No candidate copy is supplied locally. */
+  content?: LockedHomeHeroContent | null;
+}>;
+
+const emptyProducts: readonly LockedHomeHeroProduct[] = [];
 const featuredProductParam = "featured";
 
-function isHeroProductId(value: string | null): value is HeroProductId {
-  return products.some((product) => product.id === value);
+function isHeroProductId(
+  value: string | null,
+  products: readonly LockedHomeHeroProduct[],
+): value is string {
+  return Boolean(value) && products.some((product) => product.canonicalProductId === value);
 }
 
-function featuredProductFromLocation(): HeroProductId {
-  if (typeof window === "undefined") return defaultProductId;
+function featuredProductFromLocation(products: readonly LockedHomeHeroProduct[]) {
+  const defaultProductId = products[0]?.canonicalProductId ?? "";
+  if (typeof window === "undefined" || !defaultProductId) return defaultProductId;
   const featured = new URL(window.location.href).searchParams.get(featuredProductParam);
-  return isHeroProductId(featured) ? featured : defaultProductId;
+  return isHeroProductId(featured, products) ? featured : defaultProductId;
 }
 
-function writeFeaturedProductToLocation(productId: HeroProductId) {
+function writeFeaturedProductToLocation(productId: string, defaultProductId: string) {
   const url = new URL(window.location.href);
   if (productId === defaultProductId) url.searchParams.delete(featuredProductParam);
   else url.searchParams.set(featuredProductParam, productId);
   window.history.replaceState(window.history.state, "", url);
 }
 
-function relativeSlot(index: number, activeIndex: number) {
-  const count = products.length;
+function relativeSlot(index: number, activeIndex: number, count: number) {
   let delta = index - activeIndex;
   if (delta > count / 2) delta -= count;
   if (delta < -count / 2) delta += count;
@@ -71,22 +94,33 @@ function ArrowIcon({ direction }: Readonly<{ direction: "previous" | "next" }>) 
   );
 }
 
-export function LockedHomeHero() {
-  const [activeId, setActiveId] = useState<HeroProductId>(defaultProductId);
+export function LockedHomeHero({
+  content,
+  products = emptyProducts,
+}: LockedHomeHeroProps = {}) {
+  const defaultProductId = products.length === 5 ? products[0]?.canonicalProductId ?? "" : "";
+  const [activeId, setActiveId] = useState(defaultProductId);
   const rootRef = useRef<HTMLElement | null>(null);
-  const activeIndex = products.findIndex((product) => product.id === activeId);
+  const resolvedIndex = products.findIndex((product) => product.canonicalProductId === activeId);
+  const activeIndex = resolvedIndex >= 0 ? resolvedIndex : 0;
   const active = products[activeIndex];
   const ordered = useMemo(
-    () => products.map((product, index) => ({ product, slot: relativeSlot(index, activeIndex) })),
-    [activeIndex],
+    () => products.map((product, index) => ({
+      product,
+      slot: relativeSlot(index, activeIndex, products.length),
+    })),
+    [activeIndex, products],
   );
 
   const selectProduct = useCallback((
-    productId: HeroProductId,
+    productId: string,
     options?: Readonly<{ focus?: boolean; writeLocation?: boolean }>,
   ) => {
+    if (!isHeroProductId(productId, products)) return;
     setActiveId(productId);
-    if (options?.writeLocation !== false) writeFeaturedProductToLocation(productId);
+    if (options?.writeLocation !== false) {
+      writeFeaturedProductToLocation(productId, defaultProductId);
+    }
     if (options?.focus) {
       window.requestAnimationFrame(() => {
         rootRef.current
@@ -94,10 +128,11 @@ export function LockedHomeHero() {
           ?.focus();
       });
     }
-  }, []);
+  }, [defaultProductId, products]);
 
   useEffect(() => {
-    const restoreProduct = () => setActiveId(featuredProductFromLocation());
+    if (!defaultProductId) return;
+    const restoreProduct = () => setActiveId(featuredProductFromLocation(products));
 
     restoreProduct();
     window.addEventListener("popstate", restoreProduct);
@@ -106,14 +141,16 @@ export function LockedHomeHero() {
       window.removeEventListener("popstate", restoreProduct);
       window.removeEventListener("pageshow", restoreProduct);
     };
-  }, []);
+  }, [defaultProductId, products]);
 
   const moveFrom = useCallback((index: number, direction: -1 | 1) => {
+    if (products.length !== 5) return;
     const nextIndex = (index + direction + products.length) % products.length;
-    selectProduct(products[nextIndex].id, { focus: true });
-  }, [selectProduct]);
+    selectProduct(products[nextIndex].canonicalProductId, { focus: true });
+  }, [products, selectProduct]);
 
   const onTabKeyDown = useCallback((event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (products.length !== 5) return;
     let nextIndex: number | null = null;
     if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % products.length;
     if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + products.length) % products.length;
@@ -121,40 +158,101 @@ export function LockedHomeHero() {
     if (event.key === "End") nextIndex = products.length - 1;
     if (nextIndex === null) return;
     event.preventDefault();
-    selectProduct(products[nextIndex].id, { focus: true });
-  }, [selectProduct]);
+    selectProduct(products[nextIndex].canonicalProductId, { focus: true });
+  }, [products, selectProduct]);
+
+  if (!content || products.length !== 5 || !active) return null;
 
   return (
     <section
       className={styles.canvas}
-      data-figma-node="1155:29963"
       data-motion-contract="runtime-product-stage-5-3-1"
       data-state-restoration="url-featured-product"
       id="hero"
       ref={rootRef}
     >
-      <SurfaceGrid className={styles.composition}>
-        <SurfaceGridZone className={styles.editorialZone} zone="split-start">
-          <EditorialSurface
-            actions={(
-              <>
-                <ActionLink href="/shop">Shop the range</ActionLink>
-                <ActionLink href="/open-lab/records" variant="secondary">View Lab Records</ActionLink>
-              </>
-            )}
-            className={styles.editorialSurface}
-            copy="Third-party tested products, clearly stated specifications and direct access to available lab records—before you choose."
-            eyebrow="Formulated. Verified. Batch tracked."
-            headingLevel="h1"
-            title="Formulated to a higher standard."
-          />
-        </SurfaceGridZone>
-
-        <SurfaceGridZone className={styles.stageZone} zone="split-end">
+      <div className={styles.hero} data-home-family="locked-5-3-1">
+        <div className={styles.editorial}>
           <div
-            aria-labelledby={`hero-product-tab-${active.id}`}
+            className={styles.copy}
+            data-copy-sequence="eyebrow-title-primary-actions"
+            data-copy-surface="editorial"
+            data-mobile-strategy="recompose"
+          >
+            <span>{content.eyebrow}</span>
+            <h1>{content.title}</h1>
+            {content.description ? <p>{content.description}</p> : null}
+            <div className={styles.actions}>
+              <ActionLink href={content.primaryAction.href}>{content.primaryAction.label}</ActionLink>
+              {content.secondaryAction ? (
+                <ActionLink href={content.secondaryAction.href} variant="secondary">
+                  {content.secondaryAction.label}
+                </ActionLink>
+              ) : null}
+            </div>
+          </div>
+          <div aria-hidden="true" className={styles.divider} />
+          <section className={styles.decision} data-copy-surface="decision">
+            <div className={styles.identity}>
+              <span>Featured product</span>
+              <h2>{active.productName}</h2>
+              {active.alias ? <p>{active.alias}</p> : null}
+            </div>
+            <p aria-atomic="true" aria-live="polite" className="sr-only">
+              Featured product changed to {active.productName}
+              {active.alias ? `, ${active.alias}` : ""}.
+            </p>
+            <MetricRail
+              className={styles.metrics}
+              values={{
+                purity: active.purityDisplay ?? null,
+                servings: active.servingsDisplay ?? null,
+                strength: active.strengthDisplay ?? null,
+              }}
+            />
+            <div className={styles.commerceRow}>
+              {active.priceDisplay ? (
+                <div className={styles.price}>
+                  <span>Price</span>
+                  <strong>{active.priceDisplay}</strong>
+                </div>
+              ) : null}
+              <div className={styles.commerceActions}>
+                <ActionLink href={active.href} size="compact">View product</ActionLink>
+              </div>
+            </div>
+            <div
+              aria-label="Featured product"
+              aria-orientation="horizontal"
+              className={styles.tabs}
+              role="tablist"
+            >
+              {products.map((product, index) => (
+                <ActionButton
+                  aria-controls="hero-product-stage"
+                  aria-selected={product.canonicalProductId === active.canonicalProductId}
+                  className={styles.tabControl}
+                  data-hero-product={product.canonicalProductId}
+                  id={`hero-product-tab-${product.canonicalProductId}`}
+                  key={product.canonicalProductId}
+                  onClick={() => selectProduct(product.canonicalProductId)}
+                  onKeyDown={(event) => onTabKeyDown(event, index)}
+                  role="tab"
+                  size="compact"
+                  tabIndex={product.canonicalProductId === active.canonicalProductId ? 0 : -1}
+                  variant={product.canonicalProductId === active.canonicalProductId ? "primary" : "secondary"}
+                >
+                  {product.productName}
+                </ActionButton>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <div className={styles.stageColumn}>
+          <div
+            aria-labelledby={`hero-product-tab-${active.canonicalProductId}`}
             className={styles.stage}
-            data-figma-stage-node="462:4684"
             data-mobile-priority="active-product-first"
             data-proof-allow-overflow
             data-reduced-motion="static-state"
@@ -164,23 +262,23 @@ export function LockedHomeHero() {
           >
             <span aria-hidden="true" className={styles.glow} />
             {ordered.map(({ product, slot }) => (
-              /* A bottle is the authored media-stage selector itself, not a locally
-                 redrawn visible action. All labelled action controls below use ActionControl. */
               <button
-                aria-label={`Show ${product.name} in the featured product stage`}
+                aria-label={`Show ${product.productName} in the featured product stage`}
                 aria-pressed={slot === 0}
                 className={styles.bottle}
                 data-control-exception="authored-media-stage-selector"
                 data-active={slot === 0 || undefined}
                 data-stage-media-selector
                 data-slot={slot}
-                key={product.id}
-                onClick={() => selectProduct(product.id)}
+                key={product.canonicalProductId}
+                onClick={() => selectProduct(product.canonicalProductId)}
                 tabIndex={slot === 0 ? 0 : -1}
                 type="button"
               >
                 <img
-                  alt={slot === 0 ? `${product.name} ${product.alias} bottle` : ""}
+                  alt={slot === 0
+                    ? `${product.productName}${product.alias ? ` ${product.alias}` : ""} bottle`
+                    : ""}
                   decoding="async"
                   fetchPriority={slot === 0 ? "high" : "auto"}
                   height={product.media.height}
@@ -215,65 +313,8 @@ export function LockedHomeHero() {
               </ActionButton>
             </div>
           </div>
-        </SurfaceGridZone>
-
-        <SurfaceGridZone className={styles.decisionZone} zone="split-start">
-          <DecisionSurface
-            className={styles.decisionSurface}
-            compact
-            copy={active.alias}
-            eyebrow="FEATURED PRODUCT"
-            title={active.name}
-          >
-            <p aria-atomic="true" aria-live="polite" className="sr-only">
-              Featured product changed to {active.name}, {active.alias}.
-            </p>
-            <MetricRail
-              className={styles.metrics}
-              values={{
-                purity: active.purity,
-                servings: active.servings,
-                strength: active.strength,
-              }}
-            />
-            <div className={styles.commerceRow}>
-              <div className={styles.price}>
-                <span>Price</span>
-                <strong>{active.price}</strong>
-              </div>
-              <div className={styles.commerceActions}>
-                <ActionLink href={active.href} size="compact">View product</ActionLink>
-                <ActionButton disabled size="compact" variant="secondary">Add to bag</ActionButton>
-              </div>
-            </div>
-            <div
-              aria-label="Featured product"
-              aria-orientation="horizontal"
-              className={styles.tabs}
-              role="tablist"
-            >
-              {products.map((product, index) => (
-                <ActionButton
-                  aria-controls="hero-product-stage"
-                  aria-selected={product.id === active.id}
-                  className={styles.tabControl}
-                  data-hero-product={product.id}
-                  id={`hero-product-tab-${product.id}`}
-                  key={product.id}
-                  onClick={() => selectProduct(product.id)}
-                  onKeyDown={(event) => onTabKeyDown(event, index)}
-                  role="tab"
-                  size="compact"
-                  tabIndex={product.id === active.id ? 0 : -1}
-                  variant={product.id === active.id ? "primary" : "secondary"}
-                >
-                  {product.name}
-                </ActionButton>
-              ))}
-            </div>
-          </DecisionSurface>
-        </SurfaceGridZone>
-      </SurfaceGrid>
+        </div>
+      </div>
     </section>
   );
 }
