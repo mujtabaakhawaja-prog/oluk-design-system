@@ -4,8 +4,6 @@ import type { FrontierProductRecord } from "./frontier-content";
 import { actualProductMedia, frontierFaq, frontierProducts } from "./frontier-content";
 import { EvidenceStatusChip, RecommendationCard, RestockCard } from "./program-components";
 import { YourStackBuilder } from "./your-stack-builder";
-import { ProductCommerceCard } from "./product-commerce-card";
-import { mk2866Fixture } from "./product-fixtures";
 import { TransactionPresentation, type TransactionStage } from "./transaction-presentation";
 import styles from "./frontier-sections.module.css";
 
@@ -43,5 +41,70 @@ const checkoutLifecycleStage: Record<string, TransactionStage> = {
 export function CheckoutLifecycle({stage}:{stage:string}){
   return <TransactionPresentation stage={checkoutLifecycleStage[stage] ?? "details"}/>;
 }
-export function AccountHub({mode}:{mode:string}){const title=mode==="dashboard"?"Everything you need, ready when you return.":mode==="orders"?"Your orders, receipts and tracking in one place.":mode==="loyalty"?"Turn every order into your next advantage.":`Manage your ${mode.replaceAll("-"," ")}.`;return <section className={styles.account}><header><span className={styles.eyebrow}>MY OLYMPUS</span><h1>{title}</h1><p>Pick up where you left off, make the next order easy, and keep your strongest product decisions close.</p></header><div className={styles.accountGrid}><article><span>ORDER HISTORY</span><h3>MK-2866</h3><p>Track the delivery, open the receipt, or return to the product in one place.</p><Link href="/checkout/tracking">Track order →</Link></article><article><span>RESTOCK LAB</span><h3>Ready for the next phase</h3><p>Stay ahead of your next order with a clear return window and a one-tap path back to the product.</p><Link href="/product/mk-2866">View restock plan →</Link></article><article><span>LOYALTY</span><h3>320 points</h3><p>See your tier, unlock the next reward, and make every order go further.</p><Link href="/account/loyalty">View rewards →</Link></article></div><div className={styles.growthGrid}><RestockCard state="due-soon"/><RecommendationCard state="default"/><ProductCommerceCard contextKicker="READY TO REORDER" product={mk2866Fixture} secondaryHref="/checkout/tracking" secondaryLabel="Track latest order" variant="compact"/></div><YourStackBuilder baselineSlug="mk-2866" host="account"/></section>}
+export type AccountSessionState = "unauthenticated" | "empty" | "unavailable";
+
+const accountStateContent = {
+  unauthenticated: {
+    eyebrow: "ACCOUNT ACCESS",
+    title: "Sign in to continue",
+    copy: "Sign in to view your orders and saved account details.",
+    action: "Open account access",
+    href: "/account",
+  },
+  empty: {
+    eyebrow: "YOUR ACCOUNT",
+    title: "Nothing to show yet",
+    copy: "Orders and saved details will appear here when they are available.",
+    action: "Browse products",
+    href: "/shop",
+  },
+  unavailable: {
+    eyebrow: "CURRENTLY UNAVAILABLE",
+    title: "Account details are unavailable",
+    copy: "We cannot show your account details right now. Try again later or contact us for help.",
+    action: "Contact us",
+    href: "/contact",
+  },
+} as const satisfies Readonly<Record<AccountSessionState, {
+  eyebrow: string;
+  title: string;
+  copy: string;
+  action: string;
+  href: string;
+}>>;
+
+export function AccountHub({
+  mode,
+  state = "unauthenticated",
+}: {
+  mode: string;
+  state?: AccountSessionState;
+}) {
+  const content = accountStateContent[state];
+  const title = mode === "dashboard"
+    ? "Your Olympus account."
+    : mode === "orders"
+      ? "Your orders."
+      : mode === "loyalty"
+        ? "Your account rewards."
+        : `Your ${mode.replaceAll("-", " ")}.`;
+
+  return (
+    <section className={styles.account} data-account-state={state}>
+      <header>
+        <span className={styles.eyebrow}>MY OLYMPUS</span>
+        <h1>{title}</h1>
+        <p>{content.copy}</p>
+      </header>
+      <div className={styles.accountGrid}>
+        <article>
+          <span>{content.eyebrow}</span>
+          <h3>{content.title}</h3>
+          <p>{content.copy}</p>
+          <Link href={content.href}>{content.action} →</Link>
+        </article>
+      </div>
+    </section>
+  );
+}
 export function SupportContent({kind}:{kind:"about"|"faq"|"bundle"|"tool"}){if(kind==="faq")return <section className={styles.faq}><span className={styles.eyebrow}>HELP CENTRE</span><h1>Get the answer and get moving.</h1>{frontierFaq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</section>;if(kind==="bundle")return <><FrontierShell eyebrow="BUNDLE BUILDER" title="Build the stack around your goal." copy="Choose the result, compare the products and see the full stack before you add anything to your bag."><StackExplorer/><GrowthModules/></FrontierShell></>;return <FrontierShell eyebrow={kind==="about"?"ABOUT OLYMPUS":"OPENLAB TOOLS"} title={kind==="about"?"Products made clearer from first look to lab record.":"Turn product research into a clearer decision."} copy={kind==="about"?"Explore the product standards, testing access and UK customer experience behind Olympus Labs UK.":"Compare compounds, build a stack or find the exact batch detail you came for."}><section className={styles.twoCol}><article><h2>Know what you are choosing.</h2><p>Clear product specifications, purposeful comparisons and direct lab-record access keep the important detail close to every decision.</p></article><article><h2>Move from research to action.</h2><p>Focused tools help you compare options, save a plan and return to the right product without wading through unnecessary detail.</p></article></section></FrontierShell>}

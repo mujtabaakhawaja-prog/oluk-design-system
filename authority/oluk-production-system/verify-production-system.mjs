@@ -21,8 +21,12 @@ const content = await readJson(path.join(productionRoot, "CUSTOMER-CONTENT-LEDGE
 const requirementsSchema = await readJson(path.join(productionRoot, "schemas/design-requirements-ledger.schema.json"));
 const contentSchema = await readJson(path.join(productionRoot, "schemas/customer-content-ledger.schema.json"));
 const homepage = await readJson(path.join(productionRoot, "HOMEPAGE-SYSTEM-EXTRACTION-V1.json"));
+const accountStates = await readJson(path.join(productionRoot, "ACCOUNT-TRANSACTION-STATE-LAW-V1.json"));
 const heroSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx"), "utf8");
 const statusSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/product-status.tsx"), "utf8");
+const frontierSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/frontier-sections.tsx"), "utf8");
+const transactionSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx"), "utf8");
+const postPurchaseSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/post-purchase-surface.tsx"), "utf8");
 
 assert(requirements.schemaVersion === requirementsSchema.properties.schemaVersion.const, "Design ledger schema version drift");
 assert(content.schemaVersion === contentSchema.properties.schemaVersion.const, "Content ledger schema version drift");
@@ -67,6 +71,22 @@ assert(heroSource.includes("products.length !== 5 || !active) return null"), "Ho
 assert(statusSource.includes('verified: "OPENLAB REPORTED"'), "Reported evidence label drift");
 assert(statusSource.includes('state = "unavailable"'), "Evidence status must default fail closed");
 assert(!statusSource.includes("OPENLAB VERIFIED") && !statusSource.includes("RECORD AVAILABLE"), "Forbidden evidence label entered active status source");
+
+assert(accountStates.packetId === "D3-ACCOUNT-STATES-01", "Account-state packet drift");
+assert(accountStates.baseCommit === "b5a32dc6f6006819d72c791abd2f16c6b4668e1a", "Account-state base drift");
+assert(accountStates.source.commit === "feea650c8623230d6b6558c28d3db3c64e9815b1", "Account-state source drift");
+for (const fieldId of accountStates.runtimeContract.fieldRefs) {
+  assert(designFieldIds.includes(fieldId), `Account state law references unknown field ${fieldId}`);
+}
+const accountHubSource = frontierSource.slice(frontierSource.indexOf("export type AccountSessionState"), frontierSource.indexOf("export function SupportContent"));
+for (const forbidden of ["MK-2866", "320 points", "ProductCommerceCard", "mk2866Fixture", "projection", "source-owned", "provenance"]) {
+  assert(!accountHubSource.toLowerCase().includes(forbidden.toLowerCase()), `AccountHub retains forbidden default/copy: ${forbidden}`);
+}
+assert(accountHubSource.includes('state = "unauthenticated"'), "AccountHub must default unauthenticated");
+assert(!postPurchaseSource.includes("OL-10428"), "Post-purchase alias must not invent an order reference");
+assert(transactionSource.includes("ownerBoundOrderStages"), "Canonical transaction surface lacks owner-bound stage gate");
+assert(transactionSource.includes("orderReference && ownerOrderContent"), "Order content must require public identity and owner content");
+assert(!transactionSource.includes('orderReference = "OL-10428"'), "Canonical transaction surface retains a fake order default");
 
 if (args["--c2-registry"]) {
   const registry = await readJson(args["--c2-registry"]);

@@ -45,7 +45,7 @@ const candidateReviewAnchors = [
 const baselineRouteLinks = routes.filter(([pathname])=>pathname!=="/review-studio").map(([pathname]) => pathname);
 
 const stableCustomerReviewAnchors = [
-  ["/", ["hero", "assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
+  ["/", ["assurance", "compound-families", "featured-products", "openlab-records", "reviews", "related-products"]],
   ["/product/mk-2866", ["purchase", "dossier", "lab-records"]],
   ["/open-lab", ["embedded-evidence"]],
 ];
@@ -137,8 +137,12 @@ test("server-renders all 52 governed routes with their expected headings and pri
     const html = await renderHtml(worker, pathname);
     const h1Matches = html.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi) ?? [];
 
-    assert.equal(h1Matches.length, 1, `${pathname} should render exactly one h1`);
-    assert.equal(visibleText(h1Matches[0]), heading, `${pathname} h1`);
+    if (pathname === "/") {
+      assert.equal(h1Matches.length, 0, "the homepage omits the owner-bound hero and its heading while its five-item input is absent");
+    } else {
+      assert.equal(h1Matches.length, 1, `${pathname} should render exactly one h1`);
+      assert.equal(visibleText(h1Matches[0]), heading, `${pathname} h1`);
+    }
     assert.match(
       html,
       /<meta(?=[^>]*\bname=["']robots["'])(?=[^>]*\bcontent=["'][^"']*\bnoindex\b[^"']*\bnofollow\b[^"']*["'])[^>]*>/i,
@@ -185,7 +189,7 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
     "90 SERVINGS",
     ">99%",
     "IN STOCK",
-    "OPENLAB VERIFIED",
+    "OPENLAB REPORTED",
     "£43",
   ]) {
     assert.match(productText, new RegExp(escapeRegExp(expected)), `MK-2866 truth: ${expected}`);
@@ -206,23 +210,11 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
   }
 });
 
-test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", async () => {
+test("keeps homepage values fail closed until the accepted hero receives owner inputs", async () => {
   const worker = await loadWorker();
 
   const homeText = visibleText(await renderHtml(worker, "/"));
-  for (const expected of [
-    "Formulated. Verified. Batch tracked.",
-    "Formulated to a higher standard.",
-    "15 MG",
-    "90 SERVINGS",
-    ">99%",
-    "£43",
-  ]) {
-    assert.match(homeText, new RegExp(escapeRegExp(expected)), `homepage decision truth: ${expected}`);
-  }
-  assert.doesNotMatch(homeText, /90 CAPS(?:\b|ULES)/i);
-  assert.match(homeText, /Third-Party Tested/i, "approved trust statement remains visible");
-  assert.match(homeText, /direct access to available lab records/i, "LockedHero carries production-promotable customer copy");
+  assert.doesNotMatch(homeText, /Formulated\. Verified\. Batch tracked\.|direct access to available lab records/i);
 
   const shopHtml = await renderHtml(worker, "/shop");
   assert.match(shopHtml, /data-component=["']ProductCommerceCard\.compact["']/i, "Shop renders canonical Compact card instances throughout the grid");
@@ -238,8 +230,8 @@ test("carries the approved MF01A anatomy into MF01–MF03 candidate surfaces", a
   const pdpSource = await readFile(new URL("../app/design-system/pdp-first-fold.tsx", import.meta.url), "utf8");
   const openLabSource = await readFile(new URL("../app/design-system/openlab-hero-light.tsx", import.meta.url), "utf8");
   const homeHero = routeSource.match(/export function HomeRoute\(\)[\s\S]*?\n}\n\nexport function ProductRoute/)?.[0] ?? "";
-  assert.match(heroSource, /data-figma-node="1155:29963"/, "homepage uses the locked Direction D authority node");
-  assert.match(heroSource, /data-figma-stage-node="462:4684"/, "homepage stage uses the authored 5-3-1 media intent");
+  assert.match(heroSource, /products\.length !== 5 \|\| !active\) return null/, "homepage suppresses incomplete owner input");
+  assert.doesNotMatch(heroSource, /data-figma-node|data-figma-stage-node|const products = \[/);
   assert.match(pdpSource, /data-figma-node="1155:30632"/, "PDP first fold uses the corrected authority node");
   assert.match(openLabSource, /data-figma-node="614:75995"/, "OpenLab uses the HeroLight authority node");
   assert.match(homeHero, /<LockedHomeHero\b/, "homepage uses the corrected LockedHero implementation");

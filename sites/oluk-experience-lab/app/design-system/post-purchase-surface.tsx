@@ -12,5 +12,5 @@ const transactionStageByStatus = {
 
 /** Order URLs are aliases of the canonical checkout lifecycle, not a second composition. */
 export function PostPurchaseSurface({ status, orderId }: { status: PostPurchaseStatus; orderId?: string }) {
-  return <TransactionPresentation orderReference={orderId ?? "OL-10428"} stage={transactionStageByStatus[status]} />;
+  return <TransactionPresentation orderReference={orderId} stage={transactionStageByStatus[status]} />;
 }

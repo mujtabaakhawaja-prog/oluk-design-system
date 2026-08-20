@@ -62,6 +62,10 @@ function visibleText(html) {
     .trim();
 }
 
+function mainContent(html) {
+  return html.match(/<main\b[^>]*>[\s\S]*?<\/main>/i)?.[0] ?? "";
+}
+
 test("customer routes adopt the canonical design-system modules without page-local redraws", async () => {
   const shellSource = await readFile(new URL("../app/experience-lab.tsx", import.meta.url), "utf8");
   const routeSource = await readFile(new URL("../app/customer-routes.tsx", import.meta.url), "utf8");
@@ -180,4 +184,22 @@ test("core and shell destination paths resolve with coherent landmarks and no or
   const productHtml = await renderHtml(worker, "/product/mk-2866");
   assert.match(productHtml, /<nav\b[^>]*aria-label=["']Breadcrumb["']/i);
   assert.match(productHtml, /aria-current=["']page["']/i);
+});
+
+test("account and order routes remain truthful without owner-backed customer state", async () => {
+  const worker = await loadWorker();
+  const accountHtml = await renderHtml(worker, "/account/orders");
+  const requestedOrderHtml = await renderHtml(worker, "/account/orders/ORDER-REQUEST");
+  const orderStatusHtml = await renderHtml(worker, "/order/success/ORDER-REQUEST");
+
+  assert.match(accountHtml, /data-account-state=["']unauthenticated["']/i);
+  assert.match(requestedOrderHtml, /data-account-state=["']unavailable["']/i);
+  assert.match(orderStatusHtml, /data-transaction-state=["']unavailable["']/i);
+
+  for (const html of [accountHtml, requestedOrderHtml, orderStatusHtml]) {
+    const text = visibleText(mainContent(html));
+    assert.notEqual(text, "", "account-state assertion is scoped to the customer route content");
+    assert.doesNotMatch(text, /OL-10428|320 points|MK-2866|£43|Track latest order|Ready to reorder/i);
+    assert.doesNotMatch(text, /projection|source-owned|provenance|fixture|runtime owner/i);
+  }
 });
