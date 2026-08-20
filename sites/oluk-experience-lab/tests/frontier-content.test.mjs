@@ -12,7 +12,9 @@ test("frontier catalogue preserves fixed MK-2866 truth and RAD-140 8 MG correcti
   assert.match(content, /slug:"mk-2866"[\s\S]*?strength:"15 MG"[\s\S]*?servings:"90 SERVINGS"[\s\S]*?purity:">99%"[\s\S]*?price:"£43"/);
   assert.match(content, /slug:"rad-140"[\s\S]*?strength:"8 MG"/);
   assert.doesNotMatch(content, /RAD-140[\s\S]{0,280}10 MG/);
-  assert.equal((content.match(/record\(\{slug:/g) ?? []).length, 16);
+  assert.equal((content.match(/record\(\{slug:/g) ?? []).length, 15);
+  assert.doesNotMatch(content, /slug:"bpc-157"/);
+  for (const canonicalProductId of ["endurashred", "halo", "mass-gh"]) assert.match(content, new RegExp(`slug:"${canonicalProductId}"`));
 });
 
 test("frontier product records use outcome-led copy and match the approved Your Stack product facts", () => {
@@ -46,10 +48,9 @@ test("every catalogue PDP renders its own customer proposition without implement
     ["ment", "MENT", "20 MG", "30 SERVINGS", "£49"],
     ["m-sten", "M-STEN", "10 MG", "60 SERVINGS", "£48"],
     ["trenavar", "Trenavar", "30 MG", "60 SERVINGS", "£48"],
-    ["bpc-157", "BPC-157", "500 MCG", "60 SERVINGS", "£54"],
-    ["tb-500", "TB-500", "2 MG", "30 SERVINGS", "£58"],
-    ["cjc-1295", "CJC-1295", "2 MG", "30 SERVINGS", "£59"],
-    ["l-carnitine", "L-Carnitine", "500 MG", "60 SERVINGS", "£29"],
+    ["endurashred", "ENDURASHRED", "16.5 MG", "90 SERVINGS", ""],
+    ["halo", "HALO", "", "", ""],
+    ["mass-gh", "MASS GH", "", "", ""],
   ];
   const worker = await loadBuiltWorker("frontier-product-propositions");
   for (const [slug, name, strength, servings, price] of products) {

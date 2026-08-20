@@ -9,7 +9,7 @@ The production OLUK runtime-derived light system is the authority for customer-f
 The only runtime contract referenced by this Wave 0 Design lane is:
 
 - contract ID: `OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1`
-- contract version: `1.0.0`
+- contract version: `1.3.0`
 - field references: opaque provider-neutral IDs recorded in `DESIGN-REQUIREMENTS-LEDGER.json`
 
 `DESIGN-REQUIREMENTS-LEDGER.json` defines presentation obligations only. `schemas/design-requirements-ledger.schema.json` validates the shape of those obligations. Neither artifact is an executable projection, a wire schema, a value registry, or runtime authority.
@@ -18,9 +18,11 @@ The only runtime contract referenced by this Wave 0 Design lane is:
 
 | Source | Exact pin | Role |
 | --- | --- | --- |
-| Programme amendment | `f33b2713377160b46b84151dd52f71415393d341ebcf452b6e7c316a5e192ca0` | Governs the provider-neutral Wave 0 authority correction. |
-| Production runtime contract | `7aa1f4cfc02d441d672626067ab65979c3c7184f73dfe545322e43e14899154c` | Owns field meaning, values, allowed states, mutation, and lifecycle behavior. |
-| Legacy disposition registry | `ece13e6003a615caed395186f9ce547a7d06bf17bc607eead48f40d760c29458` | Classifies historical and compatibility material without granting it authority. |
+| Programme amendment | `b6f8e9e6bbddede159b0d8ee4d999ac5d7fce1bfff5ad4cc18774748c9addb46` | Governs the provider-neutral direct-tools authority correction. |
+| Production runtime contract | `4a68247beb9ea34ed8a138fea99149365d90d54324848f09ffaa21122fb9d507` | C2 registry `1.3.0`; owns field meaning, values, allowed states, mutation, and lifecycle behavior. |
+| Legacy disposition registry | `d11a68512b2ef9797f7312e2050680cd48356d0358c7db3e0da4495dfc5605b2` | Classifies historical and compatibility material without granting it authority. |
+| Continuation queue | `8e3e3277d9ecc860735723f295907604e0c5883ef841d1ed9f27f610db51b1c6` | Pins the integration champion's owner/repository queue without transferring runtime authority to Design. |
+| Canonical route registry | `23dea181163af0e5f81db7580b9b59fc2762f4ea0fae1b18d144095644f33576` | References the 74-route Next contract for applicability only; Design does not copy or own the route registry. |
 
 These SHA-256 pins are immutable content digests. Design remains a reference consumer of the runtime field contract and cannot promote itself into runtime or commerce authority.
 
@@ -39,10 +41,12 @@ Codex Sites and historical Figma material are evidence/reference only. Figma is 
 
 ## Validation
 
-Wave 0 Design is structurally ready when:
+This Design successor preserves the locked Option B Premium identity. It does not reopen identity selection or create a Figma construction or acceptance gate.
+
+This Design lane is structurally ready when:
 
 - the ledger validates against its JSON Schema;
-- every field reference names `OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1` version `1.0.0` through its enclosing requirement;
+- every field reference names `OLUK_RUNTIME_CONSUMPTION_REGISTRY_V1` version `1.3.0` through its enclosing requirement;
 - every field reference declares `required` or `optional` and a fail-closed missing behavior;
 - every seeded requirement records variants, presentation states, responsive obligations, accessibility obligations, forbidden behavior, and a component owner;
-- all three source pins match their owner-repository files exactly.
+- all five source pins match their owner-repository files exactly.

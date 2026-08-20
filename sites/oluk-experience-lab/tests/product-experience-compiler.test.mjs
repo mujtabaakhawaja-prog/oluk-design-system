@@ -10,10 +10,10 @@ const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const read = async (file) => readFile(path.join(siteRoot, file), "utf8");
 const execFileAsync = promisify(execFile);
 
-test("the product experience compiler emits the locked 16-product catalogue", async () => {
+test("the product experience compiler emits the canonical 15-product catalogue", async () => {
   const catalogue = JSON.parse(await read("app/design-system/product-experience-catalog.json"));
   assert.equal(catalogue.schemaVersion, "oluk.product-experience.v2");
-  assert.equal(catalogue.products.length, 16);
+  assert.equal(catalogue.products.length, 15);
   assert.match(catalogue.contentHash, /^[a-f0-9]{64}$/);
   assert.match(catalogue.editorialCorpusHash, /^[a-f0-9]{64}$/);
   const product = (slug) => catalogue.products.find((entry) => entry.product.slug === slug).product;
@@ -21,17 +21,19 @@ test("the product experience compiler emits the locked 16-product catalogue", as
   assert.deepEqual([product("rad-140").strength, product("rad-140").servings, product("rad-140").price], ["8 MG", "60 SERVINGS", "£55"]);
   assert.deepEqual([product("lgd-4033").strength, product("lgd-4033").servings, product("lgd-4033").price], ["5 MG", "", "£44"]);
   assert.equal(product("ment").series, "PROHORMONE SERIES");
+  assert.equal(product("endurashred").sku, undefined);
+  assert.equal(catalogue.products.some((entry) => entry.product.slug === "bpc-157"), false);
   assert.deepEqual([product("gw-501516").slug, product("gw-501516").name, product("gw-501516").strength], ["gw-501516", "GW-50156", "10 MG"]);
 });
 
-test("all 16 product experiences compile from an attributed customer editorial corpus", async () => {
+test("all 15 product experiences compile from an attributed customer editorial corpus", async () => {
   const [catalogue, corpus] = await Promise.all([
     read("app/design-system/product-experience-catalog.json").then(JSON.parse),
     read("../../authority/PRODUCT-EDITORIAL-SOURCE-CORPUS.json").then(JSON.parse),
   ]);
   assert.equal(corpus.schemaVersion, "oluk.product-editorial-corpus.v1");
-  assert.equal(Object.keys(corpus.products).length, 16);
-  assert.equal(Object.keys(corpus.sources).length, 4);
+  assert.equal(Object.keys(corpus.products).length, 15);
+  assert.equal(Object.keys(corpus.sources).length, 5);
   for (const entry of catalogue.products) {
     const editorial = entry.editorial;
     assert.equal(editorial.sourceAttribution.length, corpus.products[entry.product.slug].sources.length, entry.product.slug);

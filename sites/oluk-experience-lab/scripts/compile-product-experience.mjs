@@ -48,7 +48,10 @@ const bySlug = Object.fromEntries(products.map((product) => [product.slug, produ
 const editorialBySlug = editorialCorpus.products ?? {};
 const sourceCatalogue = editorialCorpus.sources ?? {};
 if (editorialCorpus.schemaVersion !== "oluk.product-editorial-corpus.v1") throw new Error("Unsupported product editorial corpus schema");
-if (products.length !== 16) throw new Error(`Expected 16 products, found ${products.length}`);
+const canonicalProductIds = ["trenavar", "endurashred", "rad-140", "gw-501516", "s-4", "lgd-4033", "s-23", "halo", "mass-gh", "yk-11", "m-sten", "mk-677", "epistane", "ment", "mk-2866"].sort();
+if (products.length !== 15) throw new Error(`Expected 15 products, found ${products.length}`);
+if (JSON.stringify(products.map(({ slug }) => slug).sort()) !== JSON.stringify(canonicalProductIds)) throw new Error("Product experience input must match the canonical 15");
+if (products.some(({ slug }) => slug === "bpc-157")) throw new Error("BPC-157 is not an active canonical product");
 if (Object.keys(editorialBySlug).length !== products.length) throw new Error("Editorial corpus must cover every catalogue product exactly once");
 for (const product of products) {
   const editorial = editorialBySlug[product.slug];
@@ -79,6 +82,7 @@ for (const [slug, strength, servings, price, sku] of locks) {
 }
 if (/RAD-140[^\n]{0,120}10 MG|10 MG[^\n]{0,120}RAD-140/i.test(productRaw)) throw new Error("RAD-140 10 MG is forbidden");
 if (bySlug.ment.series !== "PROHORMONE SERIES") throw new Error("MENT must remain PROHORMONE SERIES");
+if (Object.hasOwn(bySlug.endurashred, "sku")) throw new Error("ENDURASHRED canonical SKU must remain absent");
 if (bySlug["gw-501516"].name !== "GW-50156" || bySlug["gw-501516"].strength !== "10 MG") throw new Error("Cardarine must display as GW-50156 · 10 MG while retaining the legacy gw-501516 slug");
 
 const openLabRaw = await readFile(openLabPath, "utf8");
