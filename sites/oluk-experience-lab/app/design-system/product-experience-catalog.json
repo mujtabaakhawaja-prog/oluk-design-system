@@ -1,7 +1,7 @@
 {
   "schemaVersion": "oluk.product-experience.v2",
-  "productSourceHash": "14a45a575fa4c9c591add66835c8713f23f9f93e195d1daad37d25ada3bf435e",
-  "editorialCorpusHash": "3a6219e2c75adc4d94c7b0694e804a92d848c6dd288f8058462d6f8c38e458e2",
+  "productSourceHash": "05eb8a57fc06e6dd3d70cbde3e36756e93e0d07455c5fa2313f7d57d5f6d9cb1",
+  "editorialCorpusHash": "65a6223a0d4356c9125f78fa557a0934e18079c2d801de19cd384d3e8e865066",
   "openLabSourceHash": "bbb09b8a4a8f67a8fdc8d07719962bbd5e83b836d971dfd29602b466414a9523",
   "products": [
     {
@@ -492,8 +492,7 @@
         "considerations": "Read the full product details before choosing your stack.",
         "related": [
           "lgd-4033",
-          "rad-140",
-          "bpc-157"
+          "rad-140"
         ],
         "stack": [
           "lgd-4033",
@@ -588,8 +587,7 @@
         },
         "related": [
           "lgd-4033",
-          "rad-140",
-          "bpc-157"
+          "rad-140"
         ]
       },
       "stacks": {
@@ -1823,64 +1821,48 @@
     },
     {
       "product": {
-        "slug": "bpc-157",
-        "sku": "BPC157-500",
-        "series": "PEPTIDE SERIES",
-        "name": "BPC-157",
-        "alias": "BPC-157",
-        "strength": "500 MCG",
-        "servings": "60 SERVINGS",
+        "slug": "endurashred",
+        "series": "COMPOUND SERIES",
+        "name": "ENDURASHRED",
+        "alias": "LGD-4033 + MK-2866",
+        "strength": "16.5 MG",
+        "servings": "90 SERVINGS",
         "purity": ">99%",
-        "price": "£54",
-        "family": "Peptides",
-        "goal": [
-          "Recovery"
-        ],
-        "summary": "A 500 MCG peptide format for recovery-focused product planning.",
-        "researchProfile": "BPC-157 is a recovery-led choice for customers building a more complete plan around hard training weeks and repeat performance.",
-        "guidance": "Pair BPC-157 with the products that support the way you train, recover and return to the gym.",
-        "considerations": "Read the full product details before choosing your stack.",
-        "related": [
-          "tb-500",
-          "mk-677"
-        ],
-        "stack": [
-          "tb-500"
-        ]
+        "price": "",
+        "family": "Research Chemicals",
+        "goal": [],
+        "summary": "ENDURASHRED is presented as an LGD-4033 and MK-2866 compound in a 16.5 MG, 90-serving format.",
+        "researchProfile": "Review the compound identity, labelled strength and serving format together.",
+        "guidance": "Compare the labelled format with the rest of the Olympus range before choosing.",
+        "considerations": "Read the full product details before choosing.",
+        "related": [],
+        "stack": []
       },
       "editorial": {
-        "summary": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
-        "researchProfile": "BPC-157 makes recovery a visible part of the product decision, giving a hard-training plan a dedicated support-oriented direction.",
-        "guidance": "Compare BPC-157 with TB-500 and MK-677 when the next addition should put recovery at the centre of the plan.",
-        "considerations": "Use the recovery comparison and product details to choose the format that fits the wider plan.",
+        "summary": "ENDURASHRED is presented as an LGD-4033 and MK-2866 compound in a 16.5 MG, 90-serving format.",
+        "researchProfile": "Review the compound identity, labelled strength and serving format together.",
+        "guidance": "Compare the labelled format with the rest of the Olympus range before choosing.",
+        "considerations": "Read the full product details before making a product decision.",
         "customerProposition": {
-          "eyebrow": "Recovery-led peptide",
-          "headline": "Put recovery on the front foot.",
-          "promise": "BPC-157 gives demanding training weeks a dedicated recovery-led product direction.",
+          "eyebrow": "COMPOUND SERIES",
+          "headline": "Review the exact compound format.",
+          "promise": "See the ENDURASHRED compound identity, labelled strength and serving format together.",
           "benefits": [
-            "Recovery-focused role",
-            "Peptide comparison",
-            "Pairs with wider recovery planning"
+            "Compound identity",
+            "16.5 MG labelled strength",
+            "90-serving format"
           ],
-          "differentiator": "A peptide choice for customers building more recovery into the plan.",
-          "primaryAction": "Build recovery support",
-          "secondaryAction": "Compare peptide options",
-          "mobileSummary": "A recovery-led peptide choice."
+          "differentiator": "LGD-4033 and MK-2866 compound identity.",
+          "primaryAction": "View product details",
+          "mobileSummary": "ENDURASHRED compound product facts."
         },
         "sourceAttribution": [
           {
-            "id": "handover-master-plan",
-            "kind": "seo-handover",
-            "title": "Olympus Labs UK – Master Plan v3",
-            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
-            "locator": "Category Page Optimization: Peptides"
-          },
-          {
-            "id": "knowledge-base-handover",
-            "kind": "faq-handover",
-            "title": "Olympus UK Pro Chatbot Knowledge Base",
-            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
-            "locator": "Recovery, support and product-discovery entries"
+            "id": "c2-canonical-product-authority-1.3.0",
+            "kind": "provider-neutral-product-authority",
+            "title": "C2 canonical 15-product Sites authority input",
+            "sha256": "66f95a017121347f954b27eb97c423410f31dedcc1fb39beb5abfde3b47b6f0a",
+            "locator": "products[slug=endurashred]"
           }
         ]
       },
@@ -1901,123 +1883,97 @@
           "reviews"
         ],
         "decision": {
-          "eyebrow": "Recovery-led peptide",
-          "headline": "Put recovery on the front foot.",
-          "promise": "BPC-157 gives demanding training weeks a dedicated recovery-led product direction.",
+          "eyebrow": "COMPOUND SERIES",
+          "headline": "Review the exact compound format.",
+          "promise": "See the ENDURASHRED compound identity, labelled strength and serving format together.",
           "benefits": [
-            "Recovery-focused role",
-            "Peptide comparison",
-            "Pairs with wider recovery planning"
+            "Compound identity",
+            "16.5 MG labelled strength",
+            "90-serving format"
           ],
-          "differentiator": "A peptide choice for customers building more recovery into the plan.",
-          "primaryAction": "Build recovery support",
-          "secondaryAction": "Compare peptide options",
-          "mobileSummary": "A recovery-led peptide choice."
+          "differentiator": "LGD-4033 and MK-2866 compound identity.",
+          "primaryAction": "View product details",
+          "mobileSummary": "ENDURASHRED compound product facts."
         },
         "details": {
-          "summary": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
-          "researchProfile": "BPC-157 makes recovery a visible part of the product decision, giving a hard-training plan a dedicated support-oriented direction.",
-          "guidance": "Compare BPC-157 with TB-500 and MK-677 when the next addition should put recovery at the centre of the plan.",
-          "considerations": "Use the recovery comparison and product details to choose the format that fits the wider plan."
+          "summary": "ENDURASHRED is presented as an LGD-4033 and MK-2866 compound in a 16.5 MG, 90-serving format.",
+          "researchProfile": "Review the compound identity, labelled strength and serving format together.",
+          "guidance": "Compare the labelled format with the rest of the Olympus range before choosing.",
+          "considerations": "Read the full product details before making a product decision."
         },
-        "related": [
-          "tb-500",
-          "mk-677"
-        ]
+        "related": []
       },
       "stacks": {
-        "goals": [
-          "Recovery"
-        ],
-        "additions": [
-          "tb-500"
-        ],
+        "goals": [],
+        "additions": [],
         "baselineEligible": true,
-        "outcomeRole": "Recovery-led peptide"
+        "outcomeRole": "COMPOUND SERIES"
       },
       "openLab": {
         "status": "unavailable",
         "experience": "availability-panel"
       },
       "discovery": {
-        "family": "Peptides",
-        "goals": [
-          "Recovery"
-        ],
-        "headline": "Put recovery on the front foot.",
-        "mobileSummary": "A recovery-led peptide choice."
+        "family": "Research Chemicals",
+        "goals": [],
+        "headline": "Review the exact compound format.",
+        "mobileSummary": "ENDURASHRED compound product facts."
       },
       "seo": {
-        "canonicalPath": "/product/bpc-157",
-        "title": "BPC-157 500 MCG | Olympus Labs UK",
-        "description": "A recovery-led peptide choice for customers who want the plan to work harder between demanding training weeks.",
+        "canonicalPath": "/product/endurashred",
+        "title": "ENDURASHRED 16.5 MG | Olympus Labs UK",
+        "description": "ENDURASHRED is presented as an LGD-4033 and MK-2866 compound in a 16.5 MG, 90-serving format.",
         "focusPhrases": [
-          "BPC-157",
-          "BPC-157",
-          "Recovery"
+          "ENDURASHRED",
+          "LGD-4033 + MK-2866"
         ]
       }
     },
     {
       "product": {
-        "slug": "tb-500",
-        "sku": "TB500-2",
-        "series": "PEPTIDE SERIES",
-        "name": "TB-500",
-        "alias": "TB-500",
-        "strength": "2 MG",
-        "servings": "30 SERVINGS",
-        "purity": ">99%",
-        "price": "£58",
-        "family": "Peptides",
-        "goal": [
-          "Recovery"
-        ],
-        "summary": "A 2 MG, 30-serving peptide format for recovery-led stacks.",
-        "researchProfile": "TB-500 is the companion peptide for customers who want to make recovery a clear part of their wider training plan.",
-        "guidance": "Compare TB-500 and BPC-157 when recovery is the product story you want to build around.",
-        "considerations": "Read the full product details before choosing your stack.",
-        "related": [
-          "bpc-157",
-          "mk-677"
-        ],
-        "stack": [
-          "bpc-157"
-        ]
+        "slug": "halo",
+        "sku": "80529-11",
+        "series": "PROHORMONE SERIES",
+        "name": "HALO",
+        "alias": "",
+        "strength": "",
+        "servings": "",
+        "purity": "",
+        "price": "",
+        "family": "Metabolics",
+        "goal": [],
+        "summary": "Explore HALO in the Olympus PROHORMONE SERIES.",
+        "researchProfile": "Review the available HALO product details in one place.",
+        "guidance": "Compare the product details with the rest of the Olympus range before choosing.",
+        "considerations": "Read the full product details before choosing.",
+        "related": [],
+        "stack": []
       },
       "editorial": {
-        "summary": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
-        "researchProfile": "TB-500 is the companion peptide to compare when recovery needs to be treated as a deliberate part of the wider product plan.",
-        "guidance": "View TB-500 beside BPC-157 and MK-677 to decide how the recovery side of the build should come together.",
-        "considerations": "Compare the recovery role, serving format and wider stack fit before adding it.",
+        "summary": "Explore HALO in the Olympus PROHORMONE SERIES.",
+        "researchProfile": "Review the available HALO product details in one place.",
+        "guidance": "Compare the product details with the rest of the Olympus range before choosing.",
+        "considerations": "Read the full product details before making a product decision.",
         "customerProposition": {
-          "eyebrow": "Recovery companion",
-          "headline": "Make recovery part of the build.",
-          "promise": "TB-500 gives a recovery-led plan a clear peptide companion to compare with the rest of the stack.",
+          "eyebrow": "PROHORMONE SERIES",
+          "headline": "Explore HALO product details.",
+          "promise": "Review HALO in the PROHORMONE SERIES before making a product decision.",
           "benefits": [
-            "Recovery-oriented role",
-            "Peptide companion",
-            "Cross-stack comparison"
+            "HALO product identity",
+            "PROHORMONE SERIES",
+            "Product details"
           ],
-          "differentiator": "A focused peptide option when recovery needs a more deliberate place in the plan.",
-          "primaryAction": "Compare recovery options",
-          "secondaryAction": "View product details",
-          "mobileSummary": "A recovery companion for the wider plan."
+          "differentiator": "A HALO product detail from the Olympus range.",
+          "primaryAction": "View product details",
+          "mobileSummary": "Explore HALO product details."
         },
         "sourceAttribution": [
           {
-            "id": "handover-master-plan",
-            "kind": "seo-handover",
-            "title": "Olympus Labs UK – Master Plan v3",
-            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
-            "locator": "Category Page Optimization: Peptides"
-          },
-          {
-            "id": "knowledge-base-handover",
-            "kind": "faq-handover",
-            "title": "Olympus UK Pro Chatbot Knowledge Base",
-            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
-            "locator": "Recovery, support and product-discovery entries"
+            "id": "c2-canonical-product-authority-1.3.0",
+            "kind": "provider-neutral-product-authority",
+            "title": "C2 canonical 15-product Sites authority input",
+            "sha256": "66f95a017121347f954b27eb97c423410f31dedcc1fb39beb5abfde3b47b6f0a",
+            "locator": "products[slug=halo]"
           }
         ]
       },
@@ -2038,123 +1994,97 @@
           "reviews"
         ],
         "decision": {
-          "eyebrow": "Recovery companion",
-          "headline": "Make recovery part of the build.",
-          "promise": "TB-500 gives a recovery-led plan a clear peptide companion to compare with the rest of the stack.",
+          "eyebrow": "PROHORMONE SERIES",
+          "headline": "Explore HALO product details.",
+          "promise": "Review HALO in the PROHORMONE SERIES before making a product decision.",
           "benefits": [
-            "Recovery-oriented role",
-            "Peptide companion",
-            "Cross-stack comparison"
+            "HALO product identity",
+            "PROHORMONE SERIES",
+            "Product details"
           ],
-          "differentiator": "A focused peptide option when recovery needs a more deliberate place in the plan.",
-          "primaryAction": "Compare recovery options",
-          "secondaryAction": "View product details",
-          "mobileSummary": "A recovery companion for the wider plan."
+          "differentiator": "A HALO product detail from the Olympus range.",
+          "primaryAction": "View product details",
+          "mobileSummary": "Explore HALO product details."
         },
         "details": {
-          "summary": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
-          "researchProfile": "TB-500 is the companion peptide to compare when recovery needs to be treated as a deliberate part of the wider product plan.",
-          "guidance": "View TB-500 beside BPC-157 and MK-677 to decide how the recovery side of the build should come together.",
-          "considerations": "Compare the recovery role, serving format and wider stack fit before adding it."
+          "summary": "Explore HALO in the Olympus PROHORMONE SERIES.",
+          "researchProfile": "Review the available HALO product details in one place.",
+          "guidance": "Compare the product details with the rest of the Olympus range before choosing.",
+          "considerations": "Read the full product details before making a product decision."
         },
-        "related": [
-          "bpc-157",
-          "mk-677"
-        ]
+        "related": []
       },
       "stacks": {
-        "goals": [
-          "Recovery"
-        ],
-        "additions": [
-          "bpc-157"
-        ],
+        "goals": [],
+        "additions": [],
         "baselineEligible": true,
-        "outcomeRole": "Recovery companion"
+        "outcomeRole": "PROHORMONE SERIES"
       },
       "openLab": {
         "status": "unavailable",
         "experience": "availability-panel"
       },
       "discovery": {
-        "family": "Peptides",
-        "goals": [
-          "Recovery"
-        ],
-        "headline": "Make recovery part of the build.",
-        "mobileSummary": "A recovery companion for the wider plan."
+        "family": "Metabolics",
+        "goals": [],
+        "headline": "Explore HALO product details.",
+        "mobileSummary": "Explore HALO product details."
       },
       "seo": {
-        "canonicalPath": "/product/tb-500",
-        "title": "TB-500 2 MG | Olympus Labs UK",
-        "description": "A peptide option for a recovery-led plan that needs a clear companion to the rest of the training stack.",
+        "canonicalPath": "/product/halo",
+        "title": "HALO  | Olympus Labs UK",
+        "description": "Explore HALO in the Olympus PROHORMONE SERIES.",
         "focusPhrases": [
-          "TB-500",
-          "TB-500",
-          "Recovery"
+          "HALO",
+          ""
         ]
       }
     },
     {
       "product": {
-        "slug": "cjc-1295",
-        "sku": "CJC1295-2",
-        "series": "PEPTIDE SERIES",
-        "name": "CJC-1295",
-        "alias": "CJC-1295",
-        "strength": "2 MG",
-        "servings": "30 SERVINGS",
-        "purity": ">99%",
-        "price": "£59",
-        "family": "Peptides",
-        "goal": [
-          "Recovery"
-        ],
-        "summary": "A 2 MG, 30-serving peptide format for customers prioritising recovery and consistency.",
-        "researchProfile": "CJC-1295 brings another recovery-focused direction into the peptide range for customers refining a longer-term plan.",
-        "guidance": "Browse the peptide range to compare recovery-focused formats and choose the right next addition.",
-        "considerations": "Read the full product details before choosing your stack.",
-        "related": [
-          "bpc-157",
-          "tb-500"
-        ],
-        "stack": [
-          "bpc-157"
-        ]
+        "slug": "mass-gh",
+        "sku": "80529-06",
+        "series": "COMPOUND SERIES",
+        "name": "MASS GH",
+        "alias": "",
+        "strength": "",
+        "servings": "",
+        "purity": "",
+        "price": "",
+        "family": "Research Chemicals",
+        "goal": [],
+        "summary": "Explore MASS GH in the Olympus COMPOUND SERIES.",
+        "researchProfile": "Review the available MASS GH product details in one place.",
+        "guidance": "Compare the product details with the rest of the Olympus range before choosing.",
+        "considerations": "Read the full product details before choosing.",
+        "related": [],
+        "stack": []
       },
       "editorial": {
-        "summary": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
-        "researchProfile": "CJC-1295 broadens the recovery-focused peptide set, giving customers another way to compare how the supporting side of their plan is built.",
-        "guidance": "Browse CJC-1295 alongside BPC-157 and TB-500 when the next decision is about building a more complete recovery story.",
-        "considerations": "Use the peptide comparison and product facts to choose the right supporting direction.",
+        "summary": "Explore MASS GH in the Olympus COMPOUND SERIES.",
+        "researchProfile": "Review the available MASS GH product details in one place.",
+        "guidance": "Compare the product details with the rest of the Olympus range before choosing.",
+        "considerations": "Read the full product details before making a product decision.",
         "customerProposition": {
-          "eyebrow": "Recovery consistency",
-          "headline": "Build a more consistent recovery story.",
-          "promise": "CJC-1295 gives the peptide range another recovery-focused direction to compare and build around.",
+          "eyebrow": "COMPOUND SERIES",
+          "headline": "Explore MASS GH product details.",
+          "promise": "Review MASS GH in the COMPOUND SERIES before making a product decision.",
           "benefits": [
-            "Recovery consistency",
-            "Peptide-range comparison",
-            "Longer-term planning"
+            "MASS GH product identity",
+            "COMPOUND SERIES",
+            "Product details"
           ],
-          "differentiator": "A peptide option for customers refining the supporting side of the plan.",
-          "primaryAction": "Explore peptide options",
-          "secondaryAction": "View product details",
-          "mobileSummary": "A recovery-focused peptide direction."
+          "differentiator": "A MASS GH product detail from the Olympus range.",
+          "primaryAction": "View product details",
+          "mobileSummary": "Explore MASS GH product details."
         },
         "sourceAttribution": [
           {
-            "id": "handover-master-plan",
-            "kind": "seo-handover",
-            "title": "Olympus Labs UK – Master Plan v3",
-            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
-            "locator": "Category Page Optimization: Peptides"
-          },
-          {
-            "id": "knowledge-base-handover",
-            "kind": "faq-handover",
-            "title": "Olympus UK Pro Chatbot Knowledge Base",
-            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
-            "locator": "Recovery, support and product-discovery entries"
+            "id": "c2-canonical-product-authority-1.3.0",
+            "kind": "provider-neutral-product-authority",
+            "title": "C2 canonical 15-product Sites authority input",
+            "sha256": "66f95a017121347f954b27eb97c423410f31dedcc1fb39beb5abfde3b47b6f0a",
+            "locator": "products[slug=mass-gh]"
           }
         ]
       },
@@ -2175,208 +2105,49 @@
           "reviews"
         ],
         "decision": {
-          "eyebrow": "Recovery consistency",
-          "headline": "Build a more consistent recovery story.",
-          "promise": "CJC-1295 gives the peptide range another recovery-focused direction to compare and build around.",
+          "eyebrow": "COMPOUND SERIES",
+          "headline": "Explore MASS GH product details.",
+          "promise": "Review MASS GH in the COMPOUND SERIES before making a product decision.",
           "benefits": [
-            "Recovery consistency",
-            "Peptide-range comparison",
-            "Longer-term planning"
+            "MASS GH product identity",
+            "COMPOUND SERIES",
+            "Product details"
           ],
-          "differentiator": "A peptide option for customers refining the supporting side of the plan.",
-          "primaryAction": "Explore peptide options",
-          "secondaryAction": "View product details",
-          "mobileSummary": "A recovery-focused peptide direction."
+          "differentiator": "A MASS GH product detail from the Olympus range.",
+          "primaryAction": "View product details",
+          "mobileSummary": "Explore MASS GH product details."
         },
         "details": {
-          "summary": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
-          "researchProfile": "CJC-1295 broadens the recovery-focused peptide set, giving customers another way to compare how the supporting side of their plan is built.",
-          "guidance": "Browse CJC-1295 alongside BPC-157 and TB-500 when the next decision is about building a more complete recovery story.",
-          "considerations": "Use the peptide comparison and product facts to choose the right supporting direction."
+          "summary": "Explore MASS GH in the Olympus COMPOUND SERIES.",
+          "researchProfile": "Review the available MASS GH product details in one place.",
+          "guidance": "Compare the product details with the rest of the Olympus range before choosing.",
+          "considerations": "Read the full product details before making a product decision."
         },
-        "related": [
-          "bpc-157",
-          "tb-500"
-        ]
+        "related": []
       },
       "stacks": {
-        "goals": [
-          "Recovery"
-        ],
-        "additions": [
-          "bpc-157"
-        ],
+        "goals": [],
+        "additions": [],
         "baselineEligible": true,
-        "outcomeRole": "Recovery consistency"
+        "outcomeRole": "COMPOUND SERIES"
       },
       "openLab": {
         "status": "unavailable",
         "experience": "availability-panel"
       },
       "discovery": {
-        "family": "Peptides",
-        "goals": [
-          "Recovery"
-        ],
-        "headline": "Build a more consistent recovery story.",
-        "mobileSummary": "A recovery-focused peptide direction."
+        "family": "Research Chemicals",
+        "goals": [],
+        "headline": "Explore MASS GH product details.",
+        "mobileSummary": "Explore MASS GH product details."
       },
       "seo": {
-        "canonicalPath": "/product/cjc-1295",
-        "title": "CJC-1295 2 MG | Olympus Labs UK",
-        "description": "A peptide direction for customers refining a recovery-focused plan around consistency and longer-term training rhythm.",
+        "canonicalPath": "/product/mass-gh",
+        "title": "MASS GH  | Olympus Labs UK",
+        "description": "Explore MASS GH in the Olympus COMPOUND SERIES.",
         "focusPhrases": [
-          "CJC-1295",
-          "CJC-1295",
-          "Recovery"
-        ]
-      }
-    },
-    {
-      "product": {
-        "slug": "l-carnitine",
-        "sku": "LCARN-500",
-        "series": "NATURALS SERIES",
-        "name": "L-Carnitine",
-        "alias": "L-Carnitine",
-        "strength": "500 MG",
-        "servings": "60 SERVINGS",
-        "purity": ">99%",
-        "price": "£29",
-        "family": "Naturals",
-        "goal": [
-          "Cutting",
-          "Wellness"
-        ],
-        "summary": "A 500 MG L-Carnitine format for straightforward daily support in a cutting-focused plan.",
-        "researchProfile": "L-Carnitine is the accessible natural-range choice for customers who want a simple daily format alongside their training and body-composition goals.",
-        "guidance": "Choose L-Carnitine when you want to keep the next addition straightforward and easy to fit into the wider plan.",
-        "considerations": "Read the full product details before choosing your stack.",
-        "related": [
-          "gw-501516",
-          "mk-2866"
-        ],
-        "stack": [
-          "gw-501516"
-        ]
-      },
-      "editorial": {
-        "summary": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
-        "researchProfile": "L-Carnitine is the accessible daily-format choice in the range, giving a cutting or wellness plan a cleaner, easier-to-place supporting direction.",
-        "guidance": "Compare it with Cardarine and MK-2866 when the goal is to keep the next addition simple while staying close to a body-composition focus.",
-        "considerations": "Use the category and comparison views to decide whether a simple daily format is the right next addition.",
-        "customerProposition": {
-          "eyebrow": "Simple daily support",
-          "headline": "Keep the next addition uncomplicated.",
-          "promise": "L-Carnitine gives cutting and wellness plans a straightforward daily-format option.",
-          "benefits": [
-            "Simple daily format",
-            "Cutting and wellness focus",
-            "Easy product comparison"
-          ],
-          "differentiator": "A clear natural-range choice for a simpler supporting role.",
-          "primaryAction": "Add daily support",
-          "secondaryAction": "Compare simple options",
-          "mobileSummary": "Straightforward daily support."
-        },
-        "sourceAttribution": [
-          {
-            "id": "handover-master-plan",
-            "kind": "seo-handover",
-            "title": "Olympus Labs UK – Master Plan v3",
-            "sha256": "607c4b8547180666bc2c26c4fb7b7acf46521994cad1ff7082433a88515b9111",
-            "locator": "Category Page Optimization: Naturals"
-          },
-          {
-            "id": "knowledge-base-handover",
-            "kind": "faq-handover",
-            "title": "Olympus UK Pro Chatbot Knowledge Base",
-            "sha256": "0daa6d9655e1f3e88aa4c12a08bd76cdc645cc8fd0c78babe7683ccc3c2e5a22",
-            "locator": "Goal-led product-discovery entries"
-          },
-          {
-            "id": "yoast-export",
-            "kind": "seo-export",
-            "title": "Olympus page SEO export",
-            "sha256": "5dcbf28962093ddf00708b72f9b4c824d2f7d4f3a443629091666826d2675e03",
-            "locator": "Naturals search-intent rows"
-          }
-        ]
-      },
-      "media": [
-        {
-          "role": "front",
-          "src": null,
-          "authority": "governed-unpopulated-chamber"
-        }
-      ],
-      "pdp": {
-        "sections": [
-          "decision",
-          "details",
-          "evidence",
-          "stack",
-          "related",
-          "reviews"
-        ],
-        "decision": {
-          "eyebrow": "Simple daily support",
-          "headline": "Keep the next addition uncomplicated.",
-          "promise": "L-Carnitine gives cutting and wellness plans a straightforward daily-format option.",
-          "benefits": [
-            "Simple daily format",
-            "Cutting and wellness focus",
-            "Easy product comparison"
-          ],
-          "differentiator": "A clear natural-range choice for a simpler supporting role.",
-          "primaryAction": "Add daily support",
-          "secondaryAction": "Compare simple options",
-          "mobileSummary": "Straightforward daily support."
-        },
-        "details": {
-          "summary": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
-          "researchProfile": "L-Carnitine is the accessible daily-format choice in the range, giving a cutting or wellness plan a cleaner, easier-to-place supporting direction.",
-          "guidance": "Compare it with Cardarine and MK-2866 when the goal is to keep the next addition simple while staying close to a body-composition focus.",
-          "considerations": "Use the category and comparison views to decide whether a simple daily format is the right next addition."
-        },
-        "related": [
-          "gw-501516",
-          "mk-2866"
-        ]
-      },
-      "stacks": {
-        "goals": [
-          "Cutting",
-          "Wellness"
-        ],
-        "additions": [
-          "gw-501516"
-        ],
-        "baselineEligible": true,
-        "outcomeRole": "Simple daily support"
-      },
-      "openLab": {
-        "status": "unavailable",
-        "experience": "availability-panel"
-      },
-      "discovery": {
-        "family": "Naturals",
-        "goals": [
-          "Cutting",
-          "Wellness"
-        ],
-        "headline": "Keep the next addition uncomplicated.",
-        "mobileSummary": "Straightforward daily support."
-      },
-      "seo": {
-        "canonicalPath": "/product/l-carnitine",
-        "title": "L-Carnitine 500 MG | Olympus Labs UK",
-        "description": "A straightforward L-Carnitine option for customers who want a simple daily addition around a cutting or wellness-focused plan.",
-        "focusPhrases": [
-          "L-Carnitine",
-          "L-Carnitine",
-          "Cutting",
-          "Wellness"
+          "MASS GH",
+          ""
         ]
       }
     }
@@ -2470,5 +2241,5 @@
       }
     }
   },
-  "contentHash": "4e04b6cf7dae51d1e5658bccfe65020d818c65f48c73bd07d3bcb9a9061ef517"
+  "contentHash": "e1a08684b886e3dd87557f1688ddd6f7ccf3fb4d66993fe1d7435d409cabd149"
 }
