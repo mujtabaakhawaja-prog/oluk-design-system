@@ -61,12 +61,8 @@ test("MF-07 route pages form one static transaction lifecycle", async () => {
   }
 });
 
-test("transaction presentation preserves exact MK-2866 truth and deterministic inert actions", async () => {
+test("transaction presentation preserves shared anatomy and fails order-bound stages closed", async () => {
   const source = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
-
-  for (const truth of ["mk2866Fixture.price", "mk2866Fixture.evidencePath"]) {
-    assert.match(source, new RegExp(truth.replace(".", "\\.")), truth);
-  }
 
   assert.match(source, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
   assert.match(source, /<ProductCommerceCard[\s\S]*?commerceTreatment="selection"[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="compact"/);
@@ -78,6 +74,10 @@ test("transaction presentation preserves exact MK-2866 truth and deterministic i
   assert.match(source, /<ActionButton[^>]*disabled[^>]*>Pay securely<\/ActionButton>/);
   assert.match(source, /<CurrencyEqualityLock compact \/>/);
   assert.match(source, /<LifecycleAmountRecord stage="confirmation" \/>/);
+  assert.match(source, /const ownerBoundOrderStages = new Set<TransactionStage>/);
+  assert.match(source, /orderReference && ownerOrderContent/);
+  assert.match(source, /<OrderStateUnavailable \/>/);
+  assert.doesNotMatch(source, /orderReference = "OL-10428"/);
   assert.doesNotMatch(source, /<(?:a|button)\b/, "checkout-local actions must use the canonical action family");
   assert.doesNotMatch(source, /fetch\s*\(|axios|XMLHttpRequest|use server|server action|woocommerce|stripe|biaspay|initiator|tools-service|C2/i);
   assert.doesNotMatch(source, /90 CAPS(?:\b|ULES)|£43\.00|<del\b/i);
@@ -168,10 +168,28 @@ test("post-purchase aliases reuse the canonical lifecycle without a competing st
   assert.match(source, /failed: "failure"/);
   assert.match(source, /cancelled: "cancelled"/);
   assert.match(source, /tracking: "tracking"/);
-  assert.match(source, /orderReference=\{orderId \?\? "OL-10428"\}/);
+  assert.match(source, /orderReference=\{orderId\}/);
+  assert.doesNotMatch(source, /OL-10428/);
   assert.doesNotMatch(source, /RecommendationCard|RestockCard|page-hero|post-purchase-grid/);
   assert.match(shell, /<main data-live-authority="false">[\s\S]*?<PostPurchaseSurface/);
   assert.match(shell, /route=\{`checkout-\$\{checkoutContext\}`\}/);
+});
+
+test("account paths expose only unauthenticated, empty, or unavailable owner states", async () => {
+  const frontier = await readFile(new URL("design-system/frontier-sections.tsx", appRoot), "utf8");
+  const accountPage = await readFile(new URL("account/[surface]/page.tsx", appRoot), "utf8");
+  const orderPage = await readFile(new URL("account/orders/[orderId]/page.tsx", appRoot), "utf8");
+  const accountHub = frontier.slice(
+    frontier.indexOf("export type AccountSessionState"),
+    frontier.indexOf("export function SupportContent"),
+  );
+
+  assert.match(accountPage, /state="unauthenticated"/);
+  assert.match(orderPage, /data-requested-order=\{params\.orderId\}/);
+  assert.match(orderPage, /state="unavailable"/);
+  assert.match(accountHub, /"unauthenticated" \| "empty" \| "unavailable"/);
+  assert.match(accountHub, /state = "unauthenticated"/);
+  assert.doesNotMatch(accountHub, /MK-2866|320 points|ProductCommerceCard|mk2866Fixture|projection|source-owned|provenance/i);
 });
 
 test("checkout progress is route-aware and rendered once in the shared shell", async () => {

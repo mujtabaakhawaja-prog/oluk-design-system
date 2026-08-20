@@ -104,6 +104,20 @@ const stageHeadings = {
   },
 } as const satisfies Readonly<Record<TransactionStage, { title: string; copy: string }>>;
 
+const ownerBoundOrderStages = new Set<TransactionStage>([
+  "pending",
+  "confirmation",
+  "tracking",
+  "order-history",
+  "order-details",
+  "receipt",
+  "return",
+  "refund",
+  "failure",
+  "cancelled",
+  "retry",
+]);
+
 function TransactionIntro({ stage }: Readonly<{ stage: TransactionStage }>) {
   const heading = stageHeadings[stage];
   return (
@@ -584,6 +598,18 @@ function CancelledContent({ orderReference }: Readonly<{ orderReference: string 
   );
 }
 
+function OrderStateUnavailable() {
+  return (
+    <TechnicalSurface
+      actions={<ActionLink href="/account/orders" secondary>Return to orders</ActionLink>}
+      compact
+      copy="We cannot show the order details right now. Return to your account and try again later."
+      eyebrow="Currently unavailable"
+      title="Order details are unavailable."
+    />
+  );
+}
+
 function TransactionContent({ orderReference, stage }: Readonly<{ orderReference: string; stage: TransactionStage }>) {
   switch (stage) {
     case "bag": return <BagContent />;
@@ -607,12 +633,35 @@ function TransactionContent({ orderReference, stage }: Readonly<{ orderReference
   }
 }
 
-export function TransactionPresentation({ orderReference = "OL-10428", stage }: Readonly<{ orderReference?: string; stage: TransactionStage }>) {
+export function TransactionPresentation({
+  orderReference,
+  ownerOrderContent,
+  stage,
+}: Readonly<{
+  orderReference?: string;
+  /** Opaque owner-composed order content. Design does not define its data schema. */
+  ownerOrderContent?: ReactNode;
+  stage: TransactionStage;
+}>) {
+  const ownerBound = ownerBoundOrderStages.has(stage);
+  const ownerOrderReady = Boolean(orderReference && ownerOrderContent);
+  const content = ownerBound
+    ? ownerOrderReady
+      ? ownerOrderContent
+      : <OrderStateUnavailable />
+    : <TransactionContent orderReference={orderReference ?? ""} stage={stage} />;
+
   return (
-    <div className={styles.transaction} data-live-authority="false" data-transaction-stage={stage}>
+    <div
+      className={styles.transaction}
+      data-live-authority="false"
+      data-order-reference={orderReference || undefined}
+      data-transaction-stage={stage}
+      data-transaction-state={ownerBound ? ownerOrderReady ? "ready" : "unavailable" : "reference-only"}
+    >
       <TransactionIntro stage={stage} />
       <section className={styles.content}>
-        <div className="shell"><TransactionContent orderReference={orderReference} stage={stage} /></div>
+        <div className="shell">{content}</div>
       </section>
     </div>
   );
