@@ -1,0 +1,5354 @@
+{
+  "contract": "OLUK_ROUTE_PRESENTATION_AUTHORITY_V1",
+  "schemaVersion": "1.0.0",
+  "status": "SITES_READY_NEXT_SYNC_REQUIRED",
+  "sourceInventoryDigest": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c",
+  "routeRegistryDigest": "aeb81cd914ad0bc020e62efe18b51fd92306f38ed234aaf4180b9087a4b3f514",
+  "routeCount": 74,
+  "routes": [
+    {
+      "routeId": "home",
+      "path": "/",
+      "family": "homepage",
+      "templateId": "template.homepage",
+      "orderedSlots": [
+        {
+          "id": "slot.homepage.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.home.opening",
+          "role": "home.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.home.featured-product",
+          "role": "home.featured-product",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.home.discovery",
+          "role": "home.discovery",
+          "order": 5,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.home.openlab",
+          "role": "home.openlab",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.homepage.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "shop",
+      "path": "/shop",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/shop",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "collection",
+      "path": "/collections/:slug",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/collections/sample-slug",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "search",
+      "path": "/search",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/search",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "product-compare",
+      "path": "/compare",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/compare",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "product",
+      "path": "/product/:slug",
+      "family": "product_detail",
+      "templateId": "template.product-detail",
+      "orderedSlots": [
+        {
+          "id": "slot.product-detail.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.breadcrumb",
+          "role": "pdp.breadcrumb",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.first-fold",
+          "role": "pdp.first-fold",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.assurance",
+          "role": "pdp.assurance",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.label-media",
+          "role": "pdp.label-media",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.narrative",
+          "role": "pdp.narrative",
+          "order": 7,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.dossier",
+          "role": "pdp.dossier",
+          "order": 8,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.openlab-evidence",
+          "role": "pdp.openlab-evidence",
+          "order": 9,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.relationships",
+          "role": "pdp.relationships",
+          "order": 10,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.builder",
+          "role": "pdp.builder",
+          "order": 11,
+          "placementPolicy": "optional_flagged",
+          "featureId": "feature.pdp-builder"
+        },
+        {
+          "id": "slot.product-detail.pdp.faq-education",
+          "role": "pdp.faq-education",
+          "order": 12,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.pdp.continuation",
+          "role": "pdp.continuation",
+          "order": 13,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.mobile.sticky-decision",
+          "role": "mobile.sticky-decision",
+          "order": 14,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.product-detail.shell.footer",
+          "role": "shell.footer",
+          "order": 15,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "canonical-products",
+        "count": 15
+      },
+      "sitesPreviewPath": "/product/mk-2866",
+      "nativeNextTarget": "app/product/[slug]/page.next.tsx",
+      "requiredFieldIds": [
+        "field.product.series-name",
+        "field.product.name",
+        "field.product.alias",
+        "field.product.strength-display",
+        "field.product.servings-display",
+        "field.evidence.purity-display",
+        "field.evidence.state",
+        "field.commerce.stock-state",
+        "field.commerce.price",
+        "field.commerce.quantity",
+        "field.commerce.purchasable",
+        "field.media.contract-identity"
+      ],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "sites_ready"
+    },
+    {
+      "routeId": "reviews",
+      "path": "/reviews",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/reviews",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "about",
+      "path": "/about",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/about",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "about-evidence-os",
+      "path": "/about/evidence-os",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/about/evidence-os",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "account",
+      "path": "/account",
+      "family": "account",
+      "templateId": "template.account",
+      "orderedSlots": [
+        {
+          "id": "slot.account.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.navigation",
+          "role": "account.navigation",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.content",
+          "role": "account.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.actions",
+          "role": "account.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/account",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "account-orders",
+      "path": "/account/orders",
+      "family": "account",
+      "templateId": "template.account",
+      "orderedSlots": [
+        {
+          "id": "slot.account.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.navigation",
+          "role": "account.navigation",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.content",
+          "role": "account.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.actions",
+          "role": "account.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/account/orders",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "account-order",
+      "path": "/account/orders/:orderId",
+      "family": "account",
+      "templateId": "template.account",
+      "orderedSlots": [
+        {
+          "id": "slot.account.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.navigation",
+          "role": "account.navigation",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.content",
+          "role": "account.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.actions",
+          "role": "account.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/account/orders/sample-orderId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "account-profile",
+      "path": "/account/profile",
+      "family": "account",
+      "templateId": "template.account",
+      "orderedSlots": [
+        {
+          "id": "slot.account.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.navigation",
+          "role": "account.navigation",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.content",
+          "role": "account.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.actions",
+          "role": "account.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/account/profile",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "account-addresses",
+      "path": "/account/addresses",
+      "family": "account",
+      "templateId": "template.account",
+      "orderedSlots": [
+        {
+          "id": "slot.account.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.navigation",
+          "role": "account.navigation",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.content",
+          "role": "account.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.account.actions",
+          "role": "account.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.account.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/account/addresses",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "bag",
+      "path": "/bag",
+      "family": "bag_checkout",
+      "templateId": "template.checkout",
+      "orderedSlots": [
+        {
+          "id": "slot.checkout.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.progress",
+          "role": "checkout.progress",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.content",
+          "role": "checkout.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.summary",
+          "role": "checkout.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.action",
+          "role": "checkout.action",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/bag",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-information",
+      "path": "/checkout/information",
+      "family": "bag_checkout",
+      "templateId": "template.checkout",
+      "orderedSlots": [
+        {
+          "id": "slot.checkout.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.progress",
+          "role": "checkout.progress",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.content",
+          "role": "checkout.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.summary",
+          "role": "checkout.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.action",
+          "role": "checkout.action",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/information",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-delivery",
+      "path": "/checkout/delivery",
+      "family": "bag_checkout",
+      "templateId": "template.checkout",
+      "orderedSlots": [
+        {
+          "id": "slot.checkout.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.progress",
+          "role": "checkout.progress",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.content",
+          "role": "checkout.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.summary",
+          "role": "checkout.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.action",
+          "role": "checkout.action",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/delivery",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-review",
+      "path": "/checkout/review",
+      "family": "bag_checkout",
+      "templateId": "template.checkout",
+      "orderedSlots": [
+        {
+          "id": "slot.checkout.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.progress",
+          "role": "checkout.progress",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.content",
+          "role": "checkout.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.summary",
+          "role": "checkout.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.action",
+          "role": "checkout.action",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/review",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-payment",
+      "path": "/checkout/payment",
+      "family": "bag_checkout",
+      "templateId": "template.checkout",
+      "orderedSlots": [
+        {
+          "id": "slot.checkout.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.progress",
+          "role": "checkout.progress",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.content",
+          "role": "checkout.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.summary",
+          "role": "checkout.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.action",
+          "role": "checkout.action",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/payment",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-processing",
+      "path": "/checkout/processing",
+      "family": "bag_checkout",
+      "templateId": "template.checkout",
+      "orderedSlots": [
+        {
+          "id": "slot.checkout.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.progress",
+          "role": "checkout.progress",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.content",
+          "role": "checkout.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.summary",
+          "role": "checkout.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.checkout.action",
+          "role": "checkout.action",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.checkout.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/processing",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-confirmation",
+      "path": "/checkout/confirmation",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/confirmation",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-failure",
+      "path": "/checkout/failure",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/failure",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-retry",
+      "path": "/checkout/retry",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/retry",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-tracking",
+      "path": "/checkout/tracking",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/tracking",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-order-pay",
+      "path": "/checkout/order-pay",
+      "family": "complete_payment",
+      "templateId": "template.payment-preserve",
+      "orderedSlots": [
+        {
+          "id": "slot.payment-preserve.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.payment.handoff",
+          "role": "payment.handoff",
+          "order": 3,
+          "placementPolicy": "preserve_only",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.shell.footer",
+          "role": "shell.footer",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/order-pay",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "checkout-payment-handoff",
+      "path": "/checkout/payment-handoff",
+      "family": "complete_payment",
+      "templateId": "template.payment-preserve",
+      "orderedSlots": [
+        {
+          "id": "slot.payment-preserve.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.payment.handoff",
+          "role": "payment.handoff",
+          "order": 3,
+          "placementPolicy": "preserve_only",
+          "featureId": null
+        },
+        {
+          "id": "slot.payment-preserve.shell.footer",
+          "role": "shell.footer",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/checkout/payment-handoff",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "contact",
+      "path": "/contact",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/contact",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "delivery",
+      "path": "/delivery",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/delivery",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "shipping-returns",
+      "path": "/shipping-returns",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/shipping-returns",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "faq",
+      "path": "/faq",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/faq",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "lab-reports",
+      "path": "/lab-reports",
+      "family": "openlab_archive",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/lab-reports",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab",
+      "path": "/open-lab",
+      "family": "openlab_portal",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-records",
+      "path": "/open-lab/records",
+      "family": "openlab_archive",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/records",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-record",
+      "path": "/open-lab/records/:recordId",
+      "family": "openlab_product_record",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/open-lab/records/sample-recordId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-compound",
+      "path": "/open-lab/compound/:slug",
+      "family": "openlab_product_record",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/open-lab/compound/sample-slug",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-report",
+      "path": "/open-lab/report/:batchId",
+      "family": "openlab_report_viewer",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/open-lab/report/sample-batchId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-coa-viewer",
+      "path": "/open-lab/coa/:id",
+      "family": "openlab_report_viewer",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/open-lab/coa/sample-id",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-batch-lookup",
+      "path": "/open-lab/batch-lookup",
+      "family": "openlab_archive",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/batch-lookup",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-methodology",
+      "path": "/open-lab/methodology",
+      "family": "openlab_methodology_compare_evidenceos",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/methodology",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-source-chain",
+      "path": "/open-lab/source-chain",
+      "family": "openlab_methodology_compare_evidenceos",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/source-chain",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-compare",
+      "path": "/open-lab/compare",
+      "family": "openlab_methodology_compare_evidenceos",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/compare",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-evidence",
+      "path": "/open-lab/evidence",
+      "family": "openlab_methodology_compare_evidenceos",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/evidence",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-admin",
+      "path": "/open-lab/admin",
+      "family": "governance_review",
+      "templateId": "template.owner-review",
+      "orderedSlots": [
+        {
+          "id": "slot.owner-review.owner.review-navigation",
+          "role": "owner.review-navigation",
+          "order": 0,
+          "placementPolicy": "owner_only",
+          "featureId": null
+        },
+        {
+          "id": "slot.owner-review.owner.review-content",
+          "role": "owner.review-content",
+          "order": 1,
+          "placementPolicy": "owner_only",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/admin",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "privacy",
+      "path": "/privacy",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/privacy",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "terms",
+      "path": "/terms",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/terms",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "wholesale",
+      "path": "/wholesale",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/wholesale",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "international",
+      "path": "/international",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/international",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "gift-cards",
+      "path": "/gift-cards",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/gift-cards",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-research-papers",
+      "path": "/open-lab/research-papers",
+      "family": "openlab_frontier_content",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/research-papers",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-case-studies",
+      "path": "/open-lab/case-studies",
+      "family": "openlab_frontier_content",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/case-studies",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-glossary",
+      "path": "/open-lab/glossary",
+      "family": "openlab_frontier_content",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/glossary",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-dosing-calculator",
+      "path": "/open-lab/dosing-calculator",
+      "family": "decision_tools",
+      "templateId": "template.decision-tool",
+      "orderedSlots": [
+        {
+          "id": "slot.decision-tool.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.intro",
+          "role": "decision.intro",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.workspace",
+          "role": "decision.workspace",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.summary",
+          "role": "decision.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/dosing-calculator",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-compound-guide",
+      "path": "/open-lab/compound-guide",
+      "family": "decision_tools",
+      "templateId": "template.decision-tool",
+      "orderedSlots": [
+        {
+          "id": "slot.decision-tool.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.intro",
+          "role": "decision.intro",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.workspace",
+          "role": "decision.workspace",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.summary",
+          "role": "decision.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/compound-guide",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-interaction-checker",
+      "path": "/open-lab/interaction-checker",
+      "family": "decision_tools",
+      "templateId": "template.decision-tool",
+      "orderedSlots": [
+        {
+          "id": "slot.decision-tool.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.intro",
+          "role": "decision.intro",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.workspace",
+          "role": "decision.workspace",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.summary",
+          "role": "decision.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/interaction-checker",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-stack-builder",
+      "path": "/open-lab/stack-builder",
+      "family": "decision_tools",
+      "templateId": "template.decision-tool",
+      "orderedSlots": [
+        {
+          "id": "slot.decision-tool.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.intro",
+          "role": "decision.intro",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.workspace",
+          "role": "decision.workspace",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.summary",
+          "role": "decision.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/stack-builder",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-cycle-planner",
+      "path": "/open-lab/cycle-planner",
+      "family": "decision_tools",
+      "templateId": "template.decision-tool",
+      "orderedSlots": [
+        {
+          "id": "slot.decision-tool.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.intro",
+          "role": "decision.intro",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.workspace",
+          "role": "decision.workspace",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.decision.summary",
+          "role": "decision.summary",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.decision-tool.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/cycle-planner",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "order-success",
+      "path": "/order/success/:orderId?",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/order/success/sample-orderId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "order-pending",
+      "path": "/order/pending/:orderId?",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/order/pending/sample-orderId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "order-failed",
+      "path": "/order/failed/:orderId?",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/order/failed/sample-orderId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "order-cancelled",
+      "path": "/order/cancelled/:orderId?",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/order/cancelled/sample-orderId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "order-tracking",
+      "path": "/order/tracking/:orderId",
+      "family": "post_purchase",
+      "templateId": "template.post-purchase",
+      "orderedSlots": [
+        {
+          "id": "slot.post-purchase.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.status",
+          "role": "order.status",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.summary",
+          "role": "order.summary",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.order.actions",
+          "role": "order.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.post-purchase.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/order/tracking/sample-orderId",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "owner-review",
+      "path": "/review",
+      "family": "governance_review",
+      "templateId": "template.owner-review",
+      "orderedSlots": [
+        {
+          "id": "slot.owner-review.owner.review-navigation",
+          "role": "owner.review-navigation",
+          "order": 0,
+          "placementPolicy": "owner_only",
+          "featureId": null
+        },
+        {
+          "id": "slot.owner-review.owner.review-content",
+          "role": "owner.review-content",
+          "order": 1,
+          "placementPolicy": "owner_only",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/review",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "legal-document",
+      "path": "/legal/:doc",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/legal/sample-doc",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "open-lab-lab-partner",
+      "path": "/open-lab/lab-partner",
+      "family": "openlab_frontier_content",
+      "templateId": "template.openlab",
+      "orderedSlots": [
+        {
+          "id": "slot.openlab.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.opening",
+          "role": "openlab.opening",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.records",
+          "role": "openlab.records",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.detail",
+          "role": "openlab.detail",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.openlab.actions",
+          "role": "openlab.actions",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.openlab.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/open-lab/lab-partner",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "cookies",
+      "path": "/cookies",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/cookies",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "refunds",
+      "path": "/refunds",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/refunds",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "family-sarms",
+      "path": "/collections/sarms",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/collections/sarms",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "family-research-chemicals",
+      "path": "/collections/research-chemicals",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/collections/research-chemicals",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "family-prohormones",
+      "path": "/collections/prohormones",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/collections/prohormones",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "family-stacks",
+      "path": "/collections/stacks",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/collections/stacks",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "shop-goal",
+      "path": "/shop?goal=:goal",
+      "family": "catalogue_search_collections",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": {
+        "kind": "dynamic-authority",
+        "status": "blocked_by_data"
+      },
+      "sitesPreviewPath": "/shopgoal=sample-goal",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "sitemap",
+      "path": "/sitemap",
+      "family": "support_content",
+      "templateId": "template.support",
+      "orderedSlots": [
+        {
+          "id": "slot.support.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.heading",
+          "role": "support.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.content",
+          "role": "support.content",
+          "order": 4,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.support.actions",
+          "role": "support.actions",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.support.shell.footer",
+          "role": "shell.footer",
+          "order": 6,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/sitemap",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "not-found",
+      "path": "/404",
+      "family": "shared_shell",
+      "templateId": "template.shared-shell",
+      "orderedSlots": [
+        {
+          "id": "slot.shared-shell.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.shared-shell.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.shared-shell.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.shared-shell.shared.message",
+          "role": "shared.message",
+          "order": 3,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.shared-shell.shell.footer",
+          "role": "shell.footer",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/404",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    },
+    {
+      "routeId": "bundle-builder",
+      "path": "/bundle-builder",
+      "family": "selection_bundle_builder",
+      "templateId": "template.discovery",
+      "orderedSlots": [
+        {
+          "id": "slot.discovery.shell.utility",
+          "role": "shell.utility",
+          "order": 0,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.header",
+          "role": "shell.header",
+          "order": 1,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.mega-menu",
+          "role": "shell.mega-menu",
+          "order": 2,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.heading",
+          "role": "discovery.heading",
+          "order": 3,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.controls",
+          "role": "discovery.controls",
+          "order": 4,
+          "placementPolicy": "required",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.results",
+          "role": "discovery.results",
+          "order": 5,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.discovery.relationships",
+          "role": "discovery.relationships",
+          "order": 6,
+          "placementPolicy": "conditional_data",
+          "featureId": null
+        },
+        {
+          "id": "slot.discovery.shell.footer",
+          "role": "shell.footer",
+          "order": 7,
+          "placementPolicy": "required",
+          "featureId": null
+        }
+      ],
+      "instanceRequirement": null,
+      "sitesPreviewPath": "/bundle-builder",
+      "nativeNextTarget": "canonical-route-mapping",
+      "requiredFieldIds": [],
+      "requiredStates": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "responsive-reorder"
+      ],
+      "lifecycle": "inventory"
+    }
+  ],
+  "contentHash": "ed3406c9dbaa75dcf1dc62748248e4d8e63370fd22b8da3822ccd1a57f50a27a"
+}

@@ -1,0 +1,530 @@
+{
+  "contract": "OLUK_CANONICAL_CUSTOMER_ROUTE_REGISTRY_V1",
+  "canonicalRouteCount": 74,
+  "source": {
+    "sitesCompositionCommit": "4d697e180300a6381d96ca50c2e80b27894f25de",
+    "sitesRouteLedgerSha256": "329b48a822b99de8728d1d0d28e037a8b5fcb2244c19421e8a0e12489de53ce7",
+    "sourceLedgerId": "OLUK-SITE-ROUTES-073"
+  },
+  "isolatedRoute": "bundle-builder",
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "family": "homepage",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "shop",
+      "path": "/shop",
+      "family": "catalogue_search_collections",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "collection",
+      "path": "/collections/:slug",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "search",
+      "path": "/search",
+      "family": "catalogue_search_collections",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "product-compare",
+      "path": "/compare",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "product",
+      "path": "/product/:slug",
+      "family": "product_detail",
+      "disposition": "replace",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "reviews",
+      "path": "/reviews",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "about-evidence-os",
+      "path": "/about/evidence-os",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "account",
+      "path": "/account",
+      "family": "account",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "account-orders",
+      "path": "/account/orders",
+      "family": "account",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "account-order",
+      "path": "/account/orders/:orderId",
+      "family": "account",
+      "disposition": "authority-deferred",
+      "owner": "identity-and-order-projection"
+    },
+    {
+      "id": "account-profile",
+      "path": "/account/profile",
+      "family": "account",
+      "disposition": "authority-deferred",
+      "owner": "identity"
+    },
+    {
+      "id": "account-addresses",
+      "path": "/account/addresses",
+      "family": "account",
+      "disposition": "authority-deferred",
+      "owner": "identity"
+    },
+    {
+      "id": "bag",
+      "path": "/bag",
+      "family": "bag_checkout",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-information",
+      "path": "/checkout/information",
+      "family": "bag_checkout",
+      "disposition": "replace",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-delivery",
+      "path": "/checkout/delivery",
+      "family": "bag_checkout",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-review",
+      "path": "/checkout/review",
+      "family": "bag_checkout",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-payment",
+      "path": "/checkout/payment",
+      "family": "bag_checkout",
+      "disposition": "replace",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-processing",
+      "path": "/checkout/processing",
+      "family": "bag_checkout",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-confirmation",
+      "path": "/checkout/confirmation",
+      "family": "post_purchase",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-failure",
+      "path": "/checkout/failure",
+      "family": "post_purchase",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-retry",
+      "path": "/checkout/retry",
+      "family": "post_purchase",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-tracking",
+      "path": "/checkout/tracking",
+      "family": "post_purchase",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "checkout-order-pay",
+      "path": "/checkout/order-pay",
+      "family": "complete_payment",
+      "disposition": "existing",
+      "owner": "preserve-only"
+    },
+    {
+      "id": "checkout-payment-handoff",
+      "path": "/checkout/payment-handoff",
+      "family": "complete_payment",
+      "disposition": "existing",
+      "owner": "preserve-only"
+    },
+    {
+      "id": "contact",
+      "path": "/contact",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "delivery",
+      "path": "/delivery",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "shipping-returns",
+      "path": "/shipping-returns",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "faq",
+      "path": "/faq",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "lab-reports",
+      "path": "/lab-reports",
+      "family": "openlab_archive",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab",
+      "path": "/open-lab",
+      "family": "openlab_portal",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-records",
+      "path": "/open-lab/records",
+      "family": "openlab_archive",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-record",
+      "path": "/open-lab/records/:recordId",
+      "family": "openlab_product_record",
+      "disposition": "replace",
+      "owner": "openlab-source"
+    },
+    {
+      "id": "open-lab-compound",
+      "path": "/open-lab/compound/:slug",
+      "family": "openlab_product_record",
+      "disposition": "new",
+      "owner": "openlab-source"
+    },
+    {
+      "id": "open-lab-report",
+      "path": "/open-lab/report/:batchId",
+      "family": "openlab_report_viewer",
+      "disposition": "new",
+      "owner": "openlab-source"
+    },
+    {
+      "id": "open-lab-coa-viewer",
+      "path": "/open-lab/coa/:id",
+      "family": "openlab_report_viewer",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-batch-lookup",
+      "path": "/open-lab/batch-lookup",
+      "family": "openlab_archive",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-methodology",
+      "path": "/open-lab/methodology",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-source-chain",
+      "path": "/open-lab/source-chain",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-compare",
+      "path": "/open-lab/compare",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-evidence",
+      "path": "/open-lab/evidence",
+      "family": "openlab_methodology_compare_evidenceos",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-admin",
+      "path": "/open-lab/admin",
+      "family": "governance_review",
+      "disposition": "owner-only",
+      "owner": "sites-owner-review"
+    },
+    {
+      "id": "privacy",
+      "path": "/privacy",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "terms",
+      "path": "/terms",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "wholesale",
+      "path": "/wholesale",
+      "family": "support_content",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "international",
+      "path": "/international",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "gift-cards",
+      "path": "/gift-cards",
+      "family": "support_content",
+      "disposition": "authority-deferred",
+      "owner": "commerce-policy"
+    },
+    {
+      "id": "open-lab-research-papers",
+      "path": "/open-lab/research-papers",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-case-studies",
+      "path": "/open-lab/case-studies",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-glossary",
+      "path": "/open-lab/glossary",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-dosing-calculator",
+      "path": "/open-lab/dosing-calculator",
+      "family": "decision_tools",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-compound-guide",
+      "path": "/open-lab/compound-guide",
+      "family": "decision_tools",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-interaction-checker",
+      "path": "/open-lab/interaction-checker",
+      "family": "decision_tools",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-stack-builder",
+      "path": "/open-lab/stack-builder",
+      "family": "decision_tools",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-cycle-planner",
+      "path": "/open-lab/cycle-planner",
+      "family": "decision_tools",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "order-success",
+      "path": "/order/success/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "order-pending",
+      "path": "/order/pending/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "order-failed",
+      "path": "/order/failed/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "order-cancelled",
+      "path": "/order/cancelled/:orderId?",
+      "family": "post_purchase",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "order-tracking",
+      "path": "/order/tracking/:orderId",
+      "family": "post_purchase",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "owner-review",
+      "path": "/review",
+      "family": "governance_review",
+      "disposition": "owner-only",
+      "owner": "sites-owner-review"
+    },
+    {
+      "id": "legal-document",
+      "path": "/legal/:doc",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "open-lab-lab-partner",
+      "path": "/open-lab/lab-partner",
+      "family": "openlab_frontier_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "cookies",
+      "path": "/cookies",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "refunds",
+      "path": "/refunds",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "family-sarms",
+      "path": "/collections/sarms",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "family-research-chemicals",
+      "path": "/collections/research-chemicals",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "family-prohormones",
+      "path": "/collections/prohormones",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "family-stacks",
+      "path": "/collections/stacks",
+      "family": "catalogue_search_collections",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "shop-goal",
+      "path": "/shop?goal=:goal",
+      "family": "catalogue_search_collections",
+      "disposition": "enhance",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "sitemap",
+      "path": "/sitemap",
+      "family": "support_content",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "not-found",
+      "path": "/404",
+      "family": "shared_shell",
+      "disposition": "new",
+      "owner": "sites-reference"
+    },
+    {
+      "id": "bundle-builder",
+      "path": "/bundle-builder",
+      "family": "selection_bundle_builder",
+      "disposition": "isolated",
+      "owner": "shopper-runtime"
+    }
+  ]
+}
