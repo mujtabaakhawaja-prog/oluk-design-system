@@ -1,0 +1,32 @@
+{
+  "contract": "OLUK_CATALOGUE_AUTHORITY_V2",
+  "schemaVersion": 2,
+  "authority": {
+    "presentation": "Codex Sites canonical product and route identity",
+    "catalogue": "Olympus Shopper canonical customer registry",
+    "commerce": "Woo only through server-owned projections",
+    "evidence": "C2/OpenLab only through server-owned projections",
+    "media": "product-owned render contract only"
+  },
+  "sitesCompositionPin": "4d697e180300a6381d96ca50c2e80b27894f25de",
+  "sitesBindingSha256": "c1c7eb13e3b9b7c8573bea40330f67c8e5a0b37de42e1ce349d1d8c20aa1df54",
+  "products": [
+    {"canonicalProductId":"trenavar","slug":"trenavar","aliases":[],"sku":"TREN-30","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:trenavar:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"endurashred","slug":"endurashred","customerPath":"/endurashred","aliases":["endura-shred","lgd-4033-mk-2866","lgd-lean"],"sku":null,"publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:endurashred:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"rad-140","slug":"rad-140","aliases":[],"sku":"RAD140-08","labelStrengthMg":8,"publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:rad-140:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"gw-501516","slug":"gw-501516","aliases":[],"sku":"GW501516-10","labelStrengthMg":10,"publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:gw-501516:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"s-4","slug":"s-4","aliases":["andarine"],"sku":"S4-25","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:s-4:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"lgd-4033","slug":"lgd-4033","aliases":[],"sku":"80529-04","labelStrengthMg":10,"publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:lgd-4033:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"s-23","slug":"s-23","aliases":[],"sku":"S23-10","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:s-23:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"halo","slug":"halo","aliases":["halodrol"],"sku":"80529-11","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:halo:front:no-bg:1x","renderState":"unavailable","wooBindingState":"unverified"},
+    {"canonicalProductId":"mass-gh","slug":"mass-gh","aliases":["lgd-4033-mk-677"],"sku":"80529-06","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:mass-gh:front:no-bg:1x","renderState":"unavailable","wooBindingState":"unverified"},
+    {"canonicalProductId":"yk-11","slug":"yk-11","aliases":[],"sku":"YK11-10","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:yk-11:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"m-sten","slug":"m-sten","aliases":[],"sku":"MSTEN-10","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:m-sten:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"mk-677","slug":"mk-677","aliases":[],"sku":"MK677-15","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:mk-677:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"epistane","slug":"epistane","aliases":[],"sku":"EPI-20","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:epistane:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"ment","slug":"ment","aliases":[],"sku":"MENT-20","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:ment:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"},
+    {"canonicalProductId":"mk-2866","slug":"mk-2866","aliases":[],"sku":"80529-01","publication":"PUBLISHABLE","renderContractIdentity":"sites-final-render:mk-2866:front:no-bg:1x","renderState":"mapped","wooBindingState":"unverified"}
+  ],
+  "excludedStagingFixtures": ["bpc-157", "tb-500", "cjc-1295", "l-carnitine"],
+  "supersedes": ["Olympus.CanonicalCustomerProductRegistry.v1", "12-plus-4-onboarding-catalogue-model"]
+}
