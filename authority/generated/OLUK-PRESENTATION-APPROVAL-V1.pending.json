@@ -3,9 +3,9 @@
   "schemaVersion": "1.0.0",
   "status": "PENDING_HUMAN_REVIEW",
   "design": {
-    "inventoryDigest": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c",
-    "presentationDigest": "0e00a893d2e56b6fb974353b9bbb1bb6b4f5c54fea00bd73c5c03afb1656180b",
-    "routeAuthorityDigest": "ed3406c9dbaa75dcf1dc62748248e4d8e63370fd22b8da3822ccd1a57f50a27a",
+    "inventoryDigest": "7db678d3db46928913c27a59dc34965976711d95dd364caff31488de4ca36e27",
+    "presentationDigest": "2587eddad3ab5537dd185d04143ccbc168515f3a97d2344fc9c5dec81ae6cf1b",
+    "routeAuthorityDigest": "4b5f2daae4c369592bc05759fe2cb92548bbb306de115b309e63f88be783a630",
     "sourceSha": null
   },
   "next": {
@@ -14,12 +14,12 @@
   },
   "scope": {
     "routeIds": [
-      "product"
+      "home"
     ],
     "moduleIds": [
-      "module.product-detail"
+      "module.homepage"
     ],
-    "productInstanceCount": 15
+    "productInstanceCount": 5
   },
   "captures": [
     {
@@ -46,5 +46,5 @@
   "decision": null,
   "decidedAt": null,
   "decidedBy": null,
-  "contentHash": "06ae6f490458b70a7c719969b7d2d45fe6aa98b21e316b6ddc459d15499341ac"
+  "contentHash": "d859dd27a8ebdc2fdd40d388d37825cde547c1b80150893ce9a17d2ea28a9d35"
 }

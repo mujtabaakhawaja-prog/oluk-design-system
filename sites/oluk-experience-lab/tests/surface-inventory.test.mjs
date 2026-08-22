@@ -53,7 +53,8 @@ test("source authority, containment, integration, lifecycle, and exposure remain
 
 test("active contracts remain provider-neutral and human approval remains pending", () => {
   const serialized = JSON.stringify({ inventory, presentation, routeAuthority });
-  assert.equal(serialized.includes("OPENLAB VERIFIED"), false);
+  assert.equal(serialized.includes("OPENLAB VERIFIED"), true);
+  assert.equal(serialized.includes("OPENLAB REPORTED"), false);
   assert.equal(serialized.includes("X-Tenant-ID"), false);
   assert.equal(serialized.includes("wooProductId"), false);
   assert.equal(presentation.responsiveViewports.join(","), "1440,1024,768,390");

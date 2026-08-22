@@ -10,7 +10,7 @@ const inventoryLabels: Readonly<Record<InventoryState, string>> = {
 };
 
 const evidenceLabels: Readonly<Record<EvidenceState, string>> = {
-  verified: "OPENLAB REPORTED",
+  verified: "OPENLAB VERIFIED",
   available: "EVIDENCE UNAVAILABLE",
   unavailable: "EVIDENCE UNAVAILABLE",
 };

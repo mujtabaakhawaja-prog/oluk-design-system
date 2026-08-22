@@ -23,6 +23,7 @@ const contentSchema = await readJson(path.join(productionRoot, "schemas/customer
 const homepage = await readJson(path.join(productionRoot, "HOMEPAGE-SYSTEM-EXTRACTION-V1.json"));
 const accountStates = await readJson(path.join(productionRoot, "ACCOUNT-TRANSACTION-STATE-LAW-V1.json"));
 const heroSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx"), "utf8");
+const heroCandidateSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/homepage-design-candidate.ts"), "utf8");
 const statusSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/product-status.tsx"), "utf8");
 const frontierSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/frontier-sections.tsx"), "utf8");
 const transactionSource = await readFile(path.join(productionRoot, "../../sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx"), "utf8");
@@ -64,13 +65,18 @@ for (const binding of homepage.fieldBindings) {
     assert(designFieldIds.includes(fieldId), `Homepage input ${binding.componentInput} references unknown field ${fieldId}`);
   }
 }
-for (const forbidden of ["const products = [", "lockedHomeHeroMedia", "Add to bag", "Formulated. Verified", "Third-party tested", "data-figma-node", "data-figma-stage-node"]) {
+for (const forbidden of ["const products = [", "lockedHomeHeroMedia", "data-figma-node", "data-figma-stage-node"]) {
   assert(!heroSource.includes(forbidden), `Homepage source retains forbidden fixture/provenance token: ${forbidden}`);
 }
 assert(heroSource.includes("products.length !== 5 || !active) return null"), "Homepage must suppress incomplete five-position input");
-assert(statusSource.includes('verified: "OPENLAB REPORTED"'), "Reported evidence label drift");
+assert(heroCandidateSource.includes("homepageHeroProducts"), "Homepage staging inputs missing");
+assert(heroCandidateSource.includes("These values stage the visual and interaction contract"), "Homepage fixture boundary missing");
+assert(heroCandidateSource.includes("Formulated to a higher standard."), "Homepage champion copy missing");
+assert(heroCandidateSource.includes("Third-party tested."), "Homepage supporting copy missing");
+assert(heroSource.includes("Add to bag"), "Homepage decision surface is missing its purchase handoff action");
+assert(statusSource.includes('verified: "OPENLAB VERIFIED"'), "Verified evidence label drift");
 assert(statusSource.includes('state = "unavailable"'), "Evidence status must default fail closed");
-assert(!statusSource.includes("OPENLAB VERIFIED") && !statusSource.includes("RECORD AVAILABLE"), "Forbidden evidence label entered active status source");
+assert(!statusSource.includes("OPENLAB REPORTED") && !statusSource.includes("RECORD AVAILABLE"), "Forbidden evidence label entered active status source");
 
 assert(accountStates.packetId === "D3-ACCOUNT-STATES-01", "Account-state packet drift");
 assert(accountStates.baseCommit === "b5a32dc6f6006819d72c791abd2f16c6b4668e1a", "Account-state base drift");

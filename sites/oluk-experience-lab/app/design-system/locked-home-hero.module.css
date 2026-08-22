@@ -1,19 +1,16 @@
 .canvas {
   background: var(--oluk-canvas);
+  padding-inline: 28px;
   padding-block: var(--oluk-space-10) var(--oluk-space-12);
 }
 
 .hero {
-  background: var(--oluk-surface-card);
-  border: var(--oluk-border-width) solid var(--oluk-border-card);
-  border-radius: var(--oluk-radius-purchase);
-  box-shadow: var(--oluk-shadow-card);
   display: grid;
+  gap: var(--oluk-space-6);
   grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
   margin-inline: auto;
   max-width: var(--oluk-content-max);
   min-height: 760px;
-  overflow: hidden;
 }
 
 .editorial,
@@ -25,10 +22,15 @@
 .editorial {
   display: flex;
   flex-direction: column;
+  gap: var(--oluk-space-5);
 }
 
 .copy {
   align-content: center;
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-purchase);
+  box-shadow: var(--oluk-shadow-card);
   display: grid;
   flex: 1 1 auto;
   padding: clamp(var(--oluk-space-8), 4vw, 56px);
@@ -76,6 +78,7 @@
   background: var(--oluk-cobalt);
   flex: 0 0 var(--oluk-divider-width);
   height: var(--oluk-divider-width);
+  margin-inline: var(--oluk-space-5);
 }
 
 .decision {
@@ -85,8 +88,20 @@
   box-shadow: var(--oluk-shadow-compact);
   display: grid;
   gap: var(--oluk-space-4);
-  margin: var(--oluk-space-5);
+  margin: 0;
   padding: var(--oluk-space-5);
+}
+
+.identityRow {
+  align-items: start;
+  display: flex;
+  gap: var(--oluk-space-4);
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.identityRow > :first-child {
+  min-width: 0;
 }
 
 .identity h2 {
@@ -107,6 +122,8 @@
 }
 
 .metrics {
+  background: var(--oluk-surface-card);
+  box-shadow: var(--oluk-shadow-compact);
   margin: 0;
 }
 
@@ -131,6 +148,12 @@
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
+}
+
+.price small {
+  color: var(--oluk-text-secondary);
+  font-size: var(--oluk-type-body-sm-size);
+  font-weight: 800;
 }
 
 .commerceActions {
@@ -163,6 +186,9 @@
   background:
     radial-gradient(circle at 50% 59%, var(--oluk-surface-card) 0 12%, var(--oluk-surface-cobalt-soft) 43%, transparent 70%),
     linear-gradient(135deg, var(--oluk-surface-media), var(--oluk-canvas));
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-purchase);
+  box-shadow: var(--oluk-shadow-card);
   height: 100%;
   min-height: 760px;
   overflow: hidden;
@@ -312,6 +338,18 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .identityRow {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .identityRow :global(.product-status-stack) {
+    align-items: start;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    justify-items: start;
+  }
 }
 
 @media (max-width: 700px) {
@@ -322,6 +360,7 @@
   .hero {
     display: flex;
     flex-direction: column;
+    gap: var(--oluk-space-4);
     min-height: 0;
   }
 
@@ -347,7 +386,7 @@
   }
 
   .decision {
-    margin: var(--oluk-space-4);
+    margin: 0;
     order: 4;
   }
 
@@ -386,9 +425,24 @@
     grid-template-columns: 1fr;
   }
 
+  .identityRow :global(.product-status-stack) {
+    grid-template-columns: 1fr;
+  }
+
   .tabs {
     margin-inline: calc(var(--oluk-space-2) * -1);
     padding-inline: var(--oluk-space-2);
+  }
+}
+
+@media (max-width: 540px) {
+  .canvas {
+    padding-inline: var(--oluk-space-3);
+  }
+
+  .copy,
+  .decision {
+    border-radius: var(--oluk-radius-vertical);
   }
 }
 

@@ -138,7 +138,8 @@ test("server-renders all 52 governed routes with their expected headings and pri
     const h1Matches = html.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi) ?? [];
 
     if (pathname === "/") {
-      assert.equal(h1Matches.length, 0, "the homepage omits the owner-bound hero and its heading while its five-item input is absent");
+      assert.equal(h1Matches.length, 1, "the staged Homepage renders exactly one owner-approved heading");
+      assert.equal(visibleText(h1Matches[0]), "Formulated to a higher standard.", "Homepage h1");
     } else {
       assert.equal(h1Matches.length, 1, `${pathname} should render exactly one h1`);
       assert.equal(visibleText(h1Matches[0]), heading, `${pathname} h1`);
@@ -189,7 +190,7 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
     "90 SERVINGS",
     ">99%",
     "IN STOCK",
-    "OPENLAB REPORTED",
+    "OPENLAB VERIFIED",
     "£43",
   ]) {
     assert.match(productText, new RegExp(escapeRegExp(expected)), `MK-2866 truth: ${expected}`);
@@ -210,11 +211,21 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
   }
 });
 
-test("keeps homepage values fail closed until the accepted hero receives owner inputs", async () => {
+test("renders the deterministic five-product Homepage design candidate while the component still fails closed without owner inputs", async () => {
   const worker = await loadWorker();
 
   const homeText = visibleText(await renderHtml(worker, "/"));
-  assert.doesNotMatch(homeText, /Formulated\. Verified\. Batch tracked\.|direct access to available lab records/i);
+  for (const expected of [
+    "FORMULATED. VERIFIED. BATCH TRACKED.",
+    "Formulated to a higher standard.",
+    "OPENLAB VERIFIED",
+    "MK-2866",
+    "MENT",
+    "ENDURASHRED",
+    "RAD-140",
+    "MK-677",
+  ]) assert.match(homeText, new RegExp(escapeRegExp(expected)), `Homepage candidate: ${expected}`);
+  assert.doesNotMatch(homeText, /OPENLAB REPORTED/);
 
   const shopHtml = await renderHtml(worker, "/shop");
   assert.match(shopHtml, /data-component=["']ProductCommerceCard\.compact["']/i, "Shop renders canonical Compact card instances throughout the grid");
@@ -227,14 +238,18 @@ test("keeps homepage values fail closed until the accepted hero receives owner i
 
   const routeSource = await readFile(new URL("../app/customer-routes.tsx", import.meta.url), "utf8");
   const heroSource = await readFile(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8");
+  const heroCandidateSource = await readFile(new URL("../app/design-system/homepage-design-candidate.ts", import.meta.url), "utf8");
   const pdpSource = await readFile(new URL("../app/design-system/pdp-first-fold.tsx", import.meta.url), "utf8");
   const openLabSource = await readFile(new URL("../app/design-system/openlab-hero-light.tsx", import.meta.url), "utf8");
   const homeHero = routeSource.match(/export function HomeRoute\(\)[\s\S]*?\n}\n\nexport function ProductRoute/)?.[0] ?? "";
   assert.match(heroSource, /products\.length !== 5 \|\| !active\) return null/, "homepage suppresses incomplete owner input");
   assert.doesNotMatch(heroSource, /data-figma-node|data-figma-stage-node|const products = \[/);
-  assert.match(pdpSource, /data-figma-node="1155:30632"/, "PDP first fold uses the corrected authority node");
+  assert.match(pdpSource, /data-figma-node="717:16137"/, "PDP first fold retains the current full-container reference");
   assert.match(openLabSource, /data-figma-node="614:75995"/, "OpenLab uses the HeroLight authority node");
   assert.match(homeHero, /<LockedHomeHero\b/, "homepage uses the corrected LockedHero implementation");
+  assert.match(homeHero, /content=\{homepageHeroContent\}/, "homepage receives deterministic design copy");
+  assert.match(homeHero, /products=\{homepageHeroProducts\}/, "homepage receives the five-product design candidate");
+  assert.match(heroCandidateSource, /These values stage the visual and interaction contract/, "fixture boundary remains explicit");
   assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
 });
 

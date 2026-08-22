@@ -2,7 +2,7 @@
   "contract": "OLUK_ROUTE_PRESENTATION_AUTHORITY_V1",
   "schemaVersion": "1.0.0",
   "status": "SITES_READY_NEXT_SYNC_REQUIRED",
-  "sourceInventoryDigest": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c",
+  "sourceInventoryDigest": "7db678d3db46928913c27a59dc34965976711d95dd364caff31488de4ca36e27",
   "routeRegistryDigest": "aeb81cd914ad0bc020e62efe18b51fd92306f38ed234aaf4180b9087a4b3f514",
   "routeCount": 74,
   "routes": [
@@ -5350,5 +5350,5 @@
       "lifecycle": "inventory"
     }
   ],
-  "contentHash": "ed3406c9dbaa75dcf1dc62748248e4d8e63370fd22b8da3822ccd1a57f50a27a"
+  "contentHash": "4b5f2daae4c369592bc05759fe2cb92548bbb306de115b309e63f88be783a630"
 }

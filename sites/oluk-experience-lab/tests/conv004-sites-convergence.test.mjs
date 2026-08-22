@@ -189,10 +189,10 @@ test("CONV-004 exposes StockPill states while preserving InventoryStatus compati
   assert.match(status, /export function StockPill\(/);
   assert.match(status, /data-oluk-status-kind="availability"/);
   assert.match(status, /data-oluk-status-kind="evidence"/);
-  assert.match(status, /verified: "OPENLAB REPORTED"/);
+  assert.match(status, /verified: "OPENLAB VERIFIED"/);
   assert.match(status, /available: "EVIDENCE UNAVAILABLE"/);
   assert.match(status, /EvidenceStatus\(\{ state = "unavailable"/);
-  assert.doesNotMatch(status, /OPENLAB VERIFIED|RECORD AVAILABLE/);
+  assert.doesNotMatch(status, /OPENLAB REPORTED|RECORD AVAILABLE/);
   assert.match(status, /export type InventoryStatusProps = StockPillProps/);
   assert.match(status, /export function InventoryStatus\([\s\S]*?<StockPill \{\.\.\.props\} \/>/);
   assert.doesNotMatch(status, /oluk-inventory-green/);

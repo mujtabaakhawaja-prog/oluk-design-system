@@ -27,6 +27,10 @@ import { mk2866Fixture, rad140Fixture } from "./design-system/product-fixtures";
 import { ProductMediaChamber } from "./design-system/product-media-chamber";
 import { MobileDecisionSummary, ProductDetailDisclosure, ProductEvidenceSnapshot } from "./design-system/pdp-sections";
 import { LockedHomeHero } from "./design-system/locked-home-hero";
+import {
+  homepageHeroContent,
+  homepageHeroProducts,
+} from "./design-system/homepage-design-candidate";
 import { OpenLabHeroLight } from "./design-system/openlab-hero-light";
 import { PdpFirstFold } from "./design-system/pdp-first-fold";
 import { EvidenceStatus } from "./design-system/product-status";
@@ -158,7 +162,7 @@ function EvidenceArchiveEntry({ id = "openlab-records" }: Readonly<{ id?: string
 export function HomeRoute() {
   return (
     <>
-      <LockedHomeHero />
+      <LockedHomeHero content={homepageHeroContent} products={homepageHeroProducts} />
       <div className="shell"><CobaltDensityBoundary /></div>
       <AssuranceSection />
       <FamilyDiscovery />

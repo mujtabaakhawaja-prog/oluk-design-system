@@ -51,7 +51,7 @@ export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "lab-partner", path: "/open-lab/lab-partner", label: "Lab partner", heading: "The public partner journey is not yet open.", section: "openlab", authorityClass: "customer-candidate" },
   { key: "privacy", path: "/privacy", label: "Privacy", heading: "Read the published information behind your customer experience.", section: "support", authorityClass: "customer-candidate" },
   { key: "review", path: "/review", label: "Owner review", heading: "Olympus Labs UK review surfaces.", section: "owner", authorityClass: "owner-review" },
-  { key: "review-studio", path: "/review-studio", label: "Champion Review Studio", heading: "Champion Review Studio", section: "owner", authorityClass: "owner-review" },
+  { key: "review-studio", path: "/review-studio", label: "Presentation Review Studio", heading: "Presentation Review Studio", section: "owner", authorityClass: "owner-review" },
   { key: "search", path: "/search", label: "Search", heading: "Find a product.", section: "support", authorityClass: "customer-candidate" },
   { key: "terms", path: "/terms", label: "Terms", heading: "Read the published terms behind your order.", section: "support", authorityClass: "customer-candidate" },
   { key: "wholesale", path: "/wholesale", label: "Wholesale", heading: "Begin a wholesale conversation with product clarity.", section: "support", authorityClass: "customer-candidate" },

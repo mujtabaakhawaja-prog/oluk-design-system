@@ -11,7 +11,9 @@ import {
 } from "react";
 
 import { ActionButton, ActionLink } from "./action-control";
+import type { EvidenceState, InventoryState } from "./commerce-types";
 import { MetricRail } from "./metric-rail";
+import { ProductStatusStack } from "./product-status";
 import styles from "./locked-home-hero.module.css";
 
 export type LockedHomeHeroProduct = Readonly<{
@@ -23,6 +25,8 @@ export type LockedHomeHeroProduct = Readonly<{
   purityDisplay?: string | null;
   priceDisplay?: string | null;
   href: string;
+  inventoryState: InventoryState;
+  evidenceState: EvidenceState;
   media: Readonly<{
     src: string;
     width: number;
@@ -166,6 +170,7 @@ export function LockedHomeHero({
   return (
     <section
       className={styles.canvas}
+      data-component="HomepageDecisionHero"
       data-motion-contract="runtime-product-stage-5-3-1"
       data-state-restoration="url-featured-product"
       id="hero"
@@ -175,6 +180,7 @@ export function LockedHomeHero({
         <div className={styles.editorial}>
           <div
             className={styles.copy}
+            data-component="HeroCopyCard"
             data-copy-sequence="eyebrow-title-primary-actions"
             data-copy-surface="editorial"
             data-mobile-strategy="recompose"
@@ -192,11 +198,21 @@ export function LockedHomeHero({
             </div>
           </div>
           <div aria-hidden="true" className={styles.divider} />
-          <section className={styles.decision} data-copy-surface="decision">
-            <div className={styles.identity}>
-              <span>Featured product</span>
-              <h2>{active.productName}</h2>
-              {active.alias ? <p>{active.alias}</p> : null}
+          <section
+            className={styles.decision}
+            data-component="HeroDecisionSurface"
+            data-copy-surface="decision"
+          >
+            <div className={styles.identityRow}>
+              <div className={styles.identity}>
+                <span>Featured product</span>
+                <h2>{active.productName}</h2>
+                {active.alias ? <p>{active.alias}</p> : null}
+              </div>
+              <ProductStatusStack
+                evidence={active.evidenceState}
+                inventory={active.inventoryState}
+              />
             </div>
             <p aria-atomic="true" aria-live="polite" className="sr-only">
               Featured product changed to {active.productName}
@@ -211,14 +227,17 @@ export function LockedHomeHero({
               }}
             />
             <div className={styles.commerceRow}>
-              {active.priceDisplay ? (
-                <div className={styles.price}>
-                  <span>Price</span>
+              <div className={styles.price}>
+                <span>Price</span>
+                {active.priceDisplay ? (
                   <strong>{active.priceDisplay}</strong>
-                </div>
-              ) : null}
+                ) : (
+                  <small>Unavailable</small>
+                )}
+              </div>
               <div className={styles.commerceActions}>
-                <ActionLink href={active.href} size="compact">View product</ActionLink>
+                <ActionLink href={active.href} size="compact" variant="secondary">View product</ActionLink>
+                <ActionLink href={`${active.href}#purchase`} size="compact">Add to bag</ActionLink>
               </div>
             </div>
             <div
@@ -253,6 +272,8 @@ export function LockedHomeHero({
           <div
             aria-labelledby={`hero-product-tab-${active.canonicalProductId}`}
             className={styles.stage}
+            data-component="HomepageProductStage"
+            data-media-context="homepage-hero"
             data-mobile-priority="active-product-first"
             data-proof-allow-overflow
             data-reduced-motion="static-state"

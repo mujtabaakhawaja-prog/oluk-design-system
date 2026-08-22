@@ -22,6 +22,7 @@
   "targets": [
     "sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx",
     "sites/oluk-experience-lab/app/design-system/locked-home-hero.module.css",
+    "sites/oluk-experience-lab/app/design-system/homepage-design-candidate.ts",
     "sites/oluk-experience-lab/app/design-system/product-status.tsx"
   ],
   "fieldBindings": [
@@ -32,27 +33,35 @@
     {"componentInput":"servingsDisplay","runtimeFieldRefs":["productCard.servingsDisplay"]},
     {"componentInput":"purityDisplay","runtimeFieldRefs":["productCard.purityDisplay"]},
     {"componentInput":"priceDisplay","runtimeFieldRefs":["productCard.price.amountMinor","productCard.price.currency"]},
+    {"componentInput":"inventoryState","runtimeFieldRefs":["productCard.stockState"]},
+    {"componentInput":"evidenceState","runtimeFieldRefs":["productCard.openLabState"]},
     {"componentInput":"media","runtimeFieldRefs":["media.primary.handle"]}
   ],
   "compositionContract": {
     "requiredProductCount": 5,
     "desktopColumns": [0.84, 1.16],
-    "mobileOrder": ["editorial-copy", "product-stage", "cobalt-divider", "decision-surface"],
+    "mobileOrder": ["editorial-copy", "product-stage", "decision-surface"],
     "interaction": ["url-featured-selection", "popstate-restoration", "pageshow-restoration", "arrow-keys", "home-end", "active-image-eager", "inactive-image-lazy", "reduced-motion-static"],
     "missingBehavior": "suppress-component"
   },
   "removedBehaviors": [
-    "local-five-product-value-array",
-    "literal-price-values",
-    "fixture-disabled-add-to-bag",
-    "verification-and-third-party-testing-claims",
+    "component-local-five-product-value-array",
+    "unlabelled-runtime-fixture-values",
     "record-availability-as-evidence",
     "figma-node-provenance-markers"
   ],
   "evidencePresentation": {
-    "customerState": "OPENLAB REPORTED",
+    "customerState": "OPENLAB VERIFIED",
     "defaultState": "EVIDENCE UNAVAILABLE",
-    "forbiddenCustomerStates": ["OPENLAB VERIFIED", "RECORD AVAILABLE"]
+    "iconRequired": true,
+    "forbiddenCustomerStates": ["OPENLAB REPORTED", "RECORD AVAILABLE"]
+  },
+  "stagingBoundary": {
+    "mode": "SITES_DESIGN_STUDIO_MODE_V1",
+    "fixtureOwner": "homepage-design-candidate.ts",
+    "purpose": "deterministic visual and interaction staging",
+    "runtimeAuthority": false,
+    "promotionState": "HUMAN_HOMEPAGE_DESIGN_APPROVAL_PENDING"
   },
   "downstreamGates": [
     "native-next-server-binding",

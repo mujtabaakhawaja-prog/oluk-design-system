@@ -372,6 +372,36 @@
       "excluded": ["current Commerce and Checkout runtime tranche", "Account runtime implementation", "Figma", "Figma Make", "Figma publication", "Review Studio payload refresh", "candidate PR #42 rebase or merge", "route promotion", "runtime service mutation"],
       "implementationStatus": "NO_IMPLEMENTATION_OR_PROMOTION",
       "supersedes": []
+    },
+    {
+      "id": "DEC-EVIDENCE-LABEL-001",
+      "recordedDate": "2026-08-21",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "OPENLAB VERIFIED with the OpenLab icon is the correct customer-facing evidence status for the approved product presentation system. OPENLAB REPORTED is rejected for these product status surfaces, and the prior diagnosis that the icon was missing is false.",
+      "appliesTo": ["EvidenceStatus", "HeroDecisionSurface", "ProductCommerceCard", "PurchasePanel", "PDP", "Homepage", "OpenLab product bridges"],
+      "clarifies": ["DEC-HERO-001"],
+      "supersedes": ["D2-HOME-SYSTEM-01 OPENLAB REPORTED interpretation"]
+    },
+    {
+      "id": "DEC-MF-FAMILY-001",
+      "recordedDate": "2026-08-21",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "MF-03 does not supersede MF-02B. MF-02B remains the preferred adaptive and card-family design input. MF-03 is a separate OpenLab Portal page mockup whose structural ideas may be adapted after its card, elevation and component grammar are reconciled with the shared system.",
+      "appliesTo": ["MF-02B", "MF-03", "commerce card family", "OpenLab Portal", "Sites Review Studio"],
+      "clarifies": ["DEC-PRECEDENCE-001"],
+      "supersedes": ["MF-03 supersedes MF-02B interpretation"]
+    },
+    {
+      "id": "DEC-SITES-DESIGN-STUDIO-001",
+      "recordedDate": "2026-08-21",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "Sites System Atlas is the identity-system input: census, grammar, components, route slots, states and source dispositions. Sites Review Studio is the creative output frontier: candidate comparison, annotation and exact approval. Native Next Runtime Studio proves visual parity for the selected candidate in fixture and real-adapter modes, and customer routes consume the same grammar without review chrome. Page design proceeds Homepage, then PDP, then OpenLab after shared grammar and controls are coherent.",
+      "appliesTo": ["System Atlas", "Sites Review Studio", "Native Next Runtime Studio", "Native Next customer routes", "74-route programme"],
+      "clarifies": ["DEC-RUN-001", "DEC-GATE-001"],
+      "supersedes": ["Figma-only construction gate", "undifferentiated Atlas and Review Studio interpretation"]
     }
   ]
 }

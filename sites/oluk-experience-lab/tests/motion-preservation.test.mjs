@@ -41,8 +41,9 @@ test("LockedHero preserves its accepted stage behavior and fails closed without 
   assert.match(source, /strengthDisplay\?: string \| null/);
   assert.match(source, /priceDisplay\?: string \| null/);
   assert.doesNotMatch(source, /const products = \[/);
-  assert.doesNotMatch(source, /price: "£|lockedHomeHeroMedia|Add to bag/);
-  assert.doesNotMatch(source, /Formulated\. Verified|Third-party tested|OPENLAB VERIFIED|RECORD AVAILABLE/);
+  assert.doesNotMatch(source, /price: "£|lockedHomeHeroMedia/);
+  assert.match(source, /Add to bag/);
+  assert.doesNotMatch(source, /OPENLAB REPORTED|RECORD AVAILABLE/);
   assert.doesNotMatch(source, /data-figma-node|data-figma-stage-node/);
   assert.doesNotMatch(source, /className="button|styles\.buyRow|<dl className=\{styles\.metrics\}/);
   assert.match(css, /\.hero \{[\s\S]*grid-template-columns: minmax\(0, 0\.84fr\) minmax\(0, 1\.16fr\)/);
