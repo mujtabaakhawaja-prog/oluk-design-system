@@ -1,6 +1,8 @@
 import inventory from "../../../../authority/generated/OLUK-SURFACE-INVENTORY-V1.json";
 import presentation from "../../../../authority/generated/OLUK-PRESENTATION-SYSTEM-V2.json";
 import routeAuthority from "../../../../authority/generated/OLUK-ROUTE-PRESENTATION-AUTHORITY-V1.json";
+import census from "../../../../authority/generated/OLUK-COMPONENT-CENSUS-V1.json";
+import { FirstPassFoundationSpecimens } from "./first-pass-foundations";
 import { PdpFirstFold } from "./pdp-first-fold";
 import { mk2866Fixture } from "./product-fixtures";
 import styles from "./sites-system-atlas.module.css";
@@ -34,6 +36,7 @@ export function SitesSystemAtlas() {
         <article><strong>{inventory.counts.productRouteInstances}</strong><span>product instances</span></article>
         <article><strong>{inventory.counts.entities}</strong><span>surface entities</span></article>
         <article><strong>{presentation.responsiveViewports.length}</strong><span>review widths</span></article>
+        <article><strong>{census.counts.components}</strong><span>component exports</span></article>
       </section>
 
       <section className={styles.section}>
@@ -55,6 +58,13 @@ export function SitesSystemAtlas() {
       <section className={styles.section}>
         <header><span>ROUTE AUTHORITY</span><h2>Complete 74-route staging map.</h2><p>Dynamic instances remain separate from route definitions. Bundle Builder is canonical route 74.</p></header>
         <ol className={styles.routeGrid}>{routeAuthority.routes.map((route, index) => <li key={route.routeId}><b>{String(index + 1).padStart(2, "0")}</b><code>{route.path}</code><span>{route.family.replaceAll("_", " ")}</span><small>{route.templateId.replace("template.", "")}</small></li>)}</ol>
+      </section>
+
+      <FirstPassFoundationSpecimens />
+
+      <section className={styles.section}>
+        <header><span>CANONICAL COMPONENT CENSUS</span><h2>Every staging component has an adoption disposition.</h2><p>The generated census records family, variants, states, responsive modes, source, staging status, Runtime Studio status, and open gates.</p></header>
+        <div className={styles.kindGrid}>{Object.entries(census.counts.byFamily).map(([family, count]) => <article key={family}><strong>{count}</strong><span>{family.replaceAll("_", " ")}</span></article>)}</div>
       </section>
     </main>
   );

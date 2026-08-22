@@ -14,6 +14,7 @@ import { getFrontierProduct } from "./frontier-content";
 import { mk2866Fixture, rad140Fixture } from "./product-fixtures";
 import { OpenLabProductExperience } from "./openlab-product-experience";
 import { EvidenceStatusChip } from "./program-components";
+import { OpenLabArchiveExplorer } from "./openlab-archive-explorer";
 import styles from "./openlab-sections.module.css";
 
 export const openLabPortalEntries = [
@@ -60,7 +61,11 @@ export function OpenLabStateLegend() {
 }
 
 export function OpenLabRegistryArchive({ record = selectedEvidenceRecord }: { record?: EvidenceRecordPresentation }) {
-  return <section className={styles.section} data-module="OpenLabRegistryArchive"><div className={`${styles.shell} ${styles.archive}`}><DecisionSurface className={styles.searchCard} compact copy="Use a product, batch or report reference to find the exact connected record." eyebrow="SEARCH RECORDS" title="Start with the reference in front of you."><label htmlFor="record-search">Product or record reference</label><input id="record-search" placeholder="e.g. MK-2866" type="search"/><button className="button" disabled type="button">Search records</button><a href="/open-lab/batch-lookup">Have a batch number? <Arrow/></a></DecisionSurface><TechnicalSurface actions={<><ActionLink href={record.customerPath}>View {record.product.name}</ActionLink><ActionLink href="/open-lab/compare" secondary>Compare availability</ActionLink></>} className={styles.registry} copy="Product facts remain useful even when a connected record is unavailable; OpenLab keeps the missing evidence state explicit." eyebrow="PRODUCT RECORD PATH" state="unavailable" title={`${record.product.name} record availability.`}><OpenLabStateLegend/><div className={styles.registryRow} data-live-authority="false"><div><strong>{record.product.name}</strong><span>{record.product.alias} · {record.product.strength} · {record.product.servings}</span></div><dl><dt>Record</dt><dd>Unavailable</dd></dl><EvidenceStatusChip state="unavailable"/></div><PresentationState className={styles.registryState} state="unavailable"/></TechnicalSurface></div></section>;
+  return <section className={styles.section} data-module="OpenLabRegistryArchive" data-staging-fixture="true"><div className={styles.shell}><OpenLabArchiveExplorer records={[
+    { id: "OLUK-MK2866-01", product: record.product.name, alias: record.product.alias, batch: "MK2866-01", href: record.customerPath },
+    { id: "OLUK-RAD140-01", product: "RAD-140", alias: "Testolone", batch: "RAD140-08", href: "/open-lab/records/source-bound-record" },
+    { id: "OLUK-MK677-01", product: "MK-677", alias: "Ibutamoren", batch: "MK677-15", href: "/open-lab/records/source-bound-record" },
+  ]}/></div></section>;
 }
 
 export function OpenLabRecordDetail({ record = selectedEvidenceRecord }: { record?: EvidenceRecordPresentation }) {

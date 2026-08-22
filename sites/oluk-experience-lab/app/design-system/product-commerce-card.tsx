@@ -19,6 +19,7 @@ import { ProductMediaChamber } from "./product-media-chamber";
 import styles from "./product-commerce-card.module.css";
 import { QualitativeChipList } from "./qualitative-chip";
 import { QuantityStepper } from "./quantity-stepper";
+import { StagingPrice } from "./staging-preference-context";
 
 export type ProductCommerceCardProps = Readonly<{
   product: ProductFixture;
@@ -158,7 +159,7 @@ export function ProductCommerceCard({
         {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
         {commerceTreatment === "purchase" ? (
           <div className={classes("oluk-candidate-compact-buy", styles.compactPurchase)}>
-            <strong>{product.price}</strong>
+            <strong><StagingPrice value={product.price}/></strong>
             <div className={styles.compactActions}>
               <ActionLink href={secondaryHref ?? product.customerPath} size="compact" variant="quiet">
                 View product

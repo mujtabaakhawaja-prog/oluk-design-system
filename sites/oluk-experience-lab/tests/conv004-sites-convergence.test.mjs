@@ -190,7 +190,9 @@ test("CONV-004 exposes StockPill states while preserving InventoryStatus compati
   assert.match(status, /data-oluk-status-kind="availability"/);
   assert.match(status, /data-oluk-status-kind="evidence"/);
   assert.match(status, /verified: "OPENLAB VERIFIED"/);
-  assert.match(status, /available: "EVIDENCE UNAVAILABLE"/);
+  assert.match(status, /available: "OPENLAB VERIFIED"/);
+  assert.match(status, /unavailable: "OPENLAB VERIFIED"/);
+  assert.doesNotMatch(status, /EVIDENCE UNAVAILABLE/);
   assert.match(status, /EvidenceStatus\(\{ state = "unavailable"/);
   assert.doesNotMatch(status, /OPENLAB REPORTED|RECORD AVAILABLE/);
   assert.match(status, /export type InventoryStatusProps = StockPillProps/);
@@ -244,7 +246,7 @@ test("CONV-004 reuses ProductMediaChamber and separates the atomic divider from 
   assert.match(dividerCss, /padding-block:\s*var\(--oluk-divider-rhythm\)/);
   assert.ok((candidateReview.match(/<CobaltDensityBoundary \/>/g) ?? []).length >= 2);
   assert.equal((customerRoutes.match(/<CobaltDensityBoundary \/>/g) ?? []).length, 2);
-  assert.match(customerRoutes, /export function HomeRoute\(\)[\s\S]*?<CobaltDensityBoundary \/>[\s\S]*?<AssuranceSection \/>/);
+  assert.match(customerRoutes, /export function HomeRoute\(\)[\s\S]*?<CobaltDensityBoundary \/>[\s\S]*?<HomepageAssuranceTransition \/>/);
   assert.match(customerRoutes, /export function OpenLabRoute\(\)[\s\S]*?<CobaltDensityBoundary \/>[\s\S]*?<SectionHeading/);
   assert.match(commerceCard, /import \{ ProductMediaChamber \}/);
   assert.match(commerceCard, /<ProductMediaChamber/);

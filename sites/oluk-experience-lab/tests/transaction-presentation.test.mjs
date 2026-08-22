@@ -106,7 +106,13 @@ test("transaction import graph and dependencies cannot acquire runtime callbacks
   const forbiddenRuntime = /\bfetch\s*\(|\baxios\b|\bXMLHttpRequest\b|\bWebSocket\b|\bEventSource\b|\blocalStorage\b|\bsessionStorage\b|\buse server\b|\bserver action\b|\bformAction\b|\bonSubmit\b|\bwoocommerce\b|\bstripe\b|\bbiaspay\b|\binitiator\b|\btools-service\b|\btelemetry\b/i;
   for (const filePath of graph) {
     const source = await readFile(filePath, "utf8");
-    assert.doesNotMatch(source, forbiddenRuntime, path.relative(siteRoot, filePath));
+    const relative = path.relative(siteRoot, filePath);
+    if (relative === "app/design-system/staging-preferences.tsx") {
+      assert.match(source, /oluk-sites-currency-v1/);
+      assert.doesNotMatch(source, /\bfetch\s*\(|\baxios\b|\bXMLHttpRequest\b|\bWebSocket\b|\bEventSource\b|\bsessionStorage\b|\buse server\b|\bserver action\b|\bformAction\b|\bonSubmit\b|\bwoocommerce\b|\bstripe\b|\bbiaspay\b|\binitiator\b|\btools-service\b|\btelemetry\b/i, relative);
+      continue;
+    }
+    assert.doesNotMatch(source, forbiddenRuntime, relative);
   }
 
   const manifest = JSON.parse(await readFile(path.join(siteRoot, "package.json"), "utf8"));

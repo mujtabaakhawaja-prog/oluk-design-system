@@ -5,6 +5,7 @@ import { classes } from "./component-utils";
 import type { ProductFixture } from "./product-fixtures";
 import { ProductStatusStack } from "./product-status";
 import styles from "./commerce-parts.module.css";
+import { StagingPrice } from "./staging-preference-context";
 
 export type ProductIdentityProps = Readonly<{
   product: ProductFixture;
@@ -52,7 +53,7 @@ export function PriceBlock({ price }: Readonly<{ price: string }>) {
   return (
     <div className="price-block">
       <span>PRICE</span>
-      <strong>{price}</strong>
+      <strong><StagingPrice value={price}/></strong>
     </div>
   );
 }

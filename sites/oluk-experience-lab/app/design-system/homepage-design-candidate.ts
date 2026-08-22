@@ -15,7 +15,7 @@ export const homepageHeroContent = {
   eyebrow: "FORMULATED. VERIFIED. BATCH TRACKED.",
   title: "Formulated to a higher standard.",
   description:
-    "Third-party tested. Strength, servings, and fulfilment confirmed before checkout.",
+    "Explore finished products through clear labelled specifications, considered product detail, and a direct path into OpenLab records.",
   primaryAction: { href: "/shop", label: "Shop the range" },
   secondaryAction: { href: "/open-lab", label: "View Lab Records" },
 } as const satisfies LockedHomeHeroContent;

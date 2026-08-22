@@ -34,11 +34,11 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
       {
         heading: "By family",
         items: [
-          { id: "sarms", label: "SARMs", href: "/shop?family=sarms" },
+          { id: "sarms", label: "SARMs", href: "/shop?family=sarms", detail: "Browse the complete SARM collection" },
           { id: "research-chemicals", label: "Research chemicals", href: "/shop?family=research-chemicals", detail: "Compare the complete research range" },
-          { id: "prohormones", label: "Prohormones", href: "/shop?family=prohormones" },
-          { id: "metabolics", label: "Metabolics", href: "/shop?family=metabolics" },
-          { id: "shop-all", label: "View all products", href: "/shop" },
+          { id: "prohormones", label: "Prohormones", href: "/shop?family=prohormones", detail: "Explore the prohormone collection" },
+          { id: "metabolics", label: "Metabolics", href: "/shop?family=metabolics", detail: "Explore metabolic product options" },
+          { id: "shop-all", label: "View all products", href: "/shop", detail: "See the full Olympus Labs UK range" },
         ],
       },
       {
@@ -56,8 +56,7 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
         items: [
           { id: "stacks", label: "Ready-built stacks", href: "/shop?family=stacks", detail: "Shop by training goal" },
           { id: "bundle-builder", label: "Build my stack", href: "/bundle-builder", detail: "Choose the result and compare the build" },
-          { id: "capsules", label: "Capsule formats", href: "/shop?form=capsules" },
-          { id: "servings-90", label: "Longer formats", href: "/shop?servings=90" },
+          { id: "capsules", label: "Capsule formats", href: "/shop?form=capsules", detail: "Browse products by finished format" },
         ],
       },
     ],
@@ -81,7 +80,7 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
           { id: "records", label: "Browse lab records", href: "/open-lab/records", detail: "Open product and batch records" },
           { id: "batch-lookup", label: "Find my batch", href: "/open-lab/batch-lookup", detail: "Search the exact batch reference" },
           { id: "evidence", label: "See the evidence", href: "/open-lab/evidence", detail: "Read results and testing history" },
-          { id: "source-chain", label: "Follow the source chain", href: "/open-lab/source-chain" },
+          { id: "source-chain", label: "Follow the source chain", href: "/open-lab/source-chain", detail: "See how products connect to their records" },
         ],
       },
       {
@@ -89,20 +88,20 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
         items: [
           { id: "stack-builder", label: "Build my stack", href: "/open-lab/stack-builder", detail: "Start with the result you want" },
           { id: "compare", label: "Compare compounds", href: "/open-lab/compare", detail: "See the differences side by side" },
-          { id: "dose-calculator", label: "Dose calculator", href: "/open-lab/dosing-calculator" },
-          { id: "cycle-planner", label: "Cycle planner", href: "/open-lab/cycle-planner" },
-          { id: "interaction-checker", label: "Interaction checker", href: "/open-lab/interaction-checker" },
+          { id: "dose-calculator", label: "Dose calculator", href: "/open-lab/dosing-calculator", detail: "Review the available product information" },
+          { id: "cycle-planner", label: "Cycle planner", href: "/open-lab/cycle-planner", detail: "Organize products without invented guidance" },
+          { id: "interaction-checker", label: "Interaction checker", href: "/open-lab/interaction-checker", detail: "Check the information currently available" },
         ],
       },
       {
         heading: "Learn",
         items: [
-          { id: "compound-guide", label: "Compound guide", href: "/open-lab/compound-guide" },
-          { id: "methodology", label: "How testing works", href: "/open-lab/methodology" },
-          { id: "research-papers", label: "Research papers", href: "/open-lab/research-papers" },
-          { id: "case-studies", label: "Case studies", href: "/open-lab/case-studies" },
-          { id: "glossary", label: "Glossary", href: "/open-lab/glossary" },
-          { id: "lab-partner", label: "Become a lab partner", href: "/open-lab/lab-partner" },
+          { id: "compound-guide", label: "Compound guide", href: "/open-lab/compound-guide", detail: "Understand product names and categories" },
+          { id: "methodology", label: "How testing works", href: "/open-lab/methodology", detail: "See how OpenLab records are presented" },
+          { id: "research-papers", label: "Research papers", href: "/open-lab/research-papers", detail: "Browse the research library" },
+          { id: "case-studies", label: "Case studies", href: "/open-lab/case-studies", detail: "Explore practical product stories" },
+          { id: "glossary", label: "Glossary", href: "/open-lab/glossary", detail: "Look up unfamiliar terms" },
+          { id: "lab-partner", label: "Become a lab partner", href: "/open-lab/lab-partner", detail: "Learn about laboratory collaboration" },
         ],
       },
     ],
@@ -123,13 +122,13 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
       {
         heading: "Learn",
         items: [
-          { id: "learn-compounds", label: "Compound guide", href: "/open-lab/compound-guide" },
-          { id: "learn-papers", label: "Research papers", href: "/open-lab/research-papers" },
-          { id: "learn-cases", label: "Case studies", href: "/open-lab/case-studies" },
-          { id: "learn-glossary", label: "Glossary", href: "/open-lab/glossary" },
-          { id: "learn-faq", label: "FAQ and help centre", href: "/faq-help-centre" },
-          { id: "learn-delivery", label: "Delivery information", href: "/delivery" },
-          { id: "learn-contact", label: "Contact us", href: "/contact" },
+          { id: "learn-compounds", label: "Compound guide", href: "/open-lab/compound-guide", detail: "Start with product and compound fundamentals" },
+          { id: "learn-papers", label: "Research papers", href: "/open-lab/research-papers", detail: "Browse the supporting research library" },
+          { id: "learn-cases", label: "Case studies", href: "/open-lab/case-studies", detail: "Explore practical product stories" },
+          { id: "learn-glossary", label: "Glossary", href: "/open-lab/glossary", detail: "Find clear definitions for technical terms" },
+          { id: "learn-faq", label: "FAQ and help centre", href: "/faq-help-centre", detail: "Get answers before and after purchase" },
+          { id: "learn-delivery", label: "Delivery information", href: "/delivery", detail: "Review delivery options and expectations" },
+          { id: "learn-contact", label: "Contact us", href: "/contact", detail: "Speak with the Olympus Labs UK team" },
         ],
       },
     ],
@@ -143,10 +142,10 @@ export const NAVIGATION_TREE: ReadonlyArray<NavigationNode> = [
       {
         heading: "Olympus Labs UK",
         items: [
-          { id: "our-story", label: "Our story", href: "/about" },
-          { id: "testing-philosophy", label: "Testing philosophy", href: "/open-lab/methodology" },
-          { id: "privacy", label: "Privacy policy", href: "/privacy" },
-          { id: "terms", label: "Terms and conditions", href: "/terms" },
+          { id: "our-story", label: "Our story", href: "/about", detail: "Meet the people and purpose behind Olympus" },
+          { id: "testing-philosophy", label: "Testing philosophy", href: "/open-lab/methodology", detail: "Understand the OpenLab approach" },
+          { id: "privacy", label: "Privacy policy", href: "/privacy", detail: "See how customer information is handled" },
+          { id: "terms", label: "Terms and conditions", href: "/terms", detail: "Review the terms for using this shop" },
         ],
       },
     ],
@@ -168,7 +167,6 @@ const SHOP_CONTEXT = [
   { label: "Prohormones", href: "/shop?family=prohormones" },
   { label: "Stacks", href: "/shop?family=stacks" },
   { label: "Capsules", href: "/shop?form=capsules" },
-  { label: "90 servings", href: "/shop?servings=90" },
 ] as const;
 
 const OPEN_LAB_CONTEXT = [

@@ -18,6 +18,7 @@ import {
   SourceChainRoute,
 } from "./customer-routes";
 import { ShopDiscovery } from "./design-system/shop-discovery";
+import { CatalogueCategoryRail } from "./design-system/catalogue-category-rail";
 import { type CoreCustomerRouteKey } from "./design-system/site-route-map";
 import { SiteHeader } from "./design-system/site-header";
 import { TransactionPresentation } from "./design-system/transaction-presentation";
@@ -81,7 +82,8 @@ function PageHero({ eyebrow, title, copy, actions }: { eyebrow: string; title: s
 function ShopPage() {
   return (
     <>
-      <PageHero eyebrow="SHOP" title="The Olympus Labs UK range." copy="Compare clear product specifications, then move directly into available Lab Records." />
+      <PageHero eyebrow="SHOP" title="The complete Olympus Labs UK range." copy="Explore every product family in one place, then refine the range by goal, form, servings, and availability." />
+      <CatalogueCategoryRail />
       <ShopDiscovery />
     </>
   );

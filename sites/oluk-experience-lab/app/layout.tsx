@@ -5,6 +5,7 @@ import "@fontsource/plus-jakarta-sans/700.css";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "./design-system/candidate-tokens.css";
 import "./globals.css";
+import { StagingPreferenceProvider } from "./design-system/staging-preferences";
 
 export const metadata: Metadata = {
   title: {
@@ -52,7 +53,7 @@ export default function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
-        {children}
+        <StagingPreferenceProvider>{children}</StagingPreferenceProvider>
       </body>
     </html>
   );

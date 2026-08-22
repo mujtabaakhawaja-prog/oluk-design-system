@@ -15,6 +15,7 @@ import type { EvidenceState, InventoryState } from "./commerce-types";
 import { MetricRail } from "./metric-rail";
 import { ProductStatusStack } from "./product-status";
 import styles from "./locked-home-hero.module.css";
+import { StagingPrice } from "./staging-preference-context";
 
 export type LockedHomeHeroProduct = Readonly<{
   canonicalProductId: string;
@@ -230,7 +231,7 @@ export function LockedHomeHero({
               <div className={styles.price}>
                 <span>Price</span>
                 {active.priceDisplay ? (
-                  <strong>{active.priceDisplay}</strong>
+                  <strong><StagingPrice value={active.priceDisplay}/></strong>
                 ) : (
                   <small>Unavailable</small>
                 )}

@@ -145,11 +145,16 @@ test("batch lookup renders accessible deterministic empty, entered, found, no-re
   assert.match(noResult, /aria-errormessage=["']lookup-state["']/i, "no-result input identifies its message");
 });
 
-test("evidence routes keep unavailable records explicit without fabricated analytical detail", async () => {
+test("the archive stages configured records while source-bound routes keep unavailable evidence explicit", async () => {
   const worker = await loadWorker();
 
+  const archive = visibleText(await renderHtml(worker, "/open-lab/records"));
+  for (const expected of ["Latest OpenLab records", "MK-2866", "RAD-140", "MK-677", "OPENLAB VERIFIED"]) {
+    assert.match(archive, new RegExp(expected, "i"), `archive staging record: ${expected}`);
+  }
+  assert.doesNotMatch(archive, /EVIDENCE UNAVAILABLE/i);
+
   for (const pathname of [
-    "/open-lab/records",
     "/open-lab/records/source-bound-record",
     "/open-lab/dossier/mk-2866",
   ]) {

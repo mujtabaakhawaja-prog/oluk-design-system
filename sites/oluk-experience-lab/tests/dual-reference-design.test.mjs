@@ -67,13 +67,15 @@ test("every ledger route retains inspectable historic Figma nodes without claimi
   }
 });
 
-test("navigation is sentence case and canonical contextual surfaces are split", async () => {
+test("navigation keeps canonical route labels while the primary header presents all-caps navigation", async () => {
   const [navigation, header, contextual] = await Promise.all([
     readFile(path.join(siteRoot, "app/design-system/navigation-registry.ts"), "utf8"),
     readFile(path.join(siteRoot, "app/design-system/site-header.tsx"), "utf8"),
     readFile(path.join(siteRoot, "app/design-system/contextual-navigation.tsx"), "utf8"),
   ]);
   for (const label of ['label: "Shop"', 'label: "OpenLab"', 'label: "Learn"', 'label: "Wholesale"', 'label: "About"']) assert.match(navigation, new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  assert.match(header, /node\.label\.toUpperCase\(\)/);
+  assert.doesNotMatch(navigation, /servings-90|90 servings|Longer formats/);
   assert.match(header, /ProductCommerceCard/);
   assert.match(header, /rad140Fixture/);
   assert.match(contextual, /ProductContextNav/);

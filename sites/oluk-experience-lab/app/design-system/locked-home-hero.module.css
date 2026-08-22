@@ -142,7 +142,7 @@
 }
 
 .price strong {
-  color: var(--oluk-text-primary);
+  color: var(--oluk-cobalt);
   font-family: var(--oluk-font-display);
   font-size: 32px;
   font-weight: 800;

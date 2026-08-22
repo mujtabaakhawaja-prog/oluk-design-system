@@ -47,6 +47,12 @@
   height: 80px;
   width: min(100%, 310px);
 }
+.logo > span {
+  background: repeating-linear-gradient(135deg, var(--cobalt) 0 5px, transparent 5px 10px);
+  flex: 0 0 34px;
+  height: 24px;
+  margin-right: 12px;
+}
 .logo img {
   height: auto;
   max-height: 80px;
@@ -326,10 +332,50 @@
 .userInner > div {
   align-items: center;
   display: flex;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   gap: 10px;
 }
+.preferenceControls [data-component="CurrencySelector"],
+.preferenceControls [data-component="ThemeSelector"] {
+  background: var(--ice);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  padding: 2px;
+}
+.preferenceControls button,
+.mobilePreferences button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font: 800 10px var(--font-body), sans-serif;
+  min-height: 30px;
+  padding: 5px 9px;
+}
+.preferenceControls button[aria-pressed="true"],
+.mobilePreferences button[aria-pressed="true"] {
+  background: var(--white);
+  box-shadow: 0 3px 10px rgba(22, 62, 132, .12);
+  color: var(--cobalt);
+}
+.preferenceControls [data-component="ThemeSelector"] button {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+.preferenceControls [data-theme-swatch],
+.mobilePreferences [data-theme-swatch] {
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  display: block;
+  height: 10px;
+  width: 10px;
+}
+[data-theme-swatch="light"] { background: var(--white); }
+[data-theme-swatch="dark"] { background: var(--ink); }
 .userInner > div > span {
   color: var(--ink-muted);
 }
@@ -442,6 +488,24 @@
   flex-direction: column;
   padding: 14px 20px 30px;
 }
+.mobilePreferences {
+  background: var(--ice);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 16px;
+}
+.mobilePreferences > span {
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.mobilePreferences > div { display: flex; gap: 6px; }
+.mobilePreferences button { background: var(--white); min-height: 44px; }
 .mobileRoot > a,
 .mobileRoot > button {
   align-items: center;

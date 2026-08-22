@@ -8,6 +8,7 @@ import { ACCOUNT_NAVIGATION, NAVIGATION_TREE, type NavigationNode } from "./navi
 import { ProductCommerceCard } from "./product-commerce-card";
 import { rad140Fixture } from "./product-fixtures";
 import styles from "./site-header.module.css";
+import { CurrencySelector, ThemeSelector } from "./staging-preferences";
 
 const trustItems = [
   { icon: "/assets/icons/trust/delivery.svg", label: "Free UK delivery over £50" },
@@ -100,11 +101,11 @@ export function SiteHeader({ route }: Readonly<{ route: string }>) {
       </div>
       <div className={styles.navPlane}>
         <div className={`shell ${styles.navBar}`}>
-          <a className={styles.logo} href="/" aria-label="Olympus Labs UK home"><img alt="Olympus Labs UK" decoding="async" height="448" src="/assets/brand/option-b/header-logo.png" width="1600"/></a>
+          <a className={styles.logo} href="/" aria-label="Olympus Labs UK home"><span aria-hidden="true"/><img alt="Olympus Labs UK" decoding="async" height="448" src="/assets/brand/option-b/header-logo.png" width="1600"/></a>
           <nav aria-label="Primary navigation" className={`desktop-nav ${styles.desktopNav}`}>
             {NAVIGATION_TREE.map((node) => (
               <div className={styles.navItem} data-open={openMenu === node.id || undefined} key={node.id} onMouseEnter={() => node.columns && setOpenMenu(node.id)} onMouseLeave={() => node.columns && setOpenMenu(null)}>
-                <a href={node.href}>{node.label}</a>
+                <a href={node.href}>{node.label.toUpperCase()}</a>
                 {node.columns ? <button aria-expanded={openMenu === node.id} aria-label={`Open ${node.label} menu`} onClick={() => setOpenMenu((current) => current === node.id ? null : node.id)} type="button"><span aria-hidden="true">⌄</span></button> : null}
                 <MegaMenu node={node}/>
               </div>
@@ -122,7 +123,7 @@ export function SiteHeader({ route }: Readonly<{ route: string }>) {
       <div className={styles.userRail}>
         <div className={`shell ${styles.userInner}`}>
           <a href="/account"><UserIcon/><span>Sign in</span></a>
-          <div><span>Currency</span><strong>GBP £</strong><a href="?currency=USD">USD $</a><a href="?currency=EUR">EUR €</a><i aria-hidden="true"/><span>Appearance</span><strong>Light</strong></div>
+          <div className={styles.preferenceControls}><span>Currency</span><CurrencySelector compact/><i aria-hidden="true"/><span>Appearance</span><ThemeSelector compact/></div>
         </div>
       </div>
       <ContextualNavigation route={route}/>
@@ -131,8 +132,9 @@ export function SiteHeader({ route }: Readonly<{ route: string }>) {
           <div className={styles.mobileHeader}><strong id={mobileTitleId}>{mobilePanel ? NAVIGATION_TREE.find((node) => node.id === mobilePanel)?.label : "Menu"}</strong><button onClick={() => mobilePanel ? setMobilePanel(null) : setMobileOpen(false)} type="button">{mobilePanel ? "← Back" : "✕ Close"}</button></div>
           {!mobilePanel ? (
             <nav aria-label="Mobile primary navigation" className={styles.mobileRoot}>
-              {NAVIGATION_TREE.map((node) => node.columns ? <button key={node.id} onClick={() => setMobilePanel(node.id)} type="button"><span>{node.label}</span><b aria-hidden="true">›</b></button> : <a href={node.href} key={node.id}>{node.label}<b aria-hidden="true">→</b></a>)}
+              {NAVIGATION_TREE.map((node) => node.columns ? <button key={node.id} onClick={() => setMobilePanel(node.id)} type="button"><span>{node.label.toUpperCase()}</span><b aria-hidden="true">›</b></button> : <a href={node.href} key={node.id}>{node.label.toUpperCase()}<b aria-hidden="true">→</b></a>)}
               <a href="/search">Search<b aria-hidden="true">→</b></a><a href="/bag">Bag · 0<b aria-hidden="true">→</b></a><a href="/account">Account<b aria-hidden="true">→</b></a>
+              <div className={styles.mobilePreferences}><span>Currency</span><CurrencySelector/><span>Appearance preview</span><ThemeSelector/></div>
             </nav>
           ) : (
             <div className={styles.mobileSubpanel}>

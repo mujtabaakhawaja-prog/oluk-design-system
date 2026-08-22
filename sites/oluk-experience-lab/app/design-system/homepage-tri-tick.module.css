@@ -1,0 +1,22 @@
+.assurance { background: var(--oluk-canvas); padding: clamp(28px,4vw,52px) 0 18px; }
+.assuranceInner { background: var(--white); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow-card); display: grid; gap: 28px; padding: clamp(24px,3vw,40px); }
+.assuranceCopy { display: grid; gap: 8px; max-width: 780px; }
+.assuranceCopy > span,.heading > span { color: var(--cobalt); font-size: 15px; font-weight: 800; letter-spacing: .14em; }
+.assuranceCopy h2,.heading h2 { font-family: var(--font-display),sans-serif; font-size: clamp(30px,4vw,52px); letter-spacing: -.045em; line-height: 1.02; margin: 0; }
+.assuranceCopy p,.heading p,.ticks p { color: var(--ink-muted); line-height: 1.55; margin: 0; }
+.section { background: var(--oluk-canvas); padding: 18px 0 clamp(70px,8vw,120px); }
+.grid { display: grid; gap: clamp(22px,3vw,48px); grid-template-columns: minmax(0,.88fr) minmax(420px,1.12fr); }
+.media,.content { border: 1px solid var(--line); border-radius: 30px; min-width: 0; }
+.media { align-items: center; background: radial-gradient(circle at 50% 72%,var(--white) 0 15%,var(--cobalt-soft) 44%,transparent 72%),linear-gradient(135deg,var(--oluk-surface-subtle),var(--oluk-surface-media)); display: flex; justify-content: center; min-height: 620px; overflow: hidden; position: relative; }
+.media > span { color: var(--cobalt); font-size: 12px; font-weight: 800; left: 28px; letter-spacing: .12em; position: absolute; top: 26px; }
+.media img { filter: drop-shadow(0 28px 34px rgba(0,45,150,.26)); height: min(82%,580px); object-fit: contain; width: auto; }
+.content { background: var(--white); box-shadow: var(--shadow-purchase); display: grid; gap: 28px; padding: clamp(28px,4vw,54px); }
+.heading { display: grid; gap: 14px; }
+.heading :global(.evidence-status) { justify-self: start; }
+.ticks { display: grid; gap: 12px; }
+.ticks article { align-items: start; background: var(--ice); border: 1px solid var(--line); border-radius: 18px; display: grid; gap: 16px; grid-template-columns: 46px 1fr; padding: 20px; }
+.ticks b { align-items: center; background: var(--white); border: 1px solid var(--line-strong); border-radius: 14px; color: var(--cobalt); display: flex; height: 46px; justify-content: center; }
+.ticks h3 { font-size: 16px; margin: 0 0 5px; }
+.content > a { align-items: center; color: var(--cobalt); display: flex; font-weight: 800; justify-content: space-between; min-height: 44px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .media { min-height: 520px; } }
+@media (max-width: 560px) { .assuranceInner,.media,.content { border-radius: 22px; } .media { min-height: 430px; } .media img { height: 84%; } .ticks article { grid-template-columns: 40px 1fr; padding: 16px; } }

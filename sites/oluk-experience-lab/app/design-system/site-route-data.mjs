@@ -4,7 +4,7 @@
  */
 export const CUSTOMER_ROUTES = /** @type {const} */ ([
   { key: "home", path: "/", label: "Home", heading: "Formulated to a higher standard.", section: "site", authorityClass: "customer-candidate" },
-  { key: "shop", path: "/shop", label: "Shop", heading: "The Olympus Labs UK range.", section: "shop", authorityClass: "customer-candidate" },
+  { key: "shop", path: "/shop", label: "Shop", heading: "The complete Olympus Labs UK range.", section: "shop", authorityClass: "customer-candidate" },
   { key: "product", path: "/product/mk-2866", label: "MK-2866", heading: "MK-2866", section: "shop", authorityClass: "customer-candidate" },
   { key: "product-continuation", path: "/product/mk-2866/continuation", label: "Product continuation", heading: "Recommendations and restock, kept together.", section: "shop", authorityClass: "customer-candidate" },
   { key: "reviews", path: "/reviews", label: "Customer reviews", heading: "Experiences shared by Olympus customers.", section: "shop", authorityClass: "customer-candidate" },

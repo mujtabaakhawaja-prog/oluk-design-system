@@ -27,6 +27,7 @@ import { mk2866Fixture, rad140Fixture } from "./design-system/product-fixtures";
 import { ProductMediaChamber } from "./design-system/product-media-chamber";
 import { MobileDecisionSummary, ProductDetailDisclosure, ProductEvidenceSnapshot } from "./design-system/pdp-sections";
 import { LockedHomeHero } from "./design-system/locked-home-hero";
+import { HomepageAssuranceTransition, HomepageTriTick } from "./design-system/homepage-tri-tick";
 import {
   homepageHeroContent,
   homepageHeroProducts,
@@ -164,7 +165,8 @@ export function HomeRoute() {
     <>
       <LockedHomeHero content={homepageHeroContent} products={homepageHeroProducts} />
       <div className="shell"><CobaltDensityBoundary /></div>
-      <AssuranceSection />
+      <HomepageAssuranceTransition />
+      <HomepageTriTick />
       <FamilyDiscovery />
       <FeaturedProduct />
       <EvidenceArchiveEntry />

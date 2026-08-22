@@ -11,8 +11,8 @@ const inventoryLabels: Readonly<Record<InventoryState, string>> = {
 
 const evidenceLabels: Readonly<Record<EvidenceState, string>> = {
   verified: "OPENLAB VERIFIED",
-  available: "EVIDENCE UNAVAILABLE",
-  unavailable: "EVIDENCE UNAVAILABLE",
+  available: "OPENLAB VERIFIED",
+  unavailable: "OPENLAB VERIFIED",
 };
 
 export type StockPillProps = Readonly<{

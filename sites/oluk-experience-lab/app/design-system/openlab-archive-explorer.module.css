@@ -1,0 +1,132 @@
+.explorer {
+  display: grid;
+  gap: 18px;
+}
+
+.explorer > header {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 8px;
+  padding: 28px;
+}
+
+.explorer > header span {
+  color: var(--cobalt);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.explorer > header h2 {
+  font: 800 clamp(28px, 4vw, 46px)/1 var(--font-display);
+  letter-spacing: -.04em;
+  margin: 0;
+}
+
+.explorer > header p {
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.controls {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr auto;
+  padding: 22px;
+}
+
+.controls label {
+  color: var(--ink-soft);
+  display: grid;
+  font-size: 12px;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.controls input {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: 600 15px var(--font-body);
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.controls button {
+  align-self: end;
+  background: var(--cobalt-soft);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--cobalt);
+  font-weight: 800;
+  min-height: 48px;
+  padding: 0 18px;
+}
+
+.records {
+  display: grid;
+  gap: 12px;
+}
+
+.records article {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr auto auto;
+  padding: 22px;
+}
+
+.records h2,
+.state h2 {
+  font-family: var(--font-display);
+  margin: 4px 0;
+}
+
+.records p,
+.state p {
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.records article > div > span,
+.state > span {
+  color: var(--cobalt);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.records a {
+  color: var(--cobalt);
+  font-weight: 800;
+}
+
+.state {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 34px;
+}
+
+@media (max-width: 680px) {
+  .controls,
+  .records article {
+    grid-template-columns: 1fr;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+
+  .records article > :global(.evidence-status) {
+    justify-self: start;
+  }
+}
