@@ -8,11 +8,11 @@
     "inventoryDigest": "54c2f99d60e8cb0e36f48549e213f148b2d36c408300a6540384caa6255728ea",
     "presentationDigest": "544cf4418698dc04fd7cf421f3b8a47074a28eedf85368371ed4721a8b321836",
     "routeAuthorityDigest": "659d3236a9594c9d62314eb309313249ddaab2f3d422dee37583b72339c18264",
-    "nodeContractDigest": "e9171401f69d046b6d695017abf8be4379e79b855cbbe04767a106941f181787",
-    "designConnectDigest": "2f265a5263bc491b69a53f794d024ce5d28b328eb91b9e9257330023c136740a",
+    "nodeContractDigest": "8590ebe4c4cb5bb17984912800860f6a9801ce5f5f3493d9ff7d9f6c6a682fdd",
+    "designConnectDigest": "d19dfd9b2ff626fda7bc3afd7142e4c89850ec9e1d5ab1c999994667db2ec338",
     "messageContractDigest": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a",
     "patchSchemaDigest": "688f4e566050115e6378c062631b58665cec038c3af6988d61fd7fb8a2a3bb73",
-    "patchTargetsDigest": "3d098a0585e8117dc5eee9e2a27833b2030e533dc2d328369cc1657d2eae2415"
+    "patchTargetsDigest": "e10b2f2e444a01f2095cfb040622647e83f48f188df0b80645b6b981e7e0827c"
   },
   "next": {
     "candidateSha": null,
@@ -45,6 +45,7 @@
       "status.stock",
       "status.evidence",
       "component.purchase-configuration",
+      "primitive.purchase-package-option",
       "component.price-block",
       "component.quantity-stepper",
       "action.purchase.quantity-decrease",

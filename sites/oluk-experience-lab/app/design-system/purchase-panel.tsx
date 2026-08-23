@@ -33,6 +33,15 @@ export type PurchasePanelProps = Readonly<{
 export type PurchaseConfigurationProps = Readonly<{
   product: ProductFixture;
   bottleOptions?: boolean;
+  selectedBottleCount?: 1 | 2;
+  disabled?: boolean;
+}>;
+
+export type PurchasePackageOptionProps = Readonly<{
+  packageCount: 1 | 2;
+  servingsPerBottle: number;
+  selected: boolean;
+  disabled?: boolean;
 }>;
 
 function statePresentation(product: ProductFixture, state: PurchasePanelState) {
@@ -42,7 +51,7 @@ function statePresentation(product: ProductFixture, state: PurchasePanelState) {
       : state === "unavailable" || state === "disabled"
         ? "unavailable"
         : product.presentationStatus.inventory;
-  const quantity = state === "quantity-changed" ? 2 : 1;
+  const selectedBottleCount: 1 | 2 = state === "quantity-changed" ? 2 : 1;
   const actionLabel =
     state === "added"
       ? "Added"
@@ -54,14 +63,49 @@ function statePresentation(product: ProductFixture, state: PurchasePanelState) {
             ? "Disabled"
             : "Add to bag";
 
-  return { inventory, quantity, actionLabel } as const;
+  return { inventory, selectedBottleCount, actionLabel } as const;
+}
+
+/**
+ * One bounded package-selection control. Package count and total servings stay
+ * distinct from the product MetricRail and the separate purchase quantity.
+ */
+export function PurchasePackageOption({
+  packageCount,
+  servingsPerBottle,
+  selected,
+  disabled = false,
+}: PurchasePackageOptionProps) {
+  const totalServings = servingsPerBottle * packageCount;
+
+  return (
+    <button
+      aria-pressed={selected}
+      className="oluk-candidate-purchase-package-option"
+      data-oluk-node="primitive.purchase-package-option"
+      data-selected={selected ? "true" : "false"}
+      data-state={disabled ? "disabled" : selected ? "selected" : "unselected"}
+      disabled={disabled}
+      type="button"
+    >
+      <strong data-oluk-node="field.purchase.package-count">
+        {packageCount} {packageCount === 1 ? "BOTTLE" : "BOTTLES"}
+      </strong>
+      <small data-oluk-node="field.purchase.total-servings">{totalServings} SERVINGS</small>
+    </button>
+  );
 }
 
 /**
  * Stable semantic owner for package-count and total-servings presentation.
  * This is purchase configuration, never the product MetricRail or stock quantity.
  */
-export function PurchaseConfiguration({ product, bottleOptions = false }: PurchaseConfigurationProps) {
+export function PurchaseConfiguration({
+  product,
+  bottleOptions = false,
+  selectedBottleCount = 1,
+  disabled = false,
+}: PurchaseConfigurationProps) {
   const servingsLabel = product.servings.trim() || "Not supplied";
   const servingsCount = Number(product.servings.match(/\d+/)?.[0] || 0);
 
@@ -74,8 +118,18 @@ export function PurchaseConfiguration({ product, bottleOptions = false }: Purcha
         role="group"
       >
         <span>BOTTLES</span>
-        <div data-selected="true"><strong data-oluk-node="field.purchase.package-count">1 BOTTLE</strong><small data-oluk-node="field.purchase.total-servings">{servingsCount} SERVINGS</small></div>
-        <div><strong data-oluk-node="field.purchase.package-count">2 BOTTLES</strong><small data-oluk-node="field.purchase.total-servings">{servingsCount * 2} SERVINGS</small></div>
+        <PurchasePackageOption
+          disabled={disabled}
+          packageCount={1}
+          selected={selectedBottleCount === 1}
+          servingsPerBottle={servingsCount}
+        />
+        <PurchasePackageOption
+          disabled={disabled}
+          packageCount={2}
+          selected={selectedBottleCount === 2}
+          servingsPerBottle={servingsCount}
+        />
       </div>
     );
   }
@@ -131,12 +185,17 @@ export function PurchasePanel({
         {product.sku ? <span>SKU {product.sku}</span> : <span>{product.series}</span>}
         <a href={product.evidencePath}>View Lab Records →</a>
       </div>
-      <PurchaseConfiguration bottleOptions={bottleOptions} product={product} />
+      <PurchaseConfiguration
+        bottleOptions={bottleOptions}
+        disabled={(inventory ?? presentation.inventory) !== "in-stock"}
+        product={product}
+        selectedBottleCount={presentation.selectedBottleCount}
+      />
       <div className="purchase-row">
         <PriceBlock price={product.price} />
         <QuantityStepper
           unavailable={(inventory ?? presentation.inventory) !== "in-stock"}
-          value={quantity ?? presentation.quantity}
+          value={quantity ?? 1}
         />
       </div>
       <StaticPurchaseActions

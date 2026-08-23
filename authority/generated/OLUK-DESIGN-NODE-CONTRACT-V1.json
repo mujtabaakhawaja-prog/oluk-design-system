@@ -22,14 +22,14 @@
     "legacyEmbeddedSourceIsProvenanceOnly": true
   },
   "counts": {
-    "nodes": 51,
-    "explicitNodes": 30,
+    "nodes": 52,
+    "explicitNodes": 31,
     "synthesizedFieldNodes": 15,
     "synthesizedContentNodes": 6,
-    "censusExports": 115,
-    "registeredEditableExports": 18,
+    "censusExports": 116,
+    "registeredEditableExports": 19,
     "inventoryOnlyExports": 97,
-    "emittedSemanticNodeIds": 30
+    "emittedSemanticNodeIds": 31
   },
   "laws": [
     "Semantic node names supplement correct HTML; they never replace accessible headings, actions, lists, definitions, landmarks, or disclosures.",
@@ -927,7 +927,9 @@
         "parentIds": [
           "component.purchase-panel"
         ],
-        "childIds": [],
+        "childIds": [
+          "primitive.purchase-package-option"
+        ],
         "allowedSlotIds": [
           "slot.product-detail.pdp.first-fold"
         ],
@@ -940,8 +942,8 @@
         "default"
       ],
       "states": [
-        "single-bottle",
-        "two-bottles",
+        "one-bottle-selected",
+        "two-bottles-selected",
         "unavailable"
       ],
       "responsiveModes": [
@@ -2022,10 +2024,10 @@
         "disabled",
         "focus-visible",
         "long-copy",
+        "one-bottle-selected",
         "out-of-stock",
         "quantity-changed",
-        "single-bottle",
-        "two-bottles",
+        "two-bottles-selected",
         "unavailable"
       ],
       "responsiveModes": [
@@ -2240,7 +2242,8 @@
       "relationships": {
         "parentIds": [
           "component.purchase-configuration",
-          "component.purchase-panel"
+          "component.purchase-panel",
+          "primitive.purchase-package-option"
         ],
         "childIds": [],
         "allowedSlotIds": [
@@ -2260,11 +2263,13 @@
         "disabled",
         "focus-visible",
         "long-copy",
+        "one-bottle-selected",
         "out-of-stock",
         "quantity-changed",
-        "single-bottle",
-        "two-bottles",
-        "unavailable"
+        "selected",
+        "two-bottles-selected",
+        "unavailable",
+        "unselected"
       ],
       "responsiveModes": [
         "1440",
@@ -2353,7 +2358,8 @@
       "relationships": {
         "parentIds": [
           "component.purchase-configuration",
-          "component.purchase-panel"
+          "component.purchase-panel",
+          "primitive.purchase-package-option"
         ],
         "childIds": [],
         "allowedSlotIds": [
@@ -2373,11 +2379,13 @@
         "disabled",
         "focus-visible",
         "long-copy",
+        "one-bottle-selected",
         "out-of-stock",
         "quantity-changed",
-        "single-bottle",
-        "two-bottles",
-        "unavailable"
+        "selected",
+        "two-bottles-selected",
+        "unavailable",
+        "unselected"
       ],
       "responsiveModes": [
         "1440",
@@ -2625,6 +2633,57 @@
       "mediaRoleIds": [
         "media-role.atmosphere"
       ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "primitive.purchase-package-option",
+      "name": "PurchasePackageOption / Bottle Count and Total Servings",
+      "kind": "primitive",
+      "renderAs": "button",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePackageOption"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-configuration"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "one-bottle",
+        "two-bottles"
+      ],
+      "states": [
+        "selected",
+        "unselected",
+        "disabled",
+        "focus-visible"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.purchase.package-count",
+        "field.purchase.total-servings"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
       "adoption": {
         "sites": "implemented",
         "next": "binding_required",
@@ -4363,6 +4422,26 @@
       "family": "pdp",
       "semanticNodeIds": [
         "component.purchase-configuration"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchasePackageOption",
+      "family": "pdp",
+      "semanticNodeIds": [
+        "primitive.purchase-package-option"
       ],
       "disposition": "REGISTERED_EDITABLE_NODE",
       "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",

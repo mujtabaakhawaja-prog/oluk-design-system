@@ -242,8 +242,21 @@
       "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
       "exportName": "PurchaseConfiguration",
       "parentIds": ["component.purchase-panel"],
+      "childIds": ["primitive.purchase-package-option"],
       "fieldIds": ["field.package.capsule-count", "field.purchase.package-count", "field.purchase.total-servings"],
-      "states": ["single-bottle", "two-bottles", "unavailable"]
+      "states": ["one-bottle-selected", "two-bottles-selected", "unavailable"]
+    },
+    {
+      "id": "primitive.purchase-package-option",
+      "name": "PurchasePackageOption / Bottle Count and Total Servings",
+      "kind": "primitive",
+      "renderAs": "button",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchasePackageOption",
+      "parentIds": ["component.purchase-configuration"],
+      "fieldIds": ["field.purchase.package-count", "field.purchase.total-servings"],
+      "states": ["selected", "unselected", "disabled", "focus-visible"],
+      "variants": ["one-bottle", "two-bottles"]
     },
     {
       "id": "component.price-block",
@@ -411,9 +424,9 @@
     {"id": "field.commerce.price", "kind": "field", "owner": "woo-through-c2-projection", "sourceExport": "PriceBlock"},
     {"id": "field.commerce.available-quantity", "kind": "field", "owner": "woo-through-c2-projection", "sourceExport": "QuantityStepper", "fixtureBinding": "unavailable"},
     {"id": "field.package.capsule-count", "kind": "field", "owner": "canonical-product-authority", "sourceExport": "PurchasePanel", "fixtureBinding": "unavailable"},
-    {"id": "field.purchase.package-count", "kind": "field", "owner": "customer-selection", "sourceExport": "PurchasePanel"},
+    {"id": "field.purchase.package-count", "kind": "field", "owner": "customer-selection", "sourceExport": "PurchasePackageOption"},
     {"id": "field.purchase.selected-quantity", "kind": "field", "owner": "customer-selection", "sourceExport": "QuantityStepper"},
-    {"id": "field.purchase.total-servings", "kind": "field", "owner": "presentation-adapter-derived-from-authoritative-servings-and-package-count", "sourceExport": "PurchasePanel"},
+    {"id": "field.purchase.total-servings", "kind": "field", "owner": "presentation-adapter-derived-from-authoritative-servings-and-package-count", "sourceExport": "PurchasePackageOption"},
     {"id": "field.evidence.state", "kind": "field", "owner": "c2-openlab-projection", "sourceExport": "EvidenceStatus"},
     {"id": "field.media.contract-identity", "kind": "field", "owner": "native-next-media-resolver", "sourceExport": "PdpAtmosphericMediaField"},
     {"id": "content.metric-label.strength", "kind": "content", "owner": "oluk-design-system", "sourceExport": "MetricCell"},

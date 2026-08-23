@@ -17,6 +17,7 @@
   background: var(--oluk-surface-card);
   border: var(--oluk-border-width) solid var(--oluk-border-card);
   border-radius: var(--oluk-radius-vertical);
+  box-sizing: border-box;
   box-shadow: var(--oluk-shadow-card);
   margin: 0 auto;
   max-width: 1440px;

@@ -199,6 +199,7 @@ function nextTargetFor(node) {
     "status.stock": "app/presentation-system/modules/pdp/PurchasePanel.tsx#StockStatus",
     "status.evidence": "app/presentation-system/modules/pdp/PurchasePanel.tsx#EvidenceStatus",
     "component.purchase-configuration": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchaseConfiguration",
+    "primitive.purchase-package-option": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchasePackageOption",
     "component.price-block": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PriceBlock",
     "component.quantity-stepper": "app/presentation-system/modules/pdp/PurchasePanel.tsx#QuantityStepper",
     "component.purchase-actions": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchaseActions",

@@ -2,7 +2,7 @@
   "contract": "OLUK_DESIGN_CONNECT_V1",
   "schemaVersion": "1.0.0",
   "status": "CANDIDATE_PENDING_NEXT_BINDING",
-  "nodeContractDigest": "e9171401f69d046b6d695017abf8be4379e79b855cbbe04767a106941f181787",
+  "nodeContractDigest": "8590ebe4c4cb5bb17984912800860f6a9801ce5f5f3493d9ff7d9f6c6a682fdd",
   "designSource": {
     "repository": "oluk-design-system",
     "baseSha": "8b79a7d04342043d3f972c5cf844c9168547d401",
@@ -905,6 +905,26 @@
       "bindingRole": "primitive",
       "sharedExportGroup": "shared-export.pdp-atmospheric-anatomy",
       "sharedExportJustification": "The PDP-only atmospheric field owns its light, product render, and missing-media state as named semantic children."
+    },
+    {
+      "nodeId": "primitive.purchase-package-option",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePackageOption",
+      "atlasSpecimen": "/system-atlas?node=primitive.purchase-package-option",
+      "reviewCandidate": "/review-studio?node=primitive.purchase-package-option",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchasePackageOption",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=primitive.purchase-package-option",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "slot.product-detail.pdp.breadcrumb",

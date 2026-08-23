@@ -3,16 +3,16 @@
   "schemaVersion": "1.0.0",
   "generatedFrom": "sites/oluk-experience-lab/app/design-system/*.tsx",
   "counts": {
-    "components": 115,
-    "registeredEditable": 18,
+    "components": 116,
+    "registeredEditable": 19,
     "inventoryOnly": 97,
-    "emittedSemanticNodeIds": 30,
+    "emittedSemanticNodeIds": 31,
     "byFamily": {
       "commerce": 15,
       "foundation": 19,
       "openlab": 15,
       "owner_tooling": 4,
-      "pdp": 11,
+      "pdp": 12,
       "route_module": 49,
       "shell": 2
     }
@@ -3274,10 +3274,58 @@
         "component.purchase-configuration",
         "component.purchase-panel",
         "field.purchase.package-count",
-        "field.purchase.total-servings"
+        "field.purchase.total-servings",
+        "primitive.purchase-package-option"
       ],
       "semanticNodeIds": [
         "component.purchase-configuration"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": false,
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "binding_required",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.purchase-package-option",
+      "name": "PurchasePackageOption",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "governingSource": "app/design-system/purchase-panel.tsx",
+      "sourceExport": "PurchasePackageOption",
+      "fileSemanticNodeIds": [
+        "component.purchase-configuration",
+        "component.purchase-panel",
+        "field.purchase.package-count",
+        "field.purchase.total-servings",
+        "primitive.purchase-package-option"
+      ],
+      "semanticNodeIds": [
+        "primitive.purchase-package-option"
       ],
       "semanticDisposition": "REGISTERED_EDITABLE_NODE",
       "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
@@ -3321,7 +3369,8 @@
         "component.purchase-configuration",
         "component.purchase-panel",
         "field.purchase.package-count",
-        "field.purchase.total-servings"
+        "field.purchase.total-servings",
+        "primitive.purchase-package-option"
       ],
       "semanticNodeIds": [
         "component.purchase-panel"
@@ -3366,7 +3415,8 @@
         "component.purchase-configuration",
         "component.purchase-panel",
         "field.purchase.package-count",
-        "field.purchase.total-servings"
+        "field.purchase.total-servings",
+        "primitive.purchase-package-option"
       ],
       "semanticNodeIds": [],
       "semanticDisposition": "INVENTORY_ONLY",
@@ -4607,5 +4657,5 @@
       ]
     }
   ],
-  "contentHash": "1faf0eb196de2a92a69287ca58008a9fa62b59fac9b17b3616203eac819daa8b"
+  "contentHash": "2caf3fd1543295d8221f1f6dc1c723e909122bf0d5e589fa0657572a81f0c4eb"
 }
