@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import type {
   EvidenceState,
   HeadingLevel,
@@ -42,6 +46,7 @@ export type PurchasePackageOptionProps = Readonly<{
   servingsPerBottle: number;
   selected: boolean;
   disabled?: boolean;
+  onSelect?: (packageCount: 1 | 2) => void;
 }>;
 
 function statePresentation(product: ProductFixture, state: PurchasePanelState) {
@@ -75,6 +80,7 @@ export function PurchasePackageOption({
   servingsPerBottle,
   selected,
   disabled = false,
+  onSelect,
 }: PurchasePackageOptionProps) {
   const totalServings = servingsPerBottle * packageCount;
 
@@ -86,6 +92,7 @@ export function PurchasePackageOption({
       data-selected={selected ? "true" : "false"}
       data-state={disabled ? "disabled" : selected ? "selected" : "unselected"}
       disabled={disabled}
+      onClick={() => onSelect?.(packageCount)}
       type="button"
     >
       <strong data-oluk-node="field.purchase.package-count">
@@ -108,6 +115,7 @@ export function PurchaseConfiguration({
 }: PurchaseConfigurationProps) {
   const servingsLabel = product.servings.trim() || "Not supplied";
   const servingsCount = Number(product.servings.match(/\d+/)?.[0] || 0);
+  const [activeBottleCount, setActiveBottleCount] = useState<1 | 2>(selectedBottleCount);
 
   if (bottleOptions && servingsCount > 0) {
     return (
@@ -120,14 +128,16 @@ export function PurchaseConfiguration({
         <span>BOTTLES</span>
         <PurchasePackageOption
           disabled={disabled}
+          onSelect={setActiveBottleCount}
           packageCount={1}
-          selected={selectedBottleCount === 1}
+          selected={activeBottleCount === 1}
           servingsPerBottle={servingsCount}
         />
         <PurchasePackageOption
           disabled={disabled}
+          onSelect={setActiveBottleCount}
           packageCount={2}
-          selected={selectedBottleCount === 2}
+          selected={activeBottleCount === 2}
           servingsPerBottle={servingsCount}
         />
       </div>

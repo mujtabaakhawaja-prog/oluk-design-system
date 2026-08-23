@@ -12,7 +12,7 @@
     "designConnectDigest": "d19dfd9b2ff626fda7bc3afd7142e4c89850ec9e1d5ab1c999994667db2ec338",
     "messageContractDigest": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a",
     "patchSchemaDigest": "688f4e566050115e6378c062631b58665cec038c3af6988d61fd7fb8a2a3bb73",
-    "patchTargetsDigest": "e10b2f2e444a01f2095cfb040622647e83f48f188df0b80645b6b981e7e0827c"
+    "patchTargetsDigest": "16b1e09b99ee16d599cfd0685fe0ad05b06eb1d7bfdcef5c6589d0c4f982d3e8"
   },
   "next": {
     "candidateSha": null,
