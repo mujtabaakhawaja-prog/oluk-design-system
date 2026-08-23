@@ -20,6 +20,8 @@
     "surface:check": "node scripts/generate-surface-inventory.mjs --check",
     "workbench:generate": "npm run surface:generate && node scripts/generate-component-census.mjs && node scripts/generate-visual-workbench-contracts.mjs",
     "workbench:check": "npm run surface:check && node scripts/generate-component-census.mjs --check && node scripts/generate-visual-workbench-contracts.mjs --check",
+    "workbench:patch": "node scripts/workbench/design-patch.mjs",
+    "workbench:patch:test": "node --test tests/visual-workbench-patch-queue.test.mjs",
     "contract:generate": "node scripts/generate-governed-contract.mjs",
     "contract:check": "node scripts/generate-governed-contract.mjs --check",
     "review:generate": "node scripts/generate-review-studio-payload.mjs",

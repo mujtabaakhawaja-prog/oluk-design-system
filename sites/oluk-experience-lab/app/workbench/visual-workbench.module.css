@@ -329,11 +329,46 @@
 .primaryButton:disabled {
   opacity: 0.45;
 }
+.patchActions {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+}
+.patchActions .primaryButton {
+  margin-top: 0;
+}
+.queuedPatch {
+  background: var(--oluk-surface-family);
+  border: 1px solid var(--wb-border);
+  border-radius: 10px;
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.queuedPatch > code,
+.queuedPatch > small {
+  color: var(--wb-muted);
+  font: 8px/1.45 var(--oluk-font-mono);
+  overflow-wrap: anywhere;
+}
+.queuedPatch > pre {
+  margin: 0;
+}
 .safety,
 .muted {
   color: var(--wb-muted);
   font-size: 10px;
   line-height: 1.45;
+}
+.patchChecklist {
+  color: var(--wb-muted);
+  display: grid;
+  font-size: 10px;
+  gap: 6px;
+  line-height: 1.45;
+  margin: 10px 0 14px;
+  padding-left: 18px;
 }
 .inspector textarea {
   min-height: 76px;

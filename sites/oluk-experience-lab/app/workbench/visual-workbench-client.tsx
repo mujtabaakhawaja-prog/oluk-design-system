@@ -8,6 +8,7 @@ import type {
   DesignConnectMapping,
   DesignControl,
   DesignNode,
+  OlukDesignPatch,
   PreviewTarget,
   ProjectionMode,
   ViewportMode,
@@ -51,6 +52,35 @@ function semanticLabel(node: DesignNode) {
   return { group, detail: detail ?? node.id };
 }
 
+function stable(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(stable);
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    return Object.fromEntries(Object.keys(record).sort().map((key) => [key, stable(record[key])]));
+  }
+  return value;
+}
+
+function canonical(value: unknown) {
+  return JSON.stringify(stable(value));
+}
+
+async function sha256(value: string) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function downloadJson(filename: string, value: unknown) {
+  const blob = new Blob([`${JSON.stringify(value, null, 2)}\n`], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.download = filename;
+  anchor.href = url;
+  anchor.click();
+  URL.revokeObjectURL(url);
+}
+
 export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchContractBundle }>) {
   const [treeMode, setTreeMode] = useState<"semantic" | "raw">("semantic");
   const [target, setTarget] = useState<PreviewTarget>("sites");
@@ -63,6 +93,8 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
   const [annotationText, setAnnotationText] = useState("");
   const [annotations, setAnnotations] = useState<readonly WorkbenchAnnotation[]>([]);
   const [stagedValues, setStagedValues] = useState<StagedValues>({});
+  const [patchId, setPatchId] = useState<`sha256:${string}` | null>(null);
+  const [patchQueue, setPatchQueue] = useState<readonly OlukDesignPatch[]>([]);
   const [lastBridgeEvent, setLastBridgeEvent] = useState("No preview event received");
   const [bridgeListening, setBridgeListening] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -72,8 +104,15 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
   const allowedEvents = useMemo(() => new Set(bundle.messageContract.events.map((event) => event.type)), [bundle.messageContract.events]);
   const nodesById = useMemo(() => new Map(bundle.nodeContract.nodes.map((node) => [node.id, node])), [bundle.nodeContract.nodes]);
   const mappingsById = useMemo(() => new Map(bundle.designConnect.mappings.map((mapping) => [mapping.nodeId, mapping])), [bundle.designConnect.mappings]);
+  const patchTargetsById = useMemo(() => new Map(bundle.patchTargets.targets.map((patchTarget) => [patchTarget.nodeId, patchTarget])), [bundle.patchTargets.targets]);
   const selectedNode = nodesById.get(selectedNodeId) ?? bundle.nodeContract.nodes[0];
   const selectedMapping = mappingsById.get(selectedNode.id);
+  const selectedPatchTarget = patchTargetsById.get(selectedNode.id);
+  const patchableControlIds = useMemo(() => new Set(selectedPatchTarget?.controls.map((control) => control.id) ?? []), [selectedPatchTarget]);
+  const patchableControls = useMemo(
+    () => selectedNode.controls.filter((control) => control.patchable && patchableControlIds.has(control.id)),
+    [patchableControlIds, selectedNode.controls],
+  );
 
   const visibleNodes = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -135,16 +174,50 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
     };
   }, [allowedEvents, allowedOrigins, bundle.messageContract.contract, nodesById]);
 
-  const patchPreview = useMemo(() => ({
-    contract: bundle.patchSchema.$id,
-    mode: "READ_ONLY_PREVIEW",
-    nodeId: selectedNode.id,
-    baseDigest: digest,
-    changes: stagedValues,
-    targetRepository: "design",
-    targetExport: selectedNode.ownership.exportName,
-    writeCapability: "NONE",
-  }), [bundle.patchSchema.$id, digest, selectedNode.id, selectedNode.ownership.exportName, stagedValues]);
+  const changedValues = useMemo(() => {
+    const defaults = initialControlValues(selectedNode);
+    return Object.fromEntries(Object.entries(stagedValues).filter(([controlId, value]) =>
+      patchableControlIds.has(controlId) && canonical(value) !== canonical(defaults[controlId]),
+    ));
+  }, [patchableControlIds, selectedNode, stagedValues]);
+
+  const patchSeed = useMemo(() => {
+    if (!selectedPatchTarget || !Object.keys(changedValues).length) return null;
+    return {
+      contract: bundle.patchSchema.$id,
+      nodeId: selectedNode.id,
+      base: {
+        nodeContractDigest: digest,
+        targetRegistryDigest: bundle.digests.artifacts.patchTargets,
+        sourceSha256: selectedPatchTarget.sourceSha256,
+      },
+      changes: changedValues,
+      targetRepository: bundle.patchTargets.targetRepository,
+      targetExport: selectedPatchTarget.targetExport,
+    } as const;
+  }, [bundle.digests.artifacts.patchTargets, bundle.patchSchema.$id, bundle.patchTargets.targetRepository, changedValues, digest, selectedNode.id, selectedPatchTarget]);
+
+  useEffect(() => {
+    let active = true;
+    if (!patchSeed) {
+      setPatchId(null);
+      return () => { active = false; };
+    }
+    void sha256(canonical(patchSeed)).then((value) => {
+      if (active) setPatchId(`sha256:${value}`);
+    });
+    return () => { active = false; };
+  }, [patchSeed]);
+
+  const patchPreview: OlukDesignPatch | null = useMemo(() => {
+    if (!patchSeed || !patchId) return null;
+    return { ...patchSeed, patchId } as OlukDesignPatch;
+  }, [patchId, patchSeed]);
+
+  function queuePatch() {
+    if (!patchPreview) return;
+    setPatchQueue((current) => [...current.filter((patch) => patch.nodeId !== patchPreview.nodeId), patchPreview]);
+  }
 
   function captureAnnotation() {
     const text = annotationText.trim();
@@ -167,7 +240,7 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
     <main className={styles.workbench} id="main-content">
       <header className={styles.topbar}>
         <div>
-          <span className={styles.eyebrow}>LOCAL OWNER TOOLING · READ ONLY</span>
+          <span className={styles.eyebrow}>LOCAL OWNER TOOLING · EXPORT-ONLY PATCH QUEUE</span>
           <h1>OLUK Visual Workbench</h1>
         </div>
         <nav aria-label="Owner tooling links" className={styles.ownerLinks}>
@@ -297,7 +370,7 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
 
           <section className={styles.inspectorSection}>
             <h3>Typed controls</h3>
-            {selectedNode.controls.filter((control) => control.patchable).length ? selectedNode.controls.filter((control) => control.patchable).map((control) => (
+            {patchableControls.length ? patchableControls.map((control) => (
               <label className={styles.property} key={control.id}>{control.id}
                 {control.type === "boolean" ? (
                   <select value={String(stagedValues[control.id] ?? control.defaultValue ?? false)} onChange={(event) => setStagedValues((values) => ({ ...values, [control.id]: controlValue(control, event.target.value) }))}>
@@ -311,14 +384,37 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
                   <input value={String(stagedValues[control.id] ?? control.defaultValue ?? "")} onChange={(event) => setStagedValues((values) => ({ ...values, [control.id]: controlValue(control, event.target.value) }))} />
                 )}
               </label>
-            )) : <p className={styles.muted}>This node has no patchable properties in V1.</p>}
+            )) : <p className={styles.muted}>This node has no Design-writer allowlist entry in V1.</p>}
           </section>
 
           <section className={styles.inspectorSection}>
-            <h3>Read-only patch preview</h3>
-            <pre>{JSON.stringify(patchPreview, null, 2)}</pre>
-            <button className={styles.secondaryButton} onClick={() => setStagedValues(initialControlValues(selectedNode))} type="button">Discard staged values</button>
-            <p className={styles.safety}>No apply action exists. This route has no source-writing or commerce endpoint.</p>
+            <h3>Deterministic patch queue</h3>
+            <pre>{patchPreview ? JSON.stringify(patchPreview, null, 2) : "Change an allowlisted property to create a delta-only patch."}</pre>
+            <div className={styles.patchActions}>
+              <button className={styles.primaryButton} disabled={!patchPreview} onClick={queuePatch} type="button">Queue changed values</button>
+              <button className={styles.secondaryButton} onClick={() => setStagedValues(initialControlValues(selectedNode))} type="button">Discard staged values</button>
+            </div>
+            <p className={styles.safety}>The browser cannot apply source changes. Exported patches must pass the local Design-only CLI preview, immutable receipt, exact confirmation, validation, and rollback gates.</p>
+            <ul className={styles.patchChecklist}>
+              <li>One Design repository and one allowlisted export</li>
+              <li>Exact node, registry, source, patch, HEAD, and generated-output digests</li>
+              <li>Exact authored and deterministic generated diffs before apply</li>
+              <li>No staging, commit, push, PR, or cross-repository write</li>
+            </ul>
+            {patchQueue.map((patch) => {
+              const shortId = patch.patchId.slice(7, 19);
+              const filename = `OLUK-DESIGN-PATCH-V1.${patch.nodeId}.${shortId}.json`;
+              return (
+                <article className={styles.queuedPatch} key={patch.patchId}>
+                  <strong>{patch.nodeId}</strong>
+                  <code>{patch.patchId}</code>
+                  <small>{Object.keys(patch.changes).join(", ")}</small>
+                  <button className={styles.secondaryButton} onClick={() => downloadJson(filename, patch)} type="button">Download canonical patch</button>
+                  <button className={styles.secondaryButton} onClick={() => setPatchQueue((current) => current.filter((item) => item.patchId !== patch.patchId))} type="button">Remove</button>
+                  <pre>{`npm run workbench:patch -- preview /absolute/path/${filename}\n# Apply only after the preview receipt provides its exact confirmation phrase.`}</pre>
+                </article>
+              );
+            })}
           </section>
 
           <section className={styles.inspectorSection}>

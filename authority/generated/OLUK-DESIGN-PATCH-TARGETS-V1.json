@@ -1,0 +1,143 @@
+{
+  "contract": "OLUK_DESIGN_PATCH_TARGETS_V1",
+  "schemaVersion": "1.0.0",
+  "status": "LOCAL_DESIGN_WRITER_ALLOWLIST",
+  "targetRepository": "oluk-design-system",
+  "laws": [
+    "A browser may export a patch, but only the local CLI may preview, apply, or roll it back.",
+    "Every change resolves to one allowlisted semantic node, source path, export, and typed control.",
+    "Preview and apply require exact node-contract, target-registry, source-file, and Git HEAD identity.",
+    "Apply requires a clean repository, an immutable preview receipt, and its exact confirmation phrase.",
+    "Validation failure restores every transactional path to the exact pre-apply Git tree.",
+    "The patch writer never stages, commits, pushes, opens a pull request, or writes Native Next source."
+  ],
+  "targets": [
+    {
+      "nodeId": "component.metric-rail",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+      "targetExport": "MetricRail",
+      "controls": [
+        {
+          "id": "density",
+          "type": "enum",
+          "sourceProp": "compact",
+          "values": [
+            "default",
+            "compact"
+          ],
+          "mapping": {
+            "default": false,
+            "compact": true
+          }
+        }
+      ],
+      "validationCommands": [
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "workbench:generate"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "workbench:check"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "node",
+          "args": [
+            "--test",
+            "tests/visual-workbench.test.mjs"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        }
+      ],
+      "sourceSha256": "c03de8e9714afb8210de0f490c86366e777b83c9507a0b76816a70dea069a692"
+    },
+    {
+      "nodeId": "component.purchase-panel",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "targetExport": "PurchasePanel",
+      "controls": [
+        {
+          "id": "state",
+          "type": "enum",
+          "sourceProp": "state",
+          "values": [
+            "default",
+            "hover",
+            "focus-visible",
+            "quantity-changed",
+            "added",
+            "out-of-stock",
+            "unavailable",
+            "disabled"
+          ]
+        },
+        {
+          "id": "width",
+          "type": "enum",
+          "sourceProp": "width",
+          "values": [
+            "responsive",
+            "desktop",
+            "mobile"
+          ]
+        },
+        {
+          "id": "bottleOptions",
+          "type": "boolean",
+          "sourceProp": "bottleOptions"
+        }
+      ],
+      "validationCommands": [
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "workbench:generate"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "workbench:check"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "typecheck"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "node",
+          "args": [
+            "--test",
+            "tests/visual-workbench.test.mjs"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        }
+      ],
+      "sourceSha256": "3aeb184a7c26c1970bc637d538177f5846e4d4afaac71f9aab482cd46d26c964"
+    }
+  ]
+}

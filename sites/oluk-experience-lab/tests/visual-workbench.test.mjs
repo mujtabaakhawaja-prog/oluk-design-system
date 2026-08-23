@@ -53,16 +53,19 @@ test("Workbench bridge uses the exact message vocabulary and strict origin targe
   assert.doesNotMatch(client, /postMessage\([\s\S]*,\s*["']\*["']/);
 });
 
-test("Workbench provides semantic-first inspection, exact annotations, and read-only patches", () => {
+test("Workbench provides semantic-first inspection, exact annotations, and an export-only patch queue", () => {
   for (const field of ["nodeId", "routeId", "viewport", "state", "digest", "text"]) assert.match(client, new RegExp(field));
   assert.match(client, /Semantic/);
   assert.match(client, /Raw DOM/);
-  assert.match(client, /READ_ONLY_PREVIEW/);
-  assert.match(client, /writeCapability: "NONE"/);
-  assert.match(client, /No apply action exists/);
+  assert.match(client, /changedValues/);
+  assert.match(client, /OLUK-DESIGN-PATCH-V1/);
+  assert.match(client, /Queue changed values/);
+  assert.match(client, /Download canonical patch/);
+  assert.match(client, /The browser cannot apply source changes/);
+  assert.match(client, /crypto\.subtle\.digest/);
   assert.doesNotMatch(client, /fetch\s*\(/);
   assert.doesNotMatch(client, /XMLHttpRequest|localStorage|sessionStorage|WebSocket/);
-  assert.doesNotMatch(client, /applyPatch|writeFile|sourceWrite|commerceMutation/);
+  assert.doesNotMatch(client, /applyPatch|writeFile|sourceWrite|commerceMutation|Apply to source/);
 });
 
 test("Sites inspection bridge is semantic, origin-bound, and read only", () => {

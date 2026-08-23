@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import designConnectJson from "../../../../authority/generated/OLUK-DESIGN-CONNECT-V1.json";
 import nodeContractJson from "../../../../authority/generated/OLUK-DESIGN-NODE-CONTRACT-V1.json";
 import patchSchemaJson from "../../../../authority/generated/OLUK-DESIGN-PATCH-V1.schema.json";
+import patchTargetsJson from "../../../../authority/generated/OLUK-DESIGN-PATCH-TARGETS-V1.json";
 import digestManifestJson from "../../../../authority/generated/OLUK-VISUAL-WORKBENCH-DIGESTS-V1.json";
 import messageContractJson from "../../../../authority/generated/OLUK-WORKBENCH-MESSAGE-V1.json";
 import { VisualWorkbenchClient } from "./visual-workbench-client";
@@ -36,6 +37,7 @@ export default async function VisualWorkbenchPage() {
     designConnect: designConnectJson as WorkbenchContractBundle["designConnect"],
     messageContract: messageContractJson as WorkbenchContractBundle["messageContract"],
     patchSchema: patchSchemaJson as WorkbenchContractBundle["patchSchema"],
+    patchTargets: patchTargetsJson as WorkbenchContractBundle["patchTargets"],
     digests: digestManifestJson as WorkbenchContractBundle["digests"],
   };
 

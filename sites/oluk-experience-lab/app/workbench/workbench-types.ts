@@ -8,6 +8,34 @@ export type DesignControl = Readonly<{
   values?: readonly (string | number | boolean)[];
   defaultValue?: string | number | boolean;
   patchable: boolean;
+  sourceProp?: string;
+}>;
+
+export type DesignPatchTarget = Readonly<{
+  nodeId: string;
+  sourcePath: string;
+  targetExport: string;
+  sourceSha256: string;
+  controls: readonly Readonly<{
+    id: string;
+    type: "enum" | "boolean" | "number" | "string";
+    sourceProp: string;
+    values?: readonly (string | number | boolean)[];
+  }>[];
+}>;
+
+export type OlukDesignPatch = Readonly<{
+  contract: "OLUK_DESIGN_PATCH_V1";
+  patchId: `sha256:${string}`;
+  nodeId: string;
+  base: Readonly<{
+    nodeContractDigest: string;
+    targetRegistryDigest: string;
+    sourceSha256: string;
+  }>;
+  changes: Readonly<Record<string, string | number | boolean>>;
+  targetRepository: "oluk-design-system";
+  targetExport: string;
 }>;
 
 export type DesignNode = Readonly<{
@@ -70,6 +98,11 @@ export type WorkbenchContractBundle = Readonly<{
   patchSchema: Readonly<{
     $id: "OLUK_DESIGN_PATCH_V1";
     properties: Readonly<Record<string, unknown>>;
+  }>;
+  patchTargets: Readonly<{
+    contract: "OLUK_DESIGN_PATCH_TARGETS_V1";
+    targetRepository: "oluk-design-system";
+    targets: readonly DesignPatchTarget[];
   }>;
   digests: Readonly<{
     contract: "OLUK_VISUAL_WORKBENCH_DIGESTS_V1";

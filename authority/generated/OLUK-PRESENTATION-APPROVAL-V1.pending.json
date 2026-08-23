@@ -10,7 +10,9 @@
     "routeAuthorityDigest": "99954a48699bf15613735c72bc4024b1b8e6e5cbce4b53f155375c1acdc32cfd",
     "nodeContractDigest": "648c2946ac044b38303a26c6d327a24ada2b161232c5d8a9a66f9df0fd6903db",
     "designConnectDigest": "1f5015da14a28c4e00559f13b666ea8b02486473fed289e04587f2a8e40aa1b7",
-    "messageContractDigest": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a"
+    "messageContractDigest": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a",
+    "patchSchemaDigest": "688f4e566050115e6378c062631b58665cec038c3af6988d61fd7fb8a2a3bb73",
+    "patchTargetsDigest": "858824c9a619ea57471bd84a1e1bcb4f875424bd8e34450aa18794a0a9be6b79"
   },
   "next": {
     "candidateSha": null,

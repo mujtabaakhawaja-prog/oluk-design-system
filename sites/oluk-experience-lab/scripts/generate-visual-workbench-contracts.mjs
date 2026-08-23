@@ -11,6 +11,7 @@ const checkOnly = process.argv.includes("--check");
 
 const paths = {
   nodeSource: resolve(authorityDir, "OLUK-DESIGN-NODE-SOURCE-V1.json"),
+  patchTargets: resolve(authorityDir, "OLUK-DESIGN-PATCH-TARGETS-V1.json"),
   sourceRegister: resolve(authorityDir, "OLUK-VISUAL-WORKBENCH-SOURCE-REGISTER-V1.json"),
   census: resolve(generatedDir, "OLUK-COMPONENT-CENSUS-V1.json"),
   inventory: resolve(generatedDir, "OLUK-SURFACE-INVENTORY-V1.json"),
@@ -25,6 +26,7 @@ const outputs = {
   designConnect: resolve(generatedDir, "OLUK-DESIGN-CONNECT-V1.json"),
   messageContract: resolve(generatedDir, "OLUK-WORKBENCH-MESSAGE-V1.json"),
   patchSchema: resolve(generatedDir, "OLUK-DESIGN-PATCH-V1.schema.json"),
+  patchTargets: resolve(generatedDir, "OLUK-DESIGN-PATCH-TARGETS-V1.json"),
   digests: resolve(generatedDir, "OLUK-VISUAL-WORKBENCH-DIGESTS-V1.json"),
   approval: resolve(generatedDir, "OLUK-PRESENTATION-APPROVAL-V1.pending.json"),
 };
@@ -51,6 +53,13 @@ function sha256Text(value) {
 
 function contentDigest(value) {
   return sha256Text(canonical(value));
+}
+
+function patchControlSchema(control) {
+  if (control.type === "enum") return { enum: control.values };
+  if (control.type === "boolean") return { type: "boolean" };
+  if (control.type === "number") return { type: "number" };
+  return { type: "string" };
 }
 
 async function readJson(path) {
@@ -190,8 +199,9 @@ async function emit(path, value) {
   await writeFile(path, serialized);
 }
 
-const [nodeSource, sourceRegister, census, inventory, presentation, routeAuthority, routeImport, productImport] = await Promise.all([
+const [nodeSource, patchTargetSource, sourceRegister, census, inventory, presentation, routeAuthority, routeImport, productImport] = await Promise.all([
   readJson(paths.nodeSource),
+  readJson(paths.patchTargets),
   readJson(paths.sourceRegister),
   readJson(paths.census),
   readJson(paths.inventory),
@@ -216,6 +226,36 @@ for (const node of allNodes) {
   const unknownParents = node.relationships.parentIds.filter((id) => !allIds.has(id));
   if (unknownParents.length) throw new Error(`${node.id} has unknown parents: ${unknownParents.join(", ")}`);
 }
+
+const explicitNodesById = new Map(explicitNodes.map((node) => [node.id, node]));
+for (const target of patchTargetSource.targets) {
+  const node = explicitNodesById.get(target.nodeId);
+  if (!node) throw new Error(`Patch target references unknown node: ${target.nodeId}`);
+  if (target.sourcePath !== node.ownership.sourcePath || target.targetExport !== node.ownership.exportName) {
+    throw new Error(`Patch target ownership drift for ${target.nodeId}`);
+  }
+  const patchableControls = new Map(node.controls.filter((control) => control.patchable).map((control) => [control.id, control]));
+  for (const control of target.controls) {
+    const declared = patchableControls.get(control.id);
+    if (!declared) throw new Error(`Patch target exposes undeclared control: ${target.nodeId}.${control.id}`);
+    if (declared.type !== control.type || declared.sourceProp !== control.sourceProp) {
+      throw new Error(`Patch target control drift for ${target.nodeId}.${control.id}`);
+    }
+  }
+}
+
+const patchTargets = {
+  contract: "OLUK_DESIGN_PATCH_TARGETS_V1",
+  schemaVersion: "1.0.0",
+  status: "LOCAL_DESIGN_WRITER_ALLOWLIST",
+  targetRepository: "oluk-design-system",
+  laws: patchTargetSource.laws,
+  targets: await Promise.all(patchTargetSource.targets.map(async (target) => ({
+    ...target,
+    sourceSha256: await fileDigest(resolve(repoRoot, target.sourcePath)),
+  }))),
+};
+const patchTargetsDigest = contentDigest(patchTargets);
 
 const registeredExports = new Set(explicitNodes.map((node) => `${node.ownership.sourcePath}#${node.ownership.exportName}`));
 const censusReconciliation = census.components.map((component) => {
@@ -335,24 +375,48 @@ const patchSchema = {
   title: "OLUK Design Patch V1",
   type: "object",
   additionalProperties: false,
-  required: ["nodeId", "baseDigest", "changes", "targetRepository", "targetExport"],
+  required: ["contract", "patchId", "nodeId", "base", "changes", "targetRepository", "targetExport"],
   properties: {
+    contract: { const: "OLUK_DESIGN_PATCH_V1" },
+    patchId: { type: "string", pattern: "^sha256:[a-f0-9]{64}$" },
     nodeId: { type: "string", minLength: 1 },
-    baseDigest: { type: "string", pattern: "^[a-f0-9]{64}$" },
+    base: {
+      type: "object",
+      additionalProperties: false,
+      required: ["nodeContractDigest", "targetRegistryDigest", "sourceSha256"],
+      properties: {
+        nodeContractDigest: { type: "string", pattern: "^[a-f0-9]{64}$" },
+        targetRegistryDigest: { type: "string", pattern: "^[a-f0-9]{64}$" },
+        sourceSha256: { type: "string", pattern: "^[a-f0-9]{64}$" },
+      },
+    },
     changes: {
       type: "object",
       minProperties: 1,
       additionalProperties: { oneOf: [{ type: "string" }, { type: "number" }, { type: "boolean" }] },
     },
-    targetRepository: { enum: ["design", "native-next"] },
+    targetRepository: { const: "oluk-design-system" },
     targetExport: { type: "string", minLength: 1 },
   },
+  oneOf: patchTargetSource.targets.map((target) => ({
+    properties: {
+      nodeId: { const: target.nodeId },
+      targetExport: { const: target.targetExport },
+      changes: {
+        type: "object",
+        minProperties: 1,
+        additionalProperties: false,
+        properties: Object.fromEntries(target.controls.map((control) => [control.id, patchControlSchema(control)])),
+      },
+    },
+  })),
   laws: [
-    "One repository per patch.",
+    "Version one writes only the Design producer; downstream Native Next adoption is a separate generated-consumer operation.",
     "Only controls declared patchable by the semantic node may appear in changes.",
-    "The exact base digest must match before preview or apply.",
+    "The exact node-contract, target-registry, and source digests must match before preview or apply.",
     "Version one forbids arbitrary CSS and free-form source editing.",
-    "Diff preview and focused validation precede explicit apply.",
+    "The browser may export a canonical patch but has no filesystem write authority.",
+    "An immutable CLI preview receipt and exact confirmation phrase precede explicit local apply.",
   ],
 };
 
@@ -365,6 +429,7 @@ const baseArtifactDigests = {
   designConnect: contentDigest(designConnect),
   messageContract: contentDigest(messageContract),
   patchSchema: contentDigest(patchSchema),
+  patchTargets: patchTargetsDigest,
   sourceRegister: contentDigest(sourceRegister),
 };
 
@@ -391,6 +456,8 @@ const approval = {
     nodeContractDigest: baseArtifactDigests.nodeContract,
     designConnectDigest: baseArtifactDigests.designConnect,
     messageContractDigest: baseArtifactDigests.messageContract,
+    patchSchemaDigest: baseArtifactDigests.patchSchema,
+    patchTargetsDigest: baseArtifactDigests.patchTargets,
   },
   next: { candidateSha: null, bindingDigest: null },
   scope: {
@@ -411,6 +478,7 @@ await emit(outputs.nodeContract, nodeContract);
 await emit(outputs.designConnect, designConnect);
 await emit(outputs.messageContract, messageContract);
 await emit(outputs.patchSchema, patchSchema);
+await emit(outputs.patchTargets, patchTargets);
 await emit(outputs.digests, digestManifest);
 await emit(outputs.approval, approval);
 

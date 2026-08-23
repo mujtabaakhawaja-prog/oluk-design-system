@@ -5,20 +5,48 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "contract",
+    "patchId",
     "nodeId",
-    "baseDigest",
+    "base",
     "changes",
     "targetRepository",
     "targetExport"
   ],
   "properties": {
+    "contract": {
+      "const": "OLUK_DESIGN_PATCH_V1"
+    },
+    "patchId": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
     "nodeId": {
       "type": "string",
       "minLength": 1
     },
-    "baseDigest": {
-      "type": "string",
-      "pattern": "^[a-f0-9]{64}$"
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodeContractDigest",
+        "targetRegistryDigest",
+        "sourceSha256"
+      ],
+      "properties": {
+        "nodeContractDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "targetRegistryDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
     },
     "changes": {
       "type": "object",
@@ -38,21 +66,83 @@
       }
     },
     "targetRepository": {
-      "enum": [
-        "design",
-        "native-next"
-      ]
+      "const": "oluk-design-system"
     },
     "targetExport": {
       "type": "string",
       "minLength": 1
     }
   },
+  "oneOf": [
+    {
+      "properties": {
+        "nodeId": {
+          "const": "component.metric-rail"
+        },
+        "targetExport": {
+          "const": "MetricRail"
+        },
+        "changes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": false,
+          "properties": {
+            "density": {
+              "enum": [
+                "default",
+                "compact"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "nodeId": {
+          "const": "component.purchase-panel"
+        },
+        "targetExport": {
+          "const": "PurchasePanel"
+        },
+        "changes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "enum": [
+                "default",
+                "hover",
+                "focus-visible",
+                "quantity-changed",
+                "added",
+                "out-of-stock",
+                "unavailable",
+                "disabled"
+              ]
+            },
+            "width": {
+              "enum": [
+                "responsive",
+                "desktop",
+                "mobile"
+              ]
+            },
+            "bottleOptions": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  ],
   "laws": [
-    "One repository per patch.",
+    "Version one writes only the Design producer; downstream Native Next adoption is a separate generated-consumer operation.",
     "Only controls declared patchable by the semantic node may appear in changes.",
-    "The exact base digest must match before preview or apply.",
+    "The exact node-contract, target-registry, and source digests must match before preview or apply.",
     "Version one forbids arbitrary CSS and free-form source editing.",
-    "Diff preview and focused validation precede explicit apply."
+    "The browser may export a canonical patch but has no filesystem write authority.",
+    "An immutable CLI preview receipt and exact confirmation phrase precede explicit local apply."
   ]
 }
