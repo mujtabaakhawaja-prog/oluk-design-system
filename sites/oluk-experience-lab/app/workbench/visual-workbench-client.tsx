@@ -64,6 +64,7 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
   const [annotations, setAnnotations] = useState<readonly WorkbenchAnnotation[]>([]);
   const [stagedValues, setStagedValues] = useState<StagedValues>({});
   const [lastBridgeEvent, setLastBridgeEvent] = useState("No preview event received");
+  const [bridgeListening, setBridgeListening] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const digest = bundle.digests.artifacts.nodeContract;
@@ -127,7 +128,11 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
       }
     }
     window.addEventListener("message", receivePreviewMessage);
-    return () => window.removeEventListener("message", receivePreviewMessage);
+    setBridgeListening(true);
+    return () => {
+      setBridgeListening(false);
+      window.removeEventListener("message", receivePreviewMessage);
+    };
   }, [allowedEvents, allowedOrigins, bundle.messageContract.contract, nodesById]);
 
   const patchPreview = useMemo(() => ({
@@ -258,14 +263,16 @@ export function VisualWorkbenchClient({ bundle }: Readonly<{ bundle: WorkbenchCo
             <div><span>SELECTED</span><strong>{selectedNode.id}</strong></div>
           </div>
           <div className={styles.previewViewport} style={{ maxWidth: VIEWPORT_WIDTHS[viewport] }}>
-            <iframe
-              key={previewUrl}
-              onLoad={() => postToPreview("node.highlight", { nodeId: selectedNode.id })}
-              ref={iframeRef}
-              sandbox="allow-forms allow-same-origin allow-scripts"
-              src={previewUrl}
-              title={`${target} ${projection} preview`}
-            />
+            {bridgeListening ? (
+              <iframe
+                key={previewUrl}
+                onLoad={() => postToPreview("node.highlight", { nodeId: selectedNode.id })}
+                ref={iframeRef}
+                sandbox="allow-forms allow-same-origin allow-scripts"
+                src={previewUrl}
+                title={`${target} ${projection} preview`}
+              />
+            ) : null}
           </div>
         </section>
 
