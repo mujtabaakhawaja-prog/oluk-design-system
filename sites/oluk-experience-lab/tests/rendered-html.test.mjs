@@ -189,7 +189,7 @@ test("preserves exact MK-2866 commerce truth and removes backend vocabulary from
     "90 SERVINGS",
     ">99%",
     "IN STOCK",
-    "OPENLAB REPORTED",
+    "OPENLAB VERIFIED",
     "£43",
   ]) {
     assert.match(productText, new RegExp(escapeRegExp(expected)), `MK-2866 truth: ${expected}`);

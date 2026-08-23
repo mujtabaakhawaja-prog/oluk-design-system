@@ -10,7 +10,8 @@ const inventoryLabels: Readonly<Record<InventoryState, string>> = {
 };
 
 const evidenceLabels: Readonly<Record<EvidenceState, string>> = {
-  verified: "OPENLAB REPORTED",
+  // Sites is deterministic presentation staging. Runtime adapters retain source-owned evidence semantics.
+  verified: "OPENLAB VERIFIED",
   available: "EVIDENCE UNAVAILABLE",
   unavailable: "EVIDENCE UNAVAILABLE",
 };
