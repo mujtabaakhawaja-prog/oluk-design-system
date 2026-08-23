@@ -289,12 +289,54 @@ export function transformSource({ source, sourcePath, targetExport, controls, ch
   return candidate;
 }
 
+function jsonProperty(object, name) {
+  if (!ts.isObjectLiteralExpression(object)) return null;
+  const matches = object.properties.filter(
+    (property) => ts.isPropertyAssignment(property) && propertyName(property) === name,
+  );
+  if (matches.length > 1) throw new Error(`Semantic JSON contains duplicate ${name} properties`);
+  return matches[0] ?? null;
+}
+
+function jsonStringProperty(object, name) {
+  const property = jsonProperty(object, name);
+  return property && ts.isStringLiteral(property.initializer) ? property.initializer.text : null;
+}
+
 function transformNodeSource({ source, nodeId, controls, changes }) {
+  // Parse once as ordinary JSON for semantic validation and once as a JSON AST
+  // so the patch can replace only the declared default-value literal. Rewriting
+  // the whole document with JSON.stringify would create unrelated formatting
+  // churn in this deliberately compact authority source.
   const document = JSON.parse(source);
-  const node = document.nodes?.find((entry) => entry.id === nodeId);
-  if (!node) throw new Error(`Semantic source does not contain ${nodeId}`);
+  const semanticMatches = document.nodes?.filter((entry) => entry.id === nodeId) ?? [];
+  if (semanticMatches.length !== 1) {
+    throw new Error(`Expected one semantic source node named ${nodeId}; found ${semanticMatches.length}`);
+  }
+  const node = semanticMatches[0];
   const semanticControls = new Map((node.controls ?? []).map((control) => [control.id, control]));
   const allowlistedControls = new Map(controls.map((control) => [control.id, control]));
+
+  const sourceFile = ts.parseJsonText("OLUK-DESIGN-NODE-SOURCE-V1.json", source);
+  if (sourceFile.parseDiagnostics.length) {
+    throw new Error(`Semantic source does not parse before patch: ${sourceFile.parseDiagnostics[0].messageText}`);
+  }
+  const root = sourceFile.statements[0]?.expression;
+  const nodesProperty = root && jsonProperty(root, "nodes");
+  if (!nodesProperty || !ts.isArrayLiteralExpression(nodesProperty.initializer)) {
+    throw new Error("Semantic source nodes must be a JSON array");
+  }
+  const astNodes = nodesProperty.initializer.elements.filter(
+    (entry) => ts.isObjectLiteralExpression(entry) && jsonStringProperty(entry, "id") === nodeId,
+  );
+  if (astNodes.length !== 1) {
+    throw new Error(`Expected one semantic JSON node named ${nodeId}; found ${astNodes.length}`);
+  }
+  const controlsProperty = jsonProperty(astNodes[0], "controls");
+  if (!controlsProperty || !ts.isArrayLiteralExpression(controlsProperty.initializer)) {
+    throw new Error(`Semantic source controls must be an array: ${nodeId}`);
+  }
+  const edits = [];
   for (const [controlId, value] of Object.entries(changes)) {
     const semanticControl = semanticControls.get(controlId);
     const allowlistedControl = allowlistedControls.get(controlId);
@@ -307,9 +349,31 @@ function transformNodeSource({ source, nodeId, controls, changes }) {
     // stores the user-facing control value, while the TS initializer receives
     // any allowlisted source mapping (for example density -> compact boolean).
     literalFor(allowlistedControl, value);
+    literalFor(semanticControl, value);
     semanticControl.defaultValue = value;
+    const astControls = controlsProperty.initializer.elements.filter(
+      (entry) => ts.isObjectLiteralExpression(entry) && jsonStringProperty(entry, "id") === controlId,
+    );
+    if (astControls.length !== 1) {
+      throw new Error(`Expected one semantic JSON control named ${nodeId}.${controlId}; found ${astControls.length}`);
+    }
+    const defaultValueProperty = jsonProperty(astControls[0], "defaultValue");
+    if (!defaultValueProperty) throw new Error(`Semantic control has no defaultValue: ${nodeId}.${controlId}`);
+    edits.push({
+      start: defaultValueProperty.initializer.getStart(sourceFile),
+      end: defaultValueProperty.initializer.getEnd(),
+      replacement: JSON.stringify(value),
+    });
   }
-  return `${JSON.stringify(document, null, 2)}\n`;
+  edits.sort((left, right) => right.start - left.start);
+  let candidate = source;
+  for (const edit of edits) candidate = `${candidate.slice(0, edit.start)}${edit.replacement}${candidate.slice(edit.end)}`;
+  if (candidate === source) throw new Error("Patch does not change the semantic node source");
+  const parsedCandidate = JSON.parse(candidate);
+  if (canonicalJson(parsedCandidate) !== canonicalJson(document)) {
+    throw new Error("Semantic byte-range patch changed data outside the declared control");
+  }
+  return candidate;
 }
 
 async function unifiedDiff(repoRoot, sourcePath, before, after) {

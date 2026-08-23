@@ -32,6 +32,7 @@
         {"command": "npm", "args": ["run", "workbench:generate"], "cwd": "sites/oluk-experience-lab"},
         {"command": "npm", "args": ["run", "workbench:check"], "cwd": "sites/oluk-experience-lab"},
         {"command": "npm", "args": ["run", "typecheck"], "cwd": "sites/oluk-experience-lab"},
+        {"command": "npm", "args": ["run", "workbench:patch:test"], "cwd": "sites/oluk-experience-lab"},
         {"command": "node", "args": ["--test", "tests/visual-workbench.test.mjs"], "cwd": "sites/oluk-experience-lab"}
       ]
     },
@@ -62,6 +63,7 @@
         {"command": "npm", "args": ["run", "workbench:generate"], "cwd": "sites/oluk-experience-lab"},
         {"command": "npm", "args": ["run", "workbench:check"], "cwd": "sites/oluk-experience-lab"},
         {"command": "npm", "args": ["run", "typecheck"], "cwd": "sites/oluk-experience-lab"},
+        {"command": "npm", "args": ["run", "workbench:patch:test"], "cwd": "sites/oluk-experience-lab"},
         {"command": "node", "args": ["--test", "tests/visual-workbench.test.mjs"], "cwd": "sites/oluk-experience-lab"}
       ]
     }

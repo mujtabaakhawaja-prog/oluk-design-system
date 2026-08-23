@@ -57,6 +57,14 @@
           "cwd": "sites/oluk-experience-lab"
         },
         {
+          "command": "npm",
+          "args": [
+            "run",
+            "workbench:patch:test"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
           "command": "node",
           "args": [
             "--test",
@@ -125,6 +133,14 @@
           "args": [
             "run",
             "typecheck"
+          ],
+          "cwd": "sites/oluk-experience-lab"
+        },
+        {
+          "command": "npm",
+          "args": [
+            "run",
+            "workbench:patch:test"
           ],
           "cwd": "sites/oluk-experience-lab"
         },

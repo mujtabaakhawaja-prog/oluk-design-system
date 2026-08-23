@@ -67,6 +67,20 @@ async function createFixture() {
       },
     ],
   };
+  const nodeSourceText = [
+    "{",
+    '  "contract": "OLUK_DESIGN_NODE_SOURCE_V1",',
+    '  "nodes": [',
+    "    {",
+    '      "id": "component.metric-rail",',
+    '      "controls": [',
+    '        {"id": "density", "type": "enum", "values": ["default", "compact"], "defaultValue": "default", "sourceProp": "compact", "patchable": true}',
+    "      ]",
+    "    }",
+    "  ]",
+    "}",
+    "",
+  ].join("\n");
   const nodeContract = { contract: "OLUK_DESIGN_NODE_CONTRACT_V1", nodes: nodeSource.nodes };
   const targets = {
     contract: "OLUK_DESIGN_PATCH_TARGETS_V1",
@@ -124,7 +138,8 @@ async function createFixture() {
   };
   await Promise.all([
     mkdir(path.dirname(path.resolve(repoRoot, sourcePath)), { recursive: true }),
-    writeJson(path.resolve(repoRoot, nodeSourcePath), nodeSource),
+    mkdir(path.dirname(path.resolve(repoRoot, nodeSourcePath)), { recursive: true })
+      .then(() => writeFile(path.resolve(repoRoot, nodeSourcePath), nodeSourceText)),
     writeJson(path.resolve(repoRoot, "authority/generated/OLUK-DESIGN-NODE-CONTRACT-V1.json"), nodeContract),
     writeJson(path.resolve(repoRoot, "authority/generated/OLUK-DESIGN-PATCH-TARGETS-V1.json"), targets),
     writeJson(path.resolve(repoRoot, "authority/generated/OLUK-DESIGN-PATCH-V1.schema.json"), schema),
@@ -162,6 +177,7 @@ async function createFixture() {
     generatedProofPath,
     source,
     nodeSource,
+    nodeSourceText,
     patch,
     patchPath,
     externalPatchPath,
@@ -198,6 +214,14 @@ test("preview includes authored and deterministic generated diffs in a git-dir r
   assert.equal(preview.targets.length, 3);
   assert.match(preview.diffs.find((diff) => diff.includes(fixture.sourcePath)) ?? "", /compact = true/);
   assert.match(preview.diffs.find((diff) => diff.includes(fixture.nodeSourcePath)) ?? "", /"defaultValue": "compact"/);
+  const semanticDiff = preview.diffs.find((diff) => diff.includes(fixture.nodeSourcePath)) ?? "";
+  const semanticChangedLines = semanticDiff
+    .split("\n")
+    .filter((line) => (/^[+-]/.test(line) && !line.startsWith("---") && !line.startsWith("+++")));
+  assert.deepEqual(semanticChangedLines, [
+    '-        {"id": "density", "type": "enum", "values": ["default", "compact"], "defaultValue": "default", "sourceProp": "compact", "patchable": true}',
+    '+        {"id": "density", "type": "enum", "values": ["default", "compact"], "defaultValue": "compact", "sourceProp": "compact", "patchable": true}',
+  ]);
   assert.match(preview.diffs.find((diff) => diff.includes(fixture.generatedProofPath)) ?? "", /"density": "compact"/);
   assert.equal(
     preview.targets.find((target) => target.sourcePath === fixture.generatedProofPath)?.role,
@@ -228,6 +252,10 @@ test("apply requires the exact preview phrase, changes no index, and rollback re
     JSON.parse(await readFile(path.resolve(fixture.repoRoot, fixture.nodeSourcePath), "utf8")).nodes[0].controls[0].defaultValue,
     "compact",
   );
+  assert.equal(
+    await readFile(path.resolve(fixture.repoRoot, fixture.nodeSourcePath), "utf8"),
+    fixture.nodeSourceText.replace('"defaultValue": "default"', '"defaultValue": "compact"'),
+  );
   assert.equal((await git(fixture.repoRoot, "diff", "--cached", "--name-only")).stdout, "");
   await assert.rejects(
     rollbackPatch({ repoRoot: fixture.repoRoot, applyReceiptPath: applied.receiptPath, confirmation: "ROLLBACK anything" }),
@@ -241,6 +269,7 @@ test("apply requires the exact preview phrase, changes no index, and rollback re
   assert.equal(rolledBack.contract, "OLUK_DESIGN_PATCH_ROLLBACK_RECEIPT_V1");
   assert.equal(await readFile(path.resolve(fixture.repoRoot, fixture.sourcePath), "utf8"), fixture.source);
   assert.deepEqual(JSON.parse(await readFile(path.resolve(fixture.repoRoot, fixture.nodeSourcePath), "utf8")), fixture.nodeSource);
+  assert.equal(await readFile(path.resolve(fixture.repoRoot, fixture.nodeSourcePath), "utf8"), fixture.nodeSourceText);
   assert.equal((await git(fixture.repoRoot, "status", "--porcelain")).stdout, "");
 });
 
