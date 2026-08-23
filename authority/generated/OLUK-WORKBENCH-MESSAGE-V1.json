@@ -1,0 +1,101 @@
+{
+  "contract": "OLUK_WORKBENCH_MESSAGE_V1",
+  "schemaVersion": "1.0.0",
+  "status": "LOCAL_ONLY_READ_ONLY_V1",
+  "allowedOrigins": [
+    "http://127.0.0.1:4191",
+    "http://localhost:4191",
+    "http://127.0.0.1:4193",
+    "http://localhost:4193",
+    "http://127.0.0.1:4195",
+    "http://localhost:4195"
+  ],
+  "events": [
+    {
+      "type": "node.select",
+      "direction": "bidirectional",
+      "payload": [
+        "nodeId",
+        "routeId",
+        "viewport",
+        "state",
+        "digest"
+      ]
+    },
+    {
+      "type": "node.highlight",
+      "direction": "workbench_to_preview",
+      "payload": [
+        "nodeId"
+      ]
+    },
+    {
+      "type": "node.parents",
+      "direction": "preview_to_workbench",
+      "payload": [
+        "nodeId",
+        "parentIds"
+      ]
+    },
+    {
+      "type": "projection.change",
+      "direction": "bidirectional",
+      "payload": [
+        "projection"
+      ]
+    },
+    {
+      "type": "viewport.change",
+      "direction": "workbench_to_preview",
+      "payload": [
+        "viewport"
+      ]
+    },
+    {
+      "type": "state.change",
+      "direction": "workbench_to_preview",
+      "payload": [
+        "nodeId",
+        "state"
+      ]
+    },
+    {
+      "type": "annotation.create",
+      "direction": "workbench_local",
+      "payload": [
+        "annotationId",
+        "nodeId",
+        "routeId",
+        "viewport",
+        "state",
+        "digest",
+        "text"
+      ]
+    },
+    {
+      "type": "annotation.resolve",
+      "direction": "workbench_local",
+      "payload": [
+        "annotationId",
+        "digest"
+      ]
+    },
+    {
+      "type": "capture.request",
+      "direction": "workbench_to_preview",
+      "payload": [
+        "routeId",
+        "viewport",
+        "state",
+        "digest"
+      ]
+    }
+  ],
+  "security": {
+    "wildcardOriginsForbidden": true,
+    "arbitraryJavaScriptForbidden": true,
+    "rawHtmlReplacementForbidden": true,
+    "directSourceWritingForbidden": true,
+    "publicRuntimeForbidden": true
+  }
+}

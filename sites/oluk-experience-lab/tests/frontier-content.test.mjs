@@ -94,7 +94,10 @@ test("frontier binds supplied product renders and ships bounded Make/agentic han
     readFileSync(new URL("../app/design-system/shop-taxonomy.ts", import.meta.url), "utf8"),
     readFileSync(new URL("../app/design-system/locked-home-hero-media.ts", import.meta.url), "utf8"),
   ]) assert.match(source, /\/assets\/products\/rad-140\/front\.png/);
-  assert.match(readFileSync(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8"), /lockedHomeHeroMedia\["rad-140"\]/);
+  const lockedHomeHero = readFileSync(new URL("../app/design-system/locked-home-hero.tsx", import.meta.url), "utf8");
+  assert.match(lockedHomeHero, /products\.length !== 5/);
+  assert.match(lockedHomeHero, /src=\{product\.media\.src\}/);
+  assert.doesNotMatch(lockedHomeHero, /lockedHomeHeroMedia/);
   assert.doesNotMatch(readFileSync(new URL("PROMPTS.md", kitRoot), "utf8"), /RAD-140[^\n]{0,80}10 MG/);
 });
 

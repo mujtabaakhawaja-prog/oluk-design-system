@@ -19,6 +19,7 @@ export function CobaltDivider({ className }: CobaltDividerProps) {
       aria-hidden="true"
       className={classes(styles.divider, "oluk-cobalt-divider", className)}
       data-component="CobaltDivider"
+      data-oluk-node="component.cobalt-divider"
     />
   );
 }
@@ -34,6 +35,7 @@ export function CobaltDensityBoundary({ className }: CobaltDensityBoundaryProps)
       aria-hidden="true"
       className={classes(styles.boundary, "oluk-cobalt-density-boundary", className)}
       data-component="CobaltDensityBoundary"
+      data-oluk-node="component.cobalt-density-boundary"
       data-rhythm="32-2-32"
     >
       <CobaltDivider />

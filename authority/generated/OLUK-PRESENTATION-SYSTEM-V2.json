@@ -1,0 +1,178 @@
+{
+  "contract": "OLUK_PRESENTATION_SYSTEM_V2",
+  "schemaVersion": "2.0.0",
+  "status": "SITES_PRODUCER_FOUNDATION",
+  "sourceInventoryDigest": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c",
+  "routeAuthorityDigest": "ed3406c9dbaa75dcf1dc62748248e4d8e63370fd22b8da3822ccd1a57f50a27a",
+  "tokenIds": [
+    "token.canvas",
+    "token.surface",
+    "token.media-chamber",
+    "token.cobalt",
+    "token.ink",
+    "token.border",
+    "token.radius",
+    "token.elevation",
+    "token.type",
+    "token.motion",
+    "token.breakpoint"
+  ],
+  "primitiveIds": [
+    "primitive.surface",
+    "primitive.route-grid",
+    "primitive.section-slot",
+    "primitive.media-chamber",
+    "primitive.status",
+    "primitive.action",
+    "primitive.disclosure",
+    "primitive.type"
+  ],
+  "componentIds": [
+    "component.product-commerce-card",
+    "component.pdp-first-fold",
+    "component.purchase-panel",
+    "component.product-media-chamber",
+    "component.metric-rail",
+    "component.openlab-records-rail",
+    "component.product-dossier",
+    "component.builder",
+    "component.navigation",
+    "component.lifecycle-surface"
+  ],
+  "moduleIds": [
+    "module.homepage",
+    "module.discovery",
+    "module.product-detail",
+    "module.openlab",
+    "module.checkout",
+    "module.payment-preserve",
+    "module.account",
+    "module.post-purchase",
+    "module.support",
+    "module.decision-tool",
+    "module.owner-review",
+    "module.shared-shell"
+  ],
+  "templateIds": [
+    "template.homepage",
+    "template.discovery",
+    "template.product-detail",
+    "template.openlab",
+    "template.checkout",
+    "template.payment-preserve",
+    "template.account",
+    "template.post-purchase",
+    "template.support",
+    "template.decision-tool",
+    "template.owner-review",
+    "template.shared-shell"
+  ],
+  "fieldIds": [
+    "field.product.series-name",
+    "field.product.name",
+    "field.product.alias",
+    "field.product.strength-display",
+    "field.product.servings-display",
+    "field.evidence.purity-display",
+    "field.evidence.state",
+    "field.commerce.stock-state",
+    "field.commerce.price",
+    "field.commerce.quantity",
+    "field.commerce.purchasable",
+    "field.media.contract-identity"
+  ],
+  "stateIds": [
+    "state.default",
+    "state.hover",
+    "state.focus-visible",
+    "state.selected",
+    "state.added",
+    "state.loading",
+    "state.empty",
+    "state.unavailable",
+    "state.error",
+    "state.retry",
+    "state.in-stock",
+    "state.low-stock",
+    "state.out-of-stock",
+    "state.long-copy",
+    "state.missing-media",
+    "state.responsive-reorder",
+    "state.reduced-motion",
+    "state.logged-out",
+    "state.authenticated"
+  ],
+  "interactionIds": [
+    "interaction.navigate",
+    "interaction.quantity",
+    "interaction.add-to-bag",
+    "interaction.compare",
+    "interaction.view-record",
+    "interaction.disclose",
+    "interaction.retry"
+  ],
+  "sourceDispositions": [
+    {
+      "id": "source.reference-canon",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "disposition": "compare_and_adapt",
+      "removalCondition": "Retire after the winning concern is mapped into OLUK_PRESENTATION_SYSTEM_V2 and verified in both studios."
+    },
+    {
+      "id": "source.system-taxonomy",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "disposition": "compare_and_adapt",
+      "removalCondition": "Retire after the winning concern is mapped into OLUK_PRESENTATION_SYSTEM_V2 and verified in both studios."
+    },
+    {
+      "id": "source.atlas-shell",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "disposition": "compare_and_adapt",
+      "removalCondition": "Retire after the winning concern is mapped into OLUK_PRESENTATION_SYSTEM_V2 and verified in both studios."
+    },
+    {
+      "id": "source.current-design-registries",
+      "containment": "CONTAINED",
+      "disposition": "reuse",
+      "removalCondition": null
+    },
+    {
+      "id": "source.next-sites-home",
+      "containment": "CONFLICT_REQUIRES_CHAMPION",
+      "disposition": "compare_and_adapt",
+      "removalCondition": "Retire after the winning concern is mapped into OLUK_PRESENTATION_SYSTEM_V2 and verified in both studios."
+    },
+    {
+      "id": "source.next-components",
+      "containment": "CONFLICT_REQUIRES_CHAMPION",
+      "disposition": "compare_and_adapt",
+      "removalCondition": "Retire after the winning concern is mapped into OLUK_PRESENTATION_SYSTEM_V2 and verified in both studios."
+    },
+    {
+      "id": "source.next-route-local",
+      "containment": "CONFLICT_REQUIRES_CHAMPION",
+      "disposition": "compare_and_adapt",
+      "removalCondition": "Retire after the winning concern is mapped into OLUK_PRESENTATION_SYSTEM_V2 and verified in both studios."
+    },
+    {
+      "id": "source.old-runtime-studio",
+      "containment": "OBSOLETE_VITE_RUNTIME",
+      "disposition": "superseded",
+      "removalCondition": null
+    },
+    {
+      "id": "source.precision-wrap",
+      "containment": "SUPERSEDED_WITH_REASON",
+      "disposition": "superseded",
+      "removalCondition": null
+    }
+  ],
+  "responsiveViewports": [
+    1440,
+    1024,
+    768,
+    390
+  ],
+  "approvalLaw": "Human approval binds exact Design and Native Next digests plus four-width capture hashes; it cannot be inferred from source, tests, or deployment.",
+  "contentHash": "0e00a893d2e56b6fb974353b9bbb1bb6b4f5c54fea00bd73c5c03afb1656180b"
+}

@@ -1,0 +1,22 @@
+.overlay {
+  border: 2px solid var(--oluk-cobalt);
+  box-shadow: 0 0 0 1px var(--oluk-surface-card), var(--oluk-shadow-relation);
+  pointer-events: none;
+  position: fixed;
+  z-index: 2147483646;
+}
+
+.overlay span {
+  background: var(--oluk-cobalt);
+  border-radius: 5px 5px 0 0;
+  bottom: 100%;
+  color: var(--oluk-text-on-inverse);
+  font: 700 10px/1.4 var(--oluk-font-mono);
+  left: -2px;
+  max-width: min(420px, 80vw);
+  overflow: hidden;
+  padding: 4px 7px;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

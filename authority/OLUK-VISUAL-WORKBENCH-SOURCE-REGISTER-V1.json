@@ -1,0 +1,294 @@
+{
+  "contract": "OLUK_VISUAL_WORKBENCH_SOURCE_REGISTER_V1",
+  "schemaVersion": "1.0.0",
+  "base": {
+    "repository": "oluk-design-system",
+    "sha": "8b79a7d04342043d3f972c5cf844c9168547d401"
+  },
+  "laws": [
+    "Classify bounded concerns, files, or hunks; never assign one blanket disposition to a worktree.",
+    "Native Next remains customer runtime authority; this Design register governs presentation sources only.",
+    "Pending visual candidates are never promoted by containment or generated evidence.",
+    "No concern in this register authorizes C2, Woo, cart, order, payment, deployment, or public promotion."
+  ],
+  "concerns": [
+    {
+      "id": "concern.surface-inventory-route-authority",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "6044eaec79903909daf36de487c07b555864bb1c",
+        "paths": [
+          "authority/imports/*",
+          "sites/oluk-experience-lab/scripts/generate-surface-inventory.mjs",
+          "authority/generated/OLUK-SURFACE-INVENTORY-V1.json",
+          "authority/generated/OLUK-PRESENTATION-SYSTEM-V2.json",
+          "authority/generated/OLUK-ROUTE-PRESENTATION-AUTHORITY-V1.json"
+        ]
+      },
+      "authority": "candidate",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "sites_ready",
+      "exposure": "not_applicable",
+      "decision": "CHAMPION_SOURCE_FOR_V2_FOUNDATION"
+    },
+    {
+      "id": "concern.system-atlas-review-foundation",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "6044eaec79903909daf36de487c07b555864bb1c",
+        "paths": [
+          "sites/oluk-experience-lab/app/system-atlas/**",
+          "sites/oluk-experience-lab/app/design-system/sites-system-atlas.*",
+          "sites/oluk-experience-lab/app/review-studio/surface-review-studio*"
+        ]
+      },
+      "authority": "candidate",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "sites_ready",
+      "exposure": "not_applicable",
+      "decision": "CHAMPION_SHELL_REQUIRES_SEMANTIC_WORKBENCH_EXTENSION"
+    },
+    {
+      "id": "concern.pdp-first-fold-grammar",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "6044eaec79903909daf36de487c07b555864bb1c",
+        "paths": [
+          "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+          "sites/oluk-experience-lab/app/design-system/pdp-first-fold.module.css",
+          "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx"
+        ]
+      },
+      "authority": "candidate",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "sites_candidate",
+      "exposure": "not_applicable",
+      "decision": "ADOPT_STRUCTURE_AND_SEMANTIC_NODES_WITHOUT_RUNTIME_FIXTURE_AUTHORITY"
+    },
+    {
+      "id": "concern.component-census",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "5269af34d94f4a7732479770d0a8bea778c433e8",
+        "paths": [
+          "sites/oluk-experience-lab/scripts/generate-component-census.mjs",
+          "authority/generated/OLUK-COMPONENT-CENSUS-V1.json"
+        ]
+      },
+      "authority": "candidate",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "decision": "ADOPT_DISCOVERY_MECHANISM_AND_RECONCILE_WITH_SEMANTIC_NODE_CONTRACT"
+    },
+    {
+      "id": "concern.pending-homepage-visuals",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "14a2b59fdee536e2937278e1bc11d878079b3243",
+        "paths": [
+          "sites/oluk-experience-lab/app/design-system/homepage-*",
+          "sites/oluk-experience-lab/app/design-system/locked-home-hero.*"
+        ]
+      },
+      "authority": "candidate",
+      "containment": "CONFLICT_REQUIRES_CHAMPION",
+      "integrationDisposition": "suppress",
+      "lifecycle": "sites_candidate",
+      "exposure": "disabled",
+      "decision": "EXCLUDED_PENDING_HUMAN_VISUAL_SELECTION"
+    },
+    {
+      "id": "concern.generated-review-refreshes",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "bc60d070ed3887702039ae88386a81d90eac75ad",
+        "paths": [
+          "dbfdc8ae21b627dc51238e18709988008e454408",
+          "bc60d070ed3887702039ae88386a81d90eac75ad"
+        ]
+      },
+      "authority": "evidence_only",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "integrationDisposition": "suppress",
+      "lifecycle": "retired",
+      "exposure": "not_applicable",
+      "decision": "DO_NOT_REPLAY"
+    },
+    {
+      "id": "concern.legacy-atlas-shell",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "702e17d1b796726299b9dceeca39a8bcd0cbeaa2",
+        "paths": [
+          "sites/oluk-experience-lab/app/design-system/sites-system-atlas.*"
+        ]
+      },
+      "authority": "historical",
+      "containment": "PATCH_EQUIVALENT",
+      "integrationDisposition": "superseded",
+      "lifecycle": "retired",
+      "exposure": "not_applicable",
+      "decision": "SUPERSEDED_BY_PR57_ATLAS_FOUNDATION"
+    },
+    {
+      "id": "concern.current-main-registries",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+        "paths": [
+          "authority/FEATURE-INTENT-REGISTRY.json",
+          "authority/FRONTIER-SECTION-MOUNT-REGISTRY.json",
+          "authority/SITE-TEMPLATE-COMPOSITION-CATALOGUE.json",
+          "authority/PROGRAM-COMPONENT-REGISTRY.json"
+        ]
+      },
+      "authority": "runtime_current",
+      "containment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "decision": "NORMALIZE_INTO_ONE_PRODUCER_GRAPH_NO_PARALLEL_REGISTRY"
+    },
+    {
+      "id": "concern.full-site-reference",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "oluk-full-site-reference",
+        "paths": [
+          "authority/SITE-ROUTE-LEDGER.json",
+          "authority/CHANGELOG.md"
+        ]
+      },
+      "authority": "historical",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "decision": "73_ROUTE_PRESENTATION_LINEAGE_ONLY_NATIVE_NEXT_74_ROUTE_IMPORT_CONTROLS"
+    },
+    {
+      "id": "concern.dirty-production-adoption-map-laws",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "/Users/mujtabakhawaja/Worktrees/oluk-sites-production-adoption-map",
+        "paths": [
+          "no-copy-on-canvas law",
+          "feature-placement law",
+          "responsive and state-maturity law"
+        ]
+      },
+      "authority": "evidence_only",
+      "containment": "UNCOMMITTED_SOURCE_REQUIRES_EXTRACTION",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "decision": "PRESERVE_DIRTY_TREE_EXTRACT_LAWS_ONLY_REJECT_FIGMA_GATE_AND_ROUTE_AUTHORITY"
+    },
+    {
+      "id": "concern.part3-historical-intake",
+      "source": {
+        "repository": "user-supplied-evidence",
+        "ref": "/Users/mujtabakhawaja/Downloads/Part3.md",
+        "paths": ["staging/runtime separation", "proof-state discipline", "component-census requirements"]
+      },
+      "authority": "evidence_only",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "decision": "EVIDENCE_ONLY_WITH_BOUNDED_ADAPTATION_REJECT_COMMANDS_PORTS_AND_STALE_SHAS"
+    },
+    {
+      "id": "concern.part5-interaction-vision",
+      "source": {
+        "repository": "user-supplied-evidence",
+        "ref": "/Users/mujtabakhawaja/Downloads/Part5.md",
+        "paths": ["semantic hierarchy", "annotations", "typed properties", "projection and Git receipt concepts"]
+      },
+      "authority": "evidence_only",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "decision": "ADAPT_STRUCTURE_ONLY_REJECT_INVENTED_CODEX_COMMANDS_VIRTUAL_MOUNTS_AND_BROWSER_WRITES"
+    },
+    {
+      "id": "concern.companions-and-sweep-macros",
+      "source": {
+        "repository": "external-companions",
+        "ref": "/Users/mujtabakhawaja/companions",
+        "paths": ["Codex_companion.md", "chat companions", "thread sweep companions", "batch sweep macros"]
+      },
+      "authority": "historical",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "integrationDisposition": "reject",
+      "lifecycle": "retired",
+      "exposure": "not_applicable",
+      "decision": "OUT_OF_SCOPE_C2_COMPANIONS_DO_NOT_EXECUTE_DESTRUCTIVE_MACROS_ADAPT_FAIL_CLOSED_LAW_ONLY"
+    },
+    {
+      "id": "concern.legacy-vite-runtime-studios",
+      "source": {
+        "repository": "olympus-plugin-initiator",
+        "ref": "R6/JULY_RUNTIME_STUDIO_LINEAGE",
+        "paths": ["reports/runtime-studio/**", "old Vite/R6 preview amendments"]
+      },
+      "authority": "historical",
+      "containment": "OBSOLETE_VITE_RUNTIME",
+      "integrationDisposition": "superseded",
+      "lifecycle": "retired",
+      "exposure": "not_applicable",
+      "decision": "RETAIN_LOCAL_ONLY_AND_NO_MUTATION_CONCEPTS_ONLY_NATIVE_NEXT_CONTROLS"
+    },
+    {
+      "id": "concern.stale-openlab-archive-receipt",
+      "source": {
+        "repository": "user-supplied-evidence",
+        "ref": "/Users/mujtabakhawaja/Downloads/Part3.md",
+        "paths": ["/open-lab/archive"]
+      },
+      "authority": "historical",
+      "containment": "GENERATED_EVIDENCE_ONLY",
+      "integrationDisposition": "replace",
+      "lifecycle": "retired",
+      "exposure": "not_applicable",
+      "decision": "NORMALIZE_RECEIPTS_TO_IMPLEMENTED_OPENLAB_RECORDS_ROUTE_WITHOUT_ADDING_OR_CHANGING_A_RUNTIME_ROUTE"
+    },
+    {
+      "id": "concern.pr57-publication-unit",
+      "source": {
+        "repository": "oluk-design-system",
+        "ref": "PR_57",
+        "paths": ["codex/oluk-presentation-system-v2"]
+      },
+      "authority": "candidate",
+      "containment": "INTEGRATE_BOUNDED_DELTA",
+      "integrationDisposition": "superseded",
+      "lifecycle": "sites_candidate",
+      "exposure": "disabled",
+      "decision": "CLOSE_ONLY_AFTER_CHAMPION_CONCERN_CONTAINMENT_AND_REVIEW_RECEIPT"
+    },
+    {
+      "id": "concern.next-runtime-studio-consumer",
+      "source": {
+        "repository": "olympus-plugin-initiator",
+        "ref": "c7850289f7915bf404ffa47a97516708921e1f81",
+        "paths": [
+          "apps/olympus-shopper-ui/app/presentation-system/**",
+          "apps/olympus-shopper-ui/app/owner-tools/runtime-studio/**"
+        ]
+      },
+      "authority": "candidate",
+      "containment": "CONFLICT_REQUIRES_CHAMPION",
+      "integrationDisposition": "compare_and_adapt",
+      "lifecycle": "next_synced",
+      "exposure": "disabled",
+      "decision": "PR_1063_MIXES_OWNER_TOOLING_AND_CUSTOMER_PDP_COMPARE_AND_ADAPT_ONLY_CLOSE_AFTER_CONTAINMENT_RECEIPT"
+    }
+  ]
+}

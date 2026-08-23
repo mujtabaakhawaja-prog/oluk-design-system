@@ -801,6 +801,8 @@ a.button-secondary:hover {
 .metric-rail > div {
   background: var(--white);
   border: 0;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   padding: 12px 8px 10px;
@@ -811,7 +813,7 @@ a.button-secondary:hover {
   border-left: 1px solid var(--line-strong);
 }
 
-.metric-rail dt {
+.metric-rail dd {
   color: var(--cobalt);
   font-family: var(--font-display), sans-serif;
   font-size: 17px;
@@ -819,15 +821,17 @@ a.button-secondary:hover {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.035em;
   line-height: 1.05;
+  margin: 0;
+  order: -1;
   white-space: nowrap;
 }
 
-.metric-rail [data-fit="medium"] dt {
+.metric-rail [data-fit="medium"] dd {
   font-size: 15px;
   letter-spacing: -0.045em;
 }
 
-.metric-rail [data-fit="long"] dt {
+.metric-rail [data-fit="long"] dd {
   font-size: 13px;
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -835,7 +839,7 @@ a.button-secondary:hover {
   white-space: normal;
 }
 
-.metric-rail dd {
+.metric-rail dt {
   color: var(--cobalt);
   font-size: 12px;
   font-weight: 800;
@@ -846,17 +850,17 @@ a.button-secondary:hover {
   white-space: nowrap;
 }
 
-.metric-rail [data-availability="unavailable"] dt {
+.metric-rail [data-availability="unavailable"] dd {
   color: var(--oluk-text-muted);
   letter-spacing: 0;
 }
 
 @container (max-width: 240px) {
-  .metric-rail [data-fit="medium"] dt {
+  .metric-rail [data-fit="medium"] dd {
     font-size: 13px;
   }
 
-  .metric-rail [data-fit="long"] dt {
+  .metric-rail [data-fit="long"] dd {
     font-size: 12px;
   }
 }
@@ -1261,7 +1265,7 @@ a.button-secondary:hover {
   font-size: 12px;
 }
 
-.product-grid .metric-rail dt {
+.product-grid .metric-rail dd {
   font-size: 15px;
 }
 

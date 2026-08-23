@@ -69,6 +69,17 @@ function matchingRules(text, rules) {
   });
 }
 
+function hasSemanticMetric(html, role, value, label) {
+  const escapedValue = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const labelNode = `content.metric-label.${role}`;
+  const fieldNode = `field.metric.${role}`;
+  return new RegExp(
+    `data-oluk-node="${labelNode}"[^>]*>${escapedLabel}<[\\s\\S]*?data-oluk-node="${fieldNode}"[^>]*>${escapedValue}<`,
+    "i",
+  ).test(html);
+}
+
 export async function auditCustomerCopy() {
   const worker = await loadBuiltWorker("customer-copy");
   const customerRoutes = ROUTES.filter(({ customer }) => customer);
@@ -113,13 +124,19 @@ export async function auditCustomerCopy() {
   const product = rendered.find(({ route }) => route === "/product/mk-2866");
   const missingProductTruth = REQUIRED_MK2866_TRUTH.filter((value) => !product?.text.includes(value));
   const home = rendered.find(({ route }) => route === "/");
-  const missingHomeTruth = ["MK-2866", "Ostarine", "15 MG", "90 SERVINGS", ">99%", "£43"].filter(
+  const missingHomeTruth = ["MK-2866", "Ostarine", "15 MG", ">99%", "£43"].filter(
     (value) => !home?.text.includes(value),
   );
+  if (!hasSemanticMetric(home?.html ?? "", "servings", "90", "SERVINGS")) {
+    missingHomeTruth.push("90 SERVINGS");
+  }
   const shop = rendered.find(({ route }) => route === "/shop");
-  const missingShopTruth = ["MK-2866", "Ostarine", "90 SERVINGS", "£43"].filter(
+  const missingShopTruth = ["MK-2866", "Ostarine", "£43"].filter(
     (value) => !shop?.text.includes(value),
   );
+  if (!hasSemanticMetric(shop?.html ?? "", "servings", "90", "SERVINGS")) {
+    missingShopTruth.push("90 SERVINGS");
+  }
   const unavailableRecord = rendered.find(({ route }) => route === "/open-lab/records/source-bound-record");
   const unavailableRecordTruth = ["MK-2866 evidence record", "Record details are unavailable.", "Unavailable"].filter(
     (value) => !unavailableRecord?.text.includes(value),

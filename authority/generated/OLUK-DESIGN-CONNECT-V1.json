@@ -1,0 +1,832 @@
+{
+  "contract": "OLUK_DESIGN_CONNECT_V1",
+  "schemaVersion": "1.0.0",
+  "status": "CANDIDATE_PENDING_NEXT_BINDING",
+  "nodeContractDigest": "648c2946ac044b38303a26c6d327a24ada2b161232c5d8a9a66f9df0fd6903db",
+  "designSource": {
+    "repository": "oluk-design-system",
+    "baseSha": "8b79a7d04342043d3f972c5cf844c9168547d401",
+    "candidateSha": null
+  },
+  "reviewSurfaces": {
+    "systemAtlas": "http://127.0.0.1:4193/system-atlas",
+    "reviewStudio": "http://127.0.0.1:4193/review-studio",
+    "sitesPdp": "http://127.0.0.1:4193/product/mk-2866",
+    "workbench": "http://127.0.0.1:4195/workbench",
+    "runtimeStudio": "http://127.0.0.1:4191/owner-tools/runtime-studio"
+  },
+  "mappings": [
+    {
+      "nodeId": "action.openlab.record",
+      "designSource": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx#StaticPurchaseActions",
+      "atlasSpecimen": "/system-atlas?node=action.openlab.record",
+      "reviewCandidate": "/review-studio?node=action.openlab.record",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#OpenLabAction",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=action.openlab.record",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "action.purchase.primary",
+      "designSource": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx#StaticPurchaseActions",
+      "atlasSpecimen": "/system-atlas?node=action.purchase.primary",
+      "reviewCandidate": "/review-studio?node=action.purchase.primary",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PrimaryAction",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=action.purchase.primary",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "action.purchase.quantity-decrease",
+      "designSource": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx#QuantityStepper",
+      "atlasSpecimen": "/system-atlas?node=action.purchase.quantity-decrease",
+      "reviewCandidate": "/review-studio?node=action.purchase.quantity-decrease",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=action.purchase.quantity-decrease",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "action.purchase.quantity-increase",
+      "designSource": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx#QuantityStepper",
+      "atlasSpecimen": "/system-atlas?node=action.purchase.quantity-increase",
+      "reviewCandidate": "/review-studio?node=action.purchase.quantity-increase",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=action.purchase.quantity-increase",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.cobalt-density-boundary",
+      "designSource": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx#CobaltDensityBoundary",
+      "atlasSpecimen": "/system-atlas?node=component.cobalt-density-boundary",
+      "reviewCandidate": "/review-studio?node=component.cobalt-density-boundary",
+      "sitesPlacement": null,
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.cobalt-density-boundary",
+      "nativeNextSlotIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.cobalt-divider",
+      "designSource": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx#CobaltDivider",
+      "atlasSpecimen": "/system-atlas?node=component.cobalt-divider",
+      "reviewCandidate": "/review-studio?node=component.cobalt-divider",
+      "sitesPlacement": null,
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.cobalt-divider",
+      "nativeNextSlotIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.metric-cell.purity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricCell",
+      "atlasSpecimen": "/system-atlas?node=component.metric-cell.purity",
+      "reviewCandidate": "/review-studio?node=component.metric-cell.purity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/components/MetricRail.tsx#MetricCell",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.metric-cell.purity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.metric-cell.servings",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricCell",
+      "atlasSpecimen": "/system-atlas?node=component.metric-cell.servings",
+      "reviewCandidate": "/review-studio?node=component.metric-cell.servings",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/components/MetricRail.tsx#MetricCell",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.metric-cell.servings",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.metric-cell.strength",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricCell",
+      "atlasSpecimen": "/system-atlas?node=component.metric-cell.strength",
+      "reviewCandidate": "/review-studio?node=component.metric-cell.strength",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/components/MetricRail.tsx#MetricCell",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.metric-cell.strength",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.metric-rail",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=component.metric-rail",
+      "reviewCandidate": "/review-studio?node=component.metric-rail",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/components/MetricRail.tsx#MetricRail",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.metric-rail",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.pdp-atmospheric-media-field",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "atlasSpecimen": "/system-atlas?node=component.pdp-atmospheric-media-field",
+      "reviewCandidate": "/review-studio?node=component.pdp-atmospheric-media-field",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PdpAtmosphericMediaField.tsx#PdpAtmosphericMediaField",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.pdp-atmospheric-media-field",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.price-block",
+      "designSource": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx#PriceBlock",
+      "atlasSpecimen": "/system-atlas?node=component.price-block",
+      "reviewCandidate": "/review-studio?node=component.price-block",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PriceBlock",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.price-block",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.product-identity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx#ProductIdentity",
+      "atlasSpecimen": "/system-atlas?node=component.product-identity",
+      "reviewCandidate": "/review-studio?node=component.product-identity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#ProductIdentity",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.product-identity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.purchase-actions",
+      "designSource": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx#StaticPurchaseActions",
+      "atlasSpecimen": "/system-atlas?node=component.purchase-actions",
+      "reviewCandidate": "/review-studio?node=component.purchase-actions",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchaseActions",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.purchase-actions",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.purchase-configuration",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=component.purchase-configuration",
+      "reviewCandidate": "/review-studio?node=component.purchase-configuration",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchaseConfiguration",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.purchase-configuration",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.purchase-panel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=component.purchase-panel",
+      "reviewCandidate": "/review-studio?node=component.purchase-panel",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#PurchasePanel",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.purchase-panel",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.quantity-stepper",
+      "designSource": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx#QuantityStepper",
+      "atlasSpecimen": "/system-atlas?node=component.quantity-stepper",
+      "reviewCandidate": "/review-studio?node=component.quantity-stepper",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#QuantityStepper",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.quantity-stepper",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "component.status-stack",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-status.tsx#ProductStatusStack",
+      "atlasSpecimen": "/system-atlas?node=component.status-stack",
+      "reviewCandidate": "/review-studio?node=component.status-stack",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#StatusStack",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.status-stack",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "content.commerce-state",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=content.commerce-state",
+      "reviewCandidate": "/review-studio?node=content.commerce-state",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.commerce-state",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "content.evidence",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=content.evidence",
+      "reviewCandidate": "/review-studio?node=content.evidence",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.evidence",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "content.metric-label.purity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=content.metric-label.purity",
+      "reviewCandidate": "/review-studio?node=content.metric-label.purity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.metric-label.purity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "content.metric-label.servings",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=content.metric-label.servings",
+      "reviewCandidate": "/review-studio?node=content.metric-label.servings",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.metric-label.servings",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "content.metric-label.strength",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=content.metric-label.strength",
+      "reviewCandidate": "/review-studio?node=content.metric-label.strength",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.metric-label.strength",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "content.product-identity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=content.product-identity",
+      "reviewCandidate": "/review-studio?node=content.product-identity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.product-identity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.commerce.available-quantity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.commerce.available-quantity",
+      "reviewCandidate": "/review-studio?node=field.commerce.available-quantity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.commerce.available-quantity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.commerce.price",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.commerce.price",
+      "reviewCandidate": "/review-studio?node=field.commerce.price",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.commerce.price",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.commerce.stock-state",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.commerce.stock-state",
+      "reviewCandidate": "/review-studio?node=field.commerce.stock-state",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.commerce.stock-state",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.evidence.state",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.evidence.state",
+      "reviewCandidate": "/review-studio?node=field.evidence.state",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.evidence.state",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.media.contract-identity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "atlasSpecimen": "/system-atlas?node=field.media.contract-identity",
+      "reviewCandidate": "/review-studio?node=field.media.contract-identity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.media.contract-identity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.metric.purity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=field.metric.purity",
+      "reviewCandidate": "/review-studio?node=field.metric.purity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.metric.purity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.metric.servings",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=field.metric.servings",
+      "reviewCandidate": "/review-studio?node=field.metric.servings",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.metric.servings",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.metric.strength",
+      "designSource": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx#MetricRail",
+      "atlasSpecimen": "/system-atlas?node=field.metric.strength",
+      "reviewCandidate": "/review-studio?node=field.metric.strength",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.metric.strength",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.package.capsule-count",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.package.capsule-count",
+      "reviewCandidate": "/review-studio?node=field.package.capsule-count",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.package.capsule-count",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.product.alias",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.product.alias",
+      "reviewCandidate": "/review-studio?node=field.product.alias",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.product.alias",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.product.name",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "atlasSpecimen": "/system-atlas?node=field.product.name",
+      "reviewCandidate": "/review-studio?node=field.product.name",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.product.name",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.product.series-name",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.product.series-name",
+      "reviewCandidate": "/review-studio?node=field.product.series-name",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.product.series-name",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.purchase.package-count",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.purchase.package-count",
+      "reviewCandidate": "/review-studio?node=field.purchase.package-count",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.purchase.package-count",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.purchase.selected-quantity",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.purchase.selected-quantity",
+      "reviewCandidate": "/review-studio?node=field.purchase.selected-quantity",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.purchase.selected-quantity",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "field.purchase.total-servings",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.purchase.total-servings",
+      "reviewCandidate": "/review-studio?node=field.purchase.total-servings",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.purchase.total-servings",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "media.pdp-product-render",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "atlasSpecimen": "/system-atlas?node=media.pdp-product-render",
+      "reviewCandidate": "/review-studio?node=media.pdp-product-render",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=media.pdp-product-render",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "module.pdp-first-fold",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpFirstFold",
+      "atlasSpecimen": "/system-atlas?node=module.pdp-first-fold",
+      "reviewCandidate": "/review-studio?node=module.pdp-first-fold",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PdpFirstFoldCandidate.tsx#PdpFirstFoldCandidate",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=module.pdp-first-fold",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "primitive.pdp-atmosphere-light",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "atlasSpecimen": "/system-atlas?node=primitive.pdp-atmosphere-light",
+      "reviewCandidate": "/review-studio?node=primitive.pdp-atmosphere-light",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=primitive.pdp-atmosphere-light",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "slot.product-detail.pdp.breadcrumb",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpFirstFold",
+      "atlasSpecimen": "/system-atlas?node=slot.product-detail.pdp.breadcrumb",
+      "reviewCandidate": "/review-studio?node=slot.product-detail.pdp.breadcrumb",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=slot.product-detail.pdp.breadcrumb",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.breadcrumb"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "slot.product-detail.pdp.first-fold",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpFirstFold",
+      "atlasSpecimen": "/system-atlas?node=slot.product-detail.pdp.first-fold",
+      "reviewCandidate": "/review-studio?node=slot.product-detail.pdp.first-fold",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=slot.product-detail.pdp.first-fold",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "state.pdp-missing-media",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "atlasSpecimen": "/system-atlas?node=state.pdp-missing-media",
+      "reviewCandidate": "/review-studio?node=state.pdp-missing-media",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=state.pdp-missing-media",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "status.evidence",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-status.tsx#EvidenceStatus",
+      "atlasSpecimen": "/system-atlas?node=status.evidence",
+      "reviewCandidate": "/review-studio?node=status.evidence",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#EvidenceStatus",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=status.evidence",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "status.stock",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-status.tsx#StockPill",
+      "atlasSpecimen": "/system-atlas?node=status.stock",
+      "reviewCandidate": "/review-studio?node=status.stock",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/modules/pdp/PurchasePanel.tsx#StockStatus",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=status.stock",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "nodeId": "template.product-detail.first-fold",
+      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpFirstFold",
+      "atlasSpecimen": "/system-atlas?node=template.product-detail.first-fold",
+      "reviewCandidate": "/review-studio?node=template.product-detail.first-fold",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=template.product-detail.first-fold",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    }
+  ]
+}

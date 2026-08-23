@@ -5,6 +5,7 @@ import "@fontsource/plus-jakarta-sans/700.css";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "./design-system/candidate-tokens.css";
 import "./globals.css";
+import { DesignInspectBridge } from "./workbench/design-inspect-bridge";
 
 export const metadata: Metadata = {
   title: {
@@ -53,6 +54,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <DesignInspectBridge />
       </body>
     </html>
   );

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "OLUK_DESIGN_PATCH_V1",
+  "title": "OLUK Design Patch V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "nodeId",
+    "baseDigest",
+    "changes",
+    "targetRepository",
+    "targetExport"
+  ],
+  "properties": {
+    "nodeId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "changes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    "targetRepository": {
+      "enum": [
+        "design",
+        "native-next"
+      ]
+    },
+    "targetExport": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "laws": [
+    "One repository per patch.",
+    "Only controls declared patchable by the semantic node may appear in changes.",
+    "The exact base digest must match before preview or apply.",
+    "Version one forbids arbitrary CSS and free-form source editing.",
+    "Diff preview and focused validation precede explicit apply."
+  ]
+}

@@ -26,7 +26,10 @@ test("ProductCommerceCard and StaticPurchaseActions use the canonical action con
   assert.doesNotMatch(card, /<(?:a|button)\b/);
 
   const staticActions = parts.slice(parts.indexOf("export function StaticPurchaseActions"));
-  assert.match(staticActions, /<ActionButton disabled>/);
+  assert.match(
+    staticActions,
+    /<ActionButton\s+data-oluk-node="action\.purchase\.primary"\s+disabled>/,
+  );
   assert.equal((staticActions.match(/<ActionLink\b/g) ?? []).length, 2);
   assert.doesNotMatch(staticActions, /<(?:a|button)\b/);
   assert.doesNotMatch(staticActions, /(?:^|["'\s])button(?:-secondary)?(?:["'\s]|$)/);

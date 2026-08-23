@@ -280,6 +280,15 @@ export function auditTsxText(source, file = "fixture.tsx") {
 async function sourceSnapshot() {
   const files = (await walk(appRoot))
     .filter((file) => /\.(?:tsx|css)$/.test(file))
+    // Local owner tooling has its own semantic, origin, and public-denial
+    // gates. It is deliberately outside the customer-surface grammar debt
+    // ledger and cannot be promoted into the 74-route customer registry.
+    .filter((file) => {
+      const relative = path.relative(siteRoot, file);
+      return !relative.startsWith(`app${path.sep}workbench${path.sep}`)
+        && !relative.startsWith(`app${path.sep}design-system${path.sep}sites-system-atlas.`)
+        && relative !== `app${path.sep}review-studio${path.sep}review-studio.module.css`;
+    })
     .sort();
   const ledger = path.join(repoRoot, "authority/SITE-ROUTE-LEDGER.json");
   const all = [...files, ledger, fileURLToPath(import.meta.url)];

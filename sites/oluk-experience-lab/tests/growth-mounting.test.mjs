@@ -14,9 +14,10 @@ test("one governed growth component family mounts on PDP, bag and confirmation",
   assert.match(transaction, /<RestockCard state="due-soon" \/>/);
 });
 
-test("the outcome-led stack continuation mounts compact customer compositions outside PDP", () => {
+test("the outcome-led stack continuation mounts only on admitted PDP and transaction hosts", () => {
   assert.match(transaction, /<YourStackBuilder baselineSlug="mk-2866" host="bag" \/>/);
   assert.match(transaction, /<YourStackBuilder baselineSlug="mk-2866" host="confirmation" \/>/);
-  assert.match(frontier, /<YourStackBuilder baselineSlug="mk-2866" host="account"\/>/);
+  assert.doesNotMatch(frontier, /<YourStackBuilder[^>]+host="account"/);
+  assert.match(frontier, /AccountSessionState = "unauthenticated" \| "empty" \| "unavailable"/);
   assert.match(frontier, /<YourStackBuilder baselineSlug=\{product\.slug\} host="pdp"\/>/);
 });

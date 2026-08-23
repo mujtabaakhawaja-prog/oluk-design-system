@@ -278,7 +278,10 @@ test("CONV-004 reuses ProductMediaChamber and separates the atomic divider from 
   assert.match(commerceParts, /data-state=\{state\}/);
   assert.match(purchasePanel, /state=\{inventory \?\? presentation\.inventory\}/);
   assert.match(decisionHero, /state=\{product\.presentationStatus\.inventory\}/);
-  assert.match(commerceParts, /<ActionButton disabled>/);
+  assert.match(
+    commerceParts,
+    /<ActionButton\s+data-oluk-node="action\.purchase\.primary"\s+disabled>/,
+  );
   assert.match(commercePartsCss, /\.actions\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(globals, /\.product-commerce-card-featured \.card-actions\s*\{[^}]*grid-template-columns:\s*1fr 1\.12fr/s);
   assert.match(productCardCss, /\.compactActions\s*\{[^}]*grid-template-columns:\s*repeat\(2/s);

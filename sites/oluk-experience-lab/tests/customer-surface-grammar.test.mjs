@@ -99,9 +99,9 @@ test("ProductMetricRail fits long and unavailable product truth without collisio
   assert.match(source, /data-availability=\{value === "—" \? "unavailable" : "available"\}/);
   assert.match(source, /data-component="ProductMetricRail"/);
   assert.match(css, /\.metric-rail \{[\s\S]*?container-type: inline-size/);
-  assert.match(css, /\.metric-rail \[data-fit="long"\] dt \{[\s\S]*?overflow-wrap: anywhere/);
-  assert.match(css, /\.metric-rail \[data-availability="unavailable"\] dt/);
-  assert.match(css, /\.metric-rail dd \{[\s\S]*?white-space: nowrap/);
+  assert.match(css, /\.metric-rail \[data-fit="long"\] dd \{[\s\S]*?overflow-wrap: anywhere/);
+  assert.match(css, /\.metric-rail \[data-availability="unavailable"\] dd/);
+  assert.match(css, /\.metric-rail dt \{[\s\S]*?white-space: nowrap/);
 });
 
 test("the committed audit truthfully covers the 44 core Product, OpenLab and continuation routes", async () => {

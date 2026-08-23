@@ -345,7 +345,7 @@ async function lookupSuite(chromePort, baseUrl) {
     await proofCase(targetSuite, "lookup-found-truth-boundary", async () => {
       const evidence = await inspect(client, `(() => {
         const card = document.querySelector(".lookup-card .product-commerce-card");
-        const metrics = [...(card?.querySelectorAll(".metric-rail > div") ?? [])].map((cell) => ({ value: cell.querySelector("dt")?.textContent?.trim(), label: cell.querySelector("dd")?.textContent?.trim() }));
+        const metrics = [...(card?.querySelectorAll(".metric-rail > div") ?? [])].map((cell) => ({ value: cell.querySelector("dd")?.textContent?.trim(), label: cell.querySelector("dt")?.textContent?.trim() }));
         const text = card?.textContent?.replace(/\\s+/g, " ").trim() ?? "";
         return { text, metrics, name: card?.querySelector("h3")?.textContent?.trim(), price: [...(card?.querySelectorAll("strong") ?? [])].map((node) => node.textContent?.trim()).find((value) => value === "£43"), fabricatedMeasuredPurity: /99\\.\\d+%/.test(text) };
       })()`);

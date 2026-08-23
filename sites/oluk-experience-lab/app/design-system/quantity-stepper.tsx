@@ -27,14 +27,15 @@ export function QuantityStepper({
       data-behavior="static-presentation"
       data-component="QuantityStepper"
       data-control-exception="segmented-quantity-control"
+      data-oluk-node="component.quantity-stepper"
       data-state={unavailable ? "unavailable" : "default"}
       role="group"
     >
-      <button aria-label="Decrease quantity" disabled type="button">
+      <button aria-label="Decrease quantity" data-oluk-node="action.purchase.quantity-decrease" disabled type="button">
         −
       </button>
-      <output aria-label="Current quantity">{value}</output>
-      <button aria-label="Increase quantity" disabled type="button">
+      <output aria-label="Current quantity" data-oluk-node="field.purchase.selected-quantity">{value}</output>
+      <button aria-label="Increase quantity" data-oluk-node="action.purchase.quantity-increase" disabled type="button">
         +
       </button>
     </div>

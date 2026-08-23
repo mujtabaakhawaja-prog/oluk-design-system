@@ -233,10 +233,10 @@
 .oluk-candidate-sku strong { color: var(--oluk-cobalt); }
 
 .oluk-candidate-metric-rail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border: var(--oluk-border-width) solid var(--oluk-border-strong); border-radius: var(--oluk-radius-metric); overflow: hidden; }
-.oluk-candidate-metric-rail > div { min-width: 0; padding: var(--oluk-space-3) var(--oluk-space-2); text-align: center; }
+.oluk-candidate-metric-rail > div { display: flex; flex-direction: column; min-width: 0; padding: var(--oluk-space-3) var(--oluk-space-2); text-align: center; }
 .oluk-candidate-metric-rail > div + div { border-left: var(--oluk-border-width) solid var(--oluk-border-strong); }
-.oluk-candidate-metric-rail dt { color: var(--oluk-cobalt); font-family: var(--oluk-font-display); font-size: var(--oluk-type-metric); font-weight: 800; line-height: 1; }
-.oluk-candidate-metric-rail dd { margin: var(--oluk-space-2) 0 0; color: var(--oluk-cobalt); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.05em; }
+.oluk-candidate-metric-rail dd { order: -1; margin: 0; color: var(--oluk-cobalt); font-family: var(--oluk-font-display); font-size: var(--oluk-type-metric); font-weight: 800; line-height: 1; }
+.oluk-candidate-metric-rail dt { margin: var(--oluk-space-2) 0 0; color: var(--oluk-cobalt); font-size: var(--oluk-type-eyebrow); font-weight: 700; letter-spacing: 0.05em; }
 .oluk-candidate-qualitative { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--oluk-space-2); margin: 0; }
 .oluk-candidate-qualitative > div { display: grid; grid-template-columns: var(--oluk-space-4) minmax(0, 1fr); align-items: center; column-gap: var(--oluk-space-3); min-width: 0; min-height: var(--oluk-space-16); padding: var(--oluk-space-3); border: var(--oluk-border-width) solid var(--oluk-border-chip); border-radius: var(--oluk-radius-chip); background: var(--oluk-surface-card); }
 .oluk-candidate-qualitative img { grid-row: 1 / span 2; width: var(--oluk-space-4); height: var(--oluk-space-4); }
@@ -387,7 +387,7 @@
   .oluk-candidate-status-stack { grid-template-columns: 1fr; justify-items: start; }
   .oluk-candidate-proof-row { align-items: flex-start; flex-direction: column; }
   .oluk-candidate-metric-rail > div { padding-inline: var(--oluk-space-1); }
-  .oluk-candidate-metric-rail dd { letter-spacing: 0.02em; }
+  .oluk-candidate-metric-rail dt { letter-spacing: 0.02em; }
 }
 
 @media (prefers-reduced-motion: reduce) {

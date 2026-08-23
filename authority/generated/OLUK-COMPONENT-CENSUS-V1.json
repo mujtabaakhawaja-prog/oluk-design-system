@@ -1,0 +1,3688 @@
+{
+  "contract": "OLUK_COMPONENT_CENSUS_V1",
+  "schemaVersion": "1.0.0",
+  "generatedFrom": "sites/oluk-experience-lab/app/design-system/*.tsx",
+  "counts": {
+    "components": 114,
+    "byFamily": {
+      "commerce": 15,
+      "foundation": 19,
+      "openlab": 15,
+      "owner_tooling": 4,
+      "pdp": 10,
+      "route_module": 49,
+      "shell": 2
+    }
+  },
+  "components": [
+    {
+      "id": "component.about-experience",
+      "name": "AboutExperience",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/support-surface.tsx",
+      "sourceExport": "AboutExperience",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.account-hub",
+      "name": "AccountHub",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "AccountHub",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.action-button",
+      "name": "ActionButton",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/action-control.tsx",
+      "sourceExport": "ActionButton",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.action-control",
+      "name": "ActionControl",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/action-control.tsx",
+      "sourceExport": "ActionControl",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.action-link",
+      "name": "ActionLink",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/action-control.tsx",
+      "sourceExport": "ActionLink",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.analyte-table",
+      "name": "AnalyteTable",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "AnalyteTable",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.arrow",
+      "name": "Arrow",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "Arrow",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.assurance-rail",
+      "name": "AssuranceRail",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/assurance-rail.tsx",
+      "sourceExport": "AssuranceRail",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.breadcrumbs",
+      "name": "Breadcrumbs",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "Breadcrumbs",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.candidate-review-index",
+      "name": "CandidateReviewIndex",
+      "family": "owner_tooling",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-review.tsx",
+      "sourceExport": "CandidateReviewIndex",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.checkout-lifecycle",
+      "name": "CheckoutLifecycle",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "CheckoutLifecycle",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.checkout-step-indicator",
+      "name": "CheckoutStepIndicator",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "CheckoutStepIndicator",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.chevron",
+      "name": "Chevron",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "Chevron",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.coa-viewer",
+      "name": "CoaViewer",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-frontier.tsx",
+      "sourceExport": "CoaViewer",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.cobalt-density-boundary",
+      "name": "CobaltDensityBoundary",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/cobalt-divider.tsx",
+      "sourceExport": "CobaltDensityBoundary",
+      "semanticNodeIds": [
+        "component.cobalt-density-boundary",
+        "component.cobalt-divider"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.cobalt-divider",
+      "name": "CobaltDivider",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/cobalt-divider.tsx",
+      "sourceExport": "CobaltDivider",
+      "semanticNodeIds": [
+        "component.cobalt-density-boundary",
+        "component.cobalt-divider"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.contextual-navigation",
+      "name": "ContextualNavigation",
+      "family": "shell",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/contextual-navigation.tsx",
+      "sourceExport": "ContextualNavigation",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.currency-equality-lock",
+      "name": "CurrencyEqualityLock",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/payment-trust.tsx",
+      "sourceExport": "CurrencyEqualityLock",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.custody-timeline",
+      "name": "CustodyTimeline",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "CustodyTimeline",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.decision-surface",
+      "name": "DecisionSurface",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/content-surfaces.tsx",
+      "sourceExport": "DecisionSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.editorial-surface",
+      "name": "EditorialSurface",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/content-surfaces.tsx",
+      "sourceExport": "EditorialSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.evidence-os-experience",
+      "name": "EvidenceOsExperience",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/support-surface.tsx",
+      "sourceExport": "EvidenceOsExperience",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.evidence-record-explainer",
+      "name": "EvidenceRecordExplainer",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "EvidenceRecordExplainer",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.evidence-status",
+      "name": "EvidenceStatus",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-status.tsx",
+      "sourceExport": "EvidenceStatus",
+      "semanticNodeIds": [
+        "component.status-stack",
+        "status.evidence",
+        "status.stock"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.evidence-status-chip",
+      "name": "EvidenceStatusChip",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "EvidenceStatusChip",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.fixture-status-stack",
+      "name": "FixtureStatusStack",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/commerce-parts.tsx",
+      "sourceExport": "FixtureStatusStack",
+      "semanticNodeIds": [
+        "action.openlab.record",
+        "action.purchase.primary",
+        "component.price-block",
+        "component.product-identity",
+        "component.purchase-actions",
+        "field.commerce.price"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.frontier-shell",
+      "name": "FrontierShell",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "FrontierShell",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.growth-modules",
+      "name": "GrowthModules",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "GrowthModules",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.hero-decision-surface",
+      "name": "HeroDecisionSurface",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-decision-hero.tsx",
+      "sourceExport": "HeroDecisionSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.inventory-status",
+      "name": "InventoryStatus",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-status.tsx",
+      "sourceExport": "InventoryStatus",
+      "semanticNodeIds": [
+        "component.status-stack",
+        "status.evidence",
+        "status.stock"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.legal-document-surface",
+      "name": "LegalDocumentSurface",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/support-surface.tsx",
+      "sourceExport": "LegalDocumentSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.lifecycle-amount-record",
+      "name": "LifecycleAmountRecord",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/payment-trust.tsx",
+      "sourceExport": "LifecycleAmountRecord",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.locked-home-hero",
+      "name": "LockedHomeHero",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/locked-home-hero.tsx",
+      "sourceExport": "LockedHomeHero",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.metric-cell",
+      "name": "MetricCell",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/metric-rail.tsx",
+      "sourceExport": "MetricCell",
+      "semanticNodeIds": [
+        "component.metric-rail"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.metric-rail",
+      "name": "MetricRail",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/metric-rail.tsx",
+      "sourceExport": "MetricRail",
+      "semanticNodeIds": [
+        "component.metric-rail"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.mobile-decision-summary",
+      "name": "MobileDecisionSummary",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-sections.tsx",
+      "sourceExport": "MobileDecisionSummary",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-canvas",
+      "name": "OlukCanvas",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukCanvas",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-canvas-split",
+      "name": "OlukCanvasSplit",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukCanvasSplit",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-card",
+      "name": "OlukCard",
+      "family": "route_module",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-divider",
+      "name": "OlukDivider",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukDivider",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-media-chamber",
+      "name": "OlukMediaChamber",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukMediaChamber",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-purchase-plane",
+      "name": "OlukPurchasePlane",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukPurchasePlane",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-section",
+      "name": "OlukSection",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukSection",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.oluk-surface",
+      "name": "OlukSurface",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/candidate-primitives.tsx",
+      "sourceExport": "OlukSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-comparison",
+      "name": "OpenLabComparison",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabComparison",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-dossier-composition",
+      "name": "OpenLabDossierComposition",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabDossierComposition",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-frontier-page",
+      "name": "OpenLabFrontierPage",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-frontier.tsx",
+      "sourceExport": "OpenLabFrontierPage",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-hero-light",
+      "name": "OpenLabHeroLight",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-hero-light.tsx",
+      "sourceExport": "OpenLabHeroLight",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-methodology-pipeline",
+      "name": "OpenLabMethodologyPipeline",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabMethodologyPipeline",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-nav",
+      "name": "OpenLabNav",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "OpenLabNav",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-portal-hero",
+      "name": "OpenLabPortalHero",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabPortalHero",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-product-experience",
+      "name": "OpenLabProductExperience",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-product-experience.tsx",
+      "sourceExport": "OpenLabProductExperience",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-record-detail",
+      "name": "OpenLabRecordDetail",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabRecordDetail",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-registry-archive",
+      "name": "OpenLabRegistryArchive",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabRegistryArchive",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-source-chain",
+      "name": "OpenLabSourceChain",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabSourceChain",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-state-legend",
+      "name": "OpenLabStateLegend",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabStateLegend",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-unavailable-boundary",
+      "name": "OpenLabUnavailableBoundary",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabUnavailableBoundary",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.open-lab-wayfinding",
+      "name": "OpenLabWayfinding",
+      "family": "openlab",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "openlab-portal",
+        "openlab-archive"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/openlab-sections.tsx",
+      "sourceExport": "OpenLabWayfinding",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.owner-review-state-harness",
+      "name": "OwnerReviewStateHarness",
+      "family": "owner_tooling",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/owner-review-state-harness.tsx",
+      "sourceExport": "OwnerReviewStateHarness",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.page-hero",
+      "name": "PageHero",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "PageHero",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.payment-trust-primer",
+      "name": "PaymentTrustPrimer",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/payment-trust.tsx",
+      "sourceExport": "PaymentTrustPrimer",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.pdp-atmospheric-media-field",
+      "name": "PdpAtmosphericMediaField",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-first-fold.tsx",
+      "sourceExport": "PdpAtmosphericMediaField",
+      "semanticNodeIds": [
+        "component.pdp-atmospheric-media-field",
+        "media.pdp-product-render",
+        "module.pdp-first-fold",
+        "primitive.pdp-atmosphere-light",
+        "slot.product-detail.pdp.breadcrumb",
+        "state.pdp-missing-media",
+        "template.product-detail.first-fold"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.pdp-candidate-suite",
+      "name": "PdpCandidateSuite",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-candidate-suite.tsx",
+      "sourceExport": "PdpCandidateSuite",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.pdp-first-fold",
+      "name": "PdpFirstFold",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-first-fold.tsx",
+      "sourceExport": "PdpFirstFold",
+      "semanticNodeIds": [
+        "component.pdp-atmospheric-media-field",
+        "media.pdp-product-render",
+        "module.pdp-first-fold",
+        "primitive.pdp-atmosphere-light",
+        "slot.product-detail.pdp.breadcrumb",
+        "state.pdp-missing-media",
+        "template.product-detail.first-fold"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.policy-bridge",
+      "name": "PolicyBridge",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/support-surface.tsx",
+      "sourceExport": "PolicyBridge",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.post-purchase-surface",
+      "name": "PostPurchaseSurface",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/post-purchase-surface.tsx",
+      "sourceExport": "PostPurchaseSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.presentation-state",
+      "name": "PresentationState",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/presentation-state.tsx",
+      "sourceExport": "PresentationState",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.price-block",
+      "name": "PriceBlock",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/commerce-parts.tsx",
+      "sourceExport": "PriceBlock",
+      "semanticNodeIds": [
+        "action.openlab.record",
+        "action.purchase.primary",
+        "component.price-block",
+        "component.product-identity",
+        "component.purchase-actions",
+        "field.commerce.price"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-collection",
+      "name": "ProductCollection",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "ProductCollection",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-commerce-card",
+      "name": "ProductCommerceCard",
+      "family": "commerce",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-commerce-card.tsx",
+      "sourceExport": "ProductCommerceCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-continuation",
+      "name": "ProductContinuation",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "ProductContinuation",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-decision-hero",
+      "name": "ProductDecisionHero",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-decision-hero.tsx",
+      "sourceExport": "ProductDecisionHero",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-detail-disclosure",
+      "name": "ProductDetailDisclosure",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-sections.tsx",
+      "sourceExport": "ProductDetailDisclosure",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-dossier",
+      "name": "ProductDossier",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-dossier.tsx",
+      "sourceExport": "ProductDossier",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-evidence-snapshot",
+      "name": "ProductEvidenceSnapshot",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-sections.tsx",
+      "sourceExport": "ProductEvidenceSnapshot",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-hero",
+      "name": "ProductHero",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "ProductHero",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-identity",
+      "name": "ProductIdentity",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/commerce-parts.tsx",
+      "sourceExport": "ProductIdentity",
+      "semanticNodeIds": [
+        "action.openlab.record",
+        "action.purchase.primary",
+        "component.price-block",
+        "component.product-identity",
+        "component.purchase-actions",
+        "field.commerce.price"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-media-chamber",
+      "name": "ProductMediaChamber",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-media-chamber.tsx",
+      "sourceExport": "ProductMediaChamber",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-media-gallery",
+      "name": "ProductMediaGallery",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/pdp-sections.tsx",
+      "sourceExport": "ProductMediaGallery",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-narrative",
+      "name": "ProductNarrative",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "ProductNarrative",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.product-status-stack",
+      "name": "ProductStatusStack",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-status.tsx",
+      "sourceExport": "ProductStatusStack",
+      "semanticNodeIds": [
+        "component.status-stack",
+        "status.evidence",
+        "status.stock"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.purchase-panel",
+      "name": "PurchasePanel",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/purchase-panel.tsx",
+      "sourceExport": "PurchasePanel",
+      "semanticNodeIds": [
+        "component.purchase-configuration",
+        "component.purchase-configuration",
+        "component.purchase-panel",
+        "field.purchase.package-count",
+        "field.purchase.package-count",
+        "field.purchase.total-servings",
+        "field.purchase.total-servings",
+        "field.purchase.total-servings"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.purchase-panel-matrix",
+      "name": "PurchasePanelMatrix",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/purchase-panel.tsx",
+      "sourceExport": "PurchasePanelMatrix",
+      "semanticNodeIds": [
+        "component.purchase-configuration",
+        "component.purchase-configuration",
+        "component.purchase-panel",
+        "field.purchase.package-count",
+        "field.purchase.package-count",
+        "field.purchase.total-servings",
+        "field.purchase.total-servings",
+        "field.purchase.total-servings"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.qualitative-chip",
+      "name": "QualitativeChip",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/qualitative-chip.tsx",
+      "sourceExport": "QualitativeChip",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.qualitative-chip-list",
+      "name": "QualitativeChipList",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/qualitative-chip.tsx",
+      "sourceExport": "QualitativeChipList",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.qualitative-icon",
+      "name": "QualitativeIcon",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/qualitative-icon.tsx",
+      "sourceExport": "QualitativeIcon",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.quantity-stepper",
+      "name": "QuantityStepper",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/quantity-stepper.tsx",
+      "sourceExport": "QuantityStepper",
+      "semanticNodeIds": [
+        "action.purchase.quantity-decrease",
+        "action.purchase.quantity-increase",
+        "component.quantity-stepper",
+        "field.purchase.selected-quantity"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.recommendation-card",
+      "name": "RecommendationCard",
+      "family": "route_module",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "RecommendationCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.related-rail",
+      "name": "RelatedRail",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/related-rail.tsx",
+      "sourceExport": "RelatedRail",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.relation-card",
+      "name": "RelationCard",
+      "family": "route_module",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/related-rail.tsx",
+      "sourceExport": "RelationCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.report-identity-header",
+      "name": "ReportIdentityHeader",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "ReportIdentityHeader",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.restock-card",
+      "name": "RestockCard",
+      "family": "route_module",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "RestockCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.review-studio-gallery",
+      "name": "ReviewStudioGallery",
+      "family": "owner_tooling",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/review-studio-gallery.tsx",
+      "sourceExport": "ReviewStudioGallery",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.route-link",
+      "name": "RouteLink",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "RouteLink",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.section-heading",
+      "name": "SectionHeading",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/customer-route-primitives.tsx",
+      "sourceExport": "SectionHeading",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.section-introduction",
+      "name": "SectionIntroduction",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/surface-grid.tsx",
+      "sourceExport": "SectionIntroduction",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.shop-discovery",
+      "name": "ShopDiscovery",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/shop-discovery.tsx",
+      "sourceExport": "ShopDiscovery",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.site-header",
+      "name": "SiteHeader",
+      "family": "shell",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/site-header.tsx",
+      "sourceExport": "SiteHeader",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.sites-system-atlas",
+      "name": "SitesSystemAtlas",
+      "family": "owner_tooling",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/sites-system-atlas.tsx",
+      "sourceExport": "SitesSystemAtlas",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.stack-explorer",
+      "name": "StackExplorer",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "StackExplorer",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.stack-outcome-card",
+      "name": "StackOutcomeCard",
+      "family": "route_module",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/your-stack-builder.tsx",
+      "sourceExport": "StackOutcomeCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.static-purchase-actions",
+      "name": "StaticPurchaseActions",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product-detail"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/commerce-parts.tsx",
+      "sourceExport": "StaticPurchaseActions",
+      "semanticNodeIds": [
+        "action.openlab.record",
+        "action.purchase.primary",
+        "component.price-block",
+        "component.product-identity",
+        "component.purchase-actions",
+        "field.commerce.price"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.stock-pill",
+      "name": "StockPill",
+      "family": "commerce",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/product-status.tsx",
+      "sourceExport": "StockPill",
+      "semanticNodeIds": [
+        "component.status-stack",
+        "status.evidence",
+        "status.stock"
+      ],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.support-content",
+      "name": "SupportContent",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/frontier-sections.tsx",
+      "sourceExport": "SupportContent",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.support-surface",
+      "name": "SupportSurface",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/support-surface.tsx",
+      "sourceExport": "SupportSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.surface-grid",
+      "name": "SurfaceGrid",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/surface-grid.tsx",
+      "sourceExport": "SurfaceGrid",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.surface-grid-zone",
+      "name": "SurfaceGridZone",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/surface-grid.tsx",
+      "sourceExport": "SurfaceGridZone",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.technical-surface",
+      "name": "TechnicalSurface",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/content-surfaces.tsx",
+      "sourceExport": "TechnicalSurface",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.transaction-intro-card",
+      "name": "TransactionIntroCard",
+      "family": "foundation",
+      "variants": [
+        "default",
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/content-surfaces.tsx",
+      "sourceExport": "TransactionIntroCard",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.transaction-presentation",
+      "name": "TransactionPresentation",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/transaction-presentation.tsx",
+      "sourceExport": "TransactionPresentation",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.unavailable-evidence-panel",
+      "name": "UnavailableEvidencePanel",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "UnavailableEvidencePanel",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.upsell-context-rail",
+      "name": "UpsellContextRail",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/program-components.tsx",
+      "sourceExport": "UpsellContextRail",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.wholesale-experience",
+      "name": "WholesaleExperience",
+      "family": "foundation",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/support-surface.tsx",
+      "sourceExport": "WholesaleExperience",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.your-stack-builder",
+      "name": "YourStackBuilder",
+      "family": "route_module",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "shared"
+      ],
+      "routeModuleUsage": [],
+      "governingSource": "app/design-system/your-stack-builder.tsx",
+      "sourceExport": "YourStackBuilder",
+      "semanticNodeIds": [],
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "not_assessed",
+      "openGates": [
+        "human_review"
+      ]
+    }
+  ],
+  "contentHash": "af8ff202f2a178cf122681438e2fc2a79567b63be3a052ba102f1e8db1509a5e"
+}

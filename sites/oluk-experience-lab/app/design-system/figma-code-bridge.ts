@@ -136,6 +136,7 @@ export const codeBridgeComponentContracts = Object.freeze({
       "quantity",
       "headingLevel",
       "className",
+      "bottleOptions",
     ]),
   },
   ProductDossier: {

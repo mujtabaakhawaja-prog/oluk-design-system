@@ -1,0 +1,19 @@
+{
+  "contract": "OLUK_VISUAL_WORKBENCH_DIGESTS_V1",
+  "schemaVersion": "1.0.0",
+  "algorithm": "sha256(canonical-json-recursive-key-sort)",
+  "status": "CANDIDATE_PENDING_HUMAN_REVIEW",
+  "routeSnapshotSha256": "23dea181163af0e5f81db7580b9b59fc2762f4ea0fae1b18d144095644f33576",
+  "productSnapshotSha256": "c9093982504a5443d538a98db4ed02d5044a1ac2001d82efb3862c14af136f3c",
+  "artifacts": {
+    "inventory": "907b4f486daf5676c47e2cfff2df66cafafe40210f861d920adadd74e9124f72",
+    "presentation": "6cf08cd4fee5f8530fcf478c7f9a1f2889b114d9d6d1e7a0e7d45ebed7e4818c",
+    "routeAuthority": "99954a48699bf15613735c72bc4024b1b8e6e5cbce4b53f155375c1acdc32cfd",
+    "componentCensus": "1e0c6a271c52a80c8edbd0b50725a279568d6da8e249d4f70e57392a08e3819f",
+    "nodeContract": "648c2946ac044b38303a26c6d327a24ada2b161232c5d8a9a66f9df0fd6903db",
+    "designConnect": "1f5015da14a28c4e00559f13b666ea8b02486473fed289e04587f2a8e40aa1b7",
+    "messageContract": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a",
+    "patchSchema": "c12165355a20e5b9b2f88244c59c985938949e611e47ec295ff05970189debc3",
+    "sourceRegister": "0a217bf595788b87390e0c1fe0211107c1bed78a86bbe521767de8f1128d35e4"
+  }
+}

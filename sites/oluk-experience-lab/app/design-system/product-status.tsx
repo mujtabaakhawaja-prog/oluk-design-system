@@ -30,6 +30,7 @@ export function StockPill({ state = "in-stock", className }: StockPillProps) {
         "oluk-inventory-status",
         className,
       )}
+      data-oluk-node="status.stock"
       data-oluk-status-kind="availability"
       data-state={state}
     >
@@ -62,6 +63,7 @@ export function EvidenceStatus({ state = "unavailable", compact = false, classNa
         "oluk-evidence-status",
         className,
       )}
+      data-oluk-node="status.evidence"
       data-oluk-status-kind="evidence"
       data-state={state}
     >
@@ -87,7 +89,10 @@ export function ProductStatusStack({
   className,
 }: ProductStatusStackProps) {
   return (
-    <div className={classes("product-status-stack", "oluk-candidate-status-stack", className)}>
+    <div
+      className={classes("product-status-stack", "oluk-candidate-status-stack", className)}
+      data-oluk-node="component.status-stack"
+    >
       <StockPill state={inventory} />
       <EvidenceStatus compact={compactEvidence} state={evidence} />
     </div>

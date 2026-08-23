@@ -1,0 +1,90 @@
+{
+  "contract": "OLUK_PRESENTATION_APPROVAL_V1",
+  "schemaVersion": "1.0.0",
+  "status": "PENDING_HUMAN_REVIEW",
+  "design": {
+    "baseSha": "8b79a7d04342043d3f972c5cf844c9168547d401",
+    "candidateSha": null,
+    "inventoryDigest": "907b4f486daf5676c47e2cfff2df66cafafe40210f861d920adadd74e9124f72",
+    "presentationDigest": "6cf08cd4fee5f8530fcf478c7f9a1f2889b114d9d6d1e7a0e7d45ebed7e4818c",
+    "routeAuthorityDigest": "99954a48699bf15613735c72bc4024b1b8e6e5cbce4b53f155375c1acdc32cfd",
+    "nodeContractDigest": "648c2946ac044b38303a26c6d327a24ada2b161232c5d8a9a66f9df0fd6903db",
+    "designConnectDigest": "1f5015da14a28c4e00559f13b666ea8b02486473fed289e04587f2a8e40aa1b7",
+    "messageContractDigest": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a"
+  },
+  "next": {
+    "candidateSha": null,
+    "bindingDigest": null
+  },
+  "scope": {
+    "routeIds": [
+      "route.product"
+    ],
+    "slotIds": [
+      "slot.product-detail.pdp.first-fold"
+    ],
+    "moduleIds": [
+      "module.pdp-first-fold"
+    ],
+    "nodeIds": [
+      "component.metric-rail",
+      "component.metric-cell.strength",
+      "component.metric-cell.servings",
+      "component.metric-cell.purity",
+      "component.cobalt-divider",
+      "component.cobalt-density-boundary",
+      "component.pdp-atmospheric-media-field",
+      "component.purchase-panel",
+      "component.product-identity",
+      "component.status-stack",
+      "status.stock",
+      "status.evidence",
+      "component.purchase-configuration",
+      "component.price-block",
+      "component.quantity-stepper",
+      "action.purchase.quantity-decrease",
+      "action.purchase.quantity-increase",
+      "component.purchase-actions",
+      "action.purchase.primary",
+      "action.openlab.record",
+      "module.pdp-first-fold",
+      "template.product-detail.first-fold",
+      "slot.product-detail.pdp.breadcrumb",
+      "slot.product-detail.pdp.first-fold",
+      "primitive.pdp-atmosphere-light",
+      "media.pdp-product-render",
+      "state.pdp-missing-media"
+    ],
+    "productInstanceCount": 15,
+    "projections": [
+      "contract",
+      "fixture",
+      "real"
+    ]
+  },
+  "captures": [
+    {
+      "viewport": 1440,
+      "sitesSha256": null,
+      "nextSha256": null
+    },
+    {
+      "viewport": 1024,
+      "sitesSha256": null,
+      "nextSha256": null
+    },
+    {
+      "viewport": 768,
+      "sitesSha256": null,
+      "nextSha256": null
+    },
+    {
+      "viewport": 390,
+      "sitesSha256": null,
+      "nextSha256": null
+    }
+  ],
+  "decision": null,
+  "decidedAt": null,
+  "decidedBy": null
+}

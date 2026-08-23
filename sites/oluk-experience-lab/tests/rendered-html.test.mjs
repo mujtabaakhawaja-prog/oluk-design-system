@@ -232,7 +232,9 @@ test("keeps homepage values fail closed until the accepted hero receives owner i
   const homeHero = routeSource.match(/export function HomeRoute\(\)[\s\S]*?\n}\n\nexport function ProductRoute/)?.[0] ?? "";
   assert.match(heroSource, /products\.length !== 5 \|\| !active\) return null/, "homepage suppresses incomplete owner input");
   assert.doesNotMatch(heroSource, /data-figma-node|data-figma-stage-node|const products = \[/);
-  assert.match(pdpSource, /data-figma-node="1155:30632"/, "PDP first fold uses the corrected authority node");
+  assert.match(pdpSource, /data-figma-node="717:16137"/, "PDP first fold uses the current human-selected full-container authority node");
+  assert.match(pdpSource, /data-figma-purchase-panel="626:12659"/, "PDP purchase panel uses the current human-selected authority node");
+  assert.match(pdpSource, /data-figma-visual-area="717:16140"/, "PDP visual field uses the current human-selected authority node");
   assert.match(openLabSource, /data-figma-node="614:75995"/, "OpenLab uses the HeroLight authority node");
   assert.match(homeHero, /<LockedHomeHero\b/, "homepage uses the corrected LockedHero implementation");
   assert.doesNotMatch(homeHero, /<ProductCommerceCard\b/, "homepage hero is not wrapped in a later-board card component");
@@ -428,8 +430,8 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   assert.match(css, /\.metric-rail > div \+ div\s*\{[^}]*border-left:\s*1px solid var\(--line-strong\)/i, "customer MetricRail uses governed internal dividers");
   assert.match(metricRailSource, /data-fit=\{metricFit\(value\)\}/, "MetricRail exposes deterministic per-value fitting");
   assert.match(metricRailSource, /quantifiedValue\(metrics\.servings, "SERVINGS"\)/, "MetricRail separates the serving value from its label");
-  assert.match(css, /\.metric-rail \[data-fit="medium"\] dt\s*\{[^}]*font-size:\s*15px/i, "MetricRail has a bounded medium-value fit");
-  assert.match(css, /\.metric-rail \[data-fit="long"\] dt\s*\{[^}]*font-size:\s*13px[^}]*white-space:\s*normal/i, "MetricRail has a bounded long-value fit without sibling collision");
+  assert.match(css, /\.metric-rail \[data-fit="medium"\] dd\s*\{[^}]*font-size:\s*15px/i, "MetricRail has a bounded medium-value fit");
+  assert.match(css, /\.metric-rail \[data-fit="long"\] dd\s*\{[^}]*font-size:\s*13px[^}]*white-space:\s*normal/i, "MetricRail has a bounded long-value fit without sibling collision");
   assert.match(css, /\.qualitative-chips\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/i, "qualitative attributes form a 2x2 responsive grid");
   assert.match(css, /\.qualitative-chip\s*\{[^}]*background:\s*var\(--white\)[^}]*border:\s*1px solid var\(--oluk-border-chip\)[^}]*border-radius:\s*10px/i, "every qualitative chip is an independent MF-01A container");
   assert.match(css, /\.qualitative-chip dt\s*\{[^}]*color:\s*var\(--ink-muted\)[^}]*font-size:\s*11px[^}]*font-weight:\s*500[^}]*letter-spacing:\s*0\.66px[^}]*text-transform:\s*uppercase/i, "chip labels preserve the 11px Medium muted uppercase hierarchy");

@@ -1,0 +1,3466 @@
+{
+  "contract": "OLUK_DESIGN_NODE_CONTRACT_V1",
+  "schemaVersion": "1.0.0",
+  "status": "CANDIDATE_PENDING_HUMAN_REVIEW",
+  "projectionModes": [
+    "contract",
+    "fixture",
+    "real"
+  ],
+  "responsiveModes": [
+    "1440",
+    "1024",
+    "768",
+    "390"
+  ],
+  "routeAuthority": {
+    "owner": "native-next",
+    "snapshotSourceSha": "44a4a1b25fd3f38ea0692c184fd9594ac47ba8dc",
+    "snapshotSha256": "23dea181163af0e5f81db7580b9b59fc2762f4ea0fae1b18d144095644f33576",
+    "routeCount": 74,
+    "productInstanceCount": 15,
+    "legacyEmbeddedSourceIsProvenanceOnly": true
+  },
+  "counts": {
+    "nodes": 48,
+    "explicitNodes": 27,
+    "synthesizedFieldNodes": 15,
+    "synthesizedContentNodes": 6,
+    "censusExports": 114,
+    "registeredEditableExports": 14
+  },
+  "laws": [
+    "Semantic node names supplement correct HTML; they never replace accessible headings, actions, lists, definitions, landmarks, or disclosures.",
+    "PDP atmospheric media and bounded non-PDP media chambers are distinct contracts.",
+    "Fixture, contract, and real projections never substitute for one another.",
+    "Feature exposure applies to an approved route placement, never to component anatomy or truth.",
+    "Source, approval, merge, deployment, and live-proof states remain distinct."
+  ],
+  "nodes": [
+    {
+      "id": "action.openlab.record",
+      "name": "OpenLabAction / View Record",
+      "kind": "primitive",
+      "renderAs": "a",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+        "exportName": "StaticPurchaseActions"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-actions"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.evidence.state"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "action.purchase.primary",
+      "name": "PrimaryAction / Add to Bag",
+      "kind": "primitive",
+      "renderAs": "button",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+        "exportName": "StaticPurchaseActions"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-actions"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "disabled",
+        "out-of-stock",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "action.purchase.quantity-decrease",
+      "name": "Action / Decrease Purchase Quantity",
+      "kind": "primitive",
+      "renderAs": "button",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx",
+        "exportName": "QuantityStepper"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.quantity-stepper"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "disabled",
+        "focus-visible"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "action.purchase.quantity-increase",
+      "name": "Action / Increase Purchase Quantity",
+      "kind": "primitive",
+      "renderAs": "button",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx",
+        "exportName": "QuantityStepper"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.quantity-stepper"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "disabled",
+        "focus-visible"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.cobalt-density-boundary",
+      "name": "CobaltDensityBoundary / 32-2-32",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+        "exportName": "CobaltDensityBoundary"
+      },
+      "relationships": {
+        "parentIds": [],
+        "childIds": [
+          "component.cobalt-divider"
+        ],
+        "allowedSlotIds": [],
+        "allowedRouteIds": []
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.cobalt-divider",
+      "name": "CobaltDivider / Section Boundary",
+      "kind": "component",
+      "renderAs": "hr",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+        "exportName": "CobaltDivider"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.cobalt-density-boundary"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [],
+        "allowedRouteIds": []
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.metric-cell.purity",
+      "name": "MetricCell / Purity",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricCell"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-rail"
+        ],
+        "childIds": [
+          "content.metric-label.purity",
+          "field.metric.purity"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "available",
+        "unavailable"
+      ],
+      "states": [
+        "default",
+        "unavailable",
+        "long-copy"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.purity"
+      ],
+      "contentIds": [
+        "content.metric-label.purity"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.metric-cell.servings",
+      "name": "MetricCell / Servings",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricCell"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-rail"
+        ],
+        "childIds": [
+          "content.metric-label.servings",
+          "field.metric.servings"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "available",
+        "unavailable"
+      ],
+      "states": [
+        "default",
+        "unavailable",
+        "long-copy"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.servings"
+      ],
+      "contentIds": [
+        "content.metric-label.servings"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.metric-cell.strength",
+      "name": "MetricCell / Strength",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricCell"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-rail"
+        ],
+        "childIds": [
+          "content.metric-label.strength",
+          "field.metric.strength"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "available",
+        "unavailable"
+      ],
+      "states": [
+        "default",
+        "unavailable",
+        "long-copy"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.strength"
+      ],
+      "contentIds": [
+        "content.metric-label.strength"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.metric-rail",
+      "name": "MetricRail / ThreeUp / TwoRow / CobaltDivided",
+      "kind": "component",
+      "renderAs": "dl",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [
+          "component.metric-cell.purity",
+          "component.metric-cell.servings",
+          "component.metric-cell.strength"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [
+        {
+          "id": "density",
+          "type": "enum",
+          "values": [
+            "default",
+            "compact"
+          ],
+          "defaultValue": "default",
+          "sourceProp": "compact",
+          "patchable": true
+        },
+        {
+          "id": "alignment",
+          "type": "enum",
+          "values": [
+            "center"
+          ],
+          "defaultValue": "center",
+          "patchable": false
+        }
+      ],
+      "variants": [
+        "default",
+        "compact"
+      ],
+      "states": [
+        "default",
+        "unavailable",
+        "long-copy",
+        "mobile"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.purity",
+        "field.metric.servings",
+        "field.metric.strength"
+      ],
+      "contentIds": [
+        "content.metric-label.purity",
+        "content.metric-label.servings",
+        "content.metric-label.strength"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.pdp-atmospheric-media-field",
+      "name": "PdpAtmosphericMediaField / Render Slot",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpAtmosphericMediaField"
+      },
+      "relationships": {
+        "parentIds": [
+          "module.pdp-first-fold"
+        ],
+        "childIds": [
+          "media.pdp-product-render",
+          "primitive.pdp-atmosphere-light",
+          "state.pdp-missing-media"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [
+        {
+          "id": "previewState",
+          "type": "enum",
+          "values": [
+            "default",
+            "missing-media"
+          ],
+          "defaultValue": "default",
+          "patchable": false
+        }
+      ],
+      "variants": [
+        "pdp-first-fold-only"
+      ],
+      "states": [
+        "default",
+        "missing-media",
+        "mobile",
+        "reduced-motion"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.product.name"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [
+        "media-role.atmosphere",
+        "media-role.bottle",
+        "media-role.label-panel",
+        "media-role.label-wrap"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.price-block",
+      "name": "PriceBlock / Commerce Price",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+        "exportName": "PriceBlock"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.price"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.product-identity",
+      "name": "ProductIdentity / Purchase Heading",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+        "exportName": "ProductIdentity"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [
+          "component.status-stack"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.product.alias",
+        "field.product.name",
+        "field.product.series-name"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.purchase-actions",
+      "name": "PurchaseActions / Primary and OpenLab",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+        "exportName": "StaticPurchaseActions"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [
+          "action.openlab.record",
+          "action.purchase.primary"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "disabled",
+        "out-of-stock",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.purchase-configuration",
+      "name": "PurchaseConfiguration / Bottle Count and Total Servings",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "single-bottle",
+        "two-bottles",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.total-servings"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.purchase-panel",
+      "name": "PurchasePanel / PDP Decision",
+      "kind": "component",
+      "renderAs": "article",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "module.pdp-first-fold"
+        ],
+        "childIds": [
+          "component.metric-rail",
+          "component.price-block",
+          "component.product-identity",
+          "component.purchase-actions",
+          "component.purchase-configuration",
+          "component.quantity-stepper"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [
+        {
+          "id": "state",
+          "type": "enum",
+          "values": [
+            "default",
+            "hover",
+            "focus-visible",
+            "quantity-changed",
+            "added",
+            "out-of-stock",
+            "unavailable",
+            "disabled"
+          ],
+          "defaultValue": "default",
+          "sourceProp": "state",
+          "patchable": true
+        },
+        {
+          "id": "width",
+          "type": "enum",
+          "values": [
+            "responsive",
+            "desktop",
+            "mobile"
+          ],
+          "defaultValue": "responsive",
+          "sourceProp": "width",
+          "patchable": true
+        },
+        {
+          "id": "bottleOptions",
+          "type": "boolean",
+          "defaultValue": false,
+          "sourceProp": "bottleOptions",
+          "patchable": true
+        }
+      ],
+      "variants": [
+        "responsive",
+        "desktop",
+        "mobile"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "quantity-changed",
+        "added",
+        "out-of-stock",
+        "unavailable",
+        "disabled",
+        "long-copy"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.available-quantity",
+        "field.commerce.price",
+        "field.commerce.stock-state",
+        "field.evidence.state",
+        "field.metric.purity",
+        "field.metric.servings",
+        "field.metric.strength",
+        "field.package.capsule-count",
+        "field.product.alias",
+        "field.product.name",
+        "field.product.series-name",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings"
+      ],
+      "contentIds": [
+        "content.commerce-state",
+        "content.evidence",
+        "content.product-identity"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.quantity-stepper",
+      "name": "QuantityStepper / Selected Purchase Quantity",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx",
+        "exportName": "QuantityStepper"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [
+          "action.purchase.quantity-decrease",
+          "action.purchase.quantity-increase",
+          "field.purchase.selected-quantity"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "unavailable",
+        "focus-visible"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.available-quantity",
+        "field.purchase.selected-quantity"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.status-stack",
+      "name": "StatusStack / Stock and Evidence",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+        "exportName": "ProductStatusStack"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.product-identity"
+        ],
+        "childIds": [
+          "status.evidence",
+          "status.stock"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "in-stock",
+        "out-of-stock",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.commerce-state",
+      "name": "Content / Commerce State",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel",
+          "module.pdp-first-fold",
+          "state.pdp-missing-media"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "loading",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.commerce-state"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.evidence",
+      "name": "Content / Evidence",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel",
+          "module.pdp-first-fold",
+          "status.evidence"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "loading",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "reported",
+        "unavailable",
+        "verified"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.evidence"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.metric-label.purity",
+      "name": "Content / Metric Label Purity",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-cell.purity",
+          "component.metric-rail"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "long-copy",
+        "mobile",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.metric-label.purity"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.metric-label.servings",
+      "name": "Content / Metric Label Servings",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-cell.servings",
+          "component.metric-rail"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "long-copy",
+        "mobile",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.metric-label.servings"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.metric-label.strength",
+      "name": "Content / Metric Label Strength",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-cell.strength",
+          "component.metric-rail"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "long-copy",
+        "mobile",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.metric-label.strength"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.product-identity",
+      "name": "Content / Product Identity",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel",
+          "module.pdp-first-fold"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "loading",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.product-identity"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.commerce.available-quantity",
+      "name": "Field / Commerce Available Quantity",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel",
+          "component.quantity-stepper",
+          "status.stock"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "in-stock",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.available-quantity"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.commerce.price",
+      "name": "Field / Commerce Price",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.price-block",
+          "component.purchase-panel",
+          "module.pdp-first-fold"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "loading",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.price"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.commerce.stock-state",
+      "name": "Field / Commerce Stock State",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel",
+          "module.pdp-first-fold",
+          "status.stock"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "in-stock",
+        "loading",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.stock-state"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.evidence.state",
+      "name": "Field / Evidence State",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "action.openlab.record",
+          "component.purchase-panel",
+          "module.pdp-first-fold",
+          "status.evidence"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "loading",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "reported",
+        "unavailable",
+        "verified"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.evidence.state"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.media.contract-identity",
+      "name": "Field / Media Contract Identity",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpAtmosphericMediaField"
+      },
+      "relationships": {
+        "parentIds": [
+          "media.pdp-product-render"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.media.contract-identity"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.metric.purity",
+      "name": "Field / Metric Purity",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-cell.purity",
+          "component.metric-rail",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.purity"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.metric.servings",
+      "name": "Field / Metric Servings",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-cell.servings",
+          "component.metric-rail",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.servings"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.metric.strength",
+      "name": "Field / Metric Strength",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+        "exportName": "MetricRail"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.metric-cell.strength",
+          "component.metric-rail",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.metric.strength"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.package.capsule-count",
+      "name": "Field / Package Capsule Count",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-configuration",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "single-bottle",
+        "two-bottles",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.package.capsule-count"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.product.alias",
+      "name": "Field / Product Alias",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.product-identity",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.product.alias"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.product.name",
+      "name": "Field / Product Name",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpAtmosphericMediaField"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.pdp-atmospheric-media-field",
+          "component.product-identity",
+          "component.purchase-panel",
+          "module.pdp-first-fold",
+          "state.pdp-missing-media"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "error",
+        "focus-visible",
+        "loading",
+        "long-copy",
+        "missing-media",
+        "mobile",
+        "out-of-stock",
+        "quantity-changed",
+        "reduced-motion",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.product.name"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.product.series-name",
+      "name": "Field / Product Series Name",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.product-identity",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.product.series-name"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.purchase.package-count",
+      "name": "Field / Purchase Package Count",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-configuration",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "single-bottle",
+        "two-bottles",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.purchase.package-count"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.purchase.selected-quantity",
+      "name": "Field / Purchase Selected Quantity",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel",
+          "component.quantity-stepper"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.purchase.selected-quantity"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.purchase.total-servings",
+      "name": "Field / Purchase Total Servings",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-configuration",
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "single-bottle",
+        "two-bottles",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.purchase.total-servings"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "media.pdp-product-render",
+      "name": "Media / PDP Product Render",
+      "kind": "primitive",
+      "renderAs": "img",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpAtmosphericMediaField"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.pdp-atmospheric-media-field"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "bottle-render"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.media.contract-identity"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [
+        "media-role.bottle"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "module.pdp-first-fold",
+      "name": "PdpFirstFold / Atmospheric Decision Pair",
+      "kind": "module",
+      "renderAs": "section",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpFirstFold"
+      },
+      "relationships": {
+        "parentIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "childIds": [
+          "component.pdp-atmospheric-media-field",
+          "component.purchase-panel"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "loading",
+        "unavailable",
+        "error",
+        "mobile",
+        "reduced-motion"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.price",
+        "field.commerce.stock-state",
+        "field.evidence.state",
+        "field.product.name"
+      ],
+      "contentIds": [
+        "content.commerce-state",
+        "content.evidence",
+        "content.product-identity"
+      ],
+      "mediaRoleIds": [
+        "media-role.atmosphere",
+        "media-role.bottle",
+        "media-role.label-panel",
+        "media-role.label-wrap"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "primitive.pdp-atmosphere-light",
+      "name": "Atmosphere / PDP Field Light",
+      "kind": "primitive",
+      "renderAs": "span",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpAtmosphericMediaField"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.pdp-atmospheric-media-field"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "pdp-only"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [
+        "media-role.atmosphere"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "slot.product-detail.pdp.breadcrumb",
+      "name": "Slot / PDP Breadcrumb",
+      "kind": "slot",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpFirstFold"
+      },
+      "relationships": {
+        "parentIds": [
+          "template.product-detail.first-fold"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.breadcrumb"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "slot.product-detail.pdp.first-fold",
+      "name": "Slot / PDP First Fold",
+      "kind": "slot",
+      "renderAs": "section",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpFirstFold"
+      },
+      "relationships": {
+        "parentIds": [
+          "template.product-detail.first-fold"
+        ],
+        "childIds": [
+          "module.pdp-first-fold"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "state.pdp-missing-media",
+      "name": "State / PDP Missing Media",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpAtmosphericMediaField"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.pdp-atmospheric-media-field"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "missing-media"
+      ],
+      "states": [
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.product.name"
+      ],
+      "contentIds": [
+        "content.commerce-state"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "status.evidence",
+      "name": "Status / OpenLab Evidence",
+      "kind": "component",
+      "renderAs": "span",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+        "exportName": "EvidenceStatus"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.status-stack"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "verified",
+        "reported",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.evidence.state"
+      ],
+      "contentIds": [
+        "content.evidence"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "status.stock",
+      "name": "Status / Stock",
+      "kind": "component",
+      "renderAs": "span",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+        "exportName": "StockPill"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.status-stack"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "in-stock",
+        "out-of-stock",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.available-quantity",
+        "field.commerce.stock-state"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "template.product-detail.first-fold",
+      "name": "Template / Product Detail First Fold",
+      "kind": "template",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+        "exportName": "PdpFirstFold"
+      },
+      "relationships": {
+        "parentIds": [],
+        "childIds": [
+          "slot.product-detail.pdp.breadcrumb",
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    }
+  ],
+  "censusReconciliation": [
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
+      "exportName": "AboutExperience",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "AccountHub",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
+      "exportName": "ActionButton",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
+      "exportName": "ActionControl",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
+      "exportName": "ActionLink",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "AnalyteTable",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "Arrow",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/assurance-rail.tsx",
+      "exportName": "AssuranceRail",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "Breadcrumbs",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-review.tsx",
+      "exportName": "CandidateReviewIndex",
+      "family": "owner_tooling",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "CheckoutLifecycle",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "CheckoutStepIndicator",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "Chevron",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-frontier.tsx",
+      "exportName": "CoaViewer",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+      "exportName": "CobaltDensityBoundary",
+      "family": "foundation",
+      "semanticNodeIds": [
+        "component.cobalt-density-boundary"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
+      "exportName": "CobaltDivider",
+      "family": "foundation",
+      "semanticNodeIds": [
+        "component.cobalt-divider"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/contextual-navigation.tsx",
+      "exportName": "ContextualNavigation",
+      "family": "shell",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/payment-trust.tsx",
+      "exportName": "CurrencyEqualityLock",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "CustodyTimeline",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
+      "exportName": "DecisionSurface",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
+      "exportName": "EditorialSurface",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
+      "exportName": "EvidenceOsExperience",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "EvidenceRecordExplainer",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+      "exportName": "EvidenceStatus",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "status.evidence"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "EvidenceStatusChip",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+      "exportName": "FixtureStatusStack",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "FrontierShell",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "GrowthModules",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
+      "exportName": "HeroDecisionSurface",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+      "exportName": "InventoryStatus",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
+      "exportName": "LegalDocumentSurface",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/payment-trust.tsx",
+      "exportName": "LifecycleAmountRecord",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx",
+      "exportName": "LockedHomeHero",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+      "exportName": "MetricCell",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "component.metric-cell.strength",
+        "component.metric-cell.servings",
+        "component.metric-cell.purity"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+      "exportName": "MetricRail",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "component.metric-rail"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
+      "exportName": "MobileDecisionSummary",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukCanvas",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukCanvasSplit",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukCard",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukDivider",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukMediaChamber",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukPurchasePlane",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukSection",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
+      "exportName": "OlukSurface",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabComparison",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabDossierComposition",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-frontier.tsx",
+      "exportName": "OpenLabFrontierPage",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-hero-light.tsx",
+      "exportName": "OpenLabHeroLight",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabMethodologyPipeline",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "OpenLabNav",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabPortalHero",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-product-experience.tsx",
+      "exportName": "OpenLabProductExperience",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabRecordDetail",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabRegistryArchive",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabSourceChain",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabStateLegend",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabUnavailableBoundary",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
+      "exportName": "OpenLabWayfinding",
+      "family": "openlab",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/owner-review-state-harness.tsx",
+      "exportName": "OwnerReviewStateHarness",
+      "family": "owner_tooling",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "PageHero",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/payment-trust.tsx",
+      "exportName": "PaymentTrustPrimer",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+      "exportName": "PdpAtmosphericMediaField",
+      "family": "pdp",
+      "semanticNodeIds": [
+        "component.pdp-atmospheric-media-field",
+        "primitive.pdp-atmosphere-light",
+        "media.pdp-product-render",
+        "state.pdp-missing-media"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-candidate-suite.tsx",
+      "exportName": "PdpCandidateSuite",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+      "exportName": "PdpFirstFold",
+      "family": "pdp",
+      "semanticNodeIds": [
+        "module.pdp-first-fold",
+        "template.product-detail.first-fold",
+        "slot.product-detail.pdp.breadcrumb",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
+      "exportName": "PolicyBridge",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/post-purchase-surface.tsx",
+      "exportName": "PostPurchaseSurface",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/presentation-state.tsx",
+      "exportName": "PresentationState",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+      "exportName": "PriceBlock",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "component.price-block"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "ProductCollection",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+      "exportName": "ProductCommerceCard",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "ProductContinuation",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
+      "exportName": "ProductDecisionHero",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
+      "exportName": "ProductDetailDisclosure",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-dossier.tsx",
+      "exportName": "ProductDossier",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
+      "exportName": "ProductEvidenceSnapshot",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "ProductHero",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+      "exportName": "ProductIdentity",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "component.product-identity"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+      "exportName": "ProductMediaChamber",
+      "family": "commerce",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
+      "exportName": "ProductMediaGallery",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "ProductNarrative",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+      "exportName": "ProductStatusStack",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "component.status-stack"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchasePanel",
+      "family": "pdp",
+      "semanticNodeIds": [
+        "component.purchase-panel",
+        "component.purchase-configuration"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchasePanelMatrix",
+      "family": "pdp",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
+      "exportName": "QualitativeChip",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
+      "exportName": "QualitativeChipList",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/qualitative-icon.tsx",
+      "exportName": "QualitativeIcon",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx",
+      "exportName": "QuantityStepper",
+      "family": "route_module",
+      "semanticNodeIds": [
+        "component.quantity-stepper",
+        "action.purchase.quantity-decrease",
+        "action.purchase.quantity-increase"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "RecommendationCard",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/related-rail.tsx",
+      "exportName": "RelatedRail",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/related-rail.tsx",
+      "exportName": "RelationCard",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "ReportIdentityHeader",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "RestockCard",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/review-studio-gallery.tsx",
+      "exportName": "ReviewStudioGallery",
+      "family": "owner_tooling",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "RouteLink",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
+      "exportName": "SectionHeading",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/surface-grid.tsx",
+      "exportName": "SectionIntroduction",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/shop-discovery.tsx",
+      "exportName": "ShopDiscovery",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/site-header.tsx",
+      "exportName": "SiteHeader",
+      "family": "shell",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/sites-system-atlas.tsx",
+      "exportName": "SitesSystemAtlas",
+      "family": "owner_tooling",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "StackExplorer",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/your-stack-builder.tsx",
+      "exportName": "StackOutcomeCard",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+      "exportName": "StaticPurchaseActions",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "component.purchase-actions",
+        "action.purchase.primary",
+        "action.openlab.record"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
+      "exportName": "StockPill",
+      "family": "commerce",
+      "semanticNodeIds": [
+        "status.stock"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
+      "exportName": "SupportContent",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
+      "exportName": "SupportSurface",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/surface-grid.tsx",
+      "exportName": "SurfaceGrid",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/surface-grid.tsx",
+      "exportName": "SurfaceGridZone",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
+      "exportName": "TechnicalSurface",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
+      "exportName": "TransactionIntroCard",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
+      "exportName": "TransactionPresentation",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "UnavailableEvidencePanel",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
+      "exportName": "UpsellContextRail",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
+      "exportName": "WholesaleExperience",
+      "family": "foundation",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/your-stack-builder.tsx",
+      "exportName": "YourStackBuilder",
+      "family": "route_module",
+      "semanticNodeIds": [],
+      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+    }
+  ],
+  "sourceRegisterDigest": "0a217bf595788b87390e0c1fe0211107c1bed78a86bbe521767de8f1128d35e4"
+}

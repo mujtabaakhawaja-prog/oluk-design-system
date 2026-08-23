@@ -22,7 +22,10 @@ export function ProductIdentity({
   const Heading = headingLevel;
 
   return (
-    <div className={classes("product-identity-row", "oluk-candidate-identity-row", className)}>
+    <div
+      className={classes("product-identity-row", "oluk-candidate-identity-row", className)}
+      data-oluk-node="component.product-identity"
+    >
       <div>
         <span className={classes("product-series", "oluk-candidate-series")}>{product.series}</span>
         <Heading>{product.name}</Heading>
@@ -50,9 +53,9 @@ export function FixtureStatusStack({ product, inventory, evidence }: FixtureStat
 
 export function PriceBlock({ price }: Readonly<{ price: string }>) {
   return (
-    <div className="price-block">
+    <div className="price-block" data-oluk-node="component.price-block">
       <span>PRICE</span>
-      <strong>{price}</strong>
+      <strong data-oluk-node="field.commerce.price">{price}</strong>
     </div>
   );
 }
@@ -77,15 +80,19 @@ export function StaticPurchaseActions({
   state = "in-stock",
 }: StaticPurchaseActionsProps) {
   return (
-    <div className={classes("card-actions", styles.actions, className)} data-state={state}>
-      <ActionButton disabled>
+    <div
+      className={classes("card-actions", styles.actions, className)}
+      data-oluk-node="component.purchase-actions"
+      data-state={state}
+    >
+      <ActionButton data-oluk-node="action.purchase.primary" disabled>
         {primaryLabel}
       </ActionButton>
       {showProductLink && productHref ? (
         <ActionLink href={productHref} variant="secondary">View product</ActionLink>
       ) : null}
       {evidenceHref ? (
-        <ActionLink href={evidenceHref} variant="secondary">{evidenceLabel}</ActionLink>
+        <ActionLink data-oluk-node="action.openlab.record" href={evidenceHref} variant="secondary">{evidenceLabel}</ActionLink>
       ) : null}
     </div>
   );

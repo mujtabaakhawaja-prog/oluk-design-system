@@ -4,16 +4,16 @@
   "currentState": "FOUNDATION_READY_ROUTE_REFACTOR_REQUIRED",
   "debt": {
     "policy": "MONOTONIC_DECREASE",
-    "sourceFindingCount": 22,
-    "untouchedRouteViolationCount": 487
+    "sourceFindingCount": 20,
+    "untouchedRouteViolationCount": 473
   },
   "grammarReadyRouteCount": 0,
-  "looseCopyGroupCount": 493,
+  "looseCopyGroupCount": 479,
   "routeRefactorCount": 44,
   "routes": [
     {
-      "containedCopyGroupCount": 23,
-      "copyGroupCount": 53,
+      "containedCopyGroupCount": 18,
+      "copyGroupCount": 48,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -126,8 +126,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "containedCopyGroupCount": 2,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -141,38 +141,38 @@
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Manage your addresses."
+          "text": "Your addresses."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
+          "text": "Sign in to view your orders and saved account details."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "MK-2866"
+          "text": "Sign in to continue"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Track the delivery, open the receipt, or return to the product in one place."
+          "text": "Sign in to view your orders and saved account details."
         },
         {
           "copySurface": null,
-          "element": "h3",
+          "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Ready for the next phase"
+          "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 10,
       "path": "/account/addresses",
       "routeId": "account-addresses",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -183,8 +183,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "containedCopyGroupCount": 2,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -198,38 +198,38 @@
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Your orders, receipts and tracking in one place."
+          "text": "Your orders."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
+          "text": "Sign in to view your orders and saved account details."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "MK-2866"
+          "text": "Sign in to continue"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Track the delivery, open the receipt, or return to the product in one place."
+          "text": "Sign in to view your orders and saved account details."
         },
         {
           "copySurface": null,
-          "element": "h3",
+          "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Ready for the next phase"
+          "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 10,
       "path": "/account/orders",
       "routeId": "account-orders",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -240,8 +240,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "containedCopyGroupCount": 2,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -255,38 +255,38 @@
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Your orders, receipts and tracking in one place."
+          "text": "Your orders."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
+          "text": "We cannot show your account details right now. Try again later or contact us for help."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "MK-2866"
+          "text": "Account details are unavailable"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Track the delivery, open the receipt, or return to the product in one place."
+          "text": "We cannot show your account details right now. Try again later or contact us for help."
         },
         {
           "copySurface": null,
-          "element": "h3",
+          "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Ready for the next phase"
+          "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 10,
       "path": "/account/orders/OL-10428",
       "routeId": "account-order",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -297,8 +297,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 22,
-      "copyGroupCount": 36,
+      "containedCopyGroupCount": 2,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -312,38 +312,38 @@
           "element": "h1",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Manage your profile."
+          "text": "Your profile."
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Pick up where you left off, make the next order easy, and keep your strongest product decisions close."
+          "text": "Sign in to view your orders and saved account details."
         },
         {
           "copySurface": null,
           "element": "h3",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "MK-2866"
+          "text": "Sign in to continue"
         },
         {
           "copySurface": null,
           "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Track the delivery, open the receipt, or return to the product in one place."
+          "text": "Sign in to view your orders and saved account details."
         },
         {
           "copySurface": null,
-          "element": "h3",
+          "element": "p",
           "status": "LOOSE_CANVAS_COPY",
           "strictScope": false,
-          "text": "Ready for the next phase"
+          "text": "Finished products, clear specifications and independently presented evidence."
         }
       ],
-      "looseCopyGroupCount": 14,
+      "looseCopyGroupCount": 10,
       "path": "/account/profile",
       "routeId": "account-profile",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -411,8 +411,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 30,
-      "copyGroupCount": 36,
+      "containedCopyGroupCount": 6,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -525,8 +525,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 10,
-      "copyGroupCount": 16,
+      "containedCopyGroupCount": 6,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -640,7 +640,7 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "copyGroupCount": 26,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -685,7 +685,7 @@
           "text": "MK-677"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 24,
       "path": "/collections/prohormones",
       "routeId": "family-prohormones",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -697,7 +697,7 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "copyGroupCount": 28,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -742,7 +742,7 @@
           "text": "MK-2866"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 26,
       "path": "/collections/research-chemicals",
       "routeId": "family-research-chemicals",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -754,7 +754,7 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 24,
+      "copyGroupCount": 28,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -799,7 +799,7 @@
           "text": "MK-2866"
         }
       ],
-      "looseCopyGroupCount": 22,
+      "looseCopyGroupCount": 26,
       "path": "/collections/sarms",
       "routeId": "family-sarms",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -811,7 +811,7 @@
     },
     {
       "containedCopyGroupCount": 2,
-      "copyGroupCount": 44,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -856,7 +856,7 @@
           "text": "MK-2866"
         }
       ],
-      "looseCopyGroupCount": 42,
+      "looseCopyGroupCount": 34,
       "path": "/collections/stacks",
       "routeId": "family-stacks",
       "routeStatus": "NEEDS_ROUTE_REFACTOR",
@@ -2121,8 +2121,8 @@
       "surroundingRouteLooseCopyGroupCount": 6
     },
     {
-      "containedCopyGroupCount": 30,
-      "copyGroupCount": 36,
+      "containedCopyGroupCount": 6,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2178,8 +2178,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 10,
-      "copyGroupCount": 16,
+      "containedCopyGroupCount": 6,
+      "copyGroupCount": 12,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2521,7 +2521,7 @@
     }
   ],
   "schemaVersion": 2,
-  "sourceFindingCount": 22,
+  "sourceFindingCount": 20,
   "sourceFindings": [
     {
       "file": "app/design-system/frontier-sections.module.css",
@@ -2642,21 +2642,9 @@
       "rule": "muted-customer-copy",
       "selector": ".card p",
       "value": "var(--oluk-text-muted)"
-    },
-    {
-      "file": "app/review-studio/review-studio.module.css",
-      "offset": 438,
-      "rule": "literal-color",
-      "value": "#f8fbff"
-    },
-    {
-      "file": "app/review-studio/review-studio.module.css",
-      "offset": 449,
-      "rule": "literal-color",
-      "value": "#e4ecfa"
     }
   ],
-  "sourceHash": "566fca8986f4e748af9aa9209d67aa1e45551301e278271f87cb1e05001b985e",
+  "sourceHash": "ea1ddfb9906a1e57c296671269dd8b27b09ae4ea54f333eb389cfca872703d41",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2769,5 +2757,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "fdb25ce33562fcef13256d1c5c8a5ba1962c7415aea06cdf0ec72049ef97e0ae"
+  "auditHash": "891d657ba9ae2ad928d92275aadfdef3d929b6bf3816e2f914d0f7306a05132b"
 }
