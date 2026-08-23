@@ -11,8 +11,12 @@ const readJson = async (file) => JSON.parse(await readFile(path.join(repoRoot, f
 test("feature inventory is exhaustive, attributed and contract-bound", async () => {
   const registry = await readJson("authority/FEATURE-INTENT-REGISTRY.json");
   assert.equal(registry.authorityDirection, "CODEX_SITES_IS_COMPOSITION_AUTHORITY");
-  assert.equal(registry.canonicalRouteLedger.routeCount, 73);
-  assert.equal(registry.canonicalRouteLedger.mutation, "NONE");
+  assert.equal(registry.historicalSitesRouteLedger.routeCount, 73);
+  assert.equal(registry.historicalSitesRouteLedger.mutation, "NONE");
+  assert.equal(registry.historicalSitesRouteLedger.authority, "HISTORICAL_PRESENTATION_PROVENANCE_ONLY");
+  assert.equal(registry.nativeNextRouteAuthority.routeCount, 74);
+  assert.deepEqual(registry.routeCountLaw.admittedDelta, ["/bundle-builder"]);
+  assert.equal(registry.routeCountLaw.canonicalNativeNextRouteDefinitions, 74);
   assert.ok(registry.stats.total >= 80);
   assert.match(registry.contentHash, /^[a-f0-9]{64}$/);
   assert.equal(registry.features.length, registry.stats.total);
@@ -66,14 +70,13 @@ test("the feature registry covers the required commerce, confidence and lifecycl
   for (const id of required) assert.equal(ids.has(id), true, `missing required feature ${id}`);
 });
 
-test("candidate routes remain separate from the canonical 73-route ledger", async () => {
+test("the historical 73-row Sites ledger plus Bundle Builder resolves to the canonical 74-route authority", async () => {
   const [ledger, candidates] = await Promise.all([
     readJson("authority/SITE-ROUTE-LEDGER.json"),
     readJson("authority/CANDIDATE-STANDALONE-ROUTE-REGISTRY.json"),
   ]);
   const canonicalPaths = new Set(ledger.routes.map(({ path: routePath }) => routePath));
   const expected = [
-    "/bundle-builder",
     "/recommendations",
     "/quick-reorder",
     "/wishlist",
@@ -93,13 +96,19 @@ test("candidate routes remain separate from the canonical 73-route ledger", asyn
     "/api",
     "/ar-viewer",
   ];
-  assert.equal(candidates.canonicalRouteLedger.routeCount, 73);
+  assert.equal(candidates.historicalSitesRouteLedger.routeCount, 73);
+  assert.equal(candidates.nativeNextRouteAuthority.routeCount, 74);
+  assert.deepEqual(candidates.routeCountLaw.admittedDelta, ["/bundle-builder"]);
   assert.equal(candidates.candidateCount, expected.length);
   assert.deepEqual(new Set(candidates.routes.map(({ path: routePath }) => routePath)), new Set(expected));
   for (const route of candidates.routes) {
-    assert.equal(route.canonicalLedgerMembership, false);
+    assert.equal(route.canonicalRouteMembership, false);
     assert.equal(route.publicNavigationState, "NOT_PROMOTED");
     assert.equal(canonicalPaths.has(route.path), false);
     assert.ok(route.featureIds.length > 0);
   }
+  assert.equal(candidates.promotedCanonicalRoutes.length, 1);
+  assert.equal(candidates.promotedCanonicalRoutes[0].path, "/bundle-builder");
+  assert.equal(candidates.promotedCanonicalRoutes[0].canonicalRouteMembership, true);
+  assert.equal(candidates.promotedCanonicalRoutes[0].publicNavigationState, "ROUTE_ADMITTED_PRESENTATION_NOT_PROMOTED");
 });

@@ -101,6 +101,7 @@ export function ProductCommerceCard({
         className={classes("horizontal-product-card", "product-commerce-card-relation", className)}
         data-component="ProductCommerceCard.Relation"
         data-copy-surface="commerce"
+        data-oluk-node="component.product-commerce-card"
         data-state={state}
         data-variant={variant}
       >
@@ -142,6 +143,7 @@ export function ProductCommerceCard({
         )}
         data-component="ProductCommerceCard.compact"
         data-copy-surface="commerce"
+        data-oluk-node="component.product-commerce-card"
         data-state={state}
         data-variant={variant}
       >
@@ -189,6 +191,7 @@ export function ProductCommerceCard({
       )}
       data-component={`ProductCommerceCard.${variant}`}
       data-copy-surface="commerce"
+      data-oluk-node="component.product-commerce-card"
       data-state={state}
       data-variant={variant}
     >

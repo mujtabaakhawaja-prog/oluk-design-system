@@ -15,6 +15,11 @@ test("surface inventory imports exactly 74 routes and 15 product instances", () 
   assert.equal(routeAuthority.routes.length, 74);
   assert.equal(inventory.entities.filter((item) => item.kind === "route_definition").length, 74);
   assert.equal(inventory.entities.filter((item) => item.kind === "route_instance" && item.id.startsWith("route-instance.product.")).length, 15);
+  assert.equal(inventory.routeCountLaw.historicalSitesRouteDefinitions, 73);
+  assert.deepEqual(inventory.routeCountLaw.admittedDelta, ["/bundle-builder"]);
+  assert.equal(inventory.routeCountLaw.canonicalNativeNextRouteDefinitions, 74);
+  assert.deepEqual(routeAuthority.routeCountLaw, inventory.routeCountLaw);
+  assert.deepEqual(presentation.routeCountLaw, inventory.routeCountLaw);
 });
 
 test("every route owns a template and an ordered slot graph", () => {
@@ -59,6 +64,30 @@ test("active contracts remain provider-neutral and human approval remains pendin
   assert.equal(presentation.responsiveViewports.join(","), "1440,1024,768,390");
   assert.equal(approval.status, "PENDING_HUMAN_REVIEW");
   assert.equal(approval.decision, null);
+});
+
+test("PDP metric, package, purchase, and inventory quantities remain distinct", () => {
+  const fields = new Set(presentation.fieldIds);
+  for (const id of [
+    "field.metric.strength",
+    "field.metric.servings",
+    "field.metric.purity",
+    "field.package.capsule-count",
+    "field.purchase.package-count",
+    "field.purchase.selected-quantity",
+    "field.purchase.total-servings",
+    "field.commerce.available-quantity",
+  ]) assert.equal(fields.has(id), true, id);
+  for (const stale of [
+    "field.product.strength-display",
+    "field.product.servings-display",
+    "field.evidence.purity-display",
+    "field.commerce.quantity",
+  ]) assert.equal(fields.has(stale), false, stale);
+  assert.equal(presentation.componentIds.includes("component.pdp-atmospheric-media-field"), true);
+  assert.equal(presentation.componentIds.includes("component.product-media-chamber"), true);
+  assert.equal(presentation.componentIds.includes("component.pdp-first-fold"), false);
+  assert.equal(presentation.moduleIds.includes("module.pdp-first-fold"), true);
 });
 
 test("all sources have bounded dispositions and no legacy source is active authority", () => {

@@ -26,29 +26,44 @@
         "containment": "CONTAINED",
         "disposition": "reuse"
       }
+    },
+    "historicalSitesLedger": {
+      "count": 73,
+      "sha256": "8c12f68825025f963a3089df663a9d9fd19963d8b3f7c51d4d89cbc524a1cfc1",
+      "authority": "PRESENTATION_PROVENANCE_ONLY"
     }
+  },
+  "routeCountLaw": {
+    "historicalSitesRouteDefinitions": 73,
+    "historicalSitesAuthority": "PRESENTATION_PROVENANCE_ONLY",
+    "admittedDelta": [
+      "/bundle-builder"
+    ],
+    "canonicalNativeNextRouteDefinitions": 74,
+    "canonicalAuthority": "NATIVE_NEXT_ROUTE_ADMISSION",
+    "equation": "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions"
   },
   "counts": {
     "routeDefinitions": 74,
     "productRouteInstances": 15,
-    "entities": 380,
+    "entities": 387,
     "byKind": {
       "component": 10,
       "content": 7,
       "feature_exposure": 1,
-      "field_binding": 12,
+      "field_binding": 16,
       "interaction": 7,
       "media_role": 7,
-      "module": 12,
+      "module": 13,
       "placement": 88,
-      "primitive": 8,
+      "primitive": 9,
       "route_definition": 74,
       "route_instance": 15,
       "route_template": 12,
       "slot": 88,
       "source_candidate": 9,
       "state": 19,
-      "token": 11
+      "token": 12
     }
   },
   "enums": {
@@ -107,6 +122,7 @@
   },
   "laws": [
     "Native Next owns the canonical 74 customer route definitions.",
+    "The 73-row Sites ledger is historical presentation provenance; /bundle-builder is the exact admitted delta that yields 74 Native Next routes.",
     "Codex Sites stages presentation and never owns customer runtime truth.",
     "Feature exposure applies only to approved optional placements.",
     "Missing producer data renders a declared conditional state.",
@@ -200,7 +216,48 @@
     {
       "id": "token.media-chamber",
       "kind": "token",
-      "customerPurpose": "Atmospheric product-media plane.",
+      "customerPurpose": "Bounded non-PDP product-media chamber.",
+      "owner": {
+        "repository": "oluk-design-system",
+        "concern": "tokens"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "canonical",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.default"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "token.pdp-atmospheric-field",
+      "kind": "token",
+      "customerPurpose": "Continuous first-fold PDP product atmosphere.",
       "owner": {
         "repository": "oluk-design-system",
         "concern": "tokens"
@@ -592,6 +649,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -647,6 +705,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -702,6 +761,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -734,7 +794,7 @@
     {
       "id": "primitive.media-chamber",
       "kind": "primitive",
-      "customerPurpose": "Product-safe image stage.",
+      "customerPurpose": "Bounded product-safe image stage for cards, rails, and non-PDP contexts.",
       "owner": {
         "repository": "oluk-design-system",
         "concern": "primitives"
@@ -757,6 +817,63 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
+          "token.cobalt",
+          "token.ink",
+          "token.border",
+          "token.radius",
+          "token.elevation",
+          "token.type",
+          "token.motion",
+          "token.breakpoint"
+        ],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.default",
+        "state.focus-visible",
+        "state.reduced-motion"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "primitive.pdp-atmospheric-field",
+      "kind": "primitive",
+      "customerPurpose": "PDP-only continuous visual field with product-specific light and breathing room.",
+      "owner": {
+        "repository": "oluk-design-system",
+        "concern": "primitives"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "canonical",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [
+          "token.canvas",
+          "token.surface",
+          "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -812,6 +929,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -867,6 +985,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -922,6 +1041,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -977,6 +1097,7 @@
           "token.canvas",
           "token.surface",
           "token.media-chamber",
+          "token.pdp-atmospheric-field",
           "token.cobalt",
           "token.ink",
           "token.border",
@@ -1871,12 +1992,12 @@
       "contract": {}
     },
     {
-      "id": "field.product.strength-display",
+      "id": "field.metric.strength",
       "kind": "field_binding",
-      "customerPurpose": "Product-specific canonical strength.",
+      "customerPurpose": "Product-specific canonical strength metric.",
       "owner": {
-        "repository": "c2_monorepo_scaffold",
-        "concern": "c2-product-projection"
+        "repository": "olympus-plugin-initiator",
+        "concern": "product-registry"
       },
       "sources": [
         {
@@ -1912,12 +2033,12 @@
       "contract": {}
     },
     {
-      "id": "field.product.servings-display",
+      "id": "field.metric.servings",
       "kind": "field_binding",
-      "customerPurpose": "Product-specific canonical serving count.",
+      "customerPurpose": "Product-specific canonical serving-count metric.",
       "owner": {
-        "repository": "c2_monorepo_scaffold",
-        "concern": "c2-product-projection"
+        "repository": "olympus-plugin-initiator",
+        "concern": "product-registry"
       },
       "sources": [
         {
@@ -1953,12 +2074,217 @@
       "contract": {}
     },
     {
-      "id": "field.evidence.purity-display",
+      "id": "field.metric.purity",
       "kind": "field_binding",
-      "customerPurpose": "Record-specific reported purity display.",
+      "customerPurpose": "Record-specific reported purity metric.",
       "owner": {
         "repository": "c2_monorepo_scaffold",
         "concern": "c2-openlab-projection"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "runtime_current",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.unavailable"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "field.package.capsule-count",
+      "kind": "field_binding",
+      "customerPurpose": "Canonical package capsule count when the product contract supplies it.",
+      "owner": {
+        "repository": "olympus-plugin-initiator",
+        "concern": "product-registry"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "runtime_current",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.unavailable"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "field.purchase.package-count",
+      "kind": "field_binding",
+      "customerPurpose": "Customer-selected number of product packages.",
+      "owner": {
+        "repository": "olympus-plugin-initiator",
+        "concern": "next-purchase-selection"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "runtime_current",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.unavailable"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "field.purchase.selected-quantity",
+      "kind": "field_binding",
+      "customerPurpose": "Customer-selected purchase quantity with bounded minimum, maximum, and step.",
+      "owner": {
+        "repository": "olympus-plugin-initiator",
+        "concern": "next-purchase-selection"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "runtime_current",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.unavailable"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "field.purchase.total-servings",
+      "kind": "field_binding",
+      "customerPurpose": "Presentation-derived total from authoritative servings and selected package count.",
+      "owner": {
+        "repository": "olympus-plugin-initiator",
+        "concern": "next-presentation-adapter"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "runtime_current",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedRouteIds": [],
+        "allowedSlotIds": []
+      },
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "requiredStates": [
+        "state.unavailable"
+      ],
+      "interactionIds": [],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "field.commerce.available-quantity",
+      "kind": "field_binding",
+      "customerPurpose": "Provider-neutral available inventory quantity when exposed by commerce authority.",
+      "owner": {
+        "repository": "c2_monorepo_scaffold",
+        "concern": "c2-commerce-projection"
       },
       "sources": [
         {
@@ -2082,47 +2408,6 @@
       "owner": {
         "repository": "c2_monorepo_scaffold",
         "concern": "c2-commerce-projection"
-      },
-      "sources": [
-        {
-          "repository": "oluk-design-system",
-          "path": "sites/oluk-experience-lab/app/design-system",
-          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
-          "containment": "CONTAINED",
-          "disposition": "compare_and_adapt"
-        }
-      ],
-      "authorityClass": "runtime_current",
-      "sourceContainment": "CONTAINED",
-      "integrationDisposition": "reuse",
-      "relationships": {
-        "parentIds": [],
-        "childIds": [],
-        "allowedRouteIds": [],
-        "allowedSlotIds": []
-      },
-      "fieldIds": [],
-      "contentIds": [],
-      "mediaRoleIds": [],
-      "requiredStates": [
-        "state.unavailable"
-      ],
-      "interactionIds": [],
-      "lifecycle": "inventory",
-      "exposure": "not_applicable",
-      "tests": [
-        "surface-inventory.test.mjs"
-      ],
-      "receipts": [],
-      "contract": {}
-    },
-    {
-      "id": "field.commerce.quantity",
-      "kind": "field_binding",
-      "customerPurpose": "Minimum, maximum, step, and default quantity.",
-      "owner": {
-        "repository": "c2_monorepo_scaffold",
-        "concern": "c2-purchase-contract"
       },
       "sources": [
         {
@@ -3208,9 +3493,12 @@
       },
       "fieldIds": [
         "field.product.name",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
+        "field.purchase.selected-quantity",
         "field.evidence.state"
       ],
       "contentIds": [
@@ -3257,9 +3545,9 @@
       "contract": {}
     },
     {
-      "id": "component.pdp-first-fold",
+      "id": "component.pdp-atmospheric-media-field",
       "kind": "component",
-      "customerPurpose": "Product media and purchase decision composition",
+      "customerPurpose": "PDP-only continuous atmospheric render field",
       "owner": {
         "repository": "oluk-design-system",
         "concern": "component-library"
@@ -3286,17 +3574,7 @@
         "allowedSlotIds": []
       },
       "fieldIds": [
-        "field.product.series-name",
         "field.product.name",
-        "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
-        "field.evidence.state",
-        "field.commerce.stock-state",
-        "field.commerce.price",
-        "field.commerce.quantity",
-        "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
       "contentIds": [
@@ -3379,13 +3657,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable"
       ],
       "contentIds": [
@@ -3434,7 +3716,7 @@
     {
       "id": "component.product-media-chamber",
       "kind": "component",
-      "customerPurpose": "Canonical bottle and V3 media presentation",
+      "customerPurpose": "Bounded canonical bottle and V3 media presentation for cards, rails, and non-PDP contexts",
       "owner": {
         "repository": "oluk-design-system",
         "concern": "component-library"
@@ -3541,9 +3823,9 @@
         "allowedSlotIds": []
       },
       "fieldIds": [
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display"
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity"
       ],
       "contentIds": [
         "content.product-identity",
@@ -3619,7 +3901,7 @@
       },
       "fieldIds": [
         "field.evidence.state",
-        "field.evidence.purity-display"
+        "field.metric.purity"
       ],
       "contentIds": [
         "content.product-identity",
@@ -3773,7 +4055,7 @@
       "fieldIds": [
         "field.product.name",
         "field.commerce.price",
-        "field.commerce.quantity"
+        "field.purchase.selected-quantity"
       ],
       "contentIds": [
         "content.product-identity",
@@ -3922,7 +4204,7 @@
       },
       "fieldIds": [
         "field.commerce.price",
-        "field.commerce.quantity"
+        "field.purchase.selected-quantity"
       ],
       "contentIds": [
         "content.product-identity",
@@ -3958,6 +4240,91 @@
         "interaction.view-record",
         "interaction.disclose",
         "interaction.retry"
+      ],
+      "lifecycle": "inventory",
+      "exposure": "not_applicable",
+      "tests": [
+        "surface-inventory.test.mjs"
+      ],
+      "receipts": [],
+      "contract": {}
+    },
+    {
+      "id": "module.pdp-first-fold",
+      "kind": "module",
+      "customerPurpose": "Compose the PDP atmospheric media field and independently elevated purchase panel.",
+      "owner": {
+        "repository": "oluk-design-system",
+        "concern": "product-detail-first-fold"
+      },
+      "sources": [
+        {
+          "repository": "oluk-design-system",
+          "path": "sites/oluk-experience-lab/app/design-system",
+          "ref": "8b79a7d04342043d3f972c5cf844c9168547d401",
+          "containment": "CONTAINED",
+          "disposition": "compare_and_adapt"
+        }
+      ],
+      "authorityClass": "canonical",
+      "sourceContainment": "CONTAINED",
+      "integrationDisposition": "reuse",
+      "relationships": {
+        "parentIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "childIds": [
+          "component.pdp-atmospheric-media-field",
+          "component.purchase-panel"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ]
+      },
+      "fieldIds": [
+        "field.product.series-name",
+        "field.product.name",
+        "field.product.alias",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
+        "field.evidence.state",
+        "field.commerce.stock-state",
+        "field.commerce.price",
+        "field.commerce.purchasable",
+        "field.media.contract-identity"
+      ],
+      "contentIds": [
+        "content.product-identity",
+        "content.commerce-state",
+        "content.evidence"
+      ],
+      "mediaRoleIds": [
+        "media.bottle",
+        "media.label-panel",
+        "media.label-wrap",
+        "media.atmosphere"
+      ],
+      "requiredStates": [
+        "state.default",
+        "state.loading",
+        "state.unavailable",
+        "state.error",
+        "state.responsive-reorder",
+        "state.reduced-motion"
+      ],
+      "interactionIds": [
+        "interaction.quantity",
+        "interaction.add-to-bag",
+        "interaction.view-record"
       ],
       "lifecycle": "inventory",
       "exposure": "not_applicable",
@@ -6571,13 +6938,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -6715,13 +7086,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -6859,13 +7234,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7003,13 +7382,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7147,13 +7530,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7291,13 +7678,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7435,13 +7826,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7579,13 +7974,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7723,13 +8122,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -7867,13 +8270,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -8011,13 +8418,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -8155,13 +8566,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -8299,13 +8714,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -8443,13 +8862,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -8587,13 +9010,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -8731,13 +9158,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22084,13 +22515,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22173,13 +22608,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22262,13 +22701,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22351,13 +22794,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22440,13 +22887,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22529,13 +22980,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22618,13 +23073,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22707,13 +23166,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22796,13 +23259,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22885,13 +23352,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -22974,13 +23445,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -23063,13 +23538,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -23152,13 +23631,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -23241,13 +23724,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -23330,13 +23817,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -23805,5 +24296,5 @@
       }
     }
   ],
-  "contentHash": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c"
+  "contentHash": "4aeda7238d2bfa91ae08aeda6189e5690d85cdf9ec16642db1d1a4ad72c95dec"
 }

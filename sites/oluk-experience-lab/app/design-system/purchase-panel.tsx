@@ -30,6 +30,11 @@ export type PurchasePanelProps = Readonly<{
   bottleOptions?: boolean;
 }>;
 
+export type PurchaseConfigurationProps = Readonly<{
+  product: ProductFixture;
+  bottleOptions?: boolean;
+}>;
+
 function statePresentation(product: ProductFixture, state: PurchasePanelState) {
   const inventory: InventoryState =
     state === "out-of-stock"
@@ -52,6 +57,37 @@ function statePresentation(product: ProductFixture, state: PurchasePanelState) {
   return { inventory, quantity, actionLabel } as const;
 }
 
+/**
+ * Stable semantic owner for package-count and total-servings presentation.
+ * This is purchase configuration, never the product MetricRail or stock quantity.
+ */
+export function PurchaseConfiguration({ product, bottleOptions = false }: PurchaseConfigurationProps) {
+  const servingsLabel = product.servings.trim() || "Not supplied";
+  const servingsCount = Number(product.servings.match(/\d+/)?.[0] || 0);
+
+  if (bottleOptions && servingsCount > 0) {
+    return (
+      <div
+        aria-label="Bottle quantity options"
+        className="oluk-candidate-bottle-options"
+        data-oluk-node="component.purchase-configuration"
+        role="group"
+      >
+        <span>BOTTLES</span>
+        <div data-selected="true"><strong data-oluk-node="field.purchase.package-count">1 BOTTLE</strong><small data-oluk-node="field.purchase.total-servings">{servingsCount} SERVINGS</small></div>
+        <div><strong data-oluk-node="field.purchase.package-count">2 BOTTLES</strong><small data-oluk-node="field.purchase.total-servings">{servingsCount * 2} SERVINGS</small></div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="oluk-candidate-pack-size" data-oluk-node="component.purchase-configuration">
+      <span>PACK SIZE</span>
+      <strong data-oluk-node="field.purchase.total-servings">{servingsLabel}</strong>
+    </div>
+  );
+}
+
 export function PurchasePanel({
   product = mk2866Fixture,
   state = "default",
@@ -64,8 +100,6 @@ export function PurchasePanel({
   bottleOptions = false,
 }: PurchasePanelProps) {
   const presentation = statePresentation(product, state);
-  const servingsLabel = product.servings.trim() || "Not supplied";
-  const servingsCount = Number(product.servings.match(/\d+/)?.[0] || 0);
   const introFacts = [product.alias, product.strength, product.servings.trim() || "Servings not supplied", product.purity];
 
   return (
@@ -97,23 +131,7 @@ export function PurchasePanel({
         {product.sku ? <span>SKU {product.sku}</span> : <span>{product.series}</span>}
         <a href={product.evidencePath}>View Lab Records →</a>
       </div>
-      {bottleOptions && servingsCount > 0 ? (
-        <div
-          aria-label="Bottle quantity options"
-          className="oluk-candidate-bottle-options"
-          data-oluk-node="component.purchase-configuration"
-          role="group"
-        >
-          <span>BOTTLES</span>
-          <div data-selected="true"><strong data-oluk-node="field.purchase.package-count">1 BOTTLE</strong><small data-oluk-node="field.purchase.total-servings">{servingsCount} SERVINGS</small></div>
-          <div><strong data-oluk-node="field.purchase.package-count">2 BOTTLES</strong><small data-oluk-node="field.purchase.total-servings">{servingsCount * 2} SERVINGS</small></div>
-        </div>
-      ) : (
-        <div className="oluk-candidate-pack-size" data-oluk-node="component.purchase-configuration">
-          <span>PACK SIZE</span>
-          <strong data-oluk-node="field.purchase.total-servings">{servingsLabel}</strong>
-        </div>
-      )}
+      <PurchaseConfiguration bottleOptions={bottleOptions} product={product} />
       <div className="purchase-row">
         <PriceBlock price={product.price} />
         <QuantityStepper

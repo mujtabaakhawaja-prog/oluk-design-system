@@ -38,7 +38,9 @@ export const ASSET_PERFORMANCE_BUDGETS = Object.freeze({
   clientJavaScriptBytes: 630 * KIB,
   // OpenLab technical states and three materially different PDP grids reuse the
   // governed surface grammar within one bounded aggregate stylesheet ceiling.
-  clientCssBytes: 280 * KIB,
+  // The owner-only four-width component proof adds one route-isolated 5.1 KiB
+  // stylesheet without changing the largest customer stylesheet ceiling.
+  clientCssBytes: 288 * KIB,
   clientFontBytes: Math.floor(1.25 * MIB),
   largestClientJavaScriptFileBytes: 224 * KIB,
   largestClientCssFileBytes: 96 * KIB,

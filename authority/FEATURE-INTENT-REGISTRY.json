@@ -7,18 +7,33 @@
     "path": "authority/FEATURE-INTENT-SOURCE.json",
     "sha256": "7abdebdc67fc788d8dcf618bde4cd3cfed5ea23670a4ad3c4776521f9d6e5990"
   },
-  "canonicalRouteLedger": {
+  "historicalSitesRouteLedger": {
     "path": "authority/SITE-ROUTE-LEDGER.json",
     "sha256": "329b48a822b99de8728d1d0d28e037a8b5fcb2244c19421e8a0e12489de53ce7",
     "routeCount": 73,
-    "mutation": "NONE"
+    "mutation": "NONE",
+    "authority": "HISTORICAL_PRESENTATION_PROVENANCE_ONLY"
+  },
+  "nativeNextRouteAuthority": {
+    "path": "authority/imports/oluk-canonical-customer-route-registry.v1.json",
+    "sha256": "23dea181163af0e5f81db7580b9b59fc2762f4ea0fae1b18d144095644f33576",
+    "routeCount": 74,
+    "authority": "CANONICAL_CUSTOMER_ROUTE_ADMISSION"
+  },
+  "routeCountLaw": {
+    "historicalSitesRouteDefinitions": 73,
+    "admittedDelta": [
+      "/bundle-builder"
+    ],
+    "canonicalNativeNextRouteDefinitions": 74,
+    "equation": "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions"
   },
   "laws": {
     "figmaDisposition": "feature and relationship inventory only; never component or copy authority",
     "generatedCodeDisposition": "discard",
     "duplicateConceptPolicy": "one shared contract and one feature identity per customer job",
     "runtimeBoundary": "presentation intent only; live authority remains separately gated",
-    "routeBoundary": "candidate standalone paths do not enter the canonical 73-route ledger without owner selection"
+    "routeBoundary": "The 73-row Sites ledger is historical provenance; Native Next owns 74 canonical route definitions, with /bundle-builder as the explicit admitted delta."
   },
   "sharedContracts": [
     {
@@ -6278,5 +6293,5 @@
       ]
     }
   ],
-  "contentHash": "d4062005fccef3ad2b22f4caeaa6521a21fcc8b2e981f997a753b837dfe3072a"
+  "contentHash": "f797407593d92dd7c53cc64a34cb512ff2d6b5aed29b229ae7522dc5724b016b"
 }

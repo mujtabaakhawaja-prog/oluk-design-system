@@ -13,7 +13,13 @@ import { ROUTES } from "../scripts/proof/route-matrix.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRoot = path.join(siteRoot, "app");
-const PRIVATE_REVIEW_SPECIMEN_ROUTES = Object.freeze(["/review-studio/surface-grammar", "/system-atlas", "/workbench"]);
+const PRIVATE_REVIEW_SPECIMEN_ROUTES = Object.freeze([
+  "/review-studio/surface-grammar",
+  "/review-studio/component-proof",
+  "/review-studio/component-proof/specimen",
+  "/system-atlas",
+  "/workbench",
+]);
 
 async function pageRoutes(directory = appRoot) {
   const entries = await readdir(directory, { withFileTypes: true });

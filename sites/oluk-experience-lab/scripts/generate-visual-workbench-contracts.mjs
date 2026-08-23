@@ -139,7 +139,7 @@ function synthesizeDependencyNodes(nodes, kind, property) {
   });
 }
 
-function validateSource({ nodeSource, routeAuthority, inventory, census, routeImport, productImport }) {
+function validateSource({ nodeSource, presentation, routeAuthority, inventory, census, routeImport, productImport }) {
   const allowedKinds = new Set(["primitive", "component", "module", "slot", "template", "content", "field"]);
   const ids = nodeSource.nodes.map((node) => node.id);
   const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -157,10 +157,37 @@ function validateSource({ nodeSource, routeAuthority, inventory, census, routeIm
   }
   if (!Array.isArray(census.components) || census.components.length === 0) throw new Error("Component census is empty");
   if (!nodeSource.projectionModes?.includes("real")) throw new Error("Projection modes must include exact `real` mode");
+
+  const forbiddenAliases = new Set([
+    "component.pdp-media-chamber",
+    "component.product-attribute-grid",
+    "component.pdp-first-fold",
+    "field.product.strength-display",
+    "field.product.servings-display",
+    "field.evidence.purity-display",
+    "field.commerce.quantity",
+  ]);
+  const serializedActiveContracts = JSON.stringify({ nodeSource, inventory, presentation, routeAuthority });
+  const activeAliases = [...forbiddenAliases].filter((id) => serializedActiveContracts.includes(`"${id}"`));
+  if (activeAliases.length) throw new Error(`Forbidden current-slice semantic aliases: ${activeAliases.join(", ")}`);
+
+  for (const component of census.components) {
+    if (!component.semanticDisposition || !component.semanticDispositionReason || !component.routeTrain) {
+      throw new Error(`Census export lacks explicit semantic disposition: ${component.governingSource}#${component.sourceExport}`);
+    }
+    if (component.pageTemplates?.includes("shared") || component.runtimeStudioAdoption === "not_assessed" || !component.routeModuleUsage?.length) {
+      throw new Error(`Census export retains ambiguous active metadata: ${component.governingSource}#${component.sourceExport}`);
+    }
+    if (component.semanticDisposition === "INVENTORY_ONLY" && !component.requiresRegistrationBeforeAdoption) {
+      throw new Error(`Inventory-only export must fail closed before adoption: ${component.governingSource}#${component.sourceExport}`);
+    }
+  }
 }
 
 function nextTargetFor(node) {
   const explicit = {
+    "component.product-commerce-card": "src/components/commerce/ProductCommerceCard.tsx#ProductCommerceCard",
+    "component.product-media-chamber": "app/sites-home/design-system/product-media-chamber.tsx#ProductMediaChamber",
     "component.metric-rail": "app/presentation-system/components/MetricRail.tsx#MetricRail",
     "component.metric-cell.strength": "app/presentation-system/components/MetricRail.tsx#MetricCell",
     "component.metric-cell.servings": "app/presentation-system/components/MetricRail.tsx#MetricCell",
@@ -211,7 +238,7 @@ const [nodeSource, patchTargetSource, sourceRegister, census, inventory, present
   readJson(paths.productImport),
 ]);
 
-validateSource({ nodeSource, routeAuthority, inventory, census, routeImport, productImport });
+validateSource({ nodeSource, presentation, routeAuthority, inventory, census, routeImport, productImport });
 
 const explicitNodes = nodeSource.nodes.map((node) => mergeDefaults(node, nodeSource.defaults));
 const dependencyNodes = [
@@ -220,11 +247,50 @@ const dependencyNodes = [
 ];
 const allNodes = [...explicitNodes, ...dependencyNodes].sort((left, right) => left.id.localeCompare(right.id));
 const allIds = new Set(allNodes.map((node) => node.id));
+const emittedSemanticNodeIds = unique(census.components.flatMap((component) => component.fileSemanticNodeIds ?? []));
+const unknownEmittedSemanticNodeIds = emittedSemanticNodeIds.filter((id) => !allIds.has(id));
+if (unknownEmittedSemanticNodeIds.length) {
+  throw new Error(`Design source emits unregistered data-oluk-node values: ${unknownEmittedSemanticNodeIds.join(", ")}`);
+}
 for (const node of allNodes) {
   const unknownChildren = node.relationships.childIds.filter((id) => !allIds.has(id));
   if (unknownChildren.length) throw new Error(`${node.id} has unknown children: ${unknownChildren.join(", ")}`);
   const unknownParents = node.relationships.parentIds.filter((id) => !allIds.has(id));
   if (unknownParents.length) throw new Error(`${node.id} has unknown parents: ${unknownParents.join(", ")}`);
+}
+
+const explicitNodesByCoordinate = new Map();
+for (const node of explicitNodes) {
+  const coordinate = `${node.ownership.sourcePath}#${node.ownership.exportName}`;
+  explicitNodesByCoordinate.set(coordinate, [...(explicitNodesByCoordinate.get(coordinate) ?? []), node.id].sort());
+}
+const sharedExportGroupsByCoordinate = new Map(
+  (nodeSource.sharedExportGroups ?? []).map((group) => [`${group.sourcePath}#${group.exportName}`, group]),
+);
+for (const [coordinate, nodeIds] of explicitNodesByCoordinate) {
+  if (nodeIds.length < 2) continue;
+  const group = sharedExportGroupsByCoordinate.get(coordinate);
+  if (!group || !group.justification?.trim() || JSON.stringify([...group.nodeIds].sort()) !== JSON.stringify(nodeIds)) {
+    throw new Error(`Shared export lacks an exact semantic-role justification: ${coordinate} -> ${nodeIds.join(", ")}`);
+  }
+}
+for (const [coordinate, group] of sharedExportGroupsByCoordinate) {
+  if (!explicitNodesByCoordinate.has(coordinate)) throw new Error(`Shared-export group references an unknown source export: ${group.id}`);
+}
+
+const requiredPdpNodeIds = [
+  "component.product-commerce-card",
+  "component.product-media-chamber",
+  "component.pdp-atmospheric-media-field",
+  "component.purchase-panel",
+  "component.metric-rail",
+  "module.pdp-first-fold",
+];
+for (const id of requiredPdpNodeIds) {
+  if (!allIds.has(id)) throw new Error(`Current PDP semantic slice is not registered: ${id}`);
+  if (!inventory.entities.some((entity) => entity.id === id)) throw new Error(`Surface inventory is missing current PDP semantic node: ${id}`);
+  const ids = id.startsWith("module.") ? presentation.moduleIds : presentation.componentIds;
+  if (!ids.includes(id)) throw new Error(`Presentation V2 is missing current PDP semantic node: ${id}`);
 }
 
 const explicitNodesById = new Map(explicitNodes.map((node) => [node.id, node]));
@@ -257,18 +323,22 @@ const patchTargets = {
 };
 const patchTargetsDigest = contentDigest(patchTargets);
 
-const registeredExports = new Set(explicitNodes.map((node) => `${node.ownership.sourcePath}#${node.ownership.exportName}`));
 const censusReconciliation = census.components.map((component) => {
   const sourcePath = component.governingSource.startsWith("sites/")
     ? component.governingSource
     : `sites/oluk-experience-lab/${component.governingSource}`;
-  const key = `${sourcePath}#${component.sourceExport}`;
   return {
     sourcePath,
     exportName: component.sourceExport,
     family: component.family,
-    semanticNodeIds: explicitNodes.filter((node) => `${node.ownership.sourcePath}#${node.ownership.exportName}` === key).map((node) => node.id),
-    disposition: registeredExports.has(key) ? "REGISTERED_EDITABLE_NODE" : "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION",
+    semanticNodeIds: component.semanticNodeIds,
+    disposition: component.semanticDisposition,
+    reason: component.semanticDispositionReason,
+    routeTrain: component.routeTrain,
+    pageTemplates: component.pageTemplates,
+    routeModuleUsage: component.routeModuleUsage,
+    runtimeStudioAdoption: component.runtimeStudioAdoption,
+    requiresRegistrationBeforeAdoption: component.requiresRegistrationBeforeAdoption,
   };
 });
 
@@ -293,6 +363,8 @@ const nodeContract = {
     synthesizedContentNodes: dependencyNodes.filter((node) => node.kind === "content").length,
     censusExports: census.components.length,
     registeredEditableExports: censusReconciliation.filter((entry) => entry.disposition === "REGISTERED_EDITABLE_NODE").length,
+    inventoryOnlyExports: censusReconciliation.filter((entry) => entry.disposition === "INVENTORY_ONLY").length,
+    emittedSemanticNodeIds: emittedSemanticNodeIds.length,
   },
   laws: [
     "Semantic node names supplement correct HTML; they never replace accessible headings, actions, lists, definitions, landmarks, or disclosures.",
@@ -334,6 +406,9 @@ const designConnect = {
     runtimeStudioSpecimen: `/owner-tools/runtime-studio?node=${encodeURIComponent(node.id)}`,
     nativeNextSlotIds: node.relationships.allowedSlotIds,
     adoption: node.adoption,
+    bindingRole: node.kind,
+    sharedExportGroup: sharedExportGroupsByCoordinate.get(`${node.ownership.sourcePath}#${node.ownership.exportName}`)?.id ?? null,
+    sharedExportJustification: sharedExportGroupsByCoordinate.get(`${node.ownership.sourcePath}#${node.ownership.exportName}`)?.justification ?? (node.kind === "field" || node.kind === "content" ? "Synthesized dependency binding owned by its presentation adapter." : null),
   })),
 };
 

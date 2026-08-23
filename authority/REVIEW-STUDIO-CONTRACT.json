@@ -3,7 +3,23 @@
   "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
   "runtimeAuthority": "NONE",
   "decisionCount": 12,
-  "viewports": { "champion": [1440, 390], "automated": [1440, 1024, 768, 390] },
+  "viewports": { "champion": [1440, 1024, 768, 390], "automated": [1440, 1024, 768, 390] },
+  "componentProof": {
+    "path": "/review-studio/component-proof",
+    "status": "OWNER_ONLY_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
+    "decisionAuthority": "NONE",
+    "viewports": [1440, 1024, 768, 390],
+    "families": [
+      "foundations-primitives",
+      "commerce-cards",
+      "metric-rail",
+      "purchase-panel",
+      "bounded-media-chamber",
+      "pdp-first-fold",
+      "openlab",
+      "checkout"
+    ]
+  },
   "families": [
     { "id": "commerce-discovery", "label": "Commerce discovery", "routes": ["/", "/shop", "/shop/research-chemicals", "/search"], "representativeRoutes": ["/", "/shop", "/shop/research-chemicals"], "mobileStrategy": "collapse", "mobileOrder": ["navigation", "hero", "discovery", "evidence", "footer"], "desktopOrder": ["navigation", "hero", "discovery", "evidence", "footer"], "hiddenOrDisclosed": ["filter groups", "secondary navigation"], "horizontalScrollAllowed": true, "scrollDepthWarningVh": 14, "compactNavigationRequired": true },
     { "id": "pdp-growth", "label": "PDP and growth", "routes": ["/product/mk-2866", "/product/rad-140", "/product/mk-2866/continuation", "/bundle-builder"], "representativeRoutes": ["/product/mk-2866", "/product/rad-140", "/bundle-builder"], "mobileStrategy": "reorder", "mobileOrder": ["identity", "media", "purchase", "evidence", "details", "continuation"], "desktopOrder": ["identity", "media", "purchase", "details", "evidence", "continuation"], "hiddenOrDisclosed": ["secondary product detail"], "horizontalScrollAllowed": false, "scrollDepthWarningVh": 18, "compactNavigationRequired": true },

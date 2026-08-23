@@ -9,18 +9,31 @@ const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const repoRoot = path.resolve(siteRoot, "../..");
 const sourcePath = path.join(repoRoot, "authority/FEATURE-INTENT-SOURCE.json");
 const ledgerPath = path.join(repoRoot, "authority/SITE-ROUTE-LEDGER.json");
+const nativeNextRoutePath = path.join(repoRoot, "authority/imports/oluk-canonical-customer-route-registry.v1.json");
 const featureRegistryPath = path.join(repoRoot, "authority/FEATURE-INTENT-REGISTRY.json");
 const candidateRegistryPath = path.join(repoRoot, "authority/CANDIDATE-STANDALONE-ROUTE-REGISTRY.json");
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 const stableOutput = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const unique = (values) => [...new Set(values)];
 
-const [sourceRaw, ledgerRaw] = await Promise.all([readFile(sourcePath, "utf8"), readFile(ledgerPath, "utf8")]);
+const [sourceRaw, ledgerRaw, nativeNextRouteRaw] = await Promise.all([
+  readFile(sourcePath, "utf8"),
+  readFile(ledgerPath, "utf8"),
+  readFile(nativeNextRoutePath, "utf8"),
+]);
 const source = JSON.parse(sourceRaw);
 const ledger = JSON.parse(ledgerRaw);
+const nativeNextRouteRegistry = JSON.parse(nativeNextRouteRaw);
 
 if (!Array.isArray(ledger.routes) || ledger.routes.length !== 73) {
-  throw new Error("The canonical route ledger must remain exactly 73 routes");
+  throw new Error("The historical Sites route ledger must remain exactly 73 provenance rows");
+}
+if (
+  nativeNextRouteRegistry.contract !== "OLUK_CANONICAL_CUSTOMER_ROUTE_REGISTRY_V1" ||
+  nativeNextRouteRegistry.canonicalRouteCount !== 74 ||
+  nativeNextRouteRegistry.routes?.length !== 74
+) {
+  throw new Error("The imported Native Next route authority must contain exactly 74 canonical routes");
 }
 
 const assertUnique = (values, label) => {
@@ -44,7 +57,15 @@ assertUnique(source.features.map(({ name }) => name.toLowerCase().replace(/[^a-z
 const sourcesById = new Map(source.sources.map((entry) => [entry.id, entry]));
 const contractsById = new Map(source.sharedContracts.map((entry) => [entry.id, entry]));
 const featureIds = new Set(source.features.map(({ id }) => id));
-const canonicalPaths = new Set(ledger.routes.map(({ path: routePath }) => routePath));
+const historicalSitesPaths = new Set(ledger.routes.map(({ path: routePath }) => routePath));
+const nativeNextCanonicalPaths = new Set(nativeNextRouteRegistry.routes.map(({ path: routePath }) => routePath));
+const admittedDelta = [...nativeNextCanonicalPaths].filter((routePath) => !historicalSitesPaths.has(routePath)).sort();
+const removedHistoricalPaths = [...historicalSitesPaths].filter((routePath) => !nativeNextCanonicalPaths.has(routePath)).sort();
+if (admittedDelta.length !== 1 || admittedDelta[0] !== "/bundle-builder" || removedHistoricalPaths.length !== 0) {
+  throw new Error(
+    `Route-count law drift: expected historical Sites 73 + /bundle-builder = Native Next 74; admitted=${admittedDelta.join(",") || "none"}; removed=${removedHistoricalPaths.join(",") || "none"}`,
+  );
+}
 const dispositions = new Set(["REBUILD", "INTENT_ONLY", "BLOCKED", "SUPERSEDED"]);
 const candidateStates = new Set(["STANDALONE_READY", "CONTENT_INCOMPLETE", "DESIGN_INCOMPLETE"]);
 
@@ -118,18 +139,31 @@ const registryBase = {
     path: "authority/FEATURE-INTENT-SOURCE.json",
     sha256: sha256(sourceRaw),
   },
-  canonicalRouteLedger: {
+  historicalSitesRouteLedger: {
     path: "authority/SITE-ROUTE-LEDGER.json",
     sha256: sha256(ledgerRaw),
     routeCount: ledger.routes.length,
     mutation: "NONE",
+    authority: "HISTORICAL_PRESENTATION_PROVENANCE_ONLY",
+  },
+  nativeNextRouteAuthority: {
+    path: "authority/imports/oluk-canonical-customer-route-registry.v1.json",
+    sha256: sha256(nativeNextRouteRaw),
+    routeCount: nativeNextRouteRegistry.routes.length,
+    authority: "CANONICAL_CUSTOMER_ROUTE_ADMISSION",
+  },
+  routeCountLaw: {
+    historicalSitesRouteDefinitions: ledger.routes.length,
+    admittedDelta,
+    canonicalNativeNextRouteDefinitions: nativeNextRouteRegistry.routes.length,
+    equation: "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions",
   },
   laws: {
     figmaDisposition: "feature and relationship inventory only; never component or copy authority",
     generatedCodeDisposition: "discard",
     duplicateConceptPolicy: "one shared contract and one feature identity per customer job",
     runtimeBoundary: "presentation intent only; live authority remains separately gated",
-    routeBoundary: "candidate standalone paths do not enter the canonical 73-route ledger without owner selection",
+    routeBoundary: "The 73-row Sites ledger is historical provenance; Native Next owns 74 canonical route definitions, with /bundle-builder as the explicit admitted delta.",
   },
   sharedContracts: source.sharedContracts.map((contract) => ({
     ...contract,
@@ -141,10 +175,10 @@ const registryBase = {
 const featureContentHash = sha256(stableOutput(registryBase));
 const featureRegistry = { ...registryBase, contentHash: featureContentHash };
 
-const compiledCandidateRoutes = source.candidateStandaloneRoutes.map((candidate) => {
+const compileCandidate = (candidate, canonicalRouteMembership) => {
   requireText(candidate.path, "candidate route path");
   if (!candidate.path.startsWith("/")) throw new Error(`candidate path ${candidate.path} must be absolute`);
-  if (canonicalPaths.has(candidate.path)) throw new Error(`candidate path ${candidate.path} already exists in the canonical 73-route ledger`);
+  if (historicalSitesPaths.has(candidate.path)) throw new Error(`candidate path ${candidate.path} already exists in the historical 73-row Sites ledger`);
   if (!candidateStates.has(candidate.status)) throw new Error(`candidate path ${candidate.path} has an unsupported status`);
   requireTextArray(candidate.featureIds, `candidate ${candidate.path}.featureIds`);
   candidate.featureIds.forEach((featureId) => {
@@ -155,35 +189,60 @@ const compiledCandidateRoutes = source.candidateStandaloneRoutes.map((candidate)
   return {
     path: candidate.path,
     state: candidate.status,
-    canonicalLedgerMembership: false,
-    promotionRequirement: "complete Sites and native Figma options plus explicit owner selection",
+    canonicalRouteMembership,
+    routeAuthority: canonicalRouteMembership ? "NATIVE_NEXT_CANONICAL_ROUTE" : "UNADMITTED_ROUTE_CANDIDATE",
+    promotionRequirement: canonicalRouteMembership
+      ? "route is admitted; presentation remains gated by its explicit lifecycle state"
+      : "complete Sites and Native Next candidates plus explicit route-authority admission",
     featureIds: candidate.featureIds,
     customerJob: candidate.customerJob,
     commercialJob: candidate.commercialJob,
     standaloneValue: candidate.standaloneValue,
     crossMountValue: candidate.crossMountValue,
     navigationCandidates: candidate.navigationCandidates,
-    publicNavigationState: "NOT_PROMOTED",
+    publicNavigationState: canonicalRouteMembership ? "ROUTE_ADMITTED_PRESENTATION_NOT_PROMOTED" : "NOT_PROMOTED",
   };
-}).sort((a, b) => a.path.localeCompare(b.path));
+};
+const promotedCanonicalRoutes = source.candidateStandaloneRoutes
+  .filter((candidate) => nativeNextCanonicalPaths.has(candidate.path))
+  .map((candidate) => compileCandidate(candidate, true))
+  .sort((a, b) => a.path.localeCompare(b.path));
+const compiledCandidateRoutes = source.candidateStandaloneRoutes
+  .filter((candidate) => !nativeNextCanonicalPaths.has(candidate.path))
+  .map((candidate) => compileCandidate(candidate, false))
+  .sort((a, b) => a.path.localeCompare(b.path));
 
 const candidateBase = {
   schemaVersion: "oluk.candidate-standalone-route-registry.v1",
   registryId: "OLUK-CANDIDATE-STANDALONE-ROUTES-001",
-  status: "CANDIDATES_SEPARATE_FROM_CANONICAL_73_ROUTE_LEDGER",
+  status: "CANDIDATES_SEPARATE_FROM_NATIVE_NEXT_CANONICAL_74_ROUTE_AUTHORITY",
   featureRegistry: {
     path: "authority/FEATURE-INTENT-REGISTRY.json",
     contentHash: featureContentHash,
   },
-  canonicalRouteLedger: {
+  historicalSitesRouteLedger: {
     path: "authority/SITE-ROUTE-LEDGER.json",
     sha256: sha256(ledgerRaw),
     routeCount: ledger.routes.length,
     mutation: "NONE",
+    authority: "HISTORICAL_PRESENTATION_PROVENANCE_ONLY",
+  },
+  nativeNextRouteAuthority: {
+    path: "authority/imports/oluk-canonical-customer-route-registry.v1.json",
+    sha256: sha256(nativeNextRouteRaw),
+    routeCount: nativeNextRouteRegistry.routes.length,
+    authority: "CANONICAL_CUSTOMER_ROUTE_ADMISSION",
+  },
+  routeCountLaw: {
+    historicalSitesRouteDefinitions: ledger.routes.length,
+    admittedDelta,
+    canonicalNativeNextRouteDefinitions: nativeNextRouteRegistry.routes.length,
+    equation: "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions",
   },
   allowedStates: [...candidateStates].sort(),
   candidateCount: compiledCandidateRoutes.length,
   routes: compiledCandidateRoutes,
+  promotedCanonicalRoutes,
 };
 const candidateRegistry = { ...candidateBase, contentHash: sha256(stableOutput(candidateBase)) };
 
@@ -195,8 +254,8 @@ if (process.argv.includes("--check")) {
   for (const [outputPath, output, label] of outputs) {
     if (await readFile(outputPath, "utf8") !== output) throw new Error(`${label} is stale; run npm run feature-intent:generate`);
   }
-  process.stdout.write(`PASS feature intent ${featureRegistry.contentHash} · ${compiledFeatures.length} features · ${compiledCandidateRoutes.length} candidate routes · canonical ledger ${ledger.routes.length}\n`);
+  process.stdout.write(`PASS feature intent ${featureRegistry.contentHash} · ${compiledFeatures.length} features · ${compiledCandidateRoutes.length} unadmitted candidates · ${promotedCanonicalRoutes.length} promoted candidate · canonical Native Next routes ${nativeNextRouteRegistry.routes.length}\n`);
 } else {
   for (const [outputPath, output] of outputs) await writeFile(outputPath, output);
-  process.stdout.write(`WROTE feature intent ${featureRegistry.contentHash} · ${compiledFeatures.length} features · ${compiledCandidateRoutes.length} candidate routes · canonical ledger ${ledger.routes.length}\n`);
+  process.stdout.write(`WROTE feature intent ${featureRegistry.contentHash} · ${compiledFeatures.length} features · ${compiledCandidateRoutes.length} unadmitted candidates · ${promotedCanonicalRoutes.length} promoted candidate · canonical Native Next routes ${nativeNextRouteRegistry.routes.length}\n`);
 }

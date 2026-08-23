@@ -84,11 +84,12 @@ test("PDP stress products preserve exact fact, media and evidence boundaries", a
   assert.match(purchasePanel, /product\.servings\.trim\(\) \|\| "Servings not supplied"/);
 });
 
-test("owner review exposes live 1440 and 390 previews without a selection control", async () => {
+test("owner review exposes live 1440, 1024, 768 and 390 previews without a selection control", async () => {
   const review = await readFile(new URL("review-studio/pdp-candidates/pdp-candidate-review.tsx", app), "utf8");
   const route = await readFile(new URL("review-studio/pdp-candidates/[candidate]/[slug]/page.tsx", app), "utf8");
 
-  assert.match(review, /useState<1440 \| 390>\(1440\)/);
+  assert.match(review, /const REVIEW_VIEWPORTS = \[1440, 1024, 768, 390\] as const/);
+  assert.match(review, /type ReviewViewport = \(typeof REVIEW_VIEWPORTS\)\[number\]/);
   assert.match(review, /Nothing on this page selects, ranks, publishes or promotes an option/);
   assert.match(review, /Pending complete candidate review/);
   assert.doesNotMatch(review, /Approve candidate|Select candidate|OWNER_SELECTED/);

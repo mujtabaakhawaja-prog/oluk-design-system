@@ -9,6 +9,8 @@ const bridge = readFileSync(new URL("../app/workbench/design-inspect-bridge.tsx"
 const types = readFileSync(new URL("../app/workbench/workbench-types.ts", import.meta.url), "utf8");
 const messageContract = JSON.parse(readFileSync(new URL("../../../authority/generated/OLUK-WORKBENCH-MESSAGE-V1.json", import.meta.url), "utf8"));
 const nodeContract = JSON.parse(readFileSync(new URL("../../../authority/generated/OLUK-DESIGN-NODE-CONTRACT-V1.json", import.meta.url), "utf8"));
+const designConnect = JSON.parse(readFileSync(new URL("../../../authority/generated/OLUK-DESIGN-CONNECT-V1.json", import.meta.url), "utf8"));
+const census = JSON.parse(readFileSync(new URL("../../../authority/generated/OLUK-COMPONENT-CENSUS-V1.json", import.meta.url), "utf8"));
 
 test("Visual Workbench is an explicitly enabled loopback-only owner route", () => {
   assert.match(viteConfig, /process\.env\.OLUK_VISUAL_WORKBENCH === "1"/);
@@ -29,6 +31,28 @@ test("Workbench consumes the generated producer contracts without redefining the
   assert.match(page, /OLUK-VISUAL-WORKBENCH-DIGESTS-V1\.json/);
   assert.match(types, /OLUK_DESIGN_NODE_CONTRACT_V1/);
   assert.equal(nodeContract.contract, "OLUK_DESIGN_NODE_CONTRACT_V1");
+});
+
+test("semantic graph reconciles emitted nodes, shared exports, and inventory-only census rows", () => {
+  const nodeIds = new Set(nodeContract.nodes.map((node) => node.id));
+  const emitted = new Set(census.components.flatMap((component) => component.fileSemanticNodeIds));
+  for (const id of emitted) assert.equal(nodeIds.has(id), true, `unregistered emitted node ${id}`);
+
+  for (const component of census.components) {
+    assert.notEqual(component.pageTemplates.includes("shared"), true, component.name);
+    assert.notEqual(component.runtimeStudioAdoption, "not_assessed", component.name);
+    assert.ok(component.routeModuleUsage.length > 0, component.name);
+    assert.ok(component.semanticDispositionReason, component.name);
+    if (component.semanticDisposition === "INVENTORY_ONLY") {
+      assert.equal(component.requiresRegistrationBeforeAdoption, true, component.name);
+      assert.match(component.routeModuleUsage[0], /^route-train\./);
+    }
+  }
+
+  assert.equal(new Set(designConnect.mappings.map((mapping) => mapping.nodeId)).size, designConnect.mappings.length);
+  const shared = designConnect.mappings.filter((mapping) => mapping.sharedExportGroup);
+  assert.ok(shared.length > 0);
+  assert.ok(shared.every((mapping) => mapping.sharedExportJustification));
 });
 
 test("Workbench bridge uses the exact message vocabulary and strict origin targets", () => {

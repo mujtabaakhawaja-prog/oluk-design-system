@@ -2644,7 +2644,7 @@
       "value": "var(--oluk-text-muted)"
     }
   ],
-  "sourceHash": "ea1ddfb9906a1e57c296671269dd8b27b09ae4ea54f333eb389cfca872703d41",
+  "sourceHash": "b47bc1545b4de15c11383683da5a543158b6615f0a4e9ddfacb0d6ad966b9c24",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2757,5 +2757,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "891d657ba9ae2ad928d92275aadfdef3d929b6bf3816e2f914d0f7306a05132b"
+  "auditHash": "969ffb1dee85d8bdb16d714596a6a1635d471de0fff90e4aa975203b59b96c00"
 }

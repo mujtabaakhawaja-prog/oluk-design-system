@@ -22,12 +22,14 @@
     "legacyEmbeddedSourceIsProvenanceOnly": true
   },
   "counts": {
-    "nodes": 48,
-    "explicitNodes": 27,
+    "nodes": 51,
+    "explicitNodes": 30,
     "synthesizedFieldNodes": 15,
     "synthesizedContentNodes": 6,
-    "censusExports": 114,
-    "registeredEditableExports": 14
+    "censusExports": 115,
+    "registeredEditableExports": 18,
+    "inventoryOnlyExports": 97,
+    "emittedSemanticNodeIds": 30
   },
   "laws": [
     "Semantic node names supplement correct HTML; they never replace accessible headings, actions, lists, definitions, landmarks, or disclosures.",
@@ -660,6 +662,84 @@
       }
     },
     {
+      "id": "component.product-commerce-card",
+      "name": "ProductCommerceCard / Canonical Decision Card",
+      "kind": "component",
+      "renderAs": "article",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
+      },
+      "relationships": {
+        "parentIds": [],
+        "childIds": [
+          "component.metric-rail",
+          "component.price-block",
+          "component.product-identity",
+          "component.product-media-chamber",
+          "component.purchase-actions",
+          "component.quantity-stepper",
+          "component.status-stack"
+        ],
+        "allowedSlotIds": [],
+        "allowedRouteIds": [
+          "route.home",
+          "route.product",
+          "route.shop"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "compact",
+        "vertical",
+        "featured",
+        "relation"
+      ],
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "added",
+        "out-of-stock",
+        "unavailable",
+        "disabled",
+        "long-copy",
+        "mobile"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.commerce.price",
+        "field.commerce.stock-state",
+        "field.evidence.state",
+        "field.metric.purity",
+        "field.metric.servings",
+        "field.metric.strength",
+        "field.product.alias",
+        "field.product.name",
+        "field.product.series-name",
+        "field.purchase.selected-quantity"
+      ],
+      "contentIds": [
+        "content.commerce-state",
+        "content.evidence",
+        "content.product-identity"
+      ],
+      "mediaRoleIds": [
+        "media-role.bottle"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
       "id": "component.product-identity",
       "name": "ProductIdentity / Purchase Heading",
       "kind": "component",
@@ -703,6 +783,80 @@
       ],
       "contentIds": [],
       "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.product-media-chamber",
+      "name": "ProductMediaChamber / Bounded Non-PDP Media",
+      "kind": "component",
+      "renderAs": "div",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+        "exportName": "ProductMediaChamber"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.product-commerce-card"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [],
+        "allowedRouteIds": [
+          "route.home",
+          "route.open-lab",
+          "route.product",
+          "route.shop"
+        ]
+      },
+      "controls": [
+        {
+          "id": "context",
+          "type": "enum",
+          "values": [
+            "card",
+            "compact",
+            "featured",
+            "relation",
+            "hero",
+            "dossier"
+          ],
+          "defaultValue": "card",
+          "sourceProp": "context",
+          "patchable": false
+        }
+      ],
+      "variants": [
+        "card",
+        "compact",
+        "featured",
+        "relation",
+        "hero",
+        "dossier"
+      ],
+      "states": [
+        "default",
+        "missing-media",
+        "mobile",
+        "reduced-motion"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.media.contract-identity",
+        "field.product.name"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [
+        "media-role.bottle"
+      ],
       "adoption": {
         "sites": "implemented",
         "next": "binding_required",
@@ -767,7 +921,7 @@
       "ownership": {
         "repository": "design",
         "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "exportName": "PurchaseConfiguration"
       },
       "relationships": {
         "parentIds": [
@@ -1034,11 +1188,12 @@
       "kind": "content",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.purchase-panel",
           "module.pdp-first-fold",
           "state.pdp-missing-media"
@@ -1048,7 +1203,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1061,6 +1218,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "loading",
         "long-copy",
         "mobile",
@@ -1092,11 +1250,12 @@
       "kind": "content",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.purchase-panel",
           "module.pdp-first-fold",
           "status.evidence"
@@ -1106,7 +1265,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1119,6 +1280,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "loading",
         "long-copy",
         "mobile",
@@ -1299,11 +1461,12 @@
       "kind": "content",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.purchase-panel",
           "module.pdp-first-fold"
         ],
@@ -1312,7 +1475,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1325,6 +1490,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "loading",
         "long-copy",
         "mobile",
@@ -1411,12 +1577,13 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
           "component.price-block",
+          "component.product-commerce-card",
           "component.purchase-panel",
           "module.pdp-first-fold"
         ],
@@ -1425,7 +1592,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1438,6 +1607,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "loading",
         "long-copy",
         "mobile",
@@ -1469,11 +1639,12 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.purchase-panel",
           "module.pdp-first-fold",
           "status.stock"
@@ -1483,7 +1654,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1496,6 +1669,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "in-stock",
         "loading",
         "long-copy",
@@ -1528,12 +1702,13 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
           "action.openlab.record",
+          "component.product-commerce-card",
           "component.purchase-panel",
           "module.pdp-first-fold",
           "status.evidence"
@@ -1543,7 +1718,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1556,6 +1733,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "loading",
         "long-copy",
         "mobile",
@@ -1589,11 +1767,12 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
-        "exportName": "PdpAtmosphericMediaField"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+        "exportName": "ProductMediaChamber"
       },
       "relationships": {
         "parentIds": [
+          "component.product-media-chamber",
           "media.pdp-product-render"
         ],
         "childIds": [],
@@ -1601,7 +1780,10 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.open-lab",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1609,7 +1791,10 @@
         "default"
       ],
       "states": [
-        "default"
+        "default",
+        "missing-media",
+        "mobile",
+        "reduced-motion"
       ],
       "responsiveModes": [
         "1440",
@@ -1641,6 +1826,7 @@
         "parentIds": [
           "component.metric-cell.purity",
           "component.metric-rail",
+          "component.product-commerce-card",
           "component.purchase-panel"
         ],
         "childIds": [],
@@ -1648,7 +1834,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1660,6 +1848,7 @@
         "default",
         "disabled",
         "focus-visible",
+        "hover",
         "long-copy",
         "mobile",
         "out-of-stock",
@@ -1696,6 +1885,7 @@
         "parentIds": [
           "component.metric-cell.servings",
           "component.metric-rail",
+          "component.product-commerce-card",
           "component.purchase-panel"
         ],
         "childIds": [],
@@ -1703,7 +1893,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1715,6 +1907,7 @@
         "default",
         "disabled",
         "focus-visible",
+        "hover",
         "long-copy",
         "mobile",
         "out-of-stock",
@@ -1751,6 +1944,7 @@
         "parentIds": [
           "component.metric-cell.strength",
           "component.metric-rail",
+          "component.product-commerce-card",
           "component.purchase-panel"
         ],
         "childIds": [],
@@ -1758,7 +1952,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1770,6 +1966,7 @@
         "default",
         "disabled",
         "focus-visible",
+        "hover",
         "long-copy",
         "mobile",
         "out-of-stock",
@@ -1854,11 +2051,12 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.product-identity",
           "component.purchase-panel"
         ],
@@ -1867,7 +2065,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1879,7 +2079,9 @@
         "default",
         "disabled",
         "focus-visible",
+        "hover",
         "long-copy",
+        "mobile",
         "out-of-stock",
         "quantity-changed",
         "unavailable"
@@ -1907,13 +2109,15 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
-        "exportName": "PdpAtmosphericMediaField"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
           "component.pdp-atmospheric-media-field",
+          "component.product-commerce-card",
           "component.product-identity",
+          "component.product-media-chamber",
           "component.purchase-panel",
           "module.pdp-first-fold",
           "state.pdp-missing-media"
@@ -1923,7 +2127,10 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.open-lab",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1936,6 +2143,7 @@
         "disabled",
         "error",
         "focus-visible",
+        "hover",
         "loading",
         "long-copy",
         "missing-media",
@@ -1968,11 +2176,12 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.product-identity",
           "component.purchase-panel"
         ],
@@ -1981,7 +2190,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -1993,7 +2204,9 @@
         "default",
         "disabled",
         "focus-visible",
+        "hover",
         "long-copy",
+        "mobile",
         "out-of-stock",
         "quantity-changed",
         "unavailable"
@@ -2076,11 +2289,12 @@
       "kind": "field",
       "ownership": {
         "repository": "design",
-        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-        "exportName": "PurchasePanel"
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+        "exportName": "ProductCommerceCard"
       },
       "relationships": {
         "parentIds": [
+          "component.product-commerce-card",
           "component.purchase-panel",
           "component.quantity-stepper"
         ],
@@ -2089,7 +2303,9 @@
           "slot.product-detail.pdp.first-fold"
         ],
         "allowedRouteIds": [
-          "route.product"
+          "route.home",
+          "route.product",
+          "route.shop"
         ]
       },
       "controls": [],
@@ -2101,7 +2317,9 @@
         "default",
         "disabled",
         "focus-visible",
+        "hover",
         "long-copy",
+        "mobile",
         "out-of-stock",
         "quantity-changed",
         "unavailable"
@@ -2286,6 +2504,81 @@
         "media-role.label-panel",
         "media-role.label-wrap"
       ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "primitive.action-control",
+      "name": "ActionControl / Typed Link or Button",
+      "kind": "primitive",
+      "renderAs": "a-or-button",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
+        "exportName": "ActionControl"
+      },
+      "relationships": {
+        "parentIds": [],
+        "childIds": [],
+        "allowedSlotIds": [],
+        "allowedRouteIds": [
+          "route.checkout-delivery",
+          "route.checkout-information",
+          "route.checkout-review",
+          "route.home",
+          "route.open-lab",
+          "route.product",
+          "route.shop"
+        ]
+      },
+      "controls": [
+        {
+          "id": "variant",
+          "type": "enum",
+          "values": [
+            "primary",
+            "secondary",
+            "quiet"
+          ],
+          "defaultValue": "primary",
+          "sourceProp": "variant",
+          "patchable": false
+        },
+        {
+          "id": "size",
+          "type": "enum",
+          "values": [
+            "default",
+            "compact"
+          ],
+          "defaultValue": "default",
+          "sourceProp": "size",
+          "patchable": false
+        }
+      ],
+      "variants": [
+        "primary",
+        "secondary",
+        "quiet"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "pending",
+        "disabled"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [],
+      "mediaRoleIds": [],
       "adoption": {
         "sites": "implemented",
         "next": "binding_required",
@@ -2627,98 +2920,250 @@
       "exportName": "AboutExperience",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "AccountHub",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
       "exportName": "ActionButton",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
       "exportName": "ActionControl",
       "family": "foundation",
-      "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "semanticNodeIds": [
+        "primitive.action-control"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "bag_checkout",
+        "catalogue_search_collections",
+        "homepage",
+        "openlab_portal",
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.checkout-delivery",
+        "route.checkout-information",
+        "route.checkout-review",
+        "route.home",
+        "route.open-lab",
+        "route.product",
+        "route.shop"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
       "exportName": "ActionLink",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "AnalyteTable",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "Arrow",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/assurance-rail.tsx",
       "exportName": "AssuranceRail",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "Breadcrumbs",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-review.tsx",
       "exportName": "CandidateReviewIndex",
       "family": "owner_tooling",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "pageTemplates": [
+        "inventory-only:owner-tooling"
+      ],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "CheckoutLifecycle",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "CheckoutStepIndicator",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "Chevron",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-frontier.tsx",
       "exportName": "CoaViewer",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
@@ -2727,7 +3172,17 @@
       "semanticNodeIds": [
         "component.cobalt-density-boundary"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "owner-only"
+      ],
+      "routeModuleUsage": [
+        "owner-tooling.system-atlas"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/cobalt-divider.tsx",
@@ -2736,56 +3191,136 @@
       "semanticNodeIds": [
         "component.cobalt-divider"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "owner-only"
+      ],
+      "routeModuleUsage": [
+        "owner-tooling.system-atlas"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/contextual-navigation.tsx",
       "exportName": "ContextualNavigation",
       "family": "shell",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shell-homepage route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shell-homepage",
+      "pageTemplates": [
+        "inventory-only:shell-homepage"
+      ],
+      "routeModuleUsage": [
+        "route-train.shell-homepage"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/payment-trust.tsx",
       "exportName": "CurrencyEqualityLock",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "CustodyTimeline",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
       "exportName": "DecisionSurface",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
       "exportName": "EditorialSurface",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
       "exportName": "EvidenceOsExperience",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "EvidenceRecordExplainer",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
@@ -2794,81 +3329,193 @@
       "semanticNodeIds": [
         "status.evidence"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "EvidenceStatusChip",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
       "exportName": "FixtureStatusStack",
       "family": "commerce",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "inventory-only:pdp-commerce"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "FrontierShell",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "GrowthModules",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
       "exportName": "HeroDecisionSurface",
       "family": "commerce",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "inventory-only:pdp-commerce"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
       "exportName": "InventoryStatus",
       "family": "commerce",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "inventory-only:pdp-commerce"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
       "exportName": "LegalDocumentSurface",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/payment-trust.tsx",
       "exportName": "LifecycleAmountRecord",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/locked-home-hero.tsx",
       "exportName": "LockedHomeHero",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
       "exportName": "MetricCell",
       "family": "commerce",
       "semanticNodeIds": [
-        "component.metric-cell.strength",
+        "component.metric-cell.purity",
         "component.metric-cell.servings",
-        "component.metric-cell.purity"
+        "component.metric-cell.strength"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
@@ -2877,189 +3524,460 @@
       "semanticNodeIds": [
         "component.metric-rail"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
       "exportName": "MobileDecisionSummary",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukCanvas",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukCanvasSplit",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukCard",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukDivider",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukMediaChamber",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukPurchasePlane",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukSection",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/candidate-primitives.tsx",
       "exportName": "OlukSurface",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabComparison",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabDossierComposition",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-frontier.tsx",
       "exportName": "OpenLabFrontierPage",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-hero-light.tsx",
       "exportName": "OpenLabHeroLight",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabMethodologyPipeline",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "OpenLabNav",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabPortalHero",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-product-experience.tsx",
       "exportName": "OpenLabProductExperience",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabRecordDetail",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabRegistryArchive",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabSourceChain",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabStateLegend",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabUnavailableBoundary",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/openlab-sections.tsx",
       "exportName": "OpenLabWayfinding",
       "family": "openlab",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "pageTemplates": [
+        "inventory-only:openlab"
+      ],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/owner-review-state-harness.tsx",
       "exportName": "OwnerReviewStateHarness",
       "family": "owner_tooling",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "pageTemplates": [
+        "inventory-only:owner-tooling"
+      ],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "PageHero",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/payment-trust.tsx",
       "exportName": "PaymentTrustPrimer",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
@@ -3067,18 +3985,40 @@
       "family": "pdp",
       "semanticNodeIds": [
         "component.pdp-atmospheric-media-field",
-        "primitive.pdp-atmosphere-light",
         "media.pdp-product-render",
+        "primitive.pdp-atmosphere-light",
         "state.pdp-missing-media"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "module.pdp-first-fold",
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-candidate-suite.tsx",
       "exportName": "PdpCandidateSuite",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
@@ -3086,32 +4026,75 @@
       "family": "pdp",
       "semanticNodeIds": [
         "module.pdp-first-fold",
-        "template.product-detail.first-fold",
+        "slot.product-detail.pdp.breadcrumb",
+        "slot.product-detail.pdp.first-fold",
+        "template.product-detail.first-fold"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "module.pdp-first-fold",
+        "route.product",
         "slot.product-detail.pdp.breadcrumb",
         "slot.product-detail.pdp.first-fold"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
       "exportName": "PolicyBridge",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/post-purchase-surface.tsx",
       "exportName": "PostPurchaseSurface",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/presentation-state.tsx",
       "exportName": "PresentationState",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
@@ -3120,63 +4103,160 @@
       "semanticNodeIds": [
         "component.price-block"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "ProductCollection",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
       "exportName": "ProductCommerceCard",
       "family": "commerce",
-      "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "semanticNodeIds": [
+        "component.product-commerce-card"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "catalogue_search_collections",
+        "homepage",
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.home",
+        "route.product",
+        "route.shop"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "ProductContinuation",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-decision-hero.tsx",
       "exportName": "ProductDecisionHero",
       "family": "commerce",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "inventory-only:pdp-commerce"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
       "exportName": "ProductDetailDisclosure",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-dossier.tsx",
       "exportName": "ProductDossier",
       "family": "commerce",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "inventory-only:pdp-commerce"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
       "exportName": "ProductEvidenceSnapshot",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "ProductHero",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
@@ -3185,28 +4265,77 @@
       "semanticNodeIds": [
         "component.product-identity"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
       "exportName": "ProductMediaChamber",
       "family": "commerce",
-      "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "semanticNodeIds": [
+        "component.product-media-chamber"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "catalogue_search_collections",
+        "homepage",
+        "openlab_portal",
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.home",
+        "route.open-lab",
+        "route.product",
+        "route.shop"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-sections.tsx",
       "exportName": "ProductMediaGallery",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "ProductNarrative",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
@@ -3215,165 +4344,409 @@
       "semanticNodeIds": [
         "component.status-stack"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
+    },
+    {
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchaseConfiguration",
+      "family": "pdp",
+      "semanticNodeIds": [
+        "component.purchase-configuration"
+      ],
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
       "exportName": "PurchasePanel",
       "family": "pdp",
       "semanticNodeIds": [
-        "component.purchase-panel",
-        "component.purchase-configuration"
+        "component.purchase-panel"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "module.pdp-first-fold",
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
       "exportName": "PurchasePanelMatrix",
       "family": "pdp",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "pageTemplates": [
+        "inventory-only:pdp"
+      ],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
       "exportName": "QualitativeChip",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/qualitative-chip.tsx",
       "exportName": "QualitativeChipList",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/qualitative-icon.tsx",
       "exportName": "QualitativeIcon",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx",
       "exportName": "QuantityStepper",
       "family": "route_module",
       "semanticNodeIds": [
-        "component.quantity-stepper",
         "action.purchase.quantity-decrease",
-        "action.purchase.quantity-increase"
+        "action.purchase.quantity-increase",
+        "component.quantity-stepper"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "RecommendationCard",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/related-rail.tsx",
       "exportName": "RelatedRail",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/related-rail.tsx",
       "exportName": "RelationCard",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "ReportIdentityHeader",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "RestockCard",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/review-studio-gallery.tsx",
       "exportName": "ReviewStudioGallery",
       "family": "owner_tooling",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "pageTemplates": [
+        "inventory-only:owner-tooling"
+      ],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "RouteLink",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/customer-route-primitives.tsx",
       "exportName": "SectionHeading",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/surface-grid.tsx",
       "exportName": "SectionIntroduction",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/shop-discovery.tsx",
       "exportName": "ShopDiscovery",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/site-header.tsx",
       "exportName": "SiteHeader",
       "family": "shell",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shell-homepage route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shell-homepage",
+      "pageTemplates": [
+        "inventory-only:shell-homepage"
+      ],
+      "routeModuleUsage": [
+        "route-train.shell-homepage"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/sites-system-atlas.tsx",
       "exportName": "SitesSystemAtlas",
       "family": "owner_tooling",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "pageTemplates": [
+        "inventory-only:owner-tooling"
+      ],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "StackExplorer",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/your-stack-builder.tsx",
       "exportName": "StackOutcomeCard",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
       "exportName": "StaticPurchaseActions",
       "family": "commerce",
       "semanticNodeIds": [
-        "component.purchase-actions",
+        "action.openlab.record",
         "action.purchase.primary",
-        "action.openlab.record"
+        "component.purchase-actions"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/product-status.tsx",
@@ -3382,84 +4755,205 @@
       "semanticNodeIds": [
         "status.stock"
       ],
-      "disposition": "REGISTERED_EDITABLE_NODE"
+      "disposition": "REGISTERED_EDITABLE_NODE",
+      "reason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "runtimeStudioAdoption": "binding_required",
+      "requiresRegistrationBeforeAdoption": false
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/frontier-sections.tsx",
       "exportName": "SupportContent",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
       "exportName": "SupportSurface",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/surface-grid.tsx",
       "exportName": "SurfaceGrid",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/surface-grid.tsx",
       "exportName": "SurfaceGridZone",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
       "exportName": "TechnicalSurface",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/content-surfaces.tsx",
       "exportName": "TransactionIntroCard",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/transaction-presentation.tsx",
       "exportName": "TransactionPresentation",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "UnavailableEvidencePanel",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/program-components.tsx",
       "exportName": "UpsellContextRail",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/support-surface.tsx",
       "exportName": "WholesaleExperience",
       "family": "foundation",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "pageTemplates": [
+        "inventory-only:shared-foundation"
+      ],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     },
     {
       "sourcePath": "sites/oluk-experience-lab/app/design-system/your-stack-builder.tsx",
       "exportName": "YourStackBuilder",
       "family": "route_module",
       "semanticNodeIds": [],
-      "disposition": "INVENTORY_ONLY_REQUIRES_ROUTE_TRAIN_REGISTRATION"
+      "disposition": "INVENTORY_ONLY",
+      "reason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "pageTemplates": [
+        "inventory-only:route-family-modules"
+      ],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
+      "requiresRegistrationBeforeAdoption": true
     }
   ],
   "sourceRegisterDigest": "0a217bf595788b87390e0c1fe0211107c1bed78a86bbe521767de8f1128d35e4"

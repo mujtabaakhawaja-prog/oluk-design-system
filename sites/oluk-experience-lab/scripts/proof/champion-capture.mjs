@@ -25,6 +25,8 @@ const decisions = [
   ...decisionReceipt.families.filter(({ decision }) => decision === "approved" || decision === "deferred").map((entry) => ({ kind:"family", ...entry })),
   ...decisionReceipt.moduleGroups.filter(({ decision }) => decision === "approved" || decision === "deferred").map((entry) => ({ kind:"module", ...entry })),
 ];
+const championWidths = [1440, 1024, 768, 390];
+const viewportHeights = { 1440: 1000, 1024: 900, 768: 900, 390: 844 };
 const chrome = await launchChrome();
 const results = [];
 try {
@@ -33,10 +35,10 @@ try {
       ? decision.representativeRoutes.map((route) => ({ route, url: route }))
       : [{ route:`/review-studio?module=${decision.id}`, url:`/review-studio?module=${decision.id}` }];
     const images = [];
-    for (const target of targets) for (const width of [1440, 390]) {
+    for (const target of targets) for (const width of championWidths) {
       const { client, targetId } = await createPage(chrome.port);
       try {
-        await setViewport(client, { width, height: width === 1440 ? 1000 : 844 });
+        await setViewport(client, { width, height: viewportHeights[width] });
         await navigate(client, new URL(target.url, baseUrl).href);
         const filename = `${decision.kind}-${decision.id}--${routeSlug(target.route.split("?")[0])}--${width}.png`;
         await capturePng(client, path.join(outputDirectory, filename), { fullPage:false });
@@ -50,6 +52,6 @@ try {
     results.push({ id:decision.id, kind:decision.kind, decision:decision.decision, baselineState:decision.decision === "approved" ? "CHAMPION_APPROVED" : "DEFERRED", contactSheet:sheet, images });
   }
 } finally { await chrome.close(); }
-const consolidated = { schemaVersion:"oluk.champion-capture.v1", status:"HUMAN_REVIEW_RECORDED_UNPUBLISHED", generatedAt:new Date().toISOString(), sourceGitSha:decisionReceipt.sourceGitSha, sourceTreeHash:decisionReceipt.sourceTreeHash, designContractHash:decisionReceipt.designContractHash, decisionReceiptHash:createHash("sha256").update(await readFile(receiptPath)).digest("hex"), widths:[1440,390], results };
+const consolidated = { schemaVersion:"oluk.champion-capture.v1", status:"HUMAN_REVIEW_RECORDED_UNPUBLISHED", generatedAt:new Date().toISOString(), sourceGitSha:decisionReceipt.sourceGitSha, sourceTreeHash:decisionReceipt.sourceTreeHash, designContractHash:decisionReceipt.designContractHash, decisionReceiptHash:createHash("sha256").update(await readFile(receiptPath)).digest("hex"), widths:championWidths, results };
 await writeFile(path.join(outputDirectory,"champion-capture-receipt.json"), `${JSON.stringify(consolidated,null,2)}\n`);
 process.stdout.write(`${JSON.stringify({outputDirectory,decisionCount:results.length,imageCount:results.reduce((sum,item)=>sum+item.images.length,0)},null,2)}\n`);

@@ -91,7 +91,7 @@ test("review capture separates exhaustive QA evidence from champion contact shee
   assert.match(fourWidth, /"material-change"/);
   assert.match(fourWidth, /retainedCaptureCount/);
   assert.match(champion, /--decision-receipt/);
-  assert.match(champion, /\[1440, 390\]/);
+  assert.match(champion, /\[1440, 1024, 768, 390\]/);
   assert.match(champion, /CHAMPION_APPROVED/);
   assert.match(champion, /contactSheet/);
   assert.match(champion, /sourceTreeHash/);

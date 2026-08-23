@@ -1,29 +1,45 @@
 {
   "schemaVersion": "oluk.candidate-standalone-route-registry.v1",
   "registryId": "OLUK-CANDIDATE-STANDALONE-ROUTES-001",
-  "status": "CANDIDATES_SEPARATE_FROM_CANONICAL_73_ROUTE_LEDGER",
+  "status": "CANDIDATES_SEPARATE_FROM_NATIVE_NEXT_CANONICAL_74_ROUTE_AUTHORITY",
   "featureRegistry": {
     "path": "authority/FEATURE-INTENT-REGISTRY.json",
-    "contentHash": "d4062005fccef3ad2b22f4caeaa6521a21fcc8b2e981f997a753b837dfe3072a"
+    "contentHash": "f797407593d92dd7c53cc64a34cb512ff2d6b5aed29b229ae7522dc5724b016b"
   },
-  "canonicalRouteLedger": {
+  "historicalSitesRouteLedger": {
     "path": "authority/SITE-ROUTE-LEDGER.json",
     "sha256": "329b48a822b99de8728d1d0d28e037a8b5fcb2244c19421e8a0e12489de53ce7",
     "routeCount": 73,
-    "mutation": "NONE"
+    "mutation": "NONE",
+    "authority": "HISTORICAL_PRESENTATION_PROVENANCE_ONLY"
+  },
+  "nativeNextRouteAuthority": {
+    "path": "authority/imports/oluk-canonical-customer-route-registry.v1.json",
+    "sha256": "23dea181163af0e5f81db7580b9b59fc2762f4ea0fae1b18d144095644f33576",
+    "routeCount": 74,
+    "authority": "CANONICAL_CUSTOMER_ROUTE_ADMISSION"
+  },
+  "routeCountLaw": {
+    "historicalSitesRouteDefinitions": 73,
+    "admittedDelta": [
+      "/bundle-builder"
+    ],
+    "canonicalNativeNextRouteDefinitions": 74,
+    "equation": "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions"
   },
   "allowedStates": [
     "CONTENT_INCOMPLETE",
     "DESIGN_INCOMPLETE",
     "STANDALONE_READY"
   ],
-  "candidateCount": 19,
+  "candidateCount": 18,
   "routes": [
     {
       "path": "/accessibility",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "service-status-accessibility"
       ],
@@ -39,8 +55,9 @@
     {
       "path": "/account/research-profile",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "saved-stacks-research-profile",
         "openlab-confidence-card"
@@ -57,8 +74,9 @@
     {
       "path": "/api",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "public-api"
       ],
@@ -75,8 +93,9 @@
     {
       "path": "/ar-viewer",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "ar-viewer",
         "product-media-gallery"
@@ -91,30 +110,11 @@
       "publicNavigationState": "NOT_PROMOTED"
     },
     {
-      "path": "/bundle-builder",
-      "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
-      "featureIds": [
-        "bundle-builder",
-        "comparison-drawer"
-      ],
-      "customerJob": "Build a multi-product bundle from a goal, freeform choice or curated start.",
-      "commercialJob": "Increase product count and AOV with clear contribution and total.",
-      "standaloneValue": "A complete additive bundle decision surface.",
-      "crossMountValue": "Compact bundle and comparison entries on PDP, Shop and Bag.",
-      "navigationCandidates": [
-        "Shop mega-menu",
-        "Homepage",
-        "PDP"
-      ],
-      "publicNavigationState": "NOT_PROMOTED"
-    },
-    {
       "path": "/careers",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "careers-press-media-community"
       ],
@@ -131,8 +131,9 @@
     {
       "path": "/community",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "careers-press-media-community",
         "referrals-ambassador"
@@ -150,8 +151,9 @@
     {
       "path": "/expert-qa",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "journal-and-expert-qa",
         "product-faq"
@@ -168,8 +170,9 @@
     {
       "path": "/journal",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "journal-and-expert-qa",
         "campaign-and-collection-cards",
@@ -188,8 +191,9 @@
     {
       "path": "/loyalty",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "loyalty"
       ],
@@ -205,8 +209,9 @@
     {
       "path": "/podcast",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "careers-press-media-community"
       ],
@@ -222,8 +227,9 @@
     {
       "path": "/press",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "careers-press-media-community"
       ],
@@ -240,8 +246,9 @@
     {
       "path": "/quick-reorder",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "quick-reorder",
         "compact-guided-stack"
@@ -258,8 +265,9 @@
     {
       "path": "/recommendations",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "recommendations",
         "goal-led-discovery"
@@ -277,8 +285,9 @@
     {
       "path": "/referrals",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "referrals-ambassador"
       ],
@@ -294,8 +303,9 @@
     {
       "path": "/service-status",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "service-status-accessibility"
       ],
@@ -311,8 +321,9 @@
     {
       "path": "/subscriptions",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "subscriptions",
         "restock-lab"
@@ -329,8 +340,9 @@
     {
       "path": "/video",
       "state": "CONTENT_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "careers-press-media-community"
       ],
@@ -346,8 +358,9 @@
     {
       "path": "/wishlist",
       "state": "DESIGN_INCOMPLETE",
-      "canonicalLedgerMembership": false,
-      "promotionRequirement": "complete Sites and native Figma options plus explicit owner selection",
+      "canonicalRouteMembership": false,
+      "routeAuthority": "UNADMITTED_ROUTE_CANDIDATE",
+      "promotionRequirement": "complete Sites and Native Next candidates plus explicit route-authority admission",
       "featureIds": [
         "wishlist",
         "product-compare-tray"
@@ -362,5 +375,28 @@
       "publicNavigationState": "NOT_PROMOTED"
     }
   ],
-  "contentHash": "375a189e2a2c31c1e55814f9815fea7ef5c653feebd1224a5b81ed17c834b614"
+  "promotedCanonicalRoutes": [
+    {
+      "path": "/bundle-builder",
+      "state": "DESIGN_INCOMPLETE",
+      "canonicalRouteMembership": true,
+      "routeAuthority": "NATIVE_NEXT_CANONICAL_ROUTE",
+      "promotionRequirement": "route is admitted; presentation remains gated by its explicit lifecycle state",
+      "featureIds": [
+        "bundle-builder",
+        "comparison-drawer"
+      ],
+      "customerJob": "Build a multi-product bundle from a goal, freeform choice or curated start.",
+      "commercialJob": "Increase product count and AOV with clear contribution and total.",
+      "standaloneValue": "A complete additive bundle decision surface.",
+      "crossMountValue": "Compact bundle and comparison entries on PDP, Shop and Bag.",
+      "navigationCandidates": [
+        "Shop mega-menu",
+        "Homepage",
+        "PDP"
+      ],
+      "publicNavigationState": "ROUTE_ADMITTED_PRESENTATION_NOT_PROMOTED"
+    }
+  ],
+  "contentHash": "a3ae9251fdf35e0f54d67052a4290a6e0c5fefaed7275a7ac41b845590494613"
 }

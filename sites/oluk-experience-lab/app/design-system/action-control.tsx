@@ -101,6 +101,7 @@ export function ActionControl(props: ActionControlProps) {
         data-component="Button"
         data-control-kind="link"
         data-figma-intent-source="1337:8963"
+        data-oluk-node="primitive.action-control"
         data-state={pending ? "pending" : unavailable ? "disabled" : "default"}
         data-variant={variant}
         href={unavailable ? undefined : href}
@@ -143,6 +144,7 @@ export function ActionControl(props: ActionControlProps) {
       data-component="Button"
       data-control-kind="button"
       data-figma-intent-source="1337:8963"
+      data-oluk-node="primitive.action-control"
       data-state={pending ? "pending" : unavailable ? "disabled" : buttonProps["aria-pressed"] ? "selected" : "default"}
       data-variant={variant}
       disabled={unavailable}

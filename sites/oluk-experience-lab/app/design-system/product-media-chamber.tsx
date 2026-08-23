@@ -70,6 +70,7 @@ export function ProductMediaChamber({
       data-context={context}
       data-media-authority={media?.authority ?? "unpopulated-governed-chamber"}
       data-media-id={media?.id ?? "unpopulated"}
+      data-oluk-node="component.product-media-chamber"
       style={customProperties}
     >
       <span aria-hidden="true" className={classes(styles.halo, "oluk-product-media-chamber__halo")} />

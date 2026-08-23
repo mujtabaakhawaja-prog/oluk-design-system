@@ -2,8 +2,18 @@
   "contract": "OLUK_ROUTE_PRESENTATION_AUTHORITY_V1",
   "schemaVersion": "1.0.0",
   "status": "SITES_READY_NEXT_SYNC_REQUIRED",
-  "sourceInventoryDigest": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c",
+  "sourceInventoryDigest": "4aeda7238d2bfa91ae08aeda6189e5690d85cdf9ec16642db1d1a4ad72c95dec",
   "routeRegistryDigest": "aeb81cd914ad0bc020e62efe18b51fd92306f38ed234aaf4180b9087a4b3f514",
+  "routeCountLaw": {
+    "historicalSitesRouteDefinitions": 73,
+    "historicalSitesAuthority": "PRESENTATION_PROVENANCE_ONLY",
+    "admittedDelta": [
+      "/bundle-builder"
+    ],
+    "canonicalNativeNextRouteDefinitions": 74,
+    "canonicalAuthority": "NATIVE_NEXT_ROUTE_ADMISSION",
+    "equation": "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions"
+  },
   "routeCount": 74,
   "routes": [
     {
@@ -518,13 +528,17 @@
         "field.product.series-name",
         "field.product.name",
         "field.product.alias",
-        "field.product.strength-display",
-        "field.product.servings-display",
-        "field.evidence.purity-display",
+        "field.metric.strength",
+        "field.metric.servings",
+        "field.metric.purity",
+        "field.package.capsule-count",
+        "field.purchase.package-count",
+        "field.purchase.selected-quantity",
+        "field.purchase.total-servings",
+        "field.commerce.available-quantity",
         "field.evidence.state",
         "field.commerce.stock-state",
         "field.commerce.price",
-        "field.commerce.quantity",
         "field.commerce.purchasable",
         "field.media.contract-identity"
       ],
@@ -5350,5 +5364,5 @@
       "lifecycle": "inventory"
     }
   ],
-  "contentHash": "ed3406c9dbaa75dcf1dc62748248e4d8e63370fd22b8da3822ccd1a57f50a27a"
+  "contentHash": "fc510278b53052d822218e3ddc5ff0dd90b796e9973bfa836dbd09343e47e9e1"
 }

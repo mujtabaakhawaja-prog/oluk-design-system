@@ -2,7 +2,7 @@
   "contract": "OLUK_DESIGN_CONNECT_V1",
   "schemaVersion": "1.0.0",
   "status": "CANDIDATE_PENDING_NEXT_BINDING",
-  "nodeContractDigest": "648c2946ac044b38303a26c6d327a24ada2b161232c5d8a9a66f9df0fd6903db",
+  "nodeContractDigest": "e9171401f69d046b6d695017abf8be4379e79b855cbbe04767a106941f181787",
   "designSource": {
     "repository": "oluk-design-system",
     "baseSha": "8b79a7d04342043d3f972c5cf844c9168547d401",
@@ -31,7 +31,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": "shared-export.purchase-actions-anatomy",
+      "sharedExportJustification": "The action group and its primary and evidence actions are deliberate semantic roles in one export."
     },
     {
       "nodeId": "action.purchase.primary",
@@ -48,7 +51,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": "shared-export.purchase-actions-anatomy",
+      "sharedExportJustification": "The action group and its primary and evidence actions are deliberate semantic roles in one export."
     },
     {
       "nodeId": "action.purchase.quantity-decrease",
@@ -65,7 +71,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": "shared-export.quantity-stepper-anatomy",
+      "sharedExportJustification": "The stepper owns its two native button actions as named semantic children."
     },
     {
       "nodeId": "action.purchase.quantity-increase",
@@ -82,7 +91,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": "shared-export.quantity-stepper-anatomy",
+      "sharedExportJustification": "The stepper owns its two native button actions as named semantic children."
     },
     {
       "nodeId": "component.cobalt-density-boundary",
@@ -97,7 +109,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.cobalt-divider",
@@ -112,7 +127,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.metric-cell.purity",
@@ -129,7 +147,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.metric-cell-roles",
+      "sharedExportJustification": "One typed MetricCell export renders three explicitly named semantic metric roles."
     },
     {
       "nodeId": "component.metric-cell.servings",
@@ -146,7 +167,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.metric-cell-roles",
+      "sharedExportJustification": "One typed MetricCell export renders three explicitly named semantic metric roles."
     },
     {
       "nodeId": "component.metric-cell.strength",
@@ -163,7 +187,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.metric-cell-roles",
+      "sharedExportJustification": "One typed MetricCell export renders three explicitly named semantic metric roles."
     },
     {
       "nodeId": "component.metric-rail",
@@ -180,7 +207,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.pdp-atmospheric-media-field",
@@ -197,7 +227,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.pdp-atmospheric-anatomy",
+      "sharedExportJustification": "The PDP-only atmospheric field owns its light, product render, and missing-media state as named semantic children."
     },
     {
       "nodeId": "component.price-block",
@@ -214,7 +247,28 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
+    },
+    {
+      "nodeId": "component.product-commerce-card",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
+      "atlasSpecimen": "/system-atlas?node=component.product-commerce-card",
+      "reviewCandidate": "/review-studio?node=component.product-commerce-card",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "src/components/commerce/ProductCommerceCard.tsx#ProductCommerceCard",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.product-commerce-card",
+      "nativeNextSlotIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.product-identity",
@@ -231,7 +285,28 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
+    },
+    {
+      "nodeId": "component.product-media-chamber",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx#ProductMediaChamber",
+      "atlasSpecimen": "/system-atlas?node=component.product-media-chamber",
+      "reviewCandidate": "/review-studio?node=component.product-media-chamber",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/sites-home/design-system/product-media-chamber.tsx#ProductMediaChamber",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.product-media-chamber",
+      "nativeNextSlotIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.purchase-actions",
@@ -248,11 +323,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.purchase-actions-anatomy",
+      "sharedExportJustification": "The action group and its primary and evidence actions are deliberate semantic roles in one export."
     },
     {
       "nodeId": "component.purchase-configuration",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchaseConfiguration",
       "atlasSpecimen": "/system-atlas?node=component.purchase-configuration",
       "reviewCandidate": "/review-studio?node=component.purchase-configuration",
       "sitesPlacement": "/product/mk-2866",
@@ -265,7 +343,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.purchase-panel",
@@ -282,7 +363,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "component.quantity-stepper",
@@ -299,7 +383,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.quantity-stepper-anatomy",
+      "sharedExportJustification": "The stepper owns its two native button actions as named semantic children."
     },
     {
       "nodeId": "component.status-stack",
@@ -316,11 +403,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "content.commerce-state",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=content.commerce-state",
       "reviewCandidate": "/review-studio?node=content.commerce-state",
       "sitesPlacement": "/product/mk-2866",
@@ -333,11 +423,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "content.evidence",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=content.evidence",
       "reviewCandidate": "/review-studio?node=content.evidence",
       "sitesPlacement": "/product/mk-2866",
@@ -350,7 +443,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "content.metric-label.purity",
@@ -367,7 +463,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "content.metric-label.servings",
@@ -384,7 +483,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "content.metric-label.strength",
@@ -401,11 +503,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "content.product-identity",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=content.product-identity",
       "reviewCandidate": "/review-studio?node=content.product-identity",
       "sitesPlacement": "/product/mk-2866",
@@ -418,7 +523,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.commerce.available-quantity",
@@ -435,11 +543,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.commerce.price",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.commerce.price",
       "reviewCandidate": "/review-studio?node=field.commerce.price",
       "sitesPlacement": "/product/mk-2866",
@@ -452,11 +563,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.commerce.stock-state",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.commerce.stock-state",
       "reviewCandidate": "/review-studio?node=field.commerce.stock-state",
       "sitesPlacement": "/product/mk-2866",
@@ -469,11 +583,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.evidence.state",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.evidence.state",
       "reviewCandidate": "/review-studio?node=field.evidence.state",
       "sitesPlacement": "/product/mk-2866",
@@ -486,11 +603,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.media.contract-identity",
-      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx#ProductMediaChamber",
       "atlasSpecimen": "/system-atlas?node=field.media.contract-identity",
       "reviewCandidate": "/review-studio?node=field.media.contract-identity",
       "sitesPlacement": "/product/mk-2866",
@@ -503,7 +623,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.metric.purity",
@@ -520,7 +643,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.metric.servings",
@@ -537,7 +663,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.metric.strength",
@@ -554,7 +683,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.package.capsule-count",
@@ -571,11 +703,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.product.alias",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.product.alias",
       "reviewCandidate": "/review-studio?node=field.product.alias",
       "sitesPlacement": "/product/mk-2866",
@@ -588,11 +723,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.product.name",
-      "designSource": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx#PdpAtmosphericMediaField",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.product.name",
       "reviewCandidate": "/review-studio?node=field.product.name",
       "sitesPlacement": "/product/mk-2866",
@@ -605,11 +743,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.product.series-name",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.product.series-name",
       "reviewCandidate": "/review-studio?node=field.product.series-name",
       "sitesPlacement": "/product/mk-2866",
@@ -622,7 +763,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.purchase.package-count",
@@ -639,11 +783,14 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.purchase.selected-quantity",
-      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=field.purchase.selected-quantity",
       "reviewCandidate": "/review-studio?node=field.purchase.selected-quantity",
       "sitesPlacement": "/product/mk-2866",
@@ -656,7 +803,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "field.purchase.total-servings",
@@ -673,7 +823,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": null,
+      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
       "nodeId": "media.pdp-product-render",
@@ -690,7 +843,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": "shared-export.pdp-atmospheric-anatomy",
+      "sharedExportJustification": "The PDP-only atmospheric field owns its light, product render, and missing-media state as named semantic children."
     },
     {
       "nodeId": "module.pdp-first-fold",
@@ -707,7 +863,28 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "module",
+      "sharedExportGroup": "shared-export.pdp-composer-roles",
+      "sharedExportJustification": "One route composer export deliberately carries module, template, and slot roles; none aliases a component implementation."
+    },
+    {
+      "nodeId": "primitive.action-control",
+      "designSource": "sites/oluk-experience-lab/app/design-system/action-control.tsx#ActionControl",
+      "atlasSpecimen": "/system-atlas?node=primitive.action-control",
+      "reviewCandidate": "/review-studio?node=primitive.action-control",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=primitive.action-control",
+      "nativeNextSlotIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "primitive.pdp-atmosphere-light",
@@ -724,7 +901,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "primitive",
+      "sharedExportGroup": "shared-export.pdp-atmospheric-anatomy",
+      "sharedExportJustification": "The PDP-only atmospheric field owns its light, product render, and missing-media state as named semantic children."
     },
     {
       "nodeId": "slot.product-detail.pdp.breadcrumb",
@@ -741,7 +921,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "slot",
+      "sharedExportGroup": "shared-export.pdp-composer-roles",
+      "sharedExportJustification": "One route composer export deliberately carries module, template, and slot roles; none aliases a component implementation."
     },
     {
       "nodeId": "slot.product-detail.pdp.first-fold",
@@ -758,7 +941,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "slot",
+      "sharedExportGroup": "shared-export.pdp-composer-roles",
+      "sharedExportJustification": "One route composer export deliberately carries module, template, and slot roles; none aliases a component implementation."
     },
     {
       "nodeId": "state.pdp-missing-media",
@@ -775,7 +961,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.pdp-atmospheric-anatomy",
+      "sharedExportJustification": "The PDP-only atmospheric field owns its light, product render, and missing-media state as named semantic children."
     },
     {
       "nodeId": "status.evidence",
@@ -792,7 +981,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "status.stock",
@@ -809,7 +1001,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": null,
+      "sharedExportJustification": null
     },
     {
       "nodeId": "template.product-detail.first-fold",
@@ -826,7 +1021,10 @@
         "sites": "implemented",
         "next": "binding_required",
         "production": "not_assessed"
-      }
+      },
+      "bindingRole": "template",
+      "sharedExportGroup": "shared-export.pdp-composer-roles",
+      "sharedExportJustification": "One route composer export deliberately carries module, template, and slot roles; none aliases a component implementation."
     }
   ]
 }

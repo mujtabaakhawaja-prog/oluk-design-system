@@ -106,6 +106,56 @@
       "allowedSlotIds": []
     },
     {
+      "id": "primitive.action-control",
+      "name": "ActionControl / Typed Link or Button",
+      "kind": "primitive",
+      "renderAs": "a-or-button",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/action-control.tsx",
+      "exportName": "ActionControl",
+      "controls": [
+        {"id": "variant", "type": "enum", "values": ["primary", "secondary", "quiet"], "defaultValue": "primary", "sourceProp": "variant", "patchable": false},
+        {"id": "size", "type": "enum", "values": ["default", "compact"], "defaultValue": "default", "sourceProp": "size", "patchable": false}
+      ],
+      "states": ["default", "focus-visible", "pending", "disabled"],
+      "variants": ["primary", "secondary", "quiet"],
+      "allowedRouteIds": ["route.home", "route.shop", "route.product", "route.open-lab", "route.checkout-information", "route.checkout-delivery", "route.checkout-review"],
+      "allowedSlotIds": []
+    },
+    {
+      "id": "component.product-commerce-card",
+      "name": "ProductCommerceCard / Canonical Decision Card",
+      "kind": "component",
+      "renderAs": "article",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
+      "exportName": "ProductCommerceCard",
+      "childIds": ["component.product-media-chamber", "component.product-identity", "component.metric-rail", "component.status-stack", "component.price-block", "component.quantity-stepper", "component.purchase-actions"],
+      "states": ["default", "hover", "focus-visible", "added", "out-of-stock", "unavailable", "disabled", "long-copy", "mobile"],
+      "variants": ["compact", "vertical", "featured", "relation"],
+      "fieldIds": ["field.product.series-name", "field.product.name", "field.product.alias", "field.metric.strength", "field.metric.servings", "field.metric.purity", "field.commerce.stock-state", "field.commerce.price", "field.purchase.selected-quantity", "field.evidence.state"],
+      "contentIds": ["content.product-identity", "content.commerce-state", "content.evidence"],
+      "mediaRoleIds": ["media-role.bottle"],
+      "allowedRouteIds": ["route.home", "route.shop", "route.product"],
+      "allowedSlotIds": []
+    },
+    {
+      "id": "component.product-media-chamber",
+      "name": "ProductMediaChamber / Bounded Non-PDP Media",
+      "kind": "component",
+      "renderAs": "div",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/product-media-chamber.tsx",
+      "exportName": "ProductMediaChamber",
+      "parentIds": ["component.product-commerce-card"],
+      "controls": [
+        {"id": "context", "type": "enum", "values": ["card", "compact", "featured", "relation", "hero", "dossier"], "defaultValue": "card", "sourceProp": "context", "patchable": false}
+      ],
+      "states": ["default", "missing-media", "mobile", "reduced-motion"],
+      "variants": ["card", "compact", "featured", "relation", "hero", "dossier"],
+      "fieldIds": ["field.product.name", "field.media.contract-identity"],
+      "mediaRoleIds": ["media-role.bottle"],
+      "allowedRouteIds": ["route.home", "route.shop", "route.product", "route.open-lab"],
+      "allowedSlotIds": []
+    },
+    {
       "id": "component.pdp-atmospheric-media-field",
       "name": "PdpAtmosphericMediaField / Render Slot",
       "kind": "component",
@@ -190,7 +240,7 @@
       "kind": "component",
       "renderAs": "div",
       "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
-      "exportName": "PurchasePanel",
+      "exportName": "PurchaseConfiguration",
       "parentIds": ["component.purchase-panel"],
       "fieldIds": ["field.package.capsule-count", "field.purchase.package-count", "field.purchase.total-servings"],
       "states": ["single-bottle", "two-bottles", "unavailable"]
@@ -386,5 +436,42 @@
     {"semanticFieldId": "field.purchase.selected-quantity", "contractProjection": "Purchase_Selected_Quantity", "fixtureProjection": "1", "realAdapterFieldId": "selection.quantity"},
     {"semanticFieldId": "field.purchase.total-servings", "contractProjection": "Purchase_Total_Servings", "fixtureProjection": "90", "realAdapterFieldId": "selection.totalServings"},
     {"semanticFieldId": "field.commerce.available-quantity", "contractProjection": "Commerce_Available_Quantity", "fixtureProjection": null, "realAdapterFieldId": "commerce.availableQuantity"}
+  ],
+  "sharedExportGroups": [
+    {
+      "id": "shared-export.metric-cell-roles",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",
+      "exportName": "MetricCell",
+      "nodeIds": ["component.metric-cell.strength", "component.metric-cell.servings", "component.metric-cell.purity"],
+      "justification": "One typed MetricCell export renders three explicitly named semantic metric roles."
+    },
+    {
+      "id": "shared-export.quantity-stepper-anatomy",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/quantity-stepper.tsx",
+      "exportName": "QuantityStepper",
+      "nodeIds": ["component.quantity-stepper", "action.purchase.quantity-decrease", "action.purchase.quantity-increase"],
+      "justification": "The stepper owns its two native button actions as named semantic children."
+    },
+    {
+      "id": "shared-export.purchase-actions-anatomy",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/commerce-parts.tsx",
+      "exportName": "StaticPurchaseActions",
+      "nodeIds": ["component.purchase-actions", "action.purchase.primary", "action.openlab.record"],
+      "justification": "The action group and its primary and evidence actions are deliberate semantic roles in one export."
+    },
+    {
+      "id": "shared-export.pdp-atmospheric-anatomy",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+      "exportName": "PdpAtmosphericMediaField",
+      "nodeIds": ["component.pdp-atmospheric-media-field", "primitive.pdp-atmosphere-light", "media.pdp-product-render", "state.pdp-missing-media"],
+      "justification": "The PDP-only atmospheric field owns its light, product render, and missing-media state as named semantic children."
+    },
+    {
+      "id": "shared-export.pdp-composer-roles",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/pdp-first-fold.tsx",
+      "exportName": "PdpFirstFold",
+      "nodeIds": ["module.pdp-first-fold", "template.product-detail.first-fold", "slot.product-detail.pdp.breadcrumb", "slot.product-detail.pdp.first-fold"],
+      "justification": "One route composer export deliberately carries module, template, and slot roles; none aliases a component implementation."
+    }
   ]
 }

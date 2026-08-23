@@ -8,8 +8,9 @@ const checkOnly = process.argv.includes("--check");
 
 const routeRegistryPath = resolve(repoRoot, "authority/imports/oluk-canonical-customer-route-registry.v1.json");
 const productRegistryPath = resolve(repoRoot, "authority/imports/canonical-customer-product-registry.v2.json");
-const [routeRegistry, productRegistry] = await Promise.all(
-  [routeRegistryPath, productRegistryPath].map(async (path) => JSON.parse(await readFile(path, "utf8"))),
+const historicalSitesLedgerPath = resolve(repoRoot, "authority/SITE-ROUTE-LEDGER.json");
+const [routeRegistry, productRegistry, historicalSitesLedger] = await Promise.all(
+  [routeRegistryPath, productRegistryPath, historicalSitesLedgerPath].map(async (path) => JSON.parse(await readFile(path, "utf8"))),
 );
 
 const sha256 = (value) => createHash("sha256").update(typeof value === "string" ? value : JSON.stringify(value)).digest("hex");
@@ -77,6 +78,24 @@ if (routeRegistry.contract !== "OLUK_CANONICAL_CUSTOMER_ROUTE_REGISTRY_V1" || ro
 if (productRegistry.contract !== "OLUK_CATALOGUE_AUTHORITY_V2" || productRegistry.products.length !== 15) {
   throw new Error("The imported customer product registry must contain exactly 15 canonical products.");
 }
+if (!Array.isArray(historicalSitesLedger.routes) || historicalSitesLedger.routes.length !== 73) {
+  throw new Error("The historical Sites presentation ledger must contain exactly 73 provenance rows.");
+}
+const historicalSitesPaths = new Set(historicalSitesLedger.routes.map((route) => route.path));
+const canonicalNativeNextPaths = new Set(routeRegistry.routes.map((route) => route.path));
+const admittedRouteDelta = [...canonicalNativeNextPaths].filter((routePath) => !historicalSitesPaths.has(routePath)).sort();
+const removedHistoricalRoutes = [...historicalSitesPaths].filter((routePath) => !canonicalNativeNextPaths.has(routePath)).sort();
+if (admittedRouteDelta.length !== 1 || admittedRouteDelta[0] !== "/bundle-builder" || removedHistoricalRoutes.length !== 0) {
+  throw new Error("Route-count law drift: 73 historical Sites routes plus /bundle-builder must equal the 74-route Native Next authority.");
+}
+const routeCountLaw = {
+  historicalSitesRouteDefinitions: historicalSitesLedger.routes.length,
+  historicalSitesAuthority: "PRESENTATION_PROVENANCE_ONLY",
+  admittedDelta: admittedRouteDelta,
+  canonicalNativeNextRouteDefinitions: routeRegistry.routes.length,
+  canonicalAuthority: "NATIVE_NEXT_ROUTE_ADMISSION",
+  equation: "73 historical Sites route definitions + /bundle-builder = 74 canonical Native Next route definitions",
+};
 
 const routeSource = source(
   "olympus-plugin-initiator",
@@ -176,20 +195,25 @@ const fieldDefinitions = [
   ["field.product.series-name", "Product series shown above identity.", "product-registry"],
   ["field.product.name", "Canonical customer product name.", "product-registry"],
   ["field.product.alias", "Optional customer alias.", "product-registry"],
-  ["field.product.strength-display", "Product-specific canonical strength.", "c2-product-projection"],
-  ["field.product.servings-display", "Product-specific canonical serving count.", "c2-product-projection"],
-  ["field.evidence.purity-display", "Record-specific reported purity display.", "c2-openlab-projection"],
+  ["field.metric.strength", "Product-specific canonical strength metric.", "product-registry"],
+  ["field.metric.servings", "Product-specific canonical serving-count metric.", "product-registry"],
+  ["field.metric.purity", "Record-specific reported purity metric.", "c2-openlab-projection"],
+  ["field.package.capsule-count", "Canonical package capsule count when the product contract supplies it.", "product-registry"],
+  ["field.purchase.package-count", "Customer-selected number of product packages.", "next-purchase-selection"],
+  ["field.purchase.selected-quantity", "Customer-selected purchase quantity with bounded minimum, maximum, and step.", "next-purchase-selection"],
+  ["field.purchase.total-servings", "Presentation-derived total from authoritative servings and selected package count.", "next-presentation-adapter"],
+  ["field.commerce.available-quantity", "Provider-neutral available inventory quantity when exposed by commerce authority.", "c2-commerce-projection"],
   ["field.evidence.state", "Customer evidence state; REPORTED controls.", "c2-openlab-projection"],
   ["field.commerce.stock-state", "Provider-neutral stock state.", "c2-commerce-projection"],
   ["field.commerce.price", "Minor-unit amount and currency.", "c2-commerce-projection"],
-  ["field.commerce.quantity", "Minimum, maximum, step, and default quantity.", "c2-purchase-contract"],
   ["field.commerce.purchasable", "Provider-neutral purchase permission.", "c2-commerce-projection"],
   ["field.media.contract-identity", "Opaque Native Next media binding.", "oluk-media-registry"],
 ];
 const tokenDefinitions = [
   ["token.canvas", "Page canvas role."],
   ["token.surface", "Contained customer surface role."],
-  ["token.media-chamber", "Atmospheric product-media plane."],
+  ["token.media-chamber", "Bounded non-PDP product-media chamber."],
+  ["token.pdp-atmospheric-field", "Continuous first-fold PDP product atmosphere."],
   ["token.cobalt", "Primary OLUK action and identity role."],
   ["token.ink", "Primary readable text role."],
   ["token.border", "Contained surface separation."],
@@ -203,23 +227,24 @@ const primitives = [
   ["primitive.surface", "Contained background, border, radius, elevation, and padding."],
   ["primitive.route-grid", "Named responsive grid and slot placement."],
   ["primitive.section-slot", "Ordered route module host."],
-  ["primitive.media-chamber", "Product-safe image stage."],
+  ["primitive.media-chamber", "Bounded product-safe image stage for cards, rails, and non-PDP contexts."],
+  ["primitive.pdp-atmospheric-field", "PDP-only continuous visual field with product-specific light and breathing room."],
   ["primitive.status", "Inventory and evidence status semantics."],
   ["primitive.action", "Link and button semantics with 44px targets."],
   ["primitive.disclosure", "Keyboard-operable progressive disclosure."],
   ["primitive.type", "Semantic heading, body, meta, and data roles."],
 ];
 const componentDefinitions = [
-  ["component.product-commerce-card", "Product decision card", ["field.product.name", "field.commerce.stock-state", "field.commerce.price", "field.commerce.quantity", "field.evidence.state"]],
-  ["component.pdp-first-fold", "Product media and purchase decision composition", fieldDefinitions.map(([id]) => id)],
+  ["component.product-commerce-card", "Product decision card", ["field.product.name", "field.metric.strength", "field.metric.servings", "field.metric.purity", "field.commerce.stock-state", "field.commerce.price", "field.purchase.selected-quantity", "field.evidence.state"]],
+  ["component.pdp-atmospheric-media-field", "PDP-only continuous atmospheric render field", ["field.product.name", "field.media.contract-identity"]],
   ["component.purchase-panel", "Identity, evidence, commerce, quantity, and actions", fieldDefinitions.filter(([id]) => !id.startsWith("field.media")).map(([id]) => id)],
-  ["component.product-media-chamber", "Canonical bottle and V3 media presentation", ["field.product.name", "field.media.contract-identity"]],
-  ["component.metric-rail", "Strength, servings, and purity", ["field.product.strength-display", "field.product.servings-display", "field.evidence.purity-display"]],
-  ["component.openlab-records-rail", "Static customer record links", ["field.evidence.state", "field.evidence.purity-display"]],
+  ["component.product-media-chamber", "Bounded canonical bottle and V3 media presentation for cards, rails, and non-PDP contexts", ["field.product.name", "field.media.contract-identity"]],
+  ["component.metric-rail", "Strength, servings, and purity", ["field.metric.strength", "field.metric.servings", "field.metric.purity"]],
+  ["component.openlab-records-rail", "Static customer record links", ["field.evidence.state", "field.metric.purity"]],
   ["component.product-dossier", "Facts, media, composition, and evidence linkage", ["field.product.name", "field.media.contract-identity", "field.evidence.state"]],
-  ["component.builder", "Product selection and authoritative bag handoff", ["field.product.name", "field.commerce.price", "field.commerce.quantity"]],
+  ["component.builder", "Product selection and authoritative bag handoff", ["field.product.name", "field.commerce.price", "field.purchase.selected-quantity"]],
   ["component.navigation", "Shared header, Mega Menu, and route navigation", []],
-  ["component.lifecycle-surface", "Bag, checkout, account, and post-purchase presentation", ["field.commerce.price", "field.commerce.quantity"]],
+  ["component.lifecycle-surface", "Bag, checkout, account, and post-purchase presentation", ["field.commerce.price", "field.purchase.selected-quantity"]],
 ];
 const contentDefinitions = [
   ["content.shell", "Navigation, utility, and footer language."],
@@ -258,6 +283,25 @@ for (const [id, purpose] of contentDefinitions) entities.push(entity({ id, kind:
 for (const [id, purpose] of mediaDefinitions) entities.push(entity({ id, kind: "media_role", customerPurpose: purpose, concern: "media", sources: [sitesSource], requiredStates: ["state.default", "state.missing-media"], tests: ["surface-inventory.test.mjs"] }));
 for (const [id, purpose, owner] of interactionDefinitions) entities.push(entity({ id, kind: "interaction", customerPurpose: purpose, concern: owner, sources: [sitesSource], requiredStates: ["state.default", "state.focus-visible", "state.unavailable"], tests: ["surface-inventory.test.mjs"], contract: { semanticElement: id === "interaction.disclose" ? "button" : "link-or-button-by-action", keyboard: "native", actionOwner: owner, sameOrigin: true, mutationPosture: id === "interaction.add-to-bag" ? "authoritative-session-mutation" : "read-or-local-state" } }));
 for (const [id, purpose, fields] of componentDefinitions) entities.push(entity({ id, kind: "component", customerPurpose: purpose, concern: "component-library", sources: [sitesSource], relation: relationships(["primitive.surface", "primitive.route-grid"]), fieldIds: fields, contentIds: ["content.product-identity", "content.commerce-state"], mediaRoleIds: id.includes("media") || id.includes("pdp") ? ["media.bottle", "media.label-panel", "media.label-wrap"] : [], requiredStates: stateDefinitions.map(([name]) => `state.${name}`), interactionIds: interactionDefinitions.map(([interactionId]) => interactionId), tests: ["surface-inventory.test.mjs"] }));
+entities.push(entity({
+  id: "module.pdp-first-fold",
+  kind: "module",
+  customerPurpose: "Compose the PDP atmospheric media field and independently elevated purchase panel.",
+  concern: "product-detail-first-fold",
+  sources: [sitesSource],
+  relation: relationships(
+    ["slot.product-detail.pdp.first-fold"],
+    ["component.pdp-atmospheric-media-field", "component.purchase-panel"],
+    ["route.product"],
+    ["slot.product-detail.pdp.first-fold"],
+  ),
+  fieldIds: fieldDefinitions.map(([id]) => id),
+  contentIds: ["content.product-identity", "content.commerce-state", "content.evidence"],
+  mediaRoleIds: ["media.bottle", "media.label-panel", "media.label-wrap", "media.atmosphere"],
+  requiredStates: ["state.default", "state.loading", "state.unavailable", "state.error", "state.responsive-reorder", "state.reduced-motion"],
+  interactionIds: ["interaction.quantity", "interaction.add-to-bag", "interaction.view-record"],
+  tests: ["surface-inventory.test.mjs"],
+}));
 
 const moduleForTemplate = {
   "template.homepage": "module.homepage",
@@ -323,7 +367,9 @@ const inventory = {
   sources: {
     routeRegistry: { contract: routeRegistry.contract, count: routeRegistry.routes.length, sha256: sha256(routeRegistry), coordinate: routeSource },
     productRegistry: { contract: productRegistry.contract, count: productRegistry.products.length, sha256: sha256(productRegistry), coordinate: productSource },
+    historicalSitesLedger: { count: historicalSitesLedger.routes.length, sha256: sha256(historicalSitesLedger), authority: "PRESENTATION_PROVENANCE_ONLY" },
   },
+  routeCountLaw,
   counts: {
     routeDefinitions: routeRegistry.routes.length,
     productRouteInstances: productRegistry.products.length,
@@ -340,6 +386,7 @@ const inventory = {
   },
   laws: [
     "Native Next owns the canonical 74 customer route definitions.",
+    "The 73-row Sites ledger is historical presentation provenance; /bundle-builder is the exact admitted delta that yields 74 Native Next routes.",
     "Codex Sites stages presentation and never owns customer runtime truth.",
     "Feature exposure applies only to approved optional placements.",
     "Missing producer data renders a declared conditional state.",
@@ -357,6 +404,7 @@ const routeAuthority = {
   status: "SITES_READY_NEXT_SYNC_REQUIRED",
   sourceInventoryDigest: inventory.contentHash,
   routeRegistryDigest: inventory.sources.routeRegistry.sha256,
+  routeCountLaw,
   routeCount: routeRegistry.routes.length,
   routes: routeRegistry.routes.map((route) => {
     const templateId = familyTemplate(route.family);
@@ -389,6 +437,7 @@ const presentationSystem = {
   status: "SITES_PRODUCER_FOUNDATION",
   sourceInventoryDigest: inventory.contentHash,
   routeAuthorityDigest: routeAuthority.contentHash,
+  routeCountLaw,
   tokenIds: entities.filter((item) => item.kind === "token").map((item) => item.id),
   primitiveIds: entities.filter((item) => item.kind === "primitive").map((item) => item.id),
   componentIds: entities.filter((item) => item.kind === "component").map((item) => item.id),

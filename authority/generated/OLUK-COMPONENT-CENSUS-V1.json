@@ -3,17 +3,25 @@
   "schemaVersion": "1.0.0",
   "generatedFrom": "sites/oluk-experience-lab/app/design-system/*.tsx",
   "counts": {
-    "components": 114,
+    "components": 115,
+    "registeredEditable": 18,
+    "inventoryOnly": 97,
+    "emittedSemanticNodeIds": 30,
     "byFamily": {
       "commerce": 15,
       "foundation": 19,
       "openlab": 15,
       "owner_tooling": 4,
-      "pdp": 10,
+      "pdp": 11,
       "route_module": 49,
       "shell": 2
     }
   },
+  "laws": [
+    "Registered editable exports resolve to explicit semantic roles and route or owner-only usage.",
+    "Inventory-only exports carry a named route train and exact deferral reason; they are not eligible for Runtime Studio or customer adoption.",
+    "File-level emitted node markers are evidence only and are not assigned to every export in that file."
+  ],
   "components": [
     {
       "id": "component.about-experience",
@@ -34,14 +42,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/support-surface.tsx",
       "sourceExport": "AboutExperience",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -65,14 +80,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "AccountHub",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -96,14 +118,23 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/action-control.tsx",
       "sourceExport": "ActionButton",
+      "fileSemanticNodeIds": [
+        "primitive.action-control"
+      ],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -127,14 +158,35 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "bag_checkout",
+        "catalogue_search_collections",
+        "homepage",
+        "openlab_portal",
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.checkout-delivery",
+        "route.checkout-information",
+        "route.checkout-review",
+        "route.home",
+        "route.open-lab",
+        "route.product",
+        "route.shop"
+      ],
       "governingSource": "app/design-system/action-control.tsx",
       "sourceExport": "ActionControl",
-      "semanticNodeIds": [],
+      "fileSemanticNodeIds": [
+        "primitive.action-control"
+      ],
+      "semanticNodeIds": [
+        "primitive.action-control"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -158,14 +210,23 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/action-control.tsx",
       "sourceExport": "ActionLink",
+      "fileSemanticNodeIds": [
+        "primitive.action-control"
+      ],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -189,14 +250,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "AnalyteTable",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -220,14 +288,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "Arrow",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -251,14 +326,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/assurance-rail.tsx",
       "sourceExport": "AssuranceRail",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -282,14 +364,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "Breadcrumbs",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -313,14 +402,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:owner-tooling"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
       "governingSource": "app/design-system/candidate-review.tsx",
       "sourceExport": "CandidateReviewIndex",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -344,14 +440,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "CheckoutLifecycle",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -375,14 +478,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "CheckoutStepIndicator",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -406,14 +516,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "Chevron",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -437,14 +554,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-frontier.tsx",
       "sourceExport": "CoaViewer",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -468,17 +592,26 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "owner-only"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "owner-tooling.system-atlas"
+      ],
       "governingSource": "app/design-system/cobalt-divider.tsx",
       "sourceExport": "CobaltDensityBoundary",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.cobalt-density-boundary",
         "component.cobalt-divider"
       ],
+      "semanticNodeIds": [
+        "component.cobalt-density-boundary"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -502,17 +635,26 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "owner-only"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "owner-tooling.system-atlas"
+      ],
       "governingSource": "app/design-system/cobalt-divider.tsx",
       "sourceExport": "CobaltDivider",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.cobalt-density-boundary",
         "component.cobalt-divider"
       ],
+      "semanticNodeIds": [
+        "component.cobalt-divider"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -536,14 +678,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shell-homepage"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shell-homepage"
+      ],
       "governingSource": "app/design-system/contextual-navigation.tsx",
       "sourceExport": "ContextualNavigation",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shell-homepage route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shell-homepage",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -567,14 +716,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/payment-trust.tsx",
       "sourceExport": "CurrencyEqualityLock",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -598,14 +754,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "CustodyTimeline",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -629,14 +792,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/content-surfaces.tsx",
       "sourceExport": "DecisionSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -660,14 +830,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/content-surfaces.tsx",
       "sourceExport": "EditorialSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -691,14 +868,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/support-surface.tsx",
       "sourceExport": "EvidenceOsExperience",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -722,14 +906,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "EvidenceRecordExplainer",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -753,18 +944,28 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/product-status.tsx",
       "sourceExport": "EvidenceStatus",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.status-stack",
         "status.evidence",
         "status.stock"
       ],
+      "semanticNodeIds": [
+        "status.evidence"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -788,14 +989,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "EvidenceStatusChip",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -819,12 +1027,14 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:pdp-commerce"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
       "governingSource": "app/design-system/commerce-parts.tsx",
       "sourceExport": "FixtureStatusStack",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "action.openlab.record",
         "action.purchase.primary",
         "component.price-block",
@@ -832,8 +1042,13 @@
         "component.purchase-actions",
         "field.commerce.price"
       ],
+      "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -857,14 +1072,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "FrontierShell",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -888,14 +1110,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "GrowthModules",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -919,14 +1148,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:pdp-commerce"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
       "governingSource": "app/design-system/product-decision-hero.tsx",
       "sourceExport": "HeroDecisionSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -950,18 +1186,25 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:pdp-commerce"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
       "governingSource": "app/design-system/product-status.tsx",
       "sourceExport": "InventoryStatus",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.status-stack",
         "status.evidence",
         "status.stock"
       ],
+      "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -985,14 +1228,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/support-surface.tsx",
       "sourceExport": "LegalDocumentSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1016,14 +1266,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/payment-trust.tsx",
       "sourceExport": "LifecycleAmountRecord",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1047,14 +1304,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/locked-home-hero.tsx",
       "sourceExport": "LockedHomeHero",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1078,16 +1342,28 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/metric-rail.tsx",
       "sourceExport": "MetricCell",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.metric-rail"
       ],
+      "semanticNodeIds": [
+        "component.metric-cell.purity",
+        "component.metric-cell.servings",
+        "component.metric-cell.strength"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -1111,16 +1387,26 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/metric-rail.tsx",
       "sourceExport": "MetricRail",
+      "fileSemanticNodeIds": [
+        "component.metric-rail"
+      ],
       "semanticNodeIds": [
         "component.metric-rail"
       ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -1144,14 +1430,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/pdp-sections.tsx",
       "sourceExport": "MobileDecisionSummary",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1175,14 +1468,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukCanvas",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1206,14 +1506,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukCanvasSplit",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1241,14 +1548,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukCard",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1272,14 +1586,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukDivider",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1303,14 +1624,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukMediaChamber",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1334,14 +1662,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukPurchasePlane",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1365,14 +1700,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukSection",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1396,14 +1738,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/candidate-primitives.tsx",
       "sourceExport": "OlukSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1427,15 +1776,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabComparison",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1459,15 +1814,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabDossierComposition",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1491,15 +1852,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-frontier.tsx",
       "sourceExport": "OpenLabFrontierPage",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1523,15 +1890,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-hero-light.tsx",
       "sourceExport": "OpenLabHeroLight",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1555,15 +1928,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabMethodologyPipeline",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1587,15 +1966,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "OpenLabNav",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1619,15 +2004,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabPortalHero",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1651,14 +2042,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-product-experience.tsx",
       "sourceExport": "OpenLabProductExperience",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1682,15 +2080,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabRecordDetail",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1714,15 +2118,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabRegistryArchive",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1746,15 +2156,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabSourceChain",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1778,15 +2194,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabStateLegend",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1810,15 +2232,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabUnavailableBoundary",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1842,15 +2270,21 @@
         390
       ],
       "pageTemplates": [
-        "openlab-portal",
-        "openlab-archive"
+        "inventory-only:openlab"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.openlab"
+      ],
       "governingSource": "app/design-system/openlab-sections.tsx",
       "sourceExport": "OpenLabWayfinding",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the openlab route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "openlab",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1874,14 +2308,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:owner-tooling"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
       "governingSource": "app/design-system/owner-review-state-harness.tsx",
       "sourceExport": "OwnerReviewStateHarness",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1905,14 +2346,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "PageHero",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1936,14 +2384,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/payment-trust.tsx",
       "sourceExport": "PaymentTrustPrimer",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -1967,12 +2422,16 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "module.pdp-first-fold",
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/pdp-first-fold.tsx",
       "sourceExport": "PdpAtmosphericMediaField",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.pdp-atmospheric-media-field",
         "media.pdp-product-render",
         "module.pdp-first-fold",
@@ -1981,8 +2440,18 @@
         "state.pdp-missing-media",
         "template.product-detail.first-fold"
       ],
+      "semanticNodeIds": [
+        "component.pdp-atmospheric-media-field",
+        "media.pdp-product-render",
+        "primitive.pdp-atmosphere-light",
+        "state.pdp-missing-media"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2006,14 +2475,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/pdp-candidate-suite.tsx",
       "sourceExport": "PdpCandidateSuite",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2037,12 +2513,17 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "module.pdp-first-fold",
+        "route.product",
+        "slot.product-detail.pdp.breadcrumb",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/pdp-first-fold.tsx",
       "sourceExport": "PdpFirstFold",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.pdp-atmospheric-media-field",
         "media.pdp-product-render",
         "module.pdp-first-fold",
@@ -2051,8 +2532,18 @@
         "state.pdp-missing-media",
         "template.product-detail.first-fold"
       ],
+      "semanticNodeIds": [
+        "module.pdp-first-fold",
+        "slot.product-detail.pdp.breadcrumb",
+        "slot.product-detail.pdp.first-fold",
+        "template.product-detail.first-fold"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2076,14 +2567,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/support-surface.tsx",
       "sourceExport": "PolicyBridge",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2107,14 +2605,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/post-purchase-surface.tsx",
       "sourceExport": "PostPurchaseSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2138,14 +2643,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/presentation-state.tsx",
       "sourceExport": "PresentationState",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2169,12 +2681,15 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/commerce-parts.tsx",
       "sourceExport": "PriceBlock",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "action.openlab.record",
         "action.purchase.primary",
         "component.price-block",
@@ -2182,8 +2697,15 @@
         "component.purchase-actions",
         "field.commerce.price"
       ],
+      "semanticNodeIds": [
+        "component.price-block"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2207,14 +2729,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "ProductCollection",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2242,14 +2771,29 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "catalogue_search_collections",
+        "homepage",
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.home",
+        "route.product",
+        "route.shop"
+      ],
       "governingSource": "app/design-system/product-commerce-card.tsx",
       "sourceExport": "ProductCommerceCard",
-      "semanticNodeIds": [],
+      "fileSemanticNodeIds": [
+        "component.product-commerce-card"
+      ],
+      "semanticNodeIds": [
+        "component.product-commerce-card"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2273,14 +2817,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "ProductContinuation",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2304,14 +2855,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp-commerce"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
       "governingSource": "app/design-system/product-decision-hero.tsx",
       "sourceExport": "ProductDecisionHero",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2335,14 +2893,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/pdp-sections.tsx",
       "sourceExport": "ProductDetailDisclosure",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2366,14 +2931,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp-commerce"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp-commerce"
+      ],
       "governingSource": "app/design-system/product-dossier.tsx",
       "sourceExport": "ProductDossier",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp-commerce route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2397,14 +2969,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/pdp-sections.tsx",
       "sourceExport": "ProductEvidenceSnapshot",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2428,14 +3007,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "ProductHero",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2459,12 +3045,15 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/commerce-parts.tsx",
       "sourceExport": "ProductIdentity",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "action.openlab.record",
         "action.purchase.primary",
         "component.price-block",
@@ -2472,8 +3061,15 @@
         "component.purchase-actions",
         "field.commerce.price"
       ],
+      "semanticNodeIds": [
+        "component.product-identity"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2497,14 +3093,31 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "catalogue_search_collections",
+        "homepage",
+        "openlab_portal",
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.home",
+        "route.open-lab",
+        "route.product",
+        "route.shop"
+      ],
       "governingSource": "app/design-system/product-media-chamber.tsx",
       "sourceExport": "ProductMediaChamber",
-      "semanticNodeIds": [],
+      "fileSemanticNodeIds": [
+        "component.product-media-chamber"
+      ],
+      "semanticNodeIds": [
+        "component.product-media-chamber"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2528,14 +3141,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/pdp-sections.tsx",
       "sourceExport": "ProductMediaGallery",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2559,14 +3179,21 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "ProductNarrative",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2590,18 +3217,74 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/product-status.tsx",
       "sourceExport": "ProductStatusStack",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.status-stack",
         "status.evidence",
         "status.stock"
       ],
+      "semanticNodeIds": [
+        "component.status-stack"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
+      "openGates": [
+        "human_review"
+      ]
+    },
+    {
+      "id": "component.purchase-configuration",
+      "name": "PurchaseConfiguration",
+      "family": "pdp",
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "default",
+        "focus-visible",
+        "mobile"
+      ],
+      "responsiveModes": [
+        1440,
+        1024,
+        768,
+        390
+      ],
+      "pageTemplates": [
+        "product_detail"
+      ],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "governingSource": "app/design-system/purchase-panel.tsx",
+      "sourceExport": "PurchaseConfiguration",
+      "fileSemanticNodeIds": [
+        "component.purchase-configuration",
+        "component.purchase-panel",
+        "field.purchase.package-count",
+        "field.purchase.total-servings"
+      ],
+      "semanticNodeIds": [
+        "component.purchase-configuration"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": false,
+      "stagingImplementation": "implemented",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2625,23 +3308,30 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "module.pdp-first-fold",
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/purchase-panel.tsx",
       "sourceExport": "PurchasePanel",
-      "semanticNodeIds": [
-        "component.purchase-configuration",
+      "fileSemanticNodeIds": [
         "component.purchase-configuration",
         "component.purchase-panel",
         "field.purchase.package-count",
-        "field.purchase.package-count",
-        "field.purchase.total-servings",
-        "field.purchase.total-servings",
         "field.purchase.total-servings"
       ],
+      "semanticNodeIds": [
+        "component.purchase-panel"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2665,23 +3355,26 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "inventory-only:pdp"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.pdp"
+      ],
       "governingSource": "app/design-system/purchase-panel.tsx",
       "sourceExport": "PurchasePanelMatrix",
-      "semanticNodeIds": [
-        "component.purchase-configuration",
+      "fileSemanticNodeIds": [
         "component.purchase-configuration",
         "component.purchase-panel",
         "field.purchase.package-count",
-        "field.purchase.package-count",
-        "field.purchase.total-servings",
-        "field.purchase.total-servings",
         "field.purchase.total-servings"
       ],
+      "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the pdp route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "pdp",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2705,14 +3398,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/qualitative-chip.tsx",
       "sourceExport": "QualitativeChip",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2736,14 +3436,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/qualitative-chip.tsx",
       "sourceExport": "QualitativeChipList",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2767,14 +3474,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/qualitative-icon.tsx",
       "sourceExport": "QualitativeIcon",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2798,19 +3512,31 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/quantity-stepper.tsx",
       "sourceExport": "QuantityStepper",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "action.purchase.quantity-decrease",
         "action.purchase.quantity-increase",
         "component.quantity-stepper",
         "field.purchase.selected-quantity"
       ],
+      "semanticNodeIds": [
+        "action.purchase.quantity-decrease",
+        "action.purchase.quantity-increase",
+        "component.quantity-stepper"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -2838,14 +3564,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "RecommendationCard",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2869,14 +3602,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/related-rail.tsx",
       "sourceExport": "RelatedRail",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2904,14 +3644,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/related-rail.tsx",
       "sourceExport": "RelationCard",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2935,14 +3682,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "ReportIdentityHeader",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -2970,14 +3724,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "RestockCard",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3001,14 +3762,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:owner-tooling"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
       "governingSource": "app/design-system/review-studio-gallery.tsx",
       "sourceExport": "ReviewStudioGallery",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3032,14 +3800,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "RouteLink",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3063,14 +3838,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/customer-route-primitives.tsx",
       "sourceExport": "SectionHeading",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3094,14 +3876,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/surface-grid.tsx",
       "sourceExport": "SectionIntroduction",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3125,14 +3914,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/shop-discovery.tsx",
       "sourceExport": "ShopDiscovery",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3156,14 +3952,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shell-homepage"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shell-homepage"
+      ],
       "governingSource": "app/design-system/site-header.tsx",
       "sourceExport": "SiteHeader",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shell-homepage route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shell-homepage",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3187,14 +3990,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:owner-tooling"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.owner-tooling"
+      ],
       "governingSource": "app/design-system/sites-system-atlas.tsx",
       "sourceExport": "SitesSystemAtlas",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Owner-only tooling export; register only if it becomes an editable Workbench specimen.",
+      "routeTrain": "owner-tooling",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3218,14 +4028,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "StackExplorer",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3253,14 +4070,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/your-stack-builder.tsx",
       "sourceExport": "StackOutcomeCard",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3284,12 +4108,15 @@
         390
       ],
       "pageTemplates": [
-        "product-detail"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/commerce-parts.tsx",
       "sourceExport": "StaticPurchaseActions",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "action.openlab.record",
         "action.purchase.primary",
         "component.price-block",
@@ -3297,8 +4124,17 @@
         "component.purchase-actions",
         "field.commerce.price"
       ],
+      "semanticNodeIds": [
+        "action.openlab.record",
+        "action.purchase.primary",
+        "component.purchase-actions"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -3322,18 +4158,28 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "product_detail"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route.product",
+        "slot.product-detail.pdp.first-fold"
+      ],
       "governingSource": "app/design-system/product-status.tsx",
       "sourceExport": "StockPill",
-      "semanticNodeIds": [
+      "fileSemanticNodeIds": [
         "component.status-stack",
         "status.evidence",
         "status.stock"
       ],
+      "semanticNodeIds": [
+        "status.stock"
+      ],
+      "semanticDisposition": "REGISTERED_EDITABLE_NODE",
+      "semanticDispositionReason": "Exact source export is owned by one or more explicit semantic roles in OLUK_DESIGN_NODE_SOURCE_V1.",
+      "routeTrain": "pdp-commerce",
+      "requiresRegistrationBeforeAdoption": false,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "binding_required",
       "openGates": [
         "human_review"
       ]
@@ -3357,14 +4203,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/frontier-sections.tsx",
       "sourceExport": "SupportContent",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3388,14 +4241,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/support-surface.tsx",
       "sourceExport": "SupportSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3419,14 +4279,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/surface-grid.tsx",
       "sourceExport": "SurfaceGrid",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3450,14 +4317,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/surface-grid.tsx",
       "sourceExport": "SurfaceGridZone",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3481,14 +4355,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/content-surfaces.tsx",
       "sourceExport": "TechnicalSurface",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3516,14 +4397,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/content-surfaces.tsx",
       "sourceExport": "TransactionIntroCard",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3547,14 +4435,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/transaction-presentation.tsx",
       "sourceExport": "TransactionPresentation",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3578,14 +4473,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "UnavailableEvidencePanel",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3609,14 +4511,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/program-components.tsx",
       "sourceExport": "UpsellContextRail",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3640,14 +4549,21 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:shared-foundation"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.shared-foundation"
+      ],
       "governingSource": "app/design-system/support-surface.tsx",
       "sourceExport": "WholesaleExperience",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the shared-foundation route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "shared-foundation",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
@@ -3671,18 +4587,25 @@
         390
       ],
       "pageTemplates": [
-        "shared"
+        "inventory-only:route-family-modules"
       ],
-      "routeModuleUsage": [],
+      "routeModuleUsage": [
+        "route-train.route-family-modules"
+      ],
       "governingSource": "app/design-system/your-stack-builder.tsx",
       "sourceExport": "YourStackBuilder",
+      "fileSemanticNodeIds": [],
       "semanticNodeIds": [],
+      "semanticDisposition": "INVENTORY_ONLY",
+      "semanticDispositionReason": "Deferred to the route-family-modules route train; it cannot enter Runtime Studio or customer adoption until it receives a semantic node and explicit route/slot ownership.",
+      "routeTrain": "route-family-modules",
+      "requiresRegistrationBeforeAdoption": true,
       "stagingImplementation": "implemented",
-      "runtimeStudioAdoption": "not_assessed",
+      "runtimeStudioAdoption": "inventory_only_until_route_train",
       "openGates": [
         "human_review"
       ]
     }
   ],
-  "contentHash": "af8ff202f2a178cf122681438e2fc2a79567b63be3a052ba102f1e8db1509a5e"
+  "contentHash": "1faf0eb196de2a92a69287ca58008a9fa62b59fac9b17b3616203eac819daa8b"
 }
