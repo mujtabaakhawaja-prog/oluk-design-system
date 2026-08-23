@@ -9,6 +9,8 @@ import messageContractJson from "../../../../authority/generated/OLUK-WORKBENCH-
 import { VisualWorkbenchClient } from "./visual-workbench-client";
 import type { WorkbenchContractBundle } from "./workbench-types";
 
+declare const __OLUK_VISUAL_WORKBENCH_ENABLED__: boolean;
+
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "::1", "[::1]"]);
 
 function hostnameFromHostHeader(host: string | null) {
@@ -20,9 +22,12 @@ function hostnameFromHostHeader(host: string | null) {
 export default async function VisualWorkbenchPage() {
   const requestHeaders = await headers();
   const hostname = hostnameFromHostHeader(requestHeaders.get("host"));
-  const explicitlyEnabled = process.env.OLUK_VISUAL_WORKBENCH === "1";
+  const explicitlyEnabled = __OLUK_VISUAL_WORKBENCH_ENABLED__;
 
-  if (process.env.NODE_ENV === "production" || !explicitlyEnabled || !LOOPBACK_HOSTS.has(hostname)) {
+  // Vinext may render local owner tooling with a production-like NODE_ENV.
+  // The enforceable boundary is the explicit capability plus a loopback host;
+  // public and production hosts fail closed even if the capability is present.
+  if (!explicitlyEnabled || !LOOPBACK_HOSTS.has(hostname)) {
     notFound();
   }
 

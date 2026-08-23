@@ -34,6 +34,8 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
+  const visualWorkbenchEnabled = process.env.OLUK_VISUAL_WORKBENCH === "1";
+
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= "false";
@@ -44,6 +46,9 @@ export default defineConfig(async () => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
+    define: {
+      __OLUK_VISUAL_WORKBENCH_ENABLED__: JSON.stringify(visualWorkbenchEnabled),
+    },
     server: {
       host: "0.0.0.0",
       allowedHosts: ["terminal.local"],

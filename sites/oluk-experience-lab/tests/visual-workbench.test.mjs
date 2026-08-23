@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const page = readFileSync(new URL("../app/workbench/page.tsx", import.meta.url), "utf8");
+const viteConfig = readFileSync(new URL("../vite.config.ts", import.meta.url), "utf8");
 const client = readFileSync(new URL("../app/workbench/visual-workbench-client.tsx", import.meta.url), "utf8");
 const bridge = readFileSync(new URL("../app/workbench/design-inspect-bridge.tsx", import.meta.url), "utf8");
 const types = readFileSync(new URL("../app/workbench/workbench-types.ts", import.meta.url), "utf8");
@@ -10,10 +11,12 @@ const messageContract = JSON.parse(readFileSync(new URL("../../../authority/gene
 const nodeContract = JSON.parse(readFileSync(new URL("../../../authority/generated/OLUK-DESIGN-NODE-CONTRACT-V1.json", import.meta.url), "utf8"));
 
 test("Visual Workbench is an explicitly enabled loopback-only owner route", () => {
-  assert.match(page, /process\.env\.OLUK_VISUAL_WORKBENCH === "1"/);
-  assert.match(page, /process\.env\.NODE_ENV === "production"/);
+  assert.match(viteConfig, /process\.env\.OLUK_VISUAL_WORKBENCH === "1"/);
+  assert.match(viteConfig, /__OLUK_VISUAL_WORKBENCH_ENABLED__/);
+  assert.match(page, /__OLUK_VISUAL_WORKBENCH_ENABLED__/);
   assert.match(page, /127\.0\.0\.1/);
   assert.match(page, /localhost/);
+  assert.match(page, /public and production hosts fail closed/);
   assert.match(page, /notFound\(\)/);
   assert.doesNotMatch(page, /SiteHeader|CustomerSiteChrome|SiteFooter/);
 });
