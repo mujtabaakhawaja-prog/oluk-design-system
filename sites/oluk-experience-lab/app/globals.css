@@ -799,10 +799,12 @@ a.button-secondary:hover {
 }
 
 .metric-rail > div {
+  align-items: center;
   background: var(--white);
   border: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-width: 0;
   overflow: hidden;
   padding: 12px 8px 10px;

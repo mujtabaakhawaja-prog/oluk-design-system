@@ -198,8 +198,37 @@
 }
 
 .metricStack {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--oluk-space-5);
+  justify-content: center;
+}
+
+.metricSpecimen {
   display: grid;
-  gap: var(--oluk-space-6);
+  flex: 1 1 280px;
+  gap: var(--oluk-space-2);
+  inline-size: 100%;
+  margin: 0;
+  max-inline-size: 420px;
+  min-inline-size: 0;
+}
+
+.metricSpecimen h2 {
+  color: var(--oluk-text-muted);
+  font-family: var(--oluk-font-body);
+  font-size: var(--oluk-type-eyebrow-size);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.metricSpecimen :global(.metric-rail) {
+  inline-size: 100%;
+  margin: 0;
 }
 
 .mediaGrid article {

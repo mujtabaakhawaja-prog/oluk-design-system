@@ -76,9 +76,18 @@ function MetricRailSpecimens() {
     <>
       <SpecimenHeader eyebrow="METRIC RAIL" title="Three equal cells, two-row value and label grammar." />
       <section className={styles.metricStack} aria-label="MetricRail states">
-        <MetricRail product={mk2866Fixture} />
-        <MetricRail compact product={rad140Fixture} />
-        <MetricRail values={{ strength: null, servings: null, purity: null }} />
+        <article className={styles.metricSpecimen} data-state="default">
+          <h2>Default</h2>
+          <MetricRail product={mk2866Fixture} />
+        </article>
+        <article className={styles.metricSpecimen} data-state="compact">
+          <h2>Compact</h2>
+          <MetricRail compact product={rad140Fixture} />
+        </article>
+        <article className={styles.metricSpecimen} data-state="unavailable">
+          <h2>Unavailable</h2>
+          <MetricRail values={{ strength: null, servings: null, purity: null }} />
+        </article>
       </section>
     </>
   );
