@@ -153,12 +153,25 @@ const compactCard = registry.componentMappings.find(({ id }) => id === "product-
 const verticalCard = registry.componentMappings.find(({ id }) => id === "product-commerce-card-vertical");
 const relationCard = registry.componentMappings.find(({ id }) => id === "product-commerce-card-relation");
 const purchasePanel = registry.componentMappings.find(({ id }) => id === "purchase-panel");
-check(Object.keys(compactCard?.variants ?? {}).join(",") === "state", "Compact maps only its eight-state Figma axis");
-check(compactCard?.variants.state.length === 8, "Compact maps all eight Figma states");
+check(
+  JSON.stringify(compactCard?.variants) === JSON.stringify({
+    interactionState: ["default", "hover", "focus", "selected", "added"],
+    commerceState: ["available", "unavailable", "loading", "error"],
+  }),
+  "Compact separates interaction and visual-commerce review axes",
+);
 check(JSON.stringify(verticalCard?.variants) === JSON.stringify({ width: ["desktop", "mobile"] }), "Vertical maps only its two-width Figma axis");
-check(JSON.stringify(featured?.variants) === JSON.stringify({ width: ["desktop", "mobile"] }), "Featured maps only its two-width Figma axis");
+check(
+  JSON.stringify(featured?.variants) === JSON.stringify({ posture: ["destination", "transactional"], width: ["desktop", "mobile"] }),
+  "Featured maps destination and transactional postures across its two-width donor axis",
+);
 check(JSON.stringify(relationCard?.variants) === JSON.stringify({ width: ["desktop-horizontal", "tablet-stacked", "mobile-stacked"] }), "Relation maps only its three-width Figma axis");
-check(purchasePanel?.variants.state.length === 6 && purchasePanel?.variants.width.length === 2, "PurchasePanel maps its exact six-state by two-width matrix");
+check(
+  purchasePanel?.variants.state.length === 6
+    && purchasePanel?.variants.width.length === 2
+    && purchasePanel?.variants.contentMode.length === 3,
+  "PurchasePanel maps its exact state, width, and content-mode axes",
+);
 check(
   registry.figmaBoardObservations.some(
     ({ nodeId, boardDeclaredSourceNodeId, label }) =>

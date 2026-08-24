@@ -172,12 +172,9 @@ function CompoundGuide() {
         const fixture = commerceFixtureFor(product.slug);
         return <div className={styles.guideItem} key={product.slug}>
           <ProductCommerceCard
-            evidence={available ? "available" : "unavailable"}
+            evidenceTrustSignal={fixture.evidenceTrustSignal}
             headingLevel="h2"
             product={fixture}
-            secondaryHref={`/open-lab/compound/${product.slug}`}
-            secondaryLabel={available ? "Open OpenLab record" : "View record availability"}
-            showQualitative
             variant="vertical"
           />
           <TechnicalSurface

@@ -1,6 +1,6 @@
 import type { HeadingLevel, ProductCardState } from "./commerce-types";
 import { classes } from "./component-utils";
-import type { ProductFixture } from "./product-fixtures";
+import { createProductRelationship, type ProductFixture } from "./product-fixtures";
 import { ProductCommerceCard } from "./product-commerce-card";
 
 export type RelationCardProps = Readonly<{
@@ -21,9 +21,18 @@ export function RelationCard({
   return (
     <ProductCommerceCard
       className={className}
-      contextKicker={contextKicker ?? `STACKS WELL WITH ${anchorProduct.name}`}
+      commerceState={state === "unavailable" || state === "out-of-stock" || state === "disabled" ? "unavailable" : "available"}
+      interactionState={state === "unavailable" || state === "out-of-stock" || state === "disabled" ? "default" : state}
+      inventory={state === "out-of-stock" ? "out-of-stock" : state === "unavailable" || state === "disabled" ? "unavailable" : product.presentationStatus.inventory}
       product={product}
-      state={state}
+      relationship={createProductRelationship(anchorProduct, product, {
+        type: "complement",
+        reason: {
+          claim: contextKicker ?? `${product.name} is presented as a related option beside ${anchorProduct.name}.`,
+          sourceCoordinate: `${product.authority.sourceRef} | ${anchorProduct.authority.sourceRef}`,
+        },
+        action: { href: product.customerPath, label: "View product" },
+      })}
       variant="relation"
     />
   );

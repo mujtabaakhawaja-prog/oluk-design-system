@@ -261,15 +261,15 @@
     {
       "id": "product-commerce-card-compact",
       "figma": { "nodeId": "742:50", "name": "ProductCommerceCard / Compact", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "compact", "showQualitative": false } },
-      "variants": { "state": ["default", "hover", "focus", "selected", "added", "unavailable", "out-of-stock", "disabled"] },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "commerceState", "interactionState", "inventory", "headingLevel", "reviewInteractionMode", "facts", "evidenceTrustSignal", "benefitClaims", "posture", "quantity", "relationship", "showPrice", "className"], "fixedProps": { "variant": "compact" } },
+      "variants": { "interactionState": ["default", "hover", "focus", "selected", "added"], "commerceState": ["available", "unavailable", "loading", "error"] },
       "routes": ["/review"],
       "tokens": ["--oluk-surface-card", "--oluk-radius-compact", "--oluk-shadow-compact", "--oluk-media-gradient", "--oluk-cobalt"]
     },
     {
       "id": "product-commerce-card-vertical",
       "figma": { "nodeId": "743:50", "name": "ProductCommerceCard / Vertical", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "vertical" } },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "commerceState", "interactionState", "inventory", "headingLevel", "reviewInteractionMode", "facts", "evidenceTrustSignal", "benefitClaims", "posture", "quantity", "relationship", "showPrice", "className"], "fixedProps": { "variant": "vertical" } },
       "variants": { "width": ["desktop", "mobile"] },
       "routes": ["/open-lab", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-vertical", "--oluk-shadow-card", "--oluk-media-gradient", "--oluk-border-chip", "--oluk-text-chip-value", "--oluk-cobalt"]
@@ -277,15 +277,15 @@
     {
       "id": "product-commerce-card-featured",
       "figma": { "nodeId": "743:281", "name": "ProductCommerceCard / Featured", "kind": "COMPONENT_SET", "registeredDesktopVariant": "743:282", "downstreamShopInstance": "765:98" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "featured" } },
-      "variants": { "width": ["desktop", "mobile"] },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "commerceState", "interactionState", "inventory", "headingLevel", "reviewInteractionMode", "facts", "evidenceTrustSignal", "benefitClaims", "posture", "quantity", "relationship", "showPrice", "className"], "fixedProps": { "variant": "featured" } },
+      "variants": { "posture": ["destination", "transactional"], "width": ["desktop", "mobile"] },
       "routes": ["/shop", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-vertical", "--oluk-shadow-card", "--oluk-media-gradient", "--oluk-border-chip", "--oluk-text-chip-value", "--oluk-cobalt"]
     },
     {
       "id": "product-commerce-card-relation",
       "figma": { "nodeId": "743:520", "name": "ProductCommerceCard / Relation", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "state", "inventory", "evidence", "headingLevel", "quantity", "showQualitative", "contextKicker", "secondaryHref", "secondaryLabel", "className", "commerceTreatment"], "fixedProps": { "variant": "relation" } },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx", "export": "ProductCommerceCard", "propsType": "ProductCommerceCardProps", "contract": "ProductCommerceCard", "props": ["product", "variant", "commerceState", "interactionState", "inventory", "headingLevel", "reviewInteractionMode", "facts", "evidenceTrustSignal", "benefitClaims", "posture", "quantity", "relationship", "showPrice", "className"], "fixedProps": { "variant": "relation" } },
       "variants": { "width": ["desktop-horizontal", "tablet-stacked", "mobile-stacked"] },
       "routes": ["/", "/product/mk-2866", "/open-lab", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-horizontal", "--oluk-shadow-relation", "--oluk-media-gradient", "--oluk-cobalt"]
@@ -293,8 +293,8 @@
     {
       "id": "purchase-panel",
       "figma": { "nodeId": "745:50", "name": "PurchasePanel", "kind": "COMPONENT_SET" },
-      "code": { "file": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx", "export": "PurchasePanel", "propsType": "PurchasePanelProps", "contract": "PurchasePanel", "props": ["product", "state", "width", "inventory", "evidence", "quantity", "headingLevel", "className"] },
-      "variants": { "state": ["default", "quantity-changed", "added", "unavailable", "out-of-stock", "disabled"], "width": ["desktop", "mobile"] },
+      "code": { "file": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx", "export": "PurchasePanel", "propsType": "PurchasePanelProps", "contract": "PurchasePanel", "props": ["product", "state", "width", "inventory", "evidence", "quantity", "headingLevel", "className", "bottleOptions", "benefitClaim", "contentMode", "reviewMode"] },
+      "variants": { "state": ["default", "quantity-changed", "added", "unavailable", "out-of-stock", "disabled"], "width": ["desktop", "mobile"], "contentMode": ["benefits-supported", "facts-only", "minimal"] },
       "routes": ["/product/mk-2866", "/review"],
       "tokens": ["--oluk-surface-card", "--oluk-border-outer", "--oluk-radius-purchase", "--oluk-shadow-purchase", "--oluk-cobalt"]
     },

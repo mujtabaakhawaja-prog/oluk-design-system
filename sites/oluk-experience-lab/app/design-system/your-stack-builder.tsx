@@ -417,11 +417,9 @@ export function StackOutcomeCard({ product, added, onAdd }: { product: StackProd
   return (
     <div className={styles.stackChoice} data-component="StackAdditionCard" data-selected={added || undefined}>
       <ProductCommerceCard
-        commerceTreatment="selection"
         headingLevel="h2"
+        interactionState={added ? "selected" : "default"}
         product={stackFixture(product)}
-        showQualitative={false}
-        state={added ? "selected" : "default"}
         variant="vertical"
       />
       <DecisionSurface
@@ -476,10 +474,9 @@ function BaselineSurface({ baseline, onBaselineChange, productCount }: { baselin
         <div className={styles.baselineProductRow}>
           <ProductCommerceCard
             className={styles.baselineCard}
-            commerceTreatment="selection"
             headingLevel="h3"
+            interactionState="selected"
             product={stackFixture(baseline)}
-            state="selected"
             variant="compact"
           />
           <div className={styles.baselineFacts}>

@@ -8,6 +8,7 @@ import { OpenLabProductExperience } from "./openlab-product-experience";
 import type { PdpCandidateId, PdpStressProductSlug } from "./pdp-candidate-manifest";
 import { PDP_CANDIDATES } from "./pdp-candidate-manifest";
 import { ProductCommerceCard } from "./product-commerce-card";
+import { createProductRelationship } from "./product-fixtures";
 import { ProductMediaChamber } from "./product-media-chamber";
 import { PurchasePanel } from "./purchase-panel";
 import { EvidenceStatusChip } from "./program-components";
@@ -247,7 +248,6 @@ function ProductComparison({ product }: Readonly<{ product: FrontierProductRecor
         {related.map((item) => (
           <div className={styles.comparisonItem} key={item.slug}>
             <ProductCommerceCard
-              evidence={item.slug === "mk-2866" ? "verified" : "unavailable"}
               headingLevel="h3"
               product={frontierProductPresentation(item)}
               variant="compact"
@@ -270,6 +270,7 @@ function StackBundleEntry({ productSlug }: Readonly<{ productSlug: PdpStressProd
 
 function RelatedProducts({ product }: Readonly<{ product: FrontierProductRecord }>) {
   const related = product.related.slice(0, 3).map((slug) => productBySlug[slug]).filter(Boolean);
+  const anchor = frontierProductPresentation(product);
   return (
     <EditorialSurface
       copy="Each product stays tied to the role it contributes, with exact format truth and an honest OpenLab availability state."
@@ -277,15 +278,23 @@ function RelatedProducts({ product }: Readonly<{ product: FrontierProductRecord 
       title="Keep the next useful product close."
     >
       <div className={styles.relatedGrid}>
-        {related.map((item) => (
-          <ProductCommerceCard
-            evidence={item.slug === "mk-2866" ? "verified" : "unavailable"}
+        {related.map((item) => {
+          const relatedPresentation = frontierProductPresentation(item);
+          return <ProductCommerceCard
             headingLevel="h3"
             key={item.slug}
-            product={frontierProductPresentation(item)}
+            product={relatedPresentation}
+            relationship={createProductRelationship(anchor, relatedPresentation, {
+              type: "complement",
+              reason: {
+                claim: `${item.name} is presented as a related product direction beside ${product.name}.`,
+                sourceCoordinate: `${relatedPresentation.authority.sourceRef} | ${anchor.authority.sourceRef}`,
+              },
+              action: { href: `/product/${item.slug}`, label: `View ${item.name}` },
+            })}
             variant="relation"
-          />
-        ))}
+          />;
+        })}
       </div>
     </EditorialSurface>
   );

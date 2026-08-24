@@ -1,61 +1,277 @@
-.compactPurchase {
-  align-items: center;
+.compactCard {
+  align-self: start;
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-auto-rows: max-content;
+  height: auto;
+  min-height: 0;
+}
+
+.compactCommerce {
   border-block-start: var(--oluk-border-width) solid var(--oluk-border-card);
   display: grid;
   gap: var(--oluk-space-3);
-  grid-template-columns: auto minmax(0, 1fr);
   padding-block-start: var(--oluk-space-3);
 }
 
-.compactPurchase > strong {
-  color: var(--oluk-cobalt);
-  font-family: var(--oluk-font-display);
+.compactCommerce > :global([data-component="Button"]) {
+  width: 100%;
+}
+
+.compactStatusPrice {
+  align-items: end;
+  display: flex;
+  gap: var(--oluk-space-3);
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.compactStatusPrice :global(.price-block) {
+  flex: 0 0 auto;
+  text-align: end;
+}
+
+.compactStatusPrice :global(.price-block strong) {
   font-size: var(--oluk-type-display-md);
 }
 
-.compactActions {
+.verticalCard,
+.featuredCard {
+  align-self: start;
+  height: auto;
+}
+
+.verticalCard :global(.product-commerce-card-inner),
+.featuredCard :global(.product-commerce-card-inner) {
+  height: auto;
+}
+
+.verticalMedia[data-context="card"] {
+  min-height: 340px;
+}
+
+.verticalCard .contentPlane,
+.featuredCard .contentPlane {
+  display: grid;
+  gap: var(--oluk-space-5);
+}
+
+.verticalCard .contentPlane::before,
+.featuredCard .contentPlane::before {
+  content: none;
+}
+
+.factList {
+  border-block: var(--oluk-border-width) solid var(--oluk-border-card);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  min-width: 0;
+}
+
+.factList > div {
+  display: grid;
+  gap: var(--oluk-space-1);
+  min-width: 0;
+  padding: var(--oluk-space-3) var(--oluk-space-4);
+}
+
+.factList > div + div {
+  border-inline-start: var(--oluk-border-width) solid var(--oluk-border-card);
+}
+
+.factList dt {
+  color: var(--oluk-text-muted);
+  font-size: var(--oluk-type-eyebrow);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+}
+
+.factList dd {
+  color: var(--oluk-text-primary);
+  font-size: var(--oluk-type-body-sm);
+  font-weight: 800;
+  line-height: var(--oluk-type-body-sm-line);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.benefitList {
+  border-block: var(--oluk-border-width) solid var(--oluk-border-card);
+  color: var(--oluk-text-body);
   display: grid;
   gap: var(--oluk-space-2);
+  list-style: none;
+  margin: 0;
+  padding: var(--oluk-space-4) 0;
+}
+
+.benefitList li {
+  font-size: var(--oluk-type-body-sm);
+  line-height: var(--oluk-type-body-sm-line);
+  padding-inline-start: var(--oluk-space-5);
+  position: relative;
+}
+
+.benefitList li::before {
+  background: var(--oluk-cobalt);
+  border-radius: var(--oluk-radius-pill);
+  content: "";
+  height: 6px;
+  inset-block-start: 8px;
+  inset-inline-start: 0;
+  position: absolute;
+  width: 6px;
+}
+
+.verticalCommerce {
+  align-items: end;
+  border-block-start: var(--oluk-border-width) solid var(--oluk-border-card);
+  display: grid;
+  gap: var(--oluk-space-4);
+  grid-template-columns: auto minmax(0, 1fr);
+  padding-block-start: var(--oluk-space-5);
+}
+
+.priceOnly {
+  border-block-start: var(--oluk-border-width) solid var(--oluk-border-card);
+  padding-block-start: var(--oluk-space-5);
+}
+
+.actionRow {
+  display: grid;
+  gap: var(--oluk-space-3);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   min-width: 0;
 }
 
-.compactActions > * {
+.actionRow > * {
   width: 100%;
 }
 
-.skuRow {
-  align-items: center;
-  border-block: var(--oluk-border-width) solid var(--oluk-border-card);
-  color: var(--oluk-text-muted);
-  display: grid;
-  font-size: var(--oluk-type-eyebrow);
-  font-weight: 800;
-  gap: var(--oluk-space-2);
-  grid-template-columns: auto minmax(0, 1fr);
-  letter-spacing: 0.08em;
-  padding-block: var(--oluk-space-3);
+/* Review sterility is behavioral, not an unavailable-commerce treatment. */
+.featuredCard[data-interaction-mode="inert"][data-commerce-state="available"]
+  :global(button[data-component="Button"][aria-disabled="true"]) {
+  background: var(--oluk-cobalt);
+  border-color: var(--oluk-cobalt);
+  color: var(--oluk-text-on-inverse);
+  cursor: default;
 }
 
-.skuLink {
-  justify-self: end;
-  letter-spacing: 0;
-  width: fit-content;
+.relationCard {
+  min-height: 0;
+}
+
+.relationCard :global(.oluk-product-media-chamber[data-context="relation"]) {
+  min-height: 440px;
+}
+
+.relationContent {
+  gap: var(--oluk-space-5);
+  justify-content: start;
+  padding: var(--oluk-space-10);
+}
+
+.relationshipLead {
+  border-block-end: var(--oluk-border-width) solid var(--oluk-border-card);
+  display: grid;
+  gap: var(--oluk-space-2);
+  padding-block-end: var(--oluk-space-4);
+}
+
+.relationshipLead > span {
+  color: var(--oluk-cobalt);
+  font-size: var(--oluk-type-eyebrow);
+  font-weight: 800;
+  letter-spacing: var(--oluk-type-eyebrow-track);
+}
+
+.relationshipLead > p {
+  color: var(--oluk-text-body);
+  font-size: var(--oluk-type-body);
+  line-height: var(--oluk-type-body-line);
+  margin: 0;
+}
+
+.relationContent .factList {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.evidenceTrust {
+  align-items: center;
+  border-block: var(--oluk-border-width) solid var(--oluk-border-card);
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: auto minmax(0, 1fr);
+  padding-block: var(--oluk-space-4);
+}
+
+.evidenceTrust > p {
+  color: var(--oluk-text-body);
+  font-size: var(--oluk-type-body-sm);
+  line-height: var(--oluk-type-body-sm-line);
+  margin: 0;
+}
+
+.singleAction {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.singleAction > * {
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .relationCard :global(.oluk-product-media-chamber[data-context="relation"]) {
+    min-height: 360px;
+  }
+
+  .relationContent {
+    padding: var(--oluk-space-8);
+  }
 }
 
 @media (max-width: 540px) {
-  .compactPurchase,
-  .skuRow {
+  .compactStatusPrice,
+  .verticalCommerce {
     align-items: stretch;
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .compactActions {
-    grid-template-columns: 1fr;
+  .compactStatusPrice :global(.price-block) {
+    text-align: start;
   }
 
-  .skuLink {
-    justify-self: stretch;
-    width: 100%;
+  .verticalMedia[data-context="card"] {
+    min-height: 300px;
+  }
+
+  .actionRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .relationCard :global(.oluk-product-media-chamber[data-context="relation"]) {
+    min-height: 300px;
+  }
+
+  .relationContent {
+    padding: var(--oluk-space-6);
+  }
+
+  .relationContent .factList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .relationContent .factList > div + div {
+    border-block-start: var(--oluk-border-width) solid var(--oluk-border-card);
+    border-inline-start: 0;
+  }
+
+  .evidenceTrust {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

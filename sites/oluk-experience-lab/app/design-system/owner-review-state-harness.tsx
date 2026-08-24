@@ -150,13 +150,6 @@ export function OwnerReviewStateHarness() {
         : added
           ? "Added locally"
           : "Add locally";
-  const cardState = added
-    ? "added"
-    : availability === "unavailable"
-      ? "unavailable"
-      : availability === "out-of-stock"
-        ? "out-of-stock"
-        : "default";
   const cardInventory = availability === "ready" ? "in-stock" : availability;
 
   return (
@@ -187,12 +180,11 @@ export function OwnerReviewStateHarness() {
       <div className={styles.workspace}>
         <div className={styles.canonicalCard} data-harness-canonical-card="true">
           <ProductCommerceCard
-            evidence={product.presentationStatus.evidence}
+            commerceState={availability === "ready" ? "available" : "unavailable"}
             headingLevel="h3"
+            interactionState={added ? "added" : "default"}
             inventory={cardInventory}
             product={product}
-            quantity={quantity}
-            state={cardState}
             variant="vertical"
           />
         </div>

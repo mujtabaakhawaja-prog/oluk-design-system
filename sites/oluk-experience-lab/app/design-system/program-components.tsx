@@ -24,9 +24,10 @@ export function RecommendationCard({ state = "default" }: { state?: Recommendati
   return (
     <div data-candidate-component="RecommendationCard" data-state={state}>
       <ProductCommerceCard
-        contextKicker="RECOMMENDED NEXT"
+        commerceState={state === "unavailable" || state === "out-of-stock" ? "unavailable" : "available"}
+        interactionState={state === "unavailable" || state === "out-of-stock" ? "default" : state}
+        inventory={state === "out-of-stock" ? "out-of-stock" : state === "unavailable" ? "unavailable" : "in-stock"}
         product={mk2866Fixture}
-        state={state}
         variant="compact"
       />
     </div>

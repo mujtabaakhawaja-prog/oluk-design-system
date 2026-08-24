@@ -1,151 +1,310 @@
-import type {
-  EvidenceState,
-  HeadingLevel,
-  InventoryState,
-  ProductCardState,
-  ProductCardVariant,
-} from "./commerce-types";
+import type { ReactNode } from "react";
+import type { EvidenceState, HeadingLevel, InventoryState } from "./commerce-types";
 import { ActionButton, ActionLink } from "./action-control";
-import {
-  FixtureStatusStack,
-  PriceBlock,
-  ProductIdentity,
-  StaticPurchaseActions,
-} from "./commerce-parts";
+import { FixtureStatusStack, PriceBlock, ProductIdentity } from "./commerce-parts";
 import { classes } from "./component-utils";
 import { MetricRail } from "./metric-rail";
-import type { ProductFixture } from "./product-fixtures";
+import type {
+  BenefitClaim,
+  EvidenceTrustSignal,
+  ProductFact,
+  ProductFixture,
+  ProductRelationship,
+  ProductRelationshipType,
+} from "./product-fixtures";
 import { ProductMediaChamber } from "./product-media-chamber";
-import styles from "./product-commerce-card.module.css";
-import { QualitativeChipList } from "./qualitative-chip";
+import { EvidenceStatus, StockPill } from "./product-status";
 import { QuantityStepper } from "./quantity-stepper";
+import styles from "./product-commerce-card.module.css";
 
-export type ProductCommerceCardProps = Readonly<{
+export type {
+  BenefitClaim,
+  EvidenceTrustSignal,
+  ProductFact,
+  ProductRelationship,
+} from "./product-fixtures";
+
+export type ProductCardPosture = "destination" | "transactional";
+
+export type VisualCommerceState =
+  | "available"
+  | "unavailable"
+  | "loading"
+  | "error";
+
+export type ProductCardInteractionState =
+  | "default"
+  | "hover"
+  | "focus"
+  | "selected"
+  | "added";
+
+/** Review-inert purchase controls stay visually available without mutating candidate data. */
+export type ReviewInteractionMode = "inert" | "interactive";
+
+type SharedProductCommerceCardProps = Readonly<{
   product: ProductFixture;
-  variant?: ProductCardVariant;
-  state?: ProductCardState;
+  commerceState?: VisualCommerceState;
+  interactionState?: ProductCardInteractionState;
   inventory?: InventoryState;
-  evidence?: EvidenceState;
   headingLevel?: HeadingLevel;
-  quantity?: number;
-  showQualitative?: boolean;
-  contextKicker?: string;
-  secondaryHref?: string;
-  secondaryLabel?: string;
+  reviewInteractionMode?: ReviewInteractionMode;
   className?: string;
-  /** Selection contexts reuse the canonical anatomy while a parent owns price and action state. */
-  commerceTreatment?: "purchase" | "selection";
 }>;
+
+type CompactProductCommerceCardProps = SharedProductCommerceCardProps & Readonly<{
+  variant: "compact";
+}>;
+
+type VerticalProductCommerceCardProps = SharedProductCommerceCardProps & Readonly<{
+  variant?: "vertical";
+  facts?: ReadonlyArray<ProductFact>;
+  evidenceTrustSignal?: EvidenceTrustSignal;
+}>;
+
+type FeaturedProductCommerceCardProps = SharedProductCommerceCardProps & Readonly<{
+  variant: "featured";
+  benefitClaims?: ReadonlyArray<BenefitClaim>;
+  evidenceTrustSignal?: EvidenceTrustSignal;
+}> & (
+  | Readonly<{
+      posture: "destination";
+      quantity?: never;
+    }>
+  | Readonly<{
+      posture: "transactional";
+      quantity?: number;
+    }>
+);
+
+type RelationProductCommerceCardProps = SharedProductCommerceCardProps & Readonly<{
+  variant: "relation";
+  relationship: ProductRelationship;
+  showPrice?: boolean;
+}>;
+
+export type ProductCommerceCardProps =
+  | CompactProductCommerceCardProps
+  | VerticalProductCommerceCardProps
+  | FeaturedProductCommerceCardProps
+  | RelationProductCommerceCardProps;
+
+const relationshipLabels: Readonly<Record<ProductRelationshipType, string>> = {
+  alternative: "ALTERNATIVE",
+  comparison: "COMPARE",
+  complement: "COMPLEMENTS",
+  stack: "STACK RELATIONSHIP",
+};
 
 function presentationState(
   product: ProductFixture,
-  state: ProductCardState,
+  interactionState: ProductCardInteractionState,
+  commerceState: VisualCommerceState,
   inventory?: InventoryState,
   evidence?: EvidenceState,
 ) {
-  const resolvedInventory =
-    inventory ??
-    (state === "out-of-stock"
-      ? "out-of-stock"
-      : state === "unavailable" || state === "disabled"
-        ? "unavailable"
-        : product.presentationStatus.inventory);
+  const projectedInventory = inventory ?? product.presentationStatus.inventory;
+  const resolvedInventory = commerceState === "unavailable" && projectedInventory === "in-stock"
+    ? "unavailable"
+    : projectedInventory;
   const resolvedEvidence = evidence ?? product.presentationStatus.evidence;
   const primaryLabel =
-    state === "added"
-      ? "Added"
-      : state === "out-of-stock"
-        ? "Out of stock"
-        : state === "unavailable"
-          ? "Unavailable"
-          : state === "disabled"
-            ? "Disabled"
-            : resolvedInventory === "out-of-stock"
-              ? "Out of stock"
-              : resolvedInventory === "unavailable"
-                ? "Unavailable"
-                : "Add to bag";
+    commerceState === "loading"
+      ? "Loading…"
+      : commerceState === "error"
+        ? "Unavailable"
+        : interactionState === "added"
+          ? "Added"
+          : resolvedInventory === "out-of-stock"
+            ? "Out of stock"
+            : resolvedInventory === "unavailable"
+              ? "Unavailable"
+              : "Add to bag";
 
   return { inventory: resolvedInventory, evidence: resolvedEvidence, primaryLabel } as const;
 }
 
-export function ProductCommerceCard({
-  product,
-  variant = "vertical",
-  state = "default",
-  inventory,
-  evidence,
-  headingLevel = "h3",
-  quantity = 1,
-  showQualitative,
-  contextKicker,
-  secondaryHref,
-  secondaryLabel,
-  className,
-  commerceTreatment = "purchase",
-}: ProductCommerceCardProps) {
-  const resolved = presentationState(product, state, inventory, evidence);
-  const qualitativeVisible = showQualitative ?? variant !== "compact";
-  const status = commerceTreatment === "selection" ? null : (
-    <FixtureStatusStack
-      evidence={resolved.evidence}
-      inventory={resolved.inventory}
-      product={product}
-    />
-  );
+function resolveCommerceState(
+  product: ProductFixture,
+  inventory?: InventoryState,
+  commerceState?: VisualCommerceState,
+): VisualCommerceState {
+  if (commerceState) return commerceState;
+  return (inventory ?? product.presentationStatus.inventory) === "in-stock"
+    ? "available"
+    : "unavailable";
+}
 
-  if (variant === "relation") {
-    return (
-      <article
-        aria-label={`${product.name} related product presentation`}
-        className={classes("horizontal-product-card", "product-commerce-card-relation", className)}
-        data-component="ProductCommerceCard.Relation"
-        data-copy-surface="commerce"
-        data-oluk-node="component.product-commerce-card"
-        data-state={state}
-        data-variant={variant}
-      >
-        <ProductMediaChamber className="horizontal-media" context="relation" media={product.media} />
-        <div className="horizontal-content">
-          <span className="product-series">{contextKicker ?? "RELATED PRODUCT"}</span>
-          <ProductIdentity headingLevel={headingLevel} product={product} status={status} />
-          <MetricRail product={product} />
-          {qualitativeVisible && product.qualitativeFacts.length > 0 ? (
-            <QualitativeChipList facts={product.qualitativeFacts} />
-          ) : null}
-          <div className="purchase-row">
-            <PriceBlock price={product.price} />
-            <QuantityStepper
-              unavailable={resolved.inventory !== "in-stock"}
-              value={quantity}
-            />
-          </div>
-          <StaticPurchaseActions
-            evidenceHref={secondaryHref ?? product.evidencePath}
-            evidenceLabel={secondaryLabel ?? (resolved.evidence === "unavailable" ? "Browse Lab Records" : "View Lab Record")}
-            primaryLabel={resolved.primaryLabel}
-            state={resolved.inventory}
-          />
-        </div>
-      </article>
-    );
+function requireSourceCoordinate(sourceCoordinate: string, field: string) {
+  if (!sourceCoordinate.trim()) {
+    throw new Error(`ProductCommerceCard requires a source coordinate for ${field}.`);
+  }
+}
+
+function boundedFacts(facts: ReadonlyArray<ProductFact>, maximum: number) {
+  if (facts.length > maximum) {
+    throw new Error(`ProductCommerceCard accepts at most ${maximum} source-backed facts.`);
   }
 
-  if (variant === "compact") {
+  for (const fact of facts) {
+    requireSourceCoordinate(fact.sourceCoordinate, `fact "${fact.label}"`);
+  }
+
+  return facts;
+}
+
+function boundedBenefitClaims(claims: ReadonlyArray<BenefitClaim>, maximum: number) {
+  if (claims.length > maximum) {
+    throw new Error(`ProductCommerceCard accepts at most ${maximum} benefit claims.`);
+  }
+
+  for (const benefit of claims) {
+    requireSourceCoordinate(benefit.sourceCoordinate, `benefit "${benefit.claim}"`);
+  }
+
+  return claims;
+}
+
+function validatedRelationship(relationship: ProductRelationship) {
+  const differenceCount = relationship.differences.length;
+  if (differenceCount < 2 || differenceCount > 3) {
+    throw new Error("ProductCommerceCard.Relation requires two or three differences.");
+  }
+
+  requireSourceCoordinate(relationship.reason.sourceCoordinate, "relationship reason");
+  requireSourceCoordinate(relationship.evidence.sourceCoordinate, "relationship evidence");
+  boundedFacts(relationship.differences, 3);
+
+  if (!relationship.reason.claim.trim() || !relationship.action.href.trim() || !relationship.action.label.trim()) {
+    throw new Error("ProductCommerceCard.Relation requires a reason and one relationship action.");
+  }
+
+  return relationship;
+}
+
+function SourceBackedFacts({ facts }: Readonly<{ facts: ReadonlyArray<ProductFact> }>) {
+  if (facts.length === 0) return null;
+
+  return (
+    <dl aria-label="Product consideration facts" className={styles.factList}>
+      {facts.map((fact) => (
+        <div data-source-coordinate={fact.sourceCoordinate} key={`${fact.label}-${fact.value}`}>
+          <dt>{fact.label}</dt>
+          <dd>{fact.value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function BenefitClaims({ claims }: Readonly<{ claims: ReadonlyArray<BenefitClaim> }>) {
+  if (claims.length === 0) return null;
+
+  return (
+    <ul aria-label="Product benefit context" className={styles.benefitList}>
+      {claims.map((benefit) => (
+        <li data-source-coordinate={benefit.sourceCoordinate} key={benefit.claim}>
+          {benefit.claim}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function EvidenceTrust({ signal }: Readonly<{ signal: EvidenceTrustSignal }>) {
+  return (
+    <div aria-label="Evidence trust" className={styles.evidenceTrust} data-source-coordinate={signal.sourceCoordinate}>
+      <EvidenceStatus compact state={signal.state} />
+      <p>{signal.label}</p>
+    </div>
+  );
+}
+
+function CardShell({
+  actionCeiling,
+  children,
+  className,
+  component,
+  interactionMode,
+  commerceState,
+  label,
+  posture,
+  interactionState,
+  variant,
+}: Readonly<{
+  actionCeiling: 1 | 2;
+  children: ReactNode;
+  className: string;
+  component: string;
+  commerceState: VisualCommerceState;
+  interactionMode: ReviewInteractionMode;
+  label: string;
+  posture: ProductCardPosture | "relation";
+  interactionState: ProductCardInteractionState;
+  variant: "compact" | "vertical" | "featured" | "relation";
+}>) {
+  return (
+    <article
+      aria-label={label}
+      aria-busy={commerceState === "loading" || undefined}
+      className={className}
+      data-action-ceiling={actionCeiling}
+      data-component={component}
+      data-copy-surface="commerce"
+      data-commerce-state={commerceState}
+      data-interaction-mode={interactionMode}
+      data-oluk-node="component.product-commerce-card"
+      data-posture={posture}
+      data-state={interactionState}
+      data-variant={variant}
+    >
+      {children}
+    </article>
+  );
+}
+
+function EvidenceDestination({ signal }: Readonly<{ signal?: EvidenceTrustSignal }>) {
+  if (!signal?.destination) return null;
+
+  return (
+    <ActionLink href={signal.destination.href} variant="secondary">
+      {signal.destination.label}
+    </ActionLink>
+  );
+}
+
+export function ProductCommerceCard(props: ProductCommerceCardProps) {
+  const {
+    className,
+    commerceState: requestedCommerceState,
+    headingLevel = "h3",
+    interactionState = "default",
+    inventory,
+    product,
+    reviewInteractionMode = "inert",
+  } = props;
+  const commerceState = resolveCommerceState(product, inventory, requestedCommerceState);
+
+  if (props.variant === "compact") {
+    const resolved = presentationState(product, interactionState, commerceState, inventory);
+
     return (
-      <article
-        aria-label={`${product.name} compact product presentation`}
+      <CardShell
+        actionCeiling={1}
         className={classes(
           "product-commerce-card",
           "product-commerce-card-compact",
           "oluk-candidate-compact",
+          styles.compactCard,
           className,
         )}
-        data-component="ProductCommerceCard.compact"
-        data-copy-surface="commerce"
-        data-oluk-node="component.product-commerce-card"
-        data-state={state}
-        data-variant={variant}
+        component="ProductCommerceCard.compact"
+        commerceState={commerceState}
+        interactionMode={reviewInteractionMode}
+        label={`${product.name} compact product presentation`}
+        posture="destination"
+        interactionState={interactionState}
+        variant="compact"
       >
         <div className="oluk-candidate-compact-top">
           <ProductMediaChamber
@@ -156,80 +315,179 @@ export function ProductCommerceCard({
           <ProductIdentity headingLevel={headingLevel} product={product} />
         </div>
         <MetricRail compact product={product} />
-        {status ? <div className="oluk-candidate-compact-proof">{status}</div> : null}
-        {null /* Compact anatomy intentionally omits QualitativeChips in every call path. */}
-        {commerceTreatment === "purchase" ? (
-          <div className={classes("oluk-candidate-compact-buy", styles.compactPurchase)}>
-            <strong>{product.price}</strong>
-            <div className={styles.compactActions}>
-              <ActionLink href={secondaryHref ?? product.customerPath} size="compact" variant="quiet">
-                View product
-              </ActionLink>
-              <ActionButton disabled size="compact">
-                {resolved.primaryLabel === "Add to bag"
-                  ? "Quick add"
-                  : resolved.primaryLabel === "Added"
-                    ? "Added ✓"
-                    : resolved.primaryLabel}
-              </ActionButton>
-            </div>
+        <div className={styles.compactCommerce}>
+          <div className={styles.compactStatusPrice}>
+            <StockPill state={resolved.inventory} />
+            <PriceBlock price={product.price} />
           </div>
-        ) : null}
-      </article>
+          <ActionLink href={product.customerPath} size="compact">
+            View product
+          </ActionLink>
+        </div>
+      </CardShell>
     );
   }
 
-  const mediaContext = variant === "featured" ? "featured" : "card";
+  if (props.variant === "relation") {
+    const relationship = validatedRelationship(props.relationship);
 
-  return (
-    <article
-      aria-label={`${product.name} ${variant} product presentation`}
-      className={classes(
-        "product-commerce-card",
-        `product-commerce-card-${variant}`,
-        className,
-      )}
-      data-component={`ProductCommerceCard.${variant}`}
-      data-copy-surface="commerce"
-      data-oluk-node="component.product-commerce-card"
-      data-state={state}
-      data-variant={variant}
-    >
-      <div className="product-commerce-card-inner">
-        <ProductMediaChamber context={mediaContext} media={product.media} />
-        <div className="product-content-plane">
-          <ProductIdentity headingLevel={headingLevel} product={product} status={status} />
-          {variant === "featured" && product.sku ? (
-            <div className={styles.skuRow}>
-              <span>SKU {product.sku}</span>
-              <ActionLink className={styles.skuLink} href={product.customerPath} size="compact" variant="quiet">
-                View product
-              </ActionLink>
-            </div>
-          ) : null}
-          <MetricRail product={product} />
-          {qualitativeVisible && product.qualitativeFacts.length > 0 ? (
-            <QualitativeChipList facts={product.qualitativeFacts} />
-          ) : null}
-          {commerceTreatment === "purchase" ? (
-            <>
+    return (
+      <CardShell
+        actionCeiling={1}
+        className={classes(
+          "horizontal-product-card",
+          "product-commerce-card-relation",
+          styles.relationCard,
+          className,
+        )}
+        component="ProductCommerceCard.Relation"
+        commerceState={commerceState}
+        interactionMode={reviewInteractionMode}
+        label={`${product.name} ${relationship.type} relationship`}
+        posture="relation"
+        interactionState={interactionState}
+        variant="relation"
+      >
+        <ProductMediaChamber className="horizontal-media" context="relation" media={product.media} />
+        <div className={classes("horizontal-content", styles.relationContent)}>
+          <header className={styles.relationshipLead}>
+            <span>{relationshipLabels[relationship.type]}</span>
+            <p data-source-coordinate={relationship.reason.sourceCoordinate}>
+              {relationship.reason.claim}
+            </p>
+          </header>
+          <ProductIdentity headingLevel={headingLevel} product={product} />
+          <SourceBackedFacts facts={relationship.differences} />
+          <EvidenceTrust signal={relationship.evidence} />
+          {props.showPrice ? <PriceBlock price={product.price} /> : null}
+          <div className={styles.singleAction}>
+            <ActionLink href={relationship.action.href}>{relationship.action.label}</ActionLink>
+          </div>
+        </div>
+      </CardShell>
+    );
+  }
+
+  if (props.variant === "featured") {
+    const posture: ProductCardPosture = props.posture;
+    const signal = props.evidenceTrustSignal ?? product.evidenceTrustSignal;
+    const resolved = presentationState(product, interactionState, commerceState, inventory, signal?.state);
+    const benefits = boundedBenefitClaims(props.benefitClaims ?? product.benefitClaims ?? [], 2);
+    const quantity = props.posture === "transactional" ? (props.quantity ?? 1) : null;
+
+    return (
+      <CardShell
+        actionCeiling={2}
+        className={classes(
+          "product-commerce-card",
+          "product-commerce-card-featured",
+          styles.featuredCard,
+          className,
+        )}
+        component="ProductCommerceCard.featured"
+        commerceState={commerceState}
+        interactionMode={reviewInteractionMode}
+        label={`${product.name} featured ${posture} presentation`}
+        posture={posture}
+        interactionState={interactionState}
+        variant="featured"
+      >
+        <div className="product-commerce-card-inner">
+          <ProductMediaChamber context="featured" media={product.media} />
+          <div className={classes("product-content-plane", styles.contentPlane)}>
+            <ProductIdentity
+              headingLevel={headingLevel}
+              product={product}
+              status={(
+                <FixtureStatusStack
+                  evidence={resolved.evidence}
+                  inventory={resolved.inventory}
+                  product={product}
+                />
+              )}
+            />
+            <MetricRail product={product} />
+            <BenefitClaims claims={benefits} />
+            {props.posture === "transactional" ? (
               <div className="purchase-row">
                 <PriceBlock price={product.price} />
                 <QuantityStepper
-                  unavailable={resolved.inventory !== "in-stock"}
-                  value={quantity}
+                  unavailable={commerceState !== "available" || resolved.inventory !== "in-stock"}
+                  value={quantity ?? 1}
                 />
               </div>
-              <StaticPurchaseActions
-                evidenceHref={secondaryHref ?? product.evidencePath}
-                evidenceLabel={secondaryLabel}
-                primaryLabel={resolved.primaryLabel}
-                state={resolved.inventory}
+            ) : (
+              <div className={styles.priceOnly}>
+                <PriceBlock price={product.price} />
+              </div>
+            )}
+            <div className={styles.actionRow}>
+              {props.posture === "transactional" ? (
+                <ActionButton
+                  aria-disabled={reviewInteractionMode === "inert" || undefined}
+                  disabled={commerceState === "error" || commerceState === "unavailable" || resolved.inventory !== "in-stock"}
+                  pending={commerceState === "loading"}
+                  pendingLabel="Loading…"
+                >
+                  {resolved.primaryLabel}
+                </ActionButton>
+              ) : (
+                <ActionLink href={product.customerPath}>View product</ActionLink>
+              )}
+              <EvidenceDestination signal={signal} />
+            </div>
+          </div>
+        </div>
+      </CardShell>
+    );
+  }
+
+  const signal = props.evidenceTrustSignal ?? product.evidenceTrustSignal;
+  const resolved = presentationState(product, interactionState, commerceState, inventory, signal?.state);
+  const facts = boundedFacts(props.facts ?? product.considerationFacts ?? [], 2);
+
+  return (
+    <CardShell
+      actionCeiling={2}
+      className={classes(
+        "product-commerce-card",
+        "product-commerce-card-vertical",
+        styles.verticalCard,
+        className,
+      )}
+      component="ProductCommerceCard.vertical"
+      commerceState={commerceState}
+      interactionMode={reviewInteractionMode}
+      label={`${product.name} vertical consideration presentation`}
+      posture="destination"
+      interactionState={interactionState}
+      variant="vertical"
+    >
+      <div className="product-commerce-card-inner">
+        <ProductMediaChamber className={styles.verticalMedia} context="card" media={product.media} />
+        <div className={classes("product-content-plane", styles.contentPlane)}>
+          <ProductIdentity
+            headingLevel={headingLevel}
+            product={product}
+            status={(
+              <FixtureStatusStack
+                evidence={resolved.evidence}
+                inventory={resolved.inventory}
+                product={product}
               />
-            </>
-          ) : null}
+            )}
+          />
+          <MetricRail product={product} />
+          <SourceBackedFacts facts={facts} />
+          <div className={styles.verticalCommerce}>
+            <PriceBlock price={product.price} />
+            <div className={styles.actionRow}>
+              <ActionLink href={product.customerPath}>View product</ActionLink>
+              <EvidenceDestination signal={signal} />
+            </div>
+          </div>
         </div>
       </div>
-    </article>
+    </CardShell>
   );
 }

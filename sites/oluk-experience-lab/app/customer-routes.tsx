@@ -119,7 +119,7 @@ function FeaturedProduct() {
           <a href="/product/mk-2866">View MK-2866 <Arrow /></a>
         </div>
         <div className={styles.singleCard}>
-          <ProductCommerceCard product={mk2866Fixture} variant="featured" />
+          <ProductCommerceCard posture="destination" product={mk2866Fixture} variant="featured" />
         </div>
       </div>
     </section>
@@ -338,9 +338,7 @@ export function LookupRoute({ reference = "" }: Readonly<{ reference?: string }>
               {state === "found" ? (
                 <div className={styles.lookupProduct}>
                   <ProductCommerceCard
-                    evidence="unavailable"
                     product={mk2866Fixture}
-                    showQualitative={false}
                     variant="compact"
                   />
                 </div>

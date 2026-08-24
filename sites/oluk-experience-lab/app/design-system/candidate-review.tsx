@@ -300,14 +300,14 @@ export function CandidateReviewIndex() {
         <CobaltDensityBoundary />
 
         <OlukSection className="oluk-candidate-section" id="mf02b-card-family">
-          <ReviewHeading eyebrow="ADAPTIVE CARD FAMILY" title="One component grammar across density and width." copy="The family shares bounded authored media, a connected white content plane, quantified MetricRail, icon-bearing QualitativeChips, exact EvidenceStatus, cobalt StockPill and role-specific single elevation." source={figmaReviewLinks.adaptivePage} />
+          <ReviewHeading eyebrow="ADAPTIVE CARD FAMILY" title="One component grammar across density and width." copy="The family shares bounded authored media, a connected white content plane, quantified MetricRail, source-backed facts, cobalt EvidenceStatus, restrained-green StockPill and role-specific single elevation." source={figmaReviewLinks.adaptivePage} />
           <div className="oluk-candidate-primary-grid">
             <div className="oluk-candidate-component-stage" id="mf02b-vertical">
               <ProductCommerceCard product={mk2866Fixture} variant="vertical" />
               <FigmaLink href={figmaReviewLinks.vertical}>Open vertical component set</FigmaLink>
             </div>
             <div className="oluk-candidate-component-stage" id="mf02b-featured">
-              <ProductCommerceCard product={mk2866Fixture} variant="featured" />
+              <ProductCommerceCard posture="destination" product={mk2866Fixture} variant="featured" />
               <FigmaLink href={figmaReviewLinks.featured}>Open featured component set</FigmaLink>
             </div>
           </div>
@@ -322,9 +322,10 @@ export function CandidateReviewIndex() {
               <div className="oluk-candidate-state-stage" id={`mf02b-compact-${state}`} key={state}>
                 <span className="oluk-candidate-state-label">{label}</span>
                 <ProductCommerceCard
+                  commerceState={state === "unavailable" || state === "out-of-stock" || state === "disabled" ? "unavailable" : "available"}
+                  interactionState={state === "unavailable" || state === "out-of-stock" || state === "disabled" ? "default" : state}
+                  inventory={state === "out-of-stock" ? "out-of-stock" : state === "unavailable" || state === "disabled" ? "unavailable" : "in-stock"}
                   product={mk2866Fixture}
-                  showQualitative={false}
-                  state={state}
                   variant="compact"
                 />
               </div>

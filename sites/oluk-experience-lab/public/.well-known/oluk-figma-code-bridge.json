@@ -646,33 +646,37 @@
         "props": [
           "product",
           "variant",
-          "state",
+          "commerceState",
+          "interactionState",
           "inventory",
-          "evidence",
           "headingLevel",
+          "reviewInteractionMode",
+          "facts",
+          "evidenceTrustSignal",
+          "benefitClaims",
+          "posture",
           "quantity",
-          "showQualitative",
-          "contextKicker",
-          "secondaryHref",
-          "secondaryLabel",
-          "className",
-          "commerceTreatment"
+          "relationship",
+          "showPrice",
+          "className"
         ],
         "fixedProps": {
-          "variant": "compact",
-          "showQualitative": false
+          "variant": "compact"
         }
       },
       "variants": {
-        "state": [
+        "interactionState": [
           "default",
           "hover",
           "focus",
           "selected",
-          "added",
+          "added"
+        ],
+        "commerceState": [
+          "available",
           "unavailable",
-          "out-of-stock",
-          "disabled"
+          "loading",
+          "error"
         ]
       },
       "routes": [
@@ -701,17 +705,19 @@
         "props": [
           "product",
           "variant",
-          "state",
+          "commerceState",
+          "interactionState",
           "inventory",
-          "evidence",
           "headingLevel",
+          "reviewInteractionMode",
+          "facts",
+          "evidenceTrustSignal",
+          "benefitClaims",
+          "posture",
           "quantity",
-          "showQualitative",
-          "contextKicker",
-          "secondaryHref",
-          "secondaryLabel",
-          "className",
-          "commerceTreatment"
+          "relationship",
+          "showPrice",
+          "className"
         ],
         "fixedProps": {
           "variant": "vertical"
@@ -755,23 +761,29 @@
         "props": [
           "product",
           "variant",
-          "state",
+          "commerceState",
+          "interactionState",
           "inventory",
-          "evidence",
           "headingLevel",
+          "reviewInteractionMode",
+          "facts",
+          "evidenceTrustSignal",
+          "benefitClaims",
+          "posture",
           "quantity",
-          "showQualitative",
-          "contextKicker",
-          "secondaryHref",
-          "secondaryLabel",
-          "className",
-          "commerceTreatment"
+          "relationship",
+          "showPrice",
+          "className"
         ],
         "fixedProps": {
           "variant": "featured"
         }
       },
       "variants": {
+        "posture": [
+          "destination",
+          "transactional"
+        ],
         "width": [
           "desktop",
           "mobile"
@@ -807,17 +819,19 @@
         "props": [
           "product",
           "variant",
-          "state",
+          "commerceState",
+          "interactionState",
           "inventory",
-          "evidence",
           "headingLevel",
+          "reviewInteractionMode",
+          "facts",
+          "evidenceTrustSignal",
+          "benefitClaims",
+          "posture",
           "quantity",
-          "showQualitative",
-          "contextKicker",
-          "secondaryHref",
-          "secondaryLabel",
-          "className",
-          "commerceTreatment"
+          "relationship",
+          "showPrice",
+          "className"
         ],
         "fixedProps": {
           "variant": "relation"
@@ -865,7 +879,11 @@
           "evidence",
           "quantity",
           "headingLevel",
-          "className"
+          "className",
+          "bottleOptions",
+          "benefitClaim",
+          "contentMode",
+          "reviewMode"
         ]
       },
       "variants": {
@@ -880,6 +898,11 @@
         "width": [
           "desktop",
           "mobile"
+        ],
+        "contentMode": [
+          "benefits-supported",
+          "facts-only",
+          "minimal"
         ]
       },
       "routes": [

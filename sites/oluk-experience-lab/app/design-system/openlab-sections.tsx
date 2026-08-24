@@ -11,7 +11,7 @@ import { PresentationState } from "./presentation-state";
 import { ProductCommerceCard } from "./product-commerce-card";
 import { ProductDossier } from "./product-dossier";
 import { getFrontierProduct } from "./frontier-content";
-import { mk2866Fixture, rad140Fixture } from "./product-fixtures";
+import { createProductRelationship, mk2866Fixture, rad140Fixture } from "./product-fixtures";
 import { OpenLabProductExperience } from "./openlab-product-experience";
 import { EvidenceStatusChip } from "./program-components";
 import styles from "./openlab-sections.module.css";
@@ -44,7 +44,7 @@ export const sourceChainStages = [
 ] as const;
 
 export function OpenLabPortalHero() {
-  return <section className={styles.portalHero} data-module="OpenLabPortalHero"><div className={styles.shell}><div className={styles.portalGrid}><EditorialSurface actions={<><ActionLink href="/open-lab/records">Browse lab records</ActionLink><ActionLink href="/open-lab/stack-builder" secondary>Build a stronger stack</ActionLink></>} copy="Move from the product into its available batch record, source context and comparison view—then return to the product decision with more confidence." eyebrow="OPENLAB" headingLevel="h1" title="Product confidence, made visible."><div className={styles.lenses} role="list" aria-label="OpenLab customer value"><span role="listitem">PRODUCT CONFIDENCE</span><span role="listitem">SOURCE ACCESS</span><span role="listitem">CONNECTED COMMERCE</span></div></EditorialSurface><ProductCommerceCard className={styles.portalProduct} headingLevel="h2" product={mk2866Fixture} showQualitative={false} variant="vertical"/></div></div></section>;
+  return <section className={styles.portalHero} data-module="OpenLabPortalHero"><div className={styles.shell}><div className={styles.portalGrid}><EditorialSurface actions={<><ActionLink href="/open-lab/records">Browse lab records</ActionLink><ActionLink href="/open-lab/stack-builder" secondary>Build a stronger stack</ActionLink></>} copy="Move from the product into its available batch record, source context and comparison view—then return to the product decision with more confidence." eyebrow="OPENLAB" headingLevel="h1" title="Product confidence, made visible."><div className={styles.lenses} role="list" aria-label="OpenLab customer value"><span role="listitem">PRODUCT CONFIDENCE</span><span role="listitem">SOURCE ACCESS</span><span role="listitem">CONNECTED COMMERCE</span></div></EditorialSurface><ProductCommerceCard className={styles.portalProduct} headingLevel="h2" product={mk2866Fixture} variant="vertical"/></div></div></section>;
 }
 
 export function OpenLabWayfinding() {
@@ -74,7 +74,14 @@ export function OpenLabDossierComposition({ productSlug = "mk-2866" }: Readonly<
   return <div data-module="OpenLabDossierComposition" data-product-slug={productSlug}>
     {isReferenceProduct ? <ProductDossier evidenceHref="#openlab-product-experience" id="dossier" product={mk2866Fixture}/> : null}
     <OpenLabProductExperience id="openlab-product-experience" product={productReference} productSlug={productSlug}/>
-    {isReferenceProduct ? <section className={styles.section}><div className={styles.shell}><ProductCommerceCard contextKicker="RETURN TO COMMERCE" product={mk2866Fixture} secondaryHref={mk2866Fixture.customerPath} secondaryLabel="Return to MK-2866" showQualitative={false} variant="relation"/></div></section> : null}
+    {isReferenceProduct ? <section className={styles.section}><div className={styles.shell}><ProductCommerceCard product={mk2866Fixture} relationship={createProductRelationship(rad140Fixture, mk2866Fixture, {
+      type: "comparison",
+      reason: {
+        claim: "Return from the record context to the exact MK-2866 product decision.",
+        sourceCoordinate: "authority/OPENLAB-RECORDS.json#mk-2866-to-product",
+      },
+      action: { href: mk2866Fixture.customerPath, label: "Return to MK-2866" },
+    })} variant="relation"/></div></section> : null}
   </div>;
 }
 

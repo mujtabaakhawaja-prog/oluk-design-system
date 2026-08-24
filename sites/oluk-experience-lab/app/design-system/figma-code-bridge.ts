@@ -11,11 +11,13 @@ import type { QualitativeChipProps } from "./qualitative-chip";
 import type { QualitativeIconProps } from "./qualitative-icon";
 import type { RelatedRailProps } from "./related-rail";
 
-type ExactKeys<Props, Keys extends readonly (keyof Props)[]> =
-  Exclude<keyof Props, Keys[number]> extends never ? Keys : never;
+type KeysOfUnion<Props> = Props extends Props ? keyof Props : never;
+
+type ExactKeys<Props, Keys extends readonly KeysOfUnion<Props>[]> =
+  Exclude<KeysOfUnion<Props>, Keys[number]> extends never ? Keys : never;
 
 function exactPropKeys<Props>() {
-  return <const Keys extends readonly (keyof Props)[]>(keys: ExactKeys<Props, Keys>) => keys;
+  return <const Keys extends readonly KeysOfUnion<Props>[]>(keys: ExactKeys<Props, Keys>) => keys;
 }
 
 /**
@@ -110,17 +112,19 @@ export const codeBridgeComponentContracts = Object.freeze({
     propKeys: exactPropKeys<ProductCommerceCardProps>()([
       "product",
       "variant",
-      "state",
+      "commerceState",
+      "interactionState",
       "inventory",
-      "evidence",
       "headingLevel",
+      "reviewInteractionMode",
+      "facts",
+      "evidenceTrustSignal",
+      "benefitClaims",
+      "posture",
       "quantity",
-      "showQualitative",
-      "contextKicker",
-      "secondaryHref",
-      "secondaryLabel",
+      "relationship",
+      "showPrice",
       "className",
-      "commerceTreatment",
     ]),
   },
   PurchasePanel: {
@@ -137,6 +141,9 @@ export const codeBridgeComponentContracts = Object.freeze({
       "headingLevel",
       "className",
       "bottleOptions",
+      "benefitClaim",
+      "contentMode",
+      "reviewMode",
     ]),
   },
   ProductDossier: {

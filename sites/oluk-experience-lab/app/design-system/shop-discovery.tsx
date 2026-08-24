@@ -345,7 +345,6 @@ export function ShopDiscovery() {
                   className="shop-result-card shop-result-card-canonical"
                   key={product.fixtureId}
                   product={catalogueFixture(product)}
-                  secondaryHref={catalogueFixture(product).customerPath}
                   variant="compact"
                 />
               ))}
