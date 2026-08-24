@@ -356,7 +356,6 @@
 
 @media (max-width: 480px) {
   .tabs {
-    margin-inline: calc(var(--oluk-space-4) * -1);
     padding-inline: var(--oluk-space-4);
   }
 
