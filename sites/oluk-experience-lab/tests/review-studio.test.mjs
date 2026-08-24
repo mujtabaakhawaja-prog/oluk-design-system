@@ -23,10 +23,11 @@ test("MetricRail review specimens stay bounded, centered, and adaptive without n
     assert.match(specimens, new RegExp(`data-state="${state}"`));
   }
 
-  assert.match(styles, /\.metricStack\s*\{[^}]*display:\s*flex[^}]*flex-wrap:\s*wrap[^}]*justify-content:\s*center/s);
-  assert.match(styles, /\.metricSpecimen\s*\{[^}]*flex:\s*1 1 280px[^}]*max-inline-size:\s*420px/s);
+  assert.match(styles, /\.metricStack\s*\{[^}]*align-items:\s*flex-start[^}]*display:\s*flex[^}]*flex-wrap:\s*wrap[^}]*gap:\s*var\(--oluk-space-2\)[^}]*justify-content:\s*center/s);
+  assert.match(styles, /\.metricSpecimen\s*\{[^}]*flex:\s*1 1 280px[^}]*inline-size:\s*100%[^}]*max-inline-size:\s*420px[^}]*min-inline-size:\s*0/s);
   assert.match(styles, /\.metricSpecimen :global\(\.metric-rail\)\s*\{[^}]*inline-size:\s*100%/s);
   assert.match(globals, /\.metric-rail > div\s*\{[^}]*align-items:\s*center[^}]*justify-content:\s*center/s);
+  assert.match(globals, /@container \(max-width: 260px\)\s*\{[\s\S]*?\.metric-rail dt\s*\{[^}]*font-size:\s*11px[^}]*letter-spacing:\s*0\.01em/s);
 
   const reusableRail = globals.match(/\.metric-rail\s*\{([^}]*)\}/s)?.[1];
   assert.ok(reusableRail, "reusable MetricRail block is present");

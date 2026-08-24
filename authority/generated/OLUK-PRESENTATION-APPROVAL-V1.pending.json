@@ -8,11 +8,11 @@
     "inventoryDigest": "54c2f99d60e8cb0e36f48549e213f148b2d36c408300a6540384caa6255728ea",
     "presentationDigest": "544cf4418698dc04fd7cf421f3b8a47074a28eedf85368371ed4721a8b321836",
     "routeAuthorityDigest": "659d3236a9594c9d62314eb309313249ddaab2f3d422dee37583b72339c18264",
-    "nodeContractDigest": "8590ebe4c4cb5bb17984912800860f6a9801ce5f5f3493d9ff7d9f6c6a682fdd",
-    "designConnectDigest": "d19dfd9b2ff626fda7bc3afd7142e4c89850ec9e1d5ab1c999994667db2ec338",
+    "nodeContractDigest": "82eadc2ee36e91b1e3633408dee17b02a9c3d5575806bfde837457a63c5fb0d0",
+    "designConnectDigest": "818ac857805ca4b04032b590c2090404077fd7e1492ad6372ea5af9a2a21a2b0",
     "messageContractDigest": "ed9ad694b69dd125c950e61ae7b3457ee4f5021c83288659f82423f60191fc8a",
     "patchSchemaDigest": "688f4e566050115e6378c062631b58665cec038c3af6988d61fd7fb8a2a3bb73",
-    "patchTargetsDigest": "16b1e09b99ee16d599cfd0685fe0ad05b06eb1d7bfdcef5c6589d0c4f982d3e8"
+    "patchTargetsDigest": "394e256bda395ebb33684439abef31391192895d1554f7427d947558303fdbfe"
   },
   "next": {
     "candidateSha": null,
@@ -40,6 +40,7 @@
       "component.product-media-chamber",
       "component.pdp-atmospheric-media-field",
       "component.purchase-panel",
+      "component.benefit-claim",
       "component.product-identity",
       "component.status-stack",
       "status.stock",

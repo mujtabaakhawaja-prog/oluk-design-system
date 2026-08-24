@@ -41,7 +41,9 @@ test("Stack v3 keeps canonical product anatomy and customer-safe product states"
   const source = await readFile(new URL("your-stack-builder.tsx", designSystem), "utf8");
 
   assert.match(source, /<ProductCommerceCard/);
-  assert.match(source, /commerceTreatment="selection"/);
+  assert.match(source, /interactionState=\{added \? "selected" : "default"\}/);
+  assert.match(source, /variant="vertical"/);
+  assert.doesNotMatch(source, /commerceTreatment|showQualitative/);
   assert.match(source, /<PriceBlock/);
   assert.match(source, /<QualitativeChipList/);
   assert.match(source, /function ContributionChips[\s\S]*?<QualitativeChip/);

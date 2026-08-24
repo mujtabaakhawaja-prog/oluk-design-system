@@ -178,7 +178,7 @@
       "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
       "exportName": "PurchasePanel",
       "parentIds": ["module.pdp-first-fold"],
-      "childIds": ["component.product-identity", "component.metric-rail", "component.purchase-configuration", "component.price-block", "component.quantity-stepper", "component.purchase-actions"],
+      "childIds": ["component.product-identity", "component.benefit-claim", "component.metric-rail", "component.purchase-configuration", "component.price-block", "component.quantity-stepper", "component.purchase-actions"],
       "controls": [
         {"id": "state", "type": "enum", "values": ["default", "hover", "focus-visible", "quantity-changed", "added", "out-of-stock", "unavailable", "disabled"], "defaultValue": "default", "sourceProp": "state", "patchable": true},
         {"id": "width", "type": "enum", "values": ["responsive", "desktop", "mobile"], "defaultValue": "responsive", "sourceProp": "width", "patchable": true},
@@ -186,8 +186,20 @@
       ],
       "states": ["default", "focus-visible", "quantity-changed", "added", "out-of-stock", "unavailable", "disabled", "long-copy"],
       "variants": ["responsive", "desktop", "mobile"],
-      "fieldIds": ["field.product.series-name", "field.product.name", "field.product.alias", "field.metric.strength", "field.metric.servings", "field.metric.purity", "field.commerce.stock-state", "field.commerce.price", "field.commerce.available-quantity", "field.package.capsule-count", "field.purchase.package-count", "field.purchase.selected-quantity", "field.purchase.total-servings", "field.evidence.state"],
+      "fieldIds": ["field.product.series-name", "field.product.name", "field.product.alias", "field.metric.strength", "field.metric.servings", "field.metric.purity", "field.commerce.stock-state", "field.commerce.price", "field.commerce.available-quantity", "field.package.capsule-count", "field.purchase.fact-summary", "field.purchase.package-count", "field.purchase.selected-quantity", "field.purchase.total-servings", "field.evidence.state"],
       "contentIds": ["content.product-identity", "content.commerce-state", "content.evidence"]
+    },
+    {
+      "id": "component.benefit-claim",
+      "name": "BenefitClaim / Source Bound",
+      "kind": "component",
+      "renderAs": "aside",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchasePanel",
+      "parentIds": ["component.purchase-panel"],
+      "states": ["supported", "omitted"],
+      "variants": ["benefits-supported"],
+      "contentIds": ["content.product-benefit-claim"]
     },
     {
       "id": "component.product-identity",
@@ -424,6 +436,7 @@
     {"id": "field.commerce.price", "kind": "field", "owner": "woo-through-c2-projection", "sourceExport": "PriceBlock"},
     {"id": "field.commerce.available-quantity", "kind": "field", "owner": "woo-through-c2-projection", "sourceExport": "QuantityStepper", "fixtureBinding": "unavailable"},
     {"id": "field.package.capsule-count", "kind": "field", "owner": "canonical-product-authority", "sourceExport": "PurchasePanel", "fixtureBinding": "unavailable"},
+    {"id": "field.purchase.fact-summary", "kind": "field", "owner": "canonical-product-authority", "sourceExport": "PurchasePanel"},
     {"id": "field.purchase.package-count", "kind": "field", "owner": "customer-selection", "sourceExport": "PurchasePackageOption"},
     {"id": "field.purchase.selected-quantity", "kind": "field", "owner": "customer-selection", "sourceExport": "QuantityStepper"},
     {"id": "field.purchase.total-servings", "kind": "field", "owner": "presentation-adapter-derived-from-authoritative-servings-and-package-count", "sourceExport": "PurchasePackageOption"},
@@ -451,6 +464,13 @@
     {"semanticFieldId": "field.commerce.available-quantity", "contractProjection": "Commerce_Available_Quantity", "fixtureProjection": null, "realAdapterFieldId": "commerce.availableQuantity"}
   ],
   "sharedExportGroups": [
+    {
+      "id": "shared-export.purchase-panel-content-modes",
+      "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+      "exportName": "PurchasePanel",
+      "nodeIds": ["component.benefit-claim", "component.purchase-panel"],
+      "justification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
+    },
     {
       "id": "shared-export.metric-cell-roles",
       "sourcePath": "sites/oluk-experience-lab/app/design-system/metric-rail.tsx",

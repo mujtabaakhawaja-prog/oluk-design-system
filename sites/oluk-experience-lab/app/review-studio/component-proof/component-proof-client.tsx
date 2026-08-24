@@ -93,6 +93,20 @@ export function ComponentProofClient() {
           </div>
           <a href={specimenPath} rel="noreferrer" target="_blank">Open unscaled specimen</a>
         </header>
+        {family.reviewDonors.length > 0 ? (
+          <aside className={styles.donorMeta} aria-label={`${family.label} review-source dispositions`}>
+            <strong>Owner-only geometry and composition donors</strong>
+            <ul>
+              {family.reviewDonors.map((donor) => (
+                <li key={`${donor.source}-${donor.role}`}>
+                  <code>{donor.source}</code>
+                  <span>{donor.role}</span>
+                  <b>{donor.disposition}</b>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        ) : null}
         <div className={styles.frame} style={frameStyle}>
           <iframe
             key={`${familyId}-${viewport}`}

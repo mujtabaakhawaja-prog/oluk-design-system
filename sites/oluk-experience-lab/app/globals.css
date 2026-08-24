@@ -852,6 +852,22 @@ a.button-secondary:hover {
   white-space: nowrap;
 }
 
+/*
+ * Preserve the joined three-cell grammar when MetricRail is hosted by a
+ * narrow catalogue card. The rail still fills its host; only its label type
+ * tightens at the component's own container boundary.
+ */
+@container (max-width: 260px) {
+  .metric-rail > div {
+    padding-inline: 4px;
+  }
+
+  .metric-rail dt {
+    font-size: 11px;
+    letter-spacing: 0.01em;
+  }
+}
+
 .metric-rail [data-availability="unavailable"] dd {
   color: var(--oluk-text-muted);
   letter-spacing: 0;

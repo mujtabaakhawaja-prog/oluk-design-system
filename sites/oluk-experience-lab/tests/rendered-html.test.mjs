@@ -345,7 +345,8 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.match(sharedCard, /import \{ ProductMediaChamber \}/, "canonical cards import the shared authored chamber");
   assert.ok((sharedCard.match(/<ProductMediaChamber\b/g) ?? []).length >= 3, "canonical vertical, featured, compact and relation compositions reuse ProductMediaChamber");
   assert.doesNotMatch(candidateComponents, /function (?:ProductCommerceCard|CompactCard|RelationCard|MetricRail|QualitativeChips|PurchasePanel)/, "candidate registry contains no parallel component anatomy");
-  assert.match(candidateReview, /<ProductCommerceCard[\s\S]*?showQualitative=\{false\}[\s\S]*?variant="compact"/, "compact review uses canonical anatomy without the omitted chip block");
+  assert.match(candidateReview, /<ProductCommerceCard[\s\S]*?interactionState=\{state === "unavailable"[\s\S]*?variant="compact"/, "compact review uses the canonical role-based anatomy");
+  assert.doesNotMatch(candidateReview, /showQualitative|commerceTreatment/, "review consumers cannot revive deprecated card authority");
   assert.match(sharedMediaCss, /\.halo\s*\{[^}]*rgba\(255,\s*255,\s*255,\s*0\.98\)[^}]*inset/i, "shared candidate chamber preserves the luminous halo");
   assert.match(sharedMediaCss, /\.identityPane\s*\{(?=[^}]*var\(--oluk-border-identity)(?=[^}]*rgba\(255,\s*255,\s*255,\s*0\.42\))[^}]*\}/i, "shared candidate chamber preserves the identity pane");
   assert.match(sharedMediaCss, /\.contactShelf\s*\{[\s\S]*?var\(\s*--oluk-media-contact-shelf-gradient[\s\S]*?var\(--oluk-border-inner[\s\S]*?\}/i, "shared candidate chamber preserves the contact shelf");
@@ -380,7 +381,7 @@ test("locks the unpublished candidate foundation with CONV-002 graduated tokens 
   assert.doesNotMatch(css, /prefers-color-scheme:\s*dark/i);
 });
 
-test("adopts the MF-01A qualitative-chip and media grammar on customer routes", async () => {
+test("adopts the MF-01A media grammar while keeping unsupported qualitative claims off the facts-only PDP", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const cardSource = await readFile(new URL("../app/design-system/product-commerce-card.tsx", import.meta.url), "utf8");
   const chipSource = await readFile(new URL("../app/design-system/qualitative-chip.tsx", import.meta.url), "utf8");
@@ -438,8 +439,8 @@ test("adopts the MF-01A qualitative-chip and media grammar on customer routes", 
   assert.match(css, /\.qualitative-chip dd\s*\{[^}]*color:\s*var\(--oluk-text-chip-value\)[^}]*font-size:\s*12px[^}]*font-weight:\s*700[^}]*letter-spacing:\s*0\.24px/i, "chip values preserve the 12px Bold navy hierarchy");
   assert.doesNotMatch(css, /\.qualitative-chips\s*>\s*div\s*\+\s*div/, "the rejected joined-rail divider pattern is absent");
 
-  assert.match(productHtml, /<ul(?=[^>]*\bclass=["'][^"']*\bqualitative-chips\b[^"']*["'])(?=[^>]*\baria-label=["']Product attributes["'])[^>]*>/i, "rendered product route exposes the qualitative attribute list");
-  assert.equal((productHtml.match(/<li\b[^>]*\bclass=["'][^"']*\bqualitative-chip\b[^"']*["'][^>]*>/gi) ?? []).length >= 4, true, "rendered product route includes independent qualitative-chip instances");
+  assert.match(productHtml, /<dl(?=[^>]*\bclass=["'][^"']*\bmetric-rail\b[^"']*["'])[^>]*>/i, "rendered product route keeps the joined metric rail");
+  assert.doesNotMatch(productHtml, /aria-label=["']Product attributes["']|\bqualitative-chip\b/i, "facts-only PDP omits unsupported qualitative claims");
 });
 
 test("renders owner-review candidate anchors, direct Figma sources, and all comparison pages", async () => {

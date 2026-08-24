@@ -153,9 +153,10 @@ test("CONV-004 review links resolve to route frames and compact anatomy is invar
   assert.match(review, /href="#mf02b-compact-states">Compact states/);
   assert.match(review, /Three authored sources across four execution widths/);
   assert.match(review, /tablet source governs both 1024px and 768px/);
-  assert.match(card, /Compact anatomy intentionally omits QualitativeChips in every call path/);
-  const compactBranch = card.match(/if \(variant === "compact"\)[\s\S]*?\n {2}}\n{2} {2}const mediaContext/)?.[0] ?? "";
-  assert.doesNotMatch(compactBranch, /<QualitativeChipList/);
+  const compactBranch = card.match(/if \(props\.variant === "compact"\)[\s\S]*?\n {2}}\n\n {2}if \(props\.variant === "relation"\)/)?.[0] ?? "";
+  assert.match(compactBranch, /<MetricRail compact product=\{product\} \/>/);
+  assert.match(compactBranch, />\s*View product\s*<\/ActionLink>/);
+  assert.doesNotMatch(compactBranch, /QuantityStepper|BenefitClaims|SourceBackedFacts|EvidenceDestination/);
 });
 
 test("CONV-004 exposes StockPill states while preserving InventoryStatus compatibility", async () => {
@@ -248,7 +249,7 @@ test("CONV-004 reuses ProductMediaChamber and separates the atomic divider from 
   assert.match(customerRoutes, /export function OpenLabRoute\(\)[\s\S]*?<CobaltDensityBoundary \/>[\s\S]*?<SectionHeading/);
   assert.match(commerceCard, /import \{ ProductMediaChamber \}/);
   assert.match(commerceCard, /<ProductMediaChamber/);
-  assert.match(commerceCard, /<div className="product-commerce-card-inner">[\s\S]*?<ProductMediaChamber[\s\S]*?<div className="product-content-plane">/);
+  assert.match(commerceCard, /<div className="product-commerce-card-inner">[\s\S]*?<ProductMediaChamber[\s\S]*?<div className=\{classes\("product-content-plane", styles\.contentPlane\)\}>/);
   assert.match(candidateComponents, /export \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
   assert.doesNotMatch(candidateComponents, /function ProductMediaChamber|<ProductMediaChamber\b/);
   assert.match(candidateReview, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
@@ -276,26 +277,28 @@ test("CONV-004 reuses ProductMediaChamber and separates the atomic divider from 
   assert.match(globals, /\.oluk-candidate-pack-size strong\s*\{[^}]*var\(--cobalt-soft\)[^}]*var\(--cobalt\)/s);
   assert.match(commerceCard, /resolvedInventory === "unavailable"[\s\S]*?"Unavailable"/);
   assert.match(commerceParts, /data-state=\{state\}/);
-  assert.match(purchasePanel, /state=\{inventory \?\? presentation\.inventory\}/);
+  assert.match(purchasePanel, /const resolvedInventory = inventory \?\? presentation\.inventory/);
+  assert.match(purchasePanel, /state=\{resolvedInventory\}/);
   assert.match(decisionHero, /state=\{product\.presentationStatus\.inventory\}/);
   assert.match(
     commerceParts,
     /<ActionButton\s+data-oluk-node="action\.purchase\.primary"\s+disabled>/,
   );
   assert.match(commercePartsCss, /\.actions\s*\{[^}]*grid-template-columns:\s*1fr/s);
-  assert.match(globals, /\.product-commerce-card-featured \.card-actions\s*\{[^}]*grid-template-columns:\s*1fr 1\.12fr/s);
-  assert.match(productCardCss, /\.compactActions\s*\{[^}]*grid-template-columns:\s*repeat\(2/s);
+  assert.match(productCardCss, /\.actionRow\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/s);
+  assert.match(productCardCss, /\.compactCommerce > :global\(\[data-component="Button"\]\)\s*\{[^}]*width:\s*100%/s);
   assert.match(quantityStepper, /data-component="QuantityStepper"/);
   assert.match(quantityStepperCss, /grid-template-columns:\s*repeat\(3, minmax\(44px, 1fr\)\)/);
   assert.match(candidateReview, /<PurchasePanelMatrix product=\{mk2866Fixture\} \/>/);
   assert.match(candidateReviewCss, /data-width="desktop"[^}]*max-width:\s*420px/);
   assert.match(candidateReviewCss, /data-width="mobile"[^}]*max-width:\s*358px/);
-  assert.match(candidateReview, /showQualitative=\{false\}[\s\S]*?state=\{state\}[\s\S]*?variant="compact"/);
+  assert.match(candidateReview, /commerceState=\{state === "unavailable"[\s\S]*?interactionState=\{state === "unavailable"[\s\S]*?variant="compact"/);
   assert.match(candidateReviewCss, /data-state="hover"[^}]*border-color:\s*var\(--oluk-border-strong\)/);
   assert.match(candidateReviewCss, /data-state="selected"[^}]*border:\s*2px solid var\(--oluk-cobalt\)/);
-  assert.match(commerceCard, /resolved\.primaryLabel === "Added"[\s\S]*?"Added ✓"/);
-  assert.match(commerceCard, /const qualitativeVisible = showQualitative \?\? variant !== "compact"/);
-  assert.match(commerceCard, /evidenceLabel=\{secondaryLabel \?\? \(resolved\.evidence === "unavailable" \? "Browse Lab Records" : "View Lab Record"\)\}/);
+  assert.match(commerceCard, /interactionState === "added"[\s\S]*?"Added"/);
+  assert.match(commerceCard, /if \(props\.variant === "compact"\)/);
+  assert.match(commerceCard, /<EvidenceDestination signal=\{signal\} \/>/);
+  assert.doesNotMatch(commerceCard, /showQualitative|commerceTreatment/);
 
   for (const truth of ["SARM SERIES", "MK-2866", "Ostarine", "80529-01", "15 MG", "90 SERVINGS", ">99%", "£43"]) {
     assert.match(contracts, new RegExp(truth.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));

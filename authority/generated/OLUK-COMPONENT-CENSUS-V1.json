@@ -6,7 +6,7 @@
     "components": 116,
     "registeredEditable": 19,
     "inventoryOnly": 97,
-    "emittedSemanticNodeIds": 31,
+    "emittedSemanticNodeIds": 33,
     "byFamily": {
       "commerce": 15,
       "foundation": 19,
@@ -3271,8 +3271,10 @@
       "governingSource": "app/design-system/purchase-panel.tsx",
       "sourceExport": "PurchaseConfiguration",
       "fileSemanticNodeIds": [
+        "component.benefit-claim",
         "component.purchase-configuration",
         "component.purchase-panel",
+        "field.purchase.fact-summary",
         "field.purchase.package-count",
         "field.purchase.total-servings",
         "primitive.purchase-package-option"
@@ -3318,8 +3320,10 @@
       "governingSource": "app/design-system/purchase-panel.tsx",
       "sourceExport": "PurchasePackageOption",
       "fileSemanticNodeIds": [
+        "component.benefit-claim",
         "component.purchase-configuration",
         "component.purchase-panel",
+        "field.purchase.fact-summary",
         "field.purchase.package-count",
         "field.purchase.total-servings",
         "primitive.purchase-package-option"
@@ -3366,13 +3370,16 @@
       "governingSource": "app/design-system/purchase-panel.tsx",
       "sourceExport": "PurchasePanel",
       "fileSemanticNodeIds": [
+        "component.benefit-claim",
         "component.purchase-configuration",
         "component.purchase-panel",
+        "field.purchase.fact-summary",
         "field.purchase.package-count",
         "field.purchase.total-servings",
         "primitive.purchase-package-option"
       ],
       "semanticNodeIds": [
+        "component.benefit-claim",
         "component.purchase-panel"
       ],
       "semanticDisposition": "REGISTERED_EDITABLE_NODE",
@@ -3412,8 +3419,10 @@
       "governingSource": "app/design-system/purchase-panel.tsx",
       "sourceExport": "PurchasePanelMatrix",
       "fileSemanticNodeIds": [
+        "component.benefit-claim",
         "component.purchase-configuration",
         "component.purchase-panel",
+        "field.purchase.fact-summary",
         "field.purchase.package-count",
         "field.purchase.total-servings",
         "primitive.purchase-package-option"
@@ -4657,5 +4666,5 @@
       ]
     }
   ],
-  "contentHash": "2caf3fd1543295d8221f1f6dc1c723e909122bf0d5e589fa0657572a81f0c4eb"
+  "contentHash": "95bd49c8acc730f845af631d41a61fd6c32d539d1be9302bac8d2a41e0c97368"
 }

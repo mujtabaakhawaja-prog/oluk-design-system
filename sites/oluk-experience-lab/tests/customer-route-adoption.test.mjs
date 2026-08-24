@@ -118,8 +118,8 @@ test("customer routes adopt the canonical design-system modules without page-loc
 
   const openLabModules = await readFile(new URL("../app/design-system/openlab-sections.tsx", import.meta.url), "utf8");
   assert.match(openLabModules, /<ProductDossier\b/, "canonical OpenLab dossier composition reuses ProductDossier");
-  assert.match(openLabModules, /secondaryHref=\{mk2866Fixture\.customerPath\}/, "dossier return-to-commerce action targets the PDP");
-  assert.match(openLabModules, /secondaryLabel="Return to MK-2866"/, "dossier does not self-link through a lab-record label");
+  assert.match(openLabModules, /action:\s*\{ href: mk2866Fixture\.customerPath, label: "Return to MK-2866" \}/, "dossier relationship action targets the PDP");
+  assert.match(openLabModules, /variant="relation"/, "dossier uses the canonical relationship card instead of a self-linking lab action");
 });
 
 test("batch lookup renders accessible deterministic empty, entered, found, no-result and unavailable states", async () => {

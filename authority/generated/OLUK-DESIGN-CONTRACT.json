@@ -437,23 +437,24 @@
           "export": "ProductCommerceCard",
           "file": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx",
           "fixedProps": {
-            "showQualitative": false,
             "variant": "compact"
           },
           "props": [
             "product",
             "variant",
-            "state",
+            "commerceState",
+            "interactionState",
             "inventory",
-            "evidence",
             "headingLevel",
+            "reviewInteractionMode",
+            "facts",
+            "evidenceTrustSignal",
+            "benefitClaims",
+            "posture",
             "quantity",
-            "showQualitative",
-            "contextKicker",
-            "secondaryHref",
-            "secondaryLabel",
-            "className",
-            "commerceTreatment"
+            "relationship",
+            "showPrice",
+            "className"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -474,15 +475,18 @@
           "--oluk-cobalt"
         ],
         "variants": {
-          "state": [
+          "commerceState": [
+            "available",
+            "unavailable",
+            "loading",
+            "error"
+          ],
+          "interactionState": [
             "default",
             "hover",
             "focus",
             "selected",
-            "added",
-            "unavailable",
-            "out-of-stock",
-            "disabled"
+            "added"
           ]
         }
       },
@@ -497,17 +501,19 @@
           "props": [
             "product",
             "variant",
-            "state",
+            "commerceState",
+            "interactionState",
             "inventory",
-            "evidence",
             "headingLevel",
+            "reviewInteractionMode",
+            "facts",
+            "evidenceTrustSignal",
+            "benefitClaims",
+            "posture",
             "quantity",
-            "showQualitative",
-            "contextKicker",
-            "secondaryHref",
-            "secondaryLabel",
-            "className",
-            "commerceTreatment"
+            "relationship",
+            "showPrice",
+            "className"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -549,17 +555,19 @@
           "props": [
             "product",
             "variant",
-            "state",
+            "commerceState",
+            "interactionState",
             "inventory",
-            "evidence",
             "headingLevel",
+            "reviewInteractionMode",
+            "facts",
+            "evidenceTrustSignal",
+            "benefitClaims",
+            "posture",
             "quantity",
-            "showQualitative",
-            "contextKicker",
-            "secondaryHref",
-            "secondaryLabel",
-            "className",
-            "commerceTreatment"
+            "relationship",
+            "showPrice",
+            "className"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -586,6 +594,10 @@
           "--oluk-cobalt"
         ],
         "variants": {
+          "posture": [
+            "destination",
+            "transactional"
+          ],
           "width": [
             "desktop",
             "mobile"
@@ -603,17 +615,19 @@
           "props": [
             "product",
             "variant",
-            "state",
+            "commerceState",
+            "interactionState",
             "inventory",
-            "evidence",
             "headingLevel",
+            "reviewInteractionMode",
+            "facts",
+            "evidenceTrustSignal",
+            "benefitClaims",
+            "posture",
             "quantity",
-            "showQualitative",
-            "contextKicker",
-            "secondaryHref",
-            "secondaryLabel",
-            "className",
-            "commerceTreatment"
+            "relationship",
+            "showPrice",
+            "className"
           ],
           "propsType": "ProductCommerceCardProps"
         },
@@ -658,7 +672,11 @@
             "evidence",
             "quantity",
             "headingLevel",
-            "className"
+            "className",
+            "bottleOptions",
+            "benefitClaim",
+            "contentMode",
+            "reviewMode"
           ],
           "propsType": "PurchasePanelProps"
         },
@@ -680,6 +698,11 @@
           "--oluk-cobalt"
         ],
         "variants": {
+          "contentMode": [
+            "benefits-supported",
+            "facts-only",
+            "minimal"
+          ],
           "state": [
             "default",
             "quantity-changed",
@@ -2487,7 +2510,7 @@
   "generatedFrom": {
     "bridge": {
       "file": "authority/FIGMA-CODE-BRIDGE.json",
-      "sha256": "ef5e5c6b6799cb58aa9083fb8d090046c93b50f1bb8f80762c13bece1c647f3c"
+      "sha256": "2783b11537f67c5ac4c987cfa688292973fed45ad1d16717770154f9468e1658"
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
@@ -3860,5 +3883,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "e0886d67e00a09db96c2b99e030282f74f75184c5662d855cf45493962b8b900"
+  "contractHash": "a115838715681a1a44a1acf22dc42f4b108ef789ef970f096fc0e1635ef4ad28"
 }

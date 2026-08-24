@@ -178,7 +178,8 @@ test("first Make run is a self-contained canonical Your Stack frontier", () => {
 test("Your Stack wraps the canonical commerce card with governed commercial decision content", () => {
   const stackBuilder = readFileSync(new URL("../app/design-system/your-stack-builder.tsx", import.meta.url), "utf8");
   assert.match(stackBuilder, /export function StackOutcomeCard/);
-  assert.match(stackBuilder, /<ProductCommerceCard[\s\S]*commerceTreatment="selection"/);
+  assert.match(stackBuilder, /<ProductCommerceCard[\s\S]*interactionState=\{added \? "selected" : "default"\}[\s\S]*variant="vertical"/);
+  assert.doesNotMatch(stackBuilder, /commerceTreatment|showQualitative/);
   assert.match(stackBuilder, /<DecisionSurface/);
   assert.match(stackBuilder, /<TechnicalSurface/);
   assert.doesNotMatch(stackBuilder, /<ProductMediaChamber|<MetricRail/);

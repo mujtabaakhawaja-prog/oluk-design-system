@@ -12,8 +12,8 @@
   "routeRefactorCount": 44,
   "routes": [
     {
-      "containedCopyGroupCount": 18,
-      "copyGroupCount": 48,
+      "containedCopyGroupCount": 20,
+      "copyGroupCount": 50,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -468,8 +468,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 12,
-      "copyGroupCount": 18,
+      "containedCopyGroupCount": 14,
+      "copyGroupCount": 20,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -867,8 +867,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 8,
-      "copyGroupCount": 17,
+      "containedCopyGroupCount": 14,
+      "copyGroupCount": 23,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -981,8 +981,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 48,
-      "copyGroupCount": 60,
+      "containedCopyGroupCount": 64,
+      "copyGroupCount": 76,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -1323,8 +1323,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 16,
-      "copyGroupCount": 23,
+      "containedCopyGroupCount": 18,
+      "copyGroupCount": 25,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2235,8 +2235,8 @@
       "surroundingRouteLooseCopyGroupCount": 0
     },
     {
-      "containedCopyGroupCount": 21,
-      "copyGroupCount": 34,
+      "containedCopyGroupCount": 23,
+      "copyGroupCount": 36,
       "looseCopyExamples": [
         {
           "copySurface": null,
@@ -2644,7 +2644,7 @@
       "value": "var(--oluk-text-muted)"
     }
   ],
-  "sourceHash": "eeeeae00c098c26e7493072b5702a2719122410d70806e8b568a58939ed9d799",
+  "sourceHash": "280228603cd57a7b2f28d7ceb73edef52233ce076623e94ea613230f1f2b84e4",
   "strictFoundation": {
     "bodyTypeFloorPx": 15,
     "canonicalCopySurfaces": [
@@ -2757,5 +2757,5 @@
     "sourceFindings": [],
     "status": "STRICT_READY"
   },
-  "auditHash": "9bf7d82272197c755e359e645061fada51a79dc558211cb87239fd7e674d5349"
+  "auditHash": "d7285d712047a92434bc3cc4d4ba1a73212b23388a8e958fd4af12030e6c2b6b"
 }

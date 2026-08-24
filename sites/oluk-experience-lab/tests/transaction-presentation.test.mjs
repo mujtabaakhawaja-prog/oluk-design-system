@@ -65,7 +65,8 @@ test("transaction presentation preserves shared anatomy and fails order-bound st
   const source = await readFile(new URL("design-system/transaction-presentation.tsx", appRoot), "utf8");
 
   assert.match(source, /import \{ ProductCommerceCard \} from "\.\/product-commerce-card"/);
-  assert.match(source, /<ProductCommerceCard[\s\S]*?commerceTreatment="selection"[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="compact"/);
+  assert.match(source, /<ProductCommerceCard[\s\S]*?product=\{mk2866Fixture\}[\s\S]*?variant="compact"/);
+  assert.doesNotMatch(source, /commerceTreatment|showQualitative/);
   assert.match(source, /<TransactionIntroCard/);
   assert.match(source, /data-component="BreadcrumbSurface"/);
   assert.match(source, /data-component="OrderSummarySurface"/);

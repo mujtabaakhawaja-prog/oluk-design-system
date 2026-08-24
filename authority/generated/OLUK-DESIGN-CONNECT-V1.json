@@ -2,7 +2,7 @@
   "contract": "OLUK_DESIGN_CONNECT_V1",
   "schemaVersion": "1.0.0",
   "status": "CANDIDATE_PENDING_NEXT_BINDING",
-  "nodeContractDigest": "8590ebe4c4cb5bb17984912800860f6a9801ce5f5f3493d9ff7d9f6c6a682fdd",
+  "nodeContractDigest": "82eadc2ee36e91b1e3633408dee17b02a9c3d5575806bfde837457a63c5fb0d0",
   "designSource": {
     "repository": "oluk-design-system",
     "baseSha": "8b79a7d04342043d3f972c5cf844c9168547d401",
@@ -95,6 +95,26 @@
       "bindingRole": "primitive",
       "sharedExportGroup": "shared-export.quantity-stepper-anatomy",
       "sharedExportJustification": "The stepper owns its two native button actions as named semantic children."
+    },
+    {
+      "nodeId": "component.benefit-claim",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=component.benefit-claim",
+      "reviewCandidate": "/review-studio?node=component.benefit-claim",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": null,
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=component.benefit-claim",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "component",
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
     },
     {
       "nodeId": "component.cobalt-density-boundary",
@@ -365,8 +385,8 @@
         "production": "not_assessed"
       },
       "bindingRole": "component",
-      "sharedExportGroup": null,
-      "sharedExportJustification": null
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
     },
     {
       "nodeId": "component.quantity-stepper",
@@ -509,6 +529,26 @@
       "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
+      "nodeId": "content.product-benefit-claim",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=content.product-benefit-claim",
+      "reviewCandidate": "/review-studio?node=content.product-benefit-claim",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=content.product-benefit-claim",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "content",
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
+    },
+    {
       "nodeId": "content.product-identity",
       "designSource": "sites/oluk-experience-lab/app/design-system/product-commerce-card.tsx#ProductCommerceCard",
       "atlasSpecimen": "/system-atlas?node=content.product-identity",
@@ -545,8 +585,8 @@
         "production": "not_assessed"
       },
       "bindingRole": "field",
-      "sharedExportGroup": null,
-      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
     },
     {
       "nodeId": "field.commerce.price",
@@ -705,8 +745,8 @@
         "production": "not_assessed"
       },
       "bindingRole": "field",
-      "sharedExportGroup": null,
-      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
     },
     {
       "nodeId": "field.product.alias",
@@ -769,6 +809,26 @@
       "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
     },
     {
+      "nodeId": "field.purchase.fact-summary",
+      "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
+      "atlasSpecimen": "/system-atlas?node=field.purchase.fact-summary",
+      "reviewCandidate": "/review-studio?node=field.purchase.fact-summary",
+      "sitesPlacement": "/product/mk-2866",
+      "nextImplementation": "app/presentation-system/adapters/pdp-view-model.ts",
+      "runtimeStudioSpecimen": "/owner-tools/runtime-studio?node=field.purchase.fact-summary",
+      "nativeNextSlotIds": [
+        "slot.product-detail.pdp.first-fold"
+      ],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      },
+      "bindingRole": "field",
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
+    },
+    {
       "nodeId": "field.purchase.package-count",
       "designSource": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx#PurchasePanel",
       "atlasSpecimen": "/system-atlas?node=field.purchase.package-count",
@@ -785,8 +845,8 @@
         "production": "not_assessed"
       },
       "bindingRole": "field",
-      "sharedExportGroup": null,
-      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
     },
     {
       "nodeId": "field.purchase.selected-quantity",
@@ -825,8 +885,8 @@
         "production": "not_assessed"
       },
       "bindingRole": "field",
-      "sharedExportGroup": null,
-      "sharedExportJustification": "Synthesized dependency binding owned by its presentation adapter."
+      "sharedExportGroup": "shared-export.purchase-panel-content-modes",
+      "sharedExportJustification": "PurchasePanel owns the facts-only, source-bound benefit, and minimal content-mode branches; the benefit node names the guarded visible claim without creating a second purchase authority."
     },
     {
       "nodeId": "media.pdp-product-render",

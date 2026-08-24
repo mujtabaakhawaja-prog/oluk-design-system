@@ -22,14 +22,14 @@
     "legacyEmbeddedSourceIsProvenanceOnly": true
   },
   "counts": {
-    "nodes": 52,
-    "explicitNodes": 31,
-    "synthesizedFieldNodes": 15,
-    "synthesizedContentNodes": 6,
+    "nodes": 55,
+    "explicitNodes": 32,
+    "synthesizedFieldNodes": 16,
+    "synthesizedContentNodes": 7,
     "censusExports": 116,
     "registeredEditableExports": 19,
     "inventoryOnlyExports": 97,
-    "emittedSemanticNodeIds": 31
+    "emittedSemanticNodeIds": 33
   },
   "laws": [
     "Semantic node names supplement correct HTML; they never replace accessible headings, actions, lists, definitions, landmarks, or disclosures.",
@@ -215,6 +215,53 @@
       ],
       "fieldIds": [],
       "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "component.benefit-claim",
+      "name": "BenefitClaim / Source Bound",
+      "kind": "component",
+      "renderAs": "aside",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "benefits-supported"
+      ],
+      "states": [
+        "supported",
+        "omitted"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.product-benefit-claim"
+      ],
       "mediaRoleIds": [],
       "adoption": {
         "sites": "implemented",
@@ -980,6 +1027,7 @@
           "module.pdp-first-fold"
         ],
         "childIds": [
+          "component.benefit-claim",
           "component.metric-rail",
           "component.price-block",
           "component.product-identity",
@@ -1065,6 +1113,7 @@
         "field.product.alias",
         "field.product.name",
         "field.product.series-name",
+        "field.purchase.fact-summary",
         "field.purchase.package-count",
         "field.purchase.selected-quantity",
         "field.purchase.total-servings"
@@ -1449,6 +1498,52 @@
       "fieldIds": [],
       "contentIds": [
         "content.metric-label.strength"
+      ],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "content.product-benefit-claim",
+      "name": "Content / Product Benefit Claim",
+      "kind": "content",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.benefit-claim"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "omitted",
+        "supported"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [],
+      "contentIds": [
+        "content.product-benefit-claim"
       ],
       "mediaRoleIds": [],
       "adoption": {
@@ -2221,6 +2316,58 @@
       ],
       "fieldIds": [
         "field.product.series-name"
+      ],
+      "contentIds": [],
+      "mediaRoleIds": [],
+      "adoption": {
+        "sites": "implemented",
+        "next": "binding_required",
+        "production": "not_assessed"
+      }
+    },
+    {
+      "id": "field.purchase.fact-summary",
+      "name": "Field / Purchase Fact Summary",
+      "kind": "field",
+      "ownership": {
+        "repository": "design",
+        "sourcePath": "sites/oluk-experience-lab/app/design-system/purchase-panel.tsx",
+        "exportName": "PurchasePanel"
+      },
+      "relationships": {
+        "parentIds": [
+          "component.purchase-panel"
+        ],
+        "childIds": [],
+        "allowedSlotIds": [
+          "slot.product-detail.pdp.first-fold"
+        ],
+        "allowedRouteIds": [
+          "route.product"
+        ]
+      },
+      "controls": [],
+      "variants": [
+        "default"
+      ],
+      "states": [
+        "added",
+        "default",
+        "disabled",
+        "focus-visible",
+        "long-copy",
+        "out-of-stock",
+        "quantity-changed",
+        "unavailable"
+      ],
+      "responsiveModes": [
+        "1440",
+        "1024",
+        "768",
+        "390"
+      ],
+      "fieldIds": [
+        "field.purchase.fact-summary"
       ],
       "contentIds": [],
       "mediaRoleIds": [],
@@ -4461,6 +4608,7 @@
       "exportName": "PurchasePanel",
       "family": "pdp",
       "semanticNodeIds": [
+        "component.benefit-claim",
         "component.purchase-panel"
       ],
       "disposition": "REGISTERED_EDITABLE_NODE",
