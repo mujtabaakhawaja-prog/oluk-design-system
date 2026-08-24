@@ -173,8 +173,9 @@ check(stock?.figma.sourceSpecimenNodeId === "641:17", "InventoryStatus source sp
 check(stock?.code.export === "StockPill", "promoted canonical maps directly to StockPill export");
 check(stock?.code.propsType === "StockPillProps", "promoted canonical maps directly to StockPillProps");
 check(stock?.code.compatibilityAlias?.export === "InventoryStatus", "InventoryStatus is retained only as a compatibility alias");
-check(stock?.tokens.includes("--oluk-cobalt"), "in-stock StockPill uses cobalt");
-check(!stock?.tokens.includes("--oluk-inventory-green"), "inventory mapping rejects green status authority");
+check(stock?.tokens.includes("--oluk-stock-in-stock"), "in-stock StockPill uses its restrained-green inventory foreground token");
+check(stock?.tokens.includes("--oluk-stock-in-stock-soft"), "in-stock StockPill uses its restrained-green inventory background token");
+check(!stock?.tokens.includes("--oluk-cobalt"), "inventory mapping does not reuse evidence and interaction cobalt");
 
 const mediaChamber = registry.componentMappings.find(({ id }) => id === "product-media-chamber");
 check(mediaChamber?.figma.nodeId === "1022:4099", "MediaChamber component set 1022:4099 is registered");

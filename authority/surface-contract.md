@@ -1,5 +1,7 @@
 # Olympus Labs UK — Adaptive Surface and Material Contract
 
+> **2026-08-24 component-family review addendum:** `DEC-STOCK-002` supersedes `DEC-STOCK-001` only for the in-stock treatment. Dedicated inventory tokens now resolve to the restrained governed success pair (`#15803D` / `#ECFDF3`). Out-of-stock remains error, unavailable remains neutral, and evidence/metrics/selection/links/primary interaction remain cobalt. This changes Design presentation authority only; it does not create runtime inventory truth.
+
 > **2026-08-12 CONV-004 addendum:** the full-file convergence extends the four active unpublished collections from 98 to 112 variables so the approved dark/error/warning/unavailable/disabled and page-spacing roles remain explicit. Generic page canvases converge to `surface/canvas`, but this does not flatten `surface/family`, the governed MF-01A MediaChamber recipe, cards, or the sole inverse footer. Inventory adopts the cobalt StockPill contract; general success green is no longer inventory authority.
 
 > **2026-08-12 CONV-002 addendum:** 12 new convergence variables added to close the MF-01A standardization gap. Chip grammar, media gradient, and graduated border hierarchy now fully specified. `neutral/family` updated to #F8FAFC per champion decision. Total convergence variables: 98.
@@ -151,10 +153,10 @@ CONV-004 does not compress unlike semantic jobs into the old 98-variable model. 
 
 The promoted InventoryStatus canonical remains `732:2902`, derived from the source specimen `641:17`. Its three promoted variants are `732:2903`, `732:2906` and `732:2909`.
 
-- In stock: `#0057FF` foreground on `#EEF4FF`.
+- In stock: `#15803D` foreground on `#ECFDF3` (`DEC-STOCK-002`).
 - Out of stock: `#B42318` foreground on `#FEF3F2`.
 - Unavailable: `#64718A` foreground on `#F4F5F7`.
-- All states use the governed pill radius. `#15803D` remains non-inventory success only.
+- All states use the governed pill radius. Evidence, metrics, selection, links and primary interaction remain cobalt.
 
 ### Canonical MediaChamber
 

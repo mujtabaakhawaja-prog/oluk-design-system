@@ -187,3 +187,10 @@ This log is append-only. Earlier entries are never rewritten; corrective entries
 - Added exact rendered-PDP checks for each catalogue item plus customer-copy lint coverage. Validation: typecheck pass, tests `96/96`, customer-copy audit `70/70`.
 - Re-ran current-branch browser QA after the copy change: MF-09 geometry `292/292`, accessibility `146/146`, contrast/reflow/long-copy `70/70`, and interactions `35/35` including transaction zero-callback `8/8`.
 - This remains a bounded content/reference alignment. Recapture and visual comparison still precede `sync-verified`; champion review, Figma publication and deployment remain separate.
+
+## 2026-08-24 — Restrained in-stock inventory correction
+
+- Appended `DEC-STOCK-002`, which supersedes only the in-stock color treatment from `DEC-STOCK-001`; dedicated inventory tokens now resolve to the governed restrained-green success pair `#15803D / #ECFDF3`.
+- Preserved out-of-stock error red and unavailable neutral while retaining cobalt for evidence, metrics, selection, links and primary interaction.
+- Recorded Foundations and MetricRail as accepted, the remaining component families as `MACHINE_VERIFIED_HUMAN_REVIEW_REQUIRED`, and customer-route adoption as `HOLD`.
+- This is a Design/Sites presentation-authority correction only. It does not mutate runtime inventory truth, Figma, Native Next, customer routes, commerce, payment, publication or deployment.

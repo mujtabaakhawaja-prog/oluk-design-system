@@ -72,8 +72,8 @@ function FoundationSpecimen() {
     ["Text muted", "#64718A", "--oluk-text-muted"],
     ["Cobalt", "#0057FF", "--oluk-cobalt"],
     ["Cobalt alt", "#0057FF", "--oluk-cobalt-alt"],
-    ["Inventory", "#0057FF", "--oluk-stock-in-stock"],
-    ["Inventory soft", "#EEF4FF", "--oluk-stock-in-stock-soft"],
+    ["Inventory", "#15803D", "--oluk-stock-in-stock"],
+    ["Inventory soft", "#ECFDF3", "--oluk-stock-in-stock-soft"],
     ["Inverse", "#141827", "--oluk-inverse"],
     ["On inverse", "#FFFFFF", "--oluk-text-on-inverse"],
   ] as const;
@@ -185,7 +185,7 @@ function FoundationSpecimen() {
         <ul>
           <li>Exact product truth: 15 MG · 90 SERVINGS · &gt;99% · £43 · SKU 80529-01.</li>
           <li>No achromatic Tailwind grey; no cobalt outer card outline or decorative top edge.</li>
-          <li>Cobalt StockPill InventoryStatus; exact EvidenceStatus; six distinct AssuranceRail icons.</li>
+          <li>Restrained-green StockPill InventoryStatus; cobalt EvidenceStatus; six distinct AssuranceRail icons.</li>
           <li>Families: SARMs · Prohormones · Research Chemicals · Stacks. Independent facets: form · servings · goals · availability.</li>
           <li>Footer is the sole inverse. Runtime authority remains NONE.</li>
         </ul>

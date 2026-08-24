@@ -51,9 +51,12 @@
           "/review"
         ],
         "tokens": [
-          "--oluk-cobalt",
-          "--oluk-surface-cobalt-soft",
-          "--oluk-text-muted",
+          "--oluk-stock-in-stock",
+          "--oluk-stock-in-stock-soft",
+          "--oluk-stock-out-of-stock",
+          "--oluk-stock-out-of-stock-soft",
+          "--oluk-stock-unavailable",
+          "--oluk-stock-unavailable-soft",
           "--oluk-radius-pill"
         ],
         "variants": {
@@ -1886,8 +1889,8 @@
         "--oluk-status-success-soft": "#ecfdf3",
         "--oluk-status-unavailable-soft": "#f4f5f7",
         "--oluk-status-warning": "#b54708",
-        "--oluk-stock-in-stock": "var(--oluk-cobalt)",
-        "--oluk-stock-in-stock-soft": "var(--oluk-surface-cobalt-soft)",
+        "--oluk-stock-in-stock": "var(--oluk-status-success)",
+        "--oluk-stock-in-stock-soft": "var(--oluk-status-success-soft)",
         "--oluk-stock-out-of-stock": "var(--oluk-status-error)",
         "--oluk-stock-out-of-stock-soft": "var(--oluk-status-error-soft)",
         "--oluk-stock-unavailable": "var(--oluk-text-muted)",
@@ -2484,7 +2487,7 @@
   "generatedFrom": {
     "bridge": {
       "file": "authority/FIGMA-CODE-BRIDGE.json",
-      "sha256": "1feca7c220e89a1feccd26047f3ece95dbc37c691154a546ce21b43fda4ce884"
+      "sha256": "ef5e5c6b6799cb58aa9083fb8d090046c93b50f1bb8f80762c13bece1c647f3c"
     },
     "intents": {
       "file": "authority/FIGMA-INTENT-REGISTRY.json",
@@ -2512,7 +2515,7 @@
     },
     "tokens": {
       "file": "sites/oluk-experience-lab/tests/contracts/governed-token-manifest.json",
-      "sha256": "c6d3f6ec16f75a96162cb5ebefd69bb6cc7e4f9a0553ef814e9d40a854d95b79"
+      "sha256": "da36de3eb89cadbb85f9d1783259dd43d08e5142eb7a0665a2907aa53ad4254e"
     }
   },
   "immutableProductTruth": {
@@ -3857,5 +3860,5 @@
   },
   "schemaVersion": 1,
   "status": "HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-  "contractHash": "6feb898675f7e395fd5365d0e2e30ffedbf86c9793b6db20f7153c4e8ade09d4"
+  "contractHash": "e0886d67e00a09db96c2b99e030282f74f75184c5662d855cf45493962b8b900"
 }

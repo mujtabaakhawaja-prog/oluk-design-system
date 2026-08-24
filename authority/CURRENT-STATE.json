@@ -58,7 +58,7 @@
           "green/success-soft": {"id": "VariableID:634:19", "value": "#ECFDF3", "renamedFromHistorical": "green/inventory-soft"},
           "status/success": {"id": "VariableID:634:38", "alias": "green/success", "renamedFromHistorical": "status/inventory"},
           "status/success-soft": {"id": "VariableID:634:39", "alias": "green/success-soft", "renamedFromHistorical": "status/inventory-soft"},
-          "stockPillTokenSources": ["accent/cobalt", "surface/cobalt-soft"]
+          "stockPillTokenSources": ["status/success", "status/success-soft"]
         },
         "publicationState": "UNPUBLISHED"
       }
@@ -149,21 +149,36 @@
     "purchasePanelMedia": "NOT_APPLICABLE_NO_MEDIA_CHAMBER_BY_DESIGN"
   },
   "inventoryStatus": {
-    "decisionId": "DEC-STOCK-001",
+    "decisionId": "DEC-STOCK-002",
+    "supersededDecisionId": "DEC-STOCK-001_IN_STOCK_TREATMENT_ONLY",
     "status": "CHAMPION_CANDIDATE_HUMAN_REVIEW_REQUIRED",
     "sourceSpecimen": "641:17",
     "sourceVariants": ["641:8", "641:11", "641:14"],
     "promotedCanonical": "732:2902",
     "promotedVariants": ["732:2903", "732:2906", "732:2909"],
     "states": {
-      "inStock": {"foreground": "#0057FF", "background": "#EEF4FF"},
+      "inStock": {"foreground": "#15803D", "background": "#ECFDF3"},
       "outOfStock": {"foreground": "#B42318", "background": "#FEF3F2"},
       "unavailable": {"foreground": "#64718A", "background": "#F4F5F7"}
     },
-    "greenInventoryRejected": true,
+    "greenInventoryRejected": false,
+    "inStockTreatment": "RESTRAINED_GREEN",
+    "cobaltReservedFor": ["evidence", "metrics", "selection", "links", "primary interaction"],
     "repositoryCanonicalExport": "StockPill",
     "repositoryCanonicalPropsType": "StockPillProps",
     "inventoryStatusExportDisposition": "NON_CANONICAL_COMPATIBILITY_ALIAS_ONLY"
+  },
+  "componentFamilyReview": {
+    "decisionDate": "2026-08-24",
+    "foundations": "ACCEPT",
+    "metricRailComponent": "ACCEPT",
+    "metricRailReviewGeometry": "ACCEPT",
+    "commerceCards": "MACHINE_VERIFIED_HUMAN_REVIEW_REQUIRED",
+    "purchasePanel": "MACHINE_VERIFIED_HUMAN_REVIEW_REQUIRED",
+    "pdpFirstFold": "MACHINE_VERIFIED_HUMAN_REVIEW_REQUIRED",
+    "openLabComposition": "MACHINE_VERIFIED_HUMAN_REVIEW_REQUIRED",
+    "checkoutPresentation": "MACHINE_VERIFIED_HUMAN_REVIEW_REQUIRED",
+    "customerRouteAdoption": "HOLD"
   },
   "cobaltDivider": {
     "decisionId": "DEC-DIVIDER-001",
@@ -393,7 +408,7 @@
     },
     "conv004Completion": {
       "verificationState": "FINAL_FIGMA_CLOSEOUT_VERIFIED_REPOSITORY_VALIDATED_WORKTREE_PENDING_IMPLEMENTATION_COMMIT_HUMAN_REVIEW_REQUIRED_UNPUBLISHED",
-      "decisionIds": ["DEC-COLOR-001", "DEC-TYPEFACE-001", "DEC-TYPE-FLOOR-001", "DEC-VARIABLES-002", "DEC-STOCK-001", "DEC-DIVIDER-001", "DEC-MEDIA-005", "DEC-CONV-004", "DEC-CONV-004-CLOSEOUT-001"],
+      "decisionIds": ["DEC-COLOR-001", "DEC-TYPEFACE-001", "DEC-TYPE-FLOOR-001", "DEC-VARIABLES-002", "DEC-STOCK-001", "DEC-STOCK-002", "DEC-DIVIDER-001", "DEC-MEDIA-005", "DEC-CONV-004", "DEC-CONV-004-CLOSEOUT-001"],
       "activeVariableCollections": 4,
       "activeVariableCount": 112,
       "archivedVariableCollections": 0,

@@ -82,14 +82,14 @@ test("CONV-004 reproduces the complete owner-only FC-01 foundation specimen", as
   assert.match(foundation, /A normalization layer for MF-01A through MF-03 relationships\. It is not promoted design-system authority\./);
   assert.equal((foundation.match(/data-foundation-section=/g) ?? []).length, 5);
   assert.equal((roles.match(/^\s*\["/gm) ?? []).length, 22);
-  assert.match(roles, /\["Inventory", "#0057FF", "--oluk-stock-in-stock"\]/);
-  assert.match(roles, /\["Inventory soft", "#EEF4FF", "--oluk-stock-in-stock-soft"\]/);
+  assert.match(roles, /\["Inventory", "#15803D", "--oluk-stock-in-stock"\]/);
+  assert.match(roles, /\["Inventory soft", "#ECFDF3", "--oluk-stock-in-stock-soft"\]/);
   assert.match(roles, /\["Cobalt alt", "#0057FF", "--oluk-cobalt-alt"\]/);
   assert.match(foundation, /DISPLAY · PLUS JAKARTA SANS EXTRABOLD/);
   assert.match(foundation, /BODY \+ UI · INTER VARIABLE/);
   assert.match(foundation, /data-display-size="56"/);
   assert.match(foundation, /data-display-size="28"/);
-  assert.match(foundation, /Cobalt StockPill InventoryStatus/);
+  assert.match(foundation, /Restrained-green StockPill InventoryStatus/);
   assert.match(foundation, /Footer is the sole inverse\. Runtime authority remains NONE\./);
   assert.equal((foundation.match(/<li>/g) ?? []).length, 5);
 
@@ -173,8 +173,8 @@ test("CONV-004 exposes StockPill states while preserving InventoryStatus compati
     "--oluk-status-warning: #b54708",
     "--oluk-status-unavailable-soft: #f4f5f7",
     "--oluk-status-disabled: #9ca3af",
-    "--oluk-stock-in-stock: var(--oluk-cobalt)",
-    "--oluk-stock-in-stock-soft: var(--oluk-surface-cobalt-soft)",
+    "--oluk-stock-in-stock: var(--oluk-status-success)",
+    "--oluk-stock-in-stock-soft: var(--oluk-status-success-soft)",
     "--oluk-stock-out-of-stock: var(--oluk-status-error)",
     "--oluk-stock-out-of-stock-soft: var(--oluk-status-error-soft)",
     "--oluk-stock-unavailable: var(--oluk-text-muted)",

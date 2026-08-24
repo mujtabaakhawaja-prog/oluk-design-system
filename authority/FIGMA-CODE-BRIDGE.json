@@ -137,7 +137,7 @@
       "code": { "file": "sites/oluk-experience-lab/app/design-system/product-status.tsx", "export": "StockPill", "propsType": "StockPillProps", "contract": "StockPill", "compatibilityAlias": {"export": "InventoryStatus", "propsType": "InventoryStatusProps", "authority": "NON_CANONICAL_COMPATIBILITY_ONLY"}, "props": ["state", "className"] },
       "variants": { "state": ["in-stock", "out-of-stock", "unavailable"] },
       "routes": ["/", "/product/mk-2866", "/open-lab", "/review"],
-      "tokens": ["--oluk-cobalt", "--oluk-surface-cobalt-soft", "--oluk-text-muted", "--oluk-radius-pill"]
+      "tokens": ["--oluk-stock-in-stock", "--oluk-stock-in-stock-soft", "--oluk-stock-out-of-stock", "--oluk-stock-out-of-stock-soft", "--oluk-stock-unavailable", "--oluk-stock-unavailable-soft", "--oluk-radius-pill"]
     },
     {
       "id": "evidence-status",
@@ -358,8 +358,8 @@
   },
   "bridgeTokens": [
     { "css": "--oluk-cobalt-alt", "value": "#0057ff", "figmaVariable": "accent/cobalt-interactive", "figmaVariableId": "VariableID:634:36", "figmaPrimitive": "blue/interactive", "figmaPrimitiveId": "VariableID:634:16", "scope": "accent" },
-    { "css": "--oluk-status-success", "value": "#15803d", "figmaVariable": "status/success", "figmaVariableId": "VariableID:634:38", "figmaPrimitive": "green/success", "figmaPrimitiveId": "VariableID:634:18", "scope": "non-inventory-success" },
-    { "css": "--oluk-status-success-soft", "value": "#ecfdf3", "figmaVariable": "status/success-soft", "figmaVariableId": "VariableID:634:39", "figmaPrimitive": "green/success-soft", "figmaPrimitiveId": "VariableID:634:19", "scope": "non-inventory-success-fill" },
+    { "css": "--oluk-status-success", "value": "#15803d", "figmaVariable": "status/success", "figmaVariableId": "VariableID:634:38", "figmaPrimitive": "green/success", "figmaPrimitiveId": "VariableID:634:18", "scope": "success-and-in-stock" },
+    { "css": "--oluk-status-success-soft", "value": "#ecfdf3", "figmaVariable": "status/success-soft", "figmaVariableId": "VariableID:634:39", "figmaPrimitive": "green/success-soft", "figmaPrimitiveId": "VariableID:634:19", "scope": "success-and-in-stock-fill" },
     { "css": "--oluk-text-dark", "value": "var(--oluk-ink-dark)", "figmaVariable": "text/dark", "figmaVariableId": "VariableID:1024:56", "figmaPrimitive": "ink/dark", "figmaPrimitiveId": "VariableID:1024:50", "scope": "text-fill" },
     { "css": "--oluk-status-error", "value": "#b42318", "figmaVariable": "status/error", "figmaVariableId": "VariableID:1024:57", "figmaPrimitive": "red/error", "figmaPrimitiveId": "VariableID:1024:51", "scope": "status" },
     { "css": "--oluk-status-error-soft", "value": "#fef3f2", "figmaVariable": "status/error-soft", "figmaVariableId": "VariableID:1024:58", "figmaPrimitive": "red/error-soft", "figmaPrimitiveId": "VariableID:1024:52", "scope": "status-fill" },

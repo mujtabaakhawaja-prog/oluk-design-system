@@ -258,9 +258,12 @@
         "/review"
       ],
       "tokens": [
-        "--oluk-cobalt",
-        "--oluk-surface-cobalt-soft",
-        "--oluk-text-muted",
+        "--oluk-stock-in-stock",
+        "--oluk-stock-in-stock-soft",
+        "--oluk-stock-out-of-stock",
+        "--oluk-stock-out-of-stock-soft",
+        "--oluk-stock-unavailable",
+        "--oluk-stock-unavailable-soft",
         "--oluk-radius-pill"
       ]
     },
@@ -1246,7 +1249,7 @@
       "figmaVariableId": "VariableID:634:38",
       "figmaPrimitive": "green/success",
       "figmaPrimitiveId": "VariableID:634:18",
-      "scope": "non-inventory-success"
+      "scope": "success-and-in-stock"
     },
     {
       "css": "--oluk-status-success-soft",
@@ -1255,7 +1258,7 @@
       "figmaVariableId": "VariableID:634:39",
       "figmaPrimitive": "green/success-soft",
       "figmaPrimitiveId": "VariableID:634:19",
-      "scope": "non-inventory-success-fill"
+      "scope": "success-and-in-stock-fill"
     },
     {
       "css": "--oluk-text-dark",

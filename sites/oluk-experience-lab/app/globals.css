@@ -30,8 +30,8 @@
   --oluk-status-warning: #b54708;
   --oluk-status-unavailable-soft: #f4f5f7;
   --oluk-status-disabled: #9ca3af;
-  --oluk-stock-in-stock: var(--cobalt);
-  --oluk-stock-in-stock-soft: var(--cobalt-soft);
+  --oluk-stock-in-stock: var(--oluk-status-success);
+  --oluk-stock-in-stock-soft: var(--oluk-status-success-soft);
   --oluk-stock-out-of-stock: var(--oluk-status-error);
   --oluk-stock-out-of-stock-soft: var(--oluk-status-error-soft);
   --oluk-stock-unavailable: var(--ink-muted);

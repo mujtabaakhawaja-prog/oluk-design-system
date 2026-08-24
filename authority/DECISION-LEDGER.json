@@ -372,6 +372,18 @@
       "excluded": ["current Commerce and Checkout runtime tranche", "Account runtime implementation", "Figma", "Figma Make", "Figma publication", "Review Studio payload refresh", "candidate PR #42 rebase or merge", "route promotion", "runtime service mutation"],
       "implementationStatus": "NO_IMPLEMENTATION_OR_PROMOTION",
       "supersedes": []
+    },
+    {
+      "id": "DEC-STOCK-002",
+      "recordedDate": "2026-08-24",
+      "actor": "champion_user",
+      "status": "CHAMPION",
+      "decision": "The restrained green success pair is the current in-stock inventory treatment. StockPill and InventoryStatus keep their dedicated inventory token names, with in-stock foreground #15803D and background #ECFDF3. Out-of-stock remains #B42318 on #FEF3F2 and unavailable remains #64718A on #F4F5F7. Evidence, metrics, selection, links and primary interaction remain cobalt. This is a bounded presentation-authority correction and does not create runtime inventory authority.",
+      "sources": ["current explicit champion-user verdict", "status/success", "status/success-soft"],
+      "appliesTo": ["InventoryStatus", "StockPill", "Design token projection", "Codex Sites review candidates"],
+      "clarifies": ["DEC-COLOR-001", "DEC-CONV-004-CLOSEOUT-001"],
+      "supersedes": ["DEC-STOCK-001 in-stock cobalt treatment only"],
+      "guardrails": ["evidence remains cobalt", "out-of-stock remains error", "unavailable remains neutral", "HUMAN_REVIEW_REQUIRED", "UNPUBLISHED", "no runtime inventory mutation"]
     }
   ]
 }
