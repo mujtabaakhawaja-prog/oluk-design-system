@@ -9,8 +9,11 @@ export function PdpAtmosphericMediaField({ product }: Readonly<{ product: Produc
   return (
     <div
       className={styles.media}
+      data-bounded-media-chamber="false"
       data-media-context="pdp-first-fold"
+      data-plane-elevation="none"
       data-oluk-node="component.pdp-atmospheric-media-field"
+      data-surface-role="pdp-atmospheric-field"
     >
       <span aria-hidden="true" className={styles.atmosphere} data-oluk-node="primitive.pdp-atmosphere-light" />
       {product.media ? (
@@ -48,6 +51,7 @@ export function PdpFirstFold({ product }: Readonly<{ product: ProductFixture }>)
       data-figma-purchase-panel="626:12659"
       data-figma-reference-nodes="551:25865 599:69630 1384:16367"
       data-figma-visual-area="717:16140"
+      data-object-pair="pdp-atmospheric-field purchase-decision-plane"
       data-oluk-node="module.pdp-first-fold"
       data-oluk-slot="slot.product-detail.pdp.first-fold"
       data-surface-exception="pdp-media-purchase-decision-pair"
@@ -56,7 +60,15 @@ export function PdpFirstFold({ product }: Readonly<{ product: ProductFixture }>)
       <div className={`shell ${styles.breadcrumb}`} data-oluk-node="slot.product-detail.pdp.breadcrumb"><Breadcrumbs items={[{ label: "Shop", href: "/shop" },{ label: "SARMs", href: "/shop?family=sarms" },{ label: product.name }]}/></div>
       <div className={`shell ${styles.composition}`} data-oluk-node="template.product-detail.first-fold">
         <PdpAtmosphericMediaField product={product} />
-        <PurchasePanel bottleOptions className={styles.panel} headingLevel="h1" product={product}/>
+        <PurchasePanel
+          bottleOptions
+          className={styles.panel}
+          contentMode="facts-only"
+          headingLevel="h1"
+          product={product}
+          reviewMode
+          width="desktop"
+        />
       </div>
     </section>
   );

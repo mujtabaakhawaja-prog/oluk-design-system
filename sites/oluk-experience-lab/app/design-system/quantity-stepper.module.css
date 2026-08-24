@@ -4,9 +4,9 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(44px, 1fr));
   min-block-size: 44px;
-  min-inline-size: 132px;
+  min-inline-size: calc(132px + (var(--oluk-border-width) * 2));
   overflow: hidden;
-  width: min(100%, 132px);
+  width: min(100%, calc(132px + (var(--oluk-border-width) * 2)));
 }
 
 .stepper > * {

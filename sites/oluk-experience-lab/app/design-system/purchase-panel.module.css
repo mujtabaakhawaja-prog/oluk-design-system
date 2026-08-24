@@ -1,0 +1,70 @@
+.panel[data-review-mode="inert"] :global([data-control-kind="button"][data-state="disabled"][data-variant="primary"]) {
+  background: var(--oluk-cobalt);
+  border-color: var(--oluk-cobalt);
+  color: var(--oluk-text-on-inverse);
+  cursor: default;
+}
+
+.bottleOptions {
+  display: grid;
+  gap: var(--oluk-space-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: var(--oluk-space-3);
+}
+
+.bottleOptions > span {
+  color: var(--oluk-text-muted);
+  font-size: var(--oluk-type-eyebrow);
+  font-weight: 800;
+  grid-column: 1 / -1;
+  letter-spacing: 0.08em;
+}
+
+.packageOption {
+  align-items: center;
+  appearance: none;
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-control);
+  color: var(--oluk-text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font: inherit;
+  justify-content: center;
+  min-block-size: 56px;
+  min-inline-size: 0;
+  padding: 7px var(--oluk-space-2);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  width: 100%;
+}
+
+.packageOption[data-selected="true"] {
+  background: var(--oluk-surface-cobalt-soft);
+  border-color: var(--oluk-cobalt);
+  color: var(--oluk-cobalt);
+}
+
+.packageOption:focus-visible {
+  outline: var(--oluk-focus-width) solid color-mix(in srgb, var(--oluk-cobalt) 32%, transparent);
+  outline-offset: var(--oluk-focus-width);
+}
+
+.packageOption:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+
+.packageOption strong {
+  font-size: var(--oluk-type-body-sm);
+  line-height: 1.15;
+}
+
+.packageOption small {
+  font-size: var(--oluk-type-eyebrow);
+  line-height: 1.15;
+}
+
+.panel[data-review-mode="inert"] .packageOption {
+  cursor: default;
+}

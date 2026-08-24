@@ -3,7 +3,8 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const source = readFileSync(new URL("../app/design-system/purchase-panel.tsx", import.meta.url), "utf8");
-const styles = readFileSync(new URL("../app/design-system/pdp-first-fold.module.css", import.meta.url), "utf8");
+const styles = readFileSync(new URL("../app/design-system/purchase-panel.module.css", import.meta.url), "utf8");
+const quantityStyles = readFileSync(new URL("../app/design-system/quantity-stepper.module.css", import.meta.url), "utf8");
 const nodeSource = JSON.parse(
   readFileSync(new URL("../../../authority/OLUK-DESIGN-NODE-SOURCE-V1.json", import.meta.url), "utf8"),
 );
@@ -28,10 +29,14 @@ test("PurchasePackageOption is a registered semantic button with separate packag
 });
 
 test("the two package options retain one equal-width row and a bounded focus-visible control", () => {
-  assert.match(styles, /\.oluk-candidate-bottle-options[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /\.oluk-candidate-purchase-package-option\)[\s\S]*min-height: 56px[\s\S]*width: 100%/);
-  assert.match(styles, /\.oluk-candidate-purchase-package-option:focus-visible\)/);
-  assert.doesNotMatch(styles, /@media \(max-width: 390px\)[\s\S]*\.oluk-candidate-bottle-options[\s\S]*grid-template-columns: 1fr/);
+  assert.match(styles, /\.bottleOptions[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /\.packageOption\s*\{[^}]*min-block-size: 56px[^}]*min-inline-size: 0[^}]*width: 100%/);
+  assert.match(styles, /\.packageOption:focus-visible\s*\{/);
+  assert.match(styles, /\.packageOption\s*\{[^}]*border: var\(--oluk-border-width\) solid var\(--oluk-border-card\)/);
+  assert.match(styles, /\.panel\[data-review-mode="inert"\][\s\S]*data-control-kind="button"[\s\S]*background: var\(--oluk-cobalt\)/);
+  assert.doesNotMatch(styles, /@media \(max-width: 390px\)[\s\S]*\.bottleOptions[\s\S]*grid-template-columns: 1fr/);
+  assert.match(quantityStyles, /min-inline-size: calc\(132px \+ \(var\(--oluk-border-width\) \* 2\)\)/);
+  assert.match(quantityStyles, /width: min\(100%, calc\(132px \+ \(var\(--oluk-border-width\) \* 2\)\)\)/);
 });
 
 test("package selection and the separate purchase quantity do not collapse into one field", () => {
