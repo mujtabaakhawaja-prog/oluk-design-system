@@ -521,6 +521,77 @@
   gap: 8px;
 }
 
+.reviewPanel {
+  background:
+    radial-gradient(circle at 88% 12%, var(--oluk-surface-cobalt-soft), transparent 32%),
+    var(--white);
+  display: grid;
+  gap: 30px;
+  padding: clamp(32px, 5vw, 52px);
+}
+
+.reviewHeading {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.reviewHeading h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(34px, 5vw, 58px);
+  letter-spacing: -0.06em;
+  line-height: 1;
+  margin: 0;
+}
+
+.reviewHeading p {
+  color: var(--oluk-text-secondary);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 58ch;
+}
+
+.reviewFacts {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.reviewFacts > div {
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 20px;
+}
+
+.reviewFacts dt {
+  color: var(--cobalt);
+  font-size: var(--oluk-type-chip-label);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.reviewFacts dd {
+  font-family: var(--font-display), sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.reviewFacts p {
+  color: var(--oluk-text-secondary);
+  font-size: var(--oluk-type-body-sm);
+  line-height: 1.5;
+  margin: 0;
+}
+
 .deliveryRecap strong,
 .orderNote strong {
   font-family: var(--font-display), sans-serif;
@@ -691,6 +762,107 @@
   width: 100%;
 }
 
+.ownerReviewMatrix {
+  background: var(--oluk-surface-subtle);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-card);
+  color: var(--oluk-text-primary);
+  display: grid;
+  gap: var(--oluk-space-6);
+  padding: clamp(var(--oluk-space-5), 4vw, var(--oluk-space-10));
+}
+
+.ownerReviewHeader {
+  border-bottom: var(--oluk-border-width) solid var(--oluk-border-subtle);
+  display: grid;
+  gap: var(--oluk-space-3);
+  padding-bottom: var(--oluk-space-5);
+}
+
+.ownerReviewHeader > span,
+.ownerPanelHeading > span,
+.ownerStepSpecimen > span {
+  color: var(--oluk-cobalt);
+  font: 800 var(--oluk-type-chip-label)/1.2 var(--oluk-font-body);
+  letter-spacing: var(--oluk-type-eyebrow-track);
+  text-transform: uppercase;
+}
+
+.ownerReviewHeader h2 {
+  font: 800 clamp(30px, 4vw, 52px)/1.02 var(--oluk-font-display);
+  letter-spacing: -0.04em;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.ownerReviewHeader p,
+.ownerPanelHeading p {
+  color: var(--oluk-text-secondary);
+  font: 400 15px/1.55 var(--oluk-font-body);
+  margin: 0;
+  max-width: 72ch;
+}
+
+.ownerReviewGrid {
+  display: grid;
+  gap: var(--oluk-space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ownerReviewPanel {
+  background: var(--oluk-surface-card);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-vertical);
+  box-shadow: var(--oluk-shadow-compact);
+  display: grid;
+  gap: var(--oluk-space-4);
+  min-width: 0;
+  padding: var(--oluk-space-5);
+}
+
+.ownerReviewPanel[data-review-state="checkout-step"],
+.ownerReviewPanel[data-review-state="lifecycle"] {
+  grid-column: 1 / -1;
+}
+
+.ownerPanelHeading {
+  align-items: start;
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.ownerPanelHeading h3 {
+  font: 800 24px/1.08 var(--oluk-font-display);
+  margin: 0 0 var(--oluk-space-2);
+}
+
+.ownerStepMatrix {
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ownerStepSpecimen {
+  background: var(--oluk-surface-canvas);
+  border: var(--oluk-border-width) solid var(--oluk-border-card);
+  border-radius: var(--oluk-radius-compact);
+  display: grid;
+  gap: var(--oluk-space-3);
+  min-width: 0;
+  padding: var(--oluk-space-3);
+}
+
+.ownerStepSpecimen:last-child {
+  grid-column: 1 / -1;
+}
+
+.ownerLifecycleGrid {
+  display: grid;
+  gap: var(--oluk-space-3);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 @keyframes orderPulse {
   0%, 100% { opacity: 0.35; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-4px); }
@@ -709,6 +881,15 @@
 
   .summary {
     position: static;
+  }
+
+  .ownerLifecycleGrid,
+  .ownerStepMatrix {
+    grid-template-columns: 1fr;
+  }
+
+  .ownerStepSpecimen:last-child {
+    grid-column: auto;
   }
 }
 
@@ -748,8 +929,15 @@
   }
 
   .fieldGrid,
-  .nextSteps {
+  .nextSteps,
+  .ownerReviewGrid,
+  .reviewFacts {
     grid-template-columns: 1fr;
+  }
+
+  .ownerReviewPanel[data-review-state="checkout-step"],
+  .ownerReviewPanel[data-review-state="lifecycle"] {
+    grid-column: auto;
   }
 
   .continueRow,

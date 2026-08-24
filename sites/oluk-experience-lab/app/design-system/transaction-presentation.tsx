@@ -171,9 +171,7 @@ function ProductLine({ quantity = true }: Readonly<{ quantity?: boolean }>) {
   return (
     <section aria-label="MK-2866 order line" className={styles.productLine} data-copy-surface="transaction">
       <ProductCommerceCard
-        commerceTreatment="selection"
         product={mk2866Fixture}
-        showQualitative={false}
         variant="compact"
       />
       <div className={styles.productPrice} data-component="OrderLineCommerce">
@@ -310,16 +308,20 @@ function DeliveryContent() {
 
 function ReviewContent() {
   return (
-    <div className={styles.layout}>
+    <div className={styles.layout} data-review-role="canonical-customer-specimen">
       <section className={styles.primary}>
-        <section className={styles.formPanel} data-copy-surface="transaction">
-          <div className={styles.panelHeading}><span>01</span><div><h2>Your order, ready to review.</h2><p>MK-2866, your delivery choice and the amount due are gathered in one final check.</p></div></div>
+        <section className={`${styles.formPanel} ${styles.reviewPanel}`} data-copy-surface="transaction">
+          <div className={styles.reviewHeading}>
+            <span className={styles.sectionLabel}>Final check</span>
+            <h2>Everything together before payment.</h2>
+            <p>Review the selected product, delivery choice and amount due in one calm, final composition.</p>
+          </div>
           <ProductLine quantity={false} />
-        </section>
-        <section className={styles.deliveryRecap} data-copy-surface="transaction">
-          <span className={styles.sectionLabel}>Delivery</span>
-          <strong>Standard delivery</strong>
-          <p>Your delivery timing is shown with the confirmed address before payment.</p>
+          <dl className={styles.reviewFacts}>
+            <div><dt>Delivery</dt><dd>Standard delivery</dd><p>Timing appears with the confirmed address before payment.</p></div>
+            <div><dt>Order contact</dt><dd>Confirmed at checkout</dd><p>Confirmation and delivery updates use the details already supplied.</p></div>
+            <div><dt>Next step</dt><dd>Secure payment handoff</dd><p>The payment surface remains separate from this review composition.</p></div>
+          </dl>
         </section>
         <CheckoutDecisionBar
           backHref="/checkout/delivery"
@@ -329,7 +331,7 @@ function ReviewContent() {
           title="Continue when this order looks right."
         />
       </section>
-      <div className={styles.asideStack}><OrderSummary compact /><CurrencyEqualityLock compact /></div>
+      <div className={styles.asideStack}><OrderSummary compact heading="Your total" /><CurrencyEqualityLock compact /></div>
     </div>
   );
 }
