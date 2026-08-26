@@ -5,124 +5,237 @@
 - **Active repo/project:** mujtabaakhawaja-prog/oluk-design-system
 - **Lane:** Design System Documentation → Codex Implementation
 - **Runtime boundary:** apps/olympus-shopper-ui/** (no payment/Woo mutation)
-- **Figma file:** BEPMuUt1HroEw8xjz8CVyN
-- **Reference spread:** Spread 7 — Phase 0→1 Implementation Plan (1878:553)
+- **Figma file:** BEPMuUt1HroEw8xjz8CVyN (Final Design)
+- **OpenLab file:** GkC3KEt9V3RyG5K319iAUV (R6 reference — extrapolatory only)
+- **Reference spreads:** Spread 6 (1878:251) + Spread 7 (1878:553) on Canvas Shape page
+- **Evidence Charts spec:** 1890:77164 (6 responsive variants, mature)
 - **Sites Sync Routes page:** 1214:51 (156 frames · 78 unique routes · Desktop + Mobile)
 - **Sites Sync Modules page:** 1214:50 (29 module frames)
 - **Full route compositions:** MF-01 & MF-02 workspace (369:5500) — 24 frames
 
 ---
 
-## FIGMA AGENT PROMPT — ROUTE IDENTITY RECONSTRUCTION
+## FIGMA AGENT PROMPT — ROUTE IDENTITY RECONSTRUCTION (v2)
 
 This prompt is designed to be pasted into the Figma Agent to systematically reconstruct and capture the identity of each route surface in the OLUK design system. It produces a structured identity card per route that bridges design intent to production implementation.
+
+### WHAT THIS PROMPT DOES
+
+1. **Inspects** the canonical design frame for a given route
+2. **Extracts** every design decision — layout, typography, color, spacing, component usage, data shape
+3. **Produces** a structured ROUTE IDENTITY CARD that serves as the single source of truth for:
+   - Codex implementation (what to build)
+   - Design system adoption (what to publish)
+   - Production contract (how to ship)
+
+### OLUK DESIGN LAWS (embedded — the agent must enforce these)
+
+```
+TYPOGRAPHY
+- Display/Headings: Plus Jakarta Sans ExtraBold
+- Body/UI: Inter Variable
+- Body floor: 15–16px (DEC-TYPE-FLOOR-001)
+- Metadata/eyebrow floor: 12px
+
+COLOR
+- Canvas: #F7F8FC (cool luminous)
+- Cobalt: #0057FF (metrics, actions, selected states, links)
+- Content planes: raised white with restrained cool elevation
+- Light mode only — dark footer is the sole inverse surface
+
+SPACING TIERS
+- Section margins: 0 | 24 | 80 | 100 | 128 px
+- Content max-width: 1171px
+- Viewport: 1440px
+- Review-only: 1512px (never ship at this width)
+
+EVIDENCE — 4-STATE HONESTY LANGUAGE
+- Verified: #15803D (green)
+- Source Reported: #0057FF (cobalt)
+- Source Only: #D97706 (amber)
+- Unavailable: #6B7280 (grey)
+
+PRODUCT TRUTH (canonical reference)
+- MK-2866, Ostarine, SKU 80529-01
+- 15 MG, 90 Servings (never CAPS), >99% purity, £43
+- Class: SARM, Form: CAPSULES
+- Quality: LAB FORMULATED, Tested: THIRD PARTY
+
+EVIDENCE CHART TYPES (from 1890:77164)
+1. Full branded HPLC trace — retention time axis, detector response, review peak annotation
+2. Compact PDP/Archive HPLC — card-scale chromatogram
+3. Structured peak view — bar chart, peak area % vs retention time
+4. Public record trend — line chart, purity vs published batch sequence
+5. Missing-chart state — "Chart unavailable" empty state
+6. Responsive: 1440 / 1024 / 390 × Light / Dark
+```
 
 ### PROMPT START
 
 ```
-You are auditing the OLUK design system file to produce a ROUTE IDENTITY CARD for each unique route surface. A route identity card is a structured record that captures everything needed to bring a route from Figma design to production implementation AND design system adoption.
+You are auditing the OLUK design system file (BEPMuUt1HroEw8xjz8CVyN) to produce a ROUTE IDENTITY CARD for each unique route surface.
 
-For each route, I need you to inspect the canonical design frame and produce this exact structure:
+A route identity card is a structured record that captures everything needed to:
+1. Implement the route in production (Next.js app router)
+2. Adopt its patterns into the design system (publish components, tokens, patterns)
+3. Verify the implementation matches the design (acceptance criteria)
+
+You have access to the full Figma file. For each route I select, inspect the canonical design frame thoroughly — read every layer, measure spacing, identify components, extract text content, note colors and typography. Do not guess. Do not infer from names alone. Read the actual node properties.
+
+OLUK DESIGN LAWS you must verify against:
+- Typography: Plus Jakarta Sans ExtraBold (display/headings), Inter Variable (body/UI)
+- Body text floor: 15–16px. Metadata/eyebrow floor: 12px.
+- Canvas: #F7F8FC. Cobalt: #0057FF for metrics/actions. Light mode only (dark footer exception).
+- Section margin tiers: 0 | 24 | 80 | 100 | 128 px
+- Content max-width: 1171px within 1440px viewport
+- Evidence routes must use 4-state honesty language: Verified (#15803D), Source Reported (#0057FF), Source Only (#D97706), Unavailable (#6B7280)
+- PDP = single-product evidence. Portal/Homepage = multi-product evidence.
+- Product truth: MK-2866, Ostarine, SKU 80529-01, 15 MG, 90 Servings (never CAPS), >99% purity, £43
+
+For each route, produce this EXACT structure:
 
 ---
 
-ROUTE IDENTITY CARD
+## ROUTE IDENTITY CARD
 
-ROUTE
-- path: (the URL path, e.g. /openlab, /product/:slug, /checkout/bag)
-- slug: (kebab-case route identifier, e.g. openlab-portal, pdp-decision, checkout-bag)
-- title: (user-visible page title, e.g. "OpenLab · Verified Evidence")
-- description: (one-sentence purpose of this route)
+### ROUTE
+| Field | Value |
+|---|---|
+| path | (URL path, e.g. /openlab, /product/:slug) |
+| slug | (kebab-case identifier, e.g. openlab-portal) |
+| title | (user-visible page title) |
+| description | (one-sentence purpose) |
+| product_context | single-product \| multi-product \| cross-product \| no-product |
 
-CLASSIFICATION
-- domain: (commerce | evidence | account | checkout | content | navigation)
-- product_context: (single-product | multi-product | cross-product | no-product)
-- auth_required: (true | false)
-- data_dependency: (static | product-api | evidence-api | woo-api | mixed)
-- implementation_tier: (P0-critical | P1-core | P2-enhancement | P3-future)
+### CLASSIFICATION
+| Field | Value |
+|---|---|
+| domain | commerce \| evidence \| account \| checkout \| content \| navigation |
+| auth_required | true \| false |
+| data_dependency | static \| product-api \| evidence-api \| woo-api \| mixed |
+| implementation_tier | P0-critical \| P1-core \| P2-enhancement \| P3-future |
+| runtime_exclusions | (list any banned behaviors per AGENTS.md / module registry) |
 
-DESIGN AUTHORITY
-- canonical_desktop_frame: (node ID of the 1440w desktop design)
-- canonical_mobile_frame: (node ID of the 390w mobile design)
-- sync_desktop_frame: (node ID from Sites Sync — Routes page)
-- sync_mobile_frame: (node ID from Sites Sync — Routes page)
-- full_composition_frame: (node ID of full-page composition if exists, else NONE)
-- design_status: (proofed | review-required | unproofed | legacy)
-- known_issues: (list any inconsistencies, duplicates, missing breakpoints)
+### DESIGN AUTHORITY
+| Field | Value |
+|---|---|
+| canonical_desktop_frame | (node ID — the 1440w design) |
+| canonical_mobile_frame | (node ID — the 390w design, if exists) |
+| canonical_tablet_frame | (node ID — the 1024w design, if exists) |
+| sync_desktop_frame | (from Sites Sync Routes page 1214:51) |
+| sync_mobile_frame | (from Sites Sync Routes page 1214:51) |
+| full_composition_frame | (from 369:5500, use 1082:xxxxx IDs NOT 1822:xxxxx duplicates) |
+| design_status | proofed \| review-required \| unproofed \| legacy |
+| width | (actual frame width — note if 1171/1440/1512) |
+| height | (actual frame height) |
+| known_issues | (inconsistencies, duplicates, missing breakpoints, spacing problems) |
 
-SHELL CONTRACT
-- shell: (AppShell | CheckoutShell | AccountShell | MinimalShell)
-- header: (SiteHeader | none)
-- footer: (SiteFooter | none)
-- context_nav: (OpenLabContextNav | CommerceDiscoveryFilters | none)
-- mega_menu: (shop-mega-menu-panel | openlab-mega-menu-panel | none)
+### SHELL CONTRACT
+| Field | Value |
+|---|---|
+| shell | AppShell \| CheckoutShell \| AccountShell \| MinimalShell |
+| header | SiteHeader \| CheckoutHeader \| none |
+| footer | SiteFooter \| none |
+| context_nav | OpenLabContextNav \| CommerceDiscoveryFilters \| none |
+| mega_menu | shop-mega-menu-panel \| openlab-mega-menu-panel \| none |
+| breadcrumb | (pattern, e.g. "Open Lab → MK-2866 → Batch WS-0642") |
 
-SECTION MAP
-For each section in the route (top to bottom), record:
-- section_index: (1, 2, 3...)
-- section_name: (from the Figma layer name)
-- section_node_id: (node ID)
-- module_type: (hero | navigation | content | grid | evidence | commerce | form | footer)
-- grid_system: (Hero Split | CatalogueGrid | ProductGrid | Evidence Stacked | Rail Horizontal | Checkout Sidebar | Stack Wizard | Dossier Editorial | Custom)
-- margin_tier: (0 | 24 | 80 | 100 | 128)
-- components_used: (list component names used in this section)
-- responsive_behavior: (stack | collapse | hide | reflow | scroll)
+### SECTION MAP
+For each section in the route (top to bottom):
 
-COMPONENT REGISTRY
-List every unique component instance used on this route:
-- component_name:
-- component_node_id: (from Component Library)
-- variant_used: (specific variant props)
-- instance_count: (how many times on this route)
-- binding: (what data feeds this component — static copy, product data, evidence data, user data)
+| # | Section Name | Node ID | Height | Module Type | Grid System | Margin Tier | Components Used | Responsive |
+|---|---|---|---|---|---|---|---|---|
+| 1 | (layer name) | (id) | (px) | hero\|navigation\|content\|grid\|evidence\|commerce\|form\|footer | (grid name) | 0\|24\|80\|100\|128 | (list) | stack\|collapse\|hide\|reflow\|scroll |
 
-TOKEN FOOTPRINT
-List CSS custom properties / design tokens this route depends on:
-- --oluk-surface-*: (background tokens)
-- --oluk-text-*: (text color tokens)
-- --oluk-spacing-*: (spacing tokens)
-- --oluk-radius-*: (radius tokens)
-- --oluk-elevation-*: (elevation tokens)
-- --oluk-accent-*: (accent color tokens)
+### EVIDENCE INTEGRATION (evidence/commerce routes only)
+| Field | Value |
+|---|---|
+| evidence_scope | single-product \| multi-product \| cross-product |
+| chart_types_used | (from Evidence Charts spec: full-hplc, compact-hplc, structured-peak, trend, missing-state) |
+| honesty_states_used | (which of the 4 states appear on this route) |
+| data_fixtures_needed | (what governed fixture shape this route needs) |
+| chromatogram_context | section-level \| card-level \| none |
 
-PRODUCTION CONTRACT
-- next_route_file: (expected file path in Next.js app router, e.g. app/(shop)/product/[slug]/page.tsx)
-- layout_file: (shared layout, e.g. app/(shop)/layout.tsx)
-- required_components: (list of React components to implement)
-- required_api_calls: (list of data fetches — WooCommerce, evidence API, static)
-- seo_title_template: (e.g. "{product.name} | OpenLab Evidence | Olympus Labs UK")
-- og_image_source: (hero image, product image, evidence chart, none)
-- structured_data: (Product, Article, FAQPage, BreadcrumbList, none)
+### COMPONENT REGISTRY
+For each unique component instance used:
 
-DESIGN SYSTEM ADOPTION
-- components_to_publish: (any local frames that should become published components)
-- tokens_to_add: (any missing tokens this route needs)
-- patterns_to_document: (any reusable layout patterns worth extracting)
-- variants_needed: (any component variants this route reveals are missing)
+| Component | Library Node ID | Variant Props | Count | Data Binding |
+|---|---|---|---|---|
+| (name) | (from Component Library page 672:10) | (specific variant) | (instances) | static \| product \| evidence \| user |
 
-ACCEPTANCE CRITERIA
-- [ ] Desktop (1440) matches canonical frame
-- [ ] Mobile (390) matches canonical frame
+### TOKEN FOOTPRINT
+| Category | Tokens Used |
+|---|---|
+| Surface | (background tokens) |
+| Text | (text color tokens) |
+| Spacing | (spacing tokens) |
+| Radius | (radius tokens) |
+| Elevation | (elevation tokens) |
+| Accent | (accent/brand tokens) |
+
+### TYPOGRAPHY AUDIT
+| Role | Font | Weight | Size | Line Height | Compliant? |
+|---|---|---|---|---|---|
+| Page title | (actual) | (actual) | (actual) | (actual) | ✅/❌ + reason |
+| Section heading | ... | ... | ... | ... | ... |
+| Body text | ... | ... | ... | ... | ... |
+| Metadata/eyebrow | ... | ... | ... | ... | ... |
+| CTA/button | ... | ... | ... | ... | ... |
+
+### PRODUCTION CONTRACT
+| Field | Value |
+|---|---|
+| next_route_file | (e.g. app/(shop)/product/[slug]/page.tsx) |
+| layout_file | (shared layout) |
+| required_components | (React components to implement) |
+| required_api_calls | (data fetches — governed fixture, WooCommerce, evidence API, static) |
+| seo_title_template | (e.g. "{product.name} \| OpenLab Evidence \| Olympus Labs UK") |
+| og_image_source | hero \| product \| evidence-chart \| none |
+| structured_data | Product \| Article \| FAQPage \| BreadcrumbList \| none |
+
+### DESIGN SYSTEM ADOPTION
+| Category | Items |
+|---|---|
+| components_to_publish | (local frames → published components) |
+| tokens_to_add | (missing tokens this route reveals) |
+| patterns_to_document | (reusable layout patterns worth extracting) |
+| variants_needed | (missing component variants) |
+| evidence_charts_needed | (which of the 6 chart types from 1890:77164) |
+
+### ACCEPTANCE CRITERIA
+- [ ] Desktop (1440) matches canonical frame pixel-accurately
+- [ ] Mobile (390) matches canonical frame (if exists)
+- [ ] Tablet (1024) matches canonical frame (if exists)
+- [ ] Content max-width = 1171px within 1440 viewport
 - [ ] All components use published variants (no detached instances)
-- [ ] Section margins follow the 0/24/80/100/128 tier system
-- [ ] Grid columns match Grid Grammar specs
-- [ ] Evidence data uses 4-state honesty language
+- [ ] Section margins follow 0/24/80/100/128 tier system
+- [ ] Typography uses Plus Jakarta Sans ExtraBold (headings) + Inter Variable (body)
+- [ ] Body text ≥ 15px, metadata ≥ 12px
+- [ ] Canvas = #F7F8FC, cobalt = #0057FF for metrics/actions
+- [ ] Evidence data uses 4-state honesty language (evidence routes)
+- [ ] PDP shows single-product evidence / Portal shows multi-product (evidence routes)
+- [ ] Product truth matches: MK-2866, Ostarine, 80529-01, 15 MG, 90 Servings, >99%, £43
+- [ ] No dark theme outside footer
 - [ ] No editor artifacts in production output
 - [ ] Route title and meta match SEO template
 - [ ] Structured data schema validates
+- [ ] No payment/Woo mutation/runtime authority in evidence surfaces
 
 ---
 
-Now apply this template to each route. Start with the routes I select.
+Now apply this template to each route I select. Start with the routes I provide.
 
-IMPORTANT RULES:
-1. PDP routes (/product/:slug) show SINGLE-PRODUCT evidence — one compound, one batch, one HPLC trace
-2. Portal/Homepage routes (/openlab, /) show MULTI-PRODUCT evidence — grid of compounds, aggregate metrics
-3. Use canonical frame IDs from MF-01 & MF-02 workspace (1082:xxxxx series), NOT the 1822:xxxxx duplicates
+CRITICAL RULES:
+1. USE canonical 1082:xxxxx IDs from MF-01/MF-02 workspace (369:5500), NEVER the 1822:xxxxx duplicates
+2. PDP routes = single-product evidence (one compound, one batch, one HPLC trace)
+3. Portal/Homepage routes = multi-product evidence (grid of compounds, aggregate metrics)
 4. Shell contract must specify which navigation components wrap this route
-5. Every component reference must include the Component Library node ID
-6. Design status must be honest — mark "review-required" if frame has known issues
-7. Token footprint should only list tokens the route actually uses, not the full system
+5. Every component reference must include the Component Library node ID from page 672:10
+6. Design status must be honest — "review-required" if frame has known issues
+7. Token footprint = only tokens the route actually uses, not the full system
+8. Evidence Charts integration must reference specific chart types from the 1890:77164 spec
+9. CoA Viewer routes must include HPLC chromatogram + structured peak view + 4-state honesty
+10. Width = 1512 means review-only frame, not a shippable dimension
 ```
 
 ### PROMPT END
@@ -238,72 +351,6 @@ IMPORTANT RULES:
 
 ---
 
-## FULL ROUTE COMPOSITION SECTION MAPS
-
-These are the fully designed route compositions with their internal section structure:
-
-### openlab-portal-index (1082:29137) — /openlab — 1440×3299
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Hero-Section | 1082:29138 | 464 | Portal hero with headline + product showcase |
-| 2 | Philosophy-Section | 1082:29180 | 508 | Brand philosophy + evidence methodology |
-| 3 | Compound-Section | 1082:29213 | 712 | Multi-product compound cards grid |
-| 4 | Batch-Table-Section | 1082:29349 | 1351 | Aggregate batch records table |
-| 5 | Metrics-Section | 1082:29449 | 264 | Trust metrics summary |
-
-### openlab-lab-records-archive (1082:29460) — /openlab/records — 1440×2281
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Header-Filters-Block | 1082:29461 | 273 | Search + filter controls |
-| 2 | Results-Summary | 1082:29494 | 49 | Result count + sort |
-| 3 | Main-Table-Section | 1082:29502 | 1717 | Batch records data table |
-| 4 | Pagination-Section | 1082:29851 | 80 | Page navigation |
-| 5 | Methodology-Banner | 1082:29867 | 162 | Testing methodology CTA |
-
-### openlab-dossier-mk2866 (1082:29876) — /openlab/:compound — 1440×2742
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Dossier-Header-Section | 1082:29877 | 304 | Compound name + purity badge + nav |
-| 2 | Details-Container | 1082:29901 | 2038 | Full evidence chain + HPLC + batch data |
-| 3 | Related-Rail-Wrapper | 1082:30111 | 400 | Related compounds rail |
-
-### openlab-report-detail (1082:30382) — /openlab/records/:id — 1440×1824
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | content_wrapper | 1082:30383 | 1824 | Full report/COA viewer embedded |
-
-### openlab-batch-lookup (1082:30582) — /openlab/batch — 1440×1064
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Search Block | 1082:30583 | 384 | Batch ID input + search |
-| 2 | Results Block | 1082:30593 | 680 | Batch verification results |
-
-### openlab-compare (1082:30895) — /openlab/compare — 1440×1467
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Selection Block | 1082:30896 | 376 | Compound selector (2–4 products) |
-| 2 | Comparison Block | 1082:30910 | 1091 | Side-by-side evidence comparison |
-
-### openlab-methodology (1082:30690) — /openlab/methodology — 1440×1268
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Header Block | 1082:30691 | 295 | Methodology title + intro |
-| 2 | Content Block | 1082:30695 | 973 | Full methodology documentation |
-
-### openlab-source-chain (1082:30786) — /openlab/source-chain — 1440×1311
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Header Block | 1082:30787 | 295 | Source chain title + intro |
-| 2 | Content Block | 1082:30791 | 1016 | Full source chain documentation |
-
-### openlab-evidenceos-command (1082:30967) — /openlab/about — 1440×1024
-| # | Section | Node ID | Height | Purpose |
-|---|---|---|---|---|
-| 1 | Header Block | 1082:30968 | 183 | EvidenceOS brand header |
-| 2 | Content Block | 1082:30977 | 745 | About EvidenceOS platform |
-
----
-
 ## IMPLEMENTATION PRIORITY BY DOMAIN
 
 ### P0 — Critical (implement first)
@@ -329,10 +376,11 @@ These are the fully designed route compositions with their internal section stru
 |---|---|---|
 | OpenLab Batch lookup | /openlab/batch | Trust tool |
 | OpenLab Compare | /openlab/compare | Comparison tool |
-| OpenLab record | /openlab/records/:id | Report detail |
+| OpenLab record | /openlab/records/:id | Report detail + CoA viewer |
 | Search | /search | Discovery enhancement |
 | Reviews | /product/:slug/reviews | Social proof |
 | About Evidence OS | /openlab/about | Brand positioning |
+| OpenLab Evidence | /openlab/evidence | Evidence Charts multi-product trends |
 
 ### P3 — Future (implement when ready)
 | Route | Path | Reason |
@@ -357,7 +405,7 @@ SiteHeader (754:18224)
 ├── openlab-mega-menu-panel (1199:28750) — evidence routes
 ├── OpenLabContextNav (1215:29690) — /openlab/* routes only
 └── CommerceDiscoveryFilters (794:3821) — /shop, /collections/* only
-SiteFooter (754:18226)
+SiteFooter (754:18226) — dark footer (sole inverse surface)
 ```
 
 ### CheckoutShell (checkout routes)
@@ -377,26 +425,6 @@ SiteFooter (754:18226)
 
 ---
 
-## ACCEPTANCE CHECKS
-
-- [ ] Route identity prompt produces valid structured cards per route
-- [ ] All 78 unique routes have Desktop + Mobile sync frames
-- [ ] Full composition frames use 1082:xxxxx canonical IDs (not 1822:xxxxx)
-- [ ] Shell contracts assign correct navigation per domain
-- [ ] Implementation priority respects revenue-critical ordering
-- [ ] PDP routes enforce single-product evidence context
-- [ ] Portal/Homepage routes enforce multi-product evidence context
-- [ ] No payment/Woo mutation in evidence route implementations
-- [ ] No editor artifacts in production output
-
-## RISK NOTES
-
-- **7 duplicate route compositions** (1082:xxxxx ↔ 1822:xxxxx) — must canonicalize before Codex implements
-- **Content/Legal routes** (15) share identical 720px height — likely template placeholders, not proofed designs
-- **OpenLab tool routes** (dosing calc, cycle planner, interaction checker) — SYNC frames exist but no full compositions, need backend API design before implementation
-- **Checkout routes** — out of scope per codex-bridge security rules. Codex should follow AGENTS.md for checkout-adjacent work
-- Olympus runtime/payment/security concerns out of scope per codex-bridge rules
-
 ## OPEN ITEMS
 
 - [ ] Run route identity prompt against P0 routes first (Home, PDP, Shop, Bag)
@@ -405,3 +433,6 @@ SiteFooter (754:18226)
 - [ ] Document token footprint per route domain (commerce vs evidence vs account)
 - [ ] Define structured data schemas per route type (Product, Article, FAQPage)
 - [ ] Map Next.js app router file structure to route registry
+- [ ] Design CoA Viewer with OLUK identity (net-new, R6 as structural reference only)
+- [ ] Design EvidenceCommerceCard with OLUK identity (net-new card variant concept)
+- [ ] Connect Evidence Charts spec (1890:77164) to route identity cards for evidence routes
