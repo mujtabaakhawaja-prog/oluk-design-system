@@ -4,16 +4,18 @@
 
 - **File:** BEPMuUt1HroEw8xjz8CVyN (Final Design)
 - **Sites File:** 67dsmMdok9JnLZ5GCdRhBL
+- **OpenLab File:** GkC3KEt9V3RyG5K319iAUV (R6 reference — extrapolatory only)
 - **Repo:** mujtabaakhawaja-prog/oluk-design-system
-- **Registry:** authority/OPENLAB-SECTION-MODULE-REGISTRY.json (19 modules, SHA 223c097b)
-- **Prior packet:** packets/openlab-evidence-modules-phase-0-1.md (SHA a276eeb8)
-- **Verified:** 2026-08-26 — live Figma scan + GitHub registry cross-reference
+- **Registry:** authority/OPENLAB-SECTION-MODULE-REGISTRY.json (19 modules)
+- **Prior packet:** packets/openlab-evidence-modules-phase-0-1.md
+- **Canvas Shape Spreads:** Spread 6 (1878:251) + Spread 7 (1878:553)
+- **Last verified:** 2026-08-26 — live Figma scan across 3 files + GitHub registry cross-reference
 
 ---
 
 ## 🔴 PROCESS DIAGNOSIS — THE DEADLOCK
 
-**Observed from Figma:** Rich Figma-authored modules (B1–B12 on page 1660:422, D1–D5 on Spine workspace 556:32215) express brand identity but sit as static canvases. Codex produced dark-theme route pages (A1–A7 on page 672:2) that are structurally complete but visually unproofed.
+**Observed from Figma:** Rich Figma-authored modules (B1–B12 on page 1660:422, D1–D5 on Spine workspace 556:32215) express brand identity but sit as static canvases. Codex produced dark-theme route pages (A1–A6 on page 672:2) that are structurally complete but visually unproofed.
 
 **Confirmed from GitHub:** AGENTS.md states: _"Candidate code must remain presentation-only"_ and _"Make-generated code remains disposable prototype machinery."_ The OPENLAB-SECTION-MODULE-REGISTRY.json defines 19 modules — every one has `runtimeExclusions` banning fetch, mutation, evidence-inference, live-search, analytical-reconstruction. Every module's `dataOwner` points to fixture projections, never live APIs.
 
@@ -83,8 +85,8 @@ Also on page 369:5500 (no duplicates):
 | # | Frame | Node ID | Size | What It Shows |
 |---|---|---|---|---|
 | B1 | EvidenceA | 1791:75921 | 1512×1074 | Hero card + HPLC trace + Evidence Ledger + Batch Records |
-| B2 | HeroOpenLab-light (A) | 1791:76121 | 1512×1079 | ⚠ 18px TALLER than canonical — ARCHIVE THIS |
-| B3 | HeroOpenLab-light (B) | 1791:77015 | 1512×1061 | ✅ CANONICAL height (1061) |
+| B2 | HeroOpenLab-light (preferred) | 1791:76121 | 1512×1079 | ✅ OWNER PREFERRED — needs tightening of spacing (some areas too tight, some too sparse) |
+| B3 | HeroOpenLab-light (alt) | 1791:77015 | 1512×1061 | Alternative at 1061h — not selected |
 | B4 | EvidenceArchive:margin | 1791:76375 | 1512×579 | Archive grid, searchable batch history |
 | B5 | EvidencePortal:margin | 1791:76513 | 1512×520 | Portal gateway |
 | B6 | EmbeddedEvidence:margin | 1791:76641 | 1512×735 | PDP inline evidence |
@@ -94,8 +96,56 @@ Also on page 369:5500 (no duplicates):
 | B10 | OpenLabBanner | 1791:77147 | 1171×671 | ProductBanner (header+body+footer) |
 | B11 | Realtime | 1791:77373 | 1171×365 | Live verification feed |
 | B12 | openlab-realtime | 1791:77408 | 693×660 | HPLC purity chart + batch records table |
-| B13 | OPENLAB (wireframe) | 1791:75831 | 646×283 | Early concept — reference only |
-| B14 | horizontal cards | 1791:75863 | 1054×295 | Search-driven card row |
+
+### CATEGORY B2: Evidence Charts (page 672:2 — ⚠ Previously listed as MISSING, now FOUND)
+
+**Section node: 1890:77164** — "Evidence Charts" — SECTION 3200×19500 on page "00 — Authority & Run Control"
+
+| # | Frame | Node ID | Size | Variant |
+|---|---|---|---|---|
+| EC1 | Evidence Charts / 1440 / Light | 1890:77165 | 1440×3383 | Desktop Light |
+| EC2 | Evidence Charts / 1440 / Dark | 1890:77565 | 1440×3383 | Desktop Dark |
+| EC3 | Evidence Charts / 1024 / Light | 1890:78365 | 1024×2956 | Tablet Light |
+| EC4 | Evidence Charts / 1024 / Dark | 1890:78365 | 1024×2956 | Tablet Dark |
+| EC5 | Evidence Charts / 390 / Light | 1890:78765 | 390×2556 | Mobile Light |
+| EC6 | Evidence Charts / 390 / Dark | 1890:79167 | 390×2556 | Mobile Dark |
+| EC7–12 | Pixel Reference variants | 1890:79569–79574 | 400×300 each | 6 reference thumbnails |
+
+**Evidence Charts content (from 1890:77165 — Light 1440):**
+- **§1 Header** — "Governed analytical visualization" — "Six responsive presentation modes. Every visible mark is positioned from an explicit model; missing data stays missing and structured peaks never fabricate a synthetic trace."
+- **§2 Full branded-record HPLC** — "HPLC trace anatomy" — full-width chromatogram with retention time axis (0–18 min), detector response Y-axis, annotated "Review peak" at ~9 min. Expandable trace samples link.
+- **§3 Compact PDP + Archive artifact** — dual HPLC displays at PDP card scale and archive card scale, with "HPLC PURITY PROFILE" label and "EXPLICIT SAMPLE SET" annotation
+- **§4 Structured peak view** — "Structured peak summary" — bar chart with retention time (min) X-axis and peak area (%) Y-axis. Shows 4 peaks: 14% at 4.2min, 38% at ~6min, 72% at 10min (highlighted cobalt), 26% at 15.8min. "4 REPORTED PEAKS" annotation.
+- **§5 Public record trend** — "Public record trend anatomy" — line chart with "Published sequence" X-axis (1–5) and "Purity value" Y-axis (0–34). Shows trend across published batches. "2 PUBLIC SERIES" annotation.
+- **§6 Missing-chart state** — "Chart unavailable" — empty state with analytics icon. "The Lab Record remains available, but no public analytical chart is published for this record. No trace has been deferred."
+
+**Assessment:** This is a mature, production-ready design specification. All six responsive variants exist. It covers every evidence chart presentation mode the system needs. This is NOT missing — it was on page "00 — Authority & Run Control" rather than on the OpenLab page where we were looking.
+
+### CATEGORY B3: CoA Viewer (OpenLab file GkC3KEt9V3RyG5K319iAUV — extrapolatory reference only)
+
+**User assessment: "only extrapolatory and don't show any sign of maturity"**
+
+These are R6 dark-theme reference frames. They show the structural intent but need full OLUK identity redesign.
+
+| # | Frame | Node ID | Size | Page | Description |
+|---|---|---|---|---|---|
+| CoA-1 | r6-coa-viewer | 12:984 | 1440×1999 | R6-MF | Desktop dark CoA — nav + breadcrumb + "Batch WS-0642 — MK-2866 Ostarine" + Janoshik certificate (QR, test results table: Mass Spec, HPLC Purity 99.92%, Lead <0.01ppm, Arsenic <0.01ppm, Identity Confirmed) + conclusion + issued by + Download PDF/Share/Report actions + full footer |
+| CoA-2 | r6-mobile-coa-viewer | 12:1620 | 390×867 | R6-MF | Mobile dark CoA — lab info + compound identity + purity + appearance + residue + heavy metals + traceable archive QR + download CTA |
+| CoA-3 | r6-coa-viewer | 2:5046 | 1440×1999 | Evidence | Duplicate of CoA-1 (same frame on different page) |
+| CoA-4 | r6-mobile-coa-viewer | 2:5519 | 390×867 | Evidence | Duplicate of CoA-2 (same frame on different page) |
+| CoA-5 | R6 OpenLab / COA Report Viewer | 3:65653 | 620×390 | Openlab system | Component INSTANCE — compact card with "COA / REPORT VIEWER" eyebrow, chromatogram bar chart, "OPEN FULL REPORT · DOWNLOAD SOURCE" actions |
+
+**What exists:** Full structural reference for CoA certificate presentation — test results table format, QR verification, issuer attribution, PDF download. Desktop and mobile breakpoints.
+
+**What's missing for OLUK:**
+- Light mode treatment (these are all dark-on-dark, violating "light mode only" design law)
+- OLUK identity: Plus Jakarta Sans headings, Inter body, cobalt metrics, #F7F8FC canvas, raised white content planes
+- No HPLC chromatogram integration (the certificate shows pass/fail results but no inline trace visualization)
+- No 4-state honesty language applied to test results
+- No connection to Evidence Charts structured peak view
+- Product truth: should use MK-2866 / Ostarine / SKU 80529-01 / 15 MG / 90 Servings / >99% purity / £43
+
+**Design task for OLUK CoA Viewer:** Create new light-mode frames at 1440/1024/390 breakpoints in Final Design file. Use CoA-1 and CoA-2 as structural reference for content hierarchy only. Apply full OLUK identity. Integrate HPLC chromatogram from Evidence Charts (§2). Apply 4-state honesty language to test result statuses. This is a net-new design task, not a reskin.
 
 ### CATEGORY C: Card Grammar Modules (page 1572:70623)
 
@@ -103,7 +153,7 @@ Also on page 369:5500 (no duplicates):
 |---|---|---|---|---|---|
 | C1 | OpenLabArchive | 1572:70704 | 1075×470 | CanvasSplit: editorial + ledger | — |
 | C2 | OpenLabArchiveAlt | 1572:70800 | 1075×419 | Alternate split | — |
-| C3 | HeroOpenLab-light | 1572:71704 | 1512×1061 | ✅ Canonical hero at content grammar width | — |
+| C3 | HeroOpenLab-light | 1572:71704 | 1512×1061 | Hero at content grammar width | — |
 | C4 | TrustSpine:margin | 1572:71136 | 1171×724 | TrustEvidenceSpine + margin | — |
 | C5 | EvidenceArchive:margin | 1572:71339 | 1171×638 | Archive grid | — |
 | C6 | EmbeddedEvidence:margin | 1572:71476 | 1171×735 | Embedded evidence | ⚠ DUP at 72122, 72605, 73836 |
@@ -145,37 +195,61 @@ Also on page 369:5500 (no duplicates):
 | Stack / OpenLabConfidence | 1326:7659 | COMPONENT_SET · 1106×1179 | State=Foundation\|Maximum × Width=Desktop\|Mobile |
 | Stack / OpenLabConfidence v3 | 1374:853 | COMPONENT_SET · 358×1231 | v3 mobile: Foundation\|Maximum |
 
-### CATEGORY G: MF-03 Components (page 1660:422)
+---
 
-| Component | Node ID | Type | Details |
-|---|---|---|---|
-| AttributeIcon / v3 | 1671:2124 | COMPONENT_SET · 344×72 | 17 roles (Lean Mass, Fat Loss, Recovery, etc.) |
-| AttributeChip / v3 | 1671:2532 | COMPONENT_SET · 952×366 | 17 roles |
-| AttributeMatrix / v3 | 1672:2639 | COMPONENT_SET · 1512×676 | 15 products (MK-2866 through ENDURA SHRED) |
-| PurchasePanel / Profile v3 | 1672:3078 | COMPONENT_SET · 818×670 | Desktop + Mobile |
+## 🏷️ OWNER DECISIONS — RESOLVED
+
+### 1. HeroOpenLab-light — DECIDED
+
+**Owner preference: 1791:76121 (1079h)** — the taller variant with the three-column layout showing:
+- Left: OpenLab portal card (search, CTAs, archive section, live verification feed stats, search bar, methodology link)
+- Center: MK-2866 product evidence card (SARM Series, MK-2866, Ostarine, SKU 80529-01, 15 MG, 90 Servings, >99% Purity, Class SARM, Form CAPSULES, Lab Formulated, Third Party Tested, £43, Add to bag + View Lab Record CTAs)
+- Right: Category rail (SARMs, Prohormones, Research Chemicals, Stacks)
+
+**Design tightening needed:** Some areas are either too tight, too and, or too sparse. This is a design-stage task — adjust spacing and rhythm within the existing composition. Height is TBD (design-stage decision, not decided now).
+
+**Action:** Use 1791:76121 as the canonical base. Tighten spacing in a design pass. Do NOT archive — this is the preferred variant. The 1791:77015 (1061h) variant remains as alternative reference but is not the canonical choice.
+
+### 2. CoA Viewer reference maturity — ASSESSED
+
+**Owner assessment: "only extrapolatory and don't show any sign of maturity"**
+
+The R6 CoA Viewer frames (12:984, 12:1620, 2:5046, 2:5519, 3:65653 in GkC3KEt9V3RyG5K319iAUV) are structural direction references only. They show what a CoA certificate page needs to contain (test results table, QR verification, lab attribution, PDF download) but:
+- Dark theme throughout — violates light-mode-only design law
+- No OLUK typography or color identity
+- No HPLC chromatogram integration
+- No 4-state honesty language
+
+**Action:** These inform the content hierarchy for a net-new OLUK CoA Viewer design. Do not adopt wholesale. Design with OLUK's own identity and design system.
+
+### 3. EvidenceCommerceCard concept (RAD-140 card-level chromatogram)
+
+The attached RAD-140 reference showing inline HPLC trace + test result chips on a commerce card introduces a new card variant concept. This is significant but:
+
+**Action:** Must be designed with OLUK identity, not adopted wholesale. The concept (EvidenceCommerceCard — commerce card with embedded HPLC trace + test chips) is valid and sits alongside existing Vertical/Horizontal/Featured card variants. But the implementation must use OLUK design laws: cobalt metrics, Plus Jakarta Sans headings, raised white content plane, governed fixture data.
 
 ---
 
-## 🚨 DESIGN INCONSISTENCIES — VERIFIED
+## 🚨 DESIGN INCONSISTENCIES — VERIFIED (Updated)
 
 | # | Issue | Evidence | Fix |
 |---|---|---|---|
-| 1 | **Duplicate HeroOpenLab-light** | 1791:76121 (1079h) vs 1791:77015 (1061h) — 18px delta | USE 1061 (1791:77015). Archive 1791:76121. |
+| 1 | **HeroOpenLab-light spacing** | 1791:76121 (1079h, preferred) — areas too tight/sparse | TIGHTEN spacing in design pass. Keep as canonical. |
 | 2 | **7 duplicate route compositions** | 1082:xxxxx ↔ 1822:xxxxx on page 369:5500 | KEEP 1082:xxxxx set. Archive 1822:xxxxx. |
 | 3 | **3× Embedded:margin duplicates** | 1572:72122, 1572:72605, 1572:73836 on card grammar | KEEP 1572:71476. Deduplicate. |
 | 4 | **2× Realtime:margin duplicates** | 1572:72014, 1572:73567 on card grammar | KEEP 1572:72014. Deduplicate. |
-| 5 | **2× CategoryRail duplicates** | 1572:71279, 1572:71646 on card grammar | Canonicalize one. |
+| 5 | **2× CoA Viewer duplicates** | 12:984 = 2:5046, 12:1620 = 2:5519 in OpenLab file | Same frame on different pages. Reference only. |
 | 6 | **Dark-only Codex pages** | A1–A6 all dark theme on page 672:2 | Violates "light mode only" design law. Reclassify as structural reference. |
 | 7 | **Bad product thumbnails** | Codex-generated cards use backend-projected placeholders | Replace with brand-correct renders per AGENTS.md |
 | 8 | **Portal = flat spreadsheet** | Codex openlab-portal-index treats portal as data dump | Rebuild from Figma-authored editorial modules |
-| 9 | **EvidenceOS-Editorial unproofed** | 1572:72278 — no route, no component | Owner decision: promote or archive |
-| 10 | **CoA Viewer missing** | OL-COA-VIEWER registered in module registry but no Figma frame exists | NEEDS CREATION — core "present actual lab reports" gap |
-| 11 | **Evidence Charts missing** | OL-EVIDENCE-CHARTS registered but no Figma frame | NEEDS CREATION — multi-product purity trends |
+| 9 | **EvidenceOS-Editorial unproofed** | 1572:72278 — no route, no component | Owner decision pending: promote or archive |
+| 10 | **CoA Viewer needs OLUK redesign** | R6 dark-theme references exist but lack OLUK identity | NET-NEW design task using R6 as structural reference only |
+| 11 | ~~Evidence Charts missing~~ | **FOUND at 1890:77164** — 6 responsive variants, mature spec | ✅ RESOLVED — was on Authority & Run Control page |
 | 12 | **Width convention unclear** | Card grammar at 1171w, routes at 1440w, MF-03 review at 1512w | Document: 1171=content, 1440=viewport, 1512=review-only |
 
 ---
 
-## 📦 REGISTRY ↔ FIGMA CROSS-REFERENCE
+## 📦 REGISTRY ↔ FIGMA CROSS-REFERENCE (Updated)
 
 | Registry ID | Export | Figma Source | Status |
 |---|---|---|---|
@@ -190,12 +264,12 @@ Also on page 369:5500 (no duplicates):
 | OL-CHAIN | OpenLabSourceChain | Source Chain 1424:33853 + 1082:30786 | ⚠ Codex-projected, dark-only |
 | OL-COMPARE | OpenLabComparison | 1082:30895 | ⚠ Codex-projected |
 | OL-UNAVAILABLE | OpenLabUnavailableBoundary | — | ⚠ No dedicated Figma frame |
-| OL-EVIDENCE-CHARTS | OpenLabFrontierPage:evidence | — | ❌ MISSING — needs creation |
+| OL-EVIDENCE-CHARTS | OpenLabFrontierPage:evidence | **1890:77164** — 6 responsive variants, mature | ✅ FOUND — mature spec on Authority page |
 | OL-COMPOUND-GUIDE | OpenLabFrontierPage:compound-guide | — | Frontier — deferred |
 | OL-STACK-BUILDER | OpenLabFrontierPage:stack-builder | — | Frontier — deferred |
 | OL-SIDEBAR-WORKSPACE | Workspace | — | Frontier — deferred |
 | OL-INTERACTION-CHECKER | OpenLabFrontierPage:interaction-checker | — | Frontier — deferred |
-| OL-COA-VIEWER | CoaViewer | — | ❌ MISSING — needs creation |
+| OL-COA-VIEWER | CoaViewer | R6 refs: 12:984, 12:1620 (GkC3KEt9V3RyG5K319iAUV) | ⚠ R6 refs only — needs OLUK identity redesign |
 | OL-RESEARCH-ARCHIVE | OpenLabFrontierPage:research-papers | — | Frontier — deferred |
 | OL-LAB-PARTNER | OpenLabFrontierPage:lab-partner | — | Frontier — deferred |
 
@@ -203,21 +277,24 @@ Also on page 369:5500 (no duplicates):
 
 ## 🧪 PRODUCT-SPECIFIC PURITY PRESENTATION
 
-The Dossier proves the pattern. These modules need the same treatment — governed fixture data rendered with brand identity:
+The Dossier proves the pattern. Evidence Charts (1890:77164) provides the visualization spec. These modules need the same treatment:
 
-| Presentation | Figma Source | Governed Fixture Shape | Target Route |
+| Presentation | Figma Source | Evidence Charts Ref | Target Route |
 |---|---|---|---|
-| HPLC Purity Trace | openlab-realtime 1791:77408 | `{batchId:"OL-MK28-240Q", trace:[{x:"Std1",y:98.2},{x:"Std2",y:99.1},{x:"SampleA",y:99.3},{x:"SampleB",y:99.0},{x:"Std3",y:99.2}], specLimit:99}` | PDP (single-product) |
-| Batch Records Table | openlab-realtime bottom half | `[{compound:"MK-2866",batch:"OL-MK28-240Q",purity:">99%",lab:"Eurofins",date:"2024-Q3",status:"PASS"}]` | PDP (filtered), Lab Records (full) |
-| ChromatogramViewer | ❌ MISSING — OL-COA-VIEWER | `{imageUrl, retentionTimeAxis, peakAnnotations, metadata}` | /open-lab/coa/:id |
-| Evidence Ledger (6-step) | EvidenceA 1791:75921 | Identity Tested → Purity Measured → Concentration Confirmed → Janoshik Verified → Tamper-Proof Sealed → Batch Tracked | Homepage, Portal |
-| 4-State Honesty | Codex portal (unproofed) | Verified (#15803D) / Source Reported (#0057FF) / Source Only (#D97706) / Unavailable (#6B7280) | Portal, Methodology |
-| Compound Tracker Cards | Codex portal (bad thumbnails) | Per-product: name, chemical name, latest batch, purity %, CTA | Portal |
-| Live Batch Feed | Realtime 1791:77373 | `[{compound, date, purity, method}]` polling/SSE | Homepage footer, Portal |
+| HPLC Purity Trace (full branded) | openlab-realtime 1791:77408 | EC §2 — full retention-time axis, review peak annotation | PDP (single-product), Lab Record detail |
+| HPLC Compact (PDP/Archive) | — | EC §3 — dual compact HPLC at card scale | PDP card, Archive card |
+| Structured Peak View | — | EC §4 — bar chart, peak area % vs retention time | Lab Record detail, CoA Viewer |
+| Public Record Trend | — | EC §5 — line chart, purity trend across published batches | Portal (multi-product), Compare |
+| Missing-Chart State | — | EC §6 — "Chart unavailable" empty state | Any route when data absent |
+| Batch Records Table | openlab-realtime bottom half | — | PDP (filtered), Lab Records (full) |
+| ChromatogramViewer | R6 refs (dark, extrapolatory) | EC §2 + §4 for spec | /openlab/coa/:id (net-new OLUK design) |
+| Evidence Ledger (6-step) | EvidenceA 1791:75921 | — | Homepage, Portal |
+| 4-State Honesty | Codex portal (unproofed) | — | Portal, Methodology, CoA Viewer |
+| Live Batch Feed | Realtime 1791:77373 | — | Homepage footer, Portal |
 
 ---
 
-## 🏗️ PHASE 0→1 — PARALLEL LANES
+## 🏗️ PHASE 0→1 — PARALLEL LANES (Updated)
 
 ### PHASE 0: Foundation (both lanes start simultaneously)
 
@@ -225,22 +302,24 @@ The Dossier proves the pattern. These modules need the same treatment — govern
 
 | Step | Task | Frames | Output |
 |---|---|---|---|
-| 0.1 | Canonicalize HeroOpenLab-light | USE 1791:77015 (1061h), ARCHIVE 1791:76121 (1079h) | Single canonical hero |
+| 0.1 | **Tighten HeroOpenLab-light spacing** | 1791:76121 (preferred, 1079h) | Balanced spacing — fix tight/sparse areas |
 | 0.2 | Deduplicate route compositions | KEEP 1082:xxxxx, ARCHIVE 1822:xxxxx (7 frames) | Clean route page |
 | 0.3 | Deduplicate card grammar | Remove Embedded:margin extras (72605, 73836), Realtime:margin extra (73567) | Clean grammar page |
-| 0.4 | Create CoA Viewer frame (OL-COA-VIEWER) | NEW — chromatogram + analyte table + custody timeline | Missing module filled |
-| 0.5 | Create Evidence Charts frame (OL-EVIDENCE-CHARTS) | NEW — multi-product purity trends | Missing module filled |
+| 0.4 | **Design CoA Viewer (OL-COA-VIEWER)** | NET-NEW at 1440/1024/390 — R6 refs as structural reference only | OLUK light-mode CoA with HPLC chromatogram, 4-state honesty, test results table |
+| 0.5 | ~~Create Evidence Charts~~ | **ALREADY EXISTS at 1890:77164** — 6 responsive variants | ✅ No action needed |
 | 0.6 | Decide EvidenceOS-Editorial | 1572:72278 → promote to component or archive | Resolved |
 | 0.7 | Document width convention | 1171=content, 1440=viewport, 1512=review-only | Codified |
+| 0.8 | **Design EvidenceCommerceCard** | NET-NEW card variant with inline HPLC trace + test chips | OLUK identity, alongside existing card grammar |
 
 #### Lane 2 — Codex (Functional Prototypes with Governed Fixture Data)
 
 | Step | Task | Fixture Data | Output |
 |---|---|---|---|
-| 0.1 | Build openlab-realtime with MK-2866 HPLC fixture | `{batchId:"OL-MK28-240Q", compound:"MK-2866", purity:">99%", lab:"Eurofins", method:"HPLC-UV", reported:"2024-Q3", trace:[...5 points], specLimit:99}` | Working SVG chart + batch records table |
+| 0.1 | Build openlab-realtime with MK-2866 HPLC fixture | See fixture shape below | Working SVG chart + batch records table |
 | 0.2 | Build EvidenceA multi-product section | Fixture for MK-2866, RAD-140, MK-677, GW-501516 | Hero card + Evidence Ledger + multi-compound table |
 | 0.3 | Build OpenLabRegistryArchive searchable table | All compound fixtures, searchable by compound/batch/lab | Functional search + filter |
 | 0.4 | Build ProductEvidenceSnapshot for PDP | MK-2866 specific, embedded openlab-realtime | PDP-ready evidence section |
+| 0.5 | **Build Evidence Charts components** | Use 1890:77164 spec as visual contract | All 6 chart types from the spec |
 
 ### PHASE 0.5: Merge Point
 
@@ -251,13 +330,13 @@ Each Lane 2 prototype re-skinned with Lane 1's identity tokens. The Dossier (D6)
 | Priority | Route | Composed From (registry IDs) | Data Scope |
 |---|---|---|---|
 | P1.1 | /product/mk-2866 (PDP) | OL-PRODUCT-EXPERIENCE + CD-01-CD-06 + EmbeddedEvidence | Single-product, product-specific purity |
-| P1.2 | /open-lab (Portal) | OL-01 + OL-02 + OL-04 + CategoryRail + Realtime | Multi-product, aggregate stats |
-| P1.3 | /open-lab/records | LR-02-LR-05 | All compounds, searchable |
-| P1.4 | /open-lab/records/:recordId | BLR-01-BLR-06 + OL-COA-VIEWER | Single batch, full chromatogram |
-| P1.5 | /open-lab/methodology | OL-METH | Static editorial |
-| P1.6 | /open-lab/source-chain | OL-CHAIN | 6 articles |
-| P1.7 | /open-lab/compare | OL-COMPARE | Multi-product side-by-side |
-| P1.8 | /open-lab/evidence | OL-EVIDENCE-CHARTS | Multi-product purity trends |
+| P1.2 | /openlab (Portal) | OL-01 + OL-02 + OL-04 + CategoryRail + Realtime | Multi-product, aggregate stats |
+| P1.3 | /openlab/records | LR-02-LR-05 | All compounds, searchable |
+| P1.4 | /openlab/records/:recordId | BLR-01-BLR-06 + OL-COA-VIEWER | Single batch, full chromatogram |
+| P1.5 | /openlab/methodology | OL-METH | Static editorial |
+| P1.6 | /openlab/source-chain | OL-CHAIN | 6 articles |
+| P1.7 | /openlab/compare | OL-COMPARE | Multi-product side-by-side |
+| P1.8 | /openlab/evidence | OL-EVIDENCE-CHARTS | Multi-product purity trends |
 | P1.9 | Homepage evidence | EvidenceA + Realtime feed | Featured compounds |
 
 ---
@@ -265,11 +344,16 @@ Each Lane 2 prototype re-skinned with Lane 1's identity tokens. The Dossier (D6)
 ## ✅ REQUIRED CODEX ACTIONS
 
 ```
-FIGMA_TO_CODEX_PACKET — PROCESS RESET
+FIGMA_TO_CODEX_PACKET — PROCESS RESET (v2)
 
-CRITICAL CHANGE: Stop treating design boards as the gate for prototyping.
+CRITICAL CHANGES FROM v1:
+1. HeroOpenLab-light canonical = 1791:76121 (1079h), NOT 1791:77015
+2. Evidence Charts spec EXISTS at 1890:77164 — use as visual contract for all chart components
+3. CoA Viewer R6 refs are extrapolatory only — await OLUK design from Lane 1
+4. EvidenceCommerceCard is a new card variant concept — await OLUK design
+
+UNCHANGED: Stop treating design boards as the gate for prototyping.
 The Dossier (1384:17747) is the existence proof — real data + real identity.
-Every other module should follow that pattern.
 
 1. CREATE governed fixture file: authority/fixtures/openlab-evidence-fixtures.json
    Shape: {
@@ -278,7 +362,11 @@ Every other module should follow that pattern.
          batchId: "OL-MK28-240Q",
          compound: "MK-2866",
          alias: "Ostarine",
+         sku: "80529-01",
+         strength: "15 MG",
+         servings: "90 Servings",
          purity: ">99%",
+         price: "£43",
          lab: "Eurofins",
          method: "HPLC-UV",
          specLimit: 99,
@@ -291,7 +379,7 @@ Every other module should follow that pattern.
            {x: "Std3", y: 99.2}
          ],
          status: "PASS"
-       },
+       }
        // RAD-140, MK-677, GW-501516, LGD-4033 with same shape
      },
      stats: {
@@ -301,57 +389,65 @@ Every other module should follow that pattern.
      }
    }
 
-2. BUILD openlab-realtime component IMMEDIATELY
-   - React + Recharts/D3 for HPLC purity trace
-   - Trace-state toggle (real/summary/unavailable)
+2. BUILD Evidence Charts components using 1890:77164 spec:
+   - Full branded HPLC trace (retention time axis, detector response)
+   - Compact PDP/Archive HPLC (card-scale)
+   - Structured peak view (bar chart, peak area vs retention time)
+   - Public record trend (line chart, purity vs published sequence)
+   - Missing-chart state (empty state with message)
+   Uses governed fixture, NOT live API. Presentation-only.
+
+3. BUILD openlab-realtime component
+   - React + Recharts/D3 for HPLC purity trace per Evidence Charts spec
    - Batch records table with PASS/FAIL badges
    - Uses governed fixture, NOT live API
-   - Single-product scoped for PDP
 
-3. BUILD EvidenceA multi-product section
-   - Hero card + 6-step Evidence Ledger + batch records
-   - Multi-product: shows latest batch per compound
-   - Homepage/Portal scoped
+4. WAIT for Lane 1 to deliver:
+   - CoA Viewer OLUK design (before building /openlab/coa/:id)
+   - EvidenceCommerceCard OLUK design (before adding to card grammar)
+   - HeroOpenLab-light tightened spacing (before implementing hero)
 
-4. BUILD ProductEvidenceSnapshot for PDP
-   - Wraps openlab-realtime with product-specific filter
-   - Inline PDP section
-
-5. DO NOT WAIT for design proof approval to start Lane 2.
-   The registry's runtimeExclusions are respected — all data
-   comes from governed fixtures, not live APIs. This is compliant.
+5. DO NOT WAIT for design proof to build items 1–3.
+   The registry's runtimeExclusions are respected — governed fixtures only.
 ```
 
 ## ✅ ACCEPTANCE CHECKS
 
 - [ ] Lane 2 prototypes render real HPLC charts with governed fixture data — not after a design proof cycle
-- [ ] Lane 1 design identity frames created for CoA Viewer and Evidence Charts
+- [ ] Evidence Charts components match the 6 presentation modes in 1890:77164
+- [ ] HeroOpenLab-light spacing tightened at 1791:76121
+- [ ] CoA Viewer designed with OLUK identity (not R6 dark-theme adopted)
+- [ ] EvidenceCommerceCard designed with OLUK identity (not RAD-140 reference adopted)
 - [ ] Merge point produces design-contracted prototypes with both identity AND data
 - [ ] Dossier pattern replicated across all evidence modules
 - [ ] PDP routes show single-product evidence only
 - [ ] Portal/Homepage routes show multi-product evidence
-- [ ] HPLC trace renders as SVG with correct Y-axis (97–100%) and 99% spec-limit dashed line
-- [ ] Product images use brand-correct renders, never backend thumbnail fallbacks
-- [ ] 4-State Honesty Language uses correct status colors
-- [ ] No payment/Woo mutation/BiasPay in OpenLab evidence surfaces
+- [ ] Product truth: MK-2866, Ostarine, SKU 80529-01, 15 MG, 90 Servings (never CAPS), >99% purity, £43
 - [ ] All duplicates resolved before Codex implements
 
 ## ⚠️ RISK NOTES
 
-- AGENTS.md says "Candidate code must remain presentation-only" — Lane 2 prototypes use governed fixtures, not live APIs, so this is compliant
-- Dark-only Codex pages (A1–A6) violate "light mode only" design law — reclassify as structural reference, not visual authority
-- OL-COA-VIEWER and OL-EVIDENCE-CHARTS are registered but have no Figma frames — biggest gaps for "presenting actual lab reports"
-- ChromatogramViewer format TBD: PDF embed vs. rasterized PNG — Codex needs to confirm lab API returns
+- AGENTS.md: "Candidate code must remain presentation-only" — Lane 2 prototypes use governed fixtures, not live APIs
+- Dark-only Codex pages (A1–A6) violate "light mode only" design law — structural reference only
+- CoA Viewer is the biggest remaining design gap — R6 refs inform content hierarchy but not visual identity
+- Evidence Charts spec is mature and complete — Codex can begin building chart components immediately
 - 7 duplicate route compositions on page 369:5500 must be canonicalized before Codex implements
 - Olympus runtime, payment, and security work out of scope per codex-bridge rules and AGENTS.md
 
 ## 🎯 NEXT ACTIONS
 
-**Owner decisions needed:**
-1. Which HeroOpenLab-light is canonical? (Recommendation: 1791:77015 at 1061h)
-2. EvidenceOS-Editorial (1572:72278): promote to component with route, or archive?
-3. Chromatogram format: PDF embed or rasterized PNG?
+**Owner decisions still needed:**
+1. EvidenceOS-Editorial (1572:72278): promote to component with route, or archive?
+2. Chromatogram format in CoA Viewer: PDF embed or rasterized PNG or inline SVG?
 
-**Figma (Lane 1):** Begin Phase 0.1–0.3 cleanup (canonicalize, deduplicate). Then 0.4–0.5 (create missing CoA Viewer and Evidence Charts frames).
+**Figma (Lane 1):**
+1. Tighten HeroOpenLab-light (1791:76121) spacing — design pass
+2. Phase 0.2–0.3 cleanup (deduplicate route compositions + card grammar)
+3. Design CoA Viewer with OLUK identity (net-new, use R6 for content hierarchy)
+4. Design EvidenceCommerceCard with OLUK identity (net-new concept)
 
-**Codex (Lane 2):** Create governed fixture file and build openlab-realtime with real MK-2866 chart data immediately. Don't wait for design proof approval. The Dossier proves this works.
+**Codex (Lane 2):**
+1. Create governed fixture file immediately
+2. Build Evidence Charts components using 1890:77164 as visual contract — this is unblocked NOW
+3. Build openlab-realtime with MK-2866 HPLC fixture — this is unblocked NOW
+4. Wait for Lane 1 on CoA Viewer and EvidenceCommerceCard designs
