@@ -1,0 +1,50 @@
+{
+  "contract": "OLUK_PRESENTATION_APPROVAL_V1",
+  "schemaVersion": "1.0.0",
+  "status": "PENDING_HUMAN_REVIEW",
+  "design": {
+    "inventoryDigest": "ceb28e38abae8c83c862c49e43b6457d1997d447bdca30c623593a4becaa446c",
+    "presentationDigest": "0e00a893d2e56b6fb974353b9bbb1bb6b4f5c54fea00bd73c5c03afb1656180b",
+    "routeAuthorityDigest": "ed3406c9dbaa75dcf1dc62748248e4d8e63370fd22b8da3822ccd1a57f50a27a",
+    "sourceSha": null
+  },
+  "next": {
+    "candidateSha": null,
+    "bindingDigest": null
+  },
+  "scope": {
+    "routeIds": [
+      "product"
+    ],
+    "moduleIds": [
+      "module.product-detail"
+    ],
+    "productInstanceCount": 15
+  },
+  "captures": [
+    {
+      "viewport": 1440,
+      "sitesSha256": null,
+      "nextSha256": null
+    },
+    {
+      "viewport": 1024,
+      "sitesSha256": null,
+      "nextSha256": null
+    },
+    {
+      "viewport": 768,
+      "sitesSha256": null,
+      "nextSha256": null
+    },
+    {
+      "viewport": 390,
+      "sitesSha256": null,
+      "nextSha256": null
+    }
+  ],
+  "decision": null,
+  "decidedAt": null,
+  "decidedBy": null,
+  "contentHash": "06ae6f490458b70a7c719969b7d2d45fe6aa98b21e316b6ddc459d15499341ac"
+}

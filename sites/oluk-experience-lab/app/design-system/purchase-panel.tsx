@@ -28,6 +28,7 @@ export type PurchasePanelProps = Readonly<{
   quantity?: number;
   headingLevel?: HeadingLevel;
   className?: string;
+  bottleOptions?: boolean;
 }>;
 
 function statePresentation(product: ProductFixture, state: PurchasePanelState) {
@@ -61,9 +62,11 @@ export function PurchasePanel({
   quantity,
   headingLevel = "h2",
   className,
+  bottleOptions = false,
 }: PurchasePanelProps) {
   const presentation = statePresentation(product, state);
   const servingsLabel = product.servings.trim() || "Not supplied";
+  const servingsCount = Number(product.servings.match(/\d+/)?.[0] || 0);
   const introFacts = [product.alias, product.strength, product.servings.trim() || "Servings not supplied", product.purity];
 
   return (
@@ -95,10 +98,18 @@ export function PurchasePanel({
         {product.sku ? <span>SKU {product.sku}</span> : <span>{product.series}</span>}
         <a href={product.evidencePath}>View Lab Records →</a>
       </div>
-      <div className="oluk-candidate-pack-size">
-        <span>PACK SIZE</span>
-        <strong>{servingsLabel}</strong>
-      </div>
+      {bottleOptions && servingsCount > 0 ? (
+        <div aria-label="Bottle quantity options" className="oluk-candidate-bottle-options" role="group">
+          <span>BOTTLES</span>
+          <div data-selected="true"><strong>1 BOTTLE</strong><small>{servingsCount} SERVINGS</small></div>
+          <div><strong>2 BOTTLES</strong><small>{servingsCount * 2} SERVINGS</small></div>
+        </div>
+      ) : (
+        <div className="oluk-candidate-pack-size">
+          <span>PACK SIZE</span>
+          <strong>{servingsLabel}</strong>
+        </div>
+      )}
       <div className="purchase-row">
         <PriceBlock price={product.price} />
         <QuantityStepper
