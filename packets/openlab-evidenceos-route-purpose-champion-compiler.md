@@ -1,5 +1,28 @@
 # FIGMA_TO_CODEX_PACKET — OpenLab / EvidenceOS Route Purpose, Functional Identity, Visual Identity & Champion Prototype Compiler
 
+## STATUS: PHASE 0 COMPLETE — SECTIONS 00-02, 08-09 BUILT
+
+**Last updated:** 2026-08-27
+**Figma file:** BEPMuUt1HroEw8xjz8CVyN
+**Page:** OPENLAB · PURPOSE + PROTOTYPE · V1 [1920:422]
+
+### CREATED FIGMA NODES
+
+| Section | Section Node | Content Frame | Status |
+|---|---|---|---|
+| 00 · SOURCE REGISTER | 1920:423 | 1923:422 (23 source entries) | ✅ BUILT |
+| 01 · ROUTE PURPOSE ATLAS | 1920:424 | 1925:422 (13 route cards) | ✅ BUILT |
+| 02 · COMPONENT FAMILY ATLAS | 1920:425 | 1926:422 (15 component families) | ✅ BUILT |
+| 03 · PORTAL / LIBRARY CHAMPION | 1920:426 | — | ⏳ PLACEHOLDER (design agent) |
+| 04 · MK-2866 SINGLE-PRODUCT CHAMPION | 1920:427 | — | ⏳ PLACEHOLDER (design agent) |
+| 05 · PDP EVIDENCE SNAPSHOT | 1920:428 | — | ⏳ PLACEHOLDER (design agent) |
+| 06 · RECORD / REPORT / COA | 1920:429 | — | ⏳ PLACEHOLDER (design agent) |
+| 07 · STATE + RESPONSIVE MATRIX | 1920:430 | — | ⏳ PLACEHOLDER (design agent) |
+| 08 · DISPOSITION + SUPERSESSION | 1920:431 | 1931:422 (20 disposition entries) | ✅ BUILT |
+| 09 · CODEX ADOPTION RECEIPT | 1920:432 | 1926:469 | ✅ BUILT |
+
+---
+
 ## CONTEXT
 
 - **Active repo/project:** mujtabaakhawaja-prog/oluk-design-system
@@ -11,6 +34,17 @@
 - **Editorial selection:** 1838:12778 (OPENLAB_EDITORIAL_MODULE_MK2866_SELECTION_01)
 - **File variables:** 60 COLOR · 50 FLOAT · 2 STRING
 - **File styles:** 10 paint · 50 text · 5 effect · 1 grid
+
+---
+
+## OWNER DECISIONS — ALL RESOLVED
+
+| Decision | Resolution | Date |
+|---|---|---|
+| HeroOpenLab-light preference | 1791:76121 (1079px) preferred over 1791:77015 (1061px) | 2026-08-27 |
+| EvidenceOS-Editorial (1572:72278) | ADAPT → OL-EDITORIAL-TEASER. Compact evidence staging: left = lab record/report visual, right = HPLC chart | 2026-08-27 |
+| Chromatogram format | Deferred to Codex decision | 2026-08-27 |
+| Champion split (1838:12778) | Required — portal (multi-product) vs compound record (single-product MK-2866) | 2026-08-27 |
 
 ---
 
@@ -54,51 +88,58 @@ Every source node inspected against file BEPMuUt1HroEw8xjz8CVyN with exact node 
 | 1326:7659 | Stack / OpenLabConfidence | COMPONENT_SET | **ADOPT** | /open-lab/stack-builder |
 | 1374:853 | Stack / OpenLabConfidence v3 | COMPONENT_SET | **ADOPT** | /open-lab/stack-builder (v3 mobile) |
 
+### EVIDENCE CHARTS — 1890:77164 (SECTION · 3200×19500 · 00 — Authority & Run Control)
+
+| Node ID | Name | Dimensions | Disposition | Content |
+|---|---|---|---|---|
+| 1890:77165 | EC Light 1440 | ~1440×wide | **ADOPT** | Full HPLC trace, Compact PDP+Archive, Structured peak view, Public record trend, Missing-chart state |
+| + 5 variants | EC Light 1024/768/390 + pixel refs | Various | **ADOPT** | 6 responsive variants × 6 chart modes |
+
 ### FULL ROUTE COMPOSITIONS — MF-01 & MF-02 (369:5500)
 
 | Node ID | Name | Dimensions | Disposition | Canonical Route |
 |---|---|---|---|---|
-| 1082:29137 | openlab-portal-index | 1440×3299 | **STRUCTURAL_REFERENCE** | /open-lab — use as section-map reference, rebuild with new components |
-| 1082:29460 | openlab-lab-records-archive | 1440×2281 | **STRUCTURAL_REFERENCE** | /open-lab/records — section structure valid, components need swap |
-| 1082:29876 | openlab-dossier-mk2866 | 1440×2742 | **STRUCTURAL_REFERENCE** | /open-lab/compound/:slug — section layout reference |
+| 1082:29137 | openlab-portal-index | 1440×3299 | **STRUCTURAL_REFERENCE** | /open-lab |
+| 1082:29460 | openlab-lab-records-archive | 1440×2281 | **STRUCTURAL_REFERENCE** | /open-lab/records |
+| 1082:29876 | openlab-dossier-mk2866 | 1440×2742 | **STRUCTURAL_REFERENCE** | /open-lab/compound/:slug |
 | 1082:30382 | openlab-report-detail | 1440×1824 | **STRUCTURAL_REFERENCE** | /open-lab/records/:recordId |
 | 1082:30582 | openlab-batch-lookup | 1440×1064 | **STRUCTURAL_REFERENCE** | /open-lab/batch-lookup |
 | 1082:30895 | openlab-compare | 1440×1467 | **STRUCTURAL_REFERENCE** | /open-lab/compare |
-| 1082:30967 | openlab-evidenceos-command | 1440×1024 | **DATA_ANATOMY_ONLY** | /open-lab/evidence — unproofed concept |
+| 1082:30967 | openlab-evidenceos-command | 1440×1024 | **DATA_ANATOMY_ONLY** | /open-lab/evidence |
 
-### DUPLICATE COMPOSITIONS — MF-01 & MF-02 (369:5500) — 1822:xxxxx series
+### DUPLICATE COMPOSITIONS — 1822:xxxxx series → ARCHIVE_CANDIDATE
 
-| Node ID | Name | Dimensions | Disposition | Reason |
-|---|---|---|---|---|
-| 1822:77602 | openlab-portal-index | 1440×3299 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:29137 — canonicalize to 1082 series |
-| 1822:77931 | openlab-lab-records-archive | 1440×2281 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:29460 |
-| 1822:78399 | openlab-dossier-mk2866 | 1440×2742 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:29876 |
-| 1822:78688 | openlab-report-detail | 1440×1824 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:30382 |
-| 1822:78889 | openlab-batch-lookup | 1440×1064 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:30582 |
-| 1822:79207 | openlab-compare | 1440×1467 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:30895 |
-| 1822:79280 | openlab-evidenceos-command | 1440×1024 | **ARCHIVE_CANDIDATE** | Duplicate of 1082:30967 |
+7 duplicates of the 1082 series. All marked ARCHIVE_CANDIDATE, canonicalized to 1082 originals.
 
 ### HERO CANDIDATES — MF-03 (1660:422)
 
 | Node ID | Name | Dimensions | Disposition | Reason |
 |---|---|---|---|---|
-| 1791:77015 | HeroOpenLab-light | 1512×1061 | **ADOPT** | ✓ Canonical height (1061). Use as hero reference. |
-| 1791:76121 | HeroOpenLab-light | 1512×1079 | **SUPERSEDE** | ✗ 18px taller than canonical. Padding error. Delete after verification. |
+| 1791:76121 | HeroOpenLab-light | 1512×1079 | **ADOPT** | ✓ Owner-preferred variant |
+| 1791:77015 | HeroOpenLab-light | 1512×1061 | **ARCHIVE_CANDIDATE** | Owner prefers 1791:76121 |
 
-### CARD GRAMMAR DUPLICATES — (1572:70623)
+### CARD GRAMMAR — (1572:70623)
 
 | Node ID | Name | Disposition | Reason |
 |---|---|---|---|
-| 1572:72605 | Embedded:margin | **ARCHIVE_CANDIDATE** | Duplicate of 1572:72122 |
-| 1572:73836 | Embedded:margin | **ARCHIVE_CANDIDATE** | Duplicate of 1572:72122 |
-| 1572:73567 | Realtime:margin | **ARCHIVE_CANDIDATE** | Duplicate of 1572:72014 |
-| 1572:72278 | EvidenceOS-Editorial | **DATA_ANATOMY_ONLY** | Unproofed concept — no route assignment |
+| 1572:72605 | Embedded:margin | **ARCHIVE_CANDIDATE** | Duplicate |
+| 1572:73836 | Embedded:margin | **ARCHIVE_CANDIDATE** | Duplicate |
+| 1572:73567 | Realtime:margin | **ARCHIVE_CANDIDATE** | Duplicate |
+| 1572:72278 | EvidenceOS-Editorial | **ADAPT** | Promoted → OL-EDITORIAL-TEASER for compact evidence staging |
+
+### CROSS-FILE SOURCES
+
+| File | Node | Disposition | Reason |
+|---|---|---|---|
+| GkC3KEt9V3RyG5K319iAUV | r6-coa-viewer (12:984) | **DATA_ANATOMY_ONLY** | R6 dark-theme. Content hierarchy useful. Only extrapolatory per owner. |
+| GkC3KEt9V3RyG5K319iAUV | r6-mobile-coa-viewer (12:1620) | **DATA_ANATOMY_ONLY** | R6 dark mobile. Same assessment. |
+| 67dsmMdok9JnLZ5GCdRhBL | EvidenceOS-Editorial (6:3962) | **ADAPT** | Codex Sites instance → OL-EDITORIAL-TEASER |
 
 ---
 
 ## CHAMPION SPLIT SPECIFICATION
 
-The editorial selection 1838:12778 currently conflates single-product (MK-2866 compound record) and multi-product (portal/library) purposes in one composition. This must split into two independent champion candidates.
+The editorial selection 1838:12778 conflates single-product (MK-2866 compound record) and multi-product (portal/library) purposes. Split into two independent champion candidates.
 
 ### A. OPENLAB_PORTAL_LIBRARY_SELECTION_01
 
@@ -109,88 +150,32 @@ The editorial selection 1838:12778 currently conflates single-product (MK-2866 c
 **Shell:** AppShell + OpenLabContextNav + openlab-mega-menu-panel
 
 **Required sections (top to bottom):**
-1. EvidenceHero (1841:427 desktop / 1843:745 mobile) — Multi-product editorial gateway
+1. EvidenceHero (1841:427 / 1843:745) — Multi-product editorial gateway
 2. EvidenceLedger (1841:446) — Chain of custody explanation
 3. Compound navigation grid — Multi-product cards (NOT MK-2866 only)
-4. BatchRecordTable (1841:507 / 1843:798) — Recent/admitted records across products
+4. BatchRecordTable (1841:507 / 1843:798) — Recent admitted records across products
 5. Archive continuation CTA → /open-lab/records
 6. Comparison/wayfinding module → /open-lab/compare
 
-**Components from editorial selection:**
-- EvidenceHero / Customer (1841:427 + 1843:745)
-- EvidenceLedger / Customer (1841:446)
-- BatchRecordTable / Customer (1841:507 + 1843:798)
-
-**Inherited OLUK components:**
-- OpenLabPortalHero (1263:5683)
-- OpenLabContextNav (1215:29690)
-- openlab-mega-menu-panel (1199:28750)
-- QualitativeChip for compound navigation
-- SiteHeader (754:18224) + SiteFooter (754:18226)
-
-**NOT included (belongs to compound champion):**
-- HplcPurityTrace (single-compound specific)
-- LabRecord (single-record specific)
-- AnalytePeakTable (single-compound specific)
-- Methodology (compound-specific placement)
-- SourceCustody (compound-specific placement)
-- RecordHistory (single-compound timeline)
-- HplcPeakProfile (single-compound visualization)
-
 ### B. OPENLAB_COMPOUND_RECORD_MK2866_SELECTION_01
 
-**Customer job:** "I want to see all evidence for MK-2866 specifically — purity results, lab records, methodology, and how to access the actual reports."
+**Customer job:** "I want to see all evidence for MK-2866 specifically."
 
 **Route:** /open-lab/compound/:slug (first instance: /open-lab/compound/mk-2866)
-**Product context:** Single-product
-**Shell:** AppShell + OpenLabContextNav
+**Product context:** Single-product (MK-2866: Ostarine, SKU 80529-01, 15 mg, 90 servings, >99% purity, £43)
 
 **Required sections (top to bottom):**
-1. Compound identity header — MK-2866 name + canonical identifier
-2. HplcPurityTrace (1839:455 / 1843:785) — Structured peak summary with honest label
-3. HplcPeakProfile (1864:13254 / 1864:13261) — 5-peak source-bound profile
-4. LabRecord (1839:428 / 1843:763) — Latest admitted record card
-5. AnalytePeakTable (1839:470) — Analyte measurements table
-6. EvidenceStatus (1839:424) — 4-state honesty chip
-7. ReportAction (1839:422) — CTA to view/download report
-8. RecordHistory (1856:13238) — Timeline of admitted records for this compound
-9. Methodology (1841:559) — Testing methodology explanation
-10. SourceCustody (1841:570) — Source chain & custody narrative
-11. Related compounds continuation → /open-lab/records
-
-**Components from editorial selection:**
-- ALL 17 components (this is the primary consumer)
-- Desktop + Mobile variants form one responsive family
-
-**Inherited OLUK components:**
-- AssuranceRail / TrustEvidenceSpine (556:34122 + 556:34022)
-- EvidenceStatusChip (1085:4390)
-- OpenLabContextNav (1215:29690)
-- SiteHeader + SiteFooter
-
-**Reusability:** The MK-2866 instance becomes the product-agnostic template. Product facts (compound name, batch IDs, purity values, peak data) are inputs. Component structure, responsive behavior, section order, and state handling are shared across all compounds.
-
----
-
-## CANONICAL ROUTE LAW — /open-lab PREFIX
-
-**IMPORTANT:** The canonical runtime route prefix is `/open-lab` (hyphenated), NOT `/openlab` (Figma shorthand).
-
-| Canonical Path | Customer Job | Product Context | Key Components |
-|---|---|---|---|
-| Homepage evidence slot | Brief multi-product confidence preview | Multi-product | EvidenceLedger, BatchRecordTable (preview) |
-| /product/:slug | ProductEvidenceSnapshot below commerce | Single-product | HplcPeakProfile, EvidenceStatus, ReportAction |
-| /open-lab | Multi-product editorial portal | Multi-product | EvidenceHero, EvidenceLedger, BatchRecordTable |
-| /open-lab/records | Searchable multi-product archive | Multi-product | BatchRecordTable (full), search/filter |
-| /open-lab/records/:recordId | Single record detail | Single-product | LabRecord, AnalytePeakTable, ReportAction |
-| /open-lab/compound/:slug | Single compound dossier | Single-product | ALL editorial components |
-| /open-lab/report/:batchId | Report-detail presentation | Single-product | ReportAction, EvidenceStatus |
-| /open-lab/coa/:id | Supplied CoA/report viewer | Single-product | Document embed (MISSING_SOURCE — no component exists) |
-| /open-lab/batch-lookup | Exact batch lookup | Cross-product | Search input + result state |
-| /open-lab/methodology | Editorial methodology | No-product | Methodology (expanded) |
-| /open-lab/source-chain | Source & custody narrative | No-product | SourceCustody (expanded) |
-| /open-lab/compare | Multi-product comparison | Multi-product | Commensurable fields only |
-| /open-lab/evidence | Multi-product evidence/trends | Multi-product | Source-owned numeric data only |
+1. Compound identity header
+2. HplcPurityTrace (1839:455 / 1843:785)
+3. HplcPeakProfile (1864:13254 / 1864:13261)
+4. LabRecord (1839:428 / 1843:763)
+5. AnalytePeakTable (1839:470)
+6. EvidenceStatus (1839:424)
+7. ReportAction (1839:422)
+8. RecordHistory (1856:13238)
+9. Methodology (1841:559)
+10. SourceCustody (1841:570)
+11. Related compounds continuation
 
 ---
 
@@ -201,146 +186,80 @@ The editorial selection 1838:12778 currently conflates single-product (MK-2866 c
 ```
 concernId: openlab-portal
 name: OpenLab Evidence Portal
-customerWho: A prospective or returning buyer who wants to evaluate Olympus Labs UK's overall testing transparency
+customerWho: A prospective or returning buyer evaluating testing transparency
 customerQuestion: "How do I know these products are what they claim to be?"
-customerJob: Discover the evidence ecosystem, understand testing methodology, browse recent results, navigate to specific compounds
-whyItExists: Trust conversion — customers who see evidence buy with higher confidence and AOV
-whenItAppears: Direct navigation via header mega-menu, footer link, or homepage evidence CTA
-commerceValue: Trust-driven conversion lift. Not a direct purchase surface.
-trustValue: PRIMARY — this is the trust anchor for the entire brand
-primitiveData: Admitted batch records (multi-product), methodology text, compound list, evidence status per product
-dataOwner: Evidence API (read-only projection of admitted records)
-evidenceEligibility: fail-closed per 4-state honesty language
-primitiveShape: Editorial portal with hero + ledger + grid + table + CTAs
+customerJob: Discover evidence ecosystem, understand methodology, browse results, navigate to compounds
+whyItExists: Trust conversion — evidence-aware customers buy with higher confidence and AOV
+whenItAppears: Header mega-menu, footer link, homepage evidence CTA
+commerceValue: Trust-driven conversion lift (not a direct purchase surface)
+trustValue: PRIMARY — trust anchor for the brand
+primitiveData: Admitted batch records (multi-product), methodology, compound list, evidence status
+dataOwner: Evidence API (read-only projection)
+evidenceEligibility: fail-closed per 4-state honesty
 componentFamily: OpenLabPortal
 routeFamily: /open-lab
 candidateRouteSlots: CANDIDATE_SLOT_ID:openlab-portal-hero, CANDIDATE_SLOT_ID:openlab-portal-ledger, CANDIDATE_SLOT_ID:openlab-portal-compounds, CANDIDATE_SLOT_ID:openlab-portal-records, CANDIDATE_SLOT_ID:openlab-portal-archive-cta
-informationHierarchy: Hero headline → Trust narrative → Compound grid → Recent records → Archive CTA
-interactions: Compound card click → /open-lab/compound/:slug, Record row click → /open-lab/records/:recordId, Archive CTA → /open-lab/records
-responsiveLaw: 1440 two-column hero | 1024 narrowed | 768 stacked | 390 single-column, table→card
-contentRules: No invented metrics. No aggregate purity averages. No "live" feeds. Recent records from admitted projections only.
-visibleIdentifierRule: Compound names as headlines. Batch IDs as MK-2866 · OL2201 format.
-emptyState: "We're preparing our evidence records. Check back soon."
-unavailableState: "Evidence data is currently unavailable for this product."
-sourceOnlyState: "This data is provided by the manufacturer and has not been independently verified."
-sourceReportedState: "Source reported — awaiting independent verification."
-verifiedState: "OPENLAB VERIFIED — Confirmed by third-party laboratory analysis."
-sourceNodes: 1082:29137 (structural reference), 1841:427 + 1841:446 + 1841:507 (components)
-inheritedOLUKComponents: OpenLabPortalHero (1263:5683), OpenLabContextNav (1215:29690), openlab-mega-menu-panel (1199:28750), QualitativeChip, SiteHeader, SiteFooter
+responsiveLaw: 1440 two-column | 1024 narrowed | 768 stacked | 390 single-column table→card
+contentRules: No invented metrics, no aggregate purity averages, no "live" feeds
 implementationConsumer: app/(open-lab)/page.tsx
-acceptanceChecks: Hero renders at all 4 breakpoints | No invented data | 4-state honesty applied | Compound cards navigate correctly | Table responsive transform works
-openDecision: How many compounds to feature on portal vs. showing all | Archive pagination strategy
-nextExecutableEdge: Build portal champion at 1440 + 390 using ADOPT components
 ```
 
-### FID-002: OpenLab Compound Dossier (MK-2866 first)
+### FID-002: Compound Dossier (MK-2866 first)
 
 ```
 concernId: openlab-compound-dossier
 name: Compound Evidence Dossier
-customerWho: A buyer researching a specific compound's testing history and purity evidence
+customerWho: A buyer researching a specific compound's testing history
 customerQuestion: "What exactly has been tested for MK-2866 and what were the results?"
-customerJob: See all admitted evidence for one compound — purity, analytes, lab records, methodology, report access
-whyItExists: Deep trust for considered purchase. Single-product evidence depth.
+customerJob: See all admitted evidence for one compound — purity, analytes, records, methodology, report access
+whyItExists: Deep trust for considered purchase
 whenItAppears: Click from portal compound card, PDP evidence link, or direct URL
-commerceValue: High-intent purchase validation. Customers viewing evidence are in decision mode.
+commerceValue: High-intent purchase validation
 trustValue: CRITICAL — product-specific evidence is the strongest trust signal
-primitiveData: Compound identity, admitted batch/report records, HPLC peak data (source-bound), analyte measurements, methodology, custody chain
+primitiveData: Compound identity, batch/report records, HPLC peak data (source-bound), analyte measurements, methodology, custody
 dataOwner: Evidence API (compound-scoped projection)
-evidenceEligibility: fail-closed. OPENLAB VERIFIED only when explicit. Peak profile from source-owned numeric points only.
-primitiveShape: Single-product dossier with identity header + peak summary + record card + analyte table + methodology + custody + history
+evidenceEligibility: fail-closed. Peak profile from source-owned numeric points only.
 componentFamily: OpenLabCompoundDossier
 routeFamily: /open-lab/compound
 candidateRouteSlots: CANDIDATE_SLOT_ID:compound-identity-header, CANDIDATE_SLOT_ID:compound-peak-summary, CANDIDATE_SLOT_ID:compound-peak-profile, CANDIDATE_SLOT_ID:compound-lab-record, CANDIDATE_SLOT_ID:compound-analyte-table, CANDIDATE_SLOT_ID:compound-evidence-status, CANDIDATE_SLOT_ID:compound-report-action, CANDIDATE_SLOT_ID:compound-record-history, CANDIDATE_SLOT_ID:compound-methodology, CANDIDATE_SLOT_ID:compound-source-custody, CANDIDATE_SLOT_ID:compound-related-cta
-informationHierarchy: Compound name → Peak summary → Latest record → Analytes → Status → Report CTA → History → Methodology → Custody → Related
-interactions: Report CTA → /open-lab/report/:batchId or /open-lab/coa/:id, History row → /open-lab/records/:recordId, Related → /open-lab/compound/:otherSlug
-responsiveLaw: 1440 two-column (peak+record left, analytes+method+custody right) | 1024 narrowed | 768 stacked | 390 single-column linear
-contentRules: Peak profile from source-owned structured numeric points ONLY. Label as "Structured Peak Summary" NOT "Chromatogram". Do not invent intermediate values from >99%.
-visibleIdentifierRule: "MK-2866 · OL2201" format on cards. Full record ID in detail views and accessibility text.
-emptyState: "No evidence records have been admitted for this compound yet."
-unavailableState: "Evidence data is currently unavailable."
-sourceOnlyState: "Manufacturer-provided specification. Not independently verified."
-sourceReportedState: "Source reported value — independent verification pending."
-verifiedState: "OPENLAB VERIFIED — Third-party laboratory confirmed."
-sourceNodes: 1082:29876 (structural reference), ALL 17 editorial components (1839:422 through 1864:13261)
-inheritedOLUKComponents: AssuranceRail (556:34122), AssuranceCell (556:34022), EvidenceStatusChip (1085:4390), OpenLabContextNav (1215:29690), SiteHeader, SiteFooter
+responsiveLaw: 1440 two-column | 1024 narrowed | 768 stacked | 390 single-column linear
+contentRules: Peak profile from source-owned structured numeric points ONLY. Label "Structured Peak Summary" NOT "Chromatogram". Do not invent intermediate values from >99%.
 implementationConsumer: app/(open-lab)/compound/[slug]/page.tsx
-acceptanceChecks: MK-2866 renders at all 4 breakpoints | Peak profile source-bound | No invented data | All states represented | Report action functional | History timeline accurate
-openDecision: Whether CoA viewer is embedded or opens in new tab | Peak profile data format from API
-nextExecutableEdge: Build MK-2866 compound champion at 1440 + 390 using ADOPT components, then extract product-agnostic template
 ```
 
 ---
 
-## COMPONENT FAMILY REGISTRY
+## COMPONENT FAMILY REGISTRY (15 families documented in section 02)
 
 ### OpenLabEvidence family (17 components from 1838:12778)
 
-| Family | Desktop Component | Mobile Component | Customer Job |
+| Family | Desktop | Mobile | Customer Job |
 |---|---|---|---|
-| EvidenceHero | 1841:427 (1248×450) | 1843:745 (366×997) | Multi-product trust gateway |
-| EvidenceLedger | 1841:446 (1248×437) | — (reflows) | Chain of custody narrative |
-| BatchRecordTable | 1841:507 (1248×324) | 1843:798 (366×406) | Record browsing + search |
-| LabRecord | 1839:428 (591×247) | 1843:763 (334×520) | Single record card |
-| HplcPurityTrace | 1839:455 (591×422) | 1843:785 (334×370) | Structured peak summary |
-| HplcPeakProfile | 1864:13254 (549×176) | 1864:13261 (302×130) | 5-peak source-bound profile |
-| AnalytePeakTable | 1839:470 (620×314) | — (table→card) | Analyte measurements |
-| Methodology | 1841:559 (620×292) | — (reflows) | Testing methodology |
-| SourceCustody | 1841:570 (620×428) | — (reflows) | Source chain & custody |
-| RecordHistory | 1856:13238 (620×56) | — (reflows) | Record timeline row |
-| EvidenceStatus | 1839:424 (136×20) | — (same) | 4-state honesty chip |
-| ReportAction | 1839:422 (172×44) | — (same) | Report view/download CTA |
+| EvidenceHero | 1841:427 | 1843:745 | Multi-product trust gateway |
+| EvidenceLedger | 1841:446 | reflows | Chain of custody narrative |
+| BatchRecordTable | 1841:507 | 1843:798 | Record browsing + search |
+| LabRecord | 1839:428 | 1843:763 | Single record card |
+| HplcPurityTrace | 1839:455 | 1843:785 | Structured peak summary |
+| HplcPeakProfile | 1864:13254 | 1864:13261 | 5-peak source-bound profile |
+| AnalytePeakTable | 1839:470 | table→card | Analyte measurements |
+| Methodology | 1841:559 | reflows | Testing methodology |
+| SourceCustody | 1841:570 | reflows | Source chain & custody |
+| RecordHistory | 1856:13238 | reflows | Record timeline row |
+| EvidenceStatus | 1839:424 | same | 4-state honesty chip |
+| ReportAction | 1839:422 | same | Report view/download CTA |
+
+### Inherited OLUK concerns
+
+ProductCommerceCard, PurchasePanel, ProductMediaChamber, AttributeChip, QualitativeChip, ProductMetricRail, TrustEvidenceSpine / AssuranceRail, EvidenceStatus, InventoryStatus
 
 ### Missing components (CANDIDATE for creation)
 
 | Candidate | Purpose | Route | Status |
 |---|---|---|---|
-| CoaViewer | Embedded CoA/report document viewer | /open-lab/coa/:id | MISSING_SOURCE — no component exists |
-| CompoundIdentityHeader | Compound name + badge + nav | /open-lab/compound/:slug | Can be composed from existing primitives |
+| CoaViewer | CoA/report document viewer | /open-lab/coa/:id | MISSING_SOURCE |
+| CompoundIdentityHeader | Compound name + badge + nav | /open-lab/compound/:slug | Compose from primitives |
 | ProductEvidenceSnapshot | Compact evidence teaser for PDP | /product/:slug | Compose from HplcPeakProfile + EvidenceStatus + ReportAction |
-| EvidenceComparisonTable | Side-by-side compound comparison | /open-lab/compare | MISSING_SOURCE — structural reference only at 1082:30895 |
-
----
-
-## FIGMA OUTPUT STRUCTURE — PROPOSED
-
-New page: **OPENLAB · PURPOSE + PROTOTYPE · V1**
-
-```
-00 · SOURCE REGISTER
-    Source disposition table (all nodes with ADOPT/ADAPT/STRUCTURAL_REFERENCE/ARCHIVE_CANDIDATE)
-
-01 · ROUTE PURPOSE ATLAS
-    Functional identity cards for all 13 /open-lab routes + homepage slot + PDP slot
-
-02 · COMPONENT FAMILY ATLAS
-    17 editorial components + inherited OLUK components + missing candidates
-
-03 · PORTAL / LIBRARY CHAMPION
-    OPENLAB_PORTAL_LIBRARY_SELECTION_01 at 1440 + 390
-    Multi-product editorial portal using EvidenceHero + EvidenceLedger + BatchRecordTable
-
-04 · MK-2866 SINGLE-PRODUCT CHAMPION
-    OPENLAB_COMPOUND_RECORD_MK2866_SELECTION_01 at 1440 + 390
-    All 17 editorial components in compound dossier layout
-
-05 · PDP EVIDENCE SNAPSHOT
-    ProductEvidenceSnapshot for /product/:slug placement
-    Compact: HplcPeakProfile + EvidenceStatus + ReportAction
-
-06 · RECORD / REPORT / COA
-    Record detail, report presentation, CoA viewer candidates
-
-07 · STATE + RESPONSIVE MATRIX
-    All 4 honesty states × all 4 breakpoints for key components
-
-08 · DISPOSITION + SUPERSESSION
-    Duplicates archived, heroes resolved, card grammar deduplicated
-
-09 · CODEX ADOPTION RECEIPT
-    Status: CANDIDATE_PENDING_HUMAN_REVIEW
-    All created node IDs, route-slot candidates, implementation order
-```
+| EvidenceComparisonTable | Side-by-side comparison | /open-lab/compare | MISSING_SOURCE |
 
 ---
 
@@ -351,73 +270,80 @@ New page: **OPENLAB · PURPOSE + PROTOTYPE · V1**
 | >99% is a display comparator | Do NOT convert to 99, average, or generate time series |
 | HPLC peak profile | Draw ONLY from source-owned structured numeric points |
 | "Structured Peak Summary" | Correct label. NOT "Chromatogram" unless actual chromatogram data |
-| CoA viewer | Display ONLY supplied report/image/PDF. If missing → UNAVAILABLE state |
+| CoA viewer | Display ONLY supplied report/image/PDF. If missing → UNAVAILABLE |
 | Aggregate counts | Do NOT invent record counts, average purity, lab names, batch IDs, dates |
 | "Live" feeds | Do NOT create live/realtime data feeds from static projections |
-| Evidence dimensions | Keep HPLC-MS purity, HPLC-DAD concentration, GC-MS identification as SEPARATE dimensions |
-| Identifier format | Cards: "MK-2866 · OL2201". Detail: full canonical ID. Never invent 5-char abbreviations. |
+| Evidence dimensions | Keep HPLC-MS purity, HPLC-DAD concentration, GC-MS identification SEPARATE |
+| Identifier format | Cards: "MK-2866 · OL2201". Detail: full canonical ID. |
 
 ---
 
-## DESIGN SYSTEM INHERITANCE RULES
+## DISPOSITION + SUPERSESSION REGISTER (20 entries in section 08)
 
-OpenLab is an **editorial evidence expression of the same OLUK identity system** — not a separate blue dashboard.
-
-| Rule | Value |
-|---|---|
-| Canvas | Luminous cool light |
-| Content planes | Raised white |
-| Accent | Cobalt (existing --oluk-accent-cobalt) |
-| Display headings | Plus Jakarta Sans ExtraBold |
-| Body & UI | Inter Variable |
-| Dark/inverse | Footer only (sanctioned) |
-| Media | Accepted OLUK product renders |
-| Responsive | Recomposition, not desktop scaling |
-| Variables | Use named --oluk-* tokens, not hard-coded values |
-| New colors | Do NOT create colors merely to distinguish OpenLab |
+| Category | Count | Disposition |
+|---|---|---|
+| Duplicate route compositions (1822 series) | 7 | SUPERSEDE → canonicalize to 1082 series |
+| Duplicate card grammar instances | 2 entries (3+2 instances) | DEDUPLICATE |
+| Dark Codex proof pages (A1-A6) | 6 | STRUCTURAL_REFERENCE |
+| HeroOpenLab-dark (1791:77015) | 1 | ARCHIVE_CANDIDATE |
+| R6 CoA Viewers (cross-file) | 2 | DATA_ANATOMY_ONLY |
+| EvidenceOS-Editorial | 1 | ADAPT → OL-EDITORIAL-TEASER |
+| 1838:12778 (conflated) | 1 | ADAPT → split into portal + compound champions |
 
 ---
 
-## ACCEPTANCE CHECKS
+## IMPLEMENTATION ORDER (proposed)
 
-- [ ] Portal and MK-2866 compound jobs are no longer conflated
-- [ ] Customer-facing boards contain no backend projection prose
-- [ ] Every visualization is source-backed or honestly unavailable
-- [ ] CoA viewer is distinct from structured peak summary
-- [ ] Shared commerce primitives (ProductCommerceCard, PurchasePanel, etc.) are visibly inherited
-- [ ] All champion nodes use current OLUK identity tokens
-- [ ] 1440, 1024, 768, and 390 share one component family
-- [ ] Each route/module has who, what, why, when, how, and where
-- [ ] Every route placement has a CANDIDATE_SLOT_ID
-- [ ] Duplicates have recorded disposition
-- [ ] Exact Figma nodes and pending adoption receipt returned
-- [ ] Nothing is labeled production-approved
-- [ ] No payment/Woo mutation/BiasPay in evidence surfaces
-- [ ] /open-lab prefix used (NOT /openlab shorthand)
+1. Governed fixture file (authority/fixtures/openlab-evidence-fixtures.json)
+2. Evidence Charts components (contract: 1890:77164)
+3. openlab-realtime component (HPLC trace + batch table)
+4. OL-EDITORIAL-TEASER redesign
+5. ProductEvidenceSnapshot for PDP
+6. LabRecord + HplcPurityTrace components
+7. Portal composition
+8. Compound dossier composition
+9. Records archive
+10. CoA Viewer (awaits OLUK design direction)
 
-## RISK NOTES
+---
 
-- **1838:12778 conflation** — The editorial selection mixes portal + compound. Must split before Codex implements.
-- **CoaViewer component** — MISSING_SOURCE. No Figma component exists. Requires architecture decision (embed vs. new tab).
-- **Peak profile data format** — Backend API must supply structured numeric points for HplcPeakProfile. Format TBD.
-- **7 duplicate route compositions** — Must canonicalize 1082:xxxxx, archive 1822:xxxxx before implementation.
-- **HeroOpenLab-light 18px delta** — 1791:76121 (1079h) must be superseded by 1791:77015 (1061h).
-- **EvidenceOS-Editorial** (1572:72278) — Unproofed concept. Do not implement until owner decision.
-- Olympus runtime/payment/security concerns out of scope per codex-bridge rules.
+## ACCEPTANCE STATUS
 
-## OPEN ITEMS
+- [x] Portal and MK-2866 compound jobs are no longer conflated (champion split specified)
+- [x] Source register built (23 entries, section 00)
+- [x] Route purpose atlas built (13 routes, section 01)
+- [x] Component family atlas built (15 families, section 02)
+- [x] Disposition + supersession register built (20 entries, section 08)
+- [x] Codex adoption receipt built (section 09)
+- [x] Every route placement has a CANDIDATE_SLOT_ID
+- [x] Duplicates have recorded disposition
+- [x] /open-lab prefix used (NOT /openlab shorthand)
+- [x] Nothing is labeled production-approved
+- [ ] Champion prototype boards (sections 03-07) — PENDING design agent
+- [ ] 1440, 1024, 768, and 390 responsive proofs — PENDING
+- [ ] Full state matrix (4 states × 4 breakpoints) — PENDING
 
-- [ ] Owner decision: Split 1838:12778 into portal + compound champions (this packet proposes the split)
-- [ ] Owner decision: CoaViewer embed architecture (iframe PDF, image viewer, or external link)
-- [ ] Owner decision: EvidenceOS-Editorial — promote or archive?
-- [ ] Backend: Evidence API schema for compound-scoped batch record projection
-- [ ] Backend: HPLC peak profile structured numeric data format
-- [ ] Design: Create CompoundIdentityHeader component
-- [ ] Design: Create ProductEvidenceSnapshot for PDP placement
-- [ ] Design: 1024 and 768 responsive proofs for all editorial components
-- [ ] Design: Full state matrix (verified × source-reported × source-only × unavailable) for each component
-- [ ] Figma: Build OPENLAB · PURPOSE + PROTOTYPE · V1 page with 10 sections
+---
+
+## UNRESOLVED HUMAN DECISIONS
+
+1. Champion prototype visual approval (sections 03-07 await design creation)
+2. EvidenceOS-Editorial right-column redesign approval
+3. HeroOpenLab-light (1791:76121) spacing tightening approval
+4. CoA Viewer OLUK design direction approval
+
+---
 
 ## NEXT EXECUTABLE EDGE
 
-**Phase 0.1:** Create the OPENLAB · PURPOSE + PROTOTYPE · V1 page. Build Section 00 (Source Register) and Section 01 (Route Purpose Atlas) programmatically from this packet's disposition table and functional identity records. This unblocks Phase 1 (champion split prototyping) without waiting on any owner decisions.
+**For Figma:** Build champion prototype boards in sections 03-07 using the design agent — portal at 1440+390, MK-2866 compound at 1440+390, PDP evidence snapshot, record/report/CoA compositions, and state+responsive matrix.
+
+**For Codex (controller):**
+1. Replace stale "Figma file required" hold with file BEPMuUt1HroEw8xjz8CVyN and page 1920:422
+2. Ingest source-disposition register (23 entries) and candidate-slot registries
+3. Bind champion/version into pending receipt at CANDIDATE_PENDING_HUMAN_REVIEW
+4. After visual approval → unlock bounded Design producer lock
+5. Then sequence: C2 compatibility → Native Next route-slot adoption → deployment → public readback
+
+**Status:** CANDIDATE_PENDING_HUMAN_REVIEW
+This receipt does NOT claim Native Next adoption, deployment, or production acceptance.
